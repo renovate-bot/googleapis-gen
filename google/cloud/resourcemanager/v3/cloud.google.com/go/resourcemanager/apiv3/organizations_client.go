@@ -47,7 +47,7 @@ type OrganizationsCallOptions struct {
 	TestIamPermissions  []gax.CallOption
 }
 
-func defaultOrganizationsClientOptions() []option.ClientOption {
+func defaultOrganizationsGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("cloudresourcemanager.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("cloudresourcemanager.mtls.googleapis.com:443"),
@@ -89,32 +89,123 @@ func defaultOrganizationsCallOptions() *OrganizationsCallOptions {
 	}
 }
 
+// internalOrganizationsClient is an interface that defines the methods availaible from Cloud Resource Manager API.
+type internalOrganizationsClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	GetOrganization(context.Context, *resourcemanagerpb.GetOrganizationRequest, ...gax.CallOption) (*resourcemanagerpb.Organization, error)
+	SearchOrganizations(context.Context, *resourcemanagerpb.SearchOrganizationsRequest, ...gax.CallOption) *OrganizationIterator
+	GetIamPolicy(context.Context, *iampb.GetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
+	SetIamPolicy(context.Context, *iampb.SetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
+	TestIamPermissions(context.Context, *iampb.TestIamPermissionsRequest, ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error)
+}
+
 // OrganizationsClient is a client for interacting with Cloud Resource Manager API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Allows users to manage their organization resources.
+type OrganizationsClient struct {
+	// The internal transport-dependent client.
+	internalClient internalOrganizationsClient
+
+	// The call options for this service.
+	CallOptions *OrganizationsCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *OrganizationsClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *OrganizationsClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *OrganizationsClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// GetOrganization fetches an organization resource identified by the specified resource name.
+func (c *OrganizationsClient) GetOrganization(ctx context.Context, req *resourcemanagerpb.GetOrganizationRequest, opts ...gax.CallOption) (*resourcemanagerpb.Organization, error) {
+	return c.internalClient.GetOrganization(ctx, req, opts...)
+}
+
+// SearchOrganizations searches organization resources that are visible to the user and satisfy
+// the specified filter. This method returns organizations in an unspecified
+// order. New organizations do not necessarily appear at the end of the
+// results, and may take a small amount of time to appear.
+//
+// Search will only return organizations on which the user has the permission
+// resourcemanager.organizations.get
+func (c *OrganizationsClient) SearchOrganizations(ctx context.Context, req *resourcemanagerpb.SearchOrganizationsRequest, opts ...gax.CallOption) *OrganizationIterator {
+	return c.internalClient.SearchOrganizations(ctx, req, opts...)
+}
+
+// GetIamPolicy gets the access control policy for an organization resource. The policy may
+// be empty if no such policy or resource exists. The resource field should
+// be the organization’s resource name, for example: “organizations/123”.
+//
+// Authorization requires the IAM permission
+// resourcemanager.organizations.getIamPolicy on the specified organization.
+func (c *OrganizationsClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+	return c.internalClient.GetIamPolicy(ctx, req, opts...)
+}
+
+// SetIamPolicy sets the access control policy on an organization resource. Replaces any
+// existing policy. The resource field should be the organization’s resource
+// name, for example: “organizations/123”.
+//
+// Authorization requires the IAM permission
+// resourcemanager.organizations.setIamPolicy on the specified organization.
+func (c *OrganizationsClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+	return c.internalClient.SetIamPolicy(ctx, req, opts...)
+}
+
+// TestIamPermissions returns the permissions that a caller has on the specified organization.
+// The resource field should be the organization’s resource name,
+// for example: “organizations/123”.
+//
+// There are no permissions required for making this API call.
+func (c *OrganizationsClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
+	return c.internalClient.TestIamPermissions(ctx, req, opts...)
+}
+
+// organizationsGRPCClient is a client for interacting with Cloud Resource Manager API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type OrganizationsClient struct {
+type organizationsGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing OrganizationsClient
+	CallOptions **OrganizationsCallOptions
+
 	// The gRPC API client.
 	organizationsClient resourcemanagerpb.OrganizationsClient
-
-	// The call options for this service.
-	CallOptions *OrganizationsCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewOrganizationsClient creates a new organizations client.
+// NewOrganizationsClient creates a new organizations client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Allows users to manage their organization resources.
 func NewOrganizationsClient(ctx context.Context, opts ...option.ClientOption) (*OrganizationsClient, error) {
-	clientOpts := defaultOrganizationsClientOptions()
-
+	clientOpts := defaultOrganizationsGRPCClientOptions()
 	if newOrganizationsClientHook != nil {
 		hookOpts, err := newOrganizationsClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -132,42 +223,44 @@ func NewOrganizationsClient(ctx context.Context, opts ...option.ClientOption) (*
 	if err != nil {
 		return nil, err
 	}
-	c := &OrganizationsClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultOrganizationsCallOptions(),
+	client := OrganizationsClient{CallOptions: defaultOrganizationsCallOptions()}
 
+	c := &organizationsGRPCClient{
+		connPool:            connPool,
+		disableDeadlines:    disableDeadlines,
 		organizationsClient: resourcemanagerpb.NewOrganizationsClient(connPool),
+		CallOptions:         &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *OrganizationsClient) Connection() *grpc.ClientConn {
+func (c *organizationsGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *OrganizationsClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *OrganizationsClient) setGoogleClientInfo(keyval ...string) {
+func (c *organizationsGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// GetOrganization fetches an organization resource identified by the specified resource name.
-func (c *OrganizationsClient) GetOrganization(ctx context.Context, req *resourcemanagerpb.GetOrganizationRequest, opts ...gax.CallOption) (*resourcemanagerpb.Organization, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *organizationsGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *organizationsGRPCClient) GetOrganization(ctx context.Context, req *resourcemanagerpb.GetOrganizationRequest, opts ...gax.CallOption) (*resourcemanagerpb.Organization, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -175,7 +268,7 @@ func (c *OrganizationsClient) GetOrganization(ctx context.Context, req *resource
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetOrganization[0:len(c.CallOptions.GetOrganization):len(c.CallOptions.GetOrganization)], opts...)
+	opts = append((*c.CallOptions).GetOrganization[0:len((*c.CallOptions).GetOrganization):len((*c.CallOptions).GetOrganization)], opts...)
 	var resp *resourcemanagerpb.Organization
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -188,16 +281,9 @@ func (c *OrganizationsClient) GetOrganization(ctx context.Context, req *resource
 	return resp, nil
 }
 
-// SearchOrganizations searches organization resources that are visible to the user and satisfy
-// the specified filter. This method returns organizations in an unspecified
-// order. New organizations do not necessarily appear at the end of the
-// results, and may take a small amount of time to appear.
-//
-// Search will only return organizations on which the user has the permission
-// resourcemanager.organizations.get
-func (c *OrganizationsClient) SearchOrganizations(ctx context.Context, req *resourcemanagerpb.SearchOrganizationsRequest, opts ...gax.CallOption) *OrganizationIterator {
+func (c *organizationsGRPCClient) SearchOrganizations(ctx context.Context, req *resourcemanagerpb.SearchOrganizationsRequest, opts ...gax.CallOption) *OrganizationIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.SearchOrganizations[0:len(c.CallOptions.SearchOrganizations):len(c.CallOptions.SearchOrganizations)], opts...)
+	opts = append((*c.CallOptions).SearchOrganizations[0:len((*c.CallOptions).SearchOrganizations):len((*c.CallOptions).SearchOrganizations)], opts...)
 	it := &OrganizationIterator{}
 	req = proto.Clone(req).(*resourcemanagerpb.SearchOrganizationsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*resourcemanagerpb.Organization, string, error) {
@@ -234,13 +320,7 @@ func (c *OrganizationsClient) SearchOrganizations(ctx context.Context, req *reso
 	return it
 }
 
-// GetIamPolicy gets the access control policy for an organization resource. The policy may
-// be empty if no such policy or resource exists. The resource field should
-// be the organization’s resource name, for example: “organizations/123”.
-//
-// Authorization requires the IAM permission
-// resourcemanager.organizations.getIamPolicy on the specified organization.
-func (c *OrganizationsClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+func (c *organizationsGRPCClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -248,7 +328,7 @@ func (c *OrganizationsClient) GetIamPolicy(ctx context.Context, req *iampb.GetIa
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetIamPolicy[0:len(c.CallOptions.GetIamPolicy):len(c.CallOptions.GetIamPolicy)], opts...)
+	opts = append((*c.CallOptions).GetIamPolicy[0:len((*c.CallOptions).GetIamPolicy):len((*c.CallOptions).GetIamPolicy)], opts...)
 	var resp *iampb.Policy
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -261,13 +341,7 @@ func (c *OrganizationsClient) GetIamPolicy(ctx context.Context, req *iampb.GetIa
 	return resp, nil
 }
 
-// SetIamPolicy sets the access control policy on an organization resource. Replaces any
-// existing policy. The resource field should be the organization’s resource
-// name, for example: “organizations/123”.
-//
-// Authorization requires the IAM permission
-// resourcemanager.organizations.setIamPolicy on the specified organization.
-func (c *OrganizationsClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+func (c *organizationsGRPCClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -275,7 +349,7 @@ func (c *OrganizationsClient) SetIamPolicy(ctx context.Context, req *iampb.SetIa
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SetIamPolicy[0:len(c.CallOptions.SetIamPolicy):len(c.CallOptions.SetIamPolicy)], opts...)
+	opts = append((*c.CallOptions).SetIamPolicy[0:len((*c.CallOptions).SetIamPolicy):len((*c.CallOptions).SetIamPolicy)], opts...)
 	var resp *iampb.Policy
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -288,15 +362,10 @@ func (c *OrganizationsClient) SetIamPolicy(ctx context.Context, req *iampb.SetIa
 	return resp, nil
 }
 
-// TestIamPermissions returns the permissions that a caller has on the specified organization.
-// The resource field should be the organization’s resource name,
-// for example: “organizations/123”.
-//
-// There are no permissions required for making this API call.
-func (c *OrganizationsClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
+func (c *organizationsGRPCClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.TestIamPermissions[0:len(c.CallOptions.TestIamPermissions):len(c.CallOptions.TestIamPermissions)], opts...)
+	opts = append((*c.CallOptions).TestIamPermissions[0:len((*c.CallOptions).TestIamPermissions):len((*c.CallOptions).TestIamPermissions)], opts...)
 	var resp *iampb.TestIamPermissionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

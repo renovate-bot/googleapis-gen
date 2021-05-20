@@ -31,18 +31,19 @@ func ExampleNewOrganizationsClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleOrganizationsClient_GetOrganization() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewOrganizationsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.GetOrganizationRequest{
 		// TODO: Fill request struct fields.
@@ -56,14 +57,12 @@ func ExampleOrganizationsClient_GetOrganization() {
 }
 
 func ExampleOrganizationsClient_SearchOrganizations() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewOrganizationsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.SearchOrganizationsRequest{
 		// TODO: Fill request struct fields.
@@ -83,13 +82,12 @@ func ExampleOrganizationsClient_SearchOrganizations() {
 }
 
 func ExampleOrganizationsClient_GetIamPolicy() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewOrganizationsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.GetIamPolicyRequest{
 		// TODO: Fill request struct fields.
@@ -103,13 +101,12 @@ func ExampleOrganizationsClient_GetIamPolicy() {
 }
 
 func ExampleOrganizationsClient_SetIamPolicy() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewOrganizationsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.SetIamPolicyRequest{
 		// TODO: Fill request struct fields.
@@ -123,13 +120,12 @@ func ExampleOrganizationsClient_SetIamPolicy() {
 }
 
 func ExampleOrganizationsClient_TestIamPermissions() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewOrganizationsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.TestIamPermissionsRequest{
 		// TODO: Fill request struct fields.

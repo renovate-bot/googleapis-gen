@@ -48,7 +48,7 @@ type CallOptions struct {
 	ListMigrationSubtasks   []gax.CallOption
 }
 
-func defaultClientOptions() []option.ClientOption {
+func defaultGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("bigquerymigration.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("bigquerymigration.mtls.googleapis.com:443"),
@@ -122,32 +122,118 @@ func defaultCallOptions() *CallOptions {
 	}
 }
 
+// internalClient is an interface that defines the methods availaible from BigQuery Migration API.
+type internalClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateMigrationWorkflow(context.Context, *migrationpb.CreateMigrationWorkflowRequest, ...gax.CallOption) (*migrationpb.MigrationWorkflow, error)
+	GetMigrationWorkflow(context.Context, *migrationpb.GetMigrationWorkflowRequest, ...gax.CallOption) (*migrationpb.MigrationWorkflow, error)
+	ListMigrationWorkflows(context.Context, *migrationpb.ListMigrationWorkflowsRequest, ...gax.CallOption) *MigrationWorkflowIterator
+	DeleteMigrationWorkflow(context.Context, *migrationpb.DeleteMigrationWorkflowRequest, ...gax.CallOption) error
+	StartMigrationWorkflow(context.Context, *migrationpb.StartMigrationWorkflowRequest, ...gax.CallOption) error
+	GetMigrationSubtask(context.Context, *migrationpb.GetMigrationSubtaskRequest, ...gax.CallOption) (*migrationpb.MigrationSubtask, error)
+	ListMigrationSubtasks(context.Context, *migrationpb.ListMigrationSubtasksRequest, ...gax.CallOption) *MigrationSubtaskIterator
+}
+
 // Client is a client for interacting with BigQuery Migration API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Service to handle EDW migrations.
+type Client struct {
+	// The internal transport-dependent client.
+	internalClient internalClient
+
+	// The call options for this service.
+	CallOptions *CallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *Client) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *Client) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *Client) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateMigrationWorkflow creates a migration workflow.
+func (c *Client) CreateMigrationWorkflow(ctx context.Context, req *migrationpb.CreateMigrationWorkflowRequest, opts ...gax.CallOption) (*migrationpb.MigrationWorkflow, error) {
+	return c.internalClient.CreateMigrationWorkflow(ctx, req, opts...)
+}
+
+// GetMigrationWorkflow gets a previously created migration workflow.
+func (c *Client) GetMigrationWorkflow(ctx context.Context, req *migrationpb.GetMigrationWorkflowRequest, opts ...gax.CallOption) (*migrationpb.MigrationWorkflow, error) {
+	return c.internalClient.GetMigrationWorkflow(ctx, req, opts...)
+}
+
+// ListMigrationWorkflows lists previously created migration workflow.
+func (c *Client) ListMigrationWorkflows(ctx context.Context, req *migrationpb.ListMigrationWorkflowsRequest, opts ...gax.CallOption) *MigrationWorkflowIterator {
+	return c.internalClient.ListMigrationWorkflows(ctx, req, opts...)
+}
+
+// DeleteMigrationWorkflow deletes a migration workflow by name.
+func (c *Client) DeleteMigrationWorkflow(ctx context.Context, req *migrationpb.DeleteMigrationWorkflowRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteMigrationWorkflow(ctx, req, opts...)
+}
+
+// StartMigrationWorkflow starts a previously created migration workflow. I.e., the state transitions
+// from DRAFT to RUNNING. This is a no-op if the state is already RUNNING.
+// An error will be signaled if the state is anything other than DRAFT or
+// RUNNING.
+func (c *Client) StartMigrationWorkflow(ctx context.Context, req *migrationpb.StartMigrationWorkflowRequest, opts ...gax.CallOption) error {
+	return c.internalClient.StartMigrationWorkflow(ctx, req, opts...)
+}
+
+// GetMigrationSubtask gets a previously created migration subtask.
+func (c *Client) GetMigrationSubtask(ctx context.Context, req *migrationpb.GetMigrationSubtaskRequest, opts ...gax.CallOption) (*migrationpb.MigrationSubtask, error) {
+	return c.internalClient.GetMigrationSubtask(ctx, req, opts...)
+}
+
+// ListMigrationSubtasks lists previously created migration subtasks.
+func (c *Client) ListMigrationSubtasks(ctx context.Context, req *migrationpb.ListMigrationSubtasksRequest, opts ...gax.CallOption) *MigrationSubtaskIterator {
+	return c.internalClient.ListMigrationSubtasks(ctx, req, opts...)
+}
+
+// gRPCClient is a client for interacting with BigQuery Migration API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type Client struct {
+type gRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing Client
+	CallOptions **CallOptions
+
 	// The gRPC API client.
 	client migrationpb.MigrationServiceClient
-
-	// The call options for this service.
-	CallOptions *CallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewClient creates a new migration service client.
+// NewClient creates a new migration service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service to handle EDW migrations.
 func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
-	clientOpts := defaultClientOptions()
-
+	clientOpts := defaultGRPCClientOptions()
 	if newClientHook != nil {
 		hookOpts, err := newClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -165,42 +251,44 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 	if err != nil {
 		return nil, err
 	}
-	c := &Client{
+	client := Client{CallOptions: defaultCallOptions()}
+
+	c := &gRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultCallOptions(),
-
-		client: migrationpb.NewMigrationServiceClient(connPool),
+		client:           migrationpb.NewMigrationServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *Client) Connection() *grpc.ClientConn {
+func (c *gRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *Client) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *Client) setGoogleClientInfo(keyval ...string) {
+func (c *gRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateMigrationWorkflow creates a migration workflow.
-func (c *Client) CreateMigrationWorkflow(ctx context.Context, req *migrationpb.CreateMigrationWorkflowRequest, opts ...gax.CallOption) (*migrationpb.MigrationWorkflow, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *gRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *gRPCClient) CreateMigrationWorkflow(ctx context.Context, req *migrationpb.CreateMigrationWorkflowRequest, opts ...gax.CallOption) (*migrationpb.MigrationWorkflow, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -208,7 +296,7 @@ func (c *Client) CreateMigrationWorkflow(ctx context.Context, req *migrationpb.C
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateMigrationWorkflow[0:len(c.CallOptions.CreateMigrationWorkflow):len(c.CallOptions.CreateMigrationWorkflow)], opts...)
+	opts = append((*c.CallOptions).CreateMigrationWorkflow[0:len((*c.CallOptions).CreateMigrationWorkflow):len((*c.CallOptions).CreateMigrationWorkflow)], opts...)
 	var resp *migrationpb.MigrationWorkflow
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -221,8 +309,7 @@ func (c *Client) CreateMigrationWorkflow(ctx context.Context, req *migrationpb.C
 	return resp, nil
 }
 
-// GetMigrationWorkflow gets a previously created migration workflow.
-func (c *Client) GetMigrationWorkflow(ctx context.Context, req *migrationpb.GetMigrationWorkflowRequest, opts ...gax.CallOption) (*migrationpb.MigrationWorkflow, error) {
+func (c *gRPCClient) GetMigrationWorkflow(ctx context.Context, req *migrationpb.GetMigrationWorkflowRequest, opts ...gax.CallOption) (*migrationpb.MigrationWorkflow, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 120000*time.Millisecond)
 		defer cancel()
@@ -230,7 +317,7 @@ func (c *Client) GetMigrationWorkflow(ctx context.Context, req *migrationpb.GetM
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetMigrationWorkflow[0:len(c.CallOptions.GetMigrationWorkflow):len(c.CallOptions.GetMigrationWorkflow)], opts...)
+	opts = append((*c.CallOptions).GetMigrationWorkflow[0:len((*c.CallOptions).GetMigrationWorkflow):len((*c.CallOptions).GetMigrationWorkflow)], opts...)
 	var resp *migrationpb.MigrationWorkflow
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -243,11 +330,10 @@ func (c *Client) GetMigrationWorkflow(ctx context.Context, req *migrationpb.GetM
 	return resp, nil
 }
 
-// ListMigrationWorkflows lists previously created migration workflow.
-func (c *Client) ListMigrationWorkflows(ctx context.Context, req *migrationpb.ListMigrationWorkflowsRequest, opts ...gax.CallOption) *MigrationWorkflowIterator {
+func (c *gRPCClient) ListMigrationWorkflows(ctx context.Context, req *migrationpb.ListMigrationWorkflowsRequest, opts ...gax.CallOption) *MigrationWorkflowIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListMigrationWorkflows[0:len(c.CallOptions.ListMigrationWorkflows):len(c.CallOptions.ListMigrationWorkflows)], opts...)
+	opts = append((*c.CallOptions).ListMigrationWorkflows[0:len((*c.CallOptions).ListMigrationWorkflows):len((*c.CallOptions).ListMigrationWorkflows)], opts...)
 	it := &MigrationWorkflowIterator{}
 	req = proto.Clone(req).(*migrationpb.ListMigrationWorkflowsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*migrationpb.MigrationWorkflow, string, error) {
@@ -284,8 +370,7 @@ func (c *Client) ListMigrationWorkflows(ctx context.Context, req *migrationpb.Li
 	return it
 }
 
-// DeleteMigrationWorkflow deletes a migration workflow by name.
-func (c *Client) DeleteMigrationWorkflow(ctx context.Context, req *migrationpb.DeleteMigrationWorkflowRequest, opts ...gax.CallOption) error {
+func (c *gRPCClient) DeleteMigrationWorkflow(ctx context.Context, req *migrationpb.DeleteMigrationWorkflowRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -293,7 +378,7 @@ func (c *Client) DeleteMigrationWorkflow(ctx context.Context, req *migrationpb.D
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteMigrationWorkflow[0:len(c.CallOptions.DeleteMigrationWorkflow):len(c.CallOptions.DeleteMigrationWorkflow)], opts...)
+	opts = append((*c.CallOptions).DeleteMigrationWorkflow[0:len((*c.CallOptions).DeleteMigrationWorkflow):len((*c.CallOptions).DeleteMigrationWorkflow)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.client.DeleteMigrationWorkflow(ctx, req, settings.GRPC...)
@@ -302,11 +387,7 @@ func (c *Client) DeleteMigrationWorkflow(ctx context.Context, req *migrationpb.D
 	return err
 }
 
-// StartMigrationWorkflow starts a previously created migration workflow. I.e., the state transitions
-// from DRAFT to RUNNING. This is a no-op if the state is already RUNNING.
-// An error will be signaled if the state is anything other than DRAFT or
-// RUNNING.
-func (c *Client) StartMigrationWorkflow(ctx context.Context, req *migrationpb.StartMigrationWorkflowRequest, opts ...gax.CallOption) error {
+func (c *gRPCClient) StartMigrationWorkflow(ctx context.Context, req *migrationpb.StartMigrationWorkflowRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 120000*time.Millisecond)
 		defer cancel()
@@ -314,7 +395,7 @@ func (c *Client) StartMigrationWorkflow(ctx context.Context, req *migrationpb.St
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.StartMigrationWorkflow[0:len(c.CallOptions.StartMigrationWorkflow):len(c.CallOptions.StartMigrationWorkflow)], opts...)
+	opts = append((*c.CallOptions).StartMigrationWorkflow[0:len((*c.CallOptions).StartMigrationWorkflow):len((*c.CallOptions).StartMigrationWorkflow)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.client.StartMigrationWorkflow(ctx, req, settings.GRPC...)
@@ -323,8 +404,7 @@ func (c *Client) StartMigrationWorkflow(ctx context.Context, req *migrationpb.St
 	return err
 }
 
-// GetMigrationSubtask gets a previously created migration subtask.
-func (c *Client) GetMigrationSubtask(ctx context.Context, req *migrationpb.GetMigrationSubtaskRequest, opts ...gax.CallOption) (*migrationpb.MigrationSubtask, error) {
+func (c *gRPCClient) GetMigrationSubtask(ctx context.Context, req *migrationpb.GetMigrationSubtaskRequest, opts ...gax.CallOption) (*migrationpb.MigrationSubtask, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 120000*time.Millisecond)
 		defer cancel()
@@ -332,7 +412,7 @@ func (c *Client) GetMigrationSubtask(ctx context.Context, req *migrationpb.GetMi
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetMigrationSubtask[0:len(c.CallOptions.GetMigrationSubtask):len(c.CallOptions.GetMigrationSubtask)], opts...)
+	opts = append((*c.CallOptions).GetMigrationSubtask[0:len((*c.CallOptions).GetMigrationSubtask):len((*c.CallOptions).GetMigrationSubtask)], opts...)
 	var resp *migrationpb.MigrationSubtask
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -345,11 +425,10 @@ func (c *Client) GetMigrationSubtask(ctx context.Context, req *migrationpb.GetMi
 	return resp, nil
 }
 
-// ListMigrationSubtasks lists previously created migration subtasks.
-func (c *Client) ListMigrationSubtasks(ctx context.Context, req *migrationpb.ListMigrationSubtasksRequest, opts ...gax.CallOption) *MigrationSubtaskIterator {
+func (c *gRPCClient) ListMigrationSubtasks(ctx context.Context, req *migrationpb.ListMigrationSubtasksRequest, opts ...gax.CallOption) *MigrationSubtaskIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListMigrationSubtasks[0:len(c.CallOptions.ListMigrationSubtasks):len(c.CallOptions.ListMigrationSubtasks)], opts...)
+	opts = append((*c.CallOptions).ListMigrationSubtasks[0:len((*c.CallOptions).ListMigrationSubtasks):len((*c.CallOptions).ListMigrationSubtasks)], opts...)
 	it := &MigrationSubtaskIterator{}
 	req = proto.Clone(req).(*migrationpb.ListMigrationSubtasksRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*migrationpb.MigrationSubtask, string, error) {

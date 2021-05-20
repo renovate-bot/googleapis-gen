@@ -71,7 +71,7 @@ type IamCallOptions struct {
 	LintPolicy               []gax.CallOption
 }
 
-func defaultIamClientOptions() []option.ClientOption {
+func defaultIamGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("iam.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("iam.mtls.googleapis.com:443"),
@@ -194,27 +194,396 @@ func defaultIamCallOptions() *IamCallOptions {
 	}
 }
 
+// internalIamClient is an interface that defines the methods availaible from Identity and Access Management (IAM) API.
+type internalIamClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	ListServiceAccounts(context.Context, *adminpb.ListServiceAccountsRequest, ...gax.CallOption) *ServiceAccountIterator
+	GetServiceAccount(context.Context, *adminpb.GetServiceAccountRequest, ...gax.CallOption) (*adminpb.ServiceAccount, error)
+	CreateServiceAccount(context.Context, *adminpb.CreateServiceAccountRequest, ...gax.CallOption) (*adminpb.ServiceAccount, error)
+	UpdateServiceAccount(context.Context, *adminpb.ServiceAccount, ...gax.CallOption) (*adminpb.ServiceAccount, error)
+	PatchServiceAccount(context.Context, *adminpb.PatchServiceAccountRequest, ...gax.CallOption) (*adminpb.ServiceAccount, error)
+	DeleteServiceAccount(context.Context, *adminpb.DeleteServiceAccountRequest, ...gax.CallOption) error
+	UndeleteServiceAccount(context.Context, *adminpb.UndeleteServiceAccountRequest, ...gax.CallOption) (*adminpb.UndeleteServiceAccountResponse, error)
+	EnableServiceAccount(context.Context, *adminpb.EnableServiceAccountRequest, ...gax.CallOption) error
+	DisableServiceAccount(context.Context, *adminpb.DisableServiceAccountRequest, ...gax.CallOption) error
+	ListServiceAccountKeys(context.Context, *adminpb.ListServiceAccountKeysRequest, ...gax.CallOption) (*adminpb.ListServiceAccountKeysResponse, error)
+	GetServiceAccountKey(context.Context, *adminpb.GetServiceAccountKeyRequest, ...gax.CallOption) (*adminpb.ServiceAccountKey, error)
+	CreateServiceAccountKey(context.Context, *adminpb.CreateServiceAccountKeyRequest, ...gax.CallOption) (*adminpb.ServiceAccountKey, error)
+	UploadServiceAccountKey(context.Context, *adminpb.UploadServiceAccountKeyRequest, ...gax.CallOption) (*adminpb.ServiceAccountKey, error)
+	DeleteServiceAccountKey(context.Context, *adminpb.DeleteServiceAccountKeyRequest, ...gax.CallOption) error
+	SignBlob(context.Context, *adminpb.SignBlobRequest, ...gax.CallOption) (*adminpb.SignBlobResponse, error)
+	SignJwt(context.Context, *adminpb.SignJwtRequest, ...gax.CallOption) (*adminpb.SignJwtResponse, error)
+	GetIamPolicy(context.Context, *iampb.GetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
+	SetIamPolicy(context.Context, *iampb.SetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
+	TestIamPermissions(context.Context, *iampb.TestIamPermissionsRequest, ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error)
+	QueryGrantableRoles(context.Context, *adminpb.QueryGrantableRolesRequest, ...gax.CallOption) *RoleIterator
+	ListRoles(context.Context, *adminpb.ListRolesRequest, ...gax.CallOption) *RoleIterator
+	GetRole(context.Context, *adminpb.GetRoleRequest, ...gax.CallOption) (*adminpb.Role, error)
+	CreateRole(context.Context, *adminpb.CreateRoleRequest, ...gax.CallOption) (*adminpb.Role, error)
+	UpdateRole(context.Context, *adminpb.UpdateRoleRequest, ...gax.CallOption) (*adminpb.Role, error)
+	DeleteRole(context.Context, *adminpb.DeleteRoleRequest, ...gax.CallOption) (*adminpb.Role, error)
+	UndeleteRole(context.Context, *adminpb.UndeleteRoleRequest, ...gax.CallOption) (*adminpb.Role, error)
+	QueryTestablePermissions(context.Context, *adminpb.QueryTestablePermissionsRequest, ...gax.CallOption) *PermissionIterator
+	QueryAuditableServices(context.Context, *adminpb.QueryAuditableServicesRequest, ...gax.CallOption) (*adminpb.QueryAuditableServicesResponse, error)
+	LintPolicy(context.Context, *adminpb.LintPolicyRequest, ...gax.CallOption) (*adminpb.LintPolicyResponse, error)
+}
+
 // IamClient is a client for interacting with Identity and Access Management (IAM) API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Creates and manages Identity and Access Management (IAM) resources.
+//
+// You can use this service to work with all of the following resources:
+//
+//   Service accounts, which identify an application or a virtual machine
+//   (VM) instance rather than a person
+//
+//   Service account keys, which service accounts use to authenticate with
+//   Google APIs
+//
+//   IAM policies for service accounts, which specify the roles that a
+//   member has for the service account
+//
+//   IAM custom roles, which help you limit the number of permissions that
+//   you grant to members
+//
+// In addition, you can use this service to complete the following tasks, among
+// others:
+//
+//   Test whether a service account can use specific permissions
+//
+//   Check which roles you can grant for a specific resource
+//
+//   Lint, or validate, condition expressions in an IAM policy
+type IamClient struct {
+	// The internal transport-dependent client.
+	internalClient internalIamClient
+
+	// The call options for this service.
+	CallOptions *IamCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *IamClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *IamClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *IamClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// ListServiceAccounts lists every ServiceAccount that belongs to a specific project.
+func (c *IamClient) ListServiceAccounts(ctx context.Context, req *adminpb.ListServiceAccountsRequest, opts ...gax.CallOption) *ServiceAccountIterator {
+	return c.internalClient.ListServiceAccounts(ctx, req, opts...)
+}
+
+// GetServiceAccount gets a ServiceAccount.
+func (c *IamClient) GetServiceAccount(ctx context.Context, req *adminpb.GetServiceAccountRequest, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
+	return c.internalClient.GetServiceAccount(ctx, req, opts...)
+}
+
+// CreateServiceAccount creates a ServiceAccount.
+func (c *IamClient) CreateServiceAccount(ctx context.Context, req *adminpb.CreateServiceAccountRequest, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
+	return c.internalClient.CreateServiceAccount(ctx, req, opts...)
+}
+
+// UpdateServiceAccount Note: We are in the process of deprecating this method. Use
+// PatchServiceAccount instead.
+//
+// Updates a ServiceAccount.
+//
+// You can update only the display_name and description fields.
+func (c *IamClient) UpdateServiceAccount(ctx context.Context, req *adminpb.ServiceAccount, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
+	return c.internalClient.UpdateServiceAccount(ctx, req, opts...)
+}
+
+// PatchServiceAccount patches a ServiceAccount.
+func (c *IamClient) PatchServiceAccount(ctx context.Context, req *adminpb.PatchServiceAccountRequest, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
+	return c.internalClient.PatchServiceAccount(ctx, req, opts...)
+}
+
+// DeleteServiceAccount deletes a ServiceAccount.
+//
+// Warning: After you delete a service account, you might not be able to
+// undelete it. If you know that you need to re-enable the service account in
+// the future, use DisableServiceAccount instead.
+//
+// If you delete a service account, IAM permanently removes the service
+// account 30 days later. Google Cloud cannot recover the service account
+// after it is permanently removed, even if you file a support request.
+//
+// To help avoid unplanned outages, we recommend that you disable the service
+// account before you delete it. Use DisableServiceAccount to disable the
+// service account, then wait at least 24 hours and watch for unintended
+// consequences. If there are no unintended consequences, you can delete the
+// service account.
+func (c *IamClient) DeleteServiceAccount(ctx context.Context, req *adminpb.DeleteServiceAccountRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteServiceAccount(ctx, req, opts...)
+}
+
+// UndeleteServiceAccount restores a deleted ServiceAccount.
+//
+// Important: It is not always possible to restore a deleted service
+// account. Use this method only as a last resort.
+//
+// After you delete a service account, IAM permanently removes the service
+// account 30 days later. There is no way to restore a deleted service account
+// that has been permanently removed.
+func (c *IamClient) UndeleteServiceAccount(ctx context.Context, req *adminpb.UndeleteServiceAccountRequest, opts ...gax.CallOption) (*adminpb.UndeleteServiceAccountResponse, error) {
+	return c.internalClient.UndeleteServiceAccount(ctx, req, opts...)
+}
+
+// EnableServiceAccount enables a ServiceAccount that was disabled by
+// DisableServiceAccount.
+//
+// If the service account is already enabled, then this method has no effect.
+//
+// If the service account was disabled by other means—for example, if Google
+// disabled the service account because it was compromised—you cannot use this
+// method to enable the service account.
+func (c *IamClient) EnableServiceAccount(ctx context.Context, req *adminpb.EnableServiceAccountRequest, opts ...gax.CallOption) error {
+	return c.internalClient.EnableServiceAccount(ctx, req, opts...)
+}
+
+// DisableServiceAccount disables a ServiceAccount immediately.
+//
+// If an application uses the service account to authenticate, that
+// application can no longer call Google APIs or access Google Cloud
+// resources. Existing access tokens for the service account are rejected, and
+// requests for new access tokens will fail.
+//
+// To re-enable the service account, use EnableServiceAccount. After you
+// re-enable the service account, its existing access tokens will be accepted,
+// and you can request new access tokens.
+//
+// To help avoid unplanned outages, we recommend that you disable the service
+// account before you delete it. Use this method to disable the service
+// account, then wait at least 24 hours and watch for unintended consequences.
+// If there are no unintended consequences, you can delete the service account
+// with DeleteServiceAccount.
+func (c *IamClient) DisableServiceAccount(ctx context.Context, req *adminpb.DisableServiceAccountRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DisableServiceAccount(ctx, req, opts...)
+}
+
+// ListServiceAccountKeys lists every ServiceAccountKey for a service account.
+func (c *IamClient) ListServiceAccountKeys(ctx context.Context, req *adminpb.ListServiceAccountKeysRequest, opts ...gax.CallOption) (*adminpb.ListServiceAccountKeysResponse, error) {
+	return c.internalClient.ListServiceAccountKeys(ctx, req, opts...)
+}
+
+// GetServiceAccountKey gets a ServiceAccountKey.
+func (c *IamClient) GetServiceAccountKey(ctx context.Context, req *adminpb.GetServiceAccountKeyRequest, opts ...gax.CallOption) (*adminpb.ServiceAccountKey, error) {
+	return c.internalClient.GetServiceAccountKey(ctx, req, opts...)
+}
+
+// CreateServiceAccountKey creates a ServiceAccountKey.
+func (c *IamClient) CreateServiceAccountKey(ctx context.Context, req *adminpb.CreateServiceAccountKeyRequest, opts ...gax.CallOption) (*adminpb.ServiceAccountKey, error) {
+	return c.internalClient.CreateServiceAccountKey(ctx, req, opts...)
+}
+
+// UploadServiceAccountKey creates a ServiceAccountKey, using a public key that you provide.
+func (c *IamClient) UploadServiceAccountKey(ctx context.Context, req *adminpb.UploadServiceAccountKeyRequest, opts ...gax.CallOption) (*adminpb.ServiceAccountKey, error) {
+	return c.internalClient.UploadServiceAccountKey(ctx, req, opts...)
+}
+
+// DeleteServiceAccountKey deletes a ServiceAccountKey. Deleting a service account key does not
+// revoke short-lived credentials that have been issued based on the service
+// account key.
+func (c *IamClient) DeleteServiceAccountKey(ctx context.Context, req *adminpb.DeleteServiceAccountKeyRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteServiceAccountKey(ctx, req, opts...)
+}
+
+// SignBlob Note: This method is deprecated. Use the
+// signBlob (at https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
+// method in the IAM Service Account Credentials API instead. If you currently
+// use this method, see the migration
+// guide (at https://cloud.google.com/iam/help/credentials/migrate-api) for
+// instructions.
+//
+// Signs a blob using the system-managed private key for a ServiceAccount.
+//
+// Deprecated: SignBlob may be removed in a future version.
+func (c *IamClient) SignBlob(ctx context.Context, req *adminpb.SignBlobRequest, opts ...gax.CallOption) (*adminpb.SignBlobResponse, error) {
+	return c.internalClient.SignBlob(ctx, req, opts...)
+}
+
+// SignJwt Note: This method is deprecated. Use the
+// signJwt (at https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
+// method in the IAM Service Account Credentials API instead. If you currently
+// use this method, see the migration
+// guide (at https://cloud.google.com/iam/help/credentials/migrate-api) for
+// instructions.
+//
+// Signs a JSON Web Token (JWT) using the system-managed private key for a
+// ServiceAccount.
+//
+// Deprecated: SignJwt may be removed in a future version.
+func (c *IamClient) SignJwt(ctx context.Context, req *adminpb.SignJwtRequest, opts ...gax.CallOption) (*adminpb.SignJwtResponse, error) {
+	return c.internalClient.SignJwt(ctx, req, opts...)
+}
+
+// GetIamPolicy gets the IAM policy that is attached to a ServiceAccount. This IAM
+// policy specifies which members have access to the service account.
+//
+// This method does not tell you whether the service account has been granted
+// any roles on other resources. To check whether a service account has role
+// grants on a resource, use the getIamPolicy method for that resource. For
+// example, to view the role grants for a project, call the Resource Manager
+// API’s
+// projects.getIamPolicy (at https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
+// method.
+func (c *IamClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+	return c.internalClient.GetIamPolicy(ctx, req, opts...)
+}
+
+// SetIamPolicy sets the IAM policy that is attached to a ServiceAccount.
+//
+// Use this method to grant or revoke access to the service account. For
+// example, you could grant a member the ability to impersonate the service
+// account.
+//
+// This method does not enable the service account to access other resources.
+// To grant roles to a service account on a resource, follow these steps:
+//
+// Call the resource’s getIamPolicy method to get its current IAM policy.
+//
+// Edit the policy so that it binds the service account to an IAM role for
+// the resource.
+//
+// Call the resource’s setIamPolicy method to update its IAM policy.
+//
+// For detailed instructions, see
+// Granting roles to a service account for specific
+// resources (at https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
+func (c *IamClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+	return c.internalClient.SetIamPolicy(ctx, req, opts...)
+}
+
+// TestIamPermissions tests whether the caller has the specified permissions on a
+// ServiceAccount.
+func (c *IamClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
+	return c.internalClient.TestIamPermissions(ctx, req, opts...)
+}
+
+// QueryGrantableRoles lists roles that can be granted on a Google Cloud resource. A role is
+// grantable if the IAM policy for the resource can contain bindings to the
+// role.
+func (c *IamClient) QueryGrantableRoles(ctx context.Context, req *adminpb.QueryGrantableRolesRequest, opts ...gax.CallOption) *RoleIterator {
+	return c.internalClient.QueryGrantableRoles(ctx, req, opts...)
+}
+
+// ListRoles lists every predefined Role that IAM supports, or every custom role
+// that is defined for an organization or project.
+func (c *IamClient) ListRoles(ctx context.Context, req *adminpb.ListRolesRequest, opts ...gax.CallOption) *RoleIterator {
+	return c.internalClient.ListRoles(ctx, req, opts...)
+}
+
+// GetRole gets the definition of a Role.
+func (c *IamClient) GetRole(ctx context.Context, req *adminpb.GetRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
+	return c.internalClient.GetRole(ctx, req, opts...)
+}
+
+// CreateRole creates a new custom Role.
+func (c *IamClient) CreateRole(ctx context.Context, req *adminpb.CreateRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
+	return c.internalClient.CreateRole(ctx, req, opts...)
+}
+
+// UpdateRole updates the definition of a custom Role.
+func (c *IamClient) UpdateRole(ctx context.Context, req *adminpb.UpdateRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
+	return c.internalClient.UpdateRole(ctx, req, opts...)
+}
+
+// DeleteRole deletes a custom Role.
+//
+// When you delete a custom role, the following changes occur immediately:
+//
+//   You cannot bind a member to the custom role in an IAM
+//   Policy.
+//
+//   Existing bindings to the custom role are not changed, but they have no
+//   effect.
+//
+//   By default, the response from ListRoles does not include the custom
+//   role.
+//
+// You have 7 days to undelete the custom role. After 7 days, the following
+// changes occur:
+//
+//   The custom role is permanently deleted and cannot be recovered.
+//
+//   If an IAM policy contains a binding to the custom role, the binding is
+//   permanently removed.
+func (c *IamClient) DeleteRole(ctx context.Context, req *adminpb.DeleteRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
+	return c.internalClient.DeleteRole(ctx, req, opts...)
+}
+
+// UndeleteRole undeletes a custom Role.
+func (c *IamClient) UndeleteRole(ctx context.Context, req *adminpb.UndeleteRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
+	return c.internalClient.UndeleteRole(ctx, req, opts...)
+}
+
+// QueryTestablePermissions lists every permission that you can test on a resource. A permission is
+// testable if you can check whether a member has that permission on the
+// resource.
+func (c *IamClient) QueryTestablePermissions(ctx context.Context, req *adminpb.QueryTestablePermissionsRequest, opts ...gax.CallOption) *PermissionIterator {
+	return c.internalClient.QueryTestablePermissions(ctx, req, opts...)
+}
+
+// QueryAuditableServices returns a list of services that allow you to opt into audit logs that are
+// not generated by default.
+//
+// To learn more about audit logs, see the Logging
+// documentation (at https://cloud.google.com/logging/docs/audit).
+func (c *IamClient) QueryAuditableServices(ctx context.Context, req *adminpb.QueryAuditableServicesRequest, opts ...gax.CallOption) (*adminpb.QueryAuditableServicesResponse, error) {
+	return c.internalClient.QueryAuditableServices(ctx, req, opts...)
+}
+
+// LintPolicy lints, or validates, an IAM policy. Currently checks the
+// google.iam.v1.Binding.condition field, which contains a condition
+// expression for a role binding.
+//
+// Successful calls to this method always return an HTTP 200 OK status code,
+// even if the linter detects an issue in the IAM policy.
+func (c *IamClient) LintPolicy(ctx context.Context, req *adminpb.LintPolicyRequest, opts ...gax.CallOption) (*adminpb.LintPolicyResponse, error) {
+	return c.internalClient.LintPolicy(ctx, req, opts...)
+}
+
+// iamGRPCClient is a client for interacting with Identity and Access Management (IAM) API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type IamClient struct {
+type iamGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing IamClient
+	CallOptions **IamCallOptions
+
 	// The gRPC API client.
 	iamClient adminpb.IAMClient
-
-	// The call options for this service.
-	CallOptions *IamCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewIamClient creates a new iam client.
+// NewIamClient creates a new iam client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Creates and manages Identity and Access Management (IAM) resources.
 //
@@ -241,8 +610,7 @@ type IamClient struct {
 //
 //   Lint, or validate, condition expressions in an IAM policy
 func NewIamClient(ctx context.Context, opts ...option.ClientOption) (*IamClient, error) {
-	clientOpts := defaultIamClientOptions()
-
+	clientOpts := defaultIamGRPCClientOptions()
 	if newIamClientHook != nil {
 		hookOpts, err := newIamClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -260,45 +628,47 @@ func NewIamClient(ctx context.Context, opts ...option.ClientOption) (*IamClient,
 	if err != nil {
 		return nil, err
 	}
-	c := &IamClient{
+	client := IamClient{CallOptions: defaultIamCallOptions()}
+
+	c := &iamGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultIamCallOptions(),
-
-		iamClient: adminpb.NewIAMClient(connPool),
+		iamClient:        adminpb.NewIAMClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *IamClient) Connection() *grpc.ClientConn {
+func (c *iamGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *IamClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *IamClient) setGoogleClientInfo(keyval ...string) {
+func (c *iamGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// ListServiceAccounts lists every ServiceAccount that belongs to a specific project.
-func (c *IamClient) ListServiceAccounts(ctx context.Context, req *adminpb.ListServiceAccountsRequest, opts ...gax.CallOption) *ServiceAccountIterator {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *iamGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *iamGRPCClient) ListServiceAccounts(ctx context.Context, req *adminpb.ListServiceAccountsRequest, opts ...gax.CallOption) *ServiceAccountIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListServiceAccounts[0:len(c.CallOptions.ListServiceAccounts):len(c.CallOptions.ListServiceAccounts)], opts...)
+	opts = append((*c.CallOptions).ListServiceAccounts[0:len((*c.CallOptions).ListServiceAccounts):len((*c.CallOptions).ListServiceAccounts)], opts...)
 	it := &ServiceAccountIterator{}
 	req = proto.Clone(req).(*adminpb.ListServiceAccountsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.ServiceAccount, string, error) {
@@ -335,8 +705,7 @@ func (c *IamClient) ListServiceAccounts(ctx context.Context, req *adminpb.ListSe
 	return it
 }
 
-// GetServiceAccount gets a ServiceAccount.
-func (c *IamClient) GetServiceAccount(ctx context.Context, req *adminpb.GetServiceAccountRequest, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
+func (c *iamGRPCClient) GetServiceAccount(ctx context.Context, req *adminpb.GetServiceAccountRequest, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -344,7 +713,7 @@ func (c *IamClient) GetServiceAccount(ctx context.Context, req *adminpb.GetServi
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetServiceAccount[0:len(c.CallOptions.GetServiceAccount):len(c.CallOptions.GetServiceAccount)], opts...)
+	opts = append((*c.CallOptions).GetServiceAccount[0:len((*c.CallOptions).GetServiceAccount):len((*c.CallOptions).GetServiceAccount)], opts...)
 	var resp *adminpb.ServiceAccount
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -357,8 +726,7 @@ func (c *IamClient) GetServiceAccount(ctx context.Context, req *adminpb.GetServi
 	return resp, nil
 }
 
-// CreateServiceAccount creates a ServiceAccount.
-func (c *IamClient) CreateServiceAccount(ctx context.Context, req *adminpb.CreateServiceAccountRequest, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
+func (c *iamGRPCClient) CreateServiceAccount(ctx context.Context, req *adminpb.CreateServiceAccountRequest, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -366,7 +734,7 @@ func (c *IamClient) CreateServiceAccount(ctx context.Context, req *adminpb.Creat
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateServiceAccount[0:len(c.CallOptions.CreateServiceAccount):len(c.CallOptions.CreateServiceAccount)], opts...)
+	opts = append((*c.CallOptions).CreateServiceAccount[0:len((*c.CallOptions).CreateServiceAccount):len((*c.CallOptions).CreateServiceAccount)], opts...)
 	var resp *adminpb.ServiceAccount
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -379,13 +747,7 @@ func (c *IamClient) CreateServiceAccount(ctx context.Context, req *adminpb.Creat
 	return resp, nil
 }
 
-// UpdateServiceAccount Note: We are in the process of deprecating this method. Use
-// PatchServiceAccount instead.
-//
-// Updates a ServiceAccount.
-//
-// You can update only the display_name and description fields.
-func (c *IamClient) UpdateServiceAccount(ctx context.Context, req *adminpb.ServiceAccount, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
+func (c *iamGRPCClient) UpdateServiceAccount(ctx context.Context, req *adminpb.ServiceAccount, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -393,7 +755,7 @@ func (c *IamClient) UpdateServiceAccount(ctx context.Context, req *adminpb.Servi
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateServiceAccount[0:len(c.CallOptions.UpdateServiceAccount):len(c.CallOptions.UpdateServiceAccount)], opts...)
+	opts = append((*c.CallOptions).UpdateServiceAccount[0:len((*c.CallOptions).UpdateServiceAccount):len((*c.CallOptions).UpdateServiceAccount)], opts...)
 	var resp *adminpb.ServiceAccount
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -406,11 +768,10 @@ func (c *IamClient) UpdateServiceAccount(ctx context.Context, req *adminpb.Servi
 	return resp, nil
 }
 
-// PatchServiceAccount patches a ServiceAccount.
-func (c *IamClient) PatchServiceAccount(ctx context.Context, req *adminpb.PatchServiceAccountRequest, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
+func (c *iamGRPCClient) PatchServiceAccount(ctx context.Context, req *adminpb.PatchServiceAccountRequest, opts ...gax.CallOption) (*adminpb.ServiceAccount, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "service_account.name", url.QueryEscape(req.GetServiceAccount().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.PatchServiceAccount[0:len(c.CallOptions.PatchServiceAccount):len(c.CallOptions.PatchServiceAccount)], opts...)
+	opts = append((*c.CallOptions).PatchServiceAccount[0:len((*c.CallOptions).PatchServiceAccount):len((*c.CallOptions).PatchServiceAccount)], opts...)
 	var resp *adminpb.ServiceAccount
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -423,22 +784,7 @@ func (c *IamClient) PatchServiceAccount(ctx context.Context, req *adminpb.PatchS
 	return resp, nil
 }
 
-// DeleteServiceAccount deletes a ServiceAccount.
-//
-// Warning: After you delete a service account, you might not be able to
-// undelete it. If you know that you need to re-enable the service account in
-// the future, use DisableServiceAccount instead.
-//
-// If you delete a service account, IAM permanently removes the service
-// account 30 days later. Google Cloud cannot recover the service account
-// after it is permanently removed, even if you file a support request.
-//
-// To help avoid unplanned outages, we recommend that you disable the service
-// account before you delete it. Use DisableServiceAccount to disable the
-// service account, then wait at least 24 hours and watch for unintended
-// consequences. If there are no unintended consequences, you can delete the
-// service account.
-func (c *IamClient) DeleteServiceAccount(ctx context.Context, req *adminpb.DeleteServiceAccountRequest, opts ...gax.CallOption) error {
+func (c *iamGRPCClient) DeleteServiceAccount(ctx context.Context, req *adminpb.DeleteServiceAccountRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -446,7 +792,7 @@ func (c *IamClient) DeleteServiceAccount(ctx context.Context, req *adminpb.Delet
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteServiceAccount[0:len(c.CallOptions.DeleteServiceAccount):len(c.CallOptions.DeleteServiceAccount)], opts...)
+	opts = append((*c.CallOptions).DeleteServiceAccount[0:len((*c.CallOptions).DeleteServiceAccount):len((*c.CallOptions).DeleteServiceAccount)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.iamClient.DeleteServiceAccount(ctx, req, settings.GRPC...)
@@ -455,18 +801,10 @@ func (c *IamClient) DeleteServiceAccount(ctx context.Context, req *adminpb.Delet
 	return err
 }
 
-// UndeleteServiceAccount restores a deleted ServiceAccount.
-//
-// Important: It is not always possible to restore a deleted service
-// account. Use this method only as a last resort.
-//
-// After you delete a service account, IAM permanently removes the service
-// account 30 days later. There is no way to restore a deleted service account
-// that has been permanently removed.
-func (c *IamClient) UndeleteServiceAccount(ctx context.Context, req *adminpb.UndeleteServiceAccountRequest, opts ...gax.CallOption) (*adminpb.UndeleteServiceAccountResponse, error) {
+func (c *iamGRPCClient) UndeleteServiceAccount(ctx context.Context, req *adminpb.UndeleteServiceAccountRequest, opts ...gax.CallOption) (*adminpb.UndeleteServiceAccountResponse, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UndeleteServiceAccount[0:len(c.CallOptions.UndeleteServiceAccount):len(c.CallOptions.UndeleteServiceAccount)], opts...)
+	opts = append((*c.CallOptions).UndeleteServiceAccount[0:len((*c.CallOptions).UndeleteServiceAccount):len((*c.CallOptions).UndeleteServiceAccount)], opts...)
 	var resp *adminpb.UndeleteServiceAccountResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -479,18 +817,10 @@ func (c *IamClient) UndeleteServiceAccount(ctx context.Context, req *adminpb.Und
 	return resp, nil
 }
 
-// EnableServiceAccount enables a ServiceAccount that was disabled by
-// DisableServiceAccount.
-//
-// If the service account is already enabled, then this method has no effect.
-//
-// If the service account was disabled by other means—for example, if Google
-// disabled the service account because it was compromised—you cannot use this
-// method to enable the service account.
-func (c *IamClient) EnableServiceAccount(ctx context.Context, req *adminpb.EnableServiceAccountRequest, opts ...gax.CallOption) error {
+func (c *iamGRPCClient) EnableServiceAccount(ctx context.Context, req *adminpb.EnableServiceAccountRequest, opts ...gax.CallOption) error {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.EnableServiceAccount[0:len(c.CallOptions.EnableServiceAccount):len(c.CallOptions.EnableServiceAccount)], opts...)
+	opts = append((*c.CallOptions).EnableServiceAccount[0:len((*c.CallOptions).EnableServiceAccount):len((*c.CallOptions).EnableServiceAccount)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.iamClient.EnableServiceAccount(ctx, req, settings.GRPC...)
@@ -499,26 +829,10 @@ func (c *IamClient) EnableServiceAccount(ctx context.Context, req *adminpb.Enabl
 	return err
 }
 
-// DisableServiceAccount disables a ServiceAccount immediately.
-//
-// If an application uses the service account to authenticate, that
-// application can no longer call Google APIs or access Google Cloud
-// resources. Existing access tokens for the service account are rejected, and
-// requests for new access tokens will fail.
-//
-// To re-enable the service account, use EnableServiceAccount. After you
-// re-enable the service account, its existing access tokens will be accepted,
-// and you can request new access tokens.
-//
-// To help avoid unplanned outages, we recommend that you disable the service
-// account before you delete it. Use this method to disable the service
-// account, then wait at least 24 hours and watch for unintended consequences.
-// If there are no unintended consequences, you can delete the service account
-// with DeleteServiceAccount.
-func (c *IamClient) DisableServiceAccount(ctx context.Context, req *adminpb.DisableServiceAccountRequest, opts ...gax.CallOption) error {
+func (c *iamGRPCClient) DisableServiceAccount(ctx context.Context, req *adminpb.DisableServiceAccountRequest, opts ...gax.CallOption) error {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DisableServiceAccount[0:len(c.CallOptions.DisableServiceAccount):len(c.CallOptions.DisableServiceAccount)], opts...)
+	opts = append((*c.CallOptions).DisableServiceAccount[0:len((*c.CallOptions).DisableServiceAccount):len((*c.CallOptions).DisableServiceAccount)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.iamClient.DisableServiceAccount(ctx, req, settings.GRPC...)
@@ -527,8 +841,7 @@ func (c *IamClient) DisableServiceAccount(ctx context.Context, req *adminpb.Disa
 	return err
 }
 
-// ListServiceAccountKeys lists every ServiceAccountKey for a service account.
-func (c *IamClient) ListServiceAccountKeys(ctx context.Context, req *adminpb.ListServiceAccountKeysRequest, opts ...gax.CallOption) (*adminpb.ListServiceAccountKeysResponse, error) {
+func (c *iamGRPCClient) ListServiceAccountKeys(ctx context.Context, req *adminpb.ListServiceAccountKeysRequest, opts ...gax.CallOption) (*adminpb.ListServiceAccountKeysResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -536,7 +849,7 @@ func (c *IamClient) ListServiceAccountKeys(ctx context.Context, req *adminpb.Lis
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListServiceAccountKeys[0:len(c.CallOptions.ListServiceAccountKeys):len(c.CallOptions.ListServiceAccountKeys)], opts...)
+	opts = append((*c.CallOptions).ListServiceAccountKeys[0:len((*c.CallOptions).ListServiceAccountKeys):len((*c.CallOptions).ListServiceAccountKeys)], opts...)
 	var resp *adminpb.ListServiceAccountKeysResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -549,8 +862,7 @@ func (c *IamClient) ListServiceAccountKeys(ctx context.Context, req *adminpb.Lis
 	return resp, nil
 }
 
-// GetServiceAccountKey gets a ServiceAccountKey.
-func (c *IamClient) GetServiceAccountKey(ctx context.Context, req *adminpb.GetServiceAccountKeyRequest, opts ...gax.CallOption) (*adminpb.ServiceAccountKey, error) {
+func (c *iamGRPCClient) GetServiceAccountKey(ctx context.Context, req *adminpb.GetServiceAccountKeyRequest, opts ...gax.CallOption) (*adminpb.ServiceAccountKey, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -558,7 +870,7 @@ func (c *IamClient) GetServiceAccountKey(ctx context.Context, req *adminpb.GetSe
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetServiceAccountKey[0:len(c.CallOptions.GetServiceAccountKey):len(c.CallOptions.GetServiceAccountKey)], opts...)
+	opts = append((*c.CallOptions).GetServiceAccountKey[0:len((*c.CallOptions).GetServiceAccountKey):len((*c.CallOptions).GetServiceAccountKey)], opts...)
 	var resp *adminpb.ServiceAccountKey
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -571,8 +883,7 @@ func (c *IamClient) GetServiceAccountKey(ctx context.Context, req *adminpb.GetSe
 	return resp, nil
 }
 
-// CreateServiceAccountKey creates a ServiceAccountKey.
-func (c *IamClient) CreateServiceAccountKey(ctx context.Context, req *adminpb.CreateServiceAccountKeyRequest, opts ...gax.CallOption) (*adminpb.ServiceAccountKey, error) {
+func (c *iamGRPCClient) CreateServiceAccountKey(ctx context.Context, req *adminpb.CreateServiceAccountKeyRequest, opts ...gax.CallOption) (*adminpb.ServiceAccountKey, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -580,7 +891,7 @@ func (c *IamClient) CreateServiceAccountKey(ctx context.Context, req *adminpb.Cr
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateServiceAccountKey[0:len(c.CallOptions.CreateServiceAccountKey):len(c.CallOptions.CreateServiceAccountKey)], opts...)
+	opts = append((*c.CallOptions).CreateServiceAccountKey[0:len((*c.CallOptions).CreateServiceAccountKey):len((*c.CallOptions).CreateServiceAccountKey)], opts...)
 	var resp *adminpb.ServiceAccountKey
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -593,11 +904,10 @@ func (c *IamClient) CreateServiceAccountKey(ctx context.Context, req *adminpb.Cr
 	return resp, nil
 }
 
-// UploadServiceAccountKey creates a ServiceAccountKey, using a public key that you provide.
-func (c *IamClient) UploadServiceAccountKey(ctx context.Context, req *adminpb.UploadServiceAccountKeyRequest, opts ...gax.CallOption) (*adminpb.ServiceAccountKey, error) {
+func (c *iamGRPCClient) UploadServiceAccountKey(ctx context.Context, req *adminpb.UploadServiceAccountKeyRequest, opts ...gax.CallOption) (*adminpb.ServiceAccountKey, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UploadServiceAccountKey[0:len(c.CallOptions.UploadServiceAccountKey):len(c.CallOptions.UploadServiceAccountKey)], opts...)
+	opts = append((*c.CallOptions).UploadServiceAccountKey[0:len((*c.CallOptions).UploadServiceAccountKey):len((*c.CallOptions).UploadServiceAccountKey)], opts...)
 	var resp *adminpb.ServiceAccountKey
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -610,10 +920,7 @@ func (c *IamClient) UploadServiceAccountKey(ctx context.Context, req *adminpb.Up
 	return resp, nil
 }
 
-// DeleteServiceAccountKey deletes a ServiceAccountKey. Deleting a service account key does not
-// revoke short-lived credentials that have been issued based on the service
-// account key.
-func (c *IamClient) DeleteServiceAccountKey(ctx context.Context, req *adminpb.DeleteServiceAccountKeyRequest, opts ...gax.CallOption) error {
+func (c *iamGRPCClient) DeleteServiceAccountKey(ctx context.Context, req *adminpb.DeleteServiceAccountKeyRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -621,7 +928,7 @@ func (c *IamClient) DeleteServiceAccountKey(ctx context.Context, req *adminpb.De
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteServiceAccountKey[0:len(c.CallOptions.DeleteServiceAccountKey):len(c.CallOptions.DeleteServiceAccountKey)], opts...)
+	opts = append((*c.CallOptions).DeleteServiceAccountKey[0:len((*c.CallOptions).DeleteServiceAccountKey):len((*c.CallOptions).DeleteServiceAccountKey)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.iamClient.DeleteServiceAccountKey(ctx, req, settings.GRPC...)
@@ -630,15 +937,7 @@ func (c *IamClient) DeleteServiceAccountKey(ctx context.Context, req *adminpb.De
 	return err
 }
 
-// SignBlob Note: This method is deprecated. Use the
-// signBlob (at https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
-// method in the IAM Service Account Credentials API instead. If you currently
-// use this method, see the migration
-// guide (at https://cloud.google.com/iam/help/credentials/migrate-api) for
-// instructions.
-//
-// Signs a blob using the system-managed private key for a ServiceAccount.
-func (c *IamClient) SignBlob(ctx context.Context, req *adminpb.SignBlobRequest, opts ...gax.CallOption) (*adminpb.SignBlobResponse, error) {
+func (c *iamGRPCClient) SignBlob(ctx context.Context, req *adminpb.SignBlobRequest, opts ...gax.CallOption) (*adminpb.SignBlobResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -646,7 +945,7 @@ func (c *IamClient) SignBlob(ctx context.Context, req *adminpb.SignBlobRequest, 
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SignBlob[0:len(c.CallOptions.SignBlob):len(c.CallOptions.SignBlob)], opts...)
+	opts = append((*c.CallOptions).SignBlob[0:len((*c.CallOptions).SignBlob):len((*c.CallOptions).SignBlob)], opts...)
 	var resp *adminpb.SignBlobResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -659,16 +958,7 @@ func (c *IamClient) SignBlob(ctx context.Context, req *adminpb.SignBlobRequest, 
 	return resp, nil
 }
 
-// SignJwt Note: This method is deprecated. Use the
-// signJwt (at https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
-// method in the IAM Service Account Credentials API instead. If you currently
-// use this method, see the migration
-// guide (at https://cloud.google.com/iam/help/credentials/migrate-api) for
-// instructions.
-//
-// Signs a JSON Web Token (JWT) using the system-managed private key for a
-// ServiceAccount.
-func (c *IamClient) SignJwt(ctx context.Context, req *adminpb.SignJwtRequest, opts ...gax.CallOption) (*adminpb.SignJwtResponse, error) {
+func (c *iamGRPCClient) SignJwt(ctx context.Context, req *adminpb.SignJwtRequest, opts ...gax.CallOption) (*adminpb.SignJwtResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -676,7 +966,7 @@ func (c *IamClient) SignJwt(ctx context.Context, req *adminpb.SignJwtRequest, op
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SignJwt[0:len(c.CallOptions.SignJwt):len(c.CallOptions.SignJwt)], opts...)
+	opts = append((*c.CallOptions).SignJwt[0:len((*c.CallOptions).SignJwt):len((*c.CallOptions).SignJwt)], opts...)
 	var resp *adminpb.SignJwtResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -689,17 +979,7 @@ func (c *IamClient) SignJwt(ctx context.Context, req *adminpb.SignJwtRequest, op
 	return resp, nil
 }
 
-// GetIamPolicy gets the IAM policy that is attached to a ServiceAccount. This IAM
-// policy specifies which members have access to the service account.
-//
-// This method does not tell you whether the service account has been granted
-// any roles on other resources. To check whether a service account has role
-// grants on a resource, use the getIamPolicy method for that resource. For
-// example, to view the role grants for a project, call the Resource Manager
-// API’s
-// projects.getIamPolicy (at https://cloud.google.com/resource-manager/reference/rest/v1/projects/getIamPolicy)
-// method.
-func (c *IamClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+func (c *iamGRPCClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -707,7 +987,7 @@ func (c *IamClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyReq
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetIamPolicy[0:len(c.CallOptions.GetIamPolicy):len(c.CallOptions.GetIamPolicy)], opts...)
+	opts = append((*c.CallOptions).GetIamPolicy[0:len((*c.CallOptions).GetIamPolicy):len((*c.CallOptions).GetIamPolicy)], opts...)
 	var resp *iampb.Policy
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -720,26 +1000,7 @@ func (c *IamClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyReq
 	return resp, nil
 }
 
-// SetIamPolicy sets the IAM policy that is attached to a ServiceAccount.
-//
-// Use this method to grant or revoke access to the service account. For
-// example, you could grant a member the ability to impersonate the service
-// account.
-//
-// This method does not enable the service account to access other resources.
-// To grant roles to a service account on a resource, follow these steps:
-//
-// Call the resource’s getIamPolicy method to get its current IAM policy.
-//
-// Edit the policy so that it binds the service account to an IAM role for
-// the resource.
-//
-// Call the resource’s setIamPolicy method to update its IAM policy.
-//
-// For detailed instructions, see
-// Granting roles to a service account for specific
-// resources (at https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts).
-func (c *IamClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+func (c *iamGRPCClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -747,7 +1008,7 @@ func (c *IamClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyReq
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SetIamPolicy[0:len(c.CallOptions.SetIamPolicy):len(c.CallOptions.SetIamPolicy)], opts...)
+	opts = append((*c.CallOptions).SetIamPolicy[0:len((*c.CallOptions).SetIamPolicy):len((*c.CallOptions).SetIamPolicy)], opts...)
 	var resp *iampb.Policy
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -760,9 +1021,7 @@ func (c *IamClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyReq
 	return resp, nil
 }
 
-// TestIamPermissions tests whether the caller has the specified permissions on a
-// ServiceAccount.
-func (c *IamClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
+func (c *iamGRPCClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -770,7 +1029,7 @@ func (c *IamClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPe
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.TestIamPermissions[0:len(c.CallOptions.TestIamPermissions):len(c.CallOptions.TestIamPermissions)], opts...)
+	opts = append((*c.CallOptions).TestIamPermissions[0:len((*c.CallOptions).TestIamPermissions):len((*c.CallOptions).TestIamPermissions)], opts...)
 	var resp *iampb.TestIamPermissionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -783,12 +1042,9 @@ func (c *IamClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPe
 	return resp, nil
 }
 
-// QueryGrantableRoles lists roles that can be granted on a Google Cloud resource. A role is
-// grantable if the IAM policy for the resource can contain bindings to the
-// role.
-func (c *IamClient) QueryGrantableRoles(ctx context.Context, req *adminpb.QueryGrantableRolesRequest, opts ...gax.CallOption) *RoleIterator {
+func (c *iamGRPCClient) QueryGrantableRoles(ctx context.Context, req *adminpb.QueryGrantableRolesRequest, opts ...gax.CallOption) *RoleIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.QueryGrantableRoles[0:len(c.CallOptions.QueryGrantableRoles):len(c.CallOptions.QueryGrantableRoles)], opts...)
+	opts = append((*c.CallOptions).QueryGrantableRoles[0:len((*c.CallOptions).QueryGrantableRoles):len((*c.CallOptions).QueryGrantableRoles)], opts...)
 	it := &RoleIterator{}
 	req = proto.Clone(req).(*adminpb.QueryGrantableRolesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.Role, string, error) {
@@ -825,12 +1081,10 @@ func (c *IamClient) QueryGrantableRoles(ctx context.Context, req *adminpb.QueryG
 	return it
 }
 
-// ListRoles lists every predefined Role that IAM supports, or every custom role
-// that is defined for an organization or project.
-func (c *IamClient) ListRoles(ctx context.Context, req *adminpb.ListRolesRequest, opts ...gax.CallOption) *RoleIterator {
+func (c *iamGRPCClient) ListRoles(ctx context.Context, req *adminpb.ListRolesRequest, opts ...gax.CallOption) *RoleIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListRoles[0:len(c.CallOptions.ListRoles):len(c.CallOptions.ListRoles)], opts...)
+	opts = append((*c.CallOptions).ListRoles[0:len((*c.CallOptions).ListRoles):len((*c.CallOptions).ListRoles)], opts...)
 	it := &RoleIterator{}
 	req = proto.Clone(req).(*adminpb.ListRolesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.Role, string, error) {
@@ -867,11 +1121,10 @@ func (c *IamClient) ListRoles(ctx context.Context, req *adminpb.ListRolesRequest
 	return it
 }
 
-// GetRole gets the definition of a Role.
-func (c *IamClient) GetRole(ctx context.Context, req *adminpb.GetRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
+func (c *iamGRPCClient) GetRole(ctx context.Context, req *adminpb.GetRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetRole[0:len(c.CallOptions.GetRole):len(c.CallOptions.GetRole)], opts...)
+	opts = append((*c.CallOptions).GetRole[0:len((*c.CallOptions).GetRole):len((*c.CallOptions).GetRole)], opts...)
 	var resp *adminpb.Role
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -884,11 +1137,10 @@ func (c *IamClient) GetRole(ctx context.Context, req *adminpb.GetRoleRequest, op
 	return resp, nil
 }
 
-// CreateRole creates a new custom Role.
-func (c *IamClient) CreateRole(ctx context.Context, req *adminpb.CreateRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
+func (c *iamGRPCClient) CreateRole(ctx context.Context, req *adminpb.CreateRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateRole[0:len(c.CallOptions.CreateRole):len(c.CallOptions.CreateRole)], opts...)
+	opts = append((*c.CallOptions).CreateRole[0:len((*c.CallOptions).CreateRole):len((*c.CallOptions).CreateRole)], opts...)
 	var resp *adminpb.Role
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -901,11 +1153,10 @@ func (c *IamClient) CreateRole(ctx context.Context, req *adminpb.CreateRoleReque
 	return resp, nil
 }
 
-// UpdateRole updates the definition of a custom Role.
-func (c *IamClient) UpdateRole(ctx context.Context, req *adminpb.UpdateRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
+func (c *iamGRPCClient) UpdateRole(ctx context.Context, req *adminpb.UpdateRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateRole[0:len(c.CallOptions.UpdateRole):len(c.CallOptions.UpdateRole)], opts...)
+	opts = append((*c.CallOptions).UpdateRole[0:len((*c.CallOptions).UpdateRole):len((*c.CallOptions).UpdateRole)], opts...)
 	var resp *adminpb.Role
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -918,30 +1169,10 @@ func (c *IamClient) UpdateRole(ctx context.Context, req *adminpb.UpdateRoleReque
 	return resp, nil
 }
 
-// DeleteRole deletes a custom Role.
-//
-// When you delete a custom role, the following changes occur immediately:
-//
-//   You cannot bind a member to the custom role in an IAM
-//   Policy.
-//
-//   Existing bindings to the custom role are not changed, but they have no
-//   effect.
-//
-//   By default, the response from ListRoles does not include the custom
-//   role.
-//
-// You have 7 days to undelete the custom role. After 7 days, the following
-// changes occur:
-//
-//   The custom role is permanently deleted and cannot be recovered.
-//
-//   If an IAM policy contains a binding to the custom role, the binding is
-//   permanently removed.
-func (c *IamClient) DeleteRole(ctx context.Context, req *adminpb.DeleteRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
+func (c *iamGRPCClient) DeleteRole(ctx context.Context, req *adminpb.DeleteRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteRole[0:len(c.CallOptions.DeleteRole):len(c.CallOptions.DeleteRole)], opts...)
+	opts = append((*c.CallOptions).DeleteRole[0:len((*c.CallOptions).DeleteRole):len((*c.CallOptions).DeleteRole)], opts...)
 	var resp *adminpb.Role
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -954,11 +1185,10 @@ func (c *IamClient) DeleteRole(ctx context.Context, req *adminpb.DeleteRoleReque
 	return resp, nil
 }
 
-// UndeleteRole undeletes a custom Role.
-func (c *IamClient) UndeleteRole(ctx context.Context, req *adminpb.UndeleteRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
+func (c *iamGRPCClient) UndeleteRole(ctx context.Context, req *adminpb.UndeleteRoleRequest, opts ...gax.CallOption) (*adminpb.Role, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UndeleteRole[0:len(c.CallOptions.UndeleteRole):len(c.CallOptions.UndeleteRole)], opts...)
+	opts = append((*c.CallOptions).UndeleteRole[0:len((*c.CallOptions).UndeleteRole):len((*c.CallOptions).UndeleteRole)], opts...)
 	var resp *adminpb.Role
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -971,12 +1201,9 @@ func (c *IamClient) UndeleteRole(ctx context.Context, req *adminpb.UndeleteRoleR
 	return resp, nil
 }
 
-// QueryTestablePermissions lists every permission that you can test on a resource. A permission is
-// testable if you can check whether a member has that permission on the
-// resource.
-func (c *IamClient) QueryTestablePermissions(ctx context.Context, req *adminpb.QueryTestablePermissionsRequest, opts ...gax.CallOption) *PermissionIterator {
+func (c *iamGRPCClient) QueryTestablePermissions(ctx context.Context, req *adminpb.QueryTestablePermissionsRequest, opts ...gax.CallOption) *PermissionIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.QueryTestablePermissions[0:len(c.CallOptions.QueryTestablePermissions):len(c.CallOptions.QueryTestablePermissions)], opts...)
+	opts = append((*c.CallOptions).QueryTestablePermissions[0:len((*c.CallOptions).QueryTestablePermissions):len((*c.CallOptions).QueryTestablePermissions)], opts...)
 	it := &PermissionIterator{}
 	req = proto.Clone(req).(*adminpb.QueryTestablePermissionsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.Permission, string, error) {
@@ -1013,14 +1240,9 @@ func (c *IamClient) QueryTestablePermissions(ctx context.Context, req *adminpb.Q
 	return it
 }
 
-// QueryAuditableServices returns a list of services that allow you to opt into audit logs that are
-// not generated by default.
-//
-// To learn more about audit logs, see the Logging
-// documentation (at https://cloud.google.com/logging/docs/audit).
-func (c *IamClient) QueryAuditableServices(ctx context.Context, req *adminpb.QueryAuditableServicesRequest, opts ...gax.CallOption) (*adminpb.QueryAuditableServicesResponse, error) {
+func (c *iamGRPCClient) QueryAuditableServices(ctx context.Context, req *adminpb.QueryAuditableServicesRequest, opts ...gax.CallOption) (*adminpb.QueryAuditableServicesResponse, error) {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.QueryAuditableServices[0:len(c.CallOptions.QueryAuditableServices):len(c.CallOptions.QueryAuditableServices)], opts...)
+	opts = append((*c.CallOptions).QueryAuditableServices[0:len((*c.CallOptions).QueryAuditableServices):len((*c.CallOptions).QueryAuditableServices)], opts...)
 	var resp *adminpb.QueryAuditableServicesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -1033,15 +1255,9 @@ func (c *IamClient) QueryAuditableServices(ctx context.Context, req *adminpb.Que
 	return resp, nil
 }
 
-// LintPolicy lints, or validates, an IAM policy. Currently checks the
-// google.iam.v1.Binding.condition field, which contains a condition
-// expression for a role binding.
-//
-// Successful calls to this method always return an HTTP 200 OK status code,
-// even if the linter detects an issue in the IAM policy.
-func (c *IamClient) LintPolicy(ctx context.Context, req *adminpb.LintPolicyRequest, opts ...gax.CallOption) (*adminpb.LintPolicyResponse, error) {
+func (c *iamGRPCClient) LintPolicy(ctx context.Context, req *adminpb.LintPolicyRequest, opts ...gax.CallOption) (*adminpb.LintPolicyResponse, error) {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.LintPolicy[0:len(c.CallOptions.LintPolicy):len(c.CallOptions.LintPolicy)], opts...)
+	opts = append((*c.CallOptions).LintPolicy[0:len((*c.CallOptions).LintPolicy):len((*c.CallOptions).LintPolicy)], opts...)
 	var resp *adminpb.LintPolicyResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

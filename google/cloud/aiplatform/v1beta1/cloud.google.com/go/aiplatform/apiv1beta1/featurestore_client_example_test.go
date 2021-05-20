@@ -30,18 +30,19 @@ func ExampleNewFeaturestoreClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleFeaturestoreClient_CreateFeaturestore() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateFeaturestoreRequest{
 		// TODO: Fill request struct fields.
@@ -60,13 +61,12 @@ func ExampleFeaturestoreClient_CreateFeaturestore() {
 }
 
 func ExampleFeaturestoreClient_GetFeaturestore() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetFeaturestoreRequest{
 		// TODO: Fill request struct fields.
@@ -80,14 +80,12 @@ func ExampleFeaturestoreClient_GetFeaturestore() {
 }
 
 func ExampleFeaturestoreClient_ListFeaturestores() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListFeaturestoresRequest{
 		// TODO: Fill request struct fields.
@@ -107,13 +105,12 @@ func ExampleFeaturestoreClient_ListFeaturestores() {
 }
 
 func ExampleFeaturestoreClient_UpdateFeaturestore() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateFeaturestoreRequest{
 		// TODO: Fill request struct fields.
@@ -132,13 +129,12 @@ func ExampleFeaturestoreClient_UpdateFeaturestore() {
 }
 
 func ExampleFeaturestoreClient_DeleteFeaturestore() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteFeaturestoreRequest{
 		// TODO: Fill request struct fields.
@@ -155,13 +151,12 @@ func ExampleFeaturestoreClient_DeleteFeaturestore() {
 }
 
 func ExampleFeaturestoreClient_CreateEntityType() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateEntityTypeRequest{
 		// TODO: Fill request struct fields.
@@ -180,13 +175,12 @@ func ExampleFeaturestoreClient_CreateEntityType() {
 }
 
 func ExampleFeaturestoreClient_GetEntityType() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetEntityTypeRequest{
 		// TODO: Fill request struct fields.
@@ -200,14 +194,12 @@ func ExampleFeaturestoreClient_GetEntityType() {
 }
 
 func ExampleFeaturestoreClient_ListEntityTypes() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListEntityTypesRequest{
 		// TODO: Fill request struct fields.
@@ -227,13 +219,12 @@ func ExampleFeaturestoreClient_ListEntityTypes() {
 }
 
 func ExampleFeaturestoreClient_UpdateEntityType() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateEntityTypeRequest{
 		// TODO: Fill request struct fields.
@@ -247,13 +238,12 @@ func ExampleFeaturestoreClient_UpdateEntityType() {
 }
 
 func ExampleFeaturestoreClient_DeleteEntityType() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteEntityTypeRequest{
 		// TODO: Fill request struct fields.
@@ -270,13 +260,12 @@ func ExampleFeaturestoreClient_DeleteEntityType() {
 }
 
 func ExampleFeaturestoreClient_CreateFeature() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateFeatureRequest{
 		// TODO: Fill request struct fields.
@@ -295,13 +284,12 @@ func ExampleFeaturestoreClient_CreateFeature() {
 }
 
 func ExampleFeaturestoreClient_BatchCreateFeatures() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.BatchCreateFeaturesRequest{
 		// TODO: Fill request struct fields.
@@ -320,13 +308,12 @@ func ExampleFeaturestoreClient_BatchCreateFeatures() {
 }
 
 func ExampleFeaturestoreClient_GetFeature() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetFeatureRequest{
 		// TODO: Fill request struct fields.
@@ -340,14 +327,12 @@ func ExampleFeaturestoreClient_GetFeature() {
 }
 
 func ExampleFeaturestoreClient_ListFeatures() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListFeaturesRequest{
 		// TODO: Fill request struct fields.
@@ -367,13 +352,12 @@ func ExampleFeaturestoreClient_ListFeatures() {
 }
 
 func ExampleFeaturestoreClient_UpdateFeature() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateFeatureRequest{
 		// TODO: Fill request struct fields.
@@ -387,13 +371,12 @@ func ExampleFeaturestoreClient_UpdateFeature() {
 }
 
 func ExampleFeaturestoreClient_DeleteFeature() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteFeatureRequest{
 		// TODO: Fill request struct fields.
@@ -410,13 +393,12 @@ func ExampleFeaturestoreClient_DeleteFeature() {
 }
 
 func ExampleFeaturestoreClient_ImportFeatureValues() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ImportFeatureValuesRequest{
 		// TODO: Fill request struct fields.
@@ -435,13 +417,12 @@ func ExampleFeaturestoreClient_ImportFeatureValues() {
 }
 
 func ExampleFeaturestoreClient_BatchReadFeatureValues() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.BatchReadFeatureValuesRequest{
 		// TODO: Fill request struct fields.
@@ -460,13 +441,12 @@ func ExampleFeaturestoreClient_BatchReadFeatureValues() {
 }
 
 func ExampleFeaturestoreClient_ExportFeatureValues() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ExportFeatureValuesRequest{
 		// TODO: Fill request struct fields.
@@ -485,14 +465,12 @@ func ExampleFeaturestoreClient_ExportFeatureValues() {
 }
 
 func ExampleFeaturestoreClient_SearchFeatures() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.SearchFeaturesRequest{
 		// TODO: Fill request struct fields.

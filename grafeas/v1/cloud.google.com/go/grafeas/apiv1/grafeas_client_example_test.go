@@ -30,18 +30,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_GetOccurrence() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.GetOccurrenceRequest{
 		// TODO: Fill request struct fields.
@@ -55,14 +56,12 @@ func ExampleClient_GetOccurrence() {
 }
 
 func ExampleClient_ListOccurrences() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.ListOccurrencesRequest{
 		// TODO: Fill request struct fields.
@@ -87,6 +86,7 @@ func ExampleClient_DeleteOccurrence() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.DeleteOccurrenceRequest{
 		// TODO: Fill request struct fields.
@@ -98,13 +98,12 @@ func ExampleClient_DeleteOccurrence() {
 }
 
 func ExampleClient_CreateOccurrence() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.CreateOccurrenceRequest{
 		// TODO: Fill request struct fields.
@@ -118,13 +117,12 @@ func ExampleClient_CreateOccurrence() {
 }
 
 func ExampleClient_BatchCreateOccurrences() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.BatchCreateOccurrencesRequest{
 		// TODO: Fill request struct fields.
@@ -138,13 +136,12 @@ func ExampleClient_BatchCreateOccurrences() {
 }
 
 func ExampleClient_UpdateOccurrence() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.UpdateOccurrenceRequest{
 		// TODO: Fill request struct fields.
@@ -158,13 +155,12 @@ func ExampleClient_UpdateOccurrence() {
 }
 
 func ExampleClient_GetOccurrenceNote() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.GetOccurrenceNoteRequest{
 		// TODO: Fill request struct fields.
@@ -178,13 +174,12 @@ func ExampleClient_GetOccurrenceNote() {
 }
 
 func ExampleClient_GetNote() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.GetNoteRequest{
 		// TODO: Fill request struct fields.
@@ -198,14 +193,12 @@ func ExampleClient_GetNote() {
 }
 
 func ExampleClient_ListNotes() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.ListNotesRequest{
 		// TODO: Fill request struct fields.
@@ -230,6 +223,7 @@ func ExampleClient_DeleteNote() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.DeleteNoteRequest{
 		// TODO: Fill request struct fields.
@@ -241,13 +235,12 @@ func ExampleClient_DeleteNote() {
 }
 
 func ExampleClient_CreateNote() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.CreateNoteRequest{
 		// TODO: Fill request struct fields.
@@ -261,13 +254,12 @@ func ExampleClient_CreateNote() {
 }
 
 func ExampleClient_BatchCreateNotes() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.BatchCreateNotesRequest{
 		// TODO: Fill request struct fields.
@@ -281,13 +273,12 @@ func ExampleClient_BatchCreateNotes() {
 }
 
 func ExampleClient_UpdateNote() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.UpdateNoteRequest{
 		// TODO: Fill request struct fields.
@@ -301,14 +292,12 @@ func ExampleClient_UpdateNote() {
 }
 
 func ExampleClient_ListNoteOccurrences() {
-	// import grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := grafeas.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &grafeaspb.ListNoteOccurrencesRequest{
 		// TODO: Fill request struct fields.

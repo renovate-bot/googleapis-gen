@@ -51,7 +51,7 @@ type ParticipantsCallOptions struct {
 	CompileSuggestion   []gax.CallOption
 }
 
-func defaultParticipantsClientOptions() []option.ClientOption {
+func defaultParticipantsGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("dialogflow.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("dialogflow.mtls.googleapis.com:443"),
@@ -178,32 +178,173 @@ func defaultParticipantsCallOptions() *ParticipantsCallOptions {
 	}
 }
 
+// internalParticipantsClient is an interface that defines the methods availaible from Dialogflow API.
+type internalParticipantsClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateParticipant(context.Context, *dialogflowpb.CreateParticipantRequest, ...gax.CallOption) (*dialogflowpb.Participant, error)
+	GetParticipant(context.Context, *dialogflowpb.GetParticipantRequest, ...gax.CallOption) (*dialogflowpb.Participant, error)
+	ListParticipants(context.Context, *dialogflowpb.ListParticipantsRequest, ...gax.CallOption) *ParticipantIterator
+	UpdateParticipant(context.Context, *dialogflowpb.UpdateParticipantRequest, ...gax.CallOption) (*dialogflowpb.Participant, error)
+	AnalyzeContent(context.Context, *dialogflowpb.AnalyzeContentRequest, ...gax.CallOption) (*dialogflowpb.AnalyzeContentResponse, error)
+	SuggestArticles(context.Context, *dialogflowpb.SuggestArticlesRequest, ...gax.CallOption) (*dialogflowpb.SuggestArticlesResponse, error)
+	SuggestFaqAnswers(context.Context, *dialogflowpb.SuggestFaqAnswersRequest, ...gax.CallOption) (*dialogflowpb.SuggestFaqAnswersResponse, error)
+	SuggestSmartReplies(context.Context, *dialogflowpb.SuggestSmartRepliesRequest, ...gax.CallOption) (*dialogflowpb.SuggestSmartRepliesResponse, error)
+	ListSuggestions(context.Context, *dialogflowpb.ListSuggestionsRequest, ...gax.CallOption) *SuggestionIterator
+	CompileSuggestion(context.Context, *dialogflowpb.CompileSuggestionRequest, ...gax.CallOption) (*dialogflowpb.CompileSuggestionResponse, error)
+}
+
 // ParticipantsClient is a client for interacting with Dialogflow API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Service for managing Participants.
+type ParticipantsClient struct {
+	// The internal transport-dependent client.
+	internalClient internalParticipantsClient
+
+	// The call options for this service.
+	CallOptions *ParticipantsCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *ParticipantsClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *ParticipantsClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *ParticipantsClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateParticipant creates a new participant in a conversation.
+func (c *ParticipantsClient) CreateParticipant(ctx context.Context, req *dialogflowpb.CreateParticipantRequest, opts ...gax.CallOption) (*dialogflowpb.Participant, error) {
+	return c.internalClient.CreateParticipant(ctx, req, opts...)
+}
+
+// GetParticipant retrieves a conversation participant.
+func (c *ParticipantsClient) GetParticipant(ctx context.Context, req *dialogflowpb.GetParticipantRequest, opts ...gax.CallOption) (*dialogflowpb.Participant, error) {
+	return c.internalClient.GetParticipant(ctx, req, opts...)
+}
+
+// ListParticipants returns the list of all participants in the specified conversation.
+func (c *ParticipantsClient) ListParticipants(ctx context.Context, req *dialogflowpb.ListParticipantsRequest, opts ...gax.CallOption) *ParticipantIterator {
+	return c.internalClient.ListParticipants(ctx, req, opts...)
+}
+
+// UpdateParticipant updates the specified participant.
+func (c *ParticipantsClient) UpdateParticipant(ctx context.Context, req *dialogflowpb.UpdateParticipantRequest, opts ...gax.CallOption) (*dialogflowpb.Participant, error) {
+	return c.internalClient.UpdateParticipant(ctx, req, opts...)
+}
+
+// AnalyzeContent adds a text (chat, for example), or audio (phone recording, for example)
+// message from a participant into the conversation.
+//
+// Note: Always use agent versions for production traffic
+// sent to virtual agents. See Versions and
+// environments (at https://cloud.google.com/dialogflow/es/docs/agents-versions).
+func (c *ParticipantsClient) AnalyzeContent(ctx context.Context, req *dialogflowpb.AnalyzeContentRequest, opts ...gax.CallOption) (*dialogflowpb.AnalyzeContentResponse, error) {
+	return c.internalClient.AnalyzeContent(ctx, req, opts...)
+}
+
+// SuggestArticles gets suggested articles for a participant based on specific historical
+// messages.
+//
+// Note that ListSuggestions will only list the auto-generated
+// suggestions, while CompileSuggestion will try to compile suggestion
+// based on the provided conversation context in the real time.
+func (c *ParticipantsClient) SuggestArticles(ctx context.Context, req *dialogflowpb.SuggestArticlesRequest, opts ...gax.CallOption) (*dialogflowpb.SuggestArticlesResponse, error) {
+	return c.internalClient.SuggestArticles(ctx, req, opts...)
+}
+
+// SuggestFaqAnswers gets suggested faq answers for a participant based on specific historical
+// messages.
+func (c *ParticipantsClient) SuggestFaqAnswers(ctx context.Context, req *dialogflowpb.SuggestFaqAnswersRequest, opts ...gax.CallOption) (*dialogflowpb.SuggestFaqAnswersResponse, error) {
+	return c.internalClient.SuggestFaqAnswers(ctx, req, opts...)
+}
+
+// SuggestSmartReplies gets smart replies for a participant based on specific historical
+// messages.
+func (c *ParticipantsClient) SuggestSmartReplies(ctx context.Context, req *dialogflowpb.SuggestSmartRepliesRequest, opts ...gax.CallOption) (*dialogflowpb.SuggestSmartRepliesResponse, error) {
+	return c.internalClient.SuggestSmartReplies(ctx, req, opts...)
+}
+
+// ListSuggestions deprecated: Use inline suggestion, event based suggestion or
+// Suggestion* API instead.
+// See [HumanAgentAssistantConfig.name (at http://HumanAgentAssistantConfig.name)][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name (at http://google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name)] for more
+// details.
+// Removal Date: 2020-09-01.
+//
+// Retrieves suggestions for live agents.
+//
+// This method should be used by human agent client software to fetch auto
+// generated suggestions in real-time, while the conversation with an end user
+// is in progress. The functionality is implemented in terms of the
+// list pagination (at /apis/design/design_patterns#list_pagination)
+// design pattern. The client app should use the next_page_token field
+// to fetch the next batch of suggestions. suggestions are sorted by
+// create_time in descending order.
+// To fetch latest suggestion, just set page_size to 1.
+// To fetch new suggestions without duplication, send request with filter
+// create_time_epoch_microseconds > [first item's create_time of previous request] and empty page_token.
+//
+// Deprecated: ListSuggestions may be removed in a future version.
+func (c *ParticipantsClient) ListSuggestions(ctx context.Context, req *dialogflowpb.ListSuggestionsRequest, opts ...gax.CallOption) *SuggestionIterator {
+	return c.internalClient.ListSuggestions(ctx, req, opts...)
+}
+
+// CompileSuggestion deprecated. use SuggestArticles and SuggestFaqAnswers instead.
+//
+// Gets suggestions for a participant based on specific historical
+// messages.
+//
+// Note that ListSuggestions will only list the auto-generated
+// suggestions, while CompileSuggestion will try to compile suggestion
+// based on the provided conversation context in the real time.
+//
+// Deprecated: CompileSuggestion may be removed in a future version.
+func (c *ParticipantsClient) CompileSuggestion(ctx context.Context, req *dialogflowpb.CompileSuggestionRequest, opts ...gax.CallOption) (*dialogflowpb.CompileSuggestionResponse, error) {
+	return c.internalClient.CompileSuggestion(ctx, req, opts...)
+}
+
+// participantsGRPCClient is a client for interacting with Dialogflow API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type ParticipantsClient struct {
+type participantsGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing ParticipantsClient
+	CallOptions **ParticipantsCallOptions
+
 	// The gRPC API client.
 	participantsClient dialogflowpb.ParticipantsClient
-
-	// The call options for this service.
-	CallOptions *ParticipantsCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewParticipantsClient creates a new participants client.
+// NewParticipantsClient creates a new participants client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service for managing Participants.
 func NewParticipantsClient(ctx context.Context, opts ...option.ClientOption) (*ParticipantsClient, error) {
-	clientOpts := defaultParticipantsClientOptions()
-
+	clientOpts := defaultParticipantsGRPCClientOptions()
 	if newParticipantsClientHook != nil {
 		hookOpts, err := newParticipantsClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -221,42 +362,44 @@ func NewParticipantsClient(ctx context.Context, opts ...option.ClientOption) (*P
 	if err != nil {
 		return nil, err
 	}
-	c := &ParticipantsClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultParticipantsCallOptions(),
+	client := ParticipantsClient{CallOptions: defaultParticipantsCallOptions()}
 
+	c := &participantsGRPCClient{
+		connPool:           connPool,
+		disableDeadlines:   disableDeadlines,
 		participantsClient: dialogflowpb.NewParticipantsClient(connPool),
+		CallOptions:        &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *ParticipantsClient) Connection() *grpc.ClientConn {
+func (c *participantsGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *ParticipantsClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *ParticipantsClient) setGoogleClientInfo(keyval ...string) {
+func (c *participantsGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateParticipant creates a new participant in a conversation.
-func (c *ParticipantsClient) CreateParticipant(ctx context.Context, req *dialogflowpb.CreateParticipantRequest, opts ...gax.CallOption) (*dialogflowpb.Participant, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *participantsGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *participantsGRPCClient) CreateParticipant(ctx context.Context, req *dialogflowpb.CreateParticipantRequest, opts ...gax.CallOption) (*dialogflowpb.Participant, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -264,7 +407,7 @@ func (c *ParticipantsClient) CreateParticipant(ctx context.Context, req *dialogf
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateParticipant[0:len(c.CallOptions.CreateParticipant):len(c.CallOptions.CreateParticipant)], opts...)
+	opts = append((*c.CallOptions).CreateParticipant[0:len((*c.CallOptions).CreateParticipant):len((*c.CallOptions).CreateParticipant)], opts...)
 	var resp *dialogflowpb.Participant
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -277,8 +420,7 @@ func (c *ParticipantsClient) CreateParticipant(ctx context.Context, req *dialogf
 	return resp, nil
 }
 
-// GetParticipant retrieves a conversation participant.
-func (c *ParticipantsClient) GetParticipant(ctx context.Context, req *dialogflowpb.GetParticipantRequest, opts ...gax.CallOption) (*dialogflowpb.Participant, error) {
+func (c *participantsGRPCClient) GetParticipant(ctx context.Context, req *dialogflowpb.GetParticipantRequest, opts ...gax.CallOption) (*dialogflowpb.Participant, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -286,7 +428,7 @@ func (c *ParticipantsClient) GetParticipant(ctx context.Context, req *dialogflow
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetParticipant[0:len(c.CallOptions.GetParticipant):len(c.CallOptions.GetParticipant)], opts...)
+	opts = append((*c.CallOptions).GetParticipant[0:len((*c.CallOptions).GetParticipant):len((*c.CallOptions).GetParticipant)], opts...)
 	var resp *dialogflowpb.Participant
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -299,11 +441,10 @@ func (c *ParticipantsClient) GetParticipant(ctx context.Context, req *dialogflow
 	return resp, nil
 }
 
-// ListParticipants returns the list of all participants in the specified conversation.
-func (c *ParticipantsClient) ListParticipants(ctx context.Context, req *dialogflowpb.ListParticipantsRequest, opts ...gax.CallOption) *ParticipantIterator {
+func (c *participantsGRPCClient) ListParticipants(ctx context.Context, req *dialogflowpb.ListParticipantsRequest, opts ...gax.CallOption) *ParticipantIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListParticipants[0:len(c.CallOptions.ListParticipants):len(c.CallOptions.ListParticipants)], opts...)
+	opts = append((*c.CallOptions).ListParticipants[0:len((*c.CallOptions).ListParticipants):len((*c.CallOptions).ListParticipants)], opts...)
 	it := &ParticipantIterator{}
 	req = proto.Clone(req).(*dialogflowpb.ListParticipantsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*dialogflowpb.Participant, string, error) {
@@ -340,8 +481,7 @@ func (c *ParticipantsClient) ListParticipants(ctx context.Context, req *dialogfl
 	return it
 }
 
-// UpdateParticipant updates the specified participant.
-func (c *ParticipantsClient) UpdateParticipant(ctx context.Context, req *dialogflowpb.UpdateParticipantRequest, opts ...gax.CallOption) (*dialogflowpb.Participant, error) {
+func (c *participantsGRPCClient) UpdateParticipant(ctx context.Context, req *dialogflowpb.UpdateParticipantRequest, opts ...gax.CallOption) (*dialogflowpb.Participant, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -349,7 +489,7 @@ func (c *ParticipantsClient) UpdateParticipant(ctx context.Context, req *dialogf
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "participant.name", url.QueryEscape(req.GetParticipant().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateParticipant[0:len(c.CallOptions.UpdateParticipant):len(c.CallOptions.UpdateParticipant)], opts...)
+	opts = append((*c.CallOptions).UpdateParticipant[0:len((*c.CallOptions).UpdateParticipant):len((*c.CallOptions).UpdateParticipant)], opts...)
 	var resp *dialogflowpb.Participant
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -362,13 +502,7 @@ func (c *ParticipantsClient) UpdateParticipant(ctx context.Context, req *dialogf
 	return resp, nil
 }
 
-// AnalyzeContent adds a text (chat, for example), or audio (phone recording, for example)
-// message from a participant into the conversation.
-//
-// Note: Always use agent versions for production traffic
-// sent to virtual agents. See Versions and
-// environments (at https://cloud.google.com/dialogflow/es/docs/agents-versions).
-func (c *ParticipantsClient) AnalyzeContent(ctx context.Context, req *dialogflowpb.AnalyzeContentRequest, opts ...gax.CallOption) (*dialogflowpb.AnalyzeContentResponse, error) {
+func (c *participantsGRPCClient) AnalyzeContent(ctx context.Context, req *dialogflowpb.AnalyzeContentRequest, opts ...gax.CallOption) (*dialogflowpb.AnalyzeContentResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 220000*time.Millisecond)
 		defer cancel()
@@ -376,7 +510,7 @@ func (c *ParticipantsClient) AnalyzeContent(ctx context.Context, req *dialogflow
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "participant", url.QueryEscape(req.GetParticipant())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.AnalyzeContent[0:len(c.CallOptions.AnalyzeContent):len(c.CallOptions.AnalyzeContent)], opts...)
+	opts = append((*c.CallOptions).AnalyzeContent[0:len((*c.CallOptions).AnalyzeContent):len((*c.CallOptions).AnalyzeContent)], opts...)
 	var resp *dialogflowpb.AnalyzeContentResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -389,13 +523,7 @@ func (c *ParticipantsClient) AnalyzeContent(ctx context.Context, req *dialogflow
 	return resp, nil
 }
 
-// SuggestArticles gets suggested articles for a participant based on specific historical
-// messages.
-//
-// Note that ListSuggestions will only list the auto-generated
-// suggestions, while CompileSuggestion will try to compile suggestion
-// based on the provided conversation context in the real time.
-func (c *ParticipantsClient) SuggestArticles(ctx context.Context, req *dialogflowpb.SuggestArticlesRequest, opts ...gax.CallOption) (*dialogflowpb.SuggestArticlesResponse, error) {
+func (c *participantsGRPCClient) SuggestArticles(ctx context.Context, req *dialogflowpb.SuggestArticlesRequest, opts ...gax.CallOption) (*dialogflowpb.SuggestArticlesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -403,7 +531,7 @@ func (c *ParticipantsClient) SuggestArticles(ctx context.Context, req *dialogflo
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SuggestArticles[0:len(c.CallOptions.SuggestArticles):len(c.CallOptions.SuggestArticles)], opts...)
+	opts = append((*c.CallOptions).SuggestArticles[0:len((*c.CallOptions).SuggestArticles):len((*c.CallOptions).SuggestArticles)], opts...)
 	var resp *dialogflowpb.SuggestArticlesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -416,9 +544,7 @@ func (c *ParticipantsClient) SuggestArticles(ctx context.Context, req *dialogflo
 	return resp, nil
 }
 
-// SuggestFaqAnswers gets suggested faq answers for a participant based on specific historical
-// messages.
-func (c *ParticipantsClient) SuggestFaqAnswers(ctx context.Context, req *dialogflowpb.SuggestFaqAnswersRequest, opts ...gax.CallOption) (*dialogflowpb.SuggestFaqAnswersResponse, error) {
+func (c *participantsGRPCClient) SuggestFaqAnswers(ctx context.Context, req *dialogflowpb.SuggestFaqAnswersRequest, opts ...gax.CallOption) (*dialogflowpb.SuggestFaqAnswersResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -426,7 +552,7 @@ func (c *ParticipantsClient) SuggestFaqAnswers(ctx context.Context, req *dialogf
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SuggestFaqAnswers[0:len(c.CallOptions.SuggestFaqAnswers):len(c.CallOptions.SuggestFaqAnswers)], opts...)
+	opts = append((*c.CallOptions).SuggestFaqAnswers[0:len((*c.CallOptions).SuggestFaqAnswers):len((*c.CallOptions).SuggestFaqAnswers)], opts...)
 	var resp *dialogflowpb.SuggestFaqAnswersResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -439,9 +565,7 @@ func (c *ParticipantsClient) SuggestFaqAnswers(ctx context.Context, req *dialogf
 	return resp, nil
 }
 
-// SuggestSmartReplies gets smart replies for a participant based on specific historical
-// messages.
-func (c *ParticipantsClient) SuggestSmartReplies(ctx context.Context, req *dialogflowpb.SuggestSmartRepliesRequest, opts ...gax.CallOption) (*dialogflowpb.SuggestSmartRepliesResponse, error) {
+func (c *participantsGRPCClient) SuggestSmartReplies(ctx context.Context, req *dialogflowpb.SuggestSmartRepliesRequest, opts ...gax.CallOption) (*dialogflowpb.SuggestSmartRepliesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -449,7 +573,7 @@ func (c *ParticipantsClient) SuggestSmartReplies(ctx context.Context, req *dialo
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SuggestSmartReplies[0:len(c.CallOptions.SuggestSmartReplies):len(c.CallOptions.SuggestSmartReplies)], opts...)
+	opts = append((*c.CallOptions).SuggestSmartReplies[0:len((*c.CallOptions).SuggestSmartReplies):len((*c.CallOptions).SuggestSmartReplies)], opts...)
 	var resp *dialogflowpb.SuggestSmartRepliesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -462,28 +586,10 @@ func (c *ParticipantsClient) SuggestSmartReplies(ctx context.Context, req *dialo
 	return resp, nil
 }
 
-// ListSuggestions deprecated: Use inline suggestion, event based suggestion or
-// Suggestion* API instead.
-// See [HumanAgentAssistantConfig.name (at http://HumanAgentAssistantConfig.name)][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name (at http://google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name)] for more
-// details.
-// Removal Date: 2020-09-01.
-//
-// Retrieves suggestions for live agents.
-//
-// This method should be used by human agent client software to fetch auto
-// generated suggestions in real-time, while the conversation with an end user
-// is in progress. The functionality is implemented in terms of the
-// list pagination (at /apis/design/design_patterns#list_pagination)
-// design pattern. The client app should use the next_page_token field
-// to fetch the next batch of suggestions. suggestions are sorted by
-// create_time in descending order.
-// To fetch latest suggestion, just set page_size to 1.
-// To fetch new suggestions without duplication, send request with filter
-// create_time_epoch_microseconds > [first item's create_time of previous request] and empty page_token.
-func (c *ParticipantsClient) ListSuggestions(ctx context.Context, req *dialogflowpb.ListSuggestionsRequest, opts ...gax.CallOption) *SuggestionIterator {
+func (c *participantsGRPCClient) ListSuggestions(ctx context.Context, req *dialogflowpb.ListSuggestionsRequest, opts ...gax.CallOption) *SuggestionIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListSuggestions[0:len(c.CallOptions.ListSuggestions):len(c.CallOptions.ListSuggestions)], opts...)
+	opts = append((*c.CallOptions).ListSuggestions[0:len((*c.CallOptions).ListSuggestions):len((*c.CallOptions).ListSuggestions)], opts...)
 	it := &SuggestionIterator{}
 	req = proto.Clone(req).(*dialogflowpb.ListSuggestionsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*dialogflowpb.Suggestion, string, error) {
@@ -520,15 +626,7 @@ func (c *ParticipantsClient) ListSuggestions(ctx context.Context, req *dialogflo
 	return it
 }
 
-// CompileSuggestion deprecated. use SuggestArticles and SuggestFaqAnswers instead.
-//
-// Gets suggestions for a participant based on specific historical
-// messages.
-//
-// Note that ListSuggestions will only list the auto-generated
-// suggestions, while CompileSuggestion will try to compile suggestion
-// based on the provided conversation context in the real time.
-func (c *ParticipantsClient) CompileSuggestion(ctx context.Context, req *dialogflowpb.CompileSuggestionRequest, opts ...gax.CallOption) (*dialogflowpb.CompileSuggestionResponse, error) {
+func (c *participantsGRPCClient) CompileSuggestion(ctx context.Context, req *dialogflowpb.CompileSuggestionRequest, opts ...gax.CallOption) (*dialogflowpb.CompileSuggestionResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -536,7 +634,7 @@ func (c *ParticipantsClient) CompileSuggestion(ctx context.Context, req *dialogf
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CompileSuggestion[0:len(c.CallOptions.CompileSuggestion):len(c.CallOptions.CompileSuggestion)], opts...)
+	opts = append((*c.CallOptions).CompileSuggestion[0:len((*c.CallOptions).CompileSuggestion):len((*c.CallOptions).CompileSuggestion)], opts...)
 	var resp *dialogflowpb.CompileSuggestionResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

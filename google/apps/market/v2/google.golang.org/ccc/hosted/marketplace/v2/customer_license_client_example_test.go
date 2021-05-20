@@ -29,18 +29,19 @@ func ExampleNewCustomerLicenseClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleCustomerLicenseClient_Get() {
-	// import marketplacepb "google.golang.org/genproto/googleapis/ccc/hosted/marketplace/v2"
-
 	ctx := context.Background()
 	c, err := marketplace.NewCustomerLicenseClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &marketplacepb.CustomerLicenseGetRequest{
 		// TODO: Fill request struct fields.

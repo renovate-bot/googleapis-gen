@@ -29,18 +29,19 @@ func ExampleNewFeaturestoreOnlineServingClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleFeaturestoreOnlineServingClient_ReadFeatureValues() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewFeaturestoreOnlineServingClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ReadFeatureValuesRequest{
 		// TODO: Fill request struct fields.

@@ -30,18 +30,19 @@ func ExampleNewJobClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleJobClient_CreateCustomJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateCustomJobRequest{
 		// TODO: Fill request struct fields.
@@ -55,13 +56,12 @@ func ExampleJobClient_CreateCustomJob() {
 }
 
 func ExampleJobClient_GetCustomJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetCustomJobRequest{
 		// TODO: Fill request struct fields.
@@ -75,14 +75,12 @@ func ExampleJobClient_GetCustomJob() {
 }
 
 func ExampleJobClient_ListCustomJobs() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListCustomJobsRequest{
 		// TODO: Fill request struct fields.
@@ -102,13 +100,12 @@ func ExampleJobClient_ListCustomJobs() {
 }
 
 func ExampleJobClient_DeleteCustomJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteCustomJobRequest{
 		// TODO: Fill request struct fields.
@@ -130,6 +127,7 @@ func ExampleJobClient_CancelCustomJob() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CancelCustomJobRequest{
 		// TODO: Fill request struct fields.
@@ -141,13 +139,12 @@ func ExampleJobClient_CancelCustomJob() {
 }
 
 func ExampleJobClient_CreateDataLabelingJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateDataLabelingJobRequest{
 		// TODO: Fill request struct fields.
@@ -161,13 +158,12 @@ func ExampleJobClient_CreateDataLabelingJob() {
 }
 
 func ExampleJobClient_GetDataLabelingJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetDataLabelingJobRequest{
 		// TODO: Fill request struct fields.
@@ -181,14 +177,12 @@ func ExampleJobClient_GetDataLabelingJob() {
 }
 
 func ExampleJobClient_ListDataLabelingJobs() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListDataLabelingJobsRequest{
 		// TODO: Fill request struct fields.
@@ -208,13 +202,12 @@ func ExampleJobClient_ListDataLabelingJobs() {
 }
 
 func ExampleJobClient_DeleteDataLabelingJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteDataLabelingJobRequest{
 		// TODO: Fill request struct fields.
@@ -236,6 +229,7 @@ func ExampleJobClient_CancelDataLabelingJob() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CancelDataLabelingJobRequest{
 		// TODO: Fill request struct fields.
@@ -247,13 +241,12 @@ func ExampleJobClient_CancelDataLabelingJob() {
 }
 
 func ExampleJobClient_CreateHyperparameterTuningJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateHyperparameterTuningJobRequest{
 		// TODO: Fill request struct fields.
@@ -267,13 +260,12 @@ func ExampleJobClient_CreateHyperparameterTuningJob() {
 }
 
 func ExampleJobClient_GetHyperparameterTuningJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetHyperparameterTuningJobRequest{
 		// TODO: Fill request struct fields.
@@ -287,14 +279,12 @@ func ExampleJobClient_GetHyperparameterTuningJob() {
 }
 
 func ExampleJobClient_ListHyperparameterTuningJobs() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListHyperparameterTuningJobsRequest{
 		// TODO: Fill request struct fields.
@@ -314,13 +304,12 @@ func ExampleJobClient_ListHyperparameterTuningJobs() {
 }
 
 func ExampleJobClient_DeleteHyperparameterTuningJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteHyperparameterTuningJobRequest{
 		// TODO: Fill request struct fields.
@@ -342,6 +331,7 @@ func ExampleJobClient_CancelHyperparameterTuningJob() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CancelHyperparameterTuningJobRequest{
 		// TODO: Fill request struct fields.
@@ -353,13 +343,12 @@ func ExampleJobClient_CancelHyperparameterTuningJob() {
 }
 
 func ExampleJobClient_CreateBatchPredictionJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateBatchPredictionJobRequest{
 		// TODO: Fill request struct fields.
@@ -373,13 +362,12 @@ func ExampleJobClient_CreateBatchPredictionJob() {
 }
 
 func ExampleJobClient_GetBatchPredictionJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetBatchPredictionJobRequest{
 		// TODO: Fill request struct fields.
@@ -393,14 +381,12 @@ func ExampleJobClient_GetBatchPredictionJob() {
 }
 
 func ExampleJobClient_ListBatchPredictionJobs() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListBatchPredictionJobsRequest{
 		// TODO: Fill request struct fields.
@@ -420,13 +406,12 @@ func ExampleJobClient_ListBatchPredictionJobs() {
 }
 
 func ExampleJobClient_DeleteBatchPredictionJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteBatchPredictionJobRequest{
 		// TODO: Fill request struct fields.
@@ -448,6 +433,7 @@ func ExampleJobClient_CancelBatchPredictionJob() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CancelBatchPredictionJobRequest{
 		// TODO: Fill request struct fields.
@@ -459,13 +445,12 @@ func ExampleJobClient_CancelBatchPredictionJob() {
 }
 
 func ExampleJobClient_CreateModelDeploymentMonitoringJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateModelDeploymentMonitoringJobRequest{
 		// TODO: Fill request struct fields.
@@ -479,14 +464,12 @@ func ExampleJobClient_CreateModelDeploymentMonitoringJob() {
 }
 
 func ExampleJobClient_SearchModelDeploymentMonitoringStatsAnomalies() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.SearchModelDeploymentMonitoringStatsAnomaliesRequest{
 		// TODO: Fill request struct fields.
@@ -506,13 +489,12 @@ func ExampleJobClient_SearchModelDeploymentMonitoringStatsAnomalies() {
 }
 
 func ExampleJobClient_GetModelDeploymentMonitoringJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetModelDeploymentMonitoringJobRequest{
 		// TODO: Fill request struct fields.
@@ -526,14 +508,12 @@ func ExampleJobClient_GetModelDeploymentMonitoringJob() {
 }
 
 func ExampleJobClient_ListModelDeploymentMonitoringJobs() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListModelDeploymentMonitoringJobsRequest{
 		// TODO: Fill request struct fields.
@@ -553,13 +533,12 @@ func ExampleJobClient_ListModelDeploymentMonitoringJobs() {
 }
 
 func ExampleJobClient_UpdateModelDeploymentMonitoringJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateModelDeploymentMonitoringJobRequest{
 		// TODO: Fill request struct fields.
@@ -578,13 +557,12 @@ func ExampleJobClient_UpdateModelDeploymentMonitoringJob() {
 }
 
 func ExampleJobClient_DeleteModelDeploymentMonitoringJob() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteModelDeploymentMonitoringJobRequest{
 		// TODO: Fill request struct fields.
@@ -606,6 +584,7 @@ func ExampleJobClient_PauseModelDeploymentMonitoringJob() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.PauseModelDeploymentMonitoringJobRequest{
 		// TODO: Fill request struct fields.
@@ -622,6 +601,7 @@ func ExampleJobClient_ResumeModelDeploymentMonitoringJob() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ResumeModelDeploymentMonitoringJobRequest{
 		// TODO: Fill request struct fields.

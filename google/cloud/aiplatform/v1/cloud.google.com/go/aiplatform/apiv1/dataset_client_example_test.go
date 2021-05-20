@@ -30,18 +30,19 @@ func ExampleNewDatasetClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleDatasetClient_CreateDataset() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewDatasetClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateDatasetRequest{
 		// TODO: Fill request struct fields.
@@ -60,13 +61,12 @@ func ExampleDatasetClient_CreateDataset() {
 }
 
 func ExampleDatasetClient_GetDataset() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewDatasetClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetDatasetRequest{
 		// TODO: Fill request struct fields.
@@ -80,13 +80,12 @@ func ExampleDatasetClient_GetDataset() {
 }
 
 func ExampleDatasetClient_UpdateDataset() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewDatasetClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateDatasetRequest{
 		// TODO: Fill request struct fields.
@@ -100,14 +99,12 @@ func ExampleDatasetClient_UpdateDataset() {
 }
 
 func ExampleDatasetClient_ListDatasets() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewDatasetClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListDatasetsRequest{
 		// TODO: Fill request struct fields.
@@ -127,13 +124,12 @@ func ExampleDatasetClient_ListDatasets() {
 }
 
 func ExampleDatasetClient_DeleteDataset() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewDatasetClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteDatasetRequest{
 		// TODO: Fill request struct fields.
@@ -150,13 +146,12 @@ func ExampleDatasetClient_DeleteDataset() {
 }
 
 func ExampleDatasetClient_ImportData() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewDatasetClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ImportDataRequest{
 		// TODO: Fill request struct fields.
@@ -175,13 +170,12 @@ func ExampleDatasetClient_ImportData() {
 }
 
 func ExampleDatasetClient_ExportData() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewDatasetClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ExportDataRequest{
 		// TODO: Fill request struct fields.
@@ -200,14 +194,12 @@ func ExampleDatasetClient_ExportData() {
 }
 
 func ExampleDatasetClient_ListDataItems() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewDatasetClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListDataItemsRequest{
 		// TODO: Fill request struct fields.
@@ -227,13 +219,12 @@ func ExampleDatasetClient_ListDataItems() {
 }
 
 func ExampleDatasetClient_GetAnnotationSpec() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewDatasetClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetAnnotationSpecRequest{
 		// TODO: Fill request struct fields.
@@ -247,14 +238,12 @@ func ExampleDatasetClient_GetAnnotationSpec() {
 }
 
 func ExampleDatasetClient_ListAnnotations() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewDatasetClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListAnnotationsRequest{
 		// TODO: Fill request struct fields.

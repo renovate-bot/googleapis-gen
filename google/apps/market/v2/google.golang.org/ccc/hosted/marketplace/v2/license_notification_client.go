@@ -40,7 +40,7 @@ type LicenseNotificationCallOptions struct {
 	List []gax.CallOption
 }
 
-func defaultLicenseNotificationClientOptions() []option.ClientOption {
+func defaultLicenseNotificationGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("appsmarket.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("appsmarket.mtls.googleapis.com:443"),
@@ -69,31 +69,75 @@ func defaultLicenseNotificationCallOptions() *LicenseNotificationCallOptions {
 	}
 }
 
+// internalLicenseNotificationClient is an interface that defines the methods availaible from Google Workspace Marketplace API.
+type internalLicenseNotificationClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	List(context.Context, *marketplacepb.LicenseNotificationListRequest, ...gax.CallOption) (*marketplacepb.LicenseNotificationList, error)
+}
+
 // LicenseNotificationClient is a client for interacting with Google Workspace Marketplace API.
-//
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type LicenseNotificationClient struct {
+	// The internal transport-dependent client.
+	internalClient internalLicenseNotificationClient
+
+	// The call options for this service.
+	CallOptions *LicenseNotificationCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *LicenseNotificationClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *LicenseNotificationClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *LicenseNotificationClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// List get a list of licensing notifications with regards to a given app.
+func (c *LicenseNotificationClient) List(ctx context.Context, req *marketplacepb.LicenseNotificationListRequest, opts ...gax.CallOption) (*marketplacepb.LicenseNotificationList, error) {
+	return c.internalClient.List(ctx, req, opts...)
+}
+
+// licenseNotificationGRPCClient is a client for interacting with Google Workspace Marketplace API over gRPC transport.
+//
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+type licenseNotificationGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing LicenseNotificationClient
+	CallOptions **LicenseNotificationCallOptions
+
 	// The gRPC API client.
 	licenseNotificationClient marketplacepb.LicenseNotificationServiceClient
-
-	// The call options for this service.
-	CallOptions *LicenseNotificationCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewLicenseNotificationClient creates a new license notification service client.
-//
+// NewLicenseNotificationClient creates a new license notification service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 func NewLicenseNotificationClient(ctx context.Context, opts ...option.ClientOption) (*LicenseNotificationClient, error) {
-	clientOpts := defaultLicenseNotificationClientOptions()
-
+	clientOpts := defaultLicenseNotificationGRPCClientOptions()
 	if newLicenseNotificationClientHook != nil {
 		hookOpts, err := newLicenseNotificationClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -111,42 +155,44 @@ func NewLicenseNotificationClient(ctx context.Context, opts ...option.ClientOpti
 	if err != nil {
 		return nil, err
 	}
-	c := &LicenseNotificationClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultLicenseNotificationCallOptions(),
+	client := LicenseNotificationClient{CallOptions: defaultLicenseNotificationCallOptions()}
 
+	c := &licenseNotificationGRPCClient{
+		connPool:                  connPool,
+		disableDeadlines:          disableDeadlines,
 		licenseNotificationClient: marketplacepb.NewLicenseNotificationServiceClient(connPool),
+		CallOptions:               &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *LicenseNotificationClient) Connection() *grpc.ClientConn {
+func (c *licenseNotificationGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *LicenseNotificationClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *LicenseNotificationClient) setGoogleClientInfo(keyval ...string) {
+func (c *licenseNotificationGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// List get a list of licensing notifications with regards to a given app.
-func (c *LicenseNotificationClient) List(ctx context.Context, req *marketplacepb.LicenseNotificationListRequest, opts ...gax.CallOption) (*marketplacepb.LicenseNotificationList, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *licenseNotificationGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *licenseNotificationGRPCClient) List(ctx context.Context, req *marketplacepb.LicenseNotificationListRequest, opts ...gax.CallOption) (*marketplacepb.LicenseNotificationList, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -154,7 +200,7 @@ func (c *LicenseNotificationClient) List(ctx context.Context, req *marketplacepb
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "application_id", url.QueryEscape(req.GetApplicationId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.List[0:len(c.CallOptions.List):len(c.CallOptions.List)], opts...)
+	opts = append((*c.CallOptions).List[0:len((*c.CallOptions).List):len((*c.CallOptions).List)], opts...)
 	var resp *marketplacepb.LicenseNotificationList
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

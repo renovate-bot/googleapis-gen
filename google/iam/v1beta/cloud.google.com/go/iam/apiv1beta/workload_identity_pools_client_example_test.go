@@ -30,19 +30,19 @@ func ExampleNewWorkloadIdentityPoolsClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleWorkloadIdentityPoolsClient_ListWorkloadIdentityPools() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.ListWorkloadIdentityPoolsRequest{
 		// TODO: Fill request struct fields.
@@ -62,13 +62,12 @@ func ExampleWorkloadIdentityPoolsClient_ListWorkloadIdentityPools() {
 }
 
 func ExampleWorkloadIdentityPoolsClient_GetWorkloadIdentityPool() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.GetWorkloadIdentityPoolRequest{
 		// TODO: Fill request struct fields.
@@ -82,13 +81,12 @@ func ExampleWorkloadIdentityPoolsClient_GetWorkloadIdentityPool() {
 }
 
 func ExampleWorkloadIdentityPoolsClient_CreateWorkloadIdentityPool() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.CreateWorkloadIdentityPoolRequest{
 		// TODO: Fill request struct fields.
@@ -107,13 +105,12 @@ func ExampleWorkloadIdentityPoolsClient_CreateWorkloadIdentityPool() {
 }
 
 func ExampleWorkloadIdentityPoolsClient_UpdateWorkloadIdentityPool() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.UpdateWorkloadIdentityPoolRequest{
 		// TODO: Fill request struct fields.
@@ -132,13 +129,12 @@ func ExampleWorkloadIdentityPoolsClient_UpdateWorkloadIdentityPool() {
 }
 
 func ExampleWorkloadIdentityPoolsClient_DeleteWorkloadIdentityPool() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.DeleteWorkloadIdentityPoolRequest{
 		// TODO: Fill request struct fields.
@@ -157,13 +153,12 @@ func ExampleWorkloadIdentityPoolsClient_DeleteWorkloadIdentityPool() {
 }
 
 func ExampleWorkloadIdentityPoolsClient_UndeleteWorkloadIdentityPool() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.UndeleteWorkloadIdentityPoolRequest{
 		// TODO: Fill request struct fields.
@@ -182,14 +177,12 @@ func ExampleWorkloadIdentityPoolsClient_UndeleteWorkloadIdentityPool() {
 }
 
 func ExampleWorkloadIdentityPoolsClient_ListWorkloadIdentityPoolProviders() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.ListWorkloadIdentityPoolProvidersRequest{
 		// TODO: Fill request struct fields.
@@ -209,13 +202,12 @@ func ExampleWorkloadIdentityPoolsClient_ListWorkloadIdentityPoolProviders() {
 }
 
 func ExampleWorkloadIdentityPoolsClient_GetWorkloadIdentityPoolProvider() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.GetWorkloadIdentityPoolProviderRequest{
 		// TODO: Fill request struct fields.
@@ -229,13 +221,12 @@ func ExampleWorkloadIdentityPoolsClient_GetWorkloadIdentityPoolProvider() {
 }
 
 func ExampleWorkloadIdentityPoolsClient_CreateWorkloadIdentityPoolProvider() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.CreateWorkloadIdentityPoolProviderRequest{
 		// TODO: Fill request struct fields.
@@ -254,13 +245,12 @@ func ExampleWorkloadIdentityPoolsClient_CreateWorkloadIdentityPoolProvider() {
 }
 
 func ExampleWorkloadIdentityPoolsClient_UpdateWorkloadIdentityPoolProvider() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.UpdateWorkloadIdentityPoolProviderRequest{
 		// TODO: Fill request struct fields.
@@ -279,13 +269,12 @@ func ExampleWorkloadIdentityPoolsClient_UpdateWorkloadIdentityPoolProvider() {
 }
 
 func ExampleWorkloadIdentityPoolsClient_DeleteWorkloadIdentityPoolProvider() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.DeleteWorkloadIdentityPoolProviderRequest{
 		// TODO: Fill request struct fields.
@@ -304,13 +293,12 @@ func ExampleWorkloadIdentityPoolsClient_DeleteWorkloadIdentityPoolProvider() {
 }
 
 func ExampleWorkloadIdentityPoolsClient_UndeleteWorkloadIdentityPoolProvider() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1beta"
-
 	ctx := context.Background()
 	c, err := iam.NewWorkloadIdentityPoolsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.UndeleteWorkloadIdentityPoolProviderRequest{
 		// TODO: Fill request struct fields.

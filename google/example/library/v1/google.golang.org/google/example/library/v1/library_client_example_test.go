@@ -30,18 +30,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_CreateShelf() {
-	// import librarypb "google.golang.org/genproto/googleapis/example/library/v1"
-
 	ctx := context.Background()
 	c, err := library.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &librarypb.CreateShelfRequest{
 		// TODO: Fill request struct fields.
@@ -55,13 +56,12 @@ func ExampleClient_CreateShelf() {
 }
 
 func ExampleClient_GetShelf() {
-	// import librarypb "google.golang.org/genproto/googleapis/example/library/v1"
-
 	ctx := context.Background()
 	c, err := library.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &librarypb.GetShelfRequest{
 		// TODO: Fill request struct fields.
@@ -75,14 +75,12 @@ func ExampleClient_GetShelf() {
 }
 
 func ExampleClient_ListShelves() {
-	// import librarypb "google.golang.org/genproto/googleapis/example/library/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := library.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &librarypb.ListShelvesRequest{
 		// TODO: Fill request struct fields.
@@ -107,6 +105,7 @@ func ExampleClient_DeleteShelf() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &librarypb.DeleteShelfRequest{
 		// TODO: Fill request struct fields.
@@ -118,13 +117,12 @@ func ExampleClient_DeleteShelf() {
 }
 
 func ExampleClient_MergeShelves() {
-	// import librarypb "google.golang.org/genproto/googleapis/example/library/v1"
-
 	ctx := context.Background()
 	c, err := library.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &librarypb.MergeShelvesRequest{
 		// TODO: Fill request struct fields.
@@ -138,13 +136,12 @@ func ExampleClient_MergeShelves() {
 }
 
 func ExampleClient_CreateBook() {
-	// import librarypb "google.golang.org/genproto/googleapis/example/library/v1"
-
 	ctx := context.Background()
 	c, err := library.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &librarypb.CreateBookRequest{
 		// TODO: Fill request struct fields.
@@ -158,13 +155,12 @@ func ExampleClient_CreateBook() {
 }
 
 func ExampleClient_GetBook() {
-	// import librarypb "google.golang.org/genproto/googleapis/example/library/v1"
-
 	ctx := context.Background()
 	c, err := library.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &librarypb.GetBookRequest{
 		// TODO: Fill request struct fields.
@@ -178,14 +174,12 @@ func ExampleClient_GetBook() {
 }
 
 func ExampleClient_ListBooks() {
-	// import librarypb "google.golang.org/genproto/googleapis/example/library/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := library.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &librarypb.ListBooksRequest{
 		// TODO: Fill request struct fields.
@@ -210,6 +204,7 @@ func ExampleClient_DeleteBook() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &librarypb.DeleteBookRequest{
 		// TODO: Fill request struct fields.
@@ -221,13 +216,12 @@ func ExampleClient_DeleteBook() {
 }
 
 func ExampleClient_UpdateBook() {
-	// import librarypb "google.golang.org/genproto/googleapis/example/library/v1"
-
 	ctx := context.Background()
 	c, err := library.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &librarypb.UpdateBookRequest{
 		// TODO: Fill request struct fields.
@@ -241,13 +235,12 @@ func ExampleClient_UpdateBook() {
 }
 
 func ExampleClient_MoveBook() {
-	// import librarypb "google.golang.org/genproto/googleapis/example/library/v1"
-
 	ctx := context.Background()
 	c, err := library.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &librarypb.MoveBookRequest{
 		// TODO: Fill request struct fields.

@@ -29,18 +29,19 @@ func ExampleNewBotsClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleBotsClient_CreateBotSession() {
-	// import remoteworkerspb "google.golang.org/genproto/googleapis/devtools/remoteworkers/v1test2"
-
 	ctx := context.Background()
 	c, err := remoteworkers.NewBotsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &remoteworkerspb.CreateBotSessionRequest{
 		// TODO: Fill request struct fields.
@@ -54,13 +55,12 @@ func ExampleBotsClient_CreateBotSession() {
 }
 
 func ExampleBotsClient_UpdateBotSession() {
-	// import remoteworkerspb "google.golang.org/genproto/googleapis/devtools/remoteworkers/v1test2"
-
 	ctx := context.Background()
 	c, err := remoteworkers.NewBotsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &remoteworkerspb.UpdateBotSessionRequest{
 		// TODO: Fill request struct fields.

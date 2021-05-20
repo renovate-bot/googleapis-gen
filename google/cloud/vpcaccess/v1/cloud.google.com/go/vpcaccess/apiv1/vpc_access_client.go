@@ -47,7 +47,7 @@ type CallOptions struct {
 	DeleteConnector []gax.CallOption
 }
 
-func defaultClientOptions() []option.ClientOption {
+func defaultGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("vpcaccess.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("vpcaccess.mtls.googleapis.com:443"),
@@ -68,39 +68,127 @@ func defaultCallOptions() *CallOptions {
 	}
 }
 
+// internalClient is an interface that defines the methods availaible from Serverless VPC Access API.
+type internalClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateConnector(context.Context, *vpcaccesspb.CreateConnectorRequest, ...gax.CallOption) (*CreateConnectorOperation, error)
+	CreateConnectorOperation(name string) *CreateConnectorOperation
+	GetConnector(context.Context, *vpcaccesspb.GetConnectorRequest, ...gax.CallOption) (*vpcaccesspb.Connector, error)
+	ListConnectors(context.Context, *vpcaccesspb.ListConnectorsRequest, ...gax.CallOption) *ConnectorIterator
+	DeleteConnector(context.Context, *vpcaccesspb.DeleteConnectorRequest, ...gax.CallOption) (*DeleteConnectorOperation, error)
+	DeleteConnectorOperation(name string) *DeleteConnectorOperation
+}
+
 // Client is a client for interacting with Serverless VPC Access API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Serverless VPC Access API allows users to create and manage connectors for
+// App Engine, Cloud Functions and Cloud Run to have internal connections to
+// Virtual Private Cloud networks.
+type Client struct {
+	// The internal transport-dependent client.
+	internalClient internalClient
+
+	// The call options for this service.
+	CallOptions *CallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *Client) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *Client) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *Client) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateConnector creates a Serverless VPC Access connector, returns an operation.
+func (c *Client) CreateConnector(ctx context.Context, req *vpcaccesspb.CreateConnectorRequest, opts ...gax.CallOption) (*CreateConnectorOperation, error) {
+	return c.internalClient.CreateConnector(ctx, req, opts...)
+}
+
+// CreateConnectorOperation returns a new CreateConnectorOperation from a given name.
+// The name must be that of a previously created CreateConnectorOperation, possibly from a different process.
+func (c *Client) CreateConnectorOperation(name string) *CreateConnectorOperation {
+	return c.internalClient.CreateConnectorOperation(name)
+}
+
+// GetConnector gets a Serverless VPC Access connector. Returns NOT_FOUND if the resource
+// does not exist.
+func (c *Client) GetConnector(ctx context.Context, req *vpcaccesspb.GetConnectorRequest, opts ...gax.CallOption) (*vpcaccesspb.Connector, error) {
+	return c.internalClient.GetConnector(ctx, req, opts...)
+}
+
+// ListConnectors lists Serverless VPC Access connectors.
+func (c *Client) ListConnectors(ctx context.Context, req *vpcaccesspb.ListConnectorsRequest, opts ...gax.CallOption) *ConnectorIterator {
+	return c.internalClient.ListConnectors(ctx, req, opts...)
+}
+
+// DeleteConnector deletes a Serverless VPC Access connector. Returns NOT_FOUND if the
+// resource does not exist.
+func (c *Client) DeleteConnector(ctx context.Context, req *vpcaccesspb.DeleteConnectorRequest, opts ...gax.CallOption) (*DeleteConnectorOperation, error) {
+	return c.internalClient.DeleteConnector(ctx, req, opts...)
+}
+
+// DeleteConnectorOperation returns a new DeleteConnectorOperation from a given name.
+// The name must be that of a previously created DeleteConnectorOperation, possibly from a different process.
+func (c *Client) DeleteConnectorOperation(name string) *DeleteConnectorOperation {
+	return c.internalClient.DeleteConnectorOperation(name)
+}
+
+// gRPCClient is a client for interacting with Serverless VPC Access API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type Client struct {
+type gRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing Client
+	CallOptions **CallOptions
+
 	// The gRPC API client.
 	client vpcaccesspb.VpcAccessServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *CallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewClient creates a new vpc access service client.
+// NewClient creates a new vpc access service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Serverless VPC Access API allows users to create and manage connectors for
 // App Engine, Cloud Functions and Cloud Run to have internal connections to
 // Virtual Private Cloud networks.
 func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
-	clientOpts := defaultClientOptions()
-
+	clientOpts := defaultGRPCClientOptions()
 	if newClientHook != nil {
 		hookOpts, err := newClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -118,16 +206,19 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 	if err != nil {
 		return nil, err
 	}
-	c := &Client{
+	client := Client{CallOptions: defaultCallOptions()}
+
+	c := &gRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultCallOptions(),
-
-		client: vpcaccesspb.NewVpcAccessServiceClient(connPool),
+		client:           vpcaccesspb.NewVpcAccessServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -137,33 +228,33 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *Client) Connection() *grpc.ClientConn {
+func (c *gRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *Client) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *Client) setGoogleClientInfo(keyval ...string) {
+func (c *gRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateConnector creates a Serverless VPC Access connector, returns an operation.
-func (c *Client) CreateConnector(ctx context.Context, req *vpcaccesspb.CreateConnectorRequest, opts ...gax.CallOption) (*CreateConnectorOperation, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *gRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *gRPCClient) CreateConnector(ctx context.Context, req *vpcaccesspb.CreateConnectorRequest, opts ...gax.CallOption) (*CreateConnectorOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -171,7 +262,7 @@ func (c *Client) CreateConnector(ctx context.Context, req *vpcaccesspb.CreateCon
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateConnector[0:len(c.CallOptions.CreateConnector):len(c.CallOptions.CreateConnector)], opts...)
+	opts = append((*c.CallOptions).CreateConnector[0:len((*c.CallOptions).CreateConnector):len((*c.CallOptions).CreateConnector)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -182,13 +273,11 @@ func (c *Client) CreateConnector(ctx context.Context, req *vpcaccesspb.CreateCon
 		return nil, err
 	}
 	return &CreateConnectorOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetConnector gets a Serverless VPC Access connector. Returns NOT_FOUND if the resource
-// does not exist.
-func (c *Client) GetConnector(ctx context.Context, req *vpcaccesspb.GetConnectorRequest, opts ...gax.CallOption) (*vpcaccesspb.Connector, error) {
+func (c *gRPCClient) GetConnector(ctx context.Context, req *vpcaccesspb.GetConnectorRequest, opts ...gax.CallOption) (*vpcaccesspb.Connector, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -196,7 +285,7 @@ func (c *Client) GetConnector(ctx context.Context, req *vpcaccesspb.GetConnector
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetConnector[0:len(c.CallOptions.GetConnector):len(c.CallOptions.GetConnector)], opts...)
+	opts = append((*c.CallOptions).GetConnector[0:len((*c.CallOptions).GetConnector):len((*c.CallOptions).GetConnector)], opts...)
 	var resp *vpcaccesspb.Connector
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -209,11 +298,10 @@ func (c *Client) GetConnector(ctx context.Context, req *vpcaccesspb.GetConnector
 	return resp, nil
 }
 
-// ListConnectors lists Serverless VPC Access connectors.
-func (c *Client) ListConnectors(ctx context.Context, req *vpcaccesspb.ListConnectorsRequest, opts ...gax.CallOption) *ConnectorIterator {
+func (c *gRPCClient) ListConnectors(ctx context.Context, req *vpcaccesspb.ListConnectorsRequest, opts ...gax.CallOption) *ConnectorIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListConnectors[0:len(c.CallOptions.ListConnectors):len(c.CallOptions.ListConnectors)], opts...)
+	opts = append((*c.CallOptions).ListConnectors[0:len((*c.CallOptions).ListConnectors):len((*c.CallOptions).ListConnectors)], opts...)
 	it := &ConnectorIterator{}
 	req = proto.Clone(req).(*vpcaccesspb.ListConnectorsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*vpcaccesspb.Connector, string, error) {
@@ -250,9 +338,7 @@ func (c *Client) ListConnectors(ctx context.Context, req *vpcaccesspb.ListConnec
 	return it
 }
 
-// DeleteConnector deletes a Serverless VPC Access connector. Returns NOT_FOUND if the
-// resource does not exist.
-func (c *Client) DeleteConnector(ctx context.Context, req *vpcaccesspb.DeleteConnectorRequest, opts ...gax.CallOption) (*DeleteConnectorOperation, error) {
+func (c *gRPCClient) DeleteConnector(ctx context.Context, req *vpcaccesspb.DeleteConnectorRequest, opts ...gax.CallOption) (*DeleteConnectorOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -260,7 +346,7 @@ func (c *Client) DeleteConnector(ctx context.Context, req *vpcaccesspb.DeleteCon
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteConnector[0:len(c.CallOptions.DeleteConnector):len(c.CallOptions.DeleteConnector)], opts...)
+	opts = append((*c.CallOptions).DeleteConnector[0:len((*c.CallOptions).DeleteConnector):len((*c.CallOptions).DeleteConnector)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -271,7 +357,7 @@ func (c *Client) DeleteConnector(ctx context.Context, req *vpcaccesspb.DeleteCon
 		return nil, err
 	}
 	return &DeleteConnectorOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
@@ -282,9 +368,9 @@ type CreateConnectorOperation struct {
 
 // CreateConnectorOperation returns a new CreateConnectorOperation from a given name.
 // The name must be that of a previously created CreateConnectorOperation, possibly from a different process.
-func (c *Client) CreateConnectorOperation(name string) *CreateConnectorOperation {
+func (c *gRPCClient) CreateConnectorOperation(name string) *CreateConnectorOperation {
 	return &CreateConnectorOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -351,9 +437,9 @@ type DeleteConnectorOperation struct {
 
 // DeleteConnectorOperation returns a new DeleteConnectorOperation from a given name.
 // The name must be that of a previously created DeleteConnectorOperation, possibly from a different process.
-func (c *Client) DeleteConnectorOperation(name string) *DeleteConnectorOperation {
+func (c *gRPCClient) DeleteConnectorOperation(name string) *DeleteConnectorOperation {
 	return &DeleteConnectorOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

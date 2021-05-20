@@ -30,19 +30,19 @@ func ExampleNewConnectionClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleConnectionClient_ListConnections() {
-	// import apigeeconnectpb "google.golang.org/genproto/googleapis/cloud/apigeeconnect/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := apigeeconnect.NewConnectionClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &apigeeconnectpb.ListConnectionsRequest{
 		// TODO: Fill request struct fields.

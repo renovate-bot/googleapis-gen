@@ -29,18 +29,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_Lookup() {
-	// import datastorepb "google.golang.org/genproto/googleapis/datastore/v1"
-
 	ctx := context.Background()
 	c, err := datastore.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datastorepb.LookupRequest{
 		// TODO: Fill request struct fields.
@@ -54,13 +55,12 @@ func ExampleClient_Lookup() {
 }
 
 func ExampleClient_RunQuery() {
-	// import datastorepb "google.golang.org/genproto/googleapis/datastore/v1"
-
 	ctx := context.Background()
 	c, err := datastore.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datastorepb.RunQueryRequest{
 		// TODO: Fill request struct fields.
@@ -74,13 +74,12 @@ func ExampleClient_RunQuery() {
 }
 
 func ExampleClient_BeginTransaction() {
-	// import datastorepb "google.golang.org/genproto/googleapis/datastore/v1"
-
 	ctx := context.Background()
 	c, err := datastore.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datastorepb.BeginTransactionRequest{
 		// TODO: Fill request struct fields.
@@ -94,13 +93,12 @@ func ExampleClient_BeginTransaction() {
 }
 
 func ExampleClient_Commit() {
-	// import datastorepb "google.golang.org/genproto/googleapis/datastore/v1"
-
 	ctx := context.Background()
 	c, err := datastore.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datastorepb.CommitRequest{
 		// TODO: Fill request struct fields.
@@ -114,13 +112,12 @@ func ExampleClient_Commit() {
 }
 
 func ExampleClient_Rollback() {
-	// import datastorepb "google.golang.org/genproto/googleapis/datastore/v1"
-
 	ctx := context.Background()
 	c, err := datastore.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datastorepb.RollbackRequest{
 		// TODO: Fill request struct fields.
@@ -134,13 +131,12 @@ func ExampleClient_Rollback() {
 }
 
 func ExampleClient_AllocateIds() {
-	// import datastorepb "google.golang.org/genproto/googleapis/datastore/v1"
-
 	ctx := context.Background()
 	c, err := datastore.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datastorepb.AllocateIdsRequest{
 		// TODO: Fill request struct fields.
@@ -154,13 +150,12 @@ func ExampleClient_AllocateIds() {
 }
 
 func ExampleClient_ReserveIds() {
-	// import datastorepb "google.golang.org/genproto/googleapis/datastore/v1"
-
 	ctx := context.Background()
 	c, err := datastore.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datastorepb.ReserveIdsRequest{
 		// TODO: Fill request struct fields.

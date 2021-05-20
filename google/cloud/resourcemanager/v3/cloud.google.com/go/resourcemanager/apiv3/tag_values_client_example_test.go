@@ -31,19 +31,19 @@ func ExampleNewTagValuesClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleTagValuesClient_ListTagValues() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewTagValuesClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.ListTagValuesRequest{
 		// TODO: Fill request struct fields.
@@ -63,13 +63,12 @@ func ExampleTagValuesClient_ListTagValues() {
 }
 
 func ExampleTagValuesClient_GetTagValue() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewTagValuesClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.GetTagValueRequest{
 		// TODO: Fill request struct fields.
@@ -83,13 +82,12 @@ func ExampleTagValuesClient_GetTagValue() {
 }
 
 func ExampleTagValuesClient_CreateTagValue() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewTagValuesClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.CreateTagValueRequest{
 		// TODO: Fill request struct fields.
@@ -108,13 +106,12 @@ func ExampleTagValuesClient_CreateTagValue() {
 }
 
 func ExampleTagValuesClient_UpdateTagValue() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewTagValuesClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.UpdateTagValueRequest{
 		// TODO: Fill request struct fields.
@@ -133,13 +130,12 @@ func ExampleTagValuesClient_UpdateTagValue() {
 }
 
 func ExampleTagValuesClient_DeleteTagValue() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewTagValuesClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.DeleteTagValueRequest{
 		// TODO: Fill request struct fields.
@@ -158,13 +154,12 @@ func ExampleTagValuesClient_DeleteTagValue() {
 }
 
 func ExampleTagValuesClient_GetIamPolicy() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewTagValuesClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.GetIamPolicyRequest{
 		// TODO: Fill request struct fields.
@@ -178,13 +173,12 @@ func ExampleTagValuesClient_GetIamPolicy() {
 }
 
 func ExampleTagValuesClient_SetIamPolicy() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewTagValuesClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.SetIamPolicyRequest{
 		// TODO: Fill request struct fields.
@@ -198,13 +192,12 @@ func ExampleTagValuesClient_SetIamPolicy() {
 }
 
 func ExampleTagValuesClient_TestIamPermissions() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewTagValuesClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.TestIamPermissionsRequest{
 		// TODO: Fill request struct fields.

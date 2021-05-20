@@ -30,18 +30,19 @@ func ExampleNewStreamingVideoIntelligenceClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleStreamingVideoIntelligenceClient_StreamingAnnotateVideo() {
-	// import videointelligencepb "google.golang.org/genproto/googleapis/cloud/videointelligence/v1p3beta1"
-
 	ctx := context.Background()
 	c, err := videointelligence.NewStreamingVideoIntelligenceClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 	stream, err := c.StreamingAnnotateVideo(ctx)
 	if err != nil {
 		// TODO: Handle error.

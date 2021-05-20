@@ -45,7 +45,7 @@ type CallOptions struct {
 	ReadModifyWriteRow []gax.CallOption
 }
 
-func defaultClientOptions() []option.ClientOption {
+func defaultGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("bigtable.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("bigtable.mtls.googleapis.com:443"),
@@ -119,32 +119,123 @@ func defaultCallOptions() *CallOptions {
 	}
 }
 
+// internalClient is an interface that defines the methods availaible from Cloud Bigtable API.
+type internalClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	ReadRows(context.Context, *bigtablepb.ReadRowsRequest, ...gax.CallOption) (bigtablepb.Bigtable_ReadRowsClient, error)
+	SampleRowKeys(context.Context, *bigtablepb.SampleRowKeysRequest, ...gax.CallOption) (bigtablepb.Bigtable_SampleRowKeysClient, error)
+	MutateRow(context.Context, *bigtablepb.MutateRowRequest, ...gax.CallOption) (*bigtablepb.MutateRowResponse, error)
+	MutateRows(context.Context, *bigtablepb.MutateRowsRequest, ...gax.CallOption) (bigtablepb.Bigtable_MutateRowsClient, error)
+	CheckAndMutateRow(context.Context, *bigtablepb.CheckAndMutateRowRequest, ...gax.CallOption) (*bigtablepb.CheckAndMutateRowResponse, error)
+	ReadModifyWriteRow(context.Context, *bigtablepb.ReadModifyWriteRowRequest, ...gax.CallOption) (*bigtablepb.ReadModifyWriteRowResponse, error)
+}
+
 // Client is a client for interacting with Cloud Bigtable API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Service for reading from and writing to existing Bigtable tables.
+type Client struct {
+	// The internal transport-dependent client.
+	internalClient internalClient
+
+	// The call options for this service.
+	CallOptions *CallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *Client) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *Client) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *Client) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// ReadRows streams back the contents of all requested rows in key order, optionally
+// applying the same Reader filter to each. Depending on their size,
+// rows and cells may be broken up across multiple responses, but
+// atomicity of each row will still be preserved. See the
+// ReadRowsResponse documentation for details.
+func (c *Client) ReadRows(ctx context.Context, req *bigtablepb.ReadRowsRequest, opts ...gax.CallOption) (bigtablepb.Bigtable_ReadRowsClient, error) {
+	return c.internalClient.ReadRows(ctx, req, opts...)
+}
+
+// SampleRowKeys returns a sample of row keys in the table. The returned row keys will
+// delimit contiguous sections of the table of approximately equal size,
+// which can be used to break up the data for distributed tasks like
+// mapreduces.
+func (c *Client) SampleRowKeys(ctx context.Context, req *bigtablepb.SampleRowKeysRequest, opts ...gax.CallOption) (bigtablepb.Bigtable_SampleRowKeysClient, error) {
+	return c.internalClient.SampleRowKeys(ctx, req, opts...)
+}
+
+// MutateRow mutates a row atomically. Cells already present in the row are left
+// unchanged unless explicitly changed by mutation.
+func (c *Client) MutateRow(ctx context.Context, req *bigtablepb.MutateRowRequest, opts ...gax.CallOption) (*bigtablepb.MutateRowResponse, error) {
+	return c.internalClient.MutateRow(ctx, req, opts...)
+}
+
+// MutateRows mutates multiple rows in a batch. Each individual row is mutated
+// atomically as in MutateRow, but the entire batch is not executed
+// atomically.
+func (c *Client) MutateRows(ctx context.Context, req *bigtablepb.MutateRowsRequest, opts ...gax.CallOption) (bigtablepb.Bigtable_MutateRowsClient, error) {
+	return c.internalClient.MutateRows(ctx, req, opts...)
+}
+
+// CheckAndMutateRow mutates a row atomically based on the output of a predicate Reader filter.
+func (c *Client) CheckAndMutateRow(ctx context.Context, req *bigtablepb.CheckAndMutateRowRequest, opts ...gax.CallOption) (*bigtablepb.CheckAndMutateRowResponse, error) {
+	return c.internalClient.CheckAndMutateRow(ctx, req, opts...)
+}
+
+// ReadModifyWriteRow modifies a row atomically on the server. The method reads the latest
+// existing timestamp and value from the specified columns and writes a new
+// entry based on pre-defined read/modify/write rules. The new value for the
+// timestamp is the greater of the existing timestamp or the current server
+// time. The method returns the new contents of all modified cells.
+func (c *Client) ReadModifyWriteRow(ctx context.Context, req *bigtablepb.ReadModifyWriteRowRequest, opts ...gax.CallOption) (*bigtablepb.ReadModifyWriteRowResponse, error) {
+	return c.internalClient.ReadModifyWriteRow(ctx, req, opts...)
+}
+
+// gRPCClient is a client for interacting with Cloud Bigtable API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type Client struct {
+type gRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing Client
+	CallOptions **CallOptions
+
 	// The gRPC API client.
 	client bigtablepb.BigtableClient
-
-	// The call options for this service.
-	CallOptions *CallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewClient creates a new bigtable client.
+// NewClient creates a new bigtable client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service for reading from and writing to existing Bigtable tables.
 func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
-	clientOpts := defaultClientOptions()
-
+	clientOpts := defaultGRPCClientOptions()
 	if newClientHook != nil {
 		hookOpts, err := newClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -162,49 +253,46 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 	if err != nil {
 		return nil, err
 	}
-	c := &Client{
+	client := Client{CallOptions: defaultCallOptions()}
+
+	c := &gRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultCallOptions(),
-
-		client: bigtablepb.NewBigtableClient(connPool),
+		client:           bigtablepb.NewBigtableClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *Client) Connection() *grpc.ClientConn {
+func (c *gRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *Client) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *Client) setGoogleClientInfo(keyval ...string) {
+func (c *gRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// ReadRows streams back the contents of all requested rows in key order, optionally
-// applying the same Reader filter to each. Depending on their size,
-// rows and cells may be broken up across multiple responses, but
-// atomicity of each row will still be preserved. See the
-// ReadRowsResponse documentation for details.
-func (c *Client) ReadRows(ctx context.Context, req *bigtablepb.ReadRowsRequest, opts ...gax.CallOption) (bigtablepb.Bigtable_ReadRowsClient, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *gRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *gRPCClient) ReadRows(ctx context.Context, req *bigtablepb.ReadRowsRequest, opts ...gax.CallOption) (bigtablepb.Bigtable_ReadRowsClient, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "table_name", url.QueryEscape(req.GetTableName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ReadRows[0:len(c.CallOptions.ReadRows):len(c.CallOptions.ReadRows)], opts...)
 	var resp bigtablepb.Bigtable_ReadRowsClient
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -217,14 +305,9 @@ func (c *Client) ReadRows(ctx context.Context, req *bigtablepb.ReadRowsRequest, 
 	return resp, nil
 }
 
-// SampleRowKeys returns a sample of row keys in the table. The returned row keys will
-// delimit contiguous sections of the table of approximately equal size,
-// which can be used to break up the data for distributed tasks like
-// mapreduces.
-func (c *Client) SampleRowKeys(ctx context.Context, req *bigtablepb.SampleRowKeysRequest, opts ...gax.CallOption) (bigtablepb.Bigtable_SampleRowKeysClient, error) {
+func (c *gRPCClient) SampleRowKeys(ctx context.Context, req *bigtablepb.SampleRowKeysRequest, opts ...gax.CallOption) (bigtablepb.Bigtable_SampleRowKeysClient, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "table_name", url.QueryEscape(req.GetTableName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SampleRowKeys[0:len(c.CallOptions.SampleRowKeys):len(c.CallOptions.SampleRowKeys)], opts...)
 	var resp bigtablepb.Bigtable_SampleRowKeysClient
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -237,9 +320,7 @@ func (c *Client) SampleRowKeys(ctx context.Context, req *bigtablepb.SampleRowKey
 	return resp, nil
 }
 
-// MutateRow mutates a row atomically. Cells already present in the row are left
-// unchanged unless explicitly changed by mutation.
-func (c *Client) MutateRow(ctx context.Context, req *bigtablepb.MutateRowRequest, opts ...gax.CallOption) (*bigtablepb.MutateRowResponse, error) {
+func (c *gRPCClient) MutateRow(ctx context.Context, req *bigtablepb.MutateRowRequest, opts ...gax.CallOption) (*bigtablepb.MutateRowResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -247,7 +328,7 @@ func (c *Client) MutateRow(ctx context.Context, req *bigtablepb.MutateRowRequest
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "table_name", url.QueryEscape(req.GetTableName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.MutateRow[0:len(c.CallOptions.MutateRow):len(c.CallOptions.MutateRow)], opts...)
+	opts = append((*c.CallOptions).MutateRow[0:len((*c.CallOptions).MutateRow):len((*c.CallOptions).MutateRow)], opts...)
 	var resp *bigtablepb.MutateRowResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -260,13 +341,9 @@ func (c *Client) MutateRow(ctx context.Context, req *bigtablepb.MutateRowRequest
 	return resp, nil
 }
 
-// MutateRows mutates multiple rows in a batch. Each individual row is mutated
-// atomically as in MutateRow, but the entire batch is not executed
-// atomically.
-func (c *Client) MutateRows(ctx context.Context, req *bigtablepb.MutateRowsRequest, opts ...gax.CallOption) (bigtablepb.Bigtable_MutateRowsClient, error) {
+func (c *gRPCClient) MutateRows(ctx context.Context, req *bigtablepb.MutateRowsRequest, opts ...gax.CallOption) (bigtablepb.Bigtable_MutateRowsClient, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "table_name", url.QueryEscape(req.GetTableName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.MutateRows[0:len(c.CallOptions.MutateRows):len(c.CallOptions.MutateRows)], opts...)
 	var resp bigtablepb.Bigtable_MutateRowsClient
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -279,8 +356,7 @@ func (c *Client) MutateRows(ctx context.Context, req *bigtablepb.MutateRowsReque
 	return resp, nil
 }
 
-// CheckAndMutateRow mutates a row atomically based on the output of a predicate Reader filter.
-func (c *Client) CheckAndMutateRow(ctx context.Context, req *bigtablepb.CheckAndMutateRowRequest, opts ...gax.CallOption) (*bigtablepb.CheckAndMutateRowResponse, error) {
+func (c *gRPCClient) CheckAndMutateRow(ctx context.Context, req *bigtablepb.CheckAndMutateRowRequest, opts ...gax.CallOption) (*bigtablepb.CheckAndMutateRowResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 20000*time.Millisecond)
 		defer cancel()
@@ -288,7 +364,7 @@ func (c *Client) CheckAndMutateRow(ctx context.Context, req *bigtablepb.CheckAnd
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "table_name", url.QueryEscape(req.GetTableName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CheckAndMutateRow[0:len(c.CallOptions.CheckAndMutateRow):len(c.CallOptions.CheckAndMutateRow)], opts...)
+	opts = append((*c.CallOptions).CheckAndMutateRow[0:len((*c.CallOptions).CheckAndMutateRow):len((*c.CallOptions).CheckAndMutateRow)], opts...)
 	var resp *bigtablepb.CheckAndMutateRowResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -301,12 +377,7 @@ func (c *Client) CheckAndMutateRow(ctx context.Context, req *bigtablepb.CheckAnd
 	return resp, nil
 }
 
-// ReadModifyWriteRow modifies a row atomically on the server. The method reads the latest
-// existing timestamp and value from the specified columns and writes a new
-// entry based on pre-defined read/modify/write rules. The new value for the
-// timestamp is the greater of the existing timestamp or the current server
-// time. The method returns the new contents of all modified cells.
-func (c *Client) ReadModifyWriteRow(ctx context.Context, req *bigtablepb.ReadModifyWriteRowRequest, opts ...gax.CallOption) (*bigtablepb.ReadModifyWriteRowResponse, error) {
+func (c *gRPCClient) ReadModifyWriteRow(ctx context.Context, req *bigtablepb.ReadModifyWriteRowRequest, opts ...gax.CallOption) (*bigtablepb.ReadModifyWriteRowResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 20000*time.Millisecond)
 		defer cancel()
@@ -314,7 +385,7 @@ func (c *Client) ReadModifyWriteRow(ctx context.Context, req *bigtablepb.ReadMod
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "table_name", url.QueryEscape(req.GetTableName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ReadModifyWriteRow[0:len(c.CallOptions.ReadModifyWriteRow):len(c.CallOptions.ReadModifyWriteRow)], opts...)
+	opts = append((*c.CallOptions).ReadModifyWriteRow[0:len((*c.CallOptions).ReadModifyWriteRow):len((*c.CallOptions).ReadModifyWriteRow)], opts...)
 	var resp *bigtablepb.ReadModifyWriteRowResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

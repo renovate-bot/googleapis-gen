@@ -46,7 +46,7 @@ type CallOptions struct {
 	ReserveIds       []gax.CallOption
 }
 
-func defaultClientOptions() []option.ClientOption {
+func defaultGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("datastore.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("datastore.mtls.googleapis.com:443"),
@@ -103,27 +103,119 @@ func defaultCallOptions() *CallOptions {
 	}
 }
 
+// internalClient is an interface that defines the methods availaible from Cloud Datastore API.
+type internalClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	Lookup(context.Context, *datastorepb.LookupRequest, ...gax.CallOption) (*datastorepb.LookupResponse, error)
+	RunQuery(context.Context, *datastorepb.RunQueryRequest, ...gax.CallOption) (*datastorepb.RunQueryResponse, error)
+	BeginTransaction(context.Context, *datastorepb.BeginTransactionRequest, ...gax.CallOption) (*datastorepb.BeginTransactionResponse, error)
+	Commit(context.Context, *datastorepb.CommitRequest, ...gax.CallOption) (*datastorepb.CommitResponse, error)
+	Rollback(context.Context, *datastorepb.RollbackRequest, ...gax.CallOption) (*datastorepb.RollbackResponse, error)
+	AllocateIds(context.Context, *datastorepb.AllocateIdsRequest, ...gax.CallOption) (*datastorepb.AllocateIdsResponse, error)
+	ReserveIds(context.Context, *datastorepb.ReserveIdsRequest, ...gax.CallOption) (*datastorepb.ReserveIdsResponse, error)
+}
+
 // Client is a client for interacting with Cloud Datastore API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Each RPC normalizes the partition IDs of the keys in its input entities,
+// and always returns entities with keys with normalized partition IDs.
+// This applies to all keys and entities, including those in values, except keys
+// with both an empty path and an empty or unset partition ID. Normalization of
+// input keys sets the project ID (if not already set) to the project ID from
+// the request.
+type Client struct {
+	// The internal transport-dependent client.
+	internalClient internalClient
+
+	// The call options for this service.
+	CallOptions *CallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *Client) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *Client) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *Client) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// Lookup looks up entities by key.
+func (c *Client) Lookup(ctx context.Context, req *datastorepb.LookupRequest, opts ...gax.CallOption) (*datastorepb.LookupResponse, error) {
+	return c.internalClient.Lookup(ctx, req, opts...)
+}
+
+// RunQuery queries for entities.
+func (c *Client) RunQuery(ctx context.Context, req *datastorepb.RunQueryRequest, opts ...gax.CallOption) (*datastorepb.RunQueryResponse, error) {
+	return c.internalClient.RunQuery(ctx, req, opts...)
+}
+
+// BeginTransaction begins a new transaction.
+func (c *Client) BeginTransaction(ctx context.Context, req *datastorepb.BeginTransactionRequest, opts ...gax.CallOption) (*datastorepb.BeginTransactionResponse, error) {
+	return c.internalClient.BeginTransaction(ctx, req, opts...)
+}
+
+// Commit commits a transaction, optionally creating, deleting or modifying some
+// entities.
+func (c *Client) Commit(ctx context.Context, req *datastorepb.CommitRequest, opts ...gax.CallOption) (*datastorepb.CommitResponse, error) {
+	return c.internalClient.Commit(ctx, req, opts...)
+}
+
+// Rollback rolls back a transaction.
+func (c *Client) Rollback(ctx context.Context, req *datastorepb.RollbackRequest, opts ...gax.CallOption) (*datastorepb.RollbackResponse, error) {
+	return c.internalClient.Rollback(ctx, req, opts...)
+}
+
+// AllocateIds allocates IDs for the given keys, which is useful for referencing an entity
+// before it is inserted.
+func (c *Client) AllocateIds(ctx context.Context, req *datastorepb.AllocateIdsRequest, opts ...gax.CallOption) (*datastorepb.AllocateIdsResponse, error) {
+	return c.internalClient.AllocateIds(ctx, req, opts...)
+}
+
+// ReserveIds prevents the supplied keys’ IDs from being auto-allocated by Cloud
+// Datastore.
+func (c *Client) ReserveIds(ctx context.Context, req *datastorepb.ReserveIdsRequest, opts ...gax.CallOption) (*datastorepb.ReserveIdsResponse, error) {
+	return c.internalClient.ReserveIds(ctx, req, opts...)
+}
+
+// gRPCClient is a client for interacting with Cloud Datastore API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type Client struct {
+type gRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing Client
+	CallOptions **CallOptions
+
 	// The gRPC API client.
 	client datastorepb.DatastoreClient
-
-	// The call options for this service.
-	CallOptions *CallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewClient creates a new datastore client.
+// NewClient creates a new datastore client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Each RPC normalizes the partition IDs of the keys in its input entities,
 // and always returns entities with keys with normalized partition IDs.
@@ -132,8 +224,7 @@ type Client struct {
 // input keys sets the project ID (if not already set) to the project ID from
 // the request.
 func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
-	clientOpts := defaultClientOptions()
-
+	clientOpts := defaultGRPCClientOptions()
 	if newClientHook != nil {
 		hookOpts, err := newClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -151,42 +242,44 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 	if err != nil {
 		return nil, err
 	}
-	c := &Client{
+	client := Client{CallOptions: defaultCallOptions()}
+
+	c := &gRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultCallOptions(),
-
-		client: datastorepb.NewDatastoreClient(connPool),
+		client:           datastorepb.NewDatastoreClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *Client) Connection() *grpc.ClientConn {
+func (c *gRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *Client) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *Client) setGoogleClientInfo(keyval ...string) {
+func (c *gRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// Lookup looks up entities by key.
-func (c *Client) Lookup(ctx context.Context, req *datastorepb.LookupRequest, opts ...gax.CallOption) (*datastorepb.LookupResponse, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *gRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *gRPCClient) Lookup(ctx context.Context, req *datastorepb.LookupRequest, opts ...gax.CallOption) (*datastorepb.LookupResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -194,7 +287,7 @@ func (c *Client) Lookup(ctx context.Context, req *datastorepb.LookupRequest, opt
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "project_id", url.QueryEscape(req.GetProjectId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.Lookup[0:len(c.CallOptions.Lookup):len(c.CallOptions.Lookup)], opts...)
+	opts = append((*c.CallOptions).Lookup[0:len((*c.CallOptions).Lookup):len((*c.CallOptions).Lookup)], opts...)
 	var resp *datastorepb.LookupResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -207,8 +300,7 @@ func (c *Client) Lookup(ctx context.Context, req *datastorepb.LookupRequest, opt
 	return resp, nil
 }
 
-// RunQuery queries for entities.
-func (c *Client) RunQuery(ctx context.Context, req *datastorepb.RunQueryRequest, opts ...gax.CallOption) (*datastorepb.RunQueryResponse, error) {
+func (c *gRPCClient) RunQuery(ctx context.Context, req *datastorepb.RunQueryRequest, opts ...gax.CallOption) (*datastorepb.RunQueryResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -216,7 +308,7 @@ func (c *Client) RunQuery(ctx context.Context, req *datastorepb.RunQueryRequest,
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "project_id", url.QueryEscape(req.GetProjectId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.RunQuery[0:len(c.CallOptions.RunQuery):len(c.CallOptions.RunQuery)], opts...)
+	opts = append((*c.CallOptions).RunQuery[0:len((*c.CallOptions).RunQuery):len((*c.CallOptions).RunQuery)], opts...)
 	var resp *datastorepb.RunQueryResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -229,8 +321,7 @@ func (c *Client) RunQuery(ctx context.Context, req *datastorepb.RunQueryRequest,
 	return resp, nil
 }
 
-// BeginTransaction begins a new transaction.
-func (c *Client) BeginTransaction(ctx context.Context, req *datastorepb.BeginTransactionRequest, opts ...gax.CallOption) (*datastorepb.BeginTransactionResponse, error) {
+func (c *gRPCClient) BeginTransaction(ctx context.Context, req *datastorepb.BeginTransactionRequest, opts ...gax.CallOption) (*datastorepb.BeginTransactionResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -238,7 +329,7 @@ func (c *Client) BeginTransaction(ctx context.Context, req *datastorepb.BeginTra
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "project_id", url.QueryEscape(req.GetProjectId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.BeginTransaction[0:len(c.CallOptions.BeginTransaction):len(c.CallOptions.BeginTransaction)], opts...)
+	opts = append((*c.CallOptions).BeginTransaction[0:len((*c.CallOptions).BeginTransaction):len((*c.CallOptions).BeginTransaction)], opts...)
 	var resp *datastorepb.BeginTransactionResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -251,9 +342,7 @@ func (c *Client) BeginTransaction(ctx context.Context, req *datastorepb.BeginTra
 	return resp, nil
 }
 
-// Commit commits a transaction, optionally creating, deleting or modifying some
-// entities.
-func (c *Client) Commit(ctx context.Context, req *datastorepb.CommitRequest, opts ...gax.CallOption) (*datastorepb.CommitResponse, error) {
+func (c *gRPCClient) Commit(ctx context.Context, req *datastorepb.CommitRequest, opts ...gax.CallOption) (*datastorepb.CommitResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -261,7 +350,7 @@ func (c *Client) Commit(ctx context.Context, req *datastorepb.CommitRequest, opt
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "project_id", url.QueryEscape(req.GetProjectId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.Commit[0:len(c.CallOptions.Commit):len(c.CallOptions.Commit)], opts...)
+	opts = append((*c.CallOptions).Commit[0:len((*c.CallOptions).Commit):len((*c.CallOptions).Commit)], opts...)
 	var resp *datastorepb.CommitResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -274,8 +363,7 @@ func (c *Client) Commit(ctx context.Context, req *datastorepb.CommitRequest, opt
 	return resp, nil
 }
 
-// Rollback rolls back a transaction.
-func (c *Client) Rollback(ctx context.Context, req *datastorepb.RollbackRequest, opts ...gax.CallOption) (*datastorepb.RollbackResponse, error) {
+func (c *gRPCClient) Rollback(ctx context.Context, req *datastorepb.RollbackRequest, opts ...gax.CallOption) (*datastorepb.RollbackResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -283,7 +371,7 @@ func (c *Client) Rollback(ctx context.Context, req *datastorepb.RollbackRequest,
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "project_id", url.QueryEscape(req.GetProjectId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.Rollback[0:len(c.CallOptions.Rollback):len(c.CallOptions.Rollback)], opts...)
+	opts = append((*c.CallOptions).Rollback[0:len((*c.CallOptions).Rollback):len((*c.CallOptions).Rollback)], opts...)
 	var resp *datastorepb.RollbackResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -296,9 +384,7 @@ func (c *Client) Rollback(ctx context.Context, req *datastorepb.RollbackRequest,
 	return resp, nil
 }
 
-// AllocateIds allocates IDs for the given keys, which is useful for referencing an entity
-// before it is inserted.
-func (c *Client) AllocateIds(ctx context.Context, req *datastorepb.AllocateIdsRequest, opts ...gax.CallOption) (*datastorepb.AllocateIdsResponse, error) {
+func (c *gRPCClient) AllocateIds(ctx context.Context, req *datastorepb.AllocateIdsRequest, opts ...gax.CallOption) (*datastorepb.AllocateIdsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -306,7 +392,7 @@ func (c *Client) AllocateIds(ctx context.Context, req *datastorepb.AllocateIdsRe
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "project_id", url.QueryEscape(req.GetProjectId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.AllocateIds[0:len(c.CallOptions.AllocateIds):len(c.CallOptions.AllocateIds)], opts...)
+	opts = append((*c.CallOptions).AllocateIds[0:len((*c.CallOptions).AllocateIds):len((*c.CallOptions).AllocateIds)], opts...)
 	var resp *datastorepb.AllocateIdsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -319,9 +405,7 @@ func (c *Client) AllocateIds(ctx context.Context, req *datastorepb.AllocateIdsRe
 	return resp, nil
 }
 
-// ReserveIds prevents the supplied keys’ IDs from being auto-allocated by Cloud
-// Datastore.
-func (c *Client) ReserveIds(ctx context.Context, req *datastorepb.ReserveIdsRequest, opts ...gax.CallOption) (*datastorepb.ReserveIdsResponse, error) {
+func (c *gRPCClient) ReserveIds(ctx context.Context, req *datastorepb.ReserveIdsRequest, opts ...gax.CallOption) (*datastorepb.ReserveIdsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -329,7 +413,7 @@ func (c *Client) ReserveIds(ctx context.Context, req *datastorepb.ReserveIdsRequ
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "project_id", url.QueryEscape(req.GetProjectId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ReserveIds[0:len(c.CallOptions.ReserveIds):len(c.CallOptions.ReserveIds)], opts...)
+	opts = append((*c.CallOptions).ReserveIds[0:len((*c.CallOptions).ReserveIds):len((*c.CallOptions).ReserveIds)], opts...)
 	var resp *datastorepb.ReserveIdsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

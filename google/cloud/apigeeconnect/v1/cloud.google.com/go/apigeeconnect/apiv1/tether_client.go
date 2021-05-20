@@ -36,7 +36,7 @@ type TetherCallOptions struct {
 	Egress []gax.CallOption
 }
 
-func defaultTetherClientOptions() []option.ClientOption {
+func defaultTetherGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("apigeeconnect.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("apigeeconnect.mtls.googleapis.com:443"),
@@ -54,34 +54,89 @@ func defaultTetherCallOptions() *TetherCallOptions {
 	}
 }
 
+// internalTetherClient is an interface that defines the methods availaible from Apigee Connect API.
+type internalTetherClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	Egress(context.Context, ...gax.CallOption) (apigeeconnectpb.Tether_EgressClient, error)
+}
+
 // TetherClient is a client for interacting with Apigee Connect API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Tether provides a way for the control plane to send HTTP API requests to
+// services in data planes that runs in a remote datacenter without
+// requiring customers to open firewalls on their runtime plane.
+type TetherClient struct {
+	// The internal transport-dependent client.
+	internalClient internalTetherClient
+
+	// The call options for this service.
+	CallOptions *TetherCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *TetherClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *TetherClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *TetherClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// Egress egress streams egress requests and responses. Logically, this is not
+// actually a streaming request, but uses streaming as a mechanism to flip
+// the client-server relationship of gRPC so that the server can act as a
+// client.
+// The listener, the RPC server, accepts connections from the dialer,
+// the RPC client.
+// The listener streams http requests and the dialer streams http responses.
+func (c *TetherClient) Egress(ctx context.Context, opts ...gax.CallOption) (apigeeconnectpb.Tether_EgressClient, error) {
+	return c.internalClient.Egress(ctx, opts...)
+}
+
+// tetherGRPCClient is a client for interacting with Apigee Connect API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type TetherClient struct {
+type tetherGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing TetherClient
+	CallOptions **TetherCallOptions
+
 	// The gRPC API client.
 	tetherClient apigeeconnectpb.TetherClient
-
-	// The call options for this service.
-	CallOptions *TetherCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewTetherClient creates a new tether client.
+// NewTetherClient creates a new tether client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Tether provides a way for the control plane to send HTTP API requests to
 // services in data planes that runs in a remote datacenter without
 // requiring customers to open firewalls on their runtime plane.
 func NewTetherClient(ctx context.Context, opts ...option.ClientOption) (*TetherClient, error) {
-	clientOpts := defaultTetherClientOptions()
-
+	clientOpts := defaultTetherGRPCClientOptions()
 	if newTetherClientHook != nil {
 		hookOpts, err := newTetherClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -99,51 +154,47 @@ func NewTetherClient(ctx context.Context, opts ...option.ClientOption) (*TetherC
 	if err != nil {
 		return nil, err
 	}
-	c := &TetherClient{
+	client := TetherClient{CallOptions: defaultTetherCallOptions()}
+
+	c := &tetherGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultTetherCallOptions(),
-
-		tetherClient: apigeeconnectpb.NewTetherClient(connPool),
+		tetherClient:     apigeeconnectpb.NewTetherClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *TetherClient) Connection() *grpc.ClientConn {
+func (c *tetherGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *TetherClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *TetherClient) setGoogleClientInfo(keyval ...string) {
+func (c *tetherGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// Egress egress streams egress requests and responses. Logically, this is not
-// actually a streaming request, but uses streaming as a mechanism to flip
-// the client-server relationship of gRPC so that the server can act as a
-// client.
-// The listener, the RPC server, accepts connections from the dialer,
-// the RPC client.
-// The listener streams http requests and the dialer streams http responses.
-func (c *TetherClient) Egress(ctx context.Context, opts ...gax.CallOption) (apigeeconnectpb.Tether_EgressClient, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *tetherGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *tetherGRPCClient) Egress(ctx context.Context, opts ...gax.CallOption) (apigeeconnectpb.Tether_EgressClient, error) {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.Egress[0:len(c.CallOptions.Egress):len(c.CallOptions.Egress)], opts...)
 	var resp apigeeconnectpb.Tether_EgressClient
+	opts = append((*c.CallOptions).Egress[0:len((*c.CallOptions).Egress):len((*c.CallOptions).Egress)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.tetherClient.Egress(ctx, settings.GRPC...)

@@ -41,7 +41,7 @@ type TraceCallOptions struct {
 	CreateSpan      []gax.CallOption
 }
 
-func defaultTraceClientOptions() []option.ClientOption {
+func defaultTraceGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("cloudtrace.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("cloudtrace.mtls.googleapis.com:443"),
@@ -71,27 +71,86 @@ func defaultTraceCallOptions() *TraceCallOptions {
 	}
 }
 
+// internalTraceClient is an interface that defines the methods availaible from Stackdriver Trace API.
+type internalTraceClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	BatchWriteSpans(context.Context, *cloudtracepb.BatchWriteSpansRequest, ...gax.CallOption) error
+	CreateSpan(context.Context, *cloudtracepb.Span, ...gax.CallOption) (*cloudtracepb.Span, error)
+}
+
 // TraceClient is a client for interacting with Stackdriver Trace API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// This file describes an API for collecting and viewing traces and spans
+// within a trace.  A Trace is a collection of spans corresponding to a single
+// operation or set of operations for an application. A span is an individual
+// timed event which forms a node of the trace tree. A single trace may
+// contain span(s) from multiple services.
+type TraceClient struct {
+	// The internal transport-dependent client.
+	internalClient internalTraceClient
+
+	// The call options for this service.
+	CallOptions *TraceCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *TraceClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *TraceClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *TraceClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// BatchWriteSpans sends new spans to new or existing traces. You cannot update
+// existing spans.
+func (c *TraceClient) BatchWriteSpans(ctx context.Context, req *cloudtracepb.BatchWriteSpansRequest, opts ...gax.CallOption) error {
+	return c.internalClient.BatchWriteSpans(ctx, req, opts...)
+}
+
+// CreateSpan creates a new span.
+func (c *TraceClient) CreateSpan(ctx context.Context, req *cloudtracepb.Span, opts ...gax.CallOption) (*cloudtracepb.Span, error) {
+	return c.internalClient.CreateSpan(ctx, req, opts...)
+}
+
+// traceGRPCClient is a client for interacting with Stackdriver Trace API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type TraceClient struct {
+type traceGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing TraceClient
+	CallOptions **TraceCallOptions
+
 	// The gRPC API client.
 	traceClient cloudtracepb.TraceServiceClient
-
-	// The call options for this service.
-	CallOptions *TraceCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewTraceClient creates a new trace service client.
+// NewTraceClient creates a new trace service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // This file describes an API for collecting and viewing traces and spans
 // within a trace.  A Trace is a collection of spans corresponding to a single
@@ -99,8 +158,7 @@ type TraceClient struct {
 // timed event which forms a node of the trace tree. A single trace may
 // contain span(s) from multiple services.
 func NewTraceClient(ctx context.Context, opts ...option.ClientOption) (*TraceClient, error) {
-	clientOpts := defaultTraceClientOptions()
-
+	clientOpts := defaultTraceGRPCClientOptions()
 	if newTraceClientHook != nil {
 		hookOpts, err := newTraceClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -118,43 +176,44 @@ func NewTraceClient(ctx context.Context, opts ...option.ClientOption) (*TraceCli
 	if err != nil {
 		return nil, err
 	}
-	c := &TraceClient{
+	client := TraceClient{CallOptions: defaultTraceCallOptions()}
+
+	c := &traceGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultTraceCallOptions(),
-
-		traceClient: cloudtracepb.NewTraceServiceClient(connPool),
+		traceClient:      cloudtracepb.NewTraceServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *TraceClient) Connection() *grpc.ClientConn {
+func (c *traceGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *TraceClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *TraceClient) setGoogleClientInfo(keyval ...string) {
+func (c *traceGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// BatchWriteSpans sends new spans to new or existing traces. You cannot update
-// existing spans.
-func (c *TraceClient) BatchWriteSpans(ctx context.Context, req *cloudtracepb.BatchWriteSpansRequest, opts ...gax.CallOption) error {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *traceGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *traceGRPCClient) BatchWriteSpans(ctx context.Context, req *cloudtracepb.BatchWriteSpansRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 120000*time.Millisecond)
 		defer cancel()
@@ -162,7 +221,7 @@ func (c *TraceClient) BatchWriteSpans(ctx context.Context, req *cloudtracepb.Bat
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.BatchWriteSpans[0:len(c.CallOptions.BatchWriteSpans):len(c.CallOptions.BatchWriteSpans)], opts...)
+	opts = append((*c.CallOptions).BatchWriteSpans[0:len((*c.CallOptions).BatchWriteSpans):len((*c.CallOptions).BatchWriteSpans)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.traceClient.BatchWriteSpans(ctx, req, settings.GRPC...)
@@ -171,8 +230,7 @@ func (c *TraceClient) BatchWriteSpans(ctx context.Context, req *cloudtracepb.Bat
 	return err
 }
 
-// CreateSpan creates a new span.
-func (c *TraceClient) CreateSpan(ctx context.Context, req *cloudtracepb.Span, opts ...gax.CallOption) (*cloudtracepb.Span, error) {
+func (c *traceGRPCClient) CreateSpan(ctx context.Context, req *cloudtracepb.Span, opts ...gax.CallOption) (*cloudtracepb.Span, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 120000*time.Millisecond)
 		defer cancel()
@@ -180,7 +238,7 @@ func (c *TraceClient) CreateSpan(ctx context.Context, req *cloudtracepb.Span, op
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateSpan[0:len(c.CallOptions.CreateSpan):len(c.CallOptions.CreateSpan)], opts...)
+	opts = append((*c.CallOptions).CreateSpan[0:len((*c.CallOptions).CreateSpan):len((*c.CallOptions).CreateSpan)], opts...)
 	var resp *cloudtracepb.Span
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

@@ -29,18 +29,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_MutateRow() {
-	// import bigtablepb "google.golang.org/genproto/googleapis/bigtable/v2"
-
 	ctx := context.Background()
 	c, err := bigtable.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &bigtablepb.MutateRowRequest{
 		// TODO: Fill request struct fields.
@@ -54,13 +55,12 @@ func ExampleClient_MutateRow() {
 }
 
 func ExampleClient_CheckAndMutateRow() {
-	// import bigtablepb "google.golang.org/genproto/googleapis/bigtable/v2"
-
 	ctx := context.Background()
 	c, err := bigtable.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &bigtablepb.CheckAndMutateRowRequest{
 		// TODO: Fill request struct fields.
@@ -74,13 +74,12 @@ func ExampleClient_CheckAndMutateRow() {
 }
 
 func ExampleClient_ReadModifyWriteRow() {
-	// import bigtablepb "google.golang.org/genproto/googleapis/bigtable/v2"
-
 	ctx := context.Background()
 	c, err := bigtable.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &bigtablepb.ReadModifyWriteRowRequest{
 		// TODO: Fill request struct fields.

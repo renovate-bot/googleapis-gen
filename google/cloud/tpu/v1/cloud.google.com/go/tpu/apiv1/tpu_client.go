@@ -54,7 +54,7 @@ type CallOptions struct {
 	GetAcceleratorType     []gax.CallOption
 }
 
-func defaultClientOptions() []option.ClientOption {
+func defaultGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("tpu.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("tpu.mtls.googleapis.com:443"),
@@ -82,39 +82,188 @@ func defaultCallOptions() *CallOptions {
 	}
 }
 
+// internalClient is an interface that defines the methods availaible from Cloud TPU API.
+type internalClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	ListNodes(context.Context, *tpupb.ListNodesRequest, ...gax.CallOption) *NodeIterator
+	GetNode(context.Context, *tpupb.GetNodeRequest, ...gax.CallOption) (*tpupb.Node, error)
+	CreateNode(context.Context, *tpupb.CreateNodeRequest, ...gax.CallOption) (*CreateNodeOperation, error)
+	CreateNodeOperation(name string) *CreateNodeOperation
+	DeleteNode(context.Context, *tpupb.DeleteNodeRequest, ...gax.CallOption) (*DeleteNodeOperation, error)
+	DeleteNodeOperation(name string) *DeleteNodeOperation
+	ReimageNode(context.Context, *tpupb.ReimageNodeRequest, ...gax.CallOption) (*ReimageNodeOperation, error)
+	ReimageNodeOperation(name string) *ReimageNodeOperation
+	StopNode(context.Context, *tpupb.StopNodeRequest, ...gax.CallOption) (*StopNodeOperation, error)
+	StopNodeOperation(name string) *StopNodeOperation
+	StartNode(context.Context, *tpupb.StartNodeRequest, ...gax.CallOption) (*StartNodeOperation, error)
+	StartNodeOperation(name string) *StartNodeOperation
+	ListTensorFlowVersions(context.Context, *tpupb.ListTensorFlowVersionsRequest, ...gax.CallOption) *TensorFlowVersionIterator
+	GetTensorFlowVersion(context.Context, *tpupb.GetTensorFlowVersionRequest, ...gax.CallOption) (*tpupb.TensorFlowVersion, error)
+	ListAcceleratorTypes(context.Context, *tpupb.ListAcceleratorTypesRequest, ...gax.CallOption) *AcceleratorTypeIterator
+	GetAcceleratorType(context.Context, *tpupb.GetAcceleratorTypeRequest, ...gax.CallOption) (*tpupb.AcceleratorType, error)
+}
+
 // Client is a client for interacting with Cloud TPU API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Manages TPU nodes and other resources
+//
+// TPU API v1
+type Client struct {
+	// The internal transport-dependent client.
+	internalClient internalClient
+
+	// The call options for this service.
+	CallOptions *CallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *Client) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *Client) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *Client) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// ListNodes lists nodes.
+func (c *Client) ListNodes(ctx context.Context, req *tpupb.ListNodesRequest, opts ...gax.CallOption) *NodeIterator {
+	return c.internalClient.ListNodes(ctx, req, opts...)
+}
+
+// GetNode gets the details of a node.
+func (c *Client) GetNode(ctx context.Context, req *tpupb.GetNodeRequest, opts ...gax.CallOption) (*tpupb.Node, error) {
+	return c.internalClient.GetNode(ctx, req, opts...)
+}
+
+// CreateNode creates a node.
+func (c *Client) CreateNode(ctx context.Context, req *tpupb.CreateNodeRequest, opts ...gax.CallOption) (*CreateNodeOperation, error) {
+	return c.internalClient.CreateNode(ctx, req, opts...)
+}
+
+// CreateNodeOperation returns a new CreateNodeOperation from a given name.
+// The name must be that of a previously created CreateNodeOperation, possibly from a different process.
+func (c *Client) CreateNodeOperation(name string) *CreateNodeOperation {
+	return c.internalClient.CreateNodeOperation(name)
+}
+
+// DeleteNode deletes a node.
+func (c *Client) DeleteNode(ctx context.Context, req *tpupb.DeleteNodeRequest, opts ...gax.CallOption) (*DeleteNodeOperation, error) {
+	return c.internalClient.DeleteNode(ctx, req, opts...)
+}
+
+// DeleteNodeOperation returns a new DeleteNodeOperation from a given name.
+// The name must be that of a previously created DeleteNodeOperation, possibly from a different process.
+func (c *Client) DeleteNodeOperation(name string) *DeleteNodeOperation {
+	return c.internalClient.DeleteNodeOperation(name)
+}
+
+// ReimageNode reimages a node’s OS.
+func (c *Client) ReimageNode(ctx context.Context, req *tpupb.ReimageNodeRequest, opts ...gax.CallOption) (*ReimageNodeOperation, error) {
+	return c.internalClient.ReimageNode(ctx, req, opts...)
+}
+
+// ReimageNodeOperation returns a new ReimageNodeOperation from a given name.
+// The name must be that of a previously created ReimageNodeOperation, possibly from a different process.
+func (c *Client) ReimageNodeOperation(name string) *ReimageNodeOperation {
+	return c.internalClient.ReimageNodeOperation(name)
+}
+
+// StopNode stops a node.
+func (c *Client) StopNode(ctx context.Context, req *tpupb.StopNodeRequest, opts ...gax.CallOption) (*StopNodeOperation, error) {
+	return c.internalClient.StopNode(ctx, req, opts...)
+}
+
+// StopNodeOperation returns a new StopNodeOperation from a given name.
+// The name must be that of a previously created StopNodeOperation, possibly from a different process.
+func (c *Client) StopNodeOperation(name string) *StopNodeOperation {
+	return c.internalClient.StopNodeOperation(name)
+}
+
+// StartNode starts a node.
+func (c *Client) StartNode(ctx context.Context, req *tpupb.StartNodeRequest, opts ...gax.CallOption) (*StartNodeOperation, error) {
+	return c.internalClient.StartNode(ctx, req, opts...)
+}
+
+// StartNodeOperation returns a new StartNodeOperation from a given name.
+// The name must be that of a previously created StartNodeOperation, possibly from a different process.
+func (c *Client) StartNodeOperation(name string) *StartNodeOperation {
+	return c.internalClient.StartNodeOperation(name)
+}
+
+// ListTensorFlowVersions list TensorFlow versions supported by this API.
+func (c *Client) ListTensorFlowVersions(ctx context.Context, req *tpupb.ListTensorFlowVersionsRequest, opts ...gax.CallOption) *TensorFlowVersionIterator {
+	return c.internalClient.ListTensorFlowVersions(ctx, req, opts...)
+}
+
+// GetTensorFlowVersion gets TensorFlow Version.
+func (c *Client) GetTensorFlowVersion(ctx context.Context, req *tpupb.GetTensorFlowVersionRequest, opts ...gax.CallOption) (*tpupb.TensorFlowVersion, error) {
+	return c.internalClient.GetTensorFlowVersion(ctx, req, opts...)
+}
+
+// ListAcceleratorTypes lists accelerator types supported by this API.
+func (c *Client) ListAcceleratorTypes(ctx context.Context, req *tpupb.ListAcceleratorTypesRequest, opts ...gax.CallOption) *AcceleratorTypeIterator {
+	return c.internalClient.ListAcceleratorTypes(ctx, req, opts...)
+}
+
+// GetAcceleratorType gets AcceleratorType.
+func (c *Client) GetAcceleratorType(ctx context.Context, req *tpupb.GetAcceleratorTypeRequest, opts ...gax.CallOption) (*tpupb.AcceleratorType, error) {
+	return c.internalClient.GetAcceleratorType(ctx, req, opts...)
+}
+
+// gRPCClient is a client for interacting with Cloud TPU API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type Client struct {
+type gRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing Client
+	CallOptions **CallOptions
+
 	// The gRPC API client.
 	client tpupb.TpuClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *CallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewClient creates a new tpu client.
+// NewClient creates a new tpu client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Manages TPU nodes and other resources
 //
 // TPU API v1
 func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
-	clientOpts := defaultClientOptions()
-
+	clientOpts := defaultGRPCClientOptions()
 	if newClientHook != nil {
 		hookOpts, err := newClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -132,16 +281,19 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 	if err != nil {
 		return nil, err
 	}
-	c := &Client{
+	client := Client{CallOptions: defaultCallOptions()}
+
+	c := &gRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultCallOptions(),
-
-		client: tpupb.NewTpuClient(connPool),
+		client:           tpupb.NewTpuClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -151,36 +303,36 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *Client) Connection() *grpc.ClientConn {
+func (c *gRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *Client) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *Client) setGoogleClientInfo(keyval ...string) {
+func (c *gRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// ListNodes lists nodes.
-func (c *Client) ListNodes(ctx context.Context, req *tpupb.ListNodesRequest, opts ...gax.CallOption) *NodeIterator {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *gRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *gRPCClient) ListNodes(ctx context.Context, req *tpupb.ListNodesRequest, opts ...gax.CallOption) *NodeIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListNodes[0:len(c.CallOptions.ListNodes):len(c.CallOptions.ListNodes)], opts...)
+	opts = append((*c.CallOptions).ListNodes[0:len((*c.CallOptions).ListNodes):len((*c.CallOptions).ListNodes)], opts...)
 	it := &NodeIterator{}
 	req = proto.Clone(req).(*tpupb.ListNodesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*tpupb.Node, string, error) {
@@ -217,8 +369,7 @@ func (c *Client) ListNodes(ctx context.Context, req *tpupb.ListNodesRequest, opt
 	return it
 }
 
-// GetNode gets the details of a node.
-func (c *Client) GetNode(ctx context.Context, req *tpupb.GetNodeRequest, opts ...gax.CallOption) (*tpupb.Node, error) {
+func (c *gRPCClient) GetNode(ctx context.Context, req *tpupb.GetNodeRequest, opts ...gax.CallOption) (*tpupb.Node, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -226,7 +377,7 @@ func (c *Client) GetNode(ctx context.Context, req *tpupb.GetNodeRequest, opts ..
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetNode[0:len(c.CallOptions.GetNode):len(c.CallOptions.GetNode)], opts...)
+	opts = append((*c.CallOptions).GetNode[0:len((*c.CallOptions).GetNode):len((*c.CallOptions).GetNode)], opts...)
 	var resp *tpupb.Node
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -239,8 +390,7 @@ func (c *Client) GetNode(ctx context.Context, req *tpupb.GetNodeRequest, opts ..
 	return resp, nil
 }
 
-// CreateNode creates a node.
-func (c *Client) CreateNode(ctx context.Context, req *tpupb.CreateNodeRequest, opts ...gax.CallOption) (*CreateNodeOperation, error) {
+func (c *gRPCClient) CreateNode(ctx context.Context, req *tpupb.CreateNodeRequest, opts ...gax.CallOption) (*CreateNodeOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -248,7 +398,7 @@ func (c *Client) CreateNode(ctx context.Context, req *tpupb.CreateNodeRequest, o
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateNode[0:len(c.CallOptions.CreateNode):len(c.CallOptions.CreateNode)], opts...)
+	opts = append((*c.CallOptions).CreateNode[0:len((*c.CallOptions).CreateNode):len((*c.CallOptions).CreateNode)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -259,12 +409,11 @@ func (c *Client) CreateNode(ctx context.Context, req *tpupb.CreateNodeRequest, o
 		return nil, err
 	}
 	return &CreateNodeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeleteNode deletes a node.
-func (c *Client) DeleteNode(ctx context.Context, req *tpupb.DeleteNodeRequest, opts ...gax.CallOption) (*DeleteNodeOperation, error) {
+func (c *gRPCClient) DeleteNode(ctx context.Context, req *tpupb.DeleteNodeRequest, opts ...gax.CallOption) (*DeleteNodeOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -272,7 +421,7 @@ func (c *Client) DeleteNode(ctx context.Context, req *tpupb.DeleteNodeRequest, o
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteNode[0:len(c.CallOptions.DeleteNode):len(c.CallOptions.DeleteNode)], opts...)
+	opts = append((*c.CallOptions).DeleteNode[0:len((*c.CallOptions).DeleteNode):len((*c.CallOptions).DeleteNode)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -283,12 +432,11 @@ func (c *Client) DeleteNode(ctx context.Context, req *tpupb.DeleteNodeRequest, o
 		return nil, err
 	}
 	return &DeleteNodeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// ReimageNode reimages a node’s OS.
-func (c *Client) ReimageNode(ctx context.Context, req *tpupb.ReimageNodeRequest, opts ...gax.CallOption) (*ReimageNodeOperation, error) {
+func (c *gRPCClient) ReimageNode(ctx context.Context, req *tpupb.ReimageNodeRequest, opts ...gax.CallOption) (*ReimageNodeOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -296,7 +444,7 @@ func (c *Client) ReimageNode(ctx context.Context, req *tpupb.ReimageNodeRequest,
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ReimageNode[0:len(c.CallOptions.ReimageNode):len(c.CallOptions.ReimageNode)], opts...)
+	opts = append((*c.CallOptions).ReimageNode[0:len((*c.CallOptions).ReimageNode):len((*c.CallOptions).ReimageNode)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -307,12 +455,11 @@ func (c *Client) ReimageNode(ctx context.Context, req *tpupb.ReimageNodeRequest,
 		return nil, err
 	}
 	return &ReimageNodeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// StopNode stops a node.
-func (c *Client) StopNode(ctx context.Context, req *tpupb.StopNodeRequest, opts ...gax.CallOption) (*StopNodeOperation, error) {
+func (c *gRPCClient) StopNode(ctx context.Context, req *tpupb.StopNodeRequest, opts ...gax.CallOption) (*StopNodeOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -320,7 +467,7 @@ func (c *Client) StopNode(ctx context.Context, req *tpupb.StopNodeRequest, opts 
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.StopNode[0:len(c.CallOptions.StopNode):len(c.CallOptions.StopNode)], opts...)
+	opts = append((*c.CallOptions).StopNode[0:len((*c.CallOptions).StopNode):len((*c.CallOptions).StopNode)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -331,12 +478,11 @@ func (c *Client) StopNode(ctx context.Context, req *tpupb.StopNodeRequest, opts 
 		return nil, err
 	}
 	return &StopNodeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// StartNode starts a node.
-func (c *Client) StartNode(ctx context.Context, req *tpupb.StartNodeRequest, opts ...gax.CallOption) (*StartNodeOperation, error) {
+func (c *gRPCClient) StartNode(ctx context.Context, req *tpupb.StartNodeRequest, opts ...gax.CallOption) (*StartNodeOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -344,7 +490,7 @@ func (c *Client) StartNode(ctx context.Context, req *tpupb.StartNodeRequest, opt
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.StartNode[0:len(c.CallOptions.StartNode):len(c.CallOptions.StartNode)], opts...)
+	opts = append((*c.CallOptions).StartNode[0:len((*c.CallOptions).StartNode):len((*c.CallOptions).StartNode)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -355,15 +501,14 @@ func (c *Client) StartNode(ctx context.Context, req *tpupb.StartNodeRequest, opt
 		return nil, err
 	}
 	return &StartNodeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// ListTensorFlowVersions list TensorFlow versions supported by this API.
-func (c *Client) ListTensorFlowVersions(ctx context.Context, req *tpupb.ListTensorFlowVersionsRequest, opts ...gax.CallOption) *TensorFlowVersionIterator {
+func (c *gRPCClient) ListTensorFlowVersions(ctx context.Context, req *tpupb.ListTensorFlowVersionsRequest, opts ...gax.CallOption) *TensorFlowVersionIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListTensorFlowVersions[0:len(c.CallOptions.ListTensorFlowVersions):len(c.CallOptions.ListTensorFlowVersions)], opts...)
+	opts = append((*c.CallOptions).ListTensorFlowVersions[0:len((*c.CallOptions).ListTensorFlowVersions):len((*c.CallOptions).ListTensorFlowVersions)], opts...)
 	it := &TensorFlowVersionIterator{}
 	req = proto.Clone(req).(*tpupb.ListTensorFlowVersionsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*tpupb.TensorFlowVersion, string, error) {
@@ -400,8 +545,7 @@ func (c *Client) ListTensorFlowVersions(ctx context.Context, req *tpupb.ListTens
 	return it
 }
 
-// GetTensorFlowVersion gets TensorFlow Version.
-func (c *Client) GetTensorFlowVersion(ctx context.Context, req *tpupb.GetTensorFlowVersionRequest, opts ...gax.CallOption) (*tpupb.TensorFlowVersion, error) {
+func (c *gRPCClient) GetTensorFlowVersion(ctx context.Context, req *tpupb.GetTensorFlowVersionRequest, opts ...gax.CallOption) (*tpupb.TensorFlowVersion, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -409,7 +553,7 @@ func (c *Client) GetTensorFlowVersion(ctx context.Context, req *tpupb.GetTensorF
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetTensorFlowVersion[0:len(c.CallOptions.GetTensorFlowVersion):len(c.CallOptions.GetTensorFlowVersion)], opts...)
+	opts = append((*c.CallOptions).GetTensorFlowVersion[0:len((*c.CallOptions).GetTensorFlowVersion):len((*c.CallOptions).GetTensorFlowVersion)], opts...)
 	var resp *tpupb.TensorFlowVersion
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -422,11 +566,10 @@ func (c *Client) GetTensorFlowVersion(ctx context.Context, req *tpupb.GetTensorF
 	return resp, nil
 }
 
-// ListAcceleratorTypes lists accelerator types supported by this API.
-func (c *Client) ListAcceleratorTypes(ctx context.Context, req *tpupb.ListAcceleratorTypesRequest, opts ...gax.CallOption) *AcceleratorTypeIterator {
+func (c *gRPCClient) ListAcceleratorTypes(ctx context.Context, req *tpupb.ListAcceleratorTypesRequest, opts ...gax.CallOption) *AcceleratorTypeIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListAcceleratorTypes[0:len(c.CallOptions.ListAcceleratorTypes):len(c.CallOptions.ListAcceleratorTypes)], opts...)
+	opts = append((*c.CallOptions).ListAcceleratorTypes[0:len((*c.CallOptions).ListAcceleratorTypes):len((*c.CallOptions).ListAcceleratorTypes)], opts...)
 	it := &AcceleratorTypeIterator{}
 	req = proto.Clone(req).(*tpupb.ListAcceleratorTypesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*tpupb.AcceleratorType, string, error) {
@@ -463,8 +606,7 @@ func (c *Client) ListAcceleratorTypes(ctx context.Context, req *tpupb.ListAccele
 	return it
 }
 
-// GetAcceleratorType gets AcceleratorType.
-func (c *Client) GetAcceleratorType(ctx context.Context, req *tpupb.GetAcceleratorTypeRequest, opts ...gax.CallOption) (*tpupb.AcceleratorType, error) {
+func (c *gRPCClient) GetAcceleratorType(ctx context.Context, req *tpupb.GetAcceleratorTypeRequest, opts ...gax.CallOption) (*tpupb.AcceleratorType, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -472,7 +614,7 @@ func (c *Client) GetAcceleratorType(ctx context.Context, req *tpupb.GetAccelerat
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetAcceleratorType[0:len(c.CallOptions.GetAcceleratorType):len(c.CallOptions.GetAcceleratorType)], opts...)
+	opts = append((*c.CallOptions).GetAcceleratorType[0:len((*c.CallOptions).GetAcceleratorType):len((*c.CallOptions).GetAcceleratorType)], opts...)
 	var resp *tpupb.AcceleratorType
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -492,9 +634,9 @@ type CreateNodeOperation struct {
 
 // CreateNodeOperation returns a new CreateNodeOperation from a given name.
 // The name must be that of a previously created CreateNodeOperation, possibly from a different process.
-func (c *Client) CreateNodeOperation(name string) *CreateNodeOperation {
+func (c *gRPCClient) CreateNodeOperation(name string) *CreateNodeOperation {
 	return &CreateNodeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -561,9 +703,9 @@ type DeleteNodeOperation struct {
 
 // DeleteNodeOperation returns a new DeleteNodeOperation from a given name.
 // The name must be that of a previously created DeleteNodeOperation, possibly from a different process.
-func (c *Client) DeleteNodeOperation(name string) *DeleteNodeOperation {
+func (c *gRPCClient) DeleteNodeOperation(name string) *DeleteNodeOperation {
 	return &DeleteNodeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -630,9 +772,9 @@ type ReimageNodeOperation struct {
 
 // ReimageNodeOperation returns a new ReimageNodeOperation from a given name.
 // The name must be that of a previously created ReimageNodeOperation, possibly from a different process.
-func (c *Client) ReimageNodeOperation(name string) *ReimageNodeOperation {
+func (c *gRPCClient) ReimageNodeOperation(name string) *ReimageNodeOperation {
 	return &ReimageNodeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -699,9 +841,9 @@ type StartNodeOperation struct {
 
 // StartNodeOperation returns a new StartNodeOperation from a given name.
 // The name must be that of a previously created StartNodeOperation, possibly from a different process.
-func (c *Client) StartNodeOperation(name string) *StartNodeOperation {
+func (c *gRPCClient) StartNodeOperation(name string) *StartNodeOperation {
 	return &StartNodeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -768,9 +910,9 @@ type StopNodeOperation struct {
 
 // StopNodeOperation returns a new StopNodeOperation from a given name.
 // The name must be that of a previously created StopNodeOperation, possibly from a different process.
-func (c *Client) StopNodeOperation(name string) *StopNodeOperation {
+func (c *gRPCClient) StopNodeOperation(name string) *StopNodeOperation {
 	return &StopNodeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

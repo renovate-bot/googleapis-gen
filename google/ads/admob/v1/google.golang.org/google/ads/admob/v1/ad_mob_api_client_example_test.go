@@ -30,18 +30,19 @@ func ExampleNewAdMobApiClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleAdMobApiClient_GetPublisherAccount() {
-	// import admobpb "google.golang.org/genproto/googleapis/ads/admob/v1"
-
 	ctx := context.Background()
 	c, err := admob.NewAdMobApiClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &admobpb.GetPublisherAccountRequest{
 		// TODO: Fill request struct fields.
@@ -55,14 +56,12 @@ func ExampleAdMobApiClient_GetPublisherAccount() {
 }
 
 func ExampleAdMobApiClient_ListPublisherAccounts() {
-	// import admobpb "google.golang.org/genproto/googleapis/ads/admob/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := admob.NewAdMobApiClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &admobpb.ListPublisherAccountsRequest{
 		// TODO: Fill request struct fields.

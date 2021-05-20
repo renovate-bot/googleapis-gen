@@ -30,18 +30,19 @@ func ExampleNewVizierClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleVizierClient_CreateStudy() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateStudyRequest{
 		// TODO: Fill request struct fields.
@@ -55,13 +56,12 @@ func ExampleVizierClient_CreateStudy() {
 }
 
 func ExampleVizierClient_GetStudy() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetStudyRequest{
 		// TODO: Fill request struct fields.
@@ -75,14 +75,12 @@ func ExampleVizierClient_GetStudy() {
 }
 
 func ExampleVizierClient_ListStudies() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListStudiesRequest{
 		// TODO: Fill request struct fields.
@@ -107,6 +105,7 @@ func ExampleVizierClient_DeleteStudy() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteStudyRequest{
 		// TODO: Fill request struct fields.
@@ -118,13 +117,12 @@ func ExampleVizierClient_DeleteStudy() {
 }
 
 func ExampleVizierClient_LookupStudy() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.LookupStudyRequest{
 		// TODO: Fill request struct fields.
@@ -138,13 +136,12 @@ func ExampleVizierClient_LookupStudy() {
 }
 
 func ExampleVizierClient_SuggestTrials() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.SuggestTrialsRequest{
 		// TODO: Fill request struct fields.
@@ -163,13 +160,12 @@ func ExampleVizierClient_SuggestTrials() {
 }
 
 func ExampleVizierClient_CreateTrial() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateTrialRequest{
 		// TODO: Fill request struct fields.
@@ -183,13 +179,12 @@ func ExampleVizierClient_CreateTrial() {
 }
 
 func ExampleVizierClient_GetTrial() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetTrialRequest{
 		// TODO: Fill request struct fields.
@@ -203,14 +198,12 @@ func ExampleVizierClient_GetTrial() {
 }
 
 func ExampleVizierClient_ListTrials() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListTrialsRequest{
 		// TODO: Fill request struct fields.
@@ -230,13 +223,12 @@ func ExampleVizierClient_ListTrials() {
 }
 
 func ExampleVizierClient_AddTrialMeasurement() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.AddTrialMeasurementRequest{
 		// TODO: Fill request struct fields.
@@ -250,13 +242,12 @@ func ExampleVizierClient_AddTrialMeasurement() {
 }
 
 func ExampleVizierClient_CompleteTrial() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CompleteTrialRequest{
 		// TODO: Fill request struct fields.
@@ -275,6 +266,7 @@ func ExampleVizierClient_DeleteTrial() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteTrialRequest{
 		// TODO: Fill request struct fields.
@@ -286,13 +278,12 @@ func ExampleVizierClient_DeleteTrial() {
 }
 
 func ExampleVizierClient_CheckTrialEarlyStoppingState() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CheckTrialEarlyStoppingStateRequest{
 		// TODO: Fill request struct fields.
@@ -311,13 +302,12 @@ func ExampleVizierClient_CheckTrialEarlyStoppingState() {
 }
 
 func ExampleVizierClient_StopTrial() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.StopTrialRequest{
 		// TODO: Fill request struct fields.
@@ -331,13 +321,12 @@ func ExampleVizierClient_StopTrial() {
 }
 
 func ExampleVizierClient_ListOptimalTrials() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewVizierClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListOptimalTrialsRequest{
 		// TODO: Fill request struct fields.

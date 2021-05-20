@@ -50,7 +50,7 @@ type EndpointCallOptions struct {
 	UndeployModel  []gax.CallOption
 }
 
-func defaultEndpointClientOptions() []option.ClientOption {
+func defaultEndpointGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("aiplatform.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("aiplatform.mtls.googleapis.com:443"),
@@ -74,36 +74,150 @@ func defaultEndpointCallOptions() *EndpointCallOptions {
 	}
 }
 
+// internalEndpointClient is an interface that defines the methods availaible from Cloud AI Platform API.
+type internalEndpointClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateEndpoint(context.Context, *aiplatformpb.CreateEndpointRequest, ...gax.CallOption) (*CreateEndpointOperation, error)
+	CreateEndpointOperation(name string) *CreateEndpointOperation
+	GetEndpoint(context.Context, *aiplatformpb.GetEndpointRequest, ...gax.CallOption) (*aiplatformpb.Endpoint, error)
+	ListEndpoints(context.Context, *aiplatformpb.ListEndpointsRequest, ...gax.CallOption) *EndpointIterator
+	UpdateEndpoint(context.Context, *aiplatformpb.UpdateEndpointRequest, ...gax.CallOption) (*aiplatformpb.Endpoint, error)
+	DeleteEndpoint(context.Context, *aiplatformpb.DeleteEndpointRequest, ...gax.CallOption) (*DeleteEndpointOperation, error)
+	DeleteEndpointOperation(name string) *DeleteEndpointOperation
+	DeployModel(context.Context, *aiplatformpb.DeployModelRequest, ...gax.CallOption) (*DeployModelOperation, error)
+	DeployModelOperation(name string) *DeployModelOperation
+	UndeployModel(context.Context, *aiplatformpb.UndeployModelRequest, ...gax.CallOption) (*UndeployModelOperation, error)
+	UndeployModelOperation(name string) *UndeployModelOperation
+}
+
 // EndpointClient is a client for interacting with Cloud AI Platform API.
-//
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type EndpointClient struct {
+	// The internal transport-dependent client.
+	internalClient internalEndpointClient
+
+	// The call options for this service.
+	CallOptions *EndpointCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *EndpointClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *EndpointClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *EndpointClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateEndpoint creates an Endpoint.
+func (c *EndpointClient) CreateEndpoint(ctx context.Context, req *aiplatformpb.CreateEndpointRequest, opts ...gax.CallOption) (*CreateEndpointOperation, error) {
+	return c.internalClient.CreateEndpoint(ctx, req, opts...)
+}
+
+// CreateEndpointOperation returns a new CreateEndpointOperation from a given name.
+// The name must be that of a previously created CreateEndpointOperation, possibly from a different process.
+func (c *EndpointClient) CreateEndpointOperation(name string) *CreateEndpointOperation {
+	return c.internalClient.CreateEndpointOperation(name)
+}
+
+// GetEndpoint gets an Endpoint.
+func (c *EndpointClient) GetEndpoint(ctx context.Context, req *aiplatformpb.GetEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.Endpoint, error) {
+	return c.internalClient.GetEndpoint(ctx, req, opts...)
+}
+
+// ListEndpoints lists Endpoints in a Location.
+func (c *EndpointClient) ListEndpoints(ctx context.Context, req *aiplatformpb.ListEndpointsRequest, opts ...gax.CallOption) *EndpointIterator {
+	return c.internalClient.ListEndpoints(ctx, req, opts...)
+}
+
+// UpdateEndpoint updates an Endpoint.
+func (c *EndpointClient) UpdateEndpoint(ctx context.Context, req *aiplatformpb.UpdateEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.Endpoint, error) {
+	return c.internalClient.UpdateEndpoint(ctx, req, opts...)
+}
+
+// DeleteEndpoint deletes an Endpoint.
+func (c *EndpointClient) DeleteEndpoint(ctx context.Context, req *aiplatformpb.DeleteEndpointRequest, opts ...gax.CallOption) (*DeleteEndpointOperation, error) {
+	return c.internalClient.DeleteEndpoint(ctx, req, opts...)
+}
+
+// DeleteEndpointOperation returns a new DeleteEndpointOperation from a given name.
+// The name must be that of a previously created DeleteEndpointOperation, possibly from a different process.
+func (c *EndpointClient) DeleteEndpointOperation(name string) *DeleteEndpointOperation {
+	return c.internalClient.DeleteEndpointOperation(name)
+}
+
+// DeployModel deploys a Model into this Endpoint, creating a DeployedModel within it.
+func (c *EndpointClient) DeployModel(ctx context.Context, req *aiplatformpb.DeployModelRequest, opts ...gax.CallOption) (*DeployModelOperation, error) {
+	return c.internalClient.DeployModel(ctx, req, opts...)
+}
+
+// DeployModelOperation returns a new DeployModelOperation from a given name.
+// The name must be that of a previously created DeployModelOperation, possibly from a different process.
+func (c *EndpointClient) DeployModelOperation(name string) *DeployModelOperation {
+	return c.internalClient.DeployModelOperation(name)
+}
+
+// UndeployModel undeploys a Model from an Endpoint, removing a DeployedModel from it, and
+// freeing all resources it’s using.
+func (c *EndpointClient) UndeployModel(ctx context.Context, req *aiplatformpb.UndeployModelRequest, opts ...gax.CallOption) (*UndeployModelOperation, error) {
+	return c.internalClient.UndeployModel(ctx, req, opts...)
+}
+
+// UndeployModelOperation returns a new UndeployModelOperation from a given name.
+// The name must be that of a previously created UndeployModelOperation, possibly from a different process.
+func (c *EndpointClient) UndeployModelOperation(name string) *UndeployModelOperation {
+	return c.internalClient.UndeployModelOperation(name)
+}
+
+// endpointGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+//
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+type endpointGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing EndpointClient
+	CallOptions **EndpointCallOptions
+
 	// The gRPC API client.
 	endpointClient aiplatformpb.EndpointServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *EndpointCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewEndpointClient creates a new endpoint service client.
-//
+// NewEndpointClient creates a new endpoint service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 func NewEndpointClient(ctx context.Context, opts ...option.ClientOption) (*EndpointClient, error) {
-	clientOpts := defaultEndpointClientOptions()
-
+	clientOpts := defaultEndpointGRPCClientOptions()
 	if newEndpointClientHook != nil {
 		hookOpts, err := newEndpointClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -121,16 +235,19 @@ func NewEndpointClient(ctx context.Context, opts ...option.ClientOption) (*Endpo
 	if err != nil {
 		return nil, err
 	}
-	c := &EndpointClient{
+	client := EndpointClient{CallOptions: defaultEndpointCallOptions()}
+
+	c := &endpointGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultEndpointCallOptions(),
-
-		endpointClient: aiplatformpb.NewEndpointServiceClient(connPool),
+		endpointClient:   aiplatformpb.NewEndpointServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -140,33 +257,33 @@ func NewEndpointClient(ctx context.Context, opts ...option.ClientOption) (*Endpo
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *EndpointClient) Connection() *grpc.ClientConn {
+func (c *endpointGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *EndpointClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *EndpointClient) setGoogleClientInfo(keyval ...string) {
+func (c *endpointGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateEndpoint creates an Endpoint.
-func (c *EndpointClient) CreateEndpoint(ctx context.Context, req *aiplatformpb.CreateEndpointRequest, opts ...gax.CallOption) (*CreateEndpointOperation, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *endpointGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *endpointGRPCClient) CreateEndpoint(ctx context.Context, req *aiplatformpb.CreateEndpointRequest, opts ...gax.CallOption) (*CreateEndpointOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -174,7 +291,7 @@ func (c *EndpointClient) CreateEndpoint(ctx context.Context, req *aiplatformpb.C
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateEndpoint[0:len(c.CallOptions.CreateEndpoint):len(c.CallOptions.CreateEndpoint)], opts...)
+	opts = append((*c.CallOptions).CreateEndpoint[0:len((*c.CallOptions).CreateEndpoint):len((*c.CallOptions).CreateEndpoint)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -185,12 +302,11 @@ func (c *EndpointClient) CreateEndpoint(ctx context.Context, req *aiplatformpb.C
 		return nil, err
 	}
 	return &CreateEndpointOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetEndpoint gets an Endpoint.
-func (c *EndpointClient) GetEndpoint(ctx context.Context, req *aiplatformpb.GetEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.Endpoint, error) {
+func (c *endpointGRPCClient) GetEndpoint(ctx context.Context, req *aiplatformpb.GetEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.Endpoint, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -198,7 +314,7 @@ func (c *EndpointClient) GetEndpoint(ctx context.Context, req *aiplatformpb.GetE
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetEndpoint[0:len(c.CallOptions.GetEndpoint):len(c.CallOptions.GetEndpoint)], opts...)
+	opts = append((*c.CallOptions).GetEndpoint[0:len((*c.CallOptions).GetEndpoint):len((*c.CallOptions).GetEndpoint)], opts...)
 	var resp *aiplatformpb.Endpoint
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -211,11 +327,10 @@ func (c *EndpointClient) GetEndpoint(ctx context.Context, req *aiplatformpb.GetE
 	return resp, nil
 }
 
-// ListEndpoints lists Endpoints in a Location.
-func (c *EndpointClient) ListEndpoints(ctx context.Context, req *aiplatformpb.ListEndpointsRequest, opts ...gax.CallOption) *EndpointIterator {
+func (c *endpointGRPCClient) ListEndpoints(ctx context.Context, req *aiplatformpb.ListEndpointsRequest, opts ...gax.CallOption) *EndpointIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListEndpoints[0:len(c.CallOptions.ListEndpoints):len(c.CallOptions.ListEndpoints)], opts...)
+	opts = append((*c.CallOptions).ListEndpoints[0:len((*c.CallOptions).ListEndpoints):len((*c.CallOptions).ListEndpoints)], opts...)
 	it := &EndpointIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListEndpointsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Endpoint, string, error) {
@@ -252,8 +367,7 @@ func (c *EndpointClient) ListEndpoints(ctx context.Context, req *aiplatformpb.Li
 	return it
 }
 
-// UpdateEndpoint updates an Endpoint.
-func (c *EndpointClient) UpdateEndpoint(ctx context.Context, req *aiplatformpb.UpdateEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.Endpoint, error) {
+func (c *endpointGRPCClient) UpdateEndpoint(ctx context.Context, req *aiplatformpb.UpdateEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.Endpoint, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -261,7 +375,7 @@ func (c *EndpointClient) UpdateEndpoint(ctx context.Context, req *aiplatformpb.U
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "endpoint.name", url.QueryEscape(req.GetEndpoint().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateEndpoint[0:len(c.CallOptions.UpdateEndpoint):len(c.CallOptions.UpdateEndpoint)], opts...)
+	opts = append((*c.CallOptions).UpdateEndpoint[0:len((*c.CallOptions).UpdateEndpoint):len((*c.CallOptions).UpdateEndpoint)], opts...)
 	var resp *aiplatformpb.Endpoint
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -274,8 +388,7 @@ func (c *EndpointClient) UpdateEndpoint(ctx context.Context, req *aiplatformpb.U
 	return resp, nil
 }
 
-// DeleteEndpoint deletes an Endpoint.
-func (c *EndpointClient) DeleteEndpoint(ctx context.Context, req *aiplatformpb.DeleteEndpointRequest, opts ...gax.CallOption) (*DeleteEndpointOperation, error) {
+func (c *endpointGRPCClient) DeleteEndpoint(ctx context.Context, req *aiplatformpb.DeleteEndpointRequest, opts ...gax.CallOption) (*DeleteEndpointOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -283,7 +396,7 @@ func (c *EndpointClient) DeleteEndpoint(ctx context.Context, req *aiplatformpb.D
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteEndpoint[0:len(c.CallOptions.DeleteEndpoint):len(c.CallOptions.DeleteEndpoint)], opts...)
+	opts = append((*c.CallOptions).DeleteEndpoint[0:len((*c.CallOptions).DeleteEndpoint):len((*c.CallOptions).DeleteEndpoint)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -294,12 +407,11 @@ func (c *EndpointClient) DeleteEndpoint(ctx context.Context, req *aiplatformpb.D
 		return nil, err
 	}
 	return &DeleteEndpointOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeployModel deploys a Model into this Endpoint, creating a DeployedModel within it.
-func (c *EndpointClient) DeployModel(ctx context.Context, req *aiplatformpb.DeployModelRequest, opts ...gax.CallOption) (*DeployModelOperation, error) {
+func (c *endpointGRPCClient) DeployModel(ctx context.Context, req *aiplatformpb.DeployModelRequest, opts ...gax.CallOption) (*DeployModelOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -307,7 +419,7 @@ func (c *EndpointClient) DeployModel(ctx context.Context, req *aiplatformpb.Depl
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "endpoint", url.QueryEscape(req.GetEndpoint())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeployModel[0:len(c.CallOptions.DeployModel):len(c.CallOptions.DeployModel)], opts...)
+	opts = append((*c.CallOptions).DeployModel[0:len((*c.CallOptions).DeployModel):len((*c.CallOptions).DeployModel)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -318,13 +430,11 @@ func (c *EndpointClient) DeployModel(ctx context.Context, req *aiplatformpb.Depl
 		return nil, err
 	}
 	return &DeployModelOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// UndeployModel undeploys a Model from an Endpoint, removing a DeployedModel from it, and
-// freeing all resources it’s using.
-func (c *EndpointClient) UndeployModel(ctx context.Context, req *aiplatformpb.UndeployModelRequest, opts ...gax.CallOption) (*UndeployModelOperation, error) {
+func (c *endpointGRPCClient) UndeployModel(ctx context.Context, req *aiplatformpb.UndeployModelRequest, opts ...gax.CallOption) (*UndeployModelOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -332,7 +442,7 @@ func (c *EndpointClient) UndeployModel(ctx context.Context, req *aiplatformpb.Un
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "endpoint", url.QueryEscape(req.GetEndpoint())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UndeployModel[0:len(c.CallOptions.UndeployModel):len(c.CallOptions.UndeployModel)], opts...)
+	opts = append((*c.CallOptions).UndeployModel[0:len((*c.CallOptions).UndeployModel):len((*c.CallOptions).UndeployModel)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -343,7 +453,7 @@ func (c *EndpointClient) UndeployModel(ctx context.Context, req *aiplatformpb.Un
 		return nil, err
 	}
 	return &UndeployModelOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
@@ -354,9 +464,9 @@ type CreateEndpointOperation struct {
 
 // CreateEndpointOperation returns a new CreateEndpointOperation from a given name.
 // The name must be that of a previously created CreateEndpointOperation, possibly from a different process.
-func (c *EndpointClient) CreateEndpointOperation(name string) *CreateEndpointOperation {
+func (c *endpointGRPCClient) CreateEndpointOperation(name string) *CreateEndpointOperation {
 	return &CreateEndpointOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -423,9 +533,9 @@ type DeleteEndpointOperation struct {
 
 // DeleteEndpointOperation returns a new DeleteEndpointOperation from a given name.
 // The name must be that of a previously created DeleteEndpointOperation, possibly from a different process.
-func (c *EndpointClient) DeleteEndpointOperation(name string) *DeleteEndpointOperation {
+func (c *endpointGRPCClient) DeleteEndpointOperation(name string) *DeleteEndpointOperation {
 	return &DeleteEndpointOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -481,9 +591,9 @@ type DeployModelOperation struct {
 
 // DeployModelOperation returns a new DeployModelOperation from a given name.
 // The name must be that of a previously created DeployModelOperation, possibly from a different process.
-func (c *EndpointClient) DeployModelOperation(name string) *DeployModelOperation {
+func (c *endpointGRPCClient) DeployModelOperation(name string) *DeployModelOperation {
 	return &DeployModelOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -550,9 +660,9 @@ type UndeployModelOperation struct {
 
 // UndeployModelOperation returns a new UndeployModelOperation from a given name.
 // The name must be that of a previously created UndeployModelOperation, possibly from a different process.
-func (c *EndpointClient) UndeployModelOperation(name string) *UndeployModelOperation {
+func (c *endpointGRPCClient) UndeployModelOperation(name string) *UndeployModelOperation {
 	return &UndeployModelOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

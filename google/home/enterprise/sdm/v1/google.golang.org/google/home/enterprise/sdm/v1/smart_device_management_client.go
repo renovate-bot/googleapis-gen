@@ -48,7 +48,7 @@ type SmartDeviceManagementCallOptions struct {
 	ListRooms            []gax.CallOption
 }
 
-func defaultSmartDeviceManagementClientOptions() []option.ClientOption {
+func defaultSmartDeviceManagementGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("smartdevicemanagement.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("smartdevicemanagement.mtls.googleapis.com:443"),
@@ -132,33 +132,117 @@ func defaultSmartDeviceManagementCallOptions() *SmartDeviceManagementCallOptions
 	}
 }
 
+// internalSmartDeviceManagementClient is an interface that defines the methods availaible from Smart Device Management API.
+type internalSmartDeviceManagementClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	GetDevice(context.Context, *sdmpb.GetDeviceRequest, ...gax.CallOption) (*sdmpb.Device, error)
+	ListDevices(context.Context, *sdmpb.ListDevicesRequest, ...gax.CallOption) *DeviceIterator
+	ExecuteDeviceCommand(context.Context, *sdmpb.ExecuteDeviceCommandRequest, ...gax.CallOption) (*sdmpb.ExecuteDeviceCommandResponse, error)
+	GetStructure(context.Context, *sdmpb.GetStructureRequest, ...gax.CallOption) (*sdmpb.Structure, error)
+	ListStructures(context.Context, *sdmpb.ListStructuresRequest, ...gax.CallOption) *StructureIterator
+	GetRoom(context.Context, *sdmpb.GetRoomRequest, ...gax.CallOption) (*sdmpb.Room, error)
+	ListRooms(context.Context, *sdmpb.ListRoomsRequest, ...gax.CallOption) *RoomIterator
+}
+
 // SmartDeviceManagementClient is a client for interacting with Smart Device Management API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// A service that allows API consumers to provision and manage Google
+// Home structures and devices for enterprise use cases.
+type SmartDeviceManagementClient struct {
+	// The internal transport-dependent client.
+	internalClient internalSmartDeviceManagementClient
+
+	// The call options for this service.
+	CallOptions *SmartDeviceManagementCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *SmartDeviceManagementClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *SmartDeviceManagementClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *SmartDeviceManagementClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// GetDevice gets a device managed by the enterprise.
+func (c *SmartDeviceManagementClient) GetDevice(ctx context.Context, req *sdmpb.GetDeviceRequest, opts ...gax.CallOption) (*sdmpb.Device, error) {
+	return c.internalClient.GetDevice(ctx, req, opts...)
+}
+
+// ListDevices lists devices managed by the enterprise.
+func (c *SmartDeviceManagementClient) ListDevices(ctx context.Context, req *sdmpb.ListDevicesRequest, opts ...gax.CallOption) *DeviceIterator {
+	return c.internalClient.ListDevices(ctx, req, opts...)
+}
+
+// ExecuteDeviceCommand executes a command to device managed by the enterprise.
+func (c *SmartDeviceManagementClient) ExecuteDeviceCommand(ctx context.Context, req *sdmpb.ExecuteDeviceCommandRequest, opts ...gax.CallOption) (*sdmpb.ExecuteDeviceCommandResponse, error) {
+	return c.internalClient.ExecuteDeviceCommand(ctx, req, opts...)
+}
+
+// GetStructure gets a structure managed by the enterprise.
+func (c *SmartDeviceManagementClient) GetStructure(ctx context.Context, req *sdmpb.GetStructureRequest, opts ...gax.CallOption) (*sdmpb.Structure, error) {
+	return c.internalClient.GetStructure(ctx, req, opts...)
+}
+
+// ListStructures lists structures managed by the enterprise.
+func (c *SmartDeviceManagementClient) ListStructures(ctx context.Context, req *sdmpb.ListStructuresRequest, opts ...gax.CallOption) *StructureIterator {
+	return c.internalClient.ListStructures(ctx, req, opts...)
+}
+
+// GetRoom gets a room managed by the enterprise.
+func (c *SmartDeviceManagementClient) GetRoom(ctx context.Context, req *sdmpb.GetRoomRequest, opts ...gax.CallOption) (*sdmpb.Room, error) {
+	return c.internalClient.GetRoom(ctx, req, opts...)
+}
+
+// ListRooms lists rooms managed by the enterprise.
+func (c *SmartDeviceManagementClient) ListRooms(ctx context.Context, req *sdmpb.ListRoomsRequest, opts ...gax.CallOption) *RoomIterator {
+	return c.internalClient.ListRooms(ctx, req, opts...)
+}
+
+// smartDeviceManagementGRPCClient is a client for interacting with Smart Device Management API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type SmartDeviceManagementClient struct {
+type smartDeviceManagementGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing SmartDeviceManagementClient
+	CallOptions **SmartDeviceManagementCallOptions
+
 	// The gRPC API client.
 	smartDeviceManagementClient sdmpb.SmartDeviceManagementServiceClient
-
-	// The call options for this service.
-	CallOptions *SmartDeviceManagementCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewSmartDeviceManagementClient creates a new smart device management service client.
+// NewSmartDeviceManagementClient creates a new smart device management service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // A service that allows API consumers to provision and manage Google
 // Home structures and devices for enterprise use cases.
 func NewSmartDeviceManagementClient(ctx context.Context, opts ...option.ClientOption) (*SmartDeviceManagementClient, error) {
-	clientOpts := defaultSmartDeviceManagementClientOptions()
-
+	clientOpts := defaultSmartDeviceManagementGRPCClientOptions()
 	if newSmartDeviceManagementClientHook != nil {
 		hookOpts, err := newSmartDeviceManagementClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -176,42 +260,44 @@ func NewSmartDeviceManagementClient(ctx context.Context, opts ...option.ClientOp
 	if err != nil {
 		return nil, err
 	}
-	c := &SmartDeviceManagementClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultSmartDeviceManagementCallOptions(),
+	client := SmartDeviceManagementClient{CallOptions: defaultSmartDeviceManagementCallOptions()}
 
+	c := &smartDeviceManagementGRPCClient{
+		connPool:                    connPool,
+		disableDeadlines:            disableDeadlines,
 		smartDeviceManagementClient: sdmpb.NewSmartDeviceManagementServiceClient(connPool),
+		CallOptions:                 &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *SmartDeviceManagementClient) Connection() *grpc.ClientConn {
+func (c *smartDeviceManagementGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *SmartDeviceManagementClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *SmartDeviceManagementClient) setGoogleClientInfo(keyval ...string) {
+func (c *smartDeviceManagementGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// GetDevice gets a device managed by the enterprise.
-func (c *SmartDeviceManagementClient) GetDevice(ctx context.Context, req *sdmpb.GetDeviceRequest, opts ...gax.CallOption) (*sdmpb.Device, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *smartDeviceManagementGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *smartDeviceManagementGRPCClient) GetDevice(ctx context.Context, req *sdmpb.GetDeviceRequest, opts ...gax.CallOption) (*sdmpb.Device, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -219,7 +305,7 @@ func (c *SmartDeviceManagementClient) GetDevice(ctx context.Context, req *sdmpb.
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetDevice[0:len(c.CallOptions.GetDevice):len(c.CallOptions.GetDevice)], opts...)
+	opts = append((*c.CallOptions).GetDevice[0:len((*c.CallOptions).GetDevice):len((*c.CallOptions).GetDevice)], opts...)
 	var resp *sdmpb.Device
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -232,11 +318,10 @@ func (c *SmartDeviceManagementClient) GetDevice(ctx context.Context, req *sdmpb.
 	return resp, nil
 }
 
-// ListDevices lists devices managed by the enterprise.
-func (c *SmartDeviceManagementClient) ListDevices(ctx context.Context, req *sdmpb.ListDevicesRequest, opts ...gax.CallOption) *DeviceIterator {
+func (c *smartDeviceManagementGRPCClient) ListDevices(ctx context.Context, req *sdmpb.ListDevicesRequest, opts ...gax.CallOption) *DeviceIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListDevices[0:len(c.CallOptions.ListDevices):len(c.CallOptions.ListDevices)], opts...)
+	opts = append((*c.CallOptions).ListDevices[0:len((*c.CallOptions).ListDevices):len((*c.CallOptions).ListDevices)], opts...)
 	it := &DeviceIterator{}
 	req = proto.Clone(req).(*sdmpb.ListDevicesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*sdmpb.Device, string, error) {
@@ -273,8 +358,7 @@ func (c *SmartDeviceManagementClient) ListDevices(ctx context.Context, req *sdmp
 	return it
 }
 
-// ExecuteDeviceCommand executes a command to device managed by the enterprise.
-func (c *SmartDeviceManagementClient) ExecuteDeviceCommand(ctx context.Context, req *sdmpb.ExecuteDeviceCommandRequest, opts ...gax.CallOption) (*sdmpb.ExecuteDeviceCommandResponse, error) {
+func (c *smartDeviceManagementGRPCClient) ExecuteDeviceCommand(ctx context.Context, req *sdmpb.ExecuteDeviceCommandRequest, opts ...gax.CallOption) (*sdmpb.ExecuteDeviceCommandResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -282,7 +366,7 @@ func (c *SmartDeviceManagementClient) ExecuteDeviceCommand(ctx context.Context, 
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ExecuteDeviceCommand[0:len(c.CallOptions.ExecuteDeviceCommand):len(c.CallOptions.ExecuteDeviceCommand)], opts...)
+	opts = append((*c.CallOptions).ExecuteDeviceCommand[0:len((*c.CallOptions).ExecuteDeviceCommand):len((*c.CallOptions).ExecuteDeviceCommand)], opts...)
 	var resp *sdmpb.ExecuteDeviceCommandResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -295,8 +379,7 @@ func (c *SmartDeviceManagementClient) ExecuteDeviceCommand(ctx context.Context, 
 	return resp, nil
 }
 
-// GetStructure gets a structure managed by the enterprise.
-func (c *SmartDeviceManagementClient) GetStructure(ctx context.Context, req *sdmpb.GetStructureRequest, opts ...gax.CallOption) (*sdmpb.Structure, error) {
+func (c *smartDeviceManagementGRPCClient) GetStructure(ctx context.Context, req *sdmpb.GetStructureRequest, opts ...gax.CallOption) (*sdmpb.Structure, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -304,7 +387,7 @@ func (c *SmartDeviceManagementClient) GetStructure(ctx context.Context, req *sdm
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetStructure[0:len(c.CallOptions.GetStructure):len(c.CallOptions.GetStructure)], opts...)
+	opts = append((*c.CallOptions).GetStructure[0:len((*c.CallOptions).GetStructure):len((*c.CallOptions).GetStructure)], opts...)
 	var resp *sdmpb.Structure
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -317,11 +400,10 @@ func (c *SmartDeviceManagementClient) GetStructure(ctx context.Context, req *sdm
 	return resp, nil
 }
 
-// ListStructures lists structures managed by the enterprise.
-func (c *SmartDeviceManagementClient) ListStructures(ctx context.Context, req *sdmpb.ListStructuresRequest, opts ...gax.CallOption) *StructureIterator {
+func (c *smartDeviceManagementGRPCClient) ListStructures(ctx context.Context, req *sdmpb.ListStructuresRequest, opts ...gax.CallOption) *StructureIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListStructures[0:len(c.CallOptions.ListStructures):len(c.CallOptions.ListStructures)], opts...)
+	opts = append((*c.CallOptions).ListStructures[0:len((*c.CallOptions).ListStructures):len((*c.CallOptions).ListStructures)], opts...)
 	it := &StructureIterator{}
 	req = proto.Clone(req).(*sdmpb.ListStructuresRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*sdmpb.Structure, string, error) {
@@ -358,8 +440,7 @@ func (c *SmartDeviceManagementClient) ListStructures(ctx context.Context, req *s
 	return it
 }
 
-// GetRoom gets a room managed by the enterprise.
-func (c *SmartDeviceManagementClient) GetRoom(ctx context.Context, req *sdmpb.GetRoomRequest, opts ...gax.CallOption) (*sdmpb.Room, error) {
+func (c *smartDeviceManagementGRPCClient) GetRoom(ctx context.Context, req *sdmpb.GetRoomRequest, opts ...gax.CallOption) (*sdmpb.Room, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -367,7 +448,7 @@ func (c *SmartDeviceManagementClient) GetRoom(ctx context.Context, req *sdmpb.Ge
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetRoom[0:len(c.CallOptions.GetRoom):len(c.CallOptions.GetRoom)], opts...)
+	opts = append((*c.CallOptions).GetRoom[0:len((*c.CallOptions).GetRoom):len((*c.CallOptions).GetRoom)], opts...)
 	var resp *sdmpb.Room
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -380,11 +461,10 @@ func (c *SmartDeviceManagementClient) GetRoom(ctx context.Context, req *sdmpb.Ge
 	return resp, nil
 }
 
-// ListRooms lists rooms managed by the enterprise.
-func (c *SmartDeviceManagementClient) ListRooms(ctx context.Context, req *sdmpb.ListRoomsRequest, opts ...gax.CallOption) *RoomIterator {
+func (c *smartDeviceManagementGRPCClient) ListRooms(ctx context.Context, req *sdmpb.ListRoomsRequest, opts ...gax.CallOption) *RoomIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListRooms[0:len(c.CallOptions.ListRooms):len(c.CallOptions.ListRooms)], opts...)
+	opts = append((*c.CallOptions).ListRooms[0:len((*c.CallOptions).ListRooms):len((*c.CallOptions).ListRooms)], opts...)
 	it := &RoomIterator{}
 	req = proto.Clone(req).(*sdmpb.ListRoomsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*sdmpb.Room, string, error) {

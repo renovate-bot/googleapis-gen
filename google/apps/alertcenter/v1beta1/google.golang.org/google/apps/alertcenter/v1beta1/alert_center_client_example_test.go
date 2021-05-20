@@ -30,19 +30,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_ListAlerts() {
-	// import alertcenterpb "google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := alertcenter.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &alertcenterpb.ListAlertsRequest{
 		// TODO: Fill request struct fields.
@@ -62,13 +62,12 @@ func ExampleClient_ListAlerts() {
 }
 
 func ExampleClient_GetAlert() {
-	// import alertcenterpb "google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1"
-
 	ctx := context.Background()
 	c, err := alertcenter.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &alertcenterpb.GetAlertRequest{
 		// TODO: Fill request struct fields.
@@ -87,6 +86,7 @@ func ExampleClient_DeleteAlert() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &alertcenterpb.DeleteAlertRequest{
 		// TODO: Fill request struct fields.
@@ -98,13 +98,12 @@ func ExampleClient_DeleteAlert() {
 }
 
 func ExampleClient_UndeleteAlert() {
-	// import alertcenterpb "google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1"
-
 	ctx := context.Background()
 	c, err := alertcenter.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &alertcenterpb.UndeleteAlertRequest{
 		// TODO: Fill request struct fields.
@@ -118,13 +117,12 @@ func ExampleClient_UndeleteAlert() {
 }
 
 func ExampleClient_CreateAlertFeedback() {
-	// import alertcenterpb "google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1"
-
 	ctx := context.Background()
 	c, err := alertcenter.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &alertcenterpb.CreateAlertFeedbackRequest{
 		// TODO: Fill request struct fields.
@@ -138,13 +136,12 @@ func ExampleClient_CreateAlertFeedback() {
 }
 
 func ExampleClient_ListAlertFeedback() {
-	// import alertcenterpb "google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1"
-
 	ctx := context.Background()
 	c, err := alertcenter.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &alertcenterpb.ListAlertFeedbackRequest{
 		// TODO: Fill request struct fields.
@@ -158,13 +155,12 @@ func ExampleClient_ListAlertFeedback() {
 }
 
 func ExampleClient_GetAlertMetadata() {
-	// import alertcenterpb "google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1"
-
 	ctx := context.Background()
 	c, err := alertcenter.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &alertcenterpb.GetAlertMetadataRequest{
 		// TODO: Fill request struct fields.
@@ -178,13 +174,12 @@ func ExampleClient_GetAlertMetadata() {
 }
 
 func ExampleClient_GetSettings() {
-	// import alertcenterpb "google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1"
-
 	ctx := context.Background()
 	c, err := alertcenter.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &alertcenterpb.GetSettingsRequest{
 		// TODO: Fill request struct fields.
@@ -198,13 +193,12 @@ func ExampleClient_GetSettings() {
 }
 
 func ExampleClient_UpdateSettings() {
-	// import alertcenterpb "google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1"
-
 	ctx := context.Background()
 	c, err := alertcenter.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &alertcenterpb.UpdateSettingsRequest{
 		// TODO: Fill request struct fields.
@@ -218,13 +212,12 @@ func ExampleClient_UpdateSettings() {
 }
 
 func ExampleClient_BatchDeleteAlerts() {
-	// import alertcenterpb "google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1"
-
 	ctx := context.Background()
 	c, err := alertcenter.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &alertcenterpb.BatchDeleteAlertsRequest{
 		// TODO: Fill request struct fields.
@@ -238,13 +231,12 @@ func ExampleClient_BatchDeleteAlerts() {
 }
 
 func ExampleClient_BatchUndeleteAlerts() {
-	// import alertcenterpb "google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1"
-
 	ctx := context.Background()
 	c, err := alertcenter.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &alertcenterpb.BatchUndeleteAlertsRequest{
 		// TODO: Fill request struct fields.

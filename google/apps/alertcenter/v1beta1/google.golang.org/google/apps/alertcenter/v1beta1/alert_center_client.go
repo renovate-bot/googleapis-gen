@@ -51,7 +51,7 @@ type CallOptions struct {
 	BatchUndeleteAlerts []gax.CallOption
 }
 
-func defaultClientOptions() []option.ClientOption {
+func defaultGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("alertcenter.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("alertcenter.mtls.googleapis.com:443"),
@@ -79,32 +79,153 @@ func defaultCallOptions() *CallOptions {
 	}
 }
 
+// internalClient is an interface that defines the methods availaible from Google Workspace Alert Center API.
+type internalClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	ListAlerts(context.Context, *alertcenterpb.ListAlertsRequest, ...gax.CallOption) *AlertIterator
+	GetAlert(context.Context, *alertcenterpb.GetAlertRequest, ...gax.CallOption) (*alertcenterpb.Alert, error)
+	DeleteAlert(context.Context, *alertcenterpb.DeleteAlertRequest, ...gax.CallOption) error
+	UndeleteAlert(context.Context, *alertcenterpb.UndeleteAlertRequest, ...gax.CallOption) (*alertcenterpb.Alert, error)
+	CreateAlertFeedback(context.Context, *alertcenterpb.CreateAlertFeedbackRequest, ...gax.CallOption) (*alertcenterpb.AlertFeedback, error)
+	ListAlertFeedback(context.Context, *alertcenterpb.ListAlertFeedbackRequest, ...gax.CallOption) (*alertcenterpb.ListAlertFeedbackResponse, error)
+	GetAlertMetadata(context.Context, *alertcenterpb.GetAlertMetadataRequest, ...gax.CallOption) (*alertcenterpb.AlertMetadata, error)
+	GetSettings(context.Context, *alertcenterpb.GetSettingsRequest, ...gax.CallOption) (*alertcenterpb.Settings, error)
+	UpdateSettings(context.Context, *alertcenterpb.UpdateSettingsRequest, ...gax.CallOption) (*alertcenterpb.Settings, error)
+	BatchDeleteAlerts(context.Context, *alertcenterpb.BatchDeleteAlertsRequest, ...gax.CallOption) (*alertcenterpb.BatchDeleteAlertsResponse, error)
+	BatchUndeleteAlerts(context.Context, *alertcenterpb.BatchUndeleteAlertsRequest, ...gax.CallOption) (*alertcenterpb.BatchUndeleteAlertsResponse, error)
+}
+
 // Client is a client for interacting with Google Workspace Alert Center API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Google Workspace Alert Center API (beta).
+type Client struct {
+	// The internal transport-dependent client.
+	internalClient internalClient
+
+	// The call options for this service.
+	CallOptions *CallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *Client) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *Client) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *Client) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// ListAlerts lists the alerts.
+func (c *Client) ListAlerts(ctx context.Context, req *alertcenterpb.ListAlertsRequest, opts ...gax.CallOption) *AlertIterator {
+	return c.internalClient.ListAlerts(ctx, req, opts...)
+}
+
+// GetAlert gets the specified alert. Attempting to get a nonexistent alert returns
+// NOT_FOUND error.
+func (c *Client) GetAlert(ctx context.Context, req *alertcenterpb.GetAlertRequest, opts ...gax.CallOption) (*alertcenterpb.Alert, error) {
+	return c.internalClient.GetAlert(ctx, req, opts...)
+}
+
+// DeleteAlert marks the specified alert for deletion. An alert that has been marked for
+// deletion is removed from Alert Center after 30 days.
+// Marking an alert for deletion has no effect on an alert which has
+// already been marked for deletion. Attempting to mark a nonexistent alert
+// for deletion results in a NOT_FOUND error.
+func (c *Client) DeleteAlert(ctx context.Context, req *alertcenterpb.DeleteAlertRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteAlert(ctx, req, opts...)
+}
+
+// UndeleteAlert restores, or “undeletes”, an alert that was marked for deletion within the
+// past 30 days. Attempting to undelete an alert which was marked for deletion
+// over 30 days ago (which has been removed from the Alert Center database) or
+// a nonexistent alert returns a NOT_FOUND error. Attempting to
+// undelete an alert which has not been marked for deletion has no effect.
+func (c *Client) UndeleteAlert(ctx context.Context, req *alertcenterpb.UndeleteAlertRequest, opts ...gax.CallOption) (*alertcenterpb.Alert, error) {
+	return c.internalClient.UndeleteAlert(ctx, req, opts...)
+}
+
+// CreateAlertFeedback creates new feedback for an alert. Attempting to create a feedback for
+// a non-existent alert returns NOT_FOUND error. Attempting to create a
+// feedback for an alert that is marked for deletion returns
+// `FAILED_PRECONDITION’ error.
+func (c *Client) CreateAlertFeedback(ctx context.Context, req *alertcenterpb.CreateAlertFeedbackRequest, opts ...gax.CallOption) (*alertcenterpb.AlertFeedback, error) {
+	return c.internalClient.CreateAlertFeedback(ctx, req, opts...)
+}
+
+// ListAlertFeedback lists all the feedback for an alert. Attempting to list feedbacks for
+// a non-existent alert returns NOT_FOUND error.
+func (c *Client) ListAlertFeedback(ctx context.Context, req *alertcenterpb.ListAlertFeedbackRequest, opts ...gax.CallOption) (*alertcenterpb.ListAlertFeedbackResponse, error) {
+	return c.internalClient.ListAlertFeedback(ctx, req, opts...)
+}
+
+// GetAlertMetadata returns the metadata of an alert. Attempting to get metadata for
+// a non-existent alert returns NOT_FOUND error.
+func (c *Client) GetAlertMetadata(ctx context.Context, req *alertcenterpb.GetAlertMetadataRequest, opts ...gax.CallOption) (*alertcenterpb.AlertMetadata, error) {
+	return c.internalClient.GetAlertMetadata(ctx, req, opts...)
+}
+
+// GetSettings returns customer-level settings.
+func (c *Client) GetSettings(ctx context.Context, req *alertcenterpb.GetSettingsRequest, opts ...gax.CallOption) (*alertcenterpb.Settings, error) {
+	return c.internalClient.GetSettings(ctx, req, opts...)
+}
+
+// UpdateSettings updates the customer-level settings.
+func (c *Client) UpdateSettings(ctx context.Context, req *alertcenterpb.UpdateSettingsRequest, opts ...gax.CallOption) (*alertcenterpb.Settings, error) {
+	return c.internalClient.UpdateSettings(ctx, req, opts...)
+}
+
+// BatchDeleteAlerts performs batch delete operation on alerts.
+func (c *Client) BatchDeleteAlerts(ctx context.Context, req *alertcenterpb.BatchDeleteAlertsRequest, opts ...gax.CallOption) (*alertcenterpb.BatchDeleteAlertsResponse, error) {
+	return c.internalClient.BatchDeleteAlerts(ctx, req, opts...)
+}
+
+// BatchUndeleteAlerts performs batch undelete operation on alerts.
+func (c *Client) BatchUndeleteAlerts(ctx context.Context, req *alertcenterpb.BatchUndeleteAlertsRequest, opts ...gax.CallOption) (*alertcenterpb.BatchUndeleteAlertsResponse, error) {
+	return c.internalClient.BatchUndeleteAlerts(ctx, req, opts...)
+}
+
+// gRPCClient is a client for interacting with Google Workspace Alert Center API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type Client struct {
+type gRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing Client
+	CallOptions **CallOptions
+
 	// The gRPC API client.
 	client alertcenterpb.AlertCenterServiceClient
-
-	// The call options for this service.
-	CallOptions *CallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewClient creates a new alert center service client.
+// NewClient creates a new alert center service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Google Workspace Alert Center API (beta).
 func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
-	clientOpts := defaultClientOptions()
-
+	clientOpts := defaultGRPCClientOptions()
 	if newClientHook != nil {
 		hookOpts, err := newClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -122,44 +243,46 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 	if err != nil {
 		return nil, err
 	}
-	c := &Client{
+	client := Client{CallOptions: defaultCallOptions()}
+
+	c := &gRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultCallOptions(),
-
-		client: alertcenterpb.NewAlertCenterServiceClient(connPool),
+		client:           alertcenterpb.NewAlertCenterServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *Client) Connection() *grpc.ClientConn {
+func (c *gRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *Client) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *Client) setGoogleClientInfo(keyval ...string) {
+func (c *gRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// ListAlerts lists the alerts.
-func (c *Client) ListAlerts(ctx context.Context, req *alertcenterpb.ListAlertsRequest, opts ...gax.CallOption) *AlertIterator {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *gRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *gRPCClient) ListAlerts(ctx context.Context, req *alertcenterpb.ListAlertsRequest, opts ...gax.CallOption) *AlertIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.ListAlerts[0:len(c.CallOptions.ListAlerts):len(c.CallOptions.ListAlerts)], opts...)
+	opts = append((*c.CallOptions).ListAlerts[0:len((*c.CallOptions).ListAlerts):len((*c.CallOptions).ListAlerts)], opts...)
 	it := &AlertIterator{}
 	req = proto.Clone(req).(*alertcenterpb.ListAlertsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*alertcenterpb.Alert, string, error) {
@@ -196,9 +319,7 @@ func (c *Client) ListAlerts(ctx context.Context, req *alertcenterpb.ListAlertsRe
 	return it
 }
 
-// GetAlert gets the specified alert. Attempting to get a nonexistent alert returns
-// NOT_FOUND error.
-func (c *Client) GetAlert(ctx context.Context, req *alertcenterpb.GetAlertRequest, opts ...gax.CallOption) (*alertcenterpb.Alert, error) {
+func (c *gRPCClient) GetAlert(ctx context.Context, req *alertcenterpb.GetAlertRequest, opts ...gax.CallOption) (*alertcenterpb.Alert, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -206,7 +327,7 @@ func (c *Client) GetAlert(ctx context.Context, req *alertcenterpb.GetAlertReques
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "alert_id", url.QueryEscape(req.GetAlertId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetAlert[0:len(c.CallOptions.GetAlert):len(c.CallOptions.GetAlert)], opts...)
+	opts = append((*c.CallOptions).GetAlert[0:len((*c.CallOptions).GetAlert):len((*c.CallOptions).GetAlert)], opts...)
 	var resp *alertcenterpb.Alert
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -219,12 +340,7 @@ func (c *Client) GetAlert(ctx context.Context, req *alertcenterpb.GetAlertReques
 	return resp, nil
 }
 
-// DeleteAlert marks the specified alert for deletion. An alert that has been marked for
-// deletion is removed from Alert Center after 30 days.
-// Marking an alert for deletion has no effect on an alert which has
-// already been marked for deletion. Attempting to mark a nonexistent alert
-// for deletion results in a NOT_FOUND error.
-func (c *Client) DeleteAlert(ctx context.Context, req *alertcenterpb.DeleteAlertRequest, opts ...gax.CallOption) error {
+func (c *gRPCClient) DeleteAlert(ctx context.Context, req *alertcenterpb.DeleteAlertRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -232,7 +348,7 @@ func (c *Client) DeleteAlert(ctx context.Context, req *alertcenterpb.DeleteAlert
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "alert_id", url.QueryEscape(req.GetAlertId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteAlert[0:len(c.CallOptions.DeleteAlert):len(c.CallOptions.DeleteAlert)], opts...)
+	opts = append((*c.CallOptions).DeleteAlert[0:len((*c.CallOptions).DeleteAlert):len((*c.CallOptions).DeleteAlert)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.client.DeleteAlert(ctx, req, settings.GRPC...)
@@ -241,12 +357,7 @@ func (c *Client) DeleteAlert(ctx context.Context, req *alertcenterpb.DeleteAlert
 	return err
 }
 
-// UndeleteAlert restores, or “undeletes”, an alert that was marked for deletion within the
-// past 30 days. Attempting to undelete an alert which was marked for deletion
-// over 30 days ago (which has been removed from the Alert Center database) or
-// a nonexistent alert returns a NOT_FOUND error. Attempting to
-// undelete an alert which has not been marked for deletion has no effect.
-func (c *Client) UndeleteAlert(ctx context.Context, req *alertcenterpb.UndeleteAlertRequest, opts ...gax.CallOption) (*alertcenterpb.Alert, error) {
+func (c *gRPCClient) UndeleteAlert(ctx context.Context, req *alertcenterpb.UndeleteAlertRequest, opts ...gax.CallOption) (*alertcenterpb.Alert, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -254,7 +365,7 @@ func (c *Client) UndeleteAlert(ctx context.Context, req *alertcenterpb.UndeleteA
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "alert_id", url.QueryEscape(req.GetAlertId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UndeleteAlert[0:len(c.CallOptions.UndeleteAlert):len(c.CallOptions.UndeleteAlert)], opts...)
+	opts = append((*c.CallOptions).UndeleteAlert[0:len((*c.CallOptions).UndeleteAlert):len((*c.CallOptions).UndeleteAlert)], opts...)
 	var resp *alertcenterpb.Alert
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -267,11 +378,7 @@ func (c *Client) UndeleteAlert(ctx context.Context, req *alertcenterpb.UndeleteA
 	return resp, nil
 }
 
-// CreateAlertFeedback creates new feedback for an alert. Attempting to create a feedback for
-// a non-existent alert returns NOT_FOUND error. Attempting to create a
-// feedback for an alert that is marked for deletion returns
-// `FAILED_PRECONDITION’ error.
-func (c *Client) CreateAlertFeedback(ctx context.Context, req *alertcenterpb.CreateAlertFeedbackRequest, opts ...gax.CallOption) (*alertcenterpb.AlertFeedback, error) {
+func (c *gRPCClient) CreateAlertFeedback(ctx context.Context, req *alertcenterpb.CreateAlertFeedbackRequest, opts ...gax.CallOption) (*alertcenterpb.AlertFeedback, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -279,7 +386,7 @@ func (c *Client) CreateAlertFeedback(ctx context.Context, req *alertcenterpb.Cre
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "alert_id", url.QueryEscape(req.GetAlertId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateAlertFeedback[0:len(c.CallOptions.CreateAlertFeedback):len(c.CallOptions.CreateAlertFeedback)], opts...)
+	opts = append((*c.CallOptions).CreateAlertFeedback[0:len((*c.CallOptions).CreateAlertFeedback):len((*c.CallOptions).CreateAlertFeedback)], opts...)
 	var resp *alertcenterpb.AlertFeedback
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -292,9 +399,7 @@ func (c *Client) CreateAlertFeedback(ctx context.Context, req *alertcenterpb.Cre
 	return resp, nil
 }
 
-// ListAlertFeedback lists all the feedback for an alert. Attempting to list feedbacks for
-// a non-existent alert returns NOT_FOUND error.
-func (c *Client) ListAlertFeedback(ctx context.Context, req *alertcenterpb.ListAlertFeedbackRequest, opts ...gax.CallOption) (*alertcenterpb.ListAlertFeedbackResponse, error) {
+func (c *gRPCClient) ListAlertFeedback(ctx context.Context, req *alertcenterpb.ListAlertFeedbackRequest, opts ...gax.CallOption) (*alertcenterpb.ListAlertFeedbackResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -302,7 +407,7 @@ func (c *Client) ListAlertFeedback(ctx context.Context, req *alertcenterpb.ListA
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "alert_id", url.QueryEscape(req.GetAlertId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListAlertFeedback[0:len(c.CallOptions.ListAlertFeedback):len(c.CallOptions.ListAlertFeedback)], opts...)
+	opts = append((*c.CallOptions).ListAlertFeedback[0:len((*c.CallOptions).ListAlertFeedback):len((*c.CallOptions).ListAlertFeedback)], opts...)
 	var resp *alertcenterpb.ListAlertFeedbackResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -315,9 +420,7 @@ func (c *Client) ListAlertFeedback(ctx context.Context, req *alertcenterpb.ListA
 	return resp, nil
 }
 
-// GetAlertMetadata returns the metadata of an alert. Attempting to get metadata for
-// a non-existent alert returns NOT_FOUND error.
-func (c *Client) GetAlertMetadata(ctx context.Context, req *alertcenterpb.GetAlertMetadataRequest, opts ...gax.CallOption) (*alertcenterpb.AlertMetadata, error) {
+func (c *gRPCClient) GetAlertMetadata(ctx context.Context, req *alertcenterpb.GetAlertMetadataRequest, opts ...gax.CallOption) (*alertcenterpb.AlertMetadata, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -325,7 +428,7 @@ func (c *Client) GetAlertMetadata(ctx context.Context, req *alertcenterpb.GetAle
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "alert_id", url.QueryEscape(req.GetAlertId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetAlertMetadata[0:len(c.CallOptions.GetAlertMetadata):len(c.CallOptions.GetAlertMetadata)], opts...)
+	opts = append((*c.CallOptions).GetAlertMetadata[0:len((*c.CallOptions).GetAlertMetadata):len((*c.CallOptions).GetAlertMetadata)], opts...)
 	var resp *alertcenterpb.AlertMetadata
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -338,15 +441,14 @@ func (c *Client) GetAlertMetadata(ctx context.Context, req *alertcenterpb.GetAle
 	return resp, nil
 }
 
-// GetSettings returns customer-level settings.
-func (c *Client) GetSettings(ctx context.Context, req *alertcenterpb.GetSettingsRequest, opts ...gax.CallOption) (*alertcenterpb.Settings, error) {
+func (c *gRPCClient) GetSettings(ctx context.Context, req *alertcenterpb.GetSettingsRequest, opts ...gax.CallOption) (*alertcenterpb.Settings, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.GetSettings[0:len(c.CallOptions.GetSettings):len(c.CallOptions.GetSettings)], opts...)
+	opts = append((*c.CallOptions).GetSettings[0:len((*c.CallOptions).GetSettings):len((*c.CallOptions).GetSettings)], opts...)
 	var resp *alertcenterpb.Settings
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -359,15 +461,14 @@ func (c *Client) GetSettings(ctx context.Context, req *alertcenterpb.GetSettings
 	return resp, nil
 }
 
-// UpdateSettings updates the customer-level settings.
-func (c *Client) UpdateSettings(ctx context.Context, req *alertcenterpb.UpdateSettingsRequest, opts ...gax.CallOption) (*alertcenterpb.Settings, error) {
+func (c *gRPCClient) UpdateSettings(ctx context.Context, req *alertcenterpb.UpdateSettingsRequest, opts ...gax.CallOption) (*alertcenterpb.Settings, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.UpdateSettings[0:len(c.CallOptions.UpdateSettings):len(c.CallOptions.UpdateSettings)], opts...)
+	opts = append((*c.CallOptions).UpdateSettings[0:len((*c.CallOptions).UpdateSettings):len((*c.CallOptions).UpdateSettings)], opts...)
 	var resp *alertcenterpb.Settings
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -380,15 +481,14 @@ func (c *Client) UpdateSettings(ctx context.Context, req *alertcenterpb.UpdateSe
 	return resp, nil
 }
 
-// BatchDeleteAlerts performs batch delete operation on alerts.
-func (c *Client) BatchDeleteAlerts(ctx context.Context, req *alertcenterpb.BatchDeleteAlertsRequest, opts ...gax.CallOption) (*alertcenterpb.BatchDeleteAlertsResponse, error) {
+func (c *gRPCClient) BatchDeleteAlerts(ctx context.Context, req *alertcenterpb.BatchDeleteAlertsRequest, opts ...gax.CallOption) (*alertcenterpb.BatchDeleteAlertsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.BatchDeleteAlerts[0:len(c.CallOptions.BatchDeleteAlerts):len(c.CallOptions.BatchDeleteAlerts)], opts...)
+	opts = append((*c.CallOptions).BatchDeleteAlerts[0:len((*c.CallOptions).BatchDeleteAlerts):len((*c.CallOptions).BatchDeleteAlerts)], opts...)
 	var resp *alertcenterpb.BatchDeleteAlertsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -401,15 +501,14 @@ func (c *Client) BatchDeleteAlerts(ctx context.Context, req *alertcenterpb.Batch
 	return resp, nil
 }
 
-// BatchUndeleteAlerts performs batch undelete operation on alerts.
-func (c *Client) BatchUndeleteAlerts(ctx context.Context, req *alertcenterpb.BatchUndeleteAlertsRequest, opts ...gax.CallOption) (*alertcenterpb.BatchUndeleteAlertsResponse, error) {
+func (c *gRPCClient) BatchUndeleteAlerts(ctx context.Context, req *alertcenterpb.BatchUndeleteAlertsRequest, opts ...gax.CallOption) (*alertcenterpb.BatchUndeleteAlertsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.BatchUndeleteAlerts[0:len(c.CallOptions.BatchUndeleteAlerts):len(c.CallOptions.BatchUndeleteAlerts)], opts...)
+	opts = append((*c.CallOptions).BatchUndeleteAlerts[0:len((*c.CallOptions).BatchUndeleteAlerts):len((*c.CallOptions).BatchUndeleteAlerts)], opts...)
 	var resp *alertcenterpb.BatchUndeleteAlertsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

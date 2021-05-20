@@ -29,18 +29,19 @@ func ExampleNewLicenseNotificationClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleLicenseNotificationClient_List() {
-	// import marketplacepb "google.golang.org/genproto/googleapis/ccc/hosted/marketplace/v2"
-
 	ctx := context.Background()
 	c, err := marketplace.NewLicenseNotificationClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &marketplacepb.LicenseNotificationListRequest{
 		// TODO: Fill request struct fields.

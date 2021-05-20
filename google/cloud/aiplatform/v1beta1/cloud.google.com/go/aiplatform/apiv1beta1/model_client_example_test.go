@@ -30,18 +30,19 @@ func ExampleNewModelClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleModelClient_UploadModel() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UploadModelRequest{
 		// TODO: Fill request struct fields.
@@ -60,13 +61,12 @@ func ExampleModelClient_UploadModel() {
 }
 
 func ExampleModelClient_GetModel() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetModelRequest{
 		// TODO: Fill request struct fields.
@@ -80,14 +80,12 @@ func ExampleModelClient_GetModel() {
 }
 
 func ExampleModelClient_ListModels() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListModelsRequest{
 		// TODO: Fill request struct fields.
@@ -107,13 +105,12 @@ func ExampleModelClient_ListModels() {
 }
 
 func ExampleModelClient_UpdateModel() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateModelRequest{
 		// TODO: Fill request struct fields.
@@ -127,13 +124,12 @@ func ExampleModelClient_UpdateModel() {
 }
 
 func ExampleModelClient_DeleteModel() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteModelRequest{
 		// TODO: Fill request struct fields.
@@ -150,13 +146,12 @@ func ExampleModelClient_DeleteModel() {
 }
 
 func ExampleModelClient_ExportModel() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ExportModelRequest{
 		// TODO: Fill request struct fields.
@@ -175,13 +170,12 @@ func ExampleModelClient_ExportModel() {
 }
 
 func ExampleModelClient_GetModelEvaluation() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetModelEvaluationRequest{
 		// TODO: Fill request struct fields.
@@ -195,14 +189,12 @@ func ExampleModelClient_GetModelEvaluation() {
 }
 
 func ExampleModelClient_ListModelEvaluations() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListModelEvaluationsRequest{
 		// TODO: Fill request struct fields.
@@ -222,13 +214,12 @@ func ExampleModelClient_ListModelEvaluations() {
 }
 
 func ExampleModelClient_GetModelEvaluationSlice() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetModelEvaluationSliceRequest{
 		// TODO: Fill request struct fields.
@@ -242,14 +233,12 @@ func ExampleModelClient_GetModelEvaluationSlice() {
 }
 
 func ExampleModelClient_ListModelEvaluationSlices() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListModelEvaluationSlicesRequest{
 		// TODO: Fill request struct fields.

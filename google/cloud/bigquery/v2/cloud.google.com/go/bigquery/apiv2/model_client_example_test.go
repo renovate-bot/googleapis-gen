@@ -29,18 +29,19 @@ func ExampleNewModelClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleModelClient_GetModel() {
-	// import bigquerypb "google.golang.org/genproto/googleapis/cloud/bigquery/v2"
-
 	ctx := context.Background()
 	c, err := bigquery.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &bigquerypb.GetModelRequest{
 		// TODO: Fill request struct fields.
@@ -54,13 +55,12 @@ func ExampleModelClient_GetModel() {
 }
 
 func ExampleModelClient_ListModels() {
-	// import bigquerypb "google.golang.org/genproto/googleapis/cloud/bigquery/v2"
-
 	ctx := context.Background()
 	c, err := bigquery.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &bigquerypb.ListModelsRequest{
 		// TODO: Fill request struct fields.
@@ -74,13 +74,12 @@ func ExampleModelClient_ListModels() {
 }
 
 func ExampleModelClient_PatchModel() {
-	// import bigquerypb "google.golang.org/genproto/googleapis/cloud/bigquery/v2"
-
 	ctx := context.Background()
 	c, err := bigquery.NewModelClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &bigquerypb.PatchModelRequest{
 		// TODO: Fill request struct fields.
@@ -99,6 +98,7 @@ func ExampleModelClient_DeleteModel() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &bigquerypb.DeleteModelRequest{
 		// TODO: Fill request struct fields.

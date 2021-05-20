@@ -30,18 +30,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_CreateMigrationWorkflow() {
-	// import migrationpb "google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha"
-
 	ctx := context.Background()
 	c, err := migration.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &migrationpb.CreateMigrationWorkflowRequest{
 		// TODO: Fill request struct fields.
@@ -55,13 +56,12 @@ func ExampleClient_CreateMigrationWorkflow() {
 }
 
 func ExampleClient_GetMigrationWorkflow() {
-	// import migrationpb "google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha"
-
 	ctx := context.Background()
 	c, err := migration.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &migrationpb.GetMigrationWorkflowRequest{
 		// TODO: Fill request struct fields.
@@ -75,14 +75,12 @@ func ExampleClient_GetMigrationWorkflow() {
 }
 
 func ExampleClient_ListMigrationWorkflows() {
-	// import migrationpb "google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := migration.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &migrationpb.ListMigrationWorkflowsRequest{
 		// TODO: Fill request struct fields.
@@ -107,6 +105,7 @@ func ExampleClient_DeleteMigrationWorkflow() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &migrationpb.DeleteMigrationWorkflowRequest{
 		// TODO: Fill request struct fields.
@@ -123,6 +122,7 @@ func ExampleClient_StartMigrationWorkflow() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &migrationpb.StartMigrationWorkflowRequest{
 		// TODO: Fill request struct fields.
@@ -134,13 +134,12 @@ func ExampleClient_StartMigrationWorkflow() {
 }
 
 func ExampleClient_GetMigrationSubtask() {
-	// import migrationpb "google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha"
-
 	ctx := context.Background()
 	c, err := migration.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &migrationpb.GetMigrationSubtaskRequest{
 		// TODO: Fill request struct fields.
@@ -154,14 +153,12 @@ func ExampleClient_GetMigrationSubtask() {
 }
 
 func ExampleClient_ListMigrationSubtasks() {
-	// import migrationpb "google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := migration.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &migrationpb.ListMigrationSubtasksRequest{
 		// TODO: Fill request struct fields.

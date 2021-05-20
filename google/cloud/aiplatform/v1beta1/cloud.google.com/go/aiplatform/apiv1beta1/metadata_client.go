@@ -69,7 +69,7 @@ type MetadataCallOptions struct {
 	QueryArtifactLineageSubgraph     []gax.CallOption
 }
 
-func defaultMetadataClientOptions() []option.ClientOption {
+func defaultMetadataGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("aiplatform.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("aiplatform.mtls.googleapis.com:443"),
@@ -112,37 +112,272 @@ func defaultMetadataCallOptions() *MetadataCallOptions {
 	}
 }
 
+// internalMetadataClient is an interface that defines the methods availaible from Cloud AI Platform API.
+type internalMetadataClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateMetadataStore(context.Context, *aiplatformpb.CreateMetadataStoreRequest, ...gax.CallOption) (*CreateMetadataStoreOperation, error)
+	CreateMetadataStoreOperation(name string) *CreateMetadataStoreOperation
+	GetMetadataStore(context.Context, *aiplatformpb.GetMetadataStoreRequest, ...gax.CallOption) (*aiplatformpb.MetadataStore, error)
+	ListMetadataStores(context.Context, *aiplatformpb.ListMetadataStoresRequest, ...gax.CallOption) *MetadataStoreIterator
+	DeleteMetadataStore(context.Context, *aiplatformpb.DeleteMetadataStoreRequest, ...gax.CallOption) (*DeleteMetadataStoreOperation, error)
+	DeleteMetadataStoreOperation(name string) *DeleteMetadataStoreOperation
+	CreateArtifact(context.Context, *aiplatformpb.CreateArtifactRequest, ...gax.CallOption) (*aiplatformpb.Artifact, error)
+	GetArtifact(context.Context, *aiplatformpb.GetArtifactRequest, ...gax.CallOption) (*aiplatformpb.Artifact, error)
+	ListArtifacts(context.Context, *aiplatformpb.ListArtifactsRequest, ...gax.CallOption) *ArtifactIterator
+	UpdateArtifact(context.Context, *aiplatformpb.UpdateArtifactRequest, ...gax.CallOption) (*aiplatformpb.Artifact, error)
+	CreateContext(context.Context, *aiplatformpb.CreateContextRequest, ...gax.CallOption) (*aiplatformpb.Context, error)
+	GetContext(context.Context, *aiplatformpb.GetContextRequest, ...gax.CallOption) (*aiplatformpb.Context, error)
+	ListContexts(context.Context, *aiplatformpb.ListContextsRequest, ...gax.CallOption) *ContextIterator
+	UpdateContext(context.Context, *aiplatformpb.UpdateContextRequest, ...gax.CallOption) (*aiplatformpb.Context, error)
+	DeleteContext(context.Context, *aiplatformpb.DeleteContextRequest, ...gax.CallOption) (*DeleteContextOperation, error)
+	DeleteContextOperation(name string) *DeleteContextOperation
+	AddContextArtifactsAndExecutions(context.Context, *aiplatformpb.AddContextArtifactsAndExecutionsRequest, ...gax.CallOption) (*aiplatformpb.AddContextArtifactsAndExecutionsResponse, error)
+	AddContextChildren(context.Context, *aiplatformpb.AddContextChildrenRequest, ...gax.CallOption) (*aiplatformpb.AddContextChildrenResponse, error)
+	QueryContextLineageSubgraph(context.Context, *aiplatformpb.QueryContextLineageSubgraphRequest, ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error)
+	CreateExecution(context.Context, *aiplatformpb.CreateExecutionRequest, ...gax.CallOption) (*aiplatformpb.Execution, error)
+	GetExecution(context.Context, *aiplatformpb.GetExecutionRequest, ...gax.CallOption) (*aiplatformpb.Execution, error)
+	ListExecutions(context.Context, *aiplatformpb.ListExecutionsRequest, ...gax.CallOption) *ExecutionIterator
+	UpdateExecution(context.Context, *aiplatformpb.UpdateExecutionRequest, ...gax.CallOption) (*aiplatformpb.Execution, error)
+	AddExecutionEvents(context.Context, *aiplatformpb.AddExecutionEventsRequest, ...gax.CallOption) (*aiplatformpb.AddExecutionEventsResponse, error)
+	QueryExecutionInputsAndOutputs(context.Context, *aiplatformpb.QueryExecutionInputsAndOutputsRequest, ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error)
+	CreateMetadataSchema(context.Context, *aiplatformpb.CreateMetadataSchemaRequest, ...gax.CallOption) (*aiplatformpb.MetadataSchema, error)
+	GetMetadataSchema(context.Context, *aiplatformpb.GetMetadataSchemaRequest, ...gax.CallOption) (*aiplatformpb.MetadataSchema, error)
+	ListMetadataSchemas(context.Context, *aiplatformpb.ListMetadataSchemasRequest, ...gax.CallOption) *MetadataSchemaIterator
+	QueryArtifactLineageSubgraph(context.Context, *aiplatformpb.QueryArtifactLineageSubgraphRequest, ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error)
+}
+
 // MetadataClient is a client for interacting with Cloud AI Platform API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Service for reading and writing metadata entries.
+type MetadataClient struct {
+	// The internal transport-dependent client.
+	internalClient internalMetadataClient
+
+	// The call options for this service.
+	CallOptions *MetadataCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *MetadataClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *MetadataClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *MetadataClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateMetadataStore initializes a MetadataStore, including allocation of resources.
+func (c *MetadataClient) CreateMetadataStore(ctx context.Context, req *aiplatformpb.CreateMetadataStoreRequest, opts ...gax.CallOption) (*CreateMetadataStoreOperation, error) {
+	return c.internalClient.CreateMetadataStore(ctx, req, opts...)
+}
+
+// CreateMetadataStoreOperation returns a new CreateMetadataStoreOperation from a given name.
+// The name must be that of a previously created CreateMetadataStoreOperation, possibly from a different process.
+func (c *MetadataClient) CreateMetadataStoreOperation(name string) *CreateMetadataStoreOperation {
+	return c.internalClient.CreateMetadataStoreOperation(name)
+}
+
+// GetMetadataStore retrieves a specific MetadataStore.
+func (c *MetadataClient) GetMetadataStore(ctx context.Context, req *aiplatformpb.GetMetadataStoreRequest, opts ...gax.CallOption) (*aiplatformpb.MetadataStore, error) {
+	return c.internalClient.GetMetadataStore(ctx, req, opts...)
+}
+
+// ListMetadataStores lists MetadataStores for a Location.
+func (c *MetadataClient) ListMetadataStores(ctx context.Context, req *aiplatformpb.ListMetadataStoresRequest, opts ...gax.CallOption) *MetadataStoreIterator {
+	return c.internalClient.ListMetadataStores(ctx, req, opts...)
+}
+
+// DeleteMetadataStore deletes a single MetadataStore.
+func (c *MetadataClient) DeleteMetadataStore(ctx context.Context, req *aiplatformpb.DeleteMetadataStoreRequest, opts ...gax.CallOption) (*DeleteMetadataStoreOperation, error) {
+	return c.internalClient.DeleteMetadataStore(ctx, req, opts...)
+}
+
+// DeleteMetadataStoreOperation returns a new DeleteMetadataStoreOperation from a given name.
+// The name must be that of a previously created DeleteMetadataStoreOperation, possibly from a different process.
+func (c *MetadataClient) DeleteMetadataStoreOperation(name string) *DeleteMetadataStoreOperation {
+	return c.internalClient.DeleteMetadataStoreOperation(name)
+}
+
+// CreateArtifact creates an Artifact associated with a MetadataStore.
+func (c *MetadataClient) CreateArtifact(ctx context.Context, req *aiplatformpb.CreateArtifactRequest, opts ...gax.CallOption) (*aiplatformpb.Artifact, error) {
+	return c.internalClient.CreateArtifact(ctx, req, opts...)
+}
+
+// GetArtifact retrieves a specific Artifact.
+func (c *MetadataClient) GetArtifact(ctx context.Context, req *aiplatformpb.GetArtifactRequest, opts ...gax.CallOption) (*aiplatformpb.Artifact, error) {
+	return c.internalClient.GetArtifact(ctx, req, opts...)
+}
+
+// ListArtifacts lists Artifacts in the MetadataStore.
+func (c *MetadataClient) ListArtifacts(ctx context.Context, req *aiplatformpb.ListArtifactsRequest, opts ...gax.CallOption) *ArtifactIterator {
+	return c.internalClient.ListArtifacts(ctx, req, opts...)
+}
+
+// UpdateArtifact updates a stored Artifact.
+func (c *MetadataClient) UpdateArtifact(ctx context.Context, req *aiplatformpb.UpdateArtifactRequest, opts ...gax.CallOption) (*aiplatformpb.Artifact, error) {
+	return c.internalClient.UpdateArtifact(ctx, req, opts...)
+}
+
+// CreateContext creates a Context associated with a MetadataStore.
+func (c *MetadataClient) CreateContext(ctx context.Context, req *aiplatformpb.CreateContextRequest, opts ...gax.CallOption) (*aiplatformpb.Context, error) {
+	return c.internalClient.CreateContext(ctx, req, opts...)
+}
+
+// GetContext retrieves a specific Context.
+func (c *MetadataClient) GetContext(ctx context.Context, req *aiplatformpb.GetContextRequest, opts ...gax.CallOption) (*aiplatformpb.Context, error) {
+	return c.internalClient.GetContext(ctx, req, opts...)
+}
+
+// ListContexts lists Contexts on the MetadataStore.
+func (c *MetadataClient) ListContexts(ctx context.Context, req *aiplatformpb.ListContextsRequest, opts ...gax.CallOption) *ContextIterator {
+	return c.internalClient.ListContexts(ctx, req, opts...)
+}
+
+// UpdateContext updates a stored Context.
+func (c *MetadataClient) UpdateContext(ctx context.Context, req *aiplatformpb.UpdateContextRequest, opts ...gax.CallOption) (*aiplatformpb.Context, error) {
+	return c.internalClient.UpdateContext(ctx, req, opts...)
+}
+
+// DeleteContext deletes a stored Context.
+func (c *MetadataClient) DeleteContext(ctx context.Context, req *aiplatformpb.DeleteContextRequest, opts ...gax.CallOption) (*DeleteContextOperation, error) {
+	return c.internalClient.DeleteContext(ctx, req, opts...)
+}
+
+// DeleteContextOperation returns a new DeleteContextOperation from a given name.
+// The name must be that of a previously created DeleteContextOperation, possibly from a different process.
+func (c *MetadataClient) DeleteContextOperation(name string) *DeleteContextOperation {
+	return c.internalClient.DeleteContextOperation(name)
+}
+
+// AddContextArtifactsAndExecutions adds a set of Artifacts and Executions to a Context. If any of the
+// Artifacts or Executions have already been added to a Context, they are
+// simply skipped.
+func (c *MetadataClient) AddContextArtifactsAndExecutions(ctx context.Context, req *aiplatformpb.AddContextArtifactsAndExecutionsRequest, opts ...gax.CallOption) (*aiplatformpb.AddContextArtifactsAndExecutionsResponse, error) {
+	return c.internalClient.AddContextArtifactsAndExecutions(ctx, req, opts...)
+}
+
+// AddContextChildren adds a set of Contexts as children to a parent Context. If any of the
+// child Contexts have already been added to the parent Context, they are
+// simply skipped. If this call would create a cycle or cause any Context to
+// have more than 10 parents, the request will fail with INVALID_ARGUMENT
+// error.
+func (c *MetadataClient) AddContextChildren(ctx context.Context, req *aiplatformpb.AddContextChildrenRequest, opts ...gax.CallOption) (*aiplatformpb.AddContextChildrenResponse, error) {
+	return c.internalClient.AddContextChildren(ctx, req, opts...)
+}
+
+// QueryContextLineageSubgraph retrieves Artifacts and Executions within the specified Context, connected
+// by Event edges and returned as a LineageSubgraph.
+func (c *MetadataClient) QueryContextLineageSubgraph(ctx context.Context, req *aiplatformpb.QueryContextLineageSubgraphRequest, opts ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error) {
+	return c.internalClient.QueryContextLineageSubgraph(ctx, req, opts...)
+}
+
+// CreateExecution creates an Execution associated with a MetadataStore.
+func (c *MetadataClient) CreateExecution(ctx context.Context, req *aiplatformpb.CreateExecutionRequest, opts ...gax.CallOption) (*aiplatformpb.Execution, error) {
+	return c.internalClient.CreateExecution(ctx, req, opts...)
+}
+
+// GetExecution retrieves a specific Execution.
+func (c *MetadataClient) GetExecution(ctx context.Context, req *aiplatformpb.GetExecutionRequest, opts ...gax.CallOption) (*aiplatformpb.Execution, error) {
+	return c.internalClient.GetExecution(ctx, req, opts...)
+}
+
+// ListExecutions lists Executions in the MetadataStore.
+func (c *MetadataClient) ListExecutions(ctx context.Context, req *aiplatformpb.ListExecutionsRequest, opts ...gax.CallOption) *ExecutionIterator {
+	return c.internalClient.ListExecutions(ctx, req, opts...)
+}
+
+// UpdateExecution updates a stored Execution.
+func (c *MetadataClient) UpdateExecution(ctx context.Context, req *aiplatformpb.UpdateExecutionRequest, opts ...gax.CallOption) (*aiplatformpb.Execution, error) {
+	return c.internalClient.UpdateExecution(ctx, req, opts...)
+}
+
+// AddExecutionEvents adds Events for denoting whether each Artifact was an input or output for a
+// given Execution. If any Events already exist between the Execution and any
+// of the specified Artifacts they are simply skipped.
+func (c *MetadataClient) AddExecutionEvents(ctx context.Context, req *aiplatformpb.AddExecutionEventsRequest, opts ...gax.CallOption) (*aiplatformpb.AddExecutionEventsResponse, error) {
+	return c.internalClient.AddExecutionEvents(ctx, req, opts...)
+}
+
+// QueryExecutionInputsAndOutputs obtains the set of input and output Artifacts for this Execution, in the
+// form of LineageSubgraph that also contains the Execution and connecting
+// Events.
+func (c *MetadataClient) QueryExecutionInputsAndOutputs(ctx context.Context, req *aiplatformpb.QueryExecutionInputsAndOutputsRequest, opts ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error) {
+	return c.internalClient.QueryExecutionInputsAndOutputs(ctx, req, opts...)
+}
+
+// CreateMetadataSchema creates an MetadataSchema.
+func (c *MetadataClient) CreateMetadataSchema(ctx context.Context, req *aiplatformpb.CreateMetadataSchemaRequest, opts ...gax.CallOption) (*aiplatformpb.MetadataSchema, error) {
+	return c.internalClient.CreateMetadataSchema(ctx, req, opts...)
+}
+
+// GetMetadataSchema retrieves a specific MetadataSchema.
+func (c *MetadataClient) GetMetadataSchema(ctx context.Context, req *aiplatformpb.GetMetadataSchemaRequest, opts ...gax.CallOption) (*aiplatformpb.MetadataSchema, error) {
+	return c.internalClient.GetMetadataSchema(ctx, req, opts...)
+}
+
+// ListMetadataSchemas lists MetadataSchemas.
+func (c *MetadataClient) ListMetadataSchemas(ctx context.Context, req *aiplatformpb.ListMetadataSchemasRequest, opts ...gax.CallOption) *MetadataSchemaIterator {
+	return c.internalClient.ListMetadataSchemas(ctx, req, opts...)
+}
+
+// QueryArtifactLineageSubgraph retrieves lineage of an Artifact represented through Artifacts and
+// Executions connected by Event edges and returned as a LineageSubgraph.
+func (c *MetadataClient) QueryArtifactLineageSubgraph(ctx context.Context, req *aiplatformpb.QueryArtifactLineageSubgraphRequest, opts ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error) {
+	return c.internalClient.QueryArtifactLineageSubgraph(ctx, req, opts...)
+}
+
+// metadataGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type MetadataClient struct {
+type metadataGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing MetadataClient
+	CallOptions **MetadataCallOptions
+
 	// The gRPC API client.
 	metadataClient aiplatformpb.MetadataServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *MetadataCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewMetadataClient creates a new metadata service client.
+// NewMetadataClient creates a new metadata service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service for reading and writing metadata entries.
 func NewMetadataClient(ctx context.Context, opts ...option.ClientOption) (*MetadataClient, error) {
-	clientOpts := defaultMetadataClientOptions()
-
+	clientOpts := defaultMetadataGRPCClientOptions()
 	if newMetadataClientHook != nil {
 		hookOpts, err := newMetadataClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -160,16 +395,19 @@ func NewMetadataClient(ctx context.Context, opts ...option.ClientOption) (*Metad
 	if err != nil {
 		return nil, err
 	}
-	c := &MetadataClient{
+	client := MetadataClient{CallOptions: defaultMetadataCallOptions()}
+
+	c := &metadataGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultMetadataCallOptions(),
-
-		metadataClient: aiplatformpb.NewMetadataServiceClient(connPool),
+		metadataClient:   aiplatformpb.NewMetadataServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -179,33 +417,33 @@ func NewMetadataClient(ctx context.Context, opts ...option.ClientOption) (*Metad
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *MetadataClient) Connection() *grpc.ClientConn {
+func (c *metadataGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *MetadataClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *MetadataClient) setGoogleClientInfo(keyval ...string) {
+func (c *metadataGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateMetadataStore initializes a MetadataStore, including allocation of resources.
-func (c *MetadataClient) CreateMetadataStore(ctx context.Context, req *aiplatformpb.CreateMetadataStoreRequest, opts ...gax.CallOption) (*CreateMetadataStoreOperation, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *metadataGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *metadataGRPCClient) CreateMetadataStore(ctx context.Context, req *aiplatformpb.CreateMetadataStoreRequest, opts ...gax.CallOption) (*CreateMetadataStoreOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -213,7 +451,7 @@ func (c *MetadataClient) CreateMetadataStore(ctx context.Context, req *aiplatfor
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateMetadataStore[0:len(c.CallOptions.CreateMetadataStore):len(c.CallOptions.CreateMetadataStore)], opts...)
+	opts = append((*c.CallOptions).CreateMetadataStore[0:len((*c.CallOptions).CreateMetadataStore):len((*c.CallOptions).CreateMetadataStore)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -224,12 +462,11 @@ func (c *MetadataClient) CreateMetadataStore(ctx context.Context, req *aiplatfor
 		return nil, err
 	}
 	return &CreateMetadataStoreOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetMetadataStore retrieves a specific MetadataStore.
-func (c *MetadataClient) GetMetadataStore(ctx context.Context, req *aiplatformpb.GetMetadataStoreRequest, opts ...gax.CallOption) (*aiplatformpb.MetadataStore, error) {
+func (c *metadataGRPCClient) GetMetadataStore(ctx context.Context, req *aiplatformpb.GetMetadataStoreRequest, opts ...gax.CallOption) (*aiplatformpb.MetadataStore, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -237,7 +474,7 @@ func (c *MetadataClient) GetMetadataStore(ctx context.Context, req *aiplatformpb
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetMetadataStore[0:len(c.CallOptions.GetMetadataStore):len(c.CallOptions.GetMetadataStore)], opts...)
+	opts = append((*c.CallOptions).GetMetadataStore[0:len((*c.CallOptions).GetMetadataStore):len((*c.CallOptions).GetMetadataStore)], opts...)
 	var resp *aiplatformpb.MetadataStore
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -250,11 +487,10 @@ func (c *MetadataClient) GetMetadataStore(ctx context.Context, req *aiplatformpb
 	return resp, nil
 }
 
-// ListMetadataStores lists MetadataStores for a Location.
-func (c *MetadataClient) ListMetadataStores(ctx context.Context, req *aiplatformpb.ListMetadataStoresRequest, opts ...gax.CallOption) *MetadataStoreIterator {
+func (c *metadataGRPCClient) ListMetadataStores(ctx context.Context, req *aiplatformpb.ListMetadataStoresRequest, opts ...gax.CallOption) *MetadataStoreIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListMetadataStores[0:len(c.CallOptions.ListMetadataStores):len(c.CallOptions.ListMetadataStores)], opts...)
+	opts = append((*c.CallOptions).ListMetadataStores[0:len((*c.CallOptions).ListMetadataStores):len((*c.CallOptions).ListMetadataStores)], opts...)
 	it := &MetadataStoreIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListMetadataStoresRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.MetadataStore, string, error) {
@@ -291,8 +527,7 @@ func (c *MetadataClient) ListMetadataStores(ctx context.Context, req *aiplatform
 	return it
 }
 
-// DeleteMetadataStore deletes a single MetadataStore.
-func (c *MetadataClient) DeleteMetadataStore(ctx context.Context, req *aiplatformpb.DeleteMetadataStoreRequest, opts ...gax.CallOption) (*DeleteMetadataStoreOperation, error) {
+func (c *metadataGRPCClient) DeleteMetadataStore(ctx context.Context, req *aiplatformpb.DeleteMetadataStoreRequest, opts ...gax.CallOption) (*DeleteMetadataStoreOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -300,7 +535,7 @@ func (c *MetadataClient) DeleteMetadataStore(ctx context.Context, req *aiplatfor
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteMetadataStore[0:len(c.CallOptions.DeleteMetadataStore):len(c.CallOptions.DeleteMetadataStore)], opts...)
+	opts = append((*c.CallOptions).DeleteMetadataStore[0:len((*c.CallOptions).DeleteMetadataStore):len((*c.CallOptions).DeleteMetadataStore)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -311,12 +546,11 @@ func (c *MetadataClient) DeleteMetadataStore(ctx context.Context, req *aiplatfor
 		return nil, err
 	}
 	return &DeleteMetadataStoreOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// CreateArtifact creates an Artifact associated with a MetadataStore.
-func (c *MetadataClient) CreateArtifact(ctx context.Context, req *aiplatformpb.CreateArtifactRequest, opts ...gax.CallOption) (*aiplatformpb.Artifact, error) {
+func (c *metadataGRPCClient) CreateArtifact(ctx context.Context, req *aiplatformpb.CreateArtifactRequest, opts ...gax.CallOption) (*aiplatformpb.Artifact, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -324,7 +558,7 @@ func (c *MetadataClient) CreateArtifact(ctx context.Context, req *aiplatformpb.C
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateArtifact[0:len(c.CallOptions.CreateArtifact):len(c.CallOptions.CreateArtifact)], opts...)
+	opts = append((*c.CallOptions).CreateArtifact[0:len((*c.CallOptions).CreateArtifact):len((*c.CallOptions).CreateArtifact)], opts...)
 	var resp *aiplatformpb.Artifact
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -337,8 +571,7 @@ func (c *MetadataClient) CreateArtifact(ctx context.Context, req *aiplatformpb.C
 	return resp, nil
 }
 
-// GetArtifact retrieves a specific Artifact.
-func (c *MetadataClient) GetArtifact(ctx context.Context, req *aiplatformpb.GetArtifactRequest, opts ...gax.CallOption) (*aiplatformpb.Artifact, error) {
+func (c *metadataGRPCClient) GetArtifact(ctx context.Context, req *aiplatformpb.GetArtifactRequest, opts ...gax.CallOption) (*aiplatformpb.Artifact, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -346,7 +579,7 @@ func (c *MetadataClient) GetArtifact(ctx context.Context, req *aiplatformpb.GetA
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetArtifact[0:len(c.CallOptions.GetArtifact):len(c.CallOptions.GetArtifact)], opts...)
+	opts = append((*c.CallOptions).GetArtifact[0:len((*c.CallOptions).GetArtifact):len((*c.CallOptions).GetArtifact)], opts...)
 	var resp *aiplatformpb.Artifact
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -359,11 +592,10 @@ func (c *MetadataClient) GetArtifact(ctx context.Context, req *aiplatformpb.GetA
 	return resp, nil
 }
 
-// ListArtifacts lists Artifacts in the MetadataStore.
-func (c *MetadataClient) ListArtifacts(ctx context.Context, req *aiplatformpb.ListArtifactsRequest, opts ...gax.CallOption) *ArtifactIterator {
+func (c *metadataGRPCClient) ListArtifacts(ctx context.Context, req *aiplatformpb.ListArtifactsRequest, opts ...gax.CallOption) *ArtifactIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListArtifacts[0:len(c.CallOptions.ListArtifacts):len(c.CallOptions.ListArtifacts)], opts...)
+	opts = append((*c.CallOptions).ListArtifacts[0:len((*c.CallOptions).ListArtifacts):len((*c.CallOptions).ListArtifacts)], opts...)
 	it := &ArtifactIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListArtifactsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Artifact, string, error) {
@@ -400,8 +632,7 @@ func (c *MetadataClient) ListArtifacts(ctx context.Context, req *aiplatformpb.Li
 	return it
 }
 
-// UpdateArtifact updates a stored Artifact.
-func (c *MetadataClient) UpdateArtifact(ctx context.Context, req *aiplatformpb.UpdateArtifactRequest, opts ...gax.CallOption) (*aiplatformpb.Artifact, error) {
+func (c *metadataGRPCClient) UpdateArtifact(ctx context.Context, req *aiplatformpb.UpdateArtifactRequest, opts ...gax.CallOption) (*aiplatformpb.Artifact, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -409,7 +640,7 @@ func (c *MetadataClient) UpdateArtifact(ctx context.Context, req *aiplatformpb.U
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "artifact.name", url.QueryEscape(req.GetArtifact().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateArtifact[0:len(c.CallOptions.UpdateArtifact):len(c.CallOptions.UpdateArtifact)], opts...)
+	opts = append((*c.CallOptions).UpdateArtifact[0:len((*c.CallOptions).UpdateArtifact):len((*c.CallOptions).UpdateArtifact)], opts...)
 	var resp *aiplatformpb.Artifact
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -422,8 +653,7 @@ func (c *MetadataClient) UpdateArtifact(ctx context.Context, req *aiplatformpb.U
 	return resp, nil
 }
 
-// CreateContext creates a Context associated with a MetadataStore.
-func (c *MetadataClient) CreateContext(ctx context.Context, req *aiplatformpb.CreateContextRequest, opts ...gax.CallOption) (*aiplatformpb.Context, error) {
+func (c *metadataGRPCClient) CreateContext(ctx context.Context, req *aiplatformpb.CreateContextRequest, opts ...gax.CallOption) (*aiplatformpb.Context, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -431,7 +661,7 @@ func (c *MetadataClient) CreateContext(ctx context.Context, req *aiplatformpb.Cr
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateContext[0:len(c.CallOptions.CreateContext):len(c.CallOptions.CreateContext)], opts...)
+	opts = append((*c.CallOptions).CreateContext[0:len((*c.CallOptions).CreateContext):len((*c.CallOptions).CreateContext)], opts...)
 	var resp *aiplatformpb.Context
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -444,8 +674,7 @@ func (c *MetadataClient) CreateContext(ctx context.Context, req *aiplatformpb.Cr
 	return resp, nil
 }
 
-// GetContext retrieves a specific Context.
-func (c *MetadataClient) GetContext(ctx context.Context, req *aiplatformpb.GetContextRequest, opts ...gax.CallOption) (*aiplatformpb.Context, error) {
+func (c *metadataGRPCClient) GetContext(ctx context.Context, req *aiplatformpb.GetContextRequest, opts ...gax.CallOption) (*aiplatformpb.Context, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -453,7 +682,7 @@ func (c *MetadataClient) GetContext(ctx context.Context, req *aiplatformpb.GetCo
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetContext[0:len(c.CallOptions.GetContext):len(c.CallOptions.GetContext)], opts...)
+	opts = append((*c.CallOptions).GetContext[0:len((*c.CallOptions).GetContext):len((*c.CallOptions).GetContext)], opts...)
 	var resp *aiplatformpb.Context
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -466,11 +695,10 @@ func (c *MetadataClient) GetContext(ctx context.Context, req *aiplatformpb.GetCo
 	return resp, nil
 }
 
-// ListContexts lists Contexts on the MetadataStore.
-func (c *MetadataClient) ListContexts(ctx context.Context, req *aiplatformpb.ListContextsRequest, opts ...gax.CallOption) *ContextIterator {
+func (c *metadataGRPCClient) ListContexts(ctx context.Context, req *aiplatformpb.ListContextsRequest, opts ...gax.CallOption) *ContextIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListContexts[0:len(c.CallOptions.ListContexts):len(c.CallOptions.ListContexts)], opts...)
+	opts = append((*c.CallOptions).ListContexts[0:len((*c.CallOptions).ListContexts):len((*c.CallOptions).ListContexts)], opts...)
 	it := &ContextIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListContextsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Context, string, error) {
@@ -507,8 +735,7 @@ func (c *MetadataClient) ListContexts(ctx context.Context, req *aiplatformpb.Lis
 	return it
 }
 
-// UpdateContext updates a stored Context.
-func (c *MetadataClient) UpdateContext(ctx context.Context, req *aiplatformpb.UpdateContextRequest, opts ...gax.CallOption) (*aiplatformpb.Context, error) {
+func (c *metadataGRPCClient) UpdateContext(ctx context.Context, req *aiplatformpb.UpdateContextRequest, opts ...gax.CallOption) (*aiplatformpb.Context, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -516,7 +743,7 @@ func (c *MetadataClient) UpdateContext(ctx context.Context, req *aiplatformpb.Up
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "context.name", url.QueryEscape(req.GetContext().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateContext[0:len(c.CallOptions.UpdateContext):len(c.CallOptions.UpdateContext)], opts...)
+	opts = append((*c.CallOptions).UpdateContext[0:len((*c.CallOptions).UpdateContext):len((*c.CallOptions).UpdateContext)], opts...)
 	var resp *aiplatformpb.Context
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -529,8 +756,7 @@ func (c *MetadataClient) UpdateContext(ctx context.Context, req *aiplatformpb.Up
 	return resp, nil
 }
 
-// DeleteContext deletes a stored Context.
-func (c *MetadataClient) DeleteContext(ctx context.Context, req *aiplatformpb.DeleteContextRequest, opts ...gax.CallOption) (*DeleteContextOperation, error) {
+func (c *metadataGRPCClient) DeleteContext(ctx context.Context, req *aiplatformpb.DeleteContextRequest, opts ...gax.CallOption) (*DeleteContextOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -538,7 +764,7 @@ func (c *MetadataClient) DeleteContext(ctx context.Context, req *aiplatformpb.De
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteContext[0:len(c.CallOptions.DeleteContext):len(c.CallOptions.DeleteContext)], opts...)
+	opts = append((*c.CallOptions).DeleteContext[0:len((*c.CallOptions).DeleteContext):len((*c.CallOptions).DeleteContext)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -549,14 +775,11 @@ func (c *MetadataClient) DeleteContext(ctx context.Context, req *aiplatformpb.De
 		return nil, err
 	}
 	return &DeleteContextOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// AddContextArtifactsAndExecutions adds a set of Artifacts and Executions to a Context. If any of the
-// Artifacts or Executions have already been added to a Context, they are
-// simply skipped.
-func (c *MetadataClient) AddContextArtifactsAndExecutions(ctx context.Context, req *aiplatformpb.AddContextArtifactsAndExecutionsRequest, opts ...gax.CallOption) (*aiplatformpb.AddContextArtifactsAndExecutionsResponse, error) {
+func (c *metadataGRPCClient) AddContextArtifactsAndExecutions(ctx context.Context, req *aiplatformpb.AddContextArtifactsAndExecutionsRequest, opts ...gax.CallOption) (*aiplatformpb.AddContextArtifactsAndExecutionsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -564,7 +787,7 @@ func (c *MetadataClient) AddContextArtifactsAndExecutions(ctx context.Context, r
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "context", url.QueryEscape(req.GetContext())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.AddContextArtifactsAndExecutions[0:len(c.CallOptions.AddContextArtifactsAndExecutions):len(c.CallOptions.AddContextArtifactsAndExecutions)], opts...)
+	opts = append((*c.CallOptions).AddContextArtifactsAndExecutions[0:len((*c.CallOptions).AddContextArtifactsAndExecutions):len((*c.CallOptions).AddContextArtifactsAndExecutions)], opts...)
 	var resp *aiplatformpb.AddContextArtifactsAndExecutionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -577,12 +800,7 @@ func (c *MetadataClient) AddContextArtifactsAndExecutions(ctx context.Context, r
 	return resp, nil
 }
 
-// AddContextChildren adds a set of Contexts as children to a parent Context. If any of the
-// child Contexts have already been added to the parent Context, they are
-// simply skipped. If this call would create a cycle or cause any Context to
-// have more than 10 parents, the request will fail with INVALID_ARGUMENT
-// error.
-func (c *MetadataClient) AddContextChildren(ctx context.Context, req *aiplatformpb.AddContextChildrenRequest, opts ...gax.CallOption) (*aiplatformpb.AddContextChildrenResponse, error) {
+func (c *metadataGRPCClient) AddContextChildren(ctx context.Context, req *aiplatformpb.AddContextChildrenRequest, opts ...gax.CallOption) (*aiplatformpb.AddContextChildrenResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -590,7 +808,7 @@ func (c *MetadataClient) AddContextChildren(ctx context.Context, req *aiplatform
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "context", url.QueryEscape(req.GetContext())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.AddContextChildren[0:len(c.CallOptions.AddContextChildren):len(c.CallOptions.AddContextChildren)], opts...)
+	opts = append((*c.CallOptions).AddContextChildren[0:len((*c.CallOptions).AddContextChildren):len((*c.CallOptions).AddContextChildren)], opts...)
 	var resp *aiplatformpb.AddContextChildrenResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -603,9 +821,7 @@ func (c *MetadataClient) AddContextChildren(ctx context.Context, req *aiplatform
 	return resp, nil
 }
 
-// QueryContextLineageSubgraph retrieves Artifacts and Executions within the specified Context, connected
-// by Event edges and returned as a LineageSubgraph.
-func (c *MetadataClient) QueryContextLineageSubgraph(ctx context.Context, req *aiplatformpb.QueryContextLineageSubgraphRequest, opts ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error) {
+func (c *metadataGRPCClient) QueryContextLineageSubgraph(ctx context.Context, req *aiplatformpb.QueryContextLineageSubgraphRequest, opts ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -613,7 +829,7 @@ func (c *MetadataClient) QueryContextLineageSubgraph(ctx context.Context, req *a
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "context", url.QueryEscape(req.GetContext())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.QueryContextLineageSubgraph[0:len(c.CallOptions.QueryContextLineageSubgraph):len(c.CallOptions.QueryContextLineageSubgraph)], opts...)
+	opts = append((*c.CallOptions).QueryContextLineageSubgraph[0:len((*c.CallOptions).QueryContextLineageSubgraph):len((*c.CallOptions).QueryContextLineageSubgraph)], opts...)
 	var resp *aiplatformpb.LineageSubgraph
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -626,8 +842,7 @@ func (c *MetadataClient) QueryContextLineageSubgraph(ctx context.Context, req *a
 	return resp, nil
 }
 
-// CreateExecution creates an Execution associated with a MetadataStore.
-func (c *MetadataClient) CreateExecution(ctx context.Context, req *aiplatformpb.CreateExecutionRequest, opts ...gax.CallOption) (*aiplatformpb.Execution, error) {
+func (c *metadataGRPCClient) CreateExecution(ctx context.Context, req *aiplatformpb.CreateExecutionRequest, opts ...gax.CallOption) (*aiplatformpb.Execution, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -635,7 +850,7 @@ func (c *MetadataClient) CreateExecution(ctx context.Context, req *aiplatformpb.
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateExecution[0:len(c.CallOptions.CreateExecution):len(c.CallOptions.CreateExecution)], opts...)
+	opts = append((*c.CallOptions).CreateExecution[0:len((*c.CallOptions).CreateExecution):len((*c.CallOptions).CreateExecution)], opts...)
 	var resp *aiplatformpb.Execution
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -648,8 +863,7 @@ func (c *MetadataClient) CreateExecution(ctx context.Context, req *aiplatformpb.
 	return resp, nil
 }
 
-// GetExecution retrieves a specific Execution.
-func (c *MetadataClient) GetExecution(ctx context.Context, req *aiplatformpb.GetExecutionRequest, opts ...gax.CallOption) (*aiplatformpb.Execution, error) {
+func (c *metadataGRPCClient) GetExecution(ctx context.Context, req *aiplatformpb.GetExecutionRequest, opts ...gax.CallOption) (*aiplatformpb.Execution, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -657,7 +871,7 @@ func (c *MetadataClient) GetExecution(ctx context.Context, req *aiplatformpb.Get
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetExecution[0:len(c.CallOptions.GetExecution):len(c.CallOptions.GetExecution)], opts...)
+	opts = append((*c.CallOptions).GetExecution[0:len((*c.CallOptions).GetExecution):len((*c.CallOptions).GetExecution)], opts...)
 	var resp *aiplatformpb.Execution
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -670,11 +884,10 @@ func (c *MetadataClient) GetExecution(ctx context.Context, req *aiplatformpb.Get
 	return resp, nil
 }
 
-// ListExecutions lists Executions in the MetadataStore.
-func (c *MetadataClient) ListExecutions(ctx context.Context, req *aiplatformpb.ListExecutionsRequest, opts ...gax.CallOption) *ExecutionIterator {
+func (c *metadataGRPCClient) ListExecutions(ctx context.Context, req *aiplatformpb.ListExecutionsRequest, opts ...gax.CallOption) *ExecutionIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListExecutions[0:len(c.CallOptions.ListExecutions):len(c.CallOptions.ListExecutions)], opts...)
+	opts = append((*c.CallOptions).ListExecutions[0:len((*c.CallOptions).ListExecutions):len((*c.CallOptions).ListExecutions)], opts...)
 	it := &ExecutionIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListExecutionsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Execution, string, error) {
@@ -711,8 +924,7 @@ func (c *MetadataClient) ListExecutions(ctx context.Context, req *aiplatformpb.L
 	return it
 }
 
-// UpdateExecution updates a stored Execution.
-func (c *MetadataClient) UpdateExecution(ctx context.Context, req *aiplatformpb.UpdateExecutionRequest, opts ...gax.CallOption) (*aiplatformpb.Execution, error) {
+func (c *metadataGRPCClient) UpdateExecution(ctx context.Context, req *aiplatformpb.UpdateExecutionRequest, opts ...gax.CallOption) (*aiplatformpb.Execution, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -720,7 +932,7 @@ func (c *MetadataClient) UpdateExecution(ctx context.Context, req *aiplatformpb.
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "execution.name", url.QueryEscape(req.GetExecution().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateExecution[0:len(c.CallOptions.UpdateExecution):len(c.CallOptions.UpdateExecution)], opts...)
+	opts = append((*c.CallOptions).UpdateExecution[0:len((*c.CallOptions).UpdateExecution):len((*c.CallOptions).UpdateExecution)], opts...)
 	var resp *aiplatformpb.Execution
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -733,10 +945,7 @@ func (c *MetadataClient) UpdateExecution(ctx context.Context, req *aiplatformpb.
 	return resp, nil
 }
 
-// AddExecutionEvents adds Events for denoting whether each Artifact was an input or output for a
-// given Execution. If any Events already exist between the Execution and any
-// of the specified Artifacts they are simply skipped.
-func (c *MetadataClient) AddExecutionEvents(ctx context.Context, req *aiplatformpb.AddExecutionEventsRequest, opts ...gax.CallOption) (*aiplatformpb.AddExecutionEventsResponse, error) {
+func (c *metadataGRPCClient) AddExecutionEvents(ctx context.Context, req *aiplatformpb.AddExecutionEventsRequest, opts ...gax.CallOption) (*aiplatformpb.AddExecutionEventsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -744,7 +953,7 @@ func (c *MetadataClient) AddExecutionEvents(ctx context.Context, req *aiplatform
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "execution", url.QueryEscape(req.GetExecution())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.AddExecutionEvents[0:len(c.CallOptions.AddExecutionEvents):len(c.CallOptions.AddExecutionEvents)], opts...)
+	opts = append((*c.CallOptions).AddExecutionEvents[0:len((*c.CallOptions).AddExecutionEvents):len((*c.CallOptions).AddExecutionEvents)], opts...)
 	var resp *aiplatformpb.AddExecutionEventsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -757,10 +966,7 @@ func (c *MetadataClient) AddExecutionEvents(ctx context.Context, req *aiplatform
 	return resp, nil
 }
 
-// QueryExecutionInputsAndOutputs obtains the set of input and output Artifacts for this Execution, in the
-// form of LineageSubgraph that also contains the Execution and connecting
-// Events.
-func (c *MetadataClient) QueryExecutionInputsAndOutputs(ctx context.Context, req *aiplatformpb.QueryExecutionInputsAndOutputsRequest, opts ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error) {
+func (c *metadataGRPCClient) QueryExecutionInputsAndOutputs(ctx context.Context, req *aiplatformpb.QueryExecutionInputsAndOutputsRequest, opts ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -768,7 +974,7 @@ func (c *MetadataClient) QueryExecutionInputsAndOutputs(ctx context.Context, req
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "execution", url.QueryEscape(req.GetExecution())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.QueryExecutionInputsAndOutputs[0:len(c.CallOptions.QueryExecutionInputsAndOutputs):len(c.CallOptions.QueryExecutionInputsAndOutputs)], opts...)
+	opts = append((*c.CallOptions).QueryExecutionInputsAndOutputs[0:len((*c.CallOptions).QueryExecutionInputsAndOutputs):len((*c.CallOptions).QueryExecutionInputsAndOutputs)], opts...)
 	var resp *aiplatformpb.LineageSubgraph
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -781,8 +987,7 @@ func (c *MetadataClient) QueryExecutionInputsAndOutputs(ctx context.Context, req
 	return resp, nil
 }
 
-// CreateMetadataSchema creates an MetadataSchema.
-func (c *MetadataClient) CreateMetadataSchema(ctx context.Context, req *aiplatformpb.CreateMetadataSchemaRequest, opts ...gax.CallOption) (*aiplatformpb.MetadataSchema, error) {
+func (c *metadataGRPCClient) CreateMetadataSchema(ctx context.Context, req *aiplatformpb.CreateMetadataSchemaRequest, opts ...gax.CallOption) (*aiplatformpb.MetadataSchema, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -790,7 +995,7 @@ func (c *MetadataClient) CreateMetadataSchema(ctx context.Context, req *aiplatfo
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateMetadataSchema[0:len(c.CallOptions.CreateMetadataSchema):len(c.CallOptions.CreateMetadataSchema)], opts...)
+	opts = append((*c.CallOptions).CreateMetadataSchema[0:len((*c.CallOptions).CreateMetadataSchema):len((*c.CallOptions).CreateMetadataSchema)], opts...)
 	var resp *aiplatformpb.MetadataSchema
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -803,8 +1008,7 @@ func (c *MetadataClient) CreateMetadataSchema(ctx context.Context, req *aiplatfo
 	return resp, nil
 }
 
-// GetMetadataSchema retrieves a specific MetadataSchema.
-func (c *MetadataClient) GetMetadataSchema(ctx context.Context, req *aiplatformpb.GetMetadataSchemaRequest, opts ...gax.CallOption) (*aiplatformpb.MetadataSchema, error) {
+func (c *metadataGRPCClient) GetMetadataSchema(ctx context.Context, req *aiplatformpb.GetMetadataSchemaRequest, opts ...gax.CallOption) (*aiplatformpb.MetadataSchema, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -812,7 +1016,7 @@ func (c *MetadataClient) GetMetadataSchema(ctx context.Context, req *aiplatformp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetMetadataSchema[0:len(c.CallOptions.GetMetadataSchema):len(c.CallOptions.GetMetadataSchema)], opts...)
+	opts = append((*c.CallOptions).GetMetadataSchema[0:len((*c.CallOptions).GetMetadataSchema):len((*c.CallOptions).GetMetadataSchema)], opts...)
 	var resp *aiplatformpb.MetadataSchema
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -825,11 +1029,10 @@ func (c *MetadataClient) GetMetadataSchema(ctx context.Context, req *aiplatformp
 	return resp, nil
 }
 
-// ListMetadataSchemas lists MetadataSchemas.
-func (c *MetadataClient) ListMetadataSchemas(ctx context.Context, req *aiplatformpb.ListMetadataSchemasRequest, opts ...gax.CallOption) *MetadataSchemaIterator {
+func (c *metadataGRPCClient) ListMetadataSchemas(ctx context.Context, req *aiplatformpb.ListMetadataSchemasRequest, opts ...gax.CallOption) *MetadataSchemaIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListMetadataSchemas[0:len(c.CallOptions.ListMetadataSchemas):len(c.CallOptions.ListMetadataSchemas)], opts...)
+	opts = append((*c.CallOptions).ListMetadataSchemas[0:len((*c.CallOptions).ListMetadataSchemas):len((*c.CallOptions).ListMetadataSchemas)], opts...)
 	it := &MetadataSchemaIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListMetadataSchemasRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.MetadataSchema, string, error) {
@@ -866,12 +1069,10 @@ func (c *MetadataClient) ListMetadataSchemas(ctx context.Context, req *aiplatfor
 	return it
 }
 
-// QueryArtifactLineageSubgraph retrieves lineage of an Artifact represented through Artifacts and
-// Executions connected by Event edges and returned as a LineageSubgraph.
-func (c *MetadataClient) QueryArtifactLineageSubgraph(ctx context.Context, req *aiplatformpb.QueryArtifactLineageSubgraphRequest, opts ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error) {
+func (c *metadataGRPCClient) QueryArtifactLineageSubgraph(ctx context.Context, req *aiplatformpb.QueryArtifactLineageSubgraphRequest, opts ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "artifact", url.QueryEscape(req.GetArtifact())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.QueryArtifactLineageSubgraph[0:len(c.CallOptions.QueryArtifactLineageSubgraph):len(c.CallOptions.QueryArtifactLineageSubgraph)], opts...)
+	opts = append((*c.CallOptions).QueryArtifactLineageSubgraph[0:len((*c.CallOptions).QueryArtifactLineageSubgraph):len((*c.CallOptions).QueryArtifactLineageSubgraph)], opts...)
 	var resp *aiplatformpb.LineageSubgraph
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -891,9 +1092,9 @@ type CreateMetadataStoreOperation struct {
 
 // CreateMetadataStoreOperation returns a new CreateMetadataStoreOperation from a given name.
 // The name must be that of a previously created CreateMetadataStoreOperation, possibly from a different process.
-func (c *MetadataClient) CreateMetadataStoreOperation(name string) *CreateMetadataStoreOperation {
+func (c *metadataGRPCClient) CreateMetadataStoreOperation(name string) *CreateMetadataStoreOperation {
 	return &CreateMetadataStoreOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -960,9 +1161,9 @@ type DeleteContextOperation struct {
 
 // DeleteContextOperation returns a new DeleteContextOperation from a given name.
 // The name must be that of a previously created DeleteContextOperation, possibly from a different process.
-func (c *MetadataClient) DeleteContextOperation(name string) *DeleteContextOperation {
+func (c *metadataGRPCClient) DeleteContextOperation(name string) *DeleteContextOperation {
 	return &DeleteContextOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1018,9 +1219,9 @@ type DeleteMetadataStoreOperation struct {
 
 // DeleteMetadataStoreOperation returns a new DeleteMetadataStoreOperation from a given name.
 // The name must be that of a previously created DeleteMetadataStoreOperation, possibly from a different process.
-func (c *MetadataClient) DeleteMetadataStoreOperation(name string) *DeleteMetadataStoreOperation {
+func (c *metadataGRPCClient) DeleteMetadataStoreOperation(name string) *DeleteMetadataStoreOperation {
 	return &DeleteMetadataStoreOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

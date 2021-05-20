@@ -31,18 +31,19 @@ func ExampleNewProjectsClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleProjectsClient_GetProject() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewProjectsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.GetProjectRequest{
 		// TODO: Fill request struct fields.
@@ -56,14 +57,12 @@ func ExampleProjectsClient_GetProject() {
 }
 
 func ExampleProjectsClient_ListProjects() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewProjectsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.ListProjectsRequest{
 		// TODO: Fill request struct fields.
@@ -83,14 +82,12 @@ func ExampleProjectsClient_ListProjects() {
 }
 
 func ExampleProjectsClient_SearchProjects() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewProjectsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.SearchProjectsRequest{
 		// TODO: Fill request struct fields.
@@ -110,13 +107,12 @@ func ExampleProjectsClient_SearchProjects() {
 }
 
 func ExampleProjectsClient_CreateProject() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewProjectsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.CreateProjectRequest{
 		// TODO: Fill request struct fields.
@@ -135,13 +131,12 @@ func ExampleProjectsClient_CreateProject() {
 }
 
 func ExampleProjectsClient_UpdateProject() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewProjectsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.UpdateProjectRequest{
 		// TODO: Fill request struct fields.
@@ -160,13 +155,12 @@ func ExampleProjectsClient_UpdateProject() {
 }
 
 func ExampleProjectsClient_MoveProject() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewProjectsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.MoveProjectRequest{
 		// TODO: Fill request struct fields.
@@ -185,13 +179,12 @@ func ExampleProjectsClient_MoveProject() {
 }
 
 func ExampleProjectsClient_DeleteProject() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewProjectsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.DeleteProjectRequest{
 		// TODO: Fill request struct fields.
@@ -210,13 +203,12 @@ func ExampleProjectsClient_DeleteProject() {
 }
 
 func ExampleProjectsClient_UndeleteProject() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewProjectsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.UndeleteProjectRequest{
 		// TODO: Fill request struct fields.
@@ -235,13 +227,12 @@ func ExampleProjectsClient_UndeleteProject() {
 }
 
 func ExampleProjectsClient_GetIamPolicy() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewProjectsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.GetIamPolicyRequest{
 		// TODO: Fill request struct fields.
@@ -255,13 +246,12 @@ func ExampleProjectsClient_GetIamPolicy() {
 }
 
 func ExampleProjectsClient_SetIamPolicy() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewProjectsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.SetIamPolicyRequest{
 		// TODO: Fill request struct fields.
@@ -275,13 +265,12 @@ func ExampleProjectsClient_SetIamPolicy() {
 }
 
 func ExampleProjectsClient_TestIamPermissions() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewProjectsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.TestIamPermissionsRequest{
 		// TODO: Fill request struct fields.

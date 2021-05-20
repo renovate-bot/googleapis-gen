@@ -64,7 +64,7 @@ type BigtableInstanceAdminCallOptions struct {
 	TestIamPermissions    []gax.CallOption
 }
 
-func defaultBigtableInstanceAdminClientOptions() []option.ClientOption {
+func defaultBigtableInstanceAdminGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("bigtableadmin.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("bigtableadmin.mtls.googleapis.com:443"),
@@ -232,39 +232,241 @@ func defaultBigtableInstanceAdminCallOptions() *BigtableInstanceAdminCallOptions
 	}
 }
 
+// internalBigtableInstanceAdminClient is an interface that defines the methods availaible from Cloud Bigtable Admin API.
+type internalBigtableInstanceAdminClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateInstance(context.Context, *adminpb.CreateInstanceRequest, ...gax.CallOption) (*CreateInstanceOperation, error)
+	CreateInstanceOperation(name string) *CreateInstanceOperation
+	GetInstance(context.Context, *adminpb.GetInstanceRequest, ...gax.CallOption) (*adminpb.Instance, error)
+	ListInstances(context.Context, *adminpb.ListInstancesRequest, ...gax.CallOption) (*adminpb.ListInstancesResponse, error)
+	UpdateInstance(context.Context, *adminpb.Instance, ...gax.CallOption) (*adminpb.Instance, error)
+	PartialUpdateInstance(context.Context, *adminpb.PartialUpdateInstanceRequest, ...gax.CallOption) (*PartialUpdateInstanceOperation, error)
+	PartialUpdateInstanceOperation(name string) *PartialUpdateInstanceOperation
+	DeleteInstance(context.Context, *adminpb.DeleteInstanceRequest, ...gax.CallOption) error
+	CreateCluster(context.Context, *adminpb.CreateClusterRequest, ...gax.CallOption) (*CreateClusterOperation, error)
+	CreateClusterOperation(name string) *CreateClusterOperation
+	GetCluster(context.Context, *adminpb.GetClusterRequest, ...gax.CallOption) (*adminpb.Cluster, error)
+	ListClusters(context.Context, *adminpb.ListClustersRequest, ...gax.CallOption) (*adminpb.ListClustersResponse, error)
+	UpdateCluster(context.Context, *adminpb.Cluster, ...gax.CallOption) (*UpdateClusterOperation, error)
+	UpdateClusterOperation(name string) *UpdateClusterOperation
+	DeleteCluster(context.Context, *adminpb.DeleteClusterRequest, ...gax.CallOption) error
+	CreateAppProfile(context.Context, *adminpb.CreateAppProfileRequest, ...gax.CallOption) (*adminpb.AppProfile, error)
+	GetAppProfile(context.Context, *adminpb.GetAppProfileRequest, ...gax.CallOption) (*adminpb.AppProfile, error)
+	ListAppProfiles(context.Context, *adminpb.ListAppProfilesRequest, ...gax.CallOption) *AppProfileIterator
+	UpdateAppProfile(context.Context, *adminpb.UpdateAppProfileRequest, ...gax.CallOption) (*UpdateAppProfileOperation, error)
+	UpdateAppProfileOperation(name string) *UpdateAppProfileOperation
+	DeleteAppProfile(context.Context, *adminpb.DeleteAppProfileRequest, ...gax.CallOption) error
+	GetIamPolicy(context.Context, *iampb.GetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
+	SetIamPolicy(context.Context, *iampb.SetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
+	TestIamPermissions(context.Context, *iampb.TestIamPermissionsRequest, ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error)
+}
+
 // BigtableInstanceAdminClient is a client for interacting with Cloud Bigtable Admin API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Service for creating, configuring, and deleting Cloud Bigtable Instances and
+// Clusters. Provides access to the Instance and Cluster schemas only, not the
+// tables’ metadata or data stored in those tables.
+type BigtableInstanceAdminClient struct {
+	// The internal transport-dependent client.
+	internalClient internalBigtableInstanceAdminClient
+
+	// The call options for this service.
+	CallOptions *BigtableInstanceAdminCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *BigtableInstanceAdminClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *BigtableInstanceAdminClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *BigtableInstanceAdminClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateInstance create an instance within a project.
+func (c *BigtableInstanceAdminClient) CreateInstance(ctx context.Context, req *adminpb.CreateInstanceRequest, opts ...gax.CallOption) (*CreateInstanceOperation, error) {
+	return c.internalClient.CreateInstance(ctx, req, opts...)
+}
+
+// CreateInstanceOperation returns a new CreateInstanceOperation from a given name.
+// The name must be that of a previously created CreateInstanceOperation, possibly from a different process.
+func (c *BigtableInstanceAdminClient) CreateInstanceOperation(name string) *CreateInstanceOperation {
+	return c.internalClient.CreateInstanceOperation(name)
+}
+
+// GetInstance gets information about an instance.
+func (c *BigtableInstanceAdminClient) GetInstance(ctx context.Context, req *adminpb.GetInstanceRequest, opts ...gax.CallOption) (*adminpb.Instance, error) {
+	return c.internalClient.GetInstance(ctx, req, opts...)
+}
+
+// ListInstances lists information about instances in a project.
+func (c *BigtableInstanceAdminClient) ListInstances(ctx context.Context, req *adminpb.ListInstancesRequest, opts ...gax.CallOption) (*adminpb.ListInstancesResponse, error) {
+	return c.internalClient.ListInstances(ctx, req, opts...)
+}
+
+// UpdateInstance updates an instance within a project. This method updates only the display
+// name and type for an Instance. To update other Instance properties, such as
+// labels, use PartialUpdateInstance.
+func (c *BigtableInstanceAdminClient) UpdateInstance(ctx context.Context, req *adminpb.Instance, opts ...gax.CallOption) (*adminpb.Instance, error) {
+	return c.internalClient.UpdateInstance(ctx, req, opts...)
+}
+
+// PartialUpdateInstance partially updates an instance within a project. This method can modify all
+// fields of an Instance and is the preferred way to update an Instance.
+func (c *BigtableInstanceAdminClient) PartialUpdateInstance(ctx context.Context, req *adminpb.PartialUpdateInstanceRequest, opts ...gax.CallOption) (*PartialUpdateInstanceOperation, error) {
+	return c.internalClient.PartialUpdateInstance(ctx, req, opts...)
+}
+
+// PartialUpdateInstanceOperation returns a new PartialUpdateInstanceOperation from a given name.
+// The name must be that of a previously created PartialUpdateInstanceOperation, possibly from a different process.
+func (c *BigtableInstanceAdminClient) PartialUpdateInstanceOperation(name string) *PartialUpdateInstanceOperation {
+	return c.internalClient.PartialUpdateInstanceOperation(name)
+}
+
+// DeleteInstance delete an instance from a project.
+func (c *BigtableInstanceAdminClient) DeleteInstance(ctx context.Context, req *adminpb.DeleteInstanceRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteInstance(ctx, req, opts...)
+}
+
+// CreateCluster creates a cluster within an instance.
+func (c *BigtableInstanceAdminClient) CreateCluster(ctx context.Context, req *adminpb.CreateClusterRequest, opts ...gax.CallOption) (*CreateClusterOperation, error) {
+	return c.internalClient.CreateCluster(ctx, req, opts...)
+}
+
+// CreateClusterOperation returns a new CreateClusterOperation from a given name.
+// The name must be that of a previously created CreateClusterOperation, possibly from a different process.
+func (c *BigtableInstanceAdminClient) CreateClusterOperation(name string) *CreateClusterOperation {
+	return c.internalClient.CreateClusterOperation(name)
+}
+
+// GetCluster gets information about a cluster.
+func (c *BigtableInstanceAdminClient) GetCluster(ctx context.Context, req *adminpb.GetClusterRequest, opts ...gax.CallOption) (*adminpb.Cluster, error) {
+	return c.internalClient.GetCluster(ctx, req, opts...)
+}
+
+// ListClusters lists information about clusters in an instance.
+func (c *BigtableInstanceAdminClient) ListClusters(ctx context.Context, req *adminpb.ListClustersRequest, opts ...gax.CallOption) (*adminpb.ListClustersResponse, error) {
+	return c.internalClient.ListClusters(ctx, req, opts...)
+}
+
+// UpdateCluster updates a cluster within an instance.
+func (c *BigtableInstanceAdminClient) UpdateCluster(ctx context.Context, req *adminpb.Cluster, opts ...gax.CallOption) (*UpdateClusterOperation, error) {
+	return c.internalClient.UpdateCluster(ctx, req, opts...)
+}
+
+// UpdateClusterOperation returns a new UpdateClusterOperation from a given name.
+// The name must be that of a previously created UpdateClusterOperation, possibly from a different process.
+func (c *BigtableInstanceAdminClient) UpdateClusterOperation(name string) *UpdateClusterOperation {
+	return c.internalClient.UpdateClusterOperation(name)
+}
+
+// DeleteCluster deletes a cluster from an instance.
+func (c *BigtableInstanceAdminClient) DeleteCluster(ctx context.Context, req *adminpb.DeleteClusterRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteCluster(ctx, req, opts...)
+}
+
+// CreateAppProfile creates an app profile within an instance.
+func (c *BigtableInstanceAdminClient) CreateAppProfile(ctx context.Context, req *adminpb.CreateAppProfileRequest, opts ...gax.CallOption) (*adminpb.AppProfile, error) {
+	return c.internalClient.CreateAppProfile(ctx, req, opts...)
+}
+
+// GetAppProfile gets information about an app profile.
+func (c *BigtableInstanceAdminClient) GetAppProfile(ctx context.Context, req *adminpb.GetAppProfileRequest, opts ...gax.CallOption) (*adminpb.AppProfile, error) {
+	return c.internalClient.GetAppProfile(ctx, req, opts...)
+}
+
+// ListAppProfiles lists information about app profiles in an instance.
+func (c *BigtableInstanceAdminClient) ListAppProfiles(ctx context.Context, req *adminpb.ListAppProfilesRequest, opts ...gax.CallOption) *AppProfileIterator {
+	return c.internalClient.ListAppProfiles(ctx, req, opts...)
+}
+
+// UpdateAppProfile updates an app profile within an instance.
+func (c *BigtableInstanceAdminClient) UpdateAppProfile(ctx context.Context, req *adminpb.UpdateAppProfileRequest, opts ...gax.CallOption) (*UpdateAppProfileOperation, error) {
+	return c.internalClient.UpdateAppProfile(ctx, req, opts...)
+}
+
+// UpdateAppProfileOperation returns a new UpdateAppProfileOperation from a given name.
+// The name must be that of a previously created UpdateAppProfileOperation, possibly from a different process.
+func (c *BigtableInstanceAdminClient) UpdateAppProfileOperation(name string) *UpdateAppProfileOperation {
+	return c.internalClient.UpdateAppProfileOperation(name)
+}
+
+// DeleteAppProfile deletes an app profile from an instance.
+func (c *BigtableInstanceAdminClient) DeleteAppProfile(ctx context.Context, req *adminpb.DeleteAppProfileRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteAppProfile(ctx, req, opts...)
+}
+
+// GetIamPolicy gets the access control policy for an instance resource. Returns an empty
+// policy if an instance exists but does not have a policy set.
+func (c *BigtableInstanceAdminClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+	return c.internalClient.GetIamPolicy(ctx, req, opts...)
+}
+
+// SetIamPolicy sets the access control policy on an instance resource. Replaces any
+// existing policy.
+func (c *BigtableInstanceAdminClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+	return c.internalClient.SetIamPolicy(ctx, req, opts...)
+}
+
+// TestIamPermissions returns permissions that the caller has on the specified instance resource.
+func (c *BigtableInstanceAdminClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
+	return c.internalClient.TestIamPermissions(ctx, req, opts...)
+}
+
+// bigtableInstanceAdminGRPCClient is a client for interacting with Cloud Bigtable Admin API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type BigtableInstanceAdminClient struct {
+type bigtableInstanceAdminGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing BigtableInstanceAdminClient
+	CallOptions **BigtableInstanceAdminCallOptions
+
 	// The gRPC API client.
 	bigtableInstanceAdminClient adminpb.BigtableInstanceAdminClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *BigtableInstanceAdminCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewBigtableInstanceAdminClient creates a new bigtable instance admin client.
+// NewBigtableInstanceAdminClient creates a new bigtable instance admin client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service for creating, configuring, and deleting Cloud Bigtable Instances and
 // Clusters. Provides access to the Instance and Cluster schemas only, not the
 // tables’ metadata or data stored in those tables.
 func NewBigtableInstanceAdminClient(ctx context.Context, opts ...option.ClientOption) (*BigtableInstanceAdminClient, error) {
-	clientOpts := defaultBigtableInstanceAdminClientOptions()
-
+	clientOpts := defaultBigtableInstanceAdminGRPCClientOptions()
 	if newBigtableInstanceAdminClientHook != nil {
 		hookOpts, err := newBigtableInstanceAdminClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -282,16 +484,19 @@ func NewBigtableInstanceAdminClient(ctx context.Context, opts ...option.ClientOp
 	if err != nil {
 		return nil, err
 	}
-	c := &BigtableInstanceAdminClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultBigtableInstanceAdminCallOptions(),
+	client := BigtableInstanceAdminClient{CallOptions: defaultBigtableInstanceAdminCallOptions()}
 
+	c := &bigtableInstanceAdminGRPCClient{
+		connPool:                    connPool,
+		disableDeadlines:            disableDeadlines,
 		bigtableInstanceAdminClient: adminpb.NewBigtableInstanceAdminClient(connPool),
+		CallOptions:                 &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -301,33 +506,33 @@ func NewBigtableInstanceAdminClient(ctx context.Context, opts ...option.ClientOp
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *BigtableInstanceAdminClient) Connection() *grpc.ClientConn {
+func (c *bigtableInstanceAdminGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *BigtableInstanceAdminClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *BigtableInstanceAdminClient) setGoogleClientInfo(keyval ...string) {
+func (c *bigtableInstanceAdminGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateInstance create an instance within a project.
-func (c *BigtableInstanceAdminClient) CreateInstance(ctx context.Context, req *adminpb.CreateInstanceRequest, opts ...gax.CallOption) (*CreateInstanceOperation, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *bigtableInstanceAdminGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *bigtableInstanceAdminGRPCClient) CreateInstance(ctx context.Context, req *adminpb.CreateInstanceRequest, opts ...gax.CallOption) (*CreateInstanceOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 300000*time.Millisecond)
 		defer cancel()
@@ -335,7 +540,7 @@ func (c *BigtableInstanceAdminClient) CreateInstance(ctx context.Context, req *a
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateInstance[0:len(c.CallOptions.CreateInstance):len(c.CallOptions.CreateInstance)], opts...)
+	opts = append((*c.CallOptions).CreateInstance[0:len((*c.CallOptions).CreateInstance):len((*c.CallOptions).CreateInstance)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -346,12 +551,11 @@ func (c *BigtableInstanceAdminClient) CreateInstance(ctx context.Context, req *a
 		return nil, err
 	}
 	return &CreateInstanceOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetInstance gets information about an instance.
-func (c *BigtableInstanceAdminClient) GetInstance(ctx context.Context, req *adminpb.GetInstanceRequest, opts ...gax.CallOption) (*adminpb.Instance, error) {
+func (c *bigtableInstanceAdminGRPCClient) GetInstance(ctx context.Context, req *adminpb.GetInstanceRequest, opts ...gax.CallOption) (*adminpb.Instance, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -359,7 +563,7 @@ func (c *BigtableInstanceAdminClient) GetInstance(ctx context.Context, req *admi
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetInstance[0:len(c.CallOptions.GetInstance):len(c.CallOptions.GetInstance)], opts...)
+	opts = append((*c.CallOptions).GetInstance[0:len((*c.CallOptions).GetInstance):len((*c.CallOptions).GetInstance)], opts...)
 	var resp *adminpb.Instance
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -372,8 +576,7 @@ func (c *BigtableInstanceAdminClient) GetInstance(ctx context.Context, req *admi
 	return resp, nil
 }
 
-// ListInstances lists information about instances in a project.
-func (c *BigtableInstanceAdminClient) ListInstances(ctx context.Context, req *adminpb.ListInstancesRequest, opts ...gax.CallOption) (*adminpb.ListInstancesResponse, error) {
+func (c *bigtableInstanceAdminGRPCClient) ListInstances(ctx context.Context, req *adminpb.ListInstancesRequest, opts ...gax.CallOption) (*adminpb.ListInstancesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -381,7 +584,7 @@ func (c *BigtableInstanceAdminClient) ListInstances(ctx context.Context, req *ad
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListInstances[0:len(c.CallOptions.ListInstances):len(c.CallOptions.ListInstances)], opts...)
+	opts = append((*c.CallOptions).ListInstances[0:len((*c.CallOptions).ListInstances):len((*c.CallOptions).ListInstances)], opts...)
 	var resp *adminpb.ListInstancesResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -394,10 +597,7 @@ func (c *BigtableInstanceAdminClient) ListInstances(ctx context.Context, req *ad
 	return resp, nil
 }
 
-// UpdateInstance updates an instance within a project. This method updates only the display
-// name and type for an Instance. To update other Instance properties, such as
-// labels, use PartialUpdateInstance.
-func (c *BigtableInstanceAdminClient) UpdateInstance(ctx context.Context, req *adminpb.Instance, opts ...gax.CallOption) (*adminpb.Instance, error) {
+func (c *bigtableInstanceAdminGRPCClient) UpdateInstance(ctx context.Context, req *adminpb.Instance, opts ...gax.CallOption) (*adminpb.Instance, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -405,7 +605,7 @@ func (c *BigtableInstanceAdminClient) UpdateInstance(ctx context.Context, req *a
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateInstance[0:len(c.CallOptions.UpdateInstance):len(c.CallOptions.UpdateInstance)], opts...)
+	opts = append((*c.CallOptions).UpdateInstance[0:len((*c.CallOptions).UpdateInstance):len((*c.CallOptions).UpdateInstance)], opts...)
 	var resp *adminpb.Instance
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -418,9 +618,7 @@ func (c *BigtableInstanceAdminClient) UpdateInstance(ctx context.Context, req *a
 	return resp, nil
 }
 
-// PartialUpdateInstance partially updates an instance within a project. This method can modify all
-// fields of an Instance and is the preferred way to update an Instance.
-func (c *BigtableInstanceAdminClient) PartialUpdateInstance(ctx context.Context, req *adminpb.PartialUpdateInstanceRequest, opts ...gax.CallOption) (*PartialUpdateInstanceOperation, error) {
+func (c *bigtableInstanceAdminGRPCClient) PartialUpdateInstance(ctx context.Context, req *adminpb.PartialUpdateInstanceRequest, opts ...gax.CallOption) (*PartialUpdateInstanceOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -428,7 +626,7 @@ func (c *BigtableInstanceAdminClient) PartialUpdateInstance(ctx context.Context,
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "instance.name", url.QueryEscape(req.GetInstance().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.PartialUpdateInstance[0:len(c.CallOptions.PartialUpdateInstance):len(c.CallOptions.PartialUpdateInstance)], opts...)
+	opts = append((*c.CallOptions).PartialUpdateInstance[0:len((*c.CallOptions).PartialUpdateInstance):len((*c.CallOptions).PartialUpdateInstance)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -439,12 +637,11 @@ func (c *BigtableInstanceAdminClient) PartialUpdateInstance(ctx context.Context,
 		return nil, err
 	}
 	return &PartialUpdateInstanceOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeleteInstance delete an instance from a project.
-func (c *BigtableInstanceAdminClient) DeleteInstance(ctx context.Context, req *adminpb.DeleteInstanceRequest, opts ...gax.CallOption) error {
+func (c *bigtableInstanceAdminGRPCClient) DeleteInstance(ctx context.Context, req *adminpb.DeleteInstanceRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -452,7 +649,7 @@ func (c *BigtableInstanceAdminClient) DeleteInstance(ctx context.Context, req *a
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteInstance[0:len(c.CallOptions.DeleteInstance):len(c.CallOptions.DeleteInstance)], opts...)
+	opts = append((*c.CallOptions).DeleteInstance[0:len((*c.CallOptions).DeleteInstance):len((*c.CallOptions).DeleteInstance)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.bigtableInstanceAdminClient.DeleteInstance(ctx, req, settings.GRPC...)
@@ -461,8 +658,7 @@ func (c *BigtableInstanceAdminClient) DeleteInstance(ctx context.Context, req *a
 	return err
 }
 
-// CreateCluster creates a cluster within an instance.
-func (c *BigtableInstanceAdminClient) CreateCluster(ctx context.Context, req *adminpb.CreateClusterRequest, opts ...gax.CallOption) (*CreateClusterOperation, error) {
+func (c *bigtableInstanceAdminGRPCClient) CreateCluster(ctx context.Context, req *adminpb.CreateClusterRequest, opts ...gax.CallOption) (*CreateClusterOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -470,7 +666,7 @@ func (c *BigtableInstanceAdminClient) CreateCluster(ctx context.Context, req *ad
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateCluster[0:len(c.CallOptions.CreateCluster):len(c.CallOptions.CreateCluster)], opts...)
+	opts = append((*c.CallOptions).CreateCluster[0:len((*c.CallOptions).CreateCluster):len((*c.CallOptions).CreateCluster)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -481,12 +677,11 @@ func (c *BigtableInstanceAdminClient) CreateCluster(ctx context.Context, req *ad
 		return nil, err
 	}
 	return &CreateClusterOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetCluster gets information about a cluster.
-func (c *BigtableInstanceAdminClient) GetCluster(ctx context.Context, req *adminpb.GetClusterRequest, opts ...gax.CallOption) (*adminpb.Cluster, error) {
+func (c *bigtableInstanceAdminGRPCClient) GetCluster(ctx context.Context, req *adminpb.GetClusterRequest, opts ...gax.CallOption) (*adminpb.Cluster, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -494,7 +689,7 @@ func (c *BigtableInstanceAdminClient) GetCluster(ctx context.Context, req *admin
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetCluster[0:len(c.CallOptions.GetCluster):len(c.CallOptions.GetCluster)], opts...)
+	opts = append((*c.CallOptions).GetCluster[0:len((*c.CallOptions).GetCluster):len((*c.CallOptions).GetCluster)], opts...)
 	var resp *adminpb.Cluster
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -507,8 +702,7 @@ func (c *BigtableInstanceAdminClient) GetCluster(ctx context.Context, req *admin
 	return resp, nil
 }
 
-// ListClusters lists information about clusters in an instance.
-func (c *BigtableInstanceAdminClient) ListClusters(ctx context.Context, req *adminpb.ListClustersRequest, opts ...gax.CallOption) (*adminpb.ListClustersResponse, error) {
+func (c *bigtableInstanceAdminGRPCClient) ListClusters(ctx context.Context, req *adminpb.ListClustersRequest, opts ...gax.CallOption) (*adminpb.ListClustersResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -516,7 +710,7 @@ func (c *BigtableInstanceAdminClient) ListClusters(ctx context.Context, req *adm
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListClusters[0:len(c.CallOptions.ListClusters):len(c.CallOptions.ListClusters)], opts...)
+	opts = append((*c.CallOptions).ListClusters[0:len((*c.CallOptions).ListClusters):len((*c.CallOptions).ListClusters)], opts...)
 	var resp *adminpb.ListClustersResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -529,8 +723,7 @@ func (c *BigtableInstanceAdminClient) ListClusters(ctx context.Context, req *adm
 	return resp, nil
 }
 
-// UpdateCluster updates a cluster within an instance.
-func (c *BigtableInstanceAdminClient) UpdateCluster(ctx context.Context, req *adminpb.Cluster, opts ...gax.CallOption) (*UpdateClusterOperation, error) {
+func (c *bigtableInstanceAdminGRPCClient) UpdateCluster(ctx context.Context, req *adminpb.Cluster, opts ...gax.CallOption) (*UpdateClusterOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -538,7 +731,7 @@ func (c *BigtableInstanceAdminClient) UpdateCluster(ctx context.Context, req *ad
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateCluster[0:len(c.CallOptions.UpdateCluster):len(c.CallOptions.UpdateCluster)], opts...)
+	opts = append((*c.CallOptions).UpdateCluster[0:len((*c.CallOptions).UpdateCluster):len((*c.CallOptions).UpdateCluster)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -549,12 +742,11 @@ func (c *BigtableInstanceAdminClient) UpdateCluster(ctx context.Context, req *ad
 		return nil, err
 	}
 	return &UpdateClusterOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeleteCluster deletes a cluster from an instance.
-func (c *BigtableInstanceAdminClient) DeleteCluster(ctx context.Context, req *adminpb.DeleteClusterRequest, opts ...gax.CallOption) error {
+func (c *bigtableInstanceAdminGRPCClient) DeleteCluster(ctx context.Context, req *adminpb.DeleteClusterRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -562,7 +754,7 @@ func (c *BigtableInstanceAdminClient) DeleteCluster(ctx context.Context, req *ad
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteCluster[0:len(c.CallOptions.DeleteCluster):len(c.CallOptions.DeleteCluster)], opts...)
+	opts = append((*c.CallOptions).DeleteCluster[0:len((*c.CallOptions).DeleteCluster):len((*c.CallOptions).DeleteCluster)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.bigtableInstanceAdminClient.DeleteCluster(ctx, req, settings.GRPC...)
@@ -571,8 +763,7 @@ func (c *BigtableInstanceAdminClient) DeleteCluster(ctx context.Context, req *ad
 	return err
 }
 
-// CreateAppProfile creates an app profile within an instance.
-func (c *BigtableInstanceAdminClient) CreateAppProfile(ctx context.Context, req *adminpb.CreateAppProfileRequest, opts ...gax.CallOption) (*adminpb.AppProfile, error) {
+func (c *bigtableInstanceAdminGRPCClient) CreateAppProfile(ctx context.Context, req *adminpb.CreateAppProfileRequest, opts ...gax.CallOption) (*adminpb.AppProfile, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -580,7 +771,7 @@ func (c *BigtableInstanceAdminClient) CreateAppProfile(ctx context.Context, req 
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateAppProfile[0:len(c.CallOptions.CreateAppProfile):len(c.CallOptions.CreateAppProfile)], opts...)
+	opts = append((*c.CallOptions).CreateAppProfile[0:len((*c.CallOptions).CreateAppProfile):len((*c.CallOptions).CreateAppProfile)], opts...)
 	var resp *adminpb.AppProfile
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -593,8 +784,7 @@ func (c *BigtableInstanceAdminClient) CreateAppProfile(ctx context.Context, req 
 	return resp, nil
 }
 
-// GetAppProfile gets information about an app profile.
-func (c *BigtableInstanceAdminClient) GetAppProfile(ctx context.Context, req *adminpb.GetAppProfileRequest, opts ...gax.CallOption) (*adminpb.AppProfile, error) {
+func (c *bigtableInstanceAdminGRPCClient) GetAppProfile(ctx context.Context, req *adminpb.GetAppProfileRequest, opts ...gax.CallOption) (*adminpb.AppProfile, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -602,7 +792,7 @@ func (c *BigtableInstanceAdminClient) GetAppProfile(ctx context.Context, req *ad
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetAppProfile[0:len(c.CallOptions.GetAppProfile):len(c.CallOptions.GetAppProfile)], opts...)
+	opts = append((*c.CallOptions).GetAppProfile[0:len((*c.CallOptions).GetAppProfile):len((*c.CallOptions).GetAppProfile)], opts...)
 	var resp *adminpb.AppProfile
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -615,11 +805,10 @@ func (c *BigtableInstanceAdminClient) GetAppProfile(ctx context.Context, req *ad
 	return resp, nil
 }
 
-// ListAppProfiles lists information about app profiles in an instance.
-func (c *BigtableInstanceAdminClient) ListAppProfiles(ctx context.Context, req *adminpb.ListAppProfilesRequest, opts ...gax.CallOption) *AppProfileIterator {
+func (c *bigtableInstanceAdminGRPCClient) ListAppProfiles(ctx context.Context, req *adminpb.ListAppProfilesRequest, opts ...gax.CallOption) *AppProfileIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListAppProfiles[0:len(c.CallOptions.ListAppProfiles):len(c.CallOptions.ListAppProfiles)], opts...)
+	opts = append((*c.CallOptions).ListAppProfiles[0:len((*c.CallOptions).ListAppProfiles):len((*c.CallOptions).ListAppProfiles)], opts...)
 	it := &AppProfileIterator{}
 	req = proto.Clone(req).(*adminpb.ListAppProfilesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.AppProfile, string, error) {
@@ -656,8 +845,7 @@ func (c *BigtableInstanceAdminClient) ListAppProfiles(ctx context.Context, req *
 	return it
 }
 
-// UpdateAppProfile updates an app profile within an instance.
-func (c *BigtableInstanceAdminClient) UpdateAppProfile(ctx context.Context, req *adminpb.UpdateAppProfileRequest, opts ...gax.CallOption) (*UpdateAppProfileOperation, error) {
+func (c *bigtableInstanceAdminGRPCClient) UpdateAppProfile(ctx context.Context, req *adminpb.UpdateAppProfileRequest, opts ...gax.CallOption) (*UpdateAppProfileOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -665,7 +853,7 @@ func (c *BigtableInstanceAdminClient) UpdateAppProfile(ctx context.Context, req 
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "app_profile.name", url.QueryEscape(req.GetAppProfile().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateAppProfile[0:len(c.CallOptions.UpdateAppProfile):len(c.CallOptions.UpdateAppProfile)], opts...)
+	opts = append((*c.CallOptions).UpdateAppProfile[0:len((*c.CallOptions).UpdateAppProfile):len((*c.CallOptions).UpdateAppProfile)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -676,12 +864,11 @@ func (c *BigtableInstanceAdminClient) UpdateAppProfile(ctx context.Context, req 
 		return nil, err
 	}
 	return &UpdateAppProfileOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeleteAppProfile deletes an app profile from an instance.
-func (c *BigtableInstanceAdminClient) DeleteAppProfile(ctx context.Context, req *adminpb.DeleteAppProfileRequest, opts ...gax.CallOption) error {
+func (c *bigtableInstanceAdminGRPCClient) DeleteAppProfile(ctx context.Context, req *adminpb.DeleteAppProfileRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -689,7 +876,7 @@ func (c *BigtableInstanceAdminClient) DeleteAppProfile(ctx context.Context, req 
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteAppProfile[0:len(c.CallOptions.DeleteAppProfile):len(c.CallOptions.DeleteAppProfile)], opts...)
+	opts = append((*c.CallOptions).DeleteAppProfile[0:len((*c.CallOptions).DeleteAppProfile):len((*c.CallOptions).DeleteAppProfile)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.bigtableInstanceAdminClient.DeleteAppProfile(ctx, req, settings.GRPC...)
@@ -698,9 +885,7 @@ func (c *BigtableInstanceAdminClient) DeleteAppProfile(ctx context.Context, req 
 	return err
 }
 
-// GetIamPolicy gets the access control policy for an instance resource. Returns an empty
-// policy if an instance exists but does not have a policy set.
-func (c *BigtableInstanceAdminClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+func (c *bigtableInstanceAdminGRPCClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -708,7 +893,7 @@ func (c *BigtableInstanceAdminClient) GetIamPolicy(ctx context.Context, req *iam
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetIamPolicy[0:len(c.CallOptions.GetIamPolicy):len(c.CallOptions.GetIamPolicy)], opts...)
+	opts = append((*c.CallOptions).GetIamPolicy[0:len((*c.CallOptions).GetIamPolicy):len((*c.CallOptions).GetIamPolicy)], opts...)
 	var resp *iampb.Policy
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -721,9 +906,7 @@ func (c *BigtableInstanceAdminClient) GetIamPolicy(ctx context.Context, req *iam
 	return resp, nil
 }
 
-// SetIamPolicy sets the access control policy on an instance resource. Replaces any
-// existing policy.
-func (c *BigtableInstanceAdminClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+func (c *bigtableInstanceAdminGRPCClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -731,7 +914,7 @@ func (c *BigtableInstanceAdminClient) SetIamPolicy(ctx context.Context, req *iam
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SetIamPolicy[0:len(c.CallOptions.SetIamPolicy):len(c.CallOptions.SetIamPolicy)], opts...)
+	opts = append((*c.CallOptions).SetIamPolicy[0:len((*c.CallOptions).SetIamPolicy):len((*c.CallOptions).SetIamPolicy)], opts...)
 	var resp *iampb.Policy
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -744,8 +927,7 @@ func (c *BigtableInstanceAdminClient) SetIamPolicy(ctx context.Context, req *iam
 	return resp, nil
 }
 
-// TestIamPermissions returns permissions that the caller has on the specified instance resource.
-func (c *BigtableInstanceAdminClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
+func (c *bigtableInstanceAdminGRPCClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -753,7 +935,7 @@ func (c *BigtableInstanceAdminClient) TestIamPermissions(ctx context.Context, re
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.TestIamPermissions[0:len(c.CallOptions.TestIamPermissions):len(c.CallOptions.TestIamPermissions)], opts...)
+	opts = append((*c.CallOptions).TestIamPermissions[0:len((*c.CallOptions).TestIamPermissions):len((*c.CallOptions).TestIamPermissions)], opts...)
 	var resp *iampb.TestIamPermissionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -773,9 +955,9 @@ type CreateClusterOperation struct {
 
 // CreateClusterOperation returns a new CreateClusterOperation from a given name.
 // The name must be that of a previously created CreateClusterOperation, possibly from a different process.
-func (c *BigtableInstanceAdminClient) CreateClusterOperation(name string) *CreateClusterOperation {
+func (c *bigtableInstanceAdminGRPCClient) CreateClusterOperation(name string) *CreateClusterOperation {
 	return &CreateClusterOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -842,9 +1024,9 @@ type CreateInstanceOperation struct {
 
 // CreateInstanceOperation returns a new CreateInstanceOperation from a given name.
 // The name must be that of a previously created CreateInstanceOperation, possibly from a different process.
-func (c *BigtableInstanceAdminClient) CreateInstanceOperation(name string) *CreateInstanceOperation {
+func (c *bigtableInstanceAdminGRPCClient) CreateInstanceOperation(name string) *CreateInstanceOperation {
 	return &CreateInstanceOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -911,9 +1093,9 @@ type PartialUpdateInstanceOperation struct {
 
 // PartialUpdateInstanceOperation returns a new PartialUpdateInstanceOperation from a given name.
 // The name must be that of a previously created PartialUpdateInstanceOperation, possibly from a different process.
-func (c *BigtableInstanceAdminClient) PartialUpdateInstanceOperation(name string) *PartialUpdateInstanceOperation {
+func (c *bigtableInstanceAdminGRPCClient) PartialUpdateInstanceOperation(name string) *PartialUpdateInstanceOperation {
 	return &PartialUpdateInstanceOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -980,9 +1162,9 @@ type UpdateAppProfileOperation struct {
 
 // UpdateAppProfileOperation returns a new UpdateAppProfileOperation from a given name.
 // The name must be that of a previously created UpdateAppProfileOperation, possibly from a different process.
-func (c *BigtableInstanceAdminClient) UpdateAppProfileOperation(name string) *UpdateAppProfileOperation {
+func (c *bigtableInstanceAdminGRPCClient) UpdateAppProfileOperation(name string) *UpdateAppProfileOperation {
 	return &UpdateAppProfileOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1049,9 +1231,9 @@ type UpdateClusterOperation struct {
 
 // UpdateClusterOperation returns a new UpdateClusterOperation from a given name.
 // The name must be that of a previously created UpdateClusterOperation, possibly from a different process.
-func (c *BigtableInstanceAdminClient) UpdateClusterOperation(name string) *UpdateClusterOperation {
+func (c *bigtableInstanceAdminGRPCClient) UpdateClusterOperation(name string) *UpdateClusterOperation {
 	return &UpdateClusterOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

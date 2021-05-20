@@ -29,6 +29,8 @@ func ExampleNewTraceClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
@@ -39,6 +41,7 @@ func ExampleTraceClient_BatchWriteSpans() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &cloudtracepb.BatchWriteSpansRequest{
 		// TODO: Fill request struct fields.
@@ -50,13 +53,12 @@ func ExampleTraceClient_BatchWriteSpans() {
 }
 
 func ExampleTraceClient_CreateSpan() {
-	// import cloudtracepb "google.golang.org/genproto/googleapis/devtools/cloudtrace/v2"
-
 	ctx := context.Background()
 	c, err := cloudtrace.NewTraceClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &cloudtracepb.Span{
 		// TODO: Fill request struct fields.

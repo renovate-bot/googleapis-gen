@@ -30,19 +30,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_ListClusters() {
-	// import aistreamspb "google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aistreams.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aistreamspb.ListClustersRequest{
 		// TODO: Fill request struct fields.
@@ -62,13 +62,12 @@ func ExampleClient_ListClusters() {
 }
 
 func ExampleClient_GetCluster() {
-	// import aistreamspb "google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1"
-
 	ctx := context.Background()
 	c, err := aistreams.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aistreamspb.GetClusterRequest{
 		// TODO: Fill request struct fields.
@@ -82,13 +81,12 @@ func ExampleClient_GetCluster() {
 }
 
 func ExampleClient_CreateCluster() {
-	// import aistreamspb "google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1"
-
 	ctx := context.Background()
 	c, err := aistreams.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aistreamspb.CreateClusterRequest{
 		// TODO: Fill request struct fields.
@@ -107,13 +105,12 @@ func ExampleClient_CreateCluster() {
 }
 
 func ExampleClient_UpdateCluster() {
-	// import aistreamspb "google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1"
-
 	ctx := context.Background()
 	c, err := aistreams.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aistreamspb.UpdateClusterRequest{
 		// TODO: Fill request struct fields.
@@ -132,13 +129,12 @@ func ExampleClient_UpdateCluster() {
 }
 
 func ExampleClient_DeleteCluster() {
-	// import aistreamspb "google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1"
-
 	ctx := context.Background()
 	c, err := aistreams.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aistreamspb.DeleteClusterRequest{
 		// TODO: Fill request struct fields.
@@ -155,14 +151,12 @@ func ExampleClient_DeleteCluster() {
 }
 
 func ExampleClient_ListStreams() {
-	// import aistreamspb "google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aistreams.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aistreamspb.ListStreamsRequest{
 		// TODO: Fill request struct fields.
@@ -182,13 +176,12 @@ func ExampleClient_ListStreams() {
 }
 
 func ExampleClient_GetStream() {
-	// import aistreamspb "google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1"
-
 	ctx := context.Background()
 	c, err := aistreams.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aistreamspb.GetStreamRequest{
 		// TODO: Fill request struct fields.
@@ -202,13 +195,12 @@ func ExampleClient_GetStream() {
 }
 
 func ExampleClient_CreateStream() {
-	// import aistreamspb "google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1"
-
 	ctx := context.Background()
 	c, err := aistreams.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aistreamspb.CreateStreamRequest{
 		// TODO: Fill request struct fields.
@@ -227,13 +219,12 @@ func ExampleClient_CreateStream() {
 }
 
 func ExampleClient_UpdateStream() {
-	// import aistreamspb "google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1"
-
 	ctx := context.Background()
 	c, err := aistreams.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aistreamspb.UpdateStreamRequest{
 		// TODO: Fill request struct fields.
@@ -252,13 +243,12 @@ func ExampleClient_UpdateStream() {
 }
 
 func ExampleClient_DeleteStream() {
-	// import aistreamspb "google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1"
-
 	ctx := context.Background()
 	c, err := aistreams.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aistreamspb.DeleteStreamRequest{
 		// TODO: Fill request struct fields.

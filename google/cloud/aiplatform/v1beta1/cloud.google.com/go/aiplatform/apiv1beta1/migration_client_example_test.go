@@ -30,19 +30,19 @@ func ExampleNewMigrationClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleMigrationClient_SearchMigratableResources() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMigrationClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.SearchMigratableResourcesRequest{
 		// TODO: Fill request struct fields.
@@ -62,13 +62,12 @@ func ExampleMigrationClient_SearchMigratableResources() {
 }
 
 func ExampleMigrationClient_BatchMigrateResources() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMigrationClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.BatchMigrateResourcesRequest{
 		// TODO: Fill request struct fields.

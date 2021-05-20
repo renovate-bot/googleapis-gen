@@ -29,18 +29,19 @@ func ExampleNewCloudShellClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleCloudShellClient_GetEnvironment() {
-	// import shellpb "google.golang.org/genproto/googleapis/cloud/shell/v1"
-
 	ctx := context.Background()
 	c, err := shell.NewCloudShellClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &shellpb.GetEnvironmentRequest{
 		// TODO: Fill request struct fields.
@@ -54,13 +55,12 @@ func ExampleCloudShellClient_GetEnvironment() {
 }
 
 func ExampleCloudShellClient_StartEnvironment() {
-	// import shellpb "google.golang.org/genproto/googleapis/cloud/shell/v1"
-
 	ctx := context.Background()
 	c, err := shell.NewCloudShellClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &shellpb.StartEnvironmentRequest{
 		// TODO: Fill request struct fields.
@@ -79,13 +79,12 @@ func ExampleCloudShellClient_StartEnvironment() {
 }
 
 func ExampleCloudShellClient_AuthorizeEnvironment() {
-	// import shellpb "google.golang.org/genproto/googleapis/cloud/shell/v1"
-
 	ctx := context.Background()
 	c, err := shell.NewCloudShellClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &shellpb.AuthorizeEnvironmentRequest{
 		// TODO: Fill request struct fields.
@@ -104,13 +103,12 @@ func ExampleCloudShellClient_AuthorizeEnvironment() {
 }
 
 func ExampleCloudShellClient_AddPublicKey() {
-	// import shellpb "google.golang.org/genproto/googleapis/cloud/shell/v1"
-
 	ctx := context.Background()
 	c, err := shell.NewCloudShellClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &shellpb.AddPublicKeyRequest{
 		// TODO: Fill request struct fields.
@@ -129,13 +127,12 @@ func ExampleCloudShellClient_AddPublicKey() {
 }
 
 func ExampleCloudShellClient_RemovePublicKey() {
-	// import shellpb "google.golang.org/genproto/googleapis/cloud/shell/v1"
-
 	ctx := context.Background()
 	c, err := shell.NewCloudShellClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &shellpb.RemovePublicKeyRequest{
 		// TODO: Fill request struct fields.

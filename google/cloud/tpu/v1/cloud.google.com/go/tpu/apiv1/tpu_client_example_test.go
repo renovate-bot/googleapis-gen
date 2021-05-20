@@ -30,19 +30,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_ListNodes() {
-	// import tpupb "google.golang.org/genproto/googleapis/cloud/tpu/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := tpu.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &tpupb.ListNodesRequest{
 		// TODO: Fill request struct fields.
@@ -62,13 +62,12 @@ func ExampleClient_ListNodes() {
 }
 
 func ExampleClient_GetNode() {
-	// import tpupb "google.golang.org/genproto/googleapis/cloud/tpu/v1"
-
 	ctx := context.Background()
 	c, err := tpu.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &tpupb.GetNodeRequest{
 		// TODO: Fill request struct fields.
@@ -82,13 +81,12 @@ func ExampleClient_GetNode() {
 }
 
 func ExampleClient_CreateNode() {
-	// import tpupb "google.golang.org/genproto/googleapis/cloud/tpu/v1"
-
 	ctx := context.Background()
 	c, err := tpu.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &tpupb.CreateNodeRequest{
 		// TODO: Fill request struct fields.
@@ -107,13 +105,12 @@ func ExampleClient_CreateNode() {
 }
 
 func ExampleClient_DeleteNode() {
-	// import tpupb "google.golang.org/genproto/googleapis/cloud/tpu/v1"
-
 	ctx := context.Background()
 	c, err := tpu.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &tpupb.DeleteNodeRequest{
 		// TODO: Fill request struct fields.
@@ -132,13 +129,12 @@ func ExampleClient_DeleteNode() {
 }
 
 func ExampleClient_ReimageNode() {
-	// import tpupb "google.golang.org/genproto/googleapis/cloud/tpu/v1"
-
 	ctx := context.Background()
 	c, err := tpu.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &tpupb.ReimageNodeRequest{
 		// TODO: Fill request struct fields.
@@ -157,13 +153,12 @@ func ExampleClient_ReimageNode() {
 }
 
 func ExampleClient_StopNode() {
-	// import tpupb "google.golang.org/genproto/googleapis/cloud/tpu/v1"
-
 	ctx := context.Background()
 	c, err := tpu.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &tpupb.StopNodeRequest{
 		// TODO: Fill request struct fields.
@@ -182,13 +177,12 @@ func ExampleClient_StopNode() {
 }
 
 func ExampleClient_StartNode() {
-	// import tpupb "google.golang.org/genproto/googleapis/cloud/tpu/v1"
-
 	ctx := context.Background()
 	c, err := tpu.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &tpupb.StartNodeRequest{
 		// TODO: Fill request struct fields.
@@ -207,14 +201,12 @@ func ExampleClient_StartNode() {
 }
 
 func ExampleClient_ListTensorFlowVersions() {
-	// import tpupb "google.golang.org/genproto/googleapis/cloud/tpu/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := tpu.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &tpupb.ListTensorFlowVersionsRequest{
 		// TODO: Fill request struct fields.
@@ -234,13 +226,12 @@ func ExampleClient_ListTensorFlowVersions() {
 }
 
 func ExampleClient_GetTensorFlowVersion() {
-	// import tpupb "google.golang.org/genproto/googleapis/cloud/tpu/v1"
-
 	ctx := context.Background()
 	c, err := tpu.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &tpupb.GetTensorFlowVersionRequest{
 		// TODO: Fill request struct fields.
@@ -254,14 +245,12 @@ func ExampleClient_GetTensorFlowVersion() {
 }
 
 func ExampleClient_ListAcceleratorTypes() {
-	// import tpupb "google.golang.org/genproto/googleapis/cloud/tpu/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := tpu.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &tpupb.ListAcceleratorTypesRequest{
 		// TODO: Fill request struct fields.
@@ -281,13 +270,12 @@ func ExampleClient_ListAcceleratorTypes() {
 }
 
 func ExampleClient_GetAcceleratorType() {
-	// import tpupb "google.golang.org/genproto/googleapis/cloud/tpu/v1"
-
 	ctx := context.Background()
 	c, err := tpu.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &tpupb.GetAcceleratorTypeRequest{
 		// TODO: Fill request struct fields.

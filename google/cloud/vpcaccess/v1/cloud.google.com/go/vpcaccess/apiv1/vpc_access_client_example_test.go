@@ -30,18 +30,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_CreateConnector() {
-	// import vpcaccesspb "google.golang.org/genproto/googleapis/cloud/vpcaccess/v1"
-
 	ctx := context.Background()
 	c, err := vpcaccess.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &vpcaccesspb.CreateConnectorRequest{
 		// TODO: Fill request struct fields.
@@ -60,13 +61,12 @@ func ExampleClient_CreateConnector() {
 }
 
 func ExampleClient_GetConnector() {
-	// import vpcaccesspb "google.golang.org/genproto/googleapis/cloud/vpcaccess/v1"
-
 	ctx := context.Background()
 	c, err := vpcaccess.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &vpcaccesspb.GetConnectorRequest{
 		// TODO: Fill request struct fields.
@@ -80,14 +80,12 @@ func ExampleClient_GetConnector() {
 }
 
 func ExampleClient_ListConnectors() {
-	// import vpcaccesspb "google.golang.org/genproto/googleapis/cloud/vpcaccess/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := vpcaccess.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &vpcaccesspb.ListConnectorsRequest{
 		// TODO: Fill request struct fields.
@@ -107,13 +105,12 @@ func ExampleClient_ListConnectors() {
 }
 
 func ExampleClient_DeleteConnector() {
-	// import vpcaccesspb "google.golang.org/genproto/googleapis/cloud/vpcaccess/v1"
-
 	ctx := context.Background()
 	c, err := vpcaccess.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &vpcaccesspb.DeleteConnectorRequest{
 		// TODO: Fill request struct fields.

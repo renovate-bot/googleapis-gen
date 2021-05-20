@@ -29,18 +29,19 @@ func ExampleNewBetaAnalyticsDataClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleBetaAnalyticsDataClient_RunReport() {
-	// import datapb "google.golang.org/genproto/googleapis/analytics/data/v1beta"
-
 	ctx := context.Background()
 	c, err := data.NewBetaAnalyticsDataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datapb.RunReportRequest{
 		// TODO: Fill request struct fields.
@@ -54,13 +55,12 @@ func ExampleBetaAnalyticsDataClient_RunReport() {
 }
 
 func ExampleBetaAnalyticsDataClient_RunPivotReport() {
-	// import datapb "google.golang.org/genproto/googleapis/analytics/data/v1beta"
-
 	ctx := context.Background()
 	c, err := data.NewBetaAnalyticsDataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datapb.RunPivotReportRequest{
 		// TODO: Fill request struct fields.
@@ -74,13 +74,12 @@ func ExampleBetaAnalyticsDataClient_RunPivotReport() {
 }
 
 func ExampleBetaAnalyticsDataClient_BatchRunReports() {
-	// import datapb "google.golang.org/genproto/googleapis/analytics/data/v1beta"
-
 	ctx := context.Background()
 	c, err := data.NewBetaAnalyticsDataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datapb.BatchRunReportsRequest{
 		// TODO: Fill request struct fields.
@@ -94,13 +93,12 @@ func ExampleBetaAnalyticsDataClient_BatchRunReports() {
 }
 
 func ExampleBetaAnalyticsDataClient_BatchRunPivotReports() {
-	// import datapb "google.golang.org/genproto/googleapis/analytics/data/v1beta"
-
 	ctx := context.Background()
 	c, err := data.NewBetaAnalyticsDataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datapb.BatchRunPivotReportsRequest{
 		// TODO: Fill request struct fields.
@@ -114,13 +112,12 @@ func ExampleBetaAnalyticsDataClient_BatchRunPivotReports() {
 }
 
 func ExampleBetaAnalyticsDataClient_GetMetadata() {
-	// import datapb "google.golang.org/genproto/googleapis/analytics/data/v1beta"
-
 	ctx := context.Background()
 	c, err := data.NewBetaAnalyticsDataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datapb.GetMetadataRequest{
 		// TODO: Fill request struct fields.
@@ -134,13 +131,12 @@ func ExampleBetaAnalyticsDataClient_GetMetadata() {
 }
 
 func ExampleBetaAnalyticsDataClient_RunRealtimeReport() {
-	// import datapb "google.golang.org/genproto/googleapis/analytics/data/v1beta"
-
 	ctx := context.Background()
 	c, err := data.NewBetaAnalyticsDataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &datapb.RunRealtimeReportRequest{
 		// TODO: Fill request struct fields.

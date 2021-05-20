@@ -30,19 +30,19 @@ func ExampleNewTagBindingsClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleTagBindingsClient_ListTagBindings() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewTagBindingsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.ListTagBindingsRequest{
 		// TODO: Fill request struct fields.
@@ -62,13 +62,12 @@ func ExampleTagBindingsClient_ListTagBindings() {
 }
 
 func ExampleTagBindingsClient_CreateTagBinding() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewTagBindingsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.CreateTagBindingRequest{
 		// TODO: Fill request struct fields.
@@ -87,13 +86,12 @@ func ExampleTagBindingsClient_CreateTagBinding() {
 }
 
 func ExampleTagBindingsClient_DeleteTagBinding() {
-	// import resourcemanagerpb "google.golang.org/genproto/googleapis/cloud/resourcemanager/v3"
-
 	ctx := context.Background()
 	c, err := resourcemanager.NewTagBindingsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &resourcemanagerpb.DeleteTagBindingRequest{
 		// TODO: Fill request struct fields.

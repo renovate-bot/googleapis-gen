@@ -29,18 +29,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_SnapToRoads() {
-	// import roadspb "google.golang.org/genproto/googleapis/maps/roads/v1op"
-
 	ctx := context.Background()
 	c, err := roads.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &roadspb.SnapToRoadsRequest{
 		// TODO: Fill request struct fields.
@@ -54,13 +55,12 @@ func ExampleClient_SnapToRoads() {
 }
 
 func ExampleClient_ListNearestRoads() {
-	// import roadspb "google.golang.org/genproto/googleapis/maps/roads/v1op"
-
 	ctx := context.Background()
 	c, err := roads.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &roadspb.ListNearestRoadsRequest{
 		// TODO: Fill request struct fields.

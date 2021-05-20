@@ -56,7 +56,7 @@ type WorkloadIdentityPoolsCallOptions struct {
 	UndeleteWorkloadIdentityPoolProvider []gax.CallOption
 }
 
-func defaultWorkloadIdentityPoolsClientOptions() []option.ClientOption {
+func defaultWorkloadIdentityPoolsGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("iam.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("iam.mtls.googleapis.com:443"),
@@ -217,37 +217,249 @@ func defaultWorkloadIdentityPoolsCallOptions() *WorkloadIdentityPoolsCallOptions
 	}
 }
 
+// internalWorkloadIdentityPoolsClient is an interface that defines the methods availaible from Identity and Access Management (IAM) API.
+type internalWorkloadIdentityPoolsClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	ListWorkloadIdentityPools(context.Context, *iampb.ListWorkloadIdentityPoolsRequest, ...gax.CallOption) *WorkloadIdentityPoolIterator
+	GetWorkloadIdentityPool(context.Context, *iampb.GetWorkloadIdentityPoolRequest, ...gax.CallOption) (*iampb.WorkloadIdentityPool, error)
+	CreateWorkloadIdentityPool(context.Context, *iampb.CreateWorkloadIdentityPoolRequest, ...gax.CallOption) (*CreateWorkloadIdentityPoolOperation, error)
+	CreateWorkloadIdentityPoolOperation(name string) *CreateWorkloadIdentityPoolOperation
+	UpdateWorkloadIdentityPool(context.Context, *iampb.UpdateWorkloadIdentityPoolRequest, ...gax.CallOption) (*UpdateWorkloadIdentityPoolOperation, error)
+	UpdateWorkloadIdentityPoolOperation(name string) *UpdateWorkloadIdentityPoolOperation
+	DeleteWorkloadIdentityPool(context.Context, *iampb.DeleteWorkloadIdentityPoolRequest, ...gax.CallOption) (*DeleteWorkloadIdentityPoolOperation, error)
+	DeleteWorkloadIdentityPoolOperation(name string) *DeleteWorkloadIdentityPoolOperation
+	UndeleteWorkloadIdentityPool(context.Context, *iampb.UndeleteWorkloadIdentityPoolRequest, ...gax.CallOption) (*UndeleteWorkloadIdentityPoolOperation, error)
+	UndeleteWorkloadIdentityPoolOperation(name string) *UndeleteWorkloadIdentityPoolOperation
+	ListWorkloadIdentityPoolProviders(context.Context, *iampb.ListWorkloadIdentityPoolProvidersRequest, ...gax.CallOption) *WorkloadIdentityPoolProviderIterator
+	GetWorkloadIdentityPoolProvider(context.Context, *iampb.GetWorkloadIdentityPoolProviderRequest, ...gax.CallOption) (*iampb.WorkloadIdentityPoolProvider, error)
+	CreateWorkloadIdentityPoolProvider(context.Context, *iampb.CreateWorkloadIdentityPoolProviderRequest, ...gax.CallOption) (*CreateWorkloadIdentityPoolProviderOperation, error)
+	CreateWorkloadIdentityPoolProviderOperation(name string) *CreateWorkloadIdentityPoolProviderOperation
+	UpdateWorkloadIdentityPoolProvider(context.Context, *iampb.UpdateWorkloadIdentityPoolProviderRequest, ...gax.CallOption) (*UpdateWorkloadIdentityPoolProviderOperation, error)
+	UpdateWorkloadIdentityPoolProviderOperation(name string) *UpdateWorkloadIdentityPoolProviderOperation
+	DeleteWorkloadIdentityPoolProvider(context.Context, *iampb.DeleteWorkloadIdentityPoolProviderRequest, ...gax.CallOption) (*DeleteWorkloadIdentityPoolProviderOperation, error)
+	DeleteWorkloadIdentityPoolProviderOperation(name string) *DeleteWorkloadIdentityPoolProviderOperation
+	UndeleteWorkloadIdentityPoolProvider(context.Context, *iampb.UndeleteWorkloadIdentityPoolProviderRequest, ...gax.CallOption) (*UndeleteWorkloadIdentityPoolProviderOperation, error)
+	UndeleteWorkloadIdentityPoolProviderOperation(name string) *UndeleteWorkloadIdentityPoolProviderOperation
+}
+
 // WorkloadIdentityPoolsClient is a client for interacting with Identity and Access Management (IAM) API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Manages WorkloadIdentityPools.
+type WorkloadIdentityPoolsClient struct {
+	// The internal transport-dependent client.
+	internalClient internalWorkloadIdentityPoolsClient
+
+	// The call options for this service.
+	CallOptions *WorkloadIdentityPoolsCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *WorkloadIdentityPoolsClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *WorkloadIdentityPoolsClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *WorkloadIdentityPoolsClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// ListWorkloadIdentityPools lists all non-deleted
+// WorkloadIdentityPools in a
+// project. If show_deleted is set to true, then deleted pools are also
+// listed.
+func (c *WorkloadIdentityPoolsClient) ListWorkloadIdentityPools(ctx context.Context, req *iampb.ListWorkloadIdentityPoolsRequest, opts ...gax.CallOption) *WorkloadIdentityPoolIterator {
+	return c.internalClient.ListWorkloadIdentityPools(ctx, req, opts...)
+}
+
+// GetWorkloadIdentityPool gets an individual
+// WorkloadIdentityPool.
+func (c *WorkloadIdentityPoolsClient) GetWorkloadIdentityPool(ctx context.Context, req *iampb.GetWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*iampb.WorkloadIdentityPool, error) {
+	return c.internalClient.GetWorkloadIdentityPool(ctx, req, opts...)
+}
+
+// CreateWorkloadIdentityPool creates a new
+// WorkloadIdentityPool.
+//
+// You cannot reuse the name of a deleted pool until 30 days after deletion.
+func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPool(ctx context.Context, req *iampb.CreateWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*CreateWorkloadIdentityPoolOperation, error) {
+	return c.internalClient.CreateWorkloadIdentityPool(ctx, req, opts...)
+}
+
+// CreateWorkloadIdentityPoolOperation returns a new CreateWorkloadIdentityPoolOperation from a given name.
+// The name must be that of a previously created CreateWorkloadIdentityPoolOperation, possibly from a different process.
+func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPoolOperation(name string) *CreateWorkloadIdentityPoolOperation {
+	return c.internalClient.CreateWorkloadIdentityPoolOperation(name)
+}
+
+// UpdateWorkloadIdentityPool updates an existing
+// WorkloadIdentityPool.
+func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPool(ctx context.Context, req *iampb.UpdateWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*UpdateWorkloadIdentityPoolOperation, error) {
+	return c.internalClient.UpdateWorkloadIdentityPool(ctx, req, opts...)
+}
+
+// UpdateWorkloadIdentityPoolOperation returns a new UpdateWorkloadIdentityPoolOperation from a given name.
+// The name must be that of a previously created UpdateWorkloadIdentityPoolOperation, possibly from a different process.
+func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPoolOperation(name string) *UpdateWorkloadIdentityPoolOperation {
+	return c.internalClient.UpdateWorkloadIdentityPoolOperation(name)
+}
+
+// DeleteWorkloadIdentityPool deletes a
+// WorkloadIdentityPool.
+//
+// You cannot use a deleted pool to exchange external
+// credentials for Google Cloud credentials. However, deletion does
+// not revoke credentials that have already been issued.
+// Credentials issued for a deleted pool do not grant access to resources.
+// If the pool is undeleted, and the credentials are not expired, they
+// grant access again.
+// You can undelete a pool for 30 days. After 30 days, deletion is
+// permanent.
+// You cannot update deleted pools. However, you can view and list them.
+func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPool(ctx context.Context, req *iampb.DeleteWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*DeleteWorkloadIdentityPoolOperation, error) {
+	return c.internalClient.DeleteWorkloadIdentityPool(ctx, req, opts...)
+}
+
+// DeleteWorkloadIdentityPoolOperation returns a new DeleteWorkloadIdentityPoolOperation from a given name.
+// The name must be that of a previously created DeleteWorkloadIdentityPoolOperation, possibly from a different process.
+func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPoolOperation(name string) *DeleteWorkloadIdentityPoolOperation {
+	return c.internalClient.DeleteWorkloadIdentityPoolOperation(name)
+}
+
+// UndeleteWorkloadIdentityPool undeletes a WorkloadIdentityPool,
+// as long as it was deleted fewer than 30 days ago.
+func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPool(ctx context.Context, req *iampb.UndeleteWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*UndeleteWorkloadIdentityPoolOperation, error) {
+	return c.internalClient.UndeleteWorkloadIdentityPool(ctx, req, opts...)
+}
+
+// UndeleteWorkloadIdentityPoolOperation returns a new UndeleteWorkloadIdentityPoolOperation from a given name.
+// The name must be that of a previously created UndeleteWorkloadIdentityPoolOperation, possibly from a different process.
+func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPoolOperation(name string) *UndeleteWorkloadIdentityPoolOperation {
+	return c.internalClient.UndeleteWorkloadIdentityPoolOperation(name)
+}
+
+// ListWorkloadIdentityPoolProviders lists all non-deleted
+// WorkloadIdentityPoolProviders
+// in a WorkloadIdentityPool.
+// If show_deleted is set to true, then deleted providers are also listed.
+func (c *WorkloadIdentityPoolsClient) ListWorkloadIdentityPoolProviders(ctx context.Context, req *iampb.ListWorkloadIdentityPoolProvidersRequest, opts ...gax.CallOption) *WorkloadIdentityPoolProviderIterator {
+	return c.internalClient.ListWorkloadIdentityPoolProviders(ctx, req, opts...)
+}
+
+// GetWorkloadIdentityPoolProvider gets an individual
+// WorkloadIdentityPoolProvider.
+func (c *WorkloadIdentityPoolsClient) GetWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.GetWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*iampb.WorkloadIdentityPoolProvider, error) {
+	return c.internalClient.GetWorkloadIdentityPoolProvider(ctx, req, opts...)
+}
+
+// CreateWorkloadIdentityPoolProvider creates a new
+// WorkloadIdentityPoolProvider
+// in a WorkloadIdentityPool.
+//
+// You cannot reuse the name of a deleted provider until 30 days after
+// deletion.
+func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.CreateWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*CreateWorkloadIdentityPoolProviderOperation, error) {
+	return c.internalClient.CreateWorkloadIdentityPoolProvider(ctx, req, opts...)
+}
+
+// CreateWorkloadIdentityPoolProviderOperation returns a new CreateWorkloadIdentityPoolProviderOperation from a given name.
+// The name must be that of a previously created CreateWorkloadIdentityPoolProviderOperation, possibly from a different process.
+func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPoolProviderOperation(name string) *CreateWorkloadIdentityPoolProviderOperation {
+	return c.internalClient.CreateWorkloadIdentityPoolProviderOperation(name)
+}
+
+// UpdateWorkloadIdentityPoolProvider updates an existing
+// WorkloadIdentityPoolProvider.
+func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.UpdateWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*UpdateWorkloadIdentityPoolProviderOperation, error) {
+	return c.internalClient.UpdateWorkloadIdentityPoolProvider(ctx, req, opts...)
+}
+
+// UpdateWorkloadIdentityPoolProviderOperation returns a new UpdateWorkloadIdentityPoolProviderOperation from a given name.
+// The name must be that of a previously created UpdateWorkloadIdentityPoolProviderOperation, possibly from a different process.
+func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPoolProviderOperation(name string) *UpdateWorkloadIdentityPoolProviderOperation {
+	return c.internalClient.UpdateWorkloadIdentityPoolProviderOperation(name)
+}
+
+// DeleteWorkloadIdentityPoolProvider deletes a
+// WorkloadIdentityPoolProvider.
+// Deleting a provider does not revoke credentials that have already been
+// issued; they continue to grant access.
+// You can undelete a provider for 30 days. After 30 days, deletion is
+// permanent.
+// You cannot update deleted providers. However, you can view and list them.
+func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.DeleteWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*DeleteWorkloadIdentityPoolProviderOperation, error) {
+	return c.internalClient.DeleteWorkloadIdentityPoolProvider(ctx, req, opts...)
+}
+
+// DeleteWorkloadIdentityPoolProviderOperation returns a new DeleteWorkloadIdentityPoolProviderOperation from a given name.
+// The name must be that of a previously created DeleteWorkloadIdentityPoolProviderOperation, possibly from a different process.
+func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPoolProviderOperation(name string) *DeleteWorkloadIdentityPoolProviderOperation {
+	return c.internalClient.DeleteWorkloadIdentityPoolProviderOperation(name)
+}
+
+// UndeleteWorkloadIdentityPoolProvider undeletes a
+// WorkloadIdentityPoolProvider,
+// as long as it was deleted fewer than 30 days ago.
+func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.UndeleteWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*UndeleteWorkloadIdentityPoolProviderOperation, error) {
+	return c.internalClient.UndeleteWorkloadIdentityPoolProvider(ctx, req, opts...)
+}
+
+// UndeleteWorkloadIdentityPoolProviderOperation returns a new UndeleteWorkloadIdentityPoolProviderOperation from a given name.
+// The name must be that of a previously created UndeleteWorkloadIdentityPoolProviderOperation, possibly from a different process.
+func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPoolProviderOperation(name string) *UndeleteWorkloadIdentityPoolProviderOperation {
+	return c.internalClient.UndeleteWorkloadIdentityPoolProviderOperation(name)
+}
+
+// workloadIdentityPoolsGRPCClient is a client for interacting with Identity and Access Management (IAM) API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type WorkloadIdentityPoolsClient struct {
+type workloadIdentityPoolsGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing WorkloadIdentityPoolsClient
+	CallOptions **WorkloadIdentityPoolsCallOptions
+
 	// The gRPC API client.
 	workloadIdentityPoolsClient iampb.WorkloadIdentityPoolsClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *WorkloadIdentityPoolsCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewWorkloadIdentityPoolsClient creates a new workload identity pools client.
+// NewWorkloadIdentityPoolsClient creates a new workload identity pools client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Manages WorkloadIdentityPools.
 func NewWorkloadIdentityPoolsClient(ctx context.Context, opts ...option.ClientOption) (*WorkloadIdentityPoolsClient, error) {
-	clientOpts := defaultWorkloadIdentityPoolsClientOptions()
-
+	clientOpts := defaultWorkloadIdentityPoolsGRPCClientOptions()
 	if newWorkloadIdentityPoolsClientHook != nil {
 		hookOpts, err := newWorkloadIdentityPoolsClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -265,16 +477,19 @@ func NewWorkloadIdentityPoolsClient(ctx context.Context, opts ...option.ClientOp
 	if err != nil {
 		return nil, err
 	}
-	c := &WorkloadIdentityPoolsClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultWorkloadIdentityPoolsCallOptions(),
+	client := WorkloadIdentityPoolsClient{CallOptions: defaultWorkloadIdentityPoolsCallOptions()}
 
+	c := &workloadIdentityPoolsGRPCClient{
+		connPool:                    connPool,
+		disableDeadlines:            disableDeadlines,
 		workloadIdentityPoolsClient: iampb.NewWorkloadIdentityPoolsClient(connPool),
+		CallOptions:                 &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -284,39 +499,36 @@ func NewWorkloadIdentityPoolsClient(ctx context.Context, opts ...option.ClientOp
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *WorkloadIdentityPoolsClient) Connection() *grpc.ClientConn {
+func (c *workloadIdentityPoolsGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *WorkloadIdentityPoolsClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *WorkloadIdentityPoolsClient) setGoogleClientInfo(keyval ...string) {
+func (c *workloadIdentityPoolsGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// ListWorkloadIdentityPools lists all non-deleted
-// WorkloadIdentityPools in a
-// project. If show_deleted is set to true, then deleted pools are also
-// listed.
-func (c *WorkloadIdentityPoolsClient) ListWorkloadIdentityPools(ctx context.Context, req *iampb.ListWorkloadIdentityPoolsRequest, opts ...gax.CallOption) *WorkloadIdentityPoolIterator {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *workloadIdentityPoolsGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *workloadIdentityPoolsGRPCClient) ListWorkloadIdentityPools(ctx context.Context, req *iampb.ListWorkloadIdentityPoolsRequest, opts ...gax.CallOption) *WorkloadIdentityPoolIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListWorkloadIdentityPools[0:len(c.CallOptions.ListWorkloadIdentityPools):len(c.CallOptions.ListWorkloadIdentityPools)], opts...)
+	opts = append((*c.CallOptions).ListWorkloadIdentityPools[0:len((*c.CallOptions).ListWorkloadIdentityPools):len((*c.CallOptions).ListWorkloadIdentityPools)], opts...)
 	it := &WorkloadIdentityPoolIterator{}
 	req = proto.Clone(req).(*iampb.ListWorkloadIdentityPoolsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*iampb.WorkloadIdentityPool, string, error) {
@@ -353,9 +565,7 @@ func (c *WorkloadIdentityPoolsClient) ListWorkloadIdentityPools(ctx context.Cont
 	return it
 }
 
-// GetWorkloadIdentityPool gets an individual
-// WorkloadIdentityPool.
-func (c *WorkloadIdentityPoolsClient) GetWorkloadIdentityPool(ctx context.Context, req *iampb.GetWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*iampb.WorkloadIdentityPool, error) {
+func (c *workloadIdentityPoolsGRPCClient) GetWorkloadIdentityPool(ctx context.Context, req *iampb.GetWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*iampb.WorkloadIdentityPool, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -363,7 +573,7 @@ func (c *WorkloadIdentityPoolsClient) GetWorkloadIdentityPool(ctx context.Contex
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetWorkloadIdentityPool[0:len(c.CallOptions.GetWorkloadIdentityPool):len(c.CallOptions.GetWorkloadIdentityPool)], opts...)
+	opts = append((*c.CallOptions).GetWorkloadIdentityPool[0:len((*c.CallOptions).GetWorkloadIdentityPool):len((*c.CallOptions).GetWorkloadIdentityPool)], opts...)
 	var resp *iampb.WorkloadIdentityPool
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -376,11 +586,7 @@ func (c *WorkloadIdentityPoolsClient) GetWorkloadIdentityPool(ctx context.Contex
 	return resp, nil
 }
 
-// CreateWorkloadIdentityPool creates a new
-// WorkloadIdentityPool.
-//
-// You cannot reuse the name of a deleted pool until 30 days after deletion.
-func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPool(ctx context.Context, req *iampb.CreateWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*CreateWorkloadIdentityPoolOperation, error) {
+func (c *workloadIdentityPoolsGRPCClient) CreateWorkloadIdentityPool(ctx context.Context, req *iampb.CreateWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*CreateWorkloadIdentityPoolOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -388,7 +594,7 @@ func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPool(ctx context.Con
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateWorkloadIdentityPool[0:len(c.CallOptions.CreateWorkloadIdentityPool):len(c.CallOptions.CreateWorkloadIdentityPool)], opts...)
+	opts = append((*c.CallOptions).CreateWorkloadIdentityPool[0:len((*c.CallOptions).CreateWorkloadIdentityPool):len((*c.CallOptions).CreateWorkloadIdentityPool)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -399,13 +605,11 @@ func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPool(ctx context.Con
 		return nil, err
 	}
 	return &CreateWorkloadIdentityPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// UpdateWorkloadIdentityPool updates an existing
-// WorkloadIdentityPool.
-func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPool(ctx context.Context, req *iampb.UpdateWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*UpdateWorkloadIdentityPoolOperation, error) {
+func (c *workloadIdentityPoolsGRPCClient) UpdateWorkloadIdentityPool(ctx context.Context, req *iampb.UpdateWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*UpdateWorkloadIdentityPoolOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -413,7 +617,7 @@ func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPool(ctx context.Con
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "workload_identity_pool.name", url.QueryEscape(req.GetWorkloadIdentityPool().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateWorkloadIdentityPool[0:len(c.CallOptions.UpdateWorkloadIdentityPool):len(c.CallOptions.UpdateWorkloadIdentityPool)], opts...)
+	opts = append((*c.CallOptions).UpdateWorkloadIdentityPool[0:len((*c.CallOptions).UpdateWorkloadIdentityPool):len((*c.CallOptions).UpdateWorkloadIdentityPool)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -424,23 +628,11 @@ func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPool(ctx context.Con
 		return nil, err
 	}
 	return &UpdateWorkloadIdentityPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeleteWorkloadIdentityPool deletes a
-// WorkloadIdentityPool.
-//
-// You cannot use a deleted pool to exchange external
-// credentials for Google Cloud credentials. However, deletion does
-// not revoke credentials that have already been issued.
-// Credentials issued for a deleted pool do not grant access to resources.
-// If the pool is undeleted, and the credentials are not expired, they
-// grant access again.
-// You can undelete a pool for 30 days. After 30 days, deletion is
-// permanent.
-// You cannot update deleted pools. However, you can view and list them.
-func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPool(ctx context.Context, req *iampb.DeleteWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*DeleteWorkloadIdentityPoolOperation, error) {
+func (c *workloadIdentityPoolsGRPCClient) DeleteWorkloadIdentityPool(ctx context.Context, req *iampb.DeleteWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*DeleteWorkloadIdentityPoolOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -448,7 +640,7 @@ func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPool(ctx context.Con
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteWorkloadIdentityPool[0:len(c.CallOptions.DeleteWorkloadIdentityPool):len(c.CallOptions.DeleteWorkloadIdentityPool)], opts...)
+	opts = append((*c.CallOptions).DeleteWorkloadIdentityPool[0:len((*c.CallOptions).DeleteWorkloadIdentityPool):len((*c.CallOptions).DeleteWorkloadIdentityPool)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -459,13 +651,11 @@ func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPool(ctx context.Con
 		return nil, err
 	}
 	return &DeleteWorkloadIdentityPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// UndeleteWorkloadIdentityPool undeletes a WorkloadIdentityPool,
-// as long as it was deleted fewer than 30 days ago.
-func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPool(ctx context.Context, req *iampb.UndeleteWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*UndeleteWorkloadIdentityPoolOperation, error) {
+func (c *workloadIdentityPoolsGRPCClient) UndeleteWorkloadIdentityPool(ctx context.Context, req *iampb.UndeleteWorkloadIdentityPoolRequest, opts ...gax.CallOption) (*UndeleteWorkloadIdentityPoolOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -473,7 +663,7 @@ func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPool(ctx context.C
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UndeleteWorkloadIdentityPool[0:len(c.CallOptions.UndeleteWorkloadIdentityPool):len(c.CallOptions.UndeleteWorkloadIdentityPool)], opts...)
+	opts = append((*c.CallOptions).UndeleteWorkloadIdentityPool[0:len((*c.CallOptions).UndeleteWorkloadIdentityPool):len((*c.CallOptions).UndeleteWorkloadIdentityPool)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -484,18 +674,14 @@ func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPool(ctx context.C
 		return nil, err
 	}
 	return &UndeleteWorkloadIdentityPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// ListWorkloadIdentityPoolProviders lists all non-deleted
-// WorkloadIdentityPoolProviders
-// in a WorkloadIdentityPool.
-// If show_deleted is set to true, then deleted providers are also listed.
-func (c *WorkloadIdentityPoolsClient) ListWorkloadIdentityPoolProviders(ctx context.Context, req *iampb.ListWorkloadIdentityPoolProvidersRequest, opts ...gax.CallOption) *WorkloadIdentityPoolProviderIterator {
+func (c *workloadIdentityPoolsGRPCClient) ListWorkloadIdentityPoolProviders(ctx context.Context, req *iampb.ListWorkloadIdentityPoolProvidersRequest, opts ...gax.CallOption) *WorkloadIdentityPoolProviderIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListWorkloadIdentityPoolProviders[0:len(c.CallOptions.ListWorkloadIdentityPoolProviders):len(c.CallOptions.ListWorkloadIdentityPoolProviders)], opts...)
+	opts = append((*c.CallOptions).ListWorkloadIdentityPoolProviders[0:len((*c.CallOptions).ListWorkloadIdentityPoolProviders):len((*c.CallOptions).ListWorkloadIdentityPoolProviders)], opts...)
 	it := &WorkloadIdentityPoolProviderIterator{}
 	req = proto.Clone(req).(*iampb.ListWorkloadIdentityPoolProvidersRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*iampb.WorkloadIdentityPoolProvider, string, error) {
@@ -532,9 +718,7 @@ func (c *WorkloadIdentityPoolsClient) ListWorkloadIdentityPoolProviders(ctx cont
 	return it
 }
 
-// GetWorkloadIdentityPoolProvider gets an individual
-// WorkloadIdentityPoolProvider.
-func (c *WorkloadIdentityPoolsClient) GetWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.GetWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*iampb.WorkloadIdentityPoolProvider, error) {
+func (c *workloadIdentityPoolsGRPCClient) GetWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.GetWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*iampb.WorkloadIdentityPoolProvider, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -542,7 +726,7 @@ func (c *WorkloadIdentityPoolsClient) GetWorkloadIdentityPoolProvider(ctx contex
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetWorkloadIdentityPoolProvider[0:len(c.CallOptions.GetWorkloadIdentityPoolProvider):len(c.CallOptions.GetWorkloadIdentityPoolProvider)], opts...)
+	opts = append((*c.CallOptions).GetWorkloadIdentityPoolProvider[0:len((*c.CallOptions).GetWorkloadIdentityPoolProvider):len((*c.CallOptions).GetWorkloadIdentityPoolProvider)], opts...)
 	var resp *iampb.WorkloadIdentityPoolProvider
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -555,13 +739,7 @@ func (c *WorkloadIdentityPoolsClient) GetWorkloadIdentityPoolProvider(ctx contex
 	return resp, nil
 }
 
-// CreateWorkloadIdentityPoolProvider creates a new
-// WorkloadIdentityPoolProvider
-// in a WorkloadIdentityPool.
-//
-// You cannot reuse the name of a deleted provider until 30 days after
-// deletion.
-func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.CreateWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*CreateWorkloadIdentityPoolProviderOperation, error) {
+func (c *workloadIdentityPoolsGRPCClient) CreateWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.CreateWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*CreateWorkloadIdentityPoolProviderOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -569,7 +747,7 @@ func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPoolProvider(ctx con
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateWorkloadIdentityPoolProvider[0:len(c.CallOptions.CreateWorkloadIdentityPoolProvider):len(c.CallOptions.CreateWorkloadIdentityPoolProvider)], opts...)
+	opts = append((*c.CallOptions).CreateWorkloadIdentityPoolProvider[0:len((*c.CallOptions).CreateWorkloadIdentityPoolProvider):len((*c.CallOptions).CreateWorkloadIdentityPoolProvider)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -580,13 +758,11 @@ func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPoolProvider(ctx con
 		return nil, err
 	}
 	return &CreateWorkloadIdentityPoolProviderOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// UpdateWorkloadIdentityPoolProvider updates an existing
-// WorkloadIdentityPoolProvider.
-func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.UpdateWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*UpdateWorkloadIdentityPoolProviderOperation, error) {
+func (c *workloadIdentityPoolsGRPCClient) UpdateWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.UpdateWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*UpdateWorkloadIdentityPoolProviderOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -594,7 +770,7 @@ func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPoolProvider(ctx con
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "workload_identity_pool_provider.name", url.QueryEscape(req.GetWorkloadIdentityPoolProvider().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateWorkloadIdentityPoolProvider[0:len(c.CallOptions.UpdateWorkloadIdentityPoolProvider):len(c.CallOptions.UpdateWorkloadIdentityPoolProvider)], opts...)
+	opts = append((*c.CallOptions).UpdateWorkloadIdentityPoolProvider[0:len((*c.CallOptions).UpdateWorkloadIdentityPoolProvider):len((*c.CallOptions).UpdateWorkloadIdentityPoolProvider)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -605,18 +781,11 @@ func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPoolProvider(ctx con
 		return nil, err
 	}
 	return &UpdateWorkloadIdentityPoolProviderOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeleteWorkloadIdentityPoolProvider deletes a
-// WorkloadIdentityPoolProvider.
-// Deleting a provider does not revoke credentials that have already been
-// issued; they continue to grant access.
-// You can undelete a provider for 30 days. After 30 days, deletion is
-// permanent.
-// You cannot update deleted providers. However, you can view and list them.
-func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.DeleteWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*DeleteWorkloadIdentityPoolProviderOperation, error) {
+func (c *workloadIdentityPoolsGRPCClient) DeleteWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.DeleteWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*DeleteWorkloadIdentityPoolProviderOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -624,7 +793,7 @@ func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPoolProvider(ctx con
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteWorkloadIdentityPoolProvider[0:len(c.CallOptions.DeleteWorkloadIdentityPoolProvider):len(c.CallOptions.DeleteWorkloadIdentityPoolProvider)], opts...)
+	opts = append((*c.CallOptions).DeleteWorkloadIdentityPoolProvider[0:len((*c.CallOptions).DeleteWorkloadIdentityPoolProvider):len((*c.CallOptions).DeleteWorkloadIdentityPoolProvider)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -635,14 +804,11 @@ func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPoolProvider(ctx con
 		return nil, err
 	}
 	return &DeleteWorkloadIdentityPoolProviderOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// UndeleteWorkloadIdentityPoolProvider undeletes a
-// WorkloadIdentityPoolProvider,
-// as long as it was deleted fewer than 30 days ago.
-func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.UndeleteWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*UndeleteWorkloadIdentityPoolProviderOperation, error) {
+func (c *workloadIdentityPoolsGRPCClient) UndeleteWorkloadIdentityPoolProvider(ctx context.Context, req *iampb.UndeleteWorkloadIdentityPoolProviderRequest, opts ...gax.CallOption) (*UndeleteWorkloadIdentityPoolProviderOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -650,7 +816,7 @@ func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPoolProvider(ctx c
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UndeleteWorkloadIdentityPoolProvider[0:len(c.CallOptions.UndeleteWorkloadIdentityPoolProvider):len(c.CallOptions.UndeleteWorkloadIdentityPoolProvider)], opts...)
+	opts = append((*c.CallOptions).UndeleteWorkloadIdentityPoolProvider[0:len((*c.CallOptions).UndeleteWorkloadIdentityPoolProvider):len((*c.CallOptions).UndeleteWorkloadIdentityPoolProvider)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -661,7 +827,7 @@ func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPoolProvider(ctx c
 		return nil, err
 	}
 	return &UndeleteWorkloadIdentityPoolProviderOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
@@ -672,9 +838,9 @@ type CreateWorkloadIdentityPoolOperation struct {
 
 // CreateWorkloadIdentityPoolOperation returns a new CreateWorkloadIdentityPoolOperation from a given name.
 // The name must be that of a previously created CreateWorkloadIdentityPoolOperation, possibly from a different process.
-func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPoolOperation(name string) *CreateWorkloadIdentityPoolOperation {
+func (c *workloadIdentityPoolsGRPCClient) CreateWorkloadIdentityPoolOperation(name string) *CreateWorkloadIdentityPoolOperation {
 	return &CreateWorkloadIdentityPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -741,9 +907,9 @@ type CreateWorkloadIdentityPoolProviderOperation struct {
 
 // CreateWorkloadIdentityPoolProviderOperation returns a new CreateWorkloadIdentityPoolProviderOperation from a given name.
 // The name must be that of a previously created CreateWorkloadIdentityPoolProviderOperation, possibly from a different process.
-func (c *WorkloadIdentityPoolsClient) CreateWorkloadIdentityPoolProviderOperation(name string) *CreateWorkloadIdentityPoolProviderOperation {
+func (c *workloadIdentityPoolsGRPCClient) CreateWorkloadIdentityPoolProviderOperation(name string) *CreateWorkloadIdentityPoolProviderOperation {
 	return &CreateWorkloadIdentityPoolProviderOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -810,9 +976,9 @@ type DeleteWorkloadIdentityPoolOperation struct {
 
 // DeleteWorkloadIdentityPoolOperation returns a new DeleteWorkloadIdentityPoolOperation from a given name.
 // The name must be that of a previously created DeleteWorkloadIdentityPoolOperation, possibly from a different process.
-func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPoolOperation(name string) *DeleteWorkloadIdentityPoolOperation {
+func (c *workloadIdentityPoolsGRPCClient) DeleteWorkloadIdentityPoolOperation(name string) *DeleteWorkloadIdentityPoolOperation {
 	return &DeleteWorkloadIdentityPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -879,9 +1045,9 @@ type DeleteWorkloadIdentityPoolProviderOperation struct {
 
 // DeleteWorkloadIdentityPoolProviderOperation returns a new DeleteWorkloadIdentityPoolProviderOperation from a given name.
 // The name must be that of a previously created DeleteWorkloadIdentityPoolProviderOperation, possibly from a different process.
-func (c *WorkloadIdentityPoolsClient) DeleteWorkloadIdentityPoolProviderOperation(name string) *DeleteWorkloadIdentityPoolProviderOperation {
+func (c *workloadIdentityPoolsGRPCClient) DeleteWorkloadIdentityPoolProviderOperation(name string) *DeleteWorkloadIdentityPoolProviderOperation {
 	return &DeleteWorkloadIdentityPoolProviderOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -948,9 +1114,9 @@ type UndeleteWorkloadIdentityPoolOperation struct {
 
 // UndeleteWorkloadIdentityPoolOperation returns a new UndeleteWorkloadIdentityPoolOperation from a given name.
 // The name must be that of a previously created UndeleteWorkloadIdentityPoolOperation, possibly from a different process.
-func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPoolOperation(name string) *UndeleteWorkloadIdentityPoolOperation {
+func (c *workloadIdentityPoolsGRPCClient) UndeleteWorkloadIdentityPoolOperation(name string) *UndeleteWorkloadIdentityPoolOperation {
 	return &UndeleteWorkloadIdentityPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1017,9 +1183,9 @@ type UndeleteWorkloadIdentityPoolProviderOperation struct {
 
 // UndeleteWorkloadIdentityPoolProviderOperation returns a new UndeleteWorkloadIdentityPoolProviderOperation from a given name.
 // The name must be that of a previously created UndeleteWorkloadIdentityPoolProviderOperation, possibly from a different process.
-func (c *WorkloadIdentityPoolsClient) UndeleteWorkloadIdentityPoolProviderOperation(name string) *UndeleteWorkloadIdentityPoolProviderOperation {
+func (c *workloadIdentityPoolsGRPCClient) UndeleteWorkloadIdentityPoolProviderOperation(name string) *UndeleteWorkloadIdentityPoolProviderOperation {
 	return &UndeleteWorkloadIdentityPoolProviderOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1086,9 +1252,9 @@ type UpdateWorkloadIdentityPoolOperation struct {
 
 // UpdateWorkloadIdentityPoolOperation returns a new UpdateWorkloadIdentityPoolOperation from a given name.
 // The name must be that of a previously created UpdateWorkloadIdentityPoolOperation, possibly from a different process.
-func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPoolOperation(name string) *UpdateWorkloadIdentityPoolOperation {
+func (c *workloadIdentityPoolsGRPCClient) UpdateWorkloadIdentityPoolOperation(name string) *UpdateWorkloadIdentityPoolOperation {
 	return &UpdateWorkloadIdentityPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1155,9 +1321,9 @@ type UpdateWorkloadIdentityPoolProviderOperation struct {
 
 // UpdateWorkloadIdentityPoolProviderOperation returns a new UpdateWorkloadIdentityPoolProviderOperation from a given name.
 // The name must be that of a previously created UpdateWorkloadIdentityPoolProviderOperation, possibly from a different process.
-func (c *WorkloadIdentityPoolsClient) UpdateWorkloadIdentityPoolProviderOperation(name string) *UpdateWorkloadIdentityPoolProviderOperation {
+func (c *workloadIdentityPoolsGRPCClient) UpdateWorkloadIdentityPoolProviderOperation(name string) *UpdateWorkloadIdentityPoolProviderOperation {
 	return &UpdateWorkloadIdentityPoolProviderOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

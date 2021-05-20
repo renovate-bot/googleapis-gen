@@ -49,7 +49,7 @@ type CallOptions struct {
 	BatchDeletePhotos []gax.CallOption
 }
 
-func defaultClientOptions() []option.ClientOption {
+func defaultGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("streetviewpublish.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("streetviewpublish.mtls.googleapis.com:443"),
@@ -75,81 +75,54 @@ func defaultCallOptions() *CallOptions {
 	}
 }
 
+// internalClient is an interface that defines the methods availaible from Street View Publish API.
+type internalClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	StartUpload(context.Context, *emptypb.Empty, ...gax.CallOption) (*publishpb.UploadRef, error)
+	CreatePhoto(context.Context, *publishpb.CreatePhotoRequest, ...gax.CallOption) (*publishpb.Photo, error)
+	GetPhoto(context.Context, *publishpb.GetPhotoRequest, ...gax.CallOption) (*publishpb.Photo, error)
+	BatchGetPhotos(context.Context, *publishpb.BatchGetPhotosRequest, ...gax.CallOption) (*publishpb.BatchGetPhotosResponse, error)
+	ListPhotos(context.Context, *publishpb.ListPhotosRequest, ...gax.CallOption) *PhotoIterator
+	UpdatePhoto(context.Context, *publishpb.UpdatePhotoRequest, ...gax.CallOption) (*publishpb.Photo, error)
+	BatchUpdatePhotos(context.Context, *publishpb.BatchUpdatePhotosRequest, ...gax.CallOption) (*publishpb.BatchUpdatePhotosResponse, error)
+	DeletePhoto(context.Context, *publishpb.DeletePhotoRequest, ...gax.CallOption) error
+	BatchDeletePhotos(context.Context, *publishpb.BatchDeletePhotosRequest, ...gax.CallOption) (*publishpb.BatchDeletePhotosResponse, error)
+}
+
 // Client is a client for interacting with Street View Publish API.
-//
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Publishes and connects user-contributed photos on Street View.
 type Client struct {
-	// Connection pool of gRPC connections to the service.
-	connPool gtransport.ConnPool
-
-	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
-	disableDeadlines bool
-
-	// The gRPC API client.
-	client publishpb.StreetViewPublishServiceClient
+	// The internal transport-dependent client.
+	internalClient internalClient
 
 	// The call options for this service.
 	CallOptions *CallOptions
-
-	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
 }
 
-// NewClient creates a new street view publish service client.
-//
-// Publishes and connects user-contributed photos on Street View.
-func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
-	clientOpts := defaultClientOptions()
+// Wrapper methods routed to the internal client.
 
-	if newClientHook != nil {
-		hookOpts, err := newClientHook(ctx, clientHookParams{})
-		if err != nil {
-			return nil, err
-		}
-		clientOpts = append(clientOpts, hookOpts...)
-	}
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *Client) Close() error {
+	return c.internalClient.Close()
+}
 
-	disableDeadlines, err := checkDisableDeadlines()
-	if err != nil {
-		return nil, err
-	}
-
-	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
-	if err != nil {
-		return nil, err
-	}
-	c := &Client{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultCallOptions(),
-
-		client: publishpb.NewStreetViewPublishServiceClient(connPool),
-	}
-	c.setGoogleClientInfo()
-
-	return c, nil
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *Client) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
 func (c *Client) Connection() *grpc.ClientConn {
-	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *Client) Close() error {
-	return c.connPool.Close()
-}
-
-// setGoogleClientInfo sets the name and version of the application in
-// the `x-goog-api-client` header passed on each request. Intended for
-// use by Google-written clients.
-func (c *Client) setGoogleClientInfo(keyval ...string) {
-	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	return c.internalClient.Connection()
 }
 
 // StartUpload creates an upload session to start uploading photo bytes. The method uses
@@ -174,18 +147,7 @@ func (c *Client) setGoogleClientInfo(keyval ...string) {
 // CreatePhoto
 // to create the [Photo][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)] object entry.
 func (c *Client) StartUpload(ctx context.Context, req *emptypb.Empty, opts ...gax.CallOption) (*publishpb.UploadRef, error) {
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.StartUpload[0:len(c.CallOptions.StartUpload):len(c.CallOptions.StartUpload)], opts...)
-	var resp *publishpb.UploadRef
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.client.StartUpload(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
+	return c.internalClient.StartUpload(ctx, req, opts...)
 }
 
 // CreatePhoto after the client finishes uploading the photo with the returned
@@ -211,18 +173,7 @@ func (c *Client) StartUpload(ctx context.Context, req *emptypb.Empty, opts ...ga
 //   google.rpc.Code.RESOURCE_EXHAUSTED
 //   if the account has reached the storage limit.
 func (c *Client) CreatePhoto(ctx context.Context, req *publishpb.CreatePhotoRequest, opts ...gax.CallOption) (*publishpb.Photo, error) {
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.CreatePhoto[0:len(c.CallOptions.CreatePhoto):len(c.CallOptions.CreatePhoto)], opts...)
-	var resp *publishpb.Photo
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.client.CreatePhoto(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
+	return c.internalClient.CreatePhoto(ctx, req, opts...)
 }
 
 // GetPhoto gets the metadata of the specified
@@ -241,19 +192,7 @@ func (c *Client) CreatePhoto(ctx context.Context, req *publishpb.CreatePhotoRequ
 //   requested [Photo][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)] is still being
 //   indexed.
 func (c *Client) GetPhoto(ctx context.Context, req *publishpb.GetPhotoRequest, opts ...gax.CallOption) (*publishpb.Photo, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "photo_id", url.QueryEscape(req.GetPhotoId())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetPhoto[0:len(c.CallOptions.GetPhoto):len(c.CallOptions.GetPhoto)], opts...)
-	var resp *publishpb.Photo
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.client.GetPhoto(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
+	return c.internalClient.GetPhoto(ctx, req, opts...)
 }
 
 // BatchGetPhotos gets the metadata of the specified
@@ -273,8 +212,236 @@ func (c *Client) GetPhoto(ctx context.Context, req *publishpb.GetPhotoRequest, o
 // GetPhoto
 // for specific failures that can occur per photo.
 func (c *Client) BatchGetPhotos(ctx context.Context, req *publishpb.BatchGetPhotosRequest, opts ...gax.CallOption) (*publishpb.BatchGetPhotosResponse, error) {
+	return c.internalClient.BatchGetPhotos(ctx, req, opts...)
+}
+
+// ListPhotos lists all the [Photos][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)] that belong to
+// the user.
+func (c *Client) ListPhotos(ctx context.Context, req *publishpb.ListPhotosRequest, opts ...gax.CallOption) *PhotoIterator {
+	return c.internalClient.ListPhotos(ctx, req, opts...)
+}
+
+// UpdatePhoto updates the metadata of a [Photo][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)], such
+// as pose, place association, connections, etc. Changing the pixels of a
+// photo is not supported.
+//
+// Only the fields specified in the
+// updateMask
+// field are used. If updateMask is not present, the update applies to all
+// fields.
+//
+// This method returns the following error codes:
+//
+//   google.rpc.Code.PERMISSION_DENIED if
+//   the requesting user did not create the requested photo.
+//
+//   google.rpc.Code.INVALID_ARGUMENT if
+//   the request is malformed.
+//
+//   google.rpc.Code.NOT_FOUND if the requested
+//   photo does not exist.
+//
+//   google.rpc.Code.UNAVAILABLE if the
+//   requested [Photo][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)] is still being
+//   indexed.
+func (c *Client) UpdatePhoto(ctx context.Context, req *publishpb.UpdatePhotoRequest, opts ...gax.CallOption) (*publishpb.Photo, error) {
+	return c.internalClient.UpdatePhoto(ctx, req, opts...)
+}
+
+// BatchUpdatePhotos updates the metadata of [Photos][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)], such
+// as pose, place association, connections, etc. Changing the pixels of photos
+// is not supported.
+//
+// Note that if
+// BatchUpdatePhotos
+// fails, either critical fields are missing or there is an authentication
+// error. Even if
+// BatchUpdatePhotos
+// succeeds, individual photos in the batch may have failures.
+// These failures are specified in each
+// PhotoResponse.status
+// in
+// BatchUpdatePhotosResponse.results.
+// See
+// UpdatePhoto
+// for specific failures that can occur per photo.
+//
+// Only the fields specified in
+// updateMask
+// field are used. If updateMask is not present, the update applies to all
+// fields.
+//
+// The number of
+// UpdatePhotoRequest
+// messages in a
+// BatchUpdatePhotosRequest
+// must not exceed 20.
+func (c *Client) BatchUpdatePhotos(ctx context.Context, req *publishpb.BatchUpdatePhotosRequest, opts ...gax.CallOption) (*publishpb.BatchUpdatePhotosResponse, error) {
+	return c.internalClient.BatchUpdatePhotos(ctx, req, opts...)
+}
+
+// DeletePhoto deletes a [Photo][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)] and its metadata.
+//
+// This method returns the following error codes:
+//
+//   google.rpc.Code.PERMISSION_DENIED if
+//   the requesting user did not create the requested photo.
+//
+//   google.rpc.Code.NOT_FOUND if the photo ID
+//   does not exist.
+func (c *Client) DeletePhoto(ctx context.Context, req *publishpb.DeletePhotoRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeletePhoto(ctx, req, opts...)
+}
+
+// BatchDeletePhotos deletes a list of [Photos][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)] and their
+// metadata.
+//
+// Note that if
+// BatchDeletePhotos
+// fails, either critical fields are missing or there was an authentication
+// error. Even if
+// BatchDeletePhotos
+// succeeds, individual photos in the batch may have failures.
+// These failures are specified in each
+// PhotoResponse.status
+// in
+// BatchDeletePhotosResponse.results.
+// See
+// DeletePhoto
+// for specific failures that can occur per photo.
+func (c *Client) BatchDeletePhotos(ctx context.Context, req *publishpb.BatchDeletePhotosRequest, opts ...gax.CallOption) (*publishpb.BatchDeletePhotosResponse, error) {
+	return c.internalClient.BatchDeletePhotos(ctx, req, opts...)
+}
+
+// gRPCClient is a client for interacting with Street View Publish API over gRPC transport.
+//
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+type gRPCClient struct {
+	// Connection pool of gRPC connections to the service.
+	connPool gtransport.ConnPool
+
+	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
+	disableDeadlines bool
+
+	// Points back to the CallOptions field of the containing Client
+	CallOptions **CallOptions
+
+	// The gRPC API client.
+	client publishpb.StreetViewPublishServiceClient
+
+	// The x-goog-* metadata to be sent with each request.
+	xGoogMetadata metadata.MD
+}
+
+// NewClient creates a new street view publish service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
+//
+// Publishes and connects user-contributed photos on Street View.
+func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
+	clientOpts := defaultGRPCClientOptions()
+	if newClientHook != nil {
+		hookOpts, err := newClientHook(ctx, clientHookParams{})
+		if err != nil {
+			return nil, err
+		}
+		clientOpts = append(clientOpts, hookOpts...)
+	}
+
+	disableDeadlines, err := checkDisableDeadlines()
+	if err != nil {
+		return nil, err
+	}
+
+	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
+	if err != nil {
+		return nil, err
+	}
+	client := Client{CallOptions: defaultCallOptions()}
+
+	c := &gRPCClient{
+		connPool:         connPool,
+		disableDeadlines: disableDeadlines,
+		client:           publishpb.NewStreetViewPublishServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
+	}
+	c.setGoogleClientInfo()
+
+	client.internalClient = c
+
+	return &client, nil
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *gRPCClient) Connection() *grpc.ClientConn {
+	return c.connPool.Conn()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *gRPCClient) setGoogleClientInfo(keyval ...string) {
+	kv := append([]string{"gl-go", versionGo()}, keyval...)
+	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+}
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *gRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *gRPCClient) StartUpload(ctx context.Context, req *emptypb.Empty, opts ...gax.CallOption) (*publishpb.UploadRef, error) {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.BatchGetPhotos[0:len(c.CallOptions.BatchGetPhotos):len(c.CallOptions.BatchGetPhotos)], opts...)
+	opts = append((*c.CallOptions).StartUpload[0:len((*c.CallOptions).StartUpload):len((*c.CallOptions).StartUpload)], opts...)
+	var resp *publishpb.UploadRef
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.StartUpload(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *gRPCClient) CreatePhoto(ctx context.Context, req *publishpb.CreatePhotoRequest, opts ...gax.CallOption) (*publishpb.Photo, error) {
+	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	opts = append((*c.CallOptions).CreatePhoto[0:len((*c.CallOptions).CreatePhoto):len((*c.CallOptions).CreatePhoto)], opts...)
+	var resp *publishpb.Photo
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.CreatePhoto(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *gRPCClient) GetPhoto(ctx context.Context, req *publishpb.GetPhotoRequest, opts ...gax.CallOption) (*publishpb.Photo, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "photo_id", url.QueryEscape(req.GetPhotoId())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).GetPhoto[0:len((*c.CallOptions).GetPhoto):len((*c.CallOptions).GetPhoto)], opts...)
+	var resp *publishpb.Photo
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.GetPhoto(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *gRPCClient) BatchGetPhotos(ctx context.Context, req *publishpb.BatchGetPhotosRequest, opts ...gax.CallOption) (*publishpb.BatchGetPhotosResponse, error) {
+	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	opts = append((*c.CallOptions).BatchGetPhotos[0:len((*c.CallOptions).BatchGetPhotos):len((*c.CallOptions).BatchGetPhotos)], opts...)
 	var resp *publishpb.BatchGetPhotosResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -287,11 +454,9 @@ func (c *Client) BatchGetPhotos(ctx context.Context, req *publishpb.BatchGetPhot
 	return resp, nil
 }
 
-// ListPhotos lists all the [Photos][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)] that belong to
-// the user.
-func (c *Client) ListPhotos(ctx context.Context, req *publishpb.ListPhotosRequest, opts ...gax.CallOption) *PhotoIterator {
+func (c *gRPCClient) ListPhotos(ctx context.Context, req *publishpb.ListPhotosRequest, opts ...gax.CallOption) *PhotoIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.ListPhotos[0:len(c.CallOptions.ListPhotos):len(c.CallOptions.ListPhotos)], opts...)
+	opts = append((*c.CallOptions).ListPhotos[0:len((*c.CallOptions).ListPhotos):len((*c.CallOptions).ListPhotos)], opts...)
 	it := &PhotoIterator{}
 	req = proto.Clone(req).(*publishpb.ListPhotosRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*publishpb.Photo, string, error) {
@@ -328,33 +493,10 @@ func (c *Client) ListPhotos(ctx context.Context, req *publishpb.ListPhotosReques
 	return it
 }
 
-// UpdatePhoto updates the metadata of a [Photo][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)], such
-// as pose, place association, connections, etc. Changing the pixels of a
-// photo is not supported.
-//
-// Only the fields specified in the
-// updateMask
-// field are used. If updateMask is not present, the update applies to all
-// fields.
-//
-// This method returns the following error codes:
-//
-//   google.rpc.Code.PERMISSION_DENIED if
-//   the requesting user did not create the requested photo.
-//
-//   google.rpc.Code.INVALID_ARGUMENT if
-//   the request is malformed.
-//
-//   google.rpc.Code.NOT_FOUND if the requested
-//   photo does not exist.
-//
-//   google.rpc.Code.UNAVAILABLE if the
-//   requested [Photo][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)] is still being
-//   indexed.
-func (c *Client) UpdatePhoto(ctx context.Context, req *publishpb.UpdatePhotoRequest, opts ...gax.CallOption) (*publishpb.Photo, error) {
+func (c *gRPCClient) UpdatePhoto(ctx context.Context, req *publishpb.UpdatePhotoRequest, opts ...gax.CallOption) (*publishpb.Photo, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "photo.photo_id.id", url.QueryEscape(req.GetPhoto().GetPhotoId().GetId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdatePhoto[0:len(c.CallOptions.UpdatePhoto):len(c.CallOptions.UpdatePhoto)], opts...)
+	opts = append((*c.CallOptions).UpdatePhoto[0:len((*c.CallOptions).UpdatePhoto):len((*c.CallOptions).UpdatePhoto)], opts...)
 	var resp *publishpb.Photo
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -367,37 +509,9 @@ func (c *Client) UpdatePhoto(ctx context.Context, req *publishpb.UpdatePhotoRequ
 	return resp, nil
 }
 
-// BatchUpdatePhotos updates the metadata of [Photos][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)], such
-// as pose, place association, connections, etc. Changing the pixels of photos
-// is not supported.
-//
-// Note that if
-// BatchUpdatePhotos
-// fails, either critical fields are missing or there is an authentication
-// error. Even if
-// BatchUpdatePhotos
-// succeeds, individual photos in the batch may have failures.
-// These failures are specified in each
-// PhotoResponse.status
-// in
-// BatchUpdatePhotosResponse.results.
-// See
-// UpdatePhoto
-// for specific failures that can occur per photo.
-//
-// Only the fields specified in
-// updateMask
-// field are used. If updateMask is not present, the update applies to all
-// fields.
-//
-// The number of
-// UpdatePhotoRequest
-// messages in a
-// BatchUpdatePhotosRequest
-// must not exceed 20.
-func (c *Client) BatchUpdatePhotos(ctx context.Context, req *publishpb.BatchUpdatePhotosRequest, opts ...gax.CallOption) (*publishpb.BatchUpdatePhotosResponse, error) {
+func (c *gRPCClient) BatchUpdatePhotos(ctx context.Context, req *publishpb.BatchUpdatePhotosRequest, opts ...gax.CallOption) (*publishpb.BatchUpdatePhotosResponse, error) {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.BatchUpdatePhotos[0:len(c.CallOptions.BatchUpdatePhotos):len(c.CallOptions.BatchUpdatePhotos)], opts...)
+	opts = append((*c.CallOptions).BatchUpdatePhotos[0:len((*c.CallOptions).BatchUpdatePhotos):len((*c.CallOptions).BatchUpdatePhotos)], opts...)
 	var resp *publishpb.BatchUpdatePhotosResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -410,19 +524,10 @@ func (c *Client) BatchUpdatePhotos(ctx context.Context, req *publishpb.BatchUpda
 	return resp, nil
 }
 
-// DeletePhoto deletes a [Photo][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)] and its metadata.
-//
-// This method returns the following error codes:
-//
-//   google.rpc.Code.PERMISSION_DENIED if
-//   the requesting user did not create the requested photo.
-//
-//   google.rpc.Code.NOT_FOUND if the photo ID
-//   does not exist.
-func (c *Client) DeletePhoto(ctx context.Context, req *publishpb.DeletePhotoRequest, opts ...gax.CallOption) error {
+func (c *gRPCClient) DeletePhoto(ctx context.Context, req *publishpb.DeletePhotoRequest, opts ...gax.CallOption) error {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "photo_id", url.QueryEscape(req.GetPhotoId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeletePhoto[0:len(c.CallOptions.DeletePhoto):len(c.CallOptions.DeletePhoto)], opts...)
+	opts = append((*c.CallOptions).DeletePhoto[0:len((*c.CallOptions).DeletePhoto):len((*c.CallOptions).DeletePhoto)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.client.DeletePhoto(ctx, req, settings.GRPC...)
@@ -431,25 +536,9 @@ func (c *Client) DeletePhoto(ctx context.Context, req *publishpb.DeletePhotoRequ
 	return err
 }
 
-// BatchDeletePhotos deletes a list of [Photos][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)] and their
-// metadata.
-//
-// Note that if
-// BatchDeletePhotos
-// fails, either critical fields are missing or there was an authentication
-// error. Even if
-// BatchDeletePhotos
-// succeeds, individual photos in the batch may have failures.
-// These failures are specified in each
-// PhotoResponse.status
-// in
-// BatchDeletePhotosResponse.results.
-// See
-// DeletePhoto
-// for specific failures that can occur per photo.
-func (c *Client) BatchDeletePhotos(ctx context.Context, req *publishpb.BatchDeletePhotosRequest, opts ...gax.CallOption) (*publishpb.BatchDeletePhotosResponse, error) {
+func (c *gRPCClient) BatchDeletePhotos(ctx context.Context, req *publishpb.BatchDeletePhotosRequest, opts ...gax.CallOption) (*publishpb.BatchDeletePhotosResponse, error) {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.BatchDeletePhotos[0:len(c.CallOptions.BatchDeletePhotos):len(c.CallOptions.BatchDeletePhotos)], opts...)
+	opts = append((*c.CallOptions).BatchDeletePhotos[0:len((*c.CallOptions).BatchDeletePhotos):len((*c.CallOptions).BatchDeletePhotos)], opts...)
 	var resp *publishpb.BatchDeletePhotosResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

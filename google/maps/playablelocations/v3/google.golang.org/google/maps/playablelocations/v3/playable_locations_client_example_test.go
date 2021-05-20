@@ -29,18 +29,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_SamplePlayableLocations() {
-	// import playablelocationspb "google.golang.org/genproto/googleapis/maps/playablelocations/v3"
-
 	ctx := context.Background()
 	c, err := playablelocations.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &playablelocationspb.SamplePlayableLocationsRequest{
 		// TODO: Fill request struct fields.
@@ -54,13 +55,12 @@ func ExampleClient_SamplePlayableLocations() {
 }
 
 func ExampleClient_LogPlayerReports() {
-	// import playablelocationspb "google.golang.org/genproto/googleapis/maps/playablelocations/v3"
-
 	ctx := context.Background()
 	c, err := playablelocations.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &playablelocationspb.LogPlayerReportsRequest{
 		// TODO: Fill request struct fields.
@@ -74,13 +74,12 @@ func ExampleClient_LogPlayerReports() {
 }
 
 func ExampleClient_LogImpressions() {
-	// import playablelocationspb "google.golang.org/genproto/googleapis/maps/playablelocations/v3"
-
 	ctx := context.Background()
 	c, err := playablelocations.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &playablelocationspb.LogImpressionsRequest{
 		// TODO: Fill request struct fields.

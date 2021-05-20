@@ -30,18 +30,19 @@ func ExampleNewTetherClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleTetherClient_Egress() {
-	// import apigeeconnectpb "google.golang.org/genproto/googleapis/cloud/apigeeconnect/v1"
-
 	ctx := context.Background()
 	c, err := apigeeconnect.NewTetherClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 	stream, err := c.Egress(ctx)
 	if err != nil {
 		// TODO: Handle error.

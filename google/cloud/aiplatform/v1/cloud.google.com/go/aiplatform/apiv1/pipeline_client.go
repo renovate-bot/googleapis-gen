@@ -48,7 +48,7 @@ type PipelineCallOptions struct {
 	CancelTrainingPipeline []gax.CallOption
 }
 
-func defaultPipelineClientOptions() []option.ClientOption {
+func defaultPipelineGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("aiplatform.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("aiplatform.mtls.googleapis.com:443"),
@@ -70,37 +70,130 @@ func defaultPipelineCallOptions() *PipelineCallOptions {
 	}
 }
 
+// internalPipelineClient is an interface that defines the methods availaible from Cloud AI Platform API.
+type internalPipelineClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateTrainingPipeline(context.Context, *aiplatformpb.CreateTrainingPipelineRequest, ...gax.CallOption) (*aiplatformpb.TrainingPipeline, error)
+	GetTrainingPipeline(context.Context, *aiplatformpb.GetTrainingPipelineRequest, ...gax.CallOption) (*aiplatformpb.TrainingPipeline, error)
+	ListTrainingPipelines(context.Context, *aiplatformpb.ListTrainingPipelinesRequest, ...gax.CallOption) *TrainingPipelineIterator
+	DeleteTrainingPipeline(context.Context, *aiplatformpb.DeleteTrainingPipelineRequest, ...gax.CallOption) (*DeleteTrainingPipelineOperation, error)
+	DeleteTrainingPipelineOperation(name string) *DeleteTrainingPipelineOperation
+	CancelTrainingPipeline(context.Context, *aiplatformpb.CancelTrainingPipelineRequest, ...gax.CallOption) error
+}
+
 // PipelineClient is a client for interacting with Cloud AI Platform API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// A service for creating and managing AI Platform’s pipelines.
+type PipelineClient struct {
+	// The internal transport-dependent client.
+	internalClient internalPipelineClient
+
+	// The call options for this service.
+	CallOptions *PipelineCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *PipelineClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *PipelineClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *PipelineClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateTrainingPipeline creates a TrainingPipeline. A created TrainingPipeline right away will be
+// attempted to be run.
+func (c *PipelineClient) CreateTrainingPipeline(ctx context.Context, req *aiplatformpb.CreateTrainingPipelineRequest, opts ...gax.CallOption) (*aiplatformpb.TrainingPipeline, error) {
+	return c.internalClient.CreateTrainingPipeline(ctx, req, opts...)
+}
+
+// GetTrainingPipeline gets a TrainingPipeline.
+func (c *PipelineClient) GetTrainingPipeline(ctx context.Context, req *aiplatformpb.GetTrainingPipelineRequest, opts ...gax.CallOption) (*aiplatformpb.TrainingPipeline, error) {
+	return c.internalClient.GetTrainingPipeline(ctx, req, opts...)
+}
+
+// ListTrainingPipelines lists TrainingPipelines in a Location.
+func (c *PipelineClient) ListTrainingPipelines(ctx context.Context, req *aiplatformpb.ListTrainingPipelinesRequest, opts ...gax.CallOption) *TrainingPipelineIterator {
+	return c.internalClient.ListTrainingPipelines(ctx, req, opts...)
+}
+
+// DeleteTrainingPipeline deletes a TrainingPipeline.
+func (c *PipelineClient) DeleteTrainingPipeline(ctx context.Context, req *aiplatformpb.DeleteTrainingPipelineRequest, opts ...gax.CallOption) (*DeleteTrainingPipelineOperation, error) {
+	return c.internalClient.DeleteTrainingPipeline(ctx, req, opts...)
+}
+
+// DeleteTrainingPipelineOperation returns a new DeleteTrainingPipelineOperation from a given name.
+// The name must be that of a previously created DeleteTrainingPipelineOperation, possibly from a different process.
+func (c *PipelineClient) DeleteTrainingPipelineOperation(name string) *DeleteTrainingPipelineOperation {
+	return c.internalClient.DeleteTrainingPipelineOperation(name)
+}
+
+// CancelTrainingPipeline cancels a TrainingPipeline.
+// Starts asynchronous cancellation on the TrainingPipeline. The server
+// makes a best effort to cancel the pipeline, but success is not
+// guaranteed. Clients can use PipelineService.GetTrainingPipeline or
+// other methods to check whether the cancellation succeeded or whether the
+// pipeline completed despite cancellation. On successful cancellation,
+// the TrainingPipeline is not deleted; instead it becomes a pipeline with
+// a TrainingPipeline.error value with a google.rpc.Status.code of 1,
+// corresponding to Code.CANCELLED, and TrainingPipeline.state is set to
+// CANCELLED.
+func (c *PipelineClient) CancelTrainingPipeline(ctx context.Context, req *aiplatformpb.CancelTrainingPipelineRequest, opts ...gax.CallOption) error {
+	return c.internalClient.CancelTrainingPipeline(ctx, req, opts...)
+}
+
+// pipelineGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type PipelineClient struct {
+type pipelineGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing PipelineClient
+	CallOptions **PipelineCallOptions
+
 	// The gRPC API client.
 	pipelineClient aiplatformpb.PipelineServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *PipelineCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewPipelineClient creates a new pipeline service client.
+// NewPipelineClient creates a new pipeline service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // A service for creating and managing AI Platform’s pipelines.
 func NewPipelineClient(ctx context.Context, opts ...option.ClientOption) (*PipelineClient, error) {
-	clientOpts := defaultPipelineClientOptions()
-
+	clientOpts := defaultPipelineGRPCClientOptions()
 	if newPipelineClientHook != nil {
 		hookOpts, err := newPipelineClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -118,16 +211,19 @@ func NewPipelineClient(ctx context.Context, opts ...option.ClientOption) (*Pipel
 	if err != nil {
 		return nil, err
 	}
-	c := &PipelineClient{
+	client := PipelineClient{CallOptions: defaultPipelineCallOptions()}
+
+	c := &pipelineGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultPipelineCallOptions(),
-
-		pipelineClient: aiplatformpb.NewPipelineServiceClient(connPool),
+		pipelineClient:   aiplatformpb.NewPipelineServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -137,34 +233,33 @@ func NewPipelineClient(ctx context.Context, opts ...option.ClientOption) (*Pipel
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *PipelineClient) Connection() *grpc.ClientConn {
+func (c *pipelineGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *PipelineClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *PipelineClient) setGoogleClientInfo(keyval ...string) {
+func (c *pipelineGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateTrainingPipeline creates a TrainingPipeline. A created TrainingPipeline right away will be
-// attempted to be run.
-func (c *PipelineClient) CreateTrainingPipeline(ctx context.Context, req *aiplatformpb.CreateTrainingPipelineRequest, opts ...gax.CallOption) (*aiplatformpb.TrainingPipeline, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *pipelineGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *pipelineGRPCClient) CreateTrainingPipeline(ctx context.Context, req *aiplatformpb.CreateTrainingPipelineRequest, opts ...gax.CallOption) (*aiplatformpb.TrainingPipeline, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -172,7 +267,7 @@ func (c *PipelineClient) CreateTrainingPipeline(ctx context.Context, req *aiplat
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateTrainingPipeline[0:len(c.CallOptions.CreateTrainingPipeline):len(c.CallOptions.CreateTrainingPipeline)], opts...)
+	opts = append((*c.CallOptions).CreateTrainingPipeline[0:len((*c.CallOptions).CreateTrainingPipeline):len((*c.CallOptions).CreateTrainingPipeline)], opts...)
 	var resp *aiplatformpb.TrainingPipeline
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -185,8 +280,7 @@ func (c *PipelineClient) CreateTrainingPipeline(ctx context.Context, req *aiplat
 	return resp, nil
 }
 
-// GetTrainingPipeline gets a TrainingPipeline.
-func (c *PipelineClient) GetTrainingPipeline(ctx context.Context, req *aiplatformpb.GetTrainingPipelineRequest, opts ...gax.CallOption) (*aiplatformpb.TrainingPipeline, error) {
+func (c *pipelineGRPCClient) GetTrainingPipeline(ctx context.Context, req *aiplatformpb.GetTrainingPipelineRequest, opts ...gax.CallOption) (*aiplatformpb.TrainingPipeline, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -194,7 +288,7 @@ func (c *PipelineClient) GetTrainingPipeline(ctx context.Context, req *aiplatfor
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetTrainingPipeline[0:len(c.CallOptions.GetTrainingPipeline):len(c.CallOptions.GetTrainingPipeline)], opts...)
+	opts = append((*c.CallOptions).GetTrainingPipeline[0:len((*c.CallOptions).GetTrainingPipeline):len((*c.CallOptions).GetTrainingPipeline)], opts...)
 	var resp *aiplatformpb.TrainingPipeline
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -207,11 +301,10 @@ func (c *PipelineClient) GetTrainingPipeline(ctx context.Context, req *aiplatfor
 	return resp, nil
 }
 
-// ListTrainingPipelines lists TrainingPipelines in a Location.
-func (c *PipelineClient) ListTrainingPipelines(ctx context.Context, req *aiplatformpb.ListTrainingPipelinesRequest, opts ...gax.CallOption) *TrainingPipelineIterator {
+func (c *pipelineGRPCClient) ListTrainingPipelines(ctx context.Context, req *aiplatformpb.ListTrainingPipelinesRequest, opts ...gax.CallOption) *TrainingPipelineIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListTrainingPipelines[0:len(c.CallOptions.ListTrainingPipelines):len(c.CallOptions.ListTrainingPipelines)], opts...)
+	opts = append((*c.CallOptions).ListTrainingPipelines[0:len((*c.CallOptions).ListTrainingPipelines):len((*c.CallOptions).ListTrainingPipelines)], opts...)
 	it := &TrainingPipelineIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListTrainingPipelinesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.TrainingPipeline, string, error) {
@@ -248,8 +341,7 @@ func (c *PipelineClient) ListTrainingPipelines(ctx context.Context, req *aiplatf
 	return it
 }
 
-// DeleteTrainingPipeline deletes a TrainingPipeline.
-func (c *PipelineClient) DeleteTrainingPipeline(ctx context.Context, req *aiplatformpb.DeleteTrainingPipelineRequest, opts ...gax.CallOption) (*DeleteTrainingPipelineOperation, error) {
+func (c *pipelineGRPCClient) DeleteTrainingPipeline(ctx context.Context, req *aiplatformpb.DeleteTrainingPipelineRequest, opts ...gax.CallOption) (*DeleteTrainingPipelineOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -257,7 +349,7 @@ func (c *PipelineClient) DeleteTrainingPipeline(ctx context.Context, req *aiplat
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteTrainingPipeline[0:len(c.CallOptions.DeleteTrainingPipeline):len(c.CallOptions.DeleteTrainingPipeline)], opts...)
+	opts = append((*c.CallOptions).DeleteTrainingPipeline[0:len((*c.CallOptions).DeleteTrainingPipeline):len((*c.CallOptions).DeleteTrainingPipeline)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -268,21 +360,11 @@ func (c *PipelineClient) DeleteTrainingPipeline(ctx context.Context, req *aiplat
 		return nil, err
 	}
 	return &DeleteTrainingPipelineOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// CancelTrainingPipeline cancels a TrainingPipeline.
-// Starts asynchronous cancellation on the TrainingPipeline. The server
-// makes a best effort to cancel the pipeline, but success is not
-// guaranteed. Clients can use PipelineService.GetTrainingPipeline or
-// other methods to check whether the cancellation succeeded or whether the
-// pipeline completed despite cancellation. On successful cancellation,
-// the TrainingPipeline is not deleted; instead it becomes a pipeline with
-// a TrainingPipeline.error value with a google.rpc.Status.code of 1,
-// corresponding to Code.CANCELLED, and TrainingPipeline.state is set to
-// CANCELLED.
-func (c *PipelineClient) CancelTrainingPipeline(ctx context.Context, req *aiplatformpb.CancelTrainingPipelineRequest, opts ...gax.CallOption) error {
+func (c *pipelineGRPCClient) CancelTrainingPipeline(ctx context.Context, req *aiplatformpb.CancelTrainingPipelineRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -290,7 +372,7 @@ func (c *PipelineClient) CancelTrainingPipeline(ctx context.Context, req *aiplat
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CancelTrainingPipeline[0:len(c.CallOptions.CancelTrainingPipeline):len(c.CallOptions.CancelTrainingPipeline)], opts...)
+	opts = append((*c.CallOptions).CancelTrainingPipeline[0:len((*c.CallOptions).CancelTrainingPipeline):len((*c.CallOptions).CancelTrainingPipeline)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.pipelineClient.CancelTrainingPipeline(ctx, req, settings.GRPC...)
@@ -306,9 +388,9 @@ type DeleteTrainingPipelineOperation struct {
 
 // DeleteTrainingPipelineOperation returns a new DeleteTrainingPipelineOperation from a given name.
 // The name must be that of a previously created DeleteTrainingPipelineOperation, possibly from a different process.
-func (c *PipelineClient) DeleteTrainingPipelineOperation(name string) *DeleteTrainingPipelineOperation {
+func (c *pipelineGRPCClient) DeleteTrainingPipelineOperation(name string) *DeleteTrainingPipelineOperation {
 	return &DeleteTrainingPipelineOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

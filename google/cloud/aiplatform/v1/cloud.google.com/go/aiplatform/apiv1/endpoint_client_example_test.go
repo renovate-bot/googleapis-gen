@@ -30,18 +30,19 @@ func ExampleNewEndpointClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleEndpointClient_CreateEndpoint() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateEndpointRequest{
 		// TODO: Fill request struct fields.
@@ -60,13 +61,12 @@ func ExampleEndpointClient_CreateEndpoint() {
 }
 
 func ExampleEndpointClient_GetEndpoint() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetEndpointRequest{
 		// TODO: Fill request struct fields.
@@ -80,14 +80,12 @@ func ExampleEndpointClient_GetEndpoint() {
 }
 
 func ExampleEndpointClient_ListEndpoints() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListEndpointsRequest{
 		// TODO: Fill request struct fields.
@@ -107,13 +105,12 @@ func ExampleEndpointClient_ListEndpoints() {
 }
 
 func ExampleEndpointClient_UpdateEndpoint() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateEndpointRequest{
 		// TODO: Fill request struct fields.
@@ -127,13 +124,12 @@ func ExampleEndpointClient_UpdateEndpoint() {
 }
 
 func ExampleEndpointClient_DeleteEndpoint() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteEndpointRequest{
 		// TODO: Fill request struct fields.
@@ -150,13 +146,12 @@ func ExampleEndpointClient_DeleteEndpoint() {
 }
 
 func ExampleEndpointClient_DeployModel() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeployModelRequest{
 		// TODO: Fill request struct fields.
@@ -175,13 +170,12 @@ func ExampleEndpointClient_DeployModel() {
 }
 
 func ExampleEndpointClient_UndeployModel() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UndeployModelRequest{
 		// TODO: Fill request struct fields.

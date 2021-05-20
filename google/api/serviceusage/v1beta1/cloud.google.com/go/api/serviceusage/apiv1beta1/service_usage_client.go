@@ -63,7 +63,7 @@ type CallOptions struct {
 	GenerateServiceIdentity  []gax.CallOption
 }
 
-func defaultClientOptions() []option.ClientOption {
+func defaultGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("serviceusage.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("serviceusage.mtls.googleapis.com:443"),
@@ -99,37 +99,328 @@ func defaultCallOptions() *CallOptions {
 	}
 }
 
+// internalClient is an interface that defines the methods availaible from Service Usage API.
+type internalClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	EnableService(context.Context, *serviceusagepb.EnableServiceRequest, ...gax.CallOption) (*EnableServiceOperation, error)
+	EnableServiceOperation(name string) *EnableServiceOperation
+	DisableService(context.Context, *serviceusagepb.DisableServiceRequest, ...gax.CallOption) (*DisableServiceOperation, error)
+	DisableServiceOperation(name string) *DisableServiceOperation
+	GetService(context.Context, *serviceusagepb.GetServiceRequest, ...gax.CallOption) (*serviceusagepb.Service, error)
+	ListServices(context.Context, *serviceusagepb.ListServicesRequest, ...gax.CallOption) *ServiceIterator
+	BatchEnableServices(context.Context, *serviceusagepb.BatchEnableServicesRequest, ...gax.CallOption) (*BatchEnableServicesOperation, error)
+	BatchEnableServicesOperation(name string) *BatchEnableServicesOperation
+	ListConsumerQuotaMetrics(context.Context, *serviceusagepb.ListConsumerQuotaMetricsRequest, ...gax.CallOption) *ConsumerQuotaMetricIterator
+	GetConsumerQuotaMetric(context.Context, *serviceusagepb.GetConsumerQuotaMetricRequest, ...gax.CallOption) (*serviceusagepb.ConsumerQuotaMetric, error)
+	GetConsumerQuotaLimit(context.Context, *serviceusagepb.GetConsumerQuotaLimitRequest, ...gax.CallOption) (*serviceusagepb.ConsumerQuotaLimit, error)
+	CreateAdminOverride(context.Context, *serviceusagepb.CreateAdminOverrideRequest, ...gax.CallOption) (*CreateAdminOverrideOperation, error)
+	CreateAdminOverrideOperation(name string) *CreateAdminOverrideOperation
+	UpdateAdminOverride(context.Context, *serviceusagepb.UpdateAdminOverrideRequest, ...gax.CallOption) (*UpdateAdminOverrideOperation, error)
+	UpdateAdminOverrideOperation(name string) *UpdateAdminOverrideOperation
+	DeleteAdminOverride(context.Context, *serviceusagepb.DeleteAdminOverrideRequest, ...gax.CallOption) (*DeleteAdminOverrideOperation, error)
+	DeleteAdminOverrideOperation(name string) *DeleteAdminOverrideOperation
+	ListAdminOverrides(context.Context, *serviceusagepb.ListAdminOverridesRequest, ...gax.CallOption) *QuotaOverrideIterator
+	ImportAdminOverrides(context.Context, *serviceusagepb.ImportAdminOverridesRequest, ...gax.CallOption) (*ImportAdminOverridesOperation, error)
+	ImportAdminOverridesOperation(name string) *ImportAdminOverridesOperation
+	CreateConsumerOverride(context.Context, *serviceusagepb.CreateConsumerOverrideRequest, ...gax.CallOption) (*CreateConsumerOverrideOperation, error)
+	CreateConsumerOverrideOperation(name string) *CreateConsumerOverrideOperation
+	UpdateConsumerOverride(context.Context, *serviceusagepb.UpdateConsumerOverrideRequest, ...gax.CallOption) (*UpdateConsumerOverrideOperation, error)
+	UpdateConsumerOverrideOperation(name string) *UpdateConsumerOverrideOperation
+	DeleteConsumerOverride(context.Context, *serviceusagepb.DeleteConsumerOverrideRequest, ...gax.CallOption) (*DeleteConsumerOverrideOperation, error)
+	DeleteConsumerOverrideOperation(name string) *DeleteConsumerOverrideOperation
+	ListConsumerOverrides(context.Context, *serviceusagepb.ListConsumerOverridesRequest, ...gax.CallOption) *QuotaOverrideIterator
+	ImportConsumerOverrides(context.Context, *serviceusagepb.ImportConsumerOverridesRequest, ...gax.CallOption) (*ImportConsumerOverridesOperation, error)
+	ImportConsumerOverridesOperation(name string) *ImportConsumerOverridesOperation
+	GenerateServiceIdentity(context.Context, *serviceusagepb.GenerateServiceIdentityRequest, ...gax.CallOption) (*GenerateServiceIdentityOperation, error)
+	GenerateServiceIdentityOperation(name string) *GenerateServiceIdentityOperation
+}
+
 // Client is a client for interacting with Service Usage API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Service Usage API (at /service-usage/docs/overview)
+type Client struct {
+	// The internal transport-dependent client.
+	internalClient internalClient
+
+	// The call options for this service.
+	CallOptions *CallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *Client) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *Client) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *Client) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// EnableService enables a service so that it can be used with a project.
+//
+// Operation response type: google.protobuf.Empty
+//
+// Deprecated: EnableService may be removed in a future version.
+func (c *Client) EnableService(ctx context.Context, req *serviceusagepb.EnableServiceRequest, opts ...gax.CallOption) (*EnableServiceOperation, error) {
+	return c.internalClient.EnableService(ctx, req, opts...)
+}
+
+// EnableServiceOperation returns a new EnableServiceOperation from a given name.
+// The name must be that of a previously created EnableServiceOperation, possibly from a different process.
+func (c *Client) EnableServiceOperation(name string) *EnableServiceOperation {
+	return c.internalClient.EnableServiceOperation(name)
+}
+
+// DisableService disables a service so that it can no longer be used with a project.
+// This prevents unintended usage that may cause unexpected billing
+// charges or security leaks.
+//
+// It is not valid to call the disable method on a service that is not
+// currently enabled. Callers will receive a FAILED_PRECONDITION status if
+// the target service is not currently enabled.
+//
+// Operation response type: google.protobuf.Empty
+//
+// Deprecated: DisableService may be removed in a future version.
+func (c *Client) DisableService(ctx context.Context, req *serviceusagepb.DisableServiceRequest, opts ...gax.CallOption) (*DisableServiceOperation, error) {
+	return c.internalClient.DisableService(ctx, req, opts...)
+}
+
+// DisableServiceOperation returns a new DisableServiceOperation from a given name.
+// The name must be that of a previously created DisableServiceOperation, possibly from a different process.
+func (c *Client) DisableServiceOperation(name string) *DisableServiceOperation {
+	return c.internalClient.DisableServiceOperation(name)
+}
+
+// GetService returns the service configuration and enabled state for a given service.
+//
+// Deprecated: GetService may be removed in a future version.
+func (c *Client) GetService(ctx context.Context, req *serviceusagepb.GetServiceRequest, opts ...gax.CallOption) (*serviceusagepb.Service, error) {
+	return c.internalClient.GetService(ctx, req, opts...)
+}
+
+// ListServices lists all services available to the specified project, and the current
+// state of those services with respect to the project. The list includes
+// all public services, all services for which the calling user has the
+// servicemanagement.services.bind permission, and all services that have
+// already been enabled on the project. The list can be filtered to
+// only include services in a specific state, for example to only include
+// services enabled on the project.
+//
+// Deprecated: ListServices may be removed in a future version.
+func (c *Client) ListServices(ctx context.Context, req *serviceusagepb.ListServicesRequest, opts ...gax.CallOption) *ServiceIterator {
+	return c.internalClient.ListServices(ctx, req, opts...)
+}
+
+// BatchEnableServices enables multiple services on a project. The operation is atomic: if
+// enabling any service fails, then the entire batch fails, and no state
+// changes occur.
+//
+// Operation response type: google.protobuf.Empty
+//
+// Deprecated: BatchEnableServices may be removed in a future version.
+func (c *Client) BatchEnableServices(ctx context.Context, req *serviceusagepb.BatchEnableServicesRequest, opts ...gax.CallOption) (*BatchEnableServicesOperation, error) {
+	return c.internalClient.BatchEnableServices(ctx, req, opts...)
+}
+
+// BatchEnableServicesOperation returns a new BatchEnableServicesOperation from a given name.
+// The name must be that of a previously created BatchEnableServicesOperation, possibly from a different process.
+func (c *Client) BatchEnableServicesOperation(name string) *BatchEnableServicesOperation {
+	return c.internalClient.BatchEnableServicesOperation(name)
+}
+
+// ListConsumerQuotaMetrics retrieves a summary of all quota information visible to the service
+// consumer, organized by service metric. Each metric includes information
+// about all of its defined limits. Each limit includes the limit
+// configuration (quota unit, preciseness, default value), the current
+// effective limit value, and all of the overrides applied to the limit.
+func (c *Client) ListConsumerQuotaMetrics(ctx context.Context, req *serviceusagepb.ListConsumerQuotaMetricsRequest, opts ...gax.CallOption) *ConsumerQuotaMetricIterator {
+	return c.internalClient.ListConsumerQuotaMetrics(ctx, req, opts...)
+}
+
+// GetConsumerQuotaMetric retrieves a summary of quota information for a specific quota metric
+func (c *Client) GetConsumerQuotaMetric(ctx context.Context, req *serviceusagepb.GetConsumerQuotaMetricRequest, opts ...gax.CallOption) (*serviceusagepb.ConsumerQuotaMetric, error) {
+	return c.internalClient.GetConsumerQuotaMetric(ctx, req, opts...)
+}
+
+// GetConsumerQuotaLimit retrieves a summary of quota information for a specific quota limit.
+func (c *Client) GetConsumerQuotaLimit(ctx context.Context, req *serviceusagepb.GetConsumerQuotaLimitRequest, opts ...gax.CallOption) (*serviceusagepb.ConsumerQuotaLimit, error) {
+	return c.internalClient.GetConsumerQuotaLimit(ctx, req, opts...)
+}
+
+// CreateAdminOverride creates an admin override.
+// An admin override is applied by an administrator of a parent folder or
+// parent organization of the consumer receiving the override. An admin
+// override is intended to limit the amount of quota the consumer can use out
+// of the total quota pool allocated to all children of the folder or
+// organization.
+func (c *Client) CreateAdminOverride(ctx context.Context, req *serviceusagepb.CreateAdminOverrideRequest, opts ...gax.CallOption) (*CreateAdminOverrideOperation, error) {
+	return c.internalClient.CreateAdminOverride(ctx, req, opts...)
+}
+
+// CreateAdminOverrideOperation returns a new CreateAdminOverrideOperation from a given name.
+// The name must be that of a previously created CreateAdminOverrideOperation, possibly from a different process.
+func (c *Client) CreateAdminOverrideOperation(name string) *CreateAdminOverrideOperation {
+	return c.internalClient.CreateAdminOverrideOperation(name)
+}
+
+// UpdateAdminOverride updates an admin override.
+func (c *Client) UpdateAdminOverride(ctx context.Context, req *serviceusagepb.UpdateAdminOverrideRequest, opts ...gax.CallOption) (*UpdateAdminOverrideOperation, error) {
+	return c.internalClient.UpdateAdminOverride(ctx, req, opts...)
+}
+
+// UpdateAdminOverrideOperation returns a new UpdateAdminOverrideOperation from a given name.
+// The name must be that of a previously created UpdateAdminOverrideOperation, possibly from a different process.
+func (c *Client) UpdateAdminOverrideOperation(name string) *UpdateAdminOverrideOperation {
+	return c.internalClient.UpdateAdminOverrideOperation(name)
+}
+
+// DeleteAdminOverride deletes an admin override.
+func (c *Client) DeleteAdminOverride(ctx context.Context, req *serviceusagepb.DeleteAdminOverrideRequest, opts ...gax.CallOption) (*DeleteAdminOverrideOperation, error) {
+	return c.internalClient.DeleteAdminOverride(ctx, req, opts...)
+}
+
+// DeleteAdminOverrideOperation returns a new DeleteAdminOverrideOperation from a given name.
+// The name must be that of a previously created DeleteAdminOverrideOperation, possibly from a different process.
+func (c *Client) DeleteAdminOverrideOperation(name string) *DeleteAdminOverrideOperation {
+	return c.internalClient.DeleteAdminOverrideOperation(name)
+}
+
+// ListAdminOverrides lists all admin overrides on this limit.
+func (c *Client) ListAdminOverrides(ctx context.Context, req *serviceusagepb.ListAdminOverridesRequest, opts ...gax.CallOption) *QuotaOverrideIterator {
+	return c.internalClient.ListAdminOverrides(ctx, req, opts...)
+}
+
+// ImportAdminOverrides creates or updates multiple admin overrides atomically, all on the
+// same consumer, but on many different metrics or limits.
+// The name field in the quota override message should not be set.
+func (c *Client) ImportAdminOverrides(ctx context.Context, req *serviceusagepb.ImportAdminOverridesRequest, opts ...gax.CallOption) (*ImportAdminOverridesOperation, error) {
+	return c.internalClient.ImportAdminOverrides(ctx, req, opts...)
+}
+
+// ImportAdminOverridesOperation returns a new ImportAdminOverridesOperation from a given name.
+// The name must be that of a previously created ImportAdminOverridesOperation, possibly from a different process.
+func (c *Client) ImportAdminOverridesOperation(name string) *ImportAdminOverridesOperation {
+	return c.internalClient.ImportAdminOverridesOperation(name)
+}
+
+// CreateConsumerOverride creates a consumer override.
+// A consumer override is applied to the consumer on its own authority to
+// limit its own quota usage. Consumer overrides cannot be used to grant more
+// quota than would be allowed by admin overrides, producer overrides, or the
+// default limit of the service.
+func (c *Client) CreateConsumerOverride(ctx context.Context, req *serviceusagepb.CreateConsumerOverrideRequest, opts ...gax.CallOption) (*CreateConsumerOverrideOperation, error) {
+	return c.internalClient.CreateConsumerOverride(ctx, req, opts...)
+}
+
+// CreateConsumerOverrideOperation returns a new CreateConsumerOverrideOperation from a given name.
+// The name must be that of a previously created CreateConsumerOverrideOperation, possibly from a different process.
+func (c *Client) CreateConsumerOverrideOperation(name string) *CreateConsumerOverrideOperation {
+	return c.internalClient.CreateConsumerOverrideOperation(name)
+}
+
+// UpdateConsumerOverride updates a consumer override.
+func (c *Client) UpdateConsumerOverride(ctx context.Context, req *serviceusagepb.UpdateConsumerOverrideRequest, opts ...gax.CallOption) (*UpdateConsumerOverrideOperation, error) {
+	return c.internalClient.UpdateConsumerOverride(ctx, req, opts...)
+}
+
+// UpdateConsumerOverrideOperation returns a new UpdateConsumerOverrideOperation from a given name.
+// The name must be that of a previously created UpdateConsumerOverrideOperation, possibly from a different process.
+func (c *Client) UpdateConsumerOverrideOperation(name string) *UpdateConsumerOverrideOperation {
+	return c.internalClient.UpdateConsumerOverrideOperation(name)
+}
+
+// DeleteConsumerOverride deletes a consumer override.
+func (c *Client) DeleteConsumerOverride(ctx context.Context, req *serviceusagepb.DeleteConsumerOverrideRequest, opts ...gax.CallOption) (*DeleteConsumerOverrideOperation, error) {
+	return c.internalClient.DeleteConsumerOverride(ctx, req, opts...)
+}
+
+// DeleteConsumerOverrideOperation returns a new DeleteConsumerOverrideOperation from a given name.
+// The name must be that of a previously created DeleteConsumerOverrideOperation, possibly from a different process.
+func (c *Client) DeleteConsumerOverrideOperation(name string) *DeleteConsumerOverrideOperation {
+	return c.internalClient.DeleteConsumerOverrideOperation(name)
+}
+
+// ListConsumerOverrides lists all consumer overrides on this limit.
+func (c *Client) ListConsumerOverrides(ctx context.Context, req *serviceusagepb.ListConsumerOverridesRequest, opts ...gax.CallOption) *QuotaOverrideIterator {
+	return c.internalClient.ListConsumerOverrides(ctx, req, opts...)
+}
+
+// ImportConsumerOverrides creates or updates multiple consumer overrides atomically, all on the
+// same consumer, but on many different metrics or limits.
+// The name field in the quota override message should not be set.
+func (c *Client) ImportConsumerOverrides(ctx context.Context, req *serviceusagepb.ImportConsumerOverridesRequest, opts ...gax.CallOption) (*ImportConsumerOverridesOperation, error) {
+	return c.internalClient.ImportConsumerOverrides(ctx, req, opts...)
+}
+
+// ImportConsumerOverridesOperation returns a new ImportConsumerOverridesOperation from a given name.
+// The name must be that of a previously created ImportConsumerOverridesOperation, possibly from a different process.
+func (c *Client) ImportConsumerOverridesOperation(name string) *ImportConsumerOverridesOperation {
+	return c.internalClient.ImportConsumerOverridesOperation(name)
+}
+
+// GenerateServiceIdentity generates service identity for service.
+func (c *Client) GenerateServiceIdentity(ctx context.Context, req *serviceusagepb.GenerateServiceIdentityRequest, opts ...gax.CallOption) (*GenerateServiceIdentityOperation, error) {
+	return c.internalClient.GenerateServiceIdentity(ctx, req, opts...)
+}
+
+// GenerateServiceIdentityOperation returns a new GenerateServiceIdentityOperation from a given name.
+// The name must be that of a previously created GenerateServiceIdentityOperation, possibly from a different process.
+func (c *Client) GenerateServiceIdentityOperation(name string) *GenerateServiceIdentityOperation {
+	return c.internalClient.GenerateServiceIdentityOperation(name)
+}
+
+// gRPCClient is a client for interacting with Service Usage API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type Client struct {
+type gRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing Client
+	CallOptions **CallOptions
+
 	// The gRPC API client.
 	client serviceusagepb.ServiceUsageClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *CallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewClient creates a new service usage client.
+// NewClient creates a new service usage client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service Usage API (at /service-usage/docs/overview)
 func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
-	clientOpts := defaultClientOptions()
-
+	clientOpts := defaultGRPCClientOptions()
 	if newClientHook != nil {
 		hookOpts, err := newClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -147,16 +438,19 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 	if err != nil {
 		return nil, err
 	}
-	c := &Client{
+	client := Client{CallOptions: defaultCallOptions()}
+
+	c := &gRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultCallOptions(),
-
-		client: serviceusagepb.NewServiceUsageClient(connPool),
+		client:           serviceusagepb.NewServiceUsageClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -166,35 +460,33 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *Client) Connection() *grpc.ClientConn {
+func (c *gRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *Client) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *Client) setGoogleClientInfo(keyval ...string) {
+func (c *gRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// EnableService enables a service so that it can be used with a project.
-//
-// Operation response type: google.protobuf.Empty
-func (c *Client) EnableService(ctx context.Context, req *serviceusagepb.EnableServiceRequest, opts ...gax.CallOption) (*EnableServiceOperation, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *gRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *gRPCClient) EnableService(ctx context.Context, req *serviceusagepb.EnableServiceRequest, opts ...gax.CallOption) (*EnableServiceOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -202,7 +494,7 @@ func (c *Client) EnableService(ctx context.Context, req *serviceusagepb.EnableSe
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.EnableService[0:len(c.CallOptions.EnableService):len(c.CallOptions.EnableService)], opts...)
+	opts = append((*c.CallOptions).EnableService[0:len((*c.CallOptions).EnableService):len((*c.CallOptions).EnableService)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -213,20 +505,11 @@ func (c *Client) EnableService(ctx context.Context, req *serviceusagepb.EnableSe
 		return nil, err
 	}
 	return &EnableServiceOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DisableService disables a service so that it can no longer be used with a project.
-// This prevents unintended usage that may cause unexpected billing
-// charges or security leaks.
-//
-// It is not valid to call the disable method on a service that is not
-// currently enabled. Callers will receive a FAILED_PRECONDITION status if
-// the target service is not currently enabled.
-//
-// Operation response type: google.protobuf.Empty
-func (c *Client) DisableService(ctx context.Context, req *serviceusagepb.DisableServiceRequest, opts ...gax.CallOption) (*DisableServiceOperation, error) {
+func (c *gRPCClient) DisableService(ctx context.Context, req *serviceusagepb.DisableServiceRequest, opts ...gax.CallOption) (*DisableServiceOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -234,7 +517,7 @@ func (c *Client) DisableService(ctx context.Context, req *serviceusagepb.Disable
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DisableService[0:len(c.CallOptions.DisableService):len(c.CallOptions.DisableService)], opts...)
+	opts = append((*c.CallOptions).DisableService[0:len((*c.CallOptions).DisableService):len((*c.CallOptions).DisableService)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -245,12 +528,11 @@ func (c *Client) DisableService(ctx context.Context, req *serviceusagepb.Disable
 		return nil, err
 	}
 	return &DisableServiceOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetService returns the service configuration and enabled state for a given service.
-func (c *Client) GetService(ctx context.Context, req *serviceusagepb.GetServiceRequest, opts ...gax.CallOption) (*serviceusagepb.Service, error) {
+func (c *gRPCClient) GetService(ctx context.Context, req *serviceusagepb.GetServiceRequest, opts ...gax.CallOption) (*serviceusagepb.Service, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -258,7 +540,7 @@ func (c *Client) GetService(ctx context.Context, req *serviceusagepb.GetServiceR
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetService[0:len(c.CallOptions.GetService):len(c.CallOptions.GetService)], opts...)
+	opts = append((*c.CallOptions).GetService[0:len((*c.CallOptions).GetService):len((*c.CallOptions).GetService)], opts...)
 	var resp *serviceusagepb.Service
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -271,17 +553,10 @@ func (c *Client) GetService(ctx context.Context, req *serviceusagepb.GetServiceR
 	return resp, nil
 }
 
-// ListServices lists all services available to the specified project, and the current
-// state of those services with respect to the project. The list includes
-// all public services, all services for which the calling user has the
-// servicemanagement.services.bind permission, and all services that have
-// already been enabled on the project. The list can be filtered to
-// only include services in a specific state, for example to only include
-// services enabled on the project.
-func (c *Client) ListServices(ctx context.Context, req *serviceusagepb.ListServicesRequest, opts ...gax.CallOption) *ServiceIterator {
+func (c *gRPCClient) ListServices(ctx context.Context, req *serviceusagepb.ListServicesRequest, opts ...gax.CallOption) *ServiceIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListServices[0:len(c.CallOptions.ListServices):len(c.CallOptions.ListServices)], opts...)
+	opts = append((*c.CallOptions).ListServices[0:len((*c.CallOptions).ListServices):len((*c.CallOptions).ListServices)], opts...)
 	it := &ServiceIterator{}
 	req = proto.Clone(req).(*serviceusagepb.ListServicesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*serviceusagepb.Service, string, error) {
@@ -318,12 +593,7 @@ func (c *Client) ListServices(ctx context.Context, req *serviceusagepb.ListServi
 	return it
 }
 
-// BatchEnableServices enables multiple services on a project. The operation is atomic: if
-// enabling any service fails, then the entire batch fails, and no state
-// changes occur.
-//
-// Operation response type: google.protobuf.Empty
-func (c *Client) BatchEnableServices(ctx context.Context, req *serviceusagepb.BatchEnableServicesRequest, opts ...gax.CallOption) (*BatchEnableServicesOperation, error) {
+func (c *gRPCClient) BatchEnableServices(ctx context.Context, req *serviceusagepb.BatchEnableServicesRequest, opts ...gax.CallOption) (*BatchEnableServicesOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -331,7 +601,7 @@ func (c *Client) BatchEnableServices(ctx context.Context, req *serviceusagepb.Ba
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.BatchEnableServices[0:len(c.CallOptions.BatchEnableServices):len(c.CallOptions.BatchEnableServices)], opts...)
+	opts = append((*c.CallOptions).BatchEnableServices[0:len((*c.CallOptions).BatchEnableServices):len((*c.CallOptions).BatchEnableServices)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -342,19 +612,14 @@ func (c *Client) BatchEnableServices(ctx context.Context, req *serviceusagepb.Ba
 		return nil, err
 	}
 	return &BatchEnableServicesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// ListConsumerQuotaMetrics retrieves a summary of all quota information visible to the service
-// consumer, organized by service metric. Each metric includes information
-// about all of its defined limits. Each limit includes the limit
-// configuration (quota unit, preciseness, default value), the current
-// effective limit value, and all of the overrides applied to the limit.
-func (c *Client) ListConsumerQuotaMetrics(ctx context.Context, req *serviceusagepb.ListConsumerQuotaMetricsRequest, opts ...gax.CallOption) *ConsumerQuotaMetricIterator {
+func (c *gRPCClient) ListConsumerQuotaMetrics(ctx context.Context, req *serviceusagepb.ListConsumerQuotaMetricsRequest, opts ...gax.CallOption) *ConsumerQuotaMetricIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListConsumerQuotaMetrics[0:len(c.CallOptions.ListConsumerQuotaMetrics):len(c.CallOptions.ListConsumerQuotaMetrics)], opts...)
+	opts = append((*c.CallOptions).ListConsumerQuotaMetrics[0:len((*c.CallOptions).ListConsumerQuotaMetrics):len((*c.CallOptions).ListConsumerQuotaMetrics)], opts...)
 	it := &ConsumerQuotaMetricIterator{}
 	req = proto.Clone(req).(*serviceusagepb.ListConsumerQuotaMetricsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*serviceusagepb.ConsumerQuotaMetric, string, error) {
@@ -391,8 +656,7 @@ func (c *Client) ListConsumerQuotaMetrics(ctx context.Context, req *serviceusage
 	return it
 }
 
-// GetConsumerQuotaMetric retrieves a summary of quota information for a specific quota metric
-func (c *Client) GetConsumerQuotaMetric(ctx context.Context, req *serviceusagepb.GetConsumerQuotaMetricRequest, opts ...gax.CallOption) (*serviceusagepb.ConsumerQuotaMetric, error) {
+func (c *gRPCClient) GetConsumerQuotaMetric(ctx context.Context, req *serviceusagepb.GetConsumerQuotaMetricRequest, opts ...gax.CallOption) (*serviceusagepb.ConsumerQuotaMetric, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -400,7 +664,7 @@ func (c *Client) GetConsumerQuotaMetric(ctx context.Context, req *serviceusagepb
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetConsumerQuotaMetric[0:len(c.CallOptions.GetConsumerQuotaMetric):len(c.CallOptions.GetConsumerQuotaMetric)], opts...)
+	opts = append((*c.CallOptions).GetConsumerQuotaMetric[0:len((*c.CallOptions).GetConsumerQuotaMetric):len((*c.CallOptions).GetConsumerQuotaMetric)], opts...)
 	var resp *serviceusagepb.ConsumerQuotaMetric
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -413,8 +677,7 @@ func (c *Client) GetConsumerQuotaMetric(ctx context.Context, req *serviceusagepb
 	return resp, nil
 }
 
-// GetConsumerQuotaLimit retrieves a summary of quota information for a specific quota limit.
-func (c *Client) GetConsumerQuotaLimit(ctx context.Context, req *serviceusagepb.GetConsumerQuotaLimitRequest, opts ...gax.CallOption) (*serviceusagepb.ConsumerQuotaLimit, error) {
+func (c *gRPCClient) GetConsumerQuotaLimit(ctx context.Context, req *serviceusagepb.GetConsumerQuotaLimitRequest, opts ...gax.CallOption) (*serviceusagepb.ConsumerQuotaLimit, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -422,7 +685,7 @@ func (c *Client) GetConsumerQuotaLimit(ctx context.Context, req *serviceusagepb.
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetConsumerQuotaLimit[0:len(c.CallOptions.GetConsumerQuotaLimit):len(c.CallOptions.GetConsumerQuotaLimit)], opts...)
+	opts = append((*c.CallOptions).GetConsumerQuotaLimit[0:len((*c.CallOptions).GetConsumerQuotaLimit):len((*c.CallOptions).GetConsumerQuotaLimit)], opts...)
 	var resp *serviceusagepb.ConsumerQuotaLimit
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -435,13 +698,7 @@ func (c *Client) GetConsumerQuotaLimit(ctx context.Context, req *serviceusagepb.
 	return resp, nil
 }
 
-// CreateAdminOverride creates an admin override.
-// An admin override is applied by an administrator of a parent folder or
-// parent organization of the consumer receiving the override. An admin
-// override is intended to limit the amount of quota the consumer can use out
-// of the total quota pool allocated to all children of the folder or
-// organization.
-func (c *Client) CreateAdminOverride(ctx context.Context, req *serviceusagepb.CreateAdminOverrideRequest, opts ...gax.CallOption) (*CreateAdminOverrideOperation, error) {
+func (c *gRPCClient) CreateAdminOverride(ctx context.Context, req *serviceusagepb.CreateAdminOverrideRequest, opts ...gax.CallOption) (*CreateAdminOverrideOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -449,7 +706,7 @@ func (c *Client) CreateAdminOverride(ctx context.Context, req *serviceusagepb.Cr
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateAdminOverride[0:len(c.CallOptions.CreateAdminOverride):len(c.CallOptions.CreateAdminOverride)], opts...)
+	opts = append((*c.CallOptions).CreateAdminOverride[0:len((*c.CallOptions).CreateAdminOverride):len((*c.CallOptions).CreateAdminOverride)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -460,12 +717,11 @@ func (c *Client) CreateAdminOverride(ctx context.Context, req *serviceusagepb.Cr
 		return nil, err
 	}
 	return &CreateAdminOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// UpdateAdminOverride updates an admin override.
-func (c *Client) UpdateAdminOverride(ctx context.Context, req *serviceusagepb.UpdateAdminOverrideRequest, opts ...gax.CallOption) (*UpdateAdminOverrideOperation, error) {
+func (c *gRPCClient) UpdateAdminOverride(ctx context.Context, req *serviceusagepb.UpdateAdminOverrideRequest, opts ...gax.CallOption) (*UpdateAdminOverrideOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -473,7 +729,7 @@ func (c *Client) UpdateAdminOverride(ctx context.Context, req *serviceusagepb.Up
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateAdminOverride[0:len(c.CallOptions.UpdateAdminOverride):len(c.CallOptions.UpdateAdminOverride)], opts...)
+	opts = append((*c.CallOptions).UpdateAdminOverride[0:len((*c.CallOptions).UpdateAdminOverride):len((*c.CallOptions).UpdateAdminOverride)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -484,12 +740,11 @@ func (c *Client) UpdateAdminOverride(ctx context.Context, req *serviceusagepb.Up
 		return nil, err
 	}
 	return &UpdateAdminOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeleteAdminOverride deletes an admin override.
-func (c *Client) DeleteAdminOverride(ctx context.Context, req *serviceusagepb.DeleteAdminOverrideRequest, opts ...gax.CallOption) (*DeleteAdminOverrideOperation, error) {
+func (c *gRPCClient) DeleteAdminOverride(ctx context.Context, req *serviceusagepb.DeleteAdminOverrideRequest, opts ...gax.CallOption) (*DeleteAdminOverrideOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -497,7 +752,7 @@ func (c *Client) DeleteAdminOverride(ctx context.Context, req *serviceusagepb.De
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteAdminOverride[0:len(c.CallOptions.DeleteAdminOverride):len(c.CallOptions.DeleteAdminOverride)], opts...)
+	opts = append((*c.CallOptions).DeleteAdminOverride[0:len((*c.CallOptions).DeleteAdminOverride):len((*c.CallOptions).DeleteAdminOverride)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -508,15 +763,14 @@ func (c *Client) DeleteAdminOverride(ctx context.Context, req *serviceusagepb.De
 		return nil, err
 	}
 	return &DeleteAdminOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// ListAdminOverrides lists all admin overrides on this limit.
-func (c *Client) ListAdminOverrides(ctx context.Context, req *serviceusagepb.ListAdminOverridesRequest, opts ...gax.CallOption) *QuotaOverrideIterator {
+func (c *gRPCClient) ListAdminOverrides(ctx context.Context, req *serviceusagepb.ListAdminOverridesRequest, opts ...gax.CallOption) *QuotaOverrideIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListAdminOverrides[0:len(c.CallOptions.ListAdminOverrides):len(c.CallOptions.ListAdminOverrides)], opts...)
+	opts = append((*c.CallOptions).ListAdminOverrides[0:len((*c.CallOptions).ListAdminOverrides):len((*c.CallOptions).ListAdminOverrides)], opts...)
 	it := &QuotaOverrideIterator{}
 	req = proto.Clone(req).(*serviceusagepb.ListAdminOverridesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*serviceusagepb.QuotaOverride, string, error) {
@@ -553,10 +807,7 @@ func (c *Client) ListAdminOverrides(ctx context.Context, req *serviceusagepb.Lis
 	return it
 }
 
-// ImportAdminOverrides creates or updates multiple admin overrides atomically, all on the
-// same consumer, but on many different metrics or limits.
-// The name field in the quota override message should not be set.
-func (c *Client) ImportAdminOverrides(ctx context.Context, req *serviceusagepb.ImportAdminOverridesRequest, opts ...gax.CallOption) (*ImportAdminOverridesOperation, error) {
+func (c *gRPCClient) ImportAdminOverrides(ctx context.Context, req *serviceusagepb.ImportAdminOverridesRequest, opts ...gax.CallOption) (*ImportAdminOverridesOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -564,7 +815,7 @@ func (c *Client) ImportAdminOverrides(ctx context.Context, req *serviceusagepb.I
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ImportAdminOverrides[0:len(c.CallOptions.ImportAdminOverrides):len(c.CallOptions.ImportAdminOverrides)], opts...)
+	opts = append((*c.CallOptions).ImportAdminOverrides[0:len((*c.CallOptions).ImportAdminOverrides):len((*c.CallOptions).ImportAdminOverrides)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -575,16 +826,11 @@ func (c *Client) ImportAdminOverrides(ctx context.Context, req *serviceusagepb.I
 		return nil, err
 	}
 	return &ImportAdminOverridesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// CreateConsumerOverride creates a consumer override.
-// A consumer override is applied to the consumer on its own authority to
-// limit its own quota usage. Consumer overrides cannot be used to grant more
-// quota than would be allowed by admin overrides, producer overrides, or the
-// default limit of the service.
-func (c *Client) CreateConsumerOverride(ctx context.Context, req *serviceusagepb.CreateConsumerOverrideRequest, opts ...gax.CallOption) (*CreateConsumerOverrideOperation, error) {
+func (c *gRPCClient) CreateConsumerOverride(ctx context.Context, req *serviceusagepb.CreateConsumerOverrideRequest, opts ...gax.CallOption) (*CreateConsumerOverrideOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -592,7 +838,7 @@ func (c *Client) CreateConsumerOverride(ctx context.Context, req *serviceusagepb
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateConsumerOverride[0:len(c.CallOptions.CreateConsumerOverride):len(c.CallOptions.CreateConsumerOverride)], opts...)
+	opts = append((*c.CallOptions).CreateConsumerOverride[0:len((*c.CallOptions).CreateConsumerOverride):len((*c.CallOptions).CreateConsumerOverride)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -603,12 +849,11 @@ func (c *Client) CreateConsumerOverride(ctx context.Context, req *serviceusagepb
 		return nil, err
 	}
 	return &CreateConsumerOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// UpdateConsumerOverride updates a consumer override.
-func (c *Client) UpdateConsumerOverride(ctx context.Context, req *serviceusagepb.UpdateConsumerOverrideRequest, opts ...gax.CallOption) (*UpdateConsumerOverrideOperation, error) {
+func (c *gRPCClient) UpdateConsumerOverride(ctx context.Context, req *serviceusagepb.UpdateConsumerOverrideRequest, opts ...gax.CallOption) (*UpdateConsumerOverrideOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -616,7 +861,7 @@ func (c *Client) UpdateConsumerOverride(ctx context.Context, req *serviceusagepb
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateConsumerOverride[0:len(c.CallOptions.UpdateConsumerOverride):len(c.CallOptions.UpdateConsumerOverride)], opts...)
+	opts = append((*c.CallOptions).UpdateConsumerOverride[0:len((*c.CallOptions).UpdateConsumerOverride):len((*c.CallOptions).UpdateConsumerOverride)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -627,12 +872,11 @@ func (c *Client) UpdateConsumerOverride(ctx context.Context, req *serviceusagepb
 		return nil, err
 	}
 	return &UpdateConsumerOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeleteConsumerOverride deletes a consumer override.
-func (c *Client) DeleteConsumerOverride(ctx context.Context, req *serviceusagepb.DeleteConsumerOverrideRequest, opts ...gax.CallOption) (*DeleteConsumerOverrideOperation, error) {
+func (c *gRPCClient) DeleteConsumerOverride(ctx context.Context, req *serviceusagepb.DeleteConsumerOverrideRequest, opts ...gax.CallOption) (*DeleteConsumerOverrideOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -640,7 +884,7 @@ func (c *Client) DeleteConsumerOverride(ctx context.Context, req *serviceusagepb
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteConsumerOverride[0:len(c.CallOptions.DeleteConsumerOverride):len(c.CallOptions.DeleteConsumerOverride)], opts...)
+	opts = append((*c.CallOptions).DeleteConsumerOverride[0:len((*c.CallOptions).DeleteConsumerOverride):len((*c.CallOptions).DeleteConsumerOverride)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -651,15 +895,14 @@ func (c *Client) DeleteConsumerOverride(ctx context.Context, req *serviceusagepb
 		return nil, err
 	}
 	return &DeleteConsumerOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// ListConsumerOverrides lists all consumer overrides on this limit.
-func (c *Client) ListConsumerOverrides(ctx context.Context, req *serviceusagepb.ListConsumerOverridesRequest, opts ...gax.CallOption) *QuotaOverrideIterator {
+func (c *gRPCClient) ListConsumerOverrides(ctx context.Context, req *serviceusagepb.ListConsumerOverridesRequest, opts ...gax.CallOption) *QuotaOverrideIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListConsumerOverrides[0:len(c.CallOptions.ListConsumerOverrides):len(c.CallOptions.ListConsumerOverrides)], opts...)
+	opts = append((*c.CallOptions).ListConsumerOverrides[0:len((*c.CallOptions).ListConsumerOverrides):len((*c.CallOptions).ListConsumerOverrides)], opts...)
 	it := &QuotaOverrideIterator{}
 	req = proto.Clone(req).(*serviceusagepb.ListConsumerOverridesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*serviceusagepb.QuotaOverride, string, error) {
@@ -696,10 +939,7 @@ func (c *Client) ListConsumerOverrides(ctx context.Context, req *serviceusagepb.
 	return it
 }
 
-// ImportConsumerOverrides creates or updates multiple consumer overrides atomically, all on the
-// same consumer, but on many different metrics or limits.
-// The name field in the quota override message should not be set.
-func (c *Client) ImportConsumerOverrides(ctx context.Context, req *serviceusagepb.ImportConsumerOverridesRequest, opts ...gax.CallOption) (*ImportConsumerOverridesOperation, error) {
+func (c *gRPCClient) ImportConsumerOverrides(ctx context.Context, req *serviceusagepb.ImportConsumerOverridesRequest, opts ...gax.CallOption) (*ImportConsumerOverridesOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -707,7 +947,7 @@ func (c *Client) ImportConsumerOverrides(ctx context.Context, req *serviceusagep
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ImportConsumerOverrides[0:len(c.CallOptions.ImportConsumerOverrides):len(c.CallOptions.ImportConsumerOverrides)], opts...)
+	opts = append((*c.CallOptions).ImportConsumerOverrides[0:len((*c.CallOptions).ImportConsumerOverrides):len((*c.CallOptions).ImportConsumerOverrides)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -718,12 +958,11 @@ func (c *Client) ImportConsumerOverrides(ctx context.Context, req *serviceusagep
 		return nil, err
 	}
 	return &ImportConsumerOverridesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GenerateServiceIdentity generates service identity for service.
-func (c *Client) GenerateServiceIdentity(ctx context.Context, req *serviceusagepb.GenerateServiceIdentityRequest, opts ...gax.CallOption) (*GenerateServiceIdentityOperation, error) {
+func (c *gRPCClient) GenerateServiceIdentity(ctx context.Context, req *serviceusagepb.GenerateServiceIdentityRequest, opts ...gax.CallOption) (*GenerateServiceIdentityOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -731,7 +970,7 @@ func (c *Client) GenerateServiceIdentity(ctx context.Context, req *serviceusagep
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GenerateServiceIdentity[0:len(c.CallOptions.GenerateServiceIdentity):len(c.CallOptions.GenerateServiceIdentity)], opts...)
+	opts = append((*c.CallOptions).GenerateServiceIdentity[0:len((*c.CallOptions).GenerateServiceIdentity):len((*c.CallOptions).GenerateServiceIdentity)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -742,7 +981,7 @@ func (c *Client) GenerateServiceIdentity(ctx context.Context, req *serviceusagep
 		return nil, err
 	}
 	return &GenerateServiceIdentityOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
@@ -753,9 +992,9 @@ type BatchEnableServicesOperation struct {
 
 // BatchEnableServicesOperation returns a new BatchEnableServicesOperation from a given name.
 // The name must be that of a previously created BatchEnableServicesOperation, possibly from a different process.
-func (c *Client) BatchEnableServicesOperation(name string) *BatchEnableServicesOperation {
+func (c *gRPCClient) BatchEnableServicesOperation(name string) *BatchEnableServicesOperation {
 	return &BatchEnableServicesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -811,9 +1050,9 @@ type CreateAdminOverrideOperation struct {
 
 // CreateAdminOverrideOperation returns a new CreateAdminOverrideOperation from a given name.
 // The name must be that of a previously created CreateAdminOverrideOperation, possibly from a different process.
-func (c *Client) CreateAdminOverrideOperation(name string) *CreateAdminOverrideOperation {
+func (c *gRPCClient) CreateAdminOverrideOperation(name string) *CreateAdminOverrideOperation {
 	return &CreateAdminOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -880,9 +1119,9 @@ type CreateConsumerOverrideOperation struct {
 
 // CreateConsumerOverrideOperation returns a new CreateConsumerOverrideOperation from a given name.
 // The name must be that of a previously created CreateConsumerOverrideOperation, possibly from a different process.
-func (c *Client) CreateConsumerOverrideOperation(name string) *CreateConsumerOverrideOperation {
+func (c *gRPCClient) CreateConsumerOverrideOperation(name string) *CreateConsumerOverrideOperation {
 	return &CreateConsumerOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -949,9 +1188,9 @@ type DeleteAdminOverrideOperation struct {
 
 // DeleteAdminOverrideOperation returns a new DeleteAdminOverrideOperation from a given name.
 // The name must be that of a previously created DeleteAdminOverrideOperation, possibly from a different process.
-func (c *Client) DeleteAdminOverrideOperation(name string) *DeleteAdminOverrideOperation {
+func (c *gRPCClient) DeleteAdminOverrideOperation(name string) *DeleteAdminOverrideOperation {
 	return &DeleteAdminOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1007,9 +1246,9 @@ type DeleteConsumerOverrideOperation struct {
 
 // DeleteConsumerOverrideOperation returns a new DeleteConsumerOverrideOperation from a given name.
 // The name must be that of a previously created DeleteConsumerOverrideOperation, possibly from a different process.
-func (c *Client) DeleteConsumerOverrideOperation(name string) *DeleteConsumerOverrideOperation {
+func (c *gRPCClient) DeleteConsumerOverrideOperation(name string) *DeleteConsumerOverrideOperation {
 	return &DeleteConsumerOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1065,9 +1304,9 @@ type DisableServiceOperation struct {
 
 // DisableServiceOperation returns a new DisableServiceOperation from a given name.
 // The name must be that of a previously created DisableServiceOperation, possibly from a different process.
-func (c *Client) DisableServiceOperation(name string) *DisableServiceOperation {
+func (c *gRPCClient) DisableServiceOperation(name string) *DisableServiceOperation {
 	return &DisableServiceOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1123,9 +1362,9 @@ type EnableServiceOperation struct {
 
 // EnableServiceOperation returns a new EnableServiceOperation from a given name.
 // The name must be that of a previously created EnableServiceOperation, possibly from a different process.
-func (c *Client) EnableServiceOperation(name string) *EnableServiceOperation {
+func (c *gRPCClient) EnableServiceOperation(name string) *EnableServiceOperation {
 	return &EnableServiceOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1181,9 +1420,9 @@ type GenerateServiceIdentityOperation struct {
 
 // GenerateServiceIdentityOperation returns a new GenerateServiceIdentityOperation from a given name.
 // The name must be that of a previously created GenerateServiceIdentityOperation, possibly from a different process.
-func (c *Client) GenerateServiceIdentityOperation(name string) *GenerateServiceIdentityOperation {
+func (c *gRPCClient) GenerateServiceIdentityOperation(name string) *GenerateServiceIdentityOperation {
 	return &GenerateServiceIdentityOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1250,9 +1489,9 @@ type ImportAdminOverridesOperation struct {
 
 // ImportAdminOverridesOperation returns a new ImportAdminOverridesOperation from a given name.
 // The name must be that of a previously created ImportAdminOverridesOperation, possibly from a different process.
-func (c *Client) ImportAdminOverridesOperation(name string) *ImportAdminOverridesOperation {
+func (c *gRPCClient) ImportAdminOverridesOperation(name string) *ImportAdminOverridesOperation {
 	return &ImportAdminOverridesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1319,9 +1558,9 @@ type ImportConsumerOverridesOperation struct {
 
 // ImportConsumerOverridesOperation returns a new ImportConsumerOverridesOperation from a given name.
 // The name must be that of a previously created ImportConsumerOverridesOperation, possibly from a different process.
-func (c *Client) ImportConsumerOverridesOperation(name string) *ImportConsumerOverridesOperation {
+func (c *gRPCClient) ImportConsumerOverridesOperation(name string) *ImportConsumerOverridesOperation {
 	return &ImportConsumerOverridesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1388,9 +1627,9 @@ type UpdateAdminOverrideOperation struct {
 
 // UpdateAdminOverrideOperation returns a new UpdateAdminOverrideOperation from a given name.
 // The name must be that of a previously created UpdateAdminOverrideOperation, possibly from a different process.
-func (c *Client) UpdateAdminOverrideOperation(name string) *UpdateAdminOverrideOperation {
+func (c *gRPCClient) UpdateAdminOverrideOperation(name string) *UpdateAdminOverrideOperation {
 	return &UpdateAdminOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1457,9 +1696,9 @@ type UpdateConsumerOverrideOperation struct {
 
 // UpdateConsumerOverrideOperation returns a new UpdateConsumerOverrideOperation from a given name.
 // The name must be that of a previously created UpdateConsumerOverrideOperation, possibly from a different process.
-func (c *Client) UpdateConsumerOverrideOperation(name string) *UpdateConsumerOverrideOperation {
+func (c *gRPCClient) UpdateConsumerOverrideOperation(name string) *UpdateConsumerOverrideOperation {
 	return &UpdateConsumerOverrideOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

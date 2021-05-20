@@ -40,7 +40,7 @@ type UserLicenseCallOptions struct {
 	Get []gax.CallOption
 }
 
-func defaultUserLicenseClientOptions() []option.ClientOption {
+func defaultUserLicenseGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("appsmarket.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("appsmarket.mtls.googleapis.com:443"),
@@ -69,31 +69,75 @@ func defaultUserLicenseCallOptions() *UserLicenseCallOptions {
 	}
 }
 
+// internalUserLicenseClient is an interface that defines the methods availaible from Google Workspace Marketplace API.
+type internalUserLicenseClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	Get(context.Context, *marketplacepb.UserLicenseGetRequest, ...gax.CallOption) (*marketplacepb.UserLicense, error)
+}
+
 // UserLicenseClient is a client for interacting with Google Workspace Marketplace API.
-//
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type UserLicenseClient struct {
+	// The internal transport-dependent client.
+	internalClient internalUserLicenseClient
+
+	// The call options for this service.
+	CallOptions *UserLicenseCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *UserLicenseClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *UserLicenseClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *UserLicenseClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// Get get the user’s licensing status for their permission to use a given app.
+func (c *UserLicenseClient) Get(ctx context.Context, req *marketplacepb.UserLicenseGetRequest, opts ...gax.CallOption) (*marketplacepb.UserLicense, error) {
+	return c.internalClient.Get(ctx, req, opts...)
+}
+
+// userLicenseGRPCClient is a client for interacting with Google Workspace Marketplace API over gRPC transport.
+//
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+type userLicenseGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing UserLicenseClient
+	CallOptions **UserLicenseCallOptions
+
 	// The gRPC API client.
 	userLicenseClient marketplacepb.UserLicenseServiceClient
-
-	// The call options for this service.
-	CallOptions *UserLicenseCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewUserLicenseClient creates a new user license service client.
-//
+// NewUserLicenseClient creates a new user license service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 func NewUserLicenseClient(ctx context.Context, opts ...option.ClientOption) (*UserLicenseClient, error) {
-	clientOpts := defaultUserLicenseClientOptions()
-
+	clientOpts := defaultUserLicenseGRPCClientOptions()
 	if newUserLicenseClientHook != nil {
 		hookOpts, err := newUserLicenseClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -111,42 +155,44 @@ func NewUserLicenseClient(ctx context.Context, opts ...option.ClientOption) (*Us
 	if err != nil {
 		return nil, err
 	}
-	c := &UserLicenseClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultUserLicenseCallOptions(),
+	client := UserLicenseClient{CallOptions: defaultUserLicenseCallOptions()}
 
+	c := &userLicenseGRPCClient{
+		connPool:          connPool,
+		disableDeadlines:  disableDeadlines,
 		userLicenseClient: marketplacepb.NewUserLicenseServiceClient(connPool),
+		CallOptions:       &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *UserLicenseClient) Connection() *grpc.ClientConn {
+func (c *userLicenseGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *UserLicenseClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *UserLicenseClient) setGoogleClientInfo(keyval ...string) {
+func (c *userLicenseGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// Get get the user’s licensing status for their permission to use a given app.
-func (c *UserLicenseClient) Get(ctx context.Context, req *marketplacepb.UserLicenseGetRequest, opts ...gax.CallOption) (*marketplacepb.UserLicense, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *userLicenseGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *userLicenseGRPCClient) Get(ctx context.Context, req *marketplacepb.UserLicenseGetRequest, opts ...gax.CallOption) (*marketplacepb.UserLicense, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -154,7 +200,7 @@ func (c *UserLicenseClient) Get(ctx context.Context, req *marketplacepb.UserLice
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v&%s=%v", "application_id", url.QueryEscape(req.GetApplicationId()), "user_id", url.QueryEscape(req.GetUserId())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.Get[0:len(c.CallOptions.Get):len(c.CallOptions.Get)], opts...)
+	opts = append((*c.CallOptions).Get[0:len((*c.CallOptions).Get):len((*c.CallOptions).Get)], opts...)
 	var resp *marketplacepb.UserLicense
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

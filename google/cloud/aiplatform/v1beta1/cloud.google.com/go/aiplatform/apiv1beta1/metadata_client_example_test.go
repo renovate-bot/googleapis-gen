@@ -30,18 +30,19 @@ func ExampleNewMetadataClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleMetadataClient_CreateMetadataStore() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateMetadataStoreRequest{
 		// TODO: Fill request struct fields.
@@ -60,13 +61,12 @@ func ExampleMetadataClient_CreateMetadataStore() {
 }
 
 func ExampleMetadataClient_GetMetadataStore() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetMetadataStoreRequest{
 		// TODO: Fill request struct fields.
@@ -80,14 +80,12 @@ func ExampleMetadataClient_GetMetadataStore() {
 }
 
 func ExampleMetadataClient_ListMetadataStores() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListMetadataStoresRequest{
 		// TODO: Fill request struct fields.
@@ -107,13 +105,12 @@ func ExampleMetadataClient_ListMetadataStores() {
 }
 
 func ExampleMetadataClient_DeleteMetadataStore() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteMetadataStoreRequest{
 		// TODO: Fill request struct fields.
@@ -130,13 +127,12 @@ func ExampleMetadataClient_DeleteMetadataStore() {
 }
 
 func ExampleMetadataClient_CreateArtifact() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateArtifactRequest{
 		// TODO: Fill request struct fields.
@@ -150,13 +146,12 @@ func ExampleMetadataClient_CreateArtifact() {
 }
 
 func ExampleMetadataClient_GetArtifact() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetArtifactRequest{
 		// TODO: Fill request struct fields.
@@ -170,14 +165,12 @@ func ExampleMetadataClient_GetArtifact() {
 }
 
 func ExampleMetadataClient_ListArtifacts() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListArtifactsRequest{
 		// TODO: Fill request struct fields.
@@ -197,13 +190,12 @@ func ExampleMetadataClient_ListArtifacts() {
 }
 
 func ExampleMetadataClient_UpdateArtifact() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateArtifactRequest{
 		// TODO: Fill request struct fields.
@@ -217,13 +209,12 @@ func ExampleMetadataClient_UpdateArtifact() {
 }
 
 func ExampleMetadataClient_CreateContext() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateContextRequest{
 		// TODO: Fill request struct fields.
@@ -237,13 +228,12 @@ func ExampleMetadataClient_CreateContext() {
 }
 
 func ExampleMetadataClient_GetContext() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetContextRequest{
 		// TODO: Fill request struct fields.
@@ -257,14 +247,12 @@ func ExampleMetadataClient_GetContext() {
 }
 
 func ExampleMetadataClient_ListContexts() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListContextsRequest{
 		// TODO: Fill request struct fields.
@@ -284,13 +272,12 @@ func ExampleMetadataClient_ListContexts() {
 }
 
 func ExampleMetadataClient_UpdateContext() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateContextRequest{
 		// TODO: Fill request struct fields.
@@ -304,13 +291,12 @@ func ExampleMetadataClient_UpdateContext() {
 }
 
 func ExampleMetadataClient_DeleteContext() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteContextRequest{
 		// TODO: Fill request struct fields.
@@ -327,13 +313,12 @@ func ExampleMetadataClient_DeleteContext() {
 }
 
 func ExampleMetadataClient_AddContextArtifactsAndExecutions() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.AddContextArtifactsAndExecutionsRequest{
 		// TODO: Fill request struct fields.
@@ -347,13 +332,12 @@ func ExampleMetadataClient_AddContextArtifactsAndExecutions() {
 }
 
 func ExampleMetadataClient_AddContextChildren() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.AddContextChildrenRequest{
 		// TODO: Fill request struct fields.
@@ -367,13 +351,12 @@ func ExampleMetadataClient_AddContextChildren() {
 }
 
 func ExampleMetadataClient_QueryContextLineageSubgraph() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.QueryContextLineageSubgraphRequest{
 		// TODO: Fill request struct fields.
@@ -387,13 +370,12 @@ func ExampleMetadataClient_QueryContextLineageSubgraph() {
 }
 
 func ExampleMetadataClient_CreateExecution() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateExecutionRequest{
 		// TODO: Fill request struct fields.
@@ -407,13 +389,12 @@ func ExampleMetadataClient_CreateExecution() {
 }
 
 func ExampleMetadataClient_GetExecution() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetExecutionRequest{
 		// TODO: Fill request struct fields.
@@ -427,14 +408,12 @@ func ExampleMetadataClient_GetExecution() {
 }
 
 func ExampleMetadataClient_ListExecutions() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListExecutionsRequest{
 		// TODO: Fill request struct fields.
@@ -454,13 +433,12 @@ func ExampleMetadataClient_ListExecutions() {
 }
 
 func ExampleMetadataClient_UpdateExecution() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateExecutionRequest{
 		// TODO: Fill request struct fields.
@@ -474,13 +452,12 @@ func ExampleMetadataClient_UpdateExecution() {
 }
 
 func ExampleMetadataClient_AddExecutionEvents() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.AddExecutionEventsRequest{
 		// TODO: Fill request struct fields.
@@ -494,13 +471,12 @@ func ExampleMetadataClient_AddExecutionEvents() {
 }
 
 func ExampleMetadataClient_QueryExecutionInputsAndOutputs() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.QueryExecutionInputsAndOutputsRequest{
 		// TODO: Fill request struct fields.
@@ -514,13 +490,12 @@ func ExampleMetadataClient_QueryExecutionInputsAndOutputs() {
 }
 
 func ExampleMetadataClient_CreateMetadataSchema() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateMetadataSchemaRequest{
 		// TODO: Fill request struct fields.
@@ -534,13 +509,12 @@ func ExampleMetadataClient_CreateMetadataSchema() {
 }
 
 func ExampleMetadataClient_GetMetadataSchema() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetMetadataSchemaRequest{
 		// TODO: Fill request struct fields.
@@ -554,14 +528,12 @@ func ExampleMetadataClient_GetMetadataSchema() {
 }
 
 func ExampleMetadataClient_ListMetadataSchemas() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListMetadataSchemasRequest{
 		// TODO: Fill request struct fields.
@@ -581,13 +553,12 @@ func ExampleMetadataClient_ListMetadataSchemas() {
 }
 
 func ExampleMetadataClient_QueryArtifactLineageSubgraph() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.QueryArtifactLineageSubgraphRequest{
 		// TODO: Fill request struct fields.

@@ -29,18 +29,19 @@ func ExampleNewWorkflowsServiceV2BetaClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleWorkflowsServiceV2BetaClient_RunPipeline() {
-	// import lifesciencespb "google.golang.org/genproto/googleapis/cloud/lifesciences/v2beta"
-
 	ctx := context.Background()
 	c, err := lifesciences.NewWorkflowsServiceV2BetaClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &lifesciencespb.RunPipelineRequest{
 		// TODO: Fill request struct fields.

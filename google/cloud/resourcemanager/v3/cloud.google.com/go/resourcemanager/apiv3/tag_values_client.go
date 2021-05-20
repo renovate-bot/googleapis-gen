@@ -53,7 +53,7 @@ type TagValuesCallOptions struct {
 	TestIamPermissions []gax.CallOption
 }
 
-func defaultTagValuesClientOptions() []option.ClientOption {
+func defaultTagValuesGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("cloudresourcemanager.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("cloudresourcemanager.mtls.googleapis.com:443"),
@@ -108,37 +108,171 @@ func defaultTagValuesCallOptions() *TagValuesCallOptions {
 	}
 }
 
+// internalTagValuesClient is an interface that defines the methods availaible from Cloud Resource Manager API.
+type internalTagValuesClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	ListTagValues(context.Context, *resourcemanagerpb.ListTagValuesRequest, ...gax.CallOption) *TagValueIterator
+	GetTagValue(context.Context, *resourcemanagerpb.GetTagValueRequest, ...gax.CallOption) (*resourcemanagerpb.TagValue, error)
+	CreateTagValue(context.Context, *resourcemanagerpb.CreateTagValueRequest, ...gax.CallOption) (*CreateTagValueOperation, error)
+	CreateTagValueOperation(name string) *CreateTagValueOperation
+	UpdateTagValue(context.Context, *resourcemanagerpb.UpdateTagValueRequest, ...gax.CallOption) (*UpdateTagValueOperation, error)
+	UpdateTagValueOperation(name string) *UpdateTagValueOperation
+	DeleteTagValue(context.Context, *resourcemanagerpb.DeleteTagValueRequest, ...gax.CallOption) (*DeleteTagValueOperation, error)
+	DeleteTagValueOperation(name string) *DeleteTagValueOperation
+	GetIamPolicy(context.Context, *iampb.GetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
+	SetIamPolicy(context.Context, *iampb.SetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
+	TestIamPermissions(context.Context, *iampb.TestIamPermissionsRequest, ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error)
+}
+
 // TagValuesClient is a client for interacting with Cloud Resource Manager API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Allow users to create and manage tag values.
+type TagValuesClient struct {
+	// The internal transport-dependent client.
+	internalClient internalTagValuesClient
+
+	// The call options for this service.
+	CallOptions *TagValuesCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *TagValuesClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *TagValuesClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *TagValuesClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// ListTagValues lists all TagValues for a specific TagKey.
+func (c *TagValuesClient) ListTagValues(ctx context.Context, req *resourcemanagerpb.ListTagValuesRequest, opts ...gax.CallOption) *TagValueIterator {
+	return c.internalClient.ListTagValues(ctx, req, opts...)
+}
+
+// GetTagValue retrieves TagValue. If the TagValue or namespaced name does not exist, or
+// if the user does not have permission to view it, this method will return
+// PERMISSION_DENIED.
+func (c *TagValuesClient) GetTagValue(ctx context.Context, req *resourcemanagerpb.GetTagValueRequest, opts ...gax.CallOption) (*resourcemanagerpb.TagValue, error) {
+	return c.internalClient.GetTagValue(ctx, req, opts...)
+}
+
+// CreateTagValue creates a TagValue as a child of the specified TagKey. If a another
+// request with the same parameters is sent while the original request is in
+// process the second request will receive an error. A maximum of 300
+// TagValues can exist under a TagKey at any given time.
+func (c *TagValuesClient) CreateTagValue(ctx context.Context, req *resourcemanagerpb.CreateTagValueRequest, opts ...gax.CallOption) (*CreateTagValueOperation, error) {
+	return c.internalClient.CreateTagValue(ctx, req, opts...)
+}
+
+// CreateTagValueOperation returns a new CreateTagValueOperation from a given name.
+// The name must be that of a previously created CreateTagValueOperation, possibly from a different process.
+func (c *TagValuesClient) CreateTagValueOperation(name string) *CreateTagValueOperation {
+	return c.internalClient.CreateTagValueOperation(name)
+}
+
+// UpdateTagValue updates the attributes of the TagValue resource.
+func (c *TagValuesClient) UpdateTagValue(ctx context.Context, req *resourcemanagerpb.UpdateTagValueRequest, opts ...gax.CallOption) (*UpdateTagValueOperation, error) {
+	return c.internalClient.UpdateTagValue(ctx, req, opts...)
+}
+
+// UpdateTagValueOperation returns a new UpdateTagValueOperation from a given name.
+// The name must be that of a previously created UpdateTagValueOperation, possibly from a different process.
+func (c *TagValuesClient) UpdateTagValueOperation(name string) *UpdateTagValueOperation {
+	return c.internalClient.UpdateTagValueOperation(name)
+}
+
+// DeleteTagValue deletes a TagValue. The TagValue cannot have any bindings when it is
+// deleted.
+func (c *TagValuesClient) DeleteTagValue(ctx context.Context, req *resourcemanagerpb.DeleteTagValueRequest, opts ...gax.CallOption) (*DeleteTagValueOperation, error) {
+	return c.internalClient.DeleteTagValue(ctx, req, opts...)
+}
+
+// DeleteTagValueOperation returns a new DeleteTagValueOperation from a given name.
+// The name must be that of a previously created DeleteTagValueOperation, possibly from a different process.
+func (c *TagValuesClient) DeleteTagValueOperation(name string) *DeleteTagValueOperation {
+	return c.internalClient.DeleteTagValueOperation(name)
+}
+
+// GetIamPolicy gets the access control policy for a TagValue. The returned policy may be
+// empty if no such policy or resource exists. The resource field should
+// be the TagValue’s resource name. For example: tagValues/1234.
+// The caller must have the
+// cloudresourcemanager.googleapis.com/tagValues.getIamPolicy permission on
+// the identified TagValue to get the access control policy.
+func (c *TagValuesClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+	return c.internalClient.GetIamPolicy(ctx, req, opts...)
+}
+
+// SetIamPolicy sets the access control policy on a TagValue, replacing any existing
+// policy. The resource field should be the TagValue’s resource name.
+// For example: tagValues/1234.
+// The caller must have resourcemanager.tagValues.setIamPolicy permission
+// on the identified tagValue.
+func (c *TagValuesClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+	return c.internalClient.SetIamPolicy(ctx, req, opts...)
+}
+
+// TestIamPermissions returns permissions that a caller has on the specified TagValue.
+// The resource field should be the TagValue’s resource name. For example:
+// tagValues/1234.
+//
+// There are no permissions required for making this API call.
+func (c *TagValuesClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
+	return c.internalClient.TestIamPermissions(ctx, req, opts...)
+}
+
+// tagValuesGRPCClient is a client for interacting with Cloud Resource Manager API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type TagValuesClient struct {
+type tagValuesGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing TagValuesClient
+	CallOptions **TagValuesCallOptions
+
 	// The gRPC API client.
 	tagValuesClient resourcemanagerpb.TagValuesClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *TagValuesCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewTagValuesClient creates a new tag values client.
+// NewTagValuesClient creates a new tag values client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Allow users to create and manage tag values.
 func NewTagValuesClient(ctx context.Context, opts ...option.ClientOption) (*TagValuesClient, error) {
-	clientOpts := defaultTagValuesClientOptions()
-
+	clientOpts := defaultTagValuesGRPCClientOptions()
 	if newTagValuesClientHook != nil {
 		hookOpts, err := newTagValuesClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -156,16 +290,19 @@ func NewTagValuesClient(ctx context.Context, opts ...option.ClientOption) (*TagV
 	if err != nil {
 		return nil, err
 	}
-	c := &TagValuesClient{
+	client := TagValuesClient{CallOptions: defaultTagValuesCallOptions()}
+
+	c := &tagValuesGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultTagValuesCallOptions(),
-
-		tagValuesClient: resourcemanagerpb.NewTagValuesClient(connPool),
+		tagValuesClient:  resourcemanagerpb.NewTagValuesClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -175,35 +312,35 @@ func NewTagValuesClient(ctx context.Context, opts ...option.ClientOption) (*TagV
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *TagValuesClient) Connection() *grpc.ClientConn {
+func (c *tagValuesGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *TagValuesClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *TagValuesClient) setGoogleClientInfo(keyval ...string) {
+func (c *tagValuesGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// ListTagValues lists all TagValues for a specific TagKey.
-func (c *TagValuesClient) ListTagValues(ctx context.Context, req *resourcemanagerpb.ListTagValuesRequest, opts ...gax.CallOption) *TagValueIterator {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *tagValuesGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *tagValuesGRPCClient) ListTagValues(ctx context.Context, req *resourcemanagerpb.ListTagValuesRequest, opts ...gax.CallOption) *TagValueIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.ListTagValues[0:len(c.CallOptions.ListTagValues):len(c.CallOptions.ListTagValues)], opts...)
+	opts = append((*c.CallOptions).ListTagValues[0:len((*c.CallOptions).ListTagValues):len((*c.CallOptions).ListTagValues)], opts...)
 	it := &TagValueIterator{}
 	req = proto.Clone(req).(*resourcemanagerpb.ListTagValuesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*resourcemanagerpb.TagValue, string, error) {
@@ -240,10 +377,7 @@ func (c *TagValuesClient) ListTagValues(ctx context.Context, req *resourcemanage
 	return it
 }
 
-// GetTagValue retrieves TagValue. If the TagValue or namespaced name does not exist, or
-// if the user does not have permission to view it, this method will return
-// PERMISSION_DENIED.
-func (c *TagValuesClient) GetTagValue(ctx context.Context, req *resourcemanagerpb.GetTagValueRequest, opts ...gax.CallOption) (*resourcemanagerpb.TagValue, error) {
+func (c *tagValuesGRPCClient) GetTagValue(ctx context.Context, req *resourcemanagerpb.GetTagValueRequest, opts ...gax.CallOption) (*resourcemanagerpb.TagValue, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -251,7 +385,7 @@ func (c *TagValuesClient) GetTagValue(ctx context.Context, req *resourcemanagerp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetTagValue[0:len(c.CallOptions.GetTagValue):len(c.CallOptions.GetTagValue)], opts...)
+	opts = append((*c.CallOptions).GetTagValue[0:len((*c.CallOptions).GetTagValue):len((*c.CallOptions).GetTagValue)], opts...)
 	var resp *resourcemanagerpb.TagValue
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -264,18 +398,14 @@ func (c *TagValuesClient) GetTagValue(ctx context.Context, req *resourcemanagerp
 	return resp, nil
 }
 
-// CreateTagValue creates a TagValue as a child of the specified TagKey. If a another
-// request with the same parameters is sent while the original request is in
-// process the second request will receive an error. A maximum of 300
-// TagValues can exist under a TagKey at any given time.
-func (c *TagValuesClient) CreateTagValue(ctx context.Context, req *resourcemanagerpb.CreateTagValueRequest, opts ...gax.CallOption) (*CreateTagValueOperation, error) {
+func (c *tagValuesGRPCClient) CreateTagValue(ctx context.Context, req *resourcemanagerpb.CreateTagValueRequest, opts ...gax.CallOption) (*CreateTagValueOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.CreateTagValue[0:len(c.CallOptions.CreateTagValue):len(c.CallOptions.CreateTagValue)], opts...)
+	opts = append((*c.CallOptions).CreateTagValue[0:len((*c.CallOptions).CreateTagValue):len((*c.CallOptions).CreateTagValue)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -286,12 +416,11 @@ func (c *TagValuesClient) CreateTagValue(ctx context.Context, req *resourcemanag
 		return nil, err
 	}
 	return &CreateTagValueOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// UpdateTagValue updates the attributes of the TagValue resource.
-func (c *TagValuesClient) UpdateTagValue(ctx context.Context, req *resourcemanagerpb.UpdateTagValueRequest, opts ...gax.CallOption) (*UpdateTagValueOperation, error) {
+func (c *tagValuesGRPCClient) UpdateTagValue(ctx context.Context, req *resourcemanagerpb.UpdateTagValueRequest, opts ...gax.CallOption) (*UpdateTagValueOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -299,7 +428,7 @@ func (c *TagValuesClient) UpdateTagValue(ctx context.Context, req *resourcemanag
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "tag_value.name", url.QueryEscape(req.GetTagValue().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateTagValue[0:len(c.CallOptions.UpdateTagValue):len(c.CallOptions.UpdateTagValue)], opts...)
+	opts = append((*c.CallOptions).UpdateTagValue[0:len((*c.CallOptions).UpdateTagValue):len((*c.CallOptions).UpdateTagValue)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -310,13 +439,11 @@ func (c *TagValuesClient) UpdateTagValue(ctx context.Context, req *resourcemanag
 		return nil, err
 	}
 	return &UpdateTagValueOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeleteTagValue deletes a TagValue. The TagValue cannot have any bindings when it is
-// deleted.
-func (c *TagValuesClient) DeleteTagValue(ctx context.Context, req *resourcemanagerpb.DeleteTagValueRequest, opts ...gax.CallOption) (*DeleteTagValueOperation, error) {
+func (c *tagValuesGRPCClient) DeleteTagValue(ctx context.Context, req *resourcemanagerpb.DeleteTagValueRequest, opts ...gax.CallOption) (*DeleteTagValueOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -324,7 +451,7 @@ func (c *TagValuesClient) DeleteTagValue(ctx context.Context, req *resourcemanag
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteTagValue[0:len(c.CallOptions.DeleteTagValue):len(c.CallOptions.DeleteTagValue)], opts...)
+	opts = append((*c.CallOptions).DeleteTagValue[0:len((*c.CallOptions).DeleteTagValue):len((*c.CallOptions).DeleteTagValue)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -335,17 +462,11 @@ func (c *TagValuesClient) DeleteTagValue(ctx context.Context, req *resourcemanag
 		return nil, err
 	}
 	return &DeleteTagValueOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetIamPolicy gets the access control policy for a TagValue. The returned policy may be
-// empty if no such policy or resource exists. The resource field should
-// be the TagValue’s resource name. For example: tagValues/1234.
-// The caller must have the
-// cloudresourcemanager.googleapis.com/tagValues.getIamPolicy permission on
-// the identified TagValue to get the access control policy.
-func (c *TagValuesClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+func (c *tagValuesGRPCClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -353,7 +474,7 @@ func (c *TagValuesClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPol
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetIamPolicy[0:len(c.CallOptions.GetIamPolicy):len(c.CallOptions.GetIamPolicy)], opts...)
+	opts = append((*c.CallOptions).GetIamPolicy[0:len((*c.CallOptions).GetIamPolicy):len((*c.CallOptions).GetIamPolicy)], opts...)
 	var resp *iampb.Policy
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -366,12 +487,7 @@ func (c *TagValuesClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPol
 	return resp, nil
 }
 
-// SetIamPolicy sets the access control policy on a TagValue, replacing any existing
-// policy. The resource field should be the TagValue’s resource name.
-// For example: tagValues/1234.
-// The caller must have resourcemanager.tagValues.setIamPolicy permission
-// on the identified tagValue.
-func (c *TagValuesClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+func (c *tagValuesGRPCClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -379,7 +495,7 @@ func (c *TagValuesClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPol
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SetIamPolicy[0:len(c.CallOptions.SetIamPolicy):len(c.CallOptions.SetIamPolicy)], opts...)
+	opts = append((*c.CallOptions).SetIamPolicy[0:len((*c.CallOptions).SetIamPolicy):len((*c.CallOptions).SetIamPolicy)], opts...)
 	var resp *iampb.Policy
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -392,15 +508,10 @@ func (c *TagValuesClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPol
 	return resp, nil
 }
 
-// TestIamPermissions returns permissions that a caller has on the specified TagValue.
-// The resource field should be the TagValue’s resource name. For example:
-// tagValues/1234.
-//
-// There are no permissions required for making this API call.
-func (c *TagValuesClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
+func (c *tagValuesGRPCClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.TestIamPermissions[0:len(c.CallOptions.TestIamPermissions):len(c.CallOptions.TestIamPermissions)], opts...)
+	opts = append((*c.CallOptions).TestIamPermissions[0:len((*c.CallOptions).TestIamPermissions):len((*c.CallOptions).TestIamPermissions)], opts...)
 	var resp *iampb.TestIamPermissionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -420,9 +531,9 @@ type CreateTagValueOperation struct {
 
 // CreateTagValueOperation returns a new CreateTagValueOperation from a given name.
 // The name must be that of a previously created CreateTagValueOperation, possibly from a different process.
-func (c *TagValuesClient) CreateTagValueOperation(name string) *CreateTagValueOperation {
+func (c *tagValuesGRPCClient) CreateTagValueOperation(name string) *CreateTagValueOperation {
 	return &CreateTagValueOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -489,9 +600,9 @@ type DeleteTagValueOperation struct {
 
 // DeleteTagValueOperation returns a new DeleteTagValueOperation from a given name.
 // The name must be that of a previously created DeleteTagValueOperation, possibly from a different process.
-func (c *TagValuesClient) DeleteTagValueOperation(name string) *DeleteTagValueOperation {
+func (c *tagValuesGRPCClient) DeleteTagValueOperation(name string) *DeleteTagValueOperation {
 	return &DeleteTagValueOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -558,9 +669,9 @@ type UpdateTagValueOperation struct {
 
 // UpdateTagValueOperation returns a new UpdateTagValueOperation from a given name.
 // The name must be that of a previously created UpdateTagValueOperation, possibly from a different process.
-func (c *TagValuesClient) UpdateTagValueOperation(name string) *UpdateTagValueOperation {
+func (c *tagValuesGRPCClient) UpdateTagValueOperation(name string) *UpdateTagValueOperation {
 	return &UpdateTagValueOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

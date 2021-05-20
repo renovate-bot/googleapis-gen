@@ -30,18 +30,19 @@ func ExampleNewParticipantsClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleParticipantsClient_CreateParticipant() {
-	// import dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2beta1"
-
 	ctx := context.Background()
 	c, err := dialogflow.NewParticipantsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &dialogflowpb.CreateParticipantRequest{
 		// TODO: Fill request struct fields.
@@ -55,13 +56,12 @@ func ExampleParticipantsClient_CreateParticipant() {
 }
 
 func ExampleParticipantsClient_GetParticipant() {
-	// import dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2beta1"
-
 	ctx := context.Background()
 	c, err := dialogflow.NewParticipantsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &dialogflowpb.GetParticipantRequest{
 		// TODO: Fill request struct fields.
@@ -75,14 +75,12 @@ func ExampleParticipantsClient_GetParticipant() {
 }
 
 func ExampleParticipantsClient_ListParticipants() {
-	// import dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := dialogflow.NewParticipantsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &dialogflowpb.ListParticipantsRequest{
 		// TODO: Fill request struct fields.
@@ -102,13 +100,12 @@ func ExampleParticipantsClient_ListParticipants() {
 }
 
 func ExampleParticipantsClient_UpdateParticipant() {
-	// import dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2beta1"
-
 	ctx := context.Background()
 	c, err := dialogflow.NewParticipantsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &dialogflowpb.UpdateParticipantRequest{
 		// TODO: Fill request struct fields.
@@ -122,13 +119,12 @@ func ExampleParticipantsClient_UpdateParticipant() {
 }
 
 func ExampleParticipantsClient_AnalyzeContent() {
-	// import dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2beta1"
-
 	ctx := context.Background()
 	c, err := dialogflow.NewParticipantsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &dialogflowpb.AnalyzeContentRequest{
 		// TODO: Fill request struct fields.
@@ -142,13 +138,12 @@ func ExampleParticipantsClient_AnalyzeContent() {
 }
 
 func ExampleParticipantsClient_SuggestArticles() {
-	// import dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2beta1"
-
 	ctx := context.Background()
 	c, err := dialogflow.NewParticipantsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &dialogflowpb.SuggestArticlesRequest{
 		// TODO: Fill request struct fields.
@@ -162,13 +157,12 @@ func ExampleParticipantsClient_SuggestArticles() {
 }
 
 func ExampleParticipantsClient_SuggestFaqAnswers() {
-	// import dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2beta1"
-
 	ctx := context.Background()
 	c, err := dialogflow.NewParticipantsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &dialogflowpb.SuggestFaqAnswersRequest{
 		// TODO: Fill request struct fields.
@@ -182,13 +176,12 @@ func ExampleParticipantsClient_SuggestFaqAnswers() {
 }
 
 func ExampleParticipantsClient_SuggestSmartReplies() {
-	// import dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2beta1"
-
 	ctx := context.Background()
 	c, err := dialogflow.NewParticipantsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &dialogflowpb.SuggestSmartRepliesRequest{
 		// TODO: Fill request struct fields.
@@ -202,14 +195,12 @@ func ExampleParticipantsClient_SuggestSmartReplies() {
 }
 
 func ExampleParticipantsClient_ListSuggestions() {
-	// import dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := dialogflow.NewParticipantsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &dialogflowpb.ListSuggestionsRequest{
 		// TODO: Fill request struct fields.
@@ -229,13 +220,12 @@ func ExampleParticipantsClient_ListSuggestions() {
 }
 
 func ExampleParticipantsClient_CompileSuggestion() {
-	// import dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2beta1"
-
 	ctx := context.Background()
 	c, err := dialogflow.NewParticipantsClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &dialogflowpb.CompileSuggestionRequest{
 		// TODO: Fill request struct fields.

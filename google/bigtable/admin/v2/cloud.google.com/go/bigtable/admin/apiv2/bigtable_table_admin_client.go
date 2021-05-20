@@ -67,7 +67,7 @@ type BigtableTableAdminCallOptions struct {
 	TestIamPermissions       []gax.CallOption
 }
 
-func defaultBigtableTableAdminClientOptions() []option.ClientOption {
+func defaultBigtableTableAdminGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("bigtableadmin.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("bigtableadmin.mtls.googleapis.com:443"),
@@ -216,40 +216,311 @@ func defaultBigtableTableAdminCallOptions() *BigtableTableAdminCallOptions {
 	}
 }
 
+// internalBigtableTableAdminClient is an interface that defines the methods availaible from Cloud Bigtable Admin API.
+type internalBigtableTableAdminClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateTable(context.Context, *adminpb.CreateTableRequest, ...gax.CallOption) (*adminpb.Table, error)
+	CreateTableFromSnapshot(context.Context, *adminpb.CreateTableFromSnapshotRequest, ...gax.CallOption) (*CreateTableFromSnapshotOperation, error)
+	CreateTableFromSnapshotOperation(name string) *CreateTableFromSnapshotOperation
+	ListTables(context.Context, *adminpb.ListTablesRequest, ...gax.CallOption) *TableIterator
+	GetTable(context.Context, *adminpb.GetTableRequest, ...gax.CallOption) (*adminpb.Table, error)
+	DeleteTable(context.Context, *adminpb.DeleteTableRequest, ...gax.CallOption) error
+	ModifyColumnFamilies(context.Context, *adminpb.ModifyColumnFamiliesRequest, ...gax.CallOption) (*adminpb.Table, error)
+	DropRowRange(context.Context, *adminpb.DropRowRangeRequest, ...gax.CallOption) error
+	GenerateConsistencyToken(context.Context, *adminpb.GenerateConsistencyTokenRequest, ...gax.CallOption) (*adminpb.GenerateConsistencyTokenResponse, error)
+	CheckConsistency(context.Context, *adminpb.CheckConsistencyRequest, ...gax.CallOption) (*adminpb.CheckConsistencyResponse, error)
+	SnapshotTable(context.Context, *adminpb.SnapshotTableRequest, ...gax.CallOption) (*SnapshotTableOperation, error)
+	SnapshotTableOperation(name string) *SnapshotTableOperation
+	GetSnapshot(context.Context, *adminpb.GetSnapshotRequest, ...gax.CallOption) (*adminpb.Snapshot, error)
+	ListSnapshots(context.Context, *adminpb.ListSnapshotsRequest, ...gax.CallOption) *SnapshotIterator
+	DeleteSnapshot(context.Context, *adminpb.DeleteSnapshotRequest, ...gax.CallOption) error
+	CreateBackup(context.Context, *adminpb.CreateBackupRequest, ...gax.CallOption) (*CreateBackupOperation, error)
+	CreateBackupOperation(name string) *CreateBackupOperation
+	GetBackup(context.Context, *adminpb.GetBackupRequest, ...gax.CallOption) (*adminpb.Backup, error)
+	UpdateBackup(context.Context, *adminpb.UpdateBackupRequest, ...gax.CallOption) (*adminpb.Backup, error)
+	DeleteBackup(context.Context, *adminpb.DeleteBackupRequest, ...gax.CallOption) error
+	ListBackups(context.Context, *adminpb.ListBackupsRequest, ...gax.CallOption) *BackupIterator
+	RestoreTable(context.Context, *adminpb.RestoreTableRequest, ...gax.CallOption) (*RestoreTableOperation, error)
+	RestoreTableOperation(name string) *RestoreTableOperation
+	GetIamPolicy(context.Context, *iampb.GetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
+	SetIamPolicy(context.Context, *iampb.SetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
+	TestIamPermissions(context.Context, *iampb.TestIamPermissionsRequest, ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error)
+}
+
 // BigtableTableAdminClient is a client for interacting with Cloud Bigtable Admin API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Service for creating, configuring, and deleting Cloud Bigtable tables.
+//
+// Provides access to the table schemas only, not the data stored within
+// the tables.
+type BigtableTableAdminClient struct {
+	// The internal transport-dependent client.
+	internalClient internalBigtableTableAdminClient
+
+	// The call options for this service.
+	CallOptions *BigtableTableAdminCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *BigtableTableAdminClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *BigtableTableAdminClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *BigtableTableAdminClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateTable creates a new table in the specified instance.
+// The table can be created with a full set of initial column families,
+// specified in the request.
+func (c *BigtableTableAdminClient) CreateTable(ctx context.Context, req *adminpb.CreateTableRequest, opts ...gax.CallOption) (*adminpb.Table, error) {
+	return c.internalClient.CreateTable(ctx, req, opts...)
+}
+
+// CreateTableFromSnapshot creates a new table from the specified snapshot. The target table must
+// not exist. The snapshot and the table must be in the same instance.
+//
+// Note: This is a private alpha release of Cloud Bigtable snapshots. This
+// feature is not currently available to most Cloud Bigtable customers. This
+// feature might be changed in backward-incompatible ways and is not
+// recommended for production use. It is not subject to any SLA or deprecation
+// policy.
+func (c *BigtableTableAdminClient) CreateTableFromSnapshot(ctx context.Context, req *adminpb.CreateTableFromSnapshotRequest, opts ...gax.CallOption) (*CreateTableFromSnapshotOperation, error) {
+	return c.internalClient.CreateTableFromSnapshot(ctx, req, opts...)
+}
+
+// CreateTableFromSnapshotOperation returns a new CreateTableFromSnapshotOperation from a given name.
+// The name must be that of a previously created CreateTableFromSnapshotOperation, possibly from a different process.
+func (c *BigtableTableAdminClient) CreateTableFromSnapshotOperation(name string) *CreateTableFromSnapshotOperation {
+	return c.internalClient.CreateTableFromSnapshotOperation(name)
+}
+
+// ListTables lists all tables served from a specified instance.
+func (c *BigtableTableAdminClient) ListTables(ctx context.Context, req *adminpb.ListTablesRequest, opts ...gax.CallOption) *TableIterator {
+	return c.internalClient.ListTables(ctx, req, opts...)
+}
+
+// GetTable gets metadata information about the specified table.
+func (c *BigtableTableAdminClient) GetTable(ctx context.Context, req *adminpb.GetTableRequest, opts ...gax.CallOption) (*adminpb.Table, error) {
+	return c.internalClient.GetTable(ctx, req, opts...)
+}
+
+// DeleteTable permanently deletes a specified table and all of its data.
+func (c *BigtableTableAdminClient) DeleteTable(ctx context.Context, req *adminpb.DeleteTableRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteTable(ctx, req, opts...)
+}
+
+// ModifyColumnFamilies performs a series of column family modifications on the specified table.
+// Either all or none of the modifications will occur before this method
+// returns, but data requests received prior to that point may see a table
+// where only some modifications have taken effect.
+func (c *BigtableTableAdminClient) ModifyColumnFamilies(ctx context.Context, req *adminpb.ModifyColumnFamiliesRequest, opts ...gax.CallOption) (*adminpb.Table, error) {
+	return c.internalClient.ModifyColumnFamilies(ctx, req, opts...)
+}
+
+// DropRowRange permanently drop/delete a row range from a specified table. The request can
+// specify whether to delete all rows in a table, or only those that match a
+// particular prefix.
+func (c *BigtableTableAdminClient) DropRowRange(ctx context.Context, req *adminpb.DropRowRangeRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DropRowRange(ctx, req, opts...)
+}
+
+// GenerateConsistencyToken generates a consistency token for a Table, which can be used in
+// CheckConsistency to check whether mutations to the table that finished
+// before this call started have been replicated. The tokens will be available
+// for 90 days.
+func (c *BigtableTableAdminClient) GenerateConsistencyToken(ctx context.Context, req *adminpb.GenerateConsistencyTokenRequest, opts ...gax.CallOption) (*adminpb.GenerateConsistencyTokenResponse, error) {
+	return c.internalClient.GenerateConsistencyToken(ctx, req, opts...)
+}
+
+// CheckConsistency checks replication consistency based on a consistency token, that is, if
+// replication has caught up based on the conditions specified in the token
+// and the check request.
+func (c *BigtableTableAdminClient) CheckConsistency(ctx context.Context, req *adminpb.CheckConsistencyRequest, opts ...gax.CallOption) (*adminpb.CheckConsistencyResponse, error) {
+	return c.internalClient.CheckConsistency(ctx, req, opts...)
+}
+
+// SnapshotTable creates a new snapshot in the specified cluster from the specified
+// source table. The cluster and the table must be in the same instance.
+//
+// Note: This is a private alpha release of Cloud Bigtable snapshots. This
+// feature is not currently available to most Cloud Bigtable customers. This
+// feature might be changed in backward-incompatible ways and is not
+// recommended for production use. It is not subject to any SLA or deprecation
+// policy.
+func (c *BigtableTableAdminClient) SnapshotTable(ctx context.Context, req *adminpb.SnapshotTableRequest, opts ...gax.CallOption) (*SnapshotTableOperation, error) {
+	return c.internalClient.SnapshotTable(ctx, req, opts...)
+}
+
+// SnapshotTableOperation returns a new SnapshotTableOperation from a given name.
+// The name must be that of a previously created SnapshotTableOperation, possibly from a different process.
+func (c *BigtableTableAdminClient) SnapshotTableOperation(name string) *SnapshotTableOperation {
+	return c.internalClient.SnapshotTableOperation(name)
+}
+
+// GetSnapshot gets metadata information about the specified snapshot.
+//
+// Note: This is a private alpha release of Cloud Bigtable snapshots. This
+// feature is not currently available to most Cloud Bigtable customers. This
+// feature might be changed in backward-incompatible ways and is not
+// recommended for production use. It is not subject to any SLA or deprecation
+// policy.
+func (c *BigtableTableAdminClient) GetSnapshot(ctx context.Context, req *adminpb.GetSnapshotRequest, opts ...gax.CallOption) (*adminpb.Snapshot, error) {
+	return c.internalClient.GetSnapshot(ctx, req, opts...)
+}
+
+// ListSnapshots lists all snapshots associated with the specified cluster.
+//
+// Note: This is a private alpha release of Cloud Bigtable snapshots. This
+// feature is not currently available to most Cloud Bigtable customers. This
+// feature might be changed in backward-incompatible ways and is not
+// recommended for production use. It is not subject to any SLA or deprecation
+// policy.
+func (c *BigtableTableAdminClient) ListSnapshots(ctx context.Context, req *adminpb.ListSnapshotsRequest, opts ...gax.CallOption) *SnapshotIterator {
+	return c.internalClient.ListSnapshots(ctx, req, opts...)
+}
+
+// DeleteSnapshot permanently deletes the specified snapshot.
+//
+// Note: This is a private alpha release of Cloud Bigtable snapshots. This
+// feature is not currently available to most Cloud Bigtable customers. This
+// feature might be changed in backward-incompatible ways and is not
+// recommended for production use. It is not subject to any SLA or deprecation
+// policy.
+func (c *BigtableTableAdminClient) DeleteSnapshot(ctx context.Context, req *adminpb.DeleteSnapshotRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteSnapshot(ctx, req, opts...)
+}
+
+// CreateBackup starts creating a new Cloud Bigtable Backup.  The returned backup
+// [long-running operation][google.longrunning.Operation] can be used to
+// track creation of the backup. The
+// metadata field type is
+// CreateBackupMetadata. The
+// response field type is
+// Backup, if successful. Cancelling the returned operation will stop the
+// creation and delete the backup.
+func (c *BigtableTableAdminClient) CreateBackup(ctx context.Context, req *adminpb.CreateBackupRequest, opts ...gax.CallOption) (*CreateBackupOperation, error) {
+	return c.internalClient.CreateBackup(ctx, req, opts...)
+}
+
+// CreateBackupOperation returns a new CreateBackupOperation from a given name.
+// The name must be that of a previously created CreateBackupOperation, possibly from a different process.
+func (c *BigtableTableAdminClient) CreateBackupOperation(name string) *CreateBackupOperation {
+	return c.internalClient.CreateBackupOperation(name)
+}
+
+// GetBackup gets metadata on a pending or completed Cloud Bigtable Backup.
+func (c *BigtableTableAdminClient) GetBackup(ctx context.Context, req *adminpb.GetBackupRequest, opts ...gax.CallOption) (*adminpb.Backup, error) {
+	return c.internalClient.GetBackup(ctx, req, opts...)
+}
+
+// UpdateBackup updates a pending or completed Cloud Bigtable Backup.
+func (c *BigtableTableAdminClient) UpdateBackup(ctx context.Context, req *adminpb.UpdateBackupRequest, opts ...gax.CallOption) (*adminpb.Backup, error) {
+	return c.internalClient.UpdateBackup(ctx, req, opts...)
+}
+
+// DeleteBackup deletes a pending or completed Cloud Bigtable backup.
+func (c *BigtableTableAdminClient) DeleteBackup(ctx context.Context, req *adminpb.DeleteBackupRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteBackup(ctx, req, opts...)
+}
+
+// ListBackups lists Cloud Bigtable backups. Returns both completed and pending
+// backups.
+func (c *BigtableTableAdminClient) ListBackups(ctx context.Context, req *adminpb.ListBackupsRequest, opts ...gax.CallOption) *BackupIterator {
+	return c.internalClient.ListBackups(ctx, req, opts...)
+}
+
+// RestoreTable create a new table by restoring from a completed backup. The new table
+// must be in the same project as the instance containing the backup.  The
+// returned table [long-running operation][google.longrunning.Operation] can
+// be used to track the progress of the operation, and to cancel it.  The
+// metadata field type is
+// RestoreTableMetadata.  The
+// response type is
+// Table, if successful.
+func (c *BigtableTableAdminClient) RestoreTable(ctx context.Context, req *adminpb.RestoreTableRequest, opts ...gax.CallOption) (*RestoreTableOperation, error) {
+	return c.internalClient.RestoreTable(ctx, req, opts...)
+}
+
+// RestoreTableOperation returns a new RestoreTableOperation from a given name.
+// The name must be that of a previously created RestoreTableOperation, possibly from a different process.
+func (c *BigtableTableAdminClient) RestoreTableOperation(name string) *RestoreTableOperation {
+	return c.internalClient.RestoreTableOperation(name)
+}
+
+// GetIamPolicy gets the access control policy for a Table or Backup resource.
+// Returns an empty policy if the resource exists but does not have a policy
+// set.
+func (c *BigtableTableAdminClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+	return c.internalClient.GetIamPolicy(ctx, req, opts...)
+}
+
+// SetIamPolicy sets the access control policy on a Table or Backup resource.
+// Replaces any existing policy.
+func (c *BigtableTableAdminClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+	return c.internalClient.SetIamPolicy(ctx, req, opts...)
+}
+
+// TestIamPermissions returns permissions that the caller has on the specified Table or Backup resource.
+func (c *BigtableTableAdminClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
+	return c.internalClient.TestIamPermissions(ctx, req, opts...)
+}
+
+// bigtableTableAdminGRPCClient is a client for interacting with Cloud Bigtable Admin API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type BigtableTableAdminClient struct {
+type bigtableTableAdminGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing BigtableTableAdminClient
+	CallOptions **BigtableTableAdminCallOptions
+
 	// The gRPC API client.
 	bigtableTableAdminClient adminpb.BigtableTableAdminClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *BigtableTableAdminCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewBigtableTableAdminClient creates a new bigtable table admin client.
+// NewBigtableTableAdminClient creates a new bigtable table admin client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service for creating, configuring, and deleting Cloud Bigtable tables.
 //
 // Provides access to the table schemas only, not the data stored within
 // the tables.
 func NewBigtableTableAdminClient(ctx context.Context, opts ...option.ClientOption) (*BigtableTableAdminClient, error) {
-	clientOpts := defaultBigtableTableAdminClientOptions()
-
+	clientOpts := defaultBigtableTableAdminGRPCClientOptions()
 	if newBigtableTableAdminClientHook != nil {
 		hookOpts, err := newBigtableTableAdminClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -267,16 +538,19 @@ func NewBigtableTableAdminClient(ctx context.Context, opts ...option.ClientOptio
 	if err != nil {
 		return nil, err
 	}
-	c := &BigtableTableAdminClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultBigtableTableAdminCallOptions(),
+	client := BigtableTableAdminClient{CallOptions: defaultBigtableTableAdminCallOptions()}
 
+	c := &bigtableTableAdminGRPCClient{
+		connPool:                 connPool,
+		disableDeadlines:         disableDeadlines,
 		bigtableTableAdminClient: adminpb.NewBigtableTableAdminClient(connPool),
+		CallOptions:              &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -286,35 +560,33 @@ func NewBigtableTableAdminClient(ctx context.Context, opts ...option.ClientOptio
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *BigtableTableAdminClient) Connection() *grpc.ClientConn {
+func (c *bigtableTableAdminGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *BigtableTableAdminClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *BigtableTableAdminClient) setGoogleClientInfo(keyval ...string) {
+func (c *bigtableTableAdminGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateTable creates a new table in the specified instance.
-// The table can be created with a full set of initial column families,
-// specified in the request.
-func (c *BigtableTableAdminClient) CreateTable(ctx context.Context, req *adminpb.CreateTableRequest, opts ...gax.CallOption) (*adminpb.Table, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *bigtableTableAdminGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *bigtableTableAdminGRPCClient) CreateTable(ctx context.Context, req *adminpb.CreateTableRequest, opts ...gax.CallOption) (*adminpb.Table, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 300000*time.Millisecond)
 		defer cancel()
@@ -322,7 +594,7 @@ func (c *BigtableTableAdminClient) CreateTable(ctx context.Context, req *adminpb
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateTable[0:len(c.CallOptions.CreateTable):len(c.CallOptions.CreateTable)], opts...)
+	opts = append((*c.CallOptions).CreateTable[0:len((*c.CallOptions).CreateTable):len((*c.CallOptions).CreateTable)], opts...)
 	var resp *adminpb.Table
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -335,18 +607,10 @@ func (c *BigtableTableAdminClient) CreateTable(ctx context.Context, req *adminpb
 	return resp, nil
 }
 
-// CreateTableFromSnapshot creates a new table from the specified snapshot. The target table must
-// not exist. The snapshot and the table must be in the same instance.
-//
-// Note: This is a private alpha release of Cloud Bigtable snapshots. This
-// feature is not currently available to most Cloud Bigtable customers. This
-// feature might be changed in backward-incompatible ways and is not
-// recommended for production use. It is not subject to any SLA or deprecation
-// policy.
-func (c *BigtableTableAdminClient) CreateTableFromSnapshot(ctx context.Context, req *adminpb.CreateTableFromSnapshotRequest, opts ...gax.CallOption) (*CreateTableFromSnapshotOperation, error) {
+func (c *bigtableTableAdminGRPCClient) CreateTableFromSnapshot(ctx context.Context, req *adminpb.CreateTableFromSnapshotRequest, opts ...gax.CallOption) (*CreateTableFromSnapshotOperation, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateTableFromSnapshot[0:len(c.CallOptions.CreateTableFromSnapshot):len(c.CallOptions.CreateTableFromSnapshot)], opts...)
+	opts = append((*c.CallOptions).CreateTableFromSnapshot[0:len((*c.CallOptions).CreateTableFromSnapshot):len((*c.CallOptions).CreateTableFromSnapshot)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -357,15 +621,14 @@ func (c *BigtableTableAdminClient) CreateTableFromSnapshot(ctx context.Context, 
 		return nil, err
 	}
 	return &CreateTableFromSnapshotOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// ListTables lists all tables served from a specified instance.
-func (c *BigtableTableAdminClient) ListTables(ctx context.Context, req *adminpb.ListTablesRequest, opts ...gax.CallOption) *TableIterator {
+func (c *bigtableTableAdminGRPCClient) ListTables(ctx context.Context, req *adminpb.ListTablesRequest, opts ...gax.CallOption) *TableIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListTables[0:len(c.CallOptions.ListTables):len(c.CallOptions.ListTables)], opts...)
+	opts = append((*c.CallOptions).ListTables[0:len((*c.CallOptions).ListTables):len((*c.CallOptions).ListTables)], opts...)
 	it := &TableIterator{}
 	req = proto.Clone(req).(*adminpb.ListTablesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.Table, string, error) {
@@ -402,8 +665,7 @@ func (c *BigtableTableAdminClient) ListTables(ctx context.Context, req *adminpb.
 	return it
 }
 
-// GetTable gets metadata information about the specified table.
-func (c *BigtableTableAdminClient) GetTable(ctx context.Context, req *adminpb.GetTableRequest, opts ...gax.CallOption) (*adminpb.Table, error) {
+func (c *bigtableTableAdminGRPCClient) GetTable(ctx context.Context, req *adminpb.GetTableRequest, opts ...gax.CallOption) (*adminpb.Table, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -411,7 +673,7 @@ func (c *BigtableTableAdminClient) GetTable(ctx context.Context, req *adminpb.Ge
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetTable[0:len(c.CallOptions.GetTable):len(c.CallOptions.GetTable)], opts...)
+	opts = append((*c.CallOptions).GetTable[0:len((*c.CallOptions).GetTable):len((*c.CallOptions).GetTable)], opts...)
 	var resp *adminpb.Table
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -424,8 +686,7 @@ func (c *BigtableTableAdminClient) GetTable(ctx context.Context, req *adminpb.Ge
 	return resp, nil
 }
 
-// DeleteTable permanently deletes a specified table and all of its data.
-func (c *BigtableTableAdminClient) DeleteTable(ctx context.Context, req *adminpb.DeleteTableRequest, opts ...gax.CallOption) error {
+func (c *bigtableTableAdminGRPCClient) DeleteTable(ctx context.Context, req *adminpb.DeleteTableRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -433,7 +694,7 @@ func (c *BigtableTableAdminClient) DeleteTable(ctx context.Context, req *adminpb
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteTable[0:len(c.CallOptions.DeleteTable):len(c.CallOptions.DeleteTable)], opts...)
+	opts = append((*c.CallOptions).DeleteTable[0:len((*c.CallOptions).DeleteTable):len((*c.CallOptions).DeleteTable)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.bigtableTableAdminClient.DeleteTable(ctx, req, settings.GRPC...)
@@ -442,11 +703,7 @@ func (c *BigtableTableAdminClient) DeleteTable(ctx context.Context, req *adminpb
 	return err
 }
 
-// ModifyColumnFamilies performs a series of column family modifications on the specified table.
-// Either all or none of the modifications will occur before this method
-// returns, but data requests received prior to that point may see a table
-// where only some modifications have taken effect.
-func (c *BigtableTableAdminClient) ModifyColumnFamilies(ctx context.Context, req *adminpb.ModifyColumnFamiliesRequest, opts ...gax.CallOption) (*adminpb.Table, error) {
+func (c *bigtableTableAdminGRPCClient) ModifyColumnFamilies(ctx context.Context, req *adminpb.ModifyColumnFamiliesRequest, opts ...gax.CallOption) (*adminpb.Table, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 300000*time.Millisecond)
 		defer cancel()
@@ -454,7 +711,7 @@ func (c *BigtableTableAdminClient) ModifyColumnFamilies(ctx context.Context, req
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ModifyColumnFamilies[0:len(c.CallOptions.ModifyColumnFamilies):len(c.CallOptions.ModifyColumnFamilies)], opts...)
+	opts = append((*c.CallOptions).ModifyColumnFamilies[0:len((*c.CallOptions).ModifyColumnFamilies):len((*c.CallOptions).ModifyColumnFamilies)], opts...)
 	var resp *adminpb.Table
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -467,10 +724,7 @@ func (c *BigtableTableAdminClient) ModifyColumnFamilies(ctx context.Context, req
 	return resp, nil
 }
 
-// DropRowRange permanently drop/delete a row range from a specified table. The request can
-// specify whether to delete all rows in a table, or only those that match a
-// particular prefix.
-func (c *BigtableTableAdminClient) DropRowRange(ctx context.Context, req *adminpb.DropRowRangeRequest, opts ...gax.CallOption) error {
+func (c *bigtableTableAdminGRPCClient) DropRowRange(ctx context.Context, req *adminpb.DropRowRangeRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 3600000*time.Millisecond)
 		defer cancel()
@@ -478,7 +732,7 @@ func (c *BigtableTableAdminClient) DropRowRange(ctx context.Context, req *adminp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DropRowRange[0:len(c.CallOptions.DropRowRange):len(c.CallOptions.DropRowRange)], opts...)
+	opts = append((*c.CallOptions).DropRowRange[0:len((*c.CallOptions).DropRowRange):len((*c.CallOptions).DropRowRange)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.bigtableTableAdminClient.DropRowRange(ctx, req, settings.GRPC...)
@@ -487,11 +741,7 @@ func (c *BigtableTableAdminClient) DropRowRange(ctx context.Context, req *adminp
 	return err
 }
 
-// GenerateConsistencyToken generates a consistency token for a Table, which can be used in
-// CheckConsistency to check whether mutations to the table that finished
-// before this call started have been replicated. The tokens will be available
-// for 90 days.
-func (c *BigtableTableAdminClient) GenerateConsistencyToken(ctx context.Context, req *adminpb.GenerateConsistencyTokenRequest, opts ...gax.CallOption) (*adminpb.GenerateConsistencyTokenResponse, error) {
+func (c *bigtableTableAdminGRPCClient) GenerateConsistencyToken(ctx context.Context, req *adminpb.GenerateConsistencyTokenRequest, opts ...gax.CallOption) (*adminpb.GenerateConsistencyTokenResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -499,7 +749,7 @@ func (c *BigtableTableAdminClient) GenerateConsistencyToken(ctx context.Context,
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GenerateConsistencyToken[0:len(c.CallOptions.GenerateConsistencyToken):len(c.CallOptions.GenerateConsistencyToken)], opts...)
+	opts = append((*c.CallOptions).GenerateConsistencyToken[0:len((*c.CallOptions).GenerateConsistencyToken):len((*c.CallOptions).GenerateConsistencyToken)], opts...)
 	var resp *adminpb.GenerateConsistencyTokenResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -512,10 +762,7 @@ func (c *BigtableTableAdminClient) GenerateConsistencyToken(ctx context.Context,
 	return resp, nil
 }
 
-// CheckConsistency checks replication consistency based on a consistency token, that is, if
-// replication has caught up based on the conditions specified in the token
-// and the check request.
-func (c *BigtableTableAdminClient) CheckConsistency(ctx context.Context, req *adminpb.CheckConsistencyRequest, opts ...gax.CallOption) (*adminpb.CheckConsistencyResponse, error) {
+func (c *bigtableTableAdminGRPCClient) CheckConsistency(ctx context.Context, req *adminpb.CheckConsistencyRequest, opts ...gax.CallOption) (*adminpb.CheckConsistencyResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -523,7 +770,7 @@ func (c *BigtableTableAdminClient) CheckConsistency(ctx context.Context, req *ad
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CheckConsistency[0:len(c.CallOptions.CheckConsistency):len(c.CallOptions.CheckConsistency)], opts...)
+	opts = append((*c.CallOptions).CheckConsistency[0:len((*c.CallOptions).CheckConsistency):len((*c.CallOptions).CheckConsistency)], opts...)
 	var resp *adminpb.CheckConsistencyResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -536,18 +783,10 @@ func (c *BigtableTableAdminClient) CheckConsistency(ctx context.Context, req *ad
 	return resp, nil
 }
 
-// SnapshotTable creates a new snapshot in the specified cluster from the specified
-// source table. The cluster and the table must be in the same instance.
-//
-// Note: This is a private alpha release of Cloud Bigtable snapshots. This
-// feature is not currently available to most Cloud Bigtable customers. This
-// feature might be changed in backward-incompatible ways and is not
-// recommended for production use. It is not subject to any SLA or deprecation
-// policy.
-func (c *BigtableTableAdminClient) SnapshotTable(ctx context.Context, req *adminpb.SnapshotTableRequest, opts ...gax.CallOption) (*SnapshotTableOperation, error) {
+func (c *bigtableTableAdminGRPCClient) SnapshotTable(ctx context.Context, req *adminpb.SnapshotTableRequest, opts ...gax.CallOption) (*SnapshotTableOperation, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SnapshotTable[0:len(c.CallOptions.SnapshotTable):len(c.CallOptions.SnapshotTable)], opts...)
+	opts = append((*c.CallOptions).SnapshotTable[0:len((*c.CallOptions).SnapshotTable):len((*c.CallOptions).SnapshotTable)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -558,18 +797,11 @@ func (c *BigtableTableAdminClient) SnapshotTable(ctx context.Context, req *admin
 		return nil, err
 	}
 	return &SnapshotTableOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetSnapshot gets metadata information about the specified snapshot.
-//
-// Note: This is a private alpha release of Cloud Bigtable snapshots. This
-// feature is not currently available to most Cloud Bigtable customers. This
-// feature might be changed in backward-incompatible ways and is not
-// recommended for production use. It is not subject to any SLA or deprecation
-// policy.
-func (c *BigtableTableAdminClient) GetSnapshot(ctx context.Context, req *adminpb.GetSnapshotRequest, opts ...gax.CallOption) (*adminpb.Snapshot, error) {
+func (c *bigtableTableAdminGRPCClient) GetSnapshot(ctx context.Context, req *adminpb.GetSnapshotRequest, opts ...gax.CallOption) (*adminpb.Snapshot, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -577,7 +809,7 @@ func (c *BigtableTableAdminClient) GetSnapshot(ctx context.Context, req *adminpb
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetSnapshot[0:len(c.CallOptions.GetSnapshot):len(c.CallOptions.GetSnapshot)], opts...)
+	opts = append((*c.CallOptions).GetSnapshot[0:len((*c.CallOptions).GetSnapshot):len((*c.CallOptions).GetSnapshot)], opts...)
 	var resp *adminpb.Snapshot
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -590,17 +822,10 @@ func (c *BigtableTableAdminClient) GetSnapshot(ctx context.Context, req *adminpb
 	return resp, nil
 }
 
-// ListSnapshots lists all snapshots associated with the specified cluster.
-//
-// Note: This is a private alpha release of Cloud Bigtable snapshots. This
-// feature is not currently available to most Cloud Bigtable customers. This
-// feature might be changed in backward-incompatible ways and is not
-// recommended for production use. It is not subject to any SLA or deprecation
-// policy.
-func (c *BigtableTableAdminClient) ListSnapshots(ctx context.Context, req *adminpb.ListSnapshotsRequest, opts ...gax.CallOption) *SnapshotIterator {
+func (c *bigtableTableAdminGRPCClient) ListSnapshots(ctx context.Context, req *adminpb.ListSnapshotsRequest, opts ...gax.CallOption) *SnapshotIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListSnapshots[0:len(c.CallOptions.ListSnapshots):len(c.CallOptions.ListSnapshots)], opts...)
+	opts = append((*c.CallOptions).ListSnapshots[0:len((*c.CallOptions).ListSnapshots):len((*c.CallOptions).ListSnapshots)], opts...)
 	it := &SnapshotIterator{}
 	req = proto.Clone(req).(*adminpb.ListSnapshotsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.Snapshot, string, error) {
@@ -637,14 +862,7 @@ func (c *BigtableTableAdminClient) ListSnapshots(ctx context.Context, req *admin
 	return it
 }
 
-// DeleteSnapshot permanently deletes the specified snapshot.
-//
-// Note: This is a private alpha release of Cloud Bigtable snapshots. This
-// feature is not currently available to most Cloud Bigtable customers. This
-// feature might be changed in backward-incompatible ways and is not
-// recommended for production use. It is not subject to any SLA or deprecation
-// policy.
-func (c *BigtableTableAdminClient) DeleteSnapshot(ctx context.Context, req *adminpb.DeleteSnapshotRequest, opts ...gax.CallOption) error {
+func (c *bigtableTableAdminGRPCClient) DeleteSnapshot(ctx context.Context, req *adminpb.DeleteSnapshotRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -652,7 +870,7 @@ func (c *BigtableTableAdminClient) DeleteSnapshot(ctx context.Context, req *admi
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteSnapshot[0:len(c.CallOptions.DeleteSnapshot):len(c.CallOptions.DeleteSnapshot)], opts...)
+	opts = append((*c.CallOptions).DeleteSnapshot[0:len((*c.CallOptions).DeleteSnapshot):len((*c.CallOptions).DeleteSnapshot)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.bigtableTableAdminClient.DeleteSnapshot(ctx, req, settings.GRPC...)
@@ -661,15 +879,7 @@ func (c *BigtableTableAdminClient) DeleteSnapshot(ctx context.Context, req *admi
 	return err
 }
 
-// CreateBackup starts creating a new Cloud Bigtable Backup.  The returned backup
-// [long-running operation][google.longrunning.Operation] can be used to
-// track creation of the backup. The
-// metadata field type is
-// CreateBackupMetadata. The
-// response field type is
-// Backup, if successful. Cancelling the returned operation will stop the
-// creation and delete the backup.
-func (c *BigtableTableAdminClient) CreateBackup(ctx context.Context, req *adminpb.CreateBackupRequest, opts ...gax.CallOption) (*CreateBackupOperation, error) {
+func (c *bigtableTableAdminGRPCClient) CreateBackup(ctx context.Context, req *adminpb.CreateBackupRequest, opts ...gax.CallOption) (*CreateBackupOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -677,7 +887,7 @@ func (c *BigtableTableAdminClient) CreateBackup(ctx context.Context, req *adminp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateBackup[0:len(c.CallOptions.CreateBackup):len(c.CallOptions.CreateBackup)], opts...)
+	opts = append((*c.CallOptions).CreateBackup[0:len((*c.CallOptions).CreateBackup):len((*c.CallOptions).CreateBackup)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -688,12 +898,11 @@ func (c *BigtableTableAdminClient) CreateBackup(ctx context.Context, req *adminp
 		return nil, err
 	}
 	return &CreateBackupOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetBackup gets metadata on a pending or completed Cloud Bigtable Backup.
-func (c *BigtableTableAdminClient) GetBackup(ctx context.Context, req *adminpb.GetBackupRequest, opts ...gax.CallOption) (*adminpb.Backup, error) {
+func (c *bigtableTableAdminGRPCClient) GetBackup(ctx context.Context, req *adminpb.GetBackupRequest, opts ...gax.CallOption) (*adminpb.Backup, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -701,7 +910,7 @@ func (c *BigtableTableAdminClient) GetBackup(ctx context.Context, req *adminpb.G
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetBackup[0:len(c.CallOptions.GetBackup):len(c.CallOptions.GetBackup)], opts...)
+	opts = append((*c.CallOptions).GetBackup[0:len((*c.CallOptions).GetBackup):len((*c.CallOptions).GetBackup)], opts...)
 	var resp *adminpb.Backup
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -714,8 +923,7 @@ func (c *BigtableTableAdminClient) GetBackup(ctx context.Context, req *adminpb.G
 	return resp, nil
 }
 
-// UpdateBackup updates a pending or completed Cloud Bigtable Backup.
-func (c *BigtableTableAdminClient) UpdateBackup(ctx context.Context, req *adminpb.UpdateBackupRequest, opts ...gax.CallOption) (*adminpb.Backup, error) {
+func (c *bigtableTableAdminGRPCClient) UpdateBackup(ctx context.Context, req *adminpb.UpdateBackupRequest, opts ...gax.CallOption) (*adminpb.Backup, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -723,7 +931,7 @@ func (c *BigtableTableAdminClient) UpdateBackup(ctx context.Context, req *adminp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "backup.name", url.QueryEscape(req.GetBackup().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateBackup[0:len(c.CallOptions.UpdateBackup):len(c.CallOptions.UpdateBackup)], opts...)
+	opts = append((*c.CallOptions).UpdateBackup[0:len((*c.CallOptions).UpdateBackup):len((*c.CallOptions).UpdateBackup)], opts...)
 	var resp *adminpb.Backup
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -736,8 +944,7 @@ func (c *BigtableTableAdminClient) UpdateBackup(ctx context.Context, req *adminp
 	return resp, nil
 }
 
-// DeleteBackup deletes a pending or completed Cloud Bigtable backup.
-func (c *BigtableTableAdminClient) DeleteBackup(ctx context.Context, req *adminpb.DeleteBackupRequest, opts ...gax.CallOption) error {
+func (c *bigtableTableAdminGRPCClient) DeleteBackup(ctx context.Context, req *adminpb.DeleteBackupRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -745,7 +952,7 @@ func (c *BigtableTableAdminClient) DeleteBackup(ctx context.Context, req *adminp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteBackup[0:len(c.CallOptions.DeleteBackup):len(c.CallOptions.DeleteBackup)], opts...)
+	opts = append((*c.CallOptions).DeleteBackup[0:len((*c.CallOptions).DeleteBackup):len((*c.CallOptions).DeleteBackup)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.bigtableTableAdminClient.DeleteBackup(ctx, req, settings.GRPC...)
@@ -754,12 +961,10 @@ func (c *BigtableTableAdminClient) DeleteBackup(ctx context.Context, req *adminp
 	return err
 }
 
-// ListBackups lists Cloud Bigtable backups. Returns both completed and pending
-// backups.
-func (c *BigtableTableAdminClient) ListBackups(ctx context.Context, req *adminpb.ListBackupsRequest, opts ...gax.CallOption) *BackupIterator {
+func (c *bigtableTableAdminGRPCClient) ListBackups(ctx context.Context, req *adminpb.ListBackupsRequest, opts ...gax.CallOption) *BackupIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListBackups[0:len(c.CallOptions.ListBackups):len(c.CallOptions.ListBackups)], opts...)
+	opts = append((*c.CallOptions).ListBackups[0:len((*c.CallOptions).ListBackups):len((*c.CallOptions).ListBackups)], opts...)
 	it := &BackupIterator{}
 	req = proto.Clone(req).(*adminpb.ListBackupsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.Backup, string, error) {
@@ -796,15 +1001,7 @@ func (c *BigtableTableAdminClient) ListBackups(ctx context.Context, req *adminpb
 	return it
 }
 
-// RestoreTable create a new table by restoring from a completed backup. The new table
-// must be in the same project as the instance containing the backup.  The
-// returned table [long-running operation][google.longrunning.Operation] can
-// be used to track the progress of the operation, and to cancel it.  The
-// metadata field type is
-// RestoreTableMetadata.  The
-// response type is
-// Table, if successful.
-func (c *BigtableTableAdminClient) RestoreTable(ctx context.Context, req *adminpb.RestoreTableRequest, opts ...gax.CallOption) (*RestoreTableOperation, error) {
+func (c *bigtableTableAdminGRPCClient) RestoreTable(ctx context.Context, req *adminpb.RestoreTableRequest, opts ...gax.CallOption) (*RestoreTableOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -812,7 +1009,7 @@ func (c *BigtableTableAdminClient) RestoreTable(ctx context.Context, req *adminp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.RestoreTable[0:len(c.CallOptions.RestoreTable):len(c.CallOptions.RestoreTable)], opts...)
+	opts = append((*c.CallOptions).RestoreTable[0:len((*c.CallOptions).RestoreTable):len((*c.CallOptions).RestoreTable)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -823,14 +1020,11 @@ func (c *BigtableTableAdminClient) RestoreTable(ctx context.Context, req *adminp
 		return nil, err
 	}
 	return &RestoreTableOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetIamPolicy gets the access control policy for a Table or Backup resource.
-// Returns an empty policy if the resource exists but does not have a policy
-// set.
-func (c *BigtableTableAdminClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+func (c *bigtableTableAdminGRPCClient) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -838,7 +1032,7 @@ func (c *BigtableTableAdminClient) GetIamPolicy(ctx context.Context, req *iampb.
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetIamPolicy[0:len(c.CallOptions.GetIamPolicy):len(c.CallOptions.GetIamPolicy)], opts...)
+	opts = append((*c.CallOptions).GetIamPolicy[0:len((*c.CallOptions).GetIamPolicy):len((*c.CallOptions).GetIamPolicy)], opts...)
 	var resp *iampb.Policy
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -851,9 +1045,7 @@ func (c *BigtableTableAdminClient) GetIamPolicy(ctx context.Context, req *iampb.
 	return resp, nil
 }
 
-// SetIamPolicy sets the access control policy on a Table or Backup resource.
-// Replaces any existing policy.
-func (c *BigtableTableAdminClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
+func (c *bigtableTableAdminGRPCClient) SetIamPolicy(ctx context.Context, req *iampb.SetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -861,7 +1053,7 @@ func (c *BigtableTableAdminClient) SetIamPolicy(ctx context.Context, req *iampb.
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SetIamPolicy[0:len(c.CallOptions.SetIamPolicy):len(c.CallOptions.SetIamPolicy)], opts...)
+	opts = append((*c.CallOptions).SetIamPolicy[0:len((*c.CallOptions).SetIamPolicy):len((*c.CallOptions).SetIamPolicy)], opts...)
 	var resp *iampb.Policy
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -874,8 +1066,7 @@ func (c *BigtableTableAdminClient) SetIamPolicy(ctx context.Context, req *iampb.
 	return resp, nil
 }
 
-// TestIamPermissions returns permissions that the caller has on the specified Table or Backup resource.
-func (c *BigtableTableAdminClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
+func (c *bigtableTableAdminGRPCClient) TestIamPermissions(ctx context.Context, req *iampb.TestIamPermissionsRequest, opts ...gax.CallOption) (*iampb.TestIamPermissionsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -883,7 +1074,7 @@ func (c *BigtableTableAdminClient) TestIamPermissions(ctx context.Context, req *
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "resource", url.QueryEscape(req.GetResource())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.TestIamPermissions[0:len(c.CallOptions.TestIamPermissions):len(c.CallOptions.TestIamPermissions)], opts...)
+	opts = append((*c.CallOptions).TestIamPermissions[0:len((*c.CallOptions).TestIamPermissions):len((*c.CallOptions).TestIamPermissions)], opts...)
 	var resp *iampb.TestIamPermissionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -903,9 +1094,9 @@ type CreateBackupOperation struct {
 
 // CreateBackupOperation returns a new CreateBackupOperation from a given name.
 // The name must be that of a previously created CreateBackupOperation, possibly from a different process.
-func (c *BigtableTableAdminClient) CreateBackupOperation(name string) *CreateBackupOperation {
+func (c *bigtableTableAdminGRPCClient) CreateBackupOperation(name string) *CreateBackupOperation {
 	return &CreateBackupOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -972,9 +1163,9 @@ type CreateTableFromSnapshotOperation struct {
 
 // CreateTableFromSnapshotOperation returns a new CreateTableFromSnapshotOperation from a given name.
 // The name must be that of a previously created CreateTableFromSnapshotOperation, possibly from a different process.
-func (c *BigtableTableAdminClient) CreateTableFromSnapshotOperation(name string) *CreateTableFromSnapshotOperation {
+func (c *bigtableTableAdminGRPCClient) CreateTableFromSnapshotOperation(name string) *CreateTableFromSnapshotOperation {
 	return &CreateTableFromSnapshotOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1041,9 +1232,9 @@ type RestoreTableOperation struct {
 
 // RestoreTableOperation returns a new RestoreTableOperation from a given name.
 // The name must be that of a previously created RestoreTableOperation, possibly from a different process.
-func (c *BigtableTableAdminClient) RestoreTableOperation(name string) *RestoreTableOperation {
+func (c *bigtableTableAdminGRPCClient) RestoreTableOperation(name string) *RestoreTableOperation {
 	return &RestoreTableOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1110,9 +1301,9 @@ type SnapshotTableOperation struct {
 
 // SnapshotTableOperation returns a new SnapshotTableOperation from a given name.
 // The name must be that of a previously created SnapshotTableOperation, possibly from a different process.
-func (c *BigtableTableAdminClient) SnapshotTableOperation(name string) *SnapshotTableOperation {
+func (c *bigtableTableAdminGRPCClient) SnapshotTableOperation(name string) *SnapshotTableOperation {
 	return &SnapshotTableOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

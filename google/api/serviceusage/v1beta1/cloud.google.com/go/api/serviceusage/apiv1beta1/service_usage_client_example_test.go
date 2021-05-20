@@ -30,18 +30,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_EnableService() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.EnableServiceRequest{
 		// TODO: Fill request struct fields.
@@ -58,13 +59,12 @@ func ExampleClient_EnableService() {
 }
 
 func ExampleClient_DisableService() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.DisableServiceRequest{
 		// TODO: Fill request struct fields.
@@ -81,13 +81,12 @@ func ExampleClient_DisableService() {
 }
 
 func ExampleClient_GetService() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.GetServiceRequest{
 		// TODO: Fill request struct fields.
@@ -101,14 +100,12 @@ func ExampleClient_GetService() {
 }
 
 func ExampleClient_ListServices() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.ListServicesRequest{
 		// TODO: Fill request struct fields.
@@ -128,13 +125,12 @@ func ExampleClient_ListServices() {
 }
 
 func ExampleClient_BatchEnableServices() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.BatchEnableServicesRequest{
 		// TODO: Fill request struct fields.
@@ -151,14 +147,12 @@ func ExampleClient_BatchEnableServices() {
 }
 
 func ExampleClient_ListConsumerQuotaMetrics() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.ListConsumerQuotaMetricsRequest{
 		// TODO: Fill request struct fields.
@@ -178,13 +172,12 @@ func ExampleClient_ListConsumerQuotaMetrics() {
 }
 
 func ExampleClient_GetConsumerQuotaMetric() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.GetConsumerQuotaMetricRequest{
 		// TODO: Fill request struct fields.
@@ -198,13 +191,12 @@ func ExampleClient_GetConsumerQuotaMetric() {
 }
 
 func ExampleClient_GetConsumerQuotaLimit() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.GetConsumerQuotaLimitRequest{
 		// TODO: Fill request struct fields.
@@ -218,13 +210,12 @@ func ExampleClient_GetConsumerQuotaLimit() {
 }
 
 func ExampleClient_CreateAdminOverride() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.CreateAdminOverrideRequest{
 		// TODO: Fill request struct fields.
@@ -243,13 +234,12 @@ func ExampleClient_CreateAdminOverride() {
 }
 
 func ExampleClient_UpdateAdminOverride() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.UpdateAdminOverrideRequest{
 		// TODO: Fill request struct fields.
@@ -268,13 +258,12 @@ func ExampleClient_UpdateAdminOverride() {
 }
 
 func ExampleClient_DeleteAdminOverride() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.DeleteAdminOverrideRequest{
 		// TODO: Fill request struct fields.
@@ -291,14 +280,12 @@ func ExampleClient_DeleteAdminOverride() {
 }
 
 func ExampleClient_ListAdminOverrides() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.ListAdminOverridesRequest{
 		// TODO: Fill request struct fields.
@@ -318,13 +305,12 @@ func ExampleClient_ListAdminOverrides() {
 }
 
 func ExampleClient_ImportAdminOverrides() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.ImportAdminOverridesRequest{
 		// TODO: Fill request struct fields.
@@ -343,13 +329,12 @@ func ExampleClient_ImportAdminOverrides() {
 }
 
 func ExampleClient_CreateConsumerOverride() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.CreateConsumerOverrideRequest{
 		// TODO: Fill request struct fields.
@@ -368,13 +353,12 @@ func ExampleClient_CreateConsumerOverride() {
 }
 
 func ExampleClient_UpdateConsumerOverride() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.UpdateConsumerOverrideRequest{
 		// TODO: Fill request struct fields.
@@ -393,13 +377,12 @@ func ExampleClient_UpdateConsumerOverride() {
 }
 
 func ExampleClient_DeleteConsumerOverride() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.DeleteConsumerOverrideRequest{
 		// TODO: Fill request struct fields.
@@ -416,14 +399,12 @@ func ExampleClient_DeleteConsumerOverride() {
 }
 
 func ExampleClient_ListConsumerOverrides() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.ListConsumerOverridesRequest{
 		// TODO: Fill request struct fields.
@@ -443,13 +424,12 @@ func ExampleClient_ListConsumerOverrides() {
 }
 
 func ExampleClient_ImportConsumerOverrides() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.ImportConsumerOverridesRequest{
 		// TODO: Fill request struct fields.
@@ -468,13 +448,12 @@ func ExampleClient_ImportConsumerOverrides() {
 }
 
 func ExampleClient_GenerateServiceIdentity() {
-	// import serviceusagepb "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1"
-
 	ctx := context.Background()
 	c, err := serviceusage.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &serviceusagepb.GenerateServiceIdentityRequest{
 		// TODO: Fill request struct fields.

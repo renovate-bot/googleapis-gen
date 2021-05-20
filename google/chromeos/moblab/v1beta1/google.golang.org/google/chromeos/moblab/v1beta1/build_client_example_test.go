@@ -30,19 +30,19 @@ func ExampleNewBuildClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleBuildClient_ListBuilds() {
-	// import moblabpb "google.golang.org/genproto/googleapis/chromeos/moblab/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := moblab.NewBuildClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &moblabpb.ListBuildsRequest{
 		// TODO: Fill request struct fields.
@@ -62,13 +62,12 @@ func ExampleBuildClient_ListBuilds() {
 }
 
 func ExampleBuildClient_CheckBuildStageStatus() {
-	// import moblabpb "google.golang.org/genproto/googleapis/chromeos/moblab/v1beta1"
-
 	ctx := context.Background()
 	c, err := moblab.NewBuildClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &moblabpb.CheckBuildStageStatusRequest{
 		// TODO: Fill request struct fields.
@@ -82,13 +81,12 @@ func ExampleBuildClient_CheckBuildStageStatus() {
 }
 
 func ExampleBuildClient_StageBuild() {
-	// import moblabpb "google.golang.org/genproto/googleapis/chromeos/moblab/v1beta1"
-
 	ctx := context.Background()
 	c, err := moblab.NewBuildClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &moblabpb.StageBuildRequest{
 		// TODO: Fill request struct fields.

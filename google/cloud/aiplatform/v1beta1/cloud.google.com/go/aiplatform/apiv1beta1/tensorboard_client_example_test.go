@@ -30,18 +30,19 @@ func ExampleNewTensorboardClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleTensorboardClient_CreateTensorboard() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateTensorboardRequest{
 		// TODO: Fill request struct fields.
@@ -60,13 +61,12 @@ func ExampleTensorboardClient_CreateTensorboard() {
 }
 
 func ExampleTensorboardClient_GetTensorboard() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetTensorboardRequest{
 		// TODO: Fill request struct fields.
@@ -80,13 +80,12 @@ func ExampleTensorboardClient_GetTensorboard() {
 }
 
 func ExampleTensorboardClient_UpdateTensorboard() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateTensorboardRequest{
 		// TODO: Fill request struct fields.
@@ -105,14 +104,12 @@ func ExampleTensorboardClient_UpdateTensorboard() {
 }
 
 func ExampleTensorboardClient_ListTensorboards() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListTensorboardsRequest{
 		// TODO: Fill request struct fields.
@@ -132,13 +129,12 @@ func ExampleTensorboardClient_ListTensorboards() {
 }
 
 func ExampleTensorboardClient_DeleteTensorboard() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteTensorboardRequest{
 		// TODO: Fill request struct fields.
@@ -155,13 +151,12 @@ func ExampleTensorboardClient_DeleteTensorboard() {
 }
 
 func ExampleTensorboardClient_CreateTensorboardExperiment() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateTensorboardExperimentRequest{
 		// TODO: Fill request struct fields.
@@ -175,13 +170,12 @@ func ExampleTensorboardClient_CreateTensorboardExperiment() {
 }
 
 func ExampleTensorboardClient_GetTensorboardExperiment() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetTensorboardExperimentRequest{
 		// TODO: Fill request struct fields.
@@ -195,13 +189,12 @@ func ExampleTensorboardClient_GetTensorboardExperiment() {
 }
 
 func ExampleTensorboardClient_UpdateTensorboardExperiment() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateTensorboardExperimentRequest{
 		// TODO: Fill request struct fields.
@@ -215,14 +208,12 @@ func ExampleTensorboardClient_UpdateTensorboardExperiment() {
 }
 
 func ExampleTensorboardClient_ListTensorboardExperiments() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListTensorboardExperimentsRequest{
 		// TODO: Fill request struct fields.
@@ -242,13 +233,12 @@ func ExampleTensorboardClient_ListTensorboardExperiments() {
 }
 
 func ExampleTensorboardClient_DeleteTensorboardExperiment() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteTensorboardExperimentRequest{
 		// TODO: Fill request struct fields.
@@ -265,13 +255,12 @@ func ExampleTensorboardClient_DeleteTensorboardExperiment() {
 }
 
 func ExampleTensorboardClient_CreateTensorboardRun() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateTensorboardRunRequest{
 		// TODO: Fill request struct fields.
@@ -285,13 +274,12 @@ func ExampleTensorboardClient_CreateTensorboardRun() {
 }
 
 func ExampleTensorboardClient_GetTensorboardRun() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetTensorboardRunRequest{
 		// TODO: Fill request struct fields.
@@ -305,13 +293,12 @@ func ExampleTensorboardClient_GetTensorboardRun() {
 }
 
 func ExampleTensorboardClient_UpdateTensorboardRun() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateTensorboardRunRequest{
 		// TODO: Fill request struct fields.
@@ -325,14 +312,12 @@ func ExampleTensorboardClient_UpdateTensorboardRun() {
 }
 
 func ExampleTensorboardClient_ListTensorboardRuns() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListTensorboardRunsRequest{
 		// TODO: Fill request struct fields.
@@ -352,13 +337,12 @@ func ExampleTensorboardClient_ListTensorboardRuns() {
 }
 
 func ExampleTensorboardClient_DeleteTensorboardRun() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteTensorboardRunRequest{
 		// TODO: Fill request struct fields.
@@ -375,13 +359,12 @@ func ExampleTensorboardClient_DeleteTensorboardRun() {
 }
 
 func ExampleTensorboardClient_CreateTensorboardTimeSeries() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateTensorboardTimeSeriesRequest{
 		// TODO: Fill request struct fields.
@@ -395,13 +378,12 @@ func ExampleTensorboardClient_CreateTensorboardTimeSeries() {
 }
 
 func ExampleTensorboardClient_GetTensorboardTimeSeries() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetTensorboardTimeSeriesRequest{
 		// TODO: Fill request struct fields.
@@ -415,13 +397,12 @@ func ExampleTensorboardClient_GetTensorboardTimeSeries() {
 }
 
 func ExampleTensorboardClient_UpdateTensorboardTimeSeries() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateTensorboardTimeSeriesRequest{
 		// TODO: Fill request struct fields.
@@ -435,14 +416,12 @@ func ExampleTensorboardClient_UpdateTensorboardTimeSeries() {
 }
 
 func ExampleTensorboardClient_ListTensorboardTimeSeries() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListTensorboardTimeSeriesRequest{
 		// TODO: Fill request struct fields.
@@ -462,13 +441,12 @@ func ExampleTensorboardClient_ListTensorboardTimeSeries() {
 }
 
 func ExampleTensorboardClient_DeleteTensorboardTimeSeries() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteTensorboardTimeSeriesRequest{
 		// TODO: Fill request struct fields.
@@ -485,13 +463,12 @@ func ExampleTensorboardClient_DeleteTensorboardTimeSeries() {
 }
 
 func ExampleTensorboardClient_ReadTensorboardTimeSeriesData() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ReadTensorboardTimeSeriesDataRequest{
 		// TODO: Fill request struct fields.
@@ -505,13 +482,12 @@ func ExampleTensorboardClient_ReadTensorboardTimeSeriesData() {
 }
 
 func ExampleTensorboardClient_WriteTensorboardRunData() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.WriteTensorboardRunDataRequest{
 		// TODO: Fill request struct fields.
@@ -525,14 +501,12 @@ func ExampleTensorboardClient_WriteTensorboardRunData() {
 }
 
 func ExampleTensorboardClient_ExportTensorboardTimeSeriesData() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ExportTensorboardTimeSeriesDataRequest{
 		// TODO: Fill request struct fields.

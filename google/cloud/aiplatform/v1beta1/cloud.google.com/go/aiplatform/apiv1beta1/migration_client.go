@@ -45,7 +45,7 @@ type MigrationCallOptions struct {
 	BatchMigrateResources     []gax.CallOption
 }
 
-func defaultMigrationClientOptions() []option.ClientOption {
+func defaultMigrationGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("aiplatform.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("aiplatform.mtls.googleapis.com:443"),
@@ -64,38 +64,107 @@ func defaultMigrationCallOptions() *MigrationCallOptions {
 	}
 }
 
+// internalMigrationClient is an interface that defines the methods availaible from Cloud AI Platform API.
+type internalMigrationClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	SearchMigratableResources(context.Context, *aiplatformpb.SearchMigratableResourcesRequest, ...gax.CallOption) *MigratableResourceIterator
+	BatchMigrateResources(context.Context, *aiplatformpb.BatchMigrateResourcesRequest, ...gax.CallOption) (*BatchMigrateResourcesOperation, error)
+	BatchMigrateResourcesOperation(name string) *BatchMigrateResourcesOperation
+}
+
 // MigrationClient is a client for interacting with Cloud AI Platform API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// A service that migrates resources from automl.googleapis.com (at http://automl.googleapis.com),
+// datalabeling.googleapis.com (at http://datalabeling.googleapis.com) and ml.googleapis.com (at http://ml.googleapis.com) to AI Platform.
+type MigrationClient struct {
+	// The internal transport-dependent client.
+	internalClient internalMigrationClient
+
+	// The call options for this service.
+	CallOptions *MigrationCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *MigrationClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *MigrationClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *MigrationClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// SearchMigratableResources searches all of the resources in automl.googleapis.com (at http://automl.googleapis.com),
+// datalabeling.googleapis.com (at http://datalabeling.googleapis.com) and ml.googleapis.com (at http://ml.googleapis.com) that can be migrated to
+// AI Platform’s given location.
+func (c *MigrationClient) SearchMigratableResources(ctx context.Context, req *aiplatformpb.SearchMigratableResourcesRequest, opts ...gax.CallOption) *MigratableResourceIterator {
+	return c.internalClient.SearchMigratableResources(ctx, req, opts...)
+}
+
+// BatchMigrateResources batch migrates resources from ml.googleapis.com (at http://ml.googleapis.com), automl.googleapis.com (at http://automl.googleapis.com),
+// and datalabeling.googleapis.com (at http://datalabeling.googleapis.com) to AI Platform (Unified).
+func (c *MigrationClient) BatchMigrateResources(ctx context.Context, req *aiplatformpb.BatchMigrateResourcesRequest, opts ...gax.CallOption) (*BatchMigrateResourcesOperation, error) {
+	return c.internalClient.BatchMigrateResources(ctx, req, opts...)
+}
+
+// BatchMigrateResourcesOperation returns a new BatchMigrateResourcesOperation from a given name.
+// The name must be that of a previously created BatchMigrateResourcesOperation, possibly from a different process.
+func (c *MigrationClient) BatchMigrateResourcesOperation(name string) *BatchMigrateResourcesOperation {
+	return c.internalClient.BatchMigrateResourcesOperation(name)
+}
+
+// migrationGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type MigrationClient struct {
+type migrationGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing MigrationClient
+	CallOptions **MigrationCallOptions
+
 	// The gRPC API client.
 	migrationClient aiplatformpb.MigrationServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *MigrationCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewMigrationClient creates a new migration service client.
+// NewMigrationClient creates a new migration service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // A service that migrates resources from automl.googleapis.com (at http://automl.googleapis.com),
 // datalabeling.googleapis.com (at http://datalabeling.googleapis.com) and ml.googleapis.com (at http://ml.googleapis.com) to AI Platform.
 func NewMigrationClient(ctx context.Context, opts ...option.ClientOption) (*MigrationClient, error) {
-	clientOpts := defaultMigrationClientOptions()
-
+	clientOpts := defaultMigrationGRPCClientOptions()
 	if newMigrationClientHook != nil {
 		hookOpts, err := newMigrationClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -113,16 +182,19 @@ func NewMigrationClient(ctx context.Context, opts ...option.ClientOption) (*Migr
 	if err != nil {
 		return nil, err
 	}
-	c := &MigrationClient{
+	client := MigrationClient{CallOptions: defaultMigrationCallOptions()}
+
+	c := &migrationGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultMigrationCallOptions(),
-
-		migrationClient: aiplatformpb.NewMigrationServiceClient(connPool),
+		migrationClient:  aiplatformpb.NewMigrationServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -132,38 +204,36 @@ func NewMigrationClient(ctx context.Context, opts ...option.ClientOption) (*Migr
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *MigrationClient) Connection() *grpc.ClientConn {
+func (c *migrationGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *MigrationClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *MigrationClient) setGoogleClientInfo(keyval ...string) {
+func (c *migrationGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// SearchMigratableResources searches all of the resources in automl.googleapis.com (at http://automl.googleapis.com),
-// datalabeling.googleapis.com (at http://datalabeling.googleapis.com) and ml.googleapis.com (at http://ml.googleapis.com) that can be migrated to
-// AI Platform’s given location.
-func (c *MigrationClient) SearchMigratableResources(ctx context.Context, req *aiplatformpb.SearchMigratableResourcesRequest, opts ...gax.CallOption) *MigratableResourceIterator {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *migrationGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *migrationGRPCClient) SearchMigratableResources(ctx context.Context, req *aiplatformpb.SearchMigratableResourcesRequest, opts ...gax.CallOption) *MigratableResourceIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SearchMigratableResources[0:len(c.CallOptions.SearchMigratableResources):len(c.CallOptions.SearchMigratableResources)], opts...)
+	opts = append((*c.CallOptions).SearchMigratableResources[0:len((*c.CallOptions).SearchMigratableResources):len((*c.CallOptions).SearchMigratableResources)], opts...)
 	it := &MigratableResourceIterator{}
 	req = proto.Clone(req).(*aiplatformpb.SearchMigratableResourcesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.MigratableResource, string, error) {
@@ -200,12 +270,10 @@ func (c *MigrationClient) SearchMigratableResources(ctx context.Context, req *ai
 	return it
 }
 
-// BatchMigrateResources batch migrates resources from ml.googleapis.com (at http://ml.googleapis.com), automl.googleapis.com (at http://automl.googleapis.com),
-// and datalabeling.googleapis.com (at http://datalabeling.googleapis.com) to AI Platform (Unified).
-func (c *MigrationClient) BatchMigrateResources(ctx context.Context, req *aiplatformpb.BatchMigrateResourcesRequest, opts ...gax.CallOption) (*BatchMigrateResourcesOperation, error) {
+func (c *migrationGRPCClient) BatchMigrateResources(ctx context.Context, req *aiplatformpb.BatchMigrateResourcesRequest, opts ...gax.CallOption) (*BatchMigrateResourcesOperation, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.BatchMigrateResources[0:len(c.CallOptions.BatchMigrateResources):len(c.CallOptions.BatchMigrateResources)], opts...)
+	opts = append((*c.CallOptions).BatchMigrateResources[0:len((*c.CallOptions).BatchMigrateResources):len((*c.CallOptions).BatchMigrateResources)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -216,7 +284,7 @@ func (c *MigrationClient) BatchMigrateResources(ctx context.Context, req *aiplat
 		return nil, err
 	}
 	return &BatchMigrateResourcesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
@@ -227,9 +295,9 @@ type BatchMigrateResourcesOperation struct {
 
 // BatchMigrateResourcesOperation returns a new BatchMigrateResourcesOperation from a given name.
 // The name must be that of a previously created BatchMigrateResourcesOperation, possibly from a different process.
-func (c *MigrationClient) BatchMigrateResourcesOperation(name string) *BatchMigrateResourcesOperation {
+func (c *migrationGRPCClient) BatchMigrateResourcesOperation(name string) *BatchMigrateResourcesOperation {
 	return &BatchMigrateResourcesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

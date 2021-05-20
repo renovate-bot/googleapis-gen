@@ -43,7 +43,7 @@ type AdMobApiCallOptions struct {
 	GenerateMediationReport []gax.CallOption
 }
 
-func defaultAdMobApiClientOptions() []option.ClientOption {
+func defaultAdMobApiGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("admob.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("admob.mtls.googleapis.com:443"),
@@ -64,33 +64,102 @@ func defaultAdMobApiCallOptions() *AdMobApiCallOptions {
 	}
 }
 
+// internalAdMobApiClient is an interface that defines the methods availaible from AdMob API.
+type internalAdMobApiClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	GetPublisherAccount(context.Context, *admobpb.GetPublisherAccountRequest, ...gax.CallOption) (*admobpb.PublisherAccount, error)
+	ListPublisherAccounts(context.Context, *admobpb.ListPublisherAccountsRequest, ...gax.CallOption) *PublisherAccountIterator
+	GenerateNetworkReport(context.Context, *admobpb.GenerateNetworkReportRequest, ...gax.CallOption) (admobpb.AdMobApi_GenerateNetworkReportClient, error)
+	GenerateMediationReport(context.Context, *admobpb.GenerateMediationReportRequest, ...gax.CallOption) (admobpb.AdMobApi_GenerateMediationReportClient, error)
+}
+
 // AdMobApiClient is a client for interacting with AdMob API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// The AdMob API allows AdMob publishers programmatically get information about
+// their AdMob account.
+type AdMobApiClient struct {
+	// The internal transport-dependent client.
+	internalClient internalAdMobApiClient
+
+	// The call options for this service.
+	CallOptions *AdMobApiCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *AdMobApiClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *AdMobApiClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *AdMobApiClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// GetPublisherAccount gets information about the specified AdMob publisher account.
+func (c *AdMobApiClient) GetPublisherAccount(ctx context.Context, req *admobpb.GetPublisherAccountRequest, opts ...gax.CallOption) (*admobpb.PublisherAccount, error) {
+	return c.internalClient.GetPublisherAccount(ctx, req, opts...)
+}
+
+// ListPublisherAccounts lists the AdMob publisher account accessible with the client credential.
+// Currently, all credentials have access to at most one AdMob account.
+func (c *AdMobApiClient) ListPublisherAccounts(ctx context.Context, req *admobpb.ListPublisherAccountsRequest, opts ...gax.CallOption) *PublisherAccountIterator {
+	return c.internalClient.ListPublisherAccounts(ctx, req, opts...)
+}
+
+// GenerateNetworkReport generates an AdMob Network report based on the provided report
+// specification.
+func (c *AdMobApiClient) GenerateNetworkReport(ctx context.Context, req *admobpb.GenerateNetworkReportRequest, opts ...gax.CallOption) (admobpb.AdMobApi_GenerateNetworkReportClient, error) {
+	return c.internalClient.GenerateNetworkReport(ctx, req, opts...)
+}
+
+// GenerateMediationReport generates an AdMob Mediation report based on the provided report
+// specification.
+func (c *AdMobApiClient) GenerateMediationReport(ctx context.Context, req *admobpb.GenerateMediationReportRequest, opts ...gax.CallOption) (admobpb.AdMobApi_GenerateMediationReportClient, error) {
+	return c.internalClient.GenerateMediationReport(ctx, req, opts...)
+}
+
+// adMobApiGRPCClient is a client for interacting with AdMob API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type AdMobApiClient struct {
+type adMobApiGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing AdMobApiClient
+	CallOptions **AdMobApiCallOptions
+
 	// The gRPC API client.
 	adMobApiClient admobpb.AdMobApiClient
-
-	// The call options for this service.
-	CallOptions *AdMobApiCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewAdMobApiClient creates a new ad mob api client.
+// NewAdMobApiClient creates a new ad mob api client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // The AdMob API allows AdMob publishers programmatically get information about
 // their AdMob account.
 func NewAdMobApiClient(ctx context.Context, opts ...option.ClientOption) (*AdMobApiClient, error) {
-	clientOpts := defaultAdMobApiClientOptions()
-
+	clientOpts := defaultAdMobApiGRPCClientOptions()
 	if newAdMobApiClientHook != nil {
 		hookOpts, err := newAdMobApiClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -108,45 +177,47 @@ func NewAdMobApiClient(ctx context.Context, opts ...option.ClientOption) (*AdMob
 	if err != nil {
 		return nil, err
 	}
-	c := &AdMobApiClient{
+	client := AdMobApiClient{CallOptions: defaultAdMobApiCallOptions()}
+
+	c := &adMobApiGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultAdMobApiCallOptions(),
-
-		adMobApiClient: admobpb.NewAdMobApiClient(connPool),
+		adMobApiClient:   admobpb.NewAdMobApiClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *AdMobApiClient) Connection() *grpc.ClientConn {
+func (c *adMobApiGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *AdMobApiClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *AdMobApiClient) setGoogleClientInfo(keyval ...string) {
+func (c *adMobApiGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// GetPublisherAccount gets information about the specified AdMob publisher account.
-func (c *AdMobApiClient) GetPublisherAccount(ctx context.Context, req *admobpb.GetPublisherAccountRequest, opts ...gax.CallOption) (*admobpb.PublisherAccount, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *adMobApiGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *adMobApiGRPCClient) GetPublisherAccount(ctx context.Context, req *admobpb.GetPublisherAccountRequest, opts ...gax.CallOption) (*admobpb.PublisherAccount, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetPublisherAccount[0:len(c.CallOptions.GetPublisherAccount):len(c.CallOptions.GetPublisherAccount)], opts...)
+	opts = append((*c.CallOptions).GetPublisherAccount[0:len((*c.CallOptions).GetPublisherAccount):len((*c.CallOptions).GetPublisherAccount)], opts...)
 	var resp *admobpb.PublisherAccount
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -159,11 +230,9 @@ func (c *AdMobApiClient) GetPublisherAccount(ctx context.Context, req *admobpb.G
 	return resp, nil
 }
 
-// ListPublisherAccounts lists the AdMob publisher account accessible with the client credential.
-// Currently, all credentials have access to at most one AdMob account.
-func (c *AdMobApiClient) ListPublisherAccounts(ctx context.Context, req *admobpb.ListPublisherAccountsRequest, opts ...gax.CallOption) *PublisherAccountIterator {
+func (c *adMobApiGRPCClient) ListPublisherAccounts(ctx context.Context, req *admobpb.ListPublisherAccountsRequest, opts ...gax.CallOption) *PublisherAccountIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.ListPublisherAccounts[0:len(c.CallOptions.ListPublisherAccounts):len(c.CallOptions.ListPublisherAccounts)], opts...)
+	opts = append((*c.CallOptions).ListPublisherAccounts[0:len((*c.CallOptions).ListPublisherAccounts):len((*c.CallOptions).ListPublisherAccounts)], opts...)
 	it := &PublisherAccountIterator{}
 	req = proto.Clone(req).(*admobpb.ListPublisherAccountsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*admobpb.PublisherAccount, string, error) {
@@ -200,12 +269,9 @@ func (c *AdMobApiClient) ListPublisherAccounts(ctx context.Context, req *admobpb
 	return it
 }
 
-// GenerateNetworkReport generates an AdMob Network report based on the provided report
-// specification.
-func (c *AdMobApiClient) GenerateNetworkReport(ctx context.Context, req *admobpb.GenerateNetworkReportRequest, opts ...gax.CallOption) (admobpb.AdMobApi_GenerateNetworkReportClient, error) {
+func (c *adMobApiGRPCClient) GenerateNetworkReport(ctx context.Context, req *admobpb.GenerateNetworkReportRequest, opts ...gax.CallOption) (admobpb.AdMobApi_GenerateNetworkReportClient, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GenerateNetworkReport[0:len(c.CallOptions.GenerateNetworkReport):len(c.CallOptions.GenerateNetworkReport)], opts...)
 	var resp admobpb.AdMobApi_GenerateNetworkReportClient
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -218,12 +284,9 @@ func (c *AdMobApiClient) GenerateNetworkReport(ctx context.Context, req *admobpb
 	return resp, nil
 }
 
-// GenerateMediationReport generates an AdMob Mediation report based on the provided report
-// specification.
-func (c *AdMobApiClient) GenerateMediationReport(ctx context.Context, req *admobpb.GenerateMediationReportRequest, opts ...gax.CallOption) (admobpb.AdMobApi_GenerateMediationReportClient, error) {
+func (c *adMobApiGRPCClient) GenerateMediationReport(ctx context.Context, req *admobpb.GenerateMediationReportRequest, opts ...gax.CallOption) (admobpb.AdMobApi_GenerateMediationReportClient, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GenerateMediationReport[0:len(c.CallOptions.GenerateMediationReport):len(c.CallOptions.GenerateMediationReport)], opts...)
 	var resp admobpb.AdMobApi_GenerateMediationReportClient
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

@@ -38,7 +38,7 @@ type CallOptions struct {
 	LogImpressions          []gax.CallOption
 }
 
-func defaultClientOptions() []option.ClientOption {
+func defaultGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("playablelocations.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("playablelocations.mtls.googleapis.com:443"),
@@ -58,32 +58,102 @@ func defaultCallOptions() *CallOptions {
 	}
 }
 
+// internalClient is an interface that defines the methods availaible from Playable Locations API.
+type internalClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	SamplePlayableLocations(context.Context, *playablelocationspb.SamplePlayableLocationsRequest, ...gax.CallOption) (*playablelocationspb.SamplePlayableLocationsResponse, error)
+	LogPlayerReports(context.Context, *playablelocationspb.LogPlayerReportsRequest, ...gax.CallOption) (*playablelocationspb.LogPlayerReportsResponse, error)
+	LogImpressions(context.Context, *playablelocationspb.LogImpressionsRequest, ...gax.CallOption) (*playablelocationspb.LogImpressionsResponse, error)
+}
+
 // Client is a client for interacting with Playable Locations API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// The Playable Locations API for v3.
+type Client struct {
+	// The internal transport-dependent client.
+	internalClient internalClient
+
+	// The call options for this service.
+	CallOptions *CallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *Client) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *Client) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *Client) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// SamplePlayableLocations returns a set of playable locations that lie within a specified area,
+// that satisfy optional filter criteria.
+//
+// Note: Identical SamplePlayableLocations requests can return different
+// results as the state of the world changes over time.
+func (c *Client) SamplePlayableLocations(ctx context.Context, req *playablelocationspb.SamplePlayableLocationsRequest, opts ...gax.CallOption) (*playablelocationspb.SamplePlayableLocationsResponse, error) {
+	return c.internalClient.SamplePlayableLocations(ctx, req, opts...)
+}
+
+// LogPlayerReports logs bad playable location reports submitted by players.
+//
+// Reports are not partially saved; either all reports are saved and this
+// request succeeds, or no reports are saved, and this request fails.
+func (c *Client) LogPlayerReports(ctx context.Context, req *playablelocationspb.LogPlayerReportsRequest, opts ...gax.CallOption) (*playablelocationspb.LogPlayerReportsResponse, error) {
+	return c.internalClient.LogPlayerReports(ctx, req, opts...)
+}
+
+// LogImpressions logs new events when playable locations are displayed, and when they are
+// interacted with.
+//
+// Impressions are not partially saved; either all impressions are saved and
+// this request succeeds, or no impressions are saved, and this request fails.
+func (c *Client) LogImpressions(ctx context.Context, req *playablelocationspb.LogImpressionsRequest, opts ...gax.CallOption) (*playablelocationspb.LogImpressionsResponse, error) {
+	return c.internalClient.LogImpressions(ctx, req, opts...)
+}
+
+// gRPCClient is a client for interacting with Playable Locations API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type Client struct {
+type gRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing Client
+	CallOptions **CallOptions
+
 	// The gRPC API client.
 	client playablelocationspb.PlayableLocationsClient
-
-	// The call options for this service.
-	CallOptions *CallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewClient creates a new playable locations client.
+// NewClient creates a new playable locations client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // The Playable Locations API for v3.
 func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
-	clientOpts := defaultClientOptions()
-
+	clientOpts := defaultGRPCClientOptions()
 	if newClientHook != nil {
 		hookOpts, err := newClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -101,48 +171,46 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 	if err != nil {
 		return nil, err
 	}
-	c := &Client{
+	client := Client{CallOptions: defaultCallOptions()}
+
+	c := &gRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultCallOptions(),
-
-		client: playablelocationspb.NewPlayableLocationsClient(connPool),
+		client:           playablelocationspb.NewPlayableLocationsClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *Client) Connection() *grpc.ClientConn {
+func (c *gRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *Client) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *Client) setGoogleClientInfo(keyval ...string) {
+func (c *gRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// SamplePlayableLocations returns a set of playable locations that lie within a specified area,
-// that satisfy optional filter criteria.
-//
-// Note: Identical SamplePlayableLocations requests can return different
-// results as the state of the world changes over time.
-func (c *Client) SamplePlayableLocations(ctx context.Context, req *playablelocationspb.SamplePlayableLocationsRequest, opts ...gax.CallOption) (*playablelocationspb.SamplePlayableLocationsResponse, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *gRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *gRPCClient) SamplePlayableLocations(ctx context.Context, req *playablelocationspb.SamplePlayableLocationsRequest, opts ...gax.CallOption) (*playablelocationspb.SamplePlayableLocationsResponse, error) {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.SamplePlayableLocations[0:len(c.CallOptions.SamplePlayableLocations):len(c.CallOptions.SamplePlayableLocations)], opts...)
+	opts = append((*c.CallOptions).SamplePlayableLocations[0:len((*c.CallOptions).SamplePlayableLocations):len((*c.CallOptions).SamplePlayableLocations)], opts...)
 	var resp *playablelocationspb.SamplePlayableLocationsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -155,13 +223,9 @@ func (c *Client) SamplePlayableLocations(ctx context.Context, req *playablelocat
 	return resp, nil
 }
 
-// LogPlayerReports logs bad playable location reports submitted by players.
-//
-// Reports are not partially saved; either all reports are saved and this
-// request succeeds, or no reports are saved, and this request fails.
-func (c *Client) LogPlayerReports(ctx context.Context, req *playablelocationspb.LogPlayerReportsRequest, opts ...gax.CallOption) (*playablelocationspb.LogPlayerReportsResponse, error) {
+func (c *gRPCClient) LogPlayerReports(ctx context.Context, req *playablelocationspb.LogPlayerReportsRequest, opts ...gax.CallOption) (*playablelocationspb.LogPlayerReportsResponse, error) {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.LogPlayerReports[0:len(c.CallOptions.LogPlayerReports):len(c.CallOptions.LogPlayerReports)], opts...)
+	opts = append((*c.CallOptions).LogPlayerReports[0:len((*c.CallOptions).LogPlayerReports):len((*c.CallOptions).LogPlayerReports)], opts...)
 	var resp *playablelocationspb.LogPlayerReportsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -174,14 +238,9 @@ func (c *Client) LogPlayerReports(ctx context.Context, req *playablelocationspb.
 	return resp, nil
 }
 
-// LogImpressions logs new events when playable locations are displayed, and when they are
-// interacted with.
-//
-// Impressions are not partially saved; either all impressions are saved and
-// this request succeeds, or no impressions are saved, and this request fails.
-func (c *Client) LogImpressions(ctx context.Context, req *playablelocationspb.LogImpressionsRequest, opts ...gax.CallOption) (*playablelocationspb.LogImpressionsResponse, error) {
+func (c *gRPCClient) LogImpressions(ctx context.Context, req *playablelocationspb.LogImpressionsRequest, opts ...gax.CallOption) (*playablelocationspb.LogImpressionsResponse, error) {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.LogImpressions[0:len(c.CallOptions.LogImpressions):len(c.CallOptions.LogImpressions)], opts...)
+	opts = append((*c.CallOptions).LogImpressions[0:len((*c.CallOptions).LogImpressions):len((*c.CallOptions).LogImpressions)], opts...)
 	var resp *playablelocationspb.LogImpressionsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

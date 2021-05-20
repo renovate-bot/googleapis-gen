@@ -48,7 +48,7 @@ type SpecialistPoolCallOptions struct {
 	UpdateSpecialistPool []gax.CallOption
 }
 
-func defaultSpecialistPoolClientOptions() []option.ClientOption {
+func defaultSpecialistPoolGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("aiplatform.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("aiplatform.mtls.googleapis.com:443"),
@@ -70,32 +70,135 @@ func defaultSpecialistPoolCallOptions() *SpecialistPoolCallOptions {
 	}
 }
 
+// internalSpecialistPoolClient is an interface that defines the methods availaible from Cloud AI Platform API.
+type internalSpecialistPoolClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateSpecialistPool(context.Context, *aiplatformpb.CreateSpecialistPoolRequest, ...gax.CallOption) (*CreateSpecialistPoolOperation, error)
+	CreateSpecialistPoolOperation(name string) *CreateSpecialistPoolOperation
+	GetSpecialistPool(context.Context, *aiplatformpb.GetSpecialistPoolRequest, ...gax.CallOption) (*aiplatformpb.SpecialistPool, error)
+	ListSpecialistPools(context.Context, *aiplatformpb.ListSpecialistPoolsRequest, ...gax.CallOption) *SpecialistPoolIterator
+	DeleteSpecialistPool(context.Context, *aiplatformpb.DeleteSpecialistPoolRequest, ...gax.CallOption) (*DeleteSpecialistPoolOperation, error)
+	DeleteSpecialistPoolOperation(name string) *DeleteSpecialistPoolOperation
+	UpdateSpecialistPool(context.Context, *aiplatformpb.UpdateSpecialistPoolRequest, ...gax.CallOption) (*UpdateSpecialistPoolOperation, error)
+	UpdateSpecialistPoolOperation(name string) *UpdateSpecialistPoolOperation
+}
+
 // SpecialistPoolClient is a client for interacting with Cloud AI Platform API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// A service for creating and managing Customer SpecialistPools.
+// When customers start Data Labeling jobs, they can reuse/create Specialist
+// Pools to bring their own Specialists to label the data.
+// Customers can add/remove Managers for the Specialist Pool on Cloud console,
+// then Managers will get email notifications to manage Specialists and tasks on
+// CrowdCompute console.
+type SpecialistPoolClient struct {
+	// The internal transport-dependent client.
+	internalClient internalSpecialistPoolClient
+
+	// The call options for this service.
+	CallOptions *SpecialistPoolCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *SpecialistPoolClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *SpecialistPoolClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *SpecialistPoolClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateSpecialistPool creates a SpecialistPool.
+func (c *SpecialistPoolClient) CreateSpecialistPool(ctx context.Context, req *aiplatformpb.CreateSpecialistPoolRequest, opts ...gax.CallOption) (*CreateSpecialistPoolOperation, error) {
+	return c.internalClient.CreateSpecialistPool(ctx, req, opts...)
+}
+
+// CreateSpecialistPoolOperation returns a new CreateSpecialistPoolOperation from a given name.
+// The name must be that of a previously created CreateSpecialistPoolOperation, possibly from a different process.
+func (c *SpecialistPoolClient) CreateSpecialistPoolOperation(name string) *CreateSpecialistPoolOperation {
+	return c.internalClient.CreateSpecialistPoolOperation(name)
+}
+
+// GetSpecialistPool gets a SpecialistPool.
+func (c *SpecialistPoolClient) GetSpecialistPool(ctx context.Context, req *aiplatformpb.GetSpecialistPoolRequest, opts ...gax.CallOption) (*aiplatformpb.SpecialistPool, error) {
+	return c.internalClient.GetSpecialistPool(ctx, req, opts...)
+}
+
+// ListSpecialistPools lists SpecialistPools in a Location.
+func (c *SpecialistPoolClient) ListSpecialistPools(ctx context.Context, req *aiplatformpb.ListSpecialistPoolsRequest, opts ...gax.CallOption) *SpecialistPoolIterator {
+	return c.internalClient.ListSpecialistPools(ctx, req, opts...)
+}
+
+// DeleteSpecialistPool deletes a SpecialistPool as well as all Specialists in the pool.
+func (c *SpecialistPoolClient) DeleteSpecialistPool(ctx context.Context, req *aiplatformpb.DeleteSpecialistPoolRequest, opts ...gax.CallOption) (*DeleteSpecialistPoolOperation, error) {
+	return c.internalClient.DeleteSpecialistPool(ctx, req, opts...)
+}
+
+// DeleteSpecialistPoolOperation returns a new DeleteSpecialistPoolOperation from a given name.
+// The name must be that of a previously created DeleteSpecialistPoolOperation, possibly from a different process.
+func (c *SpecialistPoolClient) DeleteSpecialistPoolOperation(name string) *DeleteSpecialistPoolOperation {
+	return c.internalClient.DeleteSpecialistPoolOperation(name)
+}
+
+// UpdateSpecialistPool updates a SpecialistPool.
+func (c *SpecialistPoolClient) UpdateSpecialistPool(ctx context.Context, req *aiplatformpb.UpdateSpecialistPoolRequest, opts ...gax.CallOption) (*UpdateSpecialistPoolOperation, error) {
+	return c.internalClient.UpdateSpecialistPool(ctx, req, opts...)
+}
+
+// UpdateSpecialistPoolOperation returns a new UpdateSpecialistPoolOperation from a given name.
+// The name must be that of a previously created UpdateSpecialistPoolOperation, possibly from a different process.
+func (c *SpecialistPoolClient) UpdateSpecialistPoolOperation(name string) *UpdateSpecialistPoolOperation {
+	return c.internalClient.UpdateSpecialistPoolOperation(name)
+}
+
+// specialistPoolGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type SpecialistPoolClient struct {
+type specialistPoolGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing SpecialistPoolClient
+	CallOptions **SpecialistPoolCallOptions
+
 	// The gRPC API client.
 	specialistPoolClient aiplatformpb.SpecialistPoolServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *SpecialistPoolCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewSpecialistPoolClient creates a new specialist pool service client.
+// NewSpecialistPoolClient creates a new specialist pool service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // A service for creating and managing Customer SpecialistPools.
 // When customers start Data Labeling jobs, they can reuse/create Specialist
@@ -104,8 +207,7 @@ type SpecialistPoolClient struct {
 // then Managers will get email notifications to manage Specialists and tasks on
 // CrowdCompute console.
 func NewSpecialistPoolClient(ctx context.Context, opts ...option.ClientOption) (*SpecialistPoolClient, error) {
-	clientOpts := defaultSpecialistPoolClientOptions()
-
+	clientOpts := defaultSpecialistPoolGRPCClientOptions()
 	if newSpecialistPoolClientHook != nil {
 		hookOpts, err := newSpecialistPoolClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -123,16 +225,19 @@ func NewSpecialistPoolClient(ctx context.Context, opts ...option.ClientOption) (
 	if err != nil {
 		return nil, err
 	}
-	c := &SpecialistPoolClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultSpecialistPoolCallOptions(),
+	client := SpecialistPoolClient{CallOptions: defaultSpecialistPoolCallOptions()}
 
+	c := &specialistPoolGRPCClient{
+		connPool:             connPool,
+		disableDeadlines:     disableDeadlines,
 		specialistPoolClient: aiplatformpb.NewSpecialistPoolServiceClient(connPool),
+		CallOptions:          &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -142,33 +247,33 @@ func NewSpecialistPoolClient(ctx context.Context, opts ...option.ClientOption) (
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *SpecialistPoolClient) Connection() *grpc.ClientConn {
+func (c *specialistPoolGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *SpecialistPoolClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *SpecialistPoolClient) setGoogleClientInfo(keyval ...string) {
+func (c *specialistPoolGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateSpecialistPool creates a SpecialistPool.
-func (c *SpecialistPoolClient) CreateSpecialistPool(ctx context.Context, req *aiplatformpb.CreateSpecialistPoolRequest, opts ...gax.CallOption) (*CreateSpecialistPoolOperation, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *specialistPoolGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *specialistPoolGRPCClient) CreateSpecialistPool(ctx context.Context, req *aiplatformpb.CreateSpecialistPoolRequest, opts ...gax.CallOption) (*CreateSpecialistPoolOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -176,7 +281,7 @@ func (c *SpecialistPoolClient) CreateSpecialistPool(ctx context.Context, req *ai
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateSpecialistPool[0:len(c.CallOptions.CreateSpecialistPool):len(c.CallOptions.CreateSpecialistPool)], opts...)
+	opts = append((*c.CallOptions).CreateSpecialistPool[0:len((*c.CallOptions).CreateSpecialistPool):len((*c.CallOptions).CreateSpecialistPool)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -187,12 +292,11 @@ func (c *SpecialistPoolClient) CreateSpecialistPool(ctx context.Context, req *ai
 		return nil, err
 	}
 	return &CreateSpecialistPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetSpecialistPool gets a SpecialistPool.
-func (c *SpecialistPoolClient) GetSpecialistPool(ctx context.Context, req *aiplatformpb.GetSpecialistPoolRequest, opts ...gax.CallOption) (*aiplatformpb.SpecialistPool, error) {
+func (c *specialistPoolGRPCClient) GetSpecialistPool(ctx context.Context, req *aiplatformpb.GetSpecialistPoolRequest, opts ...gax.CallOption) (*aiplatformpb.SpecialistPool, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -200,7 +304,7 @@ func (c *SpecialistPoolClient) GetSpecialistPool(ctx context.Context, req *aipla
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetSpecialistPool[0:len(c.CallOptions.GetSpecialistPool):len(c.CallOptions.GetSpecialistPool)], opts...)
+	opts = append((*c.CallOptions).GetSpecialistPool[0:len((*c.CallOptions).GetSpecialistPool):len((*c.CallOptions).GetSpecialistPool)], opts...)
 	var resp *aiplatformpb.SpecialistPool
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -213,11 +317,10 @@ func (c *SpecialistPoolClient) GetSpecialistPool(ctx context.Context, req *aipla
 	return resp, nil
 }
 
-// ListSpecialistPools lists SpecialistPools in a Location.
-func (c *SpecialistPoolClient) ListSpecialistPools(ctx context.Context, req *aiplatformpb.ListSpecialistPoolsRequest, opts ...gax.CallOption) *SpecialistPoolIterator {
+func (c *specialistPoolGRPCClient) ListSpecialistPools(ctx context.Context, req *aiplatformpb.ListSpecialistPoolsRequest, opts ...gax.CallOption) *SpecialistPoolIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListSpecialistPools[0:len(c.CallOptions.ListSpecialistPools):len(c.CallOptions.ListSpecialistPools)], opts...)
+	opts = append((*c.CallOptions).ListSpecialistPools[0:len((*c.CallOptions).ListSpecialistPools):len((*c.CallOptions).ListSpecialistPools)], opts...)
 	it := &SpecialistPoolIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListSpecialistPoolsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.SpecialistPool, string, error) {
@@ -254,8 +357,7 @@ func (c *SpecialistPoolClient) ListSpecialistPools(ctx context.Context, req *aip
 	return it
 }
 
-// DeleteSpecialistPool deletes a SpecialistPool as well as all Specialists in the pool.
-func (c *SpecialistPoolClient) DeleteSpecialistPool(ctx context.Context, req *aiplatformpb.DeleteSpecialistPoolRequest, opts ...gax.CallOption) (*DeleteSpecialistPoolOperation, error) {
+func (c *specialistPoolGRPCClient) DeleteSpecialistPool(ctx context.Context, req *aiplatformpb.DeleteSpecialistPoolRequest, opts ...gax.CallOption) (*DeleteSpecialistPoolOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -263,7 +365,7 @@ func (c *SpecialistPoolClient) DeleteSpecialistPool(ctx context.Context, req *ai
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteSpecialistPool[0:len(c.CallOptions.DeleteSpecialistPool):len(c.CallOptions.DeleteSpecialistPool)], opts...)
+	opts = append((*c.CallOptions).DeleteSpecialistPool[0:len((*c.CallOptions).DeleteSpecialistPool):len((*c.CallOptions).DeleteSpecialistPool)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -274,12 +376,11 @@ func (c *SpecialistPoolClient) DeleteSpecialistPool(ctx context.Context, req *ai
 		return nil, err
 	}
 	return &DeleteSpecialistPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// UpdateSpecialistPool updates a SpecialistPool.
-func (c *SpecialistPoolClient) UpdateSpecialistPool(ctx context.Context, req *aiplatformpb.UpdateSpecialistPoolRequest, opts ...gax.CallOption) (*UpdateSpecialistPoolOperation, error) {
+func (c *specialistPoolGRPCClient) UpdateSpecialistPool(ctx context.Context, req *aiplatformpb.UpdateSpecialistPoolRequest, opts ...gax.CallOption) (*UpdateSpecialistPoolOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -287,7 +388,7 @@ func (c *SpecialistPoolClient) UpdateSpecialistPool(ctx context.Context, req *ai
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "specialist_pool.name", url.QueryEscape(req.GetSpecialistPool().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateSpecialistPool[0:len(c.CallOptions.UpdateSpecialistPool):len(c.CallOptions.UpdateSpecialistPool)], opts...)
+	opts = append((*c.CallOptions).UpdateSpecialistPool[0:len((*c.CallOptions).UpdateSpecialistPool):len((*c.CallOptions).UpdateSpecialistPool)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -298,7 +399,7 @@ func (c *SpecialistPoolClient) UpdateSpecialistPool(ctx context.Context, req *ai
 		return nil, err
 	}
 	return &UpdateSpecialistPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
@@ -309,9 +410,9 @@ type CreateSpecialistPoolOperation struct {
 
 // CreateSpecialistPoolOperation returns a new CreateSpecialistPoolOperation from a given name.
 // The name must be that of a previously created CreateSpecialistPoolOperation, possibly from a different process.
-func (c *SpecialistPoolClient) CreateSpecialistPoolOperation(name string) *CreateSpecialistPoolOperation {
+func (c *specialistPoolGRPCClient) CreateSpecialistPoolOperation(name string) *CreateSpecialistPoolOperation {
 	return &CreateSpecialistPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -378,9 +479,9 @@ type DeleteSpecialistPoolOperation struct {
 
 // DeleteSpecialistPoolOperation returns a new DeleteSpecialistPoolOperation from a given name.
 // The name must be that of a previously created DeleteSpecialistPoolOperation, possibly from a different process.
-func (c *SpecialistPoolClient) DeleteSpecialistPoolOperation(name string) *DeleteSpecialistPoolOperation {
+func (c *specialistPoolGRPCClient) DeleteSpecialistPoolOperation(name string) *DeleteSpecialistPoolOperation {
 	return &DeleteSpecialistPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -436,9 +537,9 @@ type UpdateSpecialistPoolOperation struct {
 
 // UpdateSpecialistPoolOperation returns a new UpdateSpecialistPoolOperation from a given name.
 // The name must be that of a previously created UpdateSpecialistPoolOperation, possibly from a different process.
-func (c *SpecialistPoolClient) UpdateSpecialistPoolOperation(name string) *UpdateSpecialistPoolOperation {
+func (c *specialistPoolGRPCClient) UpdateSpecialistPoolOperation(name string) *UpdateSpecialistPoolOperation {
 	return &UpdateSpecialistPoolOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

@@ -44,7 +44,7 @@ type HomeGraphApiCallOptions struct {
 	Sync                       []gax.CallOption
 }
 
-func defaultHomeGraphApiClientOptions() []option.ClientOption {
+func defaultHomeGraphApiGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("homegraph.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("homegraph.mtls.googleapis.com:443"),
@@ -99,27 +99,20 @@ func defaultHomeGraphApiCallOptions() *HomeGraphApiCallOptions {
 	}
 }
 
-// HomeGraphApiClient is a client for interacting with HomeGraph API.
-//
-// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type HomeGraphApiClient struct {
-	// Connection pool of gRPC connections to the service.
-	connPool gtransport.ConnPool
-
-	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
-	disableDeadlines bool
-
-	// The gRPC API client.
-	homeGraphApiClient graphpb.HomeGraphApiServiceClient
-
-	// The call options for this service.
-	CallOptions *HomeGraphApiCallOptions
-
-	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+// internalHomeGraphApiClient is an interface that defines the methods availaible from HomeGraph API.
+type internalHomeGraphApiClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	RequestSyncDevices(context.Context, *graphpb.RequestSyncDevicesRequest, ...gax.CallOption) (*graphpb.RequestSyncDevicesResponse, error)
+	ReportStateAndNotification(context.Context, *graphpb.ReportStateAndNotificationRequest, ...gax.CallOption) (*graphpb.ReportStateAndNotificationResponse, error)
+	DeleteAgentUser(context.Context, *graphpb.DeleteAgentUserRequest, ...gax.CallOption) error
+	Query(context.Context, *graphpb.QueryRequest, ...gax.CallOption) (*graphpb.QueryResponse, error)
+	Sync(context.Context, *graphpb.SyncRequest, ...gax.CallOption) (*graphpb.SyncResponse, error)
 }
 
-// NewHomeGraphApiClient creates a new home graph api service client.
+// HomeGraphApiClient is a client for interacting with HomeGraph API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // Google Home Graph API service. The Home Graph service provides support for
 // accessing first-party and third-party devices stored in Google’s Home Graph.
@@ -128,58 +121,34 @@ type HomeGraphApiClient struct {
 //
 // For more details, see the Home Graph developer
 // guide (at https://developers.google.com/assistant/smarthome/concepts/homegraph).
-func NewHomeGraphApiClient(ctx context.Context, opts ...option.ClientOption) (*HomeGraphApiClient, error) {
-	clientOpts := defaultHomeGraphApiClientOptions()
+type HomeGraphApiClient struct {
+	// The internal transport-dependent client.
+	internalClient internalHomeGraphApiClient
 
-	if newHomeGraphApiClientHook != nil {
-		hookOpts, err := newHomeGraphApiClientHook(ctx, clientHookParams{})
-		if err != nil {
-			return nil, err
-		}
-		clientOpts = append(clientOpts, hookOpts...)
-	}
+	// The call options for this service.
+	CallOptions *HomeGraphApiCallOptions
+}
 
-	disableDeadlines, err := checkDisableDeadlines()
-	if err != nil {
-		return nil, err
-	}
+// Wrapper methods routed to the internal client.
 
-	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
-	if err != nil {
-		return nil, err
-	}
-	c := &HomeGraphApiClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultHomeGraphApiCallOptions(),
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *HomeGraphApiClient) Close() error {
+	return c.internalClient.Close()
+}
 
-		homeGraphApiClient: graphpb.NewHomeGraphApiServiceClient(connPool),
-	}
-	c.setGoogleClientInfo()
-
-	return c, nil
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *HomeGraphApiClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
 func (c *HomeGraphApiClient) Connection() *grpc.ClientConn {
-	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *HomeGraphApiClient) Close() error {
-	return c.connPool.Close()
-}
-
-// setGoogleClientInfo sets the name and version of the application in
-// the `x-goog-api-client` header passed on each request. Intended for
-// use by Google-written clients.
-func (c *HomeGraphApiClient) setGoogleClientInfo(keyval ...string) {
-	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	return c.internalClient.Connection()
 }
 
 // RequestSyncDevices requests Google to send an action.devices.SYNC
@@ -192,23 +161,7 @@ func (c *HomeGraphApiClient) setGoogleClientInfo(keyval ...string) {
 // This request must be authorized using service account credentials from your
 // Actions console project.
 func (c *HomeGraphApiClient) RequestSyncDevices(ctx context.Context, req *graphpb.RequestSyncDevicesRequest, opts ...gax.CallOption) (*graphpb.RequestSyncDevicesResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 10000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.RequestSyncDevices[0:len(c.CallOptions.RequestSyncDevices):len(c.CallOptions.RequestSyncDevices)], opts...)
-	var resp *graphpb.RequestSyncDevicesResponse
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.homeGraphApiClient.RequestSyncDevices(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
+	return c.internalClient.RequestSyncDevices(ctx, req, opts...)
 }
 
 // ReportStateAndNotification reports device state and optionally sends device notifications.
@@ -229,23 +182,7 @@ func (c *HomeGraphApiClient) RequestSyncDevices(ctx context.Context, req *graphp
 // This request must be authorized using service account credentials from your
 // Actions console project.
 func (c *HomeGraphApiClient) ReportStateAndNotification(ctx context.Context, req *graphpb.ReportStateAndNotificationRequest, opts ...gax.CallOption) (*graphpb.ReportStateAndNotificationResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 10000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.ReportStateAndNotification[0:len(c.CallOptions.ReportStateAndNotification):len(c.CallOptions.ReportStateAndNotification)], opts...)
-	var resp *graphpb.ReportStateAndNotificationResponse
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.homeGraphApiClient.ReportStateAndNotification(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
+	return c.internalClient.ReportStateAndNotification(ctx, req, opts...)
 }
 
 // DeleteAgentUser unlinks the given third-party user from your smart home Action.
@@ -261,20 +198,7 @@ func (c *HomeGraphApiClient) ReportStateAndNotification(ctx context.Context, req
 // This request must be authorized using service account credentials from your
 // Actions console project.
 func (c *HomeGraphApiClient) DeleteAgentUser(ctx context.Context, req *graphpb.DeleteAgentUserRequest, opts ...gax.CallOption) error {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 10000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "agent_user_id", url.QueryEscape(req.GetAgentUserId())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteAgentUser[0:len(c.CallOptions.DeleteAgentUser):len(c.CallOptions.DeleteAgentUser)], opts...)
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		_, err = c.homeGraphApiClient.DeleteAgentUser(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	return err
+	return c.internalClient.DeleteAgentUser(ctx, req, opts...)
 }
 
 // Query gets the current states in Home Graph for the given set of the third-party
@@ -285,13 +209,170 @@ func (c *HomeGraphApiClient) DeleteAgentUser(ctx context.Context, req *graphpb.D
 // This request must be authorized using service account credentials from your
 // Actions console project.
 func (c *HomeGraphApiClient) Query(ctx context.Context, req *graphpb.QueryRequest, opts ...gax.CallOption) (*graphpb.QueryResponse, error) {
+	return c.internalClient.Query(ctx, req, opts...)
+}
+
+// Sync gets all the devices associated with the given third-party user.
+//
+// The third-party user’s identity is passed in via the agent_user_id
+// (see SyncRequest).
+// This request must be authorized using service account credentials from your
+// Actions console project.
+func (c *HomeGraphApiClient) Sync(ctx context.Context, req *graphpb.SyncRequest, opts ...gax.CallOption) (*graphpb.SyncResponse, error) {
+	return c.internalClient.Sync(ctx, req, opts...)
+}
+
+// homeGraphApiGRPCClient is a client for interacting with HomeGraph API over gRPC transport.
+//
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+type homeGraphApiGRPCClient struct {
+	// Connection pool of gRPC connections to the service.
+	connPool gtransport.ConnPool
+
+	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
+	disableDeadlines bool
+
+	// Points back to the CallOptions field of the containing HomeGraphApiClient
+	CallOptions **HomeGraphApiCallOptions
+
+	// The gRPC API client.
+	homeGraphApiClient graphpb.HomeGraphApiServiceClient
+
+	// The x-goog-* metadata to be sent with each request.
+	xGoogMetadata metadata.MD
+}
+
+// NewHomeGraphApiClient creates a new home graph api service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
+//
+// Google Home Graph API service. The Home Graph service provides support for
+// accessing first-party and third-party devices stored in Google’s Home Graph.
+// The Home Graph database provides contextual data about the relationships
+// between devices and the home.
+//
+// For more details, see the Home Graph developer
+// guide (at https://developers.google.com/assistant/smarthome/concepts/homegraph).
+func NewHomeGraphApiClient(ctx context.Context, opts ...option.ClientOption) (*HomeGraphApiClient, error) {
+	clientOpts := defaultHomeGraphApiGRPCClientOptions()
+	if newHomeGraphApiClientHook != nil {
+		hookOpts, err := newHomeGraphApiClientHook(ctx, clientHookParams{})
+		if err != nil {
+			return nil, err
+		}
+		clientOpts = append(clientOpts, hookOpts...)
+	}
+
+	disableDeadlines, err := checkDisableDeadlines()
+	if err != nil {
+		return nil, err
+	}
+
+	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
+	if err != nil {
+		return nil, err
+	}
+	client := HomeGraphApiClient{CallOptions: defaultHomeGraphApiCallOptions()}
+
+	c := &homeGraphApiGRPCClient{
+		connPool:           connPool,
+		disableDeadlines:   disableDeadlines,
+		homeGraphApiClient: graphpb.NewHomeGraphApiServiceClient(connPool),
+		CallOptions:        &client.CallOptions,
+	}
+	c.setGoogleClientInfo()
+
+	client.internalClient = c
+
+	return &client, nil
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *homeGraphApiGRPCClient) Connection() *grpc.ClientConn {
+	return c.connPool.Conn()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *homeGraphApiGRPCClient) setGoogleClientInfo(keyval ...string) {
+	kv := append([]string{"gl-go", versionGo()}, keyval...)
+	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+}
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *homeGraphApiGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *homeGraphApiGRPCClient) RequestSyncDevices(ctx context.Context, req *graphpb.RequestSyncDevicesRequest, opts ...gax.CallOption) (*graphpb.RequestSyncDevicesResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 10000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.Query[0:len(c.CallOptions.Query):len(c.CallOptions.Query)], opts...)
+	opts = append((*c.CallOptions).RequestSyncDevices[0:len((*c.CallOptions).RequestSyncDevices):len((*c.CallOptions).RequestSyncDevices)], opts...)
+	var resp *graphpb.RequestSyncDevicesResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.homeGraphApiClient.RequestSyncDevices(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *homeGraphApiGRPCClient) ReportStateAndNotification(ctx context.Context, req *graphpb.ReportStateAndNotificationRequest, opts ...gax.CallOption) (*graphpb.ReportStateAndNotificationResponse, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 10000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	opts = append((*c.CallOptions).ReportStateAndNotification[0:len((*c.CallOptions).ReportStateAndNotification):len((*c.CallOptions).ReportStateAndNotification)], opts...)
+	var resp *graphpb.ReportStateAndNotificationResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.homeGraphApiClient.ReportStateAndNotification(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *homeGraphApiGRPCClient) DeleteAgentUser(ctx context.Context, req *graphpb.DeleteAgentUserRequest, opts ...gax.CallOption) error {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 10000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "agent_user_id", url.QueryEscape(req.GetAgentUserId())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).DeleteAgentUser[0:len((*c.CallOptions).DeleteAgentUser):len((*c.CallOptions).DeleteAgentUser)], opts...)
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		_, err = c.homeGraphApiClient.DeleteAgentUser(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	return err
+}
+
+func (c *homeGraphApiGRPCClient) Query(ctx context.Context, req *graphpb.QueryRequest, opts ...gax.CallOption) (*graphpb.QueryResponse, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 10000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	opts = append((*c.CallOptions).Query[0:len((*c.CallOptions).Query):len((*c.CallOptions).Query)], opts...)
 	var resp *graphpb.QueryResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -304,20 +385,14 @@ func (c *HomeGraphApiClient) Query(ctx context.Context, req *graphpb.QueryReques
 	return resp, nil
 }
 
-// Sync gets all the devices associated with the given third-party user.
-//
-// The third-party user’s identity is passed in via the agent_user_id
-// (see SyncRequest).
-// This request must be authorized using service account credentials from your
-// Actions console project.
-func (c *HomeGraphApiClient) Sync(ctx context.Context, req *graphpb.SyncRequest, opts ...gax.CallOption) (*graphpb.SyncResponse, error) {
+func (c *homeGraphApiGRPCClient) Sync(ctx context.Context, req *graphpb.SyncRequest, opts ...gax.CallOption) (*graphpb.SyncResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 10000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.Sync[0:len(c.CallOptions.Sync):len(c.CallOptions.Sync)], opts...)
+	opts = append((*c.CallOptions).Sync[0:len((*c.CallOptions).Sync):len((*c.CallOptions).Sync)], opts...)
 	var resp *graphpb.SyncResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

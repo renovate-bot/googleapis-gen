@@ -29,18 +29,19 @@ func ExampleNewProfilerClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleProfilerClient_CreateProfile() {
-	// import cloudprofilerpb "google.golang.org/genproto/googleapis/devtools/cloudprofiler/v2"
-
 	ctx := context.Background()
 	c, err := cloudprofiler.NewProfilerClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &cloudprofilerpb.CreateProfileRequest{
 		// TODO: Fill request struct fields.
@@ -54,13 +55,12 @@ func ExampleProfilerClient_CreateProfile() {
 }
 
 func ExampleProfilerClient_CreateOfflineProfile() {
-	// import cloudprofilerpb "google.golang.org/genproto/googleapis/devtools/cloudprofiler/v2"
-
 	ctx := context.Background()
 	c, err := cloudprofiler.NewProfilerClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &cloudprofilerpb.CreateOfflineProfileRequest{
 		// TODO: Fill request struct fields.
@@ -74,13 +74,12 @@ func ExampleProfilerClient_CreateOfflineProfile() {
 }
 
 func ExampleProfilerClient_UpdateProfile() {
-	// import cloudprofilerpb "google.golang.org/genproto/googleapis/devtools/cloudprofiler/v2"
-
 	ctx := context.Background()
 	c, err := cloudprofiler.NewProfilerClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &cloudprofilerpb.UpdateProfileRequest{
 		// TODO: Fill request struct fields.

@@ -30,19 +30,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_SearchAllResources() {
-	// import assetpb "google.golang.org/genproto/googleapis/cloud/asset/v1p1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := asset.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &assetpb.SearchAllResourcesRequest{
 		// TODO: Fill request struct fields.
@@ -62,14 +62,12 @@ func ExampleClient_SearchAllResources() {
 }
 
 func ExampleClient_SearchAllIamPolicies() {
-	// import assetpb "google.golang.org/genproto/googleapis/cloud/asset/v1p1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := asset.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &assetpb.SearchAllIamPoliciesRequest{
 		// TODO: Fill request struct fields.

@@ -40,7 +40,7 @@ type BotsCallOptions struct {
 	UpdateBotSession []gax.CallOption
 }
 
-func defaultBotsClientOptions() []option.ClientOption {
+func defaultBotsGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("remoteworkers.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("remoteworkers.mtls.googleapis.com:443"),
@@ -59,27 +59,111 @@ func defaultBotsCallOptions() *BotsCallOptions {
 	}
 }
 
+// internalBotsClient is an interface that defines the methods availaible from Remote Workers API.
+type internalBotsClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateBotSession(context.Context, *remoteworkerspb.CreateBotSessionRequest, ...gax.CallOption) (*remoteworkerspb.BotSession, error)
+	UpdateBotSession(context.Context, *remoteworkerspb.UpdateBotSessionRequest, ...gax.CallOption) (*remoteworkerspb.BotSession, error)
+}
+
 // BotsClient is a client for interacting with Remote Workers API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Design doc: https://goo.gl/oojM5H (at https://goo.gl/oojM5H)
+//
+// Loosely speaking, the Bots interface monitors a collection of workers (think
+// of them as “computers” for a moment). This collection is known as a “farm,”
+// and its purpose is to perform work on behalf of a client.
+//
+// Each worker runs a small program known as a “bot” that allows it to be
+// controlled by the server. This interface contains only methods that are
+// called by the bots themselves; admin functionality is out of scope for this
+// interface.
+//
+// More precisely, we use the term “worker” to refer to the physical “thing”
+// running the bot. We use the term “worker,” and not “machine” or “computer,”
+// since a worker may consist of more than one machine - e.g., a computer with
+// multiple attached devices, or even a cluster of computers, with only one of
+// them running the bot. Conversely, a single machine may host several bots, in
+// which case each bot has a “worker” corresponding to the slice of the machine
+// being managed by that bot.
+//
+// The main resource in the Bots interface is not, surprisingly, a Bot - it is a
+// BotSession, which represents a period of time in which a bot is in continuous
+// contact with the server (see the BotSession message for more information).
+// The parent of a bot session can be thought of as an instance of a farm. That
+// is, one endpoint may be able to manage many farms for many users. For
+// example, for a farm managed through GCP, the parent resource will typically
+// take the form “projects/{project_id}”. This is referred to below as “the farm
+// resource.”
+type BotsClient struct {
+	// The internal transport-dependent client.
+	internalClient internalBotsClient
+
+	// The call options for this service.
+	CallOptions *BotsCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *BotsClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *BotsClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *BotsClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateBotSession createBotSession is called when the bot first joins the farm, and
+// establishes a session ID to ensure that multiple machines do not register
+// using the same name accidentally.
+func (c *BotsClient) CreateBotSession(ctx context.Context, req *remoteworkerspb.CreateBotSessionRequest, opts ...gax.CallOption) (*remoteworkerspb.BotSession, error) {
+	return c.internalClient.CreateBotSession(ctx, req, opts...)
+}
+
+// UpdateBotSession updateBotSession must be called periodically by the bot (on a schedule
+// determined by the server) to let the server know about its status, and to
+// pick up new lease requests from the server.
+func (c *BotsClient) UpdateBotSession(ctx context.Context, req *remoteworkerspb.UpdateBotSessionRequest, opts ...gax.CallOption) (*remoteworkerspb.BotSession, error) {
+	return c.internalClient.UpdateBotSession(ctx, req, opts...)
+}
+
+// botsGRPCClient is a client for interacting with Remote Workers API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type BotsClient struct {
+type botsGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing BotsClient
+	CallOptions **BotsCallOptions
+
 	// The gRPC API client.
 	botsClient remoteworkerspb.BotsClient
-
-	// The call options for this service.
-	CallOptions *BotsCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewBotsClient creates a new bots client.
+// NewBotsClient creates a new bots client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Design doc: https://goo.gl/oojM5H (at https://goo.gl/oojM5H)
 //
@@ -109,8 +193,7 @@ type BotsClient struct {
 // take the form “projects/{project_id}”. This is referred to below as “the farm
 // resource.”
 func NewBotsClient(ctx context.Context, opts ...option.ClientOption) (*BotsClient, error) {
-	clientOpts := defaultBotsClientOptions()
-
+	clientOpts := defaultBotsGRPCClientOptions()
 	if newBotsClientHook != nil {
 		hookOpts, err := newBotsClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -128,44 +211,44 @@ func NewBotsClient(ctx context.Context, opts ...option.ClientOption) (*BotsClien
 	if err != nil {
 		return nil, err
 	}
-	c := &BotsClient{
+	client := BotsClient{CallOptions: defaultBotsCallOptions()}
+
+	c := &botsGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultBotsCallOptions(),
-
-		botsClient: remoteworkerspb.NewBotsClient(connPool),
+		botsClient:       remoteworkerspb.NewBotsClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *BotsClient) Connection() *grpc.ClientConn {
+func (c *botsGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *BotsClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *BotsClient) setGoogleClientInfo(keyval ...string) {
+func (c *botsGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateBotSession createBotSession is called when the bot first joins the farm, and
-// establishes a session ID to ensure that multiple machines do not register
-// using the same name accidentally.
-func (c *BotsClient) CreateBotSession(ctx context.Context, req *remoteworkerspb.CreateBotSessionRequest, opts ...gax.CallOption) (*remoteworkerspb.BotSession, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *botsGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *botsGRPCClient) CreateBotSession(ctx context.Context, req *remoteworkerspb.CreateBotSessionRequest, opts ...gax.CallOption) (*remoteworkerspb.BotSession, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 600000*time.Millisecond)
 		defer cancel()
@@ -173,7 +256,7 @@ func (c *BotsClient) CreateBotSession(ctx context.Context, req *remoteworkerspb.
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateBotSession[0:len(c.CallOptions.CreateBotSession):len(c.CallOptions.CreateBotSession)], opts...)
+	opts = append((*c.CallOptions).CreateBotSession[0:len((*c.CallOptions).CreateBotSession):len((*c.CallOptions).CreateBotSession)], opts...)
 	var resp *remoteworkerspb.BotSession
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -186,10 +269,7 @@ func (c *BotsClient) CreateBotSession(ctx context.Context, req *remoteworkerspb.
 	return resp, nil
 }
 
-// UpdateBotSession updateBotSession must be called periodically by the bot (on a schedule
-// determined by the server) to let the server know about its status, and to
-// pick up new lease requests from the server.
-func (c *BotsClient) UpdateBotSession(ctx context.Context, req *remoteworkerspb.UpdateBotSessionRequest, opts ...gax.CallOption) (*remoteworkerspb.BotSession, error) {
+func (c *botsGRPCClient) UpdateBotSession(ctx context.Context, req *remoteworkerspb.UpdateBotSessionRequest, opts ...gax.CallOption) (*remoteworkerspb.BotSession, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 600000*time.Millisecond)
 		defer cancel()
@@ -197,7 +277,7 @@ func (c *BotsClient) UpdateBotSession(ctx context.Context, req *remoteworkerspb.
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateBotSession[0:len(c.CallOptions.UpdateBotSession):len(c.CallOptions.UpdateBotSession)], opts...)
+	opts = append((*c.CallOptions).UpdateBotSession[0:len((*c.CallOptions).UpdateBotSession):len((*c.CallOptions).UpdateBotSession)], opts...)
 	var resp *remoteworkerspb.BotSession
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

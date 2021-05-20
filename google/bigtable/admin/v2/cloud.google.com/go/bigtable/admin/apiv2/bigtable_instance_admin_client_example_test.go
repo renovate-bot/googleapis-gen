@@ -31,18 +31,19 @@ func ExampleNewBigtableInstanceAdminClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleBigtableInstanceAdminClient_CreateInstance() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.CreateInstanceRequest{
 		// TODO: Fill request struct fields.
@@ -61,13 +62,12 @@ func ExampleBigtableInstanceAdminClient_CreateInstance() {
 }
 
 func ExampleBigtableInstanceAdminClient_GetInstance() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.GetInstanceRequest{
 		// TODO: Fill request struct fields.
@@ -81,13 +81,12 @@ func ExampleBigtableInstanceAdminClient_GetInstance() {
 }
 
 func ExampleBigtableInstanceAdminClient_ListInstances() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.ListInstancesRequest{
 		// TODO: Fill request struct fields.
@@ -101,13 +100,12 @@ func ExampleBigtableInstanceAdminClient_ListInstances() {
 }
 
 func ExampleBigtableInstanceAdminClient_UpdateInstance() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.Instance{
 		// TODO: Fill request struct fields.
@@ -121,13 +119,12 @@ func ExampleBigtableInstanceAdminClient_UpdateInstance() {
 }
 
 func ExampleBigtableInstanceAdminClient_PartialUpdateInstance() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.PartialUpdateInstanceRequest{
 		// TODO: Fill request struct fields.
@@ -151,6 +148,7 @@ func ExampleBigtableInstanceAdminClient_DeleteInstance() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.DeleteInstanceRequest{
 		// TODO: Fill request struct fields.
@@ -162,13 +160,12 @@ func ExampleBigtableInstanceAdminClient_DeleteInstance() {
 }
 
 func ExampleBigtableInstanceAdminClient_CreateCluster() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.CreateClusterRequest{
 		// TODO: Fill request struct fields.
@@ -187,13 +184,12 @@ func ExampleBigtableInstanceAdminClient_CreateCluster() {
 }
 
 func ExampleBigtableInstanceAdminClient_GetCluster() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.GetClusterRequest{
 		// TODO: Fill request struct fields.
@@ -207,13 +203,12 @@ func ExampleBigtableInstanceAdminClient_GetCluster() {
 }
 
 func ExampleBigtableInstanceAdminClient_ListClusters() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.ListClustersRequest{
 		// TODO: Fill request struct fields.
@@ -227,13 +222,12 @@ func ExampleBigtableInstanceAdminClient_ListClusters() {
 }
 
 func ExampleBigtableInstanceAdminClient_UpdateCluster() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.Cluster{
 		// TODO: Fill request struct fields.
@@ -257,6 +251,7 @@ func ExampleBigtableInstanceAdminClient_DeleteCluster() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.DeleteClusterRequest{
 		// TODO: Fill request struct fields.
@@ -268,13 +263,12 @@ func ExampleBigtableInstanceAdminClient_DeleteCluster() {
 }
 
 func ExampleBigtableInstanceAdminClient_CreateAppProfile() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.CreateAppProfileRequest{
 		// TODO: Fill request struct fields.
@@ -288,13 +282,12 @@ func ExampleBigtableInstanceAdminClient_CreateAppProfile() {
 }
 
 func ExampleBigtableInstanceAdminClient_GetAppProfile() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.GetAppProfileRequest{
 		// TODO: Fill request struct fields.
@@ -308,14 +301,12 @@ func ExampleBigtableInstanceAdminClient_GetAppProfile() {
 }
 
 func ExampleBigtableInstanceAdminClient_ListAppProfiles() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.ListAppProfilesRequest{
 		// TODO: Fill request struct fields.
@@ -335,13 +326,12 @@ func ExampleBigtableInstanceAdminClient_ListAppProfiles() {
 }
 
 func ExampleBigtableInstanceAdminClient_UpdateAppProfile() {
-	// import adminpb "google.golang.org/genproto/googleapis/bigtable/admin/v2"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.UpdateAppProfileRequest{
 		// TODO: Fill request struct fields.
@@ -365,6 +355,7 @@ func ExampleBigtableInstanceAdminClient_DeleteAppProfile() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &adminpb.DeleteAppProfileRequest{
 		// TODO: Fill request struct fields.
@@ -376,13 +367,12 @@ func ExampleBigtableInstanceAdminClient_DeleteAppProfile() {
 }
 
 func ExampleBigtableInstanceAdminClient_GetIamPolicy() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.GetIamPolicyRequest{
 		// TODO: Fill request struct fields.
@@ -396,13 +386,12 @@ func ExampleBigtableInstanceAdminClient_GetIamPolicy() {
 }
 
 func ExampleBigtableInstanceAdminClient_SetIamPolicy() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.SetIamPolicyRequest{
 		// TODO: Fill request struct fields.
@@ -416,13 +405,12 @@ func ExampleBigtableInstanceAdminClient_SetIamPolicy() {
 }
 
 func ExampleBigtableInstanceAdminClient_TestIamPermissions() {
-	// import iampb "google.golang.org/genproto/googleapis/iam/v1"
-
 	ctx := context.Background()
 	c, err := admin.NewBigtableInstanceAdminClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &iampb.TestIamPermissionsRequest{
 		// TODO: Fill request struct fields.

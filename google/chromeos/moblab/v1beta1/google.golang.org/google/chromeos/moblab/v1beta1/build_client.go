@@ -47,7 +47,7 @@ type BuildCallOptions struct {
 	StageBuild            []gax.CallOption
 }
 
-func defaultBuildClientOptions() []option.ClientOption {
+func defaultBuildGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("chromeosmoblab.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("chromeosmoblab.mtls.googleapis.com:443"),
@@ -87,37 +87,114 @@ func defaultBuildCallOptions() *BuildCallOptions {
 	}
 }
 
+// internalBuildClient is an interface that defines the methods availaible from Chrome OS Moblab API.
+type internalBuildClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	ListBuilds(context.Context, *moblabpb.ListBuildsRequest, ...gax.CallOption) *BuildIterator
+	CheckBuildStageStatus(context.Context, *moblabpb.CheckBuildStageStatusRequest, ...gax.CallOption) (*moblabpb.CheckBuildStageStatusResponse, error)
+	StageBuild(context.Context, *moblabpb.StageBuildRequest, ...gax.CallOption) (*StageBuildOperation, error)
+	StageBuildOperation(name string) *StageBuildOperation
+}
+
 // BuildClient is a client for interacting with Chrome OS Moblab API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Manages Chrome OS build services.
+type BuildClient struct {
+	// The internal transport-dependent client.
+	internalClient internalBuildClient
+
+	// The call options for this service.
+	CallOptions *BuildCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *BuildClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *BuildClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *BuildClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// ListBuilds lists all builds for the given build target and model in descending order
+// for the milestones and build versions.
+func (c *BuildClient) ListBuilds(ctx context.Context, req *moblabpb.ListBuildsRequest, opts ...gax.CallOption) *BuildIterator {
+	return c.internalClient.ListBuilds(ctx, req, opts...)
+}
+
+// CheckBuildStageStatus checks the stage status for a given build artifact in a partner Google
+// Cloud Storage bucket.
+func (c *BuildClient) CheckBuildStageStatus(ctx context.Context, req *moblabpb.CheckBuildStageStatusRequest, opts ...gax.CallOption) (*moblabpb.CheckBuildStageStatusResponse, error) {
+	return c.internalClient.CheckBuildStageStatus(ctx, req, opts...)
+}
+
+// StageBuild stages a given build artifact from a internal Google Cloud Storage bucket
+// to a partner Google Cloud Storage bucket. If any of objects has already
+// been copied, it will overwrite the previous objects. Operation <response:
+// StageBuildResponse,
+// metadata: StageBuildMetadata>
+func (c *BuildClient) StageBuild(ctx context.Context, req *moblabpb.StageBuildRequest, opts ...gax.CallOption) (*StageBuildOperation, error) {
+	return c.internalClient.StageBuild(ctx, req, opts...)
+}
+
+// StageBuildOperation returns a new StageBuildOperation from a given name.
+// The name must be that of a previously created StageBuildOperation, possibly from a different process.
+func (c *BuildClient) StageBuildOperation(name string) *StageBuildOperation {
+	return c.internalClient.StageBuildOperation(name)
+}
+
+// buildGRPCClient is a client for interacting with Chrome OS Moblab API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type BuildClient struct {
+type buildGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing BuildClient
+	CallOptions **BuildCallOptions
+
 	// The gRPC API client.
 	buildClient moblabpb.BuildServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *BuildCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewBuildClient creates a new build service client.
+// NewBuildClient creates a new build service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Manages Chrome OS build services.
 func NewBuildClient(ctx context.Context, opts ...option.ClientOption) (*BuildClient, error) {
-	clientOpts := defaultBuildClientOptions()
-
+	clientOpts := defaultBuildGRPCClientOptions()
 	if newBuildClientHook != nil {
 		hookOpts, err := newBuildClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -135,16 +212,19 @@ func NewBuildClient(ctx context.Context, opts ...option.ClientOption) (*BuildCli
 	if err != nil {
 		return nil, err
 	}
-	c := &BuildClient{
+	client := BuildClient{CallOptions: defaultBuildCallOptions()}
+
+	c := &buildGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultBuildCallOptions(),
-
-		buildClient: moblabpb.NewBuildServiceClient(connPool),
+		buildClient:      moblabpb.NewBuildServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -154,37 +234,36 @@ func NewBuildClient(ctx context.Context, opts ...option.ClientOption) (*BuildCli
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *BuildClient) Connection() *grpc.ClientConn {
+func (c *buildGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *BuildClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *BuildClient) setGoogleClientInfo(keyval ...string) {
+func (c *buildGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// ListBuilds lists all builds for the given build target and model in descending order
-// for the milestones and build versions.
-func (c *BuildClient) ListBuilds(ctx context.Context, req *moblabpb.ListBuildsRequest, opts ...gax.CallOption) *BuildIterator {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *buildGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *buildGRPCClient) ListBuilds(ctx context.Context, req *moblabpb.ListBuildsRequest, opts ...gax.CallOption) *BuildIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListBuilds[0:len(c.CallOptions.ListBuilds):len(c.CallOptions.ListBuilds)], opts...)
+	opts = append((*c.CallOptions).ListBuilds[0:len((*c.CallOptions).ListBuilds):len((*c.CallOptions).ListBuilds)], opts...)
 	it := &BuildIterator{}
 	req = proto.Clone(req).(*moblabpb.ListBuildsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*moblabpb.Build, string, error) {
@@ -221,9 +300,7 @@ func (c *BuildClient) ListBuilds(ctx context.Context, req *moblabpb.ListBuildsRe
 	return it
 }
 
-// CheckBuildStageStatus checks the stage status for a given build artifact in a partner Google
-// Cloud Storage bucket.
-func (c *BuildClient) CheckBuildStageStatus(ctx context.Context, req *moblabpb.CheckBuildStageStatusRequest, opts ...gax.CallOption) (*moblabpb.CheckBuildStageStatusResponse, error) {
+func (c *buildGRPCClient) CheckBuildStageStatus(ctx context.Context, req *moblabpb.CheckBuildStageStatusRequest, opts ...gax.CallOption) (*moblabpb.CheckBuildStageStatusResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -231,7 +308,7 @@ func (c *BuildClient) CheckBuildStageStatus(ctx context.Context, req *moblabpb.C
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CheckBuildStageStatus[0:len(c.CallOptions.CheckBuildStageStatus):len(c.CallOptions.CheckBuildStageStatus)], opts...)
+	opts = append((*c.CallOptions).CheckBuildStageStatus[0:len((*c.CallOptions).CheckBuildStageStatus):len((*c.CallOptions).CheckBuildStageStatus)], opts...)
 	var resp *moblabpb.CheckBuildStageStatusResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -244,12 +321,7 @@ func (c *BuildClient) CheckBuildStageStatus(ctx context.Context, req *moblabpb.C
 	return resp, nil
 }
 
-// StageBuild stages a given build artifact from a internal Google Cloud Storage bucket
-// to a partner Google Cloud Storage bucket. If any of objects has already
-// been copied, it will overwrite the previous objects. Operation <response:
-// StageBuildResponse,
-// metadata: StageBuildMetadata>
-func (c *BuildClient) StageBuild(ctx context.Context, req *moblabpb.StageBuildRequest, opts ...gax.CallOption) (*StageBuildOperation, error) {
+func (c *buildGRPCClient) StageBuild(ctx context.Context, req *moblabpb.StageBuildRequest, opts ...gax.CallOption) (*StageBuildOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -257,7 +329,7 @@ func (c *BuildClient) StageBuild(ctx context.Context, req *moblabpb.StageBuildRe
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.StageBuild[0:len(c.CallOptions.StageBuild):len(c.CallOptions.StageBuild)], opts...)
+	opts = append((*c.CallOptions).StageBuild[0:len((*c.CallOptions).StageBuild):len((*c.CallOptions).StageBuild)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -268,7 +340,7 @@ func (c *BuildClient) StageBuild(ctx context.Context, req *moblabpb.StageBuildRe
 		return nil, err
 	}
 	return &StageBuildOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
@@ -279,9 +351,9 @@ type StageBuildOperation struct {
 
 // StageBuildOperation returns a new StageBuildOperation from a given name.
 // The name must be that of a previously created StageBuildOperation, possibly from a different process.
-func (c *BuildClient) StageBuildOperation(name string) *StageBuildOperation {
+func (c *buildGRPCClient) StageBuildOperation(name string) *StageBuildOperation {
 	return &StageBuildOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

@@ -30,18 +30,19 @@ func ExampleNewPipelineClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExamplePipelineClient_CreateTrainingPipeline() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewPipelineClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateTrainingPipelineRequest{
 		// TODO: Fill request struct fields.
@@ -55,13 +56,12 @@ func ExamplePipelineClient_CreateTrainingPipeline() {
 }
 
 func ExamplePipelineClient_GetTrainingPipeline() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewPipelineClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetTrainingPipelineRequest{
 		// TODO: Fill request struct fields.
@@ -75,14 +75,12 @@ func ExamplePipelineClient_GetTrainingPipeline() {
 }
 
 func ExamplePipelineClient_ListTrainingPipelines() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewPipelineClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListTrainingPipelinesRequest{
 		// TODO: Fill request struct fields.
@@ -102,13 +100,12 @@ func ExamplePipelineClient_ListTrainingPipelines() {
 }
 
 func ExamplePipelineClient_DeleteTrainingPipeline() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewPipelineClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteTrainingPipelineRequest{
 		// TODO: Fill request struct fields.
@@ -130,6 +127,7 @@ func ExamplePipelineClient_CancelTrainingPipeline() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CancelTrainingPipelineRequest{
 		// TODO: Fill request struct fields.

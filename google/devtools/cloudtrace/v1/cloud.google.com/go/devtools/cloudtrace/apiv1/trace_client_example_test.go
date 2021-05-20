@@ -30,19 +30,19 @@ func ExampleNewTraceClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleTraceClient_ListTraces() {
-	// import cloudtracepb "google.golang.org/genproto/googleapis/devtools/cloudtrace/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := cloudtrace.NewTraceClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &cloudtracepb.ListTracesRequest{
 		// TODO: Fill request struct fields.
@@ -62,13 +62,12 @@ func ExampleTraceClient_ListTraces() {
 }
 
 func ExampleTraceClient_GetTrace() {
-	// import cloudtracepb "google.golang.org/genproto/googleapis/devtools/cloudtrace/v1"
-
 	ctx := context.Background()
 	c, err := cloudtrace.NewTraceClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &cloudtracepb.GetTraceRequest{
 		// TODO: Fill request struct fields.
@@ -87,6 +86,7 @@ func ExampleTraceClient_PatchTraces() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &cloudtracepb.PatchTracesRequest{
 		// TODO: Fill request struct fields.

@@ -30,18 +30,19 @@ func ExampleNewSmartDeviceManagementClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleSmartDeviceManagementClient_GetDevice() {
-	// import sdmpb "google.golang.org/genproto/googleapis/home/enterprise/sdm/v1"
-
 	ctx := context.Background()
 	c, err := sdm.NewSmartDeviceManagementClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &sdmpb.GetDeviceRequest{
 		// TODO: Fill request struct fields.
@@ -55,14 +56,12 @@ func ExampleSmartDeviceManagementClient_GetDevice() {
 }
 
 func ExampleSmartDeviceManagementClient_ListDevices() {
-	// import sdmpb "google.golang.org/genproto/googleapis/home/enterprise/sdm/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := sdm.NewSmartDeviceManagementClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &sdmpb.ListDevicesRequest{
 		// TODO: Fill request struct fields.
@@ -82,13 +81,12 @@ func ExampleSmartDeviceManagementClient_ListDevices() {
 }
 
 func ExampleSmartDeviceManagementClient_ExecuteDeviceCommand() {
-	// import sdmpb "google.golang.org/genproto/googleapis/home/enterprise/sdm/v1"
-
 	ctx := context.Background()
 	c, err := sdm.NewSmartDeviceManagementClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &sdmpb.ExecuteDeviceCommandRequest{
 		// TODO: Fill request struct fields.
@@ -102,13 +100,12 @@ func ExampleSmartDeviceManagementClient_ExecuteDeviceCommand() {
 }
 
 func ExampleSmartDeviceManagementClient_GetStructure() {
-	// import sdmpb "google.golang.org/genproto/googleapis/home/enterprise/sdm/v1"
-
 	ctx := context.Background()
 	c, err := sdm.NewSmartDeviceManagementClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &sdmpb.GetStructureRequest{
 		// TODO: Fill request struct fields.
@@ -122,14 +119,12 @@ func ExampleSmartDeviceManagementClient_GetStructure() {
 }
 
 func ExampleSmartDeviceManagementClient_ListStructures() {
-	// import sdmpb "google.golang.org/genproto/googleapis/home/enterprise/sdm/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := sdm.NewSmartDeviceManagementClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &sdmpb.ListStructuresRequest{
 		// TODO: Fill request struct fields.
@@ -149,13 +144,12 @@ func ExampleSmartDeviceManagementClient_ListStructures() {
 }
 
 func ExampleSmartDeviceManagementClient_GetRoom() {
-	// import sdmpb "google.golang.org/genproto/googleapis/home/enterprise/sdm/v1"
-
 	ctx := context.Background()
 	c, err := sdm.NewSmartDeviceManagementClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &sdmpb.GetRoomRequest{
 		// TODO: Fill request struct fields.
@@ -169,14 +163,12 @@ func ExampleSmartDeviceManagementClient_GetRoom() {
 }
 
 func ExampleSmartDeviceManagementClient_ListRooms() {
-	// import sdmpb "google.golang.org/genproto/googleapis/home/enterprise/sdm/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := sdm.NewSmartDeviceManagementClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &sdmpb.ListRoomsRequest{
 		// TODO: Fill request struct fields.

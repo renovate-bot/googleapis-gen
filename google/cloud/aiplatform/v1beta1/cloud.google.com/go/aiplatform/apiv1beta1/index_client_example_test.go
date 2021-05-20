@@ -30,18 +30,19 @@ func ExampleNewIndexClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleIndexClient_CreateIndex() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateIndexRequest{
 		// TODO: Fill request struct fields.
@@ -60,13 +61,12 @@ func ExampleIndexClient_CreateIndex() {
 }
 
 func ExampleIndexClient_GetIndex() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetIndexRequest{
 		// TODO: Fill request struct fields.
@@ -80,14 +80,12 @@ func ExampleIndexClient_GetIndex() {
 }
 
 func ExampleIndexClient_ListIndexes() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListIndexesRequest{
 		// TODO: Fill request struct fields.
@@ -107,13 +105,12 @@ func ExampleIndexClient_ListIndexes() {
 }
 
 func ExampleIndexClient_UpdateIndex() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateIndexRequest{
 		// TODO: Fill request struct fields.
@@ -132,13 +129,12 @@ func ExampleIndexClient_UpdateIndex() {
 }
 
 func ExampleIndexClient_DeleteIndex() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteIndexRequest{
 		// TODO: Fill request struct fields.

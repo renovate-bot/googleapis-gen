@@ -30,18 +30,19 @@ func ExampleNewSpecialistPoolClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleSpecialistPoolClient_CreateSpecialistPool() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewSpecialistPoolClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateSpecialistPoolRequest{
 		// TODO: Fill request struct fields.
@@ -60,13 +61,12 @@ func ExampleSpecialistPoolClient_CreateSpecialistPool() {
 }
 
 func ExampleSpecialistPoolClient_GetSpecialistPool() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewSpecialistPoolClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetSpecialistPoolRequest{
 		// TODO: Fill request struct fields.
@@ -80,14 +80,12 @@ func ExampleSpecialistPoolClient_GetSpecialistPool() {
 }
 
 func ExampleSpecialistPoolClient_ListSpecialistPools() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewSpecialistPoolClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListSpecialistPoolsRequest{
 		// TODO: Fill request struct fields.
@@ -107,13 +105,12 @@ func ExampleSpecialistPoolClient_ListSpecialistPools() {
 }
 
 func ExampleSpecialistPoolClient_DeleteSpecialistPool() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewSpecialistPoolClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteSpecialistPoolRequest{
 		// TODO: Fill request struct fields.
@@ -130,13 +127,12 @@ func ExampleSpecialistPoolClient_DeleteSpecialistPool() {
 }
 
 func ExampleSpecialistPoolClient_UpdateSpecialistPool() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewSpecialistPoolClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateSpecialistPoolRequest{
 		// TODO: Fill request struct fields.

@@ -47,7 +47,7 @@ type CloudShellCallOptions struct {
 	RemovePublicKey      []gax.CallOption
 }
 
-func defaultCloudShellClientOptions() []option.ClientOption {
+func defaultCloudShellGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("cloudshell.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("cloudshell.mtls.googleapis.com:443"),
@@ -80,32 +80,156 @@ func defaultCloudShellCallOptions() *CloudShellCallOptions {
 	}
 }
 
+// internalCloudShellClient is an interface that defines the methods availaible from Cloud Shell API.
+type internalCloudShellClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	GetEnvironment(context.Context, *shellpb.GetEnvironmentRequest, ...gax.CallOption) (*shellpb.Environment, error)
+	StartEnvironment(context.Context, *shellpb.StartEnvironmentRequest, ...gax.CallOption) (*StartEnvironmentOperation, error)
+	StartEnvironmentOperation(name string) *StartEnvironmentOperation
+	AuthorizeEnvironment(context.Context, *shellpb.AuthorizeEnvironmentRequest, ...gax.CallOption) (*AuthorizeEnvironmentOperation, error)
+	AuthorizeEnvironmentOperation(name string) *AuthorizeEnvironmentOperation
+	AddPublicKey(context.Context, *shellpb.AddPublicKeyRequest, ...gax.CallOption) (*AddPublicKeyOperation, error)
+	AddPublicKeyOperation(name string) *AddPublicKeyOperation
+	RemovePublicKey(context.Context, *shellpb.RemovePublicKeyRequest, ...gax.CallOption) (*RemovePublicKeyOperation, error)
+	RemovePublicKeyOperation(name string) *RemovePublicKeyOperation
+}
+
 // CloudShellClient is a client for interacting with Cloud Shell API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// API for interacting with Google Cloud Shell. Each user of Cloud Shell has at
+// least one environment, which has the ID “default”. Environment consists of a
+// Docker image defining what is installed on the environment and a home
+// directory containing the user’s data that will remain across sessions.
+// Clients use this API to start and fetch information about their environment,
+// which can then be used to connect to that environment via a separate SSH
+// client.
+type CloudShellClient struct {
+	// The internal transport-dependent client.
+	internalClient internalCloudShellClient
+
+	// The call options for this service.
+	CallOptions *CloudShellCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *CloudShellClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *CloudShellClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *CloudShellClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// GetEnvironment gets an environment. Returns NOT_FOUND if the environment does not exist.
+func (c *CloudShellClient) GetEnvironment(ctx context.Context, req *shellpb.GetEnvironmentRequest, opts ...gax.CallOption) (*shellpb.Environment, error) {
+	return c.internalClient.GetEnvironment(ctx, req, opts...)
+}
+
+// StartEnvironment starts an existing environment, allowing clients to connect to it. The
+// returned operation will contain an instance of StartEnvironmentMetadata in
+// its metadata field. Users can wait for the environment to start by polling
+// this operation via GetOperation. Once the environment has finished starting
+// and is ready to accept connections, the operation will contain a
+// StartEnvironmentResponse in its response field.
+func (c *CloudShellClient) StartEnvironment(ctx context.Context, req *shellpb.StartEnvironmentRequest, opts ...gax.CallOption) (*StartEnvironmentOperation, error) {
+	return c.internalClient.StartEnvironment(ctx, req, opts...)
+}
+
+// StartEnvironmentOperation returns a new StartEnvironmentOperation from a given name.
+// The name must be that of a previously created StartEnvironmentOperation, possibly from a different process.
+func (c *CloudShellClient) StartEnvironmentOperation(name string) *StartEnvironmentOperation {
+	return c.internalClient.StartEnvironmentOperation(name)
+}
+
+// AuthorizeEnvironment sends OAuth credentials to a running environment on behalf of a user. When
+// this completes, the environment will be authorized to run various Google
+// Cloud command line tools without requiring the user to manually
+// authenticate.
+func (c *CloudShellClient) AuthorizeEnvironment(ctx context.Context, req *shellpb.AuthorizeEnvironmentRequest, opts ...gax.CallOption) (*AuthorizeEnvironmentOperation, error) {
+	return c.internalClient.AuthorizeEnvironment(ctx, req, opts...)
+}
+
+// AuthorizeEnvironmentOperation returns a new AuthorizeEnvironmentOperation from a given name.
+// The name must be that of a previously created AuthorizeEnvironmentOperation, possibly from a different process.
+func (c *CloudShellClient) AuthorizeEnvironmentOperation(name string) *AuthorizeEnvironmentOperation {
+	return c.internalClient.AuthorizeEnvironmentOperation(name)
+}
+
+// AddPublicKey adds a public SSH key to an environment, allowing clients with the
+// corresponding private key to connect to that environment via SSH. If a key
+// with the same content already exists, this will error with ALREADY_EXISTS.
+func (c *CloudShellClient) AddPublicKey(ctx context.Context, req *shellpb.AddPublicKeyRequest, opts ...gax.CallOption) (*AddPublicKeyOperation, error) {
+	return c.internalClient.AddPublicKey(ctx, req, opts...)
+}
+
+// AddPublicKeyOperation returns a new AddPublicKeyOperation from a given name.
+// The name must be that of a previously created AddPublicKeyOperation, possibly from a different process.
+func (c *CloudShellClient) AddPublicKeyOperation(name string) *AddPublicKeyOperation {
+	return c.internalClient.AddPublicKeyOperation(name)
+}
+
+// RemovePublicKey removes a public SSH key from an environment. Clients will no longer be
+// able to connect to the environment using the corresponding private key.
+// If a key with the same content is not present, this will error with
+// NOT_FOUND.
+func (c *CloudShellClient) RemovePublicKey(ctx context.Context, req *shellpb.RemovePublicKeyRequest, opts ...gax.CallOption) (*RemovePublicKeyOperation, error) {
+	return c.internalClient.RemovePublicKey(ctx, req, opts...)
+}
+
+// RemovePublicKeyOperation returns a new RemovePublicKeyOperation from a given name.
+// The name must be that of a previously created RemovePublicKeyOperation, possibly from a different process.
+func (c *CloudShellClient) RemovePublicKeyOperation(name string) *RemovePublicKeyOperation {
+	return c.internalClient.RemovePublicKeyOperation(name)
+}
+
+// cloudShellGRPCClient is a client for interacting with Cloud Shell API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type CloudShellClient struct {
+type cloudShellGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing CloudShellClient
+	CallOptions **CloudShellCallOptions
+
 	// The gRPC API client.
 	cloudShellClient shellpb.CloudShellServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *CloudShellCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewCloudShellClient creates a new cloud shell service client.
+// NewCloudShellClient creates a new cloud shell service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // API for interacting with Google Cloud Shell. Each user of Cloud Shell has at
 // least one environment, which has the ID “default”. Environment consists of a
@@ -115,8 +239,7 @@ type CloudShellClient struct {
 // which can then be used to connect to that environment via a separate SSH
 // client.
 func NewCloudShellClient(ctx context.Context, opts ...option.ClientOption) (*CloudShellClient, error) {
-	clientOpts := defaultCloudShellClientOptions()
-
+	clientOpts := defaultCloudShellGRPCClientOptions()
 	if newCloudShellClientHook != nil {
 		hookOpts, err := newCloudShellClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -134,16 +257,19 @@ func NewCloudShellClient(ctx context.Context, opts ...option.ClientOption) (*Clo
 	if err != nil {
 		return nil, err
 	}
-	c := &CloudShellClient{
+	client := CloudShellClient{CallOptions: defaultCloudShellCallOptions()}
+
+	c := &cloudShellGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultCloudShellCallOptions(),
-
 		cloudShellClient: shellpb.NewCloudShellServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -153,33 +279,33 @@ func NewCloudShellClient(ctx context.Context, opts ...option.ClientOption) (*Clo
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *CloudShellClient) Connection() *grpc.ClientConn {
+func (c *cloudShellGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *CloudShellClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *CloudShellClient) setGoogleClientInfo(keyval ...string) {
+func (c *cloudShellGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// GetEnvironment gets an environment. Returns NOT_FOUND if the environment does not exist.
-func (c *CloudShellClient) GetEnvironment(ctx context.Context, req *shellpb.GetEnvironmentRequest, opts ...gax.CallOption) (*shellpb.Environment, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *cloudShellGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *cloudShellGRPCClient) GetEnvironment(ctx context.Context, req *shellpb.GetEnvironmentRequest, opts ...gax.CallOption) (*shellpb.Environment, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -187,7 +313,7 @@ func (c *CloudShellClient) GetEnvironment(ctx context.Context, req *shellpb.GetE
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetEnvironment[0:len(c.CallOptions.GetEnvironment):len(c.CallOptions.GetEnvironment)], opts...)
+	opts = append((*c.CallOptions).GetEnvironment[0:len((*c.CallOptions).GetEnvironment):len((*c.CallOptions).GetEnvironment)], opts...)
 	var resp *shellpb.Environment
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -200,13 +326,7 @@ func (c *CloudShellClient) GetEnvironment(ctx context.Context, req *shellpb.GetE
 	return resp, nil
 }
 
-// StartEnvironment starts an existing environment, allowing clients to connect to it. The
-// returned operation will contain an instance of StartEnvironmentMetadata in
-// its metadata field. Users can wait for the environment to start by polling
-// this operation via GetOperation. Once the environment has finished starting
-// and is ready to accept connections, the operation will contain a
-// StartEnvironmentResponse in its response field.
-func (c *CloudShellClient) StartEnvironment(ctx context.Context, req *shellpb.StartEnvironmentRequest, opts ...gax.CallOption) (*StartEnvironmentOperation, error) {
+func (c *cloudShellGRPCClient) StartEnvironment(ctx context.Context, req *shellpb.StartEnvironmentRequest, opts ...gax.CallOption) (*StartEnvironmentOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -214,7 +334,7 @@ func (c *CloudShellClient) StartEnvironment(ctx context.Context, req *shellpb.St
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.StartEnvironment[0:len(c.CallOptions.StartEnvironment):len(c.CallOptions.StartEnvironment)], opts...)
+	opts = append((*c.CallOptions).StartEnvironment[0:len((*c.CallOptions).StartEnvironment):len((*c.CallOptions).StartEnvironment)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -225,15 +345,11 @@ func (c *CloudShellClient) StartEnvironment(ctx context.Context, req *shellpb.St
 		return nil, err
 	}
 	return &StartEnvironmentOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// AuthorizeEnvironment sends OAuth credentials to a running environment on behalf of a user. When
-// this completes, the environment will be authorized to run various Google
-// Cloud command line tools without requiring the user to manually
-// authenticate.
-func (c *CloudShellClient) AuthorizeEnvironment(ctx context.Context, req *shellpb.AuthorizeEnvironmentRequest, opts ...gax.CallOption) (*AuthorizeEnvironmentOperation, error) {
+func (c *cloudShellGRPCClient) AuthorizeEnvironment(ctx context.Context, req *shellpb.AuthorizeEnvironmentRequest, opts ...gax.CallOption) (*AuthorizeEnvironmentOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -241,7 +357,7 @@ func (c *CloudShellClient) AuthorizeEnvironment(ctx context.Context, req *shellp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.AuthorizeEnvironment[0:len(c.CallOptions.AuthorizeEnvironment):len(c.CallOptions.AuthorizeEnvironment)], opts...)
+	opts = append((*c.CallOptions).AuthorizeEnvironment[0:len((*c.CallOptions).AuthorizeEnvironment):len((*c.CallOptions).AuthorizeEnvironment)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -252,14 +368,11 @@ func (c *CloudShellClient) AuthorizeEnvironment(ctx context.Context, req *shellp
 		return nil, err
 	}
 	return &AuthorizeEnvironmentOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// AddPublicKey adds a public SSH key to an environment, allowing clients with the
-// corresponding private key to connect to that environment via SSH. If a key
-// with the same content already exists, this will error with ALREADY_EXISTS.
-func (c *CloudShellClient) AddPublicKey(ctx context.Context, req *shellpb.AddPublicKeyRequest, opts ...gax.CallOption) (*AddPublicKeyOperation, error) {
+func (c *cloudShellGRPCClient) AddPublicKey(ctx context.Context, req *shellpb.AddPublicKeyRequest, opts ...gax.CallOption) (*AddPublicKeyOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -267,7 +380,7 @@ func (c *CloudShellClient) AddPublicKey(ctx context.Context, req *shellpb.AddPub
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "environment", url.QueryEscape(req.GetEnvironment())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.AddPublicKey[0:len(c.CallOptions.AddPublicKey):len(c.CallOptions.AddPublicKey)], opts...)
+	opts = append((*c.CallOptions).AddPublicKey[0:len((*c.CallOptions).AddPublicKey):len((*c.CallOptions).AddPublicKey)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -278,15 +391,11 @@ func (c *CloudShellClient) AddPublicKey(ctx context.Context, req *shellpb.AddPub
 		return nil, err
 	}
 	return &AddPublicKeyOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// RemovePublicKey removes a public SSH key from an environment. Clients will no longer be
-// able to connect to the environment using the corresponding private key.
-// If a key with the same content is not present, this will error with
-// NOT_FOUND.
-func (c *CloudShellClient) RemovePublicKey(ctx context.Context, req *shellpb.RemovePublicKeyRequest, opts ...gax.CallOption) (*RemovePublicKeyOperation, error) {
+func (c *cloudShellGRPCClient) RemovePublicKey(ctx context.Context, req *shellpb.RemovePublicKeyRequest, opts ...gax.CallOption) (*RemovePublicKeyOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -294,7 +403,7 @@ func (c *CloudShellClient) RemovePublicKey(ctx context.Context, req *shellpb.Rem
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "environment", url.QueryEscape(req.GetEnvironment())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.RemovePublicKey[0:len(c.CallOptions.RemovePublicKey):len(c.CallOptions.RemovePublicKey)], opts...)
+	opts = append((*c.CallOptions).RemovePublicKey[0:len((*c.CallOptions).RemovePublicKey):len((*c.CallOptions).RemovePublicKey)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -305,7 +414,7 @@ func (c *CloudShellClient) RemovePublicKey(ctx context.Context, req *shellpb.Rem
 		return nil, err
 	}
 	return &RemovePublicKeyOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
@@ -316,9 +425,9 @@ type AddPublicKeyOperation struct {
 
 // AddPublicKeyOperation returns a new AddPublicKeyOperation from a given name.
 // The name must be that of a previously created AddPublicKeyOperation, possibly from a different process.
-func (c *CloudShellClient) AddPublicKeyOperation(name string) *AddPublicKeyOperation {
+func (c *cloudShellGRPCClient) AddPublicKeyOperation(name string) *AddPublicKeyOperation {
 	return &AddPublicKeyOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -385,9 +494,9 @@ type AuthorizeEnvironmentOperation struct {
 
 // AuthorizeEnvironmentOperation returns a new AuthorizeEnvironmentOperation from a given name.
 // The name must be that of a previously created AuthorizeEnvironmentOperation, possibly from a different process.
-func (c *CloudShellClient) AuthorizeEnvironmentOperation(name string) *AuthorizeEnvironmentOperation {
+func (c *cloudShellGRPCClient) AuthorizeEnvironmentOperation(name string) *AuthorizeEnvironmentOperation {
 	return &AuthorizeEnvironmentOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -454,9 +563,9 @@ type RemovePublicKeyOperation struct {
 
 // RemovePublicKeyOperation returns a new RemovePublicKeyOperation from a given name.
 // The name must be that of a previously created RemovePublicKeyOperation, possibly from a different process.
-func (c *CloudShellClient) RemovePublicKeyOperation(name string) *RemovePublicKeyOperation {
+func (c *cloudShellGRPCClient) RemovePublicKeyOperation(name string) *RemovePublicKeyOperation {
 	return &RemovePublicKeyOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -523,9 +632,9 @@ type StartEnvironmentOperation struct {
 
 // StartEnvironmentOperation returns a new StartEnvironmentOperation from a given name.
 // The name must be that of a previously created StartEnvironmentOperation, possibly from a different process.
-func (c *CloudShellClient) StartEnvironmentOperation(name string) *StartEnvironmentOperation {
+func (c *cloudShellGRPCClient) StartEnvironmentOperation(name string) *StartEnvironmentOperation {
 	return &StartEnvironmentOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

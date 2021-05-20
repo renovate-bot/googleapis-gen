@@ -29,18 +29,19 @@ func ExampleNewDocumentUnderstandingClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleDocumentUnderstandingClient_BatchProcessDocuments() {
-	// import documentaipb "google.golang.org/genproto/googleapis/cloud/documentai/v1beta1"
-
 	ctx := context.Background()
 	c, err := documentai.NewDocumentUnderstandingClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &documentaipb.BatchProcessDocumentsRequest{
 		// TODO: Fill request struct fields.

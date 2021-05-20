@@ -40,7 +40,7 @@ type DriveActivityCallOptions struct {
 	QueryDriveActivity []gax.CallOption
 }
 
-func defaultDriveActivityClientOptions() []option.ClientOption {
+func defaultDriveActivityGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("driveactivity.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("driveactivity.mtls.googleapis.com:443"),
@@ -68,34 +68,83 @@ func defaultDriveActivityCallOptions() *DriveActivityCallOptions {
 	}
 }
 
+// internalDriveActivityClient is an interface that defines the methods availaible from Drive Activity API.
+type internalDriveActivityClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	QueryDriveActivity(context.Context, *activitypb.QueryDriveActivityRequest, ...gax.CallOption) *DriveActivityIterator
+}
+
 // DriveActivityClient is a client for interacting with Drive Activity API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Service for querying activity on Drive items. Activity is user
+// or system action on Drive items that happened in the past. A Drive item can
+// be a file or folder, or a Team Drive.
+type DriveActivityClient struct {
+	// The internal transport-dependent client.
+	internalClient internalDriveActivityClient
+
+	// The call options for this service.
+	CallOptions *DriveActivityCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *DriveActivityClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *DriveActivityClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *DriveActivityClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// QueryDriveActivity query past activity in Google Drive.
+func (c *DriveActivityClient) QueryDriveActivity(ctx context.Context, req *activitypb.QueryDriveActivityRequest, opts ...gax.CallOption) *DriveActivityIterator {
+	return c.internalClient.QueryDriveActivity(ctx, req, opts...)
+}
+
+// driveActivityGRPCClient is a client for interacting with Drive Activity API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type DriveActivityClient struct {
+type driveActivityGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing DriveActivityClient
+	CallOptions **DriveActivityCallOptions
+
 	// The gRPC API client.
 	driveActivityClient activitypb.DriveActivityServiceClient
-
-	// The call options for this service.
-	CallOptions *DriveActivityCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewDriveActivityClient creates a new drive activity service client.
+// NewDriveActivityClient creates a new drive activity service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Service for querying activity on Drive items. Activity is user
 // or system action on Drive items that happened in the past. A Drive item can
 // be a file or folder, or a Team Drive.
 func NewDriveActivityClient(ctx context.Context, opts ...option.ClientOption) (*DriveActivityClient, error) {
-	clientOpts := defaultDriveActivityClientOptions()
-
+	clientOpts := defaultDriveActivityGRPCClientOptions()
 	if newDriveActivityClientHook != nil {
 		hookOpts, err := newDriveActivityClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -113,44 +162,46 @@ func NewDriveActivityClient(ctx context.Context, opts ...option.ClientOption) (*
 	if err != nil {
 		return nil, err
 	}
-	c := &DriveActivityClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultDriveActivityCallOptions(),
+	client := DriveActivityClient{CallOptions: defaultDriveActivityCallOptions()}
 
+	c := &driveActivityGRPCClient{
+		connPool:            connPool,
+		disableDeadlines:    disableDeadlines,
 		driveActivityClient: activitypb.NewDriveActivityServiceClient(connPool),
+		CallOptions:         &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *DriveActivityClient) Connection() *grpc.ClientConn {
+func (c *driveActivityGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *DriveActivityClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *DriveActivityClient) setGoogleClientInfo(keyval ...string) {
+func (c *driveActivityGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// QueryDriveActivity query past activity in Google Drive.
-func (c *DriveActivityClient) QueryDriveActivity(ctx context.Context, req *activitypb.QueryDriveActivityRequest, opts ...gax.CallOption) *DriveActivityIterator {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *driveActivityGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *driveActivityGRPCClient) QueryDriveActivity(ctx context.Context, req *activitypb.QueryDriveActivityRequest, opts ...gax.CallOption) *DriveActivityIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.QueryDriveActivity[0:len(c.CallOptions.QueryDriveActivity):len(c.CallOptions.QueryDriveActivity)], opts...)
+	opts = append((*c.CallOptions).QueryDriveActivity[0:len((*c.CallOptions).QueryDriveActivity):len((*c.CallOptions).QueryDriveActivity)], opts...)
 	it := &DriveActivityIterator{}
 	req = proto.Clone(req).(*activitypb.QueryDriveActivityRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*activitypb.DriveActivity, string, error) {

@@ -30,18 +30,19 @@ func ExampleNewIndexEndpointClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleIndexEndpointClient_CreateIndexEndpoint() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.CreateIndexEndpointRequest{
 		// TODO: Fill request struct fields.
@@ -60,13 +61,12 @@ func ExampleIndexEndpointClient_CreateIndexEndpoint() {
 }
 
 func ExampleIndexEndpointClient_GetIndexEndpoint() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.GetIndexEndpointRequest{
 		// TODO: Fill request struct fields.
@@ -80,14 +80,12 @@ func ExampleIndexEndpointClient_GetIndexEndpoint() {
 }
 
 func ExampleIndexEndpointClient_ListIndexEndpoints() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.ListIndexEndpointsRequest{
 		// TODO: Fill request struct fields.
@@ -107,13 +105,12 @@ func ExampleIndexEndpointClient_ListIndexEndpoints() {
 }
 
 func ExampleIndexEndpointClient_UpdateIndexEndpoint() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UpdateIndexEndpointRequest{
 		// TODO: Fill request struct fields.
@@ -127,13 +124,12 @@ func ExampleIndexEndpointClient_UpdateIndexEndpoint() {
 }
 
 func ExampleIndexEndpointClient_DeleteIndexEndpoint() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeleteIndexEndpointRequest{
 		// TODO: Fill request struct fields.
@@ -150,13 +146,12 @@ func ExampleIndexEndpointClient_DeleteIndexEndpoint() {
 }
 
 func ExampleIndexEndpointClient_DeployIndex() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.DeployIndexRequest{
 		// TODO: Fill request struct fields.
@@ -175,13 +170,12 @@ func ExampleIndexEndpointClient_DeployIndex() {
 }
 
 func ExampleIndexEndpointClient_UndeployIndex() {
-	// import aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
-
 	ctx := context.Background()
 	c, err := aiplatform.NewIndexEndpointClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &aiplatformpb.UndeployIndexRequest{
 		// TODO: Fill request struct fields.

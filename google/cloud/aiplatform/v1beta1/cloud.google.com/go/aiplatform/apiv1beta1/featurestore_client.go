@@ -63,7 +63,7 @@ type FeaturestoreCallOptions struct {
 	SearchFeatures         []gax.CallOption
 }
 
-func defaultFeaturestoreClientOptions() []option.ClientOption {
+func defaultFeaturestoreGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("aiplatform.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("aiplatform.mtls.googleapis.com:443"),
@@ -100,37 +100,308 @@ func defaultFeaturestoreCallOptions() *FeaturestoreCallOptions {
 	}
 }
 
+// internalFeaturestoreClient is an interface that defines the methods availaible from Cloud AI Platform API.
+type internalFeaturestoreClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateFeaturestore(context.Context, *aiplatformpb.CreateFeaturestoreRequest, ...gax.CallOption) (*CreateFeaturestoreOperation, error)
+	CreateFeaturestoreOperation(name string) *CreateFeaturestoreOperation
+	GetFeaturestore(context.Context, *aiplatformpb.GetFeaturestoreRequest, ...gax.CallOption) (*aiplatformpb.Featurestore, error)
+	ListFeaturestores(context.Context, *aiplatformpb.ListFeaturestoresRequest, ...gax.CallOption) *FeaturestoreIterator
+	UpdateFeaturestore(context.Context, *aiplatformpb.UpdateFeaturestoreRequest, ...gax.CallOption) (*UpdateFeaturestoreOperation, error)
+	UpdateFeaturestoreOperation(name string) *UpdateFeaturestoreOperation
+	DeleteFeaturestore(context.Context, *aiplatformpb.DeleteFeaturestoreRequest, ...gax.CallOption) (*DeleteFeaturestoreOperation, error)
+	DeleteFeaturestoreOperation(name string) *DeleteFeaturestoreOperation
+	CreateEntityType(context.Context, *aiplatformpb.CreateEntityTypeRequest, ...gax.CallOption) (*CreateEntityTypeOperation, error)
+	CreateEntityTypeOperation(name string) *CreateEntityTypeOperation
+	GetEntityType(context.Context, *aiplatformpb.GetEntityTypeRequest, ...gax.CallOption) (*aiplatformpb.EntityType, error)
+	ListEntityTypes(context.Context, *aiplatformpb.ListEntityTypesRequest, ...gax.CallOption) *EntityTypeIterator
+	UpdateEntityType(context.Context, *aiplatformpb.UpdateEntityTypeRequest, ...gax.CallOption) (*aiplatformpb.EntityType, error)
+	DeleteEntityType(context.Context, *aiplatformpb.DeleteEntityTypeRequest, ...gax.CallOption) (*DeleteEntityTypeOperation, error)
+	DeleteEntityTypeOperation(name string) *DeleteEntityTypeOperation
+	CreateFeature(context.Context, *aiplatformpb.CreateFeatureRequest, ...gax.CallOption) (*CreateFeatureOperation, error)
+	CreateFeatureOperation(name string) *CreateFeatureOperation
+	BatchCreateFeatures(context.Context, *aiplatformpb.BatchCreateFeaturesRequest, ...gax.CallOption) (*BatchCreateFeaturesOperation, error)
+	BatchCreateFeaturesOperation(name string) *BatchCreateFeaturesOperation
+	GetFeature(context.Context, *aiplatformpb.GetFeatureRequest, ...gax.CallOption) (*aiplatformpb.Feature, error)
+	ListFeatures(context.Context, *aiplatformpb.ListFeaturesRequest, ...gax.CallOption) *FeatureIterator
+	UpdateFeature(context.Context, *aiplatformpb.UpdateFeatureRequest, ...gax.CallOption) (*aiplatformpb.Feature, error)
+	DeleteFeature(context.Context, *aiplatformpb.DeleteFeatureRequest, ...gax.CallOption) (*DeleteFeatureOperation, error)
+	DeleteFeatureOperation(name string) *DeleteFeatureOperation
+	ImportFeatureValues(context.Context, *aiplatformpb.ImportFeatureValuesRequest, ...gax.CallOption) (*ImportFeatureValuesOperation, error)
+	ImportFeatureValuesOperation(name string) *ImportFeatureValuesOperation
+	BatchReadFeatureValues(context.Context, *aiplatformpb.BatchReadFeatureValuesRequest, ...gax.CallOption) (*BatchReadFeatureValuesOperation, error)
+	BatchReadFeatureValuesOperation(name string) *BatchReadFeatureValuesOperation
+	ExportFeatureValues(context.Context, *aiplatformpb.ExportFeatureValuesRequest, ...gax.CallOption) (*ExportFeatureValuesOperation, error)
+	ExportFeatureValuesOperation(name string) *ExportFeatureValuesOperation
+	SearchFeatures(context.Context, *aiplatformpb.SearchFeaturesRequest, ...gax.CallOption) *FeatureIterator
+}
+
 // FeaturestoreClient is a client for interacting with Cloud AI Platform API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// The service that handles CRUD and List for resources for Featurestore.
+type FeaturestoreClient struct {
+	// The internal transport-dependent client.
+	internalClient internalFeaturestoreClient
+
+	// The call options for this service.
+	CallOptions *FeaturestoreCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *FeaturestoreClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *FeaturestoreClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *FeaturestoreClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateFeaturestore creates a new Featurestore in a given project and location.
+func (c *FeaturestoreClient) CreateFeaturestore(ctx context.Context, req *aiplatformpb.CreateFeaturestoreRequest, opts ...gax.CallOption) (*CreateFeaturestoreOperation, error) {
+	return c.internalClient.CreateFeaturestore(ctx, req, opts...)
+}
+
+// CreateFeaturestoreOperation returns a new CreateFeaturestoreOperation from a given name.
+// The name must be that of a previously created CreateFeaturestoreOperation, possibly from a different process.
+func (c *FeaturestoreClient) CreateFeaturestoreOperation(name string) *CreateFeaturestoreOperation {
+	return c.internalClient.CreateFeaturestoreOperation(name)
+}
+
+// GetFeaturestore gets details of a single Featurestore.
+func (c *FeaturestoreClient) GetFeaturestore(ctx context.Context, req *aiplatformpb.GetFeaturestoreRequest, opts ...gax.CallOption) (*aiplatformpb.Featurestore, error) {
+	return c.internalClient.GetFeaturestore(ctx, req, opts...)
+}
+
+// ListFeaturestores lists Featurestores in a given project and location.
+func (c *FeaturestoreClient) ListFeaturestores(ctx context.Context, req *aiplatformpb.ListFeaturestoresRequest, opts ...gax.CallOption) *FeaturestoreIterator {
+	return c.internalClient.ListFeaturestores(ctx, req, opts...)
+}
+
+// UpdateFeaturestore updates the parameters of a single Featurestore.
+func (c *FeaturestoreClient) UpdateFeaturestore(ctx context.Context, req *aiplatformpb.UpdateFeaturestoreRequest, opts ...gax.CallOption) (*UpdateFeaturestoreOperation, error) {
+	return c.internalClient.UpdateFeaturestore(ctx, req, opts...)
+}
+
+// UpdateFeaturestoreOperation returns a new UpdateFeaturestoreOperation from a given name.
+// The name must be that of a previously created UpdateFeaturestoreOperation, possibly from a different process.
+func (c *FeaturestoreClient) UpdateFeaturestoreOperation(name string) *UpdateFeaturestoreOperation {
+	return c.internalClient.UpdateFeaturestoreOperation(name)
+}
+
+// DeleteFeaturestore deletes a single Featurestore. The Featurestore must not contain any
+// EntityTypes or force must be set to true for the request to succeed.
+func (c *FeaturestoreClient) DeleteFeaturestore(ctx context.Context, req *aiplatformpb.DeleteFeaturestoreRequest, opts ...gax.CallOption) (*DeleteFeaturestoreOperation, error) {
+	return c.internalClient.DeleteFeaturestore(ctx, req, opts...)
+}
+
+// DeleteFeaturestoreOperation returns a new DeleteFeaturestoreOperation from a given name.
+// The name must be that of a previously created DeleteFeaturestoreOperation, possibly from a different process.
+func (c *FeaturestoreClient) DeleteFeaturestoreOperation(name string) *DeleteFeaturestoreOperation {
+	return c.internalClient.DeleteFeaturestoreOperation(name)
+}
+
+// CreateEntityType creates a new EntityType in a given Featurestore.
+func (c *FeaturestoreClient) CreateEntityType(ctx context.Context, req *aiplatformpb.CreateEntityTypeRequest, opts ...gax.CallOption) (*CreateEntityTypeOperation, error) {
+	return c.internalClient.CreateEntityType(ctx, req, opts...)
+}
+
+// CreateEntityTypeOperation returns a new CreateEntityTypeOperation from a given name.
+// The name must be that of a previously created CreateEntityTypeOperation, possibly from a different process.
+func (c *FeaturestoreClient) CreateEntityTypeOperation(name string) *CreateEntityTypeOperation {
+	return c.internalClient.CreateEntityTypeOperation(name)
+}
+
+// GetEntityType gets details of a single EntityType.
+func (c *FeaturestoreClient) GetEntityType(ctx context.Context, req *aiplatformpb.GetEntityTypeRequest, opts ...gax.CallOption) (*aiplatformpb.EntityType, error) {
+	return c.internalClient.GetEntityType(ctx, req, opts...)
+}
+
+// ListEntityTypes lists EntityTypes in a given Featurestore.
+func (c *FeaturestoreClient) ListEntityTypes(ctx context.Context, req *aiplatformpb.ListEntityTypesRequest, opts ...gax.CallOption) *EntityTypeIterator {
+	return c.internalClient.ListEntityTypes(ctx, req, opts...)
+}
+
+// UpdateEntityType updates the parameters of a single EntityType.
+func (c *FeaturestoreClient) UpdateEntityType(ctx context.Context, req *aiplatformpb.UpdateEntityTypeRequest, opts ...gax.CallOption) (*aiplatformpb.EntityType, error) {
+	return c.internalClient.UpdateEntityType(ctx, req, opts...)
+}
+
+// DeleteEntityType deletes a single EntityType. The EntityType must not have any Features
+// or force must be set to true for the request to succeed.
+func (c *FeaturestoreClient) DeleteEntityType(ctx context.Context, req *aiplatformpb.DeleteEntityTypeRequest, opts ...gax.CallOption) (*DeleteEntityTypeOperation, error) {
+	return c.internalClient.DeleteEntityType(ctx, req, opts...)
+}
+
+// DeleteEntityTypeOperation returns a new DeleteEntityTypeOperation from a given name.
+// The name must be that of a previously created DeleteEntityTypeOperation, possibly from a different process.
+func (c *FeaturestoreClient) DeleteEntityTypeOperation(name string) *DeleteEntityTypeOperation {
+	return c.internalClient.DeleteEntityTypeOperation(name)
+}
+
+// CreateFeature creates a new Feature in a given EntityType.
+func (c *FeaturestoreClient) CreateFeature(ctx context.Context, req *aiplatformpb.CreateFeatureRequest, opts ...gax.CallOption) (*CreateFeatureOperation, error) {
+	return c.internalClient.CreateFeature(ctx, req, opts...)
+}
+
+// CreateFeatureOperation returns a new CreateFeatureOperation from a given name.
+// The name must be that of a previously created CreateFeatureOperation, possibly from a different process.
+func (c *FeaturestoreClient) CreateFeatureOperation(name string) *CreateFeatureOperation {
+	return c.internalClient.CreateFeatureOperation(name)
+}
+
+// BatchCreateFeatures creates a batch of Features in a given EntityType.
+func (c *FeaturestoreClient) BatchCreateFeatures(ctx context.Context, req *aiplatformpb.BatchCreateFeaturesRequest, opts ...gax.CallOption) (*BatchCreateFeaturesOperation, error) {
+	return c.internalClient.BatchCreateFeatures(ctx, req, opts...)
+}
+
+// BatchCreateFeaturesOperation returns a new BatchCreateFeaturesOperation from a given name.
+// The name must be that of a previously created BatchCreateFeaturesOperation, possibly from a different process.
+func (c *FeaturestoreClient) BatchCreateFeaturesOperation(name string) *BatchCreateFeaturesOperation {
+	return c.internalClient.BatchCreateFeaturesOperation(name)
+}
+
+// GetFeature gets details of a single Feature.
+func (c *FeaturestoreClient) GetFeature(ctx context.Context, req *aiplatformpb.GetFeatureRequest, opts ...gax.CallOption) (*aiplatformpb.Feature, error) {
+	return c.internalClient.GetFeature(ctx, req, opts...)
+}
+
+// ListFeatures lists Features in a given EntityType.
+func (c *FeaturestoreClient) ListFeatures(ctx context.Context, req *aiplatformpb.ListFeaturesRequest, opts ...gax.CallOption) *FeatureIterator {
+	return c.internalClient.ListFeatures(ctx, req, opts...)
+}
+
+// UpdateFeature updates the parameters of a single Feature.
+func (c *FeaturestoreClient) UpdateFeature(ctx context.Context, req *aiplatformpb.UpdateFeatureRequest, opts ...gax.CallOption) (*aiplatformpb.Feature, error) {
+	return c.internalClient.UpdateFeature(ctx, req, opts...)
+}
+
+// DeleteFeature deletes a single Feature.
+func (c *FeaturestoreClient) DeleteFeature(ctx context.Context, req *aiplatformpb.DeleteFeatureRequest, opts ...gax.CallOption) (*DeleteFeatureOperation, error) {
+	return c.internalClient.DeleteFeature(ctx, req, opts...)
+}
+
+// DeleteFeatureOperation returns a new DeleteFeatureOperation from a given name.
+// The name must be that of a previously created DeleteFeatureOperation, possibly from a different process.
+func (c *FeaturestoreClient) DeleteFeatureOperation(name string) *DeleteFeatureOperation {
+	return c.internalClient.DeleteFeatureOperation(name)
+}
+
+// ImportFeatureValues imports Feature values into the Featurestore from a source storage.
+//
+// The progress of the import is tracked by the returned operation. The
+// imported features are guaranteed to be visible to subsequent read
+// operations after the operation is marked as successfully done.
+//
+// If an import operation fails, the Feature values returned from
+// reads and exports may be inconsistent. If consistency is
+// required, the caller must retry the same import request again and wait till
+// the new operation returned is marked as successfully done.
+//
+// There are also scenarios where the caller can cause inconsistency.
+//
+//   Source data for import contains multiple distinct Feature values for
+//   the same entity ID and timestamp.
+//
+//   Source is modified during an import. This includes adding, updating, or
+//   removing source data and/or metadata. Examples of updating metadata
+//   include but are not limited to changing storage location, storage class,
+//   or retention policy.
+//
+//   Online serving cluster is under-provisioned.
+func (c *FeaturestoreClient) ImportFeatureValues(ctx context.Context, req *aiplatformpb.ImportFeatureValuesRequest, opts ...gax.CallOption) (*ImportFeatureValuesOperation, error) {
+	return c.internalClient.ImportFeatureValues(ctx, req, opts...)
+}
+
+// ImportFeatureValuesOperation returns a new ImportFeatureValuesOperation from a given name.
+// The name must be that of a previously created ImportFeatureValuesOperation, possibly from a different process.
+func (c *FeaturestoreClient) ImportFeatureValuesOperation(name string) *ImportFeatureValuesOperation {
+	return c.internalClient.ImportFeatureValuesOperation(name)
+}
+
+// BatchReadFeatureValues batch reads Feature values from a Featurestore.
+//
+// This API enables batch reading Feature values, where each read
+// instance in the batch may read Feature values of entities from one or
+// more EntityTypes. Point-in-time correctness is guaranteed for Feature
+// values of each read instance as of each instance’s read timestamp.
+func (c *FeaturestoreClient) BatchReadFeatureValues(ctx context.Context, req *aiplatformpb.BatchReadFeatureValuesRequest, opts ...gax.CallOption) (*BatchReadFeatureValuesOperation, error) {
+	return c.internalClient.BatchReadFeatureValues(ctx, req, opts...)
+}
+
+// BatchReadFeatureValuesOperation returns a new BatchReadFeatureValuesOperation from a given name.
+// The name must be that of a previously created BatchReadFeatureValuesOperation, possibly from a different process.
+func (c *FeaturestoreClient) BatchReadFeatureValuesOperation(name string) *BatchReadFeatureValuesOperation {
+	return c.internalClient.BatchReadFeatureValuesOperation(name)
+}
+
+// ExportFeatureValues exports Feature values from all the entities of a target EntityType.
+func (c *FeaturestoreClient) ExportFeatureValues(ctx context.Context, req *aiplatformpb.ExportFeatureValuesRequest, opts ...gax.CallOption) (*ExportFeatureValuesOperation, error) {
+	return c.internalClient.ExportFeatureValues(ctx, req, opts...)
+}
+
+// ExportFeatureValuesOperation returns a new ExportFeatureValuesOperation from a given name.
+// The name must be that of a previously created ExportFeatureValuesOperation, possibly from a different process.
+func (c *FeaturestoreClient) ExportFeatureValuesOperation(name string) *ExportFeatureValuesOperation {
+	return c.internalClient.ExportFeatureValuesOperation(name)
+}
+
+// SearchFeatures searches Features matching a query in a given project.
+func (c *FeaturestoreClient) SearchFeatures(ctx context.Context, req *aiplatformpb.SearchFeaturesRequest, opts ...gax.CallOption) *FeatureIterator {
+	return c.internalClient.SearchFeatures(ctx, req, opts...)
+}
+
+// featurestoreGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type FeaturestoreClient struct {
+type featurestoreGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing FeaturestoreClient
+	CallOptions **FeaturestoreCallOptions
+
 	// The gRPC API client.
 	featurestoreClient aiplatformpb.FeaturestoreServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *FeaturestoreCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewFeaturestoreClient creates a new featurestore service client.
+// NewFeaturestoreClient creates a new featurestore service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // The service that handles CRUD and List for resources for Featurestore.
 func NewFeaturestoreClient(ctx context.Context, opts ...option.ClientOption) (*FeaturestoreClient, error) {
-	clientOpts := defaultFeaturestoreClientOptions()
-
+	clientOpts := defaultFeaturestoreGRPCClientOptions()
 	if newFeaturestoreClientHook != nil {
 		hookOpts, err := newFeaturestoreClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -148,16 +419,19 @@ func NewFeaturestoreClient(ctx context.Context, opts ...option.ClientOption) (*F
 	if err != nil {
 		return nil, err
 	}
-	c := &FeaturestoreClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultFeaturestoreCallOptions(),
+	client := FeaturestoreClient{CallOptions: defaultFeaturestoreCallOptions()}
 
+	c := &featurestoreGRPCClient{
+		connPool:           connPool,
+		disableDeadlines:   disableDeadlines,
 		featurestoreClient: aiplatformpb.NewFeaturestoreServiceClient(connPool),
+		CallOptions:        &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -167,33 +441,33 @@ func NewFeaturestoreClient(ctx context.Context, opts ...option.ClientOption) (*F
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *FeaturestoreClient) Connection() *grpc.ClientConn {
+func (c *featurestoreGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *FeaturestoreClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *FeaturestoreClient) setGoogleClientInfo(keyval ...string) {
+func (c *featurestoreGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateFeaturestore creates a new Featurestore in a given project and location.
-func (c *FeaturestoreClient) CreateFeaturestore(ctx context.Context, req *aiplatformpb.CreateFeaturestoreRequest, opts ...gax.CallOption) (*CreateFeaturestoreOperation, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *featurestoreGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *featurestoreGRPCClient) CreateFeaturestore(ctx context.Context, req *aiplatformpb.CreateFeaturestoreRequest, opts ...gax.CallOption) (*CreateFeaturestoreOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -201,7 +475,7 @@ func (c *FeaturestoreClient) CreateFeaturestore(ctx context.Context, req *aiplat
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateFeaturestore[0:len(c.CallOptions.CreateFeaturestore):len(c.CallOptions.CreateFeaturestore)], opts...)
+	opts = append((*c.CallOptions).CreateFeaturestore[0:len((*c.CallOptions).CreateFeaturestore):len((*c.CallOptions).CreateFeaturestore)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -212,12 +486,11 @@ func (c *FeaturestoreClient) CreateFeaturestore(ctx context.Context, req *aiplat
 		return nil, err
 	}
 	return &CreateFeaturestoreOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetFeaturestore gets details of a single Featurestore.
-func (c *FeaturestoreClient) GetFeaturestore(ctx context.Context, req *aiplatformpb.GetFeaturestoreRequest, opts ...gax.CallOption) (*aiplatformpb.Featurestore, error) {
+func (c *featurestoreGRPCClient) GetFeaturestore(ctx context.Context, req *aiplatformpb.GetFeaturestoreRequest, opts ...gax.CallOption) (*aiplatformpb.Featurestore, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -225,7 +498,7 @@ func (c *FeaturestoreClient) GetFeaturestore(ctx context.Context, req *aiplatfor
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetFeaturestore[0:len(c.CallOptions.GetFeaturestore):len(c.CallOptions.GetFeaturestore)], opts...)
+	opts = append((*c.CallOptions).GetFeaturestore[0:len((*c.CallOptions).GetFeaturestore):len((*c.CallOptions).GetFeaturestore)], opts...)
 	var resp *aiplatformpb.Featurestore
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -238,11 +511,10 @@ func (c *FeaturestoreClient) GetFeaturestore(ctx context.Context, req *aiplatfor
 	return resp, nil
 }
 
-// ListFeaturestores lists Featurestores in a given project and location.
-func (c *FeaturestoreClient) ListFeaturestores(ctx context.Context, req *aiplatformpb.ListFeaturestoresRequest, opts ...gax.CallOption) *FeaturestoreIterator {
+func (c *featurestoreGRPCClient) ListFeaturestores(ctx context.Context, req *aiplatformpb.ListFeaturestoresRequest, opts ...gax.CallOption) *FeaturestoreIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListFeaturestores[0:len(c.CallOptions.ListFeaturestores):len(c.CallOptions.ListFeaturestores)], opts...)
+	opts = append((*c.CallOptions).ListFeaturestores[0:len((*c.CallOptions).ListFeaturestores):len((*c.CallOptions).ListFeaturestores)], opts...)
 	it := &FeaturestoreIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListFeaturestoresRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Featurestore, string, error) {
@@ -279,8 +551,7 @@ func (c *FeaturestoreClient) ListFeaturestores(ctx context.Context, req *aiplatf
 	return it
 }
 
-// UpdateFeaturestore updates the parameters of a single Featurestore.
-func (c *FeaturestoreClient) UpdateFeaturestore(ctx context.Context, req *aiplatformpb.UpdateFeaturestoreRequest, opts ...gax.CallOption) (*UpdateFeaturestoreOperation, error) {
+func (c *featurestoreGRPCClient) UpdateFeaturestore(ctx context.Context, req *aiplatformpb.UpdateFeaturestoreRequest, opts ...gax.CallOption) (*UpdateFeaturestoreOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -288,7 +559,7 @@ func (c *FeaturestoreClient) UpdateFeaturestore(ctx context.Context, req *aiplat
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "featurestore.name", url.QueryEscape(req.GetFeaturestore().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateFeaturestore[0:len(c.CallOptions.UpdateFeaturestore):len(c.CallOptions.UpdateFeaturestore)], opts...)
+	opts = append((*c.CallOptions).UpdateFeaturestore[0:len((*c.CallOptions).UpdateFeaturestore):len((*c.CallOptions).UpdateFeaturestore)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -299,13 +570,11 @@ func (c *FeaturestoreClient) UpdateFeaturestore(ctx context.Context, req *aiplat
 		return nil, err
 	}
 	return &UpdateFeaturestoreOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeleteFeaturestore deletes a single Featurestore. The Featurestore must not contain any
-// EntityTypes or force must be set to true for the request to succeed.
-func (c *FeaturestoreClient) DeleteFeaturestore(ctx context.Context, req *aiplatformpb.DeleteFeaturestoreRequest, opts ...gax.CallOption) (*DeleteFeaturestoreOperation, error) {
+func (c *featurestoreGRPCClient) DeleteFeaturestore(ctx context.Context, req *aiplatformpb.DeleteFeaturestoreRequest, opts ...gax.CallOption) (*DeleteFeaturestoreOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -313,7 +582,7 @@ func (c *FeaturestoreClient) DeleteFeaturestore(ctx context.Context, req *aiplat
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteFeaturestore[0:len(c.CallOptions.DeleteFeaturestore):len(c.CallOptions.DeleteFeaturestore)], opts...)
+	opts = append((*c.CallOptions).DeleteFeaturestore[0:len((*c.CallOptions).DeleteFeaturestore):len((*c.CallOptions).DeleteFeaturestore)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -324,12 +593,11 @@ func (c *FeaturestoreClient) DeleteFeaturestore(ctx context.Context, req *aiplat
 		return nil, err
 	}
 	return &DeleteFeaturestoreOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// CreateEntityType creates a new EntityType in a given Featurestore.
-func (c *FeaturestoreClient) CreateEntityType(ctx context.Context, req *aiplatformpb.CreateEntityTypeRequest, opts ...gax.CallOption) (*CreateEntityTypeOperation, error) {
+func (c *featurestoreGRPCClient) CreateEntityType(ctx context.Context, req *aiplatformpb.CreateEntityTypeRequest, opts ...gax.CallOption) (*CreateEntityTypeOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -337,7 +605,7 @@ func (c *FeaturestoreClient) CreateEntityType(ctx context.Context, req *aiplatfo
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateEntityType[0:len(c.CallOptions.CreateEntityType):len(c.CallOptions.CreateEntityType)], opts...)
+	opts = append((*c.CallOptions).CreateEntityType[0:len((*c.CallOptions).CreateEntityType):len((*c.CallOptions).CreateEntityType)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -348,12 +616,11 @@ func (c *FeaturestoreClient) CreateEntityType(ctx context.Context, req *aiplatfo
 		return nil, err
 	}
 	return &CreateEntityTypeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetEntityType gets details of a single EntityType.
-func (c *FeaturestoreClient) GetEntityType(ctx context.Context, req *aiplatformpb.GetEntityTypeRequest, opts ...gax.CallOption) (*aiplatformpb.EntityType, error) {
+func (c *featurestoreGRPCClient) GetEntityType(ctx context.Context, req *aiplatformpb.GetEntityTypeRequest, opts ...gax.CallOption) (*aiplatformpb.EntityType, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -361,7 +628,7 @@ func (c *FeaturestoreClient) GetEntityType(ctx context.Context, req *aiplatformp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetEntityType[0:len(c.CallOptions.GetEntityType):len(c.CallOptions.GetEntityType)], opts...)
+	opts = append((*c.CallOptions).GetEntityType[0:len((*c.CallOptions).GetEntityType):len((*c.CallOptions).GetEntityType)], opts...)
 	var resp *aiplatformpb.EntityType
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -374,11 +641,10 @@ func (c *FeaturestoreClient) GetEntityType(ctx context.Context, req *aiplatformp
 	return resp, nil
 }
 
-// ListEntityTypes lists EntityTypes in a given Featurestore.
-func (c *FeaturestoreClient) ListEntityTypes(ctx context.Context, req *aiplatformpb.ListEntityTypesRequest, opts ...gax.CallOption) *EntityTypeIterator {
+func (c *featurestoreGRPCClient) ListEntityTypes(ctx context.Context, req *aiplatformpb.ListEntityTypesRequest, opts ...gax.CallOption) *EntityTypeIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListEntityTypes[0:len(c.CallOptions.ListEntityTypes):len(c.CallOptions.ListEntityTypes)], opts...)
+	opts = append((*c.CallOptions).ListEntityTypes[0:len((*c.CallOptions).ListEntityTypes):len((*c.CallOptions).ListEntityTypes)], opts...)
 	it := &EntityTypeIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListEntityTypesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.EntityType, string, error) {
@@ -415,8 +681,7 @@ func (c *FeaturestoreClient) ListEntityTypes(ctx context.Context, req *aiplatfor
 	return it
 }
 
-// UpdateEntityType updates the parameters of a single EntityType.
-func (c *FeaturestoreClient) UpdateEntityType(ctx context.Context, req *aiplatformpb.UpdateEntityTypeRequest, opts ...gax.CallOption) (*aiplatformpb.EntityType, error) {
+func (c *featurestoreGRPCClient) UpdateEntityType(ctx context.Context, req *aiplatformpb.UpdateEntityTypeRequest, opts ...gax.CallOption) (*aiplatformpb.EntityType, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -424,7 +689,7 @@ func (c *FeaturestoreClient) UpdateEntityType(ctx context.Context, req *aiplatfo
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "entity_type.name", url.QueryEscape(req.GetEntityType().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateEntityType[0:len(c.CallOptions.UpdateEntityType):len(c.CallOptions.UpdateEntityType)], opts...)
+	opts = append((*c.CallOptions).UpdateEntityType[0:len((*c.CallOptions).UpdateEntityType):len((*c.CallOptions).UpdateEntityType)], opts...)
 	var resp *aiplatformpb.EntityType
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -437,9 +702,7 @@ func (c *FeaturestoreClient) UpdateEntityType(ctx context.Context, req *aiplatfo
 	return resp, nil
 }
 
-// DeleteEntityType deletes a single EntityType. The EntityType must not have any Features
-// or force must be set to true for the request to succeed.
-func (c *FeaturestoreClient) DeleteEntityType(ctx context.Context, req *aiplatformpb.DeleteEntityTypeRequest, opts ...gax.CallOption) (*DeleteEntityTypeOperation, error) {
+func (c *featurestoreGRPCClient) DeleteEntityType(ctx context.Context, req *aiplatformpb.DeleteEntityTypeRequest, opts ...gax.CallOption) (*DeleteEntityTypeOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -447,7 +710,7 @@ func (c *FeaturestoreClient) DeleteEntityType(ctx context.Context, req *aiplatfo
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteEntityType[0:len(c.CallOptions.DeleteEntityType):len(c.CallOptions.DeleteEntityType)], opts...)
+	opts = append((*c.CallOptions).DeleteEntityType[0:len((*c.CallOptions).DeleteEntityType):len((*c.CallOptions).DeleteEntityType)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -458,12 +721,11 @@ func (c *FeaturestoreClient) DeleteEntityType(ctx context.Context, req *aiplatfo
 		return nil, err
 	}
 	return &DeleteEntityTypeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// CreateFeature creates a new Feature in a given EntityType.
-func (c *FeaturestoreClient) CreateFeature(ctx context.Context, req *aiplatformpb.CreateFeatureRequest, opts ...gax.CallOption) (*CreateFeatureOperation, error) {
+func (c *featurestoreGRPCClient) CreateFeature(ctx context.Context, req *aiplatformpb.CreateFeatureRequest, opts ...gax.CallOption) (*CreateFeatureOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -471,7 +733,7 @@ func (c *FeaturestoreClient) CreateFeature(ctx context.Context, req *aiplatformp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateFeature[0:len(c.CallOptions.CreateFeature):len(c.CallOptions.CreateFeature)], opts...)
+	opts = append((*c.CallOptions).CreateFeature[0:len((*c.CallOptions).CreateFeature):len((*c.CallOptions).CreateFeature)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -482,12 +744,11 @@ func (c *FeaturestoreClient) CreateFeature(ctx context.Context, req *aiplatformp
 		return nil, err
 	}
 	return &CreateFeatureOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// BatchCreateFeatures creates a batch of Features in a given EntityType.
-func (c *FeaturestoreClient) BatchCreateFeatures(ctx context.Context, req *aiplatformpb.BatchCreateFeaturesRequest, opts ...gax.CallOption) (*BatchCreateFeaturesOperation, error) {
+func (c *featurestoreGRPCClient) BatchCreateFeatures(ctx context.Context, req *aiplatformpb.BatchCreateFeaturesRequest, opts ...gax.CallOption) (*BatchCreateFeaturesOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -495,7 +756,7 @@ func (c *FeaturestoreClient) BatchCreateFeatures(ctx context.Context, req *aipla
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.BatchCreateFeatures[0:len(c.CallOptions.BatchCreateFeatures):len(c.CallOptions.BatchCreateFeatures)], opts...)
+	opts = append((*c.CallOptions).BatchCreateFeatures[0:len((*c.CallOptions).BatchCreateFeatures):len((*c.CallOptions).BatchCreateFeatures)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -506,12 +767,11 @@ func (c *FeaturestoreClient) BatchCreateFeatures(ctx context.Context, req *aipla
 		return nil, err
 	}
 	return &BatchCreateFeaturesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetFeature gets details of a single Feature.
-func (c *FeaturestoreClient) GetFeature(ctx context.Context, req *aiplatformpb.GetFeatureRequest, opts ...gax.CallOption) (*aiplatformpb.Feature, error) {
+func (c *featurestoreGRPCClient) GetFeature(ctx context.Context, req *aiplatformpb.GetFeatureRequest, opts ...gax.CallOption) (*aiplatformpb.Feature, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -519,7 +779,7 @@ func (c *FeaturestoreClient) GetFeature(ctx context.Context, req *aiplatformpb.G
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetFeature[0:len(c.CallOptions.GetFeature):len(c.CallOptions.GetFeature)], opts...)
+	opts = append((*c.CallOptions).GetFeature[0:len((*c.CallOptions).GetFeature):len((*c.CallOptions).GetFeature)], opts...)
 	var resp *aiplatformpb.Feature
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -532,11 +792,10 @@ func (c *FeaturestoreClient) GetFeature(ctx context.Context, req *aiplatformpb.G
 	return resp, nil
 }
 
-// ListFeatures lists Features in a given EntityType.
-func (c *FeaturestoreClient) ListFeatures(ctx context.Context, req *aiplatformpb.ListFeaturesRequest, opts ...gax.CallOption) *FeatureIterator {
+func (c *featurestoreGRPCClient) ListFeatures(ctx context.Context, req *aiplatformpb.ListFeaturesRequest, opts ...gax.CallOption) *FeatureIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListFeatures[0:len(c.CallOptions.ListFeatures):len(c.CallOptions.ListFeatures)], opts...)
+	opts = append((*c.CallOptions).ListFeatures[0:len((*c.CallOptions).ListFeatures):len((*c.CallOptions).ListFeatures)], opts...)
 	it := &FeatureIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListFeaturesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Feature, string, error) {
@@ -573,8 +832,7 @@ func (c *FeaturestoreClient) ListFeatures(ctx context.Context, req *aiplatformpb
 	return it
 }
 
-// UpdateFeature updates the parameters of a single Feature.
-func (c *FeaturestoreClient) UpdateFeature(ctx context.Context, req *aiplatformpb.UpdateFeatureRequest, opts ...gax.CallOption) (*aiplatformpb.Feature, error) {
+func (c *featurestoreGRPCClient) UpdateFeature(ctx context.Context, req *aiplatformpb.UpdateFeatureRequest, opts ...gax.CallOption) (*aiplatformpb.Feature, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -582,7 +840,7 @@ func (c *FeaturestoreClient) UpdateFeature(ctx context.Context, req *aiplatformp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "feature.name", url.QueryEscape(req.GetFeature().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateFeature[0:len(c.CallOptions.UpdateFeature):len(c.CallOptions.UpdateFeature)], opts...)
+	opts = append((*c.CallOptions).UpdateFeature[0:len((*c.CallOptions).UpdateFeature):len((*c.CallOptions).UpdateFeature)], opts...)
 	var resp *aiplatformpb.Feature
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -595,8 +853,7 @@ func (c *FeaturestoreClient) UpdateFeature(ctx context.Context, req *aiplatformp
 	return resp, nil
 }
 
-// DeleteFeature deletes a single Feature.
-func (c *FeaturestoreClient) DeleteFeature(ctx context.Context, req *aiplatformpb.DeleteFeatureRequest, opts ...gax.CallOption) (*DeleteFeatureOperation, error) {
+func (c *featurestoreGRPCClient) DeleteFeature(ctx context.Context, req *aiplatformpb.DeleteFeatureRequest, opts ...gax.CallOption) (*DeleteFeatureOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -604,7 +861,7 @@ func (c *FeaturestoreClient) DeleteFeature(ctx context.Context, req *aiplatformp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteFeature[0:len(c.CallOptions.DeleteFeature):len(c.CallOptions.DeleteFeature)], opts...)
+	opts = append((*c.CallOptions).DeleteFeature[0:len((*c.CallOptions).DeleteFeature):len((*c.CallOptions).DeleteFeature)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -615,33 +872,11 @@ func (c *FeaturestoreClient) DeleteFeature(ctx context.Context, req *aiplatformp
 		return nil, err
 	}
 	return &DeleteFeatureOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// ImportFeatureValues imports Feature values into the Featurestore from a source storage.
-//
-// The progress of the import is tracked by the returned operation. The
-// imported features are guaranteed to be visible to subsequent read
-// operations after the operation is marked as successfully done.
-//
-// If an import operation fails, the Feature values returned from
-// reads and exports may be inconsistent. If consistency is
-// required, the caller must retry the same import request again and wait till
-// the new operation returned is marked as successfully done.
-//
-// There are also scenarios where the caller can cause inconsistency.
-//
-//   Source data for import contains multiple distinct Feature values for
-//   the same entity ID and timestamp.
-//
-//   Source is modified during an import. This includes adding, updating, or
-//   removing source data and/or metadata. Examples of updating metadata
-//   include but are not limited to changing storage location, storage class,
-//   or retention policy.
-//
-//   Online serving cluster is under-provisioned.
-func (c *FeaturestoreClient) ImportFeatureValues(ctx context.Context, req *aiplatformpb.ImportFeatureValuesRequest, opts ...gax.CallOption) (*ImportFeatureValuesOperation, error) {
+func (c *featurestoreGRPCClient) ImportFeatureValues(ctx context.Context, req *aiplatformpb.ImportFeatureValuesRequest, opts ...gax.CallOption) (*ImportFeatureValuesOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -649,7 +884,7 @@ func (c *FeaturestoreClient) ImportFeatureValues(ctx context.Context, req *aipla
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "entity_type", url.QueryEscape(req.GetEntityType())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ImportFeatureValues[0:len(c.CallOptions.ImportFeatureValues):len(c.CallOptions.ImportFeatureValues)], opts...)
+	opts = append((*c.CallOptions).ImportFeatureValues[0:len((*c.CallOptions).ImportFeatureValues):len((*c.CallOptions).ImportFeatureValues)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -660,17 +895,11 @@ func (c *FeaturestoreClient) ImportFeatureValues(ctx context.Context, req *aipla
 		return nil, err
 	}
 	return &ImportFeatureValuesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// BatchReadFeatureValues batch reads Feature values from a Featurestore.
-//
-// This API enables batch reading Feature values, where each read
-// instance in the batch may read Feature values of entities from one or
-// more EntityTypes. Point-in-time correctness is guaranteed for Feature
-// values of each read instance as of each instance’s read timestamp.
-func (c *FeaturestoreClient) BatchReadFeatureValues(ctx context.Context, req *aiplatformpb.BatchReadFeatureValuesRequest, opts ...gax.CallOption) (*BatchReadFeatureValuesOperation, error) {
+func (c *featurestoreGRPCClient) BatchReadFeatureValues(ctx context.Context, req *aiplatformpb.BatchReadFeatureValuesRequest, opts ...gax.CallOption) (*BatchReadFeatureValuesOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -678,7 +907,7 @@ func (c *FeaturestoreClient) BatchReadFeatureValues(ctx context.Context, req *ai
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "featurestore", url.QueryEscape(req.GetFeaturestore())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.BatchReadFeatureValues[0:len(c.CallOptions.BatchReadFeatureValues):len(c.CallOptions.BatchReadFeatureValues)], opts...)
+	opts = append((*c.CallOptions).BatchReadFeatureValues[0:len((*c.CallOptions).BatchReadFeatureValues):len((*c.CallOptions).BatchReadFeatureValues)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -689,15 +918,14 @@ func (c *FeaturestoreClient) BatchReadFeatureValues(ctx context.Context, req *ai
 		return nil, err
 	}
 	return &BatchReadFeatureValuesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// ExportFeatureValues exports Feature values from all the entities of a target EntityType.
-func (c *FeaturestoreClient) ExportFeatureValues(ctx context.Context, req *aiplatformpb.ExportFeatureValuesRequest, opts ...gax.CallOption) (*ExportFeatureValuesOperation, error) {
+func (c *featurestoreGRPCClient) ExportFeatureValues(ctx context.Context, req *aiplatformpb.ExportFeatureValuesRequest, opts ...gax.CallOption) (*ExportFeatureValuesOperation, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "entity_type", url.QueryEscape(req.GetEntityType())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ExportFeatureValues[0:len(c.CallOptions.ExportFeatureValues):len(c.CallOptions.ExportFeatureValues)], opts...)
+	opts = append((*c.CallOptions).ExportFeatureValues[0:len((*c.CallOptions).ExportFeatureValues):len((*c.CallOptions).ExportFeatureValues)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -708,15 +936,14 @@ func (c *FeaturestoreClient) ExportFeatureValues(ctx context.Context, req *aipla
 		return nil, err
 	}
 	return &ExportFeatureValuesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// SearchFeatures searches Features matching a query in a given project.
-func (c *FeaturestoreClient) SearchFeatures(ctx context.Context, req *aiplatformpb.SearchFeaturesRequest, opts ...gax.CallOption) *FeatureIterator {
+func (c *featurestoreGRPCClient) SearchFeatures(ctx context.Context, req *aiplatformpb.SearchFeaturesRequest, opts ...gax.CallOption) *FeatureIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "location", url.QueryEscape(req.GetLocation())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SearchFeatures[0:len(c.CallOptions.SearchFeatures):len(c.CallOptions.SearchFeatures)], opts...)
+	opts = append((*c.CallOptions).SearchFeatures[0:len((*c.CallOptions).SearchFeatures):len((*c.CallOptions).SearchFeatures)], opts...)
 	it := &FeatureIterator{}
 	req = proto.Clone(req).(*aiplatformpb.SearchFeaturesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Feature, string, error) {
@@ -760,9 +987,9 @@ type BatchCreateFeaturesOperation struct {
 
 // BatchCreateFeaturesOperation returns a new BatchCreateFeaturesOperation from a given name.
 // The name must be that of a previously created BatchCreateFeaturesOperation, possibly from a different process.
-func (c *FeaturestoreClient) BatchCreateFeaturesOperation(name string) *BatchCreateFeaturesOperation {
+func (c *featurestoreGRPCClient) BatchCreateFeaturesOperation(name string) *BatchCreateFeaturesOperation {
 	return &BatchCreateFeaturesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -829,9 +1056,9 @@ type BatchReadFeatureValuesOperation struct {
 
 // BatchReadFeatureValuesOperation returns a new BatchReadFeatureValuesOperation from a given name.
 // The name must be that of a previously created BatchReadFeatureValuesOperation, possibly from a different process.
-func (c *FeaturestoreClient) BatchReadFeatureValuesOperation(name string) *BatchReadFeatureValuesOperation {
+func (c *featurestoreGRPCClient) BatchReadFeatureValuesOperation(name string) *BatchReadFeatureValuesOperation {
 	return &BatchReadFeatureValuesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -898,9 +1125,9 @@ type CreateEntityTypeOperation struct {
 
 // CreateEntityTypeOperation returns a new CreateEntityTypeOperation from a given name.
 // The name must be that of a previously created CreateEntityTypeOperation, possibly from a different process.
-func (c *FeaturestoreClient) CreateEntityTypeOperation(name string) *CreateEntityTypeOperation {
+func (c *featurestoreGRPCClient) CreateEntityTypeOperation(name string) *CreateEntityTypeOperation {
 	return &CreateEntityTypeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -967,9 +1194,9 @@ type CreateFeatureOperation struct {
 
 // CreateFeatureOperation returns a new CreateFeatureOperation from a given name.
 // The name must be that of a previously created CreateFeatureOperation, possibly from a different process.
-func (c *FeaturestoreClient) CreateFeatureOperation(name string) *CreateFeatureOperation {
+func (c *featurestoreGRPCClient) CreateFeatureOperation(name string) *CreateFeatureOperation {
 	return &CreateFeatureOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1036,9 +1263,9 @@ type CreateFeaturestoreOperation struct {
 
 // CreateFeaturestoreOperation returns a new CreateFeaturestoreOperation from a given name.
 // The name must be that of a previously created CreateFeaturestoreOperation, possibly from a different process.
-func (c *FeaturestoreClient) CreateFeaturestoreOperation(name string) *CreateFeaturestoreOperation {
+func (c *featurestoreGRPCClient) CreateFeaturestoreOperation(name string) *CreateFeaturestoreOperation {
 	return &CreateFeaturestoreOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1105,9 +1332,9 @@ type DeleteEntityTypeOperation struct {
 
 // DeleteEntityTypeOperation returns a new DeleteEntityTypeOperation from a given name.
 // The name must be that of a previously created DeleteEntityTypeOperation, possibly from a different process.
-func (c *FeaturestoreClient) DeleteEntityTypeOperation(name string) *DeleteEntityTypeOperation {
+func (c *featurestoreGRPCClient) DeleteEntityTypeOperation(name string) *DeleteEntityTypeOperation {
 	return &DeleteEntityTypeOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1163,9 +1390,9 @@ type DeleteFeatureOperation struct {
 
 // DeleteFeatureOperation returns a new DeleteFeatureOperation from a given name.
 // The name must be that of a previously created DeleteFeatureOperation, possibly from a different process.
-func (c *FeaturestoreClient) DeleteFeatureOperation(name string) *DeleteFeatureOperation {
+func (c *featurestoreGRPCClient) DeleteFeatureOperation(name string) *DeleteFeatureOperation {
 	return &DeleteFeatureOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1221,9 +1448,9 @@ type DeleteFeaturestoreOperation struct {
 
 // DeleteFeaturestoreOperation returns a new DeleteFeaturestoreOperation from a given name.
 // The name must be that of a previously created DeleteFeaturestoreOperation, possibly from a different process.
-func (c *FeaturestoreClient) DeleteFeaturestoreOperation(name string) *DeleteFeaturestoreOperation {
+func (c *featurestoreGRPCClient) DeleteFeaturestoreOperation(name string) *DeleteFeaturestoreOperation {
 	return &DeleteFeaturestoreOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1279,9 +1506,9 @@ type ExportFeatureValuesOperation struct {
 
 // ExportFeatureValuesOperation returns a new ExportFeatureValuesOperation from a given name.
 // The name must be that of a previously created ExportFeatureValuesOperation, possibly from a different process.
-func (c *FeaturestoreClient) ExportFeatureValuesOperation(name string) *ExportFeatureValuesOperation {
+func (c *featurestoreGRPCClient) ExportFeatureValuesOperation(name string) *ExportFeatureValuesOperation {
 	return &ExportFeatureValuesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1348,9 +1575,9 @@ type ImportFeatureValuesOperation struct {
 
 // ImportFeatureValuesOperation returns a new ImportFeatureValuesOperation from a given name.
 // The name must be that of a previously created ImportFeatureValuesOperation, possibly from a different process.
-func (c *FeaturestoreClient) ImportFeatureValuesOperation(name string) *ImportFeatureValuesOperation {
+func (c *featurestoreGRPCClient) ImportFeatureValuesOperation(name string) *ImportFeatureValuesOperation {
 	return &ImportFeatureValuesOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -1417,9 +1644,9 @@ type UpdateFeaturestoreOperation struct {
 
 // UpdateFeaturestoreOperation returns a new UpdateFeaturestoreOperation from a given name.
 // The name must be that of a previously created UpdateFeaturestoreOperation, possibly from a different process.
-func (c *FeaturestoreClient) UpdateFeaturestoreOperation(name string) *UpdateFeaturestoreOperation {
+func (c *featurestoreGRPCClient) UpdateFeaturestoreOperation(name string) *UpdateFeaturestoreOperation {
 	return &UpdateFeaturestoreOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

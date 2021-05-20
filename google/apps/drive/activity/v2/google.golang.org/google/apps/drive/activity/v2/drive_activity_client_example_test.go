@@ -30,19 +30,19 @@ func ExampleNewDriveActivityClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleDriveActivityClient_QueryDriveActivity() {
-	// import activitypb "google.golang.org/genproto/googleapis/apps/drive/activity/v2"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := activity.NewDriveActivityClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &activitypb.QueryDriveActivityRequest{
 		// TODO: Fill request struct fields.

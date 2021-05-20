@@ -45,7 +45,7 @@ type BetaAnalyticsDataCallOptions struct {
 	RunRealtimeReport    []gax.CallOption
 }
 
-func defaultBetaAnalyticsDataClientOptions() []option.ClientOption {
+func defaultBetaAnalyticsDataGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("analyticsdata.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("analyticsdata.mtls.googleapis.com:443"),
@@ -78,32 +78,132 @@ func defaultBetaAnalyticsDataCallOptions() *BetaAnalyticsDataCallOptions {
 	}
 }
 
+// internalBetaAnalyticsDataClient is an interface that defines the methods availaible from Google Analytics Data API.
+type internalBetaAnalyticsDataClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	RunReport(context.Context, *datapb.RunReportRequest, ...gax.CallOption) (*datapb.RunReportResponse, error)
+	RunPivotReport(context.Context, *datapb.RunPivotReportRequest, ...gax.CallOption) (*datapb.RunPivotReportResponse, error)
+	BatchRunReports(context.Context, *datapb.BatchRunReportsRequest, ...gax.CallOption) (*datapb.BatchRunReportsResponse, error)
+	BatchRunPivotReports(context.Context, *datapb.BatchRunPivotReportsRequest, ...gax.CallOption) (*datapb.BatchRunPivotReportsResponse, error)
+	GetMetadata(context.Context, *datapb.GetMetadataRequest, ...gax.CallOption) (*datapb.Metadata, error)
+	RunRealtimeReport(context.Context, *datapb.RunRealtimeReportRequest, ...gax.CallOption) (*datapb.RunRealtimeReportResponse, error)
+}
+
 // BetaAnalyticsDataClient is a client for interacting with Google Analytics Data API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Google Analytics reporting data service.
+type BetaAnalyticsDataClient struct {
+	// The internal transport-dependent client.
+	internalClient internalBetaAnalyticsDataClient
+
+	// The call options for this service.
+	CallOptions *BetaAnalyticsDataCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *BetaAnalyticsDataClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *BetaAnalyticsDataClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *BetaAnalyticsDataClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// RunReport returns a customized report of your Google Analytics event data. Reports
+// contain statistics derived from data collected by the Google Analytics
+// tracking code. The data returned from the API is as a table with columns
+// for the requested dimensions and metrics. Metrics are individual
+// measurements of user activity on your property, such as active users or
+// event count. Dimensions break down metrics across some common criteria,
+// such as country or event name.
+func (c *BetaAnalyticsDataClient) RunReport(ctx context.Context, req *datapb.RunReportRequest, opts ...gax.CallOption) (*datapb.RunReportResponse, error) {
+	return c.internalClient.RunReport(ctx, req, opts...)
+}
+
+// RunPivotReport returns a customized pivot report of your Google Analytics event data.
+// Pivot reports are more advanced and expressive formats than regular
+// reports. In a pivot report, dimensions are only visible if they are
+// included in a pivot. Multiple pivots can be specified to further dissect
+// your data.
+func (c *BetaAnalyticsDataClient) RunPivotReport(ctx context.Context, req *datapb.RunPivotReportRequest, opts ...gax.CallOption) (*datapb.RunPivotReportResponse, error) {
+	return c.internalClient.RunPivotReport(ctx, req, opts...)
+}
+
+// BatchRunReports returns multiple reports in a batch. All reports must be for the same
+// GA4 Property.
+func (c *BetaAnalyticsDataClient) BatchRunReports(ctx context.Context, req *datapb.BatchRunReportsRequest, opts ...gax.CallOption) (*datapb.BatchRunReportsResponse, error) {
+	return c.internalClient.BatchRunReports(ctx, req, opts...)
+}
+
+// BatchRunPivotReports returns multiple pivot reports in a batch. All reports must be for the same
+// GA4 Property.
+func (c *BetaAnalyticsDataClient) BatchRunPivotReports(ctx context.Context, req *datapb.BatchRunPivotReportsRequest, opts ...gax.CallOption) (*datapb.BatchRunPivotReportsResponse, error) {
+	return c.internalClient.BatchRunPivotReports(ctx, req, opts...)
+}
+
+// GetMetadata returns metadata for dimensions and metrics available in reporting methods.
+// Used to explore the dimensions and metrics. In this method, a Google
+// Analytics GA4 Property Identifier is specified in the request, and
+// the metadata response includes Custom dimensions and metrics as well as
+// Universal metadata.
+//
+// For example if a custom metric with parameter name levels_unlocked is
+// registered to a property, the Metadata response will contain
+// customEvent:levels_unlocked. Universal metadata are dimensions and
+// metrics applicable to any property such as country and totalUsers.
+func (c *BetaAnalyticsDataClient) GetMetadata(ctx context.Context, req *datapb.GetMetadataRequest, opts ...gax.CallOption) (*datapb.Metadata, error) {
+	return c.internalClient.GetMetadata(ctx, req, opts...)
+}
+
+// RunRealtimeReport the Google Analytics Realtime API returns a customized report of realtime
+// event data for your property. These reports show events and usage from the
+// last 30 minutes.
+func (c *BetaAnalyticsDataClient) RunRealtimeReport(ctx context.Context, req *datapb.RunRealtimeReportRequest, opts ...gax.CallOption) (*datapb.RunRealtimeReportResponse, error) {
+	return c.internalClient.RunRealtimeReport(ctx, req, opts...)
+}
+
+// betaAnalyticsDataGRPCClient is a client for interacting with Google Analytics Data API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type BetaAnalyticsDataClient struct {
+type betaAnalyticsDataGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing BetaAnalyticsDataClient
+	CallOptions **BetaAnalyticsDataCallOptions
+
 	// The gRPC API client.
 	betaAnalyticsDataClient datapb.BetaAnalyticsDataClient
-
-	// The call options for this service.
-	CallOptions *BetaAnalyticsDataCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewBetaAnalyticsDataClient creates a new beta analytics data client.
+// NewBetaAnalyticsDataClient creates a new beta analytics data client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Google Analytics reporting data service.
 func NewBetaAnalyticsDataClient(ctx context.Context, opts ...option.ClientOption) (*BetaAnalyticsDataClient, error) {
-	clientOpts := defaultBetaAnalyticsDataClientOptions()
-
+	clientOpts := defaultBetaAnalyticsDataGRPCClientOptions()
 	if newBetaAnalyticsDataClientHook != nil {
 		hookOpts, err := newBetaAnalyticsDataClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -121,48 +221,44 @@ func NewBetaAnalyticsDataClient(ctx context.Context, opts ...option.ClientOption
 	if err != nil {
 		return nil, err
 	}
-	c := &BetaAnalyticsDataClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultBetaAnalyticsDataCallOptions(),
+	client := BetaAnalyticsDataClient{CallOptions: defaultBetaAnalyticsDataCallOptions()}
 
+	c := &betaAnalyticsDataGRPCClient{
+		connPool:                connPool,
+		disableDeadlines:        disableDeadlines,
 		betaAnalyticsDataClient: datapb.NewBetaAnalyticsDataClient(connPool),
+		CallOptions:             &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *BetaAnalyticsDataClient) Connection() *grpc.ClientConn {
+func (c *betaAnalyticsDataGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *BetaAnalyticsDataClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *BetaAnalyticsDataClient) setGoogleClientInfo(keyval ...string) {
+func (c *betaAnalyticsDataGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// RunReport returns a customized report of your Google Analytics event data. Reports
-// contain statistics derived from data collected by the Google Analytics
-// tracking code. The data returned from the API is as a table with columns
-// for the requested dimensions and metrics. Metrics are individual
-// measurements of user activity on your property, such as active users or
-// event count. Dimensions break down metrics across some common criteria,
-// such as country or event name.
-func (c *BetaAnalyticsDataClient) RunReport(ctx context.Context, req *datapb.RunReportRequest, opts ...gax.CallOption) (*datapb.RunReportResponse, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *betaAnalyticsDataGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *betaAnalyticsDataGRPCClient) RunReport(ctx context.Context, req *datapb.RunReportRequest, opts ...gax.CallOption) (*datapb.RunReportResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -170,7 +266,7 @@ func (c *BetaAnalyticsDataClient) RunReport(ctx context.Context, req *datapb.Run
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "property", url.QueryEscape(req.GetProperty())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.RunReport[0:len(c.CallOptions.RunReport):len(c.CallOptions.RunReport)], opts...)
+	opts = append((*c.CallOptions).RunReport[0:len((*c.CallOptions).RunReport):len((*c.CallOptions).RunReport)], opts...)
 	var resp *datapb.RunReportResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -183,12 +279,7 @@ func (c *BetaAnalyticsDataClient) RunReport(ctx context.Context, req *datapb.Run
 	return resp, nil
 }
 
-// RunPivotReport returns a customized pivot report of your Google Analytics event data.
-// Pivot reports are more advanced and expressive formats than regular
-// reports. In a pivot report, dimensions are only visible if they are
-// included in a pivot. Multiple pivots can be specified to further dissect
-// your data.
-func (c *BetaAnalyticsDataClient) RunPivotReport(ctx context.Context, req *datapb.RunPivotReportRequest, opts ...gax.CallOption) (*datapb.RunPivotReportResponse, error) {
+func (c *betaAnalyticsDataGRPCClient) RunPivotReport(ctx context.Context, req *datapb.RunPivotReportRequest, opts ...gax.CallOption) (*datapb.RunPivotReportResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -196,7 +287,7 @@ func (c *BetaAnalyticsDataClient) RunPivotReport(ctx context.Context, req *datap
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "property", url.QueryEscape(req.GetProperty())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.RunPivotReport[0:len(c.CallOptions.RunPivotReport):len(c.CallOptions.RunPivotReport)], opts...)
+	opts = append((*c.CallOptions).RunPivotReport[0:len((*c.CallOptions).RunPivotReport):len((*c.CallOptions).RunPivotReport)], opts...)
 	var resp *datapb.RunPivotReportResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -209,9 +300,7 @@ func (c *BetaAnalyticsDataClient) RunPivotReport(ctx context.Context, req *datap
 	return resp, nil
 }
 
-// BatchRunReports returns multiple reports in a batch. All reports must be for the same
-// GA4 Property.
-func (c *BetaAnalyticsDataClient) BatchRunReports(ctx context.Context, req *datapb.BatchRunReportsRequest, opts ...gax.CallOption) (*datapb.BatchRunReportsResponse, error) {
+func (c *betaAnalyticsDataGRPCClient) BatchRunReports(ctx context.Context, req *datapb.BatchRunReportsRequest, opts ...gax.CallOption) (*datapb.BatchRunReportsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -219,7 +308,7 @@ func (c *BetaAnalyticsDataClient) BatchRunReports(ctx context.Context, req *data
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "property", url.QueryEscape(req.GetProperty())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.BatchRunReports[0:len(c.CallOptions.BatchRunReports):len(c.CallOptions.BatchRunReports)], opts...)
+	opts = append((*c.CallOptions).BatchRunReports[0:len((*c.CallOptions).BatchRunReports):len((*c.CallOptions).BatchRunReports)], opts...)
 	var resp *datapb.BatchRunReportsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -232,9 +321,7 @@ func (c *BetaAnalyticsDataClient) BatchRunReports(ctx context.Context, req *data
 	return resp, nil
 }
 
-// BatchRunPivotReports returns multiple pivot reports in a batch. All reports must be for the same
-// GA4 Property.
-func (c *BetaAnalyticsDataClient) BatchRunPivotReports(ctx context.Context, req *datapb.BatchRunPivotReportsRequest, opts ...gax.CallOption) (*datapb.BatchRunPivotReportsResponse, error) {
+func (c *betaAnalyticsDataGRPCClient) BatchRunPivotReports(ctx context.Context, req *datapb.BatchRunPivotReportsRequest, opts ...gax.CallOption) (*datapb.BatchRunPivotReportsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -242,7 +329,7 @@ func (c *BetaAnalyticsDataClient) BatchRunPivotReports(ctx context.Context, req 
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "property", url.QueryEscape(req.GetProperty())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.BatchRunPivotReports[0:len(c.CallOptions.BatchRunPivotReports):len(c.CallOptions.BatchRunPivotReports)], opts...)
+	opts = append((*c.CallOptions).BatchRunPivotReports[0:len((*c.CallOptions).BatchRunPivotReports):len((*c.CallOptions).BatchRunPivotReports)], opts...)
 	var resp *datapb.BatchRunPivotReportsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -255,17 +342,7 @@ func (c *BetaAnalyticsDataClient) BatchRunPivotReports(ctx context.Context, req 
 	return resp, nil
 }
 
-// GetMetadata returns metadata for dimensions and metrics available in reporting methods.
-// Used to explore the dimensions and metrics. In this method, a Google
-// Analytics GA4 Property Identifier is specified in the request, and
-// the metadata response includes Custom dimensions and metrics as well as
-// Universal metadata.
-//
-// For example if a custom metric with parameter name levels_unlocked is
-// registered to a property, the Metadata response will contain
-// customEvent:levels_unlocked. Universal metadata are dimensions and
-// metrics applicable to any property such as country and totalUsers.
-func (c *BetaAnalyticsDataClient) GetMetadata(ctx context.Context, req *datapb.GetMetadataRequest, opts ...gax.CallOption) (*datapb.Metadata, error) {
+func (c *betaAnalyticsDataGRPCClient) GetMetadata(ctx context.Context, req *datapb.GetMetadataRequest, opts ...gax.CallOption) (*datapb.Metadata, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -273,7 +350,7 @@ func (c *BetaAnalyticsDataClient) GetMetadata(ctx context.Context, req *datapb.G
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetMetadata[0:len(c.CallOptions.GetMetadata):len(c.CallOptions.GetMetadata)], opts...)
+	opts = append((*c.CallOptions).GetMetadata[0:len((*c.CallOptions).GetMetadata):len((*c.CallOptions).GetMetadata)], opts...)
 	var resp *datapb.Metadata
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -286,10 +363,7 @@ func (c *BetaAnalyticsDataClient) GetMetadata(ctx context.Context, req *datapb.G
 	return resp, nil
 }
 
-// RunRealtimeReport the Google Analytics Realtime API returns a customized report of realtime
-// event data for your property. These reports show events and usage from the
-// last 30 minutes.
-func (c *BetaAnalyticsDataClient) RunRealtimeReport(ctx context.Context, req *datapb.RunRealtimeReportRequest, opts ...gax.CallOption) (*datapb.RunRealtimeReportResponse, error) {
+func (c *betaAnalyticsDataGRPCClient) RunRealtimeReport(ctx context.Context, req *datapb.RunRealtimeReportRequest, opts ...gax.CallOption) (*datapb.RunRealtimeReportResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -297,7 +371,7 @@ func (c *BetaAnalyticsDataClient) RunRealtimeReport(ctx context.Context, req *da
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "property", url.QueryEscape(req.GetProperty())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.RunRealtimeReport[0:len(c.CallOptions.RunRealtimeReport):len(c.CallOptions.RunRealtimeReport)], opts...)
+	opts = append((*c.CallOptions).RunRealtimeReport[0:len((*c.CallOptions).RunRealtimeReport):len((*c.CallOptions).RunRealtimeReport)], opts...)
 	var resp *datapb.RunRealtimeReportResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

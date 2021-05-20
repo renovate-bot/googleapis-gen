@@ -52,7 +52,7 @@ type CallOptions struct {
 	MoveBook     []gax.CallOption
 }
 
-func defaultClientOptions() []option.ClientOption {
+func defaultGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("library-example.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("library-example.mtls.googleapis.com:443"),
@@ -189,27 +189,154 @@ func defaultCallOptions() *CallOptions {
 	}
 }
 
+// internalClient is an interface that defines the methods availaible from Example Library API.
+type internalClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateShelf(context.Context, *librarypb.CreateShelfRequest, ...gax.CallOption) (*librarypb.Shelf, error)
+	GetShelf(context.Context, *librarypb.GetShelfRequest, ...gax.CallOption) (*librarypb.Shelf, error)
+	ListShelves(context.Context, *librarypb.ListShelvesRequest, ...gax.CallOption) *ShelfIterator
+	DeleteShelf(context.Context, *librarypb.DeleteShelfRequest, ...gax.CallOption) error
+	MergeShelves(context.Context, *librarypb.MergeShelvesRequest, ...gax.CallOption) (*librarypb.Shelf, error)
+	CreateBook(context.Context, *librarypb.CreateBookRequest, ...gax.CallOption) (*librarypb.Book, error)
+	GetBook(context.Context, *librarypb.GetBookRequest, ...gax.CallOption) (*librarypb.Book, error)
+	ListBooks(context.Context, *librarypb.ListBooksRequest, ...gax.CallOption) *BookIterator
+	DeleteBook(context.Context, *librarypb.DeleteBookRequest, ...gax.CallOption) error
+	UpdateBook(context.Context, *librarypb.UpdateBookRequest, ...gax.CallOption) (*librarypb.Book, error)
+	MoveBook(context.Context, *librarypb.MoveBookRequest, ...gax.CallOption) (*librarypb.Book, error)
+}
+
 // Client is a client for interacting with Example Library API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// This API represents a simple digital library.  It lets you manage Shelf
+// resources and Book resources in the library. It defines the following
+// resource model:
+//
+//   The API has a collection of Shelf
+//   resources, named shelves/*
+//
+//   Each Shelf has a collection of Book
+//   resources, named shelves/*/books/*
+type Client struct {
+	// The internal transport-dependent client.
+	internalClient internalClient
+
+	// The call options for this service.
+	CallOptions *CallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *Client) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *Client) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *Client) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateShelf creates a shelf, and returns the new Shelf.
+func (c *Client) CreateShelf(ctx context.Context, req *librarypb.CreateShelfRequest, opts ...gax.CallOption) (*librarypb.Shelf, error) {
+	return c.internalClient.CreateShelf(ctx, req, opts...)
+}
+
+// GetShelf gets a shelf. Returns NOT_FOUND if the shelf does not exist.
+func (c *Client) GetShelf(ctx context.Context, req *librarypb.GetShelfRequest, opts ...gax.CallOption) (*librarypb.Shelf, error) {
+	return c.internalClient.GetShelf(ctx, req, opts...)
+}
+
+// ListShelves lists shelves. The order is unspecified but deterministic. Newly created
+// shelves will not necessarily be added to the end of this list.
+func (c *Client) ListShelves(ctx context.Context, req *librarypb.ListShelvesRequest, opts ...gax.CallOption) *ShelfIterator {
+	return c.internalClient.ListShelves(ctx, req, opts...)
+}
+
+// DeleteShelf deletes a shelf. Returns NOT_FOUND if the shelf does not exist.
+func (c *Client) DeleteShelf(ctx context.Context, req *librarypb.DeleteShelfRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteShelf(ctx, req, opts...)
+}
+
+// MergeShelves merges two shelves by adding all books from the shelf named
+// other_shelf_name to shelf name, and deletes
+// other_shelf_name. Returns the updated shelf.
+// The book ids of the moved books may not be the same as the original books.
+//
+// Returns NOT_FOUND if either shelf does not exist.
+// This call is a no-op if the specified shelves are the same.
+func (c *Client) MergeShelves(ctx context.Context, req *librarypb.MergeShelvesRequest, opts ...gax.CallOption) (*librarypb.Shelf, error) {
+	return c.internalClient.MergeShelves(ctx, req, opts...)
+}
+
+// CreateBook creates a book, and returns the new Book.
+func (c *Client) CreateBook(ctx context.Context, req *librarypb.CreateBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
+	return c.internalClient.CreateBook(ctx, req, opts...)
+}
+
+// GetBook gets a book. Returns NOT_FOUND if the book does not exist.
+func (c *Client) GetBook(ctx context.Context, req *librarypb.GetBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
+	return c.internalClient.GetBook(ctx, req, opts...)
+}
+
+// ListBooks lists books in a shelf. The order is unspecified but deterministic. Newly
+// created books will not necessarily be added to the end of this list.
+// Returns NOT_FOUND if the shelf does not exist.
+func (c *Client) ListBooks(ctx context.Context, req *librarypb.ListBooksRequest, opts ...gax.CallOption) *BookIterator {
+	return c.internalClient.ListBooks(ctx, req, opts...)
+}
+
+// DeleteBook deletes a book. Returns NOT_FOUND if the book does not exist.
+func (c *Client) DeleteBook(ctx context.Context, req *librarypb.DeleteBookRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteBook(ctx, req, opts...)
+}
+
+// UpdateBook updates a book. Returns INVALID_ARGUMENT if the name of the book
+// is non-empty and does not equal the existing name.
+func (c *Client) UpdateBook(ctx context.Context, req *librarypb.UpdateBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
+	return c.internalClient.UpdateBook(ctx, req, opts...)
+}
+
+// MoveBook moves a book to another shelf, and returns the new book. The book
+// id of the new book may not be the same as the original book.
+func (c *Client) MoveBook(ctx context.Context, req *librarypb.MoveBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
+	return c.internalClient.MoveBook(ctx, req, opts...)
+}
+
+// gRPCClient is a client for interacting with Example Library API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type Client struct {
+type gRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing Client
+	CallOptions **CallOptions
+
 	// The gRPC API client.
 	client librarypb.LibraryServiceClient
-
-	// The call options for this service.
-	CallOptions *CallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewClient creates a new library service client.
+// NewClient creates a new library service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // This API represents a simple digital library.  It lets you manage Shelf
 // resources and Book resources in the library. It defines the following
@@ -221,8 +348,7 @@ type Client struct {
 //   Each Shelf has a collection of Book
 //   resources, named shelves/*/books/*
 func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
-	clientOpts := defaultClientOptions()
-
+	clientOpts := defaultGRPCClientOptions()
 	if newClientHook != nil {
 		hookOpts, err := newClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -240,49 +366,51 @@ func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error
 	if err != nil {
 		return nil, err
 	}
-	c := &Client{
+	client := Client{CallOptions: defaultCallOptions()}
+
+	c := &gRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultCallOptions(),
-
-		client: librarypb.NewLibraryServiceClient(connPool),
+		client:           librarypb.NewLibraryServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *Client) Connection() *grpc.ClientConn {
+func (c *gRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *Client) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *Client) setGoogleClientInfo(keyval ...string) {
+func (c *gRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateShelf creates a shelf, and returns the new Shelf.
-func (c *Client) CreateShelf(ctx context.Context, req *librarypb.CreateShelfRequest, opts ...gax.CallOption) (*librarypb.Shelf, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *gRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *gRPCClient) CreateShelf(ctx context.Context, req *librarypb.CreateShelfRequest, opts ...gax.CallOption) (*librarypb.Shelf, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.CreateShelf[0:len(c.CallOptions.CreateShelf):len(c.CallOptions.CreateShelf)], opts...)
+	opts = append((*c.CallOptions).CreateShelf[0:len((*c.CallOptions).CreateShelf):len((*c.CallOptions).CreateShelf)], opts...)
 	var resp *librarypb.Shelf
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -295,8 +423,7 @@ func (c *Client) CreateShelf(ctx context.Context, req *librarypb.CreateShelfRequ
 	return resp, nil
 }
 
-// GetShelf gets a shelf. Returns NOT_FOUND if the shelf does not exist.
-func (c *Client) GetShelf(ctx context.Context, req *librarypb.GetShelfRequest, opts ...gax.CallOption) (*librarypb.Shelf, error) {
+func (c *gRPCClient) GetShelf(ctx context.Context, req *librarypb.GetShelfRequest, opts ...gax.CallOption) (*librarypb.Shelf, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -304,7 +431,7 @@ func (c *Client) GetShelf(ctx context.Context, req *librarypb.GetShelfRequest, o
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetShelf[0:len(c.CallOptions.GetShelf):len(c.CallOptions.GetShelf)], opts...)
+	opts = append((*c.CallOptions).GetShelf[0:len((*c.CallOptions).GetShelf):len((*c.CallOptions).GetShelf)], opts...)
 	var resp *librarypb.Shelf
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -317,11 +444,9 @@ func (c *Client) GetShelf(ctx context.Context, req *librarypb.GetShelfRequest, o
 	return resp, nil
 }
 
-// ListShelves lists shelves. The order is unspecified but deterministic. Newly created
-// shelves will not necessarily be added to the end of this list.
-func (c *Client) ListShelves(ctx context.Context, req *librarypb.ListShelvesRequest, opts ...gax.CallOption) *ShelfIterator {
+func (c *gRPCClient) ListShelves(ctx context.Context, req *librarypb.ListShelvesRequest, opts ...gax.CallOption) *ShelfIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.ListShelves[0:len(c.CallOptions.ListShelves):len(c.CallOptions.ListShelves)], opts...)
+	opts = append((*c.CallOptions).ListShelves[0:len((*c.CallOptions).ListShelves):len((*c.CallOptions).ListShelves)], opts...)
 	it := &ShelfIterator{}
 	req = proto.Clone(req).(*librarypb.ListShelvesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*librarypb.Shelf, string, error) {
@@ -358,8 +483,7 @@ func (c *Client) ListShelves(ctx context.Context, req *librarypb.ListShelvesRequ
 	return it
 }
 
-// DeleteShelf deletes a shelf. Returns NOT_FOUND if the shelf does not exist.
-func (c *Client) DeleteShelf(ctx context.Context, req *librarypb.DeleteShelfRequest, opts ...gax.CallOption) error {
+func (c *gRPCClient) DeleteShelf(ctx context.Context, req *librarypb.DeleteShelfRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -367,7 +491,7 @@ func (c *Client) DeleteShelf(ctx context.Context, req *librarypb.DeleteShelfRequ
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteShelf[0:len(c.CallOptions.DeleteShelf):len(c.CallOptions.DeleteShelf)], opts...)
+	opts = append((*c.CallOptions).DeleteShelf[0:len((*c.CallOptions).DeleteShelf):len((*c.CallOptions).DeleteShelf)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.client.DeleteShelf(ctx, req, settings.GRPC...)
@@ -376,14 +500,7 @@ func (c *Client) DeleteShelf(ctx context.Context, req *librarypb.DeleteShelfRequ
 	return err
 }
 
-// MergeShelves merges two shelves by adding all books from the shelf named
-// other_shelf_name to shelf name, and deletes
-// other_shelf_name. Returns the updated shelf.
-// The book ids of the moved books may not be the same as the original books.
-//
-// Returns NOT_FOUND if either shelf does not exist.
-// This call is a no-op if the specified shelves are the same.
-func (c *Client) MergeShelves(ctx context.Context, req *librarypb.MergeShelvesRequest, opts ...gax.CallOption) (*librarypb.Shelf, error) {
+func (c *gRPCClient) MergeShelves(ctx context.Context, req *librarypb.MergeShelvesRequest, opts ...gax.CallOption) (*librarypb.Shelf, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -391,7 +508,7 @@ func (c *Client) MergeShelves(ctx context.Context, req *librarypb.MergeShelvesRe
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.MergeShelves[0:len(c.CallOptions.MergeShelves):len(c.CallOptions.MergeShelves)], opts...)
+	opts = append((*c.CallOptions).MergeShelves[0:len((*c.CallOptions).MergeShelves):len((*c.CallOptions).MergeShelves)], opts...)
 	var resp *librarypb.Shelf
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -404,8 +521,7 @@ func (c *Client) MergeShelves(ctx context.Context, req *librarypb.MergeShelvesRe
 	return resp, nil
 }
 
-// CreateBook creates a book, and returns the new Book.
-func (c *Client) CreateBook(ctx context.Context, req *librarypb.CreateBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
+func (c *gRPCClient) CreateBook(ctx context.Context, req *librarypb.CreateBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -413,7 +529,7 @@ func (c *Client) CreateBook(ctx context.Context, req *librarypb.CreateBookReques
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateBook[0:len(c.CallOptions.CreateBook):len(c.CallOptions.CreateBook)], opts...)
+	opts = append((*c.CallOptions).CreateBook[0:len((*c.CallOptions).CreateBook):len((*c.CallOptions).CreateBook)], opts...)
 	var resp *librarypb.Book
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -426,8 +542,7 @@ func (c *Client) CreateBook(ctx context.Context, req *librarypb.CreateBookReques
 	return resp, nil
 }
 
-// GetBook gets a book. Returns NOT_FOUND if the book does not exist.
-func (c *Client) GetBook(ctx context.Context, req *librarypb.GetBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
+func (c *gRPCClient) GetBook(ctx context.Context, req *librarypb.GetBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -435,7 +550,7 @@ func (c *Client) GetBook(ctx context.Context, req *librarypb.GetBookRequest, opt
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetBook[0:len(c.CallOptions.GetBook):len(c.CallOptions.GetBook)], opts...)
+	opts = append((*c.CallOptions).GetBook[0:len((*c.CallOptions).GetBook):len((*c.CallOptions).GetBook)], opts...)
 	var resp *librarypb.Book
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -448,13 +563,10 @@ func (c *Client) GetBook(ctx context.Context, req *librarypb.GetBookRequest, opt
 	return resp, nil
 }
 
-// ListBooks lists books in a shelf. The order is unspecified but deterministic. Newly
-// created books will not necessarily be added to the end of this list.
-// Returns NOT_FOUND if the shelf does not exist.
-func (c *Client) ListBooks(ctx context.Context, req *librarypb.ListBooksRequest, opts ...gax.CallOption) *BookIterator {
+func (c *gRPCClient) ListBooks(ctx context.Context, req *librarypb.ListBooksRequest, opts ...gax.CallOption) *BookIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListBooks[0:len(c.CallOptions.ListBooks):len(c.CallOptions.ListBooks)], opts...)
+	opts = append((*c.CallOptions).ListBooks[0:len((*c.CallOptions).ListBooks):len((*c.CallOptions).ListBooks)], opts...)
 	it := &BookIterator{}
 	req = proto.Clone(req).(*librarypb.ListBooksRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*librarypb.Book, string, error) {
@@ -491,8 +603,7 @@ func (c *Client) ListBooks(ctx context.Context, req *librarypb.ListBooksRequest,
 	return it
 }
 
-// DeleteBook deletes a book. Returns NOT_FOUND if the book does not exist.
-func (c *Client) DeleteBook(ctx context.Context, req *librarypb.DeleteBookRequest, opts ...gax.CallOption) error {
+func (c *gRPCClient) DeleteBook(ctx context.Context, req *librarypb.DeleteBookRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -500,7 +611,7 @@ func (c *Client) DeleteBook(ctx context.Context, req *librarypb.DeleteBookReques
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteBook[0:len(c.CallOptions.DeleteBook):len(c.CallOptions.DeleteBook)], opts...)
+	opts = append((*c.CallOptions).DeleteBook[0:len((*c.CallOptions).DeleteBook):len((*c.CallOptions).DeleteBook)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.client.DeleteBook(ctx, req, settings.GRPC...)
@@ -509,9 +620,7 @@ func (c *Client) DeleteBook(ctx context.Context, req *librarypb.DeleteBookReques
 	return err
 }
 
-// UpdateBook updates a book. Returns INVALID_ARGUMENT if the name of the book
-// is non-empty and does not equal the existing name.
-func (c *Client) UpdateBook(ctx context.Context, req *librarypb.UpdateBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
+func (c *gRPCClient) UpdateBook(ctx context.Context, req *librarypb.UpdateBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -519,7 +628,7 @@ func (c *Client) UpdateBook(ctx context.Context, req *librarypb.UpdateBookReques
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "book.name", url.QueryEscape(req.GetBook().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateBook[0:len(c.CallOptions.UpdateBook):len(c.CallOptions.UpdateBook)], opts...)
+	opts = append((*c.CallOptions).UpdateBook[0:len((*c.CallOptions).UpdateBook):len((*c.CallOptions).UpdateBook)], opts...)
 	var resp *librarypb.Book
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -532,9 +641,7 @@ func (c *Client) UpdateBook(ctx context.Context, req *librarypb.UpdateBookReques
 	return resp, nil
 }
 
-// MoveBook moves a book to another shelf, and returns the new book. The book
-// id of the new book may not be the same as the original book.
-func (c *Client) MoveBook(ctx context.Context, req *librarypb.MoveBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
+func (c *gRPCClient) MoveBook(ctx context.Context, req *librarypb.MoveBookRequest, opts ...gax.CallOption) (*librarypb.Book, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -542,7 +649,7 @@ func (c *Client) MoveBook(ctx context.Context, req *librarypb.MoveBookRequest, o
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.MoveBook[0:len(c.CallOptions.MoveBook):len(c.CallOptions.MoveBook)], opts...)
+	opts = append((*c.CallOptions).MoveBook[0:len((*c.CallOptions).MoveBook):len((*c.CallOptions).MoveBook)], opts...)
 	var resp *librarypb.Book
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

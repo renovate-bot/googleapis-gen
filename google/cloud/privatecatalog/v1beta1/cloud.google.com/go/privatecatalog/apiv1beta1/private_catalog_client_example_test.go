@@ -30,19 +30,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_SearchCatalogs() {
-	// import privatecatalogpb "google.golang.org/genproto/googleapis/cloud/privatecatalog/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := privatecatalog.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &privatecatalogpb.SearchCatalogsRequest{
 		// TODO: Fill request struct fields.
@@ -62,14 +62,12 @@ func ExampleClient_SearchCatalogs() {
 }
 
 func ExampleClient_SearchProducts() {
-	// import privatecatalogpb "google.golang.org/genproto/googleapis/cloud/privatecatalog/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := privatecatalog.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &privatecatalogpb.SearchProductsRequest{
 		// TODO: Fill request struct fields.
@@ -89,14 +87,12 @@ func ExampleClient_SearchProducts() {
 }
 
 func ExampleClient_SearchVersions() {
-	// import privatecatalogpb "google.golang.org/genproto/googleapis/cloud/privatecatalog/v1beta1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := privatecatalog.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &privatecatalogpb.SearchVersionsRequest{
 		// TODO: Fill request struct fields.

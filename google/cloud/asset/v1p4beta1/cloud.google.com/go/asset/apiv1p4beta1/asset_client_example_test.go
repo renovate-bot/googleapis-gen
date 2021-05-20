@@ -29,18 +29,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_AnalyzeIamPolicy() {
-	// import assetpb "google.golang.org/genproto/googleapis/cloud/asset/v1p4beta1"
-
 	ctx := context.Background()
 	c, err := asset.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &assetpb.AnalyzeIamPolicyRequest{
 		// TODO: Fill request struct fields.
@@ -54,13 +55,12 @@ func ExampleClient_AnalyzeIamPolicy() {
 }
 
 func ExampleClient_ExportIamPolicyAnalysis() {
-	// import assetpb "google.golang.org/genproto/googleapis/cloud/asset/v1p4beta1"
-
 	ctx := context.Background()
 	c, err := asset.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &assetpb.ExportIamPolicyAnalysisRequest{
 		// TODO: Fill request struct fields.

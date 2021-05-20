@@ -29,18 +29,19 @@ func ExampleNewHomeGraphApiClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleHomeGraphApiClient_RequestSyncDevices() {
-	// import graphpb "google.golang.org/genproto/googleapis/home/graph/v1"
-
 	ctx := context.Background()
 	c, err := graph.NewHomeGraphApiClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &graphpb.RequestSyncDevicesRequest{
 		// TODO: Fill request struct fields.
@@ -54,13 +55,12 @@ func ExampleHomeGraphApiClient_RequestSyncDevices() {
 }
 
 func ExampleHomeGraphApiClient_ReportStateAndNotification() {
-	// import graphpb "google.golang.org/genproto/googleapis/home/graph/v1"
-
 	ctx := context.Background()
 	c, err := graph.NewHomeGraphApiClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &graphpb.ReportStateAndNotificationRequest{
 		// TODO: Fill request struct fields.
@@ -79,6 +79,7 @@ func ExampleHomeGraphApiClient_DeleteAgentUser() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &graphpb.DeleteAgentUserRequest{
 		// TODO: Fill request struct fields.
@@ -90,13 +91,12 @@ func ExampleHomeGraphApiClient_DeleteAgentUser() {
 }
 
 func ExampleHomeGraphApiClient_Query() {
-	// import graphpb "google.golang.org/genproto/googleapis/home/graph/v1"
-
 	ctx := context.Background()
 	c, err := graph.NewHomeGraphApiClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &graphpb.QueryRequest{
 		// TODO: Fill request struct fields.
@@ -110,13 +110,12 @@ func ExampleHomeGraphApiClient_Query() {
 }
 
 func ExampleHomeGraphApiClient_Sync() {
-	// import graphpb "google.golang.org/genproto/googleapis/home/graph/v1"
-
 	ctx := context.Background()
 	c, err := graph.NewHomeGraphApiClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &graphpb.SyncRequest{
 		// TODO: Fill request struct fields.

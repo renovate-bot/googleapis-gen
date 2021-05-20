@@ -58,7 +58,7 @@ type VizierCallOptions struct {
 	ListOptimalTrials            []gax.CallOption
 }
 
-func defaultVizierClientOptions() []option.ClientOption {
+func defaultVizierGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("aiplatform.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("aiplatform.mtls.googleapis.com:443"),
@@ -90,32 +90,200 @@ func defaultVizierCallOptions() *VizierCallOptions {
 	}
 }
 
+// internalVizierClient is an interface that defines the methods availaible from Cloud AI Platform API.
+type internalVizierClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateStudy(context.Context, *aiplatformpb.CreateStudyRequest, ...gax.CallOption) (*aiplatformpb.Study, error)
+	GetStudy(context.Context, *aiplatformpb.GetStudyRequest, ...gax.CallOption) (*aiplatformpb.Study, error)
+	ListStudies(context.Context, *aiplatformpb.ListStudiesRequest, ...gax.CallOption) *StudyIterator
+	DeleteStudy(context.Context, *aiplatformpb.DeleteStudyRequest, ...gax.CallOption) error
+	LookupStudy(context.Context, *aiplatformpb.LookupStudyRequest, ...gax.CallOption) (*aiplatformpb.Study, error)
+	SuggestTrials(context.Context, *aiplatformpb.SuggestTrialsRequest, ...gax.CallOption) (*SuggestTrialsOperation, error)
+	SuggestTrialsOperation(name string) *SuggestTrialsOperation
+	CreateTrial(context.Context, *aiplatformpb.CreateTrialRequest, ...gax.CallOption) (*aiplatformpb.Trial, error)
+	GetTrial(context.Context, *aiplatformpb.GetTrialRequest, ...gax.CallOption) (*aiplatformpb.Trial, error)
+	ListTrials(context.Context, *aiplatformpb.ListTrialsRequest, ...gax.CallOption) *TrialIterator
+	AddTrialMeasurement(context.Context, *aiplatformpb.AddTrialMeasurementRequest, ...gax.CallOption) (*aiplatformpb.Trial, error)
+	CompleteTrial(context.Context, *aiplatformpb.CompleteTrialRequest, ...gax.CallOption) (*aiplatformpb.Trial, error)
+	DeleteTrial(context.Context, *aiplatformpb.DeleteTrialRequest, ...gax.CallOption) error
+	CheckTrialEarlyStoppingState(context.Context, *aiplatformpb.CheckTrialEarlyStoppingStateRequest, ...gax.CallOption) (*CheckTrialEarlyStoppingStateOperation, error)
+	CheckTrialEarlyStoppingStateOperation(name string) *CheckTrialEarlyStoppingStateOperation
+	StopTrial(context.Context, *aiplatformpb.StopTrialRequest, ...gax.CallOption) (*aiplatformpb.Trial, error)
+	ListOptimalTrials(context.Context, *aiplatformpb.ListOptimalTrialsRequest, ...gax.CallOption) (*aiplatformpb.ListOptimalTrialsResponse, error)
+}
+
 // VizierClient is a client for interacting with Cloud AI Platform API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// Cloud AI Platform Vizier API.
+//
+// Vizier service is a GCP service to solve blackbox optimization problems,
+// such as tuning machine learning hyperparameters and searching over deep
+// learning architectures.
+type VizierClient struct {
+	// The internal transport-dependent client.
+	internalClient internalVizierClient
+
+	// The call options for this service.
+	CallOptions *VizierCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *VizierClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *VizierClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *VizierClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateStudy creates a Study. A resource name will be generated after creation of the
+// Study.
+func (c *VizierClient) CreateStudy(ctx context.Context, req *aiplatformpb.CreateStudyRequest, opts ...gax.CallOption) (*aiplatformpb.Study, error) {
+	return c.internalClient.CreateStudy(ctx, req, opts...)
+}
+
+// GetStudy gets a Study by name.
+func (c *VizierClient) GetStudy(ctx context.Context, req *aiplatformpb.GetStudyRequest, opts ...gax.CallOption) (*aiplatformpb.Study, error) {
+	return c.internalClient.GetStudy(ctx, req, opts...)
+}
+
+// ListStudies lists all the studies in a region for an associated project.
+func (c *VizierClient) ListStudies(ctx context.Context, req *aiplatformpb.ListStudiesRequest, opts ...gax.CallOption) *StudyIterator {
+	return c.internalClient.ListStudies(ctx, req, opts...)
+}
+
+// DeleteStudy deletes a Study.
+func (c *VizierClient) DeleteStudy(ctx context.Context, req *aiplatformpb.DeleteStudyRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteStudy(ctx, req, opts...)
+}
+
+// LookupStudy looks a study up using the user-defined display_name field instead of the
+// fully qualified resource name.
+func (c *VizierClient) LookupStudy(ctx context.Context, req *aiplatformpb.LookupStudyRequest, opts ...gax.CallOption) (*aiplatformpb.Study, error) {
+	return c.internalClient.LookupStudy(ctx, req, opts...)
+}
+
+// SuggestTrials adds one or more Trials to a Study, with parameter values
+// suggested by AI Platform Vizier. Returns a long-running
+// operation associated with the generation of Trial suggestions.
+// When this long-running operation succeeds, it will contain
+// a SuggestTrialsResponse.
+func (c *VizierClient) SuggestTrials(ctx context.Context, req *aiplatformpb.SuggestTrialsRequest, opts ...gax.CallOption) (*SuggestTrialsOperation, error) {
+	return c.internalClient.SuggestTrials(ctx, req, opts...)
+}
+
+// SuggestTrialsOperation returns a new SuggestTrialsOperation from a given name.
+// The name must be that of a previously created SuggestTrialsOperation, possibly from a different process.
+func (c *VizierClient) SuggestTrialsOperation(name string) *SuggestTrialsOperation {
+	return c.internalClient.SuggestTrialsOperation(name)
+}
+
+// CreateTrial adds a user provided Trial to a Study.
+func (c *VizierClient) CreateTrial(ctx context.Context, req *aiplatformpb.CreateTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
+	return c.internalClient.CreateTrial(ctx, req, opts...)
+}
+
+// GetTrial gets a Trial.
+func (c *VizierClient) GetTrial(ctx context.Context, req *aiplatformpb.GetTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
+	return c.internalClient.GetTrial(ctx, req, opts...)
+}
+
+// ListTrials lists the Trials associated with a Study.
+func (c *VizierClient) ListTrials(ctx context.Context, req *aiplatformpb.ListTrialsRequest, opts ...gax.CallOption) *TrialIterator {
+	return c.internalClient.ListTrials(ctx, req, opts...)
+}
+
+// AddTrialMeasurement adds a measurement of the objective metrics to a Trial. This measurement
+// is assumed to have been taken before the Trial is complete.
+func (c *VizierClient) AddTrialMeasurement(ctx context.Context, req *aiplatformpb.AddTrialMeasurementRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
+	return c.internalClient.AddTrialMeasurement(ctx, req, opts...)
+}
+
+// CompleteTrial marks a Trial as complete.
+func (c *VizierClient) CompleteTrial(ctx context.Context, req *aiplatformpb.CompleteTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
+	return c.internalClient.CompleteTrial(ctx, req, opts...)
+}
+
+// DeleteTrial deletes a Trial.
+func (c *VizierClient) DeleteTrial(ctx context.Context, req *aiplatformpb.DeleteTrialRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteTrial(ctx, req, opts...)
+}
+
+// CheckTrialEarlyStoppingState checks  whether a Trial should stop or not. Returns a
+// long-running operation. When the operation is successful,
+// it will contain a
+// CheckTrialEarlyStoppingStateResponse.
+func (c *VizierClient) CheckTrialEarlyStoppingState(ctx context.Context, req *aiplatformpb.CheckTrialEarlyStoppingStateRequest, opts ...gax.CallOption) (*CheckTrialEarlyStoppingStateOperation, error) {
+	return c.internalClient.CheckTrialEarlyStoppingState(ctx, req, opts...)
+}
+
+// CheckTrialEarlyStoppingStateOperation returns a new CheckTrialEarlyStoppingStateOperation from a given name.
+// The name must be that of a previously created CheckTrialEarlyStoppingStateOperation, possibly from a different process.
+func (c *VizierClient) CheckTrialEarlyStoppingStateOperation(name string) *CheckTrialEarlyStoppingStateOperation {
+	return c.internalClient.CheckTrialEarlyStoppingStateOperation(name)
+}
+
+// StopTrial stops a Trial.
+func (c *VizierClient) StopTrial(ctx context.Context, req *aiplatformpb.StopTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
+	return c.internalClient.StopTrial(ctx, req, opts...)
+}
+
+// ListOptimalTrials lists the pareto-optimal Trials for multi-objective Study or the
+// optimal Trials for single-objective Study. The definition of
+// pareto-optimal can be checked in wiki page.
+// https://en.wikipedia.org/wiki/Pareto_efficiency (at https://en.wikipedia.org/wiki/Pareto_efficiency)
+func (c *VizierClient) ListOptimalTrials(ctx context.Context, req *aiplatformpb.ListOptimalTrialsRequest, opts ...gax.CallOption) (*aiplatformpb.ListOptimalTrialsResponse, error) {
+	return c.internalClient.ListOptimalTrials(ctx, req, opts...)
+}
+
+// vizierGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type VizierClient struct {
+type vizierGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing VizierClient
+	CallOptions **VizierCallOptions
+
 	// The gRPC API client.
 	vizierClient aiplatformpb.VizierServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *VizierCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewVizierClient creates a new vizier service client.
+// NewVizierClient creates a new vizier service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // Cloud AI Platform Vizier API.
 //
@@ -123,8 +291,7 @@ type VizierClient struct {
 // such as tuning machine learning hyperparameters and searching over deep
 // learning architectures.
 func NewVizierClient(ctx context.Context, opts ...option.ClientOption) (*VizierClient, error) {
-	clientOpts := defaultVizierClientOptions()
-
+	clientOpts := defaultVizierGRPCClientOptions()
 	if newVizierClientHook != nil {
 		hookOpts, err := newVizierClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -142,16 +309,19 @@ func NewVizierClient(ctx context.Context, opts ...option.ClientOption) (*VizierC
 	if err != nil {
 		return nil, err
 	}
-	c := &VizierClient{
+	client := VizierClient{CallOptions: defaultVizierCallOptions()}
+
+	c := &vizierGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultVizierCallOptions(),
-
-		vizierClient: aiplatformpb.NewVizierServiceClient(connPool),
+		vizierClient:     aiplatformpb.NewVizierServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -161,34 +331,33 @@ func NewVizierClient(ctx context.Context, opts ...option.ClientOption) (*VizierC
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *VizierClient) Connection() *grpc.ClientConn {
+func (c *vizierGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *VizierClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *VizierClient) setGoogleClientInfo(keyval ...string) {
+func (c *vizierGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateStudy creates a Study. A resource name will be generated after creation of the
-// Study.
-func (c *VizierClient) CreateStudy(ctx context.Context, req *aiplatformpb.CreateStudyRequest, opts ...gax.CallOption) (*aiplatformpb.Study, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *vizierGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *vizierGRPCClient) CreateStudy(ctx context.Context, req *aiplatformpb.CreateStudyRequest, opts ...gax.CallOption) (*aiplatformpb.Study, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -196,7 +365,7 @@ func (c *VizierClient) CreateStudy(ctx context.Context, req *aiplatformpb.Create
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateStudy[0:len(c.CallOptions.CreateStudy):len(c.CallOptions.CreateStudy)], opts...)
+	opts = append((*c.CallOptions).CreateStudy[0:len((*c.CallOptions).CreateStudy):len((*c.CallOptions).CreateStudy)], opts...)
 	var resp *aiplatformpb.Study
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -209,8 +378,7 @@ func (c *VizierClient) CreateStudy(ctx context.Context, req *aiplatformpb.Create
 	return resp, nil
 }
 
-// GetStudy gets a Study by name.
-func (c *VizierClient) GetStudy(ctx context.Context, req *aiplatformpb.GetStudyRequest, opts ...gax.CallOption) (*aiplatformpb.Study, error) {
+func (c *vizierGRPCClient) GetStudy(ctx context.Context, req *aiplatformpb.GetStudyRequest, opts ...gax.CallOption) (*aiplatformpb.Study, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -218,7 +386,7 @@ func (c *VizierClient) GetStudy(ctx context.Context, req *aiplatformpb.GetStudyR
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetStudy[0:len(c.CallOptions.GetStudy):len(c.CallOptions.GetStudy)], opts...)
+	opts = append((*c.CallOptions).GetStudy[0:len((*c.CallOptions).GetStudy):len((*c.CallOptions).GetStudy)], opts...)
 	var resp *aiplatformpb.Study
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -231,11 +399,10 @@ func (c *VizierClient) GetStudy(ctx context.Context, req *aiplatformpb.GetStudyR
 	return resp, nil
 }
 
-// ListStudies lists all the studies in a region for an associated project.
-func (c *VizierClient) ListStudies(ctx context.Context, req *aiplatformpb.ListStudiesRequest, opts ...gax.CallOption) *StudyIterator {
+func (c *vizierGRPCClient) ListStudies(ctx context.Context, req *aiplatformpb.ListStudiesRequest, opts ...gax.CallOption) *StudyIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListStudies[0:len(c.CallOptions.ListStudies):len(c.CallOptions.ListStudies)], opts...)
+	opts = append((*c.CallOptions).ListStudies[0:len((*c.CallOptions).ListStudies):len((*c.CallOptions).ListStudies)], opts...)
 	it := &StudyIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListStudiesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Study, string, error) {
@@ -272,8 +439,7 @@ func (c *VizierClient) ListStudies(ctx context.Context, req *aiplatformpb.ListSt
 	return it
 }
 
-// DeleteStudy deletes a Study.
-func (c *VizierClient) DeleteStudy(ctx context.Context, req *aiplatformpb.DeleteStudyRequest, opts ...gax.CallOption) error {
+func (c *vizierGRPCClient) DeleteStudy(ctx context.Context, req *aiplatformpb.DeleteStudyRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -281,7 +447,7 @@ func (c *VizierClient) DeleteStudy(ctx context.Context, req *aiplatformpb.Delete
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteStudy[0:len(c.CallOptions.DeleteStudy):len(c.CallOptions.DeleteStudy)], opts...)
+	opts = append((*c.CallOptions).DeleteStudy[0:len((*c.CallOptions).DeleteStudy):len((*c.CallOptions).DeleteStudy)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.vizierClient.DeleteStudy(ctx, req, settings.GRPC...)
@@ -290,9 +456,7 @@ func (c *VizierClient) DeleteStudy(ctx context.Context, req *aiplatformpb.Delete
 	return err
 }
 
-// LookupStudy looks a study up using the user-defined display_name field instead of the
-// fully qualified resource name.
-func (c *VizierClient) LookupStudy(ctx context.Context, req *aiplatformpb.LookupStudyRequest, opts ...gax.CallOption) (*aiplatformpb.Study, error) {
+func (c *vizierGRPCClient) LookupStudy(ctx context.Context, req *aiplatformpb.LookupStudyRequest, opts ...gax.CallOption) (*aiplatformpb.Study, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -300,7 +464,7 @@ func (c *VizierClient) LookupStudy(ctx context.Context, req *aiplatformpb.Lookup
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.LookupStudy[0:len(c.CallOptions.LookupStudy):len(c.CallOptions.LookupStudy)], opts...)
+	opts = append((*c.CallOptions).LookupStudy[0:len((*c.CallOptions).LookupStudy):len((*c.CallOptions).LookupStudy)], opts...)
 	var resp *aiplatformpb.Study
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -313,12 +477,7 @@ func (c *VizierClient) LookupStudy(ctx context.Context, req *aiplatformpb.Lookup
 	return resp, nil
 }
 
-// SuggestTrials adds one or more Trials to a Study, with parameter values
-// suggested by AI Platform Vizier. Returns a long-running
-// operation associated with the generation of Trial suggestions.
-// When this long-running operation succeeds, it will contain
-// a SuggestTrialsResponse.
-func (c *VizierClient) SuggestTrials(ctx context.Context, req *aiplatformpb.SuggestTrialsRequest, opts ...gax.CallOption) (*SuggestTrialsOperation, error) {
+func (c *vizierGRPCClient) SuggestTrials(ctx context.Context, req *aiplatformpb.SuggestTrialsRequest, opts ...gax.CallOption) (*SuggestTrialsOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -326,7 +485,7 @@ func (c *VizierClient) SuggestTrials(ctx context.Context, req *aiplatformpb.Sugg
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SuggestTrials[0:len(c.CallOptions.SuggestTrials):len(c.CallOptions.SuggestTrials)], opts...)
+	opts = append((*c.CallOptions).SuggestTrials[0:len((*c.CallOptions).SuggestTrials):len((*c.CallOptions).SuggestTrials)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -337,12 +496,11 @@ func (c *VizierClient) SuggestTrials(ctx context.Context, req *aiplatformpb.Sugg
 		return nil, err
 	}
 	return &SuggestTrialsOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// CreateTrial adds a user provided Trial to a Study.
-func (c *VizierClient) CreateTrial(ctx context.Context, req *aiplatformpb.CreateTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
+func (c *vizierGRPCClient) CreateTrial(ctx context.Context, req *aiplatformpb.CreateTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -350,7 +508,7 @@ func (c *VizierClient) CreateTrial(ctx context.Context, req *aiplatformpb.Create
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateTrial[0:len(c.CallOptions.CreateTrial):len(c.CallOptions.CreateTrial)], opts...)
+	opts = append((*c.CallOptions).CreateTrial[0:len((*c.CallOptions).CreateTrial):len((*c.CallOptions).CreateTrial)], opts...)
 	var resp *aiplatformpb.Trial
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -363,8 +521,7 @@ func (c *VizierClient) CreateTrial(ctx context.Context, req *aiplatformpb.Create
 	return resp, nil
 }
 
-// GetTrial gets a Trial.
-func (c *VizierClient) GetTrial(ctx context.Context, req *aiplatformpb.GetTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
+func (c *vizierGRPCClient) GetTrial(ctx context.Context, req *aiplatformpb.GetTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -372,7 +529,7 @@ func (c *VizierClient) GetTrial(ctx context.Context, req *aiplatformpb.GetTrialR
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetTrial[0:len(c.CallOptions.GetTrial):len(c.CallOptions.GetTrial)], opts...)
+	opts = append((*c.CallOptions).GetTrial[0:len((*c.CallOptions).GetTrial):len((*c.CallOptions).GetTrial)], opts...)
 	var resp *aiplatformpb.Trial
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -385,11 +542,10 @@ func (c *VizierClient) GetTrial(ctx context.Context, req *aiplatformpb.GetTrialR
 	return resp, nil
 }
 
-// ListTrials lists the Trials associated with a Study.
-func (c *VizierClient) ListTrials(ctx context.Context, req *aiplatformpb.ListTrialsRequest, opts ...gax.CallOption) *TrialIterator {
+func (c *vizierGRPCClient) ListTrials(ctx context.Context, req *aiplatformpb.ListTrialsRequest, opts ...gax.CallOption) *TrialIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListTrials[0:len(c.CallOptions.ListTrials):len(c.CallOptions.ListTrials)], opts...)
+	opts = append((*c.CallOptions).ListTrials[0:len((*c.CallOptions).ListTrials):len((*c.CallOptions).ListTrials)], opts...)
 	it := &TrialIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListTrialsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Trial, string, error) {
@@ -426,9 +582,7 @@ func (c *VizierClient) ListTrials(ctx context.Context, req *aiplatformpb.ListTri
 	return it
 }
 
-// AddTrialMeasurement adds a measurement of the objective metrics to a Trial. This measurement
-// is assumed to have been taken before the Trial is complete.
-func (c *VizierClient) AddTrialMeasurement(ctx context.Context, req *aiplatformpb.AddTrialMeasurementRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
+func (c *vizierGRPCClient) AddTrialMeasurement(ctx context.Context, req *aiplatformpb.AddTrialMeasurementRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -436,7 +590,7 @@ func (c *VizierClient) AddTrialMeasurement(ctx context.Context, req *aiplatformp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "trial_name", url.QueryEscape(req.GetTrialName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.AddTrialMeasurement[0:len(c.CallOptions.AddTrialMeasurement):len(c.CallOptions.AddTrialMeasurement)], opts...)
+	opts = append((*c.CallOptions).AddTrialMeasurement[0:len((*c.CallOptions).AddTrialMeasurement):len((*c.CallOptions).AddTrialMeasurement)], opts...)
 	var resp *aiplatformpb.Trial
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -449,8 +603,7 @@ func (c *VizierClient) AddTrialMeasurement(ctx context.Context, req *aiplatformp
 	return resp, nil
 }
 
-// CompleteTrial marks a Trial as complete.
-func (c *VizierClient) CompleteTrial(ctx context.Context, req *aiplatformpb.CompleteTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
+func (c *vizierGRPCClient) CompleteTrial(ctx context.Context, req *aiplatformpb.CompleteTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -458,7 +611,7 @@ func (c *VizierClient) CompleteTrial(ctx context.Context, req *aiplatformpb.Comp
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CompleteTrial[0:len(c.CallOptions.CompleteTrial):len(c.CallOptions.CompleteTrial)], opts...)
+	opts = append((*c.CallOptions).CompleteTrial[0:len((*c.CallOptions).CompleteTrial):len((*c.CallOptions).CompleteTrial)], opts...)
 	var resp *aiplatformpb.Trial
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -471,8 +624,7 @@ func (c *VizierClient) CompleteTrial(ctx context.Context, req *aiplatformpb.Comp
 	return resp, nil
 }
 
-// DeleteTrial deletes a Trial.
-func (c *VizierClient) DeleteTrial(ctx context.Context, req *aiplatformpb.DeleteTrialRequest, opts ...gax.CallOption) error {
+func (c *vizierGRPCClient) DeleteTrial(ctx context.Context, req *aiplatformpb.DeleteTrialRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -480,7 +632,7 @@ func (c *VizierClient) DeleteTrial(ctx context.Context, req *aiplatformpb.Delete
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteTrial[0:len(c.CallOptions.DeleteTrial):len(c.CallOptions.DeleteTrial)], opts...)
+	opts = append((*c.CallOptions).DeleteTrial[0:len((*c.CallOptions).DeleteTrial):len((*c.CallOptions).DeleteTrial)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.vizierClient.DeleteTrial(ctx, req, settings.GRPC...)
@@ -489,11 +641,7 @@ func (c *VizierClient) DeleteTrial(ctx context.Context, req *aiplatformpb.Delete
 	return err
 }
 
-// CheckTrialEarlyStoppingState checks  whether a Trial should stop or not. Returns a
-// long-running operation. When the operation is successful,
-// it will contain a
-// CheckTrialEarlyStoppingStateResponse.
-func (c *VizierClient) CheckTrialEarlyStoppingState(ctx context.Context, req *aiplatformpb.CheckTrialEarlyStoppingStateRequest, opts ...gax.CallOption) (*CheckTrialEarlyStoppingStateOperation, error) {
+func (c *vizierGRPCClient) CheckTrialEarlyStoppingState(ctx context.Context, req *aiplatformpb.CheckTrialEarlyStoppingStateRequest, opts ...gax.CallOption) (*CheckTrialEarlyStoppingStateOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -501,7 +649,7 @@ func (c *VizierClient) CheckTrialEarlyStoppingState(ctx context.Context, req *ai
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "trial_name", url.QueryEscape(req.GetTrialName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CheckTrialEarlyStoppingState[0:len(c.CallOptions.CheckTrialEarlyStoppingState):len(c.CallOptions.CheckTrialEarlyStoppingState)], opts...)
+	opts = append((*c.CallOptions).CheckTrialEarlyStoppingState[0:len((*c.CallOptions).CheckTrialEarlyStoppingState):len((*c.CallOptions).CheckTrialEarlyStoppingState)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -512,12 +660,11 @@ func (c *VizierClient) CheckTrialEarlyStoppingState(ctx context.Context, req *ai
 		return nil, err
 	}
 	return &CheckTrialEarlyStoppingStateOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// StopTrial stops a Trial.
-func (c *VizierClient) StopTrial(ctx context.Context, req *aiplatformpb.StopTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
+func (c *vizierGRPCClient) StopTrial(ctx context.Context, req *aiplatformpb.StopTrialRequest, opts ...gax.CallOption) (*aiplatformpb.Trial, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -525,7 +672,7 @@ func (c *VizierClient) StopTrial(ctx context.Context, req *aiplatformpb.StopTria
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.StopTrial[0:len(c.CallOptions.StopTrial):len(c.CallOptions.StopTrial)], opts...)
+	opts = append((*c.CallOptions).StopTrial[0:len((*c.CallOptions).StopTrial):len((*c.CallOptions).StopTrial)], opts...)
 	var resp *aiplatformpb.Trial
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -538,11 +685,7 @@ func (c *VizierClient) StopTrial(ctx context.Context, req *aiplatformpb.StopTria
 	return resp, nil
 }
 
-// ListOptimalTrials lists the pareto-optimal Trials for multi-objective Study or the
-// optimal Trials for single-objective Study. The definition of
-// pareto-optimal can be checked in wiki page.
-// https://en.wikipedia.org/wiki/Pareto_efficiency (at https://en.wikipedia.org/wiki/Pareto_efficiency)
-func (c *VizierClient) ListOptimalTrials(ctx context.Context, req *aiplatformpb.ListOptimalTrialsRequest, opts ...gax.CallOption) (*aiplatformpb.ListOptimalTrialsResponse, error) {
+func (c *vizierGRPCClient) ListOptimalTrials(ctx context.Context, req *aiplatformpb.ListOptimalTrialsRequest, opts ...gax.CallOption) (*aiplatformpb.ListOptimalTrialsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -550,7 +693,7 @@ func (c *VizierClient) ListOptimalTrials(ctx context.Context, req *aiplatformpb.
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListOptimalTrials[0:len(c.CallOptions.ListOptimalTrials):len(c.CallOptions.ListOptimalTrials)], opts...)
+	opts = append((*c.CallOptions).ListOptimalTrials[0:len((*c.CallOptions).ListOptimalTrials):len((*c.CallOptions).ListOptimalTrials)], opts...)
 	var resp *aiplatformpb.ListOptimalTrialsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -570,9 +713,9 @@ type CheckTrialEarlyStoppingStateOperation struct {
 
 // CheckTrialEarlyStoppingStateOperation returns a new CheckTrialEarlyStoppingStateOperation from a given name.
 // The name must be that of a previously created CheckTrialEarlyStoppingStateOperation, possibly from a different process.
-func (c *VizierClient) CheckTrialEarlyStoppingStateOperation(name string) *CheckTrialEarlyStoppingStateOperation {
+func (c *vizierGRPCClient) CheckTrialEarlyStoppingStateOperation(name string) *CheckTrialEarlyStoppingStateOperation {
 	return &CheckTrialEarlyStoppingStateOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -639,9 +782,9 @@ type SuggestTrialsOperation struct {
 
 // SuggestTrialsOperation returns a new SuggestTrialsOperation from a given name.
 // The name must be that of a previously created SuggestTrialsOperation, possibly from a different process.
-func (c *VizierClient) SuggestTrialsOperation(name string) *SuggestTrialsOperation {
+func (c *vizierGRPCClient) SuggestTrialsOperation(name string) *SuggestTrialsOperation {
 	return &SuggestTrialsOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

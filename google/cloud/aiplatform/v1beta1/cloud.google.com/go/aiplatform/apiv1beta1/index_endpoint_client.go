@@ -50,7 +50,7 @@ type IndexEndpointCallOptions struct {
 	UndeployIndex       []gax.CallOption
 }
 
-func defaultIndexEndpointClientOptions() []option.ClientOption {
+func defaultIndexEndpointGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("aiplatform.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("aiplatform.mtls.googleapis.com:443"),
@@ -74,37 +74,156 @@ func defaultIndexEndpointCallOptions() *IndexEndpointCallOptions {
 	}
 }
 
+// internalIndexEndpointClient is an interface that defines the methods availaible from Cloud AI Platform API.
+type internalIndexEndpointClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	CreateIndexEndpoint(context.Context, *aiplatformpb.CreateIndexEndpointRequest, ...gax.CallOption) (*CreateIndexEndpointOperation, error)
+	CreateIndexEndpointOperation(name string) *CreateIndexEndpointOperation
+	GetIndexEndpoint(context.Context, *aiplatformpb.GetIndexEndpointRequest, ...gax.CallOption) (*aiplatformpb.IndexEndpoint, error)
+	ListIndexEndpoints(context.Context, *aiplatformpb.ListIndexEndpointsRequest, ...gax.CallOption) *IndexEndpointIterator
+	UpdateIndexEndpoint(context.Context, *aiplatformpb.UpdateIndexEndpointRequest, ...gax.CallOption) (*aiplatformpb.IndexEndpoint, error)
+	DeleteIndexEndpoint(context.Context, *aiplatformpb.DeleteIndexEndpointRequest, ...gax.CallOption) (*DeleteIndexEndpointOperation, error)
+	DeleteIndexEndpointOperation(name string) *DeleteIndexEndpointOperation
+	DeployIndex(context.Context, *aiplatformpb.DeployIndexRequest, ...gax.CallOption) (*DeployIndexOperation, error)
+	DeployIndexOperation(name string) *DeployIndexOperation
+	UndeployIndex(context.Context, *aiplatformpb.UndeployIndexRequest, ...gax.CallOption) (*UndeployIndexOperation, error)
+	UndeployIndexOperation(name string) *UndeployIndexOperation
+}
+
 // IndexEndpointClient is a client for interacting with Cloud AI Platform API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// A service for managing AI Platform’s IndexEndpoints.
+type IndexEndpointClient struct {
+	// The internal transport-dependent client.
+	internalClient internalIndexEndpointClient
+
+	// The call options for this service.
+	CallOptions *IndexEndpointCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *IndexEndpointClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *IndexEndpointClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *IndexEndpointClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// CreateIndexEndpoint creates an IndexEndpoint.
+func (c *IndexEndpointClient) CreateIndexEndpoint(ctx context.Context, req *aiplatformpb.CreateIndexEndpointRequest, opts ...gax.CallOption) (*CreateIndexEndpointOperation, error) {
+	return c.internalClient.CreateIndexEndpoint(ctx, req, opts...)
+}
+
+// CreateIndexEndpointOperation returns a new CreateIndexEndpointOperation from a given name.
+// The name must be that of a previously created CreateIndexEndpointOperation, possibly from a different process.
+func (c *IndexEndpointClient) CreateIndexEndpointOperation(name string) *CreateIndexEndpointOperation {
+	return c.internalClient.CreateIndexEndpointOperation(name)
+}
+
+// GetIndexEndpoint gets an IndexEndpoint.
+func (c *IndexEndpointClient) GetIndexEndpoint(ctx context.Context, req *aiplatformpb.GetIndexEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.IndexEndpoint, error) {
+	return c.internalClient.GetIndexEndpoint(ctx, req, opts...)
+}
+
+// ListIndexEndpoints lists IndexEndpoints in a Location.
+func (c *IndexEndpointClient) ListIndexEndpoints(ctx context.Context, req *aiplatformpb.ListIndexEndpointsRequest, opts ...gax.CallOption) *IndexEndpointIterator {
+	return c.internalClient.ListIndexEndpoints(ctx, req, opts...)
+}
+
+// UpdateIndexEndpoint updates an IndexEndpoint.
+func (c *IndexEndpointClient) UpdateIndexEndpoint(ctx context.Context, req *aiplatformpb.UpdateIndexEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.IndexEndpoint, error) {
+	return c.internalClient.UpdateIndexEndpoint(ctx, req, opts...)
+}
+
+// DeleteIndexEndpoint deletes an IndexEndpoint.
+func (c *IndexEndpointClient) DeleteIndexEndpoint(ctx context.Context, req *aiplatformpb.DeleteIndexEndpointRequest, opts ...gax.CallOption) (*DeleteIndexEndpointOperation, error) {
+	return c.internalClient.DeleteIndexEndpoint(ctx, req, opts...)
+}
+
+// DeleteIndexEndpointOperation returns a new DeleteIndexEndpointOperation from a given name.
+// The name must be that of a previously created DeleteIndexEndpointOperation, possibly from a different process.
+func (c *IndexEndpointClient) DeleteIndexEndpointOperation(name string) *DeleteIndexEndpointOperation {
+	return c.internalClient.DeleteIndexEndpointOperation(name)
+}
+
+// DeployIndex deploys an Index into this IndexEndpoint, creating a DeployedIndex within
+// it.
+// Only non-empty Indexes can be deployed.
+func (c *IndexEndpointClient) DeployIndex(ctx context.Context, req *aiplatformpb.DeployIndexRequest, opts ...gax.CallOption) (*DeployIndexOperation, error) {
+	return c.internalClient.DeployIndex(ctx, req, opts...)
+}
+
+// DeployIndexOperation returns a new DeployIndexOperation from a given name.
+// The name must be that of a previously created DeployIndexOperation, possibly from a different process.
+func (c *IndexEndpointClient) DeployIndexOperation(name string) *DeployIndexOperation {
+	return c.internalClient.DeployIndexOperation(name)
+}
+
+// UndeployIndex undeploys an Index from an IndexEndpoint, removing a DeployedIndex from it,
+// and freeing all resources it’s using.
+func (c *IndexEndpointClient) UndeployIndex(ctx context.Context, req *aiplatformpb.UndeployIndexRequest, opts ...gax.CallOption) (*UndeployIndexOperation, error) {
+	return c.internalClient.UndeployIndex(ctx, req, opts...)
+}
+
+// UndeployIndexOperation returns a new UndeployIndexOperation from a given name.
+// The name must be that of a previously created UndeployIndexOperation, possibly from a different process.
+func (c *IndexEndpointClient) UndeployIndexOperation(name string) *UndeployIndexOperation {
+	return c.internalClient.UndeployIndexOperation(name)
+}
+
+// indexEndpointGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type IndexEndpointClient struct {
+type indexEndpointGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing IndexEndpointClient
+	CallOptions **IndexEndpointCallOptions
+
 	// The gRPC API client.
 	indexEndpointClient aiplatformpb.IndexEndpointServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *IndexEndpointCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewIndexEndpointClient creates a new index endpoint service client.
+// NewIndexEndpointClient creates a new index endpoint service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // A service for managing AI Platform’s IndexEndpoints.
 func NewIndexEndpointClient(ctx context.Context, opts ...option.ClientOption) (*IndexEndpointClient, error) {
-	clientOpts := defaultIndexEndpointClientOptions()
-
+	clientOpts := defaultIndexEndpointGRPCClientOptions()
 	if newIndexEndpointClientHook != nil {
 		hookOpts, err := newIndexEndpointClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -122,16 +241,19 @@ func NewIndexEndpointClient(ctx context.Context, opts ...option.ClientOption) (*
 	if err != nil {
 		return nil, err
 	}
-	c := &IndexEndpointClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultIndexEndpointCallOptions(),
+	client := IndexEndpointClient{CallOptions: defaultIndexEndpointCallOptions()}
 
+	c := &indexEndpointGRPCClient{
+		connPool:            connPool,
+		disableDeadlines:    disableDeadlines,
 		indexEndpointClient: aiplatformpb.NewIndexEndpointServiceClient(connPool),
+		CallOptions:         &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -141,33 +263,33 @@ func NewIndexEndpointClient(ctx context.Context, opts ...option.ClientOption) (*
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *IndexEndpointClient) Connection() *grpc.ClientConn {
+func (c *indexEndpointGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *IndexEndpointClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *IndexEndpointClient) setGoogleClientInfo(keyval ...string) {
+func (c *indexEndpointGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// CreateIndexEndpoint creates an IndexEndpoint.
-func (c *IndexEndpointClient) CreateIndexEndpoint(ctx context.Context, req *aiplatformpb.CreateIndexEndpointRequest, opts ...gax.CallOption) (*CreateIndexEndpointOperation, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *indexEndpointGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *indexEndpointGRPCClient) CreateIndexEndpoint(ctx context.Context, req *aiplatformpb.CreateIndexEndpointRequest, opts ...gax.CallOption) (*CreateIndexEndpointOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -175,7 +297,7 @@ func (c *IndexEndpointClient) CreateIndexEndpoint(ctx context.Context, req *aipl
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.CreateIndexEndpoint[0:len(c.CallOptions.CreateIndexEndpoint):len(c.CallOptions.CreateIndexEndpoint)], opts...)
+	opts = append((*c.CallOptions).CreateIndexEndpoint[0:len((*c.CallOptions).CreateIndexEndpoint):len((*c.CallOptions).CreateIndexEndpoint)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -186,12 +308,11 @@ func (c *IndexEndpointClient) CreateIndexEndpoint(ctx context.Context, req *aipl
 		return nil, err
 	}
 	return &CreateIndexEndpointOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetIndexEndpoint gets an IndexEndpoint.
-func (c *IndexEndpointClient) GetIndexEndpoint(ctx context.Context, req *aiplatformpb.GetIndexEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.IndexEndpoint, error) {
+func (c *indexEndpointGRPCClient) GetIndexEndpoint(ctx context.Context, req *aiplatformpb.GetIndexEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.IndexEndpoint, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -199,7 +320,7 @@ func (c *IndexEndpointClient) GetIndexEndpoint(ctx context.Context, req *aiplatf
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetIndexEndpoint[0:len(c.CallOptions.GetIndexEndpoint):len(c.CallOptions.GetIndexEndpoint)], opts...)
+	opts = append((*c.CallOptions).GetIndexEndpoint[0:len((*c.CallOptions).GetIndexEndpoint):len((*c.CallOptions).GetIndexEndpoint)], opts...)
 	var resp *aiplatformpb.IndexEndpoint
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -212,11 +333,10 @@ func (c *IndexEndpointClient) GetIndexEndpoint(ctx context.Context, req *aiplatf
 	return resp, nil
 }
 
-// ListIndexEndpoints lists IndexEndpoints in a Location.
-func (c *IndexEndpointClient) ListIndexEndpoints(ctx context.Context, req *aiplatformpb.ListIndexEndpointsRequest, opts ...gax.CallOption) *IndexEndpointIterator {
+func (c *indexEndpointGRPCClient) ListIndexEndpoints(ctx context.Context, req *aiplatformpb.ListIndexEndpointsRequest, opts ...gax.CallOption) *IndexEndpointIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListIndexEndpoints[0:len(c.CallOptions.ListIndexEndpoints):len(c.CallOptions.ListIndexEndpoints)], opts...)
+	opts = append((*c.CallOptions).ListIndexEndpoints[0:len((*c.CallOptions).ListIndexEndpoints):len((*c.CallOptions).ListIndexEndpoints)], opts...)
 	it := &IndexEndpointIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListIndexEndpointsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.IndexEndpoint, string, error) {
@@ -253,8 +373,7 @@ func (c *IndexEndpointClient) ListIndexEndpoints(ctx context.Context, req *aipla
 	return it
 }
 
-// UpdateIndexEndpoint updates an IndexEndpoint.
-func (c *IndexEndpointClient) UpdateIndexEndpoint(ctx context.Context, req *aiplatformpb.UpdateIndexEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.IndexEndpoint, error) {
+func (c *indexEndpointGRPCClient) UpdateIndexEndpoint(ctx context.Context, req *aiplatformpb.UpdateIndexEndpointRequest, opts ...gax.CallOption) (*aiplatformpb.IndexEndpoint, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -262,7 +381,7 @@ func (c *IndexEndpointClient) UpdateIndexEndpoint(ctx context.Context, req *aipl
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "index_endpoint.name", url.QueryEscape(req.GetIndexEndpoint().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateIndexEndpoint[0:len(c.CallOptions.UpdateIndexEndpoint):len(c.CallOptions.UpdateIndexEndpoint)], opts...)
+	opts = append((*c.CallOptions).UpdateIndexEndpoint[0:len((*c.CallOptions).UpdateIndexEndpoint):len((*c.CallOptions).UpdateIndexEndpoint)], opts...)
 	var resp *aiplatformpb.IndexEndpoint
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -275,8 +394,7 @@ func (c *IndexEndpointClient) UpdateIndexEndpoint(ctx context.Context, req *aipl
 	return resp, nil
 }
 
-// DeleteIndexEndpoint deletes an IndexEndpoint.
-func (c *IndexEndpointClient) DeleteIndexEndpoint(ctx context.Context, req *aiplatformpb.DeleteIndexEndpointRequest, opts ...gax.CallOption) (*DeleteIndexEndpointOperation, error) {
+func (c *indexEndpointGRPCClient) DeleteIndexEndpoint(ctx context.Context, req *aiplatformpb.DeleteIndexEndpointRequest, opts ...gax.CallOption) (*DeleteIndexEndpointOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -284,7 +402,7 @@ func (c *IndexEndpointClient) DeleteIndexEndpoint(ctx context.Context, req *aipl
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteIndexEndpoint[0:len(c.CallOptions.DeleteIndexEndpoint):len(c.CallOptions.DeleteIndexEndpoint)], opts...)
+	opts = append((*c.CallOptions).DeleteIndexEndpoint[0:len((*c.CallOptions).DeleteIndexEndpoint):len((*c.CallOptions).DeleteIndexEndpoint)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -295,14 +413,11 @@ func (c *IndexEndpointClient) DeleteIndexEndpoint(ctx context.Context, req *aipl
 		return nil, err
 	}
 	return &DeleteIndexEndpointOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// DeployIndex deploys an Index into this IndexEndpoint, creating a DeployedIndex within
-// it.
-// Only non-empty Indexes can be deployed.
-func (c *IndexEndpointClient) DeployIndex(ctx context.Context, req *aiplatformpb.DeployIndexRequest, opts ...gax.CallOption) (*DeployIndexOperation, error) {
+func (c *indexEndpointGRPCClient) DeployIndex(ctx context.Context, req *aiplatformpb.DeployIndexRequest, opts ...gax.CallOption) (*DeployIndexOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -310,7 +425,7 @@ func (c *IndexEndpointClient) DeployIndex(ctx context.Context, req *aiplatformpb
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "index_endpoint", url.QueryEscape(req.GetIndexEndpoint())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeployIndex[0:len(c.CallOptions.DeployIndex):len(c.CallOptions.DeployIndex)], opts...)
+	opts = append((*c.CallOptions).DeployIndex[0:len((*c.CallOptions).DeployIndex):len((*c.CallOptions).DeployIndex)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -321,13 +436,11 @@ func (c *IndexEndpointClient) DeployIndex(ctx context.Context, req *aiplatformpb
 		return nil, err
 	}
 	return &DeployIndexOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// UndeployIndex undeploys an Index from an IndexEndpoint, removing a DeployedIndex from it,
-// and freeing all resources it’s using.
-func (c *IndexEndpointClient) UndeployIndex(ctx context.Context, req *aiplatformpb.UndeployIndexRequest, opts ...gax.CallOption) (*UndeployIndexOperation, error) {
+func (c *indexEndpointGRPCClient) UndeployIndex(ctx context.Context, req *aiplatformpb.UndeployIndexRequest, opts ...gax.CallOption) (*UndeployIndexOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -335,7 +448,7 @@ func (c *IndexEndpointClient) UndeployIndex(ctx context.Context, req *aiplatform
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "index_endpoint", url.QueryEscape(req.GetIndexEndpoint())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UndeployIndex[0:len(c.CallOptions.UndeployIndex):len(c.CallOptions.UndeployIndex)], opts...)
+	opts = append((*c.CallOptions).UndeployIndex[0:len((*c.CallOptions).UndeployIndex):len((*c.CallOptions).UndeployIndex)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -346,7 +459,7 @@ func (c *IndexEndpointClient) UndeployIndex(ctx context.Context, req *aiplatform
 		return nil, err
 	}
 	return &UndeployIndexOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
@@ -357,9 +470,9 @@ type CreateIndexEndpointOperation struct {
 
 // CreateIndexEndpointOperation returns a new CreateIndexEndpointOperation from a given name.
 // The name must be that of a previously created CreateIndexEndpointOperation, possibly from a different process.
-func (c *IndexEndpointClient) CreateIndexEndpointOperation(name string) *CreateIndexEndpointOperation {
+func (c *indexEndpointGRPCClient) CreateIndexEndpointOperation(name string) *CreateIndexEndpointOperation {
 	return &CreateIndexEndpointOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -426,9 +539,9 @@ type DeleteIndexEndpointOperation struct {
 
 // DeleteIndexEndpointOperation returns a new DeleteIndexEndpointOperation from a given name.
 // The name must be that of a previously created DeleteIndexEndpointOperation, possibly from a different process.
-func (c *IndexEndpointClient) DeleteIndexEndpointOperation(name string) *DeleteIndexEndpointOperation {
+func (c *indexEndpointGRPCClient) DeleteIndexEndpointOperation(name string) *DeleteIndexEndpointOperation {
 	return &DeleteIndexEndpointOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -484,9 +597,9 @@ type DeployIndexOperation struct {
 
 // DeployIndexOperation returns a new DeployIndexOperation from a given name.
 // The name must be that of a previously created DeployIndexOperation, possibly from a different process.
-func (c *IndexEndpointClient) DeployIndexOperation(name string) *DeployIndexOperation {
+func (c *indexEndpointGRPCClient) DeployIndexOperation(name string) *DeployIndexOperation {
 	return &DeployIndexOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -553,9 +666,9 @@ type UndeployIndexOperation struct {
 
 // UndeployIndexOperation returns a new UndeployIndexOperation from a given name.
 // The name must be that of a previously created UndeployIndexOperation, possibly from a different process.
-func (c *IndexEndpointClient) UndeployIndexOperation(name string) *UndeployIndexOperation {
+func (c *indexEndpointGRPCClient) UndeployIndexOperation(name string) *UndeployIndexOperation {
 	return &UndeployIndexOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

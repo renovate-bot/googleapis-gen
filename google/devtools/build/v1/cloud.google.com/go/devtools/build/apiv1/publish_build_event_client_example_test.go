@@ -30,6 +30,8 @@ func ExampleNewPublishBuildEventClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
@@ -40,6 +42,7 @@ func ExamplePublishBuildEventClient_PublishLifecycleEvent() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &buildpb.PublishLifecycleEventRequest{
 		// TODO: Fill request struct fields.
@@ -51,13 +54,12 @@ func ExamplePublishBuildEventClient_PublishLifecycleEvent() {
 }
 
 func ExamplePublishBuildEventClient_PublishBuildToolEventStream() {
-	// import buildpb "google.golang.org/genproto/googleapis/devtools/build/v1"
-
 	ctx := context.Background()
 	c, err := build.NewPublishBuildEventClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 	stream, err := c.PublishBuildToolEventStream(ctx)
 	if err != nil {
 		// TODO: Handle error.

@@ -40,7 +40,7 @@ type ModelCallOptions struct {
 	DeleteModel []gax.CallOption
 }
 
-func defaultModelClientOptions() []option.ClientOption {
+func defaultModelGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("bigquery.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("bigquery.mtls.googleapis.com:443"),
@@ -61,31 +61,94 @@ func defaultModelCallOptions() *ModelCallOptions {
 	}
 }
 
+// internalModelClient is an interface that defines the methods availaible from BigQuery API.
+type internalModelClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	GetModel(context.Context, *bigquerypb.GetModelRequest, ...gax.CallOption) (*bigquerypb.Model, error)
+	ListModels(context.Context, *bigquerypb.ListModelsRequest, ...gax.CallOption) (*bigquerypb.ListModelsResponse, error)
+	PatchModel(context.Context, *bigquerypb.PatchModelRequest, ...gax.CallOption) (*bigquerypb.Model, error)
+	DeleteModel(context.Context, *bigquerypb.DeleteModelRequest, ...gax.CallOption) error
+}
+
 // ModelClient is a client for interacting with BigQuery API.
-//
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type ModelClient struct {
+	// The internal transport-dependent client.
+	internalClient internalModelClient
+
+	// The call options for this service.
+	CallOptions *ModelCallOptions
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *ModelClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *ModelClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *ModelClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// GetModel gets the specified model resource by model ID.
+func (c *ModelClient) GetModel(ctx context.Context, req *bigquerypb.GetModelRequest, opts ...gax.CallOption) (*bigquerypb.Model, error) {
+	return c.internalClient.GetModel(ctx, req, opts...)
+}
+
+// ListModels lists all models in the specified dataset. Requires the READER dataset
+// role.
+func (c *ModelClient) ListModels(ctx context.Context, req *bigquerypb.ListModelsRequest, opts ...gax.CallOption) (*bigquerypb.ListModelsResponse, error) {
+	return c.internalClient.ListModels(ctx, req, opts...)
+}
+
+// PatchModel patch specific fields in the specified model.
+func (c *ModelClient) PatchModel(ctx context.Context, req *bigquerypb.PatchModelRequest, opts ...gax.CallOption) (*bigquerypb.Model, error) {
+	return c.internalClient.PatchModel(ctx, req, opts...)
+}
+
+// DeleteModel deletes the model specified by modelId from the dataset.
+func (c *ModelClient) DeleteModel(ctx context.Context, req *bigquerypb.DeleteModelRequest, opts ...gax.CallOption) error {
+	return c.internalClient.DeleteModel(ctx, req, opts...)
+}
+
+// modelGRPCClient is a client for interacting with BigQuery API over gRPC transport.
+//
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+type modelGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing ModelClient
+	CallOptions **ModelCallOptions
+
 	// The gRPC API client.
 	modelClient bigquerypb.ModelServiceClient
-
-	// The call options for this service.
-	CallOptions *ModelCallOptions
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewModelClient creates a new model service client.
-//
+// NewModelClient creates a new model service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 func NewModelClient(ctx context.Context, opts ...option.ClientOption) (*ModelClient, error) {
-	clientOpts := defaultModelClientOptions()
-
+	clientOpts := defaultModelGRPCClientOptions()
 	if newModelClientHook != nil {
 		hookOpts, err := newModelClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -103,49 +166,51 @@ func NewModelClient(ctx context.Context, opts ...option.ClientOption) (*ModelCli
 	if err != nil {
 		return nil, err
 	}
-	c := &ModelClient{
+	client := ModelClient{CallOptions: defaultModelCallOptions()}
+
+	c := &modelGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultModelCallOptions(),
-
-		modelClient: bigquerypb.NewModelServiceClient(connPool),
+		modelClient:      bigquerypb.NewModelServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	return c, nil
+	client.internalClient = c
+
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *ModelClient) Connection() *grpc.ClientConn {
+func (c *modelGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *ModelClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *ModelClient) setGoogleClientInfo(keyval ...string) {
+func (c *modelGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// GetModel gets the specified model resource by model ID.
-func (c *ModelClient) GetModel(ctx context.Context, req *bigquerypb.GetModelRequest, opts ...gax.CallOption) (*bigquerypb.Model, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *modelGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *modelGRPCClient) GetModel(ctx context.Context, req *bigquerypb.GetModelRequest, opts ...gax.CallOption) (*bigquerypb.Model, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 600000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.GetModel[0:len(c.CallOptions.GetModel):len(c.CallOptions.GetModel)], opts...)
+	opts = append((*c.CallOptions).GetModel[0:len((*c.CallOptions).GetModel):len((*c.CallOptions).GetModel)], opts...)
 	var resp *bigquerypb.Model
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -158,16 +223,14 @@ func (c *ModelClient) GetModel(ctx context.Context, req *bigquerypb.GetModelRequ
 	return resp, nil
 }
 
-// ListModels lists all models in the specified dataset. Requires the READER dataset
-// role.
-func (c *ModelClient) ListModels(ctx context.Context, req *bigquerypb.ListModelsRequest, opts ...gax.CallOption) (*bigquerypb.ListModelsResponse, error) {
+func (c *modelGRPCClient) ListModels(ctx context.Context, req *bigquerypb.ListModelsRequest, opts ...gax.CallOption) (*bigquerypb.ListModelsResponse, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 600000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.ListModels[0:len(c.CallOptions.ListModels):len(c.CallOptions.ListModels)], opts...)
+	opts = append((*c.CallOptions).ListModels[0:len((*c.CallOptions).ListModels):len((*c.CallOptions).ListModels)], opts...)
 	var resp *bigquerypb.ListModelsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -180,15 +243,14 @@ func (c *ModelClient) ListModels(ctx context.Context, req *bigquerypb.ListModels
 	return resp, nil
 }
 
-// PatchModel patch specific fields in the specified model.
-func (c *ModelClient) PatchModel(ctx context.Context, req *bigquerypb.PatchModelRequest, opts ...gax.CallOption) (*bigquerypb.Model, error) {
+func (c *modelGRPCClient) PatchModel(ctx context.Context, req *bigquerypb.PatchModelRequest, opts ...gax.CallOption) (*bigquerypb.Model, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 600000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.PatchModel[0:len(c.CallOptions.PatchModel):len(c.CallOptions.PatchModel)], opts...)
+	opts = append((*c.CallOptions).PatchModel[0:len((*c.CallOptions).PatchModel):len((*c.CallOptions).PatchModel)], opts...)
 	var resp *bigquerypb.Model
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -201,15 +263,14 @@ func (c *ModelClient) PatchModel(ctx context.Context, req *bigquerypb.PatchModel
 	return resp, nil
 }
 
-// DeleteModel deletes the model specified by modelId from the dataset.
-func (c *ModelClient) DeleteModel(ctx context.Context, req *bigquerypb.DeleteModelRequest, opts ...gax.CallOption) error {
+func (c *modelGRPCClient) DeleteModel(ctx context.Context, req *bigquerypb.DeleteModelRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 600000*time.Millisecond)
 		defer cancel()
 		ctx = cctx
 	}
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append(c.CallOptions.DeleteModel[0:len(c.CallOptions.DeleteModel):len(c.CallOptions.DeleteModel)], opts...)
+	opts = append((*c.CallOptions).DeleteModel[0:len((*c.CallOptions).DeleteModel):len((*c.CallOptions).DeleteModel)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		_, err = c.modelClient.DeleteModel(ctx, req, settings.GRPC...)

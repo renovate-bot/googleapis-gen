@@ -53,7 +53,7 @@ type ModelCallOptions struct {
 	ListModelEvaluationSlices []gax.CallOption
 }
 
-func defaultModelClientOptions() []option.ClientOption {
+func defaultModelGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("aiplatform.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("aiplatform.mtls.googleapis.com:443"),
@@ -80,37 +80,168 @@ func defaultModelCallOptions() *ModelCallOptions {
 	}
 }
 
+// internalModelClient is an interface that defines the methods availaible from Cloud AI Platform API.
+type internalModelClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	UploadModel(context.Context, *aiplatformpb.UploadModelRequest, ...gax.CallOption) (*UploadModelOperation, error)
+	UploadModelOperation(name string) *UploadModelOperation
+	GetModel(context.Context, *aiplatformpb.GetModelRequest, ...gax.CallOption) (*aiplatformpb.Model, error)
+	ListModels(context.Context, *aiplatformpb.ListModelsRequest, ...gax.CallOption) *ModelIterator
+	UpdateModel(context.Context, *aiplatformpb.UpdateModelRequest, ...gax.CallOption) (*aiplatformpb.Model, error)
+	DeleteModel(context.Context, *aiplatformpb.DeleteModelRequest, ...gax.CallOption) (*DeleteModelOperation, error)
+	DeleteModelOperation(name string) *DeleteModelOperation
+	ExportModel(context.Context, *aiplatformpb.ExportModelRequest, ...gax.CallOption) (*ExportModelOperation, error)
+	ExportModelOperation(name string) *ExportModelOperation
+	GetModelEvaluation(context.Context, *aiplatformpb.GetModelEvaluationRequest, ...gax.CallOption) (*aiplatformpb.ModelEvaluation, error)
+	ListModelEvaluations(context.Context, *aiplatformpb.ListModelEvaluationsRequest, ...gax.CallOption) *ModelEvaluationIterator
+	GetModelEvaluationSlice(context.Context, *aiplatformpb.GetModelEvaluationSliceRequest, ...gax.CallOption) (*aiplatformpb.ModelEvaluationSlice, error)
+	ListModelEvaluationSlices(context.Context, *aiplatformpb.ListModelEvaluationSlicesRequest, ...gax.CallOption) *ModelEvaluationSliceIterator
+}
+
 // ModelClient is a client for interacting with Cloud AI Platform API.
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// A service for managing AI Platform’s machine learning Models.
+type ModelClient struct {
+	// The internal transport-dependent client.
+	internalClient internalModelClient
+
+	// The call options for this service.
+	CallOptions *ModelCallOptions
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
+}
+
+// Wrapper methods routed to the internal client.
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *ModelClient) Close() error {
+	return c.internalClient.Close()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *ModelClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *ModelClient) Connection() *grpc.ClientConn {
+	return c.internalClient.Connection()
+}
+
+// UploadModel uploads a Model artifact into AI Platform.
+func (c *ModelClient) UploadModel(ctx context.Context, req *aiplatformpb.UploadModelRequest, opts ...gax.CallOption) (*UploadModelOperation, error) {
+	return c.internalClient.UploadModel(ctx, req, opts...)
+}
+
+// UploadModelOperation returns a new UploadModelOperation from a given name.
+// The name must be that of a previously created UploadModelOperation, possibly from a different process.
+func (c *ModelClient) UploadModelOperation(name string) *UploadModelOperation {
+	return c.internalClient.UploadModelOperation(name)
+}
+
+// GetModel gets a Model.
+func (c *ModelClient) GetModel(ctx context.Context, req *aiplatformpb.GetModelRequest, opts ...gax.CallOption) (*aiplatformpb.Model, error) {
+	return c.internalClient.GetModel(ctx, req, opts...)
+}
+
+// ListModels lists Models in a Location.
+func (c *ModelClient) ListModels(ctx context.Context, req *aiplatformpb.ListModelsRequest, opts ...gax.CallOption) *ModelIterator {
+	return c.internalClient.ListModels(ctx, req, opts...)
+}
+
+// UpdateModel updates a Model.
+func (c *ModelClient) UpdateModel(ctx context.Context, req *aiplatformpb.UpdateModelRequest, opts ...gax.CallOption) (*aiplatformpb.Model, error) {
+	return c.internalClient.UpdateModel(ctx, req, opts...)
+}
+
+// DeleteModel deletes a Model.
+// Note: Model can only be deleted if there are no DeployedModels created
+// from it.
+func (c *ModelClient) DeleteModel(ctx context.Context, req *aiplatformpb.DeleteModelRequest, opts ...gax.CallOption) (*DeleteModelOperation, error) {
+	return c.internalClient.DeleteModel(ctx, req, opts...)
+}
+
+// DeleteModelOperation returns a new DeleteModelOperation from a given name.
+// The name must be that of a previously created DeleteModelOperation, possibly from a different process.
+func (c *ModelClient) DeleteModelOperation(name string) *DeleteModelOperation {
+	return c.internalClient.DeleteModelOperation(name)
+}
+
+// ExportModel exports a trained, exportable, Model to a location specified by the
+// user. A Model is considered to be exportable if it has at least one
+// [supported export format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
+func (c *ModelClient) ExportModel(ctx context.Context, req *aiplatformpb.ExportModelRequest, opts ...gax.CallOption) (*ExportModelOperation, error) {
+	return c.internalClient.ExportModel(ctx, req, opts...)
+}
+
+// ExportModelOperation returns a new ExportModelOperation from a given name.
+// The name must be that of a previously created ExportModelOperation, possibly from a different process.
+func (c *ModelClient) ExportModelOperation(name string) *ExportModelOperation {
+	return c.internalClient.ExportModelOperation(name)
+}
+
+// GetModelEvaluation gets a ModelEvaluation.
+func (c *ModelClient) GetModelEvaluation(ctx context.Context, req *aiplatformpb.GetModelEvaluationRequest, opts ...gax.CallOption) (*aiplatformpb.ModelEvaluation, error) {
+	return c.internalClient.GetModelEvaluation(ctx, req, opts...)
+}
+
+// ListModelEvaluations lists ModelEvaluations in a Model.
+func (c *ModelClient) ListModelEvaluations(ctx context.Context, req *aiplatformpb.ListModelEvaluationsRequest, opts ...gax.CallOption) *ModelEvaluationIterator {
+	return c.internalClient.ListModelEvaluations(ctx, req, opts...)
+}
+
+// GetModelEvaluationSlice gets a ModelEvaluationSlice.
+func (c *ModelClient) GetModelEvaluationSlice(ctx context.Context, req *aiplatformpb.GetModelEvaluationSliceRequest, opts ...gax.CallOption) (*aiplatformpb.ModelEvaluationSlice, error) {
+	return c.internalClient.GetModelEvaluationSlice(ctx, req, opts...)
+}
+
+// ListModelEvaluationSlices lists ModelEvaluationSlices in a ModelEvaluation.
+func (c *ModelClient) ListModelEvaluationSlices(ctx context.Context, req *aiplatformpb.ListModelEvaluationSlicesRequest, opts ...gax.CallOption) *ModelEvaluationSliceIterator {
+	return c.internalClient.ListModelEvaluationSlices(ctx, req, opts...)
+}
+
+// modelGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
-type ModelClient struct {
+type modelGRPCClient struct {
 	// Connection pool of gRPC connections to the service.
 	connPool gtransport.ConnPool
 
 	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
 	disableDeadlines bool
 
+	// Points back to the CallOptions field of the containing ModelClient
+	CallOptions **ModelCallOptions
+
 	// The gRPC API client.
 	modelClient aiplatformpb.ModelServiceClient
 
-	// LROClient is used internally to handle longrunning operations.
+	// LROClient is used internally to handle long-running operations.
 	// It is exposed so that its CallOptions can be modified if required.
 	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
-
-	// The call options for this service.
-	CallOptions *ModelCallOptions
+	LROClient **lroauto.OperationsClient
 
 	// The x-goog-* metadata to be sent with each request.
 	xGoogMetadata metadata.MD
 }
 
-// NewModelClient creates a new model service client.
+// NewModelClient creates a new model service client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // A service for managing AI Platform’s machine learning Models.
 func NewModelClient(ctx context.Context, opts ...option.ClientOption) (*ModelClient, error) {
-	clientOpts := defaultModelClientOptions()
-
+	clientOpts := defaultModelGRPCClientOptions()
 	if newModelClientHook != nil {
 		hookOpts, err := newModelClientHook(ctx, clientHookParams{})
 		if err != nil {
@@ -128,16 +259,19 @@ func NewModelClient(ctx context.Context, opts ...option.ClientOption) (*ModelCli
 	if err != nil {
 		return nil, err
 	}
-	c := &ModelClient{
+	client := ModelClient{CallOptions: defaultModelCallOptions()}
+
+	c := &modelGRPCClient{
 		connPool:         connPool,
 		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultModelCallOptions(),
-
-		modelClient: aiplatformpb.NewModelServiceClient(connPool),
+		modelClient:      aiplatformpb.NewModelServiceClient(connPool),
+		CallOptions:      &client.CallOptions,
 	}
 	c.setGoogleClientInfo()
 
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
 	if err != nil {
 		// This error "should not happen", since we are just reusing old connection pool
 		// and never actually need to dial.
@@ -147,33 +281,33 @@ func NewModelClient(ctx context.Context, opts ...option.ClientOption) (*ModelCli
 		// TODO: investigate error conditions.
 		return nil, err
 	}
-	return c, nil
+	c.LROClient = &client.LROClient
+	return &client, nil
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
-func (c *ModelClient) Connection() *grpc.ClientConn {
+func (c *modelGRPCClient) Connection() *grpc.ClientConn {
 	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *ModelClient) Close() error {
-	return c.connPool.Close()
 }
 
 // setGoogleClientInfo sets the name and version of the application in
 // the `x-goog-api-client` header passed on each request. Intended for
 // use by Google-written clients.
-func (c *ModelClient) setGoogleClientInfo(keyval ...string) {
+func (c *modelGRPCClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
-// UploadModel uploads a Model artifact into AI Platform.
-func (c *ModelClient) UploadModel(ctx context.Context, req *aiplatformpb.UploadModelRequest, opts ...gax.CallOption) (*UploadModelOperation, error) {
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *modelGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *modelGRPCClient) UploadModel(ctx context.Context, req *aiplatformpb.UploadModelRequest, opts ...gax.CallOption) (*UploadModelOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -181,7 +315,7 @@ func (c *ModelClient) UploadModel(ctx context.Context, req *aiplatformpb.UploadM
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UploadModel[0:len(c.CallOptions.UploadModel):len(c.CallOptions.UploadModel)], opts...)
+	opts = append((*c.CallOptions).UploadModel[0:len((*c.CallOptions).UploadModel):len((*c.CallOptions).UploadModel)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -192,12 +326,11 @@ func (c *ModelClient) UploadModel(ctx context.Context, req *aiplatformpb.UploadM
 		return nil, err
 	}
 	return &UploadModelOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetModel gets a Model.
-func (c *ModelClient) GetModel(ctx context.Context, req *aiplatformpb.GetModelRequest, opts ...gax.CallOption) (*aiplatformpb.Model, error) {
+func (c *modelGRPCClient) GetModel(ctx context.Context, req *aiplatformpb.GetModelRequest, opts ...gax.CallOption) (*aiplatformpb.Model, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -205,7 +338,7 @@ func (c *ModelClient) GetModel(ctx context.Context, req *aiplatformpb.GetModelRe
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetModel[0:len(c.CallOptions.GetModel):len(c.CallOptions.GetModel)], opts...)
+	opts = append((*c.CallOptions).GetModel[0:len((*c.CallOptions).GetModel):len((*c.CallOptions).GetModel)], opts...)
 	var resp *aiplatformpb.Model
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -218,11 +351,10 @@ func (c *ModelClient) GetModel(ctx context.Context, req *aiplatformpb.GetModelRe
 	return resp, nil
 }
 
-// ListModels lists Models in a Location.
-func (c *ModelClient) ListModels(ctx context.Context, req *aiplatformpb.ListModelsRequest, opts ...gax.CallOption) *ModelIterator {
+func (c *modelGRPCClient) ListModels(ctx context.Context, req *aiplatformpb.ListModelsRequest, opts ...gax.CallOption) *ModelIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListModels[0:len(c.CallOptions.ListModels):len(c.CallOptions.ListModels)], opts...)
+	opts = append((*c.CallOptions).ListModels[0:len((*c.CallOptions).ListModels):len((*c.CallOptions).ListModels)], opts...)
 	it := &ModelIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListModelsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Model, string, error) {
@@ -259,8 +391,7 @@ func (c *ModelClient) ListModels(ctx context.Context, req *aiplatformpb.ListMode
 	return it
 }
 
-// UpdateModel updates a Model.
-func (c *ModelClient) UpdateModel(ctx context.Context, req *aiplatformpb.UpdateModelRequest, opts ...gax.CallOption) (*aiplatformpb.Model, error) {
+func (c *modelGRPCClient) UpdateModel(ctx context.Context, req *aiplatformpb.UpdateModelRequest, opts ...gax.CallOption) (*aiplatformpb.Model, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -268,7 +399,7 @@ func (c *ModelClient) UpdateModel(ctx context.Context, req *aiplatformpb.UpdateM
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "model.name", url.QueryEscape(req.GetModel().GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.UpdateModel[0:len(c.CallOptions.UpdateModel):len(c.CallOptions.UpdateModel)], opts...)
+	opts = append((*c.CallOptions).UpdateModel[0:len((*c.CallOptions).UpdateModel):len((*c.CallOptions).UpdateModel)], opts...)
 	var resp *aiplatformpb.Model
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -281,10 +412,7 @@ func (c *ModelClient) UpdateModel(ctx context.Context, req *aiplatformpb.UpdateM
 	return resp, nil
 }
 
-// DeleteModel deletes a Model.
-// Note: Model can only be deleted if there are no DeployedModels created
-// from it.
-func (c *ModelClient) DeleteModel(ctx context.Context, req *aiplatformpb.DeleteModelRequest, opts ...gax.CallOption) (*DeleteModelOperation, error) {
+func (c *modelGRPCClient) DeleteModel(ctx context.Context, req *aiplatformpb.DeleteModelRequest, opts ...gax.CallOption) (*DeleteModelOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -292,7 +420,7 @@ func (c *ModelClient) DeleteModel(ctx context.Context, req *aiplatformpb.DeleteM
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteModel[0:len(c.CallOptions.DeleteModel):len(c.CallOptions.DeleteModel)], opts...)
+	opts = append((*c.CallOptions).DeleteModel[0:len((*c.CallOptions).DeleteModel):len((*c.CallOptions).DeleteModel)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -303,14 +431,11 @@ func (c *ModelClient) DeleteModel(ctx context.Context, req *aiplatformpb.DeleteM
 		return nil, err
 	}
 	return &DeleteModelOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// ExportModel exports a trained, exportable, Model to a location specified by the
-// user. A Model is considered to be exportable if it has at least one
-// [supported export format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
-func (c *ModelClient) ExportModel(ctx context.Context, req *aiplatformpb.ExportModelRequest, opts ...gax.CallOption) (*ExportModelOperation, error) {
+func (c *modelGRPCClient) ExportModel(ctx context.Context, req *aiplatformpb.ExportModelRequest, opts ...gax.CallOption) (*ExportModelOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -318,7 +443,7 @@ func (c *ModelClient) ExportModel(ctx context.Context, req *aiplatformpb.ExportM
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ExportModel[0:len(c.CallOptions.ExportModel):len(c.CallOptions.ExportModel)], opts...)
+	opts = append((*c.CallOptions).ExportModel[0:len((*c.CallOptions).ExportModel):len((*c.CallOptions).ExportModel)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -329,12 +454,11 @@ func (c *ModelClient) ExportModel(ctx context.Context, req *aiplatformpb.ExportM
 		return nil, err
 	}
 	return &ExportModelOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
-// GetModelEvaluation gets a ModelEvaluation.
-func (c *ModelClient) GetModelEvaluation(ctx context.Context, req *aiplatformpb.GetModelEvaluationRequest, opts ...gax.CallOption) (*aiplatformpb.ModelEvaluation, error) {
+func (c *modelGRPCClient) GetModelEvaluation(ctx context.Context, req *aiplatformpb.GetModelEvaluationRequest, opts ...gax.CallOption) (*aiplatformpb.ModelEvaluation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -342,7 +466,7 @@ func (c *ModelClient) GetModelEvaluation(ctx context.Context, req *aiplatformpb.
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetModelEvaluation[0:len(c.CallOptions.GetModelEvaluation):len(c.CallOptions.GetModelEvaluation)], opts...)
+	opts = append((*c.CallOptions).GetModelEvaluation[0:len((*c.CallOptions).GetModelEvaluation):len((*c.CallOptions).GetModelEvaluation)], opts...)
 	var resp *aiplatformpb.ModelEvaluation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -355,11 +479,10 @@ func (c *ModelClient) GetModelEvaluation(ctx context.Context, req *aiplatformpb.
 	return resp, nil
 }
 
-// ListModelEvaluations lists ModelEvaluations in a Model.
-func (c *ModelClient) ListModelEvaluations(ctx context.Context, req *aiplatformpb.ListModelEvaluationsRequest, opts ...gax.CallOption) *ModelEvaluationIterator {
+func (c *modelGRPCClient) ListModelEvaluations(ctx context.Context, req *aiplatformpb.ListModelEvaluationsRequest, opts ...gax.CallOption) *ModelEvaluationIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListModelEvaluations[0:len(c.CallOptions.ListModelEvaluations):len(c.CallOptions.ListModelEvaluations)], opts...)
+	opts = append((*c.CallOptions).ListModelEvaluations[0:len((*c.CallOptions).ListModelEvaluations):len((*c.CallOptions).ListModelEvaluations)], opts...)
 	it := &ModelEvaluationIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListModelEvaluationsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.ModelEvaluation, string, error) {
@@ -396,8 +519,7 @@ func (c *ModelClient) ListModelEvaluations(ctx context.Context, req *aiplatformp
 	return it
 }
 
-// GetModelEvaluationSlice gets a ModelEvaluationSlice.
-func (c *ModelClient) GetModelEvaluationSlice(ctx context.Context, req *aiplatformpb.GetModelEvaluationSliceRequest, opts ...gax.CallOption) (*aiplatformpb.ModelEvaluationSlice, error) {
+func (c *modelGRPCClient) GetModelEvaluationSlice(ctx context.Context, req *aiplatformpb.GetModelEvaluationSliceRequest, opts ...gax.CallOption) (*aiplatformpb.ModelEvaluationSlice, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
 		defer cancel()
@@ -405,7 +527,7 @@ func (c *ModelClient) GetModelEvaluationSlice(ctx context.Context, req *aiplatfo
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.GetModelEvaluationSlice[0:len(c.CallOptions.GetModelEvaluationSlice):len(c.CallOptions.GetModelEvaluationSlice)], opts...)
+	opts = append((*c.CallOptions).GetModelEvaluationSlice[0:len((*c.CallOptions).GetModelEvaluationSlice):len((*c.CallOptions).GetModelEvaluationSlice)], opts...)
 	var resp *aiplatformpb.ModelEvaluationSlice
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -418,11 +540,10 @@ func (c *ModelClient) GetModelEvaluationSlice(ctx context.Context, req *aiplatfo
 	return resp, nil
 }
 
-// ListModelEvaluationSlices lists ModelEvaluationSlices in a ModelEvaluation.
-func (c *ModelClient) ListModelEvaluationSlices(ctx context.Context, req *aiplatformpb.ListModelEvaluationSlicesRequest, opts ...gax.CallOption) *ModelEvaluationSliceIterator {
+func (c *modelGRPCClient) ListModelEvaluationSlices(ctx context.Context, req *aiplatformpb.ListModelEvaluationSlicesRequest, opts ...gax.CallOption) *ModelEvaluationSliceIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.ListModelEvaluationSlices[0:len(c.CallOptions.ListModelEvaluationSlices):len(c.CallOptions.ListModelEvaluationSlices)], opts...)
+	opts = append((*c.CallOptions).ListModelEvaluationSlices[0:len((*c.CallOptions).ListModelEvaluationSlices):len((*c.CallOptions).ListModelEvaluationSlices)], opts...)
 	it := &ModelEvaluationSliceIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListModelEvaluationSlicesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.ModelEvaluationSlice, string, error) {
@@ -466,9 +587,9 @@ type DeleteModelOperation struct {
 
 // DeleteModelOperation returns a new DeleteModelOperation from a given name.
 // The name must be that of a previously created DeleteModelOperation, possibly from a different process.
-func (c *ModelClient) DeleteModelOperation(name string) *DeleteModelOperation {
+func (c *modelGRPCClient) DeleteModelOperation(name string) *DeleteModelOperation {
 	return &DeleteModelOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -524,9 +645,9 @@ type ExportModelOperation struct {
 
 // ExportModelOperation returns a new ExportModelOperation from a given name.
 // The name must be that of a previously created ExportModelOperation, possibly from a different process.
-func (c *ModelClient) ExportModelOperation(name string) *ExportModelOperation {
+func (c *modelGRPCClient) ExportModelOperation(name string) *ExportModelOperation {
 	return &ExportModelOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
@@ -593,9 +714,9 @@ type UploadModelOperation struct {
 
 // UploadModelOperation returns a new UploadModelOperation from a given name.
 // The name must be that of a previously created UploadModelOperation, possibly from a different process.
-func (c *ModelClient) UploadModelOperation(name string) *UploadModelOperation {
+func (c *modelGRPCClient) UploadModelOperation(name string) *UploadModelOperation {
 	return &UploadModelOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 

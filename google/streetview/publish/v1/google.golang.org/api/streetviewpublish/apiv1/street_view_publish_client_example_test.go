@@ -31,18 +31,19 @@ func ExampleNewClient() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
+
 	// TODO: Use client.
 	_ = c
 }
 
 func ExampleClient_StartUpload() {
-	// import emptypb "google.golang.org/protobuf/types/known/emptypb"
-
 	ctx := context.Background()
 	c, err := streetviewpublish.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &emptypb.Empty{
 		// TODO: Fill request struct fields.
@@ -56,13 +57,12 @@ func ExampleClient_StartUpload() {
 }
 
 func ExampleClient_CreatePhoto() {
-	// import publishpb "google.golang.org/genproto/googleapis/streetview/publish/v1"
-
 	ctx := context.Background()
 	c, err := streetviewpublish.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &publishpb.CreatePhotoRequest{
 		// TODO: Fill request struct fields.
@@ -76,13 +76,12 @@ func ExampleClient_CreatePhoto() {
 }
 
 func ExampleClient_GetPhoto() {
-	// import publishpb "google.golang.org/genproto/googleapis/streetview/publish/v1"
-
 	ctx := context.Background()
 	c, err := streetviewpublish.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &publishpb.GetPhotoRequest{
 		// TODO: Fill request struct fields.
@@ -96,13 +95,12 @@ func ExampleClient_GetPhoto() {
 }
 
 func ExampleClient_BatchGetPhotos() {
-	// import publishpb "google.golang.org/genproto/googleapis/streetview/publish/v1"
-
 	ctx := context.Background()
 	c, err := streetviewpublish.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &publishpb.BatchGetPhotosRequest{
 		// TODO: Fill request struct fields.
@@ -116,14 +114,12 @@ func ExampleClient_BatchGetPhotos() {
 }
 
 func ExampleClient_ListPhotos() {
-	// import publishpb "google.golang.org/genproto/googleapis/streetview/publish/v1"
-	// import "google.golang.org/api/iterator"
-
 	ctx := context.Background()
 	c, err := streetviewpublish.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &publishpb.ListPhotosRequest{
 		// TODO: Fill request struct fields.
@@ -143,13 +139,12 @@ func ExampleClient_ListPhotos() {
 }
 
 func ExampleClient_UpdatePhoto() {
-	// import publishpb "google.golang.org/genproto/googleapis/streetview/publish/v1"
-
 	ctx := context.Background()
 	c, err := streetviewpublish.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &publishpb.UpdatePhotoRequest{
 		// TODO: Fill request struct fields.
@@ -163,13 +158,12 @@ func ExampleClient_UpdatePhoto() {
 }
 
 func ExampleClient_BatchUpdatePhotos() {
-	// import publishpb "google.golang.org/genproto/googleapis/streetview/publish/v1"
-
 	ctx := context.Background()
 	c, err := streetviewpublish.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &publishpb.BatchUpdatePhotosRequest{
 		// TODO: Fill request struct fields.
@@ -188,6 +182,7 @@ func ExampleClient_DeletePhoto() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &publishpb.DeletePhotoRequest{
 		// TODO: Fill request struct fields.
@@ -199,13 +194,12 @@ func ExampleClient_DeletePhoto() {
 }
 
 func ExampleClient_BatchDeletePhotos() {
-	// import publishpb "google.golang.org/genproto/googleapis/streetview/publish/v1"
-
 	ctx := context.Background()
 	c, err := streetviewpublish.NewClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
+	defer c.Close()
 
 	req := &publishpb.BatchDeletePhotosRequest{
 		// TODO: Fill request struct fields.

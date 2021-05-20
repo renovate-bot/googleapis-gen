@@ -42,7 +42,7 @@ type WorkflowsServiceV2BetaCallOptions struct {
 	RunPipeline []gax.CallOption
 }
 
-func defaultWorkflowsServiceV2BetaClientOptions() []option.ClientOption {
+func defaultWorkflowsServiceV2BetaGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
 		internaloption.WithDefaultEndpoint("lifesciences.googleapis.com:443"),
 		internaloption.WithDefaultMTLSEndpoint("lifesciences.mtls.googleapis.com:443"),
@@ -60,97 +60,53 @@ func defaultWorkflowsServiceV2BetaCallOptions() *WorkflowsServiceV2BetaCallOptio
 	}
 }
 
+// internalWorkflowsServiceV2BetaClient is an interface that defines the methods availaible from Cloud Life Sciences API.
+type internalWorkflowsServiceV2BetaClient interface {
+	Close() error
+	setGoogleClientInfo(...string)
+	Connection() *grpc.ClientConn
+	RunPipeline(context.Context, *lifesciencespb.RunPipelineRequest, ...gax.CallOption) (*RunPipelineOperation, error)
+	RunPipelineOperation(name string) *RunPipelineOperation
+}
+
 // WorkflowsServiceV2BetaClient is a client for interacting with Cloud Life Sciences API.
-//
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// A service for running workflows, such as pipelines consisting of Docker
+// containers.
 type WorkflowsServiceV2BetaClient struct {
-	// Connection pool of gRPC connections to the service.
-	connPool gtransport.ConnPool
-
-	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
-	disableDeadlines bool
-
-	// The gRPC API client.
-	workflowsServiceV2BetaClient lifesciencespb.WorkflowsServiceV2BetaClient
-
-	// LROClient is used internally to handle longrunning operations.
-	// It is exposed so that its CallOptions can be modified if required.
-	// Users should not Close this client.
-	LROClient *lroauto.OperationsClient
+	// The internal transport-dependent client.
+	internalClient internalWorkflowsServiceV2BetaClient
 
 	// The call options for this service.
 	CallOptions *WorkflowsServiceV2BetaCallOptions
 
-	// The x-goog-* metadata to be sent with each request.
-	xGoogMetadata metadata.MD
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient *lroauto.OperationsClient
 }
 
-// NewWorkflowsServiceV2BetaClient creates a new workflows service v2 beta client.
-//
-// A service for running workflows, such as pipelines consisting of Docker
-// containers.
-func NewWorkflowsServiceV2BetaClient(ctx context.Context, opts ...option.ClientOption) (*WorkflowsServiceV2BetaClient, error) {
-	clientOpts := defaultWorkflowsServiceV2BetaClientOptions()
+// Wrapper methods routed to the internal client.
 
-	if newWorkflowsServiceV2BetaClientHook != nil {
-		hookOpts, err := newWorkflowsServiceV2BetaClientHook(ctx, clientHookParams{})
-		if err != nil {
-			return nil, err
-		}
-		clientOpts = append(clientOpts, hookOpts...)
-	}
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *WorkflowsServiceV2BetaClient) Close() error {
+	return c.internalClient.Close()
+}
 
-	disableDeadlines, err := checkDisableDeadlines()
-	if err != nil {
-		return nil, err
-	}
-
-	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
-	if err != nil {
-		return nil, err
-	}
-	c := &WorkflowsServiceV2BetaClient{
-		connPool:         connPool,
-		disableDeadlines: disableDeadlines,
-		CallOptions:      defaultWorkflowsServiceV2BetaCallOptions(),
-
-		workflowsServiceV2BetaClient: lifesciencespb.NewWorkflowsServiceV2BetaClient(connPool),
-	}
-	c.setGoogleClientInfo()
-
-	c.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
-	if err != nil {
-		// This error "should not happen", since we are just reusing old connection pool
-		// and never actually need to dial.
-		// If this does happen, we could leak connp. However, we cannot close conn:
-		// If the user invoked the constructor with option.WithGRPCConn,
-		// we would close a connection that's still in use.
-		// TODO: investigate error conditions.
-		return nil, err
-	}
-	return c, nil
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *WorkflowsServiceV2BetaClient) setGoogleClientInfo(...string) {
+	c.internalClient.setGoogleClientInfo()
 }
 
 // Connection returns a connection to the API service.
 //
 // Deprecated.
 func (c *WorkflowsServiceV2BetaClient) Connection() *grpc.ClientConn {
-	return c.connPool.Conn()
-}
-
-// Close closes the connection to the API service. The user should invoke this when
-// the client is no longer required.
-func (c *WorkflowsServiceV2BetaClient) Close() error {
-	return c.connPool.Close()
-}
-
-// setGoogleClientInfo sets the name and version of the application in
-// the `x-goog-api-client` header passed on each request. Intended for
-// use by Google-written clients.
-func (c *WorkflowsServiceV2BetaClient) setGoogleClientInfo(keyval ...string) {
-	kv := append([]string{"gl-go", versionGo()}, keyval...)
-	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
-	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+	return c.internalClient.Connection()
 }
 
 // RunPipeline runs a pipeline.  The returned Operation’s [metadata]
@@ -171,6 +127,113 @@ func (c *WorkflowsServiceV2BetaClient) setGoogleClientInfo(keyval ...string) {
 //
 //   lifesciences.workflows.run
 func (c *WorkflowsServiceV2BetaClient) RunPipeline(ctx context.Context, req *lifesciencespb.RunPipelineRequest, opts ...gax.CallOption) (*RunPipelineOperation, error) {
+	return c.internalClient.RunPipeline(ctx, req, opts...)
+}
+
+// RunPipelineOperation returns a new RunPipelineOperation from a given name.
+// The name must be that of a previously created RunPipelineOperation, possibly from a different process.
+func (c *WorkflowsServiceV2BetaClient) RunPipelineOperation(name string) *RunPipelineOperation {
+	return c.internalClient.RunPipelineOperation(name)
+}
+
+// workflowsServiceV2BetaGRPCClient is a client for interacting with Cloud Life Sciences API over gRPC transport.
+//
+// Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+type workflowsServiceV2BetaGRPCClient struct {
+	// Connection pool of gRPC connections to the service.
+	connPool gtransport.ConnPool
+
+	// flag to opt out of default deadlines via GOOGLE_API_GO_EXPERIMENTAL_DISABLE_DEFAULT_DEADLINE
+	disableDeadlines bool
+
+	// Points back to the CallOptions field of the containing WorkflowsServiceV2BetaClient
+	CallOptions **WorkflowsServiceV2BetaCallOptions
+
+	// The gRPC API client.
+	workflowsServiceV2BetaClient lifesciencespb.WorkflowsServiceV2BetaClient
+
+	// LROClient is used internally to handle long-running operations.
+	// It is exposed so that its CallOptions can be modified if required.
+	// Users should not Close this client.
+	LROClient **lroauto.OperationsClient
+
+	// The x-goog-* metadata to be sent with each request.
+	xGoogMetadata metadata.MD
+}
+
+// NewWorkflowsServiceV2BetaClient creates a new workflows service v2 beta client based on gRPC.
+// The returned client must be Closed when it is done being used to clean up its underlying connections.
+//
+// A service for running workflows, such as pipelines consisting of Docker
+// containers.
+func NewWorkflowsServiceV2BetaClient(ctx context.Context, opts ...option.ClientOption) (*WorkflowsServiceV2BetaClient, error) {
+	clientOpts := defaultWorkflowsServiceV2BetaGRPCClientOptions()
+	if newWorkflowsServiceV2BetaClientHook != nil {
+		hookOpts, err := newWorkflowsServiceV2BetaClientHook(ctx, clientHookParams{})
+		if err != nil {
+			return nil, err
+		}
+		clientOpts = append(clientOpts, hookOpts...)
+	}
+
+	disableDeadlines, err := checkDisableDeadlines()
+	if err != nil {
+		return nil, err
+	}
+
+	connPool, err := gtransport.DialPool(ctx, append(clientOpts, opts...)...)
+	if err != nil {
+		return nil, err
+	}
+	client := WorkflowsServiceV2BetaClient{CallOptions: defaultWorkflowsServiceV2BetaCallOptions()}
+
+	c := &workflowsServiceV2BetaGRPCClient{
+		connPool:                     connPool,
+		disableDeadlines:             disableDeadlines,
+		workflowsServiceV2BetaClient: lifesciencespb.NewWorkflowsServiceV2BetaClient(connPool),
+		CallOptions:                  &client.CallOptions,
+	}
+	c.setGoogleClientInfo()
+
+	client.internalClient = c
+
+	client.LROClient, err = lroauto.NewOperationsClient(ctx, gtransport.WithConnPool(connPool))
+	if err != nil {
+		// This error "should not happen", since we are just reusing old connection pool
+		// and never actually need to dial.
+		// If this does happen, we could leak connp. However, we cannot close conn:
+		// If the user invoked the constructor with option.WithGRPCConn,
+		// we would close a connection that's still in use.
+		// TODO: investigate error conditions.
+		return nil, err
+	}
+	c.LROClient = &client.LROClient
+	return &client, nil
+}
+
+// Connection returns a connection to the API service.
+//
+// Deprecated.
+func (c *workflowsServiceV2BetaGRPCClient) Connection() *grpc.ClientConn {
+	return c.connPool.Conn()
+}
+
+// setGoogleClientInfo sets the name and version of the application in
+// the `x-goog-api-client` header passed on each request. Intended for
+// use by Google-written clients.
+func (c *workflowsServiceV2BetaGRPCClient) setGoogleClientInfo(keyval ...string) {
+	kv := append([]string{"gl-go", versionGo()}, keyval...)
+	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
+	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+}
+
+// Close closes the connection to the API service. The user should invoke this when
+// the client is no longer required.
+func (c *workflowsServiceV2BetaGRPCClient) Close() error {
+	return c.connPool.Close()
+}
+
+func (c *workflowsServiceV2BetaGRPCClient) RunPipeline(ctx context.Context, req *lifesciencespb.RunPipelineRequest, opts ...gax.CallOption) (*RunPipelineOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
 		defer cancel()
@@ -178,7 +241,7 @@ func (c *WorkflowsServiceV2BetaClient) RunPipeline(ctx context.Context, req *lif
 	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.RunPipeline[0:len(c.CallOptions.RunPipeline):len(c.CallOptions.RunPipeline)], opts...)
+	opts = append((*c.CallOptions).RunPipeline[0:len((*c.CallOptions).RunPipeline):len((*c.CallOptions).RunPipeline)], opts...)
 	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
@@ -189,7 +252,7 @@ func (c *WorkflowsServiceV2BetaClient) RunPipeline(ctx context.Context, req *lif
 		return nil, err
 	}
 	return &RunPipelineOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
 
@@ -200,9 +263,9 @@ type RunPipelineOperation struct {
 
 // RunPipelineOperation returns a new RunPipelineOperation from a given name.
 // The name must be that of a previously created RunPipelineOperation, possibly from a different process.
-func (c *WorkflowsServiceV2BetaClient) RunPipelineOperation(name string) *RunPipelineOperation {
+func (c *workflowsServiceV2BetaGRPCClient) RunPipelineOperation(name string) *RunPipelineOperation {
 	return &RunPipelineOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, &longrunningpb.Operation{Name: name}),
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
 	}
 }
 
