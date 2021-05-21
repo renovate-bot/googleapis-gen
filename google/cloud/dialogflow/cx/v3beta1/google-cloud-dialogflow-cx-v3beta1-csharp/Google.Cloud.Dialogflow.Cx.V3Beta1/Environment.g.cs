@@ -64,46 +64,84 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             "bWVudBIRCglwYWdlX3NpemUYAiABKAUSEgoKcGFnZV90b2tlbhgDIAEoCSKC",
             "AQogTG9va3VwRW52aXJvbm1lbnRIaXN0b3J5UmVzcG9uc2USRQoMZW52aXJv",
             "bm1lbnRzGAEgAygLMi8uZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNi",
-            "ZXRhMS5FbnZpcm9ubWVudBIXCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAkynwwK",
-            "DEVudmlyb25tZW50cxLeAQoQTGlzdEVudmlyb25tZW50cxI7Lmdvb2dsZS5j",
-            "bG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuTGlzdEVudmlyb25tZW50c1Jl",
-            "cXVlc3QaPC5nb29nbGUuY2xvdWQuZGlhbG9nZmxvdy5jeC52M2JldGExLkxp",
-            "c3RFbnZpcm9ubWVudHNSZXNwb25zZSJPgtPkkwJAEj4vdjNiZXRhMS97cGFy",
-            "ZW50PXByb2plY3RzLyovbG9jYXRpb25zLyovYWdlbnRzLyp9L2Vudmlyb25t",
-            "ZW50c9pBBnBhcmVudBLLAQoOR2V0RW52aXJvbm1lbnQSOS5nb29nbGUuY2xv",
-            "dWQuZGlhbG9nZmxvdy5jeC52M2JldGExLkdldEVudmlyb25tZW50UmVxdWVz",
-            "dBovLmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuRW52aXJv",
-            "bm1lbnQiTYLT5JMCQBI+L3YzYmV0YTEve25hbWU9cHJvamVjdHMvKi9sb2Nh",
-            "dGlvbnMvKi9hZ2VudHMvKi9lbnZpcm9ubWVudHMvKn3aQQRuYW1lEoMCChFD",
-            "cmVhdGVFbnZpcm9ubWVudBI8Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4",
-            "LnYzYmV0YTEuQ3JlYXRlRW52aXJvbm1lbnRSZXF1ZXN0Gh0uZ29vZ2xlLmxv",
-            "bmdydW5uaW5nLk9wZXJhdGlvbiKQAYLT5JMCTSI+L3YzYmV0YTEve3BhcmVu",
-            "dD1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL2FnZW50cy8qfS9lbnZpcm9ubWVu",
-            "dHM6C2Vudmlyb25tZW502kEScGFyZW50LGVudmlyb25tZW50ykElCgtFbnZp",
-            "cm9ubWVudBIWZ29vZ2xlLnByb3RvYnVmLlN0cnVjdBKUAgoRVXBkYXRlRW52",
-            "aXJvbm1lbnQSPC5nb29nbGUuY2xvdWQuZGlhbG9nZmxvdy5jeC52M2JldGEx",
-            "LlVwZGF0ZUVudmlyb25tZW50UmVxdWVzdBodLmdvb2dsZS5sb25ncnVubmlu",
-            "Zy5PcGVyYXRpb24ioQGC0+STAlkySi92M2JldGExL3tlbnZpcm9ubWVudC5u",
-            "YW1lPXByb2plY3RzLyovbG9jYXRpb25zLyovYWdlbnRzLyovZW52aXJvbm1l",
-            "bnRzLyp9OgtlbnZpcm9ubWVudNpBF2Vudmlyb25tZW50LHVwZGF0ZV9tYXNr",
-            "ykElCgtFbnZpcm9ubWVudBIWZ29vZ2xlLnByb3RvYnVmLlN0cnVjdBK4AQoR",
-            "RGVsZXRlRW52aXJvbm1lbnQSPC5nb29nbGUuY2xvdWQuZGlhbG9nZmxvdy5j",
-            "eC52M2JldGExLkRlbGV0ZUVudmlyb25tZW50UmVxdWVzdBoWLmdvb2dsZS5w",
-            "cm90b2J1Zi5FbXB0eSJNgtPkkwJAKj4vdjNiZXRhMS97bmFtZT1wcm9qZWN0",
-            "cy8qL2xvY2F0aW9ucy8qL2FnZW50cy8qL2Vudmlyb25tZW50cy8qfdpBBG5h",
-            "bWUSjQIKGExvb2t1cEVudmlyb25tZW50SGlzdG9yeRJDLmdvb2dsZS5jbG91",
-            "ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuTG9va3VwRW52aXJvbm1lbnRIaXN0",
-            "b3J5UmVxdWVzdBpELmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0",
-            "YTEuTG9va3VwRW52aXJvbm1lbnRIaXN0b3J5UmVzcG9uc2UiZoLT5JMCWRJX",
-            "L3YzYmV0YTEve25hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi9hZ2VudHMv",
-            "Ki9lbnZpcm9ubWVudHMvKn06bG9va3VwRW52aXJvbm1lbnRIaXN0b3J52kEE",
-            "bmFtZRp4ykEZZGlhbG9nZmxvdy5nb29nbGVhcGlzLmNvbdJBWWh0dHBzOi8v",
-            "d3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xvdWQtcGxhdGZvcm0saHR0cHM6",
-            "Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9kaWFsb2dmbG93Qq8BCiZjb20u",
-            "Z29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMUIQRW52aXJvbm1l",
-            "bnRQcm90b1ABWkRnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVh",
-            "cGlzL2Nsb3VkL2RpYWxvZ2Zsb3cvY3gvdjNiZXRhMTtjePgBAaICAkRGqgIi",
-            "R29vZ2xlLkNsb3VkLkRpYWxvZ2Zsb3cuQ3guVjNCZXRhMWIGcHJvdG8z"));
+            "ZXRhMS5FbnZpcm9ubWVudBIXCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAkijQQK",
+            "FENvbnRpbnVvdXNUZXN0UmVzdWx0EgwKBG5hbWUYASABKAkSXQoGcmVzdWx0",
+            "GAIgASgOMk0uZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5D",
+            "b250aW51b3VzVGVzdFJlc3VsdC5BZ2dyZWdhdGVkVGVzdFJlc3VsdBJIChF0",
+            "ZXN0X2Nhc2VfcmVzdWx0cxgDIAMoCUIt+kEqCihkaWFsb2dmbG93Lmdvb2ds",
+            "ZWFwaXMuY29tL1Rlc3RDYXNlUmVzdWx0EiwKCHJ1bl90aW1lGAQgASgLMhou",
+            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJWChRBZ2dyZWdhdGVkVGVzdFJl",
+            "c3VsdBImCiJBR0dSRUdBVEVEX1RFU1RfUkVTVUxUX1VOU1BFQ0lGSUVEEAAS",
+            "CgoGUEFTU0VEEAESCgoGRkFJTEVEEAI6twHqQbMBCi5kaWFsb2dmbG93Lmdv",
+            "b2dsZWFwaXMuY29tL0NvbnRpbnVvdXNUZXN0UmVzdWx0EoABcHJvamVjdHMv",
+            "e3Byb2plY3R9L2xvY2F0aW9ucy97bG9jYXRpb259L2FnZW50cy97YWdlbnR9",
+            "L2Vudmlyb25tZW50cy97ZW52aXJvbm1lbnR9L2NvbnRpbnVvdXNUZXN0UmVz",
+            "dWx0cy97Y29udGludW91c190ZXN0X3Jlc3VsdH0iXgoYUnVuQ29udGludW91",
+            "c1Rlc3RSZXF1ZXN0EkIKC2Vudmlyb25tZW50GAEgASgJQi3gQQL6QScKJWRp",
+            "YWxvZ2Zsb3cuZ29vZ2xlYXBpcy5jb20vRW52aXJvbm1lbnQidQoZUnVuQ29u",
+            "dGludW91c1Rlc3RSZXNwb25zZRJYChZjb250aW51b3VzX3Rlc3RfcmVzdWx0",
+            "GAEgASgLMjguZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5D",
+            "b250aW51b3VzVGVzdFJlc3VsdCJaChlSdW5Db250aW51b3VzVGVzdE1ldGFk",
+            "YXRhEj0KBmVycm9ycxgBIAMoCzItLmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93",
+            "LmN4LnYzYmV0YTEuVGVzdEVycm9yIpEBCiBMaXN0Q29udGludW91c1Rlc3RS",
+            "ZXN1bHRzUmVxdWVzdBJGCgZwYXJlbnQYASABKAlCNuBBAvpBMBIuZGlhbG9n",
+            "Zmxvdy5nb29nbGVhcGlzLmNvbS9Db250aW51b3VzVGVzdFJlc3VsdBIRCglw",
+            "YWdlX3NpemUYAiABKAUSEgoKcGFnZV90b2tlbhgDIAEoCSKXAQohTGlzdENv",
+            "bnRpbnVvdXNUZXN0UmVzdWx0c1Jlc3BvbnNlElkKF2NvbnRpbnVvdXNfdGVz",
+            "dF9yZXN1bHRzGAEgAygLMjguZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gu",
+            "djNiZXRhMS5Db250aW51b3VzVGVzdFJlc3VsdBIXCg9uZXh0X3BhZ2VfdG9r",
+            "ZW4YAiABKAkyxBAKDEVudmlyb25tZW50cxLeAQoQTGlzdEVudmlyb25tZW50",
+            "cxI7Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuTGlzdEVu",
+            "dmlyb25tZW50c1JlcXVlc3QaPC5nb29nbGUuY2xvdWQuZGlhbG9nZmxvdy5j",
+            "eC52M2JldGExLkxpc3RFbnZpcm9ubWVudHNSZXNwb25zZSJPgtPkkwJAEj4v",
+            "djNiZXRhMS97cGFyZW50PXByb2plY3RzLyovbG9jYXRpb25zLyovYWdlbnRz",
+            "Lyp9L2Vudmlyb25tZW50c9pBBnBhcmVudBLLAQoOR2V0RW52aXJvbm1lbnQS",
+            "OS5nb29nbGUuY2xvdWQuZGlhbG9nZmxvdy5jeC52M2JldGExLkdldEVudmly",
+            "b25tZW50UmVxdWVzdBovLmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYz",
+            "YmV0YTEuRW52aXJvbm1lbnQiTYLT5JMCQBI+L3YzYmV0YTEve25hbWU9cHJv",
+            "amVjdHMvKi9sb2NhdGlvbnMvKi9hZ2VudHMvKi9lbnZpcm9ubWVudHMvKn3a",
+            "QQRuYW1lEoMCChFDcmVhdGVFbnZpcm9ubWVudBI8Lmdvb2dsZS5jbG91ZC5k",
+            "aWFsb2dmbG93LmN4LnYzYmV0YTEuQ3JlYXRlRW52aXJvbm1lbnRSZXF1ZXN0",
+            "Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9wZXJhdGlvbiKQAYLT5JMCTSI+L3Yz",
+            "YmV0YTEve3BhcmVudD1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL2FnZW50cy8q",
+            "fS9lbnZpcm9ubWVudHM6C2Vudmlyb25tZW502kEScGFyZW50LGVudmlyb25t",
+            "ZW50ykElCgtFbnZpcm9ubWVudBIWZ29vZ2xlLnByb3RvYnVmLlN0cnVjdBKU",
+            "AgoRVXBkYXRlRW52aXJvbm1lbnQSPC5nb29nbGUuY2xvdWQuZGlhbG9nZmxv",
+            "dy5jeC52M2JldGExLlVwZGF0ZUVudmlyb25tZW50UmVxdWVzdBodLmdvb2ds",
+            "ZS5sb25ncnVubmluZy5PcGVyYXRpb24ioQGC0+STAlkySi92M2JldGExL3tl",
+            "bnZpcm9ubWVudC5uYW1lPXByb2plY3RzLyovbG9jYXRpb25zLyovYWdlbnRz",
+            "LyovZW52aXJvbm1lbnRzLyp9OgtlbnZpcm9ubWVudNpBF2Vudmlyb25tZW50",
+            "LHVwZGF0ZV9tYXNrykElCgtFbnZpcm9ubWVudBIWZ29vZ2xlLnByb3RvYnVm",
+            "LlN0cnVjdBK4AQoRRGVsZXRlRW52aXJvbm1lbnQSPC5nb29nbGUuY2xvdWQu",
+            "ZGlhbG9nZmxvdy5jeC52M2JldGExLkRlbGV0ZUVudmlyb25tZW50UmVxdWVz",
+            "dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSJNgtPkkwJAKj4vdjNiZXRhMS97",
+            "bmFtZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL2FnZW50cy8qL2Vudmlyb25t",
+            "ZW50cy8qfdpBBG5hbWUSjQIKGExvb2t1cEVudmlyb25tZW50SGlzdG9yeRJD",
+            "Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuTG9va3VwRW52",
+            "aXJvbm1lbnRIaXN0b3J5UmVxdWVzdBpELmdvb2dsZS5jbG91ZC5kaWFsb2dm",
+            "bG93LmN4LnYzYmV0YTEuTG9va3VwRW52aXJvbm1lbnRIaXN0b3J5UmVzcG9u",
+            "c2UiZoLT5JMCWRJXL3YzYmV0YTEve25hbWU9cHJvamVjdHMvKi9sb2NhdGlv",
+            "bnMvKi9hZ2VudHMvKi9lbnZpcm9ubWVudHMvKn06bG9va3VwRW52aXJvbm1l",
+            "bnRIaXN0b3J52kEEbmFtZRKOAgoRUnVuQ29udGludW91c1Rlc3QSPC5nb29n",
+            "bGUuY2xvdWQuZGlhbG9nZmxvdy5jeC52M2JldGExLlJ1bkNvbnRpbnVvdXNU",
+            "ZXN0UmVxdWVzdBodLmdvb2dsZS5sb25ncnVubmluZy5PcGVyYXRpb24imwGC",
+            "0+STAlwiVy92M2JldGExL3tlbnZpcm9ubWVudD1wcm9qZWN0cy8qL2xvY2F0",
+            "aW9ucy8qL2FnZW50cy8qL2Vudmlyb25tZW50cy8qfTpydW5Db250aW51b3Vz",
+            "VGVzdDoBKspBNgoZUnVuQ29udGludW91c1Rlc3RSZXNwb25zZRIZUnVuQ29u",
+            "dGludW91c1Rlc3RNZXRhZGF0YRKRAgoZTGlzdENvbnRpbnVvdXNUZXN0UmVz",
+            "dWx0cxJELmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuTGlz",
+            "dENvbnRpbnVvdXNUZXN0UmVzdWx0c1JlcXVlc3QaRS5nb29nbGUuY2xvdWQu",
+            "ZGlhbG9nZmxvdy5jeC52M2JldGExLkxpc3RDb250aW51b3VzVGVzdFJlc3Vs",
+            "dHNSZXNwb25zZSJngtPkkwJYElYvdjNiZXRhMS97cGFyZW50PXByb2plY3Rz",
+            "LyovbG9jYXRpb25zLyovYWdlbnRzLyovZW52aXJvbm1lbnRzLyp9L2NvbnRp",
+            "bnVvdXNUZXN0UmVzdWx0c9pBBnBhcmVudBp4ykEZZGlhbG9nZmxvdy5nb29n",
+            "bGVhcGlzLmNvbdJBWWh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgv",
+            "Y2xvdWQtcGxhdGZvcm0saHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0",
+            "aC9kaWFsb2dmbG93Qq8BCiZjb20uZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cu",
+            "Y3gudjNiZXRhMUIQRW52aXJvbm1lbnRQcm90b1ABWkRnb29nbGUuZ29sYW5n",
+            "Lm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2Nsb3VkL2RpYWxvZ2Zsb3cvY3gv",
+            "djNiZXRhMTtjePgBAaICAkRGqgIiR29vZ2xlLkNsb3VkLkRpYWxvZ2Zsb3cu",
+            "Q3guVjNCZXRhMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.TestCaseReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -115,7 +153,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.UpdateEnvironmentRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.UpdateEnvironmentRequest.Parser, new[]{ "Environment", "UpdateMask" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.DeleteEnvironmentRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.DeleteEnvironmentRequest.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.LookupEnvironmentHistoryRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.LookupEnvironmentHistoryRequest.Parser, new[]{ "Name", "PageSize", "PageToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.LookupEnvironmentHistoryResponse), global::Google.Cloud.Dialogflow.Cx.V3Beta1.LookupEnvironmentHistoryResponse.Parser, new[]{ "Environments", "NextPageToken" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.LookupEnvironmentHistoryResponse), global::Google.Cloud.Dialogflow.Cx.V3Beta1.LookupEnvironmentHistoryResponse.Parser, new[]{ "Environments", "NextPageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult), global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Parser, new[]{ "Name", "Result", "TestCaseResults", "RunTime" }, null, new[]{ typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Types.AggregatedTestResult) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.RunContinuousTestRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.RunContinuousTestRequest.Parser, new[]{ "Environment" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.RunContinuousTestResponse), global::Google.Cloud.Dialogflow.Cx.V3Beta1.RunContinuousTestResponse.Parser, new[]{ "ContinuousTestResult" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.RunContinuousTestMetadata), global::Google.Cloud.Dialogflow.Cx.V3Beta1.RunContinuousTestMetadata.Parser, new[]{ "Errors" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.ListContinuousTestResultsRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.ListContinuousTestResultsRequest.Parser, new[]{ "Parent", "PageSize", "PageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.ListContinuousTestResultsResponse), global::Google.Cloud.Dialogflow.Cx.V3Beta1.ListContinuousTestResultsResponse.Parser, new[]{ "ContinuousTestResults", "NextPageToken" }, null, null, null, null)
           }));
     }
     #endregion
@@ -2398,6 +2442,1328 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             break;
           case 10: {
             environments_.AddEntriesFrom(ref input, _repeated_environments_codec);
+            break;
+          }
+          case 18: {
+            NextPageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Represents a result from running a test case in an agent environment.
+  /// </summary>
+  public sealed partial class ContinuousTestResult : pb::IMessage<ContinuousTestResult>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ContinuousTestResult> _parser = new pb::MessageParser<ContinuousTestResult>(() => new ContinuousTestResult());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ContinuousTestResult> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Dialogflow.Cx.V3Beta1.EnvironmentReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ContinuousTestResult() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ContinuousTestResult(ContinuousTestResult other) : this() {
+      name_ = other.name_;
+      result_ = other.result_;
+      testCaseResults_ = other.testCaseResults_.Clone();
+      runTime_ = other.runTime_ != null ? other.runTime_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ContinuousTestResult Clone() {
+      return new ContinuousTestResult(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    /// <summary>
+    /// The resource name for the continuous test result. Format:
+    /// `projects/&lt;Project ID>/locations/&lt;Location ID>/agents/&lt;Agent
+    /// ID>/environments/&lt;Environment
+    /// ID>/continuousTestResults/&lt;ContinuousTestResult ID>`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "result" field.</summary>
+    public const int ResultFieldNumber = 2;
+    private global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Types.AggregatedTestResult result_ = global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Types.AggregatedTestResult.Unspecified;
+    /// <summary>
+    /// The result of this continuous test run, i.e. whether all the tests in this
+    /// continuous test run pass or not.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Types.AggregatedTestResult Result {
+      get { return result_; }
+      set {
+        result_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "test_case_results" field.</summary>
+    public const int TestCaseResultsFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_testCaseResults_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> testCaseResults_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// A list of individual test case results names in this continuous test run.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> TestCaseResults {
+      get { return testCaseResults_; }
+    }
+
+    /// <summary>Field number for the "run_time" field.</summary>
+    public const int RunTimeFieldNumber = 4;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp runTime_;
+    /// <summary>
+    /// Time when the continuous testing run starts.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp RunTime {
+      get { return runTime_; }
+      set {
+        runTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ContinuousTestResult);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ContinuousTestResult other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (Result != other.Result) return false;
+      if(!testCaseResults_.Equals(other.testCaseResults_)) return false;
+      if (!object.Equals(RunTime, other.RunTime)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Result != global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Types.AggregatedTestResult.Unspecified) hash ^= Result.GetHashCode();
+      hash ^= testCaseResults_.GetHashCode();
+      if (runTime_ != null) hash ^= RunTime.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Result != global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Types.AggregatedTestResult.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Result);
+      }
+      testCaseResults_.WriteTo(output, _repeated_testCaseResults_codec);
+      if (runTime_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(RunTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Result != global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Types.AggregatedTestResult.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Result);
+      }
+      testCaseResults_.WriteTo(ref output, _repeated_testCaseResults_codec);
+      if (runTime_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(RunTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Result != global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Types.AggregatedTestResult.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Result);
+      }
+      size += testCaseResults_.CalculateSize(_repeated_testCaseResults_codec);
+      if (runTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RunTime);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ContinuousTestResult other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Result != global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Types.AggregatedTestResult.Unspecified) {
+        Result = other.Result;
+      }
+      testCaseResults_.Add(other.testCaseResults_);
+      if (other.runTime_ != null) {
+        if (runTime_ == null) {
+          RunTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        RunTime.MergeFrom(other.RunTime);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            Result = (global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Types.AggregatedTestResult) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            testCaseResults_.AddEntriesFrom(input, _repeated_testCaseResults_codec);
+            break;
+          }
+          case 34: {
+            if (runTime_ == null) {
+              RunTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RunTime);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            Result = (global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Types.AggregatedTestResult) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            testCaseResults_.AddEntriesFrom(ref input, _repeated_testCaseResults_codec);
+            break;
+          }
+          case 34: {
+            if (runTime_ == null) {
+              RunTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RunTime);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the ContinuousTestResult message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      /// <summary>
+      /// The overall result for a continuous test run in an agent environment.
+      /// </summary>
+      public enum AggregatedTestResult {
+        /// <summary>
+        /// Not specified. Should never be used.
+        /// </summary>
+        [pbr::OriginalName("AGGREGATED_TEST_RESULT_UNSPECIFIED")] Unspecified = 0,
+        /// <summary>
+        /// All the tests passed.
+        /// </summary>
+        [pbr::OriginalName("PASSED")] Passed = 1,
+        /// <summary>
+        /// At least one test did not pass.
+        /// </summary>
+        [pbr::OriginalName("FAILED")] Failed = 2,
+      }
+
+    }
+    #endregion
+
+  }
+
+  /// <summary>
+  /// The request message for [Environments.RunContinuousTest][google.cloud.dialogflow.cx.v3beta1.Environments.RunContinuousTest].
+  /// </summary>
+  public sealed partial class RunContinuousTestRequest : pb::IMessage<RunContinuousTestRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RunContinuousTestRequest> _parser = new pb::MessageParser<RunContinuousTestRequest>(() => new RunContinuousTestRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RunContinuousTestRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Dialogflow.Cx.V3Beta1.EnvironmentReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RunContinuousTestRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RunContinuousTestRequest(RunContinuousTestRequest other) : this() {
+      environment_ = other.environment_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RunContinuousTestRequest Clone() {
+      return new RunContinuousTestRequest(this);
+    }
+
+    /// <summary>Field number for the "environment" field.</summary>
+    public const int EnvironmentFieldNumber = 1;
+    private string environment_ = "";
+    /// <summary>
+    /// Required. Format: `projects/&lt;Project ID>/locations/&lt;Location ID>/agents/&lt;Agent
+    /// ID>/environments/&lt;Environment ID>`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Environment {
+      get { return environment_; }
+      set {
+        environment_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RunContinuousTestRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RunContinuousTestRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Environment != other.Environment) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Environment.Length != 0) hash ^= Environment.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Environment.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Environment);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Environment.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Environment);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Environment.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Environment);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RunContinuousTestRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Environment.Length != 0) {
+        Environment = other.Environment;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Environment = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Environment = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// The response message for [Environments.RunContinuousTest][google.cloud.dialogflow.cx.v3beta1.Environments.RunContinuousTest].
+  /// </summary>
+  public sealed partial class RunContinuousTestResponse : pb::IMessage<RunContinuousTestResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RunContinuousTestResponse> _parser = new pb::MessageParser<RunContinuousTestResponse>(() => new RunContinuousTestResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RunContinuousTestResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Dialogflow.Cx.V3Beta1.EnvironmentReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RunContinuousTestResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RunContinuousTestResponse(RunContinuousTestResponse other) : this() {
+      continuousTestResult_ = other.continuousTestResult_ != null ? other.continuousTestResult_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RunContinuousTestResponse Clone() {
+      return new RunContinuousTestResponse(this);
+    }
+
+    /// <summary>Field number for the "continuous_test_result" field.</summary>
+    public const int ContinuousTestResultFieldNumber = 1;
+    private global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult continuousTestResult_;
+    /// <summary>
+    /// The result for a continuous test run.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult ContinuousTestResult {
+      get { return continuousTestResult_; }
+      set {
+        continuousTestResult_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RunContinuousTestResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RunContinuousTestResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(ContinuousTestResult, other.ContinuousTestResult)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (continuousTestResult_ != null) hash ^= ContinuousTestResult.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (continuousTestResult_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(ContinuousTestResult);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (continuousTestResult_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(ContinuousTestResult);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (continuousTestResult_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ContinuousTestResult);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RunContinuousTestResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.continuousTestResult_ != null) {
+        if (continuousTestResult_ == null) {
+          ContinuousTestResult = new global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult();
+        }
+        ContinuousTestResult.MergeFrom(other.ContinuousTestResult);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (continuousTestResult_ == null) {
+              ContinuousTestResult = new global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult();
+            }
+            input.ReadMessage(ContinuousTestResult);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (continuousTestResult_ == null) {
+              ContinuousTestResult = new global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult();
+            }
+            input.ReadMessage(ContinuousTestResult);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Metadata returned for the [Environments.RunContinuousTest][google.cloud.dialogflow.cx.v3beta1.Environments.RunContinuousTest] long running
+  /// operation.
+  /// </summary>
+  public sealed partial class RunContinuousTestMetadata : pb::IMessage<RunContinuousTestMetadata>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RunContinuousTestMetadata> _parser = new pb::MessageParser<RunContinuousTestMetadata>(() => new RunContinuousTestMetadata());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RunContinuousTestMetadata> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Dialogflow.Cx.V3Beta1.EnvironmentReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RunContinuousTestMetadata() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RunContinuousTestMetadata(RunContinuousTestMetadata other) : this() {
+      errors_ = other.errors_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RunContinuousTestMetadata Clone() {
+      return new RunContinuousTestMetadata(this);
+    }
+
+    /// <summary>Field number for the "errors" field.</summary>
+    public const int ErrorsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Google.Cloud.Dialogflow.Cx.V3Beta1.TestError> _repeated_errors_codec
+        = pb::FieldCodec.ForMessage(10, global::Google.Cloud.Dialogflow.Cx.V3Beta1.TestError.Parser);
+    private readonly pbc::RepeatedField<global::Google.Cloud.Dialogflow.Cx.V3Beta1.TestError> errors_ = new pbc::RepeatedField<global::Google.Cloud.Dialogflow.Cx.V3Beta1.TestError>();
+    /// <summary>
+    /// The test errors.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Google.Cloud.Dialogflow.Cx.V3Beta1.TestError> Errors {
+      get { return errors_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RunContinuousTestMetadata);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RunContinuousTestMetadata other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!errors_.Equals(other.errors_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= errors_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      errors_.WriteTo(output, _repeated_errors_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      errors_.WriteTo(ref output, _repeated_errors_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += errors_.CalculateSize(_repeated_errors_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RunContinuousTestMetadata other) {
+      if (other == null) {
+        return;
+      }
+      errors_.Add(other.errors_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            errors_.AddEntriesFrom(input, _repeated_errors_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            errors_.AddEntriesFrom(ref input, _repeated_errors_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// The request message for [Environments.ListContinuousTestResults][google.cloud.dialogflow.cx.v3beta1.Environments.ListContinuousTestResults].
+  /// </summary>
+  public sealed partial class ListContinuousTestResultsRequest : pb::IMessage<ListContinuousTestResultsRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListContinuousTestResultsRequest> _parser = new pb::MessageParser<ListContinuousTestResultsRequest>(() => new ListContinuousTestResultsRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ListContinuousTestResultsRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Dialogflow.Cx.V3Beta1.EnvironmentReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListContinuousTestResultsRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListContinuousTestResultsRequest(ListContinuousTestResultsRequest other) : this() {
+      parent_ = other.parent_;
+      pageSize_ = other.pageSize_;
+      pageToken_ = other.pageToken_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListContinuousTestResultsRequest Clone() {
+      return new ListContinuousTestResultsRequest(this);
+    }
+
+    /// <summary>Field number for the "parent" field.</summary>
+    public const int ParentFieldNumber = 1;
+    private string parent_ = "";
+    /// <summary>
+    /// Required. The environment to list results for.
+    /// Format: `projects/&lt;Project ID>/locations/&lt;Location ID>/agents/&lt;Agent ID>/
+    /// environments/&lt;Environment ID>`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Parent {
+      get { return parent_; }
+      set {
+        parent_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "page_size" field.</summary>
+    public const int PageSizeFieldNumber = 2;
+    private int pageSize_;
+    /// <summary>
+    /// The maximum number of items to return in a single page. By default 100 and
+    /// at most 1000.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PageSize {
+      get { return pageSize_; }
+      set {
+        pageSize_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "page_token" field.</summary>
+    public const int PageTokenFieldNumber = 3;
+    private string pageToken_ = "";
+    /// <summary>
+    /// The next_page_token value returned from a previous list request.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PageToken {
+      get { return pageToken_; }
+      set {
+        pageToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ListContinuousTestResultsRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ListContinuousTestResultsRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Parent != other.Parent) return false;
+      if (PageSize != other.PageSize) return false;
+      if (PageToken != other.PageToken) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Parent.Length != 0) hash ^= Parent.GetHashCode();
+      if (PageSize != 0) hash ^= PageSize.GetHashCode();
+      if (PageToken.Length != 0) hash ^= PageToken.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Parent.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Parent);
+      }
+      if (PageSize != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Parent.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Parent);
+      }
+      if (PageSize != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Parent.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Parent);
+      }
+      if (PageSize != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PageToken);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ListContinuousTestResultsRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Parent.Length != 0) {
+        Parent = other.Parent;
+      }
+      if (other.PageSize != 0) {
+        PageSize = other.PageSize;
+      }
+      if (other.PageToken.Length != 0) {
+        PageToken = other.PageToken;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Parent = input.ReadString();
+            break;
+          }
+          case 16: {
+            PageSize = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            PageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Parent = input.ReadString();
+            break;
+          }
+          case 16: {
+            PageSize = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            PageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// The response message for [Environments.ListTestCaseResults][].
+  /// </summary>
+  public sealed partial class ListContinuousTestResultsResponse : pb::IMessage<ListContinuousTestResultsResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListContinuousTestResultsResponse> _parser = new pb::MessageParser<ListContinuousTestResultsResponse>(() => new ListContinuousTestResultsResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ListContinuousTestResultsResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Dialogflow.Cx.V3Beta1.EnvironmentReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListContinuousTestResultsResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListContinuousTestResultsResponse(ListContinuousTestResultsResponse other) : this() {
+      continuousTestResults_ = other.continuousTestResults_.Clone();
+      nextPageToken_ = other.nextPageToken_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListContinuousTestResultsResponse Clone() {
+      return new ListContinuousTestResultsResponse(this);
+    }
+
+    /// <summary>Field number for the "continuous_test_results" field.</summary>
+    public const int ContinuousTestResultsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult> _repeated_continuousTestResults_codec
+        = pb::FieldCodec.ForMessage(10, global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult.Parser);
+    private readonly pbc::RepeatedField<global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult> continuousTestResults_ = new pbc::RepeatedField<global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult>();
+    /// <summary>
+    /// The list of continuous test results.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Google.Cloud.Dialogflow.Cx.V3Beta1.ContinuousTestResult> ContinuousTestResults {
+      get { return continuousTestResults_; }
+    }
+
+    /// <summary>Field number for the "next_page_token" field.</summary>
+    public const int NextPageTokenFieldNumber = 2;
+    private string nextPageToken_ = "";
+    /// <summary>
+    /// Token to retrieve the next page of results, or empty if there are no more
+    /// results in the list.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NextPageToken {
+      get { return nextPageToken_; }
+      set {
+        nextPageToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ListContinuousTestResultsResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ListContinuousTestResultsResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!continuousTestResults_.Equals(other.continuousTestResults_)) return false;
+      if (NextPageToken != other.NextPageToken) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= continuousTestResults_.GetHashCode();
+      if (NextPageToken.Length != 0) hash ^= NextPageToken.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      continuousTestResults_.WriteTo(output, _repeated_continuousTestResults_codec);
+      if (NextPageToken.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NextPageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      continuousTestResults_.WriteTo(ref output, _repeated_continuousTestResults_codec);
+      if (NextPageToken.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NextPageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += continuousTestResults_.CalculateSize(_repeated_continuousTestResults_codec);
+      if (NextPageToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NextPageToken);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ListContinuousTestResultsResponse other) {
+      if (other == null) {
+        return;
+      }
+      continuousTestResults_.Add(other.continuousTestResults_);
+      if (other.NextPageToken.Length != 0) {
+        NextPageToken = other.NextPageToken;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            continuousTestResults_.AddEntriesFrom(input, _repeated_continuousTestResults_codec);
+            break;
+          }
+          case 18: {
+            NextPageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            continuousTestResults_.AddEntriesFrom(ref input, _repeated_continuousTestResults_codec);
             break;
           }
           case 18: {

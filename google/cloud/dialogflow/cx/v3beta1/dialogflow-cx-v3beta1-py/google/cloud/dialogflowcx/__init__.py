@@ -73,14 +73,20 @@ from google.cloud.dialogflowcx_v3beta1.types.entity_type import GetEntityTypeReq
 from google.cloud.dialogflowcx_v3beta1.types.entity_type import ListEntityTypesRequest
 from google.cloud.dialogflowcx_v3beta1.types.entity_type import ListEntityTypesResponse
 from google.cloud.dialogflowcx_v3beta1.types.entity_type import UpdateEntityTypeRequest
+from google.cloud.dialogflowcx_v3beta1.types.environment import ContinuousTestResult
 from google.cloud.dialogflowcx_v3beta1.types.environment import CreateEnvironmentRequest
 from google.cloud.dialogflowcx_v3beta1.types.environment import DeleteEnvironmentRequest
 from google.cloud.dialogflowcx_v3beta1.types.environment import Environment
 from google.cloud.dialogflowcx_v3beta1.types.environment import GetEnvironmentRequest
+from google.cloud.dialogflowcx_v3beta1.types.environment import ListContinuousTestResultsRequest
+from google.cloud.dialogflowcx_v3beta1.types.environment import ListContinuousTestResultsResponse
 from google.cloud.dialogflowcx_v3beta1.types.environment import ListEnvironmentsRequest
 from google.cloud.dialogflowcx_v3beta1.types.environment import ListEnvironmentsResponse
 from google.cloud.dialogflowcx_v3beta1.types.environment import LookupEnvironmentHistoryRequest
 from google.cloud.dialogflowcx_v3beta1.types.environment import LookupEnvironmentHistoryResponse
+from google.cloud.dialogflowcx_v3beta1.types.environment import RunContinuousTestMetadata
+from google.cloud.dialogflowcx_v3beta1.types.environment import RunContinuousTestRequest
+from google.cloud.dialogflowcx_v3beta1.types.environment import RunContinuousTestResponse
 from google.cloud.dialogflowcx_v3beta1.types.environment import UpdateEnvironmentRequest
 from google.cloud.dialogflowcx_v3beta1.types.experiment import CreateExperimentRequest
 from google.cloud.dialogflowcx_v3beta1.types.experiment import DeleteExperimentRequest
@@ -284,14 +290,20 @@ __all__ = ('AgentsClient',
     'ListEntityTypesRequest',
     'ListEntityTypesResponse',
     'UpdateEntityTypeRequest',
+    'ContinuousTestResult',
     'CreateEnvironmentRequest',
     'DeleteEnvironmentRequest',
     'Environment',
     'GetEnvironmentRequest',
+    'ListContinuousTestResultsRequest',
+    'ListContinuousTestResultsResponse',
     'ListEnvironmentsRequest',
     'ListEnvironmentsResponse',
     'LookupEnvironmentHistoryRequest',
     'LookupEnvironmentHistoryResponse',
+    'RunContinuousTestMetadata',
+    'RunContinuousTestRequest',
+    'RunContinuousTestResponse',
     'UpdateEnvironmentRequest',
     'CreateExperimentRequest',
     'DeleteExperimentRequest',
