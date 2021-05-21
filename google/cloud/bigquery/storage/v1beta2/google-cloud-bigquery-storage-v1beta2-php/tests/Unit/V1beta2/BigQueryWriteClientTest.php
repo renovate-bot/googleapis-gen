@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,24 +22,27 @@
 
 namespace Google\Cloud\Bigquery\Storage\Tests\Unit\V1beta2;
 
-use Google\Cloud\Bigquery\Storage\V1beta2\BigQueryWriteClient;
 use Google\ApiCore\ApiException;
+
 use Google\ApiCore\BidiStream;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
+
 use Google\ApiCore\Testing\MockTransport;
+
 use Google\Cloud\Bigquery\Storage\V1beta2\AppendRowsRequest;
 use Google\Cloud\Bigquery\Storage\V1beta2\AppendRowsResponse;
 use Google\Cloud\Bigquery\Storage\V1beta2\BatchCommitWriteStreamsResponse;
+use Google\Cloud\Bigquery\Storage\V1beta2\BigQueryWriteClient;
 use Google\Cloud\Bigquery\Storage\V1beta2\FinalizeWriteStreamResponse;
 use Google\Cloud\Bigquery\Storage\V1beta2\FlushRowsResponse;
 use Google\Cloud\Bigquery\Storage\V1beta2\WriteStream;
-use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group storage
+ *
  * @group gapic
  */
 class BigQueryWriteClientTest extends GeneratedTest
@@ -57,9 +60,7 @@ class BigQueryWriteClientTest extends GeneratedTest
      */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
     /**
@@ -70,86 +71,7 @@ class BigQueryWriteClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new BigQueryWriteClient($options);
-    }
-
-    /**
-     * @test
-     */
-    public function createWriteStreamTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $name = 'name3373707';
-        $expectedResponse = new WriteStream();
-        $expectedResponse->setName($name);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedParent = $client->tableName('[PROJECT]', '[DATASET]', '[TABLE]');
-        $writeStream = new WriteStream();
-
-        $response = $client->createWriteStream($formattedParent, $writeStream);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.bigquery.storage.v1beta2.BigQueryWrite/CreateWriteStream', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getParent();
-
-        $this->assertProtobufEquals($formattedParent, $actualValue);
-        $actualValue = $actualRequestObject->getWriteStream();
-
-        $this->assertProtobufEquals($writeStream, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function createWriteStreamExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedParent = $client->tableName('[PROJECT]', '[DATASET]', '[TABLE]');
-        $writeStream = new WriteStream();
-
-        try {
-            $client->createWriteStream($formattedParent, $writeStream);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
     }
 
     /**
@@ -158,10 +80,10 @@ class BigQueryWriteClientTest extends GeneratedTest
     public function appendRowsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $expectedResponse = new AppendRowsResponse();
         $transport->addResponse($expectedResponse);
@@ -169,7 +91,6 @@ class BigQueryWriteClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse2);
         $expectedResponse3 = new AppendRowsResponse();
         $transport->addResponse($expectedResponse3);
-
         // Mock request
         $formattedWriteStream = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
         $request = new AppendRowsRequest();
@@ -180,15 +101,15 @@ class BigQueryWriteClientTest extends GeneratedTest
         $formattedWriteStream3 = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
         $request3 = new AppendRowsRequest();
         $request3->setWriteStream($formattedWriteStream3);
-
         $bidi = $client->appendRows();
         $this->assertInstanceOf(BidiStream::class, $bidi);
-
         $bidi->write($request);
         $responses = [];
         $responses[] = $bidi->read();
-
-        $bidi->writeAll([$request2, $request3]);
+        $bidi->writeAll([
+            $request2,
+            $request3,
+        ]);
         foreach ($bidi->closeWriteAndReadAll() as $response) {
             $responses[] = $response;
         }
@@ -198,25 +119,21 @@ class BigQueryWriteClientTest extends GeneratedTest
         $expectedResponses[] = $expectedResponse2;
         $expectedResponses[] = $expectedResponse3;
         $this->assertEquals($expectedResponses, $responses);
-
         $createStreamRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($createStreamRequests));
         $streamFuncCall = $createStreamRequests[0]->getFuncCall();
         $streamRequestObject = $createStreamRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.bigquery.storage.v1beta2.BigQueryWrite/AppendRows', $streamFuncCall);
         $this->assertNull($streamRequestObject);
-
         $callObjects = $transport->popCallObjects();
         $this->assertSame(1, count($callObjects));
         $bidiCall = $callObjects[0];
-
         $writeRequests = $bidiCall->popReceivedCalls();
         $expectedRequests = [];
         $expectedRequests[] = $request;
         $expectedRequests[] = $request2;
         $expectedRequests[] = $request3;
         $this->assertEquals($expectedRequests, $writeRequests);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -226,26 +143,22 @@ class BigQueryWriteClientTest extends GeneratedTest
     public function appendRowsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
         $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
-
         $transport->setStreamingStatus($status);
-
         $this->assertTrue($transport->isExhausted());
-
         $bidi = $client->appendRows();
         $results = $bidi->closeWriteAndReadAll();
-
         try {
             iterator_to_array($results);
             // If the close stream method call did not throw, fail the test
@@ -254,153 +167,6 @@ class BigQueryWriteClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function getWriteStreamTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $name2 = 'name2-1052831874';
-        $expectedResponse = new WriteStream();
-        $expectedResponse->setName($name2);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedName = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
-
-        $response = $client->getWriteStream($formattedName);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.bigquery.storage.v1beta2.BigQueryWrite/GetWriteStream', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getName();
-
-        $this->assertProtobufEquals($formattedName, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function getWriteStreamExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedName = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
-
-        try {
-            $client->getWriteStream($formattedName);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function finalizeWriteStreamTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $rowCount = 1340416618;
-        $expectedResponse = new FinalizeWriteStreamResponse();
-        $expectedResponse->setRowCount($rowCount);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedName = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
-
-        $response = $client->finalizeWriteStream($formattedName);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.bigquery.storage.v1beta2.BigQueryWrite/FinalizeWriteStream', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getName();
-
-        $this->assertProtobufEquals($formattedName, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function finalizeWriteStreamExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedName = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
-
-        try {
-            $client->finalizeWriteStream($formattedName);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
@@ -412,18 +178,16 @@ class BigQueryWriteClientTest extends GeneratedTest
     public function batchCommitWriteStreamsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $expectedResponse = new BatchCommitWriteStreamsResponse();
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $parent = 'parent-995424086';
         $writeStreams = [];
-
         $response = $client->batchCommitWriteStreams($parent, $writeStreams);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -431,14 +195,10 @@ class BigQueryWriteClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.bigquery.storage.v1beta2.BigQueryWrite/BatchCommitWriteStreams', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getParent();
-
         $this->assertProtobufEquals($parent, $actualValue);
         $actualValue = $actualRequestObject->getWriteStreams();
-
         $this->assertProtobufEquals($writeStreams, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -448,26 +208,23 @@ class BigQueryWriteClientTest extends GeneratedTest
     public function batchCommitWriteStreamsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $parent = 'parent-995424086';
         $writeStreams = [];
-
         try {
             $client->batchCommitWriteStreams($parent, $writeStreams);
             // If the $client method call did not throw, fail the test
@@ -476,7 +233,138 @@ class BigQueryWriteClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
 
+    /**
+     * @test
+     */
+    public function createWriteStreamTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $name = 'name3373707';
+        $expectedResponse = new WriteStream();
+        $expectedResponse->setName($name);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedParent = $client->tableName('[PROJECT]', '[DATASET]', '[TABLE]');
+        $writeStream = new WriteStream();
+        $response = $client->createWriteStream($formattedParent, $writeStream);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.bigquery.storage.v1beta2.BigQueryWrite/CreateWriteStream', $actualFuncCall);
+        $actualValue = $actualRequestObject->getParent();
+        $this->assertProtobufEquals($formattedParent, $actualValue);
+        $actualValue = $actualRequestObject->getWriteStream();
+        $this->assertProtobufEquals($writeStream, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function createWriteStreamExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedParent = $client->tableName('[PROJECT]', '[DATASET]', '[TABLE]');
+        $writeStream = new WriteStream();
+        try {
+            $client->createWriteStream($formattedParent, $writeStream);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function finalizeWriteStreamTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $rowCount = 1340416618;
+        $expectedResponse = new FinalizeWriteStreamResponse();
+        $expectedResponse->setRowCount($rowCount);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedName = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
+        $response = $client->finalizeWriteStream($formattedName);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.bigquery.storage.v1beta2.BigQueryWrite/FinalizeWriteStream', $actualFuncCall);
+        $actualValue = $actualRequestObject->getName();
+        $this->assertProtobufEquals($formattedName, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function finalizeWriteStreamExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedName = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
+        try {
+            $client->finalizeWriteStream($formattedName);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
@@ -488,19 +376,17 @@ class BigQueryWriteClientTest extends GeneratedTest
     public function flushRowsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
-        $offset = 1019779949;
+        $offset2 = 755984506;
         $expectedResponse = new FlushRowsResponse();
-        $expectedResponse->setOffset($offset);
+        $expectedResponse->setOffset($offset2);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedWriteStream = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
-
         $response = $client->flushRows($formattedWriteStream);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -508,11 +394,8 @@ class BigQueryWriteClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.bigquery.storage.v1beta2.BigQueryWrite/FlushRows', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getWriteStream();
-
         $this->assertProtobufEquals($formattedWriteStream, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -522,25 +405,22 @@ class BigQueryWriteClientTest extends GeneratedTest
     public function flushRowsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedWriteStream = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
-
         try {
             $client->flushRows($formattedWriteStream);
             // If the $client method call did not throw, fail the test
@@ -549,7 +429,70 @@ class BigQueryWriteClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
 
+    /**
+     * @test
+     */
+    public function getWriteStreamTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $name2 = 'name2-1052831874';
+        $expectedResponse = new WriteStream();
+        $expectedResponse->setName($name2);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedName = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
+        $response = $client->getWriteStream($formattedName);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.bigquery.storage.v1beta2.BigQueryWrite/GetWriteStream', $actualFuncCall);
+        $actualValue = $actualRequestObject->getName();
+        $this->assertProtobufEquals($formattedName, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function getWriteStreamExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedName = $client->writeStreamName('[PROJECT]', '[DATASET]', '[TABLE]', '[STREAM]');
+        try {
+            $client->getWriteStream($formattedName);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

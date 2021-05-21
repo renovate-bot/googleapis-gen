@@ -3,6 +3,19 @@
 return [
     'interfaces' => [
         'google.cloud.bigquery.storage.v1beta1.BigQueryStorage' => [
+            'BatchCreateReadSessionStreams' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{session.name=projects/*/sessions/*}',
+                'body' => '*',
+                'placeholders' => [
+                    'session.name' => [
+                        'getters' => [
+                            'getSession',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'CreateReadSession' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta1/{table_reference.project_id=projects/*}',
@@ -25,19 +38,6 @@ return [
                         'getters' => [
                             'getTableReference',
                             'getProjectId',
-                        ],
-                    ],
-                ],
-            ],
-            'BatchCreateReadSessionStreams' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{session.name=projects/*/sessions/*}',
-                'body' => '*',
-                'placeholders' => [
-                    'session.name' => [
-                        'getters' => [
-                            'getSession',
-                            'getName',
                         ],
                     ],
                 ],

@@ -1,0 +1,43 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.bigquery.storage.v1beta1",
+    "libraryPackage": "Google\\Cloud\\Bigquery\\Storage\\V1beta1",
+    "services": {
+        "BigQueryStorage": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "BigQueryStorageGapicClient",
+                    "rpcs": {
+                        "BatchCreateReadSessionStreams": {
+                            "methods": [
+                                "batchCreateReadSessionStreams"
+                            ]
+                        },
+                        "CreateReadSession": {
+                            "methods": [
+                                "createReadSession"
+                            ]
+                        },
+                        "FinalizeStream": {
+                            "methods": [
+                                "finalizeStream"
+                            ]
+                        },
+                        "ReadRows": {
+                            "methods": [
+                                "readRows"
+                            ]
+                        },
+                        "SplitReadStream": {
+                            "methods": [
+                                "splitReadStream"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

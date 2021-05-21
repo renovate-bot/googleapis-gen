@@ -3,10 +3,9 @@
 return [
     'interfaces' => [
         'google.cloud.bigquery.storage.v1beta2.BigQueryWrite' => [
-            'CreateWriteStream' => [
-                'method' => 'post',
+            'BatchCommitWriteStreams' => [
+                'method' => 'get',
                 'uriTemplate' => '/v1beta2/{parent=projects/*/datasets/*/tables/*}',
-                'body' => 'write_stream',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -15,14 +14,14 @@ return [
                     ],
                 ],
             ],
-            'GetWriteStream' => [
+            'CreateWriteStream' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1beta2/{name=projects/*/datasets/*/tables/*/streams/*}',
-                'body' => '*',
+                'uriTemplate' => '/v1beta2/{parent=projects/*/datasets/*/tables/*}',
+                'body' => 'write_stream',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
                         ],
                     ],
                 ],
@@ -39,17 +38,6 @@ return [
                     ],
                 ],
             ],
-            'BatchCommitWriteStreams' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta2/{parent=projects/*/datasets/*/tables/*}',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
             'FlushRows' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta2/{write_stream=projects/*/datasets/*/tables/*/streams/*}',
@@ -58,6 +46,18 @@ return [
                     'write_stream' => [
                         'getters' => [
                             'getWriteStream',
+                        ],
+                    ],
+                ],
+            ],
+            'GetWriteStream' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta2/{name=projects/*/datasets/*/tables/*/streams/*}',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
