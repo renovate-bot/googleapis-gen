@@ -32,7 +32,7 @@ module Google
     module Aiplatform
       module V1
         ##
-        # A service for managing AI Platform's machine learning Models.
+        # A service for managing Vertex AI's machine learning Models.
         #
         # To load this service and instantiate a client:
         #

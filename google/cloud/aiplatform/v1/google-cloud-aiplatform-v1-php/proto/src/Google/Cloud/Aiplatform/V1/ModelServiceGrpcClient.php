@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
 namespace Google\Cloud\Aiplatform\V1;
 
 /**
- * A service for managing AI Platform's machine learning Models.
+ * A service for managing Vertex AI's machine learning Models.
  */
 class ModelServiceGrpcClient extends \Grpc\BaseStub {
 
@@ -33,7 +33,7 @@ class ModelServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      * @param \Google\Cloud\Aiplatform\V1\UploadModelRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

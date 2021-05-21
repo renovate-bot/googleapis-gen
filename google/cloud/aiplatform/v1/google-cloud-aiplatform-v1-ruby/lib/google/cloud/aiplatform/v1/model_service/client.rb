@@ -27,7 +27,7 @@ module Google
           ##
           # Client for the ModelService service.
           #
-          # A service for managing AI Platform's machine learning Models.
+          # A service for managing Vertex AI's machine learning Models.
           #
           class Client
             include Paths
@@ -183,7 +183,7 @@ module Google
             # Service calls
 
             ##
-            # Uploads a Model artifact into AI Platform.
+            # Uploads a Model artifact into Vertex AI.
             #
             # @overload upload_model(request, options = nil)
             #   Pass arguments to `upload_model` via a request object, either of type
@@ -443,8 +443,7 @@ module Google
             #     Required. The Model which replaces the resource on the server.
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     Required. The update mask applies to the resource.
-            #     For the `FieldMask` definition, see
-            #     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+            #     For the `FieldMask` definition, see {::Google::Protobuf::FieldMask google.protobuf.FieldMask}.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Cloud::Aiplatform::V1::Model]
@@ -654,7 +653,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the ModelEvaluation resource.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -802,7 +800,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the ModelEvaluationSlice resource.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -871,7 +868,6 @@ module Google
             #   @param parent [::String]
             #     Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
             #     from. Format:
-            #
             #     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
             #   @param filter [::String]
             #     The standard list filter.

@@ -58,7 +58,7 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
 /**
- * Service Description: A service for managing AI Platform's machine learning Models.
+ * Service Description: A service for managing Vertex AI's machine learning Models.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -650,7 +650,6 @@ class ModelServiceGapicClient
      *
      * @param string $name         Required. The name of the ModelEvaluation resource.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -693,7 +692,6 @@ class ModelServiceGapicClient
      *
      * @param string $name         Required. The name of the ModelEvaluationSlice resource.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -748,7 +746,6 @@ class ModelServiceGapicClient
      *
      * @param string $parent       Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
      *                             from. Format:
-     *
      *                             `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -1014,8 +1011,7 @@ class ModelServiceGapicClient
      *
      * @param Model     $model        Required. The Model which replaces the resource on the server.
      * @param FieldMask $updateMask   Required. The update mask applies to the resource.
-     *                                For the `FieldMask` definition, see
-     *                                [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     *                                For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * @param array     $optionalArgs {
      *     Optional.
      *
@@ -1043,7 +1039,7 @@ class ModelServiceGapicClient
     }
 
     /**
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      *
      * Sample code:
      * ```

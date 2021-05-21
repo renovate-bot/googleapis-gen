@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -172,9 +172,9 @@ type DataLabelingJob struct {
 	// Note: Annotations created in the DataLabelingJob are associated with
 	// the EncryptionSpec of the Dataset they are exported to.
 	EncryptionSpec *EncryptionSpec `protobuf:"bytes,20,opt,name=encryption_spec,json=encryptionSpec,proto3" json:"encryption_spec,omitempty"`
-	// Parameters that configure the active learning pipeline. Active learning will
-	// label the data incrementally via several iterations. For every iteration,
-	// it will select a batch of data based on the sampling strategy.
+	// Parameters that configure the active learning pipeline. Active learning
+	// will label the data incrementally via several iterations. For every
+	// iteration, it will select a batch of data based on the sampling strategy.
 	ActiveLearningConfig *ActiveLearningConfig `protobuf:"bytes,21,opt,name=active_learning_config,json=activeLearningConfig,proto3" json:"active_learning_config,omitempty"`
 }
 

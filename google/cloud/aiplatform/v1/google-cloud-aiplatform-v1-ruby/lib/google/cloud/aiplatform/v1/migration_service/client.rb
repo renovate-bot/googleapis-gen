@@ -28,7 +28,7 @@ module Google
           # Client for the MigrationService service.
           #
           # A service that migrates resources from automl.googleapis.com,
-          # datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+          # datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
           #
           class Client
             include Paths
@@ -166,7 +166,7 @@ module Google
             ##
             # Searches all of the resources in automl.googleapis.com,
             # datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
-            # AI Platform's given location.
+            # Vertex AI's given location.
             #
             # @overload search_migratable_resources(request, options = nil)
             #   Pass arguments to `search_migratable_resources` via a request object, either of type
@@ -185,7 +185,7 @@ module Google
             #
             #   @param parent [::String]
             #     Required. The location that the migratable resources should be searched from.
-            #     It's the AI Platform location that the resources can be migrated to, not
+            #     It's the Vertex AI location that the resources can be migrated to, not
             #     the resources' original location.
             #     Format:
             #     `projects/{project}/locations/{location}`
@@ -195,15 +195,18 @@ module Google
             #   @param page_token [::String]
             #     The standard page token.
             #   @param filter [::String]
-            #     Supported filters are:
-            #     * Resource type: For a specific type of MigratableResource.
-            #       * `ml_engine_model_version:*`
-            #       * `automl_model:*`,
-            #       * `automl_dataset:*`
-            #       * `data_labeling_dataset:*`.
-            #     * Migrated or not: Filter migrated resource or not by last_migrate_time.
-            #       * `last_migrate_time:*` will filter migrated resources.
-            #       * `NOT last_migrate_time:*` will filter not yet migrated resources.
+            #     A filter for your search. You can use the following types of filters:
+            #
+            #     *   Resource type filters. The following strings filter for a specific type
+            #         of {::Google::Cloud::Aiplatform::V1::MigratableResource MigratableResource}:
+            #         *   `ml_engine_model_version:*`
+            #         *   `automl_model:*`
+            #         *   `automl_dataset:*`
+            #         *   `data_labeling_dataset:*`
+            #     *   "Migrated or not" filters. The following strings filter for resources
+            #         that either have or have not already been migrated:
+            #         *   `last_migrate_time:*` filters for migrated resources.
+            #         *   `NOT last_migrate_time:*` filters for not yet migrated resources.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Aiplatform::V1::MigratableResource>]
@@ -253,7 +256,7 @@ module Google
 
             ##
             # Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
-            # and datalabeling.googleapis.com to AI Platform (Unified).
+            # and datalabeling.googleapis.com to Vertex AI.
             #
             # @overload batch_migrate_resources(request, options = nil)
             #   Pass arguments to `batch_migrate_resources` via a request object, either of type

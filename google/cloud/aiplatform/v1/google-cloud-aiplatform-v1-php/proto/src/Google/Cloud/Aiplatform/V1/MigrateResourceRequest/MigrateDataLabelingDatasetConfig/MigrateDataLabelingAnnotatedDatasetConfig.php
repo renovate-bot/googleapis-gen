@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Config for migrating AnnotatedDataset in datalabeling.googleapis.com to
- * AI Platform's SavedQuery.
+ * Vertex AI's SavedQuery.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig.MigrateDataLabelingAnnotatedDatasetConfig</code>
  */

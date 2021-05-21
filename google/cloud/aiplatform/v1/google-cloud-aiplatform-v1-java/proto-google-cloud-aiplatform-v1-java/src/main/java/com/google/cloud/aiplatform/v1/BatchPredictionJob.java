@@ -1772,8 +1772,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -1798,8 +1798,8 @@ private static final long serialVersionUID = 0L;
     boolean hasBigqueryDestination();
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -1824,8 +1824,8 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.aiplatform.v1.BigQueryDestination getBigqueryDestination();
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -1850,7 +1850,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
      * </pre>
@@ -1861,7 +1861,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getPredictionsFormat();
     /**
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
      * </pre>
@@ -2139,8 +2139,8 @@ private static final long serialVersionUID = 0L;
     public static final int BIGQUERY_DESTINATION_FIELD_NUMBER = 3;
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -2168,8 +2168,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -2200,8 +2200,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -2234,7 +2234,7 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object predictionsFormat_;
     /**
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
      * </pre>
@@ -2257,7 +2257,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
      * </pre>
@@ -3033,8 +3033,8 @@ private static final long serialVersionUID = 0L;
           com.google.cloud.aiplatform.v1.BigQueryDestination, com.google.cloud.aiplatform.v1.BigQueryDestination.Builder, com.google.cloud.aiplatform.v1.BigQueryDestinationOrBuilder> bigqueryDestinationBuilder_;
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3062,8 +3062,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3101,8 +3101,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3138,8 +3138,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3173,8 +3173,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3216,8 +3216,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3256,8 +3256,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3283,8 +3283,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3318,8 +3318,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3362,7 +3362,7 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object predictionsFormat_ = "";
       /**
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
        * </pre>
@@ -3384,7 +3384,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
        * </pre>
@@ -3407,7 +3407,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
        * </pre>
@@ -3428,7 +3428,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
        * </pre>
@@ -3444,7 +3444,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
        * </pre>
@@ -4897,7 +4897,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *
@@ -4911,7 +4911,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *
@@ -4925,7 +4925,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *
@@ -7496,7 +7496,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7509,7 +7509,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7526,7 +7526,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7548,7 +7548,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7568,7 +7568,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7592,7 +7592,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7612,7 +7612,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7626,7 +7626,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7643,7 +7643,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *

@@ -17,8 +17,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class UserActionReference extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The method name of the API call. For example,
-     * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+     * The method name of the API RPC call. For example,
+     * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
      *
      * Generated from protobuf field <code>string method = 3;</code>
      */
@@ -42,8 +42,8 @@ class UserActionReference extends \Google\Protobuf\Internal\Message
      *           Format:
      *           'projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}'
      *     @type string $method
-     *           The method name of the API call. For example,
-     *           "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+     *           The method name of the API RPC call. For example,
+     *           "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
      * }
      */
     public function __construct($data = NULL) {
@@ -126,8 +126,8 @@ class UserActionReference extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The method name of the API call. For example,
-     * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+     * The method name of the API RPC call. For example,
+     * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
      *
      * Generated from protobuf field <code>string method = 3;</code>
      * @return string
@@ -138,8 +138,8 @@ class UserActionReference extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The method name of the API call. For example,
-     * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+     * The method name of the API RPC call. For example,
+     * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
      *
      * Generated from protobuf field <code>string method = 3;</code>
      * @param string $var

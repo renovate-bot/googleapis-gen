@@ -16,13 +16,13 @@ use UnexpectedValueException;
 class ObservationNoise
 {
     /**
-     * The default noise level chosen by the AI Platform service.
+     * The default noise level chosen by Vertex AI.
      *
      * Generated from protobuf enum <code>OBSERVATION_NOISE_UNSPECIFIED = 0;</code>
      */
     const OBSERVATION_NOISE_UNSPECIFIED = 0;
     /**
-     * AI Platform Vizier assumes that the objective function is (nearly)
+     * Vertex AI assumes that the objective function is (nearly)
      * perfectly reproducible, and will never repeat the same Trial
      * parameters.
      *
@@ -30,7 +30,7 @@ class ObservationNoise
      */
     const LOW = 1;
     /**
-     * AI Platform Vizier will estimate the amount of noise in metric
+     * Vertex AI will estimate the amount of noise in metric
      * evaluations, it may repeat the same Trial parameters more than once.
      *
      * Generated from protobuf enum <code>HIGH = 2;</code>

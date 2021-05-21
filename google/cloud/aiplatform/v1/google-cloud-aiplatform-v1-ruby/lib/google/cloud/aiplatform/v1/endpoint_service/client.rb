@@ -435,9 +435,7 @@ module Google
             #   @param endpoint [::Google::Cloud::Aiplatform::V1::Endpoint, ::Hash]
             #     Required. The Endpoint which replaces the resource on the server.
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
-            #     Required. The update mask applies to the resource.
-            #     See
-            #     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+            #     Required. The update mask applies to the resource. See {::Google::Protobuf::FieldMask google.protobuf.FieldMask}.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Cloud::Aiplatform::V1::Endpoint]

@@ -70,7 +70,7 @@ module Google
         # @!attribute [rw] manual_batch_tuning_parameters
         #   @return [::Google::Cloud::Aiplatform::V1::ManualBatchTuningParameters]
         #     Immutable. Parameters configuring the batch behavior. Currently only applicable when
-        #     {::Google::Cloud::Aiplatform::V1::BatchPredictionJob#dedicated_resources dedicated_resources} are used (in other cases AI Platform does
+        #     {::Google::Cloud::Aiplatform::V1::BatchPredictionJob#dedicated_resources dedicated_resources} are used (in other cases Vertex AI does
         #     the tuning itself).
         # @!attribute [r] output_info
         #   @return [::Google::Cloud::Aiplatform::V1::BatchPredictionJob::OutputInfo]
@@ -182,8 +182,8 @@ module Google
           #     containing only `code` and `message` fields.
           # @!attribute [rw] bigquery_destination
           #   @return [::Google::Cloud::Aiplatform::V1::BigQueryDestination]
-          #     The BigQuery project location where the output is to be written to.
-          #     In the given project a new dataset is created with name
+          #     The BigQuery project or dataset location where the output is to be
+          #     written to. If project is provided, a new dataset is created with name
           #     `prediction_<model-display-name>_<job-create-time>`
           #     where <model-display-name> is made
           #     BigQuery-dataset-name compatible (for example, most special characters
@@ -202,9 +202,8 @@ module Google
           #     represented as a STRUCT, and containing only `code` and `message`.
           # @!attribute [rw] predictions_format
           #   @return [::String]
-          #     Required. The format in which AI Platform gives the predictions, must be one of the
+          #     Required. The format in which Vertex AI gives the predictions, must be one of the
           #     [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
-          #
           #     {::Google::Cloud::Aiplatform::V1::Model#supported_output_storage_formats supported_output_storage_formats}.
           class OutputConfig
             include ::Google::Protobuf::MessageExts

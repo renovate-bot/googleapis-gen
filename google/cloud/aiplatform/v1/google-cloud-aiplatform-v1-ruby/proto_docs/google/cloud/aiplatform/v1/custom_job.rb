@@ -89,6 +89,8 @@ module Google
         # @!attribute [rw] worker_pool_specs
         #   @return [::Array<::Google::Cloud::Aiplatform::V1::WorkerPoolSpec>]
         #     Required. The spec of the worker pools including machine type and Docker image.
+        #     All worker pools except the first one are optional and can be skipped by
+        #     providing an empty value.
         # @!attribute [rw] scheduling
         #   @return [::Google::Cloud::Aiplatform::V1::Scheduling]
         #     Scheduling options for a CustomJob.
@@ -96,8 +98,9 @@ module Google
         #   @return [::String]
         #     Specifies the service account for workload run-as account.
         #     Users submitting jobs must have act-as permission on this run-as account.
-        #     If unspecified, the AI Platform Custom Code Service Agent for the
-        #     CustomJob's project is used.
+        #     If unspecified, the [AI Platform Custom Code Service
+        #     Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+        #     for the CustomJob's project is used.
         # @!attribute [rw] network
         #   @return [::String]
         #     The full name of the Compute Engine
@@ -119,7 +122,7 @@ module Google
         #     {::Google::Cloud::Aiplatform::V1::Trial#id id} under its parent HyperparameterTuningJob's
         #     baseOutputDirectory.
         #
-        #     The following AI Platform environment variables will be passed to
+        #     The following Vertex AI environment variables will be passed to
         #     containers or python modules when this field is set:
         #
         #       For CustomJob:
@@ -182,10 +185,12 @@ module Google
         # The spec of a Python packaged code.
         # @!attribute [rw] executor_image_uri
         #   @return [::String]
-        #     Required. The URI of a container image in the Container Registry that will run the
-        #     provided python package. AI Platform provides wide range of executor images
-        #     with pre-installed packages to meet users' various use cases. Only one of
-        #     the provided images can be set here.
+        #     Required. The URI of a container image in Artifact Registry that will run the
+        #     provided Python package. Vertex AI provides a wide range of executor
+        #     images with pre-installed packages to meet users' various use cases. See
+        #     the list of [pre-built containers for
+        #     training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+        #     You must use an image from this list.
         # @!attribute [rw] package_uris
         #   @return [::Array<::String>]
         #     Required. The Google Cloud Storage location of the Python package files which are

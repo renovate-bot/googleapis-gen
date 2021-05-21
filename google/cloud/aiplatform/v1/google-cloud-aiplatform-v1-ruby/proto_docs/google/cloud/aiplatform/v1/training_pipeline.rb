@@ -23,8 +23,8 @@ module Google
       module V1
         # The TrainingPipeline orchestrates tasks associated with training a Model. It
         # always executes the training task, and optionally may also
-        # export data from AI Platform's Dataset which becomes the training input,
-        # {::Google::Cloud::Aiplatform::V1::ModelService::Client#upload_model upload} the Model to AI Platform, and evaluate the
+        # export data from Vertex AI's Dataset which becomes the training input,
+        # {::Google::Cloud::Aiplatform::V1::ModelService::Client#upload_model upload} the Model to Vertex AI, and evaluate the
         # Model.
         # @!attribute [r] name
         #   @return [::String]
@@ -34,7 +34,7 @@ module Google
         #     Required. The user-defined name of this TrainingPipeline.
         # @!attribute [rw] input_data_config
         #   @return [::Google::Cloud::Aiplatform::V1::InputDataConfig]
-        #     Specifies AI Platform owned input data that may be used for training the
+        #     Specifies Vertex AI owned input data that may be used for training the
         #     Model. The TrainingPipeline's {::Google::Cloud::Aiplatform::V1::TrainingPipeline#training_task_definition training_task_definition} should make
         #     clear whether this config is used and if there are any special requirements
         #     on how it should be filled. If nothing about this config is mentioned in
@@ -73,7 +73,7 @@ module Google
         #     a need of this information, or that training task does not support
         #     uploading a Model as part of the pipeline.
         #     When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
-        #     the trained Model had been uploaded into AI Platform, then the
+        #     the trained Model had been uploaded into Vertex AI, then the
         #     model_to_upload's resource {::Google::Cloud::Aiplatform::V1::Model#name name} is populated. The Model
         #     is always uploaded into the Project and Location in which this pipeline
         #     is.
@@ -129,7 +129,7 @@ module Google
           end
         end
 
-        # Specifies AI Platform owned input data to be used for training, and
+        # Specifies Vertex AI owned input data to be used for training, and
         # possibly evaluating, the Model.
         # @!attribute [rw] fraction_split
         #   @return [::Google::Cloud::Aiplatform::V1::FractionSplit]
@@ -156,21 +156,18 @@ module Google
         #     where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
         #     All training input data is written into that directory.
         #
-        #     The AI Platform environment variables representing Cloud Storage
+        #     The Vertex AI environment variables representing Cloud Storage
         #     data URIs are represented in the Cloud Storage wildcard
         #     format to support sharded data. e.g.: "gs://.../training-*.jsonl"
         #
         #     * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
         #     * AIP_TRAINING_DATA_URI =
-        #
         #     "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/training-*.$\\{AIP_DATA_FORMAT}"
         #
         #     * AIP_VALIDATION_DATA_URI =
-        #
         #     "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/validation-*.$\\{AIP_DATA_FORMAT}"
         #
         #     * AIP_TEST_DATA_URI =
-        #
         #     "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/test-*.$\\{AIP_DATA_FORMAT}"
         # @!attribute [rw] bigquery_destination
         #   @return [::Google::Cloud::Aiplatform::V1::BigQueryDestination]
@@ -186,11 +183,9 @@ module Google
         #
         #     * AIP_DATA_FORMAT = "bigquery".
         #     * AIP_TRAINING_DATA_URI  =
-        #
         #     "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.training"
         #
         #     * AIP_VALIDATION_DATA_URI =
-        #
         #     "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.validation"
         #
         #     * AIP_TEST_DATA_URI =
@@ -212,7 +207,7 @@ module Google
         #     match this filter and belong to DataItems not ignored by the split method
         #     are used in respectively training, validation or test role, depending on
         #     the role of the DataItem they are on (for the auto-assigned that role is
-        #     decided by AI Platform). A filter with same syntax as the one used in
+        #     decided by Vertex AI). A filter with same syntax as the one used in
         #     {::Google::Cloud::Aiplatform::V1::DatasetService::Client#list_annotations ListAnnotations} may be used, but note
         #     here it filters across all Annotations of the Dataset, and not just within
         #     a single DataItem.
@@ -222,8 +217,8 @@ module Google
         #     Annotations.
         #
         #     Cloud Storage URI that points to a YAML file describing the annotation
-        #     schema. The schema is defined as an OpenAPI 3.0.2
-        #     [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+        #     schema. The schema is defined as an OpenAPI 3.0.2 [Schema
+        #     Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
         #     The schema files that can be used here are found in
         #     gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
         #     chosen schema must be consistent with
@@ -246,7 +241,7 @@ module Google
         # given fractions. Any of `training_fraction`, `validation_fraction` and
         # `test_fraction` may optionally be provided, they must sum to up to 1. If the
         # provided ones sum to less than 1, the remainder is assigned to sets as
-        # decided by AI Platform. If none of the fractions are set, by default roughly
+        # decided by Vertex AI. If none of the fractions are set, by default roughly
         # 80% of data is used for training, 10% for validation, and 10% for test.
         # @!attribute [rw] training_fraction
         #   @return [::Float]

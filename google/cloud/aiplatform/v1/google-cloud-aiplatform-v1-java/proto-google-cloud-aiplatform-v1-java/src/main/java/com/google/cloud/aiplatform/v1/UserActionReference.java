@@ -295,8 +295,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object method_;
   /**
    * <pre>
-   * The method name of the API call. For example,
-   * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+   * The method name of the API RPC call. For example,
+   * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
    * </pre>
    *
    * <code>string method = 3;</code>
@@ -317,8 +317,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The method name of the API call. For example,
-   * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+   * The method name of the API RPC call. For example,
+   * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
    * </pre>
    *
    * <code>string method = 3;</code>
@@ -1005,8 +1005,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object method_ = "";
     /**
      * <pre>
-     * The method name of the API call. For example,
-     * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+     * The method name of the API RPC call. For example,
+     * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
      * </pre>
      *
      * <code>string method = 3;</code>
@@ -1026,8 +1026,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The method name of the API call. For example,
-     * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+     * The method name of the API RPC call. For example,
+     * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
      * </pre>
      *
      * <code>string method = 3;</code>
@@ -1048,8 +1048,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The method name of the API call. For example,
-     * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+     * The method name of the API RPC call. For example,
+     * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
      * </pre>
      *
      * <code>string method = 3;</code>
@@ -1068,8 +1068,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The method name of the API call. For example,
-     * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+     * The method name of the API RPC call. For example,
+     * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
      * </pre>
      *
      * <code>string method = 3;</code>
@@ -1083,8 +1083,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The method name of the API call. For example,
-     * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+     * The method name of the API RPC call. For example,
+     * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
      * </pre>
      *
      * <code>string method = 3;</code>

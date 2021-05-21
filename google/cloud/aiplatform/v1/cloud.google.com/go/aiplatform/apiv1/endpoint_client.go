@@ -74,7 +74,7 @@ func defaultEndpointCallOptions() *EndpointCallOptions {
 	}
 }
 
-// internalEndpointClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalEndpointClient is an interface that defines the methods availaible from Vertex AI API.
 type internalEndpointClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -92,7 +92,7 @@ type internalEndpointClient interface {
 	UndeployModelOperation(name string) *UndeployModelOperation
 }
 
-// EndpointClient is a client for interacting with Cloud AI Platform API.
+// EndpointClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type EndpointClient struct {
 	// The internal transport-dependent client.
@@ -189,7 +189,7 @@ func (c *EndpointClient) UndeployModelOperation(name string) *UndeployModelOpera
 	return c.internalClient.UndeployModelOperation(name)
 }
 
-// endpointGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// endpointGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type endpointGRPCClient struct {

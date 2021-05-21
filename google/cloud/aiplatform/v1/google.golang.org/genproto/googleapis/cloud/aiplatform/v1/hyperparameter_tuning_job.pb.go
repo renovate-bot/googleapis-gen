@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ type HyperparameterTuningJob struct {
 	// The number of failed Trials that need to be seen before failing
 	// the HyperparameterTuningJob.
 	//
-	// If set to 0, AI Platform decides how many Trials must fail
+	// If set to 0, Vertex AI decides how many Trials must fail
 	// before the whole job fails.
 	MaxFailedTrialCount int32 `protobuf:"varint,7,opt,name=max_failed_trial_count,json=maxFailedTrialCount,proto3" json:"max_failed_trial_count,omitempty"`
 	// Required. The spec of a trial job. The same spec applies to the CustomJobs created

@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -51,8 +51,8 @@ type UserActionReference struct {
 	//	*UserActionReference_Operation
 	//	*UserActionReference_DataLabelingJob
 	Reference isUserActionReference_Reference `protobuf_oneof:"reference"`
-	// The method name of the API call. For example,
-	// "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+	// The method name of the API RPC call. For example,
+	// "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
 	Method string `protobuf:"bytes,3,opt,name=method,proto3" json:"method,omitempty"`
 }
 
@@ -132,7 +132,6 @@ type UserActionReference_DataLabelingJob struct {
 	// For API calls that start a LabelingJob.
 	// Resource name of the LabelingJob.
 	// Format:
-	//
 	// 'projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}'
 	DataLabelingJob string `protobuf:"bytes,2,opt,name=data_labeling_job,json=dataLabelingJob,proto3,oneof"`
 }

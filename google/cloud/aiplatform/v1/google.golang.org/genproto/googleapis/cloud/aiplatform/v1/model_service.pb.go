@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -441,8 +441,7 @@ type UpdateModelRequest struct {
 	// Required. The Model which replaces the resource on the server.
 	Model *Model `protobuf:"bytes,1,opt,name=model,proto3" json:"model,omitempty"`
 	// Required. The update mask applies to the resource.
-	// For the `FieldMask` definition, see
-	// [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+	// For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
 	UpdateMask *fieldmaskpb.FieldMask `protobuf:"bytes,2,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
 }
 
@@ -706,7 +705,6 @@ type GetModelEvaluationRequest struct {
 
 	// Required. The name of the ModelEvaluation resource.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -906,7 +904,6 @@ type GetModelEvaluationSliceRequest struct {
 
 	// Required. The name of the ModelEvaluationSlice resource.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -958,7 +955,6 @@ type ListModelEvaluationSlicesRequest struct {
 
 	// Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
 	// from. Format:
-	//
 	// `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// The standard list filter.
@@ -1963,7 +1959,7 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type ModelServiceClient interface {
-	// Uploads a Model artifact into AI Platform.
+	// Uploads a Model artifact into Vertex AI.
 	UploadModel(ctx context.Context, in *UploadModelRequest, opts ...grpc.CallOption) (*longrunning.Operation, error)
 	// Gets a Model.
 	GetModel(ctx context.Context, in *GetModelRequest, opts ...grpc.CallOption) (*Model, error)
@@ -2089,7 +2085,7 @@ func (c *modelServiceClient) ListModelEvaluationSlices(ctx context.Context, in *
 
 // ModelServiceServer is the server API for ModelService service.
 type ModelServiceServer interface {
-	// Uploads a Model artifact into AI Platform.
+	// Uploads a Model artifact into Vertex AI.
 	UploadModel(context.Context, *UploadModelRequest) (*longrunning.Operation, error)
 	// Gets a Model.
 	GetModel(context.Context, *GetModelRequest) (*Model, error)

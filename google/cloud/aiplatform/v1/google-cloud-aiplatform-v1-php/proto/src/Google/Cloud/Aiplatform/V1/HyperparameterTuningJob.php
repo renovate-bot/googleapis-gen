@@ -52,7 +52,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
     /**
      * The number of failed Trials that need to be seen before failing
      * the HyperparameterTuningJob.
-     * If set to 0, AI Platform decides how many Trials must fail
+     * If set to 0, Vertex AI decides how many Trials must fail
      * before the whole job fails.
      *
      * Generated from protobuf field <code>int32 max_failed_trial_count = 7;</code>
@@ -150,7 +150,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
      *     @type int $max_failed_trial_count
      *           The number of failed Trials that need to be seen before failing
      *           the HyperparameterTuningJob.
-     *           If set to 0, AI Platform decides how many Trials must fail
+     *           If set to 0, Vertex AI decides how many Trials must fail
      *           before the whole job fails.
      *     @type \Google\Cloud\Aiplatform\V1\CustomJobSpec $trial_job_spec
      *           Required. The spec of a trial job. The same spec applies to the CustomJobs created
@@ -336,7 +336,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
     /**
      * The number of failed Trials that need to be seen before failing
      * the HyperparameterTuningJob.
-     * If set to 0, AI Platform decides how many Trials must fail
+     * If set to 0, Vertex AI decides how many Trials must fail
      * before the whole job fails.
      *
      * Generated from protobuf field <code>int32 max_failed_trial_count = 7;</code>
@@ -350,7 +350,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
     /**
      * The number of failed Trials that need to be seen before failing
      * the HyperparameterTuningJob.
-     * If set to 0, AI Platform decides how many Trials must fail
+     * If set to 0, Vertex AI decides how many Trials must fail
      * before the whole job fails.
      *
      * Generated from protobuf field <code>int32 max_failed_trial_count = 7;</code>

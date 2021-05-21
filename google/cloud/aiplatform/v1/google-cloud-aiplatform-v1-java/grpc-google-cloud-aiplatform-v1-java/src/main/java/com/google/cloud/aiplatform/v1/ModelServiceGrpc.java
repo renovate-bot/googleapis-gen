@@ -4,7 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * A service for managing AI Platform's machine learning Models.
+ * A service for managing Vertex AI's machine learning Models.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -373,14 +373,14 @@ public final class ModelServiceGrpc {
 
   /**
    * <pre>
-   * A service for managing AI Platform's machine learning Models.
+   * A service for managing Vertex AI's machine learning Models.
    * </pre>
    */
   public static abstract class ModelServiceImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      * </pre>
      */
     public void uploadModel(com.google.cloud.aiplatform.v1.UploadModelRequest request,
@@ -560,7 +560,7 @@ public final class ModelServiceGrpc {
 
   /**
    * <pre>
-   * A service for managing AI Platform's machine learning Models.
+   * A service for managing Vertex AI's machine learning Models.
    * </pre>
    */
   public static final class ModelServiceStub extends io.grpc.stub.AbstractAsyncStub<ModelServiceStub> {
@@ -577,7 +577,7 @@ public final class ModelServiceGrpc {
 
     /**
      * <pre>
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      * </pre>
      */
     public void uploadModel(com.google.cloud.aiplatform.v1.UploadModelRequest request,
@@ -692,7 +692,7 @@ public final class ModelServiceGrpc {
 
   /**
    * <pre>
-   * A service for managing AI Platform's machine learning Models.
+   * A service for managing Vertex AI's machine learning Models.
    * </pre>
    */
   public static final class ModelServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<ModelServiceBlockingStub> {
@@ -709,7 +709,7 @@ public final class ModelServiceGrpc {
 
     /**
      * <pre>
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      * </pre>
      */
     public com.google.longrunning.Operation uploadModel(com.google.cloud.aiplatform.v1.UploadModelRequest request) {
@@ -814,7 +814,7 @@ public final class ModelServiceGrpc {
 
   /**
    * <pre>
-   * A service for managing AI Platform's machine learning Models.
+   * A service for managing Vertex AI's machine learning Models.
    * </pre>
    */
   public static final class ModelServiceFutureStub extends io.grpc.stub.AbstractFutureStub<ModelServiceFutureStub> {
@@ -831,7 +831,7 @@ public final class ModelServiceGrpc {
 
     /**
      * <pre>
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> uploadModel(

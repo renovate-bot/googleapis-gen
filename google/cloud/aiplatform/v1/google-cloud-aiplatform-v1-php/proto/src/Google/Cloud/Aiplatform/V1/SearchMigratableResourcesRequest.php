@@ -17,7 +17,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The location that the migratable resources should be searched from.
-     * It's the AI Platform location that the resources can be migrated to, not
+     * It's the Vertex AI location that the resources can be migrated to, not
      * the resources' original location.
      * Format:
      * `projects/{project}/locations/{location}`
@@ -39,15 +39,17 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $page_token = '';
     /**
-     * Supported filters are:
-     * * Resource type: For a specific type of MigratableResource.
-     *   * `ml_engine_model_version:*`
-     *   * `automl_model:*`,
-     *   * `automl_dataset:*`
-     *   * `data_labeling_dataset:*`.
-     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-     *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
+     * A filter for your search. You can use the following types of filters:
+     * *   Resource type filters. The following strings filter for a specific type
+     *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
+     *     *   `ml_engine_model_version:*`
+     *     *   `automl_model:*`
+     *     *   `automl_dataset:*`
+     *     *   `data_labeling_dataset:*`
+     * *   "Migrated or not" filters. The following strings filter for resources
+     *     that either have or have not already been migrated:
+     *     *   `last_migrate_time:*` filters for migrated resources.
+     *     *   `NOT last_migrate_time:*` filters for not yet migrated resources.
      *
      * Generated from protobuf field <code>string filter = 4;</code>
      */
@@ -61,7 +63,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The location that the migratable resources should be searched from.
-     *           It's the AI Platform location that the resources can be migrated to, not
+     *           It's the Vertex AI location that the resources can be migrated to, not
      *           the resources' original location.
      *           Format:
      *           `projects/{project}/locations/{location}`
@@ -71,15 +73,17 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
      *     @type string $page_token
      *           The standard page token.
      *     @type string $filter
-     *           Supported filters are:
-     *           * Resource type: For a specific type of MigratableResource.
-     *             * `ml_engine_model_version:*`
-     *             * `automl_model:*`,
-     *             * `automl_dataset:*`
-     *             * `data_labeling_dataset:*`.
-     *           * Migrated or not: Filter migrated resource or not by last_migrate_time.
-     *             * `last_migrate_time:*` will filter migrated resources.
-     *             * `NOT last_migrate_time:*` will filter not yet migrated resources.
+     *           A filter for your search. You can use the following types of filters:
+     *           *   Resource type filters. The following strings filter for a specific type
+     *               of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
+     *               *   `ml_engine_model_version:*`
+     *               *   `automl_model:*`
+     *               *   `automl_dataset:*`
+     *               *   `data_labeling_dataset:*`
+     *           *   "Migrated or not" filters. The following strings filter for resources
+     *               that either have or have not already been migrated:
+     *               *   `last_migrate_time:*` filters for migrated resources.
+     *               *   `NOT last_migrate_time:*` filters for not yet migrated resources.
      * }
      */
     public function __construct($data = NULL) {
@@ -89,7 +93,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The location that the migratable resources should be searched from.
-     * It's the AI Platform location that the resources can be migrated to, not
+     * It's the Vertex AI location that the resources can be migrated to, not
      * the resources' original location.
      * Format:
      * `projects/{project}/locations/{location}`
@@ -104,7 +108,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The location that the migratable resources should be searched from.
-     * It's the AI Platform location that the resources can be migrated to, not
+     * It's the Vertex AI location that the resources can be migrated to, not
      * the resources' original location.
      * Format:
      * `projects/{project}/locations/{location}`
@@ -176,15 +180,17 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Supported filters are:
-     * * Resource type: For a specific type of MigratableResource.
-     *   * `ml_engine_model_version:*`
-     *   * `automl_model:*`,
-     *   * `automl_dataset:*`
-     *   * `data_labeling_dataset:*`.
-     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-     *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
+     * A filter for your search. You can use the following types of filters:
+     * *   Resource type filters. The following strings filter for a specific type
+     *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
+     *     *   `ml_engine_model_version:*`
+     *     *   `automl_model:*`
+     *     *   `automl_dataset:*`
+     *     *   `data_labeling_dataset:*`
+     * *   "Migrated or not" filters. The following strings filter for resources
+     *     that either have or have not already been migrated:
+     *     *   `last_migrate_time:*` filters for migrated resources.
+     *     *   `NOT last_migrate_time:*` filters for not yet migrated resources.
      *
      * Generated from protobuf field <code>string filter = 4;</code>
      * @return string
@@ -195,15 +201,17 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Supported filters are:
-     * * Resource type: For a specific type of MigratableResource.
-     *   * `ml_engine_model_version:*`
-     *   * `automl_model:*`,
-     *   * `automl_dataset:*`
-     *   * `data_labeling_dataset:*`.
-     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-     *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
+     * A filter for your search. You can use the following types of filters:
+     * *   Resource type filters. The following strings filter for a specific type
+     *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
+     *     *   `ml_engine_model_version:*`
+     *     *   `automl_model:*`
+     *     *   `automl_dataset:*`
+     *     *   `data_labeling_dataset:*`
+     * *   "Migrated or not" filters. The following strings filter for resources
+     *     that either have or have not already been migrated:
+     *     *   `last_migrate_time:*` filters for migrated resources.
+     *     *   `NOT last_migrate_time:*` filters for not yet migrated resources.
      *
      * Generated from protobuf field <code>string filter = 4;</code>
      * @param string $var

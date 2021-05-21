@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -391,9 +391,7 @@ type UpdateEndpointRequest struct {
 
 	// Required. The Endpoint which replaces the resource on the server.
 	Endpoint *Endpoint `protobuf:"bytes,1,opt,name=endpoint,proto3" json:"endpoint,omitempty"`
-	// Required. The update mask applies to the resource.
-	// See
-	// [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+	// Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
 	UpdateMask *fieldmaskpb.FieldMask `protobuf:"bytes,2,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
 }
 

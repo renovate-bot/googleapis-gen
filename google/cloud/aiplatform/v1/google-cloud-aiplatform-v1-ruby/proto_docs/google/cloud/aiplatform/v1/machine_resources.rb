@@ -24,10 +24,13 @@ module Google
         # Specification of a single machine.
         # @!attribute [rw] machine_type
         #   @return [::String]
-        #     Immutable. The type of the machine. For the machine types supported for prediction,
-        #     see https://tinyurl.com/aip-docs/predictions/machine-types.
-        #     For machine types supported for creating a custom training job, see
-        #     https://tinyurl.com/aip-docs/training/configure-compute.
+        #     Immutable. The type of the machine.
+        #
+        #     See the [list of machine types supported for
+        #     prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+        #
+        #     See the [list of machine types supported for custom
+        #     training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
         #
         #     For {::Google::Cloud::Aiplatform::V1::DeployedModel DeployedModel} this field is optional, and the default
         #     value is `n1-standard-2`. For {::Google::Cloud::Aiplatform::V1::BatchPredictionJob BatchPredictionJob} or as part of
@@ -73,7 +76,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # A description of resources that to large degree are decided by AI Platform,
+        # A description of resources that to large degree are decided by Vertex AI,
         # and require only a modest additional configuration.
         # Each Model supporting these resources documents its specific guidelines.
         # @!attribute [rw] min_replica_count
@@ -92,7 +95,7 @@ module Google
         #     outages). If traffic against the DeployedModel increases beyond what its
         #     replicas at maximum may handle, a portion of the traffic will be dropped.
         #     If this value is not provided, a no upper bound for scaling under heavy
-        #     traffic will be assume, though AI Platform may be unable to scale beyond
+        #     traffic will be assume, though Vertex AI may be unable to scale beyond
         #     certain replica number.
         class AutomaticResources
           include ::Google::Protobuf::MessageExts
@@ -107,7 +110,7 @@ module Google
         # @!attribute [rw] starting_replica_count
         #   @return [::Integer]
         #     Immutable. The number of machine replicas used at the start of the batch operation.
-        #     If not set, AI Platform decides starting number, not greater than
+        #     If not set, Vertex AI decides starting number, not greater than
         #     {::Google::Cloud::Aiplatform::V1::BatchDedicatedResources#max_replica_count max_replica_count}
         # @!attribute [rw] max_replica_count
         #   @return [::Integer]

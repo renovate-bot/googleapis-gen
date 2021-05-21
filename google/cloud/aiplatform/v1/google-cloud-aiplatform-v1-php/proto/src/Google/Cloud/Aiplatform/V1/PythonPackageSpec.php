@@ -16,10 +16,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class PythonPackageSpec extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The URI of a container image in the Container Registry that will run the
-     * provided python package. AI Platform provides wide range of executor images
-     * with pre-installed packages to meet users' various use cases. Only one of
-     * the provided images can be set here.
+     * Required. The URI of a container image in Artifact Registry that will run the
+     * provided Python package. Vertex AI provides a wide range of executor
+     * images with pre-installed packages to meet users' various use cases. See
+     * the list of [pre-built containers for
+     * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+     * You must use an image from this list.
      *
      * Generated from protobuf field <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -58,10 +60,12 @@ class PythonPackageSpec extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $executor_image_uri
-     *           Required. The URI of a container image in the Container Registry that will run the
-     *           provided python package. AI Platform provides wide range of executor images
-     *           with pre-installed packages to meet users' various use cases. Only one of
-     *           the provided images can be set here.
+     *           Required. The URI of a container image in Artifact Registry that will run the
+     *           provided Python package. Vertex AI provides a wide range of executor
+     *           images with pre-installed packages to meet users' various use cases. See
+     *           the list of [pre-built containers for
+     *           training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+     *           You must use an image from this list.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $package_uris
      *           Required. The Google Cloud Storage location of the Python package files which are
      *           the training program and its dependent packages.
@@ -80,10 +84,12 @@ class PythonPackageSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The URI of a container image in the Container Registry that will run the
-     * provided python package. AI Platform provides wide range of executor images
-     * with pre-installed packages to meet users' various use cases. Only one of
-     * the provided images can be set here.
+     * Required. The URI of a container image in Artifact Registry that will run the
+     * provided Python package. Vertex AI provides a wide range of executor
+     * images with pre-installed packages to meet users' various use cases. See
+     * the list of [pre-built containers for
+     * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+     * You must use an image from this list.
      *
      * Generated from protobuf field <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -94,10 +100,12 @@ class PythonPackageSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The URI of a container image in the Container Registry that will run the
-     * provided python package. AI Platform provides wide range of executor images
-     * with pre-installed packages to meet users' various use cases. Only one of
-     * the provided images can be set here.
+     * Required. The URI of a container image in Artifact Registry that will run the
+     * provided Python package. Vertex AI provides a wide range of executor
+     * images with pre-installed packages to meet users' various use cases. See
+     * the list of [pre-built containers for
+     * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+     * You must use an image from this list.
      *
      * Generated from protobuf field <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

@@ -107,10 +107,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object machineType_;
   /**
    * <pre>
-   * Immutable. The type of the machine. For the machine types supported for prediction,
-   * see https://tinyurl.com/aip-docs/predictions/machine-types.
-   * For machine types supported for creating a custom training job, see
-   * https://tinyurl.com/aip-docs/training/configure-compute.
+   * Immutable. The type of the machine.
+   * See the [list of machine types supported for
+   * prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+   * See the [list of machine types supported for custom
+   * training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
    * For [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] this field is optional, and the default
    * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob] or as part of
    * [WorkerPoolSpec][google.cloud.aiplatform.v1.WorkerPoolSpec] this field is required.
@@ -134,10 +135,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Immutable. The type of the machine. For the machine types supported for prediction,
-   * see https://tinyurl.com/aip-docs/predictions/machine-types.
-   * For machine types supported for creating a custom training job, see
-   * https://tinyurl.com/aip-docs/training/configure-compute.
+   * Immutable. The type of the machine.
+   * See the [list of machine types supported for
+   * prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+   * See the [list of machine types supported for custom
+   * training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
    * For [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] this field is optional, and the default
    * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob] or as part of
    * [WorkerPoolSpec][google.cloud.aiplatform.v1.WorkerPoolSpec] this field is required.
@@ -547,10 +549,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object machineType_ = "";
     /**
      * <pre>
-     * Immutable. The type of the machine. For the machine types supported for prediction,
-     * see https://tinyurl.com/aip-docs/predictions/machine-types.
-     * For machine types supported for creating a custom training job, see
-     * https://tinyurl.com/aip-docs/training/configure-compute.
+     * Immutable. The type of the machine.
+     * See the [list of machine types supported for
+     * prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+     * See the [list of machine types supported for custom
+     * training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
      * For [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] this field is optional, and the default
      * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob] or as part of
      * [WorkerPoolSpec][google.cloud.aiplatform.v1.WorkerPoolSpec] this field is required.
@@ -573,10 +576,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The type of the machine. For the machine types supported for prediction,
-     * see https://tinyurl.com/aip-docs/predictions/machine-types.
-     * For machine types supported for creating a custom training job, see
-     * https://tinyurl.com/aip-docs/training/configure-compute.
+     * Immutable. The type of the machine.
+     * See the [list of machine types supported for
+     * prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+     * See the [list of machine types supported for custom
+     * training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
      * For [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] this field is optional, and the default
      * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob] or as part of
      * [WorkerPoolSpec][google.cloud.aiplatform.v1.WorkerPoolSpec] this field is required.
@@ -600,10 +604,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The type of the machine. For the machine types supported for prediction,
-     * see https://tinyurl.com/aip-docs/predictions/machine-types.
-     * For machine types supported for creating a custom training job, see
-     * https://tinyurl.com/aip-docs/training/configure-compute.
+     * Immutable. The type of the machine.
+     * See the [list of machine types supported for
+     * prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+     * See the [list of machine types supported for custom
+     * training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
      * For [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] this field is optional, and the default
      * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob] or as part of
      * [WorkerPoolSpec][google.cloud.aiplatform.v1.WorkerPoolSpec] this field is required.
@@ -625,10 +630,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The type of the machine. For the machine types supported for prediction,
-     * see https://tinyurl.com/aip-docs/predictions/machine-types.
-     * For machine types supported for creating a custom training job, see
-     * https://tinyurl.com/aip-docs/training/configure-compute.
+     * Immutable. The type of the machine.
+     * See the [list of machine types supported for
+     * prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+     * See the [list of machine types supported for custom
+     * training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
      * For [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] this field is optional, and the default
      * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob] or as part of
      * [WorkerPoolSpec][google.cloud.aiplatform.v1.WorkerPoolSpec] this field is required.
@@ -645,10 +651,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The type of the machine. For the machine types supported for prediction,
-     * see https://tinyurl.com/aip-docs/predictions/machine-types.
-     * For machine types supported for creating a custom training job, see
-     * https://tinyurl.com/aip-docs/training/configure-compute.
+     * Immutable. The type of the machine.
+     * See the [list of machine types supported for
+     * prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+     * See the [list of machine types supported for custom
+     * training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
      * For [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] this field is optional, and the default
      * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob] or as part of
      * [WorkerPoolSpec][google.cloud.aiplatform.v1.WorkerPoolSpec] this field is required.

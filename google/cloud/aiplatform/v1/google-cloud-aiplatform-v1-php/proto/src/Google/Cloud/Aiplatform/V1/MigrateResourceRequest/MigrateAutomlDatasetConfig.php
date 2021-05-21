@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+ * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
  * Dataset.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateAutomlDatasetConfig</code>
@@ -25,7 +25,7 @@ class MigrateAutomlDatasetConfig extends \Google\Protobuf\Internal\Message
      */
     protected $dataset = '';
     /**
-     * Required. Display name of the Dataset in AI Platform.
+     * Required. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string dataset_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -43,7 +43,7 @@ class MigrateAutomlDatasetConfig extends \Google\Protobuf\Internal\Message
      *           Format:
      *           `projects/{project}/locations/{location}/datasets/{dataset}`.
      *     @type string $dataset_display_name
-     *           Required. Display name of the Dataset in AI Platform.
+     *           Required. Display name of the Dataset in Vertex AI.
      *           System will pick a display name if unspecified.
      * }
      */
@@ -83,7 +83,7 @@ class MigrateAutomlDatasetConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Display name of the Dataset in AI Platform.
+     * Required. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string dataset_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -95,7 +95,7 @@ class MigrateAutomlDatasetConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Display name of the Dataset in AI Platform.
+     * Required. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string dataset_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Config for migrating version in ml.googleapis.com to AI Platform's Model.
+ * Config for migrating version in ml.googleapis.com to Vertex AI's Model.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig</code>
  */
@@ -35,7 +35,7 @@ class MigrateMlEngineModelVersionConfig extends \Google\Protobuf\Internal\Messag
      */
     protected $model_version = '';
     /**
-     * Required. Display name of the model in AI Platform.
+     * Required. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string model_display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -60,7 +60,7 @@ class MigrateMlEngineModelVersionConfig extends \Google\Protobuf\Internal\Messag
      *           Required. Full resource name of ml engine model version.
      *           Format: `projects/{project}/models/{model}/versions/{version}`.
      *     @type string $model_display_name
-     *           Required. Display name of the model in AI Platform.
+     *           Required. Display name of the model in Vertex AI.
      *           System will pick a display name if unspecified.
      * }
      */
@@ -136,7 +136,7 @@ class MigrateMlEngineModelVersionConfig extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Required. Display name of the model in AI Platform.
+     * Required. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string model_display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -148,7 +148,7 @@ class MigrateMlEngineModelVersionConfig extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Required. Display name of the model in AI Platform.
+     * Required. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string model_display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>

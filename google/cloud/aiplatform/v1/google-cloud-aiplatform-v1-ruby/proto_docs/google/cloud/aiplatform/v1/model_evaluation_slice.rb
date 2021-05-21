@@ -33,8 +33,8 @@ module Google
         #   @return [::String]
         #     Output only. Points to a YAML file stored on Google Cloud Storage describing the
         #     {::Google::Cloud::Aiplatform::V1::ModelEvaluationSlice#metrics metrics} of this ModelEvaluationSlice. The
-        #     schema is defined as an OpenAPI 3.0.2
-        #     [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+        #     schema is defined as an OpenAPI 3.0.2 [Schema
+        #     Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
         # @!attribute [r] metrics
         #   @return [::Google::Protobuf::Value]
         #     Output only. Sliced evaluation metrics of the Model. The schema of the metrics is stored

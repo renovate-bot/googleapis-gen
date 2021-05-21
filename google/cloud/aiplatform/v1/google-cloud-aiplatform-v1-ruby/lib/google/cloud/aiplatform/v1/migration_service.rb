@@ -33,7 +33,7 @@ module Google
       module V1
         ##
         # A service that migrates resources from automl.googleapis.com,
-        # datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+        # datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
         #
         # To load this service and instantiate a client:
         #

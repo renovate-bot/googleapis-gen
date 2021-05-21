@@ -70,7 +70,7 @@ use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 
 /**
- * Service Description: A service for creating and managing AI Platform's jobs.
+ * Service Description: A service for creating and managing Vertex AI's jobs.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -528,7 +528,6 @@ class JobServiceGapicClient
      *
      * @param string $name         Required. The name of the BatchPredictionJob to cancel.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -618,7 +617,6 @@ class JobServiceGapicClient
      *
      * @param string $name         Required. The name of the DataLabelingJob.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -668,7 +666,6 @@ class JobServiceGapicClient
      *
      * @param string $name         Required. The name of the HyperparameterTuningJob to cancel.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -911,7 +908,6 @@ class JobServiceGapicClient
      *
      * @param string $name         Required. The name of the BatchPredictionJob resource to be deleted.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -1042,7 +1038,6 @@ class JobServiceGapicClient
      *
      * @param string $name         Required. The name of the DataLabelingJob to be deleted.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -1108,7 +1103,6 @@ class JobServiceGapicClient
      *
      * @param string $name         Required. The name of the HyperparameterTuningJob resource to be deleted.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -1151,7 +1145,6 @@ class JobServiceGapicClient
      *
      * @param string $name         Required. The name of the BatchPredictionJob resource.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -1236,7 +1229,6 @@ class JobServiceGapicClient
      *
      * @param string $name         Required. The name of the DataLabelingJob.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -1279,7 +1271,6 @@ class JobServiceGapicClient
      *
      * @param string $name         Required. The name of the HyperparameterTuningJob resource.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -1345,6 +1336,8 @@ class JobServiceGapicClient
      *           * `display_name` supports = and !=.
      *
      *           * `state` supports = and !=.
+     *
+     *           * `model_display_name` supports = and !=
      *
      *           Some examples of using the filter are:
      *

@@ -142,10 +142,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object executorImageUri_;
   /**
    * <pre>
-   * Required. The URI of a container image in the Container Registry that will run the
-   * provided python package. AI Platform provides wide range of executor images
-   * with pre-installed packages to meet users' various use cases. Only one of
-   * the provided images can be set here.
+   * Required. The URI of a container image in Artifact Registry that will run the
+   * provided Python package. Vertex AI provides a wide range of executor
+   * images with pre-installed packages to meet users' various use cases. See
+   * the list of [pre-built containers for
+   * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+   * You must use an image from this list.
    * </pre>
    *
    * <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -166,10 +168,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The URI of a container image in the Container Registry that will run the
-   * provided python package. AI Platform provides wide range of executor images
-   * with pre-installed packages to meet users' various use cases. Only one of
-   * the provided images can be set here.
+   * Required. The URI of a container image in Artifact Registry that will run the
+   * provided Python package. Vertex AI provides a wide range of executor
+   * images with pre-installed packages to meet users' various use cases. See
+   * the list of [pre-built containers for
+   * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+   * You must use an image from this list.
    * </pre>
    *
    * <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -857,10 +861,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object executorImageUri_ = "";
     /**
      * <pre>
-     * Required. The URI of a container image in the Container Registry that will run the
-     * provided python package. AI Platform provides wide range of executor images
-     * with pre-installed packages to meet users' various use cases. Only one of
-     * the provided images can be set here.
+     * Required. The URI of a container image in Artifact Registry that will run the
+     * provided Python package. Vertex AI provides a wide range of executor
+     * images with pre-installed packages to meet users' various use cases. See
+     * the list of [pre-built containers for
+     * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+     * You must use an image from this list.
      * </pre>
      *
      * <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -880,10 +886,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The URI of a container image in the Container Registry that will run the
-     * provided python package. AI Platform provides wide range of executor images
-     * with pre-installed packages to meet users' various use cases. Only one of
-     * the provided images can be set here.
+     * Required. The URI of a container image in Artifact Registry that will run the
+     * provided Python package. Vertex AI provides a wide range of executor
+     * images with pre-installed packages to meet users' various use cases. See
+     * the list of [pre-built containers for
+     * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+     * You must use an image from this list.
      * </pre>
      *
      * <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -904,10 +912,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The URI of a container image in the Container Registry that will run the
-     * provided python package. AI Platform provides wide range of executor images
-     * with pre-installed packages to meet users' various use cases. Only one of
-     * the provided images can be set here.
+     * Required. The URI of a container image in Artifact Registry that will run the
+     * provided Python package. Vertex AI provides a wide range of executor
+     * images with pre-installed packages to meet users' various use cases. See
+     * the list of [pre-built containers for
+     * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+     * You must use an image from this list.
      * </pre>
      *
      * <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -926,10 +936,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The URI of a container image in the Container Registry that will run the
-     * provided python package. AI Platform provides wide range of executor images
-     * with pre-installed packages to meet users' various use cases. Only one of
-     * the provided images can be set here.
+     * Required. The URI of a container image in Artifact Registry that will run the
+     * provided Python package. Vertex AI provides a wide range of executor
+     * images with pre-installed packages to meet users' various use cases. See
+     * the list of [pre-built containers for
+     * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+     * You must use an image from this list.
      * </pre>
      *
      * <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -943,10 +955,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The URI of a container image in the Container Registry that will run the
-     * provided python package. AI Platform provides wide range of executor images
-     * with pre-installed packages to meet users' various use cases. Only one of
-     * the provided images can be set here.
+     * Required. The URI of a container image in Artifact Registry that will run the
+     * provided Python package. Vertex AI provides a wide range of executor
+     * images with pre-installed packages to meet users' various use cases. See
+     * the list of [pre-built containers for
+     * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+     * You must use an image from this list.
      * </pre>
      *
      * <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

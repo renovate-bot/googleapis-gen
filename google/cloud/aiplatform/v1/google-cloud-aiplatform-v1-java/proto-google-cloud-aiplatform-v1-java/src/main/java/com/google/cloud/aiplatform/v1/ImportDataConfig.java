@@ -357,7 +357,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. Points to a YAML file stored on Google Cloud Storage describing the import
    * format. Validation will be done against the schema. The schema is defined
-   * as an [OpenAPI 3.0.2 Schema Object](https://tinyurl.com/y538mdwt).
+   * as an [OpenAPI 3.0.2 Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
    * <code>string import_schema_uri = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -380,7 +381,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. Points to a YAML file stored on Google Cloud Storage describing the import
    * format. Validation will be done against the schema. The schema is defined
-   * as an [OpenAPI 3.0.2 Schema Object](https://tinyurl.com/y538mdwt).
+   * as an [OpenAPI 3.0.2 Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
    * <code>string import_schema_uri = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1225,7 +1227,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Points to a YAML file stored on Google Cloud Storage describing the import
      * format. Validation will be done against the schema. The schema is defined
-     * as an [OpenAPI 3.0.2 Schema Object](https://tinyurl.com/y538mdwt).
+     * as an [OpenAPI 3.0.2 Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string import_schema_uri = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1247,7 +1250,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Points to a YAML file stored on Google Cloud Storage describing the import
      * format. Validation will be done against the schema. The schema is defined
-     * as an [OpenAPI 3.0.2 Schema Object](https://tinyurl.com/y538mdwt).
+     * as an [OpenAPI 3.0.2 Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string import_schema_uri = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1270,7 +1274,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Points to a YAML file stored on Google Cloud Storage describing the import
      * format. Validation will be done against the schema. The schema is defined
-     * as an [OpenAPI 3.0.2 Schema Object](https://tinyurl.com/y538mdwt).
+     * as an [OpenAPI 3.0.2 Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string import_schema_uri = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1291,7 +1296,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Points to a YAML file stored on Google Cloud Storage describing the import
      * format. Validation will be done against the schema. The schema is defined
-     * as an [OpenAPI 3.0.2 Schema Object](https://tinyurl.com/y538mdwt).
+     * as an [OpenAPI 3.0.2 Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string import_schema_uri = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1307,7 +1313,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Points to a YAML file stored on Google Cloud Storage describing the import
      * format. Validation will be done against the schema. The schema is defined
-     * as an [OpenAPI 3.0.2 Schema Object](https://tinyurl.com/y538mdwt).
+     * as an [OpenAPI 3.0.2 Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string import_schema_uri = 4 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -151,9 +151,9 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      */
     protected $encryption_spec = null;
     /**
-     * Parameters that configure the active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ActiveLearningConfig active_learning_config = 21;</code>
      */
@@ -232,9 +232,9 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      *           Note: Annotations created in the DataLabelingJob are associated with
      *           the EncryptionSpec of the Dataset they are exported to.
      *     @type \Google\Cloud\Aiplatform\V1\ActiveLearningConfig $active_learning_config
-     *           Parameters that configure the active learning pipeline. Active learning will
-     *           label the data incrementally via several iterations. For every iteration,
-     *           it will select a batch of data based on the sampling strategy.
+     *           Parameters that configure the active learning pipeline. Active learning
+     *           will label the data incrementally via several iterations. For every
+     *           iteration, it will select a batch of data based on the sampling strategy.
      * }
      */
     public function __construct($data = NULL) {
@@ -809,9 +809,9 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Parameters that configure the active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ActiveLearningConfig active_learning_config = 21;</code>
      * @return \Google\Cloud\Aiplatform\V1\ActiveLearningConfig|null
@@ -832,9 +832,9 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Parameters that configure the active learning pipeline. Active learning will
-     * label the data incrementally via several iterations. For every iteration,
-     * it will select a batch of data based on the sampling strategy.
+     * Parameters that configure the active learning pipeline. Active learning
+     * will label the data incrementally via several iterations. For every
+     * iteration, it will select a batch of data based on the sampling strategy.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ActiveLearningConfig active_learning_config = 21;</code>
      * @param \Google\Cloud\Aiplatform\V1\ActiveLearningConfig $var

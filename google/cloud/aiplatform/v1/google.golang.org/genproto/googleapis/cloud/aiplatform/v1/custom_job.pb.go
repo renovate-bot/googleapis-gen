@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -205,13 +205,16 @@ type CustomJobSpec struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The spec of the worker pools including machine type and Docker image.
+	// All worker pools except the first one are optional and can be skipped by
+	// providing an empty value.
 	WorkerPoolSpecs []*WorkerPoolSpec `protobuf:"bytes,1,rep,name=worker_pool_specs,json=workerPoolSpecs,proto3" json:"worker_pool_specs,omitempty"`
 	// Scheduling options for a CustomJob.
 	Scheduling *Scheduling `protobuf:"bytes,3,opt,name=scheduling,proto3" json:"scheduling,omitempty"`
 	// Specifies the service account for workload run-as account.
 	// Users submitting jobs must have act-as permission on this run-as account.
-	// If unspecified, the AI Platform Custom Code Service Agent for the
-	// CustomJob's project is used.
+	// If unspecified, the [AI Platform Custom Code Service
+	// Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+	// for the CustomJob's project is used.
 	ServiceAccount string `protobuf:"bytes,4,opt,name=service_account,json=serviceAccount,proto3" json:"service_account,omitempty"`
 	// The full name of the Compute Engine
 	// [network](/compute/docs/networks-and-firewalls#networks) to which the Job
@@ -231,7 +234,7 @@ type CustomJobSpec struct {
 	// [id][google.cloud.aiplatform.v1.Trial.id] under its parent HyperparameterTuningJob's
 	// baseOutputDirectory.
 	//
-	// The following AI Platform environment variables will be passed to
+	// The following Vertex AI environment variables will be passed to
 	// containers or python modules when this field is set:
 	//
 	//   For CustomJob:
@@ -511,10 +514,12 @@ type PythonPackageSpec struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The URI of a container image in the Container Registry that will run the
-	// provided python package. AI Platform provides wide range of executor images
-	// with pre-installed packages to meet users' various use cases. Only one of
-	// the provided images can be set here.
+	// Required. The URI of a container image in Artifact Registry that will run the
+	// provided Python package. Vertex AI provides a wide range of executor
+	// images with pre-installed packages to meet users' various use cases. See
+	// the list of [pre-built containers for
+	// training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
+	// You must use an image from this list.
 	ExecutorImageUri string `protobuf:"bytes,1,opt,name=executor_image_uri,json=executorImageUri,proto3" json:"executor_image_uri,omitempty"`
 	// Required. The Google Cloud Storage location of the Python package files which are
 	// the training program and its dependent packages.

@@ -35,6 +35,7 @@ public interface ListBatchPredictionJobsRequestOrBuilder extends
    * Supported fields:
    *   * `display_name` supports = and !=.
    *   * `state` supports = and !=.
+   *   * `model_display_name` supports = and !=
    * Some examples of using the filter are:
    *  * `state="JOB_STATE_SUCCEEDED" AND display_name="my_job"`
    *  * `state="JOB_STATE_RUNNING" OR display_name="my_job"`
@@ -52,6 +53,7 @@ public interface ListBatchPredictionJobsRequestOrBuilder extends
    * Supported fields:
    *   * `display_name` supports = and !=.
    *   * `state` supports = and !=.
+   *   * `model_display_name` supports = and !=
    * Some examples of using the filter are:
    *  * `state="JOB_STATE_SUCCEEDED" AND display_name="my_job"`
    *  * `state="JOB_STATE_RUNNING" OR display_name="my_job"`

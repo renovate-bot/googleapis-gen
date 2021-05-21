@@ -4,7 +4,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * A service for creating and managing AI Platform's pipelines.
+ * A service for creating and managing Vertex AI's pipelines. This includes both
+ * `TrainingPipeline` resources (used for AutoML and custom training) and
+ * `PipelineJob` resources (used for Vertex Pipelines).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -218,7 +220,9 @@ public final class PipelineServiceGrpc {
 
   /**
    * <pre>
-   * A service for creating and managing AI Platform's pipelines.
+   * A service for creating and managing Vertex AI's pipelines. This includes both
+   * `TrainingPipeline` resources (used for AutoML and custom training) and
+   * `PipelineJob` resources (used for Vertex Pipelines).
    * </pre>
    */
   public static abstract class PipelineServiceImplBase implements io.grpc.BindableService {
@@ -326,7 +330,9 @@ public final class PipelineServiceGrpc {
 
   /**
    * <pre>
-   * A service for creating and managing AI Platform's pipelines.
+   * A service for creating and managing Vertex AI's pipelines. This includes both
+   * `TrainingPipeline` resources (used for AutoML and custom training) and
+   * `PipelineJob` resources (used for Vertex Pipelines).
    * </pre>
    */
   public static final class PipelineServiceStub extends io.grpc.stub.AbstractAsyncStub<PipelineServiceStub> {
@@ -409,7 +415,9 @@ public final class PipelineServiceGrpc {
 
   /**
    * <pre>
-   * A service for creating and managing AI Platform's pipelines.
+   * A service for creating and managing Vertex AI's pipelines. This includes both
+   * `TrainingPipeline` resources (used for AutoML and custom training) and
+   * `PipelineJob` resources (used for Vertex Pipelines).
    * </pre>
    */
   public static final class PipelineServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<PipelineServiceBlockingStub> {
@@ -487,7 +495,9 @@ public final class PipelineServiceGrpc {
 
   /**
    * <pre>
-   * A service for creating and managing AI Platform's pipelines.
+   * A service for creating and managing Vertex AI's pipelines. This includes both
+   * `TrainingPipeline` resources (used for AutoML and custom training) and
+   * `PipelineJob` resources (used for Vertex Pipelines).
    * </pre>
    */
   public static final class PipelineServiceFutureStub extends io.grpc.stub.AbstractFutureStub<PipelineServiceFutureStub> {

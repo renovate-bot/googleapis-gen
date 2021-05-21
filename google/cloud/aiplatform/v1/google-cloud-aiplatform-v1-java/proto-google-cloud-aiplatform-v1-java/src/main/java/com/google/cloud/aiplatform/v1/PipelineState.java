@@ -22,7 +22,7 @@ public enum PipelineState
   PIPELINE_STATE_UNSPECIFIED(0),
   /**
    * <pre>
-   * The pipeline has been just created or resumed and processing has not yet
+   * The pipeline has been created or resumed, and processing has not yet
    * begun.
    * </pre>
    *
@@ -63,7 +63,7 @@ public enum PipelineState
   PIPELINE_STATE_FAILED(5),
   /**
    * <pre>
-   * The pipeline is being cancelled. From this state the pipeline may only go
+   * The pipeline is being cancelled. From this state, the pipeline may only go
    * to either PIPELINE_STATE_SUCCEEDED, PIPELINE_STATE_FAILED or
    * PIPELINE_STATE_CANCELLED.
    * </pre>
@@ -100,7 +100,7 @@ public enum PipelineState
   public static final int PIPELINE_STATE_UNSPECIFIED_VALUE = 0;
   /**
    * <pre>
-   * The pipeline has been just created or resumed and processing has not yet
+   * The pipeline has been created or resumed, and processing has not yet
    * begun.
    * </pre>
    *
@@ -141,7 +141,7 @@ public enum PipelineState
   public static final int PIPELINE_STATE_FAILED_VALUE = 5;
   /**
    * <pre>
-   * The pipeline is being cancelled. From this state the pipeline may only go
+   * The pipeline is being cancelled. From this state, the pipeline may only go
    * to either PIPELINE_STATE_SUCCEEDED, PIPELINE_STATE_FAILED or
    * PIPELINE_STATE_CANCELLED.
    * </pre>

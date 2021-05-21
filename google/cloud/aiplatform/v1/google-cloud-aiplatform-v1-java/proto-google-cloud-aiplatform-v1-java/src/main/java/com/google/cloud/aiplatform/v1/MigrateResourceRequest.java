@@ -6,7 +6,7 @@ package com.google.cloud.aiplatform.v1;
 /**
  * <pre>
  * Config of migrating one resource from automl.googleapis.com,
- * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+ * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.MigrateResourceRequest}
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. Display name of the model in AI Platform.
+     * Required. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -211,7 +211,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getModelDisplayName();
     /**
      * <pre>
-     * Required. Display name of the model in AI Platform.
+     * Required. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Config for migrating version in ml.googleapis.com to AI Platform's Model.
+   * Config for migrating version in ml.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig}
@@ -433,7 +433,7 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object modelDisplayName_;
     /**
      * <pre>
-     * Required. Display name of the model in AI Platform.
+     * Required. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -455,7 +455,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Display name of the model in AI Platform.
+     * Required. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig}
@@ -1047,7 +1047,7 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object modelDisplayName_ = "";
       /**
        * <pre>
-       * Required. Display name of the model in AI Platform.
+       * Required. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1068,7 +1068,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Display name of the model in AI Platform.
+       * Required. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1090,7 +1090,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Display name of the model in AI Platform.
+       * Required. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1110,7 +1110,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Display name of the model in AI Platform.
+       * Required. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1125,7 +1125,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Display name of the model in AI Platform.
+       * Required. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1227,7 +1227,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Optional. Display name of the model in AI Platform.
+     * Optional. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -1237,7 +1237,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getModelDisplayName();
     /**
      * <pre>
-     * Optional. Display name of the model in AI Platform.
+     * Optional. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -1249,7 +1249,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Config for migrating Model in automl.googleapis.com to AI Platform's Model.
+   * Config for migrating Model in automl.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateAutomlModelConfig}
@@ -1396,7 +1396,7 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object modelDisplayName_;
     /**
      * <pre>
-     * Optional. Display name of the model in AI Platform.
+     * Optional. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -1418,7 +1418,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Display name of the model in AI Platform.
+     * Optional. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -1606,7 +1606,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's Model.
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateAutomlModelConfig}
@@ -1872,7 +1872,7 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object modelDisplayName_ = "";
       /**
        * <pre>
-       * Optional. Display name of the model in AI Platform.
+       * Optional. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1893,7 +1893,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. Display name of the model in AI Platform.
+       * Optional. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1915,7 +1915,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. Display name of the model in AI Platform.
+       * Optional. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1935,7 +1935,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. Display name of the model in AI Platform.
+       * Optional. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1950,7 +1950,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. Display name of the model in AI Platform.
+       * Optional. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -2052,7 +2052,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. Display name of the Dataset in AI Platform.
+     * Required. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -2062,7 +2062,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getDatasetDisplayName();
     /**
      * <pre>
-     * Required. Display name of the Dataset in AI Platform.
+     * Required. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -2074,7 +2074,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+   * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
    * Dataset.
    * </pre>
    *
@@ -2222,7 +2222,7 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object datasetDisplayName_;
     /**
      * <pre>
-     * Required. Display name of the Dataset in AI Platform.
+     * Required. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -2244,7 +2244,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Display name of the Dataset in AI Platform.
+     * Required. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -2432,7 +2432,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -2699,7 +2699,7 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object datasetDisplayName_ = "";
       /**
        * <pre>
-       * Required. Display name of the Dataset in AI Platform.
+       * Required. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -2720,7 +2720,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Display name of the Dataset in AI Platform.
+       * Required. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -2742,7 +2742,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Display name of the Dataset in AI Platform.
+       * Required. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -2762,7 +2762,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Display name of the Dataset in AI Platform.
+       * Required. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -2777,7 +2777,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Display name of the Dataset in AI Platform.
+       * Required. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -2879,7 +2879,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Optional. Display name of the Dataset in AI Platform.
+     * Optional. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -2889,7 +2889,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getDatasetDisplayName();
     /**
      * <pre>
-     * Optional. Display name of the Dataset in AI Platform.
+     * Optional. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -2902,7 +2902,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -2913,7 +2913,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -2923,7 +2923,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -2933,7 +2933,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -2944,7 +2944,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -3094,7 +3094,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Config for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery.
+     * Vertex AI's SavedQuery.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig.MigrateDataLabelingAnnotatedDatasetConfig}
@@ -3387,7 +3387,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Config for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery.
+       * Vertex AI's SavedQuery.
        * </pre>
        *
        * Protobuf type {@code google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig.MigrateDataLabelingAnnotatedDatasetConfig}
@@ -3749,7 +3749,7 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object datasetDisplayName_;
     /**
      * <pre>
-     * Optional. Display name of the Dataset in AI Platform.
+     * Optional. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -3771,7 +3771,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Display name of the Dataset in AI Platform.
+     * Optional. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -3798,7 +3798,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -3811,7 +3811,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -3825,7 +3825,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -3838,7 +3838,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -3851,7 +3851,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -4353,7 +4353,7 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object datasetDisplayName_ = "";
       /**
        * <pre>
-       * Optional. Display name of the Dataset in AI Platform.
+       * Optional. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -4374,7 +4374,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. Display name of the Dataset in AI Platform.
+       * Optional. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -4396,7 +4396,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. Display name of the Dataset in AI Platform.
+       * Optional. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -4416,7 +4416,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. Display name of the Dataset in AI Platform.
+       * Optional. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -4431,7 +4431,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Optional. Display name of the Dataset in AI Platform.
+       * Optional. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -4466,7 +4466,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4482,7 +4482,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4498,7 +4498,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4514,7 +4514,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4537,7 +4537,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4557,7 +4557,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4579,7 +4579,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4602,7 +4602,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4622,7 +4622,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4642,7 +4642,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4663,7 +4663,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4682,7 +4682,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4701,7 +4701,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4714,7 +4714,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4730,7 +4730,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4747,7 +4747,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4760,7 +4760,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4774,7 +4774,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -4899,7 +4899,7 @@ private static final long serialVersionUID = 0L;
   public static final int MIGRATE_ML_ENGINE_MODEL_VERSION_CONFIG_FIELD_NUMBER = 1;
   /**
    * <pre>
-   * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+   * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -4911,7 +4911,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+   * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -4926,7 +4926,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+   * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -4942,7 +4942,7 @@ private static final long serialVersionUID = 0L;
   public static final int MIGRATE_AUTOML_MODEL_CONFIG_FIELD_NUMBER = 2;
   /**
    * <pre>
-   * Config for migrating Model in automl.googleapis.com to AI Platform's
+   * Config for migrating Model in automl.googleapis.com to Vertex AI's
    * Model.
    * </pre>
    *
@@ -4955,7 +4955,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Config for migrating Model in automl.googleapis.com to AI Platform's
+   * Config for migrating Model in automl.googleapis.com to Vertex AI's
    * Model.
    * </pre>
    *
@@ -4971,7 +4971,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Config for migrating Model in automl.googleapis.com to AI Platform's
+   * Config for migrating Model in automl.googleapis.com to Vertex AI's
    * Model.
    * </pre>
    *
@@ -4988,7 +4988,7 @@ private static final long serialVersionUID = 0L;
   public static final int MIGRATE_AUTOML_DATASET_CONFIG_FIELD_NUMBER = 3;
   /**
    * <pre>
-   * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+   * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
    * Dataset.
    * </pre>
    *
@@ -5001,7 +5001,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+   * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
    * Dataset.
    * </pre>
    *
@@ -5017,7 +5017,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+   * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
    * Dataset.
    * </pre>
    *
@@ -5035,7 +5035,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Config for migrating Dataset in datalabeling.googleapis.com to
-   * AI Platform's Dataset.
+   * Vertex AI's Dataset.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
@@ -5048,7 +5048,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Config for migrating Dataset in datalabeling.googleapis.com to
-   * AI Platform's Dataset.
+   * Vertex AI's Dataset.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
@@ -5064,7 +5064,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Config for migrating Dataset in datalabeling.googleapis.com to
-   * AI Platform's Dataset.
+   * Vertex AI's Dataset.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
@@ -5293,7 +5293,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Config of migrating one resource from automl.googleapis.com,
-   * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+   * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.MigrateResourceRequest}
@@ -5507,7 +5507,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig, com.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig.Builder, com.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfigOrBuilder> migrateMlEngineModelVersionConfigBuilder_;
     /**
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -5519,7 +5519,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -5541,7 +5541,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -5561,7 +5561,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -5579,7 +5579,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -5605,7 +5605,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -5628,7 +5628,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -5638,7 +5638,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -5656,7 +5656,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
@@ -5684,7 +5684,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateAutomlModelConfig, com.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateAutomlModelConfig.Builder, com.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateAutomlModelConfigOrBuilder> migrateAutomlModelConfigBuilder_;
     /**
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -5697,7 +5697,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -5720,7 +5720,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -5741,7 +5741,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -5760,7 +5760,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -5787,7 +5787,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -5811,7 +5811,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -5822,7 +5822,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -5841,7 +5841,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -5870,7 +5870,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateAutomlDatasetConfig, com.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateAutomlDatasetConfig.Builder, com.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateAutomlDatasetConfigOrBuilder> migrateAutomlDatasetConfigBuilder_;
     /**
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -5883,7 +5883,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -5906,7 +5906,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -5927,7 +5927,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -5946,7 +5946,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -5973,7 +5973,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -5997,7 +5997,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -6008,7 +6008,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -6027,7 +6027,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -6057,7 +6057,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
@@ -6070,7 +6070,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
@@ -6093,7 +6093,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
@@ -6114,7 +6114,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
@@ -6133,7 +6133,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
@@ -6160,7 +6160,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
@@ -6184,7 +6184,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
@@ -6195,7 +6195,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
@@ -6214,7 +6214,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>

@@ -121,7 +121,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for [DataLabelingJobService.CreateDataLabelingJob][].
+        # Request message for {::Google::Cloud::Aiplatform::V1::JobService::Client#create_data_labeling_job JobService.CreateDataLabelingJob}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The parent of the DataLabelingJob.
@@ -134,19 +134,18 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for [DataLabelingJobService.GetDataLabelingJob][].
+        # Request message for {::Google::Cloud::Aiplatform::V1::JobService::Client#get_data_labeling_job JobService.GetDataLabelingJob}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the DataLabelingJob.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
         class GetDataLabelingJobRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for [DataLabelingJobService.ListDataLabelingJobs][].
+        # Request message for {::Google::Cloud::Aiplatform::V1::JobService::Client#list_data_labeling_jobs JobService.ListDataLabelingJobs}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The parent of the DataLabelingJob.
@@ -210,19 +209,17 @@ module Google
         #   @return [::String]
         #     Required. The name of the DataLabelingJob to be deleted.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
         class DeleteDataLabelingJobRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for [DataLabelingJobService.CancelDataLabelingJob][].
+        # Request message for {::Google::Cloud::Aiplatform::V1::JobService::Client#cancel_data_labeling_job JobService.CancelDataLabelingJob}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the DataLabelingJob.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
         class CancelDataLabelingJobRequest
           include ::Google::Protobuf::MessageExts
@@ -247,7 +244,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the HyperparameterTuningJob resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
         class GetHyperparameterTuningJobRequest
           include ::Google::Protobuf::MessageExts
@@ -315,7 +311,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the HyperparameterTuningJob resource to be deleted.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
         class DeleteHyperparameterTuningJobRequest
           include ::Google::Protobuf::MessageExts
@@ -327,7 +322,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the HyperparameterTuningJob to cancel.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
         class CancelHyperparameterTuningJobRequest
           include ::Google::Protobuf::MessageExts
@@ -352,7 +346,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the BatchPredictionJob resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
         class GetBatchPredictionJobRequest
           include ::Google::Protobuf::MessageExts
@@ -373,6 +366,8 @@ module Google
         #       * `display_name` supports = and !=.
         #
         #       * `state` supports = and !=.
+        #
+        #       * `model_display_name` supports = and !=
         #
         #     Some examples of using the filter are:
         #
@@ -419,7 +414,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the BatchPredictionJob resource to be deleted.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
         class DeleteBatchPredictionJobRequest
           include ::Google::Protobuf::MessageExts
@@ -431,7 +425,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the BatchPredictionJob to cancel.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
         class CancelBatchPredictionJobRequest
           include ::Google::Protobuf::MessageExts

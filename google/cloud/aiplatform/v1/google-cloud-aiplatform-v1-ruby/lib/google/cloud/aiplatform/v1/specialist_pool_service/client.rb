@@ -268,7 +268,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the SpecialistPool resource.
             #     The form is
-            #
             #     `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
             #
             # @yield [response, operation] Access the result along with the RPC operation

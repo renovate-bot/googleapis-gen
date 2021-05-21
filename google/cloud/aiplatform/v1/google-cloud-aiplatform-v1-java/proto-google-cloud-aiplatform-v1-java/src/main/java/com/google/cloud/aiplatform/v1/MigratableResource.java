@@ -5028,8 +5028,9 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp lastMigrateTime_;
   /**
    * <pre>
-   * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-   * Will not be set if there's no migration attempt on this MigratableResource.
+   * Output only. Timestamp when the last migration attempt on this MigratableResource
+   * started. Will not be set if there's no migration attempt on this
+   * MigratableResource.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5041,8 +5042,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-   * Will not be set if there's no migration attempt on this MigratableResource.
+   * Output only. Timestamp when the last migration attempt on this MigratableResource
+   * started. Will not be set if there's no migration attempt on this
+   * MigratableResource.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5054,8 +5056,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-   * Will not be set if there's no migration attempt on this MigratableResource.
+   * Output only. Timestamp when the last migration attempt on this MigratableResource
+   * started. Will not be set if there's no migration attempt on this
+   * MigratableResource.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6302,8 +6305,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastMigrateTimeBuilder_;
     /**
      * <pre>
-     * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-     * Will not be set if there's no migration attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6314,8 +6318,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-     * Will not be set if there's no migration attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6330,8 +6335,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-     * Will not be set if there's no migration attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6351,8 +6357,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-     * Will not be set if there's no migration attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6370,8 +6377,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-     * Will not be set if there's no migration attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6393,8 +6401,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-     * Will not be set if there's no migration attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6412,8 +6421,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-     * Will not be set if there's no migration attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6425,8 +6435,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-     * Will not be set if there's no migration attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6441,8 +6452,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamp when the last migration attempt on this MigratableResource started.
-     * Will not be set if there's no migration attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_migrate_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

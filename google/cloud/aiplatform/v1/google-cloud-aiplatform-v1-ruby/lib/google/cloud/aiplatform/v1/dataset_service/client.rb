@@ -340,8 +340,7 @@ module Google
             #     Required. The Dataset which replaces the resource on the server.
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     Required. The update mask applies to the resource.
-            #     For the `FieldMask` definition, see
-            #     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+            #     For the `FieldMask` definition, see {::Google::Protobuf::FieldMask google.protobuf.FieldMask}.
             #     Updatable fields:
             #
             #       * `display_name`
@@ -801,7 +800,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the AnnotationSpec resource.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
             #   @param read_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     Mask specifying which fields to read.
@@ -872,7 +870,6 @@ module Google
             #   @param parent [::String]
             #     Required. The resource name of the DataItem to list Annotations from.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
             #   @param filter [::String]
             #     The standard list filter.

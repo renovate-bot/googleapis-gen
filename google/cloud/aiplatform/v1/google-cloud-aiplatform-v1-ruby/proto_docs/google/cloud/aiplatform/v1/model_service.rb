@@ -132,8 +132,7 @@ module Google
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Required. The update mask applies to the resource.
-        #     For the `FieldMask` definition, see
-        #     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+        #     For the `FieldMask` definition, see {::Google::Protobuf::FieldMask google.protobuf.FieldMask}.
         class UpdateModelRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -229,7 +228,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the ModelEvaluation resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
         class GetModelEvaluationRequest
           include ::Google::Protobuf::MessageExts
@@ -279,7 +277,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the ModelEvaluationSlice resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
         class GetModelEvaluationSliceRequest
           include ::Google::Protobuf::MessageExts
@@ -291,7 +288,6 @@ module Google
         #   @return [::String]
         #     Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
         #     from. Format:
-        #
         #     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
         # @!attribute [rw] filter
         #   @return [::String]

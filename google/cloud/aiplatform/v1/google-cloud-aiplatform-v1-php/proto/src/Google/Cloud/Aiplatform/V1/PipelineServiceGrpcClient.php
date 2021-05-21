@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,7 +19,9 @@
 namespace Google\Cloud\Aiplatform\V1;
 
 /**
- * A service for creating and managing AI Platform's pipelines.
+ * A service for creating and managing Vertex AI's pipelines. This includes both
+ * `TrainingPipeline` resources (used for AutoML and custom training) and
+ * `PipelineJob` resources (used for Vertex Pipelines).
  */
 class PipelineServiceGrpcClient extends \Grpc\BaseStub {
 

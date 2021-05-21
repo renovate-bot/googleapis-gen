@@ -23,8 +23,7 @@ class UpdateDatasetRequest extends \Google\Protobuf\Internal\Message
     protected $dataset = null;
     /**
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`
@@ -44,8 +43,7 @@ class UpdateDatasetRequest extends \Google\Protobuf\Internal\Message
      *           Required. The Dataset which replaces the resource on the server.
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Required. The update mask applies to the resource.
-     *           For the `FieldMask` definition, see
-     *           [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     *           For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      *           Updatable fields:
      *             * `display_name`
      *             * `description`
@@ -95,8 +93,7 @@ class UpdateDatasetRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`
@@ -122,8 +119,7 @@ class UpdateDatasetRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`

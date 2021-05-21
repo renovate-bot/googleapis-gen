@@ -10,6 +10,8 @@ public interface CustomJobSpecOrBuilder extends
   /**
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -19,6 +21,8 @@ public interface CustomJobSpecOrBuilder extends
   /**
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -27,6 +31,8 @@ public interface CustomJobSpecOrBuilder extends
   /**
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -35,6 +41,8 @@ public interface CustomJobSpecOrBuilder extends
   /**
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44,6 +52,8 @@ public interface CustomJobSpecOrBuilder extends
   /**
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.WorkerPoolSpec worker_pool_specs = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -82,8 +92,9 @@ public interface CustomJobSpecOrBuilder extends
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
-   * If unspecified, the AI Platform Custom Code Service Agent for the
-   * CustomJob's project is used.
+   * If unspecified, the [AI Platform Custom Code Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * for the CustomJob's project is used.
    * </pre>
    *
    * <code>string service_account = 4;</code>
@@ -94,8 +105,9 @@ public interface CustomJobSpecOrBuilder extends
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
-   * If unspecified, the AI Platform Custom Code Service Agent for the
-   * CustomJob's project is used.
+   * If unspecified, the [AI Platform Custom Code Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * for the CustomJob's project is used.
    * </pre>
    *
    * <code>string service_account = 4;</code>
@@ -148,7 +160,7 @@ public interface CustomJobSpecOrBuilder extends
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1.Trial.id] under its parent HyperparameterTuningJob's
    * baseOutputDirectory.
-   * The following AI Platform environment variables will be passed to
+   * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
    *   For CustomJob:
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -172,7 +184,7 @@ public interface CustomJobSpecOrBuilder extends
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1.Trial.id] under its parent HyperparameterTuningJob's
    * baseOutputDirectory.
-   * The following AI Platform environment variables will be passed to
+   * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
    *   For CustomJob:
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -196,7 +208,7 @@ public interface CustomJobSpecOrBuilder extends
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1.Trial.id] under its parent HyperparameterTuningJob's
    * baseOutputDirectory.
-   * The following AI Platform environment variables will be passed to
+   * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
    *   For CustomJob:
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`

@@ -34,7 +34,7 @@ import { operationsProtos } from 'google-gax';
 const version = require('../../../package.json').version;
 
 /**
- *  A service for managing AI Platform's machine learning Models.
+ *  A service for managing Vertex AI's machine learning Models.
  * @class
  * @memberof v1
  */
@@ -470,8 +470,7 @@ export class ModelServiceClient {
  *   Required. The Model which replaces the resource on the server.
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. The update mask applies to the resource.
- *   For the `FieldMask` definition, see
- *   [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+ *   For the `FieldMask` definition, see {@link google.protobuf.FieldMask|google.protobuf.FieldMask}.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -544,7 +543,6 @@ export class ModelServiceClient {
  * @param {string} request.name
  *   Required. The name of the ModelEvaluation resource.
  *   Format:
- *
  *   `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -618,7 +616,6 @@ export class ModelServiceClient {
  * @param {string} request.name
  *   Required. The name of the ModelEvaluationSlice resource.
  *   Format:
- *
  *   `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -686,7 +683,7 @@ export class ModelServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Uploads a Model artifact into AI Platform.
+ * Uploads a Model artifact into Vertex AI.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -1457,7 +1454,6 @@ export class ModelServiceClient {
  * @param {string} request.parent
  *   Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
  *   from. Format:
- *
  *   `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
  * @param {string} request.filter
  *   The standard list filter.
@@ -1528,7 +1524,6 @@ export class ModelServiceClient {
  * @param {string} request.parent
  *   Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
  *   from. Format:
- *
  *   `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
  * @param {string} request.filter
  *   The standard list filter.
@@ -1586,7 +1581,6 @@ export class ModelServiceClient {
  * @param {string} request.parent
  *   Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
  *   from. Format:
- *
  *   `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
  * @param {string} request.filter
  *   The standard list filter.

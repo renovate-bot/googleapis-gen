@@ -113,9 +113,9 @@ module Google
         #     the EncryptionSpec of the Dataset they are exported to.
         # @!attribute [rw] active_learning_config
         #   @return [::Google::Cloud::Aiplatform::V1::ActiveLearningConfig]
-        #     Parameters that configure the active learning pipeline. Active learning will
-        #     label the data incrementally via several iterations. For every iteration,
-        #     it will select a batch of data based on the sampling strategy.
+        #     Parameters that configure the active learning pipeline. Active learning
+        #     will label the data incrementally via several iterations. For every
+        #     iteration, it will select a batch of data based on the sampling strategy.
         class DataLabelingJob
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

@@ -57,7 +57,7 @@ func defaultPredictionCallOptions() *PredictionCallOptions {
 	}
 }
 
-// internalPredictionClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalPredictionClient is an interface that defines the methods availaible from Vertex AI API.
 type internalPredictionClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -65,7 +65,7 @@ type internalPredictionClient interface {
 	Predict(context.Context, *aiplatformpb.PredictRequest, ...gax.CallOption) (*aiplatformpb.PredictResponse, error)
 }
 
-// PredictionClient is a client for interacting with Cloud AI Platform API.
+// PredictionClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // A service for online predictions and explanations.
@@ -104,7 +104,7 @@ func (c *PredictionClient) Predict(ctx context.Context, req *aiplatformpb.Predic
 	return c.internalClient.Predict(ctx, req, opts...)
 }
 
-// predictionGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// predictionGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type predictionGRPCClient struct {

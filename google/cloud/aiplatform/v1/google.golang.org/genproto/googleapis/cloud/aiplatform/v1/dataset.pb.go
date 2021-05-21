@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -210,7 +210,8 @@ type ImportDataConfig struct {
 	DataItemLabels map[string]string `protobuf:"bytes,2,rep,name=data_item_labels,json=dataItemLabels,proto3" json:"data_item_labels,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	// Required. Points to a YAML file stored on Google Cloud Storage describing the import
 	// format. Validation will be done against the schema. The schema is defined
-	// as an [OpenAPI 3.0.2 Schema Object](https://tinyurl.com/y538mdwt).
+	// as an [OpenAPI 3.0.2 Schema
+	// Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
 	ImportSchemaUri string `protobuf:"bytes,4,opt,name=import_schema_uri,json=importSchemaUri,proto3" json:"import_schema_uri,omitempty"`
 }
 

@@ -49,7 +49,9 @@ use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 
 /**
- * Service Description: A service for creating and managing AI Platform's pipelines.
+ * Service Description: A service for creating and managing Vertex AI's pipelines. This includes both
+ * `TrainingPipeline` resources (used for AutoML and custom training) and
+ * `PipelineJob` resources (used for Vertex Pipelines).
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -347,7 +349,6 @@ class PipelineServiceGapicClient
      *
      * @param string $name         Required. The name of the TrainingPipeline to cancel.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -456,7 +457,6 @@ class PipelineServiceGapicClient
      *
      * @param string $name         Required. The name of the TrainingPipeline resource to be deleted.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -499,7 +499,6 @@ class PipelineServiceGapicClient
      *
      * @param string $name         Required. The name of the TrainingPipeline resource.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
      * @param array  $optionalArgs {
      *     Optional.

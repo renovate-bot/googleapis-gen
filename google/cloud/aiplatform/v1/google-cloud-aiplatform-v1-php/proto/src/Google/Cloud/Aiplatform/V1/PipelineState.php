@@ -20,7 +20,7 @@ class PipelineState
      */
     const PIPELINE_STATE_UNSPECIFIED = 0;
     /**
-     * The pipeline has been just created or resumed and processing has not yet
+     * The pipeline has been created or resumed, and processing has not yet
      * begun.
      *
      * Generated from protobuf enum <code>PIPELINE_STATE_QUEUED = 1;</code>
@@ -51,7 +51,7 @@ class PipelineState
      */
     const PIPELINE_STATE_FAILED = 5;
     /**
-     * The pipeline is being cancelled. From this state the pipeline may only go
+     * The pipeline is being cancelled. From this state, the pipeline may only go
      * to either PIPELINE_STATE_SUCCEEDED, PIPELINE_STATE_FAILED or
      * PIPELINE_STATE_CANCELLED.
      *

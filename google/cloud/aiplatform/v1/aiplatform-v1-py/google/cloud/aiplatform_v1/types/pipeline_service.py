@@ -63,7 +63,6 @@ class GetTrainingPipelineRequest(proto.Message):
     Attributes:
         name (str):
             Required. The name of the TrainingPipeline resource. Format:
-
             ``projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}``
     """
 
@@ -170,7 +169,6 @@ class DeleteTrainingPipelineRequest(proto.Message):
         name (str):
             Required. The name of the TrainingPipeline resource to be
             deleted. Format:
-
             ``projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}``
     """
 
@@ -188,7 +186,6 @@ class CancelTrainingPipelineRequest(proto.Message):
         name (str):
             Required. The name of the TrainingPipeline to cancel.
             Format:
-
             ``projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}``
     """
 

@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -46,10 +46,13 @@ type MachineSpec struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Immutable. The type of the machine. For the machine types supported for prediction,
-	// see https://tinyurl.com/aip-docs/predictions/machine-types.
-	// For machine types supported for creating a custom training job, see
-	// https://tinyurl.com/aip-docs/training/configure-compute.
+	// Immutable. The type of the machine.
+	//
+	// See the [list of machine types supported for
+	// prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+	//
+	// See the [list of machine types supported for custom
+	// training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
 	//
 	// For [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] this field is optional, and the default
 	// value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob] or as part of
@@ -196,7 +199,7 @@ func (x *DedicatedResources) GetMaxReplicaCount() int32 {
 	return 0
 }
 
-// A description of resources that to large degree are decided by AI Platform,
+// A description of resources that to large degree are decided by Vertex AI,
 // and require only a modest additional configuration.
 // Each Model supporting these resources documents its specific guidelines.
 type AutomaticResources struct {
@@ -217,7 +220,7 @@ type AutomaticResources struct {
 	// outages). If traffic against the DeployedModel increases beyond what its
 	// replicas at maximum may handle, a portion of the traffic will be dropped.
 	// If this value is not provided, a no upper bound for scaling under heavy
-	// traffic will be assume, though AI Platform may be unable to scale beyond
+	// traffic will be assume, though Vertex AI may be unable to scale beyond
 	// certain replica number.
 	MaxReplicaCount int32 `protobuf:"varint,2,opt,name=max_replica_count,json=maxReplicaCount,proto3" json:"max_replica_count,omitempty"`
 }
@@ -278,7 +281,7 @@ type BatchDedicatedResources struct {
 	// Required. Immutable. The specification of a single machine.
 	MachineSpec *MachineSpec `protobuf:"bytes,1,opt,name=machine_spec,json=machineSpec,proto3" json:"machine_spec,omitempty"`
 	// Immutable. The number of machine replicas used at the start of the batch operation.
-	// If not set, AI Platform decides starting number, not greater than
+	// If not set, Vertex AI decides starting number, not greater than
 	// [max_replica_count][google.cloud.aiplatform.v1.BatchDedicatedResources.max_replica_count]
 	StartingReplicaCount int32 `protobuf:"varint,2,opt,name=starting_replica_count,json=startingReplicaCount,proto3" json:"starting_replica_count,omitempty"`
 	// Immutable. The maximum number of machine replicas the batch operation may be scaled

@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -114,7 +114,6 @@ type GetTrainingPipelineRequest struct {
 
 	// Required. The name of the TrainingPipeline resource.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -329,7 +328,6 @@ type DeleteTrainingPipelineRequest struct {
 
 	// Required. The name of the TrainingPipeline resource to be deleted.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -381,7 +379,6 @@ type CancelTrainingPipelineRequest struct {
 
 	// Required. The name of the TrainingPipeline to cancel.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }

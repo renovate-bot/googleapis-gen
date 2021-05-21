@@ -27,7 +27,9 @@ module Google
           ##
           # Client for the PipelineService service.
           #
-          # A service for creating and managing AI Platform's pipelines.
+          # A service for creating and managing Vertex AI's pipelines. This includes both
+          # `TrainingPipeline` resources (used for AutoML and custom training) and
+          # `PipelineJob` resources (used for Vertex Pipelines).
           #
           class Client
             include Paths
@@ -263,7 +265,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the TrainingPipeline resource.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -426,7 +427,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the TrainingPipeline resource to be deleted.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -505,7 +505,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the TrainingPipeline to cancel.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
             #
             # @yield [response, operation] Access the result along with the RPC operation

@@ -64,7 +64,7 @@ func defaultMigrationCallOptions() *MigrationCallOptions {
 	}
 }
 
-// internalMigrationClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalMigrationClient is an interface that defines the methods availaible from Vertex AI API.
 type internalMigrationClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -74,11 +74,11 @@ type internalMigrationClient interface {
 	BatchMigrateResourcesOperation(name string) *BatchMigrateResourcesOperation
 }
 
-// MigrationClient is a client for interacting with Cloud AI Platform API.
+// MigrationClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // A service that migrates resources from automl.googleapis.com (at http://automl.googleapis.com),
-// datalabeling.googleapis.com (at http://datalabeling.googleapis.com) and ml.googleapis.com (at http://ml.googleapis.com) to AI Platform.
+// datalabeling.googleapis.com (at http://datalabeling.googleapis.com) and ml.googleapis.com (at http://ml.googleapis.com) to Vertex AI.
 type MigrationClient struct {
 	// The internal transport-dependent client.
 	internalClient internalMigrationClient
@@ -116,13 +116,13 @@ func (c *MigrationClient) Connection() *grpc.ClientConn {
 
 // SearchMigratableResources searches all of the resources in automl.googleapis.com (at http://automl.googleapis.com),
 // datalabeling.googleapis.com (at http://datalabeling.googleapis.com) and ml.googleapis.com (at http://ml.googleapis.com) that can be migrated to
-// AI Platform’s given location.
+// Vertex AI’s given location.
 func (c *MigrationClient) SearchMigratableResources(ctx context.Context, req *aiplatformpb.SearchMigratableResourcesRequest, opts ...gax.CallOption) *MigratableResourceIterator {
 	return c.internalClient.SearchMigratableResources(ctx, req, opts...)
 }
 
 // BatchMigrateResources batch migrates resources from ml.googleapis.com (at http://ml.googleapis.com), automl.googleapis.com (at http://automl.googleapis.com),
-// and datalabeling.googleapis.com (at http://datalabeling.googleapis.com) to AI Platform (Unified).
+// and datalabeling.googleapis.com (at http://datalabeling.googleapis.com) to Vertex AI.
 func (c *MigrationClient) BatchMigrateResources(ctx context.Context, req *aiplatformpb.BatchMigrateResourcesRequest, opts ...gax.CallOption) (*BatchMigrateResourcesOperation, error) {
 	return c.internalClient.BatchMigrateResources(ctx, req, opts...)
 }
@@ -133,7 +133,7 @@ func (c *MigrationClient) BatchMigrateResourcesOperation(name string) *BatchMigr
 	return c.internalClient.BatchMigrateResourcesOperation(name)
 }
 
-// migrationGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// migrationGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type migrationGRPCClient struct {
@@ -162,7 +162,7 @@ type migrationGRPCClient struct {
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
 // A service that migrates resources from automl.googleapis.com (at http://automl.googleapis.com),
-// datalabeling.googleapis.com (at http://datalabeling.googleapis.com) and ml.googleapis.com (at http://ml.googleapis.com) to AI Platform.
+// datalabeling.googleapis.com (at http://datalabeling.googleapis.com) and ml.googleapis.com (at http://ml.googleapis.com) to Vertex AI.
 func NewMigrationClient(ctx context.Context, opts ...option.ClientOption) (*MigrationClient, error) {
 	clientOpts := defaultMigrationGRPCClientOptions()
 	if newMigrationClientHook != nil {

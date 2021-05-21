@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -424,7 +424,7 @@ func (x *CancelCustomJobRequest) GetName() string {
 	return ""
 }
 
-// Request message for [DataLabelingJobService.CreateDataLabelingJob][].
+// Request message for [JobService.CreateDataLabelingJob][google.cloud.aiplatform.v1.JobService.CreateDataLabelingJob].
 type CreateDataLabelingJobRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -483,7 +483,7 @@ func (x *CreateDataLabelingJobRequest) GetDataLabelingJob() *DataLabelingJob {
 	return nil
 }
 
-// Request message for [DataLabelingJobService.GetDataLabelingJob][].
+// Request message for [JobService.GetDataLabelingJob][google.cloud.aiplatform.v1.JobService.GetDataLabelingJob].
 type GetDataLabelingJobRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -491,7 +491,6 @@ type GetDataLabelingJobRequest struct {
 
 	// Required. The name of the DataLabelingJob.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -535,7 +534,7 @@ func (x *GetDataLabelingJobRequest) GetName() string {
 	return ""
 }
 
-// Request message for [DataLabelingJobService.ListDataLabelingJobs][].
+// Request message for [JobService.ListDataLabelingJobs][google.cloud.aiplatform.v1.JobService.ListDataLabelingJobs].
 type ListDataLabelingJobsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -718,7 +717,6 @@ type DeleteDataLabelingJobRequest struct {
 
 	// Required. The name of the DataLabelingJob to be deleted.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -762,7 +760,7 @@ func (x *DeleteDataLabelingJobRequest) GetName() string {
 	return ""
 }
 
-// Request message for [DataLabelingJobService.CancelDataLabelingJob][].
+// Request message for [JobService.CancelDataLabelingJob][google.cloud.aiplatform.v1.JobService.CancelDataLabelingJob].
 type CancelDataLabelingJobRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -770,7 +768,6 @@ type CancelDataLabelingJobRequest struct {
 
 	// Required. The name of the DataLabelingJob.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -881,7 +878,6 @@ type GetHyperparameterTuningJobRequest struct {
 
 	// Required. The name of the HyperparameterTuningJob resource.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -1099,7 +1095,6 @@ type DeleteHyperparameterTuningJobRequest struct {
 
 	// Required. The name of the HyperparameterTuningJob resource to be deleted.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -1151,7 +1146,6 @@ type CancelHyperparameterTuningJobRequest struct {
 
 	// Required. The name of the HyperparameterTuningJob to cancel.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -1262,7 +1256,6 @@ type GetBatchPredictionJobRequest struct {
 
 	// Required. The name of the BatchPredictionJob resource.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -1322,6 +1315,8 @@ type ListBatchPredictionJobsRequest struct {
 	//   * `display_name` supports = and !=.
 	//
 	//   * `state` supports = and !=.
+	//
+	//   * `model_display_name` supports = and !=
 	//
 	// Some examples of using the filter are:
 	//
@@ -1479,7 +1474,6 @@ type DeleteBatchPredictionJobRequest struct {
 
 	// Required. The name of the BatchPredictionJob resource to be deleted.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
@@ -1531,7 +1525,6 @@ type CancelBatchPredictionJobRequest struct {
 
 	// Required. The name of the BatchPredictionJob to cancel.
 	// Format:
-	//
 	// `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }

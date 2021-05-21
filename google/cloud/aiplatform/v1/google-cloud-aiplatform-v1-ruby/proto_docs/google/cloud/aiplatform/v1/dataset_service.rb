@@ -62,8 +62,7 @@ module Google
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Required. The update mask applies to the resource.
-        #     For the `FieldMask` definition, see
-        #     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+        #     For the `FieldMask` definition, see {::Google::Protobuf::FieldMask google.protobuf.FieldMask}.
         #     Updatable fields:
         #
         #       * `display_name`
@@ -249,7 +248,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the AnnotationSpec resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
         # @!attribute [rw] read_mask
         #   @return [::Google::Protobuf::FieldMask]
@@ -264,7 +262,6 @@ module Google
         #   @return [::String]
         #     Required. The resource name of the DataItem to list Annotations from.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
         # @!attribute [rw] filter
         #   @return [::String]

@@ -153,8 +153,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * Updatable fields:
    *   * `display_name`
    *   * `description`
@@ -171,8 +170,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * Updatable fields:
    *   * `display_name`
    *   * `description`
@@ -189,8 +187,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * Updatable fields:
    *   * `display_name`
    *   * `description`
@@ -714,8 +711,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`
@@ -731,8 +727,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`
@@ -752,8 +747,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`
@@ -778,8 +772,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`
@@ -802,8 +795,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`
@@ -830,8 +822,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`
@@ -854,8 +845,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`
@@ -872,8 +862,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`
@@ -893,8 +882,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * Updatable fields:
      *   * `display_name`
      *   * `description`

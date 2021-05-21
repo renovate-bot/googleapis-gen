@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
 namespace Google\Cloud\Aiplatform\V1;
 
 /**
- * A service for creating and managing AI Platform's jobs.
+ * A service for creating and managing Vertex AI's jobs.
  */
 class JobServiceGrpcClient extends \Grpc\BaseStub {
 

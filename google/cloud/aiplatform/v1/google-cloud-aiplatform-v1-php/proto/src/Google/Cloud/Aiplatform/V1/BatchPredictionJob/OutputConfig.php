@@ -18,7 +18,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class OutputConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
      *
@@ -56,8 +56,8 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      *           [`google.rpc.Status`](Status)
      *           containing only `code` and `message` fields.
      *     @type \Google\Cloud\Aiplatform\V1\BigQueryDestination $bigquery_destination
-     *           The BigQuery project location where the output is to be written to.
-     *           In the given project a new dataset is created with name
+     *           The BigQuery project or dataset location where the output is to be
+     *           written to. If project is provided, a new dataset is created with name
      *           `prediction_<model-display-name>_<job-create-time>`
      *           where <model-display-name> is made
      *           BigQuery-dataset-name compatible (for example, most special characters
@@ -75,7 +75,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      *           has [`google.rpc.Status`](Status)
      *           represented as a STRUCT, and containing only `code` and `message`.
      *     @type string $predictions_format
-     *           Required. The format in which AI Platform gives the predictions, must be one of the
+     *           Required. The format in which Vertex AI gives the predictions, must be one of the
      *           [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
      *           [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
      * }
@@ -157,8 +157,8 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_<model-display-name>_<job-create-time>`
      * where <model-display-name> is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -190,8 +190,8 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_<model-display-name>_<job-create-time>`
      * where <model-display-name> is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -222,7 +222,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
      *
@@ -235,7 +235,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
      *

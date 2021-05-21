@@ -39,7 +39,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the TrainingPipeline resource.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
         class GetTrainingPipelineRequest
           include ::Google::Protobuf::MessageExts
@@ -104,7 +103,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the TrainingPipeline resource to be deleted.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
         class DeleteTrainingPipelineRequest
           include ::Google::Protobuf::MessageExts
@@ -116,7 +114,6 @@ module Google
         #   @return [::String]
         #     Required. The name of the TrainingPipeline to cancel.
         #     Format:
-        #
         #     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
         class CancelTrainingPipelineRequest
           include ::Google::Protobuf::MessageExts

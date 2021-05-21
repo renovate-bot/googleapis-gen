@@ -596,9 +596,9 @@ public interface DataLabelingJobOrBuilder extends
 
   /**
    * <pre>
-   * Parameters that configure the active learning pipeline. Active learning will
-   * label the data incrementally via several iterations. For every iteration,
-   * it will select a batch of data based on the sampling strategy.
+   * Parameters that configure the active learning pipeline. Active learning
+   * will label the data incrementally via several iterations. For every
+   * iteration, it will select a batch of data based on the sampling strategy.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -607,9 +607,9 @@ public interface DataLabelingJobOrBuilder extends
   boolean hasActiveLearningConfig();
   /**
    * <pre>
-   * Parameters that configure the active learning pipeline. Active learning will
-   * label the data incrementally via several iterations. For every iteration,
-   * it will select a batch of data based on the sampling strategy.
+   * Parameters that configure the active learning pipeline. Active learning
+   * will label the data incrementally via several iterations. For every
+   * iteration, it will select a batch of data based on the sampling strategy.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.ActiveLearningConfig active_learning_config = 21;</code>
@@ -618,9 +618,9 @@ public interface DataLabelingJobOrBuilder extends
   com.google.cloud.aiplatform.v1.ActiveLearningConfig getActiveLearningConfig();
   /**
    * <pre>
-   * Parameters that configure the active learning pipeline. Active learning will
-   * label the data incrementally via several iterations. For every iteration,
-   * it will select a batch of data based on the sampling strategy.
+   * Parameters that configure the active learning pipeline. Active learning
+   * will label the data incrementally via several iterations. For every
+   * iteration, it will select a batch of data based on the sampling strategy.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.ActiveLearningConfig active_learning_config = 21;</code>

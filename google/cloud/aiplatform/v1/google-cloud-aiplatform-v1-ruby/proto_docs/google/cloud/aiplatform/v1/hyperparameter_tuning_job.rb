@@ -46,7 +46,7 @@ module Google
         #     The number of failed Trials that need to be seen before failing
         #     the HyperparameterTuningJob.
         #
-        #     If set to 0, AI Platform decides how many Trials must fail
+        #     If set to 0, Vertex AI decides how many Trials must fail
         #     before the whole job fails.
         # @!attribute [rw] trial_job_spec
         #   @return [::Google::Cloud::Aiplatform::V1::CustomJobSpec]

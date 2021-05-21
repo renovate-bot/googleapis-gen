@@ -645,7 +645,6 @@ class DatasetServiceGapicClient
      *
      * @param string $name         Required. The name of the AnnotationSpec resource.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -823,7 +822,6 @@ class DatasetServiceGapicClient
      *
      * @param string $parent       Required. The resource name of the DataItem to list Annotations from.
      *                             Format:
-     *
      *                             `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
      * @param array  $optionalArgs {
      *     Optional.
@@ -1098,8 +1096,7 @@ class DatasetServiceGapicClient
      *
      * @param Dataset   $dataset      Required. The Dataset which replaces the resource on the server.
      * @param FieldMask $updateMask   Required. The update mask applies to the resource.
-     *                                For the `FieldMask` definition, see
-     *                                [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     *                                For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      *                                Updatable fields:
      *
      *                                * `display_name`

@@ -100,7 +100,7 @@ func defaultJobCallOptions() *JobCallOptions {
 	}
 }
 
-// internalJobClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalJobClient is an interface that defines the methods availaible from Vertex AI API.
 type internalJobClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -131,10 +131,10 @@ type internalJobClient interface {
 	CancelBatchPredictionJob(context.Context, *aiplatformpb.CancelBatchPredictionJobRequest, ...gax.CallOption) error
 }
 
-// JobClient is a client for interacting with Cloud AI Platform API.
+// JobClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// A service for creating and managing AI Platform’s jobs.
+// A service for creating and managing Vertex AI’s jobs.
 type JobClient struct {
 	// The internal transport-dependent client.
 	internalClient internalJobClient
@@ -324,7 +324,7 @@ func (c *JobClient) CancelBatchPredictionJob(ctx context.Context, req *aiplatfor
 	return c.internalClient.CancelBatchPredictionJob(ctx, req, opts...)
 }
 
-// jobGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// jobGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type jobGRPCClient struct {
@@ -352,7 +352,7 @@ type jobGRPCClient struct {
 // NewJobClient creates a new job service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// A service for creating and managing AI Platform’s jobs.
+// A service for creating and managing Vertex AI’s jobs.
 func NewJobClient(ctx context.Context, opts ...option.ClientOption) (*JobClient, error) {
 	clientOpts := defaultJobGRPCClientOptions()
 	if newJobClientHook != nil {

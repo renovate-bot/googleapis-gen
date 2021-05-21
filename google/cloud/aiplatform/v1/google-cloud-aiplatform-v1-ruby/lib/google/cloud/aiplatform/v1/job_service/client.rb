@@ -27,7 +27,7 @@ module Google
           ##
           # Client for the JobService service.
           #
-          # A service for creating and managing AI Platform's jobs.
+          # A service for creating and managing Vertex AI's jobs.
           #
           class Client
             include Paths
@@ -671,7 +671,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the DataLabelingJob.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -839,7 +838,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the DataLabelingJob to be deleted.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -909,7 +907,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the DataLabelingJob.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -1047,7 +1044,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the HyperparameterTuningJob resource.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -1211,7 +1207,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the HyperparameterTuningJob resource to be deleted.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -1290,7 +1285,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the HyperparameterTuningJob to cancel.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -1429,7 +1423,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the BatchPredictionJob resource.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -1506,6 +1499,8 @@ module Google
             #       * `display_name` supports = and !=.
             #
             #       * `state` supports = and !=.
+            #
+            #       * `model_display_name` supports = and !=
             #
             #     Some examples of using the filter are:
             #
@@ -1594,7 +1589,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the BatchPredictionJob resource to be deleted.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -1673,7 +1667,6 @@ module Google
             #   @param name [::String]
             #     Required. The name of the BatchPredictionJob to cancel.
             #     Format:
-            #
             #     `projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
             #
             # @yield [response, operation] Access the result along with the RPC operation

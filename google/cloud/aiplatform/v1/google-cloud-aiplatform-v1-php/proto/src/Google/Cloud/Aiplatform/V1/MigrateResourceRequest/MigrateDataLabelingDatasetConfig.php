@@ -25,7 +25,7 @@ class MigrateDataLabelingDatasetConfig extends \Google\Protobuf\Internal\Message
      */
     protected $dataset = '';
     /**
-     * Optional. Display name of the Dataset in AI Platform.
+     * Optional. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string dataset_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -33,7 +33,7 @@ class MigrateDataLabelingDatasetConfig extends \Google\Protobuf\Internal\Message
     protected $dataset_display_name = '';
     /**
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig.MigrateDataLabelingAnnotatedDatasetConfig migrate_data_labeling_annotated_dataset_configs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -51,11 +51,11 @@ class MigrateDataLabelingDatasetConfig extends \Google\Protobuf\Internal\Message
      *           Format:
      *           `projects/{project}/datasets/{dataset}`.
      *     @type string $dataset_display_name
-     *           Optional. Display name of the Dataset in AI Platform.
+     *           Optional. Display name of the Dataset in Vertex AI.
      *           System will pick a display name if unspecified.
      *     @type \Google\Cloud\Aiplatform\V1\MigrateResourceRequest\MigrateDataLabelingDatasetConfig\MigrateDataLabelingAnnotatedDatasetConfig[]|\Google\Protobuf\Internal\RepeatedField $migrate_data_labeling_annotated_dataset_configs
      *           Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     *           AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     *           Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      *           to the datalabeling Dataset.
      * }
      */
@@ -95,7 +95,7 @@ class MigrateDataLabelingDatasetConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Display name of the Dataset in AI Platform.
+     * Optional. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string dataset_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -107,7 +107,7 @@ class MigrateDataLabelingDatasetConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Display name of the Dataset in AI Platform.
+     * Optional. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string dataset_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -124,7 +124,7 @@ class MigrateDataLabelingDatasetConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig.MigrateDataLabelingAnnotatedDatasetConfig migrate_data_labeling_annotated_dataset_configs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -137,7 +137,7 @@ class MigrateDataLabelingDatasetConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig.MigrateDataLabelingAnnotatedDatasetConfig migrate_data_labeling_annotated_dataset_configs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

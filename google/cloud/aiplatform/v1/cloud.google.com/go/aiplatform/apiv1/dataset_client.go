@@ -80,7 +80,7 @@ func defaultDatasetCallOptions() *DatasetCallOptions {
 	}
 }
 
-// internalDatasetClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalDatasetClient is an interface that defines the methods availaible from Vertex AI API.
 type internalDatasetClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -101,7 +101,7 @@ type internalDatasetClient interface {
 	ListAnnotations(context.Context, *aiplatformpb.ListAnnotationsRequest, ...gax.CallOption) *AnnotationIterator
 }
 
-// DatasetClient is a client for interacting with Cloud AI Platform API.
+// DatasetClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type DatasetClient struct {
 	// The internal transport-dependent client.
@@ -212,7 +212,7 @@ func (c *DatasetClient) ListAnnotations(ctx context.Context, req *aiplatformpb.L
 	return c.internalClient.ListAnnotations(ctx, req, opts...)
 }
 
-// datasetGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// datasetGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type datasetGRPCClient struct {
