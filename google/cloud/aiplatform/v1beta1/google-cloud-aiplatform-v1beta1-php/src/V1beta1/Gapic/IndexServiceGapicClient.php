@@ -676,8 +676,7 @@ class IndexServiceGapicClient
      *
      *     @type FieldMask $updateMask
      *           The update mask applies to the resource.
-     *           For the `FieldMask` definition, see
-     *           [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     *           For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry

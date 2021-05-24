@@ -411,8 +411,7 @@ module Google
             #     Required. The Index which updates the resource on the server.
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     The update mask applies to the resource.
-            #     For the `FieldMask` definition, see
-            #     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+            #     For the `FieldMask` definition, see {::Google::Protobuf::FieldMask google.protobuf.FieldMask}.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]

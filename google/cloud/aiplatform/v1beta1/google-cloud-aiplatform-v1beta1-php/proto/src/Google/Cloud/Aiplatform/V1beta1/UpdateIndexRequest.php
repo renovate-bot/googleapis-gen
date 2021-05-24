@@ -23,8 +23,7 @@ class UpdateIndexRequest extends \Google\Protobuf\Internal\Message
     protected $index = null;
     /**
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
@@ -40,8 +39,7 @@ class UpdateIndexRequest extends \Google\Protobuf\Internal\Message
      *           Required. The Index which updates the resource on the server.
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           The update mask applies to the resource.
-     *           For the `FieldMask` definition, see
-     *           [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     *           For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * }
      */
     public function __construct($data = NULL) {
@@ -87,8 +85,7 @@ class UpdateIndexRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -110,8 +107,7 @@ class UpdateIndexRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @param \Google\Protobuf\FieldMask $var

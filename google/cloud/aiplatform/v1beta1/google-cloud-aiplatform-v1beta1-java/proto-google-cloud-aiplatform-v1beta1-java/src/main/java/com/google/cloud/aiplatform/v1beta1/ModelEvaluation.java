@@ -1111,8 +1111,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. Points to a YAML file stored on Google Cloud Storage describing the
    * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
-   * defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
    * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1135,8 +1135,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. Points to a YAML file stored on Google Cloud Storage describing the
    * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
-   * defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
    * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2014,8 +2014,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
-     * defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2037,8 +2037,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
-     * defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2061,8 +2061,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
-     * defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2083,8 +2083,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
-     * defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2100,8 +2100,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Points to a YAML file stored on Google Cloud Storage describing the
      * [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
-     * defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
      * <code>string metrics_schema_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

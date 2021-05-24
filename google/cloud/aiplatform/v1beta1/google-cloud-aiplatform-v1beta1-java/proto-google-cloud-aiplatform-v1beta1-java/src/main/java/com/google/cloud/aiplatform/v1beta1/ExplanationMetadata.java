@@ -9133,8 +9133,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Points to a YAML file stored on Google Cloud Storage describing the format
    * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
-   * The schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * AutoML tabular Models always have this field populated by Vertex AI.
    * Note: The URI given on output may be different, including the URI scheme,
    * than the one given on input. The output URI will point to a location where
@@ -9161,8 +9161,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Points to a YAML file stored on Google Cloud Storage describing the format
    * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
-   * The schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * AutoML tabular Models always have this field populated by Vertex AI.
    * Note: The URI given on output may be different, including the URI scheme,
    * than the one given on input. The output URI will point to a location where
@@ -9997,8 +9997,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Points to a YAML file stored on Google Cloud Storage describing the format
      * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
-     * The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * AutoML tabular Models always have this field populated by Vertex AI.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
@@ -10024,8 +10024,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Points to a YAML file stored on Google Cloud Storage describing the format
      * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
-     * The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * AutoML tabular Models always have this field populated by Vertex AI.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
@@ -10052,8 +10052,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Points to a YAML file stored on Google Cloud Storage describing the format
      * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
-     * The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * AutoML tabular Models always have this field populated by Vertex AI.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
@@ -10078,8 +10078,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Points to a YAML file stored on Google Cloud Storage describing the format
      * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
-     * The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * AutoML tabular Models always have this field populated by Vertex AI.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
@@ -10099,8 +10099,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Points to a YAML file stored on Google Cloud Storage describing the format
      * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
-     * The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * AutoML tabular Models always have this field populated by Vertex AI.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where

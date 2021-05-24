@@ -846,9 +846,7 @@ class IndexEndpointServiceGapicClient
      * ```
      *
      * @param IndexEndpoint $indexEndpoint Required. The IndexEndpoint which replaces the resource on the server.
-     * @param FieldMask     $updateMask    Required. The update mask applies to the resource.
-     *                                     See
-     *                                     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * @param FieldMask     $updateMask    Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * @param array         $optionalArgs  {
      *     Optional.
      *

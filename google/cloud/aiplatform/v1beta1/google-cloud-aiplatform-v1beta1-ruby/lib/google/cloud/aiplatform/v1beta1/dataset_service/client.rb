@@ -340,8 +340,7 @@ module Google
             #     Required. The Dataset which replaces the resource on the server.
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     Required. The update mask applies to the resource.
-            #     For the `FieldMask` definition, see
-            #     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+            #     For the `FieldMask` definition, see {::Google::Protobuf::FieldMask google.protobuf.FieldMask}.
             #     Updatable fields:
             #
             #       * `display_name`

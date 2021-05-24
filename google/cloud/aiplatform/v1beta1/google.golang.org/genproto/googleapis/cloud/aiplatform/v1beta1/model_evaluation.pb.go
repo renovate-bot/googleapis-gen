@@ -53,8 +53,8 @@ type ModelEvaluation struct {
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// Output only. Points to a YAML file stored on Google Cloud Storage describing the
 	// [metrics][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
-	// defined as an OpenAPI 3.0.2
-	// [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+	// defined as an OpenAPI 3.0.2 [Schema
+	// Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
 	MetricsSchemaUri string `protobuf:"bytes,2,opt,name=metrics_schema_uri,json=metricsSchemaUri,proto3" json:"metrics_schema_uri,omitempty"`
 	// Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
 	// [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]

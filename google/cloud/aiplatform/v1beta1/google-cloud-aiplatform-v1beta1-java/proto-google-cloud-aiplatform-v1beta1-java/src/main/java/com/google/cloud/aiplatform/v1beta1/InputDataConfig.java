@@ -754,8 +754,8 @@ private static final long serialVersionUID = 0L;
    * Applicable only to custom training with Datasets that have DataItems and
    * Annotations.
    * Cloud Storage URI that points to a YAML file describing the annotation
-   * schema. The schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * schema. The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * The schema files that can be used here are found in
    * gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
    * chosen schema must be consistent with
@@ -790,8 +790,8 @@ private static final long serialVersionUID = 0L;
    * Applicable only to custom training with Datasets that have DataItems and
    * Annotations.
    * Cloud Storage URI that points to a YAML file describing the annotation
-   * schema. The schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * schema. The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * The schema files that can be used here are found in
    * gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
    * chosen schema must be consistent with
@@ -2993,8 +2993,8 @@ private static final long serialVersionUID = 0L;
      * Applicable only to custom training with Datasets that have DataItems and
      * Annotations.
      * Cloud Storage URI that points to a YAML file describing the annotation
-     * schema. The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * schema. The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * The schema files that can be used here are found in
      * gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
      * chosen schema must be consistent with
@@ -3028,8 +3028,8 @@ private static final long serialVersionUID = 0L;
      * Applicable only to custom training with Datasets that have DataItems and
      * Annotations.
      * Cloud Storage URI that points to a YAML file describing the annotation
-     * schema. The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * schema. The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * The schema files that can be used here are found in
      * gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
      * chosen schema must be consistent with
@@ -3064,8 +3064,8 @@ private static final long serialVersionUID = 0L;
      * Applicable only to custom training with Datasets that have DataItems and
      * Annotations.
      * Cloud Storage URI that points to a YAML file describing the annotation
-     * schema. The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * schema. The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * The schema files that can be used here are found in
      * gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
      * chosen schema must be consistent with
@@ -3098,8 +3098,8 @@ private static final long serialVersionUID = 0L;
      * Applicable only to custom training with Datasets that have DataItems and
      * Annotations.
      * Cloud Storage URI that points to a YAML file describing the annotation
-     * schema. The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * schema. The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * The schema files that can be used here are found in
      * gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
      * chosen schema must be consistent with
@@ -3127,8 +3127,8 @@ private static final long serialVersionUID = 0L;
      * Applicable only to custom training with Datasets that have DataItems and
      * Annotations.
      * Cloud Storage URI that points to a YAML file describing the annotation
-     * schema. The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * schema. The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * The schema files that can be used here are found in
      * gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
      * chosen schema must be consistent with

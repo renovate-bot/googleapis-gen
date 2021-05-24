@@ -152,9 +152,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.FieldMask updateMask_;
   /**
    * <pre>
-   * Required. The update mask applies to the resource.
-   * See
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -166,9 +164,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The update mask applies to the resource.
-   * See
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -180,9 +176,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The update mask applies to the resource.
-   * See
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -701,9 +695,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -714,9 +706,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -731,9 +721,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -753,9 +741,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -773,9 +759,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -797,9 +781,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -817,9 +799,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -831,9 +811,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -848,9 +826,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
-     * See
-     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>

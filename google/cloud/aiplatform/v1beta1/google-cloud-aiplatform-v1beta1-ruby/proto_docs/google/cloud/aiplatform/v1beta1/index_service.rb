@@ -102,8 +102,7 @@ module Google
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     The update mask applies to the resource.
-        #     For the `FieldMask` definition, see
-        #     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+        #     For the `FieldMask` definition, see {::Google::Protobuf::FieldMask google.protobuf.FieldMask}.
         class UpdateIndexRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

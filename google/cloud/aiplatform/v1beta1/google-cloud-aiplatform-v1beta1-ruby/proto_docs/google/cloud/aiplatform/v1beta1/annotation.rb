@@ -29,8 +29,8 @@ module Google
         # @!attribute [rw] payload_schema_uri
         #   @return [::String]
         #     Required. Google Cloud Storage URI points to a YAML file describing {::Google::Cloud::Aiplatform::V1beta1::Annotation#payload payload}. The
-        #     schema is defined as an
-        #     [OpenAPI 3.0.2 Schema Object](https://tinyurl.com/y538mdwt).
+        #     schema is defined as an [OpenAPI 3.0.2 Schema
+        #     Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
         #     The schema files that can be used here are found in
         #     gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
         #     chosen schema must be consistent with the parent Dataset's

@@ -347,8 +347,8 @@ private static final long serialVersionUID = 0L;
    * Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
    * information about the Index, that is specific to it. Unset if the Index
    * does not have any additional information.
-   * The schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -375,8 +375,8 @@ private static final long serialVersionUID = 0L;
    * Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
    * information about the Index, that is specific to it. Unset if the Index
    * does not have any additional information.
-   * The schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -1644,8 +1644,8 @@ private static final long serialVersionUID = 0L;
      * Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
      * information about the Index, that is specific to it. Unset if the Index
      * does not have any additional information.
-     * The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1671,8 +1671,8 @@ private static final long serialVersionUID = 0L;
      * Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
      * information about the Index, that is specific to it. Unset if the Index
      * does not have any additional information.
-     * The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1699,8 +1699,8 @@ private static final long serialVersionUID = 0L;
      * Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
      * information about the Index, that is specific to it. Unset if the Index
      * does not have any additional information.
-     * The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1725,8 +1725,8 @@ private static final long serialVersionUID = 0L;
      * Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
      * information about the Index, that is specific to it. Unset if the Index
      * does not have any additional information.
-     * The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1746,8 +1746,8 @@ private static final long serialVersionUID = 0L;
      * Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
      * information about the Index, that is specific to it. Unset if the Index
      * does not have any additional information.
-     * The schema is defined as an OpenAPI 3.0.2
-     * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+     * The schema is defined as an OpenAPI 3.0.2 [Schema
+     * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.

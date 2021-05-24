@@ -112,9 +112,7 @@ module Google
         #     Required. The Endpoint which replaces the resource on the server.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
-        #     Required. The update mask applies to the resource.
-        #     See
-        #     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+        #     Required. The update mask applies to the resource. See {::Google::Protobuf::FieldMask google.protobuf.FieldMask}.
         class UpdateEndpointRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

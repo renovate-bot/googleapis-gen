@@ -221,8 +221,7 @@ type UpdateDatasetRequest struct {
 	// Required. The Dataset which replaces the resource on the server.
 	Dataset *Dataset `protobuf:"bytes,1,opt,name=dataset,proto3" json:"dataset,omitempty"`
 	// Required. The update mask applies to the resource.
-	// For the `FieldMask` definition, see
-	// [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+	// For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
 	// Updatable fields:
 	//
 	//   * `display_name`

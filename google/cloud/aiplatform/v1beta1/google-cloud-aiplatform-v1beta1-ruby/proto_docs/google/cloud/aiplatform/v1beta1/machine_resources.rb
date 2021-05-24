@@ -24,10 +24,13 @@ module Google
         # Specification of a single machine.
         # @!attribute [rw] machine_type
         #   @return [::String]
-        #     Immutable. The type of the machine. For the machine types supported for prediction,
-        #     see https://tinyurl.com/aip-docs/predictions/machine-types.
-        #     For machine types supported for creating a custom training job, see
-        #     https://tinyurl.com/aip-docs/training/configure-compute.
+        #     Immutable. The type of the machine.
+        #
+        #     See the [list of machine types supported for
+        #     prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+        #
+        #     See the [list of machine types supported for custom
+        #     training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
         #
         #     For {::Google::Cloud::Aiplatform::V1beta1::DeployedModel DeployedModel} this field is optional, and the default
         #     value is `n1-standard-2`. For {::Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob BatchPredictionJob} or as part of
