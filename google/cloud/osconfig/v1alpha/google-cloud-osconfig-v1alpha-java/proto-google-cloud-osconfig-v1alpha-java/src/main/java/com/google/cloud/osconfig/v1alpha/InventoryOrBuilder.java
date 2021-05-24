@@ -60,10 +60,10 @@ public interface InventoryOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -71,10 +71,10 @@ public interface InventoryOrBuilder extends
   int getItemsCount();
   /**
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -89,10 +89,10 @@ public interface InventoryOrBuilder extends
   getItems();
   /**
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -101,10 +101,10 @@ public interface InventoryOrBuilder extends
   getItemsMap();
   /**
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -115,10 +115,10 @@ public interface InventoryOrBuilder extends
       com.google.cloud.osconfig.v1alpha.Inventory.Item defaultValue);
   /**
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

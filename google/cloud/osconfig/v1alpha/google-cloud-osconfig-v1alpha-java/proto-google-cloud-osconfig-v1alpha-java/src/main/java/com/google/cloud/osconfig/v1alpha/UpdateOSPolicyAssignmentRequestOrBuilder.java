@@ -36,8 +36,7 @@ public interface UpdateOSPolicyAssignmentRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Field mask that controls which fields of the assignment should be
-   * updated.
+   * Optional. Field mask that controls which fields of the assignment should be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -46,8 +45,7 @@ public interface UpdateOSPolicyAssignmentRequestOrBuilder extends
   boolean hasUpdateMask();
   /**
    * <pre>
-   * Optional. Field mask that controls which fields of the assignment should be
-   * updated.
+   * Optional. Field mask that controls which fields of the assignment should be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -56,8 +54,7 @@ public interface UpdateOSPolicyAssignmentRequestOrBuilder extends
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
-   * Optional. Field mask that controls which fields of the assignment should be
-   * updated.
+   * Optional. Field mask that controls which fields of the assignment should be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

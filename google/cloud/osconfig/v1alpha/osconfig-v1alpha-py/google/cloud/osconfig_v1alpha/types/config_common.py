@@ -44,6 +44,10 @@ class OSPolicyResourceConfigStep(proto.Message):
             Configuration step type.
         outcome (google.cloud.osconfig_v1alpha.types.OSPolicyResourceConfigStep.Outcome):
             Outcome of the configuration step.
+        error_message (str):
+            An error message recorded during the
+            execution of this step. Only populated when
+            outcome is FAILED.
     """
     class Type(proto.Enum):
         r"""Supported configuration step types"""
@@ -69,6 +73,10 @@ class OSPolicyResourceConfigStep(proto.Message):
         number=2,
         enum=Outcome,
     )
+    error_message = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class OSPolicyResourceCompliance(proto.Message):
@@ -81,7 +89,22 @@ class OSPolicyResourceCompliance(proto.Message):
             the agent for the OS policy resource.
         state (google.cloud.osconfig_v1alpha.types.OSPolicyComplianceState):
             Compliance state of the OS policy resource.
+        exec_resource_output (google.cloud.osconfig_v1alpha.types.OSPolicyResourceCompliance.ExecResourceOutput):
+            ExecResource specific output.
     """
+
+    class ExecResourceOutput(proto.Message):
+        r"""ExecResource specific output.
+        Attributes:
+            enforcement_output (bytes):
+                Output from Enforcement phase output file (if
+                run). Output size is limited to 100K bytes.
+        """
+
+        enforcement_output = proto.Field(
+            proto.BYTES,
+            number=2,
+        )
 
     os_policy_resource_id = proto.Field(
         proto.STRING,
@@ -96,6 +119,12 @@ class OSPolicyResourceCompliance(proto.Message):
         proto.ENUM,
         number=3,
         enum='OSPolicyComplianceState',
+    )
+    exec_resource_output = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='output',
+        message=ExecResourceOutput,
     )
 
 

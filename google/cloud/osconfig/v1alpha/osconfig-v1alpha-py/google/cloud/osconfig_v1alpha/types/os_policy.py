@@ -663,6 +663,14 @@ class OSPolicy(proto.Message):
                         during execution.
                     interpreter (google.cloud.osconfig_v1alpha.types.OSPolicy.Resource.ExecResource.Exec.Interpreter):
                         Required. The script interpreter to use.
+                    output_file_path (str):
+                        Only recorded for enforce Exec.
+                        Path to an output file (that is created by this
+                        Exec) whose content will be recorded in
+                        OSPolicyResourceCompliance after a successful
+                        run. Absence or failure to read this file will
+                        result in this ExecResource being non-compliant.
+                        Output file size is limited to 100K bytes.
                 """
                 class Interpreter(proto.Enum):
                     r"""The interpreter to use."""
@@ -690,6 +698,10 @@ class OSPolicy(proto.Message):
                     proto.ENUM,
                     number=4,
                     enum='OSPolicy.Resource.ExecResource.Exec.Interpreter',
+                )
+                output_file_path = proto.Field(
+                    proto.STRING,
+                    number=5,
                 )
 
             validate = proto.Field(

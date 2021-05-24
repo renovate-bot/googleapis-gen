@@ -34,6 +34,7 @@ class OSPolicyResourceCompliance extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.osconfig.v1alpha.OSPolicyComplianceState state = 3;</code>
      */
     protected $state = 0;
+    protected $output;
 
     /**
      * Constructor.
@@ -48,6 +49,8 @@ class OSPolicyResourceCompliance extends \Google\Protobuf\Internal\Message
      *           resource.
      *     @type int $state
      *           Compliance state of the OS policy resource.
+     *     @type \Google\Cloud\OsConfig\V1alpha\OSPolicyResourceCompliance\ExecResourceOutput $exec_resource_output
+     *           ExecResource specific output.
      * }
      */
     public function __construct($data = NULL) {
@@ -133,6 +136,45 @@ class OSPolicyResourceCompliance extends \Google\Protobuf\Internal\Message
         $this->state = $var;
 
         return $this;
+    }
+
+    /**
+     * ExecResource specific output.
+     *
+     * Generated from protobuf field <code>.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutput exec_resource_output = 4;</code>
+     * @return \Google\Cloud\OsConfig\V1alpha\OSPolicyResourceCompliance\ExecResourceOutput|null
+     */
+    public function getExecResourceOutput()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasExecResourceOutput()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * ExecResource specific output.
+     *
+     * Generated from protobuf field <code>.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutput exec_resource_output = 4;</code>
+     * @param \Google\Cloud\OsConfig\V1alpha\OSPolicyResourceCompliance\ExecResourceOutput $var
+     * @return $this
+     */
+    public function setExecResourceOutput($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\OsConfig\V1alpha\OSPolicyResourceCompliance\ExecResourceOutput::class);
+        $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOutput()
+    {
+        return $this->whichOneof("output");
     }
 
 }

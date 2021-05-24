@@ -39,10 +39,10 @@ module Google
         #     Output only. Base level operating system information for the VM.
         # @!attribute [r] items
         #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::OsConfig::V1alpha::Inventory::Item}]
-        #     Output only. Inventory items related to the VM keyed by an opaque unique
-        #     identifier for each inventory item. The identifier is unique to each
-        #     distinct and addressable inventory item and will change, when there is a
-        #     new package version.
+        #     Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+        #     each inventory item. The identifier is unique to each distinct and
+        #     addressable inventory item and will change, when there is a new package
+        #     version.
         # @!attribute [r] update_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp of the last reported inventory for the VM.

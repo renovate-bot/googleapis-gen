@@ -16,8 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class Remote extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. URI from which to fetch the object. It should contain both
-     * the protocol and path following the format `{protocol}://{location}`.
+     * Required. URI from which to fetch the object. It should contain both the
+     * protocol and path following the format `{protocol}://{location}`.
      *
      * Generated from protobuf field <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -36,8 +36,8 @@ class Remote extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $uri
-     *           Required. URI from which to fetch the object. It should contain both
-     *           the protocol and path following the format `{protocol}://{location}`.
+     *           Required. URI from which to fetch the object. It should contain both the
+     *           protocol and path following the format `{protocol}://{location}`.
      *     @type string $sha256_checksum
      *           SHA256 checksum of the remote file.
      * }
@@ -48,8 +48,8 @@ class Remote extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. URI from which to fetch the object. It should contain both
-     * the protocol and path following the format `{protocol}://{location}`.
+     * Required. URI from which to fetch the object. It should contain both the
+     * protocol and path following the format `{protocol}://{location}`.
      *
      * Generated from protobuf field <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -60,8 +60,8 @@ class Remote extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. URI from which to fetch the object. It should contain both
-     * the protocol and path following the format `{protocol}://{location}`.
+     * Required. URI from which to fetch the object. It should contain both the
+     * protocol and path following the format `{protocol}://{location}`.
      *
      * Generated from protobuf field <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

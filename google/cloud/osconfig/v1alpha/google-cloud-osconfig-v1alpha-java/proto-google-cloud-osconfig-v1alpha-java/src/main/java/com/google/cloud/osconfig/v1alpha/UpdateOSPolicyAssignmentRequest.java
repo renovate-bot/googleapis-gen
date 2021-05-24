@@ -152,8 +152,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.FieldMask updateMask_;
   /**
    * <pre>
-   * Optional. Field mask that controls which fields of the assignment should be
-   * updated.
+   * Optional. Field mask that controls which fields of the assignment should be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -165,8 +164,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Field mask that controls which fields of the assignment should be
-   * updated.
+   * Optional. Field mask that controls which fields of the assignment should be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -178,8 +176,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Field mask that controls which fields of the assignment should be
-   * updated.
+   * Optional. Field mask that controls which fields of the assignment should be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -698,8 +695,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
     /**
      * <pre>
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -710,8 +706,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -726,8 +721,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -747,8 +741,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -766,8 +759,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -789,8 +781,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -808,8 +799,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -821,8 +811,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -837,8 +826,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

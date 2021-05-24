@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
   private OSPolicyResourceConfigStep() {
     type_ = 0;
     outcome_ = 0;
+    errorMessage_ = "";
   }
 
   @java.lang.Override
@@ -65,6 +66,12 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             outcome_ = rawValue;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            errorMessage_ = s;
             break;
           }
           default: {
@@ -487,6 +494,54 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome.UNRECOGNIZED : result;
   }
 
+  public static final int ERROR_MESSAGE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object errorMessage_;
+  /**
+   * <pre>
+   * An error message recorded during the execution of this step.
+   * Only populated when outcome is FAILED.
+   * </pre>
+   *
+   * <code>string error_message = 3;</code>
+   * @return The errorMessage.
+   */
+  @java.lang.Override
+  public java.lang.String getErrorMessage() {
+    java.lang.Object ref = errorMessage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      errorMessage_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * An error message recorded during the execution of this step.
+   * Only populated when outcome is FAILED.
+   * </pre>
+   *
+   * <code>string error_message = 3;</code>
+   * @return The bytes for errorMessage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getErrorMessageBytes() {
+    java.lang.Object ref = errorMessage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      errorMessage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -507,6 +562,9 @@ private static final long serialVersionUID = 0L;
     if (outcome_ != com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome.OUTCOME_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, outcome_);
     }
+    if (!getErrorMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errorMessage_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -523,6 +581,9 @@ private static final long serialVersionUID = 0L;
     if (outcome_ != com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome.OUTCOME_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, outcome_);
+    }
+    if (!getErrorMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errorMessage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -541,6 +602,8 @@ private static final long serialVersionUID = 0L;
 
     if (type_ != other.type_) return false;
     if (outcome_ != other.outcome_) return false;
+    if (!getErrorMessage()
+        .equals(other.getErrorMessage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -556,6 +619,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + type_;
     hash = (37 * hash) + OUTCOME_FIELD_NUMBER;
     hash = (53 * hash) + outcome_;
+    hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getErrorMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -698,6 +763,8 @@ private static final long serialVersionUID = 0L;
 
       outcome_ = 0;
 
+      errorMessage_ = "";
+
       return this;
     }
 
@@ -726,6 +793,7 @@ private static final long serialVersionUID = 0L;
       com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep result = new com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep(this);
       result.type_ = type_;
       result.outcome_ = outcome_;
+      result.errorMessage_ = errorMessage_;
       onBuilt();
       return result;
     }
@@ -779,6 +847,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.outcome_ != 0) {
         setOutcomeValue(other.getOutcomeValue());
+      }
+      if (!other.getErrorMessage().isEmpty()) {
+        errorMessage_ = other.errorMessage_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -953,6 +1025,107 @@ private static final long serialVersionUID = 0L;
     public Builder clearOutcome() {
       
       outcome_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object errorMessage_ = "";
+    /**
+     * <pre>
+     * An error message recorded during the execution of this step.
+     * Only populated when outcome is FAILED.
+     * </pre>
+     *
+     * <code>string error_message = 3;</code>
+     * @return The errorMessage.
+     */
+    public java.lang.String getErrorMessage() {
+      java.lang.Object ref = errorMessage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errorMessage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * An error message recorded during the execution of this step.
+     * Only populated when outcome is FAILED.
+     * </pre>
+     *
+     * <code>string error_message = 3;</code>
+     * @return The bytes for errorMessage.
+     */
+    public com.google.protobuf.ByteString
+        getErrorMessageBytes() {
+      java.lang.Object ref = errorMessage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errorMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * An error message recorded during the execution of this step.
+     * Only populated when outcome is FAILED.
+     * </pre>
+     *
+     * <code>string error_message = 3;</code>
+     * @param value The errorMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setErrorMessage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      errorMessage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An error message recorded during the execution of this step.
+     * Only populated when outcome is FAILED.
+     * </pre>
+     *
+     * <code>string error_message = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearErrorMessage() {
+      
+      errorMessage_ = getDefaultInstance().getErrorMessage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An error message recorded during the execution of this step.
+     * Only populated when outcome is FAILED.
+     * </pre>
+     *
+     * <code>string error_message = 3;</code>
+     * @param value The bytes for errorMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setErrorMessageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      errorMessage_ = value;
       onChanged();
       return this;
     }

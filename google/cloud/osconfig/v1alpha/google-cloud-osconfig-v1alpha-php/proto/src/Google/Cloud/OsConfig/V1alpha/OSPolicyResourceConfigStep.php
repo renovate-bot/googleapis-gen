@@ -28,6 +28,13 @@ class OSPolicyResourceConfigStep extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome outcome = 2;</code>
      */
     protected $outcome = 0;
+    /**
+     * An error message recorded during the execution of this step.
+     * Only populated when outcome is FAILED.
+     *
+     * Generated from protobuf field <code>string error_message = 3;</code>
+     */
+    protected $error_message = '';
 
     /**
      * Constructor.
@@ -39,6 +46,9 @@ class OSPolicyResourceConfigStep extends \Google\Protobuf\Internal\Message
      *           Configuration step type.
      *     @type int $outcome
      *           Outcome of the configuration step.
+     *     @type string $error_message
+     *           An error message recorded during the execution of this step.
+     *           Only populated when outcome is FAILED.
      * }
      */
     public function __construct($data = NULL) {
@@ -94,6 +104,34 @@ class OSPolicyResourceConfigStep extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\OsConfig\V1alpha\OSPolicyResourceConfigStep\Outcome::class);
         $this->outcome = $var;
+
+        return $this;
+    }
+
+    /**
+     * An error message recorded during the execution of this step.
+     * Only populated when outcome is FAILED.
+     *
+     * Generated from protobuf field <code>string error_message = 3;</code>
+     * @return string
+     */
+    public function getErrorMessage()
+    {
+        return $this->error_message;
+    }
+
+    /**
+     * An error message recorded during the execution of this step.
+     * Only populated when outcome is FAILED.
+     *
+     * Generated from protobuf field <code>string error_message = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErrorMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error_message = $var;
 
         return $this;
     }

@@ -269,8 +269,8 @@ type OSPolicyAssignment struct {
 	RevisionCreateTime *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=revision_create_time,json=revisionCreateTime,proto3" json:"revision_create_time,omitempty"`
 	// Output only. OS policy assignment rollout state
 	RolloutState OSPolicyAssignment_RolloutState `protobuf:"varint,9,opt,name=rollout_state,json=rolloutState,proto3,enum=google.cloud.osconfig.v1alpha.OSPolicyAssignment_RolloutState" json:"rollout_state,omitempty"`
-	// Output only. Indicates that this revision has been successfully rolled out
-	// in this zone and new VMs will be assigned OS policies from this revision.
+	// Output only. Indicates that this revision has been successfully rolled out in this zone
+	// and new VMs will be assigned OS policies from this revision.
 	//
 	// For a given OS policy assignment, there is only one revision with a value
 	// of `true` for this field.
@@ -282,8 +282,7 @@ type OSPolicyAssignment struct {
 	// * IN_PROGRESS
 	// * CANCELLING
 	Reconciling bool `protobuf:"varint,12,opt,name=reconciling,proto3" json:"reconciling,omitempty"`
-	// Output only. Server generated unique id for the OS policy assignment
-	// resource.
+	// Output only. Server generated unique id for the OS policy assignment resource.
 	Uid string `protobuf:"bytes,13,opt,name=uid,proto3" json:"uid,omitempty"`
 }
 
@@ -575,8 +574,7 @@ type UpdateOSPolicyAssignmentRequest struct {
 
 	// Required. The updated OS policy assignment.
 	OsPolicyAssignment *OSPolicyAssignment `protobuf:"bytes,1,opt,name=os_policy_assignment,json=osPolicyAssignment,proto3" json:"os_policy_assignment,omitempty"`
-	// Optional. Field mask that controls which fields of the assignment should be
-	// updated.
+	// Optional. Field mask that controls which fields of the assignment should be updated.
 	UpdateMask *fieldmaskpb.FieldMask `protobuf:"bytes,2,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
 }
 
@@ -1136,8 +1134,8 @@ type OSPolicyAssignment_Rollout struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The maximum number (or percentage) of VMs per zone to disrupt
-	// at any given moment.
+	// Required. The maximum number (or percentage) of VMs per zone to disrupt at
+	// any given moment.
 	DisruptionBudget *FixedOrPercent `protobuf:"bytes,1,opt,name=disruption_budget,json=disruptionBudget,proto3" json:"disruption_budget,omitempty"`
 	// Required. This determines the minimum duration of time to wait after the
 	// configuration changes are applied through the current rollout. A

@@ -14424,10 +14424,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -14449,10 +14449,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -14464,10 +14464,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -14484,10 +14484,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Inventory items related to the VM keyed by an opaque unique
-   * identifier for each inventory item. The identifier is unique to each
-   * distinct and addressable inventory item and will change, when there is a
-   * new package version.
+   * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+   * each inventory item. The identifier is unique to each distinct and
+   * addressable inventory item and will change, when there is a new package
+   * version.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15253,10 +15253,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15278,10 +15278,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15293,10 +15293,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15313,10 +15313,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15341,10 +15341,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15367,10 +15367,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15386,10 +15386,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.osconfig.v1alpha.Inventory.Item&gt; items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

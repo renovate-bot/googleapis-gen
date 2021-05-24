@@ -246,8 +246,8 @@ public interface OSPolicyAssignmentOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Indicates that this revision has been successfully rolled out
-   * in this zone and new VMs will be assigned OS policies from this revision.
+   * Output only. Indicates that this revision has been successfully rolled out in this zone
+   * and new VMs will be assigned OS policies from this revision.
    * For a given OS policy assignment, there is only one revision with a value
    * of `true` for this field.
    * </pre>
@@ -282,8 +282,7 @@ public interface OSPolicyAssignmentOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Server generated unique id for the OS policy assignment
-   * resource.
+   * Output only. Server generated unique id for the OS policy assignment resource.
    * </pre>
    *
    * <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -292,8 +291,7 @@ public interface OSPolicyAssignmentOrBuilder extends
   java.lang.String getUid();
   /**
    * <pre>
-   * Output only. Server generated unique id for the OS policy assignment
-   * resource.
+   * Output only. Server generated unique id for the OS policy assignment resource.
    * </pre>
    *
    * <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

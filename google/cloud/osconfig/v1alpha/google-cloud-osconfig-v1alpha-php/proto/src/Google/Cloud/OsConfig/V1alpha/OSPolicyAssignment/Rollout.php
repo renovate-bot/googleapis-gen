@@ -17,8 +17,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class Rollout extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The maximum number (or percentage) of VMs per zone to disrupt
-     * at any given moment.
+     * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+     * any given moment.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -41,8 +41,8 @@ class Rollout extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\OsConfig\V1alpha\FixedOrPercent $disruption_budget
-     *           Required. The maximum number (or percentage) of VMs per zone to disrupt
-     *           at any given moment.
+     *           Required. The maximum number (or percentage) of VMs per zone to disrupt at
+     *           any given moment.
      *     @type \Google\Protobuf\Duration $min_wait_duration
      *           Required. This determines the minimum duration of time to wait after the
      *           configuration changes are applied through the current rollout. A
@@ -57,8 +57,8 @@ class Rollout extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The maximum number (or percentage) of VMs per zone to disrupt
-     * at any given moment.
+     * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+     * any given moment.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\OsConfig\V1alpha\FixedOrPercent|null
@@ -79,8 +79,8 @@ class Rollout extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The maximum number (or percentage) of VMs per zone to disrupt
-     * at any given moment.
+     * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+     * any given moment.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\OsConfig\V1alpha\FixedOrPercent $var

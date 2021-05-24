@@ -37,10 +37,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ExecResource extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. What to run to validate this resource is in the desired
-     * state. An exit code of 100 indicates "in desired state", and exit code
-     * of 101 indicates "not in desired state". Any other exit code indicates
-     * a failure running validate.
+     * Required. What to run to validate this resource is in the desired state.
+     * An exit code of 100 indicates "in desired state", and exit code of 101
+     * indicates "not in desired state". Any other exit code indicates a
+     * failure running validate.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -61,10 +61,10 @@ class ExecResource extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\OsConfig\V1alpha\OSPolicy\Resource\ExecResource\Exec $validate
-     *           Required. What to run to validate this resource is in the desired
-     *           state. An exit code of 100 indicates "in desired state", and exit code
-     *           of 101 indicates "not in desired state". Any other exit code indicates
-     *           a failure running validate.
+     *           Required. What to run to validate this resource is in the desired state.
+     *           An exit code of 100 indicates "in desired state", and exit code of 101
+     *           indicates "not in desired state". Any other exit code indicates a
+     *           failure running validate.
      *     @type \Google\Cloud\OsConfig\V1alpha\OSPolicy\Resource\ExecResource\Exec $enforce
      *           What to run to bring this resource into the desired state.
      *           An exit code of 100 indicates "success", any other exit code indicates
@@ -77,10 +77,10 @@ class ExecResource extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. What to run to validate this resource is in the desired
-     * state. An exit code of 100 indicates "in desired state", and exit code
-     * of 101 indicates "not in desired state". Any other exit code indicates
-     * a failure running validate.
+     * Required. What to run to validate this resource is in the desired state.
+     * An exit code of 100 indicates "in desired state", and exit code of 101
+     * indicates "not in desired state". Any other exit code indicates a
+     * failure running validate.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\OsConfig\V1alpha\OSPolicy\Resource\ExecResource\Exec|null
@@ -101,10 +101,10 @@ class ExecResource extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. What to run to validate this resource is in the desired
-     * state. An exit code of 100 indicates "in desired state", and exit code
-     * of 101 indicates "not in desired state". Any other exit code indicates
-     * a failure running validate.
+     * Required. What to run to validate this resource is in the desired state.
+     * An exit code of 100 indicates "in desired state", and exit code of 101
+     * indicates "not in desired state". Any other exit code indicates a
+     * failure running validate.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\OsConfig\V1alpha\OSPolicy\Resource\ExecResource\Exec $var

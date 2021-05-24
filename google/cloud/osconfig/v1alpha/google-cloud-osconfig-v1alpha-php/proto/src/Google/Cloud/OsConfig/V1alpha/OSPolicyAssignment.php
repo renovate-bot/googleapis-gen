@@ -85,8 +85,8 @@ class OSPolicyAssignment extends \Google\Protobuf\Internal\Message
      */
     protected $rollout_state = 0;
     /**
-     * Output only. Indicates that this revision has been successfully rolled out
-     * in this zone and new VMs will be assigned OS policies from this revision.
+     * Output only. Indicates that this revision has been successfully rolled out in this zone
+     * and new VMs will be assigned OS policies from this revision.
      * For a given OS policy assignment, there is only one revision with a value
      * of `true` for this field.
      *
@@ -109,8 +109,7 @@ class OSPolicyAssignment extends \Google\Protobuf\Internal\Message
      */
     protected $reconciling = false;
     /**
-     * Output only. Server generated unique id for the OS policy assignment
-     * resource.
+     * Output only. Server generated unique id for the OS policy assignment resource.
      *
      * Generated from protobuf field <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -152,8 +151,8 @@ class OSPolicyAssignment extends \Google\Protobuf\Internal\Message
      *     @type int $rollout_state
      *           Output only. OS policy assignment rollout state
      *     @type bool $baseline
-     *           Output only. Indicates that this revision has been successfully rolled out
-     *           in this zone and new VMs will be assigned OS policies from this revision.
+     *           Output only. Indicates that this revision has been successfully rolled out in this zone
+     *           and new VMs will be assigned OS policies from this revision.
      *           For a given OS policy assignment, there is only one revision with a value
      *           of `true` for this field.
      *     @type bool $deleted
@@ -164,8 +163,7 @@ class OSPolicyAssignment extends \Google\Protobuf\Internal\Message
      *           * IN_PROGRESS
      *           * CANCELLING
      *     @type string $uid
-     *           Output only. Server generated unique id for the OS policy assignment
-     *           resource.
+     *           Output only. Server generated unique id for the OS policy assignment resource.
      * }
      */
     public function __construct($data = NULL) {
@@ -438,8 +436,8 @@ class OSPolicyAssignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Indicates that this revision has been successfully rolled out
-     * in this zone and new VMs will be assigned OS policies from this revision.
+     * Output only. Indicates that this revision has been successfully rolled out in this zone
+     * and new VMs will be assigned OS policies from this revision.
      * For a given OS policy assignment, there is only one revision with a value
      * of `true` for this field.
      *
@@ -452,8 +450,8 @@ class OSPolicyAssignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Indicates that this revision has been successfully rolled out
-     * in this zone and new VMs will be assigned OS policies from this revision.
+     * Output only. Indicates that this revision has been successfully rolled out in this zone
+     * and new VMs will be assigned OS policies from this revision.
      * For a given OS policy assignment, there is only one revision with a value
      * of `true` for this field.
      *
@@ -528,8 +526,7 @@ class OSPolicyAssignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Server generated unique id for the OS policy assignment
-     * resource.
+     * Output only. Server generated unique id for the OS policy assignment resource.
      *
      * Generated from protobuf field <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -540,8 +537,7 @@ class OSPolicyAssignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Server generated unique id for the OS policy assignment
-     * resource.
+     * Output only. Server generated unique id for the OS policy assignment resource.
      *
      * Generated from protobuf field <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

@@ -8,6 +8,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep" do
       optional :type, :enum, 1, "google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type"
       optional :outcome, :enum, 2, "google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome"
+      optional :error_message, :string, 3
     end
     add_enum "google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type" do
       value :TYPE_UNSPECIFIED, 0
@@ -25,6 +26,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :os_policy_resource_id, :string, 1
       repeated :config_steps, :message, 2, "google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep"
       optional :state, :enum, 3, "google.cloud.osconfig.v1alpha.OSPolicyComplianceState"
+      oneof :output do
+        optional :exec_resource_output, :message, 4, "google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutput"
+      end
+    end
+    add_message "google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutput" do
+      optional :enforcement_output, :bytes, 2
     end
     add_enum "google.cloud.osconfig.v1alpha.OSPolicyComplianceState" do
       value :OS_POLICY_COMPLIANCE_STATE_UNSPECIFIED, 0
@@ -44,6 +51,7 @@ module Google
         OSPolicyResourceConfigStep::Type = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Type").enummodule
         OSPolicyResourceConfigStep::Outcome = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome").enummodule
         OSPolicyResourceCompliance = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance").msgclass
+        OSPolicyResourceCompliance::ExecResourceOutput = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutput").msgclass
         OSPolicyComplianceState = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.v1alpha.OSPolicyComplianceState").enummodule
       end
     end

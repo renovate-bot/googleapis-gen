@@ -217,10 +217,10 @@ type Inventory struct {
 	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	// Output only. Base level operating system information for the VM.
 	OsInfo *Inventory_OsInfo `protobuf:"bytes,1,opt,name=os_info,json=osInfo,proto3" json:"os_info,omitempty"`
-	// Output only. Inventory items related to the VM keyed by an opaque unique
-	// identifier for each inventory item. The identifier is unique to each
-	// distinct and addressable inventory item and will change, when there is a
-	// new package version.
+	// Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+	// each inventory item. The identifier is unique to each distinct and
+	// addressable inventory item and will change, when there is a new package
+	// version.
 	Items map[string]*Inventory_Item `protobuf:"bytes,2,rep,name=items,proto3" json:"items,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	// Output only. Timestamp of the last reported inventory for the VM.
 	UpdateTime *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty"`

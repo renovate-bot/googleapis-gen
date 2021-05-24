@@ -18,8 +18,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class ZypperRepository extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. A one word, unique name for this repository. This is the
-     * `repo id` in the zypper config file and also the `display_name` if
+     * Required. A one word, unique name for this repository. This is the `repo
+     * id` in the zypper config file and also the `display_name` if
      * `display_name` is omitted. This id is also used as the unique
      * identifier when checking for GuestPolicy conflicts.
      *
@@ -52,8 +52,8 @@ class ZypperRepository extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *           Required. A one word, unique name for this repository. This is the
-     *           `repo id` in the zypper config file and also the `display_name` if
+     *           Required. A one word, unique name for this repository. This is the `repo
+     *           id` in the zypper config file and also the `display_name` if
      *           `display_name` is omitted. This id is also used as the unique
      *           identifier when checking for GuestPolicy conflicts.
      *     @type string $display_name
@@ -70,8 +70,8 @@ class ZypperRepository extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A one word, unique name for this repository. This is the
-     * `repo id` in the zypper config file and also the `display_name` if
+     * Required. A one word, unique name for this repository. This is the `repo
+     * id` in the zypper config file and also the `display_name` if
      * `display_name` is omitted. This id is also used as the unique
      * identifier when checking for GuestPolicy conflicts.
      *
@@ -84,8 +84,8 @@ class ZypperRepository extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A one word, unique name for this repository. This is the
-     * `repo id` in the zypper config file and also the `display_name` if
+     * Required. A one word, unique name for this repository. This is the `repo
+     * id` in the zypper config file and also the `display_name` if
      * `display_name` is omitted. This id is also used as the unique
      * identifier when checking for GuestPolicy conflicts.
      *

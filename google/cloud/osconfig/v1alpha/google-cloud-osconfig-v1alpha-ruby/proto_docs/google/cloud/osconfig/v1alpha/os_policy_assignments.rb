@@ -73,8 +73,8 @@ module Google
         #     Output only. OS policy assignment rollout state
         # @!attribute [r] baseline
         #   @return [::Boolean]
-        #     Output only. Indicates that this revision has been successfully rolled out
-        #     in this zone and new VMs will be assigned OS policies from this revision.
+        #     Output only. Indicates that this revision has been successfully rolled out in this zone
+        #     and new VMs will be assigned OS policies from this revision.
         #
         #     For a given OS policy assignment, there is only one revision with a value
         #     of `true` for this field.
@@ -89,8 +89,7 @@ module Google
         #     * CANCELLING
         # @!attribute [r] uid
         #   @return [::String]
-        #     Output only. Server generated unique id for the OS policy assignment
-        #     resource.
+        #     Output only. Server generated unique id for the OS policy assignment resource.
         class OSPolicyAssignment
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -157,8 +156,8 @@ module Google
           # assignment.
           # @!attribute [rw] disruption_budget
           #   @return [::Google::Cloud::OsConfig::V1alpha::FixedOrPercent]
-          #     Required. The maximum number (or percentage) of VMs per zone to disrupt
-          #     at any given moment.
+          #     Required. The maximum number (or percentage) of VMs per zone to disrupt at
+          #     any given moment.
           # @!attribute [rw] min_wait_duration
           #   @return [::Google::Protobuf::Duration]
           #     Required. This determines the minimum duration of time to wait after the
@@ -277,8 +276,7 @@ module Google
         #     Required. The updated OS policy assignment.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
-        #     Optional. Field mask that controls which fields of the assignment should be
-        #     updated.
+        #     Optional. Field mask that controls which fields of the assignment should be updated.
         class UpdateOSPolicyAssignmentRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

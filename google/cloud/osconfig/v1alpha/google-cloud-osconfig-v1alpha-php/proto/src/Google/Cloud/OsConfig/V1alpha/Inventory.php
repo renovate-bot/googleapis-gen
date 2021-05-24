@@ -34,10 +34,10 @@ class Inventory extends \Google\Protobuf\Internal\Message
      */
     protected $os_info = null;
     /**
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      *
      * Generated from protobuf field <code>map<string, .google.cloud.osconfig.v1alpha.Inventory.Item> items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -62,10 +62,10 @@ class Inventory extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\OsConfig\V1alpha\Inventory\OsInfo $os_info
      *           Output only. Base level operating system information for the VM.
      *     @type array|\Google\Protobuf\Internal\MapField $items
-     *           Output only. Inventory items related to the VM keyed by an opaque unique
-     *           identifier for each inventory item. The identifier is unique to each
-     *           distinct and addressable inventory item and will change, when there is a
-     *           new package version.
+     *           Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     *           each inventory item. The identifier is unique to each distinct and
+     *           addressable inventory item and will change, when there is a new package
+     *           version.
      *     @type \Google\Protobuf\Timestamp $update_time
      *           Output only. Timestamp of the last reported inventory for the VM.
      * }
@@ -142,10 +142,10 @@ class Inventory extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      *
      * Generated from protobuf field <code>map<string, .google.cloud.osconfig.v1alpha.Inventory.Item> items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\MapField
@@ -156,10 +156,10 @@ class Inventory extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Inventory items related to the VM keyed by an opaque unique
-     * identifier for each inventory item. The identifier is unique to each
-     * distinct and addressable inventory item and will change, when there is a
-     * new package version.
+     * Output only. Inventory items related to the VM keyed by an opaque unique identifier for
+     * each inventory item. The identifier is unique to each distinct and
+     * addressable inventory item and will change, when there is a new package
+     * version.
      *
      * Generated from protobuf field <code>map<string, .google.cloud.osconfig.v1alpha.Inventory.Item> items = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var

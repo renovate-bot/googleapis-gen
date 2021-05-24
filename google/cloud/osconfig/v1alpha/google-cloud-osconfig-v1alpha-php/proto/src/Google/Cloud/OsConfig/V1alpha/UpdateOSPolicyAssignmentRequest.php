@@ -22,8 +22,7 @@ class UpdateOSPolicyAssignmentRequest extends \Google\Protobuf\Internal\Message
      */
     protected $os_policy_assignment = null;
     /**
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -38,8 +37,7 @@ class UpdateOSPolicyAssignmentRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\OsConfig\V1alpha\OSPolicyAssignment $os_policy_assignment
      *           Required. The updated OS policy assignment.
      *     @type \Google\Protobuf\FieldMask $update_mask
-     *           Optional. Field mask that controls which fields of the assignment should be
-     *           updated.
+     *           Optional. Field mask that controls which fields of the assignment should be updated.
      * }
      */
     public function __construct($data = NULL) {
@@ -84,8 +82,7 @@ class UpdateOSPolicyAssignmentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -106,8 +103,7 @@ class UpdateOSPolicyAssignmentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Field mask that controls which fields of the assignment should be
-     * updated.
+     * Optional. Field mask that controls which fields of the assignment should be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Protobuf\FieldMask $var

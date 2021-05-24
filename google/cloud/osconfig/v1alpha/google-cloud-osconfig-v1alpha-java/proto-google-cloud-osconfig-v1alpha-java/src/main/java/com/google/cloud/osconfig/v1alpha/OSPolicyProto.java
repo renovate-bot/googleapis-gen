@@ -140,7 +140,7 @@ public final class OSPolicyProto {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/osconfig/v1alpha/os_polic" +
       "y.proto\022\035google.cloud.osconfig.v1alpha\032\037" +
-      "google/api/field_behavior.proto\"\317!\n\010OSPo" +
+      "google/api/field_behavior.proto\"\351!\n\010OSPo" +
       "licy\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\023\n\013description\030\002 \001" +
       "(\t\022?\n\004mode\030\003 \001(\0162,.google.cloud.osconfig" +
       ".v1alpha.OSPolicy.ModeB\003\340A\002\022S\n\017resource_" +
@@ -148,7 +148,7 @@ public final class OSPolicyProto {
       "lpha.OSPolicy.ResourceGroupB\003\340A\002\022%\n\035allo" +
       "w_no_resource_group_match\030\005 \001(\010\0325\n\010OSFil" +
       "ter\022\025\n\ros_short_name\030\001 \001(\t\022\022\n\nos_version" +
-      "\030\002 \001(\t\032\310\035\n\010Resource\022\017\n\002id\030\001 \001(\tB\003\340A\002\022O\n\003" +
+      "\030\002 \001(\t\032\342\035\n\010Resource\022\017\n\002id\030\001 \001(\tB\003\340A\002\022O\n\003" +
       "pkg\030\002 \001(\0132@.google.cloud.osconfig.v1alph" +
       "a.OSPolicy.Resource.PackageResourceH\000\022Y\n" +
       "\nrepository\030\003 \001(\0132C.google.cloud.osconfi" +
@@ -221,40 +221,40 @@ public final class OSPolicyProto {
       "\n\014display_name\030\002 \001(\t\022\025\n\010base_url\030\003 \001(\tB\003" +
       "\340A\002\022\020\n\010gpg_keys\030\004 \003(\t\0324\n\rGooRepository\022\021" +
       "\n\004name\030\001 \001(\tB\003\340A\002\022\020\n\003url\030\002 \001(\tB\003\340A\002B\014\n\nr" +
-      "epository\032\363\003\n\014ExecResource\022Y\n\010validate\030\001" +
+      "epository\032\215\004\n\014ExecResource\022Y\n\010validate\030\001" +
       " \001(\0132B.google.cloud.osconfig.v1alpha.OSP" +
       "olicy.Resource.ExecResource.ExecB\003\340A\002\022S\n" +
       "\007enforce\030\002 \001(\0132B.google.cloud.osconfig.v" +
       "1alpha.OSPolicy.Resource.ExecResource.Ex" +
-      "ec\032\262\002\n\004Exec\022E\n\004file\030\001 \001(\01325.google.cloud" +
+      "ec\032\314\002\n\004Exec\022E\n\004file\030\001 \001(\01325.google.cloud" +
       ".osconfig.v1alpha.OSPolicy.Resource.File" +
       "H\000\022\020\n\006script\030\002 \001(\tH\000\022\014\n\004args\030\003 \003(\t\022h\n\013in" +
       "terpreter\030\004 \001(\0162N.google.cloud.osconfig." +
       "v1alpha.OSPolicy.Resource.ExecResource.E" +
-      "xec.InterpreterB\003\340A\002\"O\n\013Interpreter\022\033\n\027I" +
-      "NTERPRETER_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\t\n\005SH" +
-      "ELL\020\002\022\016\n\nPOWERSHELL\020\003B\010\n\006source\032\326\002\n\014File" +
-      "Resource\022E\n\004file\030\001 \001(\01325.google.cloud.os" +
-      "config.v1alpha.OSPolicy.Resource.FileH\000\022" +
-      "\021\n\007content\030\002 \001(\tH\000\022\021\n\004path\030\003 \001(\tB\003\340A\002\022^\n" +
-      "\005state\030\004 \001(\0162J.google.cloud.osconfig.v1a" +
-      "lpha.OSPolicy.Resource.FileResource.Desi" +
-      "redStateB\003\340A\002\022\023\n\013permissions\030\005 \001(\t\"Z\n\014De" +
-      "siredState\022\035\n\031DESIRED_STATE_UNSPECIFIED\020" +
-      "\000\022\013\n\007PRESENT\020\001\022\n\n\006ABSENT\020\002\022\022\n\016CONTENTS_M" +
-      "ATCH\020\003B\010\n\006sourceB\017\n\rresource_type\032\236\001\n\rRe" +
-      "sourceGroup\022C\n\tos_filter\030\001 \001(\01320.google." +
-      "cloud.osconfig.v1alpha.OSPolicy.OSFilter" +
-      "\022H\n\tresources\030\002 \003(\01320.google.cloud.oscon" +
-      "fig.v1alpha.OSPolicy.ResourceB\003\340A\002\"=\n\004Mo" +
-      "de\022\024\n\020MODE_UNSPECIFIED\020\000\022\016\n\nVALIDATION\020\001" +
-      "\022\017\n\013ENFORCEMENT\020\002B\336\001\n!com.google.cloud.o" +
-      "sconfig.v1alphaB\rOSPolicyProtoP\001ZEgoogle" +
-      ".golang.org/genproto/googleapis/cloud/os" +
-      "config/v1alpha;osconfig\252\002\035Google.Cloud.O" +
-      "sConfig.V1Alpha\312\002\035Google\\Cloud\\OsConfig\\" +
-      "V1alpha\352\002 Google::Cloud::OsConfig::V1alp" +
-      "hab\006proto3"
+      "xec.InterpreterB\003\340A\002\022\030\n\020output_file_path" +
+      "\030\005 \001(\t\"O\n\013Interpreter\022\033\n\027INTERPRETER_UNS" +
+      "PECIFIED\020\000\022\010\n\004NONE\020\001\022\t\n\005SHELL\020\002\022\016\n\nPOWER" +
+      "SHELL\020\003B\010\n\006source\032\326\002\n\014FileResource\022E\n\004fi" +
+      "le\030\001 \001(\01325.google.cloud.osconfig.v1alpha" +
+      ".OSPolicy.Resource.FileH\000\022\021\n\007content\030\002 \001" +
+      "(\tH\000\022\021\n\004path\030\003 \001(\tB\003\340A\002\022^\n\005state\030\004 \001(\0162J" +
+      ".google.cloud.osconfig.v1alpha.OSPolicy." +
+      "Resource.FileResource.DesiredStateB\003\340A\002\022" +
+      "\023\n\013permissions\030\005 \001(\t\"Z\n\014DesiredState\022\035\n\031" +
+      "DESIRED_STATE_UNSPECIFIED\020\000\022\013\n\007PRESENT\020\001" +
+      "\022\n\n\006ABSENT\020\002\022\022\n\016CONTENTS_MATCH\020\003B\010\n\006sour" +
+      "ceB\017\n\rresource_type\032\236\001\n\rResourceGroup\022C\n" +
+      "\tos_filter\030\001 \001(\01320.google.cloud.osconfig" +
+      ".v1alpha.OSPolicy.OSFilter\022H\n\tresources\030" +
+      "\002 \003(\01320.google.cloud.osconfig.v1alpha.OS" +
+      "Policy.ResourceB\003\340A\002\"=\n\004Mode\022\024\n\020MODE_UNS" +
+      "PECIFIED\020\000\022\016\n\nVALIDATION\020\001\022\017\n\013ENFORCEMEN" +
+      "T\020\002B\336\001\n!com.google.cloud.osconfig.v1alph" +
+      "aB\rOSPolicyProtoP\001ZEgoogle.golang.org/ge" +
+      "nproto/googleapis/cloud/osconfig/v1alpha" +
+      ";osconfig\252\002\035Google.Cloud.OsConfig.V1Alph" +
+      "a\312\002\035Google\\Cloud\\OsConfig\\V1alpha\352\002 Goog" +
+      "le::Cloud::OsConfig::V1alphab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -386,7 +386,7 @@ public final class OSPolicyProto {
     internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_Exec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_ExecResource_Exec_descriptor,
-        new java.lang.String[] { "File", "Script", "Args", "Interpreter", "Source", });
+        new java.lang.String[] { "File", "Script", "Args", "Interpreter", "OutputFilePath", "Source", });
     internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_FileResource_descriptor =
       internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_descriptor.getNestedTypes().get(4);
     internal_static_google_cloud_osconfig_v1alpha_OSPolicy_Resource_FileResource_fieldAccessorTable = new

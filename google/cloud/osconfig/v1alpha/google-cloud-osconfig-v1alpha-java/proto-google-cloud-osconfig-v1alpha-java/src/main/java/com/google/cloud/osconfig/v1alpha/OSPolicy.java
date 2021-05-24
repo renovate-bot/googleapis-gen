@@ -1640,8 +1640,8 @@ private static final long serialVersionUID = 0L;
 
         /**
          * <pre>
-         * Required. URI from which to fetch the object. It should contain both
-         * the protocol and path following the format `{protocol}://{location}`.
+         * Required. URI from which to fetch the object. It should contain both the
+         * protocol and path following the format `{protocol}://{location}`.
          * </pre>
          *
          * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1650,8 +1650,8 @@ private static final long serialVersionUID = 0L;
         java.lang.String getUri();
         /**
          * <pre>
-         * Required. URI from which to fetch the object. It should contain both
-         * the protocol and path following the format `{protocol}://{location}`.
+         * Required. URI from which to fetch the object. It should contain both the
+         * protocol and path following the format `{protocol}://{location}`.
          * </pre>
          *
          * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1779,8 +1779,8 @@ private static final long serialVersionUID = 0L;
         private volatile java.lang.Object uri_;
         /**
          * <pre>
-         * Required. URI from which to fetch the object. It should contain both
-         * the protocol and path following the format `{protocol}://{location}`.
+         * Required. URI from which to fetch the object. It should contain both the
+         * protocol and path following the format `{protocol}://{location}`.
          * </pre>
          *
          * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1801,8 +1801,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. URI from which to fetch the object. It should contain both
-         * the protocol and path following the format `{protocol}://{location}`.
+         * Required. URI from which to fetch the object. It should contain both the
+         * protocol and path following the format `{protocol}://{location}`.
          * </pre>
          *
          * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2195,8 +2195,8 @@ private static final long serialVersionUID = 0L;
           private java.lang.Object uri_ = "";
           /**
            * <pre>
-           * Required. URI from which to fetch the object. It should contain both
-           * the protocol and path following the format `{protocol}://{location}`.
+           * Required. URI from which to fetch the object. It should contain both the
+           * protocol and path following the format `{protocol}://{location}`.
            * </pre>
            *
            * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2216,8 +2216,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. URI from which to fetch the object. It should contain both
-           * the protocol and path following the format `{protocol}://{location}`.
+           * Required. URI from which to fetch the object. It should contain both the
+           * protocol and path following the format `{protocol}://{location}`.
            * </pre>
            *
            * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2238,8 +2238,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. URI from which to fetch the object. It should contain both
-           * the protocol and path following the format `{protocol}://{location}`.
+           * Required. URI from which to fetch the object. It should contain both the
+           * protocol and path following the format `{protocol}://{location}`.
            * </pre>
            *
            * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2258,8 +2258,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. URI from which to fetch the object. It should contain both
-           * the protocol and path following the format `{protocol}://{location}`.
+           * Required. URI from which to fetch the object. It should contain both the
+           * protocol and path following the format `{protocol}://{location}`.
            * </pre>
            *
            * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2273,8 +2273,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. URI from which to fetch the object. It should contain both
-           * the protocol and path following the format `{protocol}://{location}`.
+           * Required. URI from which to fetch the object. It should contain both the
+           * protocol and path following the format `{protocol}://{location}`.
            * </pre>
            *
            * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -12742,8 +12742,8 @@ private static final long serialVersionUID = 0L;
 
         /**
          * <pre>
-         * Required. List of components for this repository. Must contain at
-         * least one item.
+         * Required. List of components for this repository. Must contain at least one
+         * item.
          * </pre>
          *
          * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -12753,8 +12753,8 @@ private static final long serialVersionUID = 0L;
             getComponentsList();
         /**
          * <pre>
-         * Required. List of components for this repository. Must contain at
-         * least one item.
+         * Required. List of components for this repository. Must contain at least one
+         * item.
          * </pre>
          *
          * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -12763,8 +12763,8 @@ private static final long serialVersionUID = 0L;
         int getComponentsCount();
         /**
          * <pre>
-         * Required. List of components for this repository. Must contain at
-         * least one item.
+         * Required. List of components for this repository. Must contain at least one
+         * item.
          * </pre>
          *
          * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -12774,8 +12774,8 @@ private static final long serialVersionUID = 0L;
         java.lang.String getComponents(int index);
         /**
          * <pre>
-         * Required. List of components for this repository. Must contain at
-         * least one item.
+         * Required. List of components for this repository. Must contain at least one
+         * item.
          * </pre>
          *
          * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13200,8 +13200,8 @@ private static final long serialVersionUID = 0L;
         private com.google.protobuf.LazyStringList components_;
         /**
          * <pre>
-         * Required. List of components for this repository. Must contain at
-         * least one item.
+         * Required. List of components for this repository. Must contain at least one
+         * item.
          * </pre>
          *
          * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13213,8 +13213,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. List of components for this repository. Must contain at
-         * least one item.
+         * Required. List of components for this repository. Must contain at least one
+         * item.
          * </pre>
          *
          * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13225,8 +13225,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. List of components for this repository. Must contain at
-         * least one item.
+         * Required. List of components for this repository. Must contain at least one
+         * item.
          * </pre>
          *
          * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13238,8 +13238,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. List of components for this repository. Must contain at
-         * least one item.
+         * Required. List of components for this repository. Must contain at least one
+         * item.
          * </pre>
          *
          * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13968,8 +13968,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. List of components for this repository. Must contain at
-           * least one item.
+           * Required. List of components for this repository. Must contain at least one
+           * item.
            * </pre>
            *
            * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13981,8 +13981,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. List of components for this repository. Must contain at
-           * least one item.
+           * Required. List of components for this repository. Must contain at least one
+           * item.
            * </pre>
            *
            * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13993,8 +13993,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. List of components for this repository. Must contain at
-           * least one item.
+           * Required. List of components for this repository. Must contain at least one
+           * item.
            * </pre>
            *
            * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -14006,8 +14006,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. List of components for this repository. Must contain at
-           * least one item.
+           * Required. List of components for this repository. Must contain at least one
+           * item.
            * </pre>
            *
            * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -14020,8 +14020,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. List of components for this repository. Must contain at
-           * least one item.
+           * Required. List of components for this repository. Must contain at least one
+           * item.
            * </pre>
            *
            * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -14041,8 +14041,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. List of components for this repository. Must contain at
-           * least one item.
+           * Required. List of components for this repository. Must contain at least one
+           * item.
            * </pre>
            *
            * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -14061,8 +14061,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. List of components for this repository. Must contain at
-           * least one item.
+           * Required. List of components for this repository. Must contain at least one
+           * item.
            * </pre>
            *
            * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -14079,8 +14079,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. List of components for this repository. Must contain at
-           * least one item.
+           * Required. List of components for this repository. Must contain at least one
+           * item.
            * </pre>
            *
            * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -14094,8 +14094,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. List of components for this repository. Must contain at
-           * least one item.
+           * Required. List of components for this repository. Must contain at least one
+           * item.
            * </pre>
            *
            * <code>repeated string components = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -14273,8 +14273,8 @@ private static final long serialVersionUID = 0L;
 
         /**
          * <pre>
-         * Required. A one word, unique name for this repository. This is  the
-         * `repo id` in the yum config file and also the `display_name` if
+         * Required. A one word, unique name for this repository. This is  the `repo
+         * id` in the yum config file and also the `display_name` if
          * `display_name` is omitted. This id is also used as the unique
          * identifier when checking for resource conflicts.
          * </pre>
@@ -14285,8 +14285,8 @@ private static final long serialVersionUID = 0L;
         java.lang.String getId();
         /**
          * <pre>
-         * Required. A one word, unique name for this repository. This is  the
-         * `repo id` in the yum config file and also the `display_name` if
+         * Required. A one word, unique name for this repository. This is  the `repo
+         * id` in the yum config file and also the `display_name` if
          * `display_name` is omitted. This id is also used as the unique
          * identifier when checking for resource conflicts.
          * </pre>
@@ -14500,8 +14500,8 @@ private static final long serialVersionUID = 0L;
         private volatile java.lang.Object id_;
         /**
          * <pre>
-         * Required. A one word, unique name for this repository. This is  the
-         * `repo id` in the yum config file and also the `display_name` if
+         * Required. A one word, unique name for this repository. This is  the `repo
+         * id` in the yum config file and also the `display_name` if
          * `display_name` is omitted. This id is also used as the unique
          * identifier when checking for resource conflicts.
          * </pre>
@@ -14524,8 +14524,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. A one word, unique name for this repository. This is  the
-         * `repo id` in the yum config file and also the `display_name` if
+         * Required. A one word, unique name for this repository. This is  the `repo
+         * id` in the yum config file and also the `display_name` if
          * `display_name` is omitted. This id is also used as the unique
          * identifier when checking for resource conflicts.
          * </pre>
@@ -15072,8 +15072,8 @@ private static final long serialVersionUID = 0L;
           private java.lang.Object id_ = "";
           /**
            * <pre>
-           * Required. A one word, unique name for this repository. This is  the
-           * `repo id` in the yum config file and also the `display_name` if
+           * Required. A one word, unique name for this repository. This is  the `repo
+           * id` in the yum config file and also the `display_name` if
            * `display_name` is omitted. This id is also used as the unique
            * identifier when checking for resource conflicts.
            * </pre>
@@ -15095,8 +15095,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. A one word, unique name for this repository. This is  the
-           * `repo id` in the yum config file and also the `display_name` if
+           * Required. A one word, unique name for this repository. This is  the `repo
+           * id` in the yum config file and also the `display_name` if
            * `display_name` is omitted. This id is also used as the unique
            * identifier when checking for resource conflicts.
            * </pre>
@@ -15119,8 +15119,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. A one word, unique name for this repository. This is  the
-           * `repo id` in the yum config file and also the `display_name` if
+           * Required. A one word, unique name for this repository. This is  the `repo
+           * id` in the yum config file and also the `display_name` if
            * `display_name` is omitted. This id is also used as the unique
            * identifier when checking for resource conflicts.
            * </pre>
@@ -15141,8 +15141,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. A one word, unique name for this repository. This is  the
-           * `repo id` in the yum config file and also the `display_name` if
+           * Required. A one word, unique name for this repository. This is  the `repo
+           * id` in the yum config file and also the `display_name` if
            * `display_name` is omitted. This id is also used as the unique
            * identifier when checking for resource conflicts.
            * </pre>
@@ -15158,8 +15158,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. A one word, unique name for this repository. This is  the
-           * `repo id` in the yum config file and also the `display_name` if
+           * Required. A one word, unique name for this repository. This is  the `repo
+           * id` in the yum config file and also the `display_name` if
            * `display_name` is omitted. This id is also used as the unique
            * identifier when checking for resource conflicts.
            * </pre>
@@ -15576,8 +15576,8 @@ private static final long serialVersionUID = 0L;
 
         /**
          * <pre>
-         * Required. A one word, unique name for this repository. This is the
-         * `repo id` in the zypper config file and also the `display_name` if
+         * Required. A one word, unique name for this repository. This is the `repo
+         * id` in the zypper config file and also the `display_name` if
          * `display_name` is omitted. This id is also used as the unique
          * identifier when checking for GuestPolicy conflicts.
          * </pre>
@@ -15588,8 +15588,8 @@ private static final long serialVersionUID = 0L;
         java.lang.String getId();
         /**
          * <pre>
-         * Required. A one word, unique name for this repository. This is the
-         * `repo id` in the zypper config file and also the `display_name` if
+         * Required. A one word, unique name for this repository. This is the `repo
+         * id` in the zypper config file and also the `display_name` if
          * `display_name` is omitted. This id is also used as the unique
          * identifier when checking for GuestPolicy conflicts.
          * </pre>
@@ -15803,8 +15803,8 @@ private static final long serialVersionUID = 0L;
         private volatile java.lang.Object id_;
         /**
          * <pre>
-         * Required. A one word, unique name for this repository. This is the
-         * `repo id` in the zypper config file and also the `display_name` if
+         * Required. A one word, unique name for this repository. This is the `repo
+         * id` in the zypper config file and also the `display_name` if
          * `display_name` is omitted. This id is also used as the unique
          * identifier when checking for GuestPolicy conflicts.
          * </pre>
@@ -15827,8 +15827,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. A one word, unique name for this repository. This is the
-         * `repo id` in the zypper config file and also the `display_name` if
+         * Required. A one word, unique name for this repository. This is the `repo
+         * id` in the zypper config file and also the `display_name` if
          * `display_name` is omitted. This id is also used as the unique
          * identifier when checking for GuestPolicy conflicts.
          * </pre>
@@ -16375,8 +16375,8 @@ private static final long serialVersionUID = 0L;
           private java.lang.Object id_ = "";
           /**
            * <pre>
-           * Required. A one word, unique name for this repository. This is the
-           * `repo id` in the zypper config file and also the `display_name` if
+           * Required. A one word, unique name for this repository. This is the `repo
+           * id` in the zypper config file and also the `display_name` if
            * `display_name` is omitted. This id is also used as the unique
            * identifier when checking for GuestPolicy conflicts.
            * </pre>
@@ -16398,8 +16398,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. A one word, unique name for this repository. This is the
-           * `repo id` in the zypper config file and also the `display_name` if
+           * Required. A one word, unique name for this repository. This is the `repo
+           * id` in the zypper config file and also the `display_name` if
            * `display_name` is omitted. This id is also used as the unique
            * identifier when checking for GuestPolicy conflicts.
            * </pre>
@@ -16422,8 +16422,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. A one word, unique name for this repository. This is the
-           * `repo id` in the zypper config file and also the `display_name` if
+           * Required. A one word, unique name for this repository. This is the `repo
+           * id` in the zypper config file and also the `display_name` if
            * `display_name` is omitted. This id is also used as the unique
            * identifier when checking for GuestPolicy conflicts.
            * </pre>
@@ -16444,8 +16444,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. A one word, unique name for this repository. This is the
-           * `repo id` in the zypper config file and also the `display_name` if
+           * Required. A one word, unique name for this repository. This is the `repo
+           * id` in the zypper config file and also the `display_name` if
            * `display_name` is omitted. This id is also used as the unique
            * identifier when checking for GuestPolicy conflicts.
            * </pre>
@@ -16461,8 +16461,8 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Required. A one word, unique name for this repository. This is the
-           * `repo id` in the zypper config file and also the `display_name` if
+           * Required. A one word, unique name for this repository. This is the `repo
+           * id` in the zypper config file and also the `display_name` if
            * `display_name` is omitted. This id is also used as the unique
            * identifier when checking for GuestPolicy conflicts.
            * </pre>
@@ -19083,10 +19083,10 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * Required. What to run to validate this resource is in the desired
-       * state. An exit code of 100 indicates "in desired state", and exit code
-       * of 101 indicates "not in desired state". Any other exit code indicates
-       * a failure running validate.
+       * Required. What to run to validate this resource is in the desired state.
+       * An exit code of 100 indicates "in desired state", and exit code of 101
+       * indicates "not in desired state". Any other exit code indicates a
+       * failure running validate.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -19095,10 +19095,10 @@ private static final long serialVersionUID = 0L;
       boolean hasValidate();
       /**
        * <pre>
-       * Required. What to run to validate this resource is in the desired
-       * state. An exit code of 100 indicates "in desired state", and exit code
-       * of 101 indicates "not in desired state". Any other exit code indicates
-       * a failure running validate.
+       * Required. What to run to validate this resource is in the desired state.
+       * An exit code of 100 indicates "in desired state", and exit code of 101
+       * indicates "not in desired state". Any other exit code indicates a
+       * failure running validate.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -19107,10 +19107,10 @@ private static final long serialVersionUID = 0L;
       com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec getValidate();
       /**
        * <pre>
-       * Required. What to run to validate this resource is in the desired
-       * state. An exit code of 100 indicates "in desired state", and exit code
-       * of 101 indicates "not in desired state". Any other exit code indicates
-       * a failure running validate.
+       * Required. What to run to validate this resource is in the desired state.
+       * An exit code of 100 indicates "in desired state", and exit code of 101
+       * indicates "not in desired state". Any other exit code indicates a
+       * failure running validate.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -19401,6 +19401,36 @@ private static final long serialVersionUID = 0L;
          */
         com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec.Interpreter getInterpreter();
 
+        /**
+         * <pre>
+         * Only recorded for enforce Exec.
+         * Path to an output file (that is created by this Exec) whose
+         * content will be recorded in OSPolicyResourceCompliance after a
+         * successful run. Absence or failure to read this file will result in
+         * this ExecResource being non-compliant. Output file size is limited to
+         * 100K bytes.
+         * </pre>
+         *
+         * <code>string output_file_path = 5;</code>
+         * @return The outputFilePath.
+         */
+        java.lang.String getOutputFilePath();
+        /**
+         * <pre>
+         * Only recorded for enforce Exec.
+         * Path to an output file (that is created by this Exec) whose
+         * content will be recorded in OSPolicyResourceCompliance after a
+         * successful run. Absence or failure to read this file will result in
+         * this ExecResource being non-compliant. Output file size is limited to
+         * 100K bytes.
+         * </pre>
+         *
+         * <code>string output_file_path = 5;</code>
+         * @return The bytes for outputFilePath.
+         */
+        com.google.protobuf.ByteString
+            getOutputFilePathBytes();
+
         public com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec.SourceCase getSourceCase();
       }
       /**
@@ -19422,6 +19452,7 @@ private static final long serialVersionUID = 0L;
         private Exec() {
           args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           interpreter_ = 0;
+          outputFilePath_ = "";
         }
 
         @java.lang.Override
@@ -19488,6 +19519,12 @@ private static final long serialVersionUID = 0L;
                   int rawValue = input.readEnum();
 
                   interpreter_ = rawValue;
+                  break;
+                }
+                case 42: {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  outputFilePath_ = s;
                   break;
                 }
                 default: {
@@ -19926,6 +19963,62 @@ private static final long serialVersionUID = 0L;
           return result == null ? com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec.Interpreter.UNRECOGNIZED : result;
         }
 
+        public static final int OUTPUT_FILE_PATH_FIELD_NUMBER = 5;
+        private volatile java.lang.Object outputFilePath_;
+        /**
+         * <pre>
+         * Only recorded for enforce Exec.
+         * Path to an output file (that is created by this Exec) whose
+         * content will be recorded in OSPolicyResourceCompliance after a
+         * successful run. Absence or failure to read this file will result in
+         * this ExecResource being non-compliant. Output file size is limited to
+         * 100K bytes.
+         * </pre>
+         *
+         * <code>string output_file_path = 5;</code>
+         * @return The outputFilePath.
+         */
+        @java.lang.Override
+        public java.lang.String getOutputFilePath() {
+          java.lang.Object ref = outputFilePath_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = 
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            outputFilePath_ = s;
+            return s;
+          }
+        }
+        /**
+         * <pre>
+         * Only recorded for enforce Exec.
+         * Path to an output file (that is created by this Exec) whose
+         * content will be recorded in OSPolicyResourceCompliance after a
+         * successful run. Absence or failure to read this file will result in
+         * this ExecResource being non-compliant. Output file size is limited to
+         * 100K bytes.
+         * </pre>
+         *
+         * <code>string output_file_path = 5;</code>
+         * @return The bytes for outputFilePath.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString
+            getOutputFilePathBytes() {
+          java.lang.Object ref = outputFilePath_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            outputFilePath_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
         private byte memoizedIsInitialized = -1;
         @java.lang.Override
         public final boolean isInitialized() {
@@ -19951,6 +20044,9 @@ private static final long serialVersionUID = 0L;
           }
           if (interpreter_ != com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec.Interpreter.INTERPRETER_UNSPECIFIED.getNumber()) {
             output.writeEnum(4, interpreter_);
+          }
+          if (!getOutputFilePathBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 5, outputFilePath_);
           }
           unknownFields.writeTo(output);
         }
@@ -19980,6 +20076,9 @@ private static final long serialVersionUID = 0L;
             size += com.google.protobuf.CodedOutputStream
               .computeEnumSize(4, interpreter_);
           }
+          if (!getOutputFilePathBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, outputFilePath_);
+          }
           size += unknownFields.getSerializedSize();
           memoizedSize = size;
           return size;
@@ -19998,6 +20097,8 @@ private static final long serialVersionUID = 0L;
           if (!getArgsList()
               .equals(other.getArgsList())) return false;
           if (interpreter_ != other.interpreter_) return false;
+          if (!getOutputFilePath()
+              .equals(other.getOutputFilePath())) return false;
           if (!getSourceCase().equals(other.getSourceCase())) return false;
           switch (sourceCase_) {
             case 1:
@@ -20028,6 +20129,8 @@ private static final long serialVersionUID = 0L;
           }
           hash = (37 * hash) + INTERPRETER_FIELD_NUMBER;
           hash = (53 * hash) + interpreter_;
+          hash = (37 * hash) + OUTPUT_FILE_PATH_FIELD_NUMBER;
+          hash = (53 * hash) + getOutputFilePath().hashCode();
           switch (sourceCase_) {
             case 1:
               hash = (37 * hash) + FILE_FIELD_NUMBER;
@@ -20181,6 +20284,8 @@ private static final long serialVersionUID = 0L;
             bitField0_ = (bitField0_ & ~0x00000001);
             interpreter_ = 0;
 
+            outputFilePath_ = "";
+
             sourceCase_ = 0;
             source_ = null;
             return this;
@@ -20226,6 +20331,7 @@ private static final long serialVersionUID = 0L;
             }
             result.args_ = args_;
             result.interpreter_ = interpreter_;
+            result.outputFilePath_ = outputFilePath_;
             result.sourceCase_ = sourceCase_;
             onBuilt();
             return result;
@@ -20287,6 +20393,10 @@ private static final long serialVersionUID = 0L;
             }
             if (other.interpreter_ != 0) {
               setInterpreterValue(other.getInterpreterValue());
+            }
+            if (!other.getOutputFilePath().isEmpty()) {
+              outputFilePath_ = other.outputFilePath_;
+              onChanged();
             }
             switch (other.getSourceCase()) {
               case FILE: {
@@ -20871,6 +20981,127 @@ private static final long serialVersionUID = 0L;
             onChanged();
             return this;
           }
+
+          private java.lang.Object outputFilePath_ = "";
+          /**
+           * <pre>
+           * Only recorded for enforce Exec.
+           * Path to an output file (that is created by this Exec) whose
+           * content will be recorded in OSPolicyResourceCompliance after a
+           * successful run. Absence or failure to read this file will result in
+           * this ExecResource being non-compliant. Output file size is limited to
+           * 100K bytes.
+           * </pre>
+           *
+           * <code>string output_file_path = 5;</code>
+           * @return The outputFilePath.
+           */
+          public java.lang.String getOutputFilePath() {
+            java.lang.Object ref = outputFilePath_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              outputFilePath_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           * <pre>
+           * Only recorded for enforce Exec.
+           * Path to an output file (that is created by this Exec) whose
+           * content will be recorded in OSPolicyResourceCompliance after a
+           * successful run. Absence or failure to read this file will result in
+           * this ExecResource being non-compliant. Output file size is limited to
+           * 100K bytes.
+           * </pre>
+           *
+           * <code>string output_file_path = 5;</code>
+           * @return The bytes for outputFilePath.
+           */
+          public com.google.protobuf.ByteString
+              getOutputFilePathBytes() {
+            java.lang.Object ref = outputFilePath_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b = 
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                      (java.lang.String) ref);
+              outputFilePath_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           * <pre>
+           * Only recorded for enforce Exec.
+           * Path to an output file (that is created by this Exec) whose
+           * content will be recorded in OSPolicyResourceCompliance after a
+           * successful run. Absence or failure to read this file will result in
+           * this ExecResource being non-compliant. Output file size is limited to
+           * 100K bytes.
+           * </pre>
+           *
+           * <code>string output_file_path = 5;</code>
+           * @param value The outputFilePath to set.
+           * @return This builder for chaining.
+           */
+          public Builder setOutputFilePath(
+              java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  
+            outputFilePath_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * Only recorded for enforce Exec.
+           * Path to an output file (that is created by this Exec) whose
+           * content will be recorded in OSPolicyResourceCompliance after a
+           * successful run. Absence or failure to read this file will result in
+           * this ExecResource being non-compliant. Output file size is limited to
+           * 100K bytes.
+           * </pre>
+           *
+           * <code>string output_file_path = 5;</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearOutputFilePath() {
+            
+            outputFilePath_ = getDefaultInstance().getOutputFilePath();
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * Only recorded for enforce Exec.
+           * Path to an output file (that is created by this Exec) whose
+           * content will be recorded in OSPolicyResourceCompliance after a
+           * successful run. Absence or failure to read this file will result in
+           * this ExecResource being non-compliant. Output file size is limited to
+           * 100K bytes.
+           * </pre>
+           *
+           * <code>string output_file_path = 5;</code>
+           * @param value The bytes for outputFilePath to set.
+           * @return This builder for chaining.
+           */
+          public Builder setOutputFilePathBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+            
+            outputFilePath_ = value;
+            onChanged();
+            return this;
+          }
           @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -20928,10 +21159,10 @@ private static final long serialVersionUID = 0L;
       private com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate_;
       /**
        * <pre>
-       * Required. What to run to validate this resource is in the desired
-       * state. An exit code of 100 indicates "in desired state", and exit code
-       * of 101 indicates "not in desired state". Any other exit code indicates
-       * a failure running validate.
+       * Required. What to run to validate this resource is in the desired state.
+       * An exit code of 100 indicates "in desired state", and exit code of 101
+       * indicates "not in desired state". Any other exit code indicates a
+       * failure running validate.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -20943,10 +21174,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. What to run to validate this resource is in the desired
-       * state. An exit code of 100 indicates "in desired state", and exit code
-       * of 101 indicates "not in desired state". Any other exit code indicates
-       * a failure running validate.
+       * Required. What to run to validate this resource is in the desired state.
+       * An exit code of 100 indicates "in desired state", and exit code of 101
+       * indicates "not in desired state". Any other exit code indicates a
+       * failure running validate.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -20958,10 +21189,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. What to run to validate this resource is in the desired
-       * state. An exit code of 100 indicates "in desired state", and exit code
-       * of 101 indicates "not in desired state". Any other exit code indicates
-       * a failure running validate.
+       * Required. What to run to validate this resource is in the desired state.
+       * An exit code of 100 indicates "in desired state", and exit code of 101
+       * indicates "not in desired state". Any other exit code indicates a
+       * failure running validate.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -21390,10 +21621,10 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec, com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec.Builder, com.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.ExecOrBuilder> validateBuilder_;
         /**
          * <pre>
-         * Required. What to run to validate this resource is in the desired
-         * state. An exit code of 100 indicates "in desired state", and exit code
-         * of 101 indicates "not in desired state". Any other exit code indicates
-         * a failure running validate.
+         * Required. What to run to validate this resource is in the desired state.
+         * An exit code of 100 indicates "in desired state", and exit code of 101
+         * indicates "not in desired state". Any other exit code indicates a
+         * failure running validate.
          * </pre>
          *
          * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -21404,10 +21635,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. What to run to validate this resource is in the desired
-         * state. An exit code of 100 indicates "in desired state", and exit code
-         * of 101 indicates "not in desired state". Any other exit code indicates
-         * a failure running validate.
+         * Required. What to run to validate this resource is in the desired state.
+         * An exit code of 100 indicates "in desired state", and exit code of 101
+         * indicates "not in desired state". Any other exit code indicates a
+         * failure running validate.
          * </pre>
          *
          * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -21422,10 +21653,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. What to run to validate this resource is in the desired
-         * state. An exit code of 100 indicates "in desired state", and exit code
-         * of 101 indicates "not in desired state". Any other exit code indicates
-         * a failure running validate.
+         * Required. What to run to validate this resource is in the desired state.
+         * An exit code of 100 indicates "in desired state", and exit code of 101
+         * indicates "not in desired state". Any other exit code indicates a
+         * failure running validate.
          * </pre>
          *
          * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -21445,10 +21676,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. What to run to validate this resource is in the desired
-         * state. An exit code of 100 indicates "in desired state", and exit code
-         * of 101 indicates "not in desired state". Any other exit code indicates
-         * a failure running validate.
+         * Required. What to run to validate this resource is in the desired state.
+         * An exit code of 100 indicates "in desired state", and exit code of 101
+         * indicates "not in desired state". Any other exit code indicates a
+         * failure running validate.
          * </pre>
          *
          * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -21466,10 +21697,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. What to run to validate this resource is in the desired
-         * state. An exit code of 100 indicates "in desired state", and exit code
-         * of 101 indicates "not in desired state". Any other exit code indicates
-         * a failure running validate.
+         * Required. What to run to validate this resource is in the desired state.
+         * An exit code of 100 indicates "in desired state", and exit code of 101
+         * indicates "not in desired state". Any other exit code indicates a
+         * failure running validate.
          * </pre>
          *
          * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -21491,10 +21722,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. What to run to validate this resource is in the desired
-         * state. An exit code of 100 indicates "in desired state", and exit code
-         * of 101 indicates "not in desired state". Any other exit code indicates
-         * a failure running validate.
+         * Required. What to run to validate this resource is in the desired state.
+         * An exit code of 100 indicates "in desired state", and exit code of 101
+         * indicates "not in desired state". Any other exit code indicates a
+         * failure running validate.
          * </pre>
          *
          * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -21512,10 +21743,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. What to run to validate this resource is in the desired
-         * state. An exit code of 100 indicates "in desired state", and exit code
-         * of 101 indicates "not in desired state". Any other exit code indicates
-         * a failure running validate.
+         * Required. What to run to validate this resource is in the desired state.
+         * An exit code of 100 indicates "in desired state", and exit code of 101
+         * indicates "not in desired state". Any other exit code indicates a
+         * failure running validate.
          * </pre>
          *
          * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -21527,10 +21758,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. What to run to validate this resource is in the desired
-         * state. An exit code of 100 indicates "in desired state", and exit code
-         * of 101 indicates "not in desired state". Any other exit code indicates
-         * a failure running validate.
+         * Required. What to run to validate this resource is in the desired state.
+         * An exit code of 100 indicates "in desired state", and exit code of 101
+         * indicates "not in desired state". Any other exit code indicates a
+         * failure running validate.
          * </pre>
          *
          * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -21545,10 +21776,10 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. What to run to validate this resource is in the desired
-         * state. An exit code of 100 indicates "in desired state", and exit code
-         * of 101 indicates "not in desired state". Any other exit code indicates
-         * a failure running validate.
+         * Required. What to run to validate this resource is in the desired state.
+         * An exit code of 100 indicates "in desired state", and exit code of 101
+         * indicates "not in desired state". Any other exit code indicates a
+         * failure running validate.
          * </pre>
          *
          * <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec validate = 1 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -1347,8 +1347,7 @@ class OsConfigZonalServiceGapicClient
      *     Optional.
      *
      *     @type FieldMask $updateMask
-     *           Optional. Field mask that controls which fields of the assignment should be
-     *           updated.
+     *           Optional. Field mask that controls which fields of the assignment should be updated.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry

@@ -44,4 +44,26 @@ public interface OSPolicyResourceConfigStepOrBuilder extends
    * @return The outcome.
    */
   com.google.cloud.osconfig.v1alpha.OSPolicyResourceConfigStep.Outcome getOutcome();
+
+  /**
+   * <pre>
+   * An error message recorded during the execution of this step.
+   * Only populated when outcome is FAILED.
+   * </pre>
+   *
+   * <code>string error_message = 3;</code>
+   * @return The errorMessage.
+   */
+  java.lang.String getErrorMessage();
+  /**
+   * <pre>
+   * An error message recorded during the execution of this step.
+   * Only populated when outcome is FAILED.
+   * </pre>
+   *
+   * <code>string error_message = 3;</code>
+   * @return The bytes for errorMessage.
+   */
+  com.google.protobuf.ByteString
+      getErrorMessageBytes();
 }

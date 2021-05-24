@@ -27,6 +27,17 @@ class Exec extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec.Interpreter interpreter = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $interpreter = 0;
+    /**
+     * Only recorded for enforce Exec.
+     * Path to an output file (that is created by this Exec) whose
+     * content will be recorded in OSPolicyResourceCompliance after a
+     * successful run. Absence or failure to read this file will result in
+     * this ExecResource being non-compliant. Output file size is limited to
+     * 100K bytes.
+     *
+     * Generated from protobuf field <code>string output_file_path = 5;</code>
+     */
+    protected $output_file_path = '';
     protected $source;
 
     /**
@@ -44,6 +55,13 @@ class Exec extends \Google\Protobuf\Internal\Message
      *           Optional arguments to pass to the source during execution.
      *     @type int $interpreter
      *           Required. The script interpreter to use.
+     *     @type string $output_file_path
+     *           Only recorded for enforce Exec.
+     *           Path to an output file (that is created by this Exec) whose
+     *           content will be recorded in OSPolicyResourceCompliance after a
+     *           successful run. Absence or failure to read this file will result in
+     *           this ExecResource being non-compliant. Output file size is limited to
+     *           100K bytes.
      * }
      */
     public function __construct($data = NULL) {
@@ -163,6 +181,42 @@ class Exec extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\OsConfig\V1alpha\OSPolicy\Resource\ExecResource\Exec\Interpreter::class);
         $this->interpreter = $var;
+
+        return $this;
+    }
+
+    /**
+     * Only recorded for enforce Exec.
+     * Path to an output file (that is created by this Exec) whose
+     * content will be recorded in OSPolicyResourceCompliance after a
+     * successful run. Absence or failure to read this file will result in
+     * this ExecResource being non-compliant. Output file size is limited to
+     * 100K bytes.
+     *
+     * Generated from protobuf field <code>string output_file_path = 5;</code>
+     * @return string
+     */
+    public function getOutputFilePath()
+    {
+        return $this->output_file_path;
+    }
+
+    /**
+     * Only recorded for enforce Exec.
+     * Path to an output file (that is created by this Exec) whose
+     * content will be recorded in OSPolicyResourceCompliance after a
+     * successful run. Absence or failure to read this file will result in
+     * this ExecResource being non-compliant. Output file size is limited to
+     * 100K bytes.
+     *
+     * Generated from protobuf field <code>string output_file_path = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOutputFilePath($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->output_file_path = $var;
 
         return $this;
     }

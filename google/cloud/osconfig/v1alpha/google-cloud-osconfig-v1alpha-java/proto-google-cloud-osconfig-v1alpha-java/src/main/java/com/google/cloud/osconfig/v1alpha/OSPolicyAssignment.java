@@ -3229,8 +3229,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. The maximum number (or percentage) of VMs per zone to disrupt
-     * at any given moment.
+     * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+     * any given moment.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3239,8 +3239,8 @@ private static final long serialVersionUID = 0L;
     boolean hasDisruptionBudget();
     /**
      * <pre>
-     * Required. The maximum number (or percentage) of VMs per zone to disrupt
-     * at any given moment.
+     * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+     * any given moment.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3249,8 +3249,8 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.osconfig.v1alpha.FixedOrPercent getDisruptionBudget();
     /**
      * <pre>
-     * Required. The maximum number (or percentage) of VMs per zone to disrupt
-     * at any given moment.
+     * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+     * any given moment.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3408,8 +3408,8 @@ private static final long serialVersionUID = 0L;
     private com.google.cloud.osconfig.v1alpha.FixedOrPercent disruptionBudget_;
     /**
      * <pre>
-     * Required. The maximum number (or percentage) of VMs per zone to disrupt
-     * at any given moment.
+     * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+     * any given moment.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3421,8 +3421,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The maximum number (or percentage) of VMs per zone to disrupt
-     * at any given moment.
+     * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+     * any given moment.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3434,8 +3434,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The maximum number (or percentage) of VMs per zone to disrupt
-     * at any given moment.
+     * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+     * any given moment.
      * </pre>
      *
      * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3850,8 +3850,8 @@ private static final long serialVersionUID = 0L;
           com.google.cloud.osconfig.v1alpha.FixedOrPercent, com.google.cloud.osconfig.v1alpha.FixedOrPercent.Builder, com.google.cloud.osconfig.v1alpha.FixedOrPercentOrBuilder> disruptionBudgetBuilder_;
       /**
        * <pre>
-       * Required. The maximum number (or percentage) of VMs per zone to disrupt
-       * at any given moment.
+       * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+       * any given moment.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3862,8 +3862,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The maximum number (or percentage) of VMs per zone to disrupt
-       * at any given moment.
+       * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+       * any given moment.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3878,8 +3878,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The maximum number (or percentage) of VMs per zone to disrupt
-       * at any given moment.
+       * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+       * any given moment.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3899,8 +3899,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The maximum number (or percentage) of VMs per zone to disrupt
-       * at any given moment.
+       * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+       * any given moment.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3918,8 +3918,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The maximum number (or percentage) of VMs per zone to disrupt
-       * at any given moment.
+       * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+       * any given moment.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3941,8 +3941,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The maximum number (or percentage) of VMs per zone to disrupt
-       * at any given moment.
+       * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+       * any given moment.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3960,8 +3960,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The maximum number (or percentage) of VMs per zone to disrupt
-       * at any given moment.
+       * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+       * any given moment.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3973,8 +3973,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The maximum number (or percentage) of VMs per zone to disrupt
-       * at any given moment.
+       * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+       * any given moment.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3989,8 +3989,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The maximum number (or percentage) of VMs per zone to disrupt
-       * at any given moment.
+       * Required. The maximum number (or percentage) of VMs per zone to disrupt at
+       * any given moment.
        * </pre>
        *
        * <code>.google.cloud.osconfig.v1alpha.FixedOrPercent disruption_budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4628,8 +4628,8 @@ private static final long serialVersionUID = 0L;
   private boolean baseline_;
   /**
    * <pre>
-   * Output only. Indicates that this revision has been successfully rolled out
-   * in this zone and new VMs will be assigned OS policies from this revision.
+   * Output only. Indicates that this revision has been successfully rolled out in this zone
+   * and new VMs will be assigned OS policies from this revision.
    * For a given OS policy assignment, there is only one revision with a value
    * of `true` for this field.
    * </pre>
@@ -4679,8 +4679,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object uid_;
   /**
    * <pre>
-   * Output only. Server generated unique id for the OS policy assignment
-   * resource.
+   * Output only. Server generated unique id for the OS policy assignment resource.
    * </pre>
    *
    * <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4701,8 +4700,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Server generated unique id for the OS policy assignment
-   * resource.
+   * Output only. Server generated unique id for the OS policy assignment resource.
    * </pre>
    *
    * <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6540,8 +6538,8 @@ private static final long serialVersionUID = 0L;
     private boolean baseline_ ;
     /**
      * <pre>
-     * Output only. Indicates that this revision has been successfully rolled out
-     * in this zone and new VMs will be assigned OS policies from this revision.
+     * Output only. Indicates that this revision has been successfully rolled out in this zone
+     * and new VMs will be assigned OS policies from this revision.
      * For a given OS policy assignment, there is only one revision with a value
      * of `true` for this field.
      * </pre>
@@ -6555,8 +6553,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Indicates that this revision has been successfully rolled out
-     * in this zone and new VMs will be assigned OS policies from this revision.
+     * Output only. Indicates that this revision has been successfully rolled out in this zone
+     * and new VMs will be assigned OS policies from this revision.
      * For a given OS policy assignment, there is only one revision with a value
      * of `true` for this field.
      * </pre>
@@ -6573,8 +6571,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Indicates that this revision has been successfully rolled out
-     * in this zone and new VMs will be assigned OS policies from this revision.
+     * Output only. Indicates that this revision has been successfully rolled out in this zone
+     * and new VMs will be assigned OS policies from this revision.
      * For a given OS policy assignment, there is only one revision with a value
      * of `true` for this field.
      * </pre>
@@ -6687,8 +6685,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object uid_ = "";
     /**
      * <pre>
-     * Output only. Server generated unique id for the OS policy assignment
-     * resource.
+     * Output only. Server generated unique id for the OS policy assignment resource.
      * </pre>
      *
      * <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6708,8 +6705,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Server generated unique id for the OS policy assignment
-     * resource.
+     * Output only. Server generated unique id for the OS policy assignment resource.
      * </pre>
      *
      * <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6730,8 +6726,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Server generated unique id for the OS policy assignment
-     * resource.
+     * Output only. Server generated unique id for the OS policy assignment resource.
      * </pre>
      *
      * <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6750,8 +6745,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Server generated unique id for the OS policy assignment
-     * resource.
+     * Output only. Server generated unique id for the OS policy assignment resource.
      * </pre>
      *
      * <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6765,8 +6759,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Server generated unique id for the OS policy assignment
-     * resource.
+     * Output only. Server generated unique id for the OS policy assignment resource.
      * </pre>
      *
      * <code>string uid = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

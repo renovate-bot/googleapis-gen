@@ -289,8 +289,7 @@ module Google
             #   @param os_policy_assignment [::Google::Cloud::OsConfig::V1alpha::OSPolicyAssignment, ::Hash]
             #     Required. The updated OS policy assignment.
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
-            #     Optional. Field mask that controls which fields of the assignment should be
-            #     updated.
+            #     Optional. Field mask that controls which fields of the assignment should be updated.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]

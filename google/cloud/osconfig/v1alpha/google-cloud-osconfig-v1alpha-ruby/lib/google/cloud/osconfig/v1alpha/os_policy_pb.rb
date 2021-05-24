@@ -127,6 +127,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec" do
       repeated :args, :string, 3
       optional :interpreter, :enum, 4, "google.cloud.osconfig.v1alpha.OSPolicy.Resource.ExecResource.Exec.Interpreter"
+      optional :output_file_path, :string, 5
       oneof :source do
         optional :file, :message, 1, "google.cloud.osconfig.v1alpha.OSPolicy.Resource.File"
         optional :script, :string, 2
