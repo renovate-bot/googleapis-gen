@@ -27,59 +27,59 @@ namespace Google.Cloud.PubSubLite.V1 {
             "Citnb29nbGUvY2xvdWQvcHVic3VibGl0ZS92MS9zdWJzY3JpYmVyLnByb3Rv",
             "Ehpnb29nbGUuY2xvdWQucHVic3VibGl0ZS52MRofZ29vZ2xlL2FwaS9maWVs",
             "ZF9iZWhhdmlvci5wcm90bxonZ29vZ2xlL2Nsb3VkL3B1YnN1YmxpdGUvdjEv",
-            "Y29tbW9uLnByb3RvGhdnb29nbGUvYXBpL2NsaWVudC5wcm90byKDAQoXSW5p",
+            "Y29tbW9uLnByb3RvGhdnb29nbGUvYXBpL2NsaWVudC5wcm90byKKAQoXSW5p",
             "dGlhbFN1YnNjcmliZVJlcXVlc3QSFAoMc3Vic2NyaXB0aW9uGAEgASgJEhEK",
-            "CXBhcnRpdGlvbhgCIAEoAxI/Cg5pbml0aWFsX2N1cnNvchgDIAEoCzIiLmdv",
-            "b2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkN1cnNvckID4EEBIk4KGEluaXRp",
-            "YWxTdWJzY3JpYmVSZXNwb25zZRIyCgZjdXJzb3IYASABKAsyIi5nb29nbGUu",
-            "Y2xvdWQucHVic3VibGl0ZS52MS5DdXJzb3Ii5wEKC1NlZWtSZXF1ZXN0EksK",
-            "DG5hbWVkX3RhcmdldBgBIAEoDjIzLmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRl",
-            "LnYxLlNlZWtSZXF1ZXN0Lk5hbWVkVGFyZ2V0SAASNAoGY3Vyc29yGAIgASgL",
-            "MiIuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuQ3Vyc29ySAAiSwoLTmFt",
-            "ZWRUYXJnZXQSHAoYTkFNRURfVEFSR0VUX1VOU1BFQ0lGSUVEEAASCAoESEVB",
-            "RBABEhQKEENPTU1JVFRFRF9DVVJTT1IQAkIICgZ0YXJnZXQiQgoMU2Vla1Jl",
-            "c3BvbnNlEjIKBmN1cnNvchgBIAEoCzIiLmdvb2dsZS5jbG91ZC5wdWJzdWJs",
-            "aXRlLnYxLkN1cnNvciJFChJGbG93Q29udHJvbFJlcXVlc3QSGAoQYWxsb3dl",
-            "ZF9tZXNzYWdlcxgBIAEoAxIVCg1hbGxvd2VkX2J5dGVzGAIgASgDIuYBChBT",
-            "dWJzY3JpYmVSZXF1ZXN0EkYKB2luaXRpYWwYASABKAsyMy5nb29nbGUuY2xv",
-            "dWQucHVic3VibGl0ZS52MS5Jbml0aWFsU3Vic2NyaWJlUmVxdWVzdEgAEjcK",
-            "BHNlZWsYAiABKAsyJy5nb29nbGUuY2xvdWQucHVic3VibGl0ZS52MS5TZWVr",
-            "UmVxdWVzdEgAEkYKDGZsb3dfY29udHJvbBgDIAEoCzIuLmdvb2dsZS5jbG91",
-            "ZC5wdWJzdWJsaXRlLnYxLkZsb3dDb250cm9sUmVxdWVzdEgAQgkKB3JlcXVl",
-            "c3QiUQoPTWVzc2FnZVJlc3BvbnNlEj4KCG1lc3NhZ2VzGAEgAygLMiwuZ29v",
-            "Z2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuU2VxdWVuY2VkTWVzc2FnZSLjAQoR",
-            "U3Vic2NyaWJlUmVzcG9uc2USRwoHaW5pdGlhbBgBIAEoCzI0Lmdvb2dsZS5j",
-            "bG91ZC5wdWJzdWJsaXRlLnYxLkluaXRpYWxTdWJzY3JpYmVSZXNwb25zZUgA",
-            "EjgKBHNlZWsYAiABKAsyKC5nb29nbGUuY2xvdWQucHVic3VibGl0ZS52MS5T",
-            "ZWVrUmVzcG9uc2VIABI/CghtZXNzYWdlcxgDIAEoCzIrLmdvb2dsZS5jbG91",
-            "ZC5wdWJzdWJsaXRlLnYxLk1lc3NhZ2VSZXNwb25zZUgAQgoKCHJlc3BvbnNl",
-            "IkwKIUluaXRpYWxQYXJ0aXRpb25Bc3NpZ25tZW50UmVxdWVzdBIUCgxzdWJz",
-            "Y3JpcHRpb24YASABKAkSEQoJY2xpZW50X2lkGAIgASgMIikKE1BhcnRpdGlv",
-            "bkFzc2lnbm1lbnQSEgoKcGFydGl0aW9ucxgBIAMoAyIYChZQYXJ0aXRpb25B",
-            "c3NpZ25tZW50QWNrIrwBChpQYXJ0aXRpb25Bc3NpZ25tZW50UmVxdWVzdBJQ",
-            "Cgdpbml0aWFsGAEgASgLMj0uZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEu",
-            "SW5pdGlhbFBhcnRpdGlvbkFzc2lnbm1lbnRSZXF1ZXN0SAASQQoDYWNrGAIg",
-            "ASgLMjIuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuUGFydGl0aW9uQXNz",
-            "aWdubWVudEFja0gAQgkKB3JlcXVlc3Qy0gEKEVN1YnNjcmliZXJTZXJ2aWNl",
-            "Em4KCVN1YnNjcmliZRIsLmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLlN1",
-            "YnNjcmliZVJlcXVlc3QaLS5nb29nbGUuY2xvdWQucHVic3VibGl0ZS52MS5T",
-            "dWJzY3JpYmVSZXNwb25zZSIAKAEwARpNykEZcHVic3VibGl0ZS5nb29nbGVh",
-            "cGlzLmNvbdJBLmh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xv",
-            "dWQtcGxhdGZvcm0y7wEKGlBhcnRpdGlvbkFzc2lnbm1lbnRTZXJ2aWNlEoEB",
-            "ChBBc3NpZ25QYXJ0aXRpb25zEjYuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUu",
-            "djEuUGFydGl0aW9uQXNzaWdubWVudFJlcXVlc3QaLy5nb29nbGUuY2xvdWQu",
-            "cHVic3VibGl0ZS52MS5QYXJ0aXRpb25Bc3NpZ25tZW50IgAoATABGk3KQRlw",
-            "dWJzdWJsaXRlLmdvb2dsZWFwaXMuY29t0kEuaHR0cHM6Ly93d3cuZ29vZ2xl",
-            "YXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybULZAQohY29tLmdvb2dsZS5j",
-            "bG91ZC5wdWJzdWJsaXRlLnByb3RvQg9TdWJzY3JpYmVyUHJvdG9QAVpEZ29v",
-            "Z2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9jbG91ZC9wdWJz",
-            "dWJsaXRlL3YxO3B1YnN1YmxpdGX4AQGqAhpHb29nbGUuQ2xvdWQuUHViU3Vi",
-            "TGl0ZS5WMcoCGkdvb2dsZVxDbG91ZFxQdWJTdWJMaXRlXFYx6gIdR29vZ2xl",
-            "OjpDbG91ZDo6UHViU3ViTGl0ZTo6VjFiBnByb3RvMw=="));
+            "CXBhcnRpdGlvbhgCIAEoAxJGChBpbml0aWFsX2xvY2F0aW9uGAQgASgLMicu",
+            "Z29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuU2Vla1JlcXVlc3RCA+BBASJO",
+            "ChhJbml0aWFsU3Vic2NyaWJlUmVzcG9uc2USMgoGY3Vyc29yGAEgASgLMiIu",
+            "Z29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuQ3Vyc29yIucBCgtTZWVrUmVx",
+            "dWVzdBJLCgxuYW1lZF90YXJnZXQYASABKA4yMy5nb29nbGUuY2xvdWQucHVi",
+            "c3VibGl0ZS52MS5TZWVrUmVxdWVzdC5OYW1lZFRhcmdldEgAEjQKBmN1cnNv",
+            "chgCIAEoCzIiLmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkN1cnNvckgA",
+            "IksKC05hbWVkVGFyZ2V0EhwKGE5BTUVEX1RBUkdFVF9VTlNQRUNJRklFRBAA",
+            "EggKBEhFQUQQARIUChBDT01NSVRURURfQ1VSU09SEAJCCAoGdGFyZ2V0IkIK",
+            "DFNlZWtSZXNwb25zZRIyCgZjdXJzb3IYASABKAsyIi5nb29nbGUuY2xvdWQu",
+            "cHVic3VibGl0ZS52MS5DdXJzb3IiRQoSRmxvd0NvbnRyb2xSZXF1ZXN0EhgK",
+            "EGFsbG93ZWRfbWVzc2FnZXMYASABKAMSFQoNYWxsb3dlZF9ieXRlcxgCIAEo",
+            "AyLmAQoQU3Vic2NyaWJlUmVxdWVzdBJGCgdpbml0aWFsGAEgASgLMjMuZ29v",
+            "Z2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuSW5pdGlhbFN1YnNjcmliZVJlcXVl",
+            "c3RIABI3CgRzZWVrGAIgASgLMicuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUu",
+            "djEuU2Vla1JlcXVlc3RIABJGCgxmbG93X2NvbnRyb2wYAyABKAsyLi5nb29n",
+            "bGUuY2xvdWQucHVic3VibGl0ZS52MS5GbG93Q29udHJvbFJlcXVlc3RIAEIJ",
+            "CgdyZXF1ZXN0IlEKD01lc3NhZ2VSZXNwb25zZRI+CghtZXNzYWdlcxgBIAMo",
+            "CzIsLmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLlNlcXVlbmNlZE1lc3Nh",
+            "Z2Ui4wEKEVN1YnNjcmliZVJlc3BvbnNlEkcKB2luaXRpYWwYASABKAsyNC5n",
+            "b29nbGUuY2xvdWQucHVic3VibGl0ZS52MS5Jbml0aWFsU3Vic2NyaWJlUmVz",
+            "cG9uc2VIABI4CgRzZWVrGAIgASgLMiguZ29vZ2xlLmNsb3VkLnB1YnN1Ymxp",
+            "dGUudjEuU2Vla1Jlc3BvbnNlSAASPwoIbWVzc2FnZXMYAyABKAsyKy5nb29n",
+            "bGUuY2xvdWQucHVic3VibGl0ZS52MS5NZXNzYWdlUmVzcG9uc2VIAEIKCghy",
+            "ZXNwb25zZSJMCiFJbml0aWFsUGFydGl0aW9uQXNzaWdubWVudFJlcXVlc3QS",
+            "FAoMc3Vic2NyaXB0aW9uGAEgASgJEhEKCWNsaWVudF9pZBgCIAEoDCIpChNQ",
+            "YXJ0aXRpb25Bc3NpZ25tZW50EhIKCnBhcnRpdGlvbnMYASADKAMiGAoWUGFy",
+            "dGl0aW9uQXNzaWdubWVudEFjayK8AQoaUGFydGl0aW9uQXNzaWdubWVudFJl",
+            "cXVlc3QSUAoHaW5pdGlhbBgBIAEoCzI9Lmdvb2dsZS5jbG91ZC5wdWJzdWJs",
+            "aXRlLnYxLkluaXRpYWxQYXJ0aXRpb25Bc3NpZ25tZW50UmVxdWVzdEgAEkEK",
+            "A2FjaxgCIAEoCzIyLmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLlBhcnRp",
+            "dGlvbkFzc2lnbm1lbnRBY2tIAEIJCgdyZXF1ZXN0MtIBChFTdWJzY3JpYmVy",
+            "U2VydmljZRJuCglTdWJzY3JpYmUSLC5nb29nbGUuY2xvdWQucHVic3VibGl0",
+            "ZS52MS5TdWJzY3JpYmVSZXF1ZXN0Gi0uZ29vZ2xlLmNsb3VkLnB1YnN1Ymxp",
+            "dGUudjEuU3Vic2NyaWJlUmVzcG9uc2UiACgBMAEaTcpBGXB1YnN1YmxpdGUu",
+            "Z29vZ2xlYXBpcy5jb23SQS5odHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9h",
+            "dXRoL2Nsb3VkLXBsYXRmb3JtMu8BChpQYXJ0aXRpb25Bc3NpZ25tZW50U2Vy",
+            "dmljZRKBAQoQQXNzaWduUGFydGl0aW9ucxI2Lmdvb2dsZS5jbG91ZC5wdWJz",
+            "dWJsaXRlLnYxLlBhcnRpdGlvbkFzc2lnbm1lbnRSZXF1ZXN0Gi8uZ29vZ2xl",
+            "LmNsb3VkLnB1YnN1YmxpdGUudjEuUGFydGl0aW9uQXNzaWdubWVudCIAKAEw",
+            "ARpNykEZcHVic3VibGl0ZS5nb29nbGVhcGlzLmNvbdJBLmh0dHBzOi8vd3d3",
+            "Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xvdWQtcGxhdGZvcm1C2QEKIWNvbS5n",
+            "b29nbGUuY2xvdWQucHVic3VibGl0ZS5wcm90b0IPU3Vic2NyaWJlclByb3Rv",
+            "UAFaRGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvY2xv",
+            "dWQvcHVic3VibGl0ZS92MTtwdWJzdWJsaXRl+AEBqgIaR29vZ2xlLkNsb3Vk",
+            "LlB1YlN1YkxpdGUuVjHKAhpHb29nbGVcQ2xvdWRcUHViU3ViTGl0ZVxWMeoC",
+            "HUdvb2dsZTo6Q2xvdWQ6OlB1YlN1YkxpdGU6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Cloud.PubSubLite.V1.CommonReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.InitialSubscribeRequest), global::Google.Cloud.PubSubLite.V1.InitialSubscribeRequest.Parser, new[]{ "Subscription", "Partition", "InitialCursor" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.InitialSubscribeRequest), global::Google.Cloud.PubSubLite.V1.InitialSubscribeRequest.Parser, new[]{ "Subscription", "Partition", "InitialLocation" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.InitialSubscribeResponse), global::Google.Cloud.PubSubLite.V1.InitialSubscribeResponse.Parser, new[]{ "Cursor" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.SeekRequest), global::Google.Cloud.PubSubLite.V1.SeekRequest.Parser, new[]{ "NamedTarget", "Cursor" }, new[]{ "Target" }, new[]{ typeof(global::Google.Cloud.PubSubLite.V1.SeekRequest.Types.NamedTarget) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.SeekResponse), global::Google.Cloud.PubSubLite.V1.SeekResponse.Parser, new[]{ "Cursor" }, null, null, null, null),
@@ -132,7 +132,7 @@ namespace Google.Cloud.PubSubLite.V1 {
     public InitialSubscribeRequest(InitialSubscribeRequest other) : this() {
       subscription_ = other.subscription_;
       partition_ = other.partition_;
-      initialCursor_ = other.initialCursor_ != null ? other.initialCursor_.Clone() : null;
+      initialLocation_ = other.initialLocation_ != null ? other.initialLocation_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -170,20 +170,19 @@ namespace Google.Cloud.PubSubLite.V1 {
       }
     }
 
-    /// <summary>Field number for the "initial_cursor" field.</summary>
-    public const int InitialCursorFieldNumber = 3;
-    private global::Google.Cloud.PubSubLite.V1.Cursor initialCursor_;
+    /// <summary>Field number for the "initial_location" field.</summary>
+    public const int InitialLocationFieldNumber = 4;
+    private global::Google.Cloud.PubSubLite.V1.SeekRequest initialLocation_;
     /// <summary>
-    /// Optional. Initial stream delivery cursor, pointing to anywhere in the topic
-    /// partition. Cursors past head result in stream breakage. If not set,
+    /// Optional. Initial target location within the message backlog. If not set,
     /// messages will be delivered from the commit cursor for the given
     /// subscription and partition.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Cloud.PubSubLite.V1.Cursor InitialCursor {
-      get { return initialCursor_; }
+    public global::Google.Cloud.PubSubLite.V1.SeekRequest InitialLocation {
+      get { return initialLocation_; }
       set {
-        initialCursor_ = value;
+        initialLocation_ = value;
       }
     }
 
@@ -202,7 +201,7 @@ namespace Google.Cloud.PubSubLite.V1 {
       }
       if (Subscription != other.Subscription) return false;
       if (Partition != other.Partition) return false;
-      if (!object.Equals(InitialCursor, other.InitialCursor)) return false;
+      if (!object.Equals(InitialLocation, other.InitialLocation)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -211,7 +210,7 @@ namespace Google.Cloud.PubSubLite.V1 {
       int hash = 1;
       if (Subscription.Length != 0) hash ^= Subscription.GetHashCode();
       if (Partition != 0L) hash ^= Partition.GetHashCode();
-      if (initialCursor_ != null) hash ^= InitialCursor.GetHashCode();
+      if (initialLocation_ != null) hash ^= InitialLocation.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -236,9 +235,9 @@ namespace Google.Cloud.PubSubLite.V1 {
         output.WriteRawTag(16);
         output.WriteInt64(Partition);
       }
-      if (initialCursor_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(InitialCursor);
+      if (initialLocation_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(InitialLocation);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -257,9 +256,9 @@ namespace Google.Cloud.PubSubLite.V1 {
         output.WriteRawTag(16);
         output.WriteInt64(Partition);
       }
-      if (initialCursor_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(InitialCursor);
+      if (initialLocation_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(InitialLocation);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -276,8 +275,8 @@ namespace Google.Cloud.PubSubLite.V1 {
       if (Partition != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Partition);
       }
-      if (initialCursor_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InitialCursor);
+      if (initialLocation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InitialLocation);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -296,11 +295,11 @@ namespace Google.Cloud.PubSubLite.V1 {
       if (other.Partition != 0L) {
         Partition = other.Partition;
       }
-      if (other.initialCursor_ != null) {
-        if (initialCursor_ == null) {
-          InitialCursor = new global::Google.Cloud.PubSubLite.V1.Cursor();
+      if (other.initialLocation_ != null) {
+        if (initialLocation_ == null) {
+          InitialLocation = new global::Google.Cloud.PubSubLite.V1.SeekRequest();
         }
-        InitialCursor.MergeFrom(other.InitialCursor);
+        InitialLocation.MergeFrom(other.InitialLocation);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -324,11 +323,11 @@ namespace Google.Cloud.PubSubLite.V1 {
             Partition = input.ReadInt64();
             break;
           }
-          case 26: {
-            if (initialCursor_ == null) {
-              InitialCursor = new global::Google.Cloud.PubSubLite.V1.Cursor();
+          case 34: {
+            if (initialLocation_ == null) {
+              InitialLocation = new global::Google.Cloud.PubSubLite.V1.SeekRequest();
             }
-            input.ReadMessage(InitialCursor);
+            input.ReadMessage(InitialLocation);
             break;
           }
         }
@@ -353,11 +352,11 @@ namespace Google.Cloud.PubSubLite.V1 {
             Partition = input.ReadInt64();
             break;
           }
-          case 26: {
-            if (initialCursor_ == null) {
-              InitialCursor = new global::Google.Cloud.PubSubLite.V1.Cursor();
+          case 34: {
+            if (initialLocation_ == null) {
+              InitialLocation = new global::Google.Cloud.PubSubLite.V1.SeekRequest();
             }
-            input.ReadMessage(InitialCursor);
+            input.ReadMessage(InitialLocation);
             break;
           }
         }
@@ -557,9 +556,11 @@ namespace Google.Cloud.PubSubLite.V1 {
 
   /// <summary>
   /// Request to update the stream's delivery cursor based on the given target.
-  /// Resets the server available tokens to 0. SeekRequests may not be sent while
-  /// another SeekRequest is outstanding (i.e., has not received a SeekResponse) on
-  /// the same stream. SeekRequests past head result in stream breakage.
+  /// Resets the server available tokens to 0. SeekRequests past head result in
+  /// stream breakage.
+  ///
+  /// SeekRequests may not be sent while another SeekRequest is outstanding (i.e.,
+  /// has not received a SeekResponse) on the same stream.
   /// </summary>
   public sealed partial class SeekRequest : pb::IMessage<SeekRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

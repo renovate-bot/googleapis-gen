@@ -50,13 +50,11 @@ class InitialSubscribeRequest(proto.Message):
             The partition from which to receive messages. Partitions are
             zero indexed, so ``partition`` must be in the range [0,
             topic.num_partitions).
-        initial_cursor (google.cloud.pubsublite_v1.types.Cursor):
-            Optional. Initial stream delivery cursor,
-            pointing to anywhere in the topic partition.
-            Cursors past head result in stream breakage. If
-            not set, messages will be delivered from the
-            commit cursor for the given subscription and
-            partition.
+        initial_location (google.cloud.pubsublite_v1.types.SeekRequest):
+            Optional. Initial target location within the
+            message backlog. If not set, messages will be
+            delivered from the commit cursor for the given
+            subscription and partition.
     """
 
     subscription = proto.Field(
@@ -67,10 +65,10 @@ class InitialSubscribeRequest(proto.Message):
         proto.INT64,
         number=2,
     )
-    initial_cursor = proto.Field(
+    initial_location = proto.Field(
         proto.MESSAGE,
-        number=3,
-        message=common.Cursor,
+        number=4,
+        message='SeekRequest',
     )
 
 
@@ -93,9 +91,11 @@ class InitialSubscribeResponse(proto.Message):
 class SeekRequest(proto.Message):
     r"""Request to update the stream's delivery cursor based on the
     given target. Resets the server available tokens to 0.
+    SeekRequests past head result in stream breakage.
+
     SeekRequests may not be sent while another SeekRequest is
     outstanding (i.e., has not received a SeekResponse) on the same
-    stream. SeekRequests past head result in stream breakage.
+    stream.
 
     Attributes:
         named_target (google.cloud.pubsublite_v1.types.SeekRequest.NamedTarget):

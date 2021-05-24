@@ -30,10 +30,9 @@ module Google
         #   @return [::Integer]
         #     The partition from which to receive messages. Partitions are zero indexed,
         #     so `partition` must be in the range [0, topic.num_partitions).
-        # @!attribute [rw] initial_cursor
-        #   @return [::Google::Cloud::PubSubLite::V1::Cursor]
-        #     Optional. Initial stream delivery cursor, pointing to anywhere in the topic
-        #     partition. Cursors past head result in stream breakage. If not set,
+        # @!attribute [rw] initial_location
+        #   @return [::Google::Cloud::PubSubLite::V1::SeekRequest]
+        #     Optional. Initial target location within the message backlog. If not set,
         #     messages will be delivered from the commit cursor for the given
         #     subscription and partition.
         class InitialSubscribeRequest
@@ -52,9 +51,11 @@ module Google
         end
 
         # Request to update the stream's delivery cursor based on the given target.
-        # Resets the server available tokens to 0. SeekRequests may not be sent while
-        # another SeekRequest is outstanding (i.e., has not received a SeekResponse) on
-        # the same stream. SeekRequests past head result in stream breakage.
+        # Resets the server available tokens to 0. SeekRequests past head result in
+        # stream breakage.
+        #
+        # SeekRequests may not be sent while another SeekRequest is outstanding (i.e.,
+        # has not received a SeekResponse) on the same stream.
         # @!attribute [rw] named_target
         #   @return [::Google::Cloud::PubSubLite::V1::SeekRequest::NamedTarget]
         #     A named target.

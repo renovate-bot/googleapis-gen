@@ -11,7 +11,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.pubsublite.v1.InitialSubscribeRequest" do
       optional :subscription, :string, 1
       optional :partition, :int64, 2
-      optional :initial_cursor, :message, 3, "google.cloud.pubsublite.v1.Cursor"
+      optional :initial_location, :message, 4, "google.cloud.pubsublite.v1.SeekRequest"
     end
     add_message "google.cloud.pubsublite.v1.InitialSubscribeResponse" do
       optional :cursor, :message, 1, "google.cloud.pubsublite.v1.Cursor"
