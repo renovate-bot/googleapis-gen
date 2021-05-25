@@ -46,6 +46,10 @@ module Google
               rpc :DeleteEnvironment, ::Google::Cloud::Dialogflow::Cx::V3::DeleteEnvironmentRequest, ::Google::Protobuf::Empty
               # Looks up the history of the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
               rpc :LookupEnvironmentHistory, ::Google::Cloud::Dialogflow::Cx::V3::LookupEnvironmentHistoryRequest, ::Google::Cloud::Dialogflow::Cx::V3::LookupEnvironmentHistoryResponse
+              # Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+              rpc :RunContinuousTest, ::Google::Cloud::Dialogflow::Cx::V3::RunContinuousTestRequest, ::Google::Longrunning::Operation
+              # Fetches a list of continuous test results for a given environment.
+              rpc :ListContinuousTestResults, ::Google::Cloud::Dialogflow::Cx::V3::ListContinuousTestResultsRequest, ::Google::Cloud::Dialogflow::Cx::V3::ListContinuousTestResultsResponse
             end
 
             Stub = Service.rpc_stub_class

@@ -454,6 +454,16 @@
               "methods": [
                 "lookup_environment_history"
               ]
+            },
+            "RunContinuousTest": {
+              "methods": [
+                "run_continuous_test"
+              ]
+            },
+            "ListContinuousTestResults": {
+              "methods": [
+                "list_continuous_test_results"
+              ]
             }
           }
         }

@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3.stub;
 
+import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListContinuousTestResultsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.LookupEnvironmentHistoryPagedResponse;
 
@@ -45,14 +46,20 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.cx.v3.ContinuousTestResult;
 import com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3.Environment;
 import com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest;
+import com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest;
+import com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse;
 import com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse;
 import com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest;
 import com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse;
+import com.google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata;
+import com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest;
+import com.google.cloud.dialogflow.cx.v3.RunContinuousTestResponse;
 import com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -122,6 +129,14 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse,
           LookupEnvironmentHistoryPagedResponse>
       lookupEnvironmentHistorySettings;
+  private final UnaryCallSettings<RunContinuousTestRequest, Operation> runContinuousTestSettings;
+  private final OperationCallSettings<
+          RunContinuousTestRequest, RunContinuousTestResponse, RunContinuousTestMetadata>
+      runContinuousTestOperationSettings;
+  private final PagedCallSettings<
+          ListContinuousTestResultsRequest, ListContinuousTestResultsResponse,
+          ListContinuousTestResultsPagedResponse>
+      listContinuousTestResultsSettings;
 
   private static final PagedListDescriptor<
           ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
@@ -208,6 +223,52 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             }
           };
 
+  private static final PagedListDescriptor<
+          ListContinuousTestResultsRequest, ListContinuousTestResultsResponse, ContinuousTestResult>
+      LIST_CONTINUOUS_TEST_RESULTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListContinuousTestResultsRequest, ListContinuousTestResultsResponse,
+              ContinuousTestResult>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListContinuousTestResultsRequest injectToken(
+                ListContinuousTestResultsRequest payload, String token) {
+              return ListContinuousTestResultsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListContinuousTestResultsRequest injectPageSize(
+                ListContinuousTestResultsRequest payload, int pageSize) {
+              return ListContinuousTestResultsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListContinuousTestResultsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListContinuousTestResultsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ContinuousTestResult> extractResources(
+                ListContinuousTestResultsResponse payload) {
+              return payload.getContinuousTestResultsList() == null
+                  ? ImmutableList.<ContinuousTestResult>of()
+                  : payload.getContinuousTestResultsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
       LIST_ENVIRONMENTS_PAGE_STR_FACT =
@@ -248,6 +309,31 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
                       PageContext.create(
                           callable, LOOKUP_ENVIRONMENT_HISTORY_PAGE_STR_DESC, request, context);
               return LookupEnvironmentHistoryPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListContinuousTestResultsRequest, ListContinuousTestResultsResponse,
+          ListContinuousTestResultsPagedResponse>
+      LIST_CONTINUOUS_TEST_RESULTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListContinuousTestResultsRequest, ListContinuousTestResultsResponse,
+              ListContinuousTestResultsPagedResponse>() {
+            @Override
+            public ApiFuture<ListContinuousTestResultsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
+                    callable,
+                ListContinuousTestResultsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListContinuousTestResultsResponse> futureResponse) {
+              PageContext<
+                      ListContinuousTestResultsRequest, ListContinuousTestResultsResponse,
+                      ContinuousTestResult>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CONTINUOUS_TEST_RESULTS_PAGE_STR_DESC, request, context);
+              return ListContinuousTestResultsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -296,6 +382,26 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           LookupEnvironmentHistoryPagedResponse>
       lookupEnvironmentHistorySettings() {
     return lookupEnvironmentHistorySettings;
+  }
+
+  /** Returns the object with the settings used for calls to runContinuousTest. */
+  public UnaryCallSettings<RunContinuousTestRequest, Operation> runContinuousTestSettings() {
+    return runContinuousTestSettings;
+  }
+
+  /** Returns the object with the settings used for calls to runContinuousTest. */
+  public OperationCallSettings<
+          RunContinuousTestRequest, RunContinuousTestResponse, RunContinuousTestMetadata>
+      runContinuousTestOperationSettings() {
+    return runContinuousTestOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listContinuousTestResults. */
+  public PagedCallSettings<
+          ListContinuousTestResultsRequest, ListContinuousTestResultsResponse,
+          ListContinuousTestResultsPagedResponse>
+      listContinuousTestResultsSettings() {
+    return listContinuousTestResultsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -377,6 +483,10 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
         settingsBuilder.updateEnvironmentOperationSettings().build();
     deleteEnvironmentSettings = settingsBuilder.deleteEnvironmentSettings().build();
     lookupEnvironmentHistorySettings = settingsBuilder.lookupEnvironmentHistorySettings().build();
+    runContinuousTestSettings = settingsBuilder.runContinuousTestSettings().build();
+    runContinuousTestOperationSettings =
+        settingsBuilder.runContinuousTestOperationSettings().build();
+    listContinuousTestResultsSettings = settingsBuilder.listContinuousTestResultsSettings().build();
   }
 
   /** Builder for EnvironmentsStubSettings. */
@@ -401,6 +511,15 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse,
             LookupEnvironmentHistoryPagedResponse>
         lookupEnvironmentHistorySettings;
+    private final UnaryCallSettings.Builder<RunContinuousTestRequest, Operation>
+        runContinuousTestSettings;
+    private final OperationCallSettings.Builder<
+            RunContinuousTestRequest, RunContinuousTestResponse, RunContinuousTestMetadata>
+        runContinuousTestOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListContinuousTestResultsRequest, ListContinuousTestResultsResponse,
+            ListContinuousTestResultsPagedResponse>
+        listContinuousTestResultsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -448,6 +567,10 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       deleteEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       lookupEnvironmentHistorySettings =
           PagedCallSettings.newBuilder(LOOKUP_ENVIRONMENT_HISTORY_PAGE_STR_FACT);
+      runContinuousTestSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      runContinuousTestOperationSettings = OperationCallSettings.newBuilder();
+      listContinuousTestResultsSettings =
+          PagedCallSettings.newBuilder(LIST_CONTINUOUS_TEST_RESULTS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -456,7 +579,9 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               createEnvironmentSettings,
               updateEnvironmentSettings,
               deleteEnvironmentSettings,
-              lookupEnvironmentHistorySettings);
+              lookupEnvironmentHistorySettings,
+              runContinuousTestSettings,
+              listContinuousTestResultsSettings);
       initDefaults(this);
     }
 
@@ -471,6 +596,9 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       updateEnvironmentOperationSettings = settings.updateEnvironmentOperationSettings.toBuilder();
       deleteEnvironmentSettings = settings.deleteEnvironmentSettings.toBuilder();
       lookupEnvironmentHistorySettings = settings.lookupEnvironmentHistorySettings.toBuilder();
+      runContinuousTestSettings = settings.runContinuousTestSettings.toBuilder();
+      runContinuousTestOperationSettings = settings.runContinuousTestOperationSettings.toBuilder();
+      listContinuousTestResultsSettings = settings.listContinuousTestResultsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -479,7 +607,9 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               createEnvironmentSettings,
               updateEnvironmentSettings,
               deleteEnvironmentSettings,
-              lookupEnvironmentHistorySettings);
+              lookupEnvironmentHistorySettings,
+              runContinuousTestSettings,
+              listContinuousTestResultsSettings);
     }
 
     private static Builder createDefault() {
@@ -525,6 +655,16 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .runContinuousTestSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listContinuousTestResultsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .createEnvironmentOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -560,6 +700,32 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               ProtoOperationTransformers.ResponseTransformer.create(Environment.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .runContinuousTestOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RunContinuousTestRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  RunContinuousTestResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  RunContinuousTestMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -642,6 +808,29 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             LookupEnvironmentHistoryPagedResponse>
         lookupEnvironmentHistorySettings() {
       return lookupEnvironmentHistorySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runContinuousTest. */
+    public UnaryCallSettings.Builder<RunContinuousTestRequest, Operation>
+        runContinuousTestSettings() {
+      return runContinuousTestSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runContinuousTest. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            RunContinuousTestRequest, RunContinuousTestResponse, RunContinuousTestMetadata>
+        runContinuousTestOperationSettings() {
+      return runContinuousTestOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listContinuousTestResults. */
+    public PagedCallSettings.Builder<
+            ListContinuousTestResultsRequest, ListContinuousTestResultsResponse,
+            ListContinuousTestResultsPagedResponse>
+        listContinuousTestResultsSettings() {
+      return listContinuousTestResultsSettings;
     }
 
     @Override

@@ -37,6 +37,17 @@ return [
                     ],
                 ],
             ],
+            'ListContinuousTestResults' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/{parent=projects/*/locations/*/agents/*/environments/*}/continuousTestResults',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'ListEnvironments' => [
                 'method' => 'get',
                 'uriTemplate' => '/v3/{parent=projects/*/locations/*/agents/*}/environments',
@@ -55,6 +66,18 @@ return [
                     'name' => [
                         'getters' => [
                             'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'RunContinuousTest' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3/{environment=projects/*/locations/*/agents/*/environments/*}:runContinuousTest',
+                'body' => '*',
+                'placeholders' => [
+                    'environment' => [
+                        'getters' => [
+                            'getEnvironment',
                         ],
                     ],
                 ],

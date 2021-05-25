@@ -122,4 +122,34 @@ class EnvironmentsGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * @param \Google\Cloud\Dialogflow\Cx\V3\RunContinuousTestRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function RunContinuousTest(\Google\Cloud\Dialogflow\Cx\V3\RunContinuousTestRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.dialogflow.cx.v3.Environments/RunContinuousTest',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Fetches a list of continuous test results for a given environment.
+     * @param \Google\Cloud\Dialogflow\Cx\V3\ListContinuousTestResultsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListContinuousTestResults(\Google\Cloud\Dialogflow\Cx\V3\ListContinuousTestResultsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.dialogflow.cx.v3.Environments/ListContinuousTestResults',
+        $argument,
+        ['\Google\Cloud\Dialogflow\Cx\V3\ListContinuousTestResultsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

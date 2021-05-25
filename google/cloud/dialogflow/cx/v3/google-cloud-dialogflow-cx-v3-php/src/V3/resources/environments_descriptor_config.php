@@ -13,6 +13,16 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
+            'RunContinuousTest' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Dialogflow\Cx\V3\RunContinuousTestResponse',
+                    'metadataReturnType' => '\Google\Cloud\Dialogflow\Cx\V3\RunContinuousTestMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
             'UpdateEnvironment' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\Dialogflow\Cx\V3\Environment',
@@ -21,6 +31,16 @@ return [
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
                     'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'ListContinuousTestResults' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getContinuousTestResults',
                 ],
             ],
             'ListEnvironments' => [

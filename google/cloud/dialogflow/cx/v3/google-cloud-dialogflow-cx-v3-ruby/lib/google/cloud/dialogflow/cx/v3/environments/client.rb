@@ -594,6 +594,148 @@ module Google
               end
 
               ##
+              # Kicks off a continuous test under the specified {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment}.
+              #
+              # @overload run_continuous_test(request, options = nil)
+              #   Pass arguments to `run_continuous_test` via a request object, either of type
+              #   {::Google::Cloud::Dialogflow::Cx::V3::RunContinuousTestRequest} or an equivalent Hash.
+              #
+              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::RunContinuousTestRequest, ::Hash]
+              #     A request object representing the call parameters. Required. To specify no
+              #     parameters, or to keep all the default parameter values, pass an empty Hash.
+              #   @param options [::Gapic::CallOptions, ::Hash]
+              #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+              #
+              # @overload run_continuous_test(environment: nil)
+              #   Pass arguments to `run_continuous_test` via keyword arguments. Note that at
+              #   least one keyword argument is required. To specify no parameters, or to keep all
+              #   the default parameter values, pass an empty Hash as a request object (see above).
+              #
+              #   @param environment [::String]
+              #     Required. Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+              #     ID>/environments/<Environment ID>`.
+              #
+              # @yield [response, operation] Access the result along with the RPC operation
+              # @yieldparam response [::Gapic::Operation]
+              # @yieldparam operation [::GRPC::ActiveCall::Operation]
+              #
+              # @return [::Gapic::Operation]
+              #
+              # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              def run_continuous_test request, options = nil
+                raise ::ArgumentError, "request must be provided" if request.nil?
+
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::RunContinuousTestRequest
+
+                # Converts hash and nil to an options object
+                options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+                # Customize the options with defaults
+                metadata = @config.rpcs.run_continuous_test.metadata.to_h
+
+                # Set x-goog-api-client and x-goog-user-project headers
+                metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                  lib_name: @config.lib_name, lib_version: @config.lib_version,
+                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+                header_params = {
+                  "environment" => request.environment
+                }
+                request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+                metadata[:"x-goog-request-params"] ||= request_params_header
+
+                options.apply_defaults timeout:      @config.rpcs.run_continuous_test.timeout,
+                                       metadata:     metadata,
+                                       retry_policy: @config.rpcs.run_continuous_test.retry_policy
+                options.apply_defaults metadata:     @config.metadata,
+                                       retry_policy: @config.retry_policy
+
+                @environments_stub.call_rpc :run_continuous_test, request, options: options do |response, operation|
+                  response = ::Gapic::Operation.new response, @operations_client, options: options
+                  yield response, operation if block_given?
+                  return response
+                end
+              rescue ::GRPC::BadStatus => e
+                raise ::Google::Cloud::Error.from_error(e)
+              end
+
+              ##
+              # Fetches a list of continuous test results for a given environment.
+              #
+              # @overload list_continuous_test_results(request, options = nil)
+              #   Pass arguments to `list_continuous_test_results` via a request object, either of type
+              #   {::Google::Cloud::Dialogflow::Cx::V3::ListContinuousTestResultsRequest} or an equivalent Hash.
+              #
+              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::ListContinuousTestResultsRequest, ::Hash]
+              #     A request object representing the call parameters. Required. To specify no
+              #     parameters, or to keep all the default parameter values, pass an empty Hash.
+              #   @param options [::Gapic::CallOptions, ::Hash]
+              #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+              #
+              # @overload list_continuous_test_results(parent: nil, page_size: nil, page_token: nil)
+              #   Pass arguments to `list_continuous_test_results` via keyword arguments. Note that at
+              #   least one keyword argument is required. To specify no parameters, or to keep all
+              #   the default parameter values, pass an empty Hash as a request object (see above).
+              #
+              #   @param parent [::String]
+              #     Required. The environment to list results for.
+              #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/
+              #     environments/<Environment ID>`.
+              #   @param page_size [::Integer]
+              #     The maximum number of items to return in a single page. By default 100 and
+              #     at most 1000.
+              #   @param page_token [::String]
+              #     The next_page_token value returned from a previous list request.
+              #
+              # @yield [response, operation] Access the result along with the RPC operation
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::ContinuousTestResult>]
+              # @yieldparam operation [::GRPC::ActiveCall::Operation]
+              #
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::ContinuousTestResult>]
+              #
+              # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              def list_continuous_test_results request, options = nil
+                raise ::ArgumentError, "request must be provided" if request.nil?
+
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::ListContinuousTestResultsRequest
+
+                # Converts hash and nil to an options object
+                options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+                # Customize the options with defaults
+                metadata = @config.rpcs.list_continuous_test_results.metadata.to_h
+
+                # Set x-goog-api-client and x-goog-user-project headers
+                metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                  lib_name: @config.lib_name, lib_version: @config.lib_version,
+                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+                header_params = {
+                  "parent" => request.parent
+                }
+                request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+                metadata[:"x-goog-request-params"] ||= request_params_header
+
+                options.apply_defaults timeout:      @config.rpcs.list_continuous_test_results.timeout,
+                                       metadata:     metadata,
+                                       retry_policy: @config.rpcs.list_continuous_test_results.retry_policy
+                options.apply_defaults metadata:     @config.metadata,
+                                       retry_policy: @config.retry_policy
+
+                @environments_stub.call_rpc :list_continuous_test_results, request, options: options do |response, operation|
+                  response = ::Gapic::PagedEnumerable.new @environments_stub, :list_continuous_test_results, request, response, operation, options
+                  yield response, operation if block_given?
+                  return response
+                end
+              rescue ::GRPC::BadStatus => e
+                raise ::Google::Cloud::Error.from_error(e)
+              end
+
+              ##
               # Configuration class for the Environments API.
               #
               # This class represents the configuration for Environments,
@@ -759,6 +901,16 @@ module Google
                   # @return [::Gapic::Config::Method]
                   #
                   attr_reader :lookup_environment_history
+                  ##
+                  # RPC-specific configuration for `run_continuous_test`
+                  # @return [::Gapic::Config::Method]
+                  #
+                  attr_reader :run_continuous_test
+                  ##
+                  # RPC-specific configuration for `list_continuous_test_results`
+                  # @return [::Gapic::Config::Method]
+                  #
+                  attr_reader :list_continuous_test_results
 
                   # @private
                   def initialize parent_rpcs = nil
@@ -774,6 +926,10 @@ module Google
                     @delete_environment = ::Gapic::Config::Method.new delete_environment_config
                     lookup_environment_history_config = parent_rpcs.lookup_environment_history if parent_rpcs.respond_to? :lookup_environment_history
                     @lookup_environment_history = ::Gapic::Config::Method.new lookup_environment_history_config
+                    run_continuous_test_config = parent_rpcs.run_continuous_test if parent_rpcs.respond_to? :run_continuous_test
+                    @run_continuous_test = ::Gapic::Config::Method.new run_continuous_test_config
+                    list_continuous_test_results_config = parent_rpcs.list_continuous_test_results if parent_rpcs.respond_to? :list_continuous_test_results
+                    @list_continuous_test_results = ::Gapic::Config::Method.new list_continuous_test_results_config
 
                     yield self if block_given?
                   end
