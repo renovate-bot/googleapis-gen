@@ -1,5 +1,6 @@
 [
   "../../protos/google/devtools/clouddebugger/v2/controller.proto",
   "../../protos/google/devtools/clouddebugger/v2/data.proto",
-  "../../protos/google/devtools/clouddebugger/v2/debugger.proto"
+  "../../protos/google/devtools/clouddebugger/v2/debugger.proto",
+  "../../protos/google/devtools/source/v1/source_context.proto"
 ]
