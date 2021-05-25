@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const serviceusage = require('@google-cloud/serviceusage');
+const serviceusage = require('@google-cloud/service-usage');
 
 function main() {
   const serviceUsageClient = new serviceusage.ServiceUsageClient();
