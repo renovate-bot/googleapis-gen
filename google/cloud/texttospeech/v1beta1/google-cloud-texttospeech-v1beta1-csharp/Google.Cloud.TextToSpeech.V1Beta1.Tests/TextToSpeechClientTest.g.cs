@@ -22,7 +22,7 @@ using st = System.Threading;
 using stt = System.Threading.Tasks;
 using xunit = Xunit;
 
-namespace Google.Cloud.TextToSpeech.V1beta1.Tests
+namespace Google.Cloud.TextToSpeech.V1Beta1.Tests
 {
     /// <summary>Generated unit tests.</summary>
     public sealed class GeneratedTextToSpeechClientTest

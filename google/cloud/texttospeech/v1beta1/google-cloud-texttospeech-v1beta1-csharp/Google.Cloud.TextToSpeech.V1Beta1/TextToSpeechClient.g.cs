@@ -26,7 +26,7 @@ using sco = System.Collections.ObjectModel;
 using st = System.Threading;
 using stt = System.Threading.Tasks;
 
-namespace Google.Cloud.TextToSpeech.V1beta1
+namespace Google.Cloud.TextToSpeech.V1Beta1
 {
     /// <summary>Settings for <see cref="TextToSpeechClient"/> instances.</summary>
     public sealed partial class TextToSpeechSettings : gaxgrpc::ServiceSettingsBase

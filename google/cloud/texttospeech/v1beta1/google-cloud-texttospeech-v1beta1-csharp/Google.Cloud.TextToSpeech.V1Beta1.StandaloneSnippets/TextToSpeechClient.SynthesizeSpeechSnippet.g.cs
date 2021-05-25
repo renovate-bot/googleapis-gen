@@ -14,25 +14,27 @@
 
 // Generated code. DO NOT EDIT!
 
-namespace Google.Cloud.TextToSpeech.V1beta1.Snippets
+namespace Google.Cloud.TextToSpeech.V1Beta1.Snippets
 {
-    using Google.Cloud.TextToSpeech.V1beta1;
+    using Google.Cloud.TextToSpeech.V1Beta1;
 
     public sealed partial class GeneratedTextToSpeechClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListVoices</summary>
+        /// <summary>Snippet for SynthesizeSpeech</summary>
         /// <remarks>
         /// This snippet has been automatically generated for illustrative purposes only.
         /// It may require modifications to work in your environment.
         /// </remarks>
-        public void ListVoicesRequestObject()
+        public void SynthesizeSpeech()
         {
             // Create client
             TextToSpeechClient textToSpeechClient = TextToSpeechClient.Create();
             // Initialize request argument(s)
-            ListVoicesRequest request = new ListVoicesRequest { LanguageCode = "", };
+            SynthesisInput input = new SynthesisInput();
+            VoiceSelectionParams voice = new VoiceSelectionParams();
+            AudioConfig audioConfig = new AudioConfig();
             // Make the request
-            ListVoicesResponse response = textToSpeechClient.ListVoices(request);
+            SynthesizeSpeechResponse response = textToSpeechClient.SynthesizeSpeech(input, voice, audioConfig);
         }
     }
 }

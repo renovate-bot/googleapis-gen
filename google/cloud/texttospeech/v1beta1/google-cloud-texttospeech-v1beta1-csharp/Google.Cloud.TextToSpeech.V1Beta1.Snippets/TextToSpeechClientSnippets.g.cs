@@ -14,7 +14,7 @@
 
 // Generated code. DO NOT EDIT!
 
-namespace Google.Cloud.TextToSpeech.V1beta1.Snippets
+namespace Google.Cloud.TextToSpeech.V1Beta1.Snippets
 {
     using System.Threading.Tasks;
 

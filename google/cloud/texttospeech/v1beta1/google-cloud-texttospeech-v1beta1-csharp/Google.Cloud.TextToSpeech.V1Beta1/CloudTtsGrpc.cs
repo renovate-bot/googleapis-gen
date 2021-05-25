@@ -22,7 +22,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Google.Cloud.TextToSpeech.V1beta1 {
+namespace Google.Cloud.TextToSpeech.V1Beta1 {
   /// <summary>
   /// Service that implements Google Cloud Text-to-Speech API.
   /// </summary>
@@ -60,19 +60,19 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       return parser.ParseFrom(context.PayloadAsNewBuffer());
     }
 
-    static readonly grpc::Marshaller<global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest> __Marshaller_google_cloud_texttospeech_v1beta1_ListVoicesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest.Parser));
-    static readonly grpc::Marshaller<global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse> __Marshaller_google_cloud_texttospeech_v1beta1_ListVoicesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse.Parser));
-    static readonly grpc::Marshaller<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest> __Marshaller_google_cloud_texttospeech_v1beta1_SynthesizeSpeechRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest.Parser));
-    static readonly grpc::Marshaller<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse> __Marshaller_google_cloud_texttospeech_v1beta1_SynthesizeSpeechResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest> __Marshaller_google_cloud_texttospeech_v1beta1_ListVoicesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse> __Marshaller_google_cloud_texttospeech_v1beta1_ListVoicesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest> __Marshaller_google_cloud_texttospeech_v1beta1_SynthesizeSpeechRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse> __Marshaller_google_cloud_texttospeech_v1beta1_SynthesizeSpeechResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse.Parser));
 
-    static readonly grpc::Method<global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest, global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse> __Method_ListVoices = new grpc::Method<global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest, global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse>(
+    static readonly grpc::Method<global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest, global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse> __Method_ListVoices = new grpc::Method<global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest, global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "ListVoices",
         __Marshaller_google_cloud_texttospeech_v1beta1_ListVoicesRequest,
         __Marshaller_google_cloud_texttospeech_v1beta1_ListVoicesResponse);
 
-    static readonly grpc::Method<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest, global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse> __Method_SynthesizeSpeech = new grpc::Method<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest, global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse>(
+    static readonly grpc::Method<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest, global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse> __Method_SynthesizeSpeech = new grpc::Method<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest, global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SynthesizeSpeech",
@@ -82,7 +82,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Google.Cloud.TextToSpeech.V1beta1.CloudTtsReflection.Descriptor.Services[0]; }
+      get { return global::Google.Cloud.TextToSpeech.V1Beta1.CloudTtsReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of TextToSpeech</summary>
@@ -95,7 +95,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse> ListVoices(global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse> ListVoices(global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -107,7 +107,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse> SynthesizeSpeech(global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse> SynthesizeSpeech(global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -145,7 +145,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse ListVoices(global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse ListVoices(global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ListVoices(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -155,7 +155,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse ListVoices(global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest request, grpc::CallOptions options)
+      public virtual global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse ListVoices(global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_ListVoices, null, options, request);
       }
@@ -167,7 +167,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse> ListVoicesAsync(global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse> ListVoicesAsync(global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ListVoicesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -177,7 +177,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse> ListVoicesAsync(global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse> ListVoicesAsync(global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ListVoices, null, options, request);
       }
@@ -190,7 +190,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse SynthesizeSpeech(global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse SynthesizeSpeech(global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SynthesizeSpeech(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -201,7 +201,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse SynthesizeSpeech(global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest request, grpc::CallOptions options)
+      public virtual global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse SynthesizeSpeech(global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SynthesizeSpeech, null, options, request);
       }
@@ -214,7 +214,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse> SynthesizeSpeechAsync(global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse> SynthesizeSpeechAsync(global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SynthesizeSpeechAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -225,7 +225,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse> SynthesizeSpeechAsync(global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse> SynthesizeSpeechAsync(global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SynthesizeSpeech, null, options, request);
       }
@@ -251,8 +251,8 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, TextToSpeechBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_ListVoices, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest, global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse>(serviceImpl.ListVoices));
-      serviceBinder.AddMethod(__Method_SynthesizeSpeech, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest, global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse>(serviceImpl.SynthesizeSpeech));
+      serviceBinder.AddMethod(__Method_ListVoices, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest, global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse>(serviceImpl.ListVoices));
+      serviceBinder.AddMethod(__Method_SynthesizeSpeech, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest, global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse>(serviceImpl.SynthesizeSpeech));
     }
 
   }

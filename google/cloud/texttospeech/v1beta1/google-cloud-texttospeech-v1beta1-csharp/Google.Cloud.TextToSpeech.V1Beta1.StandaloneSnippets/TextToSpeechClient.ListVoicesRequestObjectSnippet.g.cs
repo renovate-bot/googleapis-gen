@@ -14,9 +14,9 @@
 
 // Generated code. DO NOT EDIT!
 
-namespace Google.Cloud.TextToSpeech.V1beta1.Snippets
+namespace Google.Cloud.TextToSpeech.V1Beta1.Snippets
 {
-    using Google.Cloud.TextToSpeech.V1beta1;
+    using Google.Cloud.TextToSpeech.V1Beta1;
 
     public sealed partial class GeneratedTextToSpeechClientStandaloneSnippets
     {
@@ -25,14 +25,14 @@ namespace Google.Cloud.TextToSpeech.V1beta1.Snippets
         /// This snippet has been automatically generated for illustrative purposes only.
         /// It may require modifications to work in your environment.
         /// </remarks>
-        public void ListVoices()
+        public void ListVoicesRequestObject()
         {
             // Create client
             TextToSpeechClient textToSpeechClient = TextToSpeechClient.Create();
             // Initialize request argument(s)
-            string languageCode = "";
+            ListVoicesRequest request = new ListVoicesRequest { LanguageCode = "", };
             // Make the request
-            ListVoicesResponse response = textToSpeechClient.ListVoices(languageCode);
+            ListVoicesResponse response = textToSpeechClient.ListVoices(request);
         }
     }
 }

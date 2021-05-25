@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Google.Cloud.TextToSpeech.V1beta1 {
+namespace Google.Cloud.TextToSpeech.V1Beta1 {
 
   /// <summary>Holder for reflection information generated from google/cloud/texttospeech/v1beta1/cloud_tts.proto</summary>
   public static partial class CloudTtsReflection {
@@ -78,21 +78,21 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
             "ZXRhMUIRVGV4dFRvU3BlZWNoUHJvdG9QAVpNZ29vZ2xlLmdvbGFuZy5vcmcv",
             "Z2VucHJvdG8vZ29vZ2xlYXBpcy9jbG91ZC90ZXh0dG9zcGVlY2gvdjFiZXRh",
             "MTt0ZXh0dG9zcGVlY2j4AQGqAiFHb29nbGUuQ2xvdWQuVGV4dFRvU3BlZWNo",
-            "LlYxYmV0YTHKAiFHb29nbGVcQ2xvdWRcVGV4dFRvU3BlZWNoXFYxYmV0YTHq",
+            "LlYxQmV0YTHKAiFHb29nbGVcQ2xvdWRcVGV4dFRvU3BlZWNoXFYxYmV0YTHq",
             "AiRHb29nbGU6OkNsb3VkOjpUZXh0VG9TcGVlY2g6OlYxYmV0YTFiBnByb3Rv",
             "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender), typeof(global::Google.Cloud.TextToSpeech.V1beta1.AudioEncoding), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest), global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesRequest.Parser, new[]{ "LanguageCode" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse), global::Google.Cloud.TextToSpeech.V1beta1.ListVoicesResponse.Parser, new[]{ "Voices" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1beta1.Voice), global::Google.Cloud.TextToSpeech.V1beta1.Voice.Parser, new[]{ "LanguageCodes", "Name", "SsmlGender", "NaturalSampleRateHertz" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest), global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest.Parser, new[]{ "Input", "Voice", "AudioConfig", "EnableTimePointing" }, null, new[]{ typeof(global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest.Types.TimepointType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1beta1.SynthesisInput), global::Google.Cloud.TextToSpeech.V1beta1.SynthesisInput.Parser, new[]{ "Text", "Ssml" }, new[]{ "InputSource" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1beta1.VoiceSelectionParams), global::Google.Cloud.TextToSpeech.V1beta1.VoiceSelectionParams.Parser, new[]{ "LanguageCode", "Name", "SsmlGender" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig), global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig.Parser, new[]{ "AudioEncoding", "SpeakingRate", "Pitch", "VolumeGainDb", "SampleRateHertz", "EffectsProfileId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse), global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechResponse.Parser, new[]{ "AudioContent", "Timepoints", "AudioConfig" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1beta1.Timepoint), global::Google.Cloud.TextToSpeech.V1beta1.Timepoint.Parser, new[]{ "MarkName", "TimeSeconds" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender), typeof(global::Google.Cloud.TextToSpeech.V1Beta1.AudioEncoding), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest), global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesRequest.Parser, new[]{ "LanguageCode" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse), global::Google.Cloud.TextToSpeech.V1Beta1.ListVoicesResponse.Parser, new[]{ "Voices" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1Beta1.Voice), global::Google.Cloud.TextToSpeech.V1Beta1.Voice.Parser, new[]{ "LanguageCodes", "Name", "SsmlGender", "NaturalSampleRateHertz" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest), global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest.Parser, new[]{ "Input", "Voice", "AudioConfig", "EnableTimePointing" }, null, new[]{ typeof(global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest.Types.TimepointType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1Beta1.SynthesisInput), global::Google.Cloud.TextToSpeech.V1Beta1.SynthesisInput.Parser, new[]{ "Text", "Ssml" }, new[]{ "InputSource" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1Beta1.VoiceSelectionParams), global::Google.Cloud.TextToSpeech.V1Beta1.VoiceSelectionParams.Parser, new[]{ "LanguageCode", "Name", "SsmlGender" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig), global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig.Parser, new[]{ "AudioEncoding", "SpeakingRate", "Pitch", "VolumeGainDb", "SampleRateHertz", "EffectsProfileId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse), global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechResponse.Parser, new[]{ "AudioContent", "Timepoints", "AudioConfig" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.TextToSpeech.V1Beta1.Timepoint), global::Google.Cloud.TextToSpeech.V1Beta1.Timepoint.Parser, new[]{ "MarkName", "TimeSeconds" }, null, null, null, null)
           }));
     }
     #endregion
@@ -185,7 +185,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.TextToSpeech.V1beta1.CloudTtsReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Google.Cloud.TextToSpeech.V1Beta1.CloudTtsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -371,7 +371,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.TextToSpeech.V1beta1.CloudTtsReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Google.Cloud.TextToSpeech.V1Beta1.CloudTtsReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -399,14 +399,14 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     /// <summary>Field number for the "voices" field.</summary>
     public const int VoicesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Google.Cloud.TextToSpeech.V1beta1.Voice> _repeated_voices_codec
-        = pb::FieldCodec.ForMessage(10, global::Google.Cloud.TextToSpeech.V1beta1.Voice.Parser);
-    private readonly pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1beta1.Voice> voices_ = new pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1beta1.Voice>();
+    private static readonly pb::FieldCodec<global::Google.Cloud.TextToSpeech.V1Beta1.Voice> _repeated_voices_codec
+        = pb::FieldCodec.ForMessage(10, global::Google.Cloud.TextToSpeech.V1Beta1.Voice.Parser);
+    private readonly pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1Beta1.Voice> voices_ = new pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1Beta1.Voice>();
     /// <summary>
     /// The list of voices.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1beta1.Voice> Voices {
+    public pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1Beta1.Voice> Voices {
       get { return voices_; }
     }
 
@@ -538,7 +538,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.TextToSpeech.V1beta1.CloudTtsReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Google.Cloud.TextToSpeech.V1Beta1.CloudTtsReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -598,12 +598,12 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     /// <summary>Field number for the "ssml_gender" field.</summary>
     public const int SsmlGenderFieldNumber = 3;
-    private global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender ssmlGender_ = global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified;
+    private global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender ssmlGender_ = global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified;
     /// <summary>
     /// The gender of this voice.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender SsmlGender {
+    public global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender SsmlGender {
       get { return ssmlGender_; }
       set {
         ssmlGender_ = value;
@@ -649,7 +649,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       int hash = 1;
       hash ^= languageCodes_.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified) hash ^= SsmlGender.GetHashCode();
+      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified) hash ^= SsmlGender.GetHashCode();
       if (NaturalSampleRateHertz != 0) hash ^= NaturalSampleRateHertz.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -672,7 +672,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified) {
+      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified) {
         output.WriteRawTag(24);
         output.WriteEnum((int) SsmlGender);
       }
@@ -694,7 +694,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified) {
+      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified) {
         output.WriteRawTag(24);
         output.WriteEnum((int) SsmlGender);
       }
@@ -715,7 +715,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified) {
+      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) SsmlGender);
       }
       if (NaturalSampleRateHertz != 0) {
@@ -736,7 +736,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.SsmlGender != global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified) {
+      if (other.SsmlGender != global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified) {
         SsmlGender = other.SsmlGender;
       }
       if (other.NaturalSampleRateHertz != 0) {
@@ -765,7 +765,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
             break;
           }
           case 24: {
-            SsmlGender = (global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender) input.ReadEnum();
+            SsmlGender = (global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender) input.ReadEnum();
             break;
           }
           case 32: {
@@ -795,7 +795,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
             break;
           }
           case 24: {
-            SsmlGender = (global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender) input.ReadEnum();
+            SsmlGender = (global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender) input.ReadEnum();
             break;
           }
           case 32: {
@@ -824,7 +824,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.TextToSpeech.V1beta1.CloudTtsReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Google.Cloud.TextToSpeech.V1Beta1.CloudTtsReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -855,12 +855,12 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     /// <summary>Field number for the "input" field.</summary>
     public const int InputFieldNumber = 1;
-    private global::Google.Cloud.TextToSpeech.V1beta1.SynthesisInput input_;
+    private global::Google.Cloud.TextToSpeech.V1Beta1.SynthesisInput input_;
     /// <summary>
     /// Required. The Synthesizer requires either plain text or SSML as input.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Cloud.TextToSpeech.V1beta1.SynthesisInput Input {
+    public global::Google.Cloud.TextToSpeech.V1Beta1.SynthesisInput Input {
       get { return input_; }
       set {
         input_ = value;
@@ -869,12 +869,12 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     /// <summary>Field number for the "voice" field.</summary>
     public const int VoiceFieldNumber = 2;
-    private global::Google.Cloud.TextToSpeech.V1beta1.VoiceSelectionParams voice_;
+    private global::Google.Cloud.TextToSpeech.V1Beta1.VoiceSelectionParams voice_;
     /// <summary>
     /// Required. The desired voice of the synthesized audio.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Cloud.TextToSpeech.V1beta1.VoiceSelectionParams Voice {
+    public global::Google.Cloud.TextToSpeech.V1Beta1.VoiceSelectionParams Voice {
       get { return voice_; }
       set {
         voice_ = value;
@@ -883,12 +883,12 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     /// <summary>Field number for the "audio_config" field.</summary>
     public const int AudioConfigFieldNumber = 3;
-    private global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig audioConfig_;
+    private global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig audioConfig_;
     /// <summary>
     /// Required. The configuration of the synthesized audio.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig AudioConfig {
+    public global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig AudioConfig {
       get { return audioConfig_; }
       set {
         audioConfig_ = value;
@@ -897,14 +897,14 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     /// <summary>Field number for the "enable_time_pointing" field.</summary>
     public const int EnableTimePointingFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest.Types.TimepointType> _repeated_enableTimePointing_codec
-        = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest.Types.TimepointType) x);
-    private readonly pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest.Types.TimepointType> enableTimePointing_ = new pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest.Types.TimepointType>();
+    private static readonly pb::FieldCodec<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest.Types.TimepointType> _repeated_enableTimePointing_codec
+        = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest.Types.TimepointType) x);
+    private readonly pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest.Types.TimepointType> enableTimePointing_ = new pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest.Types.TimepointType>();
     /// <summary>
     /// Whether and what timepoints are returned in the response.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1beta1.SynthesizeSpeechRequest.Types.TimepointType> EnableTimePointing {
+    public pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1Beta1.SynthesizeSpeechRequest.Types.TimepointType> EnableTimePointing {
       get { return enableTimePointing_; }
     }
 
@@ -1018,19 +1018,19 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       }
       if (other.input_ != null) {
         if (input_ == null) {
-          Input = new global::Google.Cloud.TextToSpeech.V1beta1.SynthesisInput();
+          Input = new global::Google.Cloud.TextToSpeech.V1Beta1.SynthesisInput();
         }
         Input.MergeFrom(other.Input);
       }
       if (other.voice_ != null) {
         if (voice_ == null) {
-          Voice = new global::Google.Cloud.TextToSpeech.V1beta1.VoiceSelectionParams();
+          Voice = new global::Google.Cloud.TextToSpeech.V1Beta1.VoiceSelectionParams();
         }
         Voice.MergeFrom(other.Voice);
       }
       if (other.audioConfig_ != null) {
         if (audioConfig_ == null) {
-          AudioConfig = new global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig();
+          AudioConfig = new global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig();
         }
         AudioConfig.MergeFrom(other.AudioConfig);
       }
@@ -1051,21 +1051,21 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
             break;
           case 10: {
             if (input_ == null) {
-              Input = new global::Google.Cloud.TextToSpeech.V1beta1.SynthesisInput();
+              Input = new global::Google.Cloud.TextToSpeech.V1Beta1.SynthesisInput();
             }
             input.ReadMessage(Input);
             break;
           }
           case 18: {
             if (voice_ == null) {
-              Voice = new global::Google.Cloud.TextToSpeech.V1beta1.VoiceSelectionParams();
+              Voice = new global::Google.Cloud.TextToSpeech.V1Beta1.VoiceSelectionParams();
             }
             input.ReadMessage(Voice);
             break;
           }
           case 26: {
             if (audioConfig_ == null) {
-              AudioConfig = new global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig();
+              AudioConfig = new global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig();
             }
             input.ReadMessage(AudioConfig);
             break;
@@ -1091,21 +1091,21 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
             break;
           case 10: {
             if (input_ == null) {
-              Input = new global::Google.Cloud.TextToSpeech.V1beta1.SynthesisInput();
+              Input = new global::Google.Cloud.TextToSpeech.V1Beta1.SynthesisInput();
             }
             input.ReadMessage(Input);
             break;
           }
           case 18: {
             if (voice_ == null) {
-              Voice = new global::Google.Cloud.TextToSpeech.V1beta1.VoiceSelectionParams();
+              Voice = new global::Google.Cloud.TextToSpeech.V1Beta1.VoiceSelectionParams();
             }
             input.ReadMessage(Voice);
             break;
           }
           case 26: {
             if (audioConfig_ == null) {
-              AudioConfig = new global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig();
+              AudioConfig = new global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig();
             }
             input.ReadMessage(AudioConfig);
             break;
@@ -1161,7 +1161,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.TextToSpeech.V1beta1.CloudTtsReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Google.Cloud.TextToSpeech.V1Beta1.CloudTtsReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1412,7 +1412,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.TextToSpeech.V1beta1.CloudTtsReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Google.Cloud.TextToSpeech.V1Beta1.CloudTtsReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1481,7 +1481,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     /// <summary>Field number for the "ssml_gender" field.</summary>
     public const int SsmlGenderFieldNumber = 3;
-    private global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender ssmlGender_ = global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified;
+    private global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender ssmlGender_ = global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified;
     /// <summary>
     /// The preferred gender of the voice. If not set, the service will
     /// choose a voice based on the other parameters such as language_code and
@@ -1490,7 +1490,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
     /// substitute a voice with a different gender rather than failing the request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender SsmlGender {
+    public global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender SsmlGender {
       get { return ssmlGender_; }
       set {
         ssmlGender_ = value;
@@ -1521,7 +1521,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       int hash = 1;
       if (LanguageCode.Length != 0) hash ^= LanguageCode.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified) hash ^= SsmlGender.GetHashCode();
+      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified) hash ^= SsmlGender.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1546,7 +1546,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified) {
+      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified) {
         output.WriteRawTag(24);
         output.WriteEnum((int) SsmlGender);
       }
@@ -1567,7 +1567,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified) {
+      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified) {
         output.WriteRawTag(24);
         output.WriteEnum((int) SsmlGender);
       }
@@ -1586,7 +1586,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified) {
+      if (SsmlGender != global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) SsmlGender);
       }
       if (_unknownFields != null) {
@@ -1606,7 +1606,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.SsmlGender != global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender.Unspecified) {
+      if (other.SsmlGender != global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender.Unspecified) {
         SsmlGender = other.SsmlGender;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1632,7 +1632,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
             break;
           }
           case 24: {
-            SsmlGender = (global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender) input.ReadEnum();
+            SsmlGender = (global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender) input.ReadEnum();
             break;
           }
         }
@@ -1658,7 +1658,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
             break;
           }
           case 24: {
-            SsmlGender = (global::Google.Cloud.TextToSpeech.V1beta1.SsmlVoiceGender) input.ReadEnum();
+            SsmlGender = (global::Google.Cloud.TextToSpeech.V1Beta1.SsmlVoiceGender) input.ReadEnum();
             break;
           }
         }
@@ -1683,7 +1683,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.TextToSpeech.V1beta1.CloudTtsReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Google.Cloud.TextToSpeech.V1Beta1.CloudTtsReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1716,12 +1716,12 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     /// <summary>Field number for the "audio_encoding" field.</summary>
     public const int AudioEncodingFieldNumber = 1;
-    private global::Google.Cloud.TextToSpeech.V1beta1.AudioEncoding audioEncoding_ = global::Google.Cloud.TextToSpeech.V1beta1.AudioEncoding.Unspecified;
+    private global::Google.Cloud.TextToSpeech.V1Beta1.AudioEncoding audioEncoding_ = global::Google.Cloud.TextToSpeech.V1Beta1.AudioEncoding.Unspecified;
     /// <summary>
     /// Required. The format of the audio byte stream.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Cloud.TextToSpeech.V1beta1.AudioEncoding AudioEncoding {
+    public global::Google.Cloud.TextToSpeech.V1Beta1.AudioEncoding AudioEncoding {
       get { return audioEncoding_; }
       set {
         audioEncoding_ = value;
@@ -1845,7 +1845,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (AudioEncoding != global::Google.Cloud.TextToSpeech.V1beta1.AudioEncoding.Unspecified) hash ^= AudioEncoding.GetHashCode();
+      if (AudioEncoding != global::Google.Cloud.TextToSpeech.V1Beta1.AudioEncoding.Unspecified) hash ^= AudioEncoding.GetHashCode();
       if (SpeakingRate != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(SpeakingRate);
       if (Pitch != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Pitch);
       if (VolumeGainDb != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(VolumeGainDb);
@@ -1867,7 +1867,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AudioEncoding != global::Google.Cloud.TextToSpeech.V1beta1.AudioEncoding.Unspecified) {
+      if (AudioEncoding != global::Google.Cloud.TextToSpeech.V1Beta1.AudioEncoding.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) AudioEncoding);
       }
@@ -1897,7 +1897,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AudioEncoding != global::Google.Cloud.TextToSpeech.V1beta1.AudioEncoding.Unspecified) {
+      if (AudioEncoding != global::Google.Cloud.TextToSpeech.V1Beta1.AudioEncoding.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) AudioEncoding);
       }
@@ -1927,7 +1927,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (AudioEncoding != global::Google.Cloud.TextToSpeech.V1beta1.AudioEncoding.Unspecified) {
+      if (AudioEncoding != global::Google.Cloud.TextToSpeech.V1Beta1.AudioEncoding.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) AudioEncoding);
       }
       if (SpeakingRate != 0D) {
@@ -1954,7 +1954,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       if (other == null) {
         return;
       }
-      if (other.AudioEncoding != global::Google.Cloud.TextToSpeech.V1beta1.AudioEncoding.Unspecified) {
+      if (other.AudioEncoding != global::Google.Cloud.TextToSpeech.V1Beta1.AudioEncoding.Unspecified) {
         AudioEncoding = other.AudioEncoding;
       }
       if (other.SpeakingRate != 0D) {
@@ -1985,7 +1985,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            AudioEncoding = (global::Google.Cloud.TextToSpeech.V1beta1.AudioEncoding) input.ReadEnum();
+            AudioEncoding = (global::Google.Cloud.TextToSpeech.V1Beta1.AudioEncoding) input.ReadEnum();
             break;
           }
           case 17: {
@@ -2023,7 +2023,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            AudioEncoding = (global::Google.Cloud.TextToSpeech.V1beta1.AudioEncoding) input.ReadEnum();
+            AudioEncoding = (global::Google.Cloud.TextToSpeech.V1Beta1.AudioEncoding) input.ReadEnum();
             break;
           }
           case 17: {
@@ -2068,7 +2068,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.TextToSpeech.V1beta1.CloudTtsReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Google.Cloud.TextToSpeech.V1Beta1.CloudTtsReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2116,26 +2116,26 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     /// <summary>Field number for the "timepoints" field.</summary>
     public const int TimepointsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Google.Cloud.TextToSpeech.V1beta1.Timepoint> _repeated_timepoints_codec
-        = pb::FieldCodec.ForMessage(18, global::Google.Cloud.TextToSpeech.V1beta1.Timepoint.Parser);
-    private readonly pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1beta1.Timepoint> timepoints_ = new pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1beta1.Timepoint>();
+    private static readonly pb::FieldCodec<global::Google.Cloud.TextToSpeech.V1Beta1.Timepoint> _repeated_timepoints_codec
+        = pb::FieldCodec.ForMessage(18, global::Google.Cloud.TextToSpeech.V1Beta1.Timepoint.Parser);
+    private readonly pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1Beta1.Timepoint> timepoints_ = new pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1Beta1.Timepoint>();
     /// <summary>
     /// A link between a position in the original request input and a corresponding
     /// time in the output audio. It's only supported via `&lt;mark>` of SSML input.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1beta1.Timepoint> Timepoints {
+    public pbc::RepeatedField<global::Google.Cloud.TextToSpeech.V1Beta1.Timepoint> Timepoints {
       get { return timepoints_; }
     }
 
     /// <summary>Field number for the "audio_config" field.</summary>
     public const int AudioConfigFieldNumber = 4;
-    private global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig audioConfig_;
+    private global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig audioConfig_;
     /// <summary>
     /// The audio metadata of `audio_content`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig AudioConfig {
+    public global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig AudioConfig {
       get { return audioConfig_; }
       set {
         audioConfig_ = value;
@@ -2243,7 +2243,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
       timepoints_.Add(other.timepoints_);
       if (other.audioConfig_ != null) {
         if (audioConfig_ == null) {
-          AudioConfig = new global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig();
+          AudioConfig = new global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig();
         }
         AudioConfig.MergeFrom(other.AudioConfig);
       }
@@ -2271,7 +2271,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
           }
           case 34: {
             if (audioConfig_ == null) {
-              AudioConfig = new global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig();
+              AudioConfig = new global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig();
             }
             input.ReadMessage(AudioConfig);
             break;
@@ -2300,7 +2300,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
           }
           case 34: {
             if (audioConfig_ == null) {
-              AudioConfig = new global::Google.Cloud.TextToSpeech.V1beta1.AudioConfig();
+              AudioConfig = new global::Google.Cloud.TextToSpeech.V1Beta1.AudioConfig();
             }
             input.ReadMessage(AudioConfig);
             break;
@@ -2328,7 +2328,7 @@ namespace Google.Cloud.TextToSpeech.V1beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.TextToSpeech.V1beta1.CloudTtsReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Google.Cloud.TextToSpeech.V1Beta1.CloudTtsReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

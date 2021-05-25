@@ -14,9 +14,9 @@
 
 // Generated code. DO NOT EDIT!
 
-namespace Google.Cloud.TextToSpeech.V1beta1.Snippets
+namespace Google.Cloud.TextToSpeech.V1Beta1.Snippets
 {
-    using Google.Cloud.TextToSpeech.V1beta1;
+    using Google.Cloud.TextToSpeech.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTextToSpeechClientStandaloneSnippets
@@ -26,14 +26,14 @@ namespace Google.Cloud.TextToSpeech.V1beta1.Snippets
         /// This snippet has been automatically generated for illustrative purposes only.
         /// It may require modifications to work in your environment.
         /// </remarks>
-        public async Task ListVoicesAsync()
+        public async Task ListVoicesRequestObjectAsync()
         {
             // Create client
             TextToSpeechClient textToSpeechClient = await TextToSpeechClient.CreateAsync();
             // Initialize request argument(s)
-            string languageCode = "";
+            ListVoicesRequest request = new ListVoicesRequest { LanguageCode = "", };
             // Make the request
-            ListVoicesResponse response = await textToSpeechClient.ListVoicesAsync(languageCode);
+            ListVoicesResponse response = await textToSpeechClient.ListVoicesAsync(request);
         }
     }
 }

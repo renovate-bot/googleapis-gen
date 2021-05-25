@@ -14,34 +14,28 @@
 
 // Generated code. DO NOT EDIT!
 
-namespace Google.Cloud.TextToSpeech.V1beta1.Snippets
+namespace Google.Cloud.TextToSpeech.V1Beta1.Snippets
 {
-    using Google.Cloud.TextToSpeech.V1beta1;
+    using Google.Cloud.TextToSpeech.V1Beta1;
+    using System.Threading.Tasks;
 
     public sealed partial class GeneratedTextToSpeechClientStandaloneSnippets
     {
-        /// <summary>Snippet for SynthesizeSpeech</summary>
+        /// <summary>Snippet for SynthesizeSpeechAsync</summary>
         /// <remarks>
         /// This snippet has been automatically generated for illustrative purposes only.
         /// It may require modifications to work in your environment.
         /// </remarks>
-        public void SynthesizeSpeechRequestObject()
+        public async Task SynthesizeSpeechAsync()
         {
             // Create client
-            TextToSpeechClient textToSpeechClient = TextToSpeechClient.Create();
+            TextToSpeechClient textToSpeechClient = await TextToSpeechClient.CreateAsync();
             // Initialize request argument(s)
-            SynthesizeSpeechRequest request = new SynthesizeSpeechRequest
-            {
-                Input = new SynthesisInput(),
-                Voice = new VoiceSelectionParams(),
-                AudioConfig = new AudioConfig(),
-                EnableTimePointing =
-                {
-                    SynthesizeSpeechRequest.Types.TimepointType.Unspecified,
-                },
-            };
+            SynthesisInput input = new SynthesisInput();
+            VoiceSelectionParams voice = new VoiceSelectionParams();
+            AudioConfig audioConfig = new AudioConfig();
             // Make the request
-            SynthesizeSpeechResponse response = textToSpeechClient.SynthesizeSpeech(request);
+            SynthesizeSpeechResponse response = await textToSpeechClient.SynthesizeSpeechAsync(input, voice, audioConfig);
         }
     }
 }
