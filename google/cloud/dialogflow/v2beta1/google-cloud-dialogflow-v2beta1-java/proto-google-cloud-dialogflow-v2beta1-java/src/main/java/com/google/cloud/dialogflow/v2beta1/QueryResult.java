@@ -201,6 +201,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 168: {
+
+            cancelsSlotFilling_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -513,6 +518,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getAllRequiredParamsPresent() {
     return allRequiredParamsPresent_;
+  }
+
+  public static final int CANCELS_SLOT_FILLING_FIELD_NUMBER = 21;
+  private boolean cancelsSlotFilling_;
+  /**
+   * <pre>
+   * Indicates whether the conversational query triggers a cancellation for slot
+   * filling.
+   * </pre>
+   *
+   * <code>bool cancels_slot_filling = 21;</code>
+   * @return The cancelsSlotFilling.
+   */
+  @java.lang.Override
+  public boolean getCancelsSlotFilling() {
+    return cancelsSlotFilling_;
   }
 
   public static final int FULFILLMENT_TEXT_FIELD_NUMBER = 6;
@@ -1050,6 +1071,9 @@ private static final long serialVersionUID = 0L;
     if (knowledgeAnswers_ != null) {
       output.writeMessage(18, getKnowledgeAnswers());
     }
+    if (cancelsSlotFilling_ != false) {
+      output.writeBool(21, cancelsSlotFilling_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1118,6 +1142,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getKnowledgeAnswers());
     }
+    if (cancelsSlotFilling_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(21, cancelsSlotFilling_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1149,6 +1177,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getAllRequiredParamsPresent()
         != other.getAllRequiredParamsPresent()) return false;
+    if (getCancelsSlotFilling()
+        != other.getCancelsSlotFilling()) return false;
     if (!getFulfillmentText()
         .equals(other.getFulfillmentText())) return false;
     if (!getFulfillmentMessagesList()
@@ -1212,6 +1242,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ALL_REQUIRED_PARAMS_PRESENT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getAllRequiredParamsPresent());
+    hash = (37 * hash) + CANCELS_SLOT_FILLING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getCancelsSlotFilling());
     hash = (37 * hash) + FULFILLMENT_TEXT_FIELD_NUMBER;
     hash = (53 * hash) + getFulfillmentText().hashCode();
     if (getFulfillmentMessagesCount() > 0) {
@@ -1402,6 +1435,8 @@ private static final long serialVersionUID = 0L;
       }
       allRequiredParamsPresent_ = false;
 
+      cancelsSlotFilling_ = false;
+
       fulfillmentText_ = "";
 
       if (fulfillmentMessagesBuilder_ == null) {
@@ -1487,6 +1522,7 @@ private static final long serialVersionUID = 0L;
         result.parameters_ = parametersBuilder_.build();
       }
       result.allRequiredParamsPresent_ = allRequiredParamsPresent_;
+      result.cancelsSlotFilling_ = cancelsSlotFilling_;
       result.fulfillmentText_ = fulfillmentText_;
       if (fulfillmentMessagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -1601,6 +1637,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getAllRequiredParamsPresent() != false) {
         setAllRequiredParamsPresent(other.getAllRequiredParamsPresent());
+      }
+      if (other.getCancelsSlotFilling() != false) {
+        setCancelsSlotFilling(other.getCancelsSlotFilling());
       }
       if (!other.getFulfillmentText().isEmpty()) {
         fulfillmentText_ = other.fulfillmentText_;
@@ -2435,6 +2474,52 @@ private static final long serialVersionUID = 0L;
     public Builder clearAllRequiredParamsPresent() {
       
       allRequiredParamsPresent_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean cancelsSlotFilling_ ;
+    /**
+     * <pre>
+     * Indicates whether the conversational query triggers a cancellation for slot
+     * filling.
+     * </pre>
+     *
+     * <code>bool cancels_slot_filling = 21;</code>
+     * @return The cancelsSlotFilling.
+     */
+    @java.lang.Override
+    public boolean getCancelsSlotFilling() {
+      return cancelsSlotFilling_;
+    }
+    /**
+     * <pre>
+     * Indicates whether the conversational query triggers a cancellation for slot
+     * filling.
+     * </pre>
+     *
+     * <code>bool cancels_slot_filling = 21;</code>
+     * @param value The cancelsSlotFilling to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCancelsSlotFilling(boolean value) {
+      
+      cancelsSlotFilling_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether the conversational query triggers a cancellation for slot
+     * filling.
+     * </pre>
+     *
+     * <code>bool cancels_slot_filling = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCancelsSlotFilling() {
+      
+      cancelsSlotFilling_ = false;
       onChanged();
       return this;
     }
