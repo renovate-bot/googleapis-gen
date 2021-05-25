@@ -1492,6 +1492,142 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
         return self._stubs['get_data_sharing_settings']
 
     @property
+    def get_measurement_protocol_secret(self) -> Callable[
+            [analytics_admin.GetMeasurementProtocolSecretRequest],
+            resources.MeasurementProtocolSecret]:
+        r"""Return a callable for the get measurement protocol
+        secret method over gRPC.
+
+        Lookup for a single "GA4" MeasurementProtocolSecret.
+
+        Returns:
+            Callable[[~.GetMeasurementProtocolSecretRequest],
+                    ~.MeasurementProtocolSecret]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'get_measurement_protocol_secret' not in self._stubs:
+            self._stubs['get_measurement_protocol_secret'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/GetMeasurementProtocolSecret',
+                request_serializer=analytics_admin.GetMeasurementProtocolSecretRequest.serialize,
+                response_deserializer=resources.MeasurementProtocolSecret.deserialize,
+            )
+        return self._stubs['get_measurement_protocol_secret']
+
+    @property
+    def list_measurement_protocol_secrets(self) -> Callable[
+            [analytics_admin.ListMeasurementProtocolSecretsRequest],
+            analytics_admin.ListMeasurementProtocolSecretsResponse]:
+        r"""Return a callable for the list measurement protocol
+        secrets method over gRPC.
+
+        Returns child MeasurementProtocolSecrets under the
+        specified parent Property.
+
+        Returns:
+            Callable[[~.ListMeasurementProtocolSecretsRequest],
+                    ~.ListMeasurementProtocolSecretsResponse]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'list_measurement_protocol_secrets' not in self._stubs:
+            self._stubs['list_measurement_protocol_secrets'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/ListMeasurementProtocolSecrets',
+                request_serializer=analytics_admin.ListMeasurementProtocolSecretsRequest.serialize,
+                response_deserializer=analytics_admin.ListMeasurementProtocolSecretsResponse.deserialize,
+            )
+        return self._stubs['list_measurement_protocol_secrets']
+
+    @property
+    def create_measurement_protocol_secret(self) -> Callable[
+            [analytics_admin.CreateMeasurementProtocolSecretRequest],
+            resources.MeasurementProtocolSecret]:
+        r"""Return a callable for the create measurement protocol
+        secret method over gRPC.
+
+        Creates a measurement protocol secret.
+
+        Returns:
+            Callable[[~.CreateMeasurementProtocolSecretRequest],
+                    ~.MeasurementProtocolSecret]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'create_measurement_protocol_secret' not in self._stubs:
+            self._stubs['create_measurement_protocol_secret'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/CreateMeasurementProtocolSecret',
+                request_serializer=analytics_admin.CreateMeasurementProtocolSecretRequest.serialize,
+                response_deserializer=resources.MeasurementProtocolSecret.deserialize,
+            )
+        return self._stubs['create_measurement_protocol_secret']
+
+    @property
+    def delete_measurement_protocol_secret(self) -> Callable[
+            [analytics_admin.DeleteMeasurementProtocolSecretRequest],
+            empty_pb2.Empty]:
+        r"""Return a callable for the delete measurement protocol
+        secret method over gRPC.
+
+        Deletes target MeasurementProtocolSecret.
+
+        Returns:
+            Callable[[~.DeleteMeasurementProtocolSecretRequest],
+                    ~.Empty]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'delete_measurement_protocol_secret' not in self._stubs:
+            self._stubs['delete_measurement_protocol_secret'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteMeasurementProtocolSecret',
+                request_serializer=analytics_admin.DeleteMeasurementProtocolSecretRequest.serialize,
+                response_deserializer=empty_pb2.Empty.FromString,
+            )
+        return self._stubs['delete_measurement_protocol_secret']
+
+    @property
+    def update_measurement_protocol_secret(self) -> Callable[
+            [analytics_admin.UpdateMeasurementProtocolSecretRequest],
+            resources.MeasurementProtocolSecret]:
+        r"""Return a callable for the update measurement protocol
+        secret method over gRPC.
+
+        Updates a measurement protocol secret.
+
+        Returns:
+            Callable[[~.UpdateMeasurementProtocolSecretRequest],
+                    ~.MeasurementProtocolSecret]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'update_measurement_protocol_secret' not in self._stubs:
+            self._stubs['update_measurement_protocol_secret'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateMeasurementProtocolSecret',
+                request_serializer=analytics_admin.UpdateMeasurementProtocolSecretRequest.serialize,
+                response_deserializer=resources.MeasurementProtocolSecret.deserialize,
+            )
+        return self._stubs['update_measurement_protocol_secret']
+
+    @property
     def search_change_history_events(self) -> Callable[
             [analytics_admin.SearchChangeHistoryEventsRequest],
             analytics_admin.SearchChangeHistoryEventsResponse]:
@@ -1517,6 +1653,425 @@ class AnalyticsAdminServiceGrpcTransport(AnalyticsAdminServiceTransport):
                 response_deserializer=analytics_admin.SearchChangeHistoryEventsResponse.deserialize,
             )
         return self._stubs['search_change_history_events']
+
+    @property
+    def get_google_signals_settings(self) -> Callable[
+            [analytics_admin.GetGoogleSignalsSettingsRequest],
+            resources.GoogleSignalsSettings]:
+        r"""Return a callable for the get google signals settings method over gRPC.
+
+        Lookup for Google Signals settings for a property.
+
+        Returns:
+            Callable[[~.GetGoogleSignalsSettingsRequest],
+                    ~.GoogleSignalsSettings]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'get_google_signals_settings' not in self._stubs:
+            self._stubs['get_google_signals_settings'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/GetGoogleSignalsSettings',
+                request_serializer=analytics_admin.GetGoogleSignalsSettingsRequest.serialize,
+                response_deserializer=resources.GoogleSignalsSettings.deserialize,
+            )
+        return self._stubs['get_google_signals_settings']
+
+    @property
+    def update_google_signals_settings(self) -> Callable[
+            [analytics_admin.UpdateGoogleSignalsSettingsRequest],
+            resources.GoogleSignalsSettings]:
+        r"""Return a callable for the update google signals settings method over gRPC.
+
+        Updates Google Signals settings for a property.
+
+        Returns:
+            Callable[[~.UpdateGoogleSignalsSettingsRequest],
+                    ~.GoogleSignalsSettings]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'update_google_signals_settings' not in self._stubs:
+            self._stubs['update_google_signals_settings'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateGoogleSignalsSettings',
+                request_serializer=analytics_admin.UpdateGoogleSignalsSettingsRequest.serialize,
+                response_deserializer=resources.GoogleSignalsSettings.deserialize,
+            )
+        return self._stubs['update_google_signals_settings']
+
+    @property
+    def create_conversion_event(self) -> Callable[
+            [analytics_admin.CreateConversionEventRequest],
+            resources.ConversionEvent]:
+        r"""Return a callable for the create conversion event method over gRPC.
+
+        Creates a conversion event with the specified
+        attributes.
+
+        Returns:
+            Callable[[~.CreateConversionEventRequest],
+                    ~.ConversionEvent]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'create_conversion_event' not in self._stubs:
+            self._stubs['create_conversion_event'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/CreateConversionEvent',
+                request_serializer=analytics_admin.CreateConversionEventRequest.serialize,
+                response_deserializer=resources.ConversionEvent.deserialize,
+            )
+        return self._stubs['create_conversion_event']
+
+    @property
+    def get_conversion_event(self) -> Callable[
+            [analytics_admin.GetConversionEventRequest],
+            resources.ConversionEvent]:
+        r"""Return a callable for the get conversion event method over gRPC.
+
+        Retrieve a single conversion event.
+
+        Returns:
+            Callable[[~.GetConversionEventRequest],
+                    ~.ConversionEvent]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'get_conversion_event' not in self._stubs:
+            self._stubs['get_conversion_event'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/GetConversionEvent',
+                request_serializer=analytics_admin.GetConversionEventRequest.serialize,
+                response_deserializer=resources.ConversionEvent.deserialize,
+            )
+        return self._stubs['get_conversion_event']
+
+    @property
+    def delete_conversion_event(self) -> Callable[
+            [analytics_admin.DeleteConversionEventRequest],
+            empty_pb2.Empty]:
+        r"""Return a callable for the delete conversion event method over gRPC.
+
+        Deletes a conversion event in a property.
+
+        Returns:
+            Callable[[~.DeleteConversionEventRequest],
+                    ~.Empty]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'delete_conversion_event' not in self._stubs:
+            self._stubs['delete_conversion_event'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteConversionEvent',
+                request_serializer=analytics_admin.DeleteConversionEventRequest.serialize,
+                response_deserializer=empty_pb2.Empty.FromString,
+            )
+        return self._stubs['delete_conversion_event']
+
+    @property
+    def list_conversion_events(self) -> Callable[
+            [analytics_admin.ListConversionEventsRequest],
+            analytics_admin.ListConversionEventsResponse]:
+        r"""Return a callable for the list conversion events method over gRPC.
+
+        Returns a list of conversion events in the specified
+        parent property.
+        Returns an empty list if no conversion events are found.
+
+        Returns:
+            Callable[[~.ListConversionEventsRequest],
+                    ~.ListConversionEventsResponse]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'list_conversion_events' not in self._stubs:
+            self._stubs['list_conversion_events'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/ListConversionEvents',
+                request_serializer=analytics_admin.ListConversionEventsRequest.serialize,
+                response_deserializer=analytics_admin.ListConversionEventsResponse.deserialize,
+            )
+        return self._stubs['list_conversion_events']
+
+    @property
+    def create_custom_dimension(self) -> Callable[
+            [analytics_admin.CreateCustomDimensionRequest],
+            resources.CustomDimension]:
+        r"""Return a callable for the create custom dimension method over gRPC.
+
+        Creates a CustomDimension.
+
+        Returns:
+            Callable[[~.CreateCustomDimensionRequest],
+                    ~.CustomDimension]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'create_custom_dimension' not in self._stubs:
+            self._stubs['create_custom_dimension'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/CreateCustomDimension',
+                request_serializer=analytics_admin.CreateCustomDimensionRequest.serialize,
+                response_deserializer=resources.CustomDimension.deserialize,
+            )
+        return self._stubs['create_custom_dimension']
+
+    @property
+    def update_custom_dimension(self) -> Callable[
+            [analytics_admin.UpdateCustomDimensionRequest],
+            resources.CustomDimension]:
+        r"""Return a callable for the update custom dimension method over gRPC.
+
+        Updates a CustomDimension on a property.
+
+        Returns:
+            Callable[[~.UpdateCustomDimensionRequest],
+                    ~.CustomDimension]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'update_custom_dimension' not in self._stubs:
+            self._stubs['update_custom_dimension'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateCustomDimension',
+                request_serializer=analytics_admin.UpdateCustomDimensionRequest.serialize,
+                response_deserializer=resources.CustomDimension.deserialize,
+            )
+        return self._stubs['update_custom_dimension']
+
+    @property
+    def list_custom_dimensions(self) -> Callable[
+            [analytics_admin.ListCustomDimensionsRequest],
+            analytics_admin.ListCustomDimensionsResponse]:
+        r"""Return a callable for the list custom dimensions method over gRPC.
+
+        Lists CustomDimensions on a property.
+
+        Returns:
+            Callable[[~.ListCustomDimensionsRequest],
+                    ~.ListCustomDimensionsResponse]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'list_custom_dimensions' not in self._stubs:
+            self._stubs['list_custom_dimensions'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/ListCustomDimensions',
+                request_serializer=analytics_admin.ListCustomDimensionsRequest.serialize,
+                response_deserializer=analytics_admin.ListCustomDimensionsResponse.deserialize,
+            )
+        return self._stubs['list_custom_dimensions']
+
+    @property
+    def archive_custom_dimension(self) -> Callable[
+            [analytics_admin.ArchiveCustomDimensionRequest],
+            empty_pb2.Empty]:
+        r"""Return a callable for the archive custom dimension method over gRPC.
+
+        Archives a CustomDimension on a property.
+
+        Returns:
+            Callable[[~.ArchiveCustomDimensionRequest],
+                    ~.Empty]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'archive_custom_dimension' not in self._stubs:
+            self._stubs['archive_custom_dimension'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/ArchiveCustomDimension',
+                request_serializer=analytics_admin.ArchiveCustomDimensionRequest.serialize,
+                response_deserializer=empty_pb2.Empty.FromString,
+            )
+        return self._stubs['archive_custom_dimension']
+
+    @property
+    def get_custom_dimension(self) -> Callable[
+            [analytics_admin.GetCustomDimensionRequest],
+            resources.CustomDimension]:
+        r"""Return a callable for the get custom dimension method over gRPC.
+
+        Lookup for a single CustomDimension.
+
+        Returns:
+            Callable[[~.GetCustomDimensionRequest],
+                    ~.CustomDimension]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'get_custom_dimension' not in self._stubs:
+            self._stubs['get_custom_dimension'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/GetCustomDimension',
+                request_serializer=analytics_admin.GetCustomDimensionRequest.serialize,
+                response_deserializer=resources.CustomDimension.deserialize,
+            )
+        return self._stubs['get_custom_dimension']
+
+    @property
+    def create_custom_metric(self) -> Callable[
+            [analytics_admin.CreateCustomMetricRequest],
+            resources.CustomMetric]:
+        r"""Return a callable for the create custom metric method over gRPC.
+
+        Creates a CustomMetric.
+
+        Returns:
+            Callable[[~.CreateCustomMetricRequest],
+                    ~.CustomMetric]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'create_custom_metric' not in self._stubs:
+            self._stubs['create_custom_metric'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/CreateCustomMetric',
+                request_serializer=analytics_admin.CreateCustomMetricRequest.serialize,
+                response_deserializer=resources.CustomMetric.deserialize,
+            )
+        return self._stubs['create_custom_metric']
+
+    @property
+    def update_custom_metric(self) -> Callable[
+            [analytics_admin.UpdateCustomMetricRequest],
+            resources.CustomMetric]:
+        r"""Return a callable for the update custom metric method over gRPC.
+
+        Updates a CustomMetric on a property.
+
+        Returns:
+            Callable[[~.UpdateCustomMetricRequest],
+                    ~.CustomMetric]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'update_custom_metric' not in self._stubs:
+            self._stubs['update_custom_metric'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateCustomMetric',
+                request_serializer=analytics_admin.UpdateCustomMetricRequest.serialize,
+                response_deserializer=resources.CustomMetric.deserialize,
+            )
+        return self._stubs['update_custom_metric']
+
+    @property
+    def list_custom_metrics(self) -> Callable[
+            [analytics_admin.ListCustomMetricsRequest],
+            analytics_admin.ListCustomMetricsResponse]:
+        r"""Return a callable for the list custom metrics method over gRPC.
+
+        Lists CustomMetrics on a property.
+
+        Returns:
+            Callable[[~.ListCustomMetricsRequest],
+                    ~.ListCustomMetricsResponse]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'list_custom_metrics' not in self._stubs:
+            self._stubs['list_custom_metrics'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/ListCustomMetrics',
+                request_serializer=analytics_admin.ListCustomMetricsRequest.serialize,
+                response_deserializer=analytics_admin.ListCustomMetricsResponse.deserialize,
+            )
+        return self._stubs['list_custom_metrics']
+
+    @property
+    def archive_custom_metric(self) -> Callable[
+            [analytics_admin.ArchiveCustomMetricRequest],
+            empty_pb2.Empty]:
+        r"""Return a callable for the archive custom metric method over gRPC.
+
+        Archives a CustomMetric on a property.
+
+        Returns:
+            Callable[[~.ArchiveCustomMetricRequest],
+                    ~.Empty]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'archive_custom_metric' not in self._stubs:
+            self._stubs['archive_custom_metric'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/ArchiveCustomMetric',
+                request_serializer=analytics_admin.ArchiveCustomMetricRequest.serialize,
+                response_deserializer=empty_pb2.Empty.FromString,
+            )
+        return self._stubs['archive_custom_metric']
+
+    @property
+    def get_custom_metric(self) -> Callable[
+            [analytics_admin.GetCustomMetricRequest],
+            resources.CustomMetric]:
+        r"""Return a callable for the get custom metric method over gRPC.
+
+        Lookup for a single CustomMetric.
+
+        Returns:
+            Callable[[~.GetCustomMetricRequest],
+                    ~.CustomMetric]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'get_custom_metric' not in self._stubs:
+            self._stubs['get_custom_metric'] = self.grpc_channel.unary_unary(
+                '/google.analytics.admin.v1alpha.AnalyticsAdminService/GetCustomMetric',
+                request_serializer=analytics_admin.GetCustomMetricRequest.serialize,
+                response_deserializer=resources.CustomMetric.deserialize,
+            )
+        return self._stubs['get_custom_metric']
 
 
 __all__ = (

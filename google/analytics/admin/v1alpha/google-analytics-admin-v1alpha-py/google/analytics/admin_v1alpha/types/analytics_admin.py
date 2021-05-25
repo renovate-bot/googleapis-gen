@@ -85,6 +85,31 @@ __protobuf__ = proto.module(
         'ListAccountSummariesResponse',
         'SearchChangeHistoryEventsRequest',
         'SearchChangeHistoryEventsResponse',
+        'GetMeasurementProtocolSecretRequest',
+        'CreateMeasurementProtocolSecretRequest',
+        'DeleteMeasurementProtocolSecretRequest',
+        'UpdateMeasurementProtocolSecretRequest',
+        'ListMeasurementProtocolSecretsRequest',
+        'ListMeasurementProtocolSecretsResponse',
+        'GetGoogleSignalsSettingsRequest',
+        'UpdateGoogleSignalsSettingsRequest',
+        'CreateConversionEventRequest',
+        'GetConversionEventRequest',
+        'DeleteConversionEventRequest',
+        'ListConversionEventsRequest',
+        'ListConversionEventsResponse',
+        'CreateCustomDimensionRequest',
+        'UpdateCustomDimensionRequest',
+        'ListCustomDimensionsRequest',
+        'ListCustomDimensionsResponse',
+        'ArchiveCustomDimensionRequest',
+        'GetCustomDimensionRequest',
+        'CreateCustomMetricRequest',
+        'UpdateCustomMetricRequest',
+        'ListCustomMetricsRequest',
+        'ListCustomMetricsResponse',
+        'ArchiveCustomMetricRequest',
+        'GetCustomMetricRequest',
     },
 )
 
@@ -1597,6 +1622,573 @@ class SearchChangeHistoryEventsResponse(proto.Message):
     next_page_token = proto.Field(
         proto.STRING,
         number=2,
+    )
+
+
+class GetMeasurementProtocolSecretRequest(proto.Message):
+    r"""Request message for GetMeasurementProtocolSecret RPC.
+    Attributes:
+        name (str):
+            Required. The name of the measurement
+            protocol secret to lookup. Format:
+            properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+            Note: Any type of stream (WebDataStream,
+            IosAppDataStream, AndroidAppDataStream) may be a
+            parent.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class CreateMeasurementProtocolSecretRequest(proto.Message):
+    r"""Request message for CreateMeasurementProtocolSecret RPC
+    Attributes:
+        parent (str):
+            Required. The parent resource where this
+            secret will be created. Any type of stream
+            (WebDataStream, IosAppDataStream,
+            AndroidAppDataStream) may be a parent.
+            Format:
+            properties/{property}/webDataStreams/{webDataStream}
+        measurement_protocol_secret (google.analytics.admin_v1alpha.types.MeasurementProtocolSecret):
+            Required. The measurement protocol secret to
+            create.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    measurement_protocol_secret = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=resources.MeasurementProtocolSecret,
+    )
+
+
+class DeleteMeasurementProtocolSecretRequest(proto.Message):
+    r"""Request message for DeleteMeasurementProtocolSecret RPC
+    Attributes:
+        name (str):
+            Required. The name of the
+            MeasurementProtocolSecret to delete. Format:
+            properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+            Note: Any type of stream (WebDataStream,
+            IosAppDataStream, AndroidAppDataStream) may be a
+            parent.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class UpdateMeasurementProtocolSecretRequest(proto.Message):
+    r"""Request message for UpdateMeasurementProtocolSecret RPC
+    Attributes:
+        measurement_protocol_secret (google.analytics.admin_v1alpha.types.MeasurementProtocolSecret):
+            Required. The measurement protocol secret to
+            update.
+        update_mask (google.protobuf.field_mask_pb2.FieldMask):
+            The list of fields to be updated. Omitted
+            fields will not be updated.
+    """
+
+    measurement_protocol_secret = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=resources.MeasurementProtocolSecret,
+    )
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
+    )
+
+
+class ListMeasurementProtocolSecretsRequest(proto.Message):
+    r"""Request message for ListMeasurementProtocolSecret RPC
+    Attributes:
+        parent (str):
+            Required. The resource name of the parent
+            stream. Any type of stream (WebDataStream,
+            IosAppDataStream, AndroidAppDataStream) may be a
+            parent.
+            Format:
+            properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets
+        page_size (int):
+            The maximum number of resources to return.
+            If unspecified, at most 10 resources will be
+            returned. The maximum value is 10. Higher values
+            will be coerced to the maximum.
+        page_token (str):
+            A page token, received from a previous
+            ``ListMeasurementProtocolSecrets`` call. Provide this to
+            retrieve the subsequent page. When paginating, all other
+            parameters provided to ``ListMeasurementProtocolSecrets``
+            must match the call that provided the page token.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+
+
+class ListMeasurementProtocolSecretsResponse(proto.Message):
+    r"""Response message for ListMeasurementProtocolSecret RPC
+    Attributes:
+        measurement_protocol_secrets (Sequence[google.analytics.admin_v1alpha.types.MeasurementProtocolSecret]):
+            A list of secrets for the parent stream
+            specified in the request.
+        next_page_token (str):
+            A token, which can be sent as ``page_token`` to retrieve the
+            next page. If this field is omitted, there are no subsequent
+            pages.
+    """
+
+    @property
+    def raw_page(self):
+        return self
+
+    measurement_protocol_secrets = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=resources.MeasurementProtocolSecret,
+    )
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class GetGoogleSignalsSettingsRequest(proto.Message):
+    r"""Request message for GetGoogleSignalsSettings RPC
+    Attributes:
+        name (str):
+            Required. The name of the google signals
+            settings to retrieve. Format:
+            properties/{property}/googleSignalsSettings
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class UpdateGoogleSignalsSettingsRequest(proto.Message):
+    r"""Request message for UpdateGoogleSignalsSettings RPC
+    Attributes:
+        google_signals_settings (google.analytics.admin_v1alpha.types.GoogleSignalsSettings):
+            Required. The settings to update. The ``name`` field is used
+            to identify the settings to be updated.
+        update_mask (google.protobuf.field_mask_pb2.FieldMask):
+            Required. The list of fields to be updated. Field names must
+            be in snake case (e.g., "field_to_update"). Omitted fields
+            will not be updated. To replace the entire entity, use one
+            path with the string "*" to match all fields.
+    """
+
+    google_signals_settings = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=resources.GoogleSignalsSettings,
+    )
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
+    )
+
+
+class CreateConversionEventRequest(proto.Message):
+    r"""Request message for CreateConversionEvent RPC
+    Attributes:
+        conversion_event (google.analytics.admin_v1alpha.types.ConversionEvent):
+            Required. The conversion event to create.
+        parent (str):
+            Required. The resource name of the parent
+            property where this conversion event will be
+            created. Format: properties/123
+    """
+
+    conversion_event = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=resources.ConversionEvent,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class GetConversionEventRequest(proto.Message):
+    r"""Request message for GetConversionEvent RPC
+    Attributes:
+        name (str):
+            Required. The resource name of the conversion event to
+            retrieve. Format:
+            properties/{property}/conversionEvents/{conversion_event}
+            Example: "properties/123/conversionEvents/456".
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class DeleteConversionEventRequest(proto.Message):
+    r"""Request message for DeleteConversionEvent RPC
+    Attributes:
+        name (str):
+            Required. The resource name of the conversion event to
+            delete. Format:
+            properties/{property}/conversionEvents/{conversion_event}
+            Example: "properties/123/conversionEvents/456".
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class ListConversionEventsRequest(proto.Message):
+    r"""Request message for ListConversionEvents RPC
+    Attributes:
+        parent (str):
+            Required. The resource name of the parent
+            property. Example: 'properties/123'
+        page_size (int):
+            The maximum number of resources to return.
+            If unspecified, at most 50 resources will be
+            returned. The maximum value is 200; (higher
+            values will be coerced to the maximum)
+        page_token (str):
+            A page token, received from a previous
+            ``ListConversionEvents`` call. Provide this to retrieve the
+            subsequent page. When paginating, all other parameters
+            provided to ``ListConversionEvents`` must match the call
+            that provided the page token.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+
+
+class ListConversionEventsResponse(proto.Message):
+    r"""Response message for ListConversionEvents RPC.
+    Attributes:
+        conversion_events (Sequence[google.analytics.admin_v1alpha.types.ConversionEvent]):
+            The requested conversion events
+        next_page_token (str):
+            A token, which can be sent as ``page_token`` to retrieve the
+            next page. If this field is omitted, there are no subsequent
+            pages.
+    """
+
+    @property
+    def raw_page(self):
+        return self
+
+    conversion_events = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=resources.ConversionEvent,
+    )
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class CreateCustomDimensionRequest(proto.Message):
+    r"""Request message for CreateCustomDimension RPC.
+    Attributes:
+        parent (str):
+            Required. Example format: properties/1234
+        custom_dimension (google.analytics.admin_v1alpha.types.CustomDimension):
+            Required. The CustomDimension to create.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    custom_dimension = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=resources.CustomDimension,
+    )
+
+
+class UpdateCustomDimensionRequest(proto.Message):
+    r"""Request message for UpdateCustomDimension RPC.
+    Attributes:
+        custom_dimension (google.analytics.admin_v1alpha.types.CustomDimension):
+            The CustomDimension to update
+        update_mask (google.protobuf.field_mask_pb2.FieldMask):
+            Required. The list of fields to be updated. Omitted fields
+            will not be updated. To replace the entire entity, use one
+            path with the string "*" to match all fields.
+    """
+
+    custom_dimension = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=resources.CustomDimension,
+    )
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
+    )
+
+
+class ListCustomDimensionsRequest(proto.Message):
+    r"""Request message for ListCustomDimensions RPC.
+    Attributes:
+        parent (str):
+            Required. Example format: properties/1234
+        page_size (int):
+            The maximum number of resources to return.
+            If unspecified, at most 50 resources will be
+            returned. The maximum value is 200 (higher
+            values will be coerced to the maximum).
+        page_token (str):
+            A page token, received from a previous
+            ``ListCustomDimensions`` call. Provide this to retrieve the
+            subsequent page.
+
+            When paginating, all other parameters provided to
+            ``ListCustomDimensions`` must match the call that provided
+            the page token.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+
+
+class ListCustomDimensionsResponse(proto.Message):
+    r"""Response message for ListCustomDimensions RPC.
+    Attributes:
+        custom_dimensions (Sequence[google.analytics.admin_v1alpha.types.CustomDimension]):
+            List of CustomDimensions.
+        next_page_token (str):
+            A token, which can be sent as ``page_token`` to retrieve the
+            next page. If this field is omitted, there are no subsequent
+            pages.
+    """
+
+    @property
+    def raw_page(self):
+        return self
+
+    custom_dimensions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=resources.CustomDimension,
+    )
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class ArchiveCustomDimensionRequest(proto.Message):
+    r"""Request message for ArchiveCustomDimension RPC.
+    Attributes:
+        name (str):
+            Required. The name of the CustomDimension to
+            archive. Example format:
+            properties/1234/customDimensions/5678
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class GetCustomDimensionRequest(proto.Message):
+    r"""Request message for GetCustomDimension RPC.
+    Attributes:
+        name (str):
+            Required. The name of the CustomDimension to
+            get. Example format:
+            properties/1234/customDimensions/5678
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class CreateCustomMetricRequest(proto.Message):
+    r"""Request message for CreateCustomMetric RPC.
+    Attributes:
+        parent (str):
+            Required. Example format: properties/1234
+        custom_metric (google.analytics.admin_v1alpha.types.CustomMetric):
+            Required. The CustomMetric to create.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    custom_metric = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=resources.CustomMetric,
+    )
+
+
+class UpdateCustomMetricRequest(proto.Message):
+    r"""Request message for UpdateCustomMetric RPC.
+    Attributes:
+        custom_metric (google.analytics.admin_v1alpha.types.CustomMetric):
+            The CustomMetric to update
+        update_mask (google.protobuf.field_mask_pb2.FieldMask):
+            Required. The list of fields to be updated. Omitted fields
+            will not be updated. To replace the entire entity, use one
+            path with the string "*" to match all fields.
+    """
+
+    custom_metric = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=resources.CustomMetric,
+    )
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
+    )
+
+
+class ListCustomMetricsRequest(proto.Message):
+    r"""Request message for ListCustomMetrics RPC.
+    Attributes:
+        parent (str):
+            Required. Example format: properties/1234
+        page_size (int):
+            The maximum number of resources to return.
+            If unspecified, at most 50 resources will be
+            returned. The maximum value is 200 (higher
+            values will be coerced to the maximum).
+        page_token (str):
+            A page token, received from a previous ``ListCustomMetrics``
+            call. Provide this to retrieve the subsequent page.
+
+            When paginating, all other parameters provided to
+            ``ListCustomMetrics`` must match the call that provided the
+            page token.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+
+
+class ListCustomMetricsResponse(proto.Message):
+    r"""Response message for ListCustomMetrics RPC.
+    Attributes:
+        custom_metrics (Sequence[google.analytics.admin_v1alpha.types.CustomMetric]):
+            List of CustomMetrics.
+        next_page_token (str):
+            A token, which can be sent as ``page_token`` to retrieve the
+            next page. If this field is omitted, there are no subsequent
+            pages.
+    """
+
+    @property
+    def raw_page(self):
+        return self
+
+    custom_metrics = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=resources.CustomMetric,
+    )
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class ArchiveCustomMetricRequest(proto.Message):
+    r"""Request message for ArchiveCustomMetric RPC.
+    Attributes:
+        name (str):
+            Required. The name of the CustomMetric to
+            archive. Example format:
+            properties/1234/customMetrics/5678
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class GetCustomMetricRequest(proto.Message):
+    r"""Request message for GetCustomMetric RPC.
+    Attributes:
+        name (str):
+            Required. The name of the CustomMetric to
+            get. Example format:
+            properties/1234/customMetrics/5678
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
     )
 
 

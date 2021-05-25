@@ -117,10 +117,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Example format: properties/1234/userLinks/5678
+   * Output only. Example format: properties/1234/userLinks/5678
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -138,10 +138,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Example format: properties/1234/userLinks/5678
+   * Output only. Example format: properties/1234/userLinks/5678
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -163,10 +163,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object emailAddress_;
   /**
    * <pre>
-   * Email address of the user to link
+   * Immutable. Email address of the user to link
    * </pre>
    *
-   * <code>string email_address = 2;</code>
+   * <code>string email_address = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The emailAddress.
    */
   @java.lang.Override
@@ -184,10 +184,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Email address of the user to link
+   * Immutable. Email address of the user to link
    * </pre>
    *
-   * <code>string email_address = 2;</code>
+   * <code>string email_address = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The bytes for emailAddress.
    */
   @java.lang.Override
@@ -655,10 +655,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Example format: properties/1234/userLinks/5678
+     * Output only. Example format: properties/1234/userLinks/5678
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -675,10 +675,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Example format: properties/1234/userLinks/5678
+     * Output only. Example format: properties/1234/userLinks/5678
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -696,10 +696,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Example format: properties/1234/userLinks/5678
+     * Output only. Example format: properties/1234/userLinks/5678
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -715,10 +715,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Example format: properties/1234/userLinks/5678
+     * Output only. Example format: properties/1234/userLinks/5678
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -729,10 +729,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Example format: properties/1234/userLinks/5678
+     * Output only. Example format: properties/1234/userLinks/5678
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -751,10 +751,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object emailAddress_ = "";
     /**
      * <pre>
-     * Email address of the user to link
+     * Immutable. Email address of the user to link
      * </pre>
      *
-     * <code>string email_address = 2;</code>
+     * <code>string email_address = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The emailAddress.
      */
     public java.lang.String getEmailAddress() {
@@ -771,10 +771,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Email address of the user to link
+     * Immutable. Email address of the user to link
      * </pre>
      *
-     * <code>string email_address = 2;</code>
+     * <code>string email_address = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The bytes for emailAddress.
      */
     public com.google.protobuf.ByteString
@@ -792,10 +792,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Email address of the user to link
+     * Immutable. Email address of the user to link
      * </pre>
      *
-     * <code>string email_address = 2;</code>
+     * <code>string email_address = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param value The emailAddress to set.
      * @return This builder for chaining.
      */
@@ -811,10 +811,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Email address of the user to link
+     * Immutable. Email address of the user to link
      * </pre>
      *
-     * <code>string email_address = 2;</code>
+     * <code>string email_address = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return This builder for chaining.
      */
     public Builder clearEmailAddress() {
@@ -825,10 +825,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Email address of the user to link
+     * Immutable. Email address of the user to link
      * </pre>
      *
-     * <code>string email_address = 2;</code>
+     * <code>string email_address = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param value The bytes for emailAddress to set.
      * @return This builder for chaining.
      */

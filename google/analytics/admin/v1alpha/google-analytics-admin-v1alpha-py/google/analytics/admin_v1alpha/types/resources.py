@@ -27,6 +27,8 @@ __protobuf__ = proto.module(
         'ActorType',
         'ActionType',
         'ChangeHistoryResourceType',
+        'GoogleSignalsState',
+        'GoogleSignalsConsent',
         'Account',
         'Property',
         'AndroidAppDataStream',
@@ -41,8 +43,13 @@ __protobuf__ = proto.module(
         'DataSharingSettings',
         'AccountSummary',
         'PropertySummary',
+        'MeasurementProtocolSecret',
         'ChangeHistoryEvent',
         'ChangeHistoryChange',
+        'ConversionEvent',
+        'GoogleSignalsSettings',
+        'CustomDimension',
+        'CustomMetric',
     },
 )
 
@@ -121,6 +128,29 @@ class ChangeHistoryResourceType(proto.Enum):
     IOS_APP_DATA_STREAM = 5
     FIREBASE_LINK = 6
     GOOGLE_ADS_LINK = 7
+    GOOGLE_SIGNALS_SETTINGS = 8
+    CONVERSION_EVENT = 9
+    MEASUREMENT_PROTOCOL_SECRET = 10
+    CUSTOM_DIMENSION = 11
+    CUSTOM_METRIC = 12
+
+
+class GoogleSignalsState(proto.Enum):
+    r"""Status of the Google Signals settings (i.e., whether this
+    feature has been enabled for the property).
+    """
+    GOOGLE_SIGNALS_STATE_UNSPECIFIED = 0
+    GOOGLE_SIGNALS_ENABLED = 1
+    GOOGLE_SIGNALS_DISABLED = 2
+
+
+class GoogleSignalsConsent(proto.Enum):
+    r"""Consent field of the Google Signals settings (i.e., whether
+    the user has consented to the Google Signals terms of service.)
+    """
+    GOOGLE_SIGNALS_CONSENT_UNSPECIFIED = 0
+    GOOGLE_SIGNALS_CONSENT_CONSENTED = 2
+    GOOGLE_SIGNALS_CONSENT_NOT_CONSENTED = 1
 
 
 class Account(proto.Message):
@@ -467,10 +497,10 @@ class UserLink(proto.Message):
 
     Attributes:
         name (str):
-            Example format:
+            Output only. Example format:
             properties/1234/userLinks/5678
         email_address (str):
-            Email address of the user to link
+            Immutable. Email address of the user to link
         direct_roles (Sequence[str]):
             Roles directly assigned to this user for this account or
             property.
@@ -737,7 +767,7 @@ class GoogleAdsLink(proto.Message):
             Google Analytics audience lists and Google
             Analytics remarketing events/parameters to the
             linked Google Ads account. If this field is not
-            set on create/update it will be defaulted to
+            set on create/update, it will be defaulted to
             true.
         email_address (str):
             Output only. Email address of the user that
@@ -902,6 +932,38 @@ class PropertySummary(proto.Message):
     )
 
 
+class MeasurementProtocolSecret(proto.Message):
+    r"""A secret value used for sending hits to Measurement Protocol.
+    Attributes:
+        name (str):
+            Output only. Resource name of this secret.
+            This secret may be a child of any type of
+            stream. Format:
+            properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+        display_name (str):
+            Required. Human-readable display name for
+            this secret.
+        secret_value (str):
+            Output only. The measurement protocol secret value. Pass
+            this value to the api_secret field of the Measurement
+            Protocol API when sending hits to this secret's parent
+            property.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    secret_value = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+
+
 class ChangeHistoryEvent(proto.Message):
     r"""A set of changes within a Google Analytics account or its
     child properties that resulted from the same cause. Common
@@ -1009,6 +1071,21 @@ class ChangeHistoryChange(proto.Message):
             google_ads_link (google.analytics.admin_v1alpha.types.GoogleAdsLink):
                 A snapshot of a GoogleAdsLink resource in
                 change history.
+            google_signals_settings (google.analytics.admin_v1alpha.types.GoogleSignalsSettings):
+                A snapshot of a GoogleSignalsSettings
+                resource in change history.
+            conversion_event (google.analytics.admin_v1alpha.types.ConversionEvent):
+                A snapshot of a ConversionEvent resource in
+                change history.
+            measurement_protocol_secret (google.analytics.admin_v1alpha.types.MeasurementProtocolSecret):
+                A snapshot of a MeasurementProtocolSecret
+                resource in change history.
+            custom_dimension (google.analytics.admin_v1alpha.types.CustomDimension):
+                A snapshot of a CustomDimension resource in
+                change history.
+            custom_metric (google.analytics.admin_v1alpha.types.CustomMetric):
+                A snapshot of a CustomMetric resource in
+                change history.
         """
 
         account = proto.Field(
@@ -1053,6 +1130,36 @@ class ChangeHistoryChange(proto.Message):
             oneof='resource',
             message='GoogleAdsLink',
         )
+        google_signals_settings = proto.Field(
+            proto.MESSAGE,
+            number=8,
+            oneof='resource',
+            message='GoogleSignalsSettings',
+        )
+        conversion_event = proto.Field(
+            proto.MESSAGE,
+            number=11,
+            oneof='resource',
+            message='ConversionEvent',
+        )
+        measurement_protocol_secret = proto.Field(
+            proto.MESSAGE,
+            number=12,
+            oneof='resource',
+            message='MeasurementProtocolSecret',
+        )
+        custom_dimension = proto.Field(
+            proto.MESSAGE,
+            number=13,
+            oneof='resource',
+            message='CustomDimension',
+        )
+        custom_metric = proto.Field(
+            proto.MESSAGE,
+            number=14,
+            oneof='resource',
+            message='CustomMetric',
+        )
 
     resource = proto.Field(
         proto.STRING,
@@ -1072,6 +1179,229 @@ class ChangeHistoryChange(proto.Message):
         proto.MESSAGE,
         number=4,
         message=ChangeHistoryResource,
+    )
+
+
+class ConversionEvent(proto.Message):
+    r"""A conversion event in a Google Analytics property.
+    Attributes:
+        name (str):
+            Output only. Resource name of this conversion event. Format:
+            properties/{property}/conversionEvents/{conversion_event}
+        event_name (str):
+            Immutable. The event name for this conversion
+            event. Examples: 'click', 'purchase'
+        create_time (google.protobuf.timestamp_pb2.Timestamp):
+            Output only. Time when this conversion event
+            was created in the property.
+        is_deletable (bool):
+            Output only. If set, this event can currently
+            be deleted via DeleteConversionEvent.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    event_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
+    )
+    is_deletable = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
+
+
+class GoogleSignalsSettings(proto.Message):
+    r"""Settings values for Google Signals.  This is a singleton
+    resource.
+
+    Attributes:
+        name (str):
+            Output only. Resource name of this setting. Format:
+            properties/{property_id}/googleSignalsSettings Example:
+            "properties/1000/googleSignalsSettings".
+        state (google.analytics.admin_v1alpha.types.GoogleSignalsState):
+            Status of this setting.
+        consent (google.analytics.admin_v1alpha.types.GoogleSignalsConsent):
+            Output only. Terms of Service acceptance.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=3,
+        enum='GoogleSignalsState',
+    )
+    consent = proto.Field(
+        proto.ENUM,
+        number=4,
+        enum='GoogleSignalsConsent',
+    )
+
+
+class CustomDimension(proto.Message):
+    r"""A definition for a CustomDimension.
+    Attributes:
+        name (str):
+            Output only. Resource name for this
+            CustomDimension resource. Format:
+            properties/{property}/customDimensions/{customDimension}
+        parameter_name (str):
+            Required. Immutable. Tagging parameter name
+            for this custom dimension.
+            If this is a user-scoped dimension, then this is
+            the user property name. If this is an event-
+            scoped dimension, then this is the event
+            parameter name.
+
+            May only contain alphanumeric and underscore
+            characters, starting with a letter. Max length
+            of 24 characters for user-scoped dimensions, 40
+            characters for event-scoped dimensions.
+        display_name (str):
+            Required. Display name for this custom
+            dimension as shown in the Analytics UI. Max
+            length of 82 characters, alphanumeric plus space
+            and underscore starting with a letter. Legacy
+            system-generated display names may contain
+            square brackets, but updates to this field will
+            never permit square brackets.
+        description (str):
+            Optional. Description for this custom
+            dimension. Max length of 150 characters.
+        scope (google.analytics.admin_v1alpha.types.CustomDimension.DimensionScope):
+            Required. Immutable. The scope of this
+            dimension.
+        disallow_ads_personalization (bool):
+            Optional. If set to true, sets this dimension
+            as NPA and excludes it from ads personalization.
+            This is currently only supported by user-scoped
+            custom dimensions.
+    """
+    class DimensionScope(proto.Enum):
+        r"""Valid values for the scope of this dimension."""
+        DIMENSION_SCOPE_UNSPECIFIED = 0
+        EVENT = 1
+        USER = 2
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    parameter_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    scope = proto.Field(
+        proto.ENUM,
+        number=5,
+        enum=DimensionScope,
+    )
+    disallow_ads_personalization = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
+
+
+class CustomMetric(proto.Message):
+    r"""A definition for a custom metric.
+    Attributes:
+        name (str):
+            Output only. Resource name for this
+            CustomMetric resource. Format:
+            properties/{property}/customMetrics/{customMetric}
+        parameter_name (str):
+            Required. Immutable. Tagging name for this
+            custom metric.
+            If this is an event-scoped metric, then this is
+            the event parameter name.
+
+            May only contain alphanumeric and underscore
+            charactes, starting with a letter. Max length of
+            40 characters for event-scoped metrics.
+        display_name (str):
+            Required. Display name for this custom metric
+            as shown in the Analytics UI. Max length of 82
+            characters, alphanumeric plus space and
+            underscore starting with a letter. Legacy
+            system-generated display names may contain
+            square brackets, but updates to this field will
+            never permit square brackets.
+        description (str):
+            Optional. Description for this custom
+            dimension. Max length of 150 characters.
+        measurement_unit (google.analytics.admin_v1alpha.types.CustomMetric.MeasurementUnit):
+            Required. Immutable. The type for the custom
+            metric's value.
+        scope (google.analytics.admin_v1alpha.types.CustomMetric.MetricScope):
+            Required. Immutable. The scope of this custom
+            metric.
+    """
+    class MeasurementUnit(proto.Enum):
+        r"""Possible types of representing the custom metric's value.
+        Currency representation may change in the future, requiring a
+        breaking API change.
+        """
+        MEASUREMENT_UNIT_UNSPECIFIED = 0
+        STANDARD = 1
+        CURRENCY = 2
+        FEET = 3
+        METERS = 4
+        KILOMETERS = 5
+        MILES = 6
+        MILLISECONDS = 7
+        SECONDS = 8
+        MINUTES = 9
+        HOURS = 10
+
+    class MetricScope(proto.Enum):
+        r"""The scope of this metric."""
+        METRIC_SCOPE_UNSPECIFIED = 0
+        EVENT = 1
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    parameter_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    measurement_unit = proto.Field(
+        proto.ENUM,
+        number=5,
+        enum=MeasurementUnit,
+    )
+    scope = proto.Field(
+        proto.ENUM,
+        number=6,
+        enum=MetricScope,
     )
 
 

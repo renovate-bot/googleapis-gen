@@ -395,8 +395,113 @@ class AnalyticsAdminServiceTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.get_measurement_protocol_secret: gapic_v1.method.wrap_method(
+                self.get_measurement_protocol_secret,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.list_measurement_protocol_secrets: gapic_v1.method.wrap_method(
+                self.list_measurement_protocol_secrets,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.create_measurement_protocol_secret: gapic_v1.method.wrap_method(
+                self.create_measurement_protocol_secret,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.delete_measurement_protocol_secret: gapic_v1.method.wrap_method(
+                self.delete_measurement_protocol_secret,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.update_measurement_protocol_secret: gapic_v1.method.wrap_method(
+                self.update_measurement_protocol_secret,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.search_change_history_events: gapic_v1.method.wrap_method(
                 self.search_change_history_events,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.get_google_signals_settings: gapic_v1.method.wrap_method(
+                self.get_google_signals_settings,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.update_google_signals_settings: gapic_v1.method.wrap_method(
+                self.update_google_signals_settings,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.create_conversion_event: gapic_v1.method.wrap_method(
+                self.create_conversion_event,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.get_conversion_event: gapic_v1.method.wrap_method(
+                self.get_conversion_event,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.delete_conversion_event: gapic_v1.method.wrap_method(
+                self.delete_conversion_event,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.list_conversion_events: gapic_v1.method.wrap_method(
+                self.list_conversion_events,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.create_custom_dimension: gapic_v1.method.wrap_method(
+                self.create_custom_dimension,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.update_custom_dimension: gapic_v1.method.wrap_method(
+                self.update_custom_dimension,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.list_custom_dimensions: gapic_v1.method.wrap_method(
+                self.list_custom_dimensions,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.archive_custom_dimension: gapic_v1.method.wrap_method(
+                self.archive_custom_dimension,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.get_custom_dimension: gapic_v1.method.wrap_method(
+                self.get_custom_dimension,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.create_custom_metric: gapic_v1.method.wrap_method(
+                self.create_custom_metric,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.update_custom_metric: gapic_v1.method.wrap_method(
+                self.update_custom_metric,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.list_custom_metrics: gapic_v1.method.wrap_method(
+                self.list_custom_metrics,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.archive_custom_metric: gapic_v1.method.wrap_method(
+                self.archive_custom_metric,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.get_custom_metric: gapic_v1.method.wrap_method(
+                self.get_custom_metric,
                 default_timeout=None,
                 client_info=client_info,
             ),
@@ -817,11 +922,200 @@ class AnalyticsAdminServiceTransport(abc.ABC):
         raise NotImplementedError()
 
     @property
+    def get_measurement_protocol_secret(self) -> Callable[
+            [analytics_admin.GetMeasurementProtocolSecretRequest],
+            Union[
+                resources.MeasurementProtocolSecret,
+                Awaitable[resources.MeasurementProtocolSecret]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def list_measurement_protocol_secrets(self) -> Callable[
+            [analytics_admin.ListMeasurementProtocolSecretsRequest],
+            Union[
+                analytics_admin.ListMeasurementProtocolSecretsResponse,
+                Awaitable[analytics_admin.ListMeasurementProtocolSecretsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def create_measurement_protocol_secret(self) -> Callable[
+            [analytics_admin.CreateMeasurementProtocolSecretRequest],
+            Union[
+                resources.MeasurementProtocolSecret,
+                Awaitable[resources.MeasurementProtocolSecret]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def delete_measurement_protocol_secret(self) -> Callable[
+            [analytics_admin.DeleteMeasurementProtocolSecretRequest],
+            Union[
+                empty_pb2.Empty,
+                Awaitable[empty_pb2.Empty]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def update_measurement_protocol_secret(self) -> Callable[
+            [analytics_admin.UpdateMeasurementProtocolSecretRequest],
+            Union[
+                resources.MeasurementProtocolSecret,
+                Awaitable[resources.MeasurementProtocolSecret]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def search_change_history_events(self) -> Callable[
             [analytics_admin.SearchChangeHistoryEventsRequest],
             Union[
                 analytics_admin.SearchChangeHistoryEventsResponse,
                 Awaitable[analytics_admin.SearchChangeHistoryEventsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def get_google_signals_settings(self) -> Callable[
+            [analytics_admin.GetGoogleSignalsSettingsRequest],
+            Union[
+                resources.GoogleSignalsSettings,
+                Awaitable[resources.GoogleSignalsSettings]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def update_google_signals_settings(self) -> Callable[
+            [analytics_admin.UpdateGoogleSignalsSettingsRequest],
+            Union[
+                resources.GoogleSignalsSettings,
+                Awaitable[resources.GoogleSignalsSettings]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def create_conversion_event(self) -> Callable[
+            [analytics_admin.CreateConversionEventRequest],
+            Union[
+                resources.ConversionEvent,
+                Awaitable[resources.ConversionEvent]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def get_conversion_event(self) -> Callable[
+            [analytics_admin.GetConversionEventRequest],
+            Union[
+                resources.ConversionEvent,
+                Awaitable[resources.ConversionEvent]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def delete_conversion_event(self) -> Callable[
+            [analytics_admin.DeleteConversionEventRequest],
+            Union[
+                empty_pb2.Empty,
+                Awaitable[empty_pb2.Empty]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def list_conversion_events(self) -> Callable[
+            [analytics_admin.ListConversionEventsRequest],
+            Union[
+                analytics_admin.ListConversionEventsResponse,
+                Awaitable[analytics_admin.ListConversionEventsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def create_custom_dimension(self) -> Callable[
+            [analytics_admin.CreateCustomDimensionRequest],
+            Union[
+                resources.CustomDimension,
+                Awaitable[resources.CustomDimension]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def update_custom_dimension(self) -> Callable[
+            [analytics_admin.UpdateCustomDimensionRequest],
+            Union[
+                resources.CustomDimension,
+                Awaitable[resources.CustomDimension]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def list_custom_dimensions(self) -> Callable[
+            [analytics_admin.ListCustomDimensionsRequest],
+            Union[
+                analytics_admin.ListCustomDimensionsResponse,
+                Awaitable[analytics_admin.ListCustomDimensionsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def archive_custom_dimension(self) -> Callable[
+            [analytics_admin.ArchiveCustomDimensionRequest],
+            Union[
+                empty_pb2.Empty,
+                Awaitable[empty_pb2.Empty]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def get_custom_dimension(self) -> Callable[
+            [analytics_admin.GetCustomDimensionRequest],
+            Union[
+                resources.CustomDimension,
+                Awaitable[resources.CustomDimension]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def create_custom_metric(self) -> Callable[
+            [analytics_admin.CreateCustomMetricRequest],
+            Union[
+                resources.CustomMetric,
+                Awaitable[resources.CustomMetric]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def update_custom_metric(self) -> Callable[
+            [analytics_admin.UpdateCustomMetricRequest],
+            Union[
+                resources.CustomMetric,
+                Awaitable[resources.CustomMetric]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def list_custom_metrics(self) -> Callable[
+            [analytics_admin.ListCustomMetricsRequest],
+            Union[
+                analytics_admin.ListCustomMetricsResponse,
+                Awaitable[analytics_admin.ListCustomMetricsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def archive_custom_metric(self) -> Callable[
+            [analytics_admin.ArchiveCustomMetricRequest],
+            Union[
+                empty_pb2.Empty,
+                Awaitable[empty_pb2.Empty]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def get_custom_metric(self) -> Callable[
+            [analytics_admin.GetCustomMetricRequest],
+            Union[
+                resources.CustomMetric,
+                Awaitable[resources.CustomMetric]
             ]]:
         raise NotImplementedError()
 

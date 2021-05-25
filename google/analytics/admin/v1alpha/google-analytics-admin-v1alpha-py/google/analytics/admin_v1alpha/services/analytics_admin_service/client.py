@@ -193,6 +193,39 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         return m.groupdict() if m else {}
 
     @staticmethod
+    def conversion_event_path(property: str,conversion_event: str,) -> str:
+        """Returns a fully-qualified conversion_event string."""
+        return "properties/{property}/conversionEvents/{conversion_event}".format(property=property, conversion_event=conversion_event, )
+
+    @staticmethod
+    def parse_conversion_event_path(path: str) -> Dict[str,str]:
+        """Parses a conversion_event path into its component segments."""
+        m = re.match(r"^properties/(?P<property>.+?)/conversionEvents/(?P<conversion_event>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def custom_dimension_path(property: str,) -> str:
+        """Returns a fully-qualified custom_dimension string."""
+        return "properties/{property}/customDimensions".format(property=property, )
+
+    @staticmethod
+    def parse_custom_dimension_path(path: str) -> Dict[str,str]:
+        """Parses a custom_dimension path into its component segments."""
+        m = re.match(r"^properties/(?P<property>.+?)/customDimensions$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def custom_metric_path(property: str,) -> str:
+        """Returns a fully-qualified custom_metric string."""
+        return "properties/{property}/customMetrics".format(property=property, )
+
+    @staticmethod
+    def parse_custom_metric_path(path: str) -> Dict[str,str]:
+        """Parses a custom_metric path into its component segments."""
+        m = re.match(r"^properties/(?P<property>.+?)/customMetrics$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
     def data_sharing_settings_path(account: str,) -> str:
         """Returns a fully-qualified data_sharing_settings string."""
         return "accounts/{account}/dataSharingSettings".format(account=account, )
@@ -248,6 +281,17 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         return m.groupdict() if m else {}
 
     @staticmethod
+    def google_signals_settings_path(property: str,) -> str:
+        """Returns a fully-qualified google_signals_settings string."""
+        return "properties/{property}/googleSignalsSettings".format(property=property, )
+
+    @staticmethod
+    def parse_google_signals_settings_path(path: str) -> Dict[str,str]:
+        """Parses a google_signals_settings path into its component segments."""
+        m = re.match(r"^properties/(?P<property>.+?)/googleSignalsSettings$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
     def ios_app_data_stream_path(property: str,ios_app_data_stream: str,) -> str:
         """Returns a fully-qualified ios_app_data_stream string."""
         return "properties/{property}/iosAppDataStreams/{ios_app_data_stream}".format(property=property, ios_app_data_stream=ios_app_data_stream, )
@@ -256,6 +300,17 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def parse_ios_app_data_stream_path(path: str) -> Dict[str,str]:
         """Parses a ios_app_data_stream path into its component segments."""
         m = re.match(r"^properties/(?P<property>.+?)/iosAppDataStreams/(?P<ios_app_data_stream>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def measurement_protocol_secret_path(property: str,web_data_stream: str,measurement_protocol_secret: str,) -> str:
+        """Returns a fully-qualified measurement_protocol_secret string."""
+        return "properties/{property}/webDataStreams/{web_data_stream}/measurementProtocolSecrets/{measurement_protocol_secret}".format(property=property, web_data_stream=web_data_stream, measurement_protocol_secret=measurement_protocol_secret, )
+
+    @staticmethod
+    def parse_measurement_protocol_secret_path(path: str) -> Dict[str,str]:
+        """Parses a measurement_protocol_secret path into its component segments."""
+        m = re.match(r"^properties/(?P<property>.+?)/webDataStreams/(?P<web_data_stream>.+?)/measurementProtocolSecrets/(?P<measurement_protocol_secret>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
@@ -4003,6 +4058,422 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # Done; return the response.
         return response
 
+    def get_measurement_protocol_secret(self,
+            request: analytics_admin.GetMeasurementProtocolSecretRequest = None,
+            *,
+            name: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.MeasurementProtocolSecret:
+        r"""Lookup for a single "GA4" MeasurementProtocolSecret.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.GetMeasurementProtocolSecretRequest):
+                The request object. Request message for
+                GetMeasurementProtocolSecret RPC.
+            name (str):
+                Required. The name of the measurement
+                protocol secret to lookup. Format:
+                properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+                Note: Any type of stream (WebDataStream,
+                IosAppDataStream, AndroidAppDataStream)
+                may be a parent.
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.MeasurementProtocolSecret:
+                A secret value used for sending hits
+                to Measurement Protocol.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.GetMeasurementProtocolSecretRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.GetMeasurementProtocolSecretRequest):
+            request = analytics_admin.GetMeasurementProtocolSecretRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.get_measurement_protocol_secret]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("name", request.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def list_measurement_protocol_secrets(self,
+            request: analytics_admin.ListMeasurementProtocolSecretsRequest = None,
+            *,
+            parent: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> pagers.ListMeasurementProtocolSecretsPager:
+        r"""Returns child MeasurementProtocolSecrets under the
+        specified parent Property.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.ListMeasurementProtocolSecretsRequest):
+                The request object. Request message for
+                ListMeasurementProtocolSecret RPC
+            parent (str):
+                Required. The resource name of the
+                parent stream. Any type of stream
+                (WebDataStream, IosAppDataStream,
+                AndroidAppDataStream) may be a parent.
+                Format:
+                properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.services.analytics_admin_service.pagers.ListMeasurementProtocolSecretsPager:
+                Response message for
+                ListMeasurementProtocolSecret RPC
+                Iterating over this object will yield
+                results and resolve additional pages
+                automatically.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.ListMeasurementProtocolSecretsRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.ListMeasurementProtocolSecretsRequest):
+            request = analytics_admin.ListMeasurementProtocolSecretsRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if parent is not None:
+                request.parent = parent
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.list_measurement_protocol_secrets]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("parent", request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # This method is paged; wrap the response in a pager, which provides
+        # an `__iter__` convenience method.
+        response = pagers.ListMeasurementProtocolSecretsPager(
+            method=rpc,
+            request=request,
+            response=response,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def create_measurement_protocol_secret(self,
+            request: analytics_admin.CreateMeasurementProtocolSecretRequest = None,
+            *,
+            parent: str = None,
+            measurement_protocol_secret: resources.MeasurementProtocolSecret = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.MeasurementProtocolSecret:
+        r"""Creates a measurement protocol secret.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.CreateMeasurementProtocolSecretRequest):
+                The request object. Request message for
+                CreateMeasurementProtocolSecret RPC
+            parent (str):
+                Required. The parent resource where
+                this secret will be created. Any type of
+                stream (WebDataStream, IosAppDataStream,
+                AndroidAppDataStream) may be a parent.
+                Format:
+                properties/{property}/webDataStreams/{webDataStream}
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            measurement_protocol_secret (google.analytics.admin_v1alpha.types.MeasurementProtocolSecret):
+                Required. The measurement protocol
+                secret to create.
+
+                This corresponds to the ``measurement_protocol_secret`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.MeasurementProtocolSecret:
+                A secret value used for sending hits
+                to Measurement Protocol.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent, measurement_protocol_secret])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.CreateMeasurementProtocolSecretRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.CreateMeasurementProtocolSecretRequest):
+            request = analytics_admin.CreateMeasurementProtocolSecretRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if parent is not None:
+                request.parent = parent
+            if measurement_protocol_secret is not None:
+                request.measurement_protocol_secret = measurement_protocol_secret
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.create_measurement_protocol_secret]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("parent", request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def delete_measurement_protocol_secret(self,
+            request: analytics_admin.DeleteMeasurementProtocolSecretRequest = None,
+            *,
+            name: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> None:
+        r"""Deletes target MeasurementProtocolSecret.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.DeleteMeasurementProtocolSecretRequest):
+                The request object. Request message for
+                DeleteMeasurementProtocolSecret RPC
+            name (str):
+                Required. The name of the
+                MeasurementProtocolSecret to delete.
+                Format:
+                properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+                Note: Any type of stream (WebDataStream,
+                IosAppDataStream, AndroidAppDataStream)
+                may be a parent.
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.DeleteMeasurementProtocolSecretRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.DeleteMeasurementProtocolSecretRequest):
+            request = analytics_admin.DeleteMeasurementProtocolSecretRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.delete_measurement_protocol_secret]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("name", request.name),
+            )),
+        )
+
+        # Send the request.
+        rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+    def update_measurement_protocol_secret(self,
+            request: analytics_admin.UpdateMeasurementProtocolSecretRequest = None,
+            *,
+            measurement_protocol_secret: resources.MeasurementProtocolSecret = None,
+            update_mask: field_mask_pb2.FieldMask = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.MeasurementProtocolSecret:
+        r"""Updates a measurement protocol secret.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.UpdateMeasurementProtocolSecretRequest):
+                The request object. Request message for
+                UpdateMeasurementProtocolSecret RPC
+            measurement_protocol_secret (google.analytics.admin_v1alpha.types.MeasurementProtocolSecret):
+                Required. The measurement protocol
+                secret to update.
+
+                This corresponds to the ``measurement_protocol_secret`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            update_mask (google.protobuf.field_mask_pb2.FieldMask):
+                The list of fields to be updated.
+                Omitted fields will not be updated.
+
+                This corresponds to the ``update_mask`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.MeasurementProtocolSecret:
+                A secret value used for sending hits
+                to Measurement Protocol.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([measurement_protocol_secret, update_mask])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.UpdateMeasurementProtocolSecretRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.UpdateMeasurementProtocolSecretRequest):
+            request = analytics_admin.UpdateMeasurementProtocolSecretRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if measurement_protocol_secret is not None:
+                request.measurement_protocol_secret = measurement_protocol_secret
+            if update_mask is not None:
+                request.update_mask = update_mask
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.update_measurement_protocol_secret]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("measurement_protocol_secret.name", request.measurement_protocol_secret.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
     def search_change_history_events(self,
             request: analytics_admin.SearchChangeHistoryEventsRequest = None,
             *,
@@ -4066,6 +4537,1280 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             method=rpc,
             request=request,
             response=response,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def get_google_signals_settings(self,
+            request: analytics_admin.GetGoogleSignalsSettingsRequest = None,
+            *,
+            name: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.GoogleSignalsSettings:
+        r"""Lookup for Google Signals settings for a property.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.GetGoogleSignalsSettingsRequest):
+                The request object. Request message for
+                GetGoogleSignalsSettings RPC
+            name (str):
+                Required. The name of the google
+                signals settings to retrieve. Format:
+                properties/{property}/googleSignalsSettings
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.GoogleSignalsSettings:
+                Settings values for Google Signals.
+                This is a singleton resource.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.GetGoogleSignalsSettingsRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.GetGoogleSignalsSettingsRequest):
+            request = analytics_admin.GetGoogleSignalsSettingsRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.get_google_signals_settings]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("name", request.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def update_google_signals_settings(self,
+            request: analytics_admin.UpdateGoogleSignalsSettingsRequest = None,
+            *,
+            google_signals_settings: resources.GoogleSignalsSettings = None,
+            update_mask: field_mask_pb2.FieldMask = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.GoogleSignalsSettings:
+        r"""Updates Google Signals settings for a property.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.UpdateGoogleSignalsSettingsRequest):
+                The request object. Request message for
+                UpdateGoogleSignalsSettings RPC
+            google_signals_settings (google.analytics.admin_v1alpha.types.GoogleSignalsSettings):
+                Required. The settings to update. The ``name`` field is
+                used to identify the settings to be updated.
+
+                This corresponds to the ``google_signals_settings`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            update_mask (google.protobuf.field_mask_pb2.FieldMask):
+                Required. The list of fields to be updated. Field names
+                must be in snake case (e.g., "field_to_update"). Omitted
+                fields will not be updated. To replace the entire
+                entity, use one path with the string "*" to match all
+                fields.
+
+                This corresponds to the ``update_mask`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.GoogleSignalsSettings:
+                Settings values for Google Signals.
+                This is a singleton resource.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([google_signals_settings, update_mask])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.UpdateGoogleSignalsSettingsRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.UpdateGoogleSignalsSettingsRequest):
+            request = analytics_admin.UpdateGoogleSignalsSettingsRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if google_signals_settings is not None:
+                request.google_signals_settings = google_signals_settings
+            if update_mask is not None:
+                request.update_mask = update_mask
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.update_google_signals_settings]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("google_signals_settings.name", request.google_signals_settings.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def create_conversion_event(self,
+            request: analytics_admin.CreateConversionEventRequest = None,
+            *,
+            parent: str = None,
+            conversion_event: resources.ConversionEvent = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.ConversionEvent:
+        r"""Creates a conversion event with the specified
+        attributes.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.CreateConversionEventRequest):
+                The request object. Request message for
+                CreateConversionEvent RPC
+            parent (str):
+                Required. The resource name of the
+                parent property where this conversion
+                event will be created. Format:
+                properties/123
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            conversion_event (google.analytics.admin_v1alpha.types.ConversionEvent):
+                Required. The conversion event to
+                create.
+
+                This corresponds to the ``conversion_event`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.ConversionEvent:
+                A conversion event in a Google
+                Analytics property.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent, conversion_event])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.CreateConversionEventRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.CreateConversionEventRequest):
+            request = analytics_admin.CreateConversionEventRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if parent is not None:
+                request.parent = parent
+            if conversion_event is not None:
+                request.conversion_event = conversion_event
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.create_conversion_event]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("parent", request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def get_conversion_event(self,
+            request: analytics_admin.GetConversionEventRequest = None,
+            *,
+            name: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.ConversionEvent:
+        r"""Retrieve a single conversion event.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.GetConversionEventRequest):
+                The request object. Request message for
+                GetConversionEvent RPC
+            name (str):
+                Required. The resource name of the conversion event to
+                retrieve. Format:
+                properties/{property}/conversionEvents/{conversion_event}
+                Example: "properties/123/conversionEvents/456"
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.ConversionEvent:
+                A conversion event in a Google
+                Analytics property.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.GetConversionEventRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.GetConversionEventRequest):
+            request = analytics_admin.GetConversionEventRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.get_conversion_event]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("name", request.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def delete_conversion_event(self,
+            request: analytics_admin.DeleteConversionEventRequest = None,
+            *,
+            name: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> None:
+        r"""Deletes a conversion event in a property.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.DeleteConversionEventRequest):
+                The request object. Request message for
+                DeleteConversionEvent RPC
+            name (str):
+                Required. The resource name of the conversion event to
+                delete. Format:
+                properties/{property}/conversionEvents/{conversion_event}
+                Example: "properties/123/conversionEvents/456"
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.DeleteConversionEventRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.DeleteConversionEventRequest):
+            request = analytics_admin.DeleteConversionEventRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.delete_conversion_event]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("name", request.name),
+            )),
+        )
+
+        # Send the request.
+        rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+    def list_conversion_events(self,
+            request: analytics_admin.ListConversionEventsRequest = None,
+            *,
+            parent: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> pagers.ListConversionEventsPager:
+        r"""Returns a list of conversion events in the specified
+        parent property.
+        Returns an empty list if no conversion events are found.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.ListConversionEventsRequest):
+                The request object. Request message for
+                ListConversionEvents RPC
+            parent (str):
+                Required. The resource name of the
+                parent property. Example:
+                'properties/123'
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.services.analytics_admin_service.pagers.ListConversionEventsPager:
+                Response message for
+                ListConversionEvents RPC.
+                Iterating over this object will yield
+                results and resolve additional pages
+                automatically.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.ListConversionEventsRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.ListConversionEventsRequest):
+            request = analytics_admin.ListConversionEventsRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if parent is not None:
+                request.parent = parent
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.list_conversion_events]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("parent", request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # This method is paged; wrap the response in a pager, which provides
+        # an `__iter__` convenience method.
+        response = pagers.ListConversionEventsPager(
+            method=rpc,
+            request=request,
+            response=response,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def create_custom_dimension(self,
+            request: analytics_admin.CreateCustomDimensionRequest = None,
+            *,
+            parent: str = None,
+            custom_dimension: resources.CustomDimension = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.CustomDimension:
+        r"""Creates a CustomDimension.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.CreateCustomDimensionRequest):
+                The request object. Request message for
+                CreateCustomDimension RPC.
+            parent (str):
+                Required. Example format:
+                properties/1234
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            custom_dimension (google.analytics.admin_v1alpha.types.CustomDimension):
+                Required. The CustomDimension to
+                create.
+
+                This corresponds to the ``custom_dimension`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.CustomDimension:
+                A definition for a CustomDimension.
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent, custom_dimension])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.CreateCustomDimensionRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.CreateCustomDimensionRequest):
+            request = analytics_admin.CreateCustomDimensionRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if parent is not None:
+                request.parent = parent
+            if custom_dimension is not None:
+                request.custom_dimension = custom_dimension
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.create_custom_dimension]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("parent", request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def update_custom_dimension(self,
+            request: analytics_admin.UpdateCustomDimensionRequest = None,
+            *,
+            custom_dimension: resources.CustomDimension = None,
+            update_mask: field_mask_pb2.FieldMask = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.CustomDimension:
+        r"""Updates a CustomDimension on a property.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.UpdateCustomDimensionRequest):
+                The request object. Request message for
+                UpdateCustomDimension RPC.
+            custom_dimension (google.analytics.admin_v1alpha.types.CustomDimension):
+                The CustomDimension to update
+                This corresponds to the ``custom_dimension`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            update_mask (google.protobuf.field_mask_pb2.FieldMask):
+                Required. The list of fields to be updated. Omitted
+                fields will not be updated. To replace the entire
+                entity, use one path with the string "*" to match all
+                fields.
+
+                This corresponds to the ``update_mask`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.CustomDimension:
+                A definition for a CustomDimension.
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([custom_dimension, update_mask])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.UpdateCustomDimensionRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.UpdateCustomDimensionRequest):
+            request = analytics_admin.UpdateCustomDimensionRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if custom_dimension is not None:
+                request.custom_dimension = custom_dimension
+            if update_mask is not None:
+                request.update_mask = update_mask
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.update_custom_dimension]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("custom_dimension.name", request.custom_dimension.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def list_custom_dimensions(self,
+            request: analytics_admin.ListCustomDimensionsRequest = None,
+            *,
+            parent: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> pagers.ListCustomDimensionsPager:
+        r"""Lists CustomDimensions on a property.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.ListCustomDimensionsRequest):
+                The request object. Request message for
+                ListCustomDimensions RPC.
+            parent (str):
+                Required. Example format:
+                properties/1234
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.services.analytics_admin_service.pagers.ListCustomDimensionsPager:
+                Response message for
+                ListCustomDimensions RPC.
+                Iterating over this object will yield
+                results and resolve additional pages
+                automatically.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.ListCustomDimensionsRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.ListCustomDimensionsRequest):
+            request = analytics_admin.ListCustomDimensionsRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if parent is not None:
+                request.parent = parent
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.list_custom_dimensions]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("parent", request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # This method is paged; wrap the response in a pager, which provides
+        # an `__iter__` convenience method.
+        response = pagers.ListCustomDimensionsPager(
+            method=rpc,
+            request=request,
+            response=response,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def archive_custom_dimension(self,
+            request: analytics_admin.ArchiveCustomDimensionRequest = None,
+            *,
+            name: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> None:
+        r"""Archives a CustomDimension on a property.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.ArchiveCustomDimensionRequest):
+                The request object. Request message for
+                ArchiveCustomDimension RPC.
+            name (str):
+                Required. The name of the
+                CustomDimension to archive. Example
+                format:
+                properties/1234/customDimensions/5678
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.ArchiveCustomDimensionRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.ArchiveCustomDimensionRequest):
+            request = analytics_admin.ArchiveCustomDimensionRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.archive_custom_dimension]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("name", request.name),
+            )),
+        )
+
+        # Send the request.
+        rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+    def get_custom_dimension(self,
+            request: analytics_admin.GetCustomDimensionRequest = None,
+            *,
+            name: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.CustomDimension:
+        r"""Lookup for a single CustomDimension.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.GetCustomDimensionRequest):
+                The request object. Request message for
+                GetCustomDimension RPC.
+            name (str):
+                Required. The name of the
+                CustomDimension to get. Example format:
+                properties/1234/customDimensions/5678
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.CustomDimension:
+                A definition for a CustomDimension.
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.GetCustomDimensionRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.GetCustomDimensionRequest):
+            request = analytics_admin.GetCustomDimensionRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.get_custom_dimension]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("name", request.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def create_custom_metric(self,
+            request: analytics_admin.CreateCustomMetricRequest = None,
+            *,
+            parent: str = None,
+            custom_metric: resources.CustomMetric = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.CustomMetric:
+        r"""Creates a CustomMetric.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.CreateCustomMetricRequest):
+                The request object. Request message for
+                CreateCustomMetric RPC.
+            parent (str):
+                Required. Example format:
+                properties/1234
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            custom_metric (google.analytics.admin_v1alpha.types.CustomMetric):
+                Required. The CustomMetric to create.
+                This corresponds to the ``custom_metric`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.CustomMetric:
+                A definition for a custom metric.
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent, custom_metric])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.CreateCustomMetricRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.CreateCustomMetricRequest):
+            request = analytics_admin.CreateCustomMetricRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if parent is not None:
+                request.parent = parent
+            if custom_metric is not None:
+                request.custom_metric = custom_metric
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.create_custom_metric]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("parent", request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def update_custom_metric(self,
+            request: analytics_admin.UpdateCustomMetricRequest = None,
+            *,
+            custom_metric: resources.CustomMetric = None,
+            update_mask: field_mask_pb2.FieldMask = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.CustomMetric:
+        r"""Updates a CustomMetric on a property.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.UpdateCustomMetricRequest):
+                The request object. Request message for
+                UpdateCustomMetric RPC.
+            custom_metric (google.analytics.admin_v1alpha.types.CustomMetric):
+                The CustomMetric to update
+                This corresponds to the ``custom_metric`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            update_mask (google.protobuf.field_mask_pb2.FieldMask):
+                Required. The list of fields to be updated. Omitted
+                fields will not be updated. To replace the entire
+                entity, use one path with the string "*" to match all
+                fields.
+
+                This corresponds to the ``update_mask`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.CustomMetric:
+                A definition for a custom metric.
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([custom_metric, update_mask])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.UpdateCustomMetricRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.UpdateCustomMetricRequest):
+            request = analytics_admin.UpdateCustomMetricRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if custom_metric is not None:
+                request.custom_metric = custom_metric
+            if update_mask is not None:
+                request.update_mask = update_mask
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.update_custom_metric]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("custom_metric.name", request.custom_metric.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def list_custom_metrics(self,
+            request: analytics_admin.ListCustomMetricsRequest = None,
+            *,
+            parent: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> pagers.ListCustomMetricsPager:
+        r"""Lists CustomMetrics on a property.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.ListCustomMetricsRequest):
+                The request object. Request message for
+                ListCustomMetrics RPC.
+            parent (str):
+                Required. Example format:
+                properties/1234
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.services.analytics_admin_service.pagers.ListCustomMetricsPager:
+                Response message for
+                ListCustomMetrics RPC.
+                Iterating over this object will yield
+                results and resolve additional pages
+                automatically.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.ListCustomMetricsRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.ListCustomMetricsRequest):
+            request = analytics_admin.ListCustomMetricsRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if parent is not None:
+                request.parent = parent
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.list_custom_metrics]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("parent", request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # This method is paged; wrap the response in a pager, which provides
+        # an `__iter__` convenience method.
+        response = pagers.ListCustomMetricsPager(
+            method=rpc,
+            request=request,
+            response=response,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def archive_custom_metric(self,
+            request: analytics_admin.ArchiveCustomMetricRequest = None,
+            *,
+            name: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> None:
+        r"""Archives a CustomMetric on a property.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.ArchiveCustomMetricRequest):
+                The request object. Request message for
+                ArchiveCustomMetric RPC.
+            name (str):
+                Required. The name of the
+                CustomMetric to archive. Example format:
+                properties/1234/customMetrics/5678
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.ArchiveCustomMetricRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.ArchiveCustomMetricRequest):
+            request = analytics_admin.ArchiveCustomMetricRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.archive_custom_metric]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("name", request.name),
+            )),
+        )
+
+        # Send the request.
+        rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+    def get_custom_metric(self,
+            request: analytics_admin.GetCustomMetricRequest = None,
+            *,
+            name: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> resources.CustomMetric:
+        r"""Lookup for a single CustomMetric.
+
+        Args:
+            request (google.analytics.admin_v1alpha.types.GetCustomMetricRequest):
+                The request object. Request message for GetCustomMetric
+                RPC.
+            name (str):
+                Required. The name of the
+                CustomMetric to get. Example format:
+                properties/1234/customMetrics/5678
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.analytics.admin_v1alpha.types.CustomMetric:
+                A definition for a custom metric.
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a analytics_admin.GetCustomMetricRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, analytics_admin.GetCustomMetricRequest):
+            request = analytics_admin.GetCustomMetricRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.get_custom_metric]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("name", request.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
             metadata=metadata,
         )
 
