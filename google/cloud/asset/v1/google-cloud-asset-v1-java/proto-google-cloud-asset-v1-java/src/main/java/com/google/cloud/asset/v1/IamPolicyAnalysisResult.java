@@ -4227,6 +4227,36 @@ private static final long serialVersionUID = 0L;
      */
     com.google.cloud.asset.v1.IamPolicyAnalysisResult.EdgeOrBuilder getResourceEdgesOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * Condition evaluation for this AccessControlList, if there is a condition
+     * defined in the above IAM policy binding.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+     * @return Whether the conditionEvaluation field is set.
+     */
+    boolean hasConditionEvaluation();
+    /**
+     * <pre>
+     * Condition evaluation for this AccessControlList, if there is a condition
+     * defined in the above IAM policy binding.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+     * @return The conditionEvaluation.
+     */
+    com.google.cloud.asset.v1.ConditionEvaluation getConditionEvaluation();
+    /**
+     * <pre>
+     * Condition evaluation for this AccessControlList, if there is a condition
+     * defined in the above IAM policy binding.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+     */
+    com.google.cloud.asset.v1.ConditionEvaluationOrBuilder getConditionEvaluationOrBuilder();
   }
   /**
    * <pre>
@@ -4317,6 +4347,19 @@ private static final long serialVersionUID = 0L;
               }
               resourceEdges_.add(
                   input.readMessage(com.google.cloud.asset.v1.IamPolicyAnalysisResult.Edge.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              com.google.cloud.asset.v1.ConditionEvaluation.Builder subBuilder = null;
+              if (conditionEvaluation_ != null) {
+                subBuilder = conditionEvaluation_.toBuilder();
+              }
+              conditionEvaluation_ = input.readMessage(com.google.cloud.asset.v1.ConditionEvaluation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(conditionEvaluation_);
+                conditionEvaluation_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -4580,6 +4623,47 @@ private static final long serialVersionUID = 0L;
       return resourceEdges_.get(index);
     }
 
+    public static final int CONDITION_EVALUATION_FIELD_NUMBER = 4;
+    private com.google.cloud.asset.v1.ConditionEvaluation conditionEvaluation_;
+    /**
+     * <pre>
+     * Condition evaluation for this AccessControlList, if there is a condition
+     * defined in the above IAM policy binding.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+     * @return Whether the conditionEvaluation field is set.
+     */
+    @java.lang.Override
+    public boolean hasConditionEvaluation() {
+      return conditionEvaluation_ != null;
+    }
+    /**
+     * <pre>
+     * Condition evaluation for this AccessControlList, if there is a condition
+     * defined in the above IAM policy binding.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+     * @return The conditionEvaluation.
+     */
+    @java.lang.Override
+    public com.google.cloud.asset.v1.ConditionEvaluation getConditionEvaluation() {
+      return conditionEvaluation_ == null ? com.google.cloud.asset.v1.ConditionEvaluation.getDefaultInstance() : conditionEvaluation_;
+    }
+    /**
+     * <pre>
+     * Condition evaluation for this AccessControlList, if there is a condition
+     * defined in the above IAM policy binding.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.asset.v1.ConditionEvaluationOrBuilder getConditionEvaluationOrBuilder() {
+      return getConditionEvaluation();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4603,6 +4687,9 @@ private static final long serialVersionUID = 0L;
       for (int i = 0; i < resourceEdges_.size(); i++) {
         output.writeMessage(3, resourceEdges_.get(i));
       }
+      if (conditionEvaluation_ != null) {
+        output.writeMessage(4, getConditionEvaluation());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4623,6 +4710,10 @@ private static final long serialVersionUID = 0L;
       for (int i = 0; i < resourceEdges_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, resourceEdges_.get(i));
+      }
+      if (conditionEvaluation_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getConditionEvaluation());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4645,6 +4736,11 @@ private static final long serialVersionUID = 0L;
           .equals(other.getAccessesList())) return false;
       if (!getResourceEdgesList()
           .equals(other.getResourceEdgesList())) return false;
+      if (hasConditionEvaluation() != other.hasConditionEvaluation()) return false;
+      if (hasConditionEvaluation()) {
+        if (!getConditionEvaluation()
+            .equals(other.getConditionEvaluation())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4667,6 +4763,10 @@ private static final long serialVersionUID = 0L;
       if (getResourceEdgesCount() > 0) {
         hash = (37 * hash) + RESOURCE_EDGES_FIELD_NUMBER;
         hash = (53 * hash) + getResourceEdgesList().hashCode();
+      }
+      if (hasConditionEvaluation()) {
+        hash = (37 * hash) + CONDITION_EVALUATION_FIELD_NUMBER;
+        hash = (53 * hash) + getConditionEvaluation().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4837,6 +4937,12 @@ private static final long serialVersionUID = 0L;
         } else {
           resourceEdgesBuilder_.clear();
         }
+        if (conditionEvaluationBuilder_ == null) {
+          conditionEvaluation_ = null;
+        } else {
+          conditionEvaluation_ = null;
+          conditionEvaluationBuilder_ = null;
+        }
         return this;
       }
 
@@ -4890,6 +4996,11 @@ private static final long serialVersionUID = 0L;
           result.resourceEdges_ = resourceEdges_;
         } else {
           result.resourceEdges_ = resourceEdgesBuilder_.build();
+        }
+        if (conditionEvaluationBuilder_ == null) {
+          result.conditionEvaluation_ = conditionEvaluation_;
+        } else {
+          result.conditionEvaluation_ = conditionEvaluationBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5016,6 +5127,9 @@ private static final long serialVersionUID = 0L;
               resourceEdgesBuilder_.addAllMessages(other.resourceEdges_);
             }
           }
+        }
+        if (other.hasConditionEvaluation()) {
+          mergeConditionEvaluation(other.getConditionEvaluation());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6125,6 +6239,170 @@ private static final long serialVersionUID = 0L;
           resourceEdges_ = null;
         }
         return resourceEdgesBuilder_;
+      }
+
+      private com.google.cloud.asset.v1.ConditionEvaluation conditionEvaluation_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.asset.v1.ConditionEvaluation, com.google.cloud.asset.v1.ConditionEvaluation.Builder, com.google.cloud.asset.v1.ConditionEvaluationOrBuilder> conditionEvaluationBuilder_;
+      /**
+       * <pre>
+       * Condition evaluation for this AccessControlList, if there is a condition
+       * defined in the above IAM policy binding.
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+       * @return Whether the conditionEvaluation field is set.
+       */
+      public boolean hasConditionEvaluation() {
+        return conditionEvaluationBuilder_ != null || conditionEvaluation_ != null;
+      }
+      /**
+       * <pre>
+       * Condition evaluation for this AccessControlList, if there is a condition
+       * defined in the above IAM policy binding.
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+       * @return The conditionEvaluation.
+       */
+      public com.google.cloud.asset.v1.ConditionEvaluation getConditionEvaluation() {
+        if (conditionEvaluationBuilder_ == null) {
+          return conditionEvaluation_ == null ? com.google.cloud.asset.v1.ConditionEvaluation.getDefaultInstance() : conditionEvaluation_;
+        } else {
+          return conditionEvaluationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Condition evaluation for this AccessControlList, if there is a condition
+       * defined in the above IAM policy binding.
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+       */
+      public Builder setConditionEvaluation(com.google.cloud.asset.v1.ConditionEvaluation value) {
+        if (conditionEvaluationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          conditionEvaluation_ = value;
+          onChanged();
+        } else {
+          conditionEvaluationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Condition evaluation for this AccessControlList, if there is a condition
+       * defined in the above IAM policy binding.
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+       */
+      public Builder setConditionEvaluation(
+          com.google.cloud.asset.v1.ConditionEvaluation.Builder builderForValue) {
+        if (conditionEvaluationBuilder_ == null) {
+          conditionEvaluation_ = builderForValue.build();
+          onChanged();
+        } else {
+          conditionEvaluationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Condition evaluation for this AccessControlList, if there is a condition
+       * defined in the above IAM policy binding.
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+       */
+      public Builder mergeConditionEvaluation(com.google.cloud.asset.v1.ConditionEvaluation value) {
+        if (conditionEvaluationBuilder_ == null) {
+          if (conditionEvaluation_ != null) {
+            conditionEvaluation_ =
+              com.google.cloud.asset.v1.ConditionEvaluation.newBuilder(conditionEvaluation_).mergeFrom(value).buildPartial();
+          } else {
+            conditionEvaluation_ = value;
+          }
+          onChanged();
+        } else {
+          conditionEvaluationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Condition evaluation for this AccessControlList, if there is a condition
+       * defined in the above IAM policy binding.
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+       */
+      public Builder clearConditionEvaluation() {
+        if (conditionEvaluationBuilder_ == null) {
+          conditionEvaluation_ = null;
+          onChanged();
+        } else {
+          conditionEvaluation_ = null;
+          conditionEvaluationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Condition evaluation for this AccessControlList, if there is a condition
+       * defined in the above IAM policy binding.
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+       */
+      public com.google.cloud.asset.v1.ConditionEvaluation.Builder getConditionEvaluationBuilder() {
+        
+        onChanged();
+        return getConditionEvaluationFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Condition evaluation for this AccessControlList, if there is a condition
+       * defined in the above IAM policy binding.
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+       */
+      public com.google.cloud.asset.v1.ConditionEvaluationOrBuilder getConditionEvaluationOrBuilder() {
+        if (conditionEvaluationBuilder_ != null) {
+          return conditionEvaluationBuilder_.getMessageOrBuilder();
+        } else {
+          return conditionEvaluation_ == null ?
+              com.google.cloud.asset.v1.ConditionEvaluation.getDefaultInstance() : conditionEvaluation_;
+        }
+      }
+      /**
+       * <pre>
+       * Condition evaluation for this AccessControlList, if there is a condition
+       * defined in the above IAM policy binding.
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.asset.v1.ConditionEvaluation, com.google.cloud.asset.v1.ConditionEvaluation.Builder, com.google.cloud.asset.v1.ConditionEvaluationOrBuilder> 
+          getConditionEvaluationFieldBuilder() {
+        if (conditionEvaluationBuilder_ == null) {
+          conditionEvaluationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.asset.v1.ConditionEvaluation, com.google.cloud.asset.v1.ConditionEvaluation.Builder, com.google.cloud.asset.v1.ConditionEvaluationOrBuilder>(
+                  getConditionEvaluation(),
+                  getParentForChildren(),
+                  isClean());
+          conditionEvaluation_ = null;
+        }
+        return conditionEvaluationBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(

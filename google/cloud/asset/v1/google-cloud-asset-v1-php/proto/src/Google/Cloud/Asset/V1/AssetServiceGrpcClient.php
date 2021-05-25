@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -53,6 +53,22 @@ class AssetServiceGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.cloud.asset.v1.AssetService/ExportAssets',
         $argument,
         ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Lists assets with time and resource types and returns paged results in
+     * response.
+     * @param \Google\Cloud\Asset\V1\ListAssetsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListAssets(\Google\Cloud\Asset\V1\ListAssetsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.asset.v1.AssetService/ListAssets',
+        $argument,
+        ['\Google\Cloud\Asset\V1\ListAssetsResponse', 'decode'],
         $metadata, $options);
     }
 

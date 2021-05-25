@@ -23,10 +23,16 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     assetType_ = "";
     project_ = "";
+    folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    organization_ = "";
     displayName_ = "";
     description_ = "";
     location_ = "";
     networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    kmsKey_ = "";
+    state_ = "";
+    parentFullResourceName_ = "";
+    parentAssetType_ = "";
   }
 
   @java.lang.Override
@@ -97,10 +103,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               labels_ = com.google.protobuf.MapField.newMapField(
                   LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000002;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             labels__ = input.readMessage(
@@ -111,9 +117,9 @@ private static final long serialVersionUID = 0L;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               networkTags_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000004;
             }
             networkTags_.add(s);
             break;
@@ -131,6 +137,71 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            kmsKey_ = s;
+            break;
+          }
+          case 90: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (createTime_ != null) {
+              subBuilder = createTime_.toBuilder();
+            }
+            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(createTime_);
+              createTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 98: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (updateTime_ != null) {
+              subBuilder = updateTime_.toBuilder();
+            }
+            updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateTime_);
+              updateTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            state_ = s;
+            break;
+          }
+          case 138: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              folders_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            folders_.add(s);
+            break;
+          }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            organization_ = s;
+            break;
+          }
+          case 154: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            parentFullResourceName_ = s;
+            break;
+          }
+          case 826: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            parentAssetType_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -146,8 +217,11 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         networkTags_ = networkTags_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        folders_ = folders_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -293,8 +367,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The project that this resource belongs to, in the form of
-   * projects/{PROJECT_NUMBER}.
-   * To search against the `project`:
+   * projects/{PROJECT_NUMBER}. This field is available when the resource
+   * belongs to a project.
+   * To search against `project`:
+   * * use a field query. Example: `project:12345`
+   * * use a free text query. Example: `12345`
    * * specify the `scope` field as this project in your search request.
    * </pre>
    *
@@ -317,8 +394,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The project that this resource belongs to, in the form of
-   * projects/{PROJECT_NUMBER}.
-   * To search against the `project`:
+   * projects/{PROJECT_NUMBER}. This field is available when the resource
+   * belongs to a project.
+   * To search against `project`:
+   * * use a field query. Example: `project:12345`
+   * * use a free text query. Example: `12345`
    * * specify the `scope` field as this project in your search request.
    * </pre>
    *
@@ -340,11 +420,145 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int FOLDERS_FIELD_NUMBER = 17;
+  private com.google.protobuf.LazyStringList folders_;
+  /**
+   * <pre>
+   * The folder(s) that this resource belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the resource
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 17;</code>
+   * @return A list containing the folders.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getFoldersList() {
+    return folders_;
+  }
+  /**
+   * <pre>
+   * The folder(s) that this resource belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the resource
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 17;</code>
+   * @return The count of folders.
+   */
+  public int getFoldersCount() {
+    return folders_.size();
+  }
+  /**
+   * <pre>
+   * The folder(s) that this resource belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the resource
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 17;</code>
+   * @param index The index of the element to return.
+   * @return The folders at the given index.
+   */
+  public java.lang.String getFolders(int index) {
+    return folders_.get(index);
+  }
+  /**
+   * <pre>
+   * The folder(s) that this resource belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the resource
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 17;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the folders at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getFoldersBytes(int index) {
+    return folders_.getByteString(index);
+  }
+
+  public static final int ORGANIZATION_FIELD_NUMBER = 18;
+  private volatile java.lang.Object organization_;
+  /**
+   * <pre>
+   * The organization that this resource belongs to, in the form of
+   * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+   * resource belongs to an organization.
+   * To search against `organization`:
+   * * use a field query. Example: `organization:123`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this organization in your search request.
+   * </pre>
+   *
+   * <code>string organization = 18;</code>
+   * @return The organization.
+   */
+  @java.lang.Override
+  public java.lang.String getOrganization() {
+    java.lang.Object ref = organization_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      organization_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The organization that this resource belongs to, in the form of
+   * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+   * resource belongs to an organization.
+   * To search against `organization`:
+   * * use a field query. Example: `organization:123`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this organization in your search request.
+   * </pre>
+   *
+   * <code>string organization = 18;</code>
+   * @return The bytes for organization.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOrganizationBytes() {
+    java.lang.Object ref = organization_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      organization_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 4;
   private volatile java.lang.Object displayName_;
   /**
    * <pre>
-   * The display name of this resource.
+   * The display name of this resource. This field is available only when the
+   * resource's proto contains it.
    * To search against the `display_name`:
    * * use a field query. Example: `displayName:"My Instance"`
    * * use a free text query. Example: `"My Instance"`
@@ -368,7 +582,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The display name of this resource.
+   * The display name of this resource. This field is available only when the
+   * resource's proto contains it.
    * To search against the `display_name`:
    * * use a field query. Example: `displayName:"My Instance"`
    * * use a free text query. Example: `"My Instance"`
@@ -397,10 +612,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * One or more paragraphs of text description of this resource. Maximum length
-   * could be up to 1M bytes.
+   * could be up to 1M bytes. This field is available only when the resource's
+   * proto contains it.
    * To search against the `description`:
-   * * use a field query. Example: `description:"*important instance*"`
-   * * use a free text query. Example: `"*important instance*"`
+   * * use a field query. Example: `description:"important instance"`
+   * * use a free text query. Example: `"important instance"`
    * </pre>
    *
    * <code>string description = 5;</code>
@@ -422,10 +638,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * One or more paragraphs of text description of this resource. Maximum length
-   * could be up to 1M bytes.
+   * could be up to 1M bytes. This field is available only when the resource's
+   * proto contains it.
    * To search against the `description`:
-   * * use a field query. Example: `description:"*important instance*"`
-   * * use a free text query. Example: `"*important instance*"`
+   * * use a field query. Example: `description:"important instance"`
+   * * use a free text query. Example: `"important instance"`
    * </pre>
    *
    * <code>string description = 5;</code>
@@ -451,7 +668,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Location can be `global`, regional like `us-east1`, or zonal like
-   * `us-west1-b`.
+   * `us-west1-b`. This field is available only when the resource's proto
+   * contains it.
    * To search against the `location`:
    * * use a field query. Example: `location:us-west*`
    * * use a free text query. Example: `us-west*`
@@ -476,7 +694,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Location can be `global`, regional like `us-east1`, or zonal like
-   * `us-west1-b`.
+   * `us-west1-b`. This field is available only when the resource's proto
+   * contains it.
    * To search against the `location`:
    * * use a field query. Example: `location:us-west*`
    * * use a free text query. Example: `us-west*`
@@ -530,7 +749,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-   * for more information.
+   * for more information. This field is available only when the resource's
+   * proto contains it.
    * To search against the `labels`:
    * * use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
@@ -560,7 +780,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-   * for more information.
+   * for more information. This field is available only when the resource's
+   * proto contains it.
    * To search against the `labels`:
    * * use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
@@ -580,7 +801,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-   * for more information.
+   * for more information. This field is available only when the resource's
+   * proto contains it.
    * To search against the `labels`:
    * * use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
@@ -605,7 +827,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-   * for more information.
+   * for more information. This field is available only when the resource's
+   * proto contains it.
    * To search against the `labels`:
    * * use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
@@ -636,7 +859,8 @@ private static final long serialVersionUID = 0L;
    * Network tags associated with this resource. Like labels, network tags are a
    * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-   * for more information.
+   * for more information. This field is available only when the resource's
+   * proto contains it.
    * To search against the `network_tags`:
    * * use a field query. Example: `networkTags:internal`
    * * use a free text query. Example: `internal`
@@ -654,7 +878,8 @@ private static final long serialVersionUID = 0L;
    * Network tags associated with this resource. Like labels, network tags are a
    * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-   * for more information.
+   * for more information. This field is available only when the resource's
+   * proto contains it.
    * To search against the `network_tags`:
    * * use a field query. Example: `networkTags:internal`
    * * use a free text query. Example: `internal`
@@ -671,7 +896,8 @@ private static final long serialVersionUID = 0L;
    * Network tags associated with this resource. Like labels, network tags are a
    * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-   * for more information.
+   * for more information. This field is available only when the resource's
+   * proto contains it.
    * To search against the `network_tags`:
    * * use a field query. Example: `networkTags:internal`
    * * use a free text query. Example: `internal`
@@ -689,7 +915,8 @@ private static final long serialVersionUID = 0L;
    * Network tags associated with this resource. Like labels, network tags are a
    * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-   * for more information.
+   * for more information. This field is available only when the resource's
+   * proto contains it.
    * To search against the `network_tags`:
    * * use a field query. Example: `networkTags:internal`
    * * use a free text query. Example: `internal`
@@ -704,6 +931,269 @@ private static final long serialVersionUID = 0L;
     return networkTags_.getByteString(index);
   }
 
+  public static final int KMS_KEY_FIELD_NUMBER = 10;
+  private volatile java.lang.Object kmsKey_;
+  /**
+   * <pre>
+   * The Cloud KMS
+   * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys?hl=en)
+   * name or
+   * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions?hl=en)
+   * name. This field is available only when the resource's proto contains it.
+   * To search against the `kms_key`:
+   * * use a field query. Example: `kmsKey:key`
+   * * use a free text query. Example: `key`
+   * </pre>
+   *
+   * <code>string kms_key = 10;</code>
+   * @return The kmsKey.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKey() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKey_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The Cloud KMS
+   * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys?hl=en)
+   * name or
+   * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions?hl=en)
+   * name. This field is available only when the resource's proto contains it.
+   * To search against the `kms_key`:
+   * * use a field query. Example: `kmsKey:key`
+   * * use a free text query. Example: `key`
+   * </pre>
+   *
+   * <code>string kms_key = 10;</code>
+   * @return The bytes for kmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getKmsKeyBytes() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      kmsKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   * <pre>
+   * The create timestamp of this resource, at which the resource was created.
+   * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+   * is available only when the resource's proto contains it.
+   * To search against `create_time`:
+   * * use a field query.
+   *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+   *     - value in date string. Example: `createTime &gt; 2021-01-01`
+   *     - value in date-time string (must be quoted). Example: `createTime &gt;
+   *     "2021-01-01T00:00:00"`
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return createTime_ != null;
+  }
+  /**
+   * <pre>
+   * The create timestamp of this resource, at which the resource was created.
+   * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+   * is available only when the resource's proto contains it.
+   * To search against `create_time`:
+   * * use a field query.
+   *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+   *     - value in date string. Example: `createTime &gt; 2021-01-01`
+   *     - value in date-time string (must be quoted). Example: `createTime &gt;
+   *     "2021-01-01T00:00:00"`
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   * <pre>
+   * The create timestamp of this resource, at which the resource was created.
+   * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+   * is available only when the resource's proto contains it.
+   * To search against `create_time`:
+   * * use a field query.
+   *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+   *     - value in date string. Example: `createTime &gt; 2021-01-01`
+   *     - value in date-time string (must be quoted). Example: `createTime &gt;
+   *     "2021-01-01T00:00:00"`
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return getCreateTime();
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   * <pre>
+   * The last update timestamp of this resource, at which the resource was last
+   * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+   * always be 0. This field is available only when the resource's proto
+   * contains it.
+   * To search against `update_time`:
+   * * use a field query.
+   *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+   *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+   *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+   *     "2021-01-01T00:00:00"`
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   * <pre>
+   * The last update timestamp of this resource, at which the resource was last
+   * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+   * always be 0. This field is available only when the resource's proto
+   * contains it.
+   * To search against `update_time`:
+   * * use a field query.
+   *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+   *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+   *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+   *     "2021-01-01T00:00:00"`
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   * <pre>
+   * The last update timestamp of this resource, at which the resource was last
+   * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+   * always be 0. This field is available only when the resource's proto
+   * contains it.
+   * To search against `update_time`:
+   * * use a field query.
+   *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+   *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+   *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+   *     "2021-01-01T00:00:00"`
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
+  }
+
+  public static final int STATE_FIELD_NUMBER = 13;
+  private volatile java.lang.Object state_;
+  /**
+   * <pre>
+   * The state of this resource. Different resources types have different state
+   * definitions that are mapped from various fields of different resource
+   * types. This field is available only when the resource's proto contains it.
+   * Example:
+   * If the resource is an instance provided by Compute Engine,
+   * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
+   * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
+   * in [API
+   * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
+   * If the resource is a project provided by Cloud Resource Manager, its state
+   * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+   * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
+   * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+   * To search against the `state`:
+   * * use a field query. Example: `state:RUNNING`
+   * * use a free text query. Example: `RUNNING`
+   * </pre>
+   *
+   * <code>string state = 13;</code>
+   * @return The state.
+   */
+  @java.lang.Override
+  public java.lang.String getState() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      state_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The state of this resource. Different resources types have different state
+   * definitions that are mapped from various fields of different resource
+   * types. This field is available only when the resource's proto contains it.
+   * Example:
+   * If the resource is an instance provided by Compute Engine,
+   * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
+   * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
+   * in [API
+   * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
+   * If the resource is a project provided by Cloud Resource Manager, its state
+   * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+   * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
+   * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+   * To search against the `state`:
+   * * use a field query. Example: `state:RUNNING`
+   * * use a free text query. Example: `RUNNING`
+   * </pre>
+   *
+   * <code>string state = 13;</code>
+   * @return The bytes for state.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStateBytes() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      state_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ADDITIONAL_ATTRIBUTES_FIELD_NUMBER = 9;
   private com.google.protobuf.Struct additionalAttributes_;
   /**
@@ -715,7 +1205,7 @@ private static final long serialVersionUID = 0L;
    * corresponding GCP service (e.g., Compute Engine). see [API references and
    * supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-   * for more information.
+   * to see which fields are included.
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the GCP service updates to a new incompatible API
@@ -742,7 +1232,7 @@ private static final long serialVersionUID = 0L;
    * corresponding GCP service (e.g., Compute Engine). see [API references and
    * supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-   * for more information.
+   * to see which fields are included.
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the GCP service updates to a new incompatible API
@@ -769,7 +1259,7 @@ private static final long serialVersionUID = 0L;
    * corresponding GCP service (e.g., Compute Engine). see [API references and
    * supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-   * for more information.
+   * to see which fields are included.
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the GCP service updates to a new incompatible API
@@ -785,6 +1275,118 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getAdditionalAttributesOrBuilder() {
     return getAdditionalAttributes();
+  }
+
+  public static final int PARENT_FULL_RESOURCE_NAME_FIELD_NUMBER = 19;
+  private volatile java.lang.Object parentFullResourceName_;
+  /**
+   * <pre>
+   * The full resource name of this resource's parent, if it has one.
+   * To search against the `parent_full_resource_name`:
+   * * use a field query. Example:
+   * `parentFullResourceName:"project-name"`
+   * * use a free text query. Example:
+   * `project-name`
+   * </pre>
+   *
+   * <code>string parent_full_resource_name = 19;</code>
+   * @return The parentFullResourceName.
+   */
+  @java.lang.Override
+  public java.lang.String getParentFullResourceName() {
+    java.lang.Object ref = parentFullResourceName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parentFullResourceName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The full resource name of this resource's parent, if it has one.
+   * To search against the `parent_full_resource_name`:
+   * * use a field query. Example:
+   * `parentFullResourceName:"project-name"`
+   * * use a free text query. Example:
+   * `project-name`
+   * </pre>
+   *
+   * <code>string parent_full_resource_name = 19;</code>
+   * @return The bytes for parentFullResourceName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getParentFullResourceNameBytes() {
+    java.lang.Object ref = parentFullResourceName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      parentFullResourceName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PARENT_ASSET_TYPE_FIELD_NUMBER = 103;
+  private volatile java.lang.Object parentAssetType_;
+  /**
+   * <pre>
+   * The type of this resource's immediate parent, if there is one.
+   * To search against the `parent_asset_type`:
+   * * use a field query. Example:
+   * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
+   * * use a free text query. Example:
+   * `cloudresourcemanager.googleapis.com/Project`
+   * </pre>
+   *
+   * <code>string parent_asset_type = 103;</code>
+   * @return The parentAssetType.
+   */
+  @java.lang.Override
+  public java.lang.String getParentAssetType() {
+    java.lang.Object ref = parentAssetType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parentAssetType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The type of this resource's immediate parent, if there is one.
+   * To search against the `parent_asset_type`:
+   * * use a field query. Example:
+   * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
+   * * use a free text query. Example:
+   * `cloudresourcemanager.googleapis.com/Project`
+   * </pre>
+   *
+   * <code>string parent_asset_type = 103;</code>
+   * @return The bytes for parentAssetType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getParentAssetTypeBytes() {
+    java.lang.Object ref = parentAssetType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      parentAssetType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -830,6 +1432,30 @@ private static final long serialVersionUID = 0L;
     }
     if (additionalAttributes_ != null) {
       output.writeMessage(9, getAdditionalAttributes());
+    }
+    if (!getKmsKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, kmsKey_);
+    }
+    if (createTime_ != null) {
+      output.writeMessage(11, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(12, getUpdateTime());
+    }
+    if (!getStateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, state_);
+    }
+    for (int i = 0; i < folders_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, folders_.getRaw(i));
+    }
+    if (!getOrganizationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, organization_);
+    }
+    if (!getParentFullResourceNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, parentFullResourceName_);
+    }
+    if (!getParentAssetTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 103, parentAssetType_);
     }
     unknownFields.writeTo(output);
   }
@@ -880,6 +1506,37 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getAdditionalAttributes());
     }
+    if (!getKmsKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, kmsKey_);
+    }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getUpdateTime());
+    }
+    if (!getStateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, state_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < folders_.size(); i++) {
+        dataSize += computeStringSizeNoTag(folders_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getFoldersList().size();
+    }
+    if (!getOrganizationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, organization_);
+    }
+    if (!getParentFullResourceNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, parentFullResourceName_);
+    }
+    if (!getParentAssetTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103, parentAssetType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -901,6 +1558,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAssetType())) return false;
     if (!getProject()
         .equals(other.getProject())) return false;
+    if (!getFoldersList()
+        .equals(other.getFoldersList())) return false;
+    if (!getOrganization()
+        .equals(other.getOrganization())) return false;
     if (!getDisplayName()
         .equals(other.getDisplayName())) return false;
     if (!getDescription()
@@ -911,11 +1572,29 @@ private static final long serialVersionUID = 0L;
         other.internalGetLabels())) return false;
     if (!getNetworkTagsList()
         .equals(other.getNetworkTagsList())) return false;
+    if (!getKmsKey()
+        .equals(other.getKmsKey())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime()
+          .equals(other.getCreateTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime()
+          .equals(other.getUpdateTime())) return false;
+    }
+    if (!getState()
+        .equals(other.getState())) return false;
     if (hasAdditionalAttributes() != other.hasAdditionalAttributes()) return false;
     if (hasAdditionalAttributes()) {
       if (!getAdditionalAttributes()
           .equals(other.getAdditionalAttributes())) return false;
     }
+    if (!getParentFullResourceName()
+        .equals(other.getParentFullResourceName())) return false;
+    if (!getParentAssetType()
+        .equals(other.getParentAssetType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -933,6 +1612,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAssetType().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
+    if (getFoldersCount() > 0) {
+      hash = (37 * hash) + FOLDERS_FIELD_NUMBER;
+      hash = (53 * hash) + getFoldersList().hashCode();
+    }
+    hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
+    hash = (53 * hash) + getOrganization().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
@@ -947,10 +1632,26 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + NETWORK_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkTagsList().hashCode();
     }
+    hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKey().hashCode();
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + getState().hashCode();
     if (hasAdditionalAttributes()) {
       hash = (37 * hash) + ADDITIONAL_ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalAttributes().hashCode();
     }
+    hash = (37 * hash) + PARENT_FULL_RESOURCE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getParentFullResourceName().hashCode();
+    hash = (37 * hash) + PARENT_ASSET_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getParentAssetType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1116,6 +1817,10 @@ private static final long serialVersionUID = 0L;
 
       project_ = "";
 
+      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      organization_ = "";
+
       displayName_ = "";
 
       description_ = "";
@@ -1124,13 +1829,33 @@ private static final long serialVersionUID = 0L;
 
       internalGetMutableLabels().clear();
       networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
+      kmsKey_ = "";
+
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+      state_ = "";
+
       if (additionalAttributesBuilder_ == null) {
         additionalAttributes_ = null;
       } else {
         additionalAttributes_ = null;
         additionalAttributesBuilder_ = null;
       }
+      parentFullResourceName_ = "";
+
+      parentAssetType_ = "";
+
       return this;
     }
 
@@ -1161,21 +1886,41 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.assetType_ = assetType_;
       result.project_ = project_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        folders_ = folders_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.folders_ = folders_;
+      result.organization_ = organization_;
       result.displayName_ = displayName_;
       result.description_ = description_;
       result.location_ = location_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         networkTags_ = networkTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.networkTags_ = networkTags_;
+      result.kmsKey_ = kmsKey_;
+      if (createTimeBuilder_ == null) {
+        result.createTime_ = createTime_;
+      } else {
+        result.createTime_ = createTimeBuilder_.build();
+      }
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
+      }
+      result.state_ = state_;
       if (additionalAttributesBuilder_ == null) {
         result.additionalAttributes_ = additionalAttributes_;
       } else {
         result.additionalAttributes_ = additionalAttributesBuilder_.build();
       }
+      result.parentFullResourceName_ = parentFullResourceName_;
+      result.parentAssetType_ = parentAssetType_;
       onBuilt();
       return result;
     }
@@ -1236,6 +1981,20 @@ private static final long serialVersionUID = 0L;
         project_ = other.project_;
         onChanged();
       }
+      if (!other.folders_.isEmpty()) {
+        if (folders_.isEmpty()) {
+          folders_ = other.folders_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureFoldersIsMutable();
+          folders_.addAll(other.folders_);
+        }
+        onChanged();
+      }
+      if (!other.getOrganization().isEmpty()) {
+        organization_ = other.organization_;
+        onChanged();
+      }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
         onChanged();
@@ -1253,15 +2012,37 @@ private static final long serialVersionUID = 0L;
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
         }
         onChanged();
       }
+      if (!other.getKmsKey().isEmpty()) {
+        kmsKey_ = other.kmsKey_;
+        onChanged();
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
+      if (!other.getState().isEmpty()) {
+        state_ = other.state_;
+        onChanged();
+      }
       if (other.hasAdditionalAttributes()) {
         mergeAdditionalAttributes(other.getAdditionalAttributes());
+      }
+      if (!other.getParentFullResourceName().isEmpty()) {
+        parentFullResourceName_ = other.parentFullResourceName_;
+        onChanged();
+      }
+      if (!other.getParentAssetType().isEmpty()) {
+        parentAssetType_ = other.parentAssetType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1534,8 +2315,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The project that this resource belongs to, in the form of
-     * projects/{PROJECT_NUMBER}.
-     * To search against the `project`:
+     * projects/{PROJECT_NUMBER}. This field is available when the resource
+     * belongs to a project.
+     * To search against `project`:
+     * * use a field query. Example: `project:12345`
+     * * use a free text query. Example: `12345`
      * * specify the `scope` field as this project in your search request.
      * </pre>
      *
@@ -1557,8 +2341,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The project that this resource belongs to, in the form of
-     * projects/{PROJECT_NUMBER}.
-     * To search against the `project`:
+     * projects/{PROJECT_NUMBER}. This field is available when the resource
+     * belongs to a project.
+     * To search against `project`:
+     * * use a field query. Example: `project:12345`
+     * * use a free text query. Example: `12345`
      * * specify the `scope` field as this project in your search request.
      * </pre>
      *
@@ -1581,8 +2368,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The project that this resource belongs to, in the form of
-     * projects/{PROJECT_NUMBER}.
-     * To search against the `project`:
+     * projects/{PROJECT_NUMBER}. This field is available when the resource
+     * belongs to a project.
+     * To search against `project`:
+     * * use a field query. Example: `project:12345`
+     * * use a free text query. Example: `12345`
      * * specify the `scope` field as this project in your search request.
      * </pre>
      *
@@ -1603,8 +2393,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The project that this resource belongs to, in the form of
-     * projects/{PROJECT_NUMBER}.
-     * To search against the `project`:
+     * projects/{PROJECT_NUMBER}. This field is available when the resource
+     * belongs to a project.
+     * To search against `project`:
+     * * use a field query. Example: `project:12345`
+     * * use a free text query. Example: `12345`
      * * specify the `scope` field as this project in your search request.
      * </pre>
      *
@@ -1620,8 +2413,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The project that this resource belongs to, in the form of
-     * projects/{PROJECT_NUMBER}.
-     * To search against the `project`:
+     * projects/{PROJECT_NUMBER}. This field is available when the resource
+     * belongs to a project.
+     * To search against `project`:
+     * * use a field query. Example: `project:12345`
+     * * use a free text query. Example: `12345`
      * * specify the `scope` field as this project in your search request.
      * </pre>
      *
@@ -1641,10 +2437,337 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.LazyStringList folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureFoldersIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        folders_ = new com.google.protobuf.LazyStringArrayList(folders_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <pre>
+     * The folder(s) that this resource belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 17;</code>
+     * @return A list containing the folders.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getFoldersList() {
+      return folders_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * The folder(s) that this resource belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 17;</code>
+     * @return The count of folders.
+     */
+    public int getFoldersCount() {
+      return folders_.size();
+    }
+    /**
+     * <pre>
+     * The folder(s) that this resource belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 17;</code>
+     * @param index The index of the element to return.
+     * @return The folders at the given index.
+     */
+    public java.lang.String getFolders(int index) {
+      return folders_.get(index);
+    }
+    /**
+     * <pre>
+     * The folder(s) that this resource belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 17;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the folders at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getFoldersBytes(int index) {
+      return folders_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * The folder(s) that this resource belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 17;</code>
+     * @param index The index to set the value at.
+     * @param value The folders to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFolders(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFoldersIsMutable();
+      folders_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The folder(s) that this resource belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 17;</code>
+     * @param value The folders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFolders(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFoldersIsMutable();
+      folders_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The folder(s) that this resource belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 17;</code>
+     * @param values The folders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllFolders(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureFoldersIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, folders_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The folder(s) that this resource belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFolders() {
+      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The folder(s) that this resource belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 17;</code>
+     * @param value The bytes of the folders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFoldersBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureFoldersIsMutable();
+      folders_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object organization_ = "";
+    /**
+     * <pre>
+     * The organization that this resource belongs to, in the form of
+     * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * resource belongs to an organization.
+     * To search against `organization`:
+     * * use a field query. Example: `organization:123`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this organization in your search request.
+     * </pre>
+     *
+     * <code>string organization = 18;</code>
+     * @return The organization.
+     */
+    public java.lang.String getOrganization() {
+      java.lang.Object ref = organization_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organization_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The organization that this resource belongs to, in the form of
+     * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * resource belongs to an organization.
+     * To search against `organization`:
+     * * use a field query. Example: `organization:123`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this organization in your search request.
+     * </pre>
+     *
+     * <code>string organization = 18;</code>
+     * @return The bytes for organization.
+     */
+    public com.google.protobuf.ByteString
+        getOrganizationBytes() {
+      java.lang.Object ref = organization_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organization_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The organization that this resource belongs to, in the form of
+     * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * resource belongs to an organization.
+     * To search against `organization`:
+     * * use a field query. Example: `organization:123`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this organization in your search request.
+     * </pre>
+     *
+     * <code>string organization = 18;</code>
+     * @param value The organization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganization(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      organization_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The organization that this resource belongs to, in the form of
+     * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * resource belongs to an organization.
+     * To search against `organization`:
+     * * use a field query. Example: `organization:123`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this organization in your search request.
+     * </pre>
+     *
+     * <code>string organization = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrganization() {
+      
+      organization_ = getDefaultInstance().getOrganization();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The organization that this resource belongs to, in the form of
+     * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * resource belongs to an organization.
+     * To search against `organization`:
+     * * use a field query. Example: `organization:123`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this organization in your search request.
+     * </pre>
+     *
+     * <code>string organization = 18;</code>
+     * @param value The bytes for organization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      organization_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object displayName_ = "";
     /**
      * <pre>
-     * The display name of this resource.
+     * The display name of this resource. This field is available only when the
+     * resource's proto contains it.
      * To search against the `display_name`:
      * * use a field query. Example: `displayName:"My Instance"`
      * * use a free text query. Example: `"My Instance"`
@@ -1667,7 +2790,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The display name of this resource.
+     * The display name of this resource. This field is available only when the
+     * resource's proto contains it.
      * To search against the `display_name`:
      * * use a field query. Example: `displayName:"My Instance"`
      * * use a free text query. Example: `"My Instance"`
@@ -1691,7 +2815,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The display name of this resource.
+     * The display name of this resource. This field is available only when the
+     * resource's proto contains it.
      * To search against the `display_name`:
      * * use a field query. Example: `displayName:"My Instance"`
      * * use a free text query. Example: `"My Instance"`
@@ -1713,7 +2838,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The display name of this resource.
+     * The display name of this resource. This field is available only when the
+     * resource's proto contains it.
      * To search against the `display_name`:
      * * use a field query. Example: `displayName:"My Instance"`
      * * use a free text query. Example: `"My Instance"`
@@ -1730,7 +2856,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The display name of this resource.
+     * The display name of this resource. This field is available only when the
+     * resource's proto contains it.
      * To search against the `display_name`:
      * * use a field query. Example: `displayName:"My Instance"`
      * * use a free text query. Example: `"My Instance"`
@@ -1756,10 +2883,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * One or more paragraphs of text description of this resource. Maximum length
-     * could be up to 1M bytes.
+     * could be up to 1M bytes. This field is available only when the resource's
+     * proto contains it.
      * To search against the `description`:
-     * * use a field query. Example: `description:"*important instance*"`
-     * * use a free text query. Example: `"*important instance*"`
+     * * use a field query. Example: `description:"important instance"`
+     * * use a free text query. Example: `"important instance"`
      * </pre>
      *
      * <code>string description = 5;</code>
@@ -1780,10 +2908,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * One or more paragraphs of text description of this resource. Maximum length
-     * could be up to 1M bytes.
+     * could be up to 1M bytes. This field is available only when the resource's
+     * proto contains it.
      * To search against the `description`:
-     * * use a field query. Example: `description:"*important instance*"`
-     * * use a free text query. Example: `"*important instance*"`
+     * * use a field query. Example: `description:"important instance"`
+     * * use a free text query. Example: `"important instance"`
      * </pre>
      *
      * <code>string description = 5;</code>
@@ -1805,10 +2934,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * One or more paragraphs of text description of this resource. Maximum length
-     * could be up to 1M bytes.
+     * could be up to 1M bytes. This field is available only when the resource's
+     * proto contains it.
      * To search against the `description`:
-     * * use a field query. Example: `description:"*important instance*"`
-     * * use a free text query. Example: `"*important instance*"`
+     * * use a field query. Example: `description:"important instance"`
+     * * use a free text query. Example: `"important instance"`
      * </pre>
      *
      * <code>string description = 5;</code>
@@ -1828,10 +2958,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * One or more paragraphs of text description of this resource. Maximum length
-     * could be up to 1M bytes.
+     * could be up to 1M bytes. This field is available only when the resource's
+     * proto contains it.
      * To search against the `description`:
-     * * use a field query. Example: `description:"*important instance*"`
-     * * use a free text query. Example: `"*important instance*"`
+     * * use a field query. Example: `description:"important instance"`
+     * * use a free text query. Example: `"important instance"`
      * </pre>
      *
      * <code>string description = 5;</code>
@@ -1846,10 +2977,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * One or more paragraphs of text description of this resource. Maximum length
-     * could be up to 1M bytes.
+     * could be up to 1M bytes. This field is available only when the resource's
+     * proto contains it.
      * To search against the `description`:
-     * * use a field query. Example: `description:"*important instance*"`
-     * * use a free text query. Example: `"*important instance*"`
+     * * use a field query. Example: `description:"important instance"`
+     * * use a free text query. Example: `"important instance"`
      * </pre>
      *
      * <code>string description = 5;</code>
@@ -1872,7 +3004,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Location can be `global`, regional like `us-east1`, or zonal like
-     * `us-west1-b`.
+     * `us-west1-b`. This field is available only when the resource's proto
+     * contains it.
      * To search against the `location`:
      * * use a field query. Example: `location:us-west*`
      * * use a free text query. Example: `us-west*`
@@ -1896,7 +3029,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Location can be `global`, regional like `us-east1`, or zonal like
-     * `us-west1-b`.
+     * `us-west1-b`. This field is available only when the resource's proto
+     * contains it.
      * To search against the `location`:
      * * use a field query. Example: `location:us-west*`
      * * use a free text query. Example: `us-west*`
@@ -1921,7 +3055,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Location can be `global`, regional like `us-east1`, or zonal like
-     * `us-west1-b`.
+     * `us-west1-b`. This field is available only when the resource's proto
+     * contains it.
      * To search against the `location`:
      * * use a field query. Example: `location:us-west*`
      * * use a free text query. Example: `us-west*`
@@ -1944,7 +3079,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Location can be `global`, regional like `us-east1`, or zonal like
-     * `us-west1-b`.
+     * `us-west1-b`. This field is available only when the resource's proto
+     * contains it.
      * To search against the `location`:
      * * use a field query. Example: `location:us-west*`
      * * use a free text query. Example: `us-west*`
@@ -1962,7 +3098,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Location can be `global`, regional like `us-east1`, or zonal like
-     * `us-west1-b`.
+     * `us-west1-b`. This field is available only when the resource's proto
+     * contains it.
      * To search against the `location`:
      * * use a field query. Example: `location:us-west*`
      * * use a free text query. Example: `us-west*`
@@ -2014,7 +3151,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `labels`:
      * * use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
@@ -2044,7 +3182,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `labels`:
      * * use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
@@ -2064,7 +3203,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `labels`:
      * * use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
@@ -2089,7 +3229,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `labels`:
      * * use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
@@ -2122,7 +3263,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `labels`:
      * * use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
@@ -2153,7 +3295,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `labels`:
      * * use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
@@ -2177,7 +3320,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `labels`:
      * * use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
@@ -2198,9 +3342,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureNetworkTagsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
        }
     }
     /**
@@ -2208,7 +3352,8 @@ private static final long serialVersionUID = 0L;
      * Network tags associated with this resource. Like labels, network tags are a
      * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `network_tags`:
      * * use a field query. Example: `networkTags:internal`
      * * use a free text query. Example: `internal`
@@ -2226,7 +3371,8 @@ private static final long serialVersionUID = 0L;
      * Network tags associated with this resource. Like labels, network tags are a
      * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `network_tags`:
      * * use a field query. Example: `networkTags:internal`
      * * use a free text query. Example: `internal`
@@ -2243,7 +3389,8 @@ private static final long serialVersionUID = 0L;
      * Network tags associated with this resource. Like labels, network tags are a
      * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `network_tags`:
      * * use a field query. Example: `networkTags:internal`
      * * use a free text query. Example: `internal`
@@ -2261,7 +3408,8 @@ private static final long serialVersionUID = 0L;
      * Network tags associated with this resource. Like labels, network tags are a
      * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `network_tags`:
      * * use a field query. Example: `networkTags:internal`
      * * use a free text query. Example: `internal`
@@ -2280,7 +3428,8 @@ private static final long serialVersionUID = 0L;
      * Network tags associated with this resource. Like labels, network tags are a
      * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `network_tags`:
      * * use a field query. Example: `networkTags:internal`
      * * use a free text query. Example: `internal`
@@ -2306,7 +3455,8 @@ private static final long serialVersionUID = 0L;
      * Network tags associated with this resource. Like labels, network tags are a
      * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `network_tags`:
      * * use a field query. Example: `networkTags:internal`
      * * use a free text query. Example: `internal`
@@ -2331,7 +3481,8 @@ private static final long serialVersionUID = 0L;
      * Network tags associated with this resource. Like labels, network tags are a
      * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `network_tags`:
      * * use a field query. Example: `networkTags:internal`
      * * use a free text query. Example: `internal`
@@ -2354,7 +3505,8 @@ private static final long serialVersionUID = 0L;
      * Network tags associated with this resource. Like labels, network tags are a
      * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `network_tags`:
      * * use a field query. Example: `networkTags:internal`
      * * use a free text query. Example: `internal`
@@ -2365,7 +3517,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearNetworkTags() {
       networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2374,7 +3526,8 @@ private static final long serialVersionUID = 0L;
      * Network tags associated with this resource. Like labels, network tags are a
      * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
-     * for more information.
+     * for more information. This field is available only when the resource's
+     * proto contains it.
      * To search against the `network_tags`:
      * * use a field query. Example: `networkTags:internal`
      * * use a free text query. Example: `internal`
@@ -2396,6 +3549,771 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object kmsKey_ = "";
+    /**
+     * <pre>
+     * The Cloud KMS
+     * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys?hl=en)
+     * name or
+     * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions?hl=en)
+     * name. This field is available only when the resource's proto contains it.
+     * To search against the `kms_key`:
+     * * use a field query. Example: `kmsKey:key`
+     * * use a free text query. Example: `key`
+     * </pre>
+     *
+     * <code>string kms_key = 10;</code>
+     * @return The kmsKey.
+     */
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The Cloud KMS
+     * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys?hl=en)
+     * name or
+     * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions?hl=en)
+     * name. This field is available only when the resource's proto contains it.
+     * To search against the `kms_key`:
+     * * use a field query. Example: `kmsKey:key`
+     * * use a free text query. Example: `key`
+     * </pre>
+     *
+     * <code>string kms_key = 10;</code>
+     * @return The bytes for kmsKey.
+     */
+    public com.google.protobuf.ByteString
+        getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The Cloud KMS
+     * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys?hl=en)
+     * name or
+     * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions?hl=en)
+     * name. This field is available only when the resource's proto contains it.
+     * To search against the `kms_key`:
+     * * use a field query. Example: `kmsKey:key`
+     * * use a free text query. Example: `key`
+     * </pre>
+     *
+     * <code>string kms_key = 10;</code>
+     * @param value The kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      kmsKey_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The Cloud KMS
+     * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys?hl=en)
+     * name or
+     * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions?hl=en)
+     * name. This field is available only when the resource's proto contains it.
+     * To search against the `kms_key`:
+     * * use a field query. Example: `kmsKey:key`
+     * * use a free text query. Example: `key`
+     * </pre>
+     *
+     * <code>string kms_key = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKey() {
+      
+      kmsKey_ = getDefaultInstance().getKmsKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The Cloud KMS
+     * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys?hl=en)
+     * name or
+     * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions?hl=en)
+     * name. This field is available only when the resource's proto contains it.
+     * To search against the `kms_key`:
+     * * use a field query. Example: `kmsKey:key`
+     * * use a free text query. Example: `key`
+     * </pre>
+     *
+     * <code>string kms_key = 10;</code>
+     * @param value The bytes for kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      kmsKey_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+    /**
+     * <pre>
+     * The create timestamp of this resource, at which the resource was created.
+     * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+     * is available only when the resource's proto contains it.
+     * To search against `create_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+     *     - value in date string. Example: `createTime &gt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `createTime &gt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return createTimeBuilder_ != null || createTime_ != null;
+    }
+    /**
+     * <pre>
+     * The create timestamp of this resource, at which the resource was created.
+     * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+     * is available only when the resource's proto contains it.
+     * To search against `create_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+     *     - value in date string. Example: `createTime &gt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `createTime &gt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The create timestamp of this resource, at which the resource was created.
+     * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+     * is available only when the resource's proto contains it.
+     * To search against `create_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+     *     - value in date string. Example: `createTime &gt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `createTime &gt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The create timestamp of this resource, at which the resource was created.
+     * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+     * is available only when the resource's proto contains it.
+     * To search against `create_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+     *     - value in date string. Example: `createTime &gt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `createTime &gt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     */
+    public Builder setCreateTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The create timestamp of this resource, at which the resource was created.
+     * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+     * is available only when the resource's proto contains it.
+     * To search against `create_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+     *     - value in date string. Example: `createTime &gt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `createTime &gt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (createTime_ != null) {
+          createTime_ =
+            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        } else {
+          createTime_ = value;
+        }
+        onChanged();
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The create timestamp of this resource, at which the resource was created.
+     * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+     * is available only when the resource's proto contains it.
+     * To search against `create_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+     *     - value in date string. Example: `createTime &gt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `createTime &gt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     */
+    public Builder clearCreateTime() {
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+        onChanged();
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The create timestamp of this resource, at which the resource was created.
+     * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+     * is available only when the resource's proto contains it.
+     * To search against `create_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+     *     - value in date string. Example: `createTime &gt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `createTime &gt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The create timestamp of this resource, at which the resource was created.
+     * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+     * is available only when the resource's proto contains it.
+     * To search against `create_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+     *     - value in date string. Example: `createTime &gt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `createTime &gt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+      }
+    }
+    /**
+     * <pre>
+     * The create timestamp of this resource, at which the resource was created.
+     * The granularity is in seconds. Timestamp.nanos will always be 0. This field
+     * is available only when the resource's proto contains it.
+     * To search against `create_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
+     *     - value in date string. Example: `createTime &gt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `createTime &gt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(),
+                getParentForChildren(),
+                isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+    /**
+     * <pre>
+     * The last update timestamp of this resource, at which the resource was last
+     * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+     * always be 0. This field is available only when the resource's proto
+     * contains it.
+     * To search against `update_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+     *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     * <pre>
+     * The last update timestamp of this resource, at which the resource was last
+     * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+     * always be 0. This field is available only when the resource's proto
+     * contains it.
+     * To search against `update_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+     *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The last update timestamp of this resource, at which the resource was last
+     * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+     * always be 0. This field is available only when the resource's proto
+     * contains it.
+     * To search against `update_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+     *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The last update timestamp of this resource, at which the resource was last
+     * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+     * always be 0. This field is available only when the resource's proto
+     * contains it.
+     * To search against `update_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+     *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     */
+    public Builder setUpdateTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The last update timestamp of this resource, at which the resource was last
+     * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+     * always be 0. This field is available only when the resource's proto
+     * contains it.
+     * To search against `update_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+     *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The last update timestamp of this resource, at which the resource was last
+     * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+     * always be 0. This field is available only when the resource's proto
+     * contains it.
+     * To search against `update_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+     *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The last update timestamp of this resource, at which the resource was last
+     * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+     * always be 0. This field is available only when the resource's proto
+     * contains it.
+     * To search against `update_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+     *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The last update timestamp of this resource, at which the resource was last
+     * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+     * always be 0. This field is available only when the resource's proto
+     * contains it.
+     * To search against `update_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+     *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+      }
+    }
+    /**
+     * <pre>
+     * The last update timestamp of this resource, at which the resource was last
+     * modified or deleted. The granularity is in seconds. Timestamp.nanos will
+     * always be 0. This field is available only when the resource's proto
+     * contains it.
+     * To search against `update_time`:
+     * * use a field query.
+     *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
+     *     - value in date string. Example: `updateTime &lt; 2021-01-01`
+     *     - value in date-time string (must be quoted). Example: `updateTime &lt;
+     *     "2021-01-01T00:00:00"`
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(),
+                getParentForChildren(),
+                isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
+    }
+
+    private java.lang.Object state_ = "";
+    /**
+     * <pre>
+     * The state of this resource. Different resources types have different state
+     * definitions that are mapped from various fields of different resource
+     * types. This field is available only when the resource's proto contains it.
+     * Example:
+     * If the resource is an instance provided by Compute Engine,
+     * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
+     * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
+     * in [API
+     * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
+     * If the resource is a project provided by Cloud Resource Manager, its state
+     * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+     * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
+     * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     * To search against the `state`:
+     * * use a field query. Example: `state:RUNNING`
+     * * use a free text query. Example: `RUNNING`
+     * </pre>
+     *
+     * <code>string state = 13;</code>
+     * @return The state.
+     */
+    public java.lang.String getState() {
+      java.lang.Object ref = state_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        state_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The state of this resource. Different resources types have different state
+     * definitions that are mapped from various fields of different resource
+     * types. This field is available only when the resource's proto contains it.
+     * Example:
+     * If the resource is an instance provided by Compute Engine,
+     * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
+     * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
+     * in [API
+     * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
+     * If the resource is a project provided by Cloud Resource Manager, its state
+     * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+     * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
+     * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     * To search against the `state`:
+     * * use a field query. Example: `state:RUNNING`
+     * * use a free text query. Example: `RUNNING`
+     * </pre>
+     *
+     * <code>string state = 13;</code>
+     * @return The bytes for state.
+     */
+    public com.google.protobuf.ByteString
+        getStateBytes() {
+      java.lang.Object ref = state_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        state_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The state of this resource. Different resources types have different state
+     * definitions that are mapped from various fields of different resource
+     * types. This field is available only when the resource's proto contains it.
+     * Example:
+     * If the resource is an instance provided by Compute Engine,
+     * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
+     * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
+     * in [API
+     * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
+     * If the resource is a project provided by Cloud Resource Manager, its state
+     * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+     * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
+     * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     * To search against the `state`:
+     * * use a field query. Example: `state:RUNNING`
+     * * use a free text query. Example: `RUNNING`
+     * </pre>
+     *
+     * <code>string state = 13;</code>
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      state_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The state of this resource. Different resources types have different state
+     * definitions that are mapped from various fields of different resource
+     * types. This field is available only when the resource's proto contains it.
+     * Example:
+     * If the resource is an instance provided by Compute Engine,
+     * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
+     * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
+     * in [API
+     * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
+     * If the resource is a project provided by Cloud Resource Manager, its state
+     * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+     * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
+     * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     * To search against the `state`:
+     * * use a field query. Example: `state:RUNNING`
+     * * use a free text query. Example: `RUNNING`
+     * </pre>
+     *
+     * <code>string state = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      
+      state_ = getDefaultInstance().getState();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The state of this resource. Different resources types have different state
+     * definitions that are mapped from various fields of different resource
+     * types. This field is available only when the resource's proto contains it.
+     * Example:
+     * If the resource is an instance provided by Compute Engine,
+     * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
+     * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
+     * in [API
+     * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
+     * If the resource is a project provided by Cloud Resource Manager, its state
+     * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+     * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
+     * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     * To search against the `state`:
+     * * use a field query. Example: `state:RUNNING`
+     * * use a free text query. Example: `RUNNING`
+     * </pre>
+     *
+     * <code>string state = 13;</code>
+     * @param value The bytes for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      state_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Struct additionalAttributes_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> additionalAttributesBuilder_;
@@ -2408,7 +4326,7 @@ private static final long serialVersionUID = 0L;
      * corresponding GCP service (e.g., Compute Engine). see [API references and
      * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-     * for more information.
+     * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the GCP service updates to a new incompatible API
@@ -2434,7 +4352,7 @@ private static final long serialVersionUID = 0L;
      * corresponding GCP service (e.g., Compute Engine). see [API references and
      * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-     * for more information.
+     * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the GCP service updates to a new incompatible API
@@ -2464,7 +4382,7 @@ private static final long serialVersionUID = 0L;
      * corresponding GCP service (e.g., Compute Engine). see [API references and
      * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-     * for more information.
+     * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the GCP service updates to a new incompatible API
@@ -2499,7 +4417,7 @@ private static final long serialVersionUID = 0L;
      * corresponding GCP service (e.g., Compute Engine). see [API references and
      * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-     * for more information.
+     * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the GCP service updates to a new incompatible API
@@ -2532,7 +4450,7 @@ private static final long serialVersionUID = 0L;
      * corresponding GCP service (e.g., Compute Engine). see [API references and
      * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-     * for more information.
+     * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the GCP service updates to a new incompatible API
@@ -2569,7 +4487,7 @@ private static final long serialVersionUID = 0L;
      * corresponding GCP service (e.g., Compute Engine). see [API references and
      * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-     * for more information.
+     * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the GCP service updates to a new incompatible API
@@ -2602,7 +4520,7 @@ private static final long serialVersionUID = 0L;
      * corresponding GCP service (e.g., Compute Engine). see [API references and
      * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-     * for more information.
+     * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the GCP service updates to a new incompatible API
@@ -2629,7 +4547,7 @@ private static final long serialVersionUID = 0L;
      * corresponding GCP service (e.g., Compute Engine). see [API references and
      * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-     * for more information.
+     * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the GCP service updates to a new incompatible API
@@ -2659,7 +4577,7 @@ private static final long serialVersionUID = 0L;
      * corresponding GCP service (e.g., Compute Engine). see [API references and
      * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
-     * for more information.
+     * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the GCP service updates to a new incompatible API
@@ -2684,6 +4602,248 @@ private static final long serialVersionUID = 0L;
         additionalAttributes_ = null;
       }
       return additionalAttributesBuilder_;
+    }
+
+    private java.lang.Object parentFullResourceName_ = "";
+    /**
+     * <pre>
+     * The full resource name of this resource's parent, if it has one.
+     * To search against the `parent_full_resource_name`:
+     * * use a field query. Example:
+     * `parentFullResourceName:"project-name"`
+     * * use a free text query. Example:
+     * `project-name`
+     * </pre>
+     *
+     * <code>string parent_full_resource_name = 19;</code>
+     * @return The parentFullResourceName.
+     */
+    public java.lang.String getParentFullResourceName() {
+      java.lang.Object ref = parentFullResourceName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parentFullResourceName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The full resource name of this resource's parent, if it has one.
+     * To search against the `parent_full_resource_name`:
+     * * use a field query. Example:
+     * `parentFullResourceName:"project-name"`
+     * * use a free text query. Example:
+     * `project-name`
+     * </pre>
+     *
+     * <code>string parent_full_resource_name = 19;</code>
+     * @return The bytes for parentFullResourceName.
+     */
+    public com.google.protobuf.ByteString
+        getParentFullResourceNameBytes() {
+      java.lang.Object ref = parentFullResourceName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parentFullResourceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The full resource name of this resource's parent, if it has one.
+     * To search against the `parent_full_resource_name`:
+     * * use a field query. Example:
+     * `parentFullResourceName:"project-name"`
+     * * use a free text query. Example:
+     * `project-name`
+     * </pre>
+     *
+     * <code>string parent_full_resource_name = 19;</code>
+     * @param value The parentFullResourceName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentFullResourceName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      parentFullResourceName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The full resource name of this resource's parent, if it has one.
+     * To search against the `parent_full_resource_name`:
+     * * use a field query. Example:
+     * `parentFullResourceName:"project-name"`
+     * * use a free text query. Example:
+     * `project-name`
+     * </pre>
+     *
+     * <code>string parent_full_resource_name = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParentFullResourceName() {
+      
+      parentFullResourceName_ = getDefaultInstance().getParentFullResourceName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The full resource name of this resource's parent, if it has one.
+     * To search against the `parent_full_resource_name`:
+     * * use a field query. Example:
+     * `parentFullResourceName:"project-name"`
+     * * use a free text query. Example:
+     * `project-name`
+     * </pre>
+     *
+     * <code>string parent_full_resource_name = 19;</code>
+     * @param value The bytes for parentFullResourceName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentFullResourceNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      parentFullResourceName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object parentAssetType_ = "";
+    /**
+     * <pre>
+     * The type of this resource's immediate parent, if there is one.
+     * To search against the `parent_asset_type`:
+     * * use a field query. Example:
+     * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
+     * * use a free text query. Example:
+     * `cloudresourcemanager.googleapis.com/Project`
+     * </pre>
+     *
+     * <code>string parent_asset_type = 103;</code>
+     * @return The parentAssetType.
+     */
+    public java.lang.String getParentAssetType() {
+      java.lang.Object ref = parentAssetType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parentAssetType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The type of this resource's immediate parent, if there is one.
+     * To search against the `parent_asset_type`:
+     * * use a field query. Example:
+     * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
+     * * use a free text query. Example:
+     * `cloudresourcemanager.googleapis.com/Project`
+     * </pre>
+     *
+     * <code>string parent_asset_type = 103;</code>
+     * @return The bytes for parentAssetType.
+     */
+    public com.google.protobuf.ByteString
+        getParentAssetTypeBytes() {
+      java.lang.Object ref = parentAssetType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parentAssetType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The type of this resource's immediate parent, if there is one.
+     * To search against the `parent_asset_type`:
+     * * use a field query. Example:
+     * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
+     * * use a free text query. Example:
+     * `cloudresourcemanager.googleapis.com/Project`
+     * </pre>
+     *
+     * <code>string parent_asset_type = 103;</code>
+     * @param value The parentAssetType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentAssetType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      parentAssetType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The type of this resource's immediate parent, if there is one.
+     * To search against the `parent_asset_type`:
+     * * use a field query. Example:
+     * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
+     * * use a free text query. Example:
+     * `cloudresourcemanager.googleapis.com/Project`
+     * </pre>
+     *
+     * <code>string parent_asset_type = 103;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParentAssetType() {
+      
+      parentAssetType_ = getDefaultInstance().getParentAssetType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The type of this resource's immediate parent, if there is one.
+     * To search against the `parent_asset_type`:
+     * * use a field query. Example:
+     * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
+     * * use a free text query. Example:
+     * `cloudresourcemanager.googleapis.com/Project`
+     * </pre>
+     *
+     * <code>string parent_asset_type = 103;</code>
+     * @param value The bytes for parentAssetType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentAssetTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      parentAssetType_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -137,7 +137,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. A scope can be a project, a folder, or an organization. The search is
    * limited to the resources within the `scope`. The caller must be granted the
-   * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+   * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
    * The allowed values are:
    * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. A scope can be a project, a folder, or an organization. The search is
    * limited to the resources within the `scope`. The caller must be granted the
-   * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+   * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
    * The allowed values are:
    * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
@@ -198,34 +198,39 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The query statement. See [how to construct a
-   * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+   * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
    * for more information. If not specified or empty, it will search all the
-   * resources within the specified `scope`. Note that the query string is
-   * compared against each Cloud IAM policy binding, including its members,
-   * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
-   * contain the bindings that match your query. To learn more about the IAM
-   * policy structure, see [IAM policy
-   * doc](https://cloud.google.com/iam/docs/policies#structure).
+   * resources within the specified `scope`.
    * Examples:
    * * `name:Important` to find Cloud resources whose name contains
    *   "Important" as a word.
+   * * `name=Important` to find the Cloud resource whose name is exactly
+   *   "Important".
    * * `displayName:Impor*` to find Cloud resources whose display name
-   *   contains "Impor" as a prefix.
-   * * `description:*por*` to find Cloud resources whose description
-   *   contains "por" as a substring.
-   * * `location:us-west*` to find Cloud resources whose location is
-   *   prefixed with "us-west".
+   *   contains "Impor" as a prefix of any word in the field.
+   * * `location:us-west*` to find Cloud resources whose location contains both
+   *   "us" and "west" as prefixes.
    * * `labels:prod` to find Cloud resources whose labels contain "prod" as
    *   a key or value.
    * * `labels.env:prod` to find Cloud resources that have a label "env"
    *   and its value is "prod".
    * * `labels.env:*` to find Cloud resources that have a label "env".
+   * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
+   *   encryption key whose name contains the word "key".
+   * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
+   *   word.
+   * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
+   *   doesn't contain "ACTIVE" as a word.
+   * * `createTime&lt;1609459200` to find Cloud resources that were created before
+   *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+   *   "2021-01-01 00:00:00 UTC" in seconds.
+   * * `updateTime&gt;1609459200` to find Cloud resources that were updated after
+   *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+   *   "2021-01-01 00:00:00 UTC" in seconds.
    * * `Important` to find Cloud resources that contain "Important" as a word
    *   in any of the searchable fields.
-   * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
-   *   in any of the searchable fields.
-   * * `*por*` to find Cloud resources that contain "por" as a substring in
-   *   any of the searchable fields.
+   * * `Impor*` to find Cloud resources that contain "Impor" as a prefix of any
+   *   word in any of the searchable fields.
    * * `Important location:(us-west1 OR global)` to find Cloud
    *   resources that contain "Important" as a word in any of the searchable
    *   fields and are also located in the "us-west1" region or the "global"
@@ -251,34 +256,39 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The query statement. See [how to construct a
-   * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+   * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
    * for more information. If not specified or empty, it will search all the
-   * resources within the specified `scope`. Note that the query string is
-   * compared against each Cloud IAM policy binding, including its members,
-   * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
-   * contain the bindings that match your query. To learn more about the IAM
-   * policy structure, see [IAM policy
-   * doc](https://cloud.google.com/iam/docs/policies#structure).
+   * resources within the specified `scope`.
    * Examples:
    * * `name:Important` to find Cloud resources whose name contains
    *   "Important" as a word.
+   * * `name=Important` to find the Cloud resource whose name is exactly
+   *   "Important".
    * * `displayName:Impor*` to find Cloud resources whose display name
-   *   contains "Impor" as a prefix.
-   * * `description:*por*` to find Cloud resources whose description
-   *   contains "por" as a substring.
-   * * `location:us-west*` to find Cloud resources whose location is
-   *   prefixed with "us-west".
+   *   contains "Impor" as a prefix of any word in the field.
+   * * `location:us-west*` to find Cloud resources whose location contains both
+   *   "us" and "west" as prefixes.
    * * `labels:prod` to find Cloud resources whose labels contain "prod" as
    *   a key or value.
    * * `labels.env:prod` to find Cloud resources that have a label "env"
    *   and its value is "prod".
    * * `labels.env:*` to find Cloud resources that have a label "env".
+   * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
+   *   encryption key whose name contains the word "key".
+   * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
+   *   word.
+   * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
+   *   doesn't contain "ACTIVE" as a word.
+   * * `createTime&lt;1609459200` to find Cloud resources that were created before
+   *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+   *   "2021-01-01 00:00:00 UTC" in seconds.
+   * * `updateTime&gt;1609459200` to find Cloud resources that were updated after
+   *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+   *   "2021-01-01 00:00:00 UTC" in seconds.
    * * `Important` to find Cloud resources that contain "Important" as a word
    *   in any of the searchable fields.
-   * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
-   *   in any of the searchable fields.
-   * * `*por*` to find Cloud resources that contain "por" as a substring in
-   *   any of the searchable fields.
+   * * `Impor*` to find Cloud resources that contain "Impor" as a prefix of any
+   *   word in any of the searchable fields.
    * * `Important location:(us-west1 OR global)` to find Cloud
    *   resources that contain "Important" as a word in any of the searchable
    *   fields and are also located in the "us-west1" region or the "global"
@@ -310,6 +320,14 @@ private static final long serialVersionUID = 0L;
    * Optional. A list of asset types that this request searches for. If empty, it will
    * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   * Regular expressions are also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
    * </pre>
    *
    * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -324,6 +342,14 @@ private static final long serialVersionUID = 0L;
    * Optional. A list of asset types that this request searches for. If empty, it will
    * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   * Regular expressions are also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
    * </pre>
    *
    * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -337,6 +363,14 @@ private static final long serialVersionUID = 0L;
    * Optional. A list of asset types that this request searches for. If empty, it will
    * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   * Regular expressions are also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
    * </pre>
    *
    * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -351,6 +385,14 @@ private static final long serialVersionUID = 0L;
    * Optional. A list of asset types that this request searches for. If empty, it will
    * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   * Regular expressions are also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
    * </pre>
    *
    * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -436,12 +478,24 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object orderBy_;
   /**
    * <pre>
-   * Optional. A comma separated list of fields specifying the sorting order of the
+   * Optional. A comma-separated list of fields specifying the sorting order of the
    * results. The default order is ascending. Add " DESC" after the field name
    * to indicate descending order. Redundant space characters are ignored.
-   * Example: "location DESC, name". Only string fields in the response are
-   * sortable, including `name`, `displayName`, `description`, `location`. All
-   * the other fields such as repeated fields (e.g., `networkTags`), map
+   * Example: "location DESC, name".
+   * Only singular primitive fields in the response are sortable:
+   *   * name
+   *   * assetType
+   *   * project
+   *   * displayName
+   *   * description
+   *   * location
+   *   * kmsKey
+   *   * createTime
+   *   * updateTime
+   *   * state
+   *   * parentFullResourceName
+   *   * parentAssetType
+   * All the other fields such as repeated fields (e.g., `networkTags`), map
    * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
    * are not supported.
    * </pre>
@@ -464,12 +518,24 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A comma separated list of fields specifying the sorting order of the
+   * Optional. A comma-separated list of fields specifying the sorting order of the
    * results. The default order is ascending. Add " DESC" after the field name
    * to indicate descending order. Redundant space characters are ignored.
-   * Example: "location DESC, name". Only string fields in the response are
-   * sortable, including `name`, `displayName`, `description`, `location`. All
-   * the other fields such as repeated fields (e.g., `networkTags`), map
+   * Example: "location DESC, name".
+   * Only singular primitive fields in the response are sortable:
+   *   * name
+   *   * assetType
+   *   * project
+   *   * displayName
+   *   * description
+   *   * location
+   *   * kmsKey
+   *   * createTime
+   *   * updateTime
+   *   * state
+   *   * parentFullResourceName
+   *   * parentAssetType
+   * All the other fields such as repeated fields (e.g., `networkTags`), map
    * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
    * are not supported.
    * </pre>
@@ -907,7 +973,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. A scope can be a project, a folder, or an organization. The search is
      * limited to the resources within the `scope`. The caller must be granted the
-     * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+     * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
@@ -935,7 +1001,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. A scope can be a project, a folder, or an organization. The search is
      * limited to the resources within the `scope`. The caller must be granted the
-     * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+     * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
@@ -964,7 +1030,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. A scope can be a project, a folder, or an organization. The search is
      * limited to the resources within the `scope`. The caller must be granted the
-     * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+     * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
@@ -991,7 +1057,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. A scope can be a project, a folder, or an organization. The search is
      * limited to the resources within the `scope`. The caller must be granted the
-     * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+     * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
@@ -1013,7 +1079,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. A scope can be a project, a folder, or an organization. The search is
      * limited to the resources within the `scope`. The caller must be granted the
-     * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+     * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
@@ -1042,34 +1108,39 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The query statement. See [how to construct a
-     * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+     * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
      * for more information. If not specified or empty, it will search all the
-     * resources within the specified `scope`. Note that the query string is
-     * compared against each Cloud IAM policy binding, including its members,
-     * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
-     * contain the bindings that match your query. To learn more about the IAM
-     * policy structure, see [IAM policy
-     * doc](https://cloud.google.com/iam/docs/policies#structure).
+     * resources within the specified `scope`.
      * Examples:
      * * `name:Important` to find Cloud resources whose name contains
      *   "Important" as a word.
+     * * `name=Important` to find the Cloud resource whose name is exactly
+     *   "Important".
      * * `displayName:Impor*` to find Cloud resources whose display name
-     *   contains "Impor" as a prefix.
-     * * `description:*por*` to find Cloud resources whose description
-     *   contains "por" as a substring.
-     * * `location:us-west*` to find Cloud resources whose location is
-     *   prefixed with "us-west".
+     *   contains "Impor" as a prefix of any word in the field.
+     * * `location:us-west*` to find Cloud resources whose location contains both
+     *   "us" and "west" as prefixes.
      * * `labels:prod` to find Cloud resources whose labels contain "prod" as
      *   a key or value.
      * * `labels.env:prod` to find Cloud resources that have a label "env"
      *   and its value is "prod".
      * * `labels.env:*` to find Cloud resources that have a label "env".
+     * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
+     *   encryption key whose name contains the word "key".
+     * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
+     *   word.
+     * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
+     *   doesn't contain "ACTIVE" as a word.
+     * * `createTime&lt;1609459200` to find Cloud resources that were created before
+     *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+     *   "2021-01-01 00:00:00 UTC" in seconds.
+     * * `updateTime&gt;1609459200` to find Cloud resources that were updated after
+     *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+     *   "2021-01-01 00:00:00 UTC" in seconds.
      * * `Important` to find Cloud resources that contain "Important" as a word
      *   in any of the searchable fields.
-     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
-     *   in any of the searchable fields.
-     * * `*por*` to find Cloud resources that contain "por" as a substring in
-     *   any of the searchable fields.
+     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix of any
+     *   word in any of the searchable fields.
      * * `Important location:(us-west1 OR global)` to find Cloud
      *   resources that contain "Important" as a word in any of the searchable
      *   fields and are also located in the "us-west1" region or the "global"
@@ -1094,34 +1165,39 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The query statement. See [how to construct a
-     * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+     * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
      * for more information. If not specified or empty, it will search all the
-     * resources within the specified `scope`. Note that the query string is
-     * compared against each Cloud IAM policy binding, including its members,
-     * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
-     * contain the bindings that match your query. To learn more about the IAM
-     * policy structure, see [IAM policy
-     * doc](https://cloud.google.com/iam/docs/policies#structure).
+     * resources within the specified `scope`.
      * Examples:
      * * `name:Important` to find Cloud resources whose name contains
      *   "Important" as a word.
+     * * `name=Important` to find the Cloud resource whose name is exactly
+     *   "Important".
      * * `displayName:Impor*` to find Cloud resources whose display name
-     *   contains "Impor" as a prefix.
-     * * `description:*por*` to find Cloud resources whose description
-     *   contains "por" as a substring.
-     * * `location:us-west*` to find Cloud resources whose location is
-     *   prefixed with "us-west".
+     *   contains "Impor" as a prefix of any word in the field.
+     * * `location:us-west*` to find Cloud resources whose location contains both
+     *   "us" and "west" as prefixes.
      * * `labels:prod` to find Cloud resources whose labels contain "prod" as
      *   a key or value.
      * * `labels.env:prod` to find Cloud resources that have a label "env"
      *   and its value is "prod".
      * * `labels.env:*` to find Cloud resources that have a label "env".
+     * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
+     *   encryption key whose name contains the word "key".
+     * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
+     *   word.
+     * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
+     *   doesn't contain "ACTIVE" as a word.
+     * * `createTime&lt;1609459200` to find Cloud resources that were created before
+     *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+     *   "2021-01-01 00:00:00 UTC" in seconds.
+     * * `updateTime&gt;1609459200` to find Cloud resources that were updated after
+     *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+     *   "2021-01-01 00:00:00 UTC" in seconds.
      * * `Important` to find Cloud resources that contain "Important" as a word
      *   in any of the searchable fields.
-     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
-     *   in any of the searchable fields.
-     * * `*por*` to find Cloud resources that contain "por" as a substring in
-     *   any of the searchable fields.
+     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix of any
+     *   word in any of the searchable fields.
      * * `Important location:(us-west1 OR global)` to find Cloud
      *   resources that contain "Important" as a word in any of the searchable
      *   fields and are also located in the "us-west1" region or the "global"
@@ -1147,34 +1223,39 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The query statement. See [how to construct a
-     * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+     * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
      * for more information. If not specified or empty, it will search all the
-     * resources within the specified `scope`. Note that the query string is
-     * compared against each Cloud IAM policy binding, including its members,
-     * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
-     * contain the bindings that match your query. To learn more about the IAM
-     * policy structure, see [IAM policy
-     * doc](https://cloud.google.com/iam/docs/policies#structure).
+     * resources within the specified `scope`.
      * Examples:
      * * `name:Important` to find Cloud resources whose name contains
      *   "Important" as a word.
+     * * `name=Important` to find the Cloud resource whose name is exactly
+     *   "Important".
      * * `displayName:Impor*` to find Cloud resources whose display name
-     *   contains "Impor" as a prefix.
-     * * `description:*por*` to find Cloud resources whose description
-     *   contains "por" as a substring.
-     * * `location:us-west*` to find Cloud resources whose location is
-     *   prefixed with "us-west".
+     *   contains "Impor" as a prefix of any word in the field.
+     * * `location:us-west*` to find Cloud resources whose location contains both
+     *   "us" and "west" as prefixes.
      * * `labels:prod` to find Cloud resources whose labels contain "prod" as
      *   a key or value.
      * * `labels.env:prod` to find Cloud resources that have a label "env"
      *   and its value is "prod".
      * * `labels.env:*` to find Cloud resources that have a label "env".
+     * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
+     *   encryption key whose name contains the word "key".
+     * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
+     *   word.
+     * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
+     *   doesn't contain "ACTIVE" as a word.
+     * * `createTime&lt;1609459200` to find Cloud resources that were created before
+     *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+     *   "2021-01-01 00:00:00 UTC" in seconds.
+     * * `updateTime&gt;1609459200` to find Cloud resources that were updated after
+     *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+     *   "2021-01-01 00:00:00 UTC" in seconds.
      * * `Important` to find Cloud resources that contain "Important" as a word
      *   in any of the searchable fields.
-     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
-     *   in any of the searchable fields.
-     * * `*por*` to find Cloud resources that contain "por" as a substring in
-     *   any of the searchable fields.
+     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix of any
+     *   word in any of the searchable fields.
      * * `Important location:(us-west1 OR global)` to find Cloud
      *   resources that contain "Important" as a word in any of the searchable
      *   fields and are also located in the "us-west1" region or the "global"
@@ -1198,34 +1279,39 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The query statement. See [how to construct a
-     * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+     * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
      * for more information. If not specified or empty, it will search all the
-     * resources within the specified `scope`. Note that the query string is
-     * compared against each Cloud IAM policy binding, including its members,
-     * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
-     * contain the bindings that match your query. To learn more about the IAM
-     * policy structure, see [IAM policy
-     * doc](https://cloud.google.com/iam/docs/policies#structure).
+     * resources within the specified `scope`.
      * Examples:
      * * `name:Important` to find Cloud resources whose name contains
      *   "Important" as a word.
+     * * `name=Important` to find the Cloud resource whose name is exactly
+     *   "Important".
      * * `displayName:Impor*` to find Cloud resources whose display name
-     *   contains "Impor" as a prefix.
-     * * `description:*por*` to find Cloud resources whose description
-     *   contains "por" as a substring.
-     * * `location:us-west*` to find Cloud resources whose location is
-     *   prefixed with "us-west".
+     *   contains "Impor" as a prefix of any word in the field.
+     * * `location:us-west*` to find Cloud resources whose location contains both
+     *   "us" and "west" as prefixes.
      * * `labels:prod` to find Cloud resources whose labels contain "prod" as
      *   a key or value.
      * * `labels.env:prod` to find Cloud resources that have a label "env"
      *   and its value is "prod".
      * * `labels.env:*` to find Cloud resources that have a label "env".
+     * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
+     *   encryption key whose name contains the word "key".
+     * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
+     *   word.
+     * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
+     *   doesn't contain "ACTIVE" as a word.
+     * * `createTime&lt;1609459200` to find Cloud resources that were created before
+     *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+     *   "2021-01-01 00:00:00 UTC" in seconds.
+     * * `updateTime&gt;1609459200` to find Cloud resources that were updated after
+     *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+     *   "2021-01-01 00:00:00 UTC" in seconds.
      * * `Important` to find Cloud resources that contain "Important" as a word
      *   in any of the searchable fields.
-     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
-     *   in any of the searchable fields.
-     * * `*por*` to find Cloud resources that contain "por" as a substring in
-     *   any of the searchable fields.
+     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix of any
+     *   word in any of the searchable fields.
      * * `Important location:(us-west1 OR global)` to find Cloud
      *   resources that contain "Important" as a word in any of the searchable
      *   fields and are also located in the "us-west1" region or the "global"
@@ -1244,34 +1330,39 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The query statement. See [how to construct a
-     * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+     * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
      * for more information. If not specified or empty, it will search all the
-     * resources within the specified `scope`. Note that the query string is
-     * compared against each Cloud IAM policy binding, including its members,
-     * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
-     * contain the bindings that match your query. To learn more about the IAM
-     * policy structure, see [IAM policy
-     * doc](https://cloud.google.com/iam/docs/policies#structure).
+     * resources within the specified `scope`.
      * Examples:
      * * `name:Important` to find Cloud resources whose name contains
      *   "Important" as a word.
+     * * `name=Important` to find the Cloud resource whose name is exactly
+     *   "Important".
      * * `displayName:Impor*` to find Cloud resources whose display name
-     *   contains "Impor" as a prefix.
-     * * `description:*por*` to find Cloud resources whose description
-     *   contains "por" as a substring.
-     * * `location:us-west*` to find Cloud resources whose location is
-     *   prefixed with "us-west".
+     *   contains "Impor" as a prefix of any word in the field.
+     * * `location:us-west*` to find Cloud resources whose location contains both
+     *   "us" and "west" as prefixes.
      * * `labels:prod` to find Cloud resources whose labels contain "prod" as
      *   a key or value.
      * * `labels.env:prod` to find Cloud resources that have a label "env"
      *   and its value is "prod".
      * * `labels.env:*` to find Cloud resources that have a label "env".
+     * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
+     *   encryption key whose name contains the word "key".
+     * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
+     *   word.
+     * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
+     *   doesn't contain "ACTIVE" as a word.
+     * * `createTime&lt;1609459200` to find Cloud resources that were created before
+     *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+     *   "2021-01-01 00:00:00 UTC" in seconds.
+     * * `updateTime&gt;1609459200` to find Cloud resources that were updated after
+     *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
+     *   "2021-01-01 00:00:00 UTC" in seconds.
      * * `Important` to find Cloud resources that contain "Important" as a word
      *   in any of the searchable fields.
-     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
-     *   in any of the searchable fields.
-     * * `*por*` to find Cloud resources that contain "por" as a substring in
-     *   any of the searchable fields.
+     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix of any
+     *   word in any of the searchable fields.
      * * `Important location:(us-west1 OR global)` to find Cloud
      *   resources that contain "Important" as a word in any of the searchable
      *   fields and are also located in the "us-west1" region or the "global"
@@ -1306,6 +1397,14 @@ private static final long serialVersionUID = 0L;
      * Optional. A list of asset types that this request searches for. If empty, it will
      * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     * Regular expressions are also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1320,6 +1419,14 @@ private static final long serialVersionUID = 0L;
      * Optional. A list of asset types that this request searches for. If empty, it will
      * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     * Regular expressions are also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1333,6 +1440,14 @@ private static final long serialVersionUID = 0L;
      * Optional. A list of asset types that this request searches for. If empty, it will
      * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     * Regular expressions are also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1347,6 +1462,14 @@ private static final long serialVersionUID = 0L;
      * Optional. A list of asset types that this request searches for. If empty, it will
      * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     * Regular expressions are also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1362,6 +1485,14 @@ private static final long serialVersionUID = 0L;
      * Optional. A list of asset types that this request searches for. If empty, it will
      * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     * Regular expressions are also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1384,6 +1515,14 @@ private static final long serialVersionUID = 0L;
      * Optional. A list of asset types that this request searches for. If empty, it will
      * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     * Regular expressions are also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1405,6 +1544,14 @@ private static final long serialVersionUID = 0L;
      * Optional. A list of asset types that this request searches for. If empty, it will
      * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     * Regular expressions are also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1424,6 +1571,14 @@ private static final long serialVersionUID = 0L;
      * Optional. A list of asset types that this request searches for. If empty, it will
      * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     * Regular expressions are also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1440,6 +1595,14 @@ private static final long serialVersionUID = 0L;
      * Optional. A list of asset types that this request searches for. If empty, it will
      * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     * Regular expressions are also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1624,12 +1787,24 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object orderBy_ = "";
     /**
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of the
+     * Optional. A comma-separated list of fields specifying the sorting order of the
      * results. The default order is ascending. Add " DESC" after the field name
      * to indicate descending order. Redundant space characters are ignored.
-     * Example: "location DESC, name". Only string fields in the response are
-     * sortable, including `name`, `displayName`, `description`, `location`. All
-     * the other fields such as repeated fields (e.g., `networkTags`), map
+     * Example: "location DESC, name".
+     * Only singular primitive fields in the response are sortable:
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * parentFullResourceName
+     *   * parentAssetType
+     * All the other fields such as repeated fields (e.g., `networkTags`), map
      * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
      * are not supported.
      * </pre>
@@ -1651,12 +1826,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of the
+     * Optional. A comma-separated list of fields specifying the sorting order of the
      * results. The default order is ascending. Add " DESC" after the field name
      * to indicate descending order. Redundant space characters are ignored.
-     * Example: "location DESC, name". Only string fields in the response are
-     * sortable, including `name`, `displayName`, `description`, `location`. All
-     * the other fields such as repeated fields (e.g., `networkTags`), map
+     * Example: "location DESC, name".
+     * Only singular primitive fields in the response are sortable:
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * parentFullResourceName
+     *   * parentAssetType
+     * All the other fields such as repeated fields (e.g., `networkTags`), map
      * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
      * are not supported.
      * </pre>
@@ -1679,12 +1866,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of the
+     * Optional. A comma-separated list of fields specifying the sorting order of the
      * results. The default order is ascending. Add " DESC" after the field name
      * to indicate descending order. Redundant space characters are ignored.
-     * Example: "location DESC, name". Only string fields in the response are
-     * sortable, including `name`, `displayName`, `description`, `location`. All
-     * the other fields such as repeated fields (e.g., `networkTags`), map
+     * Example: "location DESC, name".
+     * Only singular primitive fields in the response are sortable:
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * parentFullResourceName
+     *   * parentAssetType
+     * All the other fields such as repeated fields (e.g., `networkTags`), map
      * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
      * are not supported.
      * </pre>
@@ -1705,12 +1904,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of the
+     * Optional. A comma-separated list of fields specifying the sorting order of the
      * results. The default order is ascending. Add " DESC" after the field name
      * to indicate descending order. Redundant space characters are ignored.
-     * Example: "location DESC, name". Only string fields in the response are
-     * sortable, including `name`, `displayName`, `description`, `location`. All
-     * the other fields such as repeated fields (e.g., `networkTags`), map
+     * Example: "location DESC, name".
+     * Only singular primitive fields in the response are sortable:
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * parentFullResourceName
+     *   * parentAssetType
+     * All the other fields such as repeated fields (e.g., `networkTags`), map
      * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
      * are not supported.
      * </pre>
@@ -1726,12 +1937,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of the
+     * Optional. A comma-separated list of fields specifying the sorting order of the
      * results. The default order is ascending. Add " DESC" after the field name
      * to indicate descending order. Redundant space characters are ignored.
-     * Example: "location DESC, name". Only string fields in the response are
-     * sortable, including `name`, `displayName`, `description`, `location`. All
-     * the other fields such as repeated fields (e.g., `networkTags`), map
+     * Example: "location DESC, name".
+     * Only singular primitive fields in the response are sortable:
+     *   * name
+     *   * assetType
+     *   * project
+     *   * displayName
+     *   * description
+     *   * location
+     *   * kmsKey
+     *   * createTime
+     *   * updateTime
+     *   * state
+     *   * parentFullResourceName
+     *   * parentAssetType
+     * All the other fields such as repeated fields (e.g., `networkTags`), map
      * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
      * are not supported.
      * </pre>
