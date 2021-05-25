@@ -1,0 +1,591 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.cloud.sql_v1beta4",
+  "protoPackage": "google.cloud.sql.v1beta4",
+  "schema": "1.0",
+  "services": {
+    "SqlBackupRunsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SqlBackupRunsServiceClient",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "SqlBackupRunsServiceAsyncClient",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlDatabasesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SqlDatabasesServiceClient",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            },
+            "Patch": {
+              "methods": [
+                "patch"
+              ]
+            },
+            "Update": {
+              "methods": [
+                "update"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "SqlDatabasesServiceAsyncClient",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            },
+            "Patch": {
+              "methods": [
+                "patch"
+              ]
+            },
+            "Update": {
+              "methods": [
+                "update"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlFlagsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SqlFlagsServiceClient",
+          "rpcs": {
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "SqlFlagsServiceAsyncClient",
+          "rpcs": {
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlInstancesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SqlInstancesServiceClient",
+          "rpcs": {
+            "AddServerCa": {
+              "methods": [
+                "add_server_ca"
+              ]
+            },
+            "Clone": {
+              "methods": [
+                "clone"
+              ]
+            },
+            "CreateEphemeral": {
+              "methods": [
+                "create_ephemeral"
+              ]
+            },
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "DemoteMaster": {
+              "methods": [
+                "demote_master"
+              ]
+            },
+            "Export": {
+              "methods": [
+                "export"
+              ]
+            },
+            "Failover": {
+              "methods": [
+                "failover"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Import": {
+              "methods": [
+                "import"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            },
+            "ListServerCas": {
+              "methods": [
+                "list_server_cas"
+              ]
+            },
+            "Patch": {
+              "methods": [
+                "patch"
+              ]
+            },
+            "PromoteReplica": {
+              "methods": [
+                "promote_replica"
+              ]
+            },
+            "RescheduleMaintenance": {
+              "methods": [
+                "reschedule_maintenance"
+              ]
+            },
+            "ResetSslConfig": {
+              "methods": [
+                "reset_ssl_config"
+              ]
+            },
+            "Restart": {
+              "methods": [
+                "restart"
+              ]
+            },
+            "RestoreBackup": {
+              "methods": [
+                "restore_backup"
+              ]
+            },
+            "RotateServerCa": {
+              "methods": [
+                "rotate_server_ca"
+              ]
+            },
+            "StartExternalSync": {
+              "methods": [
+                "start_external_sync"
+              ]
+            },
+            "StartReplica": {
+              "methods": [
+                "start_replica"
+              ]
+            },
+            "StopReplica": {
+              "methods": [
+                "stop_replica"
+              ]
+            },
+            "TruncateLog": {
+              "methods": [
+                "truncate_log"
+              ]
+            },
+            "Update": {
+              "methods": [
+                "update"
+              ]
+            },
+            "VerifyExternalSyncSettings": {
+              "methods": [
+                "verify_external_sync_settings"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "SqlInstancesServiceAsyncClient",
+          "rpcs": {
+            "AddServerCa": {
+              "methods": [
+                "add_server_ca"
+              ]
+            },
+            "Clone": {
+              "methods": [
+                "clone"
+              ]
+            },
+            "CreateEphemeral": {
+              "methods": [
+                "create_ephemeral"
+              ]
+            },
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "DemoteMaster": {
+              "methods": [
+                "demote_master"
+              ]
+            },
+            "Export": {
+              "methods": [
+                "export"
+              ]
+            },
+            "Failover": {
+              "methods": [
+                "failover"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Import": {
+              "methods": [
+                "import"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            },
+            "ListServerCas": {
+              "methods": [
+                "list_server_cas"
+              ]
+            },
+            "Patch": {
+              "methods": [
+                "patch"
+              ]
+            },
+            "PromoteReplica": {
+              "methods": [
+                "promote_replica"
+              ]
+            },
+            "RescheduleMaintenance": {
+              "methods": [
+                "reschedule_maintenance"
+              ]
+            },
+            "ResetSslConfig": {
+              "methods": [
+                "reset_ssl_config"
+              ]
+            },
+            "Restart": {
+              "methods": [
+                "restart"
+              ]
+            },
+            "RestoreBackup": {
+              "methods": [
+                "restore_backup"
+              ]
+            },
+            "RotateServerCa": {
+              "methods": [
+                "rotate_server_ca"
+              ]
+            },
+            "StartExternalSync": {
+              "methods": [
+                "start_external_sync"
+              ]
+            },
+            "StartReplica": {
+              "methods": [
+                "start_replica"
+              ]
+            },
+            "StopReplica": {
+              "methods": [
+                "stop_replica"
+              ]
+            },
+            "TruncateLog": {
+              "methods": [
+                "truncate_log"
+              ]
+            },
+            "Update": {
+              "methods": [
+                "update"
+              ]
+            },
+            "VerifyExternalSyncSettings": {
+              "methods": [
+                "verify_external_sync_settings"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlOperationsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SqlOperationsServiceClient",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "SqlOperationsServiceAsyncClient",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlSslCertsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SqlSslCertsServiceClient",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "SqlSslCertsServiceAsyncClient",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlTiersService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SqlTiersServiceClient",
+          "rpcs": {
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "SqlTiersServiceAsyncClient",
+          "rpcs": {
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlUsersService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SqlUsersServiceClient",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            },
+            "Update": {
+              "methods": [
+                "update"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "SqlUsersServiceAsyncClient",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            },
+            "Update": {
+              "methods": [
+                "update"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

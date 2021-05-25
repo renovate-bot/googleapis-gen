@@ -1,0 +1,2 @@
+recursive-include google/cloud/sql *.py
+recursive-include google/cloud/sql_v1beta4 *.py
