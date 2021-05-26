@@ -462,11 +462,14 @@ public final class ContactCenterInsightsProto {
       "ettings\332A\024settings,update_mask\032X\312A$conta" +
       "ctcenterinsights.googleapis.com\322A.https:" +
       "//www.googleapis.com/auth/cloud-platform" +
-      "B\245\001\n)com.google.cloud.contactcenterinsig" +
+      "B\240\002\n)com.google.cloud.contactcenterinsig" +
       "hts.v1B\032ContactCenterInsightsProtoP\001ZZgo" +
       "ogle.golang.org/genproto/googleapis/clou" +
       "d/contactcenterinsights/v1;contactcenter" +
-      "insightsb\006proto3"
+      "insights\252\002%Google.Cloud.ContactCenterIns" +
+      "ights.V1\312\002%Google\\Cloud\\ContactCenterIns" +
+      "ights\\V1\352\002(Google::Cloud::ContactCenterI" +
+      "nsights::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

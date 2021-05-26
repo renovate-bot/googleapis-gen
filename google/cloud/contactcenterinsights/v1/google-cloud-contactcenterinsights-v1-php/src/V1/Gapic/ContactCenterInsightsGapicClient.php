@@ -22,7 +22,7 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Contactcenterinsights\V1\Gapic;
+namespace Google\Cloud\ContactCenterInsights\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -37,43 +37,43 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Contactcenterinsights\V1\Analysis;
-use Google\Cloud\Contactcenterinsights\V1\CalculateIssueModelStatsRequest;
-use Google\Cloud\Contactcenterinsights\V1\CalculateIssueModelStatsResponse;
-use Google\Cloud\Contactcenterinsights\V1\CalculateStatsRequest;
-use Google\Cloud\Contactcenterinsights\V1\CalculateStatsResponse;
-use Google\Cloud\Contactcenterinsights\V1\Conversation;
-use Google\Cloud\Contactcenterinsights\V1\CreateAnalysisRequest;
-use Google\Cloud\Contactcenterinsights\V1\CreateConversationRequest;
-use Google\Cloud\Contactcenterinsights\V1\CreatePhraseMatcherRequest;
-use Google\Cloud\Contactcenterinsights\V1\DeleteAnalysisRequest;
-use Google\Cloud\Contactcenterinsights\V1\DeleteConversationRequest;
-use Google\Cloud\Contactcenterinsights\V1\DeletePhraseMatcherRequest;
-use Google\Cloud\Contactcenterinsights\V1\ExportInsightsDataRequest;
-use Google\Cloud\Contactcenterinsights\V1\ExportInsightsDataRequest\BigQueryDestination;
-use Google\Cloud\Contactcenterinsights\V1\GetAnalysisRequest;
-use Google\Cloud\Contactcenterinsights\V1\GetConversationRequest;
-use Google\Cloud\Contactcenterinsights\V1\GetIssueModelRequest;
-use Google\Cloud\Contactcenterinsights\V1\GetIssueRequest;
-use Google\Cloud\Contactcenterinsights\V1\GetPhraseMatcherRequest;
-use Google\Cloud\Contactcenterinsights\V1\GetSettingsRequest;
-use Google\Cloud\Contactcenterinsights\V1\Issue;
-use Google\Cloud\Contactcenterinsights\V1\IssueModel;
-use Google\Cloud\Contactcenterinsights\V1\ListAnalysesRequest;
-use Google\Cloud\Contactcenterinsights\V1\ListAnalysesResponse;
-use Google\Cloud\Contactcenterinsights\V1\ListConversationsRequest;
-use Google\Cloud\Contactcenterinsights\V1\ListConversationsResponse;
-use Google\Cloud\Contactcenterinsights\V1\ListIssueModelsRequest;
-use Google\Cloud\Contactcenterinsights\V1\ListIssueModelsResponse;
-use Google\Cloud\Contactcenterinsights\V1\ListIssuesRequest;
-use Google\Cloud\Contactcenterinsights\V1\ListIssuesResponse;
+use Google\Cloud\ContactCenterInsights\V1\Analysis;
+use Google\Cloud\ContactCenterInsights\V1\CalculateIssueModelStatsRequest;
+use Google\Cloud\ContactCenterInsights\V1\CalculateIssueModelStatsResponse;
+use Google\Cloud\ContactCenterInsights\V1\CalculateStatsRequest;
+use Google\Cloud\ContactCenterInsights\V1\CalculateStatsResponse;
+use Google\Cloud\ContactCenterInsights\V1\Conversation;
+use Google\Cloud\ContactCenterInsights\V1\CreateAnalysisRequest;
+use Google\Cloud\ContactCenterInsights\V1\CreateConversationRequest;
+use Google\Cloud\ContactCenterInsights\V1\CreatePhraseMatcherRequest;
+use Google\Cloud\ContactCenterInsights\V1\DeleteAnalysisRequest;
+use Google\Cloud\ContactCenterInsights\V1\DeleteConversationRequest;
+use Google\Cloud\ContactCenterInsights\V1\DeletePhraseMatcherRequest;
+use Google\Cloud\ContactCenterInsights\V1\ExportInsightsDataRequest;
+use Google\Cloud\ContactCenterInsights\V1\ExportInsightsDataRequest\BigQueryDestination;
+use Google\Cloud\ContactCenterInsights\V1\GetAnalysisRequest;
+use Google\Cloud\ContactCenterInsights\V1\GetConversationRequest;
+use Google\Cloud\ContactCenterInsights\V1\GetIssueModelRequest;
+use Google\Cloud\ContactCenterInsights\V1\GetIssueRequest;
+use Google\Cloud\ContactCenterInsights\V1\GetPhraseMatcherRequest;
+use Google\Cloud\ContactCenterInsights\V1\GetSettingsRequest;
+use Google\Cloud\ContactCenterInsights\V1\Issue;
+use Google\Cloud\ContactCenterInsights\V1\IssueModel;
+use Google\Cloud\ContactCenterInsights\V1\ListAnalysesRequest;
+use Google\Cloud\ContactCenterInsights\V1\ListAnalysesResponse;
+use Google\Cloud\ContactCenterInsights\V1\ListConversationsRequest;
+use Google\Cloud\ContactCenterInsights\V1\ListConversationsResponse;
+use Google\Cloud\ContactCenterInsights\V1\ListIssueModelsRequest;
+use Google\Cloud\ContactCenterInsights\V1\ListIssueModelsResponse;
+use Google\Cloud\ContactCenterInsights\V1\ListIssuesRequest;
+use Google\Cloud\ContactCenterInsights\V1\ListIssuesResponse;
 
-use Google\Cloud\Contactcenterinsights\V1\ListPhraseMatchersRequest;
-use Google\Cloud\Contactcenterinsights\V1\ListPhraseMatchersResponse;
-use Google\Cloud\Contactcenterinsights\V1\PhraseMatcher;
-use Google\Cloud\Contactcenterinsights\V1\Settings;
-use Google\Cloud\Contactcenterinsights\V1\UpdateConversationRequest;
-use Google\Cloud\Contactcenterinsights\V1\UpdateSettingsRequest;
+use Google\Cloud\ContactCenterInsights\V1\ListPhraseMatchersRequest;
+use Google\Cloud\ContactCenterInsights\V1\ListPhraseMatchersResponse;
+use Google\Cloud\ContactCenterInsights\V1\PhraseMatcher;
+use Google\Cloud\ContactCenterInsights\V1\Settings;
+use Google\Cloud\ContactCenterInsights\V1\UpdateConversationRequest;
+use Google\Cloud\ContactCenterInsights\V1\UpdateSettingsRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
@@ -539,7 +539,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\CalculateIssueModelStatsResponse
+     * @return \Google\Cloud\ContactCenterInsights\V1\CalculateIssueModelStatsResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -582,7 +582,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\CalculateStatsResponse
+     * @return \Google\Cloud\ContactCenterInsights\V1\CalculateStatsResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -704,7 +704,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\Conversation
+     * @return \Google\Cloud\ContactCenterInsights\V1\Conversation
      *
      * @throws ApiException if the remote call fails
      */
@@ -754,7 +754,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\PhraseMatcher
+     * @return \Google\Cloud\ContactCenterInsights\V1\PhraseMatcher
      *
      * @throws ApiException if the remote call fails
      */
@@ -1003,7 +1003,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\Analysis
+     * @return \Google\Cloud\ContactCenterInsights\V1\Analysis
      *
      * @throws ApiException if the remote call fails
      */
@@ -1038,7 +1038,7 @@ class ContactCenterInsightsGapicClient
      *
      *     @type int $view
      *           The level of details of the conversation. Default is `FULL`.
-     *           For allowed values, use constants defined on {@see \Google\Cloud\Contactcenterinsights\V1\ConversationView}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\ContactCenterInsights\V1\ConversationView}
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1046,7 +1046,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\Conversation
+     * @return \Google\Cloud\ContactCenterInsights\V1\Conversation
      *
      * @throws ApiException if the remote call fails
      */
@@ -1090,7 +1090,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\Issue
+     * @return \Google\Cloud\ContactCenterInsights\V1\Issue
      *
      * @throws ApiException if the remote call fails
      */
@@ -1130,7 +1130,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\IssueModel
+     * @return \Google\Cloud\ContactCenterInsights\V1\IssueModel
      *
      * @throws ApiException if the remote call fails
      */
@@ -1170,7 +1170,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\PhraseMatcher
+     * @return \Google\Cloud\ContactCenterInsights\V1\PhraseMatcher
      *
      * @throws ApiException if the remote call fails
      */
@@ -1210,7 +1210,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\Settings
+     * @return \Google\Cloud\ContactCenterInsights\V1\Settings
      *
      * @throws ApiException if the remote call fails
      */
@@ -1345,7 +1345,7 @@ class ContactCenterInsightsGapicClient
      *           conversations with specific properties.
      *     @type int $view
      *           The level of details of the conversation. Default is `BASIC`.
-     *           For allowed values, use constants defined on {@see \Google\Cloud\Contactcenterinsights\V1\ConversationView}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\ContactCenterInsights\V1\ConversationView}
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1409,7 +1409,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\ListIssueModelsResponse
+     * @return \Google\Cloud\ContactCenterInsights\V1\ListIssueModelsResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -1449,7 +1449,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\ListIssuesResponse
+     * @return \Google\Cloud\ContactCenterInsights\V1\ListIssuesResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -1567,7 +1567,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\Conversation
+     * @return \Google\Cloud\ContactCenterInsights\V1\Conversation
      *
      * @throws ApiException if the remote call fails
      */
@@ -1613,7 +1613,7 @@ class ContactCenterInsightsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Contactcenterinsights\V1\Settings
+     * @return \Google\Cloud\ContactCenterInsights\V1\Settings
      *
      * @throws ApiException if the remote call fails
      */

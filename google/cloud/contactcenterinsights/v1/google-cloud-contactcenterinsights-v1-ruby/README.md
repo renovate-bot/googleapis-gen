@@ -29,9 +29,9 @@ In order to use this library, you first need to go through the following steps:
 ## Quick Start
 
 ```ruby
-require "google/cloud/contactcenterinsights/v1"
+require "google/cloud/contact_center_insights/v1"
 
-client = ::Google::Cloud::Contactcenterinsights::V1::ContactCenterInsights::Client.new
+client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new
 request = my_create_request
 response = client.create_conversation request
 ```

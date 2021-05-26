@@ -22,9 +22,9 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Contactcenterinsights\V1;
+namespace Google\Cloud\ContactCenterInsights\V1;
 
-use Google\Cloud\Contactcenterinsights\V1\Gapic\ContactCenterInsightsGapicClient;
+use Google\Cloud\ContactCenterInsights\V1\Gapic\ContactCenterInsightsGapicClient;
 
 /** {@inheritdoc} */
 class ContactCenterInsightsClient extends ContactCenterInsightsGapicClient

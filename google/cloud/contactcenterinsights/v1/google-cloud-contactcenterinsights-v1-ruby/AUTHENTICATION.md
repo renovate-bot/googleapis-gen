@@ -25,9 +25,9 @@ export V1_CREDENTIALS=path/to/keyfile.json
 3. Initialize the client.
 
 ```ruby
-require "google/cloud/contactcenterinsights/v1"
+require "google/cloud/contact_center_insights/v1"
 
-client = ::Google::Cloud::Contactcenterinsights::V1::ContactCenterInsights::Client.new
+client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new
 ```
 
 ## Credential Lookup
@@ -64,7 +64,7 @@ containers where writing files is difficult or not encouraged.
 
 The environment variables that google-cloud-contactcenterinsights-v1
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Contactcenterinsights::V1::ContactCenterInsights::Credentials}):
+{::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Credentials}):
 
 1. `V1_CREDENTIALS` - Path to JSON file, or JSON contents
 2. `V1_KEYFILE` - Path to JSON file, or JSON contents
@@ -73,11 +73,11 @@ checks for credentials are configured on the service Credentials class (such as
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
-require "google/cloud/contactcenterinsights/v1"
+require "google/cloud/contact_center_insights/v1"
 
 ENV["V1_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Contactcenterinsights::V1::ContactCenterInsights::Client.new
+client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new
 ```
 
 ### Configuration
@@ -86,9 +86,9 @@ The **Credentials JSON** can be configured instead of placing them in
 environment variables. Either on an individual client initialization:
 
 ```ruby
-require "google/cloud/contactcenterinsights/v1"
+require "google/cloud/contact_center_insights/v1"
 
-client = ::Google::Cloud::Contactcenterinsights::V1::ContactCenterInsights::Client.new do |config|
+client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -96,13 +96,13 @@ end
 Or configured globally for all clients:
 
 ```ruby
-require "google/cloud/contactcenterinsights/v1"
+require "google/cloud/contact_center_insights/v1"
 
-::Google::Cloud::Contactcenterinsights::V1::ContactCenterInsights::Client.configure do |config|
+::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Contactcenterinsights::V1::ContactCenterInsights::Client.new
+client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new
 ```
 
 ### Cloud SDK

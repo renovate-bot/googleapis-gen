@@ -609,11 +609,14 @@ public final class ResourcesProto {
       "etadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
       ":\0028\001\"M\n\031DialogflowInteractionData\022\034\n\024dia" +
       "logflow_intent_id\030\001 \001(\t\022\022\n\nconfidence\030\002 " +
-      "\001(\002B\231\001\n)com.google.cloud.contactcenterin" +
+      "\001(\002B\224\002\n)com.google.cloud.contactcenterin" +
       "sights.v1B\016ResourcesProtoP\001ZZgoogle.gola" +
       "ng.org/genproto/googleapis/cloud/contact" +
-      "centerinsights/v1;contactcenterinsightsb" +
-      "\006proto3"
+      "centerinsights/v1;contactcenterinsights\252" +
+      "\002%Google.Cloud.ContactCenterInsights.V1\312" +
+      "\002%Google\\Cloud\\ContactCenterInsights\\V1\352" +
+      "\002(Google::Cloud::ContactCenterInsights::" +
+      "V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

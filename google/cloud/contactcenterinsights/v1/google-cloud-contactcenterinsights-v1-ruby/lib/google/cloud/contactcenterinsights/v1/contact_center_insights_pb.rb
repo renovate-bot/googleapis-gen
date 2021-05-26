@@ -162,7 +162,7 @@ end
 
 module Google
   module Cloud
-    module Contactcenterinsights
+    module ContactCenterInsights
       module V1
         CalculateStatsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CalculateStatsRequest").msgclass
         CalculateStatsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CalculateStatsResponse").msgclass

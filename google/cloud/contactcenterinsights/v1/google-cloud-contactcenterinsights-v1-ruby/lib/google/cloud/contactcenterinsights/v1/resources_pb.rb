@@ -336,7 +336,7 @@ end
 
 module Google
   module Cloud
-    module Contactcenterinsights
+    module ContactCenterInsights
       module V1
         Conversation = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.Conversation").msgclass
         Conversation::CallMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.Conversation.CallMetadata").msgclass

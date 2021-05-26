@@ -19,11 +19,11 @@
 
 module Google
   module Cloud
-    module Contactcenterinsights
+    module ContactCenterInsights
       module V1
         # The conversation resource.
         # @!attribute [rw] call_metadata
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::Conversation::CallMetadata]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::Conversation::CallMetadata]
         #     Call-specific metadata.
         # @!attribute [rw] expire_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -39,7 +39,7 @@ module Google
         #     Format:
         #     projects/\\{project}/locations/\\{location}/conversations/\\{conversation}
         # @!attribute [rw] data_source
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::ConversationDataSource]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::ConversationDataSource]
         #     The source of the audio and transcription for the conversation.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -62,10 +62,10 @@ module Google
         #     A map for the user to specify any custom fields. A maximum of 20 labels per
         #     conversation is allowed, with a maximum of 256 characters per entry.
         # @!attribute [r] transcript
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::Conversation::Transcript]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::Conversation::Transcript]
         #     Output only. The conversation transcript.
         # @!attribute [rw] medium
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::Conversation::Medium]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::Conversation::Medium]
         #     Immutable. The conversation medium.
         # @!attribute [r] duration
         #   @return [::Google::Protobuf::Duration]
@@ -74,14 +74,14 @@ module Google
         #   @return [::Integer]
         #     Output only. The number of turns in the conversation.
         # @!attribute [r] latest_analysis
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::Analysis]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::Analysis]
         #     Output only. The conversation's latest analysis, if one exists.
         # @!attribute [r] runtime_annotations
-        #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::RuntimeAnnotation>]
+        #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::RuntimeAnnotation>]
         #     Output only. The annotations that were generated during the customer and agent
         #     interaction.
         # @!attribute [r] dialogflow_intents
-        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Contactcenterinsights::V1::DialogflowIntent}]
+        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::ContactCenterInsights::V1::DialogflowIntent}]
         #     Output only. All the matched Dialogflow intents in the call. The key corresponds to a
         #     Dialogflow intent, format:
         #     projects/\\{project}/agent/\\{agent}/intents/\\{intent}
@@ -103,7 +103,7 @@ module Google
 
           # A message representing the transcript of a conversation.
           # @!attribute [rw] transcript_segments
-          #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::Conversation::Transcript::TranscriptSegment>]
+          #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::Conversation::Transcript::TranscriptSegment>]
           #     A list of sequential transcript segments that comprise the conversation.
           class Transcript
             include ::Google::Protobuf::MessageExts
@@ -118,7 +118,7 @@ module Google
             #     A confidence estimate between 0.0 and 1.0 of the fidelity of this
             #     segment. A default value of 0.0 indicates that the value is unset.
             # @!attribute [rw] words
-            #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::Conversation::Transcript::TranscriptSegment::WordInfo>]
+            #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::Conversation::Transcript::TranscriptSegment::WordInfo>]
             #     A list of the word-specific information for each word in the segment.
             # @!attribute [rw] language_code
             #   @return [::String]
@@ -132,7 +132,7 @@ module Google
             #     audioChannelCount = N, its output values can range from '1' to 'N'. A
             #     channel tag of 0 indicates that the audio is mono.
             # @!attribute [rw] participant
-            #   @return [::Google::Cloud::Contactcenterinsights::V1::Conversation::Transcript::TranscriptSegment::Participant]
+            #   @return [::Google::Cloud::ContactCenterInsights::V1::Conversation::Transcript::TranscriptSegment::Participant]
             #     The participant of this segment.
             class TranscriptSegment
               include ::Google::Protobuf::MessageExts
@@ -165,7 +165,7 @@ module Google
               #     The name of the Dialogflow participant. Format:
               #     projects/\\{project}/locations/\\{location}/conversations/\\{conversation}/participants/\\{participant}
               # @!attribute [rw] role
-              #   @return [::Google::Cloud::Contactcenterinsights::V1::Conversation::Transcript::TranscriptSegment::Participant::Role]
+              #   @return [::Google::Cloud::ContactCenterInsights::V1::Conversation::Transcript::TranscriptSegment::Participant::Role]
               #     The role of the participant.
               class Participant
                 include ::Google::Protobuf::MessageExts
@@ -201,7 +201,7 @@ module Google
           # @!attribute [rw] key
           #   @return [::String]
           # @!attribute [rw] value
-          #   @return [::Google::Cloud::Contactcenterinsights::V1::DialogflowIntent]
+          #   @return [::Google::Cloud::ContactCenterInsights::V1::DialogflowIntent]
           class DialogflowIntentsEntry
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -234,7 +234,7 @@ module Google
         #     Output only. The time at which the analysis was created, which occurs when the
         #     long-running operation completes.
         # @!attribute [r] analysis_result
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::AnalysisResult]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::AnalysisResult]
         #     Output only. The result of the analysis, which is populated when the analysis
         #     finishes.
         class Analysis
@@ -244,10 +244,10 @@ module Google
 
         # The conversation source, which is a combination of transcript and audio.
         # @!attribute [rw] gcs_source
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::GcsSource]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::GcsSource]
         #     A Cloud Storage location specification for the audio and transcript.
         # @!attribute [rw] dialogflow_source
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::DialogflowSource]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::DialogflowSource]
         #     The source when the conversation comes from Dialogflow.
         class ConversationDataSource
           include ::Google::Protobuf::MessageExts
@@ -285,7 +285,7 @@ module Google
 
         # The result of an analysis.
         # @!attribute [rw] call_analysis_metadata
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::AnalysisResult::CallAnalysisMetadata]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::AnalysisResult::CallAnalysisMetadata]
         #     Call-specific metadata created by the analysis.
         # @!attribute [rw] end_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -296,22 +296,22 @@ module Google
 
           # Call-specific metadata created during analysis.
           # @!attribute [rw] annotations
-          #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::CallAnnotation>]
+          #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::CallAnnotation>]
           #     A list of call annotations that apply to this call.
           # @!attribute [rw] entities
-          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Contactcenterinsights::V1::Entity}]
+          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::ContactCenterInsights::V1::Entity}]
           #     All the entities in the call.
           # @!attribute [rw] sentiments
-          #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::ConversationLevelSentiment>]
+          #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::ConversationLevelSentiment>]
           #     Overall conversation-level sentiment for each channel of the call.
           # @!attribute [rw] intents
-          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Contactcenterinsights::V1::Intent}]
+          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::ContactCenterInsights::V1::Intent}]
           #     All the matched intents in the call.
           # @!attribute [rw] phrase_matchers
-          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Contactcenterinsights::V1::PhraseMatchData}]
+          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::ContactCenterInsights::V1::PhraseMatchData}]
           #     All the matched phrase matchers in the call.
           # @!attribute [rw] issue_model_result
-          #   @return [::Google::Cloud::Contactcenterinsights::V1::IssueModelResult]
+          #   @return [::Google::Cloud::ContactCenterInsights::V1::IssueModelResult]
           #     Overall conversation-level issue modeling result.
           class CallAnalysisMetadata
             include ::Google::Protobuf::MessageExts
@@ -320,7 +320,7 @@ module Google
             # @!attribute [rw] key
             #   @return [::String]
             # @!attribute [rw] value
-            #   @return [::Google::Cloud::Contactcenterinsights::V1::Entity]
+            #   @return [::Google::Cloud::ContactCenterInsights::V1::Entity]
             class EntitiesEntry
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -329,7 +329,7 @@ module Google
             # @!attribute [rw] key
             #   @return [::String]
             # @!attribute [rw] value
-            #   @return [::Google::Cloud::Contactcenterinsights::V1::Intent]
+            #   @return [::Google::Cloud::ContactCenterInsights::V1::Intent]
             class IntentsEntry
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -338,7 +338,7 @@ module Google
             # @!attribute [rw] key
             #   @return [::String]
             # @!attribute [rw] value
-            #   @return [::Google::Cloud::Contactcenterinsights::V1::PhraseMatchData]
+            #   @return [::Google::Cloud::ContactCenterInsights::V1::PhraseMatchData]
             class PhraseMatchersEntry
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -351,7 +351,7 @@ module Google
         #   @return [::String]
         #     Issue model that generates the result.
         # @!attribute [rw] issues
-        #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::IssueAssignment>]
+        #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::IssueAssignment>]
         #     All the matched issues.
         class IssueModelResult
           include ::Google::Protobuf::MessageExts
@@ -363,7 +363,7 @@ module Google
         #   @return [::Integer]
         #     The channel of the audio that the data applies to.
         # @!attribute [rw] sentiment_data
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::SentimentData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::SentimentData]
         #     Data specifying sentiment.
         class ConversationLevelSentiment
           include ::Google::Protobuf::MessageExts
@@ -385,35 +385,35 @@ module Google
 
         # A piece of metadata that applies to a window of a call.
         # @!attribute [rw] interruption_data
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::InterruptionData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::InterruptionData]
         #     Data specifying an interruption.
         # @!attribute [rw] sentiment_data
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::SentimentData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::SentimentData]
         #     Data specifying sentiment.
         # @!attribute [rw] silence_data
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::SilenceData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::SilenceData]
         #     Data specifying silence.
         # @!attribute [rw] hold_data
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::HoldData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::HoldData]
         #     Data specifying a hold.
         # @!attribute [rw] entity_mention_data
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::EntityMentionData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::EntityMentionData]
         #     Data specifying an entity mention.
         # @!attribute [rw] intent_match_data
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::IntentMatchData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::IntentMatchData]
         #     Data specifying an intent match.
         # @!attribute [rw] phrase_match_data
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::PhraseMatchData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::PhraseMatchData]
         #     Data specifying a phrase match.
         # @!attribute [rw] channel_tag
         #   @return [::Integer]
         #     The channel of the audio where the annotation occurs. For single-channel
         #     audio, this field is not populated.
         # @!attribute [rw] annotation_start_boundary
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::AnnotationBoundary]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::AnnotationBoundary]
         #     The boundary in the conversation where the annotation starts, inclusive.
         # @!attribute [rw] annotation_end_boundary
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::AnnotationBoundary]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::AnnotationBoundary]
         #     The boundary in the conversation where the annotation ends, inclusive.
         class CallAnnotation
           include ::Google::Protobuf::MessageExts
@@ -446,7 +446,7 @@ module Google
         #   @return [::String]
         #     The representative name for the entity.
         # @!attribute [rw] type
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::Entity::Type]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::Entity::Type]
         #     The entity type.
         # @!attribute [rw] metadata
         #   @return [::Google::Protobuf::Map{::String => ::String}]
@@ -464,7 +464,7 @@ module Google
         #     Scores closer to 0 are less salient, while scores closer to 1.0 are highly
         #     salient.
         # @!attribute [rw] sentiment
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::SentimentData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::SentimentData]
         #     The aggregate sentiment expressed for this entity in the conversation.
         class Entity
           include ::Google::Protobuf::MessageExts
@@ -620,10 +620,10 @@ module Google
         #     The key of this entity in conversation entities.
         #     Can be used to retrieve the exact `Entity` this mention is attached to.
         # @!attribute [rw] type
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::EntityMentionData::MentionType]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::EntityMentionData::MentionType]
         #     The type of the entity mention.
         # @!attribute [rw] sentiment
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::SentimentData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::SentimentData]
         #     Sentiment expressed for this mention of the entity.
         class EntityMentionData
           include ::Google::Protobuf::MessageExts
@@ -684,10 +684,10 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. The most recent time at which the issue model was updated.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::IssueModel::State]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::IssueModel::State]
         #     Output only. State of the model.
         # @!attribute [r] training_stats
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::IssueModelLabelStats]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::IssueModelLabelStats]
         #     Output only. Immutable. The issue model's label statistics on its training data.
         class IssueModel
           include ::Google::Protobuf::MessageExts
@@ -745,7 +745,7 @@ module Google
         #     Number of analyzed conversations for which no issue was applicable at this
         #     point in time.
         # @!attribute [rw] issue_stats
-        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Contactcenterinsights::V1::IssueModelLabelStats::IssueStats}]
+        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::ContactCenterInsights::V1::IssueModelLabelStats::IssueStats}]
         #     Statistics on each issue. Key is the issue's resource name.
         class IssueModelLabelStats
           include ::Google::Protobuf::MessageExts
@@ -768,7 +768,7 @@ module Google
           # @!attribute [rw] key
           #   @return [::String]
           # @!attribute [rw] value
-          #   @return [::Google::Cloud::Contactcenterinsights::V1::IssueModelLabelStats::IssueStats]
+          #   @return [::Google::Cloud::ContactCenterInsights::V1::IssueModelLabelStats::IssueStats]
           class IssueStatsEntry
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -799,13 +799,13 @@ module Google
         #   @return [::String]
         #     The human-readable name of the phrase matcher.
         # @!attribute [rw] type
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::PhraseMatcher::PhraseMatcherType]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::PhraseMatcher::PhraseMatcherType]
         #     Required. The type of this phrase matcher.
         # @!attribute [rw] active
         #   @return [::Boolean]
         #     Applies the phrase matcher only when it is active.
         # @!attribute [rw] phrase_match_rule_groups
-        #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::PhraseMatchRuleGroup>]
+        #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::PhraseMatchRuleGroup>]
         #     A list of phase match rule groups that are included in this matcher.
         # @!attribute [r] activation_update_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -830,10 +830,10 @@ module Google
 
         # A message representing a rule in the phrase matcher.
         # @!attribute [rw] type
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::PhraseMatchRuleGroup::PhraseMatchRuleGroupType]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::PhraseMatchRuleGroup::PhraseMatchRuleGroupType]
         #     Required. The type of this phrase match rule group.
         # @!attribute [rw] phrase_match_rules
-        #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::PhraseMatchRule>]
+        #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::PhraseMatchRule>]
         #     A list of phase match rules that are included in this group.
         class PhraseMatchRuleGroup
           include ::Google::Protobuf::MessageExts
@@ -862,7 +862,7 @@ module Google
         #     Specifies whether the phrase must be missing from the transcript segment or
         #     present in the transcript segment.
         # @!attribute [rw] config
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::PhraseMatchRuleConfig]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::PhraseMatchRuleConfig]
         #     Provides additional information about the rule that specifies how to apply
         #     the rule.
         class PhraseMatchRule
@@ -872,7 +872,7 @@ module Google
 
         # Configuration information of a phrase match rule.
         # @!attribute [rw] exact_match_config
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::ExactMatchConfig]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::ExactMatchConfig]
         #     The configuration for the exact match rule.
         class PhraseMatchRuleConfig
           include ::Google::Protobuf::MessageExts
@@ -927,7 +927,7 @@ module Google
         #     Values are Pub/Sub topics. The format of each Pub/Sub topic is:
         #     projects/\\{project}/topics/\\{topic}
         # @!attribute [rw] analysis_config
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::Settings::AnalysisConfig]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::Settings::AnalysisConfig]
         #     Default analysis settings.
         class Settings
           include ::Google::Protobuf::MessageExts
@@ -955,19 +955,19 @@ module Google
 
         # An annotation that was generated during the customer and agent interaction.
         # @!attribute [rw] article_suggestion
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::ArticleSuggestionData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::ArticleSuggestionData]
         #     Agent Assist Article Suggestion data.
         # @!attribute [rw] faq_answer
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::FaqAnswerData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::FaqAnswerData]
         #     Agent Assist FAQ answer data.
         # @!attribute [rw] smart_reply
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::SmartReplyData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::SmartReplyData]
         #     Agent Assist Smart Reply data.
         # @!attribute [rw] smart_compose_suggestion
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::SmartComposeSuggestionData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::SmartComposeSuggestionData]
         #     Agent Assist Smart Compose suggestion data.
         # @!attribute [rw] dialogflow_interaction
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::DialogflowInteractionData]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::DialogflowInteractionData]
         #     Dialogflow interaction data.
         # @!attribute [rw] annotation_id
         #   @return [::String]
@@ -978,13 +978,13 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     The time at which this annotation was created.
         # @!attribute [rw] start_boundary
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::AnnotationBoundary]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::AnnotationBoundary]
         #     The boundary in the conversation where the annotation starts, inclusive.
         # @!attribute [rw] end_boundary
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::AnnotationBoundary]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::AnnotationBoundary]
         #     The boundary in the conversation where the annotation ends, inclusive.
         # @!attribute [rw] answer_feedback
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::AnswerFeedback]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::AnswerFeedback]
         #     The feedback that the customer has about the answer in `data`.
         class RuntimeAnnotation
           include ::Google::Protobuf::MessageExts
@@ -994,7 +994,7 @@ module Google
         # The feedback that the customer has about a certain answer in the
         # conversation.
         # @!attribute [rw] correctness_level
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::AnswerFeedback::CorrectnessLevel]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::AnswerFeedback::CorrectnessLevel]
         #     The correctness level of an answer.
         # @!attribute [rw] clicked
         #   @return [::Boolean]

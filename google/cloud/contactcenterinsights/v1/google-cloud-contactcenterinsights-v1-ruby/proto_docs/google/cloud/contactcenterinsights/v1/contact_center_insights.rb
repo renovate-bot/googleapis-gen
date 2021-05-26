@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Contactcenterinsights
+    module ContactCenterInsights
       module V1
         # The request for calculating conversation statistics.
         # @!attribute [rw] location
@@ -111,7 +111,7 @@ module Google
         #   @return [::String]
         #     Required. The parent resource of the conversation.
         # @!attribute [rw] conversation
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::Conversation]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::Conversation]
         #     Required. The conversation resource to create.
         # @!attribute [rw] conversation_id
         #   @return [::String]
@@ -146,7 +146,7 @@ module Google
         #     A filter to reduce results to a specific subset. Useful for querying
         #     conversations with specific properties.
         # @!attribute [rw] view
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::ConversationView]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::ConversationView]
         #     The level of details of the conversation. Default is `BASIC`.
         class ListConversationsRequest
           include ::Google::Protobuf::MessageExts
@@ -155,7 +155,7 @@ module Google
 
         # The response of listing conversations.
         # @!attribute [rw] conversations
-        #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::Conversation>]
+        #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::Conversation>]
         #     The conversations that match the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -171,7 +171,7 @@ module Google
         #   @return [::String]
         #     Required. The name of the conversation to get.
         # @!attribute [rw] view
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::ConversationView]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::ConversationView]
         #     The level of details of the conversation. Default is `FULL`.
         class GetConversationRequest
           include ::Google::Protobuf::MessageExts
@@ -180,7 +180,7 @@ module Google
 
         # The request to update a conversation.
         # @!attribute [rw] conversation
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::Conversation]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::Conversation]
         #     Required. The new values for the conversation.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
@@ -209,7 +209,7 @@ module Google
         #   @return [::String]
         #     Required. The parent resource of the analysis.
         # @!attribute [rw] analysis
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::Analysis]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::Analysis]
         #     Required. The analysis to create.
         class CreateAnalysisRequest
           include ::Google::Protobuf::MessageExts
@@ -242,7 +242,7 @@ module Google
 
         # The response to list analyses.
         # @!attribute [rw] analyses
-        #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::Analysis>]
+        #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::Analysis>]
         #     The analyses that match the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -273,7 +273,7 @@ module Google
 
         # The request to export insights.
         # @!attribute [rw] big_query_destination
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::ExportInsightsDataRequest::BigQueryDestination]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::ExportInsightsDataRequest::BigQueryDestination]
         #     Specified if sink is a BigQuery table.
         # @!attribute [rw] parent
         #   @return [::String]
@@ -316,7 +316,7 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. The time the operation finished running.
         # @!attribute [rw] request
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::ExportInsightsDataRequest]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::ExportInsightsDataRequest]
         #     The original request for export.
         # @!attribute [rw] partial_errors
         #   @return [::Array<::Google::Rpc::Status>]
@@ -344,7 +344,7 @@ module Google
 
         # The response of listing issue models.
         # @!attribute [rw] issue_models
-        #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::IssueModel>]
+        #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::IssueModel>]
         #     The issue models that match the request.
         class ListIssueModelsResponse
           include ::Google::Protobuf::MessageExts
@@ -380,7 +380,7 @@ module Google
 
         # The response of listing issues.
         # @!attribute [rw] issues
-        #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::Issue>]
+        #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::Issue>]
         #     The issues that match the request.
         class ListIssuesResponse
           include ::Google::Protobuf::MessageExts
@@ -398,7 +398,7 @@ module Google
 
         # Response of querying an issue model's statistics.
         # @!attribute [rw] current_stats
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::IssueModelLabelStats]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::IssueModelLabelStats]
         #     The latest label statistics for the queried issue model. Includes results
         #     on both training data and data labeled after deployment.
         class CalculateIssueModelStatsResponse
@@ -414,7 +414,7 @@ module Google
         #     Format: `projects/<Project ID>/locations/<Location ID>` or
         #     `projects/<Project Number>/locations/<Location ID>`
         # @!attribute [rw] phrase_matcher
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::PhraseMatcher]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::PhraseMatcher]
         #     Required. The phrase matcher resource to create.
         class CreatePhraseMatcherRequest
           include ::Google::Protobuf::MessageExts
@@ -447,7 +447,7 @@ module Google
 
         # The response of listing phrase matchers.
         # @!attribute [rw] phrase_matchers
-        #   @return [::Array<::Google::Cloud::Contactcenterinsights::V1::PhraseMatcher>]
+        #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::PhraseMatcher>]
         #     The phrase matchers that match the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -487,7 +487,7 @@ module Google
 
         # The request to update project-level settings.
         # @!attribute [rw] settings
-        #   @return [::Google::Cloud::Contactcenterinsights::V1::Settings]
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::Settings]
         #     Required. The new values for the conversation.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]

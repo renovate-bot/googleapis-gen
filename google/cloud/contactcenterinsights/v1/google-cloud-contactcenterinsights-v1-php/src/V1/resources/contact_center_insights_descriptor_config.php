@@ -5,8 +5,8 @@ return [
         'google.cloud.contactcenterinsights.v1.ContactCenterInsights' => [
             'CreateAnalysis' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Contactcenterinsights\V1\Analysis',
-                    'metadataReturnType' => '\Google\Cloud\Contactcenterinsights\V1\CreateAnalysisOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\ContactCenterInsights\V1\Analysis',
+                    'metadataReturnType' => '\Google\Cloud\ContactCenterInsights\V1\CreateAnalysisOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -15,8 +15,8 @@ return [
             ],
             'ExportInsightsData' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Contactcenterinsights\V1\ExportInsightsDataResponse',
-                    'metadataReturnType' => '\Google\Cloud\Contactcenterinsights\V1\ExportInsightsDataMetadata',
+                    'operationReturnType' => '\Google\Cloud\ContactCenterInsights\V1\ExportInsightsDataResponse',
+                    'metadataReturnType' => '\Google\Cloud\ContactCenterInsights\V1\ExportInsightsDataMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

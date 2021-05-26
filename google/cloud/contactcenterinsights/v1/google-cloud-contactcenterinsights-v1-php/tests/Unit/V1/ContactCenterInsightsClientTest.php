@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Contactcenterinsights\Tests\Unit\V1;
+namespace Google\Cloud\ContactCenterInsights\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,23 +29,23 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Contactcenterinsights\V1\Analysis;
-use Google\Cloud\Contactcenterinsights\V1\CalculateIssueModelStatsResponse;
+use Google\Cloud\ContactCenterInsights\V1\Analysis;
+use Google\Cloud\ContactCenterInsights\V1\CalculateIssueModelStatsResponse;
 
-use Google\Cloud\Contactcenterinsights\V1\CalculateStatsResponse;
-use Google\Cloud\Contactcenterinsights\V1\ContactCenterInsightsClient;
-use Google\Cloud\Contactcenterinsights\V1\Conversation;
-use Google\Cloud\Contactcenterinsights\V1\ExportInsightsDataResponse;
-use Google\Cloud\Contactcenterinsights\V1\Issue;
-use Google\Cloud\Contactcenterinsights\V1\IssueModel;
-use Google\Cloud\Contactcenterinsights\V1\ListAnalysesResponse;
-use Google\Cloud\Contactcenterinsights\V1\ListConversationsResponse;
-use Google\Cloud\Contactcenterinsights\V1\ListIssueModelsResponse;
-use Google\Cloud\Contactcenterinsights\V1\ListIssuesResponse;
-use Google\Cloud\Contactcenterinsights\V1\ListPhraseMatchersResponse;
-use Google\Cloud\Contactcenterinsights\V1\PhraseMatcher;
-use Google\Cloud\Contactcenterinsights\V1\PhraseMatcher\PhraseMatcherType;
-use Google\Cloud\Contactcenterinsights\V1\Settings;
+use Google\Cloud\ContactCenterInsights\V1\CalculateStatsResponse;
+use Google\Cloud\ContactCenterInsights\V1\ContactCenterInsightsClient;
+use Google\Cloud\ContactCenterInsights\V1\Conversation;
+use Google\Cloud\ContactCenterInsights\V1\ExportInsightsDataResponse;
+use Google\Cloud\ContactCenterInsights\V1\Issue;
+use Google\Cloud\ContactCenterInsights\V1\IssueModel;
+use Google\Cloud\ContactCenterInsights\V1\ListAnalysesResponse;
+use Google\Cloud\ContactCenterInsights\V1\ListConversationsResponse;
+use Google\Cloud\ContactCenterInsights\V1\ListIssueModelsResponse;
+use Google\Cloud\ContactCenterInsights\V1\ListIssuesResponse;
+use Google\Cloud\ContactCenterInsights\V1\ListPhraseMatchersResponse;
+use Google\Cloud\ContactCenterInsights\V1\PhraseMatcher;
+use Google\Cloud\ContactCenterInsights\V1\PhraseMatcher\PhraseMatcherType;
+use Google\Cloud\ContactCenterInsights\V1\Settings;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

@@ -3,7 +3,7 @@
     "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
     "language": "php",
     "protoPackage": "google.cloud.contactcenterinsights.v1",
-    "libraryPackage": "Google\\Cloud\\Contactcenterinsights\\V1",
+    "libraryPackage": "Google\\Cloud\\ContactCenterInsights\\V1",
     "services": {
         "ContactCenterInsights": {
             "clients": {
