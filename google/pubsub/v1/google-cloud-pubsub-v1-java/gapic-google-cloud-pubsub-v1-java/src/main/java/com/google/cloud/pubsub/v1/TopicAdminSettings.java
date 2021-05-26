@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.pubsub.v1;
 
 import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSnapshotsPagedResponse;
@@ -29,6 +30,7 @@ import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
@@ -56,16 +58,16 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link TopicAdminClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (pubsub.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (pubsub.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -73,22 +75,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createTopic to 30 seconds:
  *
- * <pre>
- * <code>
- * TopicAdminSettings.Builder topicAdminSettingsBuilder =
- *     TopicAdminSettings.newBuilder();
+ * <pre>{@code
+ * TopicAdminSettings.Builder topicAdminSettingsBuilder = TopicAdminSettings.newBuilder();
  * topicAdminSettingsBuilder
  *     .createTopicSettings()
  *     .setRetrySettings(
- *         topicAdminSettingsBuilder.createTopicSettings().getRetrySettings().toBuilder()
+ *         topicAdminSettingsBuilder
+ *             .createTopicSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TopicAdminSettings topicAdminSettings = topicAdminSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
+
   /** Returns the object with the settings used for calls to createTopic. */
   public UnaryCallSettings<Topic, Topic> createTopicSettings() {
     return ((PublisherStubSettings) getStubSettings()).createTopicSettings();
@@ -100,7 +103,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   }
 
   /** Returns the object with the settings used for calls to publish. */
-  /* package-private */ BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
+  public BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
     return ((PublisherStubSettings) getStubSettings()).publishSettings();
   }
 
@@ -124,7 +127,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   }
 
   /** Returns the object with the settings used for calls to listTopicSnapshots. */
-  /* package-private */ PagedCallSettings<
+  public PagedCallSettings<
           ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
       listTopicSnapshotsSettings() {
     return ((PublisherStubSettings) getStubSettings()).listTopicSnapshotsSettings();
@@ -133,6 +136,12 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   /** Returns the object with the settings used for calls to deleteTopic. */
   public UnaryCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings() {
     return ((PublisherStubSettings) getStubSettings()).deleteTopicSettings();
+  }
+
+  /** Returns the object with the settings used for calls to detachSubscription. */
+  public UnaryCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
+      detachSubscriptionSettings() {
+    return ((PublisherStubSettings) getStubSettings()).detachSubscriptionSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -149,12 +158,6 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((PublisherStubSettings) getStubSettings()).testIamPermissionsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to detachSubscription. */
-  public UnaryCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
-      detachSubscriptionSettings() {
-    return ((PublisherStubSettings) getStubSettings()).detachSubscriptionSettings();
   }
 
   public static final TopicAdminSettings create(PublisherStubSettings stub) throws IOException {
@@ -216,16 +219,13 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
 
   /** Builder for TopicAdminSettings. */
   public static class Builder extends ClientSettings.Builder<TopicAdminSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(PublisherStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(PublisherStubSettings.newBuilder());
     }
 
     protected Builder(TopicAdminSettings settings) {
@@ -236,11 +236,15 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(PublisherStubSettings.newBuilder());
+    }
+
     public PublisherStubSettings.Builder getStubSettingsBuilder() {
       return ((PublisherStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -264,8 +268,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     }
 
     /** Returns the builder for the settings used for calls to publish. */
-    /* package-private */ BatchingCallSettings.Builder<PublishRequest, PublishResponse>
-        publishSettings() {
+    public BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
       return getStubSettingsBuilder().publishSettings();
     }
 
@@ -289,7 +292,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     }
 
     /** Returns the builder for the settings used for calls to listTopicSnapshots. */
-    /* package-private */ PagedCallSettings.Builder<
+    public PagedCallSettings.Builder<
             ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
         listTopicSnapshotsSettings() {
       return getStubSettingsBuilder().listTopicSnapshotsSettings();
@@ -298,6 +301,12 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     /** Returns the builder for the settings used for calls to deleteTopic. */
     public UnaryCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings() {
       return getStubSettingsBuilder().deleteTopicSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to detachSubscription. */
+    public UnaryCallSettings.Builder<DetachSubscriptionRequest, DetachSubscriptionResponse>
+        detachSubscriptionSettings() {
+      return getStubSettingsBuilder().detachSubscriptionSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */
@@ -314,12 +323,6 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to detachSubscription. */
-    public UnaryCallSettings.Builder<DetachSubscriptionRequest, DetachSubscriptionResponse>
-        detachSubscriptionSettings() {
-      return getStubSettingsBuilder().detachSubscriptionSettings();
     }
 
     @Override

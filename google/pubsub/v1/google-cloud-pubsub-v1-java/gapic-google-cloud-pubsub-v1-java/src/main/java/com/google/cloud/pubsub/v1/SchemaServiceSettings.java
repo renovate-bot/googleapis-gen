@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.pubsub.v1;
 
 import static com.google.cloud.pubsub.v1.SchemaServiceClient.ListSchemasPagedResponse;
@@ -26,9 +27,15 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.pubsub.v1.stub.SchemaServiceStubSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.CreateSchemaRequest;
 import com.google.pubsub.v1.DeleteSchemaRequest;
@@ -44,16 +51,16 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link SchemaServiceClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (pubsub.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (pubsub.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -61,22 +68,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createSchema to 30 seconds:
  *
- * <pre>
- * <code>
- * SchemaServiceSettings.Builder schemaServiceSettingsBuilder =
- *     SchemaServiceSettings.newBuilder();
+ * <pre>{@code
+ * SchemaServiceSettings.Builder schemaServiceSettingsBuilder = SchemaServiceSettings.newBuilder();
  * schemaServiceSettingsBuilder
  *     .createSchemaSettings()
  *     .setRetrySettings(
- *         schemaServiceSettingsBuilder.createSchemaSettings().getRetrySettings().toBuilder()
+ *         schemaServiceSettingsBuilder
+ *             .createSchemaSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SchemaServiceSettings schemaServiceSettings = schemaServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class SchemaServiceSettings extends ClientSettings<SchemaServiceSettings> {
+
   /** Returns the object with the settings used for calls to createSchema. */
   public UnaryCallSettings<CreateSchemaRequest, Schema> createSchemaSettings() {
     return ((SchemaServiceStubSettings) getStubSettings()).createSchemaSettings();
@@ -107,6 +115,22 @@ public class SchemaServiceSettings extends ClientSettings<SchemaServiceSettings>
   public UnaryCallSettings<ValidateMessageRequest, ValidateMessageResponse>
       validateMessageSettings() {
     return ((SchemaServiceStubSettings) getStubSettings()).validateMessageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((SchemaServiceStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((SchemaServiceStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((SchemaServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final SchemaServiceSettings create(SchemaServiceStubSettings stub)
@@ -169,16 +193,13 @@ public class SchemaServiceSettings extends ClientSettings<SchemaServiceSettings>
 
   /** Builder for SchemaServiceSettings. */
   public static class Builder extends ClientSettings.Builder<SchemaServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(SchemaServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(SchemaServiceStubSettings.newBuilder());
     }
 
     protected Builder(SchemaServiceSettings settings) {
@@ -189,11 +210,15 @@ public class SchemaServiceSettings extends ClientSettings<SchemaServiceSettings>
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(SchemaServiceStubSettings.newBuilder());
+    }
+
     public SchemaServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((SchemaServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -238,6 +263,22 @@ public class SchemaServiceSettings extends ClientSettings<SchemaServiceSettings>
     public UnaryCallSettings.Builder<ValidateMessageRequest, ValidateMessageResponse>
         validateMessageSettings() {
       return getStubSettingsBuilder().validateMessageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

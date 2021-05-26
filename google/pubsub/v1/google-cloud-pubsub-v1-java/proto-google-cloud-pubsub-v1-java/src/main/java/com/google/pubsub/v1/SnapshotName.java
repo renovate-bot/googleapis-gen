@@ -28,30 +28,30 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class SchemaName implements ResourceName {
-  private static final PathTemplate PROJECT_SCHEMA =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/schemas/{schema}");
+public class SnapshotName implements ResourceName {
+  private static final PathTemplate PROJECT_SNAPSHOT =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/snapshots/{snapshot}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
-  private final String schema;
+  private final String snapshot;
 
   @Deprecated
-  protected SchemaName() {
+  protected SnapshotName() {
     project = null;
-    schema = null;
+    snapshot = null;
   }
 
-  private SchemaName(Builder builder) {
+  private SnapshotName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    schema = Preconditions.checkNotNull(builder.getSchema());
+    snapshot = Preconditions.checkNotNull(builder.getSnapshot());
   }
 
   public String getProject() {
     return project;
   }
 
-  public String getSchema() {
-    return schema;
+  public String getSnapshot() {
+    return snapshot;
   }
 
   public static Builder newBuilder() {
@@ -62,35 +62,35 @@ public class SchemaName implements ResourceName {
     return new Builder(this);
   }
 
-  public static SchemaName of(String project, String schema) {
-    return newBuilder().setProject(project).setSchema(schema).build();
+  public static SnapshotName of(String project, String snapshot) {
+    return newBuilder().setProject(project).setSnapshot(snapshot).build();
   }
 
-  public static String format(String project, String schema) {
-    return newBuilder().setProject(project).setSchema(schema).build().toString();
+  public static String format(String project, String snapshot) {
+    return newBuilder().setProject(project).setSnapshot(snapshot).build().toString();
   }
 
-  public static SchemaName parse(String formattedString) {
+  public static SnapshotName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_SCHEMA.validatedMatch(
-            formattedString, "SchemaName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("schema"));
+        PROJECT_SNAPSHOT.validatedMatch(
+            formattedString, "SnapshotName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("snapshot"));
   }
 
-  public static List<SchemaName> parseList(List<String> formattedStrings) {
-    List<SchemaName> list = new ArrayList<>(formattedStrings.size());
+  public static List<SnapshotName> parseList(List<String> formattedStrings) {
+    List<SnapshotName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<SchemaName> values) {
+  public static List<String> toStringList(List<SnapshotName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (SchemaName value : values) {
+    for (SnapshotName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -101,7 +101,7 @@ public class SchemaName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_SCHEMA.matches(formattedString);
+    return PROJECT_SNAPSHOT.matches(formattedString);
   }
 
   @Override
@@ -113,8 +113,8 @@ public class SchemaName implements ResourceName {
           if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (schema != null) {
-            fieldMapBuilder.put("schema", schema);
+          if (snapshot != null) {
+            fieldMapBuilder.put("snapshot", snapshot);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -129,7 +129,7 @@ public class SchemaName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_SCHEMA.instantiate("project", project, "schema", schema);
+    return PROJECT_SNAPSHOT.instantiate("project", project, "snapshot", snapshot);
   }
 
   @Override
@@ -138,8 +138,9 @@ public class SchemaName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      SchemaName that = ((SchemaName) o);
-      return Objects.equals(this.project, that.project) && Objects.equals(this.schema, that.schema);
+      SnapshotName that = ((SnapshotName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.snapshot, that.snapshot);
     }
     return false;
   }
@@ -150,14 +151,14 @@ public class SchemaName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
-    h ^= Objects.hashCode(schema);
+    h ^= Objects.hashCode(snapshot);
     return h;
   }
 
-  /** Builder for projects/{project}/schemas/{schema}. */
+  /** Builder for projects/{project}/snapshots/{snapshot}. */
   public static class Builder {
     private String project;
-    private String schema;
+    private String snapshot;
 
     protected Builder() {}
 
@@ -165,8 +166,8 @@ public class SchemaName implements ResourceName {
       return project;
     }
 
-    public String getSchema() {
-      return schema;
+    public String getSnapshot() {
+      return snapshot;
     }
 
     public Builder setProject(String project) {
@@ -174,18 +175,18 @@ public class SchemaName implements ResourceName {
       return this;
     }
 
-    public Builder setSchema(String schema) {
-      this.schema = schema;
+    public Builder setSnapshot(String snapshot) {
+      this.snapshot = snapshot;
       return this;
     }
 
-    private Builder(SchemaName schemaName) {
-      project = schemaName.project;
-      schema = schemaName.schema;
+    private Builder(SnapshotName snapshotName) {
+      project = snapshotName.project;
+      snapshot = snapshotName.snapshot;
     }
 
-    public SchemaName build() {
-      return new SchemaName(this);
+    public SnapshotName build() {
+      return new SnapshotName(this);
     }
   }
 }

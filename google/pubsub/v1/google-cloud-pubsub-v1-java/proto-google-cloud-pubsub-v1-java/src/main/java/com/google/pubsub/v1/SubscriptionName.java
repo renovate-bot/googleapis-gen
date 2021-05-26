@@ -28,30 +28,30 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class SchemaName implements ResourceName {
-  private static final PathTemplate PROJECT_SCHEMA =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/schemas/{schema}");
+public class SubscriptionName implements ResourceName {
+  private static final PathTemplate PROJECT_SUBSCRIPTION =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/subscriptions/{subscription}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
-  private final String schema;
+  private final String subscription;
 
   @Deprecated
-  protected SchemaName() {
+  protected SubscriptionName() {
     project = null;
-    schema = null;
+    subscription = null;
   }
 
-  private SchemaName(Builder builder) {
+  private SubscriptionName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    schema = Preconditions.checkNotNull(builder.getSchema());
+    subscription = Preconditions.checkNotNull(builder.getSubscription());
   }
 
   public String getProject() {
     return project;
   }
 
-  public String getSchema() {
-    return schema;
+  public String getSubscription() {
+    return subscription;
   }
 
   public static Builder newBuilder() {
@@ -62,35 +62,35 @@ public class SchemaName implements ResourceName {
     return new Builder(this);
   }
 
-  public static SchemaName of(String project, String schema) {
-    return newBuilder().setProject(project).setSchema(schema).build();
+  public static SubscriptionName of(String project, String subscription) {
+    return newBuilder().setProject(project).setSubscription(subscription).build();
   }
 
-  public static String format(String project, String schema) {
-    return newBuilder().setProject(project).setSchema(schema).build().toString();
+  public static String format(String project, String subscription) {
+    return newBuilder().setProject(project).setSubscription(subscription).build().toString();
   }
 
-  public static SchemaName parse(String formattedString) {
+  public static SubscriptionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_SCHEMA.validatedMatch(
-            formattedString, "SchemaName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("schema"));
+        PROJECT_SUBSCRIPTION.validatedMatch(
+            formattedString, "SubscriptionName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("subscription"));
   }
 
-  public static List<SchemaName> parseList(List<String> formattedStrings) {
-    List<SchemaName> list = new ArrayList<>(formattedStrings.size());
+  public static List<SubscriptionName> parseList(List<String> formattedStrings) {
+    List<SubscriptionName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<SchemaName> values) {
+  public static List<String> toStringList(List<SubscriptionName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (SchemaName value : values) {
+    for (SubscriptionName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -101,7 +101,7 @@ public class SchemaName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_SCHEMA.matches(formattedString);
+    return PROJECT_SUBSCRIPTION.matches(formattedString);
   }
 
   @Override
@@ -113,8 +113,8 @@ public class SchemaName implements ResourceName {
           if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (schema != null) {
-            fieldMapBuilder.put("schema", schema);
+          if (subscription != null) {
+            fieldMapBuilder.put("subscription", subscription);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -129,7 +129,7 @@ public class SchemaName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_SCHEMA.instantiate("project", project, "schema", schema);
+    return PROJECT_SUBSCRIPTION.instantiate("project", project, "subscription", subscription);
   }
 
   @Override
@@ -138,8 +138,9 @@ public class SchemaName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      SchemaName that = ((SchemaName) o);
-      return Objects.equals(this.project, that.project) && Objects.equals(this.schema, that.schema);
+      SubscriptionName that = ((SubscriptionName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.subscription, that.subscription);
     }
     return false;
   }
@@ -150,14 +151,14 @@ public class SchemaName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
-    h ^= Objects.hashCode(schema);
+    h ^= Objects.hashCode(subscription);
     return h;
   }
 
-  /** Builder for projects/{project}/schemas/{schema}. */
+  /** Builder for projects/{project}/subscriptions/{subscription}. */
   public static class Builder {
     private String project;
-    private String schema;
+    private String subscription;
 
     protected Builder() {}
 
@@ -165,8 +166,8 @@ public class SchemaName implements ResourceName {
       return project;
     }
 
-    public String getSchema() {
-      return schema;
+    public String getSubscription() {
+      return subscription;
     }
 
     public Builder setProject(String project) {
@@ -174,18 +175,18 @@ public class SchemaName implements ResourceName {
       return this;
     }
 
-    public Builder setSchema(String schema) {
-      this.schema = schema;
+    public Builder setSubscription(String subscription) {
+      this.subscription = subscription;
       return this;
     }
 
-    private Builder(SchemaName schemaName) {
-      project = schemaName.project;
-      schema = schemaName.schema;
+    private Builder(SubscriptionName subscriptionName) {
+      project = subscriptionName.project;
+      subscription = subscriptionName.subscription;
     }
 
-    public SchemaName build() {
-      return new SchemaName(this);
+    public SubscriptionName build() {
+      return new SubscriptionName(this);
     }
   }
 }

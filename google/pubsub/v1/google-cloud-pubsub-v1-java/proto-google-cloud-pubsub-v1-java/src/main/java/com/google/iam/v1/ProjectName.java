@@ -1,39 +1,47 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2021 Google LLC
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
-package com.google.pubsub.v1;
+package com.google.iam.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/**
- * AUTO-GENERATED DOCUMENTATION AND CLASS
- */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class ProjectName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
+
+  @Deprecated
+  protected ProjectName() {
+    project = null;
+  }
+
+  private ProjectName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+  }
 
   public String getProject() {
     return project;
@@ -47,21 +55,12 @@ public class ProjectName implements ResourceName {
     return new Builder(this);
   }
 
-  private ProjectName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-  }
-
   public static ProjectName of(String project) {
-    return newBuilder()
-      .setProject(project)
-      .build();
+    return newBuilder().setProject(project).build();
   }
 
   public static String format(String project) {
-    return newBuilder()
-      .setProject(project)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).build().toString();
   }
 
   public static ProjectName parse(String formattedString) {
@@ -69,7 +68,8 @@ public class ProjectName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectName.parse: formattedString not in valid format");
+        PROJECT.validatedMatch(
+            formattedString, "ProjectName.parse: formattedString not in valid format");
     return of(matchMap.get("project"));
   }
 
@@ -82,7 +82,7 @@ public class ProjectName implements ResourceName {
   }
 
   public static List<String> toStringList(List<ProjectName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (ProjectName value : values) {
       if (value == null) {
         list.add("");
@@ -94,15 +94,18 @@ public class ProjectName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -116,13 +119,34 @@ public class ProjectName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project);
+    return PROJECT.instantiate("project", project);
   }
 
-  /** Builder for ProjectName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      ProjectName that = ((ProjectName) o);
+      return Objects.equals(this.project, that.project);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    return h;
+  }
+
+  /** Builder for projects/{project}. */
+  public static class Builder {
     private String project;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -133,9 +157,6 @@ public class ProjectName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
-
     private Builder(ProjectName projectName) {
       project = projectName.project;
     }
@@ -144,25 +165,4 @@ public class ProjectName implements ResourceName {
       return new ProjectName(this);
     }
   }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof ProjectName) {
-      ProjectName that = (ProjectName) o;
-      return (this.project.equals(that.project));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    return h;
-  }
 }
-
