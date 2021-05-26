@@ -1,0 +1,83 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.securitycenter.settings.v1beta1",
+    "libraryPackage": "Google\\Cloud\\SecurityCenter\\Settings\\V1beta1",
+    "services": {
+        "SecurityCenterSettingsService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "SecurityCenterSettingsServiceGapicClient",
+                    "rpcs": {
+                        "BatchCalculateEffectiveSettings": {
+                            "methods": [
+                                "batchCalculateEffectiveSettings"
+                            ]
+                        },
+                        "BatchGetSettings": {
+                            "methods": [
+                                "batchGetSettings"
+                            ]
+                        },
+                        "CalculateEffectiveComponentSettings": {
+                            "methods": [
+                                "calculateEffectiveComponentSettings"
+                            ]
+                        },
+                        "CalculateEffectiveSettings": {
+                            "methods": [
+                                "calculateEffectiveSettings"
+                            ]
+                        },
+                        "GetComponentSettings": {
+                            "methods": [
+                                "getComponentSettings"
+                            ]
+                        },
+                        "GetServiceAccount": {
+                            "methods": [
+                                "getServiceAccount"
+                            ]
+                        },
+                        "GetSettings": {
+                            "methods": [
+                                "getSettings"
+                            ]
+                        },
+                        "ListComponents": {
+                            "methods": [
+                                "listComponents"
+                            ]
+                        },
+                        "ListDetectors": {
+                            "methods": [
+                                "listDetectors"
+                            ]
+                        },
+                        "ResetComponentSettings": {
+                            "methods": [
+                                "resetComponentSettings"
+                            ]
+                        },
+                        "ResetSettings": {
+                            "methods": [
+                                "resetSettings"
+                            ]
+                        },
+                        "UpdateComponentSettings": {
+                            "methods": [
+                                "updateComponentSettings"
+                            ]
+                        },
+                        "UpdateSettings": {
+                            "methods": [
+                                "updateSettings"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
