@@ -74,8 +74,8 @@ namespace Google.Cloud.Bigquery.Storage.V1Beta2
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
         /// <c>BigQueryWriteClient.AppendRows</c> and <c>BigQueryWriteClient.AppendRowsAsync</c>.
         /// </summary>
-        /// <remarks>Timeout: 86400 seconds.</remarks>
-        public gaxgrpc::CallSettings AppendRowsSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(86400000)));
+        /// <remarks>No timeout is applied.</remarks>
+        public gaxgrpc::CallSettings AppendRowsSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
 
         /// <summary>
         /// <see cref="gaxgrpc::BidirectionalStreamingSettings"/> for calls to <c>BigQueryWriteClient.AppendRows</c> and
