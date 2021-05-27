@@ -3,9 +3,10 @@
 return [
     'interfaces' => [
         'google.cloud.apigateway.v1.ApiGatewayService' => [
-            'ListGateways' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/gateways',
+            'CreateApi' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/apis',
+                'body' => 'api',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -14,13 +15,14 @@ return [
                     ],
                 ],
             ],
-            'GetGateway' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/gateways/*}',
+            'CreateApiConfig' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*/apis/*}/configs',
+                'body' => 'api_config',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
                         ],
                     ],
                 ],
@@ -37,14 +39,23 @@ return [
                     ],
                 ],
             ],
-            'UpdateGateway' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/{gateway.name=projects/*/locations/*/gateways/*}',
-                'body' => 'gateway',
+            'DeleteApi' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/apis/*}',
                 'placeholders' => [
-                    'gateway.name' => [
+                    'name' => [
                         'getters' => [
-                            'getGateway',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteApiConfig' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/apis/*/configs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
                             'getName',
                         ],
                     ],
@@ -61,17 +72,6 @@ return [
                     ],
                 ],
             ],
-            'ListApis' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/apis',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
             'GetApi' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/apis/*}',
@@ -83,10 +83,53 @@ return [
                     ],
                 ],
             ],
-            'CreateApi' => [
-                'method' => 'post',
+            'GetApiConfig' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/apis/*/configs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetGateway' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/gateways/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListApiConfigs' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*/apis/*}/configs',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListApis' => [
+                'method' => 'get',
                 'uriTemplate' => '/v1/{parent=projects/*/locations/*}/apis',
-                'body' => 'api',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListGateways' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/gateways',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -108,51 +151,6 @@ return [
                     ],
                 ],
             ],
-            'DeleteApi' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/apis/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListApiConfigs' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*/apis/*}/configs',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'GetApiConfig' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/apis/*/configs/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateApiConfig' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{parent=projects/*/locations/*/apis/*}/configs',
-                'body' => 'api_config',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
             'UpdateApiConfig' => [
                 'method' => 'patch',
                 'uriTemplate' => '/v1/{api_config.name=projects/*/locations/*/apis/*/configs/*}',
@@ -166,12 +164,14 @@ return [
                     ],
                 ],
             ],
-            'DeleteApiConfig' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/apis/*/configs/*}',
+            'UpdateGateway' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{gateway.name=projects/*/locations/*/gateways/*}',
+                'body' => 'gateway',
                 'placeholders' => [
-                    'name' => [
+                    'gateway.name' => [
                         'getters' => [
+                            'getGateway',
                             'getName',
                         ],
                     ],
