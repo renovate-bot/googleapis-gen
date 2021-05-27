@@ -28,6 +28,17 @@ return [
                     ],
                 ],
             ],
+            'DeleteConnector' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/connectors/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'GetConnector' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/connectors/*}',
@@ -46,17 +57,6 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'DeleteConnector' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/connectors/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
                         ],
                     ],
                 ],
