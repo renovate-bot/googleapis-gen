@@ -769,7 +769,7 @@ class TpuGapicClient
      * ```
      * $tpuClient = new TpuClient();
      * try {
-     *     $formattedParent = $tpuClient->nodeName('[PROJECT]', '[LOCATION]', '[NODE]');
+     *     $formattedParent = $tpuClient->locationName('[PROJECT]', '[LOCATION]');
      *     // Iterate over pages of elements
      *     $pagedResponse = $tpuClient->listNodes($formattedParent);
      *     foreach ($pagedResponse->iteratePages() as $page) {

@@ -158,6 +158,9 @@ export class TpuClient {
       nodePathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/locations/{location}/nodes/{node}'
       ),
+      projectPathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}'
+      ),
       tensorFlowVersionPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/locations/{location}/tensorFlowVersions/{tensor_flow_version}'
       ),
@@ -1733,6 +1736,29 @@ export class TpuClient {
    */
   matchNodeFromNodeName(nodeName: string) {
     return this.pathTemplates.nodePathTemplate.match(nodeName).node;
+  }
+
+  /**
+   * Return a fully-qualified project resource name string.
+   *
+   * @param {string} project
+   * @returns {string} Resource name string.
+   */
+  projectPath(project:string) {
+    return this.pathTemplates.projectPathTemplate.render({
+      project: project,
+    });
+  }
+
+  /**
+   * Parse the project from Project resource.
+   *
+   * @param {string} projectName
+   *   A fully-qualified path representing Project resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromProjectName(projectName: string) {
+    return this.pathTemplates.projectPathTemplate.match(projectName).project;
   }
 
   /**

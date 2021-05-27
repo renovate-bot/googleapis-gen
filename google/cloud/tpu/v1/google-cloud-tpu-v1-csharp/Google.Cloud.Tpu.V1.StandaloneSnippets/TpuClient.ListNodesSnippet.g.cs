@@ -32,7 +32,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // Create client
             TpuClient tpuClient = TpuClient.Create();
             // Initialize request argument(s)
-            string parent = "projects/[PROJECT]/locations/[LOCATION]/nodes/[NODE]";
+            string parent = "projects/[PROJECT]/locations/[LOCATION]";
             // Make the request
             PagedEnumerable<ListNodesResponse, Node> response = tpuClient.ListNodes(parent);
 

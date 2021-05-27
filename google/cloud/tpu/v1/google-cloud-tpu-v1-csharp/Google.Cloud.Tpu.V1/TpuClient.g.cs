@@ -512,10 +512,10 @@ namespace Google.Cloud.Tpu.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A pageable sequence of <see cref="Node"/> resources.</returns>
-        public virtual gax::PagedEnumerable<ListNodesResponse, Node> ListNodes(NodeName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+        public virtual gax::PagedEnumerable<ListNodesResponse, Node> ListNodes(gagr::LocationName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
             ListNodes(new ListNodesRequest
             {
-                ParentAsNodeName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                 PageToken = pageToken ?? "",
                 PageSize = pageSize ?? 0,
             }, callSettings);
@@ -536,10 +536,10 @@ namespace Google.Cloud.Tpu.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A pageable asynchronous sequence of <see cref="Node"/> resources.</returns>
-        public virtual gax::PagedAsyncEnumerable<ListNodesResponse, Node> ListNodesAsync(NodeName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+        public virtual gax::PagedAsyncEnumerable<ListNodesResponse, Node> ListNodesAsync(gagr::LocationName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
             ListNodesAsync(new ListNodesRequest
             {
-                ParentAsNodeName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                 PageToken = pageToken ?? "",
                 PageSize = pageSize ?? 0,
             }, callSettings);

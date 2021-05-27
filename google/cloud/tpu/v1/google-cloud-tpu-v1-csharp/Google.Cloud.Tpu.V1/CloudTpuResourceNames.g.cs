@@ -764,10 +764,12 @@ namespace Google.Cloud.Tpu.V1
 
     public partial class ListNodesRequest
     {
-        /// <summary><see cref="NodeName"/>-typed view over the <see cref="Parent"/> resource name property.</summary>
-        public NodeName ParentAsNodeName
+        /// <summary>
+        /// <see cref="gagr::LocationName"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// </summary>
+        public gagr::LocationName ParentAsLocationName
         {
-            get => string.IsNullOrEmpty(Parent) ? null : NodeName.Parse(Parent, allowUnparsed: true);
+            get => string.IsNullOrEmpty(Parent) ? null : gagr::LocationName.Parse(Parent, allowUnparsed: true);
             set => Parent = value?.ToString() ?? "";
         }
     }

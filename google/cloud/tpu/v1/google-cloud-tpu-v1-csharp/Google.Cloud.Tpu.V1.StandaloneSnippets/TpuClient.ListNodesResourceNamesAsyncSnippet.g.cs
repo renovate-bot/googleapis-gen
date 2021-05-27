@@ -17,6 +17,7 @@
 namespace Google.Cloud.Tpu.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.Tpu.V1;
     using System;
     using System.Linq;
@@ -34,7 +35,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // Create client
             TpuClient tpuClient = await TpuClient.CreateAsync();
             // Initialize request argument(s)
-            NodeName parent = NodeName.FromProjectLocationNode("[PROJECT]", "[LOCATION]", "[NODE]");
+            LocationName parent = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
             // Make the request
             PagedAsyncEnumerable<ListNodesResponse, Node> response = tpuClient.ListNodesAsync(parent);
 

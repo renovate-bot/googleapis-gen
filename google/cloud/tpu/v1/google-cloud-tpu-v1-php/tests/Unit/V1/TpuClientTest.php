@@ -684,7 +684,7 @@ class TpuClientTest extends GeneratedTest
         $expectedResponse->setNodes($nodes);
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedParent = $client->nodeName('[PROJECT]', '[LOCATION]', '[NODE]');
+        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $response = $client->listNodes($formattedParent);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
@@ -721,7 +721,7 @@ class TpuClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedParent = $client->nodeName('[PROJECT]', '[LOCATION]', '[NODE]');
+        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         try {
             $client->listNodes($formattedParent);
             // If the $client method call did not throw, fail the test

@@ -97,7 +97,7 @@ public class TpuClientTest {
             .build();
     mockTpu.addResponse(expectedResponse);
 
-    NodeName parent = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
     ListNodesPagedResponse pagedListResponse = client.listNodes(parent);
 
@@ -123,7 +123,7 @@ public class TpuClientTest {
     mockTpu.addException(exception);
 
     try {
-      NodeName parent = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       client.listNodes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

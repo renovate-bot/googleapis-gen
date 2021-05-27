@@ -35,7 +35,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // Initialize request argument(s)
             ListNodesRequest request = new ListNodesRequest
             {
-                ParentAsNodeName = NodeName.FromProjectLocationNode("[PROJECT]", "[LOCATION]", "[NODE]"),
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
             };
             // Make the request
             PagedEnumerable<ListNodesResponse, Node> response = tpuClient.ListNodes(request);
@@ -83,7 +83,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // Initialize request argument(s)
             ListNodesRequest request = new ListNodesRequest
             {
-                ParentAsNodeName = NodeName.FromProjectLocationNode("[PROJECT]", "[LOCATION]", "[NODE]"),
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
             };
             // Make the request
             PagedAsyncEnumerable<ListNodesResponse, Node> response = tpuClient.ListNodesAsync(request);
@@ -129,7 +129,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // Create client
             TpuClient tpuClient = TpuClient.Create();
             // Initialize request argument(s)
-            string parent = "projects/[PROJECT]/locations/[LOCATION]/nodes/[NODE]";
+            string parent = "projects/[PROJECT]/locations/[LOCATION]";
             // Make the request
             PagedEnumerable<ListNodesResponse, Node> response = tpuClient.ListNodes(parent);
 
@@ -174,7 +174,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // Create client
             TpuClient tpuClient = await TpuClient.CreateAsync();
             // Initialize request argument(s)
-            string parent = "projects/[PROJECT]/locations/[LOCATION]/nodes/[NODE]";
+            string parent = "projects/[PROJECT]/locations/[LOCATION]";
             // Make the request
             PagedAsyncEnumerable<ListNodesResponse, Node> response = tpuClient.ListNodesAsync(parent);
 
@@ -215,11 +215,11 @@ namespace Google.Cloud.Tpu.V1.Snippets
         /// <summary>Snippet for ListNodes</summary>
         public void ListNodesResourceNames()
         {
-            // Snippet: ListNodes(NodeName, string, int?, CallSettings)
+            // Snippet: ListNodes(LocationName, string, int?, CallSettings)
             // Create client
             TpuClient tpuClient = TpuClient.Create();
             // Initialize request argument(s)
-            NodeName parent = NodeName.FromProjectLocationNode("[PROJECT]", "[LOCATION]", "[NODE]");
+            LocationName parent = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
             // Make the request
             PagedEnumerable<ListNodesResponse, Node> response = tpuClient.ListNodes(parent);
 
@@ -260,11 +260,11 @@ namespace Google.Cloud.Tpu.V1.Snippets
         /// <summary>Snippet for ListNodesAsync</summary>
         public async Task ListNodesResourceNamesAsync()
         {
-            // Snippet: ListNodesAsync(NodeName, string, int?, CallSettings)
+            // Snippet: ListNodesAsync(LocationName, string, int?, CallSettings)
             // Create client
             TpuClient tpuClient = await TpuClient.CreateAsync();
             // Initialize request argument(s)
-            NodeName parent = NodeName.FromProjectLocationNode("[PROJECT]", "[LOCATION]", "[NODE]");
+            LocationName parent = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
             // Make the request
             PagedAsyncEnumerable<ListNodesResponse, Node> response = tpuClient.ListNodesAsync(parent);
 
