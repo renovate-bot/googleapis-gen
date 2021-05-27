@@ -243,7 +243,7 @@ type Queue struct {
 	RetryConfig *RetryConfig `protobuf:"bytes,5,opt,name=retry_config,json=retryConfig,proto3" json:"retry_config,omitempty"`
 	// Output only. The state of the queue.
 	//
-	// `state` can only be changed by called
+	// `state` can only be changed by calling
 	// [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
 	// [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or uploading
 	// [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
