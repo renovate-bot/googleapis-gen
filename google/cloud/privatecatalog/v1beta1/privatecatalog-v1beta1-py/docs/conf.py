@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-cloud-privatecatalog documentation build configuration file
+# google-cloud-private-catalog documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-privatecatalog"
+project = u"google-cloud-private-catalog"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-privatecatalog-doc"
+htmlhelp_basename = "google-cloud-private-catalog-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-privatecatalog.tex",
-        u"google-cloud-privatecatalog Documentation",
+        "google-cloud-private-catalog.tex",
+        u"google-cloud-private-catalog Documentation",
         author,
         "manual",
     )
@@ -308,7 +308,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-privatecatalog",
+        "google-cloud-private-catalog",
         u"Google Cloud Privatecatalog Documentation",
         [author],
         1,
@@ -327,10 +327,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-privatecatalog",
-        u"google-cloud-privatecatalog Documentation",
+        "google-cloud-private-catalog",
+        u"google-cloud-private-catalog Documentation",
         author,
-        "google-cloud-privatecatalog",
+        "google-cloud-private-catalog",
         "GAPIC library for Google Cloud Privatecatalog API",
         "APIs",
     )
