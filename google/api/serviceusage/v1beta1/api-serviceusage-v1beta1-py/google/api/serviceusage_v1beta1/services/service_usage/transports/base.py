@@ -56,6 +56,8 @@ class ServiceUsageTransport(abc.ABC):
 
     AUTH_SCOPES = (
         'https://www.googleapis.com/auth/cloud-platform',
+        'https://www.googleapis.com/auth/cloud-platform.read-only',
+        'https://www.googleapis.com/auth/service.management',
     )
 
     DEFAULT_HOST: str = 'serviceusage.googleapis.com'

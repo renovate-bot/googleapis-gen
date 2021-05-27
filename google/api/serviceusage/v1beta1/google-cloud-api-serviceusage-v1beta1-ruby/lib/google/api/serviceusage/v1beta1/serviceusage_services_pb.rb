@@ -24,7 +24,7 @@ module Google
     module ServiceUsage
       module V1beta1
         module ServiceUsage
-          # [Service Usage API](/service-usage/docs/overview)
+          # [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
           class Service
 
             include GRPC::GenericService

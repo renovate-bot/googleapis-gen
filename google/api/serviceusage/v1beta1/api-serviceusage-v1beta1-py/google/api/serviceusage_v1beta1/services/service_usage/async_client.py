@@ -38,7 +38,9 @@ from .client import ServiceUsageClient
 
 
 class ServiceUsageAsyncClient:
-    """`Service Usage API </service-usage/docs/overview>`__"""
+    """`Service Usage
+    API <https://cloud.google.com/service-usage/docs/overview>`__
+    """
 
     _client: ServiceUsageClient
 

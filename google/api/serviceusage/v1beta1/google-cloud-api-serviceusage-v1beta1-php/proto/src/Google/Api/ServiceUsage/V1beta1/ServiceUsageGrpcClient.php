@@ -19,7 +19,7 @@
 namespace Google\Api\ServiceUsage\V1beta1;
 
 /**
- * [Service Usage API](/service-usage/docs/overview)
+ * [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
  */
 class ServiceUsageGrpcClient extends \Grpc\BaseStub {
 

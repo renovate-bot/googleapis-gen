@@ -36,7 +36,8 @@ from .grpc import ServiceUsageGrpcTransport
 class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     """gRPC AsyncIO backend transport for ServiceUsage.
 
-    `Service Usage API </service-usage/docs/overview>`__
+    `Service Usage
+    API <https://cloud.google.com/service-usage/docs/overview>`__
 
     This class defines the same methods as the primary client, so the
     primary client can load the underlying transport implementation

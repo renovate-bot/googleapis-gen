@@ -73,7 +73,7 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
 /**
- * Service Description: [Service Usage API](/service-usage/docs/overview)
+ * Service Description: [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -141,6 +141,8 @@ class ServiceUsageGapicClient
      */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/cloud-platform',
+        'https://www.googleapis.com/auth/cloud-platform.read-only',
+        'https://www.googleapis.com/auth/service.management',
     ];
 
     private $operationsClient;

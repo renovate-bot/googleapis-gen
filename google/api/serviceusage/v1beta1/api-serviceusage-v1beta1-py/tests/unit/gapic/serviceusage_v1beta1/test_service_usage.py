@@ -4117,6 +4117,8 @@ def test_service_usage_base_transport_with_credentials_file():
             scopes=None,
             default_scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+            'https://www.googleapis.com/auth/service.management',
 ),
             quota_project_id="octopus",
         )
@@ -4134,6 +4136,8 @@ def test_service_usage_base_transport_with_credentials_file_old_google_auth():
         )
         load_creds.assert_called_once_with("credentials.json", scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+            'https://www.googleapis.com/auth/service.management',
             ),
             quota_project_id="octopus",
         )
@@ -4158,6 +4162,8 @@ def test_service_usage_auth_adc():
             scopes=None,
             default_scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+            'https://www.googleapis.com/auth/service.management',
 ),
             quota_project_id=None,
         )
@@ -4170,7 +4176,7 @@ def test_service_usage_auth_adc_old_google_auth():
         adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         ServiceUsageClient()
         adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',                'https://www.googleapis.com/auth/service.management',),
             quota_project_id=None,
         )
 
@@ -4191,7 +4197,7 @@ def test_service_usage_transport_auth_adc(transport_class):
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
         adc.assert_called_once_with(
             scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',                'https://www.googleapis.com/auth/service.management',),
             quota_project_id="octopus",
         )
 
@@ -4212,6 +4218,8 @@ def test_service_usage_transport_auth_adc_old_google_auth(transport_class):
         transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+            'https://www.googleapis.com/auth/service.management',
 ),
             quota_project_id="octopus",
         )
@@ -4245,6 +4253,8 @@ def test_service_usage_transport_create_channel(transport_class, grpc_helpers):
             quota_project_id="octopus",
             default_scopes=(
                 'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/cloud-platform.read-only',
+                'https://www.googleapis.com/auth/service.management',
 ),
             scopes=["1", "2"],
             default_host="serviceusage.googleapis.com",
@@ -4281,6 +4291,8 @@ def test_service_usage_transport_create_channel_old_api_core(transport_class, gr
             quota_project_id="octopus",
             scopes=(
                 'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/cloud-platform.read-only',
+                'https://www.googleapis.com/auth/service.management',
 ),
             ssl_credentials=None,
             options=[
@@ -4343,6 +4355,8 @@ def test_service_usage_grpc_transport_client_cert_source_for_mtls(
             credentials_file=None,
             scopes=(
                 'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/cloud-platform.read-only',
+                'https://www.googleapis.com/auth/service.management',
             ),
             ssl_credentials=mock_ssl_channel_creds,
             quota_project_id=None,
@@ -4442,6 +4456,8 @@ def test_service_usage_transport_channel_mtls_with_client_cert_source(
                 credentials_file=None,
                 scopes=(
                     'https://www.googleapis.com/auth/cloud-platform',
+                    'https://www.googleapis.com/auth/cloud-platform.read-only',
+                    'https://www.googleapis.com/auth/service.management',
                 ),
                 ssl_credentials=mock_ssl_cred,
                 quota_project_id=None,
@@ -4485,6 +4501,8 @@ def test_service_usage_transport_channel_mtls_with_adc(
                 credentials_file=None,
                 scopes=(
                     'https://www.googleapis.com/auth/cloud-platform',
+                    'https://www.googleapis.com/auth/cloud-platform.read-only',
+                    'https://www.googleapis.com/auth/service.management',
                 ),
                 ssl_credentials=mock_ssl_cred,
                 quota_project_id=None,

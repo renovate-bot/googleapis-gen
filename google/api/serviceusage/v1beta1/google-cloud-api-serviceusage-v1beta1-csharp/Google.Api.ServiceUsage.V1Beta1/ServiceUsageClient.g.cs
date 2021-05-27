@@ -593,7 +593,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
 
     /// <summary>ServiceUsage client wrapper, for convenient use.</summary>
     /// <remarks>
-    /// [Service Usage API](/service-usage/docs/overview)
+    /// [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
     /// </remarks>
     public abstract partial class ServiceUsageClient
     {
@@ -608,11 +608,15 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// The default ServiceUsage scopes are:
         /// <list type="bullet">
         /// <item><description>https://www.googleapis.com/auth/cloud-platform</description></item>
+        /// <item><description>https://www.googleapis.com/auth/cloud-platform.read-only</description></item>
+        /// <item><description>https://www.googleapis.com/auth/service.management</description></item>
         /// </list>
         /// </remarks>
         public static scg::IReadOnlyList<string> DefaultScopes { get; } = new sco::ReadOnlyCollection<string>(new string[]
         {
             "https://www.googleapis.com/auth/cloud-platform",
+            "https://www.googleapis.com/auth/cloud-platform.read-only",
+            "https://www.googleapis.com/auth/service.management",
         });
 
         internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
@@ -1574,7 +1578,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
 
     /// <summary>ServiceUsage client wrapper implementation, for convenient use.</summary>
     /// <remarks>
-    /// [Service Usage API](/service-usage/docs/overview)
+    /// [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
     /// </remarks>
     public sealed partial class ServiceUsageClientImpl : ServiceUsageClient
     {

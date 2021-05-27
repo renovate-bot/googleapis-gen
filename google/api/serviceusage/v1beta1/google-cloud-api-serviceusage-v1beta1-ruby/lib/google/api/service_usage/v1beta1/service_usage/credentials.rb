@@ -26,7 +26,9 @@ module Google
           # Credentials for the ServiceUsage API.
           class Credentials < ::Google::Auth::Credentials
             self.scope = [
-              "https://www.googleapis.com/auth/cloud-platform"
+              "https://www.googleapis.com/auth/cloud-platform",
+              "https://www.googleapis.com/auth/cloud-platform.read-only",
+              "https://www.googleapis.com/auth/service.management"
             ]
             self.env_vars = [
               "V1BETA1_CREDENTIALS",

@@ -34,7 +34,8 @@ from .base import ServiceUsageTransport, DEFAULT_CLIENT_INFO
 class ServiceUsageGrpcTransport(ServiceUsageTransport):
     """gRPC backend transport for ServiceUsage.
 
-    `Service Usage API </service-usage/docs/overview>`__
+    `Service Usage
+    API <https://cloud.google.com/service-usage/docs/overview>`__
 
     This class defines the same methods as the primary client, so the
     primary client can load the underlying transport implementation

@@ -24,7 +24,7 @@ using grpc = global::Grpc.Core;
 
 namespace Google.Api.ServiceUsage.V1Beta1 {
   /// <summary>
-  /// [Service Usage API](/service-usage/docs/overview)
+  /// [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
   /// </summary>
   public static partial class ServiceUsage
   {

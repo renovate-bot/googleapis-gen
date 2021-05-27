@@ -74,7 +74,9 @@ class ServiceUsageClientMeta(type):
 
 
 class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
-    """`Service Usage API </service-usage/docs/overview>`__"""
+    """`Service Usage
+    API <https://cloud.google.com/service-usage/docs/overview>`__
+    """
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):

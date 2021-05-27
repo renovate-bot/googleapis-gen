@@ -27,7 +27,7 @@ module Google
           ##
           # Client for the ServiceUsage service.
           #
-          # [Service Usage API](/service-usage/docs/overview)
+          # [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
           #
           class Client
             # @private

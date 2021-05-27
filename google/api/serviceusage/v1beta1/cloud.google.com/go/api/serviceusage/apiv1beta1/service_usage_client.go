@@ -140,7 +140,7 @@ type internalClient interface {
 // Client is a client for interacting with Service Usage API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// Service Usage API (at /service-usage/docs/overview)
+// Service Usage API (at https://cloud.google.com/service-usage/docs/overview)
 type Client struct {
 	// The internal transport-dependent client.
 	internalClient internalClient
@@ -418,7 +418,7 @@ type gRPCClient struct {
 // NewClient creates a new service usage client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// Service Usage API (at /service-usage/docs/overview)
+// Service Usage API (at https://cloud.google.com/service-usage/docs/overview)
 func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
 	clientOpts := defaultGRPCClientOptions()
 	if newClientHook != nil {
