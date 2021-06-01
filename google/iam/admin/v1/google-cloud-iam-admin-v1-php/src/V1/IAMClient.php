@@ -22,9 +22,9 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Iam\Admin\V1;
+namespace Google\Cloud\Iam\Admin\V1;
 
-use Google\Iam\Admin\V1\Gapic\IAMGapicClient;
+use Google\Cloud\Iam\Admin\V1\Gapic\IAMGapicClient;
 
 /** {@inheritdoc} */
 class IAMClient extends IAMGapicClient

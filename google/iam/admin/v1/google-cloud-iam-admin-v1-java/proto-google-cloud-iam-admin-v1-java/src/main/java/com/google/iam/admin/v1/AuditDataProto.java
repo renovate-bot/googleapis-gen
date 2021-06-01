@@ -39,10 +39,11 @@ public final class AuditDataProto {
       "lta\030\001 \001(\0132..google.iam.admin.v1.AuditDat" +
       "a.PermissionDelta\032I\n\017PermissionDelta\022\031\n\021" +
       "added_permissions\030\001 \003(\t\022\033\n\023removed_permi" +
-      "ssions\030\002 \003(\tBe\n\027com.google.iam.admin.v1B" +
-      "\016AuditDataProtoP\001Z8google.golang.org/gen" +
-      "proto/googleapis/iam/admin/v1;adminb\006pro" +
-      "to3"
+      "ssions\030\002 \003(\tB\235\001\n\027com.google.iam.admin.v1" +
+      "B\016AuditDataProtoP\001Z8google.golang.org/ge" +
+      "nproto/googleapis/iam/admin/v1;admin\252\002\031G" +
+      "oogle.Cloud.Iam.Admin.V1\312\002\031Google\\Cloud\\" +
+      "Iam\\Admin\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

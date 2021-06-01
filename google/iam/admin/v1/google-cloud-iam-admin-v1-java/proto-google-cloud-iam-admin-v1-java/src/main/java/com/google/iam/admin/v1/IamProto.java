@@ -520,10 +520,11 @@ public final class IamProto {
       "am.admin.v1.LintPolicyResponse\"%\202\323\344\223\002\037\"\032" +
       "/v1/iamPolicies:lintPolicy:\001*\032F\312A\022iam.go" +
       "ogleapis.com\322A.https://www.googleapis.co" +
-      "m/auth/cloud-platformBb\n\027com.google.iam." +
-      "admin.v1B\010IamProtoP\001Z8google.golang.org/" +
-      "genproto/googleapis/iam/admin/v1;admin\370\001" +
-      "\001b\006proto3"
+      "m/auth/cloud-platformB\232\001\n\027com.google.iam" +
+      ".admin.v1B\010IamProtoP\001Z8google.golang.org" +
+      "/genproto/googleapis/iam/admin/v1;admin\370" +
+      "\001\001\252\002\031Google.Cloud.Iam.Admin.V1\312\002\031Google\\" +
+      "Cloud\\Iam\\Admin\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

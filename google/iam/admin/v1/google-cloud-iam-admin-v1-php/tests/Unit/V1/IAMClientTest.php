@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Iam\Admin\Tests\Unit\V1;
+namespace Google\Cloud\Iam\Admin\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
 
@@ -28,24 +28,24 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 
-use Google\Cloud\Iam\V1\Policy;
+use Google\Cloud\Iam\Admin\V1\IAMClient;
 
+use Google\Cloud\Iam\Admin\V1\LintPolicyResponse;
+use Google\Cloud\Iam\Admin\V1\ListRolesResponse;
+use Google\Cloud\Iam\Admin\V1\ListServiceAccountKeysResponse;
+use Google\Cloud\Iam\Admin\V1\ListServiceAccountsResponse;
+use Google\Cloud\Iam\Admin\V1\Permission;
+use Google\Cloud\Iam\Admin\V1\QueryAuditableServicesResponse;
+use Google\Cloud\Iam\Admin\V1\QueryGrantableRolesResponse;
+use Google\Cloud\Iam\Admin\V1\QueryTestablePermissionsResponse;
+use Google\Cloud\Iam\Admin\V1\Role;
+use Google\Cloud\Iam\Admin\V1\ServiceAccount;
+use Google\Cloud\Iam\Admin\V1\ServiceAccountKey;
+use Google\Cloud\Iam\Admin\V1\SignBlobResponse;
+use Google\Cloud\Iam\Admin\V1\SignJwtResponse;
+use Google\Cloud\Iam\Admin\V1\UndeleteServiceAccountResponse;
+use Google\Cloud\Iam\V1\Policy;
 use Google\Cloud\Iam\V1\TestIamPermissionsResponse;
-use Google\Iam\Admin\V1\IAMClient;
-use Google\Iam\Admin\V1\LintPolicyResponse;
-use Google\Iam\Admin\V1\ListRolesResponse;
-use Google\Iam\Admin\V1\ListServiceAccountKeysResponse;
-use Google\Iam\Admin\V1\ListServiceAccountsResponse;
-use Google\Iam\Admin\V1\Permission;
-use Google\Iam\Admin\V1\QueryAuditableServicesResponse;
-use Google\Iam\Admin\V1\QueryGrantableRolesResponse;
-use Google\Iam\Admin\V1\QueryTestablePermissionsResponse;
-use Google\Iam\Admin\V1\Role;
-use Google\Iam\Admin\V1\ServiceAccount;
-use Google\Iam\Admin\V1\ServiceAccountKey;
-use Google\Iam\Admin\V1\SignBlobResponse;
-use Google\Iam\Admin\V1\SignJwtResponse;
-use Google\Iam\Admin\V1\UndeleteServiceAccountResponse;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
 use stdClass;

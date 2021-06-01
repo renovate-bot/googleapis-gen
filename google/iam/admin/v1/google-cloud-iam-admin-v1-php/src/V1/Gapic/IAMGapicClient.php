@@ -22,7 +22,7 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Iam\Admin\V1\Gapic;
+namespace Google\Cloud\Iam\Admin\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -34,54 +34,54 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\Iam\Admin\V1\CreateRoleRequest;
+use Google\Cloud\Iam\Admin\V1\CreateServiceAccountKeyRequest;
+use Google\Cloud\Iam\Admin\V1\CreateServiceAccountRequest;
+use Google\Cloud\Iam\Admin\V1\DeleteRoleRequest;
+use Google\Cloud\Iam\Admin\V1\DeleteServiceAccountKeyRequest;
+use Google\Cloud\Iam\Admin\V1\DeleteServiceAccountRequest;
+use Google\Cloud\Iam\Admin\V1\DisableServiceAccountRequest;
+use Google\Cloud\Iam\Admin\V1\EnableServiceAccountRequest;
+use Google\Cloud\Iam\Admin\V1\GetRoleRequest;
+
+use Google\Cloud\Iam\Admin\V1\GetServiceAccountKeyRequest;
+use Google\Cloud\Iam\Admin\V1\GetServiceAccountRequest;
+use Google\Cloud\Iam\Admin\V1\LintPolicyRequest;
+use Google\Cloud\Iam\Admin\V1\LintPolicyResponse;
+use Google\Cloud\Iam\Admin\V1\ListRolesRequest;
+use Google\Cloud\Iam\Admin\V1\ListRolesResponse;
+use Google\Cloud\Iam\Admin\V1\ListServiceAccountKeysRequest;
+use Google\Cloud\Iam\Admin\V1\ListServiceAccountKeysResponse;
+use Google\Cloud\Iam\Admin\V1\ListServiceAccountsRequest;
+use Google\Cloud\Iam\Admin\V1\ListServiceAccountsResponse;
+use Google\Cloud\Iam\Admin\V1\PatchServiceAccountRequest;
+use Google\Cloud\Iam\Admin\V1\QueryAuditableServicesRequest;
+use Google\Cloud\Iam\Admin\V1\QueryAuditableServicesResponse;
+use Google\Cloud\Iam\Admin\V1\QueryGrantableRolesRequest;
+use Google\Cloud\Iam\Admin\V1\QueryGrantableRolesResponse;
+use Google\Cloud\Iam\Admin\V1\QueryTestablePermissionsRequest;
+use Google\Cloud\Iam\Admin\V1\QueryTestablePermissionsResponse;
+use Google\Cloud\Iam\Admin\V1\Role;
+use Google\Cloud\Iam\Admin\V1\ServiceAccount;
+use Google\Cloud\Iam\Admin\V1\ServiceAccountKey;
+use Google\Cloud\Iam\Admin\V1\SignBlobRequest;
+use Google\Cloud\Iam\Admin\V1\SignBlobResponse;
+
+use Google\Cloud\Iam\Admin\V1\SignJwtRequest;
+use Google\Cloud\Iam\Admin\V1\SignJwtResponse;
+use Google\Cloud\Iam\Admin\V1\UndeleteRoleRequest;
+
+use Google\Cloud\Iam\Admin\V1\UndeleteServiceAccountRequest;
+use Google\Cloud\Iam\Admin\V1\UndeleteServiceAccountResponse;
+use Google\Cloud\Iam\Admin\V1\UpdateRoleRequest;
+
+use Google\Cloud\Iam\Admin\V1\UploadServiceAccountKeyRequest;
 use Google\Cloud\Iam\V1\GetIamPolicyRequest;
 use Google\Cloud\Iam\V1\GetPolicyOptions;
 use Google\Cloud\Iam\V1\Policy;
 use Google\Cloud\Iam\V1\SetIamPolicyRequest;
 use Google\Cloud\Iam\V1\TestIamPermissionsRequest;
 use Google\Cloud\Iam\V1\TestIamPermissionsResponse;
-use Google\Iam\Admin\V1\CreateRoleRequest;
-use Google\Iam\Admin\V1\CreateServiceAccountKeyRequest;
-use Google\Iam\Admin\V1\CreateServiceAccountRequest;
-
-use Google\Iam\Admin\V1\DeleteRoleRequest;
-use Google\Iam\Admin\V1\DeleteServiceAccountKeyRequest;
-use Google\Iam\Admin\V1\DeleteServiceAccountRequest;
-use Google\Iam\Admin\V1\DisableServiceAccountRequest;
-use Google\Iam\Admin\V1\EnableServiceAccountRequest;
-use Google\Iam\Admin\V1\GetRoleRequest;
-use Google\Iam\Admin\V1\GetServiceAccountKeyRequest;
-use Google\Iam\Admin\V1\GetServiceAccountRequest;
-use Google\Iam\Admin\V1\LintPolicyRequest;
-use Google\Iam\Admin\V1\LintPolicyResponse;
-use Google\Iam\Admin\V1\ListRolesRequest;
-use Google\Iam\Admin\V1\ListRolesResponse;
-use Google\Iam\Admin\V1\ListServiceAccountKeysRequest;
-use Google\Iam\Admin\V1\ListServiceAccountKeysResponse;
-use Google\Iam\Admin\V1\ListServiceAccountsRequest;
-use Google\Iam\Admin\V1\ListServiceAccountsResponse;
-use Google\Iam\Admin\V1\PatchServiceAccountRequest;
-use Google\Iam\Admin\V1\QueryAuditableServicesRequest;
-use Google\Iam\Admin\V1\QueryAuditableServicesResponse;
-use Google\Iam\Admin\V1\QueryGrantableRolesRequest;
-use Google\Iam\Admin\V1\QueryGrantableRolesResponse;
-use Google\Iam\Admin\V1\QueryTestablePermissionsRequest;
-
-use Google\Iam\Admin\V1\QueryTestablePermissionsResponse;
-use Google\Iam\Admin\V1\Role;
-use Google\Iam\Admin\V1\ServiceAccount;
-
-use Google\Iam\Admin\V1\ServiceAccountKey;
-use Google\Iam\Admin\V1\SignBlobRequest;
-use Google\Iam\Admin\V1\SignBlobResponse;
-
-use Google\Iam\Admin\V1\SignJwtRequest;
-use Google\Iam\Admin\V1\SignJwtResponse;
-use Google\Iam\Admin\V1\UndeleteRoleRequest;
-use Google\Iam\Admin\V1\UndeleteServiceAccountRequest;
-use Google\Iam\Admin\V1\UndeleteServiceAccountResponse;
-use Google\Iam\Admin\V1\UpdateRoleRequest;
-use Google\Iam\Admin\V1\UploadServiceAccountKeyRequest;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 use Google\Type\Expr;
@@ -425,7 +425,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\Role
+     * @return \Google\Cloud\Iam\Admin\V1\Role
      *
      * @throws ApiException if the remote call fails
      */
@@ -486,7 +486,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\ServiceAccount
+     * @return \Google\Cloud\Iam\Admin\V1\ServiceAccount
      *
      * @throws ApiException if the remote call fails
      */
@@ -532,12 +532,12 @@ class IAMGapicClient
      *           The output format of the private key. The default value is
      *           `TYPE_GOOGLE_CREDENTIALS_FILE`, which is the Google Credentials File
      *           format.
-     *           For allowed values, use constants defined on {@see \Google\Iam\Admin\V1\ServiceAccountPrivateKeyType}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Iam\Admin\V1\ServiceAccountPrivateKeyType}
      *     @type int $keyAlgorithm
      *           Which type of key and algorithm to use for the key.
      *           The default is currently a 2K RSA key.  However this may change in the
      *           future.
-     *           For allowed values, use constants defined on {@see \Google\Iam\Admin\V1\ServiceAccountKeyAlgorithm}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Iam\Admin\V1\ServiceAccountKeyAlgorithm}
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -545,7 +545,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\ServiceAccountKey
+     * @return \Google\Cloud\Iam\Admin\V1\ServiceAccountKey
      *
      * @throws ApiException if the remote call fails
      */
@@ -630,7 +630,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\Role
+     * @return \Google\Cloud\Iam\Admin\V1\Role
      *
      * @throws ApiException if the remote call fails
      */
@@ -972,7 +972,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\Role
+     * @return \Google\Cloud\Iam\Admin\V1\Role
      *
      * @throws ApiException if the remote call fails
      */
@@ -1019,7 +1019,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\ServiceAccount
+     * @return \Google\Cloud\Iam\Admin\V1\ServiceAccount
      *
      * @throws ApiException if the remote call fails
      */
@@ -1060,7 +1060,7 @@ class IAMGapicClient
      *     @type int $publicKeyType
      *           The output format of the public key requested.
      *           X509_PEM is the default output format.
-     *           For allowed values, use constants defined on {@see \Google\Iam\Admin\V1\ServiceAccountPublicKeyType}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Iam\Admin\V1\ServiceAccountPublicKeyType}
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1068,7 +1068,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\ServiceAccountKey
+     * @return \Google\Cloud\Iam\Admin\V1\ServiceAccountKey
      *
      * @throws ApiException if the remote call fails
      */
@@ -1127,7 +1127,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\LintPolicyResponse
+     * @return \Google\Cloud\Iam\Admin\V1\LintPolicyResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -1216,7 +1216,7 @@ class IAMGapicClient
      *           the `includedPermissions` field is returned, which includes a list of all
      *           permissions in the role. The default value is `BASIC`, which does not
      *           return the `includedPermissions` field.
-     *           For allowed values, use constants defined on {@see \Google\Iam\Admin\V1\RoleView}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Iam\Admin\V1\RoleView}
      *     @type bool $showDeleted
      *           Include Roles that have been deleted.
      *     @type RetrySettings|array $retrySettings
@@ -1287,7 +1287,7 @@ class IAMGapicClient
      *           Filters the types of keys the user wants to include in the list
      *           response. Duplicate key types are not allowed. If no key type
      *           is provided, all keys are returned.
-     *           For allowed values, use constants defined on {@see \Google\Iam\Admin\V1\ListServiceAccountKeysRequest\KeyType}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Iam\Admin\V1\ListServiceAccountKeysRequest\KeyType}
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1295,7 +1295,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\ListServiceAccountKeysResponse
+     * @return \Google\Cloud\Iam\Admin\V1\ListServiceAccountKeysResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -1409,7 +1409,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\ServiceAccount
+     * @return \Google\Cloud\Iam\Admin\V1\ServiceAccount
      *
      * @throws ApiException if the remote call fails
      */
@@ -1464,7 +1464,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\QueryAuditableServicesResponse
+     * @return \Google\Cloud\Iam\Admin\V1\QueryAuditableServicesResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -1515,7 +1515,7 @@ class IAMGapicClient
      *     Optional.
      *
      *     @type int $view
-     *           For allowed values, use constants defined on {@see \Google\Iam\Admin\V1\RoleView}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Iam\Admin\V1\RoleView}
      *     @type int $pageSize
      *           The maximum number of resources contained in the underlying API
      *           response. The API may return fewer values in a page, even if
@@ -1737,7 +1737,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\SignBlobResponse
+     * @return \Google\Cloud\Iam\Admin\V1\SignBlobResponse
      *
      * @throws ApiException if the remote call fails
      *
@@ -1809,7 +1809,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\SignJwtResponse
+     * @return \Google\Cloud\Iam\Admin\V1\SignJwtResponse
      *
      * @throws ApiException if the remote call fails
      *
@@ -1921,7 +1921,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\Role
+     * @return \Google\Cloud\Iam\Admin\V1\Role
      *
      * @throws ApiException if the remote call fails
      */
@@ -1978,7 +1978,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\UndeleteServiceAccountResponse
+     * @return \Google\Cloud\Iam\Admin\V1\UndeleteServiceAccountResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -2044,7 +2044,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\Role
+     * @return \Google\Cloud\Iam\Admin\V1\Role
      *
      * @throws ApiException if the remote call fails
      */
@@ -2141,7 +2141,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\ServiceAccount
+     * @return \Google\Cloud\Iam\Admin\V1\ServiceAccount
      *
      * @throws ApiException if the remote call fails
      */
@@ -2225,7 +2225,7 @@ class IAMGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Iam\Admin\V1\ServiceAccountKey
+     * @return \Google\Cloud\Iam\Admin\V1\ServiceAccountKey
      *
      * @throws ApiException if the remote call fails
      */

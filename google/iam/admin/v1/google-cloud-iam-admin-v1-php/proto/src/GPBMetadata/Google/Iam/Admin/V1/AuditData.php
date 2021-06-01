@@ -17,14 +17,14 @@ class AuditData
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Õ
+Ü
 $google/iam/admin/v1/audit_data.protogoogle.iam.admin.v1"†
 	AuditDataH
 permission_delta (2..google.iam.admin.v1.AuditData.PermissionDeltaI
 PermissionDelta
 added_permissions (	
-removed_permissions (	Be
-com.google.iam.admin.v1BAuditDataProtoPZ8google.golang.org/genproto/googleapis/iam/admin/v1;adminbproto3'
+removed_permissions (	Bù
+com.google.iam.admin.v1BAuditDataProtoPZ8google.golang.org/genproto/googleapis/iam/admin/v1;admin™Google.Cloud.Iam.Admin.V1 Google\\Cloud\\Iam\\Admin\\V1bproto3'
         , true);
 
         static::$is_initialized = true;
