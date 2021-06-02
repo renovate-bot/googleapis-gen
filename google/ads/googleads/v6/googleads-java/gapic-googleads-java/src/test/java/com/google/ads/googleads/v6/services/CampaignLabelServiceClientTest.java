@@ -43,8 +43,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CampaignLabelServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockCampaignLabelService mockCampaignLabelService;
+  private static MockServiceHelper mockServiceHelper;
   private CampaignLabelServiceClient client;
   private LocalChannelProvider channelProvider;
 

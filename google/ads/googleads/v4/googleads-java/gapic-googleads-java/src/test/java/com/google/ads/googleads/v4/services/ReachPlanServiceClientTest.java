@@ -42,10 +42,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ReachPlanServiceClientTest {
+  private static MockReachPlanService mockReachPlanService;
   private static MockServiceHelper mockServiceHelper;
   private ReachPlanServiceClient client;
   private LocalChannelProvider channelProvider;
-  private static MockReachPlanService mockReachPlanService;
 
   @BeforeClass
   public static void startStaticServer() {

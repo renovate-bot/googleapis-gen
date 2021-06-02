@@ -42,8 +42,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class GeographicViewServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockGeographicViewService mockGeographicViewService;
+  private static MockServiceHelper mockServiceHelper;
   private GeographicViewServiceClient client;
   private LocalChannelProvider channelProvider;
 

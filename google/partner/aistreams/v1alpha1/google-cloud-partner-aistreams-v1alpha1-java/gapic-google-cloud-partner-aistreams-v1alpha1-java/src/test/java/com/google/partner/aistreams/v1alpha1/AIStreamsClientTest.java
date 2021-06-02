@@ -51,8 +51,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AIStreamsClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockAIStreams mockAIStreams;
+  private static MockServiceHelper mockServiceHelper;
   private AIStreamsClient client;
   private LocalChannelProvider channelProvider;
 

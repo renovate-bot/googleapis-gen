@@ -41,9 +41,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AdScheduleViewServiceClientTest {
+  private static MockAdScheduleViewService mockAdScheduleViewService;
   private static MockServiceHelper mockServiceHelper;
   private AdScheduleViewServiceClient client;
-  private static MockAdScheduleViewService mockAdScheduleViewService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

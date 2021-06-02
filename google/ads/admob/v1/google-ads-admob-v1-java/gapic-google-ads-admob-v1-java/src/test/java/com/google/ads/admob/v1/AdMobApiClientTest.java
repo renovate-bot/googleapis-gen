@@ -46,10 +46,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AdMobApiClientTest {
+  private static MockAdMobApi mockAdMobApi;
   private static MockServiceHelper mockServiceHelper;
   private AdMobApiClient client;
   private LocalChannelProvider channelProvider;
-  private static MockAdMobApi mockAdMobApi;
 
   @BeforeClass
   public static void startStaticServer() {

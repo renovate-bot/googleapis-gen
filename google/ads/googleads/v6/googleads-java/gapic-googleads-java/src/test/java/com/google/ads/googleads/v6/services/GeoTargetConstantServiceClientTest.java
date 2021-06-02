@@ -42,8 +42,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class GeoTargetConstantServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockGeoTargetConstantService mockGeoTargetConstantService;
+  private static MockServiceHelper mockServiceHelper;
   private GeoTargetConstantServiceClient client;
   private LocalChannelProvider channelProvider;
 

@@ -49,8 +49,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class GoogleAdsServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockGoogleAdsService mockGoogleAdsService;
+  private static MockServiceHelper mockServiceHelper;
   private GoogleAdsServiceClient client;
   private LocalChannelProvider channelProvider;
 

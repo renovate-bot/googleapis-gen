@@ -42,9 +42,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class MerchantCenterLinkServiceClientTest {
+  private static MockMerchantCenterLinkService mockMerchantCenterLinkService;
   private static MockServiceHelper mockServiceHelper;
   private MerchantCenterLinkServiceClient client;
-  private static MockMerchantCenterLinkService mockMerchantCenterLinkService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

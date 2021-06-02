@@ -54,9 +54,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class DatasetServiceClientTest {
+  private static MockDatasetService mockDatasetService;
   private static MockServiceHelper mockServiceHelper;
   private DatasetServiceClient client;
-  private static MockDatasetService mockDatasetService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

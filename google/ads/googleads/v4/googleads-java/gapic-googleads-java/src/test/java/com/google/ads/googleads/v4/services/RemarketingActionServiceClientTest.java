@@ -46,8 +46,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class RemarketingActionServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockRemarketingActionService mockRemarketingActionService;
+  private static MockServiceHelper mockServiceHelper;
   private RemarketingActionServiceClient client;
   private LocalChannelProvider channelProvider;
 

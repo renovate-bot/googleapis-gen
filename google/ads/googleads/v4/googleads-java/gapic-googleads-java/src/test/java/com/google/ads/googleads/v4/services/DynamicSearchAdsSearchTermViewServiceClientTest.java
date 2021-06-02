@@ -43,10 +43,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class DynamicSearchAdsSearchTermViewServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
-  private DynamicSearchAdsSearchTermViewServiceClient client;
   private static MockDynamicSearchAdsSearchTermViewService
       mockDynamicSearchAdsSearchTermViewService;
+  private static MockServiceHelper mockServiceHelper;
+  private DynamicSearchAdsSearchTermViewServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

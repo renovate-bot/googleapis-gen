@@ -46,8 +46,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class FirewallClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockFirewall mockFirewall;
+  private static MockServiceHelper mockServiceHelper;
   private FirewallClient client;
   private LocalChannelProvider channelProvider;
 

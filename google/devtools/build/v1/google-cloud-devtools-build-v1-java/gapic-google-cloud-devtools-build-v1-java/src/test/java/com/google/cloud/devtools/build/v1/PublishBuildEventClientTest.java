@@ -52,8 +52,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PublishBuildEventClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockPublishBuildEvent mockPublishBuildEvent;
+  private static MockServiceHelper mockServiceHelper;
   private PublishBuildEventClient client;
   private LocalChannelProvider channelProvider;
 

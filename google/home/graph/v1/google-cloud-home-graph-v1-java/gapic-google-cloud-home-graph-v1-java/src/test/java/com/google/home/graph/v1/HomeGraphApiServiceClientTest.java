@@ -41,8 +41,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class HomeGraphApiServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockHomeGraphApiService mockHomeGraphApiService;
+  private static MockServiceHelper mockServiceHelper;
   private HomeGraphApiServiceClient client;
   private LocalChannelProvider channelProvider;
 

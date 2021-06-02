@@ -45,9 +45,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class DomainCategoryServiceClientTest {
+  private static MockDomainCategoryService mockDomainCategoryService;
   private static MockServiceHelper mockServiceHelper;
   private DomainCategoryServiceClient client;
-  private static MockDomainCategoryService mockDomainCategoryService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

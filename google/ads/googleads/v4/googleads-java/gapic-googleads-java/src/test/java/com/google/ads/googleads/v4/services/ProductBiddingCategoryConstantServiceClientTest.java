@@ -43,9 +43,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ProductBiddingCategoryConstantServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockProductBiddingCategoryConstantService
       mockProductBiddingCategoryConstantService;
+  private static MockServiceHelper mockServiceHelper;
   private ProductBiddingCategoryConstantServiceClient client;
   private LocalChannelProvider channelProvider;
 

@@ -43,9 +43,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class FeedItemSetServiceClientTest {
+  private static MockFeedItemSetService mockFeedItemSetService;
   private static MockServiceHelper mockServiceHelper;
   private FeedItemSetServiceClient client;
-  private static MockFeedItemSetService mockFeedItemSetService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

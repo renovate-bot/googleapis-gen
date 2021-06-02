@@ -43,9 +43,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CustomInterestServiceClientTest {
+  private static MockCustomInterestService mockCustomInterestService;
   private static MockServiceHelper mockServiceHelper;
   private CustomInterestServiceClient client;
-  private static MockCustomInterestService mockCustomInterestService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

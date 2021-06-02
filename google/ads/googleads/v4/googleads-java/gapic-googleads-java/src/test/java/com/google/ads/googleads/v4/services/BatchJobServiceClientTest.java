@@ -52,8 +52,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class BatchJobServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockBatchJobService mockBatchJobService;
+  private static MockServiceHelper mockServiceHelper;
   private BatchJobServiceClient client;
   private LocalChannelProvider channelProvider;
 

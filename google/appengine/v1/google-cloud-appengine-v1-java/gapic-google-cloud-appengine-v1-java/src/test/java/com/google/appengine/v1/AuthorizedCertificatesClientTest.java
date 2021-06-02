@@ -46,8 +46,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AuthorizedCertificatesClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockAuthorizedCertificates mockAuthorizedCertificates;
+  private static MockServiceHelper mockServiceHelper;
   private AuthorizedCertificatesClient client;
   private LocalChannelProvider channelProvider;
 

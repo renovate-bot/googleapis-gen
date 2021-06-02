@@ -58,10 +58,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class TensorboardServiceClientTest {
+  private static MockTensorboardService mockTensorboardService;
   private static MockServiceHelper mockServiceHelper;
   private TensorboardServiceClient client;
   private LocalChannelProvider channelProvider;
-  private static MockTensorboardService mockTensorboardService;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -60,10 +60,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class DatastoreAdminClientTest {
+  private static MockDatastoreAdmin mockDatastoreAdmin;
   private static MockServiceHelper mockServiceHelper;
   private DatastoreAdminClient client;
   private LocalChannelProvider channelProvider;
-  private static MockDatastoreAdmin mockDatastoreAdmin;
 
   @BeforeClass
   public static void startStaticServer() {

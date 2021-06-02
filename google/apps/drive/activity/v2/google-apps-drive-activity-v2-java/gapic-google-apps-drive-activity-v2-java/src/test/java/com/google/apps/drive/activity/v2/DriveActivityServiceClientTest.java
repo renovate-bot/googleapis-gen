@@ -42,10 +42,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class DriveActivityServiceClientTest {
+  private static MockDriveActivityService mockDriveActivityService;
   private static MockServiceHelper mockServiceHelper;
   private DriveActivityServiceClient client;
   private LocalChannelProvider channelProvider;
-  private static MockDriveActivityService mockDriveActivityService;
 
   @BeforeClass
   public static void startStaticServer() {

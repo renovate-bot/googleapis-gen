@@ -105,9 +105,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class IAMClientTest {
+  private static MockIAM mockIAM;
   private static MockServiceHelper mockServiceHelper;
   private IAMClient client;
-  private static MockIAM mockIAM;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

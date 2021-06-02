@@ -44,9 +44,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ClickViewServiceClientTest {
+  private static MockClickViewService mockClickViewService;
   private static MockServiceHelper mockServiceHelper;
   private ClickViewServiceClient client;
-  private static MockClickViewService mockClickViewService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

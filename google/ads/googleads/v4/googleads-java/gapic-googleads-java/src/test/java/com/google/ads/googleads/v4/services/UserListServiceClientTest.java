@@ -46,8 +46,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class UserListServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockUserListService mockUserListService;
+  private static MockServiceHelper mockServiceHelper;
   private UserListServiceClient client;
   private LocalChannelProvider channelProvider;
 

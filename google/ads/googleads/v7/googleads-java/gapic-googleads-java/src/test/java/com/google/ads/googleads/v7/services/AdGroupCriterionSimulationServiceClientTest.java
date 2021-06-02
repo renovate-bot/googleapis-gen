@@ -41,10 +41,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AdGroupCriterionSimulationServiceClientTest {
+  private static MockAdGroupCriterionSimulationService mockAdGroupCriterionSimulationService;
   private static MockServiceHelper mockServiceHelper;
   private AdGroupCriterionSimulationServiceClient client;
   private LocalChannelProvider channelProvider;
-  private static MockAdGroupCriterionSimulationService mockAdGroupCriterionSimulationService;
 
   @BeforeClass
   public static void startStaticServer() {

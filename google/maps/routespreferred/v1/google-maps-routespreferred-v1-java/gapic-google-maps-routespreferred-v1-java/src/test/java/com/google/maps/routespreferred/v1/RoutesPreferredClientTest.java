@@ -64,10 +64,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class RoutesPreferredClientTest {
+  private static MockRoutesPreferred mockRoutesPreferred;
   private static MockServiceHelper mockServiceHelper;
   private RoutesPreferredClient client;
   private LocalChannelProvider channelProvider;
-  private static MockRoutesPreferred mockRoutesPreferred;
 
   @BeforeClass
   public static void startStaticServer() {

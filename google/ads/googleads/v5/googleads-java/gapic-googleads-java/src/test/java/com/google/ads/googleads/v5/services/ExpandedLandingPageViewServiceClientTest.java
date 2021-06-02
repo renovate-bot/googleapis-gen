@@ -42,10 +42,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ExpandedLandingPageViewServiceClientTest {
+  private static MockExpandedLandingPageViewService mockExpandedLandingPageViewService;
   private static MockServiceHelper mockServiceHelper;
   private ExpandedLandingPageViewServiceClient client;
   private LocalChannelProvider channelProvider;
-  private static MockExpandedLandingPageViewService mockExpandedLandingPageViewService;
 
   @BeforeClass
   public static void startStaticServer() {

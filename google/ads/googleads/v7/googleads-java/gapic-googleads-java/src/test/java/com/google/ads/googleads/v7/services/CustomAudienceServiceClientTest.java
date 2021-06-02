@@ -43,9 +43,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CustomAudienceServiceClientTest {
+  private static MockCustomAudienceService mockCustomAudienceService;
   private static MockServiceHelper mockServiceHelper;
   private CustomAudienceServiceClient client;
-  private static MockCustomAudienceService mockCustomAudienceService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

@@ -43,9 +43,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class SharedCriterionServiceClientTest {
+  private static MockSharedCriterionService mockSharedCriterionService;
   private static MockServiceHelper mockServiceHelper;
   private SharedCriterionServiceClient client;
-  private static MockSharedCriterionService mockSharedCriterionService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

@@ -41,8 +41,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CarrierConstantServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockCarrierConstantService mockCarrierConstantService;
+  private static MockServiceHelper mockServiceHelper;
   private CarrierConstantServiceClient client;
   private LocalChannelProvider channelProvider;
 

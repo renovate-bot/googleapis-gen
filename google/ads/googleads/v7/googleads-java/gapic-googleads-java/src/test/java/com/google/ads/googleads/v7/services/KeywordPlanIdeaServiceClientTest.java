@@ -46,9 +46,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class KeywordPlanIdeaServiceClientTest {
+  private static MockKeywordPlanIdeaService mockKeywordPlanIdeaService;
   private static MockServiceHelper mockServiceHelper;
   private KeywordPlanIdeaServiceClient client;
-  private static MockKeywordPlanIdeaService mockKeywordPlanIdeaService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

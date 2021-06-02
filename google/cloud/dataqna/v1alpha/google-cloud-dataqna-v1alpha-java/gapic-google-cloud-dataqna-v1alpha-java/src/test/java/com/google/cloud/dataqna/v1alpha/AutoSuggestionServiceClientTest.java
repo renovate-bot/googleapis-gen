@@ -40,8 +40,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AutoSuggestionServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockAutoSuggestionService mockAutoSuggestionService;
+  private static MockServiceHelper mockServiceHelper;
   private AutoSuggestionServiceClient client;
   private LocalChannelProvider channelProvider;
 

@@ -41,8 +41,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class MobileAppCategoryConstantServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockMobileAppCategoryConstantService mockMobileAppCategoryConstantService;
+  private static MockServiceHelper mockServiceHelper;
   private MobileAppCategoryConstantServiceClient client;
   private LocalChannelProvider channelProvider;
 

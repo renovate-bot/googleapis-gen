@@ -47,10 +47,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AdGroupServiceClientTest {
+  private static MockAdGroupService mockAdGroupService;
   private static MockServiceHelper mockServiceHelper;
   private AdGroupServiceClient client;
   private LocalChannelProvider channelProvider;
-  private static MockAdGroupService mockAdGroupService;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -41,8 +41,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AgeRangeViewServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockAgeRangeViewService mockAgeRangeViewService;
+  private static MockServiceHelper mockServiceHelper;
   private AgeRangeViewServiceClient client;
   private LocalChannelProvider channelProvider;
 

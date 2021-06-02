@@ -63,9 +63,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class DatastoreClientTest {
+  private static MockDatastore mockDatastore;
   private static MockServiceHelper mockServiceHelper;
   private DatastoreClient client;
-  private static MockDatastore mockDatastore;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

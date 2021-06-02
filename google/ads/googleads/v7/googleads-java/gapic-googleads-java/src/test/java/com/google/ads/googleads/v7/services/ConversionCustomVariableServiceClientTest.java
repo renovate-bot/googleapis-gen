@@ -44,9 +44,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ConversionCustomVariableServiceClientTest {
+  private static MockConversionCustomVariableService mockConversionCustomVariableService;
   private static MockServiceHelper mockServiceHelper;
   private ConversionCustomVariableServiceClient client;
-  private static MockConversionCustomVariableService mockConversionCustomVariableService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

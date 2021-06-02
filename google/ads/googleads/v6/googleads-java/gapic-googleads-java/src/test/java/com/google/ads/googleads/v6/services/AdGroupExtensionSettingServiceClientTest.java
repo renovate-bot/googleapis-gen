@@ -43,9 +43,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AdGroupExtensionSettingServiceClientTest {
+  private static MockAdGroupExtensionSettingService mockAdGroupExtensionSettingService;
   private static MockServiceHelper mockServiceHelper;
   private AdGroupExtensionSettingServiceClient client;
-  private static MockAdGroupExtensionSettingService mockAdGroupExtensionSettingService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

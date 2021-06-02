@@ -40,8 +40,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class RoadsServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockRoadsService mockRoadsService;
+  private static MockServiceHelper mockServiceHelper;
   private RoadsServiceClient client;
   private LocalChannelProvider channelProvider;
 

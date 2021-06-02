@@ -44,10 +44,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class LabelServiceClientTest {
+  private static MockLabelService mockLabelService;
   private static MockServiceHelper mockServiceHelper;
   private LabelServiceClient client;
   private LocalChannelProvider channelProvider;
-  private static MockLabelService mockLabelService;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -41,9 +41,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class UserLocationViewServiceClientTest {
+  private static MockUserLocationViewService mockUserLocationViewService;
   private static MockServiceHelper mockServiceHelper;
   private UserLocationViewServiceClient client;
-  private static MockUserLocationViewService mockUserLocationViewService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

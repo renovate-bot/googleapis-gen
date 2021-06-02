@@ -63,8 +63,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class BaseBigtableDataClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockBigtable mockBigtable;
+  private static MockServiceHelper mockServiceHelper;
   private BaseBigtableDataClient client;
   private LocalChannelProvider channelProvider;
 

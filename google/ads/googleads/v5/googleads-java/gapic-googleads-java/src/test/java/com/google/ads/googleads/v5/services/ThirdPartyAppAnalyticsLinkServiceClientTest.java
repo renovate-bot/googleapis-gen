@@ -42,9 +42,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ThirdPartyAppAnalyticsLinkServiceClientTest {
+  private static MockThirdPartyAppAnalyticsLinkService mockThirdPartyAppAnalyticsLinkService;
   private static MockServiceHelper mockServiceHelper;
   private ThirdPartyAppAnalyticsLinkServiceClient client;
-  private static MockThirdPartyAppAnalyticsLinkService mockThirdPartyAppAnalyticsLinkService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

@@ -47,9 +47,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CampaignCriterionServiceClientTest {
+  private static MockCampaignCriterionService mockCampaignCriterionService;
   private static MockServiceHelper mockServiceHelper;
   private CampaignCriterionServiceClient client;
-  private static MockCampaignCriterionService mockCampaignCriterionService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

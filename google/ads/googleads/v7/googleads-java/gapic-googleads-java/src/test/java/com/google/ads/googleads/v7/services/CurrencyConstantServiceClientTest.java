@@ -41,9 +41,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class CurrencyConstantServiceClientTest {
+  private static MockCurrencyConstantService mockCurrencyConstantService;
   private static MockServiceHelper mockServiceHelper;
   private CurrencyConstantServiceClient client;
-  private static MockCurrencyConstantService mockCurrencyConstantService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

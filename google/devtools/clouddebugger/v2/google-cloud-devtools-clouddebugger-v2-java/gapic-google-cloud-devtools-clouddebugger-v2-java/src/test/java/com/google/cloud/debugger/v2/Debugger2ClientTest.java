@@ -52,9 +52,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class Debugger2ClientTest {
+  private static MockDebugger2 mockDebugger2;
   private static MockServiceHelper mockServiceHelper;
   private Debugger2Client client;
-  private static MockDebugger2 mockDebugger2;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass

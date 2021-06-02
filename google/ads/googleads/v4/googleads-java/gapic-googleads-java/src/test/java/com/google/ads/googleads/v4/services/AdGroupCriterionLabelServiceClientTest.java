@@ -44,8 +44,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class AdGroupCriterionLabelServiceClientTest {
-  private static MockServiceHelper mockServiceHelper;
   private static MockAdGroupCriterionLabelService mockAdGroupCriterionLabelService;
+  private static MockServiceHelper mockServiceHelper;
   private AdGroupCriterionLabelServiceClient client;
   private LocalChannelProvider channelProvider;
 

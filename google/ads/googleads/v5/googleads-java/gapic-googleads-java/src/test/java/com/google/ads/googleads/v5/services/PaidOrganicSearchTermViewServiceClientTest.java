@@ -42,9 +42,9 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PaidOrganicSearchTermViewServiceClientTest {
+  private static MockPaidOrganicSearchTermViewService mockPaidOrganicSearchTermViewService;
   private static MockServiceHelper mockServiceHelper;
   private PaidOrganicSearchTermViewServiceClient client;
-  private static MockPaidOrganicSearchTermViewService mockPaidOrganicSearchTermViewService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
