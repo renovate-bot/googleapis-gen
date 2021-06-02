@@ -1,0 +1,43 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.cloud.ondemandscanning_v1beta1",
+  "protoPackage": "google.cloud.ondemandscanning.v1beta1",
+  "schema": "1.0",
+  "services": {
+    "ScannerService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ScannerServiceClient",
+          "rpcs": {
+            "AnalyzePackages": {
+              "methods": [
+                "analyze_packages"
+              ]
+            },
+            "ListVulnerabilities": {
+              "methods": [
+                "list_vulnerabilities"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "ScannerServiceAsyncClient",
+          "rpcs": {
+            "AnalyzePackages": {
+              "methods": [
+                "analyze_packages"
+              ]
+            },
+            "ListVulnerabilities": {
+              "methods": [
+                "list_vulnerabilities"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

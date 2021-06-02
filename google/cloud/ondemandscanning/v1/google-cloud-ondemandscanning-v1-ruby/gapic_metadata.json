@@ -1,0 +1,28 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.ondemandscanning.v1",
+  "libraryPackage": "::Google::Cloud::OnDemandScanning::V1",
+  "services": {
+    "ScannerService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::OnDemandScanning::V1::ScannerService::Client",
+          "rpcs": {
+            "AnalyzePackages": {
+              "methods": [
+                "analyze_packages"
+              ]
+            },
+            "ListVulnerabilities": {
+              "methods": [
+                "list_vulnerabilities"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
