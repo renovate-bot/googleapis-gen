@@ -1,0 +1,9 @@
+{
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-remoteworkers-v1test2/latest",
+    "distribution_name": "google-cloud-remoteworkers-v1test2",
+    "language": "ruby",
+    "name_pretty": "Google Cloud Remoteworkers V1test2 API",
+    "repo": "googleapis/google-cloud-ruby",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}

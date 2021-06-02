@@ -1,0 +1,9 @@
+{
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-sql-v1beta4/latest",
+    "distribution_name": "google-cloud-sql-v1beta4",
+    "language": "ruby",
+    "name_pretty": "Google Cloud Sql V1beta4 API",
+    "repo": "googleapis/google-cloud-ruby",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}

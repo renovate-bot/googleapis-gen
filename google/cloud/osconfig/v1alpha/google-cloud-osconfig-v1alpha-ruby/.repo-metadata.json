@@ -1,0 +1,12 @@
+{
+    "api_id": "osconfig.googleapis.com",
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-os_config-v1alpha/latest",
+    "distribution_name": "google-cloud-os_config-v1alpha",
+    "language": "ruby",
+    "name": "osconfig",
+    "name_pretty": "Google Cloud OsConfig V1alpha API",
+    "product_documentation": "https://cloud.google.com/compute/docs/manage-os",
+    "repo": "googleapis/google-cloud-ruby",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}

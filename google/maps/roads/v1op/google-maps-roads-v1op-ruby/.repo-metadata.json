@@ -1,0 +1,9 @@
+{
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-roads-v1op/latest",
+    "distribution_name": "google-cloud-roads-v1op",
+    "language": "ruby",
+    "name_pretty": "Google Cloud Roads V1op API",
+    "repo": "googleapis/google-cloud-ruby",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}

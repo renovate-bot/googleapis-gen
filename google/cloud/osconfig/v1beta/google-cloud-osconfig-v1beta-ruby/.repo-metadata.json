@@ -1,0 +1,9 @@
+{
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-osconfig-v1beta/latest",
+    "distribution_name": "google-cloud-osconfig-v1beta",
+    "language": "ruby",
+    "name_pretty": "Google Cloud Osconfig V1beta API",
+    "repo": "googleapis/google-cloud-ruby",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}

@@ -1,0 +1,9 @@
+{
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-dialogflow-v2beta1/latest",
+    "distribution_name": "google-cloud-dialogflow-v2beta1",
+    "language": "ruby",
+    "name_pretty": "Google Cloud Dialogflow V2beta1 API",
+    "repo": "googleapis/google-cloud-ruby",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}

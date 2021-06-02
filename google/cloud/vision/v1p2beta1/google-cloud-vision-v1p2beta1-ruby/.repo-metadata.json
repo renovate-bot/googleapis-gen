@@ -1,0 +1,9 @@
+{
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-vision-v1p2beta1/latest",
+    "distribution_name": "google-cloud-vision-v1p2beta1",
+    "language": "ruby",
+    "name_pretty": "Google Cloud Vision V1p2beta1 API",
+    "repo": "googleapis/google-cloud-ruby",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}

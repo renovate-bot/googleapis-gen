@@ -1,0 +1,9 @@
+{
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-retail-v2alpha/latest",
+    "distribution_name": "google-cloud-retail-v2alpha",
+    "language": "ruby",
+    "name_pretty": "Google Cloud Retail V2alpha API",
+    "repo": "googleapis/google-cloud-ruby",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}
