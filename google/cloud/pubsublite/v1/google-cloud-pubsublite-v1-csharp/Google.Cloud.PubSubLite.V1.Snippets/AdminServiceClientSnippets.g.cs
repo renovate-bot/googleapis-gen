@@ -1616,5 +1616,894 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             await adminServiceClient.DeleteSubscriptionAsync(name);
             // End snippet
         }
+
+        /// <summary>Snippet for CreateReservation</summary>
+        public void CreateReservationRequestObject()
+        {
+            // Snippet: CreateReservation(CreateReservationRequest, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            CreateReservationRequest request = new CreateReservationRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Reservation = new Reservation(),
+                ReservationId = "",
+            };
+            // Make the request
+            Reservation response = adminServiceClient.CreateReservation(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for CreateReservationAsync</summary>
+        public async Task CreateReservationRequestObjectAsync()
+        {
+            // Snippet: CreateReservationAsync(CreateReservationRequest, CallSettings)
+            // Additional: CreateReservationAsync(CreateReservationRequest, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            CreateReservationRequest request = new CreateReservationRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Reservation = new Reservation(),
+                ReservationId = "",
+            };
+            // Make the request
+            Reservation response = await adminServiceClient.CreateReservationAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for CreateReservation</summary>
+        public void CreateReservation()
+        {
+            // Snippet: CreateReservation(string, Reservation, string, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            string parent = "projects/[PROJECT]/locations/[LOCATION]";
+            Reservation reservation = new Reservation();
+            string reservationId = "";
+            // Make the request
+            Reservation response = adminServiceClient.CreateReservation(parent, reservation, reservationId);
+            // End snippet
+        }
+
+        /// <summary>Snippet for CreateReservationAsync</summary>
+        public async Task CreateReservationAsync()
+        {
+            // Snippet: CreateReservationAsync(string, Reservation, string, CallSettings)
+            // Additional: CreateReservationAsync(string, Reservation, string, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            string parent = "projects/[PROJECT]/locations/[LOCATION]";
+            Reservation reservation = new Reservation();
+            string reservationId = "";
+            // Make the request
+            Reservation response = await adminServiceClient.CreateReservationAsync(parent, reservation, reservationId);
+            // End snippet
+        }
+
+        /// <summary>Snippet for CreateReservation</summary>
+        public void CreateReservationResourceNames()
+        {
+            // Snippet: CreateReservation(LocationName, Reservation, string, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            LocationName parent = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
+            Reservation reservation = new Reservation();
+            string reservationId = "";
+            // Make the request
+            Reservation response = adminServiceClient.CreateReservation(parent, reservation, reservationId);
+            // End snippet
+        }
+
+        /// <summary>Snippet for CreateReservationAsync</summary>
+        public async Task CreateReservationResourceNamesAsync()
+        {
+            // Snippet: CreateReservationAsync(LocationName, Reservation, string, CallSettings)
+            // Additional: CreateReservationAsync(LocationName, Reservation, string, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            LocationName parent = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
+            Reservation reservation = new Reservation();
+            string reservationId = "";
+            // Make the request
+            Reservation response = await adminServiceClient.CreateReservationAsync(parent, reservation, reservationId);
+            // End snippet
+        }
+
+        /// <summary>Snippet for GetReservation</summary>
+        public void GetReservationRequestObject()
+        {
+            // Snippet: GetReservation(GetReservationRequest, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            GetReservationRequest request = new GetReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            // Make the request
+            Reservation response = adminServiceClient.GetReservation(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for GetReservationAsync</summary>
+        public async Task GetReservationRequestObjectAsync()
+        {
+            // Snippet: GetReservationAsync(GetReservationRequest, CallSettings)
+            // Additional: GetReservationAsync(GetReservationRequest, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            GetReservationRequest request = new GetReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            // Make the request
+            Reservation response = await adminServiceClient.GetReservationAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for GetReservation</summary>
+        public void GetReservation()
+        {
+            // Snippet: GetReservation(string, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/reservations/[RESERVATION]";
+            // Make the request
+            Reservation response = adminServiceClient.GetReservation(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for GetReservationAsync</summary>
+        public async Task GetReservationAsync()
+        {
+            // Snippet: GetReservationAsync(string, CallSettings)
+            // Additional: GetReservationAsync(string, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/reservations/[RESERVATION]";
+            // Make the request
+            Reservation response = await adminServiceClient.GetReservationAsync(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for GetReservation</summary>
+        public void GetReservationResourceNames()
+        {
+            // Snippet: GetReservation(ReservationName, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            ReservationName name = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+            // Make the request
+            Reservation response = adminServiceClient.GetReservation(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for GetReservationAsync</summary>
+        public async Task GetReservationResourceNamesAsync()
+        {
+            // Snippet: GetReservationAsync(ReservationName, CallSettings)
+            // Additional: GetReservationAsync(ReservationName, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            ReservationName name = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+            // Make the request
+            Reservation response = await adminServiceClient.GetReservationAsync(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservations</summary>
+        public void ListReservationsRequestObject()
+        {
+            // Snippet: ListReservations(ListReservationsRequest, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            ListReservationsRequest request = new ListReservationsRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+            };
+            // Make the request
+            PagedEnumerable<ListReservationsResponse, Reservation> response = adminServiceClient.ListReservations(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (Reservation item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (ListReservationsResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Reservation item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Reservation> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Reservation item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservationsAsync</summary>
+        public async Task ListReservationsRequestObjectAsync()
+        {
+            // Snippet: ListReservationsAsync(ListReservationsRequest, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            ListReservationsRequest request = new ListReservationsRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+            };
+            // Make the request
+            PagedAsyncEnumerable<ListReservationsResponse, Reservation> response = adminServiceClient.ListReservationsAsync(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await response.ForEachAsync((Reservation item) =>
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            });
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await response.AsRawResponses().ForEachAsync((ListReservationsResponse page) =>
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Reservation item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            });
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Reservation> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Reservation item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservations</summary>
+        public void ListReservations()
+        {
+            // Snippet: ListReservations(string, string, int?, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            string parent = "projects/[PROJECT]/locations/[LOCATION]";
+            // Make the request
+            PagedEnumerable<ListReservationsResponse, Reservation> response = adminServiceClient.ListReservations(parent);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (Reservation item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (ListReservationsResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Reservation item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Reservation> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Reservation item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservationsAsync</summary>
+        public async Task ListReservationsAsync()
+        {
+            // Snippet: ListReservationsAsync(string, string, int?, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            string parent = "projects/[PROJECT]/locations/[LOCATION]";
+            // Make the request
+            PagedAsyncEnumerable<ListReservationsResponse, Reservation> response = adminServiceClient.ListReservationsAsync(parent);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await response.ForEachAsync((Reservation item) =>
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            });
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await response.AsRawResponses().ForEachAsync((ListReservationsResponse page) =>
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Reservation item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            });
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Reservation> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Reservation item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservations</summary>
+        public void ListReservationsResourceNames()
+        {
+            // Snippet: ListReservations(LocationName, string, int?, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            LocationName parent = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
+            // Make the request
+            PagedEnumerable<ListReservationsResponse, Reservation> response = adminServiceClient.ListReservations(parent);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (Reservation item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (ListReservationsResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Reservation item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Reservation> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Reservation item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservationsAsync</summary>
+        public async Task ListReservationsResourceNamesAsync()
+        {
+            // Snippet: ListReservationsAsync(LocationName, string, int?, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            LocationName parent = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
+            // Make the request
+            PagedAsyncEnumerable<ListReservationsResponse, Reservation> response = adminServiceClient.ListReservationsAsync(parent);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await response.ForEachAsync((Reservation item) =>
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            });
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await response.AsRawResponses().ForEachAsync((ListReservationsResponse page) =>
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Reservation item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            });
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Reservation> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Reservation item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for UpdateReservation</summary>
+        public void UpdateReservationRequestObject()
+        {
+            // Snippet: UpdateReservation(UpdateReservationRequest, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            UpdateReservationRequest request = new UpdateReservationRequest
+            {
+                Reservation = new Reservation(),
+                UpdateMask = new FieldMask(),
+            };
+            // Make the request
+            Reservation response = adminServiceClient.UpdateReservation(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for UpdateReservationAsync</summary>
+        public async Task UpdateReservationRequestObjectAsync()
+        {
+            // Snippet: UpdateReservationAsync(UpdateReservationRequest, CallSettings)
+            // Additional: UpdateReservationAsync(UpdateReservationRequest, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            UpdateReservationRequest request = new UpdateReservationRequest
+            {
+                Reservation = new Reservation(),
+                UpdateMask = new FieldMask(),
+            };
+            // Make the request
+            Reservation response = await adminServiceClient.UpdateReservationAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for UpdateReservation</summary>
+        public void UpdateReservation()
+        {
+            // Snippet: UpdateReservation(Reservation, FieldMask, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            Reservation reservation = new Reservation();
+            FieldMask updateMask = new FieldMask();
+            // Make the request
+            Reservation response = adminServiceClient.UpdateReservation(reservation, updateMask);
+            // End snippet
+        }
+
+        /// <summary>Snippet for UpdateReservationAsync</summary>
+        public async Task UpdateReservationAsync()
+        {
+            // Snippet: UpdateReservationAsync(Reservation, FieldMask, CallSettings)
+            // Additional: UpdateReservationAsync(Reservation, FieldMask, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            Reservation reservation = new Reservation();
+            FieldMask updateMask = new FieldMask();
+            // Make the request
+            Reservation response = await adminServiceClient.UpdateReservationAsync(reservation, updateMask);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteReservation</summary>
+        public void DeleteReservationRequestObject()
+        {
+            // Snippet: DeleteReservation(DeleteReservationRequest, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            DeleteReservationRequest request = new DeleteReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            // Make the request
+            adminServiceClient.DeleteReservation(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteReservationAsync</summary>
+        public async Task DeleteReservationRequestObjectAsync()
+        {
+            // Snippet: DeleteReservationAsync(DeleteReservationRequest, CallSettings)
+            // Additional: DeleteReservationAsync(DeleteReservationRequest, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            DeleteReservationRequest request = new DeleteReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            // Make the request
+            await adminServiceClient.DeleteReservationAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteReservation</summary>
+        public void DeleteReservation()
+        {
+            // Snippet: DeleteReservation(string, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/reservations/[RESERVATION]";
+            // Make the request
+            adminServiceClient.DeleteReservation(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteReservationAsync</summary>
+        public async Task DeleteReservationAsync()
+        {
+            // Snippet: DeleteReservationAsync(string, CallSettings)
+            // Additional: DeleteReservationAsync(string, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/reservations/[RESERVATION]";
+            // Make the request
+            await adminServiceClient.DeleteReservationAsync(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteReservation</summary>
+        public void DeleteReservationResourceNames()
+        {
+            // Snippet: DeleteReservation(ReservationName, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            ReservationName name = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+            // Make the request
+            adminServiceClient.DeleteReservation(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteReservationAsync</summary>
+        public async Task DeleteReservationResourceNamesAsync()
+        {
+            // Snippet: DeleteReservationAsync(ReservationName, CallSettings)
+            // Additional: DeleteReservationAsync(ReservationName, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            ReservationName name = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+            // Make the request
+            await adminServiceClient.DeleteReservationAsync(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservationTopics</summary>
+        public void ListReservationTopicsRequestObject()
+        {
+            // Snippet: ListReservationTopics(ListReservationTopicsRequest, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            ListReservationTopicsRequest request = new ListReservationTopicsRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            // Make the request
+            PagedEnumerable<ListReservationTopicsResponse, string> response = adminServiceClient.ListReservationTopics(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (string item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (ListReservationTopicsResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (string item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<string> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (string item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservationTopicsAsync</summary>
+        public async Task ListReservationTopicsRequestObjectAsync()
+        {
+            // Snippet: ListReservationTopicsAsync(ListReservationTopicsRequest, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            ListReservationTopicsRequest request = new ListReservationTopicsRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            // Make the request
+            PagedAsyncEnumerable<ListReservationTopicsResponse, string> response = adminServiceClient.ListReservationTopicsAsync(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await response.ForEachAsync((string item) =>
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            });
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await response.AsRawResponses().ForEachAsync((ListReservationTopicsResponse page) =>
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (string item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            });
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<string> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (string item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservationTopics</summary>
+        public void ListReservationTopics()
+        {
+            // Snippet: ListReservationTopics(string, string, int?, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/reservations/[RESERVATION]";
+            // Make the request
+            PagedEnumerable<ListReservationTopicsResponse, string> response = adminServiceClient.ListReservationTopics(name);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (string item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (ListReservationTopicsResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (string item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<string> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (string item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservationTopicsAsync</summary>
+        public async Task ListReservationTopicsAsync()
+        {
+            // Snippet: ListReservationTopicsAsync(string, string, int?, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            string name = "projects/[PROJECT]/locations/[LOCATION]/reservations/[RESERVATION]";
+            // Make the request
+            PagedAsyncEnumerable<ListReservationTopicsResponse, string> response = adminServiceClient.ListReservationTopicsAsync(name);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await response.ForEachAsync((string item) =>
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            });
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await response.AsRawResponses().ForEachAsync((ListReservationTopicsResponse page) =>
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (string item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            });
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<string> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (string item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservationTopics</summary>
+        public void ListReservationTopicsResourceNames()
+        {
+            // Snippet: ListReservationTopics(ReservationName, string, int?, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            ReservationName name = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+            // Make the request
+            PagedEnumerable<ListReservationTopicsResponse, string> response = adminServiceClient.ListReservationTopics(name);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (string item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (ListReservationTopicsResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (string item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<string> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (string item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListReservationTopicsAsync</summary>
+        public async Task ListReservationTopicsResourceNamesAsync()
+        {
+            // Snippet: ListReservationTopicsAsync(ReservationName, string, int?, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            ReservationName name = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+            // Make the request
+            PagedAsyncEnumerable<ListReservationTopicsResponse, string> response = adminServiceClient.ListReservationTopicsAsync(name);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await response.ForEachAsync((string item) =>
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            });
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await response.AsRawResponses().ForEachAsync((ListReservationTopicsResponse page) =>
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (string item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            });
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<string> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (string item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
     }
 }

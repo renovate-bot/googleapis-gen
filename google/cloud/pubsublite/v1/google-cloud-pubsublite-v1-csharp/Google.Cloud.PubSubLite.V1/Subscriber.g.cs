@@ -174,9 +174,9 @@ namespace Google.Cloud.PubSubLite.V1 {
     public const int InitialLocationFieldNumber = 4;
     private global::Google.Cloud.PubSubLite.V1.SeekRequest initialLocation_;
     /// <summary>
-    /// Optional. Initial target location within the message backlog. If not set,
-    /// messages will be delivered from the commit cursor for the given
-    /// subscription and partition.
+    /// Optional. Initial target location within the message backlog. If not set, messages
+    /// will be delivered from the commit cursor for the given subscription and
+    /// partition.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.PubSubLite.V1.SeekRequest InitialLocation {

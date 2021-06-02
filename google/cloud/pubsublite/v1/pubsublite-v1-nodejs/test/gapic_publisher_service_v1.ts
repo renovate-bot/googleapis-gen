@@ -179,6 +179,52 @@ describe('v1.PublisherServiceClient', () => {
 
     describe('Path templates', () => {
 
+        describe('reservation', () => {
+            const fakePath = "/rendered/path/reservation";
+            const expectedParameters = {
+                project: "projectValue",
+                location: "locationValue",
+                reservation: "reservationValue",
+            };
+            const client = new publisherserviceModule.v1.PublisherServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.reservationPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.reservationPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('reservationPath', () => {
+                const result = client.reservationPath("projectValue", "locationValue", "reservationValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.reservationPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchProjectFromReservationName', () => {
+                const result = client.matchProjectFromReservationName(fakePath);
+                assert.strictEqual(result, "projectValue");
+                assert((client.pathTemplates.reservationPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchLocationFromReservationName', () => {
+                const result = client.matchLocationFromReservationName(fakePath);
+                assert.strictEqual(result, "locationValue");
+                assert((client.pathTemplates.reservationPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchReservationFromReservationName', () => {
+                const result = client.matchReservationFromReservationName(fakePath);
+                assert.strictEqual(result, "reservationValue");
+                assert((client.pathTemplates.reservationPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
         describe('subscription', () => {
             const fakePath = "/rendered/path/subscription";
             const expectedParameters = {

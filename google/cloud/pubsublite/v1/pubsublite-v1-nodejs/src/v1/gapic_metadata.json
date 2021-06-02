@@ -55,6 +55,26 @@
                 "deleteSubscription"
               ]
             },
+            "CreateReservation": {
+              "methods": [
+                "createReservation"
+              ]
+            },
+            "GetReservation": {
+              "methods": [
+                "getReservation"
+              ]
+            },
+            "UpdateReservation": {
+              "methods": [
+                "updateReservation"
+              ]
+            },
+            "DeleteReservation": {
+              "methods": [
+                "deleteReservation"
+              ]
+            },
             "ListTopics": {
               "methods": [
                 "listTopics",
@@ -74,6 +94,20 @@
                 "listSubscriptions",
                 "listSubscriptionsStream",
                 "listSubscriptionsAsync"
+              ]
+            },
+            "ListReservations": {
+              "methods": [
+                "listReservations",
+                "listReservationsStream",
+                "listReservationsAsync"
+              ]
+            },
+            "ListReservationTopics": {
+              "methods": [
+                "listReservationTopics",
+                "listReservationTopicsStream",
+                "listReservationTopicsAsync"
               ]
             }
           }
@@ -126,6 +160,26 @@
                 "deleteSubscription"
               ]
             },
+            "CreateReservation": {
+              "methods": [
+                "createReservation"
+              ]
+            },
+            "GetReservation": {
+              "methods": [
+                "getReservation"
+              ]
+            },
+            "UpdateReservation": {
+              "methods": [
+                "updateReservation"
+              ]
+            },
+            "DeleteReservation": {
+              "methods": [
+                "deleteReservation"
+              ]
+            },
             "ListTopics": {
               "methods": [
                 "listTopics",
@@ -145,6 +199,20 @@
                 "listSubscriptions",
                 "listSubscriptionsStream",
                 "listSubscriptionsAsync"
+              ]
+            },
+            "ListReservations": {
+              "methods": [
+                "listReservations",
+                "listReservationsStream",
+                "listReservationsAsync"
+              ]
+            },
+            "ListReservationTopics": {
+              "methods": [
+                "listReservationTopics",
+                "listReservationTopicsStream",
+                "listReservationTopicsAsync"
               ]
             }
           }

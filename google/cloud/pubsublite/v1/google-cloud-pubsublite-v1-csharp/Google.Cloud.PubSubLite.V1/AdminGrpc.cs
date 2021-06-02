@@ -80,6 +80,15 @@ namespace Google.Cloud.PubSubLite.V1 {
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.ListSubscriptionsResponse> __Marshaller_google_cloud_pubsublite_v1_ListSubscriptionsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.ListSubscriptionsResponse.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.UpdateSubscriptionRequest> __Marshaller_google_cloud_pubsublite_v1_UpdateSubscriptionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.UpdateSubscriptionRequest.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest> __Marshaller_google_cloud_pubsublite_v1_DeleteSubscriptionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.CreateReservationRequest> __Marshaller_google_cloud_pubsublite_v1_CreateReservationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.CreateReservationRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.Reservation> __Marshaller_google_cloud_pubsublite_v1_Reservation = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.Reservation.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.GetReservationRequest> __Marshaller_google_cloud_pubsublite_v1_GetReservationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.GetReservationRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.ListReservationsRequest> __Marshaller_google_cloud_pubsublite_v1_ListReservationsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.ListReservationsRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.ListReservationsResponse> __Marshaller_google_cloud_pubsublite_v1_ListReservationsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.ListReservationsResponse.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest> __Marshaller_google_cloud_pubsublite_v1_UpdateReservationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest> __Marshaller_google_cloud_pubsublite_v1_DeleteReservationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest> __Marshaller_google_cloud_pubsublite_v1_ListReservationTopicsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse> __Marshaller_google_cloud_pubsublite_v1_ListReservationTopicsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse.Parser));
 
     static readonly grpc::Method<global::Google.Cloud.PubSubLite.V1.CreateTopicRequest, global::Google.Cloud.PubSubLite.V1.Topic> __Method_CreateTopic = new grpc::Method<global::Google.Cloud.PubSubLite.V1.CreateTopicRequest, global::Google.Cloud.PubSubLite.V1.Topic>(
         grpc::MethodType.Unary,
@@ -164,6 +173,48 @@ namespace Google.Cloud.PubSubLite.V1 {
         "DeleteSubscription",
         __Marshaller_google_cloud_pubsublite_v1_DeleteSubscriptionRequest,
         __Marshaller_google_protobuf_Empty);
+
+    static readonly grpc::Method<global::Google.Cloud.PubSubLite.V1.CreateReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation> __Method_CreateReservation = new grpc::Method<global::Google.Cloud.PubSubLite.V1.CreateReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateReservation",
+        __Marshaller_google_cloud_pubsublite_v1_CreateReservationRequest,
+        __Marshaller_google_cloud_pubsublite_v1_Reservation);
+
+    static readonly grpc::Method<global::Google.Cloud.PubSubLite.V1.GetReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation> __Method_GetReservation = new grpc::Method<global::Google.Cloud.PubSubLite.V1.GetReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetReservation",
+        __Marshaller_google_cloud_pubsublite_v1_GetReservationRequest,
+        __Marshaller_google_cloud_pubsublite_v1_Reservation);
+
+    static readonly grpc::Method<global::Google.Cloud.PubSubLite.V1.ListReservationsRequest, global::Google.Cloud.PubSubLite.V1.ListReservationsResponse> __Method_ListReservations = new grpc::Method<global::Google.Cloud.PubSubLite.V1.ListReservationsRequest, global::Google.Cloud.PubSubLite.V1.ListReservationsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListReservations",
+        __Marshaller_google_cloud_pubsublite_v1_ListReservationsRequest,
+        __Marshaller_google_cloud_pubsublite_v1_ListReservationsResponse);
+
+    static readonly grpc::Method<global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation> __Method_UpdateReservation = new grpc::Method<global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateReservation",
+        __Marshaller_google_cloud_pubsublite_v1_UpdateReservationRequest,
+        __Marshaller_google_cloud_pubsublite_v1_Reservation);
+
+    static readonly grpc::Method<global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest, global::Google.Protobuf.WellKnownTypes.Empty> __Method_DeleteReservation = new grpc::Method<global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest, global::Google.Protobuf.WellKnownTypes.Empty>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DeleteReservation",
+        __Marshaller_google_cloud_pubsublite_v1_DeleteReservationRequest,
+        __Marshaller_google_protobuf_Empty);
+
+    static readonly grpc::Method<global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest, global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse> __Method_ListReservationTopics = new grpc::Method<global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest, global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListReservationTopics",
+        __Marshaller_google_cloud_pubsublite_v1_ListReservationTopicsRequest,
+        __Marshaller_google_cloud_pubsublite_v1_ListReservationTopicsResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -303,6 +354,72 @@ namespace Google.Cloud.PubSubLite.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> DeleteSubscription(global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Creates a new reservation.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.PubSubLite.V1.Reservation> CreateReservation(global::Google.Cloud.PubSubLite.V1.CreateReservationRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Returns the reservation configuration.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.PubSubLite.V1.Reservation> GetReservation(global::Google.Cloud.PubSubLite.V1.GetReservationRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Returns the list of reservations for the given project.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.PubSubLite.V1.ListReservationsResponse> ListReservations(global::Google.Cloud.PubSubLite.V1.ListReservationsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Updates properties of the specified reservation.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.PubSubLite.V1.Reservation> UpdateReservation(global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Deletes the specified reservation.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> DeleteReservation(global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Lists the topics attached to the specified reservation.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse> ListReservationTopics(global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -860,6 +977,270 @@ namespace Google.Cloud.PubSubLite.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteSubscription, null, options, request);
       }
+      /// <summary>
+      /// Creates a new reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.Reservation CreateReservation(global::Google.Cloud.PubSubLite.V1.CreateReservationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateReservation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Creates a new reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.Reservation CreateReservation(global::Google.Cloud.PubSubLite.V1.CreateReservationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateReservation, null, options, request);
+      }
+      /// <summary>
+      /// Creates a new reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.Reservation> CreateReservationAsync(global::Google.Cloud.PubSubLite.V1.CreateReservationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateReservationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Creates a new reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.Reservation> CreateReservationAsync(global::Google.Cloud.PubSubLite.V1.CreateReservationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateReservation, null, options, request);
+      }
+      /// <summary>
+      /// Returns the reservation configuration.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.Reservation GetReservation(global::Google.Cloud.PubSubLite.V1.GetReservationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetReservation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Returns the reservation configuration.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.Reservation GetReservation(global::Google.Cloud.PubSubLite.V1.GetReservationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetReservation, null, options, request);
+      }
+      /// <summary>
+      /// Returns the reservation configuration.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.Reservation> GetReservationAsync(global::Google.Cloud.PubSubLite.V1.GetReservationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetReservationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Returns the reservation configuration.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.Reservation> GetReservationAsync(global::Google.Cloud.PubSubLite.V1.GetReservationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetReservation, null, options, request);
+      }
+      /// <summary>
+      /// Returns the list of reservations for the given project.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.ListReservationsResponse ListReservations(global::Google.Cloud.PubSubLite.V1.ListReservationsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListReservations(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Returns the list of reservations for the given project.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.ListReservationsResponse ListReservations(global::Google.Cloud.PubSubLite.V1.ListReservationsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListReservations, null, options, request);
+      }
+      /// <summary>
+      /// Returns the list of reservations for the given project.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.ListReservationsResponse> ListReservationsAsync(global::Google.Cloud.PubSubLite.V1.ListReservationsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListReservationsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Returns the list of reservations for the given project.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.ListReservationsResponse> ListReservationsAsync(global::Google.Cloud.PubSubLite.V1.ListReservationsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListReservations, null, options, request);
+      }
+      /// <summary>
+      /// Updates properties of the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.Reservation UpdateReservation(global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateReservation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Updates properties of the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.Reservation UpdateReservation(global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateReservation, null, options, request);
+      }
+      /// <summary>
+      /// Updates properties of the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.Reservation> UpdateReservationAsync(global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateReservationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Updates properties of the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.Reservation> UpdateReservationAsync(global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateReservation, null, options, request);
+      }
+      /// <summary>
+      /// Deletes the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty DeleteReservation(global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteReservation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Deletes the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty DeleteReservation(global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DeleteReservation, null, options, request);
+      }
+      /// <summary>
+      /// Deletes the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> DeleteReservationAsync(global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteReservationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Deletes the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> DeleteReservationAsync(global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DeleteReservation, null, options, request);
+      }
+      /// <summary>
+      /// Lists the topics attached to the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse ListReservationTopics(global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListReservationTopics(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Lists the topics attached to the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse ListReservationTopics(global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListReservationTopics, null, options, request);
+      }
+      /// <summary>
+      /// Lists the topics attached to the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse> ListReservationTopicsAsync(global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListReservationTopicsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Lists the topics attached to the specified reservation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse> ListReservationTopicsAsync(global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListReservationTopics, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override AdminServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -883,7 +1264,13 @@ namespace Google.Cloud.PubSubLite.V1 {
           .AddMethod(__Method_GetSubscription, serviceImpl.GetSubscription)
           .AddMethod(__Method_ListSubscriptions, serviceImpl.ListSubscriptions)
           .AddMethod(__Method_UpdateSubscription, serviceImpl.UpdateSubscription)
-          .AddMethod(__Method_DeleteSubscription, serviceImpl.DeleteSubscription).Build();
+          .AddMethod(__Method_DeleteSubscription, serviceImpl.DeleteSubscription)
+          .AddMethod(__Method_CreateReservation, serviceImpl.CreateReservation)
+          .AddMethod(__Method_GetReservation, serviceImpl.GetReservation)
+          .AddMethod(__Method_ListReservations, serviceImpl.ListReservations)
+          .AddMethod(__Method_UpdateReservation, serviceImpl.UpdateReservation)
+          .AddMethod(__Method_DeleteReservation, serviceImpl.DeleteReservation)
+          .AddMethod(__Method_ListReservationTopics, serviceImpl.ListReservationTopics).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -904,6 +1291,12 @@ namespace Google.Cloud.PubSubLite.V1 {
       serviceBinder.AddMethod(__Method_ListSubscriptions, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.ListSubscriptionsRequest, global::Google.Cloud.PubSubLite.V1.ListSubscriptionsResponse>(serviceImpl.ListSubscriptions));
       serviceBinder.AddMethod(__Method_UpdateSubscription, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.UpdateSubscriptionRequest, global::Google.Cloud.PubSubLite.V1.Subscription>(serviceImpl.UpdateSubscription));
       serviceBinder.AddMethod(__Method_DeleteSubscription, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.DeleteSubscription));
+      serviceBinder.AddMethod(__Method_CreateReservation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.CreateReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation>(serviceImpl.CreateReservation));
+      serviceBinder.AddMethod(__Method_GetReservation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.GetReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation>(serviceImpl.GetReservation));
+      serviceBinder.AddMethod(__Method_ListReservations, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.ListReservationsRequest, global::Google.Cloud.PubSubLite.V1.ListReservationsResponse>(serviceImpl.ListReservations));
+      serviceBinder.AddMethod(__Method_UpdateReservation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation>(serviceImpl.UpdateReservation));
+      serviceBinder.AddMethod(__Method_DeleteReservation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.DeleteReservation));
+      serviceBinder.AddMethod(__Method_ListReservationTopics, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest, global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse>(serviceImpl.ListReservationTopics));
     }
 
   }

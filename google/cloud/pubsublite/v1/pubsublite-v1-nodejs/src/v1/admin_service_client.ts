@@ -150,6 +150,9 @@ export class AdminServiceClient {
       locationPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/locations/{location}'
       ),
+      reservationPathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}/locations/{location}/reservations/{reservation}'
+      ),
       subscriptionPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/locations/{location}/subscriptions/{subscription}'
       ),
@@ -167,7 +170,11 @@ export class AdminServiceClient {
       listTopicSubscriptions:
           new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'subscriptions'),
       listSubscriptions:
-          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'subscriptions')
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'subscriptions'),
+      listReservations:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'reservations'),
+      listReservationTopics:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'topics')
     };
 
     // Put together the default options sent with requests.
@@ -210,7 +217,7 @@ export class AdminServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const adminServiceStubMethods =
-        ['createTopic', 'getTopic', 'getTopicPartitions', 'listTopics', 'updateTopic', 'deleteTopic', 'listTopicSubscriptions', 'createSubscription', 'getSubscription', 'listSubscriptions', 'updateSubscription', 'deleteSubscription'];
+        ['createTopic', 'getTopic', 'getTopicPartitions', 'listTopics', 'updateTopic', 'deleteTopic', 'listTopicSubscriptions', 'createSubscription', 'getSubscription', 'listSubscriptions', 'updateSubscription', 'deleteSubscription', 'createReservation', 'getReservation', 'listReservations', 'updateReservation', 'deleteReservation', 'listReservationTopics'];
     for (const methodName of adminServiceStubMethods) {
       const callPromise = this.adminServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -957,6 +964,304 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteSubscription(request, options, callback);
   }
+  createReservation(
+      request: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IReservation,
+        protos.google.cloud.pubsublite.v1.ICreateReservationRequest|undefined, {}|undefined
+      ]>;
+  createReservation(
+      request: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.ICreateReservationRequest|null|undefined,
+          {}|null|undefined>): void;
+  createReservation(
+      request: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.ICreateReservationRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Creates a new reservation.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent location in which to create the reservation.
+ *   Structured like `projects/{project_number}/locations/{location}`.
+ * @param {google.cloud.pubsublite.v1.Reservation} request.reservation
+ *   Required. Configuration of the reservation to create. Its `name` field is ignored.
+ * @param {string} request.reservationId
+ *   Required. The ID to use for the reservation, which will become the final component of
+ *   the reservation's name.
+ *
+ *   This value is structured like: `my-reservation-name`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Reservation]{@link google.cloud.pubsublite.v1.Reservation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.createReservation(request);
+ */
+  createReservation(
+      request: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.ICreateReservationRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.ICreateReservationRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IReservation,
+        protos.google.cloud.pubsublite.v1.ICreateReservationRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'parent': request.parent || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.createReservation(request, options, callback);
+  }
+  getReservation(
+      request: protos.google.cloud.pubsublite.v1.IGetReservationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IReservation,
+        protos.google.cloud.pubsublite.v1.IGetReservationRequest|undefined, {}|undefined
+      ]>;
+  getReservation(
+      request: protos.google.cloud.pubsublite.v1.IGetReservationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.IGetReservationRequest|null|undefined,
+          {}|null|undefined>): void;
+  getReservation(
+      request: protos.google.cloud.pubsublite.v1.IGetReservationRequest,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.IGetReservationRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Returns the reservation configuration.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the reservation whose configuration to return.
+ *   Structured like:
+ *   projects/{project_number}/locations/{location}/reservations/{reservation_id}
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Reservation]{@link google.cloud.pubsublite.v1.Reservation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.getReservation(request);
+ */
+  getReservation(
+      request: protos.google.cloud.pubsublite.v1.IGetReservationRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.IGetReservationRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.IGetReservationRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IReservation,
+        protos.google.cloud.pubsublite.v1.IGetReservationRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.getReservation(request, options, callback);
+  }
+  updateReservation(
+      request: protos.google.cloud.pubsublite.v1.IUpdateReservationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IReservation,
+        protos.google.cloud.pubsublite.v1.IUpdateReservationRequest|undefined, {}|undefined
+      ]>;
+  updateReservation(
+      request: protos.google.cloud.pubsublite.v1.IUpdateReservationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.IUpdateReservationRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateReservation(
+      request: protos.google.cloud.pubsublite.v1.IUpdateReservationRequest,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.IUpdateReservationRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Updates properties of the specified reservation.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.pubsublite.v1.Reservation} request.reservation
+ *   Required. The reservation to update. Its `name` field must be populated.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. A mask specifying the reservation fields to change.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Reservation]{@link google.cloud.pubsublite.v1.Reservation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.updateReservation(request);
+ */
+  updateReservation(
+      request: protos.google.cloud.pubsublite.v1.IUpdateReservationRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.IUpdateReservationRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.IUpdateReservationRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IReservation,
+        protos.google.cloud.pubsublite.v1.IUpdateReservationRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'reservation.name': request.reservation!.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.updateReservation(request, options, callback);
+  }
+  deleteReservation(
+      request: protos.google.cloud.pubsublite.v1.IDeleteReservationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.pubsublite.v1.IDeleteReservationRequest|undefined, {}|undefined
+      ]>;
+  deleteReservation(
+      request: protos.google.cloud.pubsublite.v1.IDeleteReservationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.pubsublite.v1.IDeleteReservationRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteReservation(
+      request: protos.google.cloud.pubsublite.v1.IDeleteReservationRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.pubsublite.v1.IDeleteReservationRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Deletes the specified reservation.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the reservation to delete.
+ *   Structured like:
+ *   projects/{project_number}/locations/{location}/reservations/{reservation_id}
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.deleteReservation(request);
+ */
+  deleteReservation(
+      request: protos.google.cloud.pubsublite.v1.IDeleteReservationRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.pubsublite.v1.IDeleteReservationRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.pubsublite.v1.IDeleteReservationRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.pubsublite.v1.IDeleteReservationRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.deleteReservation(request, options, callback);
+  }
 
   listTopics(
       request: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
@@ -1543,6 +1848,401 @@ export class AdminServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.pubsublite.v1.ISubscription>;
   }
+  listReservations(
+      request: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IReservation[],
+        protos.google.cloud.pubsublite.v1.IListReservationsRequest|null,
+        protos.google.cloud.pubsublite.v1.IListReservationsResponse
+      ]>;
+  listReservations(
+      request: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.IReservation>): void;
+  listReservations(
+      request: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.IReservation>): void;
+/**
+ * Returns the list of reservations for the given project.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent whose reservations are to be listed.
+ *   Structured like `projects/{project_number}/locations/{location}`.
+ * @param {number} request.pageSize
+ *   The maximum number of reservations to return. The service may return fewer
+ *   than this value. If unset or zero, all reservations for the parent will be
+ *   returned.
+ * @param {string} request.pageToken
+ *   A page token, received from a previous `ListReservations` call.
+ *   Provide this to retrieve the subsequent page.
+ *
+ *   When paginating, all other parameters provided to `ListReservations` must
+ *   match the call that provided the page token.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is Array of [Reservation]{@link google.cloud.pubsublite.v1.Reservation}.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed and will merge results from all the pages into this array.
+ *   Note that it can affect your quota.
+ *   We recommend using `listReservationsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listReservations(
+      request: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+      optionsOrCallback?: CallOptions|PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.IReservation>,
+      callback?: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.IReservation>):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IReservation[],
+        protos.google.cloud.pubsublite.v1.IListReservationsRequest|null,
+        protos.google.cloud.pubsublite.v1.IListReservationsResponse
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'parent': request.parent || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.listReservations(request, options, callback);
+  }
+
+/**
+ * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent whose reservations are to be listed.
+ *   Structured like `projects/{project_number}/locations/{location}`.
+ * @param {number} request.pageSize
+ *   The maximum number of reservations to return. The service may return fewer
+ *   than this value. If unset or zero, all reservations for the parent will be
+ *   returned.
+ * @param {string} request.pageToken
+ *   A page token, received from a previous `ListReservations` call.
+ *   Provide this to retrieve the subsequent page.
+ *
+ *   When paginating, all other parameters provided to `ListReservations` must
+ *   match the call that provided the page token.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream}
+ *   An object stream which emits an object representing [Reservation]{@link google.cloud.pubsublite.v1.Reservation} on 'data' event.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed. Note that it can affect your quota.
+ *   We recommend using `listReservationsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listReservationsStream(
+      request?: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+      options?: CallOptions):
+    Transform{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'parent': request.parent || '',
+    });
+    const callSettings = new gax.CallSettings(options);
+    this.initialize();
+    return this.descriptors.page.listReservations.createStream(
+      this.innerApiCalls.listReservations as gax.GaxCall,
+      request,
+      callSettings
+    );
+  }
+
+/**
+ * Equivalent to `listReservations`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent whose reservations are to be listed.
+ *   Structured like `projects/{project_number}/locations/{location}`.
+ * @param {number} request.pageSize
+ *   The maximum number of reservations to return. The service may return fewer
+ *   than this value. If unset or zero, all reservations for the parent will be
+ *   returned.
+ * @param {string} request.pageToken
+ *   A page token, received from a previous `ListReservations` call.
+ *   Provide this to retrieve the subsequent page.
+ *
+ *   When paginating, all other parameters provided to `ListReservations` must
+ *   match the call that provided the page token.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   [Reservation]{@link google.cloud.pubsublite.v1.Reservation}. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example
+ * const iterable = client.listReservationsAsync(request);
+ * for await (const response of iterable) {
+ *   // process response
+ * }
+ */
+  listReservationsAsync(
+      request?: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+      options?: CallOptions):
+    AsyncIterable<protos.google.cloud.pubsublite.v1.IReservation>{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'parent': request.parent || '',
+    });
+    options = options || {};
+    const callSettings = new gax.CallSettings(options);
+    this.initialize();
+    return this.descriptors.page.listReservations.asyncIterate(
+      this.innerApiCalls['listReservations'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<protos.google.cloud.pubsublite.v1.IReservation>;
+  }
+  listReservationTopics(
+      request: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+      options?: CallOptions):
+      Promise<[
+        string[],
+        protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest|null,
+        protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse
+      ]>;
+  listReservationTopics(
+      request: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse|null|undefined,
+          string>): void;
+  listReservationTopics(
+      request: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse|null|undefined,
+          string>): void;
+/**
+ * Lists the topics attached to the specified reservation.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the reservation whose topics to list.
+ *   Structured like:
+ *   projects/{project_number}/locations/{location}/reservations/{reservation_id}
+ * @param {number} request.pageSize
+ *   The maximum number of topics to return. The service may return fewer
+ *   than this value.
+ *   If unset or zero, all topics for the given reservation will be returned.
+ * @param {string} request.pageToken
+ *   A page token, received from a previous `ListReservationTopics` call.
+ *   Provide this to retrieve the subsequent page.
+ *
+ *   When paginating, all other parameters provided to `ListReservationTopics`
+ *   must match the call that provided the page token.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is Array of string.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed and will merge results from all the pages into this array.
+ *   Note that it can affect your quota.
+ *   We recommend using `listReservationTopicsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listReservationTopics(
+      request: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+      optionsOrCallback?: CallOptions|PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse|null|undefined,
+          string>,
+      callback?: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse|null|undefined,
+          string>):
+      Promise<[
+        string[],
+        protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest|null,
+        protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.listReservationTopics(request, options, callback);
+  }
+
+/**
+ * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the reservation whose topics to list.
+ *   Structured like:
+ *   projects/{project_number}/locations/{location}/reservations/{reservation_id}
+ * @param {number} request.pageSize
+ *   The maximum number of topics to return. The service may return fewer
+ *   than this value.
+ *   If unset or zero, all topics for the given reservation will be returned.
+ * @param {string} request.pageToken
+ *   A page token, received from a previous `ListReservationTopics` call.
+ *   Provide this to retrieve the subsequent page.
+ *
+ *   When paginating, all other parameters provided to `ListReservationTopics`
+ *   must match the call that provided the page token.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream}
+ *   An object stream which emits an object representing string on 'data' event.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed. Note that it can affect your quota.
+ *   We recommend using `listReservationTopicsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listReservationTopicsStream(
+      request?: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+      options?: CallOptions):
+    Transform{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    const callSettings = new gax.CallSettings(options);
+    this.initialize();
+    return this.descriptors.page.listReservationTopics.createStream(
+      this.innerApiCalls.listReservationTopics as gax.GaxCall,
+      request,
+      callSettings
+    );
+  }
+
+/**
+ * Equivalent to `listReservationTopics`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the reservation whose topics to list.
+ *   Structured like:
+ *   projects/{project_number}/locations/{location}/reservations/{reservation_id}
+ * @param {number} request.pageSize
+ *   The maximum number of topics to return. The service may return fewer
+ *   than this value.
+ *   If unset or zero, all topics for the given reservation will be returned.
+ * @param {string} request.pageToken
+ *   A page token, received from a previous `ListReservationTopics` call.
+ *   Provide this to retrieve the subsequent page.
+ *
+ *   When paginating, all other parameters provided to `ListReservationTopics`
+ *   must match the call that provided the page token.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   string. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example
+ * const iterable = client.listReservationTopicsAsync(request);
+ * for await (const response of iterable) {
+ *   // process response
+ * }
+ */
+  listReservationTopicsAsync(
+      request?: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+      options?: CallOptions):
+    AsyncIterable<string>{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    options = options || {};
+    const callSettings = new gax.CallSettings(options);
+    this.initialize();
+    return this.descriptors.page.listReservationTopics.asyncIterate(
+      this.innerApiCalls['listReservationTopics'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<string>;
+  }
   // --------------------
   // -- Path templates --
   // --------------------
@@ -1581,6 +2281,55 @@ export class AdminServiceClient {
    */
   matchLocationFromLocationName(locationName: string) {
     return this.pathTemplates.locationPathTemplate.match(locationName).location;
+  }
+
+  /**
+   * Return a fully-qualified reservation resource name string.
+   *
+   * @param {string} project
+   * @param {string} location
+   * @param {string} reservation
+   * @returns {string} Resource name string.
+   */
+  reservationPath(project:string,location:string,reservation:string) {
+    return this.pathTemplates.reservationPathTemplate.render({
+      project: project,
+      location: location,
+      reservation: reservation,
+    });
+  }
+
+  /**
+   * Parse the project from Reservation resource.
+   *
+   * @param {string} reservationName
+   *   A fully-qualified path representing Reservation resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromReservationName(reservationName: string) {
+    return this.pathTemplates.reservationPathTemplate.match(reservationName).project;
+  }
+
+  /**
+   * Parse the location from Reservation resource.
+   *
+   * @param {string} reservationName
+   *   A fully-qualified path representing Reservation resource.
+   * @returns {string} A string representing the location.
+   */
+  matchLocationFromReservationName(reservationName: string) {
+    return this.pathTemplates.reservationPathTemplate.match(reservationName).location;
+  }
+
+  /**
+   * Parse the reservation from Reservation resource.
+   *
+   * @param {string} reservationName
+   *   A fully-qualified path representing Reservation resource.
+   * @returns {string} A string representing the reservation.
+   */
+  matchReservationFromReservationName(reservationName: string) {
+    return this.pathTemplates.reservationPathTemplate.match(reservationName).reservation;
   }
 
   /**

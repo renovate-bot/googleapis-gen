@@ -176,9 +176,9 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.pubsublite.proto.SeekRequest initialLocation_;
   /**
    * <pre>
-   * Optional. Initial target location within the message backlog. If not set,
-   * messages will be delivered from the commit cursor for the given
-   * subscription and partition.
+   * Optional. Initial target location within the message backlog. If not set, messages
+   * will be delivered from the commit cursor for the given subscription and
+   * partition.
    * </pre>
    *
    * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -190,9 +190,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Initial target location within the message backlog. If not set,
-   * messages will be delivered from the commit cursor for the given
-   * subscription and partition.
+   * Optional. Initial target location within the message backlog. If not set, messages
+   * will be delivered from the commit cursor for the given subscription and
+   * partition.
    * </pre>
    *
    * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -204,9 +204,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Initial target location within the message backlog. If not set,
-   * messages will be delivered from the commit cursor for the given
-   * subscription and partition.
+   * Optional. Initial target location within the message backlog. If not set, messages
+   * will be delivered from the commit cursor for the given subscription and
+   * partition.
    * </pre>
    *
    * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -718,9 +718,9 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.pubsublite.proto.SeekRequest, com.google.cloud.pubsublite.proto.SeekRequest.Builder, com.google.cloud.pubsublite.proto.SeekRequestOrBuilder> initialLocationBuilder_;
     /**
      * <pre>
-     * Optional. Initial target location within the message backlog. If not set,
-     * messages will be delivered from the commit cursor for the given
-     * subscription and partition.
+     * Optional. Initial target location within the message backlog. If not set, messages
+     * will be delivered from the commit cursor for the given subscription and
+     * partition.
      * </pre>
      *
      * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -731,9 +731,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Initial target location within the message backlog. If not set,
-     * messages will be delivered from the commit cursor for the given
-     * subscription and partition.
+     * Optional. Initial target location within the message backlog. If not set, messages
+     * will be delivered from the commit cursor for the given subscription and
+     * partition.
      * </pre>
      *
      * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -748,9 +748,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Initial target location within the message backlog. If not set,
-     * messages will be delivered from the commit cursor for the given
-     * subscription and partition.
+     * Optional. Initial target location within the message backlog. If not set, messages
+     * will be delivered from the commit cursor for the given subscription and
+     * partition.
      * </pre>
      *
      * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -770,9 +770,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Initial target location within the message backlog. If not set,
-     * messages will be delivered from the commit cursor for the given
-     * subscription and partition.
+     * Optional. Initial target location within the message backlog. If not set, messages
+     * will be delivered from the commit cursor for the given subscription and
+     * partition.
      * </pre>
      *
      * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -790,9 +790,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Initial target location within the message backlog. If not set,
-     * messages will be delivered from the commit cursor for the given
-     * subscription and partition.
+     * Optional. Initial target location within the message backlog. If not set, messages
+     * will be delivered from the commit cursor for the given subscription and
+     * partition.
      * </pre>
      *
      * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -814,9 +814,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Initial target location within the message backlog. If not set,
-     * messages will be delivered from the commit cursor for the given
-     * subscription and partition.
+     * Optional. Initial target location within the message backlog. If not set, messages
+     * will be delivered from the commit cursor for the given subscription and
+     * partition.
      * </pre>
      *
      * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -834,9 +834,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Initial target location within the message backlog. If not set,
-     * messages will be delivered from the commit cursor for the given
-     * subscription and partition.
+     * Optional. Initial target location within the message backlog. If not set, messages
+     * will be delivered from the commit cursor for the given subscription and
+     * partition.
      * </pre>
      *
      * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -848,9 +848,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Initial target location within the message backlog. If not set,
-     * messages will be delivered from the commit cursor for the given
-     * subscription and partition.
+     * Optional. Initial target location within the message backlog. If not set, messages
+     * will be delivered from the commit cursor for the given subscription and
+     * partition.
      * </pre>
      *
      * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -865,9 +865,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Initial target location within the message backlog. If not set,
-     * messages will be delivered from the commit cursor for the given
-     * subscription and partition.
+     * Optional. Initial target location within the message backlog. If not set, messages
+     * will be delivered from the commit cursor for the given subscription and
+     * partition.
      * </pre>
      *
      * <code>.google.cloud.pubsublite.v1.SeekRequest initial_location = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -70,66 +70,115 @@ namespace Google.Cloud.PubSubLite.V1 {
             "aXRlLnYxLlN1YnNjcmlwdGlvbkID4EECEjQKC3VwZGF0ZV9tYXNrGAIgASgL",
             "MhouZ29vZ2xlLnByb3RvYnVmLkZpZWxkTWFza0ID4EECIlkKGURlbGV0ZVN1",
             "YnNjcmlwdGlvblJlcXVlc3QSPAoEbmFtZRgBIAEoCUIu4EEC+kEoCiZwdWJz",
-            "dWJsaXRlLmdvb2dsZWFwaXMuY29tL1N1YnNjcmlwdGlvbjL4EgoMQWRtaW5T",
-            "ZXJ2aWNlErkBCgtDcmVhdGVUb3BpYxIuLmdvb2dsZS5jbG91ZC5wdWJzdWJs",
-            "aXRlLnYxLkNyZWF0ZVRvcGljUmVxdWVzdBohLmdvb2dsZS5jbG91ZC5wdWJz",
-            "dWJsaXRlLnYxLlRvcGljIleC0+STAjkiMC92MS9hZG1pbi97cGFyZW50PXBy",
-            "b2plY3RzLyovbG9jYXRpb25zLyp9L3RvcGljczoFdG9waWPaQRVwYXJlbnQs",
-            "dG9waWMsdG9waWNfaWQSmwEKCEdldFRvcGljEisuZ29vZ2xlLmNsb3VkLnB1",
-            "YnN1YmxpdGUudjEuR2V0VG9waWNSZXF1ZXN0GiEuZ29vZ2xlLmNsb3VkLnB1",
-            "YnN1YmxpdGUudjEuVG9waWMiP4LT5JMCMhIwL3YxL2FkbWluL3tuYW1lPXBy",
-            "b2plY3RzLyovbG9jYXRpb25zLyovdG9waWNzLyp92kEEbmFtZRLEAQoSR2V0",
-            "VG9waWNQYXJ0aXRpb25zEjUuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEu",
-            "R2V0VG9waWNQYXJ0aXRpb25zUmVxdWVzdBorLmdvb2dsZS5jbG91ZC5wdWJz",
-            "dWJsaXRlLnYxLlRvcGljUGFydGl0aW9ucyJKgtPkkwI9EjsvdjEvYWRtaW4v",
-            "e25hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi90b3BpY3MvKn0vcGFydGl0",
-            "aW9uc9pBBG5hbWUSrgEKCkxpc3RUb3BpY3MSLS5nb29nbGUuY2xvdWQucHVi",
-            "c3VibGl0ZS52MS5MaXN0VG9waWNzUmVxdWVzdBouLmdvb2dsZS5jbG91ZC5w",
-            "dWJzdWJsaXRlLnYxLkxpc3RUb3BpY3NSZXNwb25zZSJBgtPkkwIyEjAvdjEv",
-            "YWRtaW4ve3BhcmVudD1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qfS90b3BpY3Pa",
-            "QQZwYXJlbnQSuwEKC1VwZGF0ZVRvcGljEi4uZ29vZ2xlLmNsb3VkLnB1YnN1",
-            "YmxpdGUudjEuVXBkYXRlVG9waWNSZXF1ZXN0GiEuZ29vZ2xlLmNsb3VkLnB1",
-            "YnN1YmxpdGUudjEuVG9waWMiWYLT5JMCPzI2L3YxL2FkbWluL3t0b3BpYy5u",
-            "YW1lPXByb2plY3RzLyovbG9jYXRpb25zLyovdG9waWNzLyp9OgV0b3BpY9pB",
-            "EXRvcGljLHVwZGF0ZV9tYXNrEpYBCgtEZWxldGVUb3BpYxIuLmdvb2dsZS5j",
-            "bG91ZC5wdWJzdWJsaXRlLnYxLkRlbGV0ZVRvcGljUmVxdWVzdBoWLmdvb2ds",
-            "ZS5wcm90b2J1Zi5FbXB0eSI/gtPkkwIyKjAvdjEvYWRtaW4ve25hbWU9cHJv",
-            "amVjdHMvKi9sb2NhdGlvbnMvKi90b3BpY3MvKn3aQQRuYW1lEt4BChZMaXN0",
-            "VG9waWNTdWJzY3JpcHRpb25zEjkuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUu",
-            "djEuTGlzdFRvcGljU3Vic2NyaXB0aW9uc1JlcXVlc3QaOi5nb29nbGUuY2xv",
-            "dWQucHVic3VibGl0ZS52MS5MaXN0VG9waWNTdWJzY3JpcHRpb25zUmVzcG9u",
-            "c2UiTYLT5JMCQBI+L3YxL2FkbWluL3tuYW1lPXByb2plY3RzLyovbG9jYXRp",
-            "b25zLyovdG9waWNzLyp9L3N1YnNjcmlwdGlvbnPaQQRuYW1lEuoBChJDcmVh",
-            "dGVTdWJzY3JpcHRpb24SNS5nb29nbGUuY2xvdWQucHVic3VibGl0ZS52MS5D",
-            "cmVhdGVTdWJzY3JpcHRpb25SZXF1ZXN0GiguZ29vZ2xlLmNsb3VkLnB1YnN1",
-            "YmxpdGUudjEuU3Vic2NyaXB0aW9uInOC0+STAkciNy92MS9hZG1pbi97cGFy",
-            "ZW50PXByb2plY3RzLyovbG9jYXRpb25zLyp9L3N1YnNjcmlwdGlvbnM6DHN1",
-            "YnNjcmlwdGlvbtpBI3BhcmVudCxzdWJzY3JpcHRpb24sc3Vic2NyaXB0aW9u",
-            "X2lkErcBCg9HZXRTdWJzY3JpcHRpb24SMi5nb29nbGUuY2xvdWQucHVic3Vi",
-            "bGl0ZS52MS5HZXRTdWJzY3JpcHRpb25SZXF1ZXN0GiguZ29vZ2xlLmNsb3Vk",
-            "LnB1YnN1YmxpdGUudjEuU3Vic2NyaXB0aW9uIkaC0+STAjkSNy92MS9hZG1p",
+            "dWJsaXRlLmdvb2dsZWFwaXMuY29tL1N1YnNjcmlwdGlvbiK1AQoYQ3JlYXRl",
+            "UmVzZXJ2YXRpb25SZXF1ZXN0EjkKBnBhcmVudBgBIAEoCUIp4EEC+kEjCiFs",
+            "b2NhdGlvbnMuZ29vZ2xlYXBpcy5jb20vTG9jYXRpb24SQQoLcmVzZXJ2YXRp",
+            "b24YAiABKAsyJy5nb29nbGUuY2xvdWQucHVic3VibGl0ZS52MS5SZXNlcnZh",
+            "dGlvbkID4EECEhsKDnJlc2VydmF0aW9uX2lkGAMgASgJQgPgQQIiVAoVR2V0",
+            "UmVzZXJ2YXRpb25SZXF1ZXN0EjsKBG5hbWUYASABKAlCLeBBAvpBJwolcHVi",
+            "c3VibGl0ZS5nb29nbGVhcGlzLmNvbS9SZXNlcnZhdGlvbiJ7ChdMaXN0UmVz",
+            "ZXJ2YXRpb25zUmVxdWVzdBI5CgZwYXJlbnQYASABKAlCKeBBAvpBIwohbG9j",
+            "YXRpb25zLmdvb2dsZWFwaXMuY29tL0xvY2F0aW9uEhEKCXBhZ2Vfc2l6ZRgC",
+            "IAEoBRISCgpwYWdlX3Rva2VuGAMgASgJInIKGExpc3RSZXNlcnZhdGlvbnNS",
+            "ZXNwb25zZRI9CgxyZXNlcnZhdGlvbnMYASADKAsyJy5nb29nbGUuY2xvdWQu",
+            "cHVic3VibGl0ZS52MS5SZXNlcnZhdGlvbhIXCg9uZXh0X3BhZ2VfdG9rZW4Y",
+            "AiABKAkikwEKGFVwZGF0ZVJlc2VydmF0aW9uUmVxdWVzdBJBCgtyZXNlcnZh",
+            "dGlvbhgBIAEoCzInLmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLlJlc2Vy",
+            "dmF0aW9uQgPgQQISNAoLdXBkYXRlX21hc2sYAiABKAsyGi5nb29nbGUucHJv",
+            "dG9idWYuRmllbGRNYXNrQgPgQQIiVwoYRGVsZXRlUmVzZXJ2YXRpb25SZXF1",
+            "ZXN0EjsKBG5hbWUYASABKAlCLeBBAvpBJwolcHVic3VibGl0ZS5nb29nbGVh",
+            "cGlzLmNvbS9SZXNlcnZhdGlvbiKCAQocTGlzdFJlc2VydmF0aW9uVG9waWNz",
+            "UmVxdWVzdBI7CgRuYW1lGAEgASgJQi3gQQL6QScKJXB1YnN1YmxpdGUuZ29v",
+            "Z2xlYXBpcy5jb20vUmVzZXJ2YXRpb24SEQoJcGFnZV9zaXplGAIgASgFEhIK",
+            "CnBhZ2VfdG9rZW4YAyABKAkiSAodTGlzdFJlc2VydmF0aW9uVG9waWNzUmVz",
+            "cG9uc2USDgoGdG9waWNzGAEgAygJEhcKD25leHRfcGFnZV90b2tlbhgCIAEo",
+            "CTLNHAoMQWRtaW5TZXJ2aWNlErkBCgtDcmVhdGVUb3BpYxIuLmdvb2dsZS5j",
+            "bG91ZC5wdWJzdWJsaXRlLnYxLkNyZWF0ZVRvcGljUmVxdWVzdBohLmdvb2ds",
+            "ZS5jbG91ZC5wdWJzdWJsaXRlLnYxLlRvcGljIleC0+STAjkiMC92MS9hZG1p",
+            "bi97cGFyZW50PXByb2plY3RzLyovbG9jYXRpb25zLyp9L3RvcGljczoFdG9w",
+            "aWPaQRVwYXJlbnQsdG9waWMsdG9waWNfaWQSmwEKCEdldFRvcGljEisuZ29v",
+            "Z2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuR2V0VG9waWNSZXF1ZXN0GiEuZ29v",
+            "Z2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuVG9waWMiP4LT5JMCMhIwL3YxL2Fk",
+            "bWluL3tuYW1lPXByb2plY3RzLyovbG9jYXRpb25zLyovdG9waWNzLyp92kEE",
+            "bmFtZRLEAQoSR2V0VG9waWNQYXJ0aXRpb25zEjUuZ29vZ2xlLmNsb3VkLnB1",
+            "YnN1YmxpdGUudjEuR2V0VG9waWNQYXJ0aXRpb25zUmVxdWVzdBorLmdvb2ds",
+            "ZS5jbG91ZC5wdWJzdWJsaXRlLnYxLlRvcGljUGFydGl0aW9ucyJKgtPkkwI9",
+            "EjsvdjEvYWRtaW4ve25hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi90b3Bp",
+            "Y3MvKn0vcGFydGl0aW9uc9pBBG5hbWUSrgEKCkxpc3RUb3BpY3MSLS5nb29n",
+            "bGUuY2xvdWQucHVic3VibGl0ZS52MS5MaXN0VG9waWNzUmVxdWVzdBouLmdv",
+            "b2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkxpc3RUb3BpY3NSZXNwb25zZSJB",
+            "gtPkkwIyEjAvdjEvYWRtaW4ve3BhcmVudD1wcm9qZWN0cy8qL2xvY2F0aW9u",
+            "cy8qfS90b3BpY3PaQQZwYXJlbnQSuwEKC1VwZGF0ZVRvcGljEi4uZ29vZ2xl",
+            "LmNsb3VkLnB1YnN1YmxpdGUudjEuVXBkYXRlVG9waWNSZXF1ZXN0GiEuZ29v",
+            "Z2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuVG9waWMiWYLT5JMCPzI2L3YxL2Fk",
+            "bWluL3t0b3BpYy5uYW1lPXByb2plY3RzLyovbG9jYXRpb25zLyovdG9waWNz",
+            "Lyp9OgV0b3BpY9pBEXRvcGljLHVwZGF0ZV9tYXNrEpYBCgtEZWxldGVUb3Bp",
+            "YxIuLmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkRlbGV0ZVRvcGljUmVx",
+            "dWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSI/gtPkkwIyKjAvdjEvYWRt",
+            "aW4ve25hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi90b3BpY3MvKn3aQQRu",
+            "YW1lEt4BChZMaXN0VG9waWNTdWJzY3JpcHRpb25zEjkuZ29vZ2xlLmNsb3Vk",
+            "LnB1YnN1YmxpdGUudjEuTGlzdFRvcGljU3Vic2NyaXB0aW9uc1JlcXVlc3Qa",
+            "Oi5nb29nbGUuY2xvdWQucHVic3VibGl0ZS52MS5MaXN0VG9waWNTdWJzY3Jp",
+            "cHRpb25zUmVzcG9uc2UiTYLT5JMCQBI+L3YxL2FkbWluL3tuYW1lPXByb2pl",
+            "Y3RzLyovbG9jYXRpb25zLyovdG9waWNzLyp9L3N1YnNjcmlwdGlvbnPaQQRu",
+            "YW1lEuoBChJDcmVhdGVTdWJzY3JpcHRpb24SNS5nb29nbGUuY2xvdWQucHVi",
+            "c3VibGl0ZS52MS5DcmVhdGVTdWJzY3JpcHRpb25SZXF1ZXN0GiguZ29vZ2xl",
+            "LmNsb3VkLnB1YnN1YmxpdGUudjEuU3Vic2NyaXB0aW9uInOC0+STAkciNy92",
+            "MS9hZG1pbi97cGFyZW50PXByb2plY3RzLyovbG9jYXRpb25zLyp9L3N1YnNj",
+            "cmlwdGlvbnM6DHN1YnNjcmlwdGlvbtpBI3BhcmVudCxzdWJzY3JpcHRpb24s",
+            "c3Vic2NyaXB0aW9uX2lkErcBCg9HZXRTdWJzY3JpcHRpb24SMi5nb29nbGUu",
+            "Y2xvdWQucHVic3VibGl0ZS52MS5HZXRTdWJzY3JpcHRpb25SZXF1ZXN0Gigu",
+            "Z29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuU3Vic2NyaXB0aW9uIkaC0+ST",
+            "AjkSNy92MS9hZG1pbi97bmFtZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL3N1",
+            "YnNjcmlwdGlvbnMvKn3aQQRuYW1lEsoBChFMaXN0U3Vic2NyaXB0aW9ucxI0",
+            "Lmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkxpc3RTdWJzY3JpcHRpb25z",
+            "UmVxdWVzdBo1Lmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkxpc3RTdWJz",
+            "Y3JpcHRpb25zUmVzcG9uc2UiSILT5JMCORI3L3YxL2FkbWluL3twYXJlbnQ9",
+            "cHJvamVjdHMvKi9sb2NhdGlvbnMvKn0vc3Vic2NyaXB0aW9uc9pBBnBhcmVu",
+            "dBLsAQoSVXBkYXRlU3Vic2NyaXB0aW9uEjUuZ29vZ2xlLmNsb3VkLnB1YnN1",
+            "YmxpdGUudjEuVXBkYXRlU3Vic2NyaXB0aW9uUmVxdWVzdBooLmdvb2dsZS5j",
+            "bG91ZC5wdWJzdWJsaXRlLnYxLlN1YnNjcmlwdGlvbiJ1gtPkkwJUMkQvdjEv",
+            "YWRtaW4ve3N1YnNjcmlwdGlvbi5uYW1lPXByb2plY3RzLyovbG9jYXRpb25z",
+            "Lyovc3Vic2NyaXB0aW9ucy8qfToMc3Vic2NyaXB0aW9u2kEYc3Vic2NyaXB0",
+            "aW9uLHVwZGF0ZV9tYXNrEqsBChJEZWxldGVTdWJzY3JpcHRpb24SNS5nb29n",
+            "bGUuY2xvdWQucHVic3VibGl0ZS52MS5EZWxldGVTdWJzY3JpcHRpb25SZXF1",
+            "ZXN0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IkaC0+STAjkqNy92MS9hZG1p",
             "bi97bmFtZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL3N1YnNjcmlwdGlvbnMv",
-            "Kn3aQQRuYW1lEsoBChFMaXN0U3Vic2NyaXB0aW9ucxI0Lmdvb2dsZS5jbG91",
-            "ZC5wdWJzdWJsaXRlLnYxLkxpc3RTdWJzY3JpcHRpb25zUmVxdWVzdBo1Lmdv",
-            "b2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkxpc3RTdWJzY3JpcHRpb25zUmVz",
-            "cG9uc2UiSILT5JMCORI3L3YxL2FkbWluL3twYXJlbnQ9cHJvamVjdHMvKi9s",
-            "b2NhdGlvbnMvKn0vc3Vic2NyaXB0aW9uc9pBBnBhcmVudBLsAQoSVXBkYXRl",
-            "U3Vic2NyaXB0aW9uEjUuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuVXBk",
-            "YXRlU3Vic2NyaXB0aW9uUmVxdWVzdBooLmdvb2dsZS5jbG91ZC5wdWJzdWJs",
-            "aXRlLnYxLlN1YnNjcmlwdGlvbiJ1gtPkkwJUMkQvdjEvYWRtaW4ve3N1YnNj",
-            "cmlwdGlvbi5uYW1lPXByb2plY3RzLyovbG9jYXRpb25zLyovc3Vic2NyaXB0",
-            "aW9ucy8qfToMc3Vic2NyaXB0aW9u2kEYc3Vic2NyaXB0aW9uLHVwZGF0ZV9t",
-            "YXNrEqsBChJEZWxldGVTdWJzY3JpcHRpb24SNS5nb29nbGUuY2xvdWQucHVi",
-            "c3VibGl0ZS52MS5EZWxldGVTdWJzY3JpcHRpb25SZXF1ZXN0GhYuZ29vZ2xl",
-            "LnByb3RvYnVmLkVtcHR5IkaC0+STAjkqNy92MS9hZG1pbi97bmFtZT1wcm9q",
-            "ZWN0cy8qL2xvY2F0aW9ucy8qL3N1YnNjcmlwdGlvbnMvKn3aQQRuYW1lGk3K",
-            "QRlwdWJzdWJsaXRlLmdvb2dsZWFwaXMuY29t0kEuaHR0cHM6Ly93d3cuZ29v",
-            "Z2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybULRAQohY29tLmdvb2ds",
-            "ZS5jbG91ZC5wdWJzdWJsaXRlLnByb3RvQgpBZG1pblByb3RvUAFaRGdvb2ds",
-            "ZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvY2xvdWQvcHVic3Vi",
-            "bGl0ZS92MTtwdWJzdWJsaXRlqgIaR29vZ2xlLkNsb3VkLlB1YlN1YkxpdGUu",
-            "VjHKAhpHb29nbGVcQ2xvdWRcUHViU3ViTGl0ZVxWMeoCHUdvb2dsZTo6Q2xv",
-            "dWQ6OlB1YlN1YkxpdGU6OlYxYgZwcm90bzM="));
+            "Kn3aQQRuYW1lEuMBChFDcmVhdGVSZXNlcnZhdGlvbhI0Lmdvb2dsZS5jbG91",
+            "ZC5wdWJzdWJsaXRlLnYxLkNyZWF0ZVJlc2VydmF0aW9uUmVxdWVzdBonLmdv",
+            "b2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLlJlc2VydmF0aW9uIm+C0+STAkUi",
+            "Ni92MS9hZG1pbi97cGFyZW50PXByb2plY3RzLyovbG9jYXRpb25zLyp9L3Jl",
+            "c2VydmF0aW9uczoLcmVzZXJ2YXRpb27aQSFwYXJlbnQscmVzZXJ2YXRpb24s",
+            "cmVzZXJ2YXRpb25faWQSswEKDkdldFJlc2VydmF0aW9uEjEuZ29vZ2xlLmNs",
+            "b3VkLnB1YnN1YmxpdGUudjEuR2V0UmVzZXJ2YXRpb25SZXF1ZXN0GicuZ29v",
+            "Z2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuUmVzZXJ2YXRpb24iRYLT5JMCOBI2",
+            "L3YxL2FkbWluL3tuYW1lPXByb2plY3RzLyovbG9jYXRpb25zLyovcmVzZXJ2",
+            "YXRpb25zLyp92kEEbmFtZRLGAQoQTGlzdFJlc2VydmF0aW9ucxIzLmdvb2ds",
+            "ZS5jbG91ZC5wdWJzdWJsaXRlLnYxLkxpc3RSZXNlcnZhdGlvbnNSZXF1ZXN0",
+            "GjQuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuTGlzdFJlc2VydmF0aW9u",
+            "c1Jlc3BvbnNlIkeC0+STAjgSNi92MS9hZG1pbi97cGFyZW50PXByb2plY3Rz",
+            "LyovbG9jYXRpb25zLyp9L3Jlc2VydmF0aW9uc9pBBnBhcmVudBLlAQoRVXBk",
+            "YXRlUmVzZXJ2YXRpb24SNC5nb29nbGUuY2xvdWQucHVic3VibGl0ZS52MS5V",
+            "cGRhdGVSZXNlcnZhdGlvblJlcXVlc3QaJy5nb29nbGUuY2xvdWQucHVic3Vi",
+            "bGl0ZS52MS5SZXNlcnZhdGlvbiJxgtPkkwJRMkIvdjEvYWRtaW4ve3Jlc2Vy",
+            "dmF0aW9uLm5hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi9yZXNlcnZhdGlv",
+            "bnMvKn06C3Jlc2VydmF0aW9u2kEXcmVzZXJ2YXRpb24sdXBkYXRlX21hc2sS",
+            "qAEKEURlbGV0ZVJlc2VydmF0aW9uEjQuZ29vZ2xlLmNsb3VkLnB1YnN1Ymxp",
+            "dGUudjEuRGVsZXRlUmVzZXJ2YXRpb25SZXF1ZXN0GhYuZ29vZ2xlLnByb3Rv",
+            "YnVmLkVtcHR5IkWC0+STAjgqNi92MS9hZG1pbi97bmFtZT1wcm9qZWN0cy8q",
+            "L2xvY2F0aW9ucy8qL3Jlc2VydmF0aW9ucy8qfdpBBG5hbWUS2gEKFUxpc3RS",
+            "ZXNlcnZhdGlvblRvcGljcxI4Lmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYx",
+            "Lkxpc3RSZXNlcnZhdGlvblRvcGljc1JlcXVlc3QaOS5nb29nbGUuY2xvdWQu",
+            "cHVic3VibGl0ZS52MS5MaXN0UmVzZXJ2YXRpb25Ub3BpY3NSZXNwb25zZSJM",
+            "gtPkkwI/Ej0vdjEvYWRtaW4ve25hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMv",
+            "Ki9yZXNlcnZhdGlvbnMvKn0vdG9waWNz2kEEbmFtZRpNykEZcHVic3VibGl0",
+            "ZS5nb29nbGVhcGlzLmNvbdJBLmh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29t",
+            "L2F1dGgvY2xvdWQtcGxhdGZvcm1C0QEKIWNvbS5nb29nbGUuY2xvdWQucHVi",
+            "c3VibGl0ZS5wcm90b0IKQWRtaW5Qcm90b1ABWkRnb29nbGUuZ29sYW5nLm9y",
+            "Zy9nZW5wcm90by9nb29nbGVhcGlzL2Nsb3VkL3B1YnN1YmxpdGUvdjE7cHVi",
+            "c3VibGl0ZaoCGkdvb2dsZS5DbG91ZC5QdWJTdWJMaXRlLlYxygIaR29vZ2xl",
+            "XENsb3VkXFB1YlN1YkxpdGVcVjHqAh1Hb29nbGU6OkNsb3VkOjpQdWJTdWJM",
+            "aXRlOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.PubSubLite.V1.CommonReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -148,7 +197,15 @@ namespace Google.Cloud.PubSubLite.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ListSubscriptionsRequest), global::Google.Cloud.PubSubLite.V1.ListSubscriptionsRequest.Parser, new[]{ "Parent", "PageSize", "PageToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ListSubscriptionsResponse), global::Google.Cloud.PubSubLite.V1.ListSubscriptionsResponse.Parser, new[]{ "Subscriptions", "NextPageToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.UpdateSubscriptionRequest), global::Google.Cloud.PubSubLite.V1.UpdateSubscriptionRequest.Parser, new[]{ "Subscription", "UpdateMask" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest), global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest.Parser, new[]{ "Name" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest), global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.CreateReservationRequest), global::Google.Cloud.PubSubLite.V1.CreateReservationRequest.Parser, new[]{ "Parent", "Reservation", "ReservationId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.GetReservationRequest), global::Google.Cloud.PubSubLite.V1.GetReservationRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ListReservationsRequest), global::Google.Cloud.PubSubLite.V1.ListReservationsRequest.Parser, new[]{ "Parent", "PageSize", "PageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ListReservationsResponse), global::Google.Cloud.PubSubLite.V1.ListReservationsResponse.Parser, new[]{ "Reservations", "NextPageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest), global::Google.Cloud.PubSubLite.V1.UpdateReservationRequest.Parser, new[]{ "Reservation", "UpdateMask" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest), global::Google.Cloud.PubSubLite.V1.DeleteReservationRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest), global::Google.Cloud.PubSubLite.V1.ListReservationTopicsRequest.Parser, new[]{ "Name", "PageSize", "PageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse), global::Google.Cloud.PubSubLite.V1.ListReservationTopicsResponse.Parser, new[]{ "Topics", "NextPageToken" }, null, null, null, null)
           }));
     }
     #endregion
@@ -3676,6 +3733,1813 @@ namespace Google.Cloud.PubSubLite.V1 {
             break;
           case 10: {
             Name = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Request for CreateReservation.
+  /// </summary>
+  public sealed partial class CreateReservationRequest : pb::IMessage<CreateReservationRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CreateReservationRequest> _parser = new pb::MessageParser<CreateReservationRequest>(() => new CreateReservationRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CreateReservationRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.AdminReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateReservationRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateReservationRequest(CreateReservationRequest other) : this() {
+      parent_ = other.parent_;
+      reservation_ = other.reservation_ != null ? other.reservation_.Clone() : null;
+      reservationId_ = other.reservationId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CreateReservationRequest Clone() {
+      return new CreateReservationRequest(this);
+    }
+
+    /// <summary>Field number for the "parent" field.</summary>
+    public const int ParentFieldNumber = 1;
+    private string parent_ = "";
+    /// <summary>
+    /// Required. The parent location in which to create the reservation.
+    /// Structured like `projects/{project_number}/locations/{location}`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Parent {
+      get { return parent_; }
+      set {
+        parent_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "reservation" field.</summary>
+    public const int ReservationFieldNumber = 2;
+    private global::Google.Cloud.PubSubLite.V1.Reservation reservation_;
+    /// <summary>
+    /// Required. Configuration of the reservation to create. Its `name` field is ignored.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Cloud.PubSubLite.V1.Reservation Reservation {
+      get { return reservation_; }
+      set {
+        reservation_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reservation_id" field.</summary>
+    public const int ReservationIdFieldNumber = 3;
+    private string reservationId_ = "";
+    /// <summary>
+    /// Required. The ID to use for the reservation, which will become the final component of
+    /// the reservation's name.
+    ///
+    /// This value is structured like: `my-reservation-name`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ReservationId {
+      get { return reservationId_; }
+      set {
+        reservationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CreateReservationRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CreateReservationRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Parent != other.Parent) return false;
+      if (!object.Equals(Reservation, other.Reservation)) return false;
+      if (ReservationId != other.ReservationId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Parent.Length != 0) hash ^= Parent.GetHashCode();
+      if (reservation_ != null) hash ^= Reservation.GetHashCode();
+      if (ReservationId.Length != 0) hash ^= ReservationId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Parent.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Parent);
+      }
+      if (reservation_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Reservation);
+      }
+      if (ReservationId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ReservationId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Parent.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Parent);
+      }
+      if (reservation_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Reservation);
+      }
+      if (ReservationId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ReservationId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Parent.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Parent);
+      }
+      if (reservation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Reservation);
+      }
+      if (ReservationId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ReservationId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CreateReservationRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Parent.Length != 0) {
+        Parent = other.Parent;
+      }
+      if (other.reservation_ != null) {
+        if (reservation_ == null) {
+          Reservation = new global::Google.Cloud.PubSubLite.V1.Reservation();
+        }
+        Reservation.MergeFrom(other.Reservation);
+      }
+      if (other.ReservationId.Length != 0) {
+        ReservationId = other.ReservationId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Parent = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (reservation_ == null) {
+              Reservation = new global::Google.Cloud.PubSubLite.V1.Reservation();
+            }
+            input.ReadMessage(Reservation);
+            break;
+          }
+          case 26: {
+            ReservationId = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Parent = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (reservation_ == null) {
+              Reservation = new global::Google.Cloud.PubSubLite.V1.Reservation();
+            }
+            input.ReadMessage(Reservation);
+            break;
+          }
+          case 26: {
+            ReservationId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Request for GetReservation.
+  /// </summary>
+  public sealed partial class GetReservationRequest : pb::IMessage<GetReservationRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetReservationRequest> _parser = new pb::MessageParser<GetReservationRequest>(() => new GetReservationRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GetReservationRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.AdminReflection.Descriptor.MessageTypes[17]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetReservationRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetReservationRequest(GetReservationRequest other) : this() {
+      name_ = other.name_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetReservationRequest Clone() {
+      return new GetReservationRequest(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    /// <summary>
+    /// Required. The name of the reservation whose configuration to return.
+    /// Structured like:
+    /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GetReservationRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GetReservationRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GetReservationRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Request for ListReservations.
+  /// </summary>
+  public sealed partial class ListReservationsRequest : pb::IMessage<ListReservationsRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListReservationsRequest> _parser = new pb::MessageParser<ListReservationsRequest>(() => new ListReservationsRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ListReservationsRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.AdminReflection.Descriptor.MessageTypes[18]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationsRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationsRequest(ListReservationsRequest other) : this() {
+      parent_ = other.parent_;
+      pageSize_ = other.pageSize_;
+      pageToken_ = other.pageToken_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationsRequest Clone() {
+      return new ListReservationsRequest(this);
+    }
+
+    /// <summary>Field number for the "parent" field.</summary>
+    public const int ParentFieldNumber = 1;
+    private string parent_ = "";
+    /// <summary>
+    /// Required. The parent whose reservations are to be listed.
+    /// Structured like `projects/{project_number}/locations/{location}`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Parent {
+      get { return parent_; }
+      set {
+        parent_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "page_size" field.</summary>
+    public const int PageSizeFieldNumber = 2;
+    private int pageSize_;
+    /// <summary>
+    /// The maximum number of reservations to return. The service may return fewer
+    /// than this value. If unset or zero, all reservations for the parent will be
+    /// returned.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PageSize {
+      get { return pageSize_; }
+      set {
+        pageSize_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "page_token" field.</summary>
+    public const int PageTokenFieldNumber = 3;
+    private string pageToken_ = "";
+    /// <summary>
+    /// A page token, received from a previous `ListReservations` call.
+    /// Provide this to retrieve the subsequent page.
+    ///
+    /// When paginating, all other parameters provided to `ListReservations` must
+    /// match the call that provided the page token.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PageToken {
+      get { return pageToken_; }
+      set {
+        pageToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ListReservationsRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ListReservationsRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Parent != other.Parent) return false;
+      if (PageSize != other.PageSize) return false;
+      if (PageToken != other.PageToken) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Parent.Length != 0) hash ^= Parent.GetHashCode();
+      if (PageSize != 0) hash ^= PageSize.GetHashCode();
+      if (PageToken.Length != 0) hash ^= PageToken.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Parent.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Parent);
+      }
+      if (PageSize != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Parent.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Parent);
+      }
+      if (PageSize != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Parent.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Parent);
+      }
+      if (PageSize != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PageToken);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ListReservationsRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Parent.Length != 0) {
+        Parent = other.Parent;
+      }
+      if (other.PageSize != 0) {
+        PageSize = other.PageSize;
+      }
+      if (other.PageToken.Length != 0) {
+        PageToken = other.PageToken;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Parent = input.ReadString();
+            break;
+          }
+          case 16: {
+            PageSize = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            PageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Parent = input.ReadString();
+            break;
+          }
+          case 16: {
+            PageSize = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            PageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Response for ListReservations.
+  /// </summary>
+  public sealed partial class ListReservationsResponse : pb::IMessage<ListReservationsResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListReservationsResponse> _parser = new pb::MessageParser<ListReservationsResponse>(() => new ListReservationsResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ListReservationsResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.AdminReflection.Descriptor.MessageTypes[19]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationsResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationsResponse(ListReservationsResponse other) : this() {
+      reservations_ = other.reservations_.Clone();
+      nextPageToken_ = other.nextPageToken_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationsResponse Clone() {
+      return new ListReservationsResponse(this);
+    }
+
+    /// <summary>Field number for the "reservations" field.</summary>
+    public const int ReservationsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Google.Cloud.PubSubLite.V1.Reservation> _repeated_reservations_codec
+        = pb::FieldCodec.ForMessage(10, global::Google.Cloud.PubSubLite.V1.Reservation.Parser);
+    private readonly pbc::RepeatedField<global::Google.Cloud.PubSubLite.V1.Reservation> reservations_ = new pbc::RepeatedField<global::Google.Cloud.PubSubLite.V1.Reservation>();
+    /// <summary>
+    /// The list of reservation in the requested parent. The order of the
+    /// reservations is unspecified.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Google.Cloud.PubSubLite.V1.Reservation> Reservations {
+      get { return reservations_; }
+    }
+
+    /// <summary>Field number for the "next_page_token" field.</summary>
+    public const int NextPageTokenFieldNumber = 2;
+    private string nextPageToken_ = "";
+    /// <summary>
+    /// A token that can be sent as `page_token` to retrieve the next page of
+    /// results. If this field is omitted, there are no more results.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NextPageToken {
+      get { return nextPageToken_; }
+      set {
+        nextPageToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ListReservationsResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ListReservationsResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!reservations_.Equals(other.reservations_)) return false;
+      if (NextPageToken != other.NextPageToken) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= reservations_.GetHashCode();
+      if (NextPageToken.Length != 0) hash ^= NextPageToken.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      reservations_.WriteTo(output, _repeated_reservations_codec);
+      if (NextPageToken.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NextPageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      reservations_.WriteTo(ref output, _repeated_reservations_codec);
+      if (NextPageToken.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NextPageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += reservations_.CalculateSize(_repeated_reservations_codec);
+      if (NextPageToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NextPageToken);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ListReservationsResponse other) {
+      if (other == null) {
+        return;
+      }
+      reservations_.Add(other.reservations_);
+      if (other.NextPageToken.Length != 0) {
+        NextPageToken = other.NextPageToken;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            reservations_.AddEntriesFrom(input, _repeated_reservations_codec);
+            break;
+          }
+          case 18: {
+            NextPageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            reservations_.AddEntriesFrom(ref input, _repeated_reservations_codec);
+            break;
+          }
+          case 18: {
+            NextPageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Request for UpdateReservation.
+  /// </summary>
+  public sealed partial class UpdateReservationRequest : pb::IMessage<UpdateReservationRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<UpdateReservationRequest> _parser = new pb::MessageParser<UpdateReservationRequest>(() => new UpdateReservationRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UpdateReservationRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.AdminReflection.Descriptor.MessageTypes[20]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateReservationRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateReservationRequest(UpdateReservationRequest other) : this() {
+      reservation_ = other.reservation_ != null ? other.reservation_.Clone() : null;
+      updateMask_ = other.updateMask_ != null ? other.updateMask_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateReservationRequest Clone() {
+      return new UpdateReservationRequest(this);
+    }
+
+    /// <summary>Field number for the "reservation" field.</summary>
+    public const int ReservationFieldNumber = 1;
+    private global::Google.Cloud.PubSubLite.V1.Reservation reservation_;
+    /// <summary>
+    /// Required. The reservation to update. Its `name` field must be populated.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Cloud.PubSubLite.V1.Reservation Reservation {
+      get { return reservation_; }
+      set {
+        reservation_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "update_mask" field.</summary>
+    public const int UpdateMaskFieldNumber = 2;
+    private global::Google.Protobuf.WellKnownTypes.FieldMask updateMask_;
+    /// <summary>
+    /// Required. A mask specifying the reservation fields to change.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.FieldMask UpdateMask {
+      get { return updateMask_; }
+      set {
+        updateMask_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateReservationRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UpdateReservationRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Reservation, other.Reservation)) return false;
+      if (!object.Equals(UpdateMask, other.UpdateMask)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (reservation_ != null) hash ^= Reservation.GetHashCode();
+      if (updateMask_ != null) hash ^= UpdateMask.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (reservation_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Reservation);
+      }
+      if (updateMask_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(UpdateMask);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (reservation_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Reservation);
+      }
+      if (updateMask_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(UpdateMask);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (reservation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Reservation);
+      }
+      if (updateMask_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdateMask);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UpdateReservationRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.reservation_ != null) {
+        if (reservation_ == null) {
+          Reservation = new global::Google.Cloud.PubSubLite.V1.Reservation();
+        }
+        Reservation.MergeFrom(other.Reservation);
+      }
+      if (other.updateMask_ != null) {
+        if (updateMask_ == null) {
+          UpdateMask = new global::Google.Protobuf.WellKnownTypes.FieldMask();
+        }
+        UpdateMask.MergeFrom(other.UpdateMask);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (reservation_ == null) {
+              Reservation = new global::Google.Cloud.PubSubLite.V1.Reservation();
+            }
+            input.ReadMessage(Reservation);
+            break;
+          }
+          case 18: {
+            if (updateMask_ == null) {
+              UpdateMask = new global::Google.Protobuf.WellKnownTypes.FieldMask();
+            }
+            input.ReadMessage(UpdateMask);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (reservation_ == null) {
+              Reservation = new global::Google.Cloud.PubSubLite.V1.Reservation();
+            }
+            input.ReadMessage(Reservation);
+            break;
+          }
+          case 18: {
+            if (updateMask_ == null) {
+              UpdateMask = new global::Google.Protobuf.WellKnownTypes.FieldMask();
+            }
+            input.ReadMessage(UpdateMask);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Request for DeleteReservation.
+  /// </summary>
+  public sealed partial class DeleteReservationRequest : pb::IMessage<DeleteReservationRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DeleteReservationRequest> _parser = new pb::MessageParser<DeleteReservationRequest>(() => new DeleteReservationRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeleteReservationRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.AdminReflection.Descriptor.MessageTypes[21]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteReservationRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteReservationRequest(DeleteReservationRequest other) : this() {
+      name_ = other.name_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteReservationRequest Clone() {
+      return new DeleteReservationRequest(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    /// <summary>
+    /// Required. The name of the reservation to delete.
+    /// Structured like:
+    /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeleteReservationRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeleteReservationRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeleteReservationRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Request for ListReservationTopics.
+  /// </summary>
+  public sealed partial class ListReservationTopicsRequest : pb::IMessage<ListReservationTopicsRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListReservationTopicsRequest> _parser = new pb::MessageParser<ListReservationTopicsRequest>(() => new ListReservationTopicsRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ListReservationTopicsRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.AdminReflection.Descriptor.MessageTypes[22]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationTopicsRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationTopicsRequest(ListReservationTopicsRequest other) : this() {
+      name_ = other.name_;
+      pageSize_ = other.pageSize_;
+      pageToken_ = other.pageToken_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationTopicsRequest Clone() {
+      return new ListReservationTopicsRequest(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    /// <summary>
+    /// Required. The name of the reservation whose topics to list.
+    /// Structured like:
+    /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "page_size" field.</summary>
+    public const int PageSizeFieldNumber = 2;
+    private int pageSize_;
+    /// <summary>
+    /// The maximum number of topics to return. The service may return fewer
+    /// than this value.
+    /// If unset or zero, all topics for the given reservation will be returned.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PageSize {
+      get { return pageSize_; }
+      set {
+        pageSize_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "page_token" field.</summary>
+    public const int PageTokenFieldNumber = 3;
+    private string pageToken_ = "";
+    /// <summary>
+    /// A page token, received from a previous `ListReservationTopics` call.
+    /// Provide this to retrieve the subsequent page.
+    ///
+    /// When paginating, all other parameters provided to `ListReservationTopics`
+    /// must match the call that provided the page token.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PageToken {
+      get { return pageToken_; }
+      set {
+        pageToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ListReservationTopicsRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ListReservationTopicsRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (PageSize != other.PageSize) return false;
+      if (PageToken != other.PageToken) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (PageSize != 0) hash ^= PageSize.GetHashCode();
+      if (PageToken.Length != 0) hash ^= PageToken.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (PageSize != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (PageSize != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(PageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (PageSize != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PageToken);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ListReservationTopicsRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.PageSize != 0) {
+        PageSize = other.PageSize;
+      }
+      if (other.PageToken.Length != 0) {
+        PageToken = other.PageToken;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            PageSize = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            PageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            PageSize = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            PageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Response for ListReservationTopics.
+  /// </summary>
+  public sealed partial class ListReservationTopicsResponse : pb::IMessage<ListReservationTopicsResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListReservationTopicsResponse> _parser = new pb::MessageParser<ListReservationTopicsResponse>(() => new ListReservationTopicsResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ListReservationTopicsResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.AdminReflection.Descriptor.MessageTypes[23]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationTopicsResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationTopicsResponse(ListReservationTopicsResponse other) : this() {
+      topics_ = other.topics_.Clone();
+      nextPageToken_ = other.nextPageToken_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListReservationTopicsResponse Clone() {
+      return new ListReservationTopicsResponse(this);
+    }
+
+    /// <summary>Field number for the "topics" field.</summary>
+    public const int TopicsFieldNumber = 1;
+    private static readonly pb::FieldCodec<string> _repeated_topics_codec
+        = pb::FieldCodec.ForString(10);
+    private readonly pbc::RepeatedField<string> topics_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// The names of topics attached to the reservation. The order of the
+    /// topics is unspecified.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Topics {
+      get { return topics_; }
+    }
+
+    /// <summary>Field number for the "next_page_token" field.</summary>
+    public const int NextPageTokenFieldNumber = 2;
+    private string nextPageToken_ = "";
+    /// <summary>
+    /// A token that can be sent as `page_token` to retrieve the next page of
+    /// results. If this field is omitted, there are no more results.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NextPageToken {
+      get { return nextPageToken_; }
+      set {
+        nextPageToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ListReservationTopicsResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ListReservationTopicsResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!topics_.Equals(other.topics_)) return false;
+      if (NextPageToken != other.NextPageToken) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= topics_.GetHashCode();
+      if (NextPageToken.Length != 0) hash ^= NextPageToken.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      topics_.WriteTo(output, _repeated_topics_codec);
+      if (NextPageToken.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NextPageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      topics_.WriteTo(ref output, _repeated_topics_codec);
+      if (NextPageToken.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NextPageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += topics_.CalculateSize(_repeated_topics_codec);
+      if (NextPageToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NextPageToken);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ListReservationTopicsResponse other) {
+      if (other == null) {
+        return;
+      }
+      topics_.Add(other.topics_);
+      if (other.NextPageToken.Length != 0) {
+        NextPageToken = other.NextPageToken;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            topics_.AddEntriesFrom(input, _repeated_topics_codec);
+            break;
+          }
+          case 18: {
+            NextPageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            topics_.AddEntriesFrom(ref input, _repeated_topics_codec);
+            break;
+          }
+          case 18: {
+            NextPageToken = input.ReadString();
             break;
           }
         }

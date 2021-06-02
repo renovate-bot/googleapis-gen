@@ -32,9 +32,9 @@ module Google
         #     so `partition` must be in the range [0, topic.num_partitions).
         # @!attribute [rw] initial_location
         #   @return [::Google::Cloud::PubSubLite::V1::SeekRequest]
-        #     Optional. Initial target location within the message backlog. If not set,
-        #     messages will be delivered from the commit cursor for the given
-        #     subscription and partition.
+        #     Optional. Initial target location within the message backlog. If not set, messages
+        #     will be delivered from the commit cursor for the given subscription and
+        #     partition.
         class InitialSubscribeRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

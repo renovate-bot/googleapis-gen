@@ -148,6 +148,9 @@ export class CursorServiceClient {
     // identifiers to uniquely identify resources within the API.
     // Create useful helper objects for these.
     this.pathTemplates = {
+      reservationPathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}/locations/{location}/reservations/{reservation}'
+      ),
       subscriptionPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/locations/{location}/subscriptions/{subscription}'
       ),
@@ -599,6 +602,55 @@ export class CursorServiceClient {
   // --------------------
   // -- Path templates --
   // --------------------
+
+  /**
+   * Return a fully-qualified reservation resource name string.
+   *
+   * @param {string} project
+   * @param {string} location
+   * @param {string} reservation
+   * @returns {string} Resource name string.
+   */
+  reservationPath(project:string,location:string,reservation:string) {
+    return this.pathTemplates.reservationPathTemplate.render({
+      project: project,
+      location: location,
+      reservation: reservation,
+    });
+  }
+
+  /**
+   * Parse the project from Reservation resource.
+   *
+   * @param {string} reservationName
+   *   A fully-qualified path representing Reservation resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromReservationName(reservationName: string) {
+    return this.pathTemplates.reservationPathTemplate.match(reservationName).project;
+  }
+
+  /**
+   * Parse the location from Reservation resource.
+   *
+   * @param {string} reservationName
+   *   A fully-qualified path representing Reservation resource.
+   * @returns {string} A string representing the location.
+   */
+  matchLocationFromReservationName(reservationName: string) {
+    return this.pathTemplates.reservationPathTemplate.match(reservationName).location;
+  }
+
+  /**
+   * Parse the reservation from Reservation resource.
+   *
+   * @param {string} reservationName
+   *   A fully-qualified path representing Reservation resource.
+   * @returns {string} A string representing the reservation.
+   */
+  matchReservationFromReservationName(reservationName: string) {
+    return this.pathTemplates.reservationPathTemplate.match(reservationName).reservation;
+  }
 
   /**
    * Return a fully-qualified subscription resource name string.

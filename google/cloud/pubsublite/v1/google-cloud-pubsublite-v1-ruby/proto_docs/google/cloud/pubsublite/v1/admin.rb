@@ -249,6 +249,132 @@ module Google
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
+
+        # Request for CreateReservation.
+        # @!attribute [rw] parent
+        #   @return [::String]
+        #     Required. The parent location in which to create the reservation.
+        #     Structured like `projects/{project_number}/locations/{location}`.
+        # @!attribute [rw] reservation
+        #   @return [::Google::Cloud::PubSubLite::V1::Reservation]
+        #     Required. Configuration of the reservation to create. Its `name` field is ignored.
+        # @!attribute [rw] reservation_id
+        #   @return [::String]
+        #     Required. The ID to use for the reservation, which will become the final component of
+        #     the reservation's name.
+        #
+        #     This value is structured like: `my-reservation-name`.
+        class CreateReservationRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request for GetReservation.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     Required. The name of the reservation whose configuration to return.
+        #     Structured like:
+        #     projects/\\{project_number}/locations/\\{location}/reservations/\\{reservation_id}
+        class GetReservationRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request for ListReservations.
+        # @!attribute [rw] parent
+        #   @return [::String]
+        #     Required. The parent whose reservations are to be listed.
+        #     Structured like `projects/{project_number}/locations/{location}`.
+        # @!attribute [rw] page_size
+        #   @return [::Integer]
+        #     The maximum number of reservations to return. The service may return fewer
+        #     than this value. If unset or zero, all reservations for the parent will be
+        #     returned.
+        # @!attribute [rw] page_token
+        #   @return [::String]
+        #     A page token, received from a previous `ListReservations` call.
+        #     Provide this to retrieve the subsequent page.
+        #
+        #     When paginating, all other parameters provided to `ListReservations` must
+        #     match the call that provided the page token.
+        class ListReservationsRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response for ListReservations.
+        # @!attribute [rw] reservations
+        #   @return [::Array<::Google::Cloud::PubSubLite::V1::Reservation>]
+        #     The list of reservation in the requested parent. The order of the
+        #     reservations is unspecified.
+        # @!attribute [rw] next_page_token
+        #   @return [::String]
+        #     A token that can be sent as `page_token` to retrieve the next page of
+        #     results. If this field is omitted, there are no more results.
+        class ListReservationsResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request for UpdateReservation.
+        # @!attribute [rw] reservation
+        #   @return [::Google::Cloud::PubSubLite::V1::Reservation]
+        #     Required. The reservation to update. Its `name` field must be populated.
+        # @!attribute [rw] update_mask
+        #   @return [::Google::Protobuf::FieldMask]
+        #     Required. A mask specifying the reservation fields to change.
+        class UpdateReservationRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request for DeleteReservation.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     Required. The name of the reservation to delete.
+        #     Structured like:
+        #     projects/\\{project_number}/locations/\\{location}/reservations/\\{reservation_id}
+        class DeleteReservationRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request for ListReservationTopics.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     Required. The name of the reservation whose topics to list.
+        #     Structured like:
+        #     projects/\\{project_number}/locations/\\{location}/reservations/\\{reservation_id}
+        # @!attribute [rw] page_size
+        #   @return [::Integer]
+        #     The maximum number of topics to return. The service may return fewer
+        #     than this value.
+        #     If unset or zero, all topics for the given reservation will be returned.
+        # @!attribute [rw] page_token
+        #   @return [::String]
+        #     A page token, received from a previous `ListReservationTopics` call.
+        #     Provide this to retrieve the subsequent page.
+        #
+        #     When paginating, all other parameters provided to `ListReservationTopics`
+        #     must match the call that provided the page token.
+        class ListReservationTopicsRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response for ListReservationTopics.
+        # @!attribute [rw] topics
+        #   @return [::Array<::String>]
+        #     The names of topics attached to the reservation. The order of the
+        #     topics is unspecified.
+        # @!attribute [rw] next_page_token
+        #   @return [::String]
+        #     A token that can be sent as `page_token` to retrieve the next page of
+        #     results. If this field is omitted, there are no more results.
+        class ListReservationTopicsResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
       end
     end
   end

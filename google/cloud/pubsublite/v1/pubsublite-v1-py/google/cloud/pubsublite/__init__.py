@@ -27,13 +27,20 @@ from google.cloud.pubsublite_v1.services.subscriber_service.async_client import 
 from google.cloud.pubsublite_v1.services.topic_stats_service.client import TopicStatsServiceClient
 from google.cloud.pubsublite_v1.services.topic_stats_service.async_client import TopicStatsServiceAsyncClient
 
+from google.cloud.pubsublite_v1.types.admin import CreateReservationRequest
 from google.cloud.pubsublite_v1.types.admin import CreateSubscriptionRequest
 from google.cloud.pubsublite_v1.types.admin import CreateTopicRequest
+from google.cloud.pubsublite_v1.types.admin import DeleteReservationRequest
 from google.cloud.pubsublite_v1.types.admin import DeleteSubscriptionRequest
 from google.cloud.pubsublite_v1.types.admin import DeleteTopicRequest
+from google.cloud.pubsublite_v1.types.admin import GetReservationRequest
 from google.cloud.pubsublite_v1.types.admin import GetSubscriptionRequest
 from google.cloud.pubsublite_v1.types.admin import GetTopicPartitionsRequest
 from google.cloud.pubsublite_v1.types.admin import GetTopicRequest
+from google.cloud.pubsublite_v1.types.admin import ListReservationsRequest
+from google.cloud.pubsublite_v1.types.admin import ListReservationsResponse
+from google.cloud.pubsublite_v1.types.admin import ListReservationTopicsRequest
+from google.cloud.pubsublite_v1.types.admin import ListReservationTopicsResponse
 from google.cloud.pubsublite_v1.types.admin import ListSubscriptionsRequest
 from google.cloud.pubsublite_v1.types.admin import ListSubscriptionsResponse
 from google.cloud.pubsublite_v1.types.admin import ListTopicsRequest
@@ -41,11 +48,13 @@ from google.cloud.pubsublite_v1.types.admin import ListTopicsResponse
 from google.cloud.pubsublite_v1.types.admin import ListTopicSubscriptionsRequest
 from google.cloud.pubsublite_v1.types.admin import ListTopicSubscriptionsResponse
 from google.cloud.pubsublite_v1.types.admin import TopicPartitions
+from google.cloud.pubsublite_v1.types.admin import UpdateReservationRequest
 from google.cloud.pubsublite_v1.types.admin import UpdateSubscriptionRequest
 from google.cloud.pubsublite_v1.types.admin import UpdateTopicRequest
 from google.cloud.pubsublite_v1.types.common import AttributeValues
 from google.cloud.pubsublite_v1.types.common import Cursor
 from google.cloud.pubsublite_v1.types.common import PubSubMessage
+from google.cloud.pubsublite_v1.types.common import Reservation
 from google.cloud.pubsublite_v1.types.common import SequencedMessage
 from google.cloud.pubsublite_v1.types.common import Subscription
 from google.cloud.pubsublite_v1.types.common import TimeTarget
@@ -98,13 +107,20 @@ __all__ = ('AdminServiceClient',
     'SubscriberServiceAsyncClient',
     'TopicStatsServiceClient',
     'TopicStatsServiceAsyncClient',
+    'CreateReservationRequest',
     'CreateSubscriptionRequest',
     'CreateTopicRequest',
+    'DeleteReservationRequest',
     'DeleteSubscriptionRequest',
     'DeleteTopicRequest',
+    'GetReservationRequest',
     'GetSubscriptionRequest',
     'GetTopicPartitionsRequest',
     'GetTopicRequest',
+    'ListReservationsRequest',
+    'ListReservationsResponse',
+    'ListReservationTopicsRequest',
+    'ListReservationTopicsResponse',
     'ListSubscriptionsRequest',
     'ListSubscriptionsResponse',
     'ListTopicsRequest',
@@ -112,11 +128,13 @@ __all__ = ('AdminServiceClient',
     'ListTopicSubscriptionsRequest',
     'ListTopicSubscriptionsResponse',
     'TopicPartitions',
+    'UpdateReservationRequest',
     'UpdateSubscriptionRequest',
     'UpdateTopicRequest',
     'AttributeValues',
     'Cursor',
     'PubSubMessage',
+    'Reservation',
     'SequencedMessage',
     'Subscription',
     'TimeTarget',

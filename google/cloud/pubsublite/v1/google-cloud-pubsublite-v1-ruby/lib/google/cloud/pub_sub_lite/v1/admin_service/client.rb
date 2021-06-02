@@ -1011,6 +1011,440 @@ module Google
             end
 
             ##
+            # Creates a new reservation.
+            #
+            # @overload create_reservation(request, options = nil)
+            #   Pass arguments to `create_reservation` via a request object, either of type
+            #   {::Google::Cloud::PubSubLite::V1::CreateReservationRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::PubSubLite::V1::CreateReservationRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload create_reservation(parent: nil, reservation: nil, reservation_id: nil)
+            #   Pass arguments to `create_reservation` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param parent [::String]
+            #     Required. The parent location in which to create the reservation.
+            #     Structured like `projects/{project_number}/locations/{location}`.
+            #   @param reservation [::Google::Cloud::PubSubLite::V1::Reservation, ::Hash]
+            #     Required. Configuration of the reservation to create. Its `name` field is ignored.
+            #   @param reservation_id [::String]
+            #     Required. The ID to use for the reservation, which will become the final component of
+            #     the reservation's name.
+            #
+            #     This value is structured like: `my-reservation-name`.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::PubSubLite::V1::Reservation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::PubSubLite::V1::Reservation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def create_reservation request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::PubSubLite::V1::CreateReservationRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.create_reservation.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Pubsublite::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "parent" => request.parent
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.create_reservation.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.create_reservation.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @admin_service_stub.call_rpc :create_reservation, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Returns the reservation configuration.
+            #
+            # @overload get_reservation(request, options = nil)
+            #   Pass arguments to `get_reservation` via a request object, either of type
+            #   {::Google::Cloud::PubSubLite::V1::GetReservationRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::PubSubLite::V1::GetReservationRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload get_reservation(name: nil)
+            #   Pass arguments to `get_reservation` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The name of the reservation whose configuration to return.
+            #     Structured like:
+            #     projects/\\{project_number}/locations/\\{location}/reservations/\\{reservation_id}
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::PubSubLite::V1::Reservation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::PubSubLite::V1::Reservation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def get_reservation request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::PubSubLite::V1::GetReservationRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.get_reservation.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Pubsublite::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.get_reservation.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.get_reservation.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @admin_service_stub.call_rpc :get_reservation, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Returns the list of reservations for the given project.
+            #
+            # @overload list_reservations(request, options = nil)
+            #   Pass arguments to `list_reservations` via a request object, either of type
+            #   {::Google::Cloud::PubSubLite::V1::ListReservationsRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::PubSubLite::V1::ListReservationsRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload list_reservations(parent: nil, page_size: nil, page_token: nil)
+            #   Pass arguments to `list_reservations` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param parent [::String]
+            #     Required. The parent whose reservations are to be listed.
+            #     Structured like `projects/{project_number}/locations/{location}`.
+            #   @param page_size [::Integer]
+            #     The maximum number of reservations to return. The service may return fewer
+            #     than this value. If unset or zero, all reservations for the parent will be
+            #     returned.
+            #   @param page_token [::String]
+            #     A page token, received from a previous `ListReservations` call.
+            #     Provide this to retrieve the subsequent page.
+            #
+            #     When paginating, all other parameters provided to `ListReservations` must
+            #     match the call that provided the page token.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::PubSubLite::V1::Reservation>]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::PagedEnumerable<::Google::Cloud::PubSubLite::V1::Reservation>]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def list_reservations request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::PubSubLite::V1::ListReservationsRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.list_reservations.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Pubsublite::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "parent" => request.parent
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.list_reservations.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.list_reservations.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @admin_service_stub.call_rpc :list_reservations, request, options: options do |response, operation|
+                response = ::Gapic::PagedEnumerable.new @admin_service_stub, :list_reservations, request, response, operation, options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Updates properties of the specified reservation.
+            #
+            # @overload update_reservation(request, options = nil)
+            #   Pass arguments to `update_reservation` via a request object, either of type
+            #   {::Google::Cloud::PubSubLite::V1::UpdateReservationRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::PubSubLite::V1::UpdateReservationRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload update_reservation(reservation: nil, update_mask: nil)
+            #   Pass arguments to `update_reservation` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param reservation [::Google::Cloud::PubSubLite::V1::Reservation, ::Hash]
+            #     Required. The reservation to update. Its `name` field must be populated.
+            #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
+            #     Required. A mask specifying the reservation fields to change.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::PubSubLite::V1::Reservation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::PubSubLite::V1::Reservation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def update_reservation request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::PubSubLite::V1::UpdateReservationRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.update_reservation.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Pubsublite::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "reservation.name" => request.reservation.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.update_reservation.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.update_reservation.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @admin_service_stub.call_rpc :update_reservation, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Deletes the specified reservation.
+            #
+            # @overload delete_reservation(request, options = nil)
+            #   Pass arguments to `delete_reservation` via a request object, either of type
+            #   {::Google::Cloud::PubSubLite::V1::DeleteReservationRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::PubSubLite::V1::DeleteReservationRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload delete_reservation(name: nil)
+            #   Pass arguments to `delete_reservation` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The name of the reservation to delete.
+            #     Structured like:
+            #     projects/\\{project_number}/locations/\\{location}/reservations/\\{reservation_id}
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Protobuf::Empty]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Protobuf::Empty]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def delete_reservation request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::PubSubLite::V1::DeleteReservationRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.delete_reservation.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Pubsublite::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.delete_reservation.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.delete_reservation.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @admin_service_stub.call_rpc :delete_reservation, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Lists the topics attached to the specified reservation.
+            #
+            # @overload list_reservation_topics(request, options = nil)
+            #   Pass arguments to `list_reservation_topics` via a request object, either of type
+            #   {::Google::Cloud::PubSubLite::V1::ListReservationTopicsRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::PubSubLite::V1::ListReservationTopicsRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload list_reservation_topics(name: nil, page_size: nil, page_token: nil)
+            #   Pass arguments to `list_reservation_topics` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The name of the reservation whose topics to list.
+            #     Structured like:
+            #     projects/\\{project_number}/locations/\\{location}/reservations/\\{reservation_id}
+            #   @param page_size [::Integer]
+            #     The maximum number of topics to return. The service may return fewer
+            #     than this value.
+            #     If unset or zero, all topics for the given reservation will be returned.
+            #   @param page_token [::String]
+            #     A page token, received from a previous `ListReservationTopics` call.
+            #     Provide this to retrieve the subsequent page.
+            #
+            #     When paginating, all other parameters provided to `ListReservationTopics`
+            #     must match the call that provided the page token.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::PubSubLite::V1::ListReservationTopicsResponse]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::PubSubLite::V1::ListReservationTopicsResponse]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def list_reservation_topics request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::PubSubLite::V1::ListReservationTopicsRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.list_reservation_topics.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Pubsublite::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.list_reservation_topics.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.list_reservation_topics.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @admin_service_stub.call_rpc :list_reservation_topics, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Configuration class for the AdminService API.
             #
             # This class represents the configuration for AdminService,
@@ -1206,6 +1640,36 @@ module Google
                 # @return [::Gapic::Config::Method]
                 #
                 attr_reader :delete_subscription
+                ##
+                # RPC-specific configuration for `create_reservation`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :create_reservation
+                ##
+                # RPC-specific configuration for `get_reservation`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :get_reservation
+                ##
+                # RPC-specific configuration for `list_reservations`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :list_reservations
+                ##
+                # RPC-specific configuration for `update_reservation`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :update_reservation
+                ##
+                # RPC-specific configuration for `delete_reservation`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :delete_reservation
+                ##
+                # RPC-specific configuration for `list_reservation_topics`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :list_reservation_topics
 
                 # @private
                 def initialize parent_rpcs = nil
@@ -1233,6 +1697,18 @@ module Google
                   @update_subscription = ::Gapic::Config::Method.new update_subscription_config
                   delete_subscription_config = parent_rpcs.delete_subscription if parent_rpcs.respond_to? :delete_subscription
                   @delete_subscription = ::Gapic::Config::Method.new delete_subscription_config
+                  create_reservation_config = parent_rpcs.create_reservation if parent_rpcs.respond_to? :create_reservation
+                  @create_reservation = ::Gapic::Config::Method.new create_reservation_config
+                  get_reservation_config = parent_rpcs.get_reservation if parent_rpcs.respond_to? :get_reservation
+                  @get_reservation = ::Gapic::Config::Method.new get_reservation_config
+                  list_reservations_config = parent_rpcs.list_reservations if parent_rpcs.respond_to? :list_reservations
+                  @list_reservations = ::Gapic::Config::Method.new list_reservations_config
+                  update_reservation_config = parent_rpcs.update_reservation if parent_rpcs.respond_to? :update_reservation
+                  @update_reservation = ::Gapic::Config::Method.new update_reservation_config
+                  delete_reservation_config = parent_rpcs.delete_reservation if parent_rpcs.respond_to? :delete_reservation
+                  @delete_reservation = ::Gapic::Config::Method.new delete_reservation_config
+                  list_reservation_topics_config = parent_rpcs.list_reservation_topics if parent_rpcs.respond_to? :list_reservation_topics
+                  @list_reservation_topics = ::Gapic::Config::Method.new list_reservation_topics_config
 
                   yield self if block_given?
                 end

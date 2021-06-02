@@ -927,6 +927,345 @@ describe('v1.AdminServiceClient', () => {
         });
     });
 
+    describe('createReservation', () => {
+        it('invokes createReservation without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateReservationRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation());
+            client.innerApiCalls.createReservation = stubSimpleCall(expectedResponse);
+            const [response] = await client.createReservation(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.createReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes createReservation without error using callback', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateReservationRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation());
+            client.innerApiCalls.createReservation = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.createReservation(
+                    request,
+                    (err?: Error|null, result?: protos.google.cloud.pubsublite.v1.IReservation|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.createReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes createReservation with error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateReservationRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.createReservation = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.createReservation(request), expectedError);
+            assert((client.innerApiCalls.createReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('getReservation', () => {
+        it('invokes getReservation without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetReservationRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation());
+            client.innerApiCalls.getReservation = stubSimpleCall(expectedResponse);
+            const [response] = await client.getReservation(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.getReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes getReservation without error using callback', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetReservationRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation());
+            client.innerApiCalls.getReservation = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.getReservation(
+                    request,
+                    (err?: Error|null, result?: protos.google.cloud.pubsublite.v1.IReservation|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.getReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes getReservation with error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetReservationRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.getReservation = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.getReservation(request), expectedError);
+            assert((client.innerApiCalls.getReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('updateReservation', () => {
+        it('invokes updateReservation without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateReservationRequest());
+            request.reservation = {};
+            request.reservation.name = '';
+            const expectedHeaderRequestParams = "reservation.name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation());
+            client.innerApiCalls.updateReservation = stubSimpleCall(expectedResponse);
+            const [response] = await client.updateReservation(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.updateReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes updateReservation without error using callback', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateReservationRequest());
+            request.reservation = {};
+            request.reservation.name = '';
+            const expectedHeaderRequestParams = "reservation.name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation());
+            client.innerApiCalls.updateReservation = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.updateReservation(
+                    request,
+                    (err?: Error|null, result?: protos.google.cloud.pubsublite.v1.IReservation|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.updateReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes updateReservation with error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateReservationRequest());
+            request.reservation = {};
+            request.reservation.name = '';
+            const expectedHeaderRequestParams = "reservation.name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.updateReservation = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.updateReservation(request), expectedError);
+            assert((client.innerApiCalls.updateReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('deleteReservation', () => {
+        it('invokes deleteReservation without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteReservationRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
+            client.innerApiCalls.deleteReservation = stubSimpleCall(expectedResponse);
+            const [response] = await client.deleteReservation(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.deleteReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes deleteReservation without error using callback', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteReservationRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
+            client.innerApiCalls.deleteReservation = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.deleteReservation(
+                    request,
+                    (err?: Error|null, result?: protos.google.protobuf.IEmpty|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.deleteReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes deleteReservation with error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteReservationRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.deleteReservation = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.deleteReservation(request), expectedError);
+            assert((client.innerApiCalls.deleteReservation as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
     describe('listTopics', () => {
         it('invokes listTopics without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
@@ -1577,6 +1916,434 @@ describe('v1.AdminServiceClient', () => {
         });
     });
 
+    describe('listReservations', () => {
+        it('invokes listReservations without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+            ];
+            client.innerApiCalls.listReservations = stubSimpleCall(expectedResponse);
+            const [response] = await client.listReservations(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listReservations as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listReservations without error using callback', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+            ];
+            client.innerApiCalls.listReservations = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.listReservations(
+                    request,
+                    (err?: Error|null, result?: protos.google.cloud.pubsublite.v1.IReservation[]|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listReservations as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes listReservations with error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.listReservations = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.listReservations(request), expectedError);
+            assert((client.innerApiCalls.listReservations as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listReservationsStream without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+            ];
+            client.descriptors.page.listReservations.createStream = stubPageStreamingCall(expectedResponse);
+            const stream = client.listReservationsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.pubsublite.v1.Reservation[] = [];
+                stream.on('data', (response: protos.google.cloud.pubsublite.v1.Reservation) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            const responses = await promise;
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert((client.descriptors.page.listReservations.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listReservations, request));
+            assert.strictEqual(
+                (client.descriptors.page.listReservations.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('invokes listReservationsStream with error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedError = new Error('expected');
+            client.descriptors.page.listReservations.createStream = stubPageStreamingCall(undefined, expectedError);
+            const stream = client.listReservationsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.pubsublite.v1.Reservation[] = [];
+                stream.on('data', (response: protos.google.cloud.pubsublite.v1.Reservation) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            await assert.rejects(promise, expectedError);
+            assert((client.descriptors.page.listReservations.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listReservations, request));
+            assert.strictEqual(
+                (client.descriptors.page.listReservations.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listReservations without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+              generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
+            ];
+            client.descriptors.page.listReservations.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: protos.google.cloud.pubsublite.v1.IReservation[] = [];
+            const iterable = client.listReservationsAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.listReservations.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listReservations.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listReservations with error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";const expectedError = new Error('expected');
+            client.descriptors.page.listReservations.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.listReservationsAsync(request);
+            await assert.rejects(async () => {
+                const responses: protos.google.cloud.pubsublite.v1.IReservation[] = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.listReservations.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listReservations.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+    });
+
+    describe('listReservationTopics', () => {
+        it('invokes listReservationTopics without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationTopicsRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [new String(), new String(), new String()];
+            client.innerApiCalls.listReservationTopics = stubSimpleCall(expectedResponse);
+            const [response] = await client.listReservationTopics(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listReservationTopics as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listReservationTopics without error using callback', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationTopicsRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [new String(), new String(), new String()];
+            client.innerApiCalls.listReservationTopics = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.listReservationTopics(
+                    request,
+                    (err?: Error|null, result?: string[]|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listReservationTopics as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes listReservationTopics with error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationTopicsRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.listReservationTopics = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.listReservationTopics(request), expectedError);
+            assert((client.innerApiCalls.listReservationTopics as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listReservationTopicsStream without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationTopicsRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedResponse = [new String(), new String(), new String()];
+            client.descriptors.page.listReservationTopics.createStream = stubPageStreamingCall(expectedResponse);
+            const stream = client.listReservationTopicsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: string[] = [];
+                stream.on('data', (response: string) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            const responses = await promise;
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert((client.descriptors.page.listReservationTopics.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listReservationTopics, request));
+            assert.strictEqual(
+                (client.descriptors.page.listReservationTopics.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('invokes listReservationTopicsStream with error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationTopicsRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedError = new Error('expected');
+            client.descriptors.page.listReservationTopics.createStream = stubPageStreamingCall(undefined, expectedError);
+            const stream = client.listReservationTopicsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: string[] = [];
+                stream.on('data', (response: string) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            await assert.rejects(promise, expectedError);
+            assert((client.descriptors.page.listReservationTopics.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listReservationTopics, request));
+            assert.strictEqual(
+                (client.descriptors.page.listReservationTopics.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listReservationTopics without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationTopicsRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";const expectedResponse = [new String(), new String(), new String()];
+            client.descriptors.page.listReservationTopics.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: string[] = [];
+            const iterable = client.listReservationTopicsAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.listReservationTopics.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listReservationTopics.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listReservationTopics with error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationTopicsRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";const expectedError = new Error('expected');
+            client.descriptors.page.listReservationTopics.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.listReservationTopicsAsync(request);
+            await assert.rejects(async () => {
+                const responses: string[] = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.listReservationTopics.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listReservationTopics.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+    });
+
     describe('Path templates', () => {
 
         describe('location', () => {
@@ -1613,6 +2380,52 @@ describe('v1.AdminServiceClient', () => {
                 const result = client.matchLocationFromLocationName(fakePath);
                 assert.strictEqual(result, "locationValue");
                 assert((client.pathTemplates.locationPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
+        describe('reservation', () => {
+            const fakePath = "/rendered/path/reservation";
+            const expectedParameters = {
+                project: "projectValue",
+                location: "locationValue",
+                reservation: "reservationValue",
+            };
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.reservationPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.reservationPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('reservationPath', () => {
+                const result = client.reservationPath("projectValue", "locationValue", "reservationValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.reservationPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchProjectFromReservationName', () => {
+                const result = client.matchProjectFromReservationName(fakePath);
+                assert.strictEqual(result, "projectValue");
+                assert((client.pathTemplates.reservationPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchLocationFromReservationName', () => {
+                const result = client.matchLocationFromReservationName(fakePath);
+                assert.strictEqual(result, "locationValue");
+                assert((client.pathTemplates.reservationPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchReservationFromReservationName', () => {
+                const result = client.matchReservationFromReservationName(fakePath);
+                assert.strictEqual(result, "reservationValue");
+                assert((client.pathTemplates.reservationPathTemplate.match as SinonStub)
                     .getCall(-1).calledWith(fakePath));
             });
         });

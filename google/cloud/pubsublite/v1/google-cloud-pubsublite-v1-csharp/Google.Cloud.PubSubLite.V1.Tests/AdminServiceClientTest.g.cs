@@ -43,6 +43,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.CreateTopic(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -66,6 +67,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.CreateTopicAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Topic>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -91,6 +93,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.CreateTopic(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -114,6 +117,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.CreateTopicAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Topic>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -139,6 +143,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.CreateTopic(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -162,6 +167,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.CreateTopicAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Topic>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -185,6 +191,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.GetTopic(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -206,6 +213,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.GetTopicAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Topic>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -229,6 +237,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.GetTopic(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -250,6 +259,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.GetTopicAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Topic>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -273,6 +283,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.GetTopic(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -294,6 +305,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.GetTopicAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Topic>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -438,6 +450,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.UpdateTopic(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -460,6 +473,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.UpdateTopicAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Topic>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -484,6 +498,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.UpdateTopic(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -506,6 +521,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
                 PartitionConfig = new Topic.Types.PartitionConfig(),
                 RetentionConfig = new Topic.Types.RetentionConfig(),
+                ReservationConfig = new Topic.Types.ReservationConfig(),
             };
             mockGrpcClient.Setup(x => x.UpdateTopicAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Topic>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
@@ -1069,6 +1085,451 @@ namespace Google.Cloud.PubSubLite.V1.Tests
             AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
             await client.DeleteSubscriptionAsync(request.SubscriptionName, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
             await client.DeleteSubscriptionAsync(request.SubscriptionName, st::CancellationToken.None);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void CreateReservationRequestObject()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            CreateReservationRequest request = new CreateReservationRequest
+            {
+                ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Reservation = new Reservation(),
+                ReservationId = "reservation_id4ff109fe",
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.CreateReservation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation response = client.CreateReservation(request);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task CreateReservationRequestObjectAsync()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            CreateReservationRequest request = new CreateReservationRequest
+            {
+                ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Reservation = new Reservation(),
+                ReservationId = "reservation_id4ff109fe",
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.CreateReservationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Reservation>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation responseCallSettings = await client.CreateReservationAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Reservation responseCancellationToken = await client.CreateReservationAsync(request, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void CreateReservation()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            CreateReservationRequest request = new CreateReservationRequest
+            {
+                ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Reservation = new Reservation(),
+                ReservationId = "reservation_id4ff109fe",
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.CreateReservation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation response = client.CreateReservation(request.Parent, request.Reservation, request.ReservationId);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task CreateReservationAsync()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            CreateReservationRequest request = new CreateReservationRequest
+            {
+                ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Reservation = new Reservation(),
+                ReservationId = "reservation_id4ff109fe",
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.CreateReservationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Reservation>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation responseCallSettings = await client.CreateReservationAsync(request.Parent, request.Reservation, request.ReservationId, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Reservation responseCancellationToken = await client.CreateReservationAsync(request.Parent, request.Reservation, request.ReservationId, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void CreateReservationResourceNames()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            CreateReservationRequest request = new CreateReservationRequest
+            {
+                ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Reservation = new Reservation(),
+                ReservationId = "reservation_id4ff109fe",
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.CreateReservation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation response = client.CreateReservation(request.ParentAsLocationName, request.Reservation, request.ReservationId);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task CreateReservationResourceNamesAsync()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            CreateReservationRequest request = new CreateReservationRequest
+            {
+                ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Reservation = new Reservation(),
+                ReservationId = "reservation_id4ff109fe",
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.CreateReservationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Reservation>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation responseCallSettings = await client.CreateReservationAsync(request.ParentAsLocationName, request.Reservation, request.ReservationId, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Reservation responseCancellationToken = await client.CreateReservationAsync(request.ParentAsLocationName, request.Reservation, request.ReservationId, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void GetReservationRequestObject()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            GetReservationRequest request = new GetReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.GetReservation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation response = client.GetReservation(request);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task GetReservationRequestObjectAsync()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            GetReservationRequest request = new GetReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.GetReservationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Reservation>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation responseCallSettings = await client.GetReservationAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Reservation responseCancellationToken = await client.GetReservationAsync(request, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void GetReservation()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            GetReservationRequest request = new GetReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.GetReservation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation response = client.GetReservation(request.Name);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task GetReservationAsync()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            GetReservationRequest request = new GetReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.GetReservationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Reservation>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation responseCallSettings = await client.GetReservationAsync(request.Name, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Reservation responseCancellationToken = await client.GetReservationAsync(request.Name, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void GetReservationResourceNames()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            GetReservationRequest request = new GetReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.GetReservation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation response = client.GetReservation(request.ReservationName);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task GetReservationResourceNamesAsync()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            GetReservationRequest request = new GetReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.GetReservationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Reservation>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation responseCallSettings = await client.GetReservationAsync(request.ReservationName, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Reservation responseCancellationToken = await client.GetReservationAsync(request.ReservationName, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void UpdateReservationRequestObject()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            UpdateReservationRequest request = new UpdateReservationRequest
+            {
+                Reservation = new Reservation(),
+                UpdateMask = new wkt::FieldMask(),
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.UpdateReservation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation response = client.UpdateReservation(request);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task UpdateReservationRequestObjectAsync()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            UpdateReservationRequest request = new UpdateReservationRequest
+            {
+                Reservation = new Reservation(),
+                UpdateMask = new wkt::FieldMask(),
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.UpdateReservationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Reservation>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation responseCallSettings = await client.UpdateReservationAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Reservation responseCancellationToken = await client.UpdateReservationAsync(request, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void UpdateReservation()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            UpdateReservationRequest request = new UpdateReservationRequest
+            {
+                Reservation = new Reservation(),
+                UpdateMask = new wkt::FieldMask(),
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.UpdateReservation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation response = client.UpdateReservation(request.Reservation, request.UpdateMask);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task UpdateReservationAsync()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            UpdateReservationRequest request = new UpdateReservationRequest
+            {
+                Reservation = new Reservation(),
+                UpdateMask = new wkt::FieldMask(),
+            };
+            Reservation expectedResponse = new Reservation
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+                ThroughputCapacity = 9118872543832748091L,
+            };
+            mockGrpcClient.Setup(x => x.UpdateReservationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Reservation>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            Reservation responseCallSettings = await client.UpdateReservationAsync(request.Reservation, request.UpdateMask, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Reservation responseCancellationToken = await client.UpdateReservationAsync(request.Reservation, request.UpdateMask, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void DeleteReservationRequestObject()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            DeleteReservationRequest request = new DeleteReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            wkt::Empty expectedResponse = new wkt::Empty { };
+            mockGrpcClient.Setup(x => x.DeleteReservation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            client.DeleteReservation(request);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task DeleteReservationRequestObjectAsync()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            DeleteReservationRequest request = new DeleteReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            wkt::Empty expectedResponse = new wkt::Empty { };
+            mockGrpcClient.Setup(x => x.DeleteReservationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<wkt::Empty>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            await client.DeleteReservationAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            await client.DeleteReservationAsync(request, st::CancellationToken.None);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void DeleteReservation()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            DeleteReservationRequest request = new DeleteReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            wkt::Empty expectedResponse = new wkt::Empty { };
+            mockGrpcClient.Setup(x => x.DeleteReservation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            client.DeleteReservation(request.Name);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task DeleteReservationAsync()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            DeleteReservationRequest request = new DeleteReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            wkt::Empty expectedResponse = new wkt::Empty { };
+            mockGrpcClient.Setup(x => x.DeleteReservationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<wkt::Empty>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            await client.DeleteReservationAsync(request.Name, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            await client.DeleteReservationAsync(request.Name, st::CancellationToken.None);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void DeleteReservationResourceNames()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            DeleteReservationRequest request = new DeleteReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            wkt::Empty expectedResponse = new wkt::Empty { };
+            mockGrpcClient.Setup(x => x.DeleteReservation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            client.DeleteReservation(request.ReservationName);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task DeleteReservationResourceNamesAsync()
+        {
+            moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            DeleteReservationRequest request = new DeleteReservationRequest
+            {
+                ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
+            };
+            wkt::Empty expectedResponse = new wkt::Empty { };
+            mockGrpcClient.Setup(x => x.DeleteReservationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<wkt::Empty>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            AdminServiceClient client = new AdminServiceClientImpl(mockGrpcClient.Object, null);
+            await client.DeleteReservationAsync(request.ReservationName, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            await client.DeleteReservationAsync(request.ReservationName, st::CancellationToken.None);
             mockGrpcClient.VerifyAll();
         }
     }

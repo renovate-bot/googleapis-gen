@@ -58,6 +58,12 @@ namespace Google.Cloud.PubSubLite.V1
             ListSubscriptionsSettings = existing.ListSubscriptionsSettings;
             UpdateSubscriptionSettings = existing.UpdateSubscriptionSettings;
             DeleteSubscriptionSettings = existing.DeleteSubscriptionSettings;
+            CreateReservationSettings = existing.CreateReservationSettings;
+            GetReservationSettings = existing.GetReservationSettings;
+            ListReservationsSettings = existing.ListReservationsSettings;
+            UpdateReservationSettings = existing.UpdateReservationSettings;
+            DeleteReservationSettings = existing.DeleteReservationSettings;
+            ListReservationTopicsSettings = existing.ListReservationTopicsSettings;
             OnCopy(existing);
         }
 
@@ -242,6 +248,96 @@ namespace Google.Cloud.PubSubLite.V1
         /// </list>
         /// </remarks>
         public gaxgrpc::CallSettings DeleteSubscriptionSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable, grpccore::StatusCode.Aborted, grpccore::StatusCode.Internal, grpccore::StatusCode.Unknown)));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>AdminServiceClient.CreateReservation</c> and <c>AdminServiceClient.CreateReservationAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>Timeout: 600 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings CreateReservationSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable, grpccore::StatusCode.Aborted, grpccore::StatusCode.Internal, grpccore::StatusCode.Unknown)));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>AdminServiceClient.GetReservation</c> and <c>AdminServiceClient.GetReservationAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>Timeout: 600 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings GetReservationSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable, grpccore::StatusCode.Aborted, grpccore::StatusCode.Internal, grpccore::StatusCode.Unknown)));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>AdminServiceClient.ListReservations</c> and <c>AdminServiceClient.ListReservationsAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>Timeout: 600 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings ListReservationsSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable, grpccore::StatusCode.Aborted, grpccore::StatusCode.Internal, grpccore::StatusCode.Unknown)));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>AdminServiceClient.UpdateReservation</c> and <c>AdminServiceClient.UpdateReservationAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>Timeout: 600 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings UpdateReservationSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable, grpccore::StatusCode.Aborted, grpccore::StatusCode.Internal, grpccore::StatusCode.Unknown)));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>AdminServiceClient.DeleteReservation</c> and <c>AdminServiceClient.DeleteReservationAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>Timeout: 600 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings DeleteReservationSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable, grpccore::StatusCode.Aborted, grpccore::StatusCode.Internal, grpccore::StatusCode.Unknown)));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>AdminServiceClient.ListReservationTopics</c> and <c>AdminServiceClient.ListReservationTopicsAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>Timeout: 600 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings ListReservationTopicsSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable, grpccore::StatusCode.Aborted, grpccore::StatusCode.Internal, grpccore::StatusCode.Unknown)));
 
         /// <summary>Creates a deep clone of this object, with all the same property values.</summary>
         /// <returns>A deep clone of this <see cref="AdminServiceSettings"/> object.</returns>
@@ -1763,6 +1859,730 @@ namespace Google.Cloud.PubSubLite.V1
         /// <returns>A Task containing the RPC response.</returns>
         public virtual stt::Task DeleteSubscriptionAsync(SubscriptionName name, st::CancellationToken cancellationToken) =>
             DeleteSubscriptionAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a new reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Reservation CreateReservation(CreateReservationRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Creates a new reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> CreateReservationAsync(CreateReservationRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Creates a new reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> CreateReservationAsync(CreateReservationRequest request, st::CancellationToken cancellationToken) =>
+            CreateReservationAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a new reservation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent location in which to create the reservation.
+        /// Structured like `projects/{project_number}/locations/{location}`.
+        /// </param>
+        /// <param name="reservation">
+        /// Required. Configuration of the reservation to create. Its `name` field is ignored.
+        /// </param>
+        /// <param name="reservationId">
+        /// Required. The ID to use for the reservation, which will become the final component of
+        /// the reservation's name.
+        /// 
+        /// This value is structured like: `my-reservation-name`.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Reservation CreateReservation(string parent, Reservation reservation, string reservationId, gaxgrpc::CallSettings callSettings = null) =>
+            CreateReservation(new CreateReservationRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                Reservation = gax::GaxPreconditions.CheckNotNull(reservation, nameof(reservation)),
+                ReservationId = gax::GaxPreconditions.CheckNotNullOrEmpty(reservationId, nameof(reservationId)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a new reservation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent location in which to create the reservation.
+        /// Structured like `projects/{project_number}/locations/{location}`.
+        /// </param>
+        /// <param name="reservation">
+        /// Required. Configuration of the reservation to create. Its `name` field is ignored.
+        /// </param>
+        /// <param name="reservationId">
+        /// Required. The ID to use for the reservation, which will become the final component of
+        /// the reservation's name.
+        /// 
+        /// This value is structured like: `my-reservation-name`.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> CreateReservationAsync(string parent, Reservation reservation, string reservationId, gaxgrpc::CallSettings callSettings = null) =>
+            CreateReservationAsync(new CreateReservationRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                Reservation = gax::GaxPreconditions.CheckNotNull(reservation, nameof(reservation)),
+                ReservationId = gax::GaxPreconditions.CheckNotNullOrEmpty(reservationId, nameof(reservationId)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a new reservation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent location in which to create the reservation.
+        /// Structured like `projects/{project_number}/locations/{location}`.
+        /// </param>
+        /// <param name="reservation">
+        /// Required. Configuration of the reservation to create. Its `name` field is ignored.
+        /// </param>
+        /// <param name="reservationId">
+        /// Required. The ID to use for the reservation, which will become the final component of
+        /// the reservation's name.
+        /// 
+        /// This value is structured like: `my-reservation-name`.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> CreateReservationAsync(string parent, Reservation reservation, string reservationId, st::CancellationToken cancellationToken) =>
+            CreateReservationAsync(parent, reservation, reservationId, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a new reservation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent location in which to create the reservation.
+        /// Structured like `projects/{project_number}/locations/{location}`.
+        /// </param>
+        /// <param name="reservation">
+        /// Required. Configuration of the reservation to create. Its `name` field is ignored.
+        /// </param>
+        /// <param name="reservationId">
+        /// Required. The ID to use for the reservation, which will become the final component of
+        /// the reservation's name.
+        /// 
+        /// This value is structured like: `my-reservation-name`.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Reservation CreateReservation(gagr::LocationName parent, Reservation reservation, string reservationId, gaxgrpc::CallSettings callSettings = null) =>
+            CreateReservation(new CreateReservationRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                Reservation = gax::GaxPreconditions.CheckNotNull(reservation, nameof(reservation)),
+                ReservationId = gax::GaxPreconditions.CheckNotNullOrEmpty(reservationId, nameof(reservationId)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a new reservation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent location in which to create the reservation.
+        /// Structured like `projects/{project_number}/locations/{location}`.
+        /// </param>
+        /// <param name="reservation">
+        /// Required. Configuration of the reservation to create. Its `name` field is ignored.
+        /// </param>
+        /// <param name="reservationId">
+        /// Required. The ID to use for the reservation, which will become the final component of
+        /// the reservation's name.
+        /// 
+        /// This value is structured like: `my-reservation-name`.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> CreateReservationAsync(gagr::LocationName parent, Reservation reservation, string reservationId, gaxgrpc::CallSettings callSettings = null) =>
+            CreateReservationAsync(new CreateReservationRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                Reservation = gax::GaxPreconditions.CheckNotNull(reservation, nameof(reservation)),
+                ReservationId = gax::GaxPreconditions.CheckNotNullOrEmpty(reservationId, nameof(reservationId)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a new reservation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent location in which to create the reservation.
+        /// Structured like `projects/{project_number}/locations/{location}`.
+        /// </param>
+        /// <param name="reservation">
+        /// Required. Configuration of the reservation to create. Its `name` field is ignored.
+        /// </param>
+        /// <param name="reservationId">
+        /// Required. The ID to use for the reservation, which will become the final component of
+        /// the reservation's name.
+        /// 
+        /// This value is structured like: `my-reservation-name`.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> CreateReservationAsync(gagr::LocationName parent, Reservation reservation, string reservationId, st::CancellationToken cancellationToken) =>
+            CreateReservationAsync(parent, reservation, reservationId, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Returns the reservation configuration.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Reservation GetReservation(GetReservationRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Returns the reservation configuration.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> GetReservationAsync(GetReservationRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Returns the reservation configuration.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> GetReservationAsync(GetReservationRequest request, st::CancellationToken cancellationToken) =>
+            GetReservationAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Returns the reservation configuration.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation whose configuration to return.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Reservation GetReservation(string name, gaxgrpc::CallSettings callSettings = null) =>
+            GetReservation(new GetReservationRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Returns the reservation configuration.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation whose configuration to return.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> GetReservationAsync(string name, gaxgrpc::CallSettings callSettings = null) =>
+            GetReservationAsync(new GetReservationRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Returns the reservation configuration.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation whose configuration to return.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> GetReservationAsync(string name, st::CancellationToken cancellationToken) =>
+            GetReservationAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Returns the reservation configuration.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation whose configuration to return.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Reservation GetReservation(ReservationName name, gaxgrpc::CallSettings callSettings = null) =>
+            GetReservation(new GetReservationRequest
+            {
+                ReservationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Returns the reservation configuration.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation whose configuration to return.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> GetReservationAsync(ReservationName name, gaxgrpc::CallSettings callSettings = null) =>
+            GetReservationAsync(new GetReservationRequest
+            {
+                ReservationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Returns the reservation configuration.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation whose configuration to return.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> GetReservationAsync(ReservationName name, st::CancellationToken cancellationToken) =>
+            GetReservationAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Returns the list of reservations for the given project.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Reservation"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListReservationsResponse, Reservation> ListReservations(ListReservationsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Returns the list of reservations for the given project.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Reservation"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListReservationsResponse, Reservation> ListReservationsAsync(ListReservationsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Returns the list of reservations for the given project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent whose reservations are to be listed.
+        /// Structured like `projects/{project_number}/locations/{location}`.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Reservation"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListReservationsResponse, Reservation> ListReservations(string parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListReservations(new ListReservationsRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Returns the list of reservations for the given project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent whose reservations are to be listed.
+        /// Structured like `projects/{project_number}/locations/{location}`.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Reservation"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListReservationsResponse, Reservation> ListReservationsAsync(string parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListReservationsAsync(new ListReservationsRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Returns the list of reservations for the given project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent whose reservations are to be listed.
+        /// Structured like `projects/{project_number}/locations/{location}`.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Reservation"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListReservationsResponse, Reservation> ListReservations(gagr::LocationName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListReservations(new ListReservationsRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Returns the list of reservations for the given project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent whose reservations are to be listed.
+        /// Structured like `projects/{project_number}/locations/{location}`.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Reservation"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListReservationsResponse, Reservation> ListReservationsAsync(gagr::LocationName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListReservationsAsync(new ListReservationsRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Updates properties of the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Reservation UpdateReservation(UpdateReservationRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Updates properties of the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> UpdateReservationAsync(UpdateReservationRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Updates properties of the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> UpdateReservationAsync(UpdateReservationRequest request, st::CancellationToken cancellationToken) =>
+            UpdateReservationAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Updates properties of the specified reservation.
+        /// </summary>
+        /// <param name="reservation">
+        /// Required. The reservation to update. Its `name` field must be populated.
+        /// </param>
+        /// <param name="updateMask">
+        /// Required. A mask specifying the reservation fields to change.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Reservation UpdateReservation(Reservation reservation, wkt::FieldMask updateMask, gaxgrpc::CallSettings callSettings = null) =>
+            UpdateReservation(new UpdateReservationRequest
+            {
+                Reservation = gax::GaxPreconditions.CheckNotNull(reservation, nameof(reservation)),
+                UpdateMask = gax::GaxPreconditions.CheckNotNull(updateMask, nameof(updateMask)),
+            }, callSettings);
+
+        /// <summary>
+        /// Updates properties of the specified reservation.
+        /// </summary>
+        /// <param name="reservation">
+        /// Required. The reservation to update. Its `name` field must be populated.
+        /// </param>
+        /// <param name="updateMask">
+        /// Required. A mask specifying the reservation fields to change.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> UpdateReservationAsync(Reservation reservation, wkt::FieldMask updateMask, gaxgrpc::CallSettings callSettings = null) =>
+            UpdateReservationAsync(new UpdateReservationRequest
+            {
+                Reservation = gax::GaxPreconditions.CheckNotNull(reservation, nameof(reservation)),
+                UpdateMask = gax::GaxPreconditions.CheckNotNull(updateMask, nameof(updateMask)),
+            }, callSettings);
+
+        /// <summary>
+        /// Updates properties of the specified reservation.
+        /// </summary>
+        /// <param name="reservation">
+        /// Required. The reservation to update. Its `name` field must be populated.
+        /// </param>
+        /// <param name="updateMask">
+        /// Required. A mask specifying the reservation fields to change.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Reservation> UpdateReservationAsync(Reservation reservation, wkt::FieldMask updateMask, st::CancellationToken cancellationToken) =>
+            UpdateReservationAsync(reservation, updateMask, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual void DeleteReservation(DeleteReservationRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Deletes the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task DeleteReservationAsync(DeleteReservationRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Deletes the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task DeleteReservationAsync(DeleteReservationRequest request, st::CancellationToken cancellationToken) =>
+            DeleteReservationAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes the specified reservation.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation to delete.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual void DeleteReservation(string name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteReservation(new DeleteReservationRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes the specified reservation.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation to delete.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task DeleteReservationAsync(string name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteReservationAsync(new DeleteReservationRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes the specified reservation.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation to delete.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task DeleteReservationAsync(string name, st::CancellationToken cancellationToken) =>
+            DeleteReservationAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes the specified reservation.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation to delete.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual void DeleteReservation(ReservationName name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteReservation(new DeleteReservationRequest
+            {
+                ReservationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes the specified reservation.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation to delete.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task DeleteReservationAsync(ReservationName name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteReservationAsync(new DeleteReservationRequest
+            {
+                ReservationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes the specified reservation.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation to delete.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task DeleteReservationAsync(ReservationName name, st::CancellationToken cancellationToken) =>
+            DeleteReservationAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Lists the topics attached to the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="string"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListReservationTopicsResponse, string> ListReservationTopics(ListReservationTopicsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Lists the topics attached to the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="string"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListReservationTopicsResponse, string> ListReservationTopicsAsync(ListReservationTopicsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Lists the topics attached to the specified reservation.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation whose topics to list.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="string"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListReservationTopicsResponse, string> ListReservationTopics(string name, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListReservationTopics(new ListReservationTopicsRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists the topics attached to the specified reservation.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation whose topics to list.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="string"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListReservationTopicsResponse, string> ListReservationTopicsAsync(string name, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListReservationTopicsAsync(new ListReservationTopicsRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists the topics attached to the specified reservation.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation whose topics to list.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="string"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListReservationTopicsResponse, string> ListReservationTopics(ReservationName name, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListReservationTopics(new ListReservationTopicsRequest
+            {
+                ReservationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists the topics attached to the specified reservation.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The name of the reservation whose topics to list.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="string"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListReservationTopicsResponse, string> ListReservationTopicsAsync(ReservationName name, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListReservationTopicsAsync(new ListReservationTopicsRequest
+            {
+                ReservationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
     }
 
     /// <summary>AdminService client wrapper implementation, for convenient use.</summary>
@@ -1795,6 +2615,18 @@ namespace Google.Cloud.PubSubLite.V1
         private readonly gaxgrpc::ApiCall<UpdateSubscriptionRequest, Subscription> _callUpdateSubscription;
 
         private readonly gaxgrpc::ApiCall<DeleteSubscriptionRequest, wkt::Empty> _callDeleteSubscription;
+
+        private readonly gaxgrpc::ApiCall<CreateReservationRequest, Reservation> _callCreateReservation;
+
+        private readonly gaxgrpc::ApiCall<GetReservationRequest, Reservation> _callGetReservation;
+
+        private readonly gaxgrpc::ApiCall<ListReservationsRequest, ListReservationsResponse> _callListReservations;
+
+        private readonly gaxgrpc::ApiCall<UpdateReservationRequest, Reservation> _callUpdateReservation;
+
+        private readonly gaxgrpc::ApiCall<DeleteReservationRequest, wkt::Empty> _callDeleteReservation;
+
+        private readonly gaxgrpc::ApiCall<ListReservationTopicsRequest, ListReservationTopicsResponse> _callListReservationTopics;
 
         /// <summary>
         /// Constructs a client wrapper for the AdminService service, with the specified gRPC client and settings.
@@ -1842,6 +2674,24 @@ namespace Google.Cloud.PubSubLite.V1
             _callDeleteSubscription = clientHelper.BuildApiCall<DeleteSubscriptionRequest, wkt::Empty>(grpcClient.DeleteSubscriptionAsync, grpcClient.DeleteSubscription, effectiveSettings.DeleteSubscriptionSettings).WithGoogleRequestParam("name", request => request.Name);
             Modify_ApiCall(ref _callDeleteSubscription);
             Modify_DeleteSubscriptionApiCall(ref _callDeleteSubscription);
+            _callCreateReservation = clientHelper.BuildApiCall<CreateReservationRequest, Reservation>(grpcClient.CreateReservationAsync, grpcClient.CreateReservation, effectiveSettings.CreateReservationSettings).WithGoogleRequestParam("parent", request => request.Parent);
+            Modify_ApiCall(ref _callCreateReservation);
+            Modify_CreateReservationApiCall(ref _callCreateReservation);
+            _callGetReservation = clientHelper.BuildApiCall<GetReservationRequest, Reservation>(grpcClient.GetReservationAsync, grpcClient.GetReservation, effectiveSettings.GetReservationSettings).WithGoogleRequestParam("name", request => request.Name);
+            Modify_ApiCall(ref _callGetReservation);
+            Modify_GetReservationApiCall(ref _callGetReservation);
+            _callListReservations = clientHelper.BuildApiCall<ListReservationsRequest, ListReservationsResponse>(grpcClient.ListReservationsAsync, grpcClient.ListReservations, effectiveSettings.ListReservationsSettings).WithGoogleRequestParam("parent", request => request.Parent);
+            Modify_ApiCall(ref _callListReservations);
+            Modify_ListReservationsApiCall(ref _callListReservations);
+            _callUpdateReservation = clientHelper.BuildApiCall<UpdateReservationRequest, Reservation>(grpcClient.UpdateReservationAsync, grpcClient.UpdateReservation, effectiveSettings.UpdateReservationSettings).WithGoogleRequestParam("reservation.name", request => request.Reservation?.Name);
+            Modify_ApiCall(ref _callUpdateReservation);
+            Modify_UpdateReservationApiCall(ref _callUpdateReservation);
+            _callDeleteReservation = clientHelper.BuildApiCall<DeleteReservationRequest, wkt::Empty>(grpcClient.DeleteReservationAsync, grpcClient.DeleteReservation, effectiveSettings.DeleteReservationSettings).WithGoogleRequestParam("name", request => request.Name);
+            Modify_ApiCall(ref _callDeleteReservation);
+            Modify_DeleteReservationApiCall(ref _callDeleteReservation);
+            _callListReservationTopics = clientHelper.BuildApiCall<ListReservationTopicsRequest, ListReservationTopicsResponse>(grpcClient.ListReservationTopicsAsync, grpcClient.ListReservationTopics, effectiveSettings.ListReservationTopicsSettings).WithGoogleRequestParam("name", request => request.Name);
+            Modify_ApiCall(ref _callListReservationTopics);
+            Modify_ListReservationTopicsApiCall(ref _callListReservationTopics);
             OnConstruction(grpcClient, effectiveSettings, clientHelper);
         }
 
@@ -1871,6 +2721,18 @@ namespace Google.Cloud.PubSubLite.V1
 
         partial void Modify_DeleteSubscriptionApiCall(ref gaxgrpc::ApiCall<DeleteSubscriptionRequest, wkt::Empty> call);
 
+        partial void Modify_CreateReservationApiCall(ref gaxgrpc::ApiCall<CreateReservationRequest, Reservation> call);
+
+        partial void Modify_GetReservationApiCall(ref gaxgrpc::ApiCall<GetReservationRequest, Reservation> call);
+
+        partial void Modify_ListReservationsApiCall(ref gaxgrpc::ApiCall<ListReservationsRequest, ListReservationsResponse> call);
+
+        partial void Modify_UpdateReservationApiCall(ref gaxgrpc::ApiCall<UpdateReservationRequest, Reservation> call);
+
+        partial void Modify_DeleteReservationApiCall(ref gaxgrpc::ApiCall<DeleteReservationRequest, wkt::Empty> call);
+
+        partial void Modify_ListReservationTopicsApiCall(ref gaxgrpc::ApiCall<ListReservationTopicsRequest, ListReservationTopicsResponse> call);
+
         partial void OnConstruction(AdminService.AdminServiceClient grpcClient, AdminServiceSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
 
         /// <summary>The underlying gRPC AdminService client</summary>
@@ -1899,6 +2761,18 @@ namespace Google.Cloud.PubSubLite.V1
         partial void Modify_UpdateSubscriptionRequest(ref UpdateSubscriptionRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_DeleteSubscriptionRequest(ref DeleteSubscriptionRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_CreateReservationRequest(ref CreateReservationRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_GetReservationRequest(ref GetReservationRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_ListReservationsRequest(ref ListReservationsRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_UpdateReservationRequest(ref UpdateReservationRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_DeleteReservationRequest(ref DeleteReservationRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_ListReservationTopicsRequest(ref ListReservationTopicsRequest request, ref gaxgrpc::CallSettings settings);
 
         /// <summary>
         /// Creates a new topic.
@@ -2187,6 +3061,150 @@ namespace Google.Cloud.PubSubLite.V1
             Modify_DeleteSubscriptionRequest(ref request, ref callSettings);
             return _callDeleteSubscription.Async(request, callSettings);
         }
+
+        /// <summary>
+        /// Creates a new reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override Reservation CreateReservation(CreateReservationRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_CreateReservationRequest(ref request, ref callSettings);
+            return _callCreateReservation.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Creates a new reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override stt::Task<Reservation> CreateReservationAsync(CreateReservationRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_CreateReservationRequest(ref request, ref callSettings);
+            return _callCreateReservation.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Returns the reservation configuration.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override Reservation GetReservation(GetReservationRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_GetReservationRequest(ref request, ref callSettings);
+            return _callGetReservation.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Returns the reservation configuration.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override stt::Task<Reservation> GetReservationAsync(GetReservationRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_GetReservationRequest(ref request, ref callSettings);
+            return _callGetReservation.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Returns the list of reservations for the given project.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Reservation"/> resources.</returns>
+        public override gax::PagedEnumerable<ListReservationsResponse, Reservation> ListReservations(ListReservationsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListReservationsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedEnumerable<ListReservationsRequest, ListReservationsResponse, Reservation>(_callListReservations, request, callSettings);
+        }
+
+        /// <summary>
+        /// Returns the list of reservations for the given project.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Reservation"/> resources.</returns>
+        public override gax::PagedAsyncEnumerable<ListReservationsResponse, Reservation> ListReservationsAsync(ListReservationsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListReservationsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedAsyncEnumerable<ListReservationsRequest, ListReservationsResponse, Reservation>(_callListReservations, request, callSettings);
+        }
+
+        /// <summary>
+        /// Updates properties of the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override Reservation UpdateReservation(UpdateReservationRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_UpdateReservationRequest(ref request, ref callSettings);
+            return _callUpdateReservation.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Updates properties of the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override stt::Task<Reservation> UpdateReservationAsync(UpdateReservationRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_UpdateReservationRequest(ref request, ref callSettings);
+            return _callUpdateReservation.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Deletes the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override void DeleteReservation(DeleteReservationRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteReservationRequest(ref request, ref callSettings);
+            _callDeleteReservation.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Deletes the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override stt::Task DeleteReservationAsync(DeleteReservationRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteReservationRequest(ref request, ref callSettings);
+            return _callDeleteReservation.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Lists the topics attached to the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="string"/> resources.</returns>
+        public override gax::PagedEnumerable<ListReservationTopicsResponse, string> ListReservationTopics(ListReservationTopicsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListReservationTopicsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedEnumerable<ListReservationTopicsRequest, ListReservationTopicsResponse, string>(_callListReservationTopics, request, callSettings);
+        }
+
+        /// <summary>
+        /// Lists the topics attached to the specified reservation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="string"/> resources.</returns>
+        public override gax::PagedAsyncEnumerable<ListReservationTopicsResponse, string> ListReservationTopicsAsync(ListReservationTopicsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListReservationTopicsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedAsyncEnumerable<ListReservationTopicsRequest, ListReservationTopicsResponse, string>(_callListReservationTopics, request, callSettings);
+        }
     }
 
     public partial class ListTopicsRequest : gaxgrpc::IPageRequest
@@ -2198,6 +3216,14 @@ namespace Google.Cloud.PubSubLite.V1
     }
 
     public partial class ListSubscriptionsRequest : gaxgrpc::IPageRequest
+    {
+    }
+
+    public partial class ListReservationsRequest : gaxgrpc::IPageRequest
+    {
+    }
+
+    public partial class ListReservationTopicsRequest : gaxgrpc::IPageRequest
     {
     }
 
@@ -2221,6 +3247,22 @@ namespace Google.Cloud.PubSubLite.V1
     {
         /// <summary>Returns an enumerator that iterates through the resources in this response.</summary>
         public scg::IEnumerator<Subscription> GetEnumerator() => Subscriptions.GetEnumerator();
+
+        sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();
+    }
+
+    public partial class ListReservationsResponse : gaxgrpc::IPageResponse<Reservation>
+    {
+        /// <summary>Returns an enumerator that iterates through the resources in this response.</summary>
+        public scg::IEnumerator<Reservation> GetEnumerator() => Reservations.GetEnumerator();
+
+        sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();
+    }
+
+    public partial class ListReservationTopicsResponse : gaxgrpc::IPageResponse<string>
+    {
+        /// <summary>Returns an enumerator that iterates through the resources in this response.</summary>
+        public scg::IEnumerator<string> GetEnumerator() => Topics.GetEnumerator();
 
         sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();
     }

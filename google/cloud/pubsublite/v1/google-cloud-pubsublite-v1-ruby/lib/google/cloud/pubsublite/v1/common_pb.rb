@@ -26,10 +26,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :message, :message, 3, "google.cloud.pubsublite.v1.PubSubMessage"
       optional :size_bytes, :int64, 4
     end
+    add_message "google.cloud.pubsublite.v1.Reservation" do
+      optional :name, :string, 1
+      optional :throughput_capacity, :int64, 2
+    end
     add_message "google.cloud.pubsublite.v1.Topic" do
       optional :name, :string, 1
       optional :partition_config, :message, 2, "google.cloud.pubsublite.v1.Topic.PartitionConfig"
       optional :retention_config, :message, 3, "google.cloud.pubsublite.v1.Topic.RetentionConfig"
+      optional :reservation_config, :message, 4, "google.cloud.pubsublite.v1.Topic.ReservationConfig"
     end
     add_message "google.cloud.pubsublite.v1.Topic.PartitionConfig" do
       optional :count, :int64, 1
@@ -45,6 +50,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.pubsublite.v1.Topic.RetentionConfig" do
       optional :per_partition_bytes, :int64, 1
       optional :period, :message, 2, "google.protobuf.Duration"
+    end
+    add_message "google.cloud.pubsublite.v1.Topic.ReservationConfig" do
+      optional :throughput_reservation, :string, 1
     end
     add_message "google.cloud.pubsublite.v1.Subscription" do
       optional :name, :string, 1
@@ -76,10 +84,12 @@ module Google
         PubSubMessage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.PubSubMessage").msgclass
         Cursor = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Cursor").msgclass
         SequencedMessage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.SequencedMessage").msgclass
+        Reservation = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Reservation").msgclass
         Topic = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Topic").msgclass
         Topic::PartitionConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Topic.PartitionConfig").msgclass
         Topic::PartitionConfig::Capacity = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Topic.PartitionConfig.Capacity").msgclass
         Topic::RetentionConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Topic.RetentionConfig").msgclass
+        Topic::ReservationConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Topic.ReservationConfig").msgclass
         Subscription = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Subscription").msgclass
         Subscription::DeliveryConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Subscription.DeliveryConfig").msgclass
         Subscription::DeliveryConfig::DeliveryRequirement = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.Subscription.DeliveryConfig.DeliveryRequirement").enummodule

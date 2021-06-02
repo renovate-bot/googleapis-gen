@@ -77,6 +77,39 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.pubsublite.v1.DeleteSubscriptionRequest" do
       optional :name, :string, 1
     end
+    add_message "google.cloud.pubsublite.v1.CreateReservationRequest" do
+      optional :parent, :string, 1
+      optional :reservation, :message, 2, "google.cloud.pubsublite.v1.Reservation"
+      optional :reservation_id, :string, 3
+    end
+    add_message "google.cloud.pubsublite.v1.GetReservationRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.cloud.pubsublite.v1.ListReservationsRequest" do
+      optional :parent, :string, 1
+      optional :page_size, :int32, 2
+      optional :page_token, :string, 3
+    end
+    add_message "google.cloud.pubsublite.v1.ListReservationsResponse" do
+      repeated :reservations, :message, 1, "google.cloud.pubsublite.v1.Reservation"
+      optional :next_page_token, :string, 2
+    end
+    add_message "google.cloud.pubsublite.v1.UpdateReservationRequest" do
+      optional :reservation, :message, 1, "google.cloud.pubsublite.v1.Reservation"
+      optional :update_mask, :message, 2, "google.protobuf.FieldMask"
+    end
+    add_message "google.cloud.pubsublite.v1.DeleteReservationRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.cloud.pubsublite.v1.ListReservationTopicsRequest" do
+      optional :name, :string, 1
+      optional :page_size, :int32, 2
+      optional :page_token, :string, 3
+    end
+    add_message "google.cloud.pubsublite.v1.ListReservationTopicsResponse" do
+      repeated :topics, :string, 1
+      optional :next_page_token, :string, 2
+    end
   end
 end
 
@@ -100,6 +133,14 @@ module Google
         ListSubscriptionsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.ListSubscriptionsResponse").msgclass
         UpdateSubscriptionRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.UpdateSubscriptionRequest").msgclass
         DeleteSubscriptionRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.DeleteSubscriptionRequest").msgclass
+        CreateReservationRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.CreateReservationRequest").msgclass
+        GetReservationRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.GetReservationRequest").msgclass
+        ListReservationsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.ListReservationsRequest").msgclass
+        ListReservationsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.ListReservationsResponse").msgclass
+        UpdateReservationRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.UpdateReservationRequest").msgclass
+        DeleteReservationRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.DeleteReservationRequest").msgclass
+        ListReservationTopicsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.ListReservationTopicsRequest").msgclass
+        ListReservationTopicsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.pubsublite.v1.ListReservationTopicsResponse").msgclass
       end
     end
   end

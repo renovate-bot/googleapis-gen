@@ -779,6 +779,373 @@ class ::Google::Cloud::PubSubLite::V1::AdminService::ClientTest < Minitest::Test
     end
   end
 
+  def test_create_reservation
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::PubSubLite::V1::Reservation.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    parent = "hello world"
+    reservation = {}
+    reservation_id = "hello world"
+
+    create_reservation_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :create_reservation, name
+      assert_kind_of ::Google::Cloud::PubSubLite::V1::CreateReservationRequest, request
+      assert_equal "hello world", request["parent"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::PubSubLite::V1::Reservation), request["reservation"]
+      assert_equal "hello world", request["reservation_id"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, create_reservation_client_stub do
+      # Create client
+      client = ::Google::Cloud::PubSubLite::V1::AdminService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.create_reservation({ parent: parent, reservation: reservation, reservation_id: reservation_id }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.create_reservation parent: parent, reservation: reservation, reservation_id: reservation_id do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.create_reservation ::Google::Cloud::PubSubLite::V1::CreateReservationRequest.new(parent: parent, reservation: reservation, reservation_id: reservation_id) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.create_reservation({ parent: parent, reservation: reservation, reservation_id: reservation_id }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.create_reservation(::Google::Cloud::PubSubLite::V1::CreateReservationRequest.new(parent: parent, reservation: reservation, reservation_id: reservation_id), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, create_reservation_client_stub.call_rpc_count
+    end
+  end
+
+  def test_get_reservation
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::PubSubLite::V1::Reservation.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    get_reservation_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :get_reservation, name
+      assert_kind_of ::Google::Cloud::PubSubLite::V1::GetReservationRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, get_reservation_client_stub do
+      # Create client
+      client = ::Google::Cloud::PubSubLite::V1::AdminService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.get_reservation({ name: name }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.get_reservation name: name do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.get_reservation ::Google::Cloud::PubSubLite::V1::GetReservationRequest.new(name: name) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.get_reservation({ name: name }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.get_reservation(::Google::Cloud::PubSubLite::V1::GetReservationRequest.new(name: name), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, get_reservation_client_stub.call_rpc_count
+    end
+  end
+
+  def test_list_reservations
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::PubSubLite::V1::ListReservationsResponse.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    parent = "hello world"
+    page_size = 42
+    page_token = "hello world"
+
+    list_reservations_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :list_reservations, name
+      assert_kind_of ::Google::Cloud::PubSubLite::V1::ListReservationsRequest, request
+      assert_equal "hello world", request["parent"]
+      assert_equal 42, request["page_size"]
+      assert_equal "hello world", request["page_token"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, list_reservations_client_stub do
+      # Create client
+      client = ::Google::Cloud::PubSubLite::V1::AdminService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.list_reservations({ parent: parent, page_size: page_size, page_token: page_token }) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.list_reservations parent: parent, page_size: page_size, page_token: page_token do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.list_reservations ::Google::Cloud::PubSubLite::V1::ListReservationsRequest.new(parent: parent, page_size: page_size, page_token: page_token) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.list_reservations({ parent: parent, page_size: page_size, page_token: page_token }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.list_reservations(::Google::Cloud::PubSubLite::V1::ListReservationsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, list_reservations_client_stub.call_rpc_count
+    end
+  end
+
+  def test_update_reservation
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::PubSubLite::V1::Reservation.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    reservation = {}
+    update_mask = {}
+
+    update_reservation_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :update_reservation, name
+      assert_kind_of ::Google::Cloud::PubSubLite::V1::UpdateReservationRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::PubSubLite::V1::Reservation), request["reservation"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, update_reservation_client_stub do
+      # Create client
+      client = ::Google::Cloud::PubSubLite::V1::AdminService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.update_reservation({ reservation: reservation, update_mask: update_mask }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.update_reservation reservation: reservation, update_mask: update_mask do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.update_reservation ::Google::Cloud::PubSubLite::V1::UpdateReservationRequest.new(reservation: reservation, update_mask: update_mask) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.update_reservation({ reservation: reservation, update_mask: update_mask }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.update_reservation(::Google::Cloud::PubSubLite::V1::UpdateReservationRequest.new(reservation: reservation, update_mask: update_mask), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, update_reservation_client_stub.call_rpc_count
+    end
+  end
+
+  def test_delete_reservation
+    # Create GRPC objects.
+    grpc_response = ::Google::Protobuf::Empty.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    delete_reservation_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :delete_reservation, name
+      assert_kind_of ::Google::Cloud::PubSubLite::V1::DeleteReservationRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, delete_reservation_client_stub do
+      # Create client
+      client = ::Google::Cloud::PubSubLite::V1::AdminService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.delete_reservation({ name: name }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.delete_reservation name: name do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.delete_reservation ::Google::Cloud::PubSubLite::V1::DeleteReservationRequest.new(name: name) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.delete_reservation({ name: name }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.delete_reservation(::Google::Cloud::PubSubLite::V1::DeleteReservationRequest.new(name: name), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, delete_reservation_client_stub.call_rpc_count
+    end
+  end
+
+  def test_list_reservation_topics
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::PubSubLite::V1::ListReservationTopicsResponse.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+    page_size = 42
+    page_token = "hello world"
+
+    list_reservation_topics_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :list_reservation_topics, name
+      assert_kind_of ::Google::Cloud::PubSubLite::V1::ListReservationTopicsRequest, request
+      assert_equal "hello world", request["name"]
+      assert_equal 42, request["page_size"]
+      assert_equal "hello world", request["page_token"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, list_reservation_topics_client_stub do
+      # Create client
+      client = ::Google::Cloud::PubSubLite::V1::AdminService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.list_reservation_topics({ name: name, page_size: page_size, page_token: page_token }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.list_reservation_topics name: name, page_size: page_size, page_token: page_token do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.list_reservation_topics ::Google::Cloud::PubSubLite::V1::ListReservationTopicsRequest.new(name: name, page_size: page_size, page_token: page_token) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.list_reservation_topics({ name: name, page_size: page_size, page_token: page_token }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.list_reservation_topics(::Google::Cloud::PubSubLite::V1::ListReservationTopicsRequest.new(name: name, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, list_reservation_topics_client_stub.call_rpc_count
+    end
+  end
+
   def test_configure
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
 

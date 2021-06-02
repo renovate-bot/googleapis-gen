@@ -58,6 +58,18 @@ module Google
             rpc :UpdateSubscription, ::Google::Cloud::PubSubLite::V1::UpdateSubscriptionRequest, ::Google::Cloud::PubSubLite::V1::Subscription
             # Deletes the specified subscription.
             rpc :DeleteSubscription, ::Google::Cloud::PubSubLite::V1::DeleteSubscriptionRequest, ::Google::Protobuf::Empty
+            # Creates a new reservation.
+            rpc :CreateReservation, ::Google::Cloud::PubSubLite::V1::CreateReservationRequest, ::Google::Cloud::PubSubLite::V1::Reservation
+            # Returns the reservation configuration.
+            rpc :GetReservation, ::Google::Cloud::PubSubLite::V1::GetReservationRequest, ::Google::Cloud::PubSubLite::V1::Reservation
+            # Returns the list of reservations for the given project.
+            rpc :ListReservations, ::Google::Cloud::PubSubLite::V1::ListReservationsRequest, ::Google::Cloud::PubSubLite::V1::ListReservationsResponse
+            # Updates properties of the specified reservation.
+            rpc :UpdateReservation, ::Google::Cloud::PubSubLite::V1::UpdateReservationRequest, ::Google::Cloud::PubSubLite::V1::Reservation
+            # Deletes the specified reservation.
+            rpc :DeleteReservation, ::Google::Cloud::PubSubLite::V1::DeleteReservationRequest, ::Google::Protobuf::Empty
+            # Lists the topics attached to the specified reservation.
+            rpc :ListReservationTopics, ::Google::Cloud::PubSubLite::V1::ListReservationTopicsRequest, ::Google::Cloud::PubSubLite::V1::ListReservationTopicsResponse
           end
 
           Stub = Service.rpc_stub_class

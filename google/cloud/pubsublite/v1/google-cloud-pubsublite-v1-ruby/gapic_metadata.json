@@ -69,6 +69,36 @@
               "methods": [
                 "delete_subscription"
               ]
+            },
+            "CreateReservation": {
+              "methods": [
+                "create_reservation"
+              ]
+            },
+            "GetReservation": {
+              "methods": [
+                "get_reservation"
+              ]
+            },
+            "ListReservations": {
+              "methods": [
+                "list_reservations"
+              ]
+            },
+            "UpdateReservation": {
+              "methods": [
+                "update_reservation"
+              ]
+            },
+            "DeleteReservation": {
+              "methods": [
+                "delete_reservation"
+              ]
+            },
+            "ListReservationTopics": {
+              "methods": [
+                "list_reservation_topics"
+              ]
             }
           }
         }

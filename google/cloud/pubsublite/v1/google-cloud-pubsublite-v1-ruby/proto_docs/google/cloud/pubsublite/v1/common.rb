@@ -88,6 +88,26 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
+        # Metadata about a reservation resource.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     The name of the reservation.
+        #     Structured like:
+        #     projects/\\{project_number}/locations/\\{location}/reservations/\\{reservation_id}
+        # @!attribute [rw] throughput_capacity
+        #   @return [::Integer]
+        #     The reserved throughput capacity. Every unit of throughput capacity is
+        #     equivalent to 1 MiB/s of published messages or 2 MiB/s of subscribed
+        #     messages.
+        #
+        #     Any topics which are declared as using capacity from a Reservation will
+        #     consume resources from this reservation instead of being charged
+        #     individually.
+        class Reservation
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # Metadata about a topic resource.
         # @!attribute [rw] name
         #   @return [::String]
@@ -100,6 +120,9 @@ module Google
         # @!attribute [rw] retention_config
         #   @return [::Google::Cloud::PubSubLite::V1::Topic::RetentionConfig]
         #     The settings for this topic's message retention.
+        # @!attribute [rw] reservation_config
+        #   @return [::Google::Cloud::PubSubLite::V1::Topic::ReservationConfig]
+        #     The settings for this topic's Reservation usage.
         class Topic
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -158,6 +181,17 @@ module Google
           #     retained as long as the bytes retained for each partition is below
           #     `per_partition_bytes`.
           class RetentionConfig
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # The settings for this topic's Reservation usage.
+          # @!attribute [rw] throughput_reservation
+          #   @return [::String]
+          #     The Reservation to use for this topic's throughput capacity.
+          #     Structured like:
+          #     projects/\\{project_number}/locations/\\{location}/reservations/\\{reservation_id}
+          class ReservationConfig
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end

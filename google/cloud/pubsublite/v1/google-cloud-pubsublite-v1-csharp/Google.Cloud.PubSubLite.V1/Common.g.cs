@@ -39,39 +39,47 @@ namespace Google.Cloud.PubSubLite.V1 {
             "dWQucHVic3VibGl0ZS52MS5DdXJzb3ISMAoMcHVibGlzaF90aW1lGAIgASgL",
             "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBI6CgdtZXNzYWdlGAMgASgL",
             "MikuZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuUHViU3ViTWVzc2FnZRIS",
-            "CgpzaXplX2J5dGVzGAQgASgDIsUECgVUb3BpYxIMCgRuYW1lGAEgASgJEksK",
-            "EHBhcnRpdGlvbl9jb25maWcYAiABKAsyMS5nb29nbGUuY2xvdWQucHVic3Vi",
-            "bGl0ZS52MS5Ub3BpYy5QYXJ0aXRpb25Db25maWcSSwoQcmV0ZW50aW9uX2Nv",
-            "bmZpZxgDIAEoCzIxLmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLlRvcGlj",
-            "LlJldGVudGlvbkNvbmZpZxraAQoPUGFydGl0aW9uQ29uZmlnEg0KBWNvdW50",
-            "GAEgASgDEhMKBXNjYWxlGAIgASgFQgIYAUgAEk4KCGNhcGFjaXR5GAMgASgL",
-            "MjouZ29vZ2xlLmNsb3VkLnB1YnN1YmxpdGUudjEuVG9waWMuUGFydGl0aW9u",
-            "Q29uZmlnLkNhcGFjaXR5SAAaRgoIQ2FwYWNpdHkSGwoTcHVibGlzaF9taWJf",
-            "cGVyX3NlYxgBIAEoBRIdChVzdWJzY3JpYmVfbWliX3Blcl9zZWMYAiABKAVC",
-            "CwoJZGltZW5zaW9uGlkKD1JldGVudGlvbkNvbmZpZxIbChNwZXJfcGFydGl0",
-            "aW9uX2J5dGVzGAEgASgDEikKBnBlcmlvZBgCIAEoCzIZLmdvb2dsZS5wcm90",
-            "b2J1Zi5EdXJhdGlvbjpc6kFZCh9wdWJzdWJsaXRlLmdvb2dsZWFwaXMuY29t",
-            "L1RvcGljEjZwcm9qZWN0cy97cHJvamVjdH0vbG9jYXRpb25zL3tsb2NhdGlv",
-            "bn0vdG9waWNzL3t0b3BpY30ihAQKDFN1YnNjcmlwdGlvbhIMCgRuYW1lGAEg",
-            "ASgJEjMKBXRvcGljGAIgASgJQiT6QSEKH3B1YnN1YmxpdGUuZ29vZ2xlYXBp",
-            "cy5jb20vVG9waWMSUAoPZGVsaXZlcnlfY29uZmlnGAMgASgLMjcuZ29vZ2xl",
-            "LmNsb3VkLnB1YnN1YmxpdGUudjEuU3Vic2NyaXB0aW9uLkRlbGl2ZXJ5Q29u",
-            "ZmlnGusBCg5EZWxpdmVyeUNvbmZpZxJpChRkZWxpdmVyeV9yZXF1aXJlbWVu",
-            "dBgDIAEoDjJLLmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLlN1YnNjcmlw",
-            "dGlvbi5EZWxpdmVyeUNvbmZpZy5EZWxpdmVyeVJlcXVpcmVtZW50Im4KE0Rl",
-            "bGl2ZXJ5UmVxdWlyZW1lbnQSJAogREVMSVZFUllfUkVRVUlSRU1FTlRfVU5T",
-            "UEVDSUZJRUQQABIXChNERUxJVkVSX0lNTUVESUFURUxZEAESGAoUREVMSVZF",
-            "Ul9BRlRFUl9TVE9SRUQQAjpx6kFuCiZwdWJzdWJsaXRlLmdvb2dsZWFwaXMu",
-            "Y29tL1N1YnNjcmlwdGlvbhJEcHJvamVjdHMve3Byb2plY3R9L2xvY2F0aW9u",
-            "cy97bG9jYXRpb259L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbn0iegoK",
-            "VGltZVRhcmdldBIyCgxwdWJsaXNoX3RpbWUYASABKAsyGi5nb29nbGUucHJv",
-            "dG9idWYuVGltZXN0YW1wSAASMAoKZXZlbnRfdGltZRgCIAEoCzIaLmdvb2ds",
-            "ZS5wcm90b2J1Zi5UaW1lc3RhbXBIAEIGCgR0aW1lQtUBCiFjb20uZ29vZ2xl",
-            "LmNsb3VkLnB1YnN1YmxpdGUucHJvdG9CC0NvbW1vblByb3RvUAFaRGdvb2ds",
-            "ZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvY2xvdWQvcHVic3Vi",
-            "bGl0ZS92MTtwdWJzdWJsaXRl+AEBqgIaR29vZ2xlLkNsb3VkLlB1YlN1Ykxp",
-            "dGUuVjHKAhpHb29nbGVcQ2xvdWRcUHViU3ViTGl0ZVxWMeoCHUdvb2dsZTo6",
-            "Q2xvdWQ6OlB1YlN1YkxpdGU6OlYxYgZwcm90bzM="));
+            "CgpzaXplX2J5dGVzGAQgASgDIqgBCgtSZXNlcnZhdGlvbhIMCgRuYW1lGAEg",
+            "ASgJEhsKE3Rocm91Z2hwdXRfY2FwYWNpdHkYAiABKAM6bupBawolcHVic3Vi",
+            "bGl0ZS5nb29nbGVhcGlzLmNvbS9SZXNlcnZhdGlvbhJCcHJvamVjdHMve3By",
+            "b2plY3R9L2xvY2F0aW9ucy97bG9jYXRpb259L3Jlc2VydmF0aW9ucy97cmVz",
+            "ZXJ2YXRpb259IvcFCgVUb3BpYxIMCgRuYW1lGAEgASgJEksKEHBhcnRpdGlv",
+            "bl9jb25maWcYAiABKAsyMS5nb29nbGUuY2xvdWQucHVic3VibGl0ZS52MS5U",
+            "b3BpYy5QYXJ0aXRpb25Db25maWcSSwoQcmV0ZW50aW9uX2NvbmZpZxgDIAEo",
+            "CzIxLmdvb2dsZS5jbG91ZC5wdWJzdWJsaXRlLnYxLlRvcGljLlJldGVudGlv",
+            "bkNvbmZpZxJPChJyZXNlcnZhdGlvbl9jb25maWcYBCABKAsyMy5nb29nbGUu",
+            "Y2xvdWQucHVic3VibGl0ZS52MS5Ub3BpYy5SZXNlcnZhdGlvbkNvbmZpZxra",
+            "AQoPUGFydGl0aW9uQ29uZmlnEg0KBWNvdW50GAEgASgDEhMKBXNjYWxlGAIg",
+            "ASgFQgIYAUgAEk4KCGNhcGFjaXR5GAMgASgLMjouZ29vZ2xlLmNsb3VkLnB1",
+            "YnN1YmxpdGUudjEuVG9waWMuUGFydGl0aW9uQ29uZmlnLkNhcGFjaXR5SAAa",
+            "RgoIQ2FwYWNpdHkSGwoTcHVibGlzaF9taWJfcGVyX3NlYxgBIAEoBRIdChVz",
+            "dWJzY3JpYmVfbWliX3Blcl9zZWMYAiABKAVCCwoJZGltZW5zaW9uGlkKD1Jl",
+            "dGVudGlvbkNvbmZpZxIbChNwZXJfcGFydGl0aW9uX2J5dGVzGAEgASgDEikK",
+            "BnBlcmlvZBgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbhpfChFS",
+            "ZXNlcnZhdGlvbkNvbmZpZxJKChZ0aHJvdWdocHV0X3Jlc2VydmF0aW9uGAEg",
+            "ASgJQir6QScKJXB1YnN1YmxpdGUuZ29vZ2xlYXBpcy5jb20vUmVzZXJ2YXRp",
+            "b246XOpBWQofcHVic3VibGl0ZS5nb29nbGVhcGlzLmNvbS9Ub3BpYxI2cHJv",
+            "amVjdHMve3Byb2plY3R9L2xvY2F0aW9ucy97bG9jYXRpb259L3RvcGljcy97",
+            "dG9waWN9IoQECgxTdWJzY3JpcHRpb24SDAoEbmFtZRgBIAEoCRIzCgV0b3Bp",
+            "YxgCIAEoCUIk+kEhCh9wdWJzdWJsaXRlLmdvb2dsZWFwaXMuY29tL1RvcGlj",
+            "ElAKD2RlbGl2ZXJ5X2NvbmZpZxgDIAEoCzI3Lmdvb2dsZS5jbG91ZC5wdWJz",
+            "dWJsaXRlLnYxLlN1YnNjcmlwdGlvbi5EZWxpdmVyeUNvbmZpZxrrAQoORGVs",
+            "aXZlcnlDb25maWcSaQoUZGVsaXZlcnlfcmVxdWlyZW1lbnQYAyABKA4ySy5n",
+            "b29nbGUuY2xvdWQucHVic3VibGl0ZS52MS5TdWJzY3JpcHRpb24uRGVsaXZl",
+            "cnlDb25maWcuRGVsaXZlcnlSZXF1aXJlbWVudCJuChNEZWxpdmVyeVJlcXVp",
+            "cmVtZW50EiQKIERFTElWRVJZX1JFUVVJUkVNRU5UX1VOU1BFQ0lGSUVEEAAS",
+            "FwoTREVMSVZFUl9JTU1FRElBVEVMWRABEhgKFERFTElWRVJfQUZURVJfU1RP",
+            "UkVEEAI6cepBbgomcHVic3VibGl0ZS5nb29nbGVhcGlzLmNvbS9TdWJzY3Jp",
+            "cHRpb24SRHByb2plY3RzL3twcm9qZWN0fS9sb2NhdGlvbnMve2xvY2F0aW9u",
+            "fS9zdWJzY3JpcHRpb25zL3tzdWJzY3JpcHRpb259InoKClRpbWVUYXJnZXQS",
+            "MgoMcHVibGlzaF90aW1lGAEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVz",
+            "dGFtcEgAEjAKCmV2ZW50X3RpbWUYAiABKAsyGi5nb29nbGUucHJvdG9idWYu",
+            "VGltZXN0YW1wSABCBgoEdGltZULVAQohY29tLmdvb2dsZS5jbG91ZC5wdWJz",
+            "dWJsaXRlLnByb3RvQgtDb21tb25Qcm90b1ABWkRnb29nbGUuZ29sYW5nLm9y",
+            "Zy9nZW5wcm90by9nb29nbGVhcGlzL2Nsb3VkL3B1YnN1YmxpdGUvdjE7cHVi",
+            "c3VibGl0ZfgBAaoCGkdvb2dsZS5DbG91ZC5QdWJTdWJMaXRlLlYxygIaR29v",
+            "Z2xlXENsb3VkXFB1YlN1YkxpdGVcVjHqAh1Hb29nbGU6OkNsb3VkOjpQdWJT",
+            "dWJMaXRlOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.ResourceReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -79,8 +87,10 @@ namespace Google.Cloud.PubSubLite.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.PubSubMessage), global::Google.Cloud.PubSubLite.V1.PubSubMessage.Parser, new[]{ "Key", "Data", "Attributes", "EventTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Cursor), global::Google.Cloud.PubSubLite.V1.Cursor.Parser, new[]{ "Offset" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.SequencedMessage), global::Google.Cloud.PubSubLite.V1.SequencedMessage.Parser, new[]{ "Cursor", "PublishTime", "Message", "SizeBytes" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic), global::Google.Cloud.PubSubLite.V1.Topic.Parser, new[]{ "Name", "PartitionConfig", "RetentionConfig" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig), global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig.Parser, new[]{ "Count", "Scale", "Capacity" }, new[]{ "Dimension" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig.Types.Capacity), global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig.Types.Capacity.Parser, new[]{ "PublishMibPerSec", "SubscribeMibPerSec" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic.Types.RetentionConfig), global::Google.Cloud.PubSubLite.V1.Topic.Types.RetentionConfig.Parser, new[]{ "PerPartitionBytes", "Period" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Reservation), global::Google.Cloud.PubSubLite.V1.Reservation.Parser, new[]{ "Name", "ThroughputCapacity" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic), global::Google.Cloud.PubSubLite.V1.Topic.Parser, new[]{ "Name", "PartitionConfig", "RetentionConfig", "ReservationConfig" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig), global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig.Parser, new[]{ "Count", "Scale", "Capacity" }, new[]{ "Dimension" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig.Types.Capacity), global::Google.Cloud.PubSubLite.V1.Topic.Types.PartitionConfig.Types.Capacity.Parser, new[]{ "PublishMibPerSec", "SubscribeMibPerSec" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic.Types.RetentionConfig), global::Google.Cloud.PubSubLite.V1.Topic.Types.RetentionConfig.Parser, new[]{ "PerPartitionBytes", "Period" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Topic.Types.ReservationConfig), global::Google.Cloud.PubSubLite.V1.Topic.Types.ReservationConfig.Parser, new[]{ "ThroughputReservation" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Subscription), global::Google.Cloud.PubSubLite.V1.Subscription.Parser, new[]{ "Name", "Topic", "DeliveryConfig" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.Subscription.Types.DeliveryConfig), global::Google.Cloud.PubSubLite.V1.Subscription.Types.DeliveryConfig.Parser, new[]{ "DeliveryRequirement" }, null, new[]{ typeof(global::Google.Cloud.PubSubLite.V1.Subscription.Types.DeliveryConfig.Types.DeliveryRequirement) }, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.PubSubLite.V1.TimeTarget), global::Google.Cloud.PubSubLite.V1.TimeTarget.Parser, new[]{ "PublishTime", "EventTime" }, new[]{ "Time" }, null, null, null)
           }));
@@ -1054,6 +1064,231 @@ namespace Google.Cloud.PubSubLite.V1 {
   }
 
   /// <summary>
+  /// Metadata about a reservation resource.
+  /// </summary>
+  public sealed partial class Reservation : pb::IMessage<Reservation>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Reservation> _parser = new pb::MessageParser<Reservation>(() => new Reservation());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Reservation> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.PubSubLite.V1.CommonReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Reservation() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Reservation(Reservation other) : this() {
+      name_ = other.name_;
+      throughputCapacity_ = other.throughputCapacity_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Reservation Clone() {
+      return new Reservation(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    /// <summary>
+    /// The name of the reservation.
+    /// Structured like:
+    /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "throughput_capacity" field.</summary>
+    public const int ThroughputCapacityFieldNumber = 2;
+    private long throughputCapacity_;
+    /// <summary>
+    /// The reserved throughput capacity. Every unit of throughput capacity is
+    /// equivalent to 1 MiB/s of published messages or 2 MiB/s of subscribed
+    /// messages.
+    ///
+    /// Any topics which are declared as using capacity from a Reservation will
+    /// consume resources from this reservation instead of being charged
+    /// individually.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long ThroughputCapacity {
+      get { return throughputCapacity_; }
+      set {
+        throughputCapacity_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Reservation);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Reservation other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (ThroughputCapacity != other.ThroughputCapacity) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (ThroughputCapacity != 0L) hash ^= ThroughputCapacity.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (ThroughputCapacity != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(ThroughputCapacity);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (ThroughputCapacity != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(ThroughputCapacity);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (ThroughputCapacity != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ThroughputCapacity);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Reservation other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.ThroughputCapacity != 0L) {
+        ThroughputCapacity = other.ThroughputCapacity;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            ThroughputCapacity = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            ThroughputCapacity = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
   /// Metadata about a topic resource.
   /// </summary>
   public sealed partial class Topic : pb::IMessage<Topic>
@@ -1068,7 +1303,7 @@ namespace Google.Cloud.PubSubLite.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.PubSubLite.V1.CommonReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Google.Cloud.PubSubLite.V1.CommonReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1088,6 +1323,7 @@ namespace Google.Cloud.PubSubLite.V1 {
       name_ = other.name_;
       partitionConfig_ = other.partitionConfig_ != null ? other.partitionConfig_.Clone() : null;
       retentionConfig_ = other.retentionConfig_ != null ? other.retentionConfig_.Clone() : null;
+      reservationConfig_ = other.reservationConfig_ != null ? other.reservationConfig_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1140,6 +1376,20 @@ namespace Google.Cloud.PubSubLite.V1 {
       }
     }
 
+    /// <summary>Field number for the "reservation_config" field.</summary>
+    public const int ReservationConfigFieldNumber = 4;
+    private global::Google.Cloud.PubSubLite.V1.Topic.Types.ReservationConfig reservationConfig_;
+    /// <summary>
+    /// The settings for this topic's Reservation usage.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Cloud.PubSubLite.V1.Topic.Types.ReservationConfig ReservationConfig {
+      get { return reservationConfig_; }
+      set {
+        reservationConfig_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Topic);
@@ -1156,6 +1406,7 @@ namespace Google.Cloud.PubSubLite.V1 {
       if (Name != other.Name) return false;
       if (!object.Equals(PartitionConfig, other.PartitionConfig)) return false;
       if (!object.Equals(RetentionConfig, other.RetentionConfig)) return false;
+      if (!object.Equals(ReservationConfig, other.ReservationConfig)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1165,6 +1416,7 @@ namespace Google.Cloud.PubSubLite.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (partitionConfig_ != null) hash ^= PartitionConfig.GetHashCode();
       if (retentionConfig_ != null) hash ^= RetentionConfig.GetHashCode();
+      if (reservationConfig_ != null) hash ^= ReservationConfig.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1193,6 +1445,10 @@ namespace Google.Cloud.PubSubLite.V1 {
         output.WriteRawTag(26);
         output.WriteMessage(RetentionConfig);
       }
+      if (reservationConfig_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ReservationConfig);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1214,6 +1470,10 @@ namespace Google.Cloud.PubSubLite.V1 {
         output.WriteRawTag(26);
         output.WriteMessage(RetentionConfig);
       }
+      if (reservationConfig_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ReservationConfig);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1231,6 +1491,9 @@ namespace Google.Cloud.PubSubLite.V1 {
       }
       if (retentionConfig_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RetentionConfig);
+      }
+      if (reservationConfig_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ReservationConfig);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1257,6 +1520,12 @@ namespace Google.Cloud.PubSubLite.V1 {
           RetentionConfig = new global::Google.Cloud.PubSubLite.V1.Topic.Types.RetentionConfig();
         }
         RetentionConfig.MergeFrom(other.RetentionConfig);
+      }
+      if (other.reservationConfig_ != null) {
+        if (reservationConfig_ == null) {
+          ReservationConfig = new global::Google.Cloud.PubSubLite.V1.Topic.Types.ReservationConfig();
+        }
+        ReservationConfig.MergeFrom(other.ReservationConfig);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1290,6 +1559,13 @@ namespace Google.Cloud.PubSubLite.V1 {
             input.ReadMessage(RetentionConfig);
             break;
           }
+          case 34: {
+            if (reservationConfig_ == null) {
+              ReservationConfig = new global::Google.Cloud.PubSubLite.V1.Topic.Types.ReservationConfig();
+            }
+            input.ReadMessage(ReservationConfig);
+            break;
+          }
         }
       }
     #endif
@@ -1320,6 +1596,13 @@ namespace Google.Cloud.PubSubLite.V1 {
               RetentionConfig = new global::Google.Cloud.PubSubLite.V1.Topic.Types.RetentionConfig();
             }
             input.ReadMessage(RetentionConfig);
+            break;
+          }
+          case 34: {
+            if (reservationConfig_ == null) {
+              ReservationConfig = new global::Google.Cloud.PubSubLite.V1.Topic.Types.ReservationConfig();
+            }
+            input.ReadMessage(ReservationConfig);
             break;
           }
         }
@@ -2101,6 +2384,186 @@ namespace Google.Cloud.PubSubLite.V1 {
 
       }
 
+      /// <summary>
+      /// The settings for this topic's Reservation usage.
+      /// </summary>
+      public sealed partial class ReservationConfig : pb::IMessage<ReservationConfig>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<ReservationConfig> _parser = new pb::MessageParser<ReservationConfig>(() => new ReservationConfig());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pb::MessageParser<ReservationConfig> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Google.Cloud.PubSubLite.V1.Topic.Descriptor.NestedTypes[2]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public ReservationConfig() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public ReservationConfig(ReservationConfig other) : this() {
+          throughputReservation_ = other.throughputReservation_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public ReservationConfig Clone() {
+          return new ReservationConfig(this);
+        }
+
+        /// <summary>Field number for the "throughput_reservation" field.</summary>
+        public const int ThroughputReservationFieldNumber = 1;
+        private string throughputReservation_ = "";
+        /// <summary>
+        /// The Reservation to use for this topic's throughput capacity.
+        /// Structured like:
+        /// projects/{project_number}/locations/{location}/reservations/{reservation_id}
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string ThroughputReservation {
+          get { return throughputReservation_; }
+          set {
+            throughputReservation_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override bool Equals(object other) {
+          return Equals(other as ReservationConfig);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool Equals(ReservationConfig other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (ThroughputReservation != other.ThroughputReservation) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (ThroughputReservation.Length != 0) hash ^= ThroughputReservation.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (ThroughputReservation.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(ThroughputReservation);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (ThroughputReservation.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(ThroughputReservation);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int CalculateSize() {
+          int size = 0;
+          if (ThroughputReservation.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(ThroughputReservation);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(ReservationConfig other) {
+          if (other == null) {
+            return;
+          }
+          if (other.ThroughputReservation.Length != 0) {
+            ThroughputReservation = other.ThroughputReservation;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                ThroughputReservation = input.ReadString();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                ThroughputReservation = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
     }
     #endregion
 
@@ -2121,7 +2584,7 @@ namespace Google.Cloud.PubSubLite.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.PubSubLite.V1.CommonReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Google.Cloud.PubSubLite.V1.CommonReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2606,7 +3069,7 @@ namespace Google.Cloud.PubSubLite.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.PubSubLite.V1.CommonReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Google.Cloud.PubSubLite.V1.CommonReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

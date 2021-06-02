@@ -86,6 +86,36 @@
           "timeout_millis": 600000,
           "retry_codes_name": "unknown_deadline_exceeded_aborted_internal_unavailable",
           "retry_params_name": "default"
+        },
+        "CreateReservation": {
+          "timeout_millis": 600000,
+          "retry_codes_name": "unknown_deadline_exceeded_aborted_internal_unavailable",
+          "retry_params_name": "default"
+        },
+        "GetReservation": {
+          "timeout_millis": 600000,
+          "retry_codes_name": "unknown_deadline_exceeded_aborted_internal_unavailable",
+          "retry_params_name": "default"
+        },
+        "ListReservations": {
+          "timeout_millis": 600000,
+          "retry_codes_name": "unknown_deadline_exceeded_aborted_internal_unavailable",
+          "retry_params_name": "default"
+        },
+        "UpdateReservation": {
+          "timeout_millis": 600000,
+          "retry_codes_name": "unknown_deadline_exceeded_aborted_internal_unavailable",
+          "retry_params_name": "default"
+        },
+        "DeleteReservation": {
+          "timeout_millis": 600000,
+          "retry_codes_name": "unknown_deadline_exceeded_aborted_internal_unavailable",
+          "retry_params_name": "default"
+        },
+        "ListReservationTopics": {
+          "timeout_millis": 600000,
+          "retry_codes_name": "unknown_deadline_exceeded_aborted_internal_unavailable",
+          "retry_params_name": "default"
         }
       }
     }
