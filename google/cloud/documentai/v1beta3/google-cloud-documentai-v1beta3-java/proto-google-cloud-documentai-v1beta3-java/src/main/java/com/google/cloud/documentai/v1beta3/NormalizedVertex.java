@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
   private float y_;
   /**
    * <pre>
-   * Y coordinate.
+   * Y coordinate (starts from the top of the image).
    * </pre>
    *
    * <code>float y = 2;</code>
@@ -501,7 +501,7 @@ private static final long serialVersionUID = 0L;
     private float y_ ;
     /**
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>float y = 2;</code>
@@ -513,7 +513,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>float y = 2;</code>
@@ -528,7 +528,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>float y = 2;</code>

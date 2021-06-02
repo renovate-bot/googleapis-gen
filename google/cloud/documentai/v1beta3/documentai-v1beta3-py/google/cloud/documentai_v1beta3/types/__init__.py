@@ -28,7 +28,6 @@ from .document_processor_service import (
     BatchProcessMetadata,
     BatchProcessRequest,
     BatchProcessResponse,
-    CommonOperationMetadata,
     HumanReviewStatus,
     ProcessRequest,
     ProcessResponse,
@@ -40,6 +39,9 @@ from .geometry import (
     BoundingPoly,
     NormalizedVertex,
     Vertex,
+)
+from .operation_metadata import (
+    CommonOperationMetadata,
 )
 
 __all__ = (
@@ -53,7 +55,6 @@ __all__ = (
     'BatchProcessMetadata',
     'BatchProcessRequest',
     'BatchProcessResponse',
-    'CommonOperationMetadata',
     'HumanReviewStatus',
     'ProcessRequest',
     'ProcessResponse',
@@ -63,4 +64,5 @@ __all__ = (
     'BoundingPoly',
     'NormalizedVertex',
     'Vertex',
+    'CommonOperationMetadata',
 )

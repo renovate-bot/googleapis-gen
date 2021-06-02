@@ -23,7 +23,7 @@ class Vertex extends \Google\Protobuf\Internal\Message
      */
     protected $x = 0;
     /**
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      *
      * Generated from protobuf field <code>int32 y = 2;</code>
      */
@@ -38,7 +38,7 @@ class Vertex extends \Google\Protobuf\Internal\Message
      *     @type int $x
      *           X coordinate.
      *     @type int $y
-     *           Y coordinate.
+     *           Y coordinate (starts from the top of the image).
      * }
      */
     public function __construct($data = NULL) {
@@ -73,7 +73,7 @@ class Vertex extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      *
      * Generated from protobuf field <code>int32 y = 2;</code>
      * @return int
@@ -84,7 +84,7 @@ class Vertex extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      *
      * Generated from protobuf field <code>int32 y = 2;</code>
      * @param int $var

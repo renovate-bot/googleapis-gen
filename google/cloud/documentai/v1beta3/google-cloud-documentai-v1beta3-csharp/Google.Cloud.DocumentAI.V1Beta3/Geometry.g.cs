@@ -111,7 +111,7 @@ namespace Google.Cloud.DocumentAI.V1Beta3 {
     public const int YFieldNumber = 2;
     private int y_;
     /// <summary>
-    /// Y coordinate.
+    /// Y coordinate (starts from the top of the image).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Y {
@@ -330,7 +330,7 @@ namespace Google.Cloud.DocumentAI.V1Beta3 {
     public const int YFieldNumber = 2;
     private float y_;
     /// <summary>
-    /// Y coordinate.
+    /// Y coordinate (starts from the top of the image).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float Y {

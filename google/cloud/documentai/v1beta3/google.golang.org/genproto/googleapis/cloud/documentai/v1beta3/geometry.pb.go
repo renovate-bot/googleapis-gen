@@ -49,7 +49,7 @@ type Vertex struct {
 
 	// X coordinate.
 	X int32 `protobuf:"varint,1,opt,name=x,proto3" json:"x,omitempty"`
-	// Y coordinate.
+	// Y coordinate (starts from the top of the image).
 	Y int32 `protobuf:"varint,2,opt,name=y,proto3" json:"y,omitempty"`
 }
 
@@ -109,7 +109,7 @@ type NormalizedVertex struct {
 
 	// X coordinate.
 	X float32 `protobuf:"fixed32,1,opt,name=x,proto3" json:"x,omitempty"`
-	// Y coordinate.
+	// Y coordinate (starts from the top of the image).
 	Y float32 `protobuf:"fixed32,2,opt,name=y,proto3" json:"y,omitempty"`
 }
 

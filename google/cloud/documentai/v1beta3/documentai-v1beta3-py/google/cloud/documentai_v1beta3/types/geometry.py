@@ -35,7 +35,8 @@ class Vertex(proto.Message):
         x (int):
             X coordinate.
         y (int):
-            Y coordinate.
+            Y coordinate (starts from the top of the
+            image).
     """
 
     x = proto.Field(
@@ -57,7 +58,8 @@ class NormalizedVertex(proto.Message):
         x (float):
             X coordinate.
         y (float):
-            Y coordinate.
+            Y coordinate (starts from the top of the
+            image).
     """
 
     x = proto.Field(

@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
   private int y_;
   /**
    * <pre>
-   * Y coordinate.
+   * Y coordinate (starts from the top of the image).
    * </pre>
    *
    * <code>int32 y = 2;</code>
@@ -495,7 +495,7 @@ private static final long serialVersionUID = 0L;
     private int y_ ;
     /**
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>int32 y = 2;</code>
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>int32 y = 2;</code>
@@ -522,7 +522,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>int32 y = 2;</code>

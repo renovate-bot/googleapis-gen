@@ -19,7 +19,7 @@ public interface VertexOrBuilder extends
 
   /**
    * <pre>
-   * Y coordinate.
+   * Y coordinate (starts from the top of the image).
    * </pre>
    *
    * <code>int32 y = 2;</code>
