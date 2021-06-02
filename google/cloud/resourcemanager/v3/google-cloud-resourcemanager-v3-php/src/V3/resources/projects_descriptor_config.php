@@ -13,10 +13,10 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateProject' => [
+            'DeleteProject' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ResourceManager\V3\Project',
-                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\UpdateProjectMetadata',
+                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\DeleteProjectMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -33,20 +33,20 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'DeleteProject' => [
+            'UndeleteProject' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ResourceManager\V3\Project',
-                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\DeleteProjectMetadata',
+                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\UndeleteProjectMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UndeleteProject' => [
+            'UpdateProject' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ResourceManager\V3\Project',
-                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\UndeleteProjectMetadata',
+                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\UpdateProjectMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

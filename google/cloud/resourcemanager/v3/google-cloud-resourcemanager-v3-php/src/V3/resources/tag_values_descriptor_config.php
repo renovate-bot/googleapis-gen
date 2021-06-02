@@ -13,20 +13,20 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateTagValue' => [
+            'DeleteTagValue' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ResourceManager\V3\TagValue',
-                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\UpdateTagValueMetadata',
+                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\DeleteTagValueMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'DeleteTagValue' => [
+            'UpdateTagValue' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ResourceManager\V3\TagValue',
-                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\DeleteTagValueMetadata',
+                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\UpdateTagValueMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

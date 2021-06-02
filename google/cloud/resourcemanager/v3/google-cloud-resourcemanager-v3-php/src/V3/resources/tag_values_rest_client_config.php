@@ -3,38 +3,10 @@
 return [
     'interfaces' => [
         'google.cloud.resourcemanager.v3.TagValues' => [
-            'ListTagValues' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3/tagValues',
-            ],
-            'GetTagValue' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3/{name=tagValues/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateTagValue' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3/tagValues',
                 'body' => 'tag_value',
-            ],
-            'UpdateTagValue' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v3/{tag_value.name=tagValues/*}',
-                'body' => 'tag_value',
-                'placeholders' => [
-                    'tag_value.name' => [
-                        'getters' => [
-                            'getTagValue',
-                            'getName',
-                        ],
-                    ],
-                ],
             ],
             'DeleteTagValue' => [
                 'method' => 'delete',
@@ -59,6 +31,21 @@ return [
                     ],
                 ],
             ],
+            'GetTagValue' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/{name=tagValues/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListTagValues' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/tagValues',
+            ],
             'SetIamPolicy' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3/{resource=tagValues/*}:setIamPolicy',
@@ -79,6 +66,19 @@ return [
                     'resource' => [
                         'getters' => [
                             'getResource',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateTagValue' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v3/{tag_value.name=tagValues/*}',
+                'body' => 'tag_value',
+                'placeholders' => [
+                    'tag_value.name' => [
+                        'getters' => [
+                            'getTagValue',
+                            'getName',
                         ],
                     ],
                 ],

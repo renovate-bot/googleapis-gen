@@ -3,6 +3,18 @@
 return [
     'interfaces' => [
         'google.cloud.resourcemanager.v3.Organizations' => [
+            'GetIamPolicy' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3/{resource=organizations/*}:getIamPolicy',
+                'body' => '*',
+                'placeholders' => [
+                    'resource' => [
+                        'getters' => [
+                            'getResource',
+                        ],
+                    ],
+                ],
+            ],
             'GetOrganization' => [
                 'method' => 'get',
                 'uriTemplate' => '/v3/{name=organizations/*}',
@@ -17,18 +29,6 @@ return [
             'SearchOrganizations' => [
                 'method' => 'get',
                 'uriTemplate' => '/v3/organizations:search',
-            ],
-            'GetIamPolicy' => [
-                'method' => 'post',
-                'uriTemplate' => '/v3/{resource=organizations/*}:getIamPolicy',
-                'body' => '*',
-                'placeholders' => [
-                    'resource' => [
-                        'getters' => [
-                            'getResource',
-                        ],
-                    ],
-                ],
             ],
             'SetIamPolicy' => [
                 'method' => 'post',

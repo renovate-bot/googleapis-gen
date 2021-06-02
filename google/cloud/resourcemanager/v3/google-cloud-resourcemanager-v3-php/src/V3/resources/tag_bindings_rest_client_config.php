@@ -3,10 +3,6 @@
 return [
     'interfaces' => [
         'google.cloud.resourcemanager.v3.TagBindings' => [
-            'ListTagBindings' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3/tagBindings',
-            ],
             'CreateTagBinding' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3/tagBindings',
@@ -22,6 +18,10 @@ return [
                         ],
                     ],
                 ],
+            ],
+            'ListTagBindings' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/tagBindings',
             ],
         ],
         'google.longrunning.Operations' => [

@@ -3,38 +3,10 @@
 return [
     'interfaces' => [
         'google.cloud.resourcemanager.v3.TagKeys' => [
-            'ListTagKeys' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3/tagKeys',
-            ],
-            'GetTagKey' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3/{name=tagKeys/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateTagKey' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3/tagKeys',
                 'body' => 'tag_key',
-            ],
-            'UpdateTagKey' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v3/{tag_key.name=tagKeys/*}',
-                'body' => 'tag_key',
-                'placeholders' => [
-                    'tag_key.name' => [
-                        'getters' => [
-                            'getTagKey',
-                            'getName',
-                        ],
-                    ],
-                ],
             ],
             'DeleteTagKey' => [
                 'method' => 'delete',
@@ -59,6 +31,21 @@ return [
                     ],
                 ],
             ],
+            'GetTagKey' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/{name=tagKeys/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListTagKeys' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/tagKeys',
+            ],
             'SetIamPolicy' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3/{resource=tagKeys/*}:setIamPolicy',
@@ -79,6 +66,19 @@ return [
                     'resource' => [
                         'getters' => [
                             'getResource',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateTagKey' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v3/{tag_key.name=tagKeys/*}',
+                'body' => 'tag_key',
+                'placeholders' => [
+                    'tag_key.name' => [
+                        'getters' => [
+                            'getTagKey',
+                            'getName',
                         ],
                     ],
                 ],

@@ -3,70 +3,14 @@
 return [
     'interfaces' => [
         'google.cloud.resourcemanager.v3.Projects' => [
-            'GetProject' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3/{name=projects/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListProjects' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3/projects',
-            ],
-            'SearchProjects' => [
-                'method' => 'get',
-                'uriTemplate' => '/v3/projects:search',
-            ],
             'CreateProject' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3/projects',
                 'body' => 'project',
             ],
-            'UpdateProject' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v3/{project.name=projects/*}',
-                'body' => 'project',
-                'placeholders' => [
-                    'project.name' => [
-                        'getters' => [
-                            'getProject',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'MoveProject' => [
-                'method' => 'post',
-                'uriTemplate' => '/v3/{name=projects/*}:move',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'DeleteProject' => [
                 'method' => 'delete',
                 'uriTemplate' => '/v3/{name=projects/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'UndeleteProject' => [
-                'method' => 'post',
-                'uriTemplate' => '/v3/{name=projects/*}:undelete',
-                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -86,6 +30,37 @@ return [
                         ],
                     ],
                 ],
+            ],
+            'GetProject' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/{name=projects/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListProjects' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/projects',
+            ],
+            'MoveProject' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3/{name=projects/*}:move',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'SearchProjects' => [
+                'method' => 'get',
+                'uriTemplate' => '/v3/projects:search',
             ],
             'SetIamPolicy' => [
                 'method' => 'post',
@@ -107,6 +82,31 @@ return [
                     'resource' => [
                         'getters' => [
                             'getResource',
+                        ],
+                    ],
+                ],
+            ],
+            'UndeleteProject' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3/{name=projects/*}:undelete',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateProject' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v3/{project.name=projects/*}',
+                'body' => 'project',
+                'placeholders' => [
+                    'project.name' => [
+                        'getters' => [
+                            'getProject',
+                            'getName',
                         ],
                     ],
                 ],

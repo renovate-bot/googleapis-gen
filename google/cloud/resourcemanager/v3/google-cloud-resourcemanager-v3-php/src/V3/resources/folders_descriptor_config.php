@@ -13,10 +13,10 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateFolder' => [
+            'DeleteFolder' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ResourceManager\V3\Folder',
-                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\UpdateFolderMetadata',
+                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\DeleteFolderMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -33,20 +33,20 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'DeleteFolder' => [
+            'UndeleteFolder' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ResourceManager\V3\Folder',
-                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\DeleteFolderMetadata',
+                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\UndeleteFolderMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UndeleteFolder' => [
+            'UpdateFolder' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\ResourceManager\V3\Folder',
-                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\UndeleteFolderMetadata',
+                    'metadataReturnType' => '\Google\Cloud\ResourceManager\V3\UpdateFolderMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
