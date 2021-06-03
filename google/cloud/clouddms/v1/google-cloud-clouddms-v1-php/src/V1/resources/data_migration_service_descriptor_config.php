@@ -3,6 +3,16 @@
 return [
     'interfaces' => [
         'google.cloud.clouddms.v1.DataMigrationService' => [
+            'CreateConnectionProfile' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\CloudDms\V1\ConnectionProfile',
+                    'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
             'CreateMigrationJob' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\CloudDms\V1\MigrationJob',
@@ -13,9 +23,9 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateMigrationJob' => [
+            'DeleteConnectionProfile' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\CloudDms\V1\MigrationJob',
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
                     'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -26,6 +36,36 @@ return [
             'DeleteMigrationJob' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'PromoteMigrationJob' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\CloudDms\V1\MigrationJob',
+                    'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'RestartMigrationJob' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\CloudDms\V1\MigrationJob',
+                    'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'ResumeMigrationJob' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\CloudDms\V1\MigrationJob',
                     'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -53,9 +93,9 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'ResumeMigrationJob' => [
+            'UpdateConnectionProfile' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\CloudDms\V1\MigrationJob',
+                    'operationReturnType' => '\Google\Cloud\CloudDms\V1\ConnectionProfile',
                     'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -63,7 +103,7 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'PromoteMigrationJob' => [
+            'UpdateMigrationJob' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\CloudDms\V1\MigrationJob',
                     'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
@@ -83,44 +123,14 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'RestartMigrationJob' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\CloudDms\V1\MigrationJob',
-                    'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'CreateConnectionProfile' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\CloudDms\V1\ConnectionProfile',
-                    'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'UpdateConnectionProfile' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\CloudDms\V1\ConnectionProfile',
-                    'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'DeleteConnectionProfile' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\CloudDms\V1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
+            'ListConnectionProfiles' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getConnectionProfiles',
                 ],
             ],
             'ListMigrationJobs' => [
@@ -131,16 +141,6 @@ return [
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
                     'resourcesGetMethod' => 'getMigrationJobs',
-                ],
-            ],
-            'ListConnectionProfiles' => [
-                'pageStreaming' => [
-                    'requestPageTokenGetMethod' => 'getPageToken',
-                    'requestPageTokenSetMethod' => 'setPageToken',
-                    'requestPageSizeGetMethod' => 'getPageSize',
-                    'requestPageSizeSetMethod' => 'setPageSize',
-                    'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getConnectionProfiles',
                 ],
             ],
         ],
