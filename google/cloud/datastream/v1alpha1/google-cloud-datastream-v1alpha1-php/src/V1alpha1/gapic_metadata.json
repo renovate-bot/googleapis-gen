@@ -1,0 +1,123 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.datastream.v1alpha1",
+    "libraryPackage": "Google\\Cloud\\Datastream\\V1alpha1",
+    "services": {
+        "Datastream": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "DatastreamGapicClient",
+                    "rpcs": {
+                        "CreateConnectionProfile": {
+                            "methods": [
+                                "createConnectionProfile"
+                            ]
+                        },
+                        "CreatePrivateConnection": {
+                            "methods": [
+                                "createPrivateConnection"
+                            ]
+                        },
+                        "CreateRoute": {
+                            "methods": [
+                                "createRoute"
+                            ]
+                        },
+                        "CreateStream": {
+                            "methods": [
+                                "createStream"
+                            ]
+                        },
+                        "DeleteConnectionProfile": {
+                            "methods": [
+                                "deleteConnectionProfile"
+                            ]
+                        },
+                        "DeletePrivateConnection": {
+                            "methods": [
+                                "deletePrivateConnection"
+                            ]
+                        },
+                        "DeleteRoute": {
+                            "methods": [
+                                "deleteRoute"
+                            ]
+                        },
+                        "DeleteStream": {
+                            "methods": [
+                                "deleteStream"
+                            ]
+                        },
+                        "DiscoverConnectionProfile": {
+                            "methods": [
+                                "discoverConnectionProfile"
+                            ]
+                        },
+                        "FetchErrors": {
+                            "methods": [
+                                "fetchErrors"
+                            ]
+                        },
+                        "FetchStaticIps": {
+                            "methods": [
+                                "fetchStaticIps"
+                            ]
+                        },
+                        "GetConnectionProfile": {
+                            "methods": [
+                                "getConnectionProfile"
+                            ]
+                        },
+                        "GetPrivateConnection": {
+                            "methods": [
+                                "getPrivateConnection"
+                            ]
+                        },
+                        "GetRoute": {
+                            "methods": [
+                                "getRoute"
+                            ]
+                        },
+                        "GetStream": {
+                            "methods": [
+                                "getStream"
+                            ]
+                        },
+                        "ListConnectionProfiles": {
+                            "methods": [
+                                "listConnectionProfiles"
+                            ]
+                        },
+                        "ListPrivateConnections": {
+                            "methods": [
+                                "listPrivateConnections"
+                            ]
+                        },
+                        "ListRoutes": {
+                            "methods": [
+                                "listRoutes"
+                            ]
+                        },
+                        "ListStreams": {
+                            "methods": [
+                                "listStreams"
+                            ]
+                        },
+                        "UpdateConnectionProfile": {
+                            "methods": [
+                                "updateConnectionProfile"
+                            ]
+                        },
+                        "UpdateStream": {
+                            "methods": [
+                                "updateStream"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
