@@ -1,5 +1,5 @@
 --no-private
---title=Google Cloud Storage V1beta1 API
+--title=Google Cloud Bigquery Storage V1beta1 API
 --exclude _pb\.rb$
 --markup markdown
 --markup-provider redcarpet

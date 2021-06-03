@@ -1,8 +1,8 @@
 {
-    "client_documentation": "https://googleapis.dev/ruby/google-cloud-storage-v1beta1/latest",
-    "distribution_name": "google-cloud-storage-v1beta1",
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-bigquery-storage-v1beta1/latest",
+    "distribution_name": "google-cloud-bigquery-storage-v1beta1",
     "language": "ruby",
-    "name_pretty": "Google Cloud Storage V1beta1 API",
+    "name_pretty": "Google Cloud Bigquery Storage V1beta1 API",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
     "library_type": "GAPIC_AUTO"

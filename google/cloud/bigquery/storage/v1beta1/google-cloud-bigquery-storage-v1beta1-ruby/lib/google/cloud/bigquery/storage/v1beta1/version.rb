@@ -19,9 +19,11 @@
 
 module Google
   module Cloud
-    module Storage
-      module V1beta1
-        VERSION = "0.0.1"
+    module Bigquery
+      module Storage
+        module V1beta1
+          VERSION = "0.0.1"
+        end
       end
     end
   end

@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/storage/v1beta1/version"
+require "google/cloud/bigquery/storage/v1beta1/version"
 
 require "google/cloud/bigquery/storage/v1beta1/big_query_storage/credentials"
 require "google/cloud/bigquery/storage/v1beta1/big_query_storage/paths"

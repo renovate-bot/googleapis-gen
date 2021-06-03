@@ -1,16 +1,16 @@
 # -*- ruby -*-
 # encoding: utf-8
 
-require File.expand_path("lib/google/cloud/storage/v1beta1/version", __dir__)
+require File.expand_path("lib/google/cloud/bigquery/storage/v1beta1/version", __dir__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-cloud-storage-v1beta1"
-  gem.version       = Google::Cloud::Storage::V1beta1::VERSION
+  gem.name          = "google-cloud-bigquery-storage-v1beta1"
+  gem.version       = Google::Cloud::Bigquery::Storage::V1beta1::VERSION
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-storage-v1beta1 is the official client library for the Google Cloud Storage V1beta1 API. Note that google-cloud-storage-v1beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-storage instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Storage V1beta1 API"
+  gem.description   = "google-cloud-bigquery-storage-v1beta1 is the official client library for the Google Cloud Bigquery Storage V1beta1 API. Note that google-cloud-bigquery-storage-v1beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-bigquery-storage instead. See the readme for more details."
+  gem.summary       = "API Client library for the Google Cloud Bigquery Storage V1beta1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 
