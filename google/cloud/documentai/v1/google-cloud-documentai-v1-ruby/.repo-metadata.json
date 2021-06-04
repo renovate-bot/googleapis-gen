@@ -4,7 +4,7 @@
     "distribution_name": "google-cloud-document_ai-v1",
     "language": "ruby",
     "name": "documentai",
-    "name_pretty": "Document AI V1beta3 API",
+    "name_pretty": "Document AI V1 API",
     "product_documentation": "https://cloud.google.com/document-ai/",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
