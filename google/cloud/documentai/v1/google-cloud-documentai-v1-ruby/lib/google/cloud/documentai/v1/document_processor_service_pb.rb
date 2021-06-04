@@ -9,6 +9,7 @@ require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/cloud/documentai/v1/document_pb'
 require 'google/cloud/documentai/v1/document_io_pb'
+require 'google/cloud/documentai/v1/operation_metadata_pb'
 require 'google/longrunning/operations_pb'
 require 'google/protobuf/field_mask_pb'
 require 'google/protobuf/timestamp_pb'
@@ -81,20 +82,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.documentai.v1.ReviewDocumentOperationMetadata" do
       optional :common_metadata, :message, 5, "google.cloud.documentai.v1.CommonOperationMetadata"
     end
-    add_message "google.cloud.documentai.v1.CommonOperationMetadata" do
-      optional :state, :enum, 1, "google.cloud.documentai.v1.CommonOperationMetadata.State"
-      optional :state_message, :string, 2
-      optional :create_time, :message, 3, "google.protobuf.Timestamp"
-      optional :update_time, :message, 4, "google.protobuf.Timestamp"
-    end
-    add_enum "google.cloud.documentai.v1.CommonOperationMetadata.State" do
-      value :STATE_UNSPECIFIED, 0
-      value :RUNNING, 1
-      value :CANCELLING, 2
-      value :SUCCEEDED, 3
-      value :FAILED, 4
-      value :CANCELLED, 5
-    end
   end
 end
 
@@ -114,8 +101,6 @@ module Google
         ReviewDocumentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.documentai.v1.ReviewDocumentRequest").msgclass
         ReviewDocumentResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.documentai.v1.ReviewDocumentResponse").msgclass
         ReviewDocumentOperationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.documentai.v1.ReviewDocumentOperationMetadata").msgclass
-        CommonOperationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.documentai.v1.CommonOperationMetadata").msgclass
-        CommonOperationMetadata::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.documentai.v1.CommonOperationMetadata.State").enummodule
       end
     end
   end

@@ -24,7 +24,7 @@ class NormalizedVertex extends \Google\Protobuf\Internal\Message
      */
     protected $x = 0.0;
     /**
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      *
      * Generated from protobuf field <code>float y = 2;</code>
      */
@@ -39,7 +39,7 @@ class NormalizedVertex extends \Google\Protobuf\Internal\Message
      *     @type float $x
      *           X coordinate.
      *     @type float $y
-     *           Y coordinate.
+     *           Y coordinate (starts from the top of the image).
      * }
      */
     public function __construct($data = NULL) {
@@ -74,7 +74,7 @@ class NormalizedVertex extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      *
      * Generated from protobuf field <code>float y = 2;</code>
      * @return float
@@ -85,7 +85,7 @@ class NormalizedVertex extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      *
      * Generated from protobuf field <code>float y = 2;</code>
      * @param float $var
