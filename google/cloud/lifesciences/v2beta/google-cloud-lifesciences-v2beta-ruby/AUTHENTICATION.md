@@ -25,9 +25,9 @@ export V2BETA_CREDENTIALS=path/to/keyfile.json
 3. Initialize the client.
 
 ```ruby
-require "google/cloud/lifesciences/v2beta"
+require "google/cloud/life_sciences/v2beta"
 
-client = ::Google::Cloud::Lifesciences::V2beta::WorkflowsServiceV2Beta::Client.new
+client = ::Google::Cloud::LifeSciences::V2beta::WorkflowsServiceV2Beta::Client.new
 ```
 
 ## Credential Lookup
@@ -64,7 +64,7 @@ containers where writing files is difficult or not encouraged.
 
 The environment variables that google-cloud-lifesciences-v2beta
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Lifesciences::V2beta::WorkflowsServiceV2Beta::Credentials}):
+{::Google::Cloud::LifeSciences::V2beta::WorkflowsServiceV2Beta::Credentials}):
 
 1. `V2BETA_CREDENTIALS` - Path to JSON file, or JSON contents
 2. `V2BETA_KEYFILE` - Path to JSON file, or JSON contents
@@ -73,11 +73,11 @@ checks for credentials are configured on the service Credentials class (such as
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
-require "google/cloud/lifesciences/v2beta"
+require "google/cloud/life_sciences/v2beta"
 
 ENV["V2BETA_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Lifesciences::V2beta::WorkflowsServiceV2Beta::Client.new
+client = ::Google::Cloud::LifeSciences::V2beta::WorkflowsServiceV2Beta::Client.new
 ```
 
 ### Configuration
@@ -86,9 +86,9 @@ The **Credentials JSON** can be configured instead of placing them in
 environment variables. Either on an individual client initialization:
 
 ```ruby
-require "google/cloud/lifesciences/v2beta"
+require "google/cloud/life_sciences/v2beta"
 
-client = ::Google::Cloud::Lifesciences::V2beta::WorkflowsServiceV2Beta::Client.new do |config|
+client = ::Google::Cloud::LifeSciences::V2beta::WorkflowsServiceV2Beta::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -96,13 +96,13 @@ end
 Or configured globally for all clients:
 
 ```ruby
-require "google/cloud/lifesciences/v2beta"
+require "google/cloud/life_sciences/v2beta"
 
-::Google::Cloud::Lifesciences::V2beta::WorkflowsServiceV2Beta::Client.configure do |config|
+::Google::Cloud::LifeSciences::V2beta::WorkflowsServiceV2Beta::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Lifesciences::V2beta::WorkflowsServiceV2Beta::Client.new
+client = ::Google::Cloud::LifeSciences::V2beta::WorkflowsServiceV2Beta::Client.new
 ```
 
 ### Cloud SDK

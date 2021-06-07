@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Lifesciences\Tests\Unit\V2beta;
+namespace Google\Cloud\LifeSciences\Tests\Unit\V2beta;
 
 use Google\ApiCore\ApiException;
 
@@ -29,10 +29,10 @@ use Google\ApiCore\LongRunning\OperationsClient;
 
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Lifesciences\V2beta\Pipeline;
+use Google\Cloud\LifeSciences\V2beta\Pipeline;
 
-use Google\Cloud\Lifesciences\V2beta\RunPipelineResponse;
-use Google\Cloud\Lifesciences\V2beta\WorkflowsServiceV2BetaClient;
+use Google\Cloud\LifeSciences\V2beta\RunPipelineResponse;
+use Google\Cloud\LifeSciences\V2beta\WorkflowsServiceV2BetaClient;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

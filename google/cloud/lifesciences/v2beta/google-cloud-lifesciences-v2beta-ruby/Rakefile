@@ -85,8 +85,8 @@ task :acceptance, :project, :keyfile do |t, args|
   if project.nil? || keyfile.nil?
     fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V2BETA_TEST_PROJECT=test123 V2BETA_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
-  require "google/cloud/lifesciences/v2beta/workflows_service_v2_beta/credentials"
-  ::Google::Cloud::Lifesciences::V2beta::WorkflowsServiceV2Beta::Credentials.env_vars.each do |path|
+  require "google/cloud/life_sciences/v2beta/workflows_service_v2_beta/credentials"
+  ::Google::Cloud::LifeSciences::V2beta::WorkflowsServiceV2Beta::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
   ENV["V2BETA_PROJECT"] = project

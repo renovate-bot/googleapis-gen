@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Lifesciences\V2beta\Gapic;
+namespace Google\Cloud\LifeSciences\V2beta\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -38,10 +38,10 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Lifesciences\V2beta\Metadata;
-use Google\Cloud\Lifesciences\V2beta\Pipeline;
-use Google\Cloud\Lifesciences\V2beta\RunPipelineRequest;
-use Google\Cloud\Lifesciences\V2beta\RunPipelineResponse;
+use Google\Cloud\LifeSciences\V2beta\Metadata;
+use Google\Cloud\LifeSciences\V2beta\Pipeline;
+use Google\Cloud\LifeSciences\V2beta\RunPipelineRequest;
+use Google\Cloud\LifeSciences\V2beta\RunPipelineResponse;
 use Google\LongRunning\Operation;
 
 /**

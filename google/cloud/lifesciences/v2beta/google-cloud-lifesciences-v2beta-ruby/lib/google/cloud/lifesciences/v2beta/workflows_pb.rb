@@ -185,7 +185,7 @@ end
 
 module Google
   module Cloud
-    module Lifesciences
+    module LifeSciences
       module V2beta
         RunPipelineRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.lifesciences.v2beta.RunPipelineRequest").msgclass
         RunPipelineResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.lifesciences.v2beta.RunPipelineResponse").msgclass

@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Lifesciences
+    module LifeSciences
       module V2beta
         # The arguments to the `RunPipeline` method. The requesting user must have
         # the `iam.serviceAccounts.actAs` permission for the Cloud Life Sciences
@@ -28,7 +28,7 @@ module Google
         #   @return [::String]
         #     The project and location that this request should be executed against.
         # @!attribute [rw] pipeline
-        #   @return [::Google::Cloud::Lifesciences::V2beta::Pipeline]
+        #   @return [::Google::Cloud::LifeSciences::V2beta::Pipeline]
         #     Required. The description of the pipeline to run.
         # @!attribute [rw] labels
         #   @return [::Google::Protobuf::Map{::String => ::String}]
@@ -67,10 +67,10 @@ module Google
 
         # Specifies a series of actions to execute, expressed as Docker containers.
         # @!attribute [rw] actions
-        #   @return [::Array<::Google::Cloud::Lifesciences::V2beta::Action>]
+        #   @return [::Array<::Google::Cloud::LifeSciences::V2beta::Action>]
         #     The list of actions to execute, in the order they are specified.
         # @!attribute [rw] resources
-        #   @return [::Google::Cloud::Lifesciences::V2beta::Resources]
+        #   @return [::Google::Cloud::LifeSciences::V2beta::Resources]
         #     The resources required for execution.
         # @!attribute [rw] environment
         #   @return [::Google::Protobuf::Map{::String => ::String}]
@@ -121,7 +121,7 @@ module Google
         #     If the specified image is not public, the service account specified for
         #     the Virtual Machine must have access to pull the images from GCR, or
         #     appropriate credentials must be specified in the
-        #     {::Google::Cloud::Lifesciences::V2beta::Action#credentials google.cloud.lifesciences.v2beta.Action.credentials} field.
+        #     {::Google::Cloud::LifeSciences::V2beta::Action#credentials google.cloud.lifesciences.v2beta.Action.credentials} field.
         # @!attribute [rw] commands
         #   @return [::Array<::String>]
         #     If specified, overrides the `CMD` specified in the container. If the
@@ -134,7 +134,7 @@ module Google
         # @!attribute [rw] environment
         #   @return [::Google::Protobuf::Map{::String => ::String}]
         #     The environment to pass into the container. This environment is merged
-        #     with values specified in the {::Google::Cloud::Lifesciences::V2beta::Pipeline google.cloud.lifesciences.v2beta.Pipeline}
+        #     with values specified in the {::Google::Cloud::LifeSciences::V2beta::Pipeline google.cloud.lifesciences.v2beta.Pipeline}
         #     message, overwriting any duplicate values.
         #
         #     In addition to the values passed here, a few other values are
@@ -164,7 +164,7 @@ module Google
         #     random port is assigned. To determine the resulting port number, consult
         #     the `ContainerStartedEvent` in the operation metadata.
         # @!attribute [rw] mounts
-        #   @return [::Array<::Google::Cloud::Lifesciences::V2beta::Mount>]
+        #   @return [::Array<::Google::Cloud::LifeSciences::V2beta::Mount>]
         #     A list of mounts to make available to the action.
         #
         #     In addition to the values specified here, every action has a special
@@ -189,7 +189,7 @@ module Google
         #     what sort of action they perform, such as localization or debugging).
         #     They are returned in the operation metadata, but are otherwise ignored.
         # @!attribute [rw] credentials
-        #   @return [::Google::Cloud::Lifesciences::V2beta::Secret]
+        #   @return [::Google::Cloud::LifeSciences::V2beta::Secret]
         #     If the specified image is hosted on a private registry other than Google
         #     Container Registry, the credentials required to pull the image must be
         #     specified here as an encrypted secret.
@@ -323,7 +323,7 @@ module Google
         #     The list of zones allowed for VM allocation. If set, the `regions` field
         #     must not be set.
         # @!attribute [rw] virtual_machine
-        #   @return [::Google::Cloud::Lifesciences::V2beta::VirtualMachine]
+        #   @return [::Google::Cloud::LifeSciences::V2beta::VirtualMachine]
         #     The virtual machine specification.
         class Resources
           include ::Google::Protobuf::MessageExts
@@ -355,18 +355,18 @@ module Google
         #     Labels applied at creation time to the VM. Applied on a best-effort basis
         #     to attached disk resources shortly after VM creation.
         # @!attribute [rw] disks
-        #   @return [::Array<::Google::Cloud::Lifesciences::V2beta::Disk>]
+        #   @return [::Array<::Google::Cloud::LifeSciences::V2beta::Disk>]
         #     The list of disks to create and attach to the VM.
         #
         #     Specify either the `volumes[]` field or the `disks[]` field, but not both.
         # @!attribute [rw] network
-        #   @return [::Google::Cloud::Lifesciences::V2beta::Network]
+        #   @return [::Google::Cloud::LifeSciences::V2beta::Network]
         #     The VM network configuration.
         # @!attribute [rw] accelerators
-        #   @return [::Array<::Google::Cloud::Lifesciences::V2beta::Accelerator>]
+        #   @return [::Array<::Google::Cloud::LifeSciences::V2beta::Accelerator>]
         #     The list of accelerators to attach to the VM.
         # @!attribute [rw] service_account
-        #   @return [::Google::Cloud::Lifesciences::V2beta::ServiceAccount]
+        #   @return [::Google::Cloud::LifeSciences::V2beta::ServiceAccount]
         #     The service account to install on the VM. This account does not need
         #     any permissions other than those required by the pipeline.
         # @!attribute [rw] boot_disk_size_gb
@@ -421,7 +421,7 @@ module Google
         #     cached will be stored on the first cache disk instead of the boot disk.
         #     Only a single image is supported.
         # @!attribute [rw] volumes
-        #   @return [::Array<::Google::Cloud::Lifesciences::V2beta::Volume>]
+        #   @return [::Array<::Google::Cloud::LifeSciences::V2beta::Volume>]
         #     The list of disks and other storage to create or attach to the VM.
         #
         #     Specify either the `volumes[]` field or the `disks[]` field, but not both.
@@ -509,8 +509,8 @@ module Google
         # See https://cloud.google.com/compute/docs/disks/performance for more
         # information about disk type, size, and performance considerations.
         #
-        # Specify either {::Google::Cloud::Lifesciences::V2beta::Volume `Volume`} or
-        # {::Google::Cloud::Lifesciences::V2beta::Disk `Disk`}, but not both.
+        # Specify either {::Google::Cloud::LifeSciences::V2beta::Volume `Volume`} or
+        # {::Google::Cloud::LifeSciences::V2beta::Disk `Disk`}, but not both.
         # @!attribute [rw] name
         #   @return [::String]
         #     A user-supplied name for the disk. Used when mounting the disk into
@@ -538,22 +538,22 @@ module Google
 
         # Carries information about storage that can be attached to a VM.
         #
-        # Specify either {::Google::Cloud::Lifesciences::V2beta::Volume `Volume`} or
-        # {::Google::Cloud::Lifesciences::V2beta::Disk `Disk`}, but not both.
+        # Specify either {::Google::Cloud::LifeSciences::V2beta::Volume `Volume`} or
+        # {::Google::Cloud::LifeSciences::V2beta::Disk `Disk`}, but not both.
         # @!attribute [rw] volume
         #   @return [::String]
         #     A user-supplied name for the volume. Used when mounting the volume into
-        #     {::Google::Cloud::Lifesciences::V2beta::Action `Actions`}. The name must contain
+        #     {::Google::Cloud::LifeSciences::V2beta::Action `Actions`}. The name must contain
         #     only upper and lowercase alphanumeric characters and hyphens and cannot
         #     start with a hyphen.
         # @!attribute [rw] persistent_disk
-        #   @return [::Google::Cloud::Lifesciences::V2beta::PersistentDisk]
+        #   @return [::Google::Cloud::LifeSciences::V2beta::PersistentDisk]
         #     Configuration for a persistent disk.
         # @!attribute [rw] existing_disk
-        #   @return [::Google::Cloud::Lifesciences::V2beta::ExistingDisk]
+        #   @return [::Google::Cloud::LifeSciences::V2beta::ExistingDisk]
         #     Configuration for a existing disk.
         # @!attribute [rw] nfs_mount
-        #   @return [::Google::Cloud::Lifesciences::V2beta::NFSMount]
+        #   @return [::Google::Cloud::LifeSciences::V2beta::NFSMount]
         #     Configuration for an NFS mount.
         class Volume
           include ::Google::Protobuf::MessageExts
@@ -614,13 +614,13 @@ module Google
         # Carries information about the pipeline execution that is returned
         # in the long running operation's metadata field.
         # @!attribute [rw] pipeline
-        #   @return [::Google::Cloud::Lifesciences::V2beta::Pipeline]
+        #   @return [::Google::Cloud::LifeSciences::V2beta::Pipeline]
         #     The pipeline this operation represents.
         # @!attribute [rw] labels
         #   @return [::Google::Protobuf::Map{::String => ::String}]
         #     The user-defined labels associated with this operation.
         # @!attribute [rw] events
-        #   @return [::Array<::Google::Cloud::Lifesciences::V2beta::Event>]
+        #   @return [::Array<::Google::Cloud::LifeSciences::V2beta::Event>]
         #     The list of events that have happened so far during the execution of this
         #     operation.
         # @!attribute [rw] create_time
@@ -660,35 +660,35 @@ module Google
         #     change at any time without notice. Any application logic must use the
         #     information in the `details` field.
         # @!attribute [rw] delayed
-        #   @return [::Google::Cloud::Lifesciences::V2beta::DelayedEvent]
-        #     See {::Google::Cloud::Lifesciences::V2beta::DelayedEvent google.cloud.lifesciences.v2beta.DelayedEvent}.
+        #   @return [::Google::Cloud::LifeSciences::V2beta::DelayedEvent]
+        #     See {::Google::Cloud::LifeSciences::V2beta::DelayedEvent google.cloud.lifesciences.v2beta.DelayedEvent}.
         # @!attribute [rw] worker_assigned
-        #   @return [::Google::Cloud::Lifesciences::V2beta::WorkerAssignedEvent]
-        #     See {::Google::Cloud::Lifesciences::V2beta::WorkerAssignedEvent google.cloud.lifesciences.v2beta.WorkerAssignedEvent}.
+        #   @return [::Google::Cloud::LifeSciences::V2beta::WorkerAssignedEvent]
+        #     See {::Google::Cloud::LifeSciences::V2beta::WorkerAssignedEvent google.cloud.lifesciences.v2beta.WorkerAssignedEvent}.
         # @!attribute [rw] worker_released
-        #   @return [::Google::Cloud::Lifesciences::V2beta::WorkerReleasedEvent]
-        #     See {::Google::Cloud::Lifesciences::V2beta::WorkerReleasedEvent google.cloud.lifesciences.v2beta.WorkerReleasedEvent}.
+        #   @return [::Google::Cloud::LifeSciences::V2beta::WorkerReleasedEvent]
+        #     See {::Google::Cloud::LifeSciences::V2beta::WorkerReleasedEvent google.cloud.lifesciences.v2beta.WorkerReleasedEvent}.
         # @!attribute [rw] pull_started
-        #   @return [::Google::Cloud::Lifesciences::V2beta::PullStartedEvent]
-        #     See {::Google::Cloud::Lifesciences::V2beta::PullStartedEvent google.cloud.lifesciences.v2beta.PullStartedEvent}.
+        #   @return [::Google::Cloud::LifeSciences::V2beta::PullStartedEvent]
+        #     See {::Google::Cloud::LifeSciences::V2beta::PullStartedEvent google.cloud.lifesciences.v2beta.PullStartedEvent}.
         # @!attribute [rw] pull_stopped
-        #   @return [::Google::Cloud::Lifesciences::V2beta::PullStoppedEvent]
-        #     See {::Google::Cloud::Lifesciences::V2beta::PullStoppedEvent google.cloud.lifesciences.v2beta.PullStoppedEvent}.
+        #   @return [::Google::Cloud::LifeSciences::V2beta::PullStoppedEvent]
+        #     See {::Google::Cloud::LifeSciences::V2beta::PullStoppedEvent google.cloud.lifesciences.v2beta.PullStoppedEvent}.
         # @!attribute [rw] container_started
-        #   @return [::Google::Cloud::Lifesciences::V2beta::ContainerStartedEvent]
-        #     See {::Google::Cloud::Lifesciences::V2beta::ContainerStartedEvent google.cloud.lifesciences.v2beta.ContainerStartedEvent}.
+        #   @return [::Google::Cloud::LifeSciences::V2beta::ContainerStartedEvent]
+        #     See {::Google::Cloud::LifeSciences::V2beta::ContainerStartedEvent google.cloud.lifesciences.v2beta.ContainerStartedEvent}.
         # @!attribute [rw] container_stopped
-        #   @return [::Google::Cloud::Lifesciences::V2beta::ContainerStoppedEvent]
-        #     See {::Google::Cloud::Lifesciences::V2beta::ContainerStoppedEvent google.cloud.lifesciences.v2beta.ContainerStoppedEvent}.
+        #   @return [::Google::Cloud::LifeSciences::V2beta::ContainerStoppedEvent]
+        #     See {::Google::Cloud::LifeSciences::V2beta::ContainerStoppedEvent google.cloud.lifesciences.v2beta.ContainerStoppedEvent}.
         # @!attribute [rw] container_killed
-        #   @return [::Google::Cloud::Lifesciences::V2beta::ContainerKilledEvent]
-        #     See {::Google::Cloud::Lifesciences::V2beta::ContainerKilledEvent google.cloud.lifesciences.v2beta.ContainerKilledEvent}.
+        #   @return [::Google::Cloud::LifeSciences::V2beta::ContainerKilledEvent]
+        #     See {::Google::Cloud::LifeSciences::V2beta::ContainerKilledEvent google.cloud.lifesciences.v2beta.ContainerKilledEvent}.
         # @!attribute [rw] unexpected_exit_status
-        #   @return [::Google::Cloud::Lifesciences::V2beta::UnexpectedExitStatusEvent]
-        #     See {::Google::Cloud::Lifesciences::V2beta::UnexpectedExitStatusEvent google.cloud.lifesciences.v2beta.UnexpectedExitStatusEvent}.
+        #   @return [::Google::Cloud::LifeSciences::V2beta::UnexpectedExitStatusEvent]
+        #     See {::Google::Cloud::LifeSciences::V2beta::UnexpectedExitStatusEvent google.cloud.lifesciences.v2beta.UnexpectedExitStatusEvent}.
         # @!attribute [rw] failed
-        #   @return [::Google::Cloud::Lifesciences::V2beta::FailedEvent]
-        #     See {::Google::Cloud::Lifesciences::V2beta::FailedEvent google.cloud.lifesciences.v2beta.FailedEvent}.
+        #   @return [::Google::Cloud::LifeSciences::V2beta::FailedEvent]
+        #     See {::Google::Cloud::LifeSciences::V2beta::FailedEvent google.cloud.lifesciences.v2beta.FailedEvent}.
         class Event
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

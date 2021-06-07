@@ -24,9 +24,9 @@
  * @experimental
  */
 
-namespace Google\Cloud\Lifesciences\V2beta;
+namespace Google\Cloud\LifeSciences\V2beta;
 
-use Google\Cloud\Lifesciences\V2beta\Gapic\WorkflowsServiceV2BetaGapicClient;
+use Google\Cloud\LifeSciences\V2beta\Gapic\WorkflowsServiceV2BetaGapicClient;
 
 /** {@inheritdoc} */
 class WorkflowsServiceV2BetaClient extends WorkflowsServiceV2BetaGapicClient

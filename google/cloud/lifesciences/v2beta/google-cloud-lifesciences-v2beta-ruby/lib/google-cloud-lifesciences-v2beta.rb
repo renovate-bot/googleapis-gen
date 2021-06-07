@@ -18,4 +18,4 @@
 
 # This gem does not autoload during Bundler.require. To load this gem,
 # issue explicit require statements for the packages desired, e.g.:
-# require "google/cloud/lifesciences/v2beta"
+# require "google/cloud/life_sciences/v2beta"

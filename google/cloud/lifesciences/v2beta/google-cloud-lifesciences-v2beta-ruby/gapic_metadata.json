@@ -3,12 +3,12 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "ruby",
   "protoPackage": "google.cloud.lifesciences.v2beta",
-  "libraryPackage": "::Google::Cloud::Lifesciences::V2beta",
+  "libraryPackage": "::Google::Cloud::LifeSciences::V2beta",
   "services": {
     "WorkflowsServiceV2Beta": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Lifesciences::V2beta::WorkflowsServiceV2Beta::Client",
+          "libraryClient": "::Google::Cloud::LifeSciences::V2beta::WorkflowsServiceV2Beta::Client",
           "rpcs": {
             "RunPipeline": {
               "methods": [

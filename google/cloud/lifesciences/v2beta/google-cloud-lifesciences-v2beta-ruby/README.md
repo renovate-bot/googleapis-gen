@@ -29,9 +29,9 @@ In order to use this library, you first need to go through the following steps:
 ## Quick Start
 
 ```ruby
-require "google/cloud/lifesciences/v2beta"
+require "google/cloud/life_sciences/v2beta"
 
-client = ::Google::Cloud::Lifesciences::V2beta::WorkflowsServiceV2Beta::Client.new
+client = ::Google::Cloud::LifeSciences::V2beta::WorkflowsServiceV2Beta::Client.new
 request = my_create_request
 response = client.run_pipeline request
 ```

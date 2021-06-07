@@ -5,8 +5,8 @@ return [
         'google.cloud.lifesciences.v2beta.WorkflowsServiceV2Beta' => [
             'RunPipeline' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Lifesciences\V2beta\RunPipelineResponse',
-                    'metadataReturnType' => '\Google\Cloud\Lifesciences\V2beta\Metadata',
+                    'operationReturnType' => '\Google\Cloud\LifeSciences\V2beta\RunPipelineResponse',
+                    'metadataReturnType' => '\Google\Cloud\LifeSciences\V2beta\Metadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
