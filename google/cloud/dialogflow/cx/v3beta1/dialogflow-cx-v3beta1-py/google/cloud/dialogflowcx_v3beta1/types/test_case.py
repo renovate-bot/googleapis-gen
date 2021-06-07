@@ -245,6 +245,8 @@ class ConversationTurn(proto.Message):
                 response to the user utterance. Often if
                 parameters are injected, webhooks should not be
                 enabled.
+            enable_sentiment_analysis (bool):
+                Whether sentiment analysis is enabled.
         """
 
         input = proto.Field(
@@ -260,6 +262,10 @@ class ConversationTurn(proto.Message):
         is_webhook_enabled = proto.Field(
             proto.BOOL,
             number=3,
+        )
+        enable_sentiment_analysis = proto.Field(
+            proto.BOOL,
+            number=7,
         )
 
     class VirtualAgentOutput(proto.Message):

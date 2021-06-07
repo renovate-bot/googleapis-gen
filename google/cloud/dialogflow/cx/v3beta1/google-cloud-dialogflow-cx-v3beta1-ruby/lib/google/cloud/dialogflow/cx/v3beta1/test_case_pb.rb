@@ -50,6 +50,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :input, :message, 5, "google.cloud.dialogflow.cx.v3beta1.QueryInput"
       optional :injected_parameters, :message, 2, "google.protobuf.Struct"
       optional :is_webhook_enabled, :bool, 3
+      optional :enable_sentiment_analysis, :bool, 7
     end
     add_message "google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput" do
       optional :session_parameters, :message, 4, "google.protobuf.Struct"

@@ -37,6 +37,12 @@ class UserInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_webhook_enabled = 3;</code>
      */
     protected $is_webhook_enabled = false;
+    /**
+     * Whether sentiment analysis is enabled.
+     *
+     * Generated from protobuf field <code>bool enable_sentiment_analysis = 7;</code>
+     */
+    protected $enable_sentiment_analysis = false;
 
     /**
      * Constructor.
@@ -54,6 +60,8 @@ class UserInput extends \Google\Protobuf\Internal\Message
      *           If webhooks should be allowed to trigger in response to the user
      *           utterance. Often if parameters are injected, webhooks should not be
      *           enabled.
+     *     @type bool $enable_sentiment_analysis
+     *           Whether sentiment analysis is enabled.
      * }
      */
     public function __construct($data = NULL) {
@@ -163,6 +171,32 @@ class UserInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_webhook_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether sentiment analysis is enabled.
+     *
+     * Generated from protobuf field <code>bool enable_sentiment_analysis = 7;</code>
+     * @return bool
+     */
+    public function getEnableSentimentAnalysis()
+    {
+        return $this->enable_sentiment_analysis;
+    }
+
+    /**
+     * Whether sentiment analysis is enabled.
+     *
+     * Generated from protobuf field <code>bool enable_sentiment_analysis = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableSentimentAnalysis($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_sentiment_analysis = $var;
 
         return $this;
     }
