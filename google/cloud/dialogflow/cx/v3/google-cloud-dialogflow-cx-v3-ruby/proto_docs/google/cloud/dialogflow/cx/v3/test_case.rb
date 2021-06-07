@@ -125,6 +125,9 @@ module Google
             #     If webhooks should be allowed to trigger in response to the user
             #     utterance. Often if parameters are injected, webhooks should not be
             #     enabled.
+            # @!attribute [rw] enable_sentiment_analysis
+            #   @return [::Boolean]
+            #     Whether sentiment analysis is enabled.
             class UserInput
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods

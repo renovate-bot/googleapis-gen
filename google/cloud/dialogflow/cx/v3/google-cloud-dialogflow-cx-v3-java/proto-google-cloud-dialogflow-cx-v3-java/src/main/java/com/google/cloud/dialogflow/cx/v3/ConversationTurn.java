@@ -186,6 +186,16 @@ private static final long serialVersionUID = 0L;
      * @return The isWebhookEnabled.
      */
     boolean getIsWebhookEnabled();
+
+    /**
+     * <pre>
+     * Whether sentiment analysis is enabled.
+     * </pre>
+     *
+     * <code>bool enable_sentiment_analysis = 7;</code>
+     * @return The enableSentimentAnalysis.
+     */
+    boolean getEnableSentimentAnalysis();
   }
   /**
    * <pre>
@@ -265,6 +275,11 @@ private static final long serialVersionUID = 0L;
                 input_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 56: {
+
+              enableSentimentAnalysis_ = input.readBool();
               break;
             }
             default: {
@@ -398,6 +413,21 @@ private static final long serialVersionUID = 0L;
       return isWebhookEnabled_;
     }
 
+    public static final int ENABLE_SENTIMENT_ANALYSIS_FIELD_NUMBER = 7;
+    private boolean enableSentimentAnalysis_;
+    /**
+     * <pre>
+     * Whether sentiment analysis is enabled.
+     * </pre>
+     *
+     * <code>bool enable_sentiment_analysis = 7;</code>
+     * @return The enableSentimentAnalysis.
+     */
+    @java.lang.Override
+    public boolean getEnableSentimentAnalysis() {
+      return enableSentimentAnalysis_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -421,6 +451,9 @@ private static final long serialVersionUID = 0L;
       if (input_ != null) {
         output.writeMessage(5, getInput());
       }
+      if (enableSentimentAnalysis_ != false) {
+        output.writeBool(7, enableSentimentAnalysis_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -441,6 +474,10 @@ private static final long serialVersionUID = 0L;
       if (input_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getInput());
+      }
+      if (enableSentimentAnalysis_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, enableSentimentAnalysis_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -469,6 +506,8 @@ private static final long serialVersionUID = 0L;
       }
       if (getIsWebhookEnabled()
           != other.getIsWebhookEnabled()) return false;
+      if (getEnableSentimentAnalysis()
+          != other.getEnableSentimentAnalysis()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -491,6 +530,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + IS_WEBHOOK_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsWebhookEnabled());
+      hash = (37 * hash) + ENABLE_SENTIMENT_ANALYSIS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEnableSentimentAnalysis());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -642,6 +684,8 @@ private static final long serialVersionUID = 0L;
         }
         isWebhookEnabled_ = false;
 
+        enableSentimentAnalysis_ = false;
+
         return this;
       }
 
@@ -679,6 +723,7 @@ private static final long serialVersionUID = 0L;
           result.injectedParameters_ = injectedParametersBuilder_.build();
         }
         result.isWebhookEnabled_ = isWebhookEnabled_;
+        result.enableSentimentAnalysis_ = enableSentimentAnalysis_;
         onBuilt();
         return result;
       }
@@ -735,6 +780,9 @@ private static final long serialVersionUID = 0L;
         }
         if (other.getIsWebhookEnabled() != false) {
           setIsWebhookEnabled(other.getIsWebhookEnabled());
+        }
+        if (other.getEnableSentimentAnalysis() != false) {
+          setEnableSentimentAnalysis(other.getEnableSentimentAnalysis());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1138,6 +1186,49 @@ private static final long serialVersionUID = 0L;
       public Builder clearIsWebhookEnabled() {
         
         isWebhookEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableSentimentAnalysis_ ;
+      /**
+       * <pre>
+       * Whether sentiment analysis is enabled.
+       * </pre>
+       *
+       * <code>bool enable_sentiment_analysis = 7;</code>
+       * @return The enableSentimentAnalysis.
+       */
+      @java.lang.Override
+      public boolean getEnableSentimentAnalysis() {
+        return enableSentimentAnalysis_;
+      }
+      /**
+       * <pre>
+       * Whether sentiment analysis is enabled.
+       * </pre>
+       *
+       * <code>bool enable_sentiment_analysis = 7;</code>
+       * @param value The enableSentimentAnalysis to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableSentimentAnalysis(boolean value) {
+        
+        enableSentimentAnalysis_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Whether sentiment analysis is enabled.
+       * </pre>
+       *
+       * <code>bool enable_sentiment_analysis = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableSentimentAnalysis() {
+        
+        enableSentimentAnalysis_ = false;
         onChanged();
         return this;
       }
