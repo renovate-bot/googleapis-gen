@@ -22,9 +22,9 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Apigeeconnect\V1;
+namespace Google\Cloud\ApigeeConnect\V1;
 
-use Google\Cloud\Apigeeconnect\V1\Gapic\TetherGapicClient;
+use Google\Cloud\ApigeeConnect\V1\Gapic\TetherGapicClient;
 
 /** {@inheritdoc} */
 class TetherClient extends TetherGapicClient

@@ -32,7 +32,7 @@ end
 
 module Google
   module Cloud
-    module Apigeeconnect
+    module ApigeeConnect
       module V1
         ListConnectionsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.apigeeconnect.v1.ListConnectionsRequest").msgclass
         ListConnectionsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.apigeeconnect.v1.ListConnectionsResponse").msgclass

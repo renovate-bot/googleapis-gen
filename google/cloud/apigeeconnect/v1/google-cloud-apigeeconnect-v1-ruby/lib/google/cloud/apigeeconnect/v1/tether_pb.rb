@@ -78,7 +78,7 @@ end
 
 module Google
   module Cloud
-    module Apigeeconnect
+    module ApigeeConnect
       module V1
         EgressRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.apigeeconnect.v1.EgressRequest").msgclass
         Payload = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.apigeeconnect.v1.Payload").msgclass

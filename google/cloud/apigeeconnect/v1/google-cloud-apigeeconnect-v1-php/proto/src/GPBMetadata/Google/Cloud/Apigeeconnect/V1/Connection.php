@@ -20,7 +20,7 @@ class Connection
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-½
+ 	
 .google/cloud/apigeeconnect/v1/connection.protogoogle.cloud.apigeeconnect.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto"~
 ListConnectionsRequest=
 parent (	B-àAúA\'
@@ -40,8 +40,8 @@ Connection
 name (	
 region (	2ª
 ConnectionServiceÂ
-ListConnections5.google.cloud.apigeeconnect.v1.ListConnectionsRequest6.google.cloud.apigeeconnect.v1.ListConnectionsResponse"@‚Óä“1//v1/{parent=projects/*/endpoints/*}/connectionsÚAparentPÊAapigeeconnect.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBÕ
-!com.google.cloud.apigeeconnect.v1BConnectionProtoPZJgoogle.golang.org/genproto/googleapis/cloud/apigeeconnect/v1;apigeeconnectêAP
+ListConnections5.google.cloud.apigeeconnect.v1.ListConnectionsRequest6.google.cloud.apigeeconnect.v1.ListConnectionsResponse"@‚Óä“1//v1/{parent=projects/*/endpoints/*}/connectionsÚAparentPÊAapigeeconnect.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformB¸
+!com.google.cloud.apigeeconnect.v1BConnectionProtoPZJgoogle.golang.org/genproto/googleapis/cloud/apigeeconnect/v1;apigeeconnectªGoogle.Cloud.ApigeeConnect.V1ÊGoogle\\Cloud\\ApigeeConnect\\V1ê Google::Cloud::ApigeeConnect::V1êAP
 %apigeeconnect.googleapis.com/Endpoint\'projects/{project}/endpoints/{endpoint}bproto3'
         , true);
 

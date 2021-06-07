@@ -22,9 +22,9 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Apigeeconnect\V1;
+namespace Google\Cloud\ApigeeConnect\V1;
 
-use Google\Cloud\Apigeeconnect\V1\Gapic\ConnectionServiceGapicClient;
+use Google\Cloud\ApigeeConnect\V1\Gapic\ConnectionServiceGapicClient;
 
 /** {@inheritdoc} */
 class ConnectionServiceClient extends ConnectionServiceGapicClient

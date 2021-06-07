@@ -19,17 +19,17 @@
 
 module Google
   module Cloud
-    module Apigeeconnect
+    module ApigeeConnect
       module V1
         # gRPC request payload for tether.
         # @!attribute [rw] id
         #   @return [::String]
         #     Unique identifier for the request.
         # @!attribute [rw] payload
-        #   @return [::Google::Cloud::Apigeeconnect::V1::Payload]
+        #   @return [::Google::Cloud::ApigeeConnect::V1::Payload]
         #     Actual payload to send to agent.
         # @!attribute [rw] endpoint
-        #   @return [::Google::Cloud::Apigeeconnect::V1::TetherEndpoint]
+        #   @return [::Google::Cloud::ApigeeConnect::V1::TetherEndpoint]
         #     Tether Endpoint.
         # @!attribute [rw] project
         #   @return [::String]
@@ -48,13 +48,13 @@ module Google
 
         # Payload for EgressRequest.
         # @!attribute [rw] http_request
-        #   @return [::Google::Cloud::Apigeeconnect::V1::HttpRequest]
+        #   @return [::Google::Cloud::ApigeeConnect::V1::HttpRequest]
         #     The HttpRequest proto.
         # @!attribute [rw] stream_info
-        #   @return [::Google::Cloud::Apigeeconnect::V1::StreamInfo]
+        #   @return [::Google::Cloud::ApigeeConnect::V1::StreamInfo]
         #     The information of stream.
         # @!attribute [rw] action
-        #   @return [::Google::Cloud::Apigeeconnect::V1::Action]
+        #   @return [::Google::Cloud::ApigeeConnect::V1::Action]
         #     The action taken by agent.
         class Payload
           include ::Google::Protobuf::MessageExts
@@ -75,7 +75,7 @@ module Google
         #   @return [::String]
         #     Unique identifier for the response. Matches the EgressRequest's id.
         # @!attribute [rw] http_response
-        #   @return [::Google::Cloud::Apigeeconnect::V1::HttpResponse]
+        #   @return [::Google::Cloud::ApigeeConnect::V1::HttpResponse]
         #     HttpResponse.
         # @!attribute [rw] status
         #   @return [::Google::Rpc::Status]
@@ -89,7 +89,7 @@ module Google
         #     Unique identifier for clients to trace their request/response. Matches the
         #     EgressRequest's trace id
         # @!attribute [rw] endpoint
-        #   @return [::Google::Cloud::Apigeeconnect::V1::TetherEndpoint]
+        #   @return [::Google::Cloud::ApigeeConnect::V1::TetherEndpoint]
         #     Tether Endpoint.
         # @!attribute [rw] name
         #   @return [::String]
@@ -109,10 +109,10 @@ module Google
         #     The HTTP request method.
         #     Valid methods: "GET", "HEAD", "POST", "PUT", "PATCH","DELETE".
         # @!attribute [rw] url
-        #   @return [::Google::Cloud::Apigeeconnect::V1::Url]
+        #   @return [::Google::Cloud::ApigeeConnect::V1::Url]
         #     The HTTP request URL.
         # @!attribute [rw] headers
-        #   @return [::Array<::Google::Cloud::Apigeeconnect::V1::Header>]
+        #   @return [::Array<::Google::Cloud::ApigeeConnect::V1::Header>]
         #     The HTTP request headers.
         # @!attribute [rw] body
         #   @return [::String]
@@ -127,7 +127,7 @@ module Google
         #
         #  `[scheme://][google.cloud.apigeeconnect.v1.Url.host][path]`
         # @!attribute [rw] scheme
-        #   @return [::Google::Cloud::Apigeeconnect::V1::Scheme]
+        #   @return [::Google::Cloud::ApigeeConnect::V1::Scheme]
         #     Scheme.
         # @!attribute [rw] host
         #   @return [::String]
@@ -164,7 +164,7 @@ module Google
         #   @return [::String]
         #     The HTTP 1.1 response body.
         # @!attribute [rw] headers
-        #   @return [::Array<::Google::Cloud::Apigeeconnect::V1::Header>]
+        #   @return [::Array<::Google::Cloud::ApigeeConnect::V1::Header>]
         #     The HTTP response headers.
         # @!attribute [rw] content_length
         #   @return [::Integer]

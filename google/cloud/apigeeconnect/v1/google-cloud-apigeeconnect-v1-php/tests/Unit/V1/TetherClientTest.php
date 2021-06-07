@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Apigeeconnect\Tests\Unit\V1;
+namespace Google\Cloud\ApigeeConnect\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,9 +29,9 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Apigeeconnect\V1\EgressRequest;
-use Google\Cloud\Apigeeconnect\V1\EgressResponse;
-use Google\Cloud\Apigeeconnect\V1\TetherClient;
+use Google\Cloud\ApigeeConnect\V1\EgressRequest;
+use Google\Cloud\ApigeeConnect\V1\EgressResponse;
+use Google\Cloud\ApigeeConnect\V1\TetherClient;
 use Google\Rpc\Code;
 use stdClass;
 

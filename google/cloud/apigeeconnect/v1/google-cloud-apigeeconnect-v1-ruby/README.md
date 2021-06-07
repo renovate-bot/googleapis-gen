@@ -29,9 +29,9 @@ In order to use this library, you first need to go through the following steps:
 ## Quick Start
 
 ```ruby
-require "google/cloud/apigeeconnect/v1"
+require "google/cloud/apigee_connect/v1"
 
-client = ::Google::Cloud::Apigeeconnect::V1::ConnectionService::Client.new
+client = ::Google::Cloud::ApigeeConnect::V1::ConnectionService::Client.new
 request = my_create_request
 response = client.list_connections request
 ```

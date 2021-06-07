@@ -22,7 +22,7 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Apigeeconnect\V1\Gapic;
+namespace Google\Cloud\ApigeeConnect\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -34,8 +34,8 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Apigeeconnect\V1\ListConnectionsRequest;
-use Google\Cloud\Apigeeconnect\V1\ListConnectionsResponse;
+use Google\Cloud\ApigeeConnect\V1\ListConnectionsRequest;
+use Google\Cloud\ApigeeConnect\V1\ListConnectionsResponse;
 
 /**
  * Service Description: Service Interface for the Apigee Connect connection management APIs.

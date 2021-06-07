@@ -22,7 +22,7 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Apigeeconnect\V1\Gapic;
+namespace Google\Cloud\ApigeeConnect\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Call;
@@ -31,8 +31,8 @@ use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Apigeeconnect\V1\EgressRequest;
-use Google\Cloud\Apigeeconnect\V1\EgressResponse;
+use Google\Cloud\ApigeeConnect\V1\EgressRequest;
+use Google\Cloud\ApigeeConnect\V1\EgressResponse;
 
 /**
  * Service Description: Tether provides a way for the control plane to send HTTP API requests to

@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Apigeeconnect
+    module ApigeeConnect
       module V1
         # The request for [ListConnections][Management.ListConnections].
         # @!attribute [rw] parent
@@ -46,7 +46,7 @@ module Google
         # The response for
         # [ListConnections][Management.ListConnections].
         # @!attribute [rw] connections
-        #   @return [::Array<::Google::Cloud::Apigeeconnect::V1::Connection>]
+        #   @return [::Array<::Google::Cloud::ApigeeConnect::V1::Connection>]
         #     A list of clients.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -62,7 +62,7 @@ module Google
         #     The endpoint that the connection is made against.
         #     Format: `projects/{project_number}/endpoints/{endpoint}`
         # @!attribute [rw] cluster
-        #   @return [::Google::Cloud::Apigeeconnect::V1::Cluster]
+        #   @return [::Google::Cloud::ApigeeConnect::V1::Cluster]
         #     Cluster information.
         # @!attribute [rw] stream_count
         #   @return [::Integer]
