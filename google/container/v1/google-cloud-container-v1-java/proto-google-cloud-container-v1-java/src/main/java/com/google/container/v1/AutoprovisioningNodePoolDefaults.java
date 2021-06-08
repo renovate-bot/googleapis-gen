@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     minCpuPlatform_ = "";
     diskType_ = "";
     bootDiskKmsKey_ = "";
+    imageType_ = "";
   }
 
   @java.lang.Override
@@ -134,6 +135,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             bootDiskKmsKey_ = s;
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            imageType_ = s;
             break;
           }
           default: {
@@ -567,6 +574,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IMAGE_TYPE_FIELD_NUMBER = 10;
+  private volatile java.lang.Object imageType_;
+  /**
+   * <pre>
+   * The image type to use for NAP created node.
+   * </pre>
+   *
+   * <code>string image_type = 10;</code>
+   * @return The imageType.
+   */
+  @java.lang.Override
+  public java.lang.String getImageType() {
+    java.lang.Object ref = imageType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      imageType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The image type to use for NAP created node.
+   * </pre>
+   *
+   * <code>string image_type = 10;</code>
+   * @return The bytes for imageType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getImageTypeBytes() {
+    java.lang.Object ref = imageType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      imageType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -607,6 +660,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getBootDiskKmsKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, bootDiskKmsKey_);
+    }
+    if (!getImageTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, imageType_);
     }
     unknownFields.writeTo(output);
   }
@@ -653,6 +709,9 @@ private static final long serialVersionUID = 0L;
     if (!getBootDiskKmsKeyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, bootDiskKmsKey_);
     }
+    if (!getImageTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, imageType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -695,6 +754,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getBootDiskKmsKey()
         .equals(other.getBootDiskKmsKey())) return false;
+    if (!getImageType()
+        .equals(other.getImageType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -732,6 +793,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + BOOT_DISK_KMS_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getBootDiskKmsKey().hashCode();
+    hash = (37 * hash) + IMAGE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getImageType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -900,6 +963,8 @@ private static final long serialVersionUID = 0L;
       }
       bootDiskKmsKey_ = "";
 
+      imageType_ = "";
+
       return this;
     }
 
@@ -952,6 +1017,7 @@ private static final long serialVersionUID = 0L;
         result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
       }
       result.bootDiskKmsKey_ = bootDiskKmsKey_;
+      result.imageType_ = imageType_;
       onBuilt();
       return result;
     }
@@ -1036,6 +1102,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getBootDiskKmsKey().isEmpty()) {
         bootDiskKmsKey_ = other.bootDiskKmsKey_;
+        onChanged();
+      }
+      if (!other.getImageType().isEmpty()) {
+        imageType_ = other.imageType_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2183,6 +2253,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       bootDiskKmsKey_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object imageType_ = "";
+    /**
+     * <pre>
+     * The image type to use for NAP created node.
+     * </pre>
+     *
+     * <code>string image_type = 10;</code>
+     * @return The imageType.
+     */
+    public java.lang.String getImageType() {
+      java.lang.Object ref = imageType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The image type to use for NAP created node.
+     * </pre>
+     *
+     * <code>string image_type = 10;</code>
+     * @return The bytes for imageType.
+     */
+    public com.google.protobuf.ByteString
+        getImageTypeBytes() {
+      java.lang.Object ref = imageType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        imageType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The image type to use for NAP created node.
+     * </pre>
+     *
+     * <code>string image_type = 10;</code>
+     * @param value The imageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      imageType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The image type to use for NAP created node.
+     * </pre>
+     *
+     * <code>string image_type = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearImageType() {
+      
+      imageType_ = getDefaultInstance().getImageType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The image type to use for NAP created node.
+     * </pre>
+     *
+     * <code>string image_type = 10;</code>
+     * @param value The bytes for imageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      imageType_ = value;
       onChanged();
       return this;
     }
