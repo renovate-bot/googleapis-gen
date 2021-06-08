@@ -806,6 +806,37 @@ public final class CloudChannelServiceGrpc {
     return getUpdateChannelPartnerLinkMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.channel.v1.LookupOfferRequest,
+      com.google.cloud.channel.v1.Offer> getLookupOfferMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LookupOffer",
+      requestType = com.google.cloud.channel.v1.LookupOfferRequest.class,
+      responseType = com.google.cloud.channel.v1.Offer.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.channel.v1.LookupOfferRequest,
+      com.google.cloud.channel.v1.Offer> getLookupOfferMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.channel.v1.LookupOfferRequest, com.google.cloud.channel.v1.Offer> getLookupOfferMethod;
+    if ((getLookupOfferMethod = CloudChannelServiceGrpc.getLookupOfferMethod) == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getLookupOfferMethod = CloudChannelServiceGrpc.getLookupOfferMethod) == null) {
+          CloudChannelServiceGrpc.getLookupOfferMethod = getLookupOfferMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.channel.v1.LookupOfferRequest, com.google.cloud.channel.v1.Offer>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LookupOffer"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.channel.v1.LookupOfferRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.channel.v1.Offer.getDefaultInstance()))
+              .setSchemaDescriptor(new CloudChannelServiceMethodDescriptorSupplier("LookupOffer"))
+              .build();
+        }
+      }
+    }
+    return getLookupOfferMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.cloud.channel.v1.ListProductsRequest,
       com.google.cloud.channel.v1.ListProductsResponse> getListProductsMethod;
 
@@ -1137,7 +1168,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [Customer][google.cloud.channel.v1.Customer] resource.
+     * Returns the requested [Customer][google.cloud.channel.v1.Customer] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The reseller account making the request is different
      * from the reseller account in the API request.
@@ -1213,7 +1244,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently and irreversibly.
+     * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently.
      * Possible error codes:
      * * PERMISSION_DENIED: The account making the request does not own
      * this customer.
@@ -1316,7 +1347,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
+     * Returns the requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The customer doesn't belong to the reseller.
      * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
@@ -1651,7 +1682,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.
+     * Returns the requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.
      * You must be a distributor to call this method.
      * Possible error codes:
      * * PERMISSION_DENIED: The reseller account making the request is different
@@ -1721,6 +1752,22 @@ public final class CloudChannelServiceGrpc {
     public void updateChannelPartnerLink(com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateChannelPartnerLinkMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * NOT_FOUND: Entitlement or offer was not found.
+     * Return value:
+     * The [Offer][google.cloud.channel.v1.Offer] resource.
+     * </pre>
+     */
+    public void lookupOffer(com.google.cloud.channel.v1.LookupOfferRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Offer> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLookupOfferMethod(), responseObserver);
     }
 
     /**
@@ -2040,6 +2087,13 @@ public final class CloudChannelServiceGrpc {
                 com.google.cloud.channel.v1.ChannelPartnerLink>(
                   this, METHODID_UPDATE_CHANNEL_PARTNER_LINK)))
           .addMethod(
+            getLookupOfferMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.channel.v1.LookupOfferRequest,
+                com.google.cloud.channel.v1.Offer>(
+                  this, METHODID_LOOKUP_OFFER)))
+          .addMethod(
             getListProductsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -2149,7 +2203,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [Customer][google.cloud.channel.v1.Customer] resource.
+     * Returns the requested [Customer][google.cloud.channel.v1.Customer] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The reseller account making the request is different
      * from the reseller account in the API request.
@@ -2229,7 +2283,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently and irreversibly.
+     * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently.
      * Possible error codes:
      * * PERMISSION_DENIED: The account making the request does not own
      * this customer.
@@ -2337,7 +2391,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
+     * Returns the requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The customer doesn't belong to the reseller.
      * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
@@ -2684,7 +2738,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.
+     * Returns the requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.
      * You must be a distributor to call this method.
      * Possible error codes:
      * * PERMISSION_DENIED: The reseller account making the request is different
@@ -2757,6 +2811,23 @@ public final class CloudChannelServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateChannelPartnerLinkMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * NOT_FOUND: Entitlement or offer was not found.
+     * Return value:
+     * The [Offer][google.cloud.channel.v1.Offer] resource.
+     * </pre>
+     */
+    public void lookupOffer(com.google.cloud.channel.v1.LookupOfferRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Offer> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLookupOfferMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2956,7 +3027,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [Customer][google.cloud.channel.v1.Customer] resource.
+     * Returns the requested [Customer][google.cloud.channel.v1.Customer] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The reseller account making the request is different
      * from the reseller account in the API request.
@@ -3032,7 +3103,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently and irreversibly.
+     * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently.
      * Possible error codes:
      * * PERMISSION_DENIED: The account making the request does not own
      * this customer.
@@ -3135,7 +3206,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
+     * Returns the requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The customer doesn't belong to the reseller.
      * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
@@ -3470,7 +3541,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.
+     * Returns the requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.
      * You must be a distributor to call this method.
      * Possible error codes:
      * * PERMISSION_DENIED: The reseller account making the request is different
@@ -3540,6 +3611,22 @@ public final class CloudChannelServiceGrpc {
     public com.google.cloud.channel.v1.ChannelPartnerLink updateChannelPartnerLink(com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateChannelPartnerLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * NOT_FOUND: Entitlement or offer was not found.
+     * Return value:
+     * The [Offer][google.cloud.channel.v1.Offer] resource.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.Offer lookupOffer(com.google.cloud.channel.v1.LookupOfferRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupOfferMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3732,7 +3819,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [Customer][google.cloud.channel.v1.Customer] resource.
+     * Returns the requested [Customer][google.cloud.channel.v1.Customer] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The reseller account making the request is different
      * from the reseller account in the API request.
@@ -3812,7 +3899,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently and irreversibly.
+     * Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently.
      * Possible error codes:
      * * PERMISSION_DENIED: The account making the request does not own
      * this customer.
@@ -3920,7 +4007,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
+     * Returns the requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The customer doesn't belong to the reseller.
      * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
@@ -4267,7 +4354,7 @@ public final class CloudChannelServiceGrpc {
 
     /**
      * <pre>
-     * Returns a requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.
+     * Returns the requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.
      * You must be a distributor to call this method.
      * Possible error codes:
      * * PERMISSION_DENIED: The reseller account making the request is different
@@ -4340,6 +4427,23 @@ public final class CloudChannelServiceGrpc {
         com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateChannelPartnerLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * NOT_FOUND: Entitlement or offer was not found.
+     * Return value:
+     * The [Offer][google.cloud.channel.v1.Offer] resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.Offer> lookupOffer(
+        com.google.cloud.channel.v1.LookupOfferRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLookupOfferMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4515,14 +4619,15 @@ public final class CloudChannelServiceGrpc {
   private static final int METHODID_GET_CHANNEL_PARTNER_LINK = 22;
   private static final int METHODID_CREATE_CHANNEL_PARTNER_LINK = 23;
   private static final int METHODID_UPDATE_CHANNEL_PARTNER_LINK = 24;
-  private static final int METHODID_LIST_PRODUCTS = 25;
-  private static final int METHODID_LIST_SKUS = 26;
-  private static final int METHODID_LIST_OFFERS = 27;
-  private static final int METHODID_LIST_PURCHASABLE_SKUS = 28;
-  private static final int METHODID_LIST_PURCHASABLE_OFFERS = 29;
-  private static final int METHODID_REGISTER_SUBSCRIBER = 30;
-  private static final int METHODID_UNREGISTER_SUBSCRIBER = 31;
-  private static final int METHODID_LIST_SUBSCRIBERS = 32;
+  private static final int METHODID_LOOKUP_OFFER = 25;
+  private static final int METHODID_LIST_PRODUCTS = 26;
+  private static final int METHODID_LIST_SKUS = 27;
+  private static final int METHODID_LIST_OFFERS = 28;
+  private static final int METHODID_LIST_PURCHASABLE_SKUS = 29;
+  private static final int METHODID_LIST_PURCHASABLE_OFFERS = 30;
+  private static final int METHODID_REGISTER_SUBSCRIBER = 31;
+  private static final int METHODID_UNREGISTER_SUBSCRIBER = 32;
+  private static final int METHODID_LIST_SUBSCRIBERS = 33;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4640,6 +4745,10 @@ public final class CloudChannelServiceGrpc {
         case METHODID_UPDATE_CHANNEL_PARTNER_LINK:
           serviceImpl.updateChannelPartnerLink((com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink>) responseObserver);
+          break;
+        case METHODID_LOOKUP_OFFER:
+          serviceImpl.lookupOffer((com.google.cloud.channel.v1.LookupOfferRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Offer>) responseObserver);
           break;
         case METHODID_LIST_PRODUCTS:
           serviceImpl.listProducts((com.google.cloud.channel.v1.ListProductsRequest) request,
@@ -4759,6 +4868,7 @@ public final class CloudChannelServiceGrpc {
               .addMethod(getGetChannelPartnerLinkMethod())
               .addMethod(getCreateChannelPartnerLinkMethod())
               .addMethod(getUpdateChannelPartnerLinkMethod())
+              .addMethod(getLookupOfferMethod())
               .addMethod(getListProductsMethod())
               .addMethod(getListSkusMethod())
               .addMethod(getListOffersMethod())

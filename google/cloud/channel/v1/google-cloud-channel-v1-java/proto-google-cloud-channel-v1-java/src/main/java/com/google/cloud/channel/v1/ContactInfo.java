@@ -130,7 +130,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object firstName_;
   /**
    * <pre>
-   * First name of the contact in the customer account.
+   * The customer account contact's first name.
    * </pre>
    *
    * <code>string first_name = 1;</code>
@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * First name of the contact in the customer account.
+   * The customer account contact's first name.
    * </pre>
    *
    * <code>string first_name = 1;</code>
@@ -176,7 +176,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object lastName_;
   /**
    * <pre>
-   * Last name of the contact in the customer account.
+   * The customer account contact's last name.
    * </pre>
    *
    * <code>string last_name = 2;</code>
@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Last name of the contact in the customer account.
+   * The customer account contact's last name.
    * </pre>
    *
    * <code>string last_name = 2;</code>
@@ -222,8 +222,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object displayName_;
   /**
    * <pre>
-   * Output only. Display name of the contact in the customer account.
-   * Populated by combining customer first name and last name.
+   * Output only. The customer account contact's display name, formatted as a
+   * combination of the customer's first and last name.
    * </pre>
    *
    * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -244,8 +244,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Display name of the contact in the customer account.
-   * Populated by combining customer first name and last name.
+   * Output only. The customer account contact's display name, formatted as a
+   * combination of the customer's first and last name.
    * </pre>
    *
    * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -270,10 +270,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object email_;
   /**
    * <pre>
-   * Email of the contact in the customer account.
-   * Email is required for entitlements that need creation of admin.google.com
-   * accounts. The email will be the username used in credentials to access the
-   * admin.google.com account.
+   * The customer account's contact email. Required for entitlements that create
+   * admin.google.com accounts, and serves as the customer's username for those
+   * accounts.
    * </pre>
    *
    * <code>string email = 5;</code>
@@ -294,10 +293,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Email of the contact in the customer account.
-   * Email is required for entitlements that need creation of admin.google.com
-   * accounts. The email will be the username used in credentials to access the
-   * admin.google.com account.
+   * The customer account's contact email. Required for entitlements that create
+   * admin.google.com accounts, and serves as the customer's username for those
+   * accounts.
    * </pre>
    *
    * <code>string email = 5;</code>
@@ -322,7 +320,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object title_;
   /**
    * <pre>
-   * Optional. Job title of the contact in the customer account.
+   * Optional. The customer account contact's job title.
    * </pre>
    *
    * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -343,7 +341,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Job title of the contact in the customer account.
+   * Optional. The customer account contact's job title.
    * </pre>
    *
    * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -368,7 +366,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object phone_;
   /**
    * <pre>
-   * Phone number of the contact in the customer account.
+   * The customer account's contact phone number.
    * </pre>
    *
    * <code>string phone = 7;</code>
@@ -389,7 +387,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Phone number of the contact in the customer account.
+   * The customer account's contact phone number.
    * </pre>
    *
    * <code>string phone = 7;</code>
@@ -804,7 +802,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object firstName_ = "";
     /**
      * <pre>
-     * First name of the contact in the customer account.
+     * The customer account contact's first name.
      * </pre>
      *
      * <code>string first_name = 1;</code>
@@ -824,7 +822,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * First name of the contact in the customer account.
+     * The customer account contact's first name.
      * </pre>
      *
      * <code>string first_name = 1;</code>
@@ -845,7 +843,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * First name of the contact in the customer account.
+     * The customer account contact's first name.
      * </pre>
      *
      * <code>string first_name = 1;</code>
@@ -864,7 +862,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * First name of the contact in the customer account.
+     * The customer account contact's first name.
      * </pre>
      *
      * <code>string first_name = 1;</code>
@@ -878,7 +876,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * First name of the contact in the customer account.
+     * The customer account contact's first name.
      * </pre>
      *
      * <code>string first_name = 1;</code>
@@ -900,7 +898,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object lastName_ = "";
     /**
      * <pre>
-     * Last name of the contact in the customer account.
+     * The customer account contact's last name.
      * </pre>
      *
      * <code>string last_name = 2;</code>
@@ -920,7 +918,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Last name of the contact in the customer account.
+     * The customer account contact's last name.
      * </pre>
      *
      * <code>string last_name = 2;</code>
@@ -941,7 +939,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Last name of the contact in the customer account.
+     * The customer account contact's last name.
      * </pre>
      *
      * <code>string last_name = 2;</code>
@@ -960,7 +958,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Last name of the contact in the customer account.
+     * The customer account contact's last name.
      * </pre>
      *
      * <code>string last_name = 2;</code>
@@ -974,7 +972,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Last name of the contact in the customer account.
+     * The customer account contact's last name.
      * </pre>
      *
      * <code>string last_name = 2;</code>
@@ -996,8 +994,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object displayName_ = "";
     /**
      * <pre>
-     * Output only. Display name of the contact in the customer account.
-     * Populated by combining customer first name and last name.
+     * Output only. The customer account contact's display name, formatted as a
+     * combination of the customer's first and last name.
      * </pre>
      *
      * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1017,8 +1015,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Display name of the contact in the customer account.
-     * Populated by combining customer first name and last name.
+     * Output only. The customer account contact's display name, formatted as a
+     * combination of the customer's first and last name.
      * </pre>
      *
      * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1039,8 +1037,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Display name of the contact in the customer account.
-     * Populated by combining customer first name and last name.
+     * Output only. The customer account contact's display name, formatted as a
+     * combination of the customer's first and last name.
      * </pre>
      *
      * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1059,8 +1057,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Display name of the contact in the customer account.
-     * Populated by combining customer first name and last name.
+     * Output only. The customer account contact's display name, formatted as a
+     * combination of the customer's first and last name.
      * </pre>
      *
      * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1074,8 +1072,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Display name of the contact in the customer account.
-     * Populated by combining customer first name and last name.
+     * Output only. The customer account contact's display name, formatted as a
+     * combination of the customer's first and last name.
      * </pre>
      *
      * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1097,10 +1095,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object email_ = "";
     /**
      * <pre>
-     * Email of the contact in the customer account.
-     * Email is required for entitlements that need creation of admin.google.com
-     * accounts. The email will be the username used in credentials to access the
-     * admin.google.com account.
+     * The customer account's contact email. Required for entitlements that create
+     * admin.google.com accounts, and serves as the customer's username for those
+     * accounts.
      * </pre>
      *
      * <code>string email = 5;</code>
@@ -1120,10 +1117,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Email of the contact in the customer account.
-     * Email is required for entitlements that need creation of admin.google.com
-     * accounts. The email will be the username used in credentials to access the
-     * admin.google.com account.
+     * The customer account's contact email. Required for entitlements that create
+     * admin.google.com accounts, and serves as the customer's username for those
+     * accounts.
      * </pre>
      *
      * <code>string email = 5;</code>
@@ -1144,10 +1140,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Email of the contact in the customer account.
-     * Email is required for entitlements that need creation of admin.google.com
-     * accounts. The email will be the username used in credentials to access the
-     * admin.google.com account.
+     * The customer account's contact email. Required for entitlements that create
+     * admin.google.com accounts, and serves as the customer's username for those
+     * accounts.
      * </pre>
      *
      * <code>string email = 5;</code>
@@ -1166,10 +1161,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Email of the contact in the customer account.
-     * Email is required for entitlements that need creation of admin.google.com
-     * accounts. The email will be the username used in credentials to access the
-     * admin.google.com account.
+     * The customer account's contact email. Required for entitlements that create
+     * admin.google.com accounts, and serves as the customer's username for those
+     * accounts.
      * </pre>
      *
      * <code>string email = 5;</code>
@@ -1183,10 +1177,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Email of the contact in the customer account.
-     * Email is required for entitlements that need creation of admin.google.com
-     * accounts. The email will be the username used in credentials to access the
-     * admin.google.com account.
+     * The customer account's contact email. Required for entitlements that create
+     * admin.google.com accounts, and serves as the customer's username for those
+     * accounts.
      * </pre>
      *
      * <code>string email = 5;</code>
@@ -1208,7 +1201,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object title_ = "";
     /**
      * <pre>
-     * Optional. Job title of the contact in the customer account.
+     * Optional. The customer account contact's job title.
      * </pre>
      *
      * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1228,7 +1221,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Job title of the contact in the customer account.
+     * Optional. The customer account contact's job title.
      * </pre>
      *
      * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1249,7 +1242,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Job title of the contact in the customer account.
+     * Optional. The customer account contact's job title.
      * </pre>
      *
      * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1268,7 +1261,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Job title of the contact in the customer account.
+     * Optional. The customer account contact's job title.
      * </pre>
      *
      * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1282,7 +1275,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Job title of the contact in the customer account.
+     * Optional. The customer account contact's job title.
      * </pre>
      *
      * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1304,7 +1297,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object phone_ = "";
     /**
      * <pre>
-     * Phone number of the contact in the customer account.
+     * The customer account's contact phone number.
      * </pre>
      *
      * <code>string phone = 7;</code>
@@ -1324,7 +1317,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Phone number of the contact in the customer account.
+     * The customer account's contact phone number.
      * </pre>
      *
      * <code>string phone = 7;</code>
@@ -1345,7 +1338,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Phone number of the contact in the customer account.
+     * The customer account's contact phone number.
      * </pre>
      *
      * <code>string phone = 7;</code>
@@ -1364,7 +1357,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Phone number of the contact in the customer account.
+     * The customer account's contact phone number.
      * </pre>
      *
      * <code>string phone = 7;</code>
@@ -1378,7 +1371,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Phone number of the contact in the customer account.
+     * The customer account's contact phone number.
      * </pre>
      *
      * <code>string phone = 7;</code>

@@ -352,7 +352,7 @@ export class CloudChannelServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const cloudChannelServiceStubMethods =
-        ['listCustomers', 'getCustomer', 'checkCloudIdentityAccountsExist', 'createCustomer', 'updateCustomer', 'deleteCustomer', 'provisionCloudIdentity', 'listEntitlements', 'listTransferableSkus', 'listTransferableOffers', 'getEntitlement', 'createEntitlement', 'changeParameters', 'changeRenewalSettings', 'changeOffer', 'startPaidService', 'suspendEntitlement', 'cancelEntitlement', 'activateEntitlement', 'transferEntitlements', 'transferEntitlementsToGoogle', 'listChannelPartnerLinks', 'getChannelPartnerLink', 'createChannelPartnerLink', 'updateChannelPartnerLink', 'listProducts', 'listSkus', 'listOffers', 'listPurchasableSkus', 'listPurchasableOffers', 'registerSubscriber', 'unregisterSubscriber', 'listSubscribers'];
+        ['listCustomers', 'getCustomer', 'checkCloudIdentityAccountsExist', 'createCustomer', 'updateCustomer', 'deleteCustomer', 'provisionCloudIdentity', 'listEntitlements', 'listTransferableSkus', 'listTransferableOffers', 'getEntitlement', 'createEntitlement', 'changeParameters', 'changeRenewalSettings', 'changeOffer', 'startPaidService', 'suspendEntitlement', 'cancelEntitlement', 'activateEntitlement', 'transferEntitlements', 'transferEntitlementsToGoogle', 'listChannelPartnerLinks', 'getChannelPartnerLink', 'createChannelPartnerLink', 'updateChannelPartnerLink', 'lookupOffer', 'listProducts', 'listSkus', 'listOffers', 'listPurchasableSkus', 'listPurchasableOffers', 'registerSubscriber', 'unregisterSubscriber', 'listSubscribers'];
     for (const methodName of cloudChannelServiceStubMethods) {
       const callPromise = this.cloudChannelServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -457,7 +457,7 @@ export class CloudChannelServiceClient {
           protos.google.cloud.channel.v1.IGetCustomerRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Returns a requested {@link google.cloud.channel.v1.Customer|Customer} resource.
+ * Returns the requested {@link google.cloud.channel.v1.Customer|Customer} resource.
  *
  * Possible error codes:
  *
@@ -800,7 +800,7 @@ export class CloudChannelServiceClient {
           protos.google.cloud.channel.v1.IDeleteCustomerRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Deletes the given {@link google.cloud.channel.v1.Customer|Customer} permanently and irreversibly.
+ * Deletes the given {@link google.cloud.channel.v1.Customer|Customer} permanently.
  *
  * Possible error codes:
  *
@@ -879,7 +879,7 @@ export class CloudChannelServiceClient {
           protos.google.cloud.channel.v1.IGetEntitlementRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Returns a requested {@link google.cloud.channel.v1.Entitlement|Entitlement} resource.
+ * Returns the requested {@link google.cloud.channel.v1.Entitlement|Entitlement} resource.
  *
  * Possible error codes:
  *
@@ -961,7 +961,7 @@ export class CloudChannelServiceClient {
           protos.google.cloud.channel.v1.IGetChannelPartnerLinkRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Returns a requested {@link google.cloud.channel.v1.ChannelPartnerLink|ChannelPartnerLink} resource.
+ * Returns the requested {@link google.cloud.channel.v1.ChannelPartnerLink|ChannelPartnerLink} resource.
  * You must be a distributor to call this method.
  *
  * Possible error codes:
@@ -1224,6 +1224,88 @@ export class CloudChannelServiceClient {
     });
     this.initialize();
     return this.innerApiCalls.updateChannelPartnerLink(request, options, callback);
+  }
+  lookupOffer(
+      request: protos.google.cloud.channel.v1.ILookupOfferRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.channel.v1.IOffer,
+        protos.google.cloud.channel.v1.ILookupOfferRequest|undefined, {}|undefined
+      ]>;
+  lookupOffer(
+      request: protos.google.cloud.channel.v1.ILookupOfferRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.channel.v1.IOffer,
+          protos.google.cloud.channel.v1.ILookupOfferRequest|null|undefined,
+          {}|null|undefined>): void;
+  lookupOffer(
+      request: protos.google.cloud.channel.v1.ILookupOfferRequest,
+      callback: Callback<
+          protos.google.cloud.channel.v1.IOffer,
+          protos.google.cloud.channel.v1.ILookupOfferRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Returns the requested {@link google.cloud.channel.v1.Offer|Offer} resource.
+ *
+ * Possible error codes:
+ *
+ * * PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
+ * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * * NOT_FOUND: Entitlement or offer was not found.
+ *
+ * Return value:
+ * The {@link google.cloud.channel.v1.Offer|Offer} resource.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.entitlement
+ *   Required. The resource name of the entitlement to retrieve the Offer.
+ *   Entitlement uses the format:
+ *   accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Offer]{@link google.cloud.channel.v1.Offer}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.lookupOffer(request);
+ */
+  lookupOffer(
+      request: protos.google.cloud.channel.v1.ILookupOfferRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.channel.v1.IOffer,
+          protos.google.cloud.channel.v1.ILookupOfferRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.channel.v1.IOffer,
+          protos.google.cloud.channel.v1.ILookupOfferRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.cloud.channel.v1.IOffer,
+        protos.google.cloud.channel.v1.ILookupOfferRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'entitlement': request.entitlement || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.lookupOffer(request, options, callback);
   }
   registerSubscriber(
       request: protos.google.cloud.channel.v1.IRegisterSubscriberRequest,

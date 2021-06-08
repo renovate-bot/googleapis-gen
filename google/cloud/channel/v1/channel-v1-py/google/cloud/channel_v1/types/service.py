@@ -61,6 +61,7 @@ __protobuf__ = proto.module(
         'CancelEntitlementRequest',
         'SuspendEntitlementRequest',
         'ActivateEntitlementRequest',
+        'LookupOfferRequest',
         'ListProductsRequest',
         'ListProductsResponse',
         'ListSkusRequest',
@@ -1259,6 +1260,21 @@ class ActivateEntitlementRequest(proto.Message):
     request_id = proto.Field(
         proto.STRING,
         number=3,
+    )
+
+
+class LookupOfferRequest(proto.Message):
+    r"""Request message for LookupOffer.
+    Attributes:
+        entitlement (str):
+            Required. The resource name of the entitlement to retrieve
+            the Offer. Entitlement uses the format:
+            accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
+    """
+
+    entitlement = proto.Field(
+        proto.STRING,
+        number=1,
     )
 
 

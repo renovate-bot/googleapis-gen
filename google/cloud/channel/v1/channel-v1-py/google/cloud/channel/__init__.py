@@ -93,6 +93,7 @@ from google.cloud.channel_v1.types.service import ListTransferableOffersRequest
 from google.cloud.channel_v1.types.service import ListTransferableOffersResponse
 from google.cloud.channel_v1.types.service import ListTransferableSkusRequest
 from google.cloud.channel_v1.types.service import ListTransferableSkusResponse
+from google.cloud.channel_v1.types.service import LookupOfferRequest
 from google.cloud.channel_v1.types.service import ProvisionCloudIdentityRequest
 from google.cloud.channel_v1.types.service import PurchasableOffer
 from google.cloud.channel_v1.types.service import PurchasableSku
@@ -190,6 +191,7 @@ __all__ = ('CloudChannelServiceClient',
     'ListTransferableOffersResponse',
     'ListTransferableSkusRequest',
     'ListTransferableSkusResponse',
+    'LookupOfferRequest',
     'ProvisionCloudIdentityRequest',
     'PurchasableOffer',
     'PurchasableSku',

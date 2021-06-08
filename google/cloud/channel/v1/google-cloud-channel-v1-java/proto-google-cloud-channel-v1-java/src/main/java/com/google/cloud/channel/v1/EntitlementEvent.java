@@ -206,6 +206,14 @@ private static final long serialVersionUID = 0L;
      * <code>LICENSE_ASSIGNMENT_CHANGED = 12;</code>
      */
     LICENSE_ASSIGNMENT_CHANGED(12),
+    /**
+     * <pre>
+     * License cap was changed for the entitlement.
+     * </pre>
+     *
+     * <code>LICENSE_CAP_CHANGED = 13;</code>
+     */
+    LICENSE_CAP_CHANGED(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -308,6 +316,14 @@ private static final long serialVersionUID = 0L;
      * <code>LICENSE_ASSIGNMENT_CHANGED = 12;</code>
      */
     public static final int LICENSE_ASSIGNMENT_CHANGED_VALUE = 12;
+    /**
+     * <pre>
+     * License cap was changed for the entitlement.
+     * </pre>
+     *
+     * <code>LICENSE_CAP_CHANGED = 13;</code>
+     */
+    public static final int LICENSE_CAP_CHANGED_VALUE = 13;
 
 
     public final int getNumber() {
@@ -346,6 +362,7 @@ private static final long serialVersionUID = 0L;
         case 10: return RENEWAL_SETTING_CHANGED;
         case 11: return PAID_SERVICE_STARTED;
         case 12: return LICENSE_ASSIGNMENT_CHANGED;
+        case 13: return LICENSE_CAP_CHANGED;
         default: return null;
       }
     }
