@@ -298,4 +298,24 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBootDiskKmsKeyBytes();
+
+  /**
+   * <pre>
+   * The image type to use for node created by NodeAutoprovisioning.
+   * </pre>
+   *
+   * <code>string image_type = 10;</code>
+   * @return The imageType.
+   */
+  java.lang.String getImageType();
+  /**
+   * <pre>
+   * The image type to use for node created by NodeAutoprovisioning.
+   * </pre>
+   *
+   * <code>string image_type = 10;</code>
+   * @return The bytes for imageType.
+   */
+  com.google.protobuf.ByteString
+      getImageTypeBytes();
 }

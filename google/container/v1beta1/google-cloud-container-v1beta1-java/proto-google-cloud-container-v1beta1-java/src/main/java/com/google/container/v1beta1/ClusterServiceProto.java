@@ -1128,7 +1128,7 @@ public final class ClusterServiceProto {
       "toprovisioningNodePoolDefaults\022\"\n\032autopr" +
       "ovisioning_locations\030\005 \003(\t\"U\n\022Autoscalin" +
       "gProfile\022\027\n\023PROFILE_UNSPECIFIED\020\000\022\030\n\024OPT" +
-      "IMIZE_UTILIZATION\020\001\022\014\n\010BALANCED\020\002\"\217\003\n Au" +
+      "IMIZE_UTILIZATION\020\001\022\014\n\010BALANCED\020\002\"\243\003\n Au" +
       "toprovisioningNodePoolDefaults\022\024\n\014oauth_" +
       "scopes\030\001 \003(\t\022\027\n\017service_account\030\002 \001(\t\022L\n" +
       "\020upgrade_settings\030\003 \001(\01322.google.contain" +
@@ -1138,391 +1138,391 @@ public final class ClusterServiceProto {
       "\001(\t\022\024\n\014disk_size_gb\030\006 \001(\005\022\021\n\tdisk_type\030\007" +
       " \001(\t\022R\n\030shielded_instance_config\030\010 \001(\01320" +
       ".google.container.v1beta1.ShieldedInstan" +
-      "ceConfig\022\031\n\021boot_disk_kms_key\030\t \001(\t\"H\n\rR" +
-      "esourceLimit\022\025\n\rresource_type\030\001 \001(\t\022\017\n\007m" +
-      "inimum\030\002 \001(\003\022\017\n\007maximum\030\003 \001(\003\"o\n\023NodePoo" +
-      "lAutoscaling\022\017\n\007enabled\030\001 \001(\010\022\026\n\016min_nod" +
-      "e_count\030\002 \001(\005\022\026\n\016max_node_count\030\003 \001(\005\022\027\n" +
-      "\017autoprovisioned\030\004 \001(\010\"\240\002\n\020SetLabelsRequ" +
-      "est\022\031\n\nproject_id\030\001 \001(\tB\005\030\001\340A\002\022\023\n\004zone\030\002" +
-      " \001(\tB\005\030\001\340A\002\022\031\n\ncluster_id\030\003 \001(\tB\005\030\001\340A\002\022\\" +
-      "\n\017resource_labels\030\004 \003(\0132>.google.contain" +
-      "er.v1beta1.SetLabelsRequest.ResourceLabe" +
-      "lsEntryB\003\340A\002\022\036\n\021label_fingerprint\030\005 \001(\tB" +
-      "\003\340A\002\022\014\n\004name\030\007 \001(\t\0325\n\023ResourceLabelsEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\205\001\n\024Se" +
-      "tLegacyAbacRequest\022\031\n\nproject_id\030\001 \001(\tB\005" +
-      "\030\001\340A\002\022\023\n\004zone\030\002 \001(\tB\005\030\001\340A\002\022\031\n\ncluster_id" +
-      "\030\003 \001(\tB\005\030\001\340A\002\022\024\n\007enabled\030\004 \001(\010B\003\340A\002\022\014\n\004n" +
-      "ame\030\006 \001(\t\"\215\001\n\026StartIPRotationRequest\022\031\n\n" +
-      "project_id\030\001 \001(\tB\005\030\001\340A\002\022\023\n\004zone\030\002 \001(\tB\005\030" +
-      "\001\340A\002\022\031\n\ncluster_id\030\003 \001(\tB\005\030\001\340A\002\022\014\n\004name\030" +
-      "\006 \001(\t\022\032\n\022rotate_credentials\030\007 \001(\010\"t\n\031Com" +
-      "pleteIPRotationRequest\022\031\n\nproject_id\030\001 \001" +
-      "(\tB\005\030\001\340A\002\022\023\n\004zone\030\002 \001(\tB\005\030\001\340A\002\022\031\n\ncluste" +
-      "r_id\030\003 \001(\tB\005\030\001\340A\002\022\014\n\004name\030\007 \001(\t\"H\n\021Accel" +
-      "eratorConfig\022\031\n\021accelerator_count\030\001 \001(\003\022" +
-      "\030\n\020accelerator_type\030\002 \001(\t\"\313\002\n\026WorkloadMe" +
-      "tadataConfig\022X\n\rnode_metadata\030\001 \001(\0162=.go" +
-      "ogle.container.v1beta1.WorkloadMetadataC" +
-      "onfig.NodeMetadataB\002\030\001\022C\n\004mode\030\002 \001(\01625.g" +
-      "oogle.container.v1beta1.WorkloadMetadata" +
-      "Config.Mode\"P\n\014NodeMetadata\022\017\n\013UNSPECIFI" +
-      "ED\020\000\022\n\n\006SECURE\020\001\022\n\n\006EXPOSE\020\002\022\027\n\023GKE_META" +
-      "DATA_SERVER\020\003\"@\n\004Mode\022\024\n\020MODE_UNSPECIFIE" +
-      "D\020\000\022\020\n\014GCE_METADATA\020\001\022\020\n\014GKE_METADATA\020\002\"" +
-      "\270\001\n\027SetNetworkPolicyRequest\022\031\n\nproject_i" +
-      "d\030\001 \001(\tB\005\030\001\340A\002\022\023\n\004zone\030\002 \001(\tB\005\030\001\340A\002\022\031\n\nc" +
-      "luster_id\030\003 \001(\tB\005\030\001\340A\002\022D\n\016network_policy" +
-      "\030\004 \001(\0132\'.google.container.v1beta1.Networ" +
-      "kPolicyB\003\340A\002\022\014\n\004name\030\006 \001(\t\"\276\001\n\033SetMainte" +
-      "nancePolicyRequest\022\027\n\nproject_id\030\001 \001(\tB\003" +
-      "\340A\002\022\021\n\004zone\030\002 \001(\tB\003\340A\002\022\027\n\ncluster_id\030\003 \001" +
-      "(\tB\003\340A\002\022L\n\022maintenance_policy\030\004 \001(\0132+.go" +
-      "ogle.container.v1beta1.MaintenancePolicy" +
-      "B\003\340A\002\022\014\n\004name\030\005 \001(\t\"+\n\024ListLocationsRequ" +
-      "est\022\023\n\006parent\030\001 \001(\tB\003\340A\002\"g\n\025ListLocation" +
-      "sResponse\0225\n\tlocations\030\001 \003(\0132\".google.co" +
-      "ntainer.v1beta1.Location\022\027\n\017next_page_to" +
-      "ken\030\002 \001(\t\"\261\001\n\010Location\022=\n\004type\030\001 \001(\0162/.g" +
-      "oogle.container.v1beta1.Location.Locatio" +
-      "nType\022\014\n\004name\030\002 \001(\t\022\023\n\013recommended\030\003 \001(\010" +
-      "\"C\n\014LocationType\022\035\n\031LOCATION_TYPE_UNSPEC" +
-      "IFIED\020\000\022\010\n\004ZONE\020\001\022\n\n\006REGION\020\002\"\235\002\n\017Status" +
-      "Condition\022@\n\004code\030\001 \001(\0162..google.contain" +
-      "er.v1beta1.StatusCondition.CodeB\002\030\001\022\017\n\007m" +
-      "essage\030\002 \001(\t\022(\n\016canonical_code\030\003 \001(\0162\020.g" +
-      "oogle.rpc.Code\"\214\001\n\004Code\022\013\n\007UNKNOWN\020\000\022\020\n\014" +
-      "GCE_STOCKOUT\020\001\022\037\n\033GKE_SERVICE_ACCOUNT_DE" +
-      "LETED\020\002\022\026\n\022GCE_QUOTA_EXCEEDED\020\003\022\023\n\017SET_B" +
-      "Y_OPERATOR\020\004\022\027\n\023CLOUD_KMS_KEY_ERROR\020\007\"\353\001" +
-      "\n\rNetworkConfig\022\017\n\007network\030\001 \001(\t\022\022\n\nsubn" +
-      "etwork\030\002 \001(\t\022$\n\034enable_intra_node_visibi" +
-      "lity\030\005 \001(\010\022H\n\023default_snat_status\030\007 \001(\0132" +
-      "+.google.container.v1beta1.DefaultSnatSt" +
-      "atus\022E\n\021datapath_provider\030\013 \001(\0162*.google" +
-      ".container.v1beta1.DatapathProvider\"j\n\034L" +
-      "istUsableSubnetworksRequest\022\023\n\006parent\030\001 " +
-      "\001(\tB\003\340A\002\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 " +
-      "\001(\005\022\022\n\npage_token\030\004 \001(\t\"y\n\035ListUsableSub" +
-      "networksResponse\022?\n\013subnetworks\030\001 \003(\0132*." +
-      "google.container.v1beta1.UsableSubnetwor" +
-      "k\022\027\n\017next_page_token\030\002 \001(\t\"\205\002\n\036UsableSub" +
-      "networkSecondaryRange\022\022\n\nrange_name\030\001 \001(" +
-      "\t\022\025\n\rip_cidr_range\030\002 \001(\t\022O\n\006status\030\003 \001(\016" +
-      "2?.google.container.v1beta1.UsableSubnet" +
-      "workSecondaryRange.Status\"g\n\006Status\022\013\n\007U" +
-      "NKNOWN\020\000\022\n\n\006UNUSED\020\001\022\022\n\016IN_USE_SERVICE\020\002" +
-      "\022\030\n\024IN_USE_SHAREABLE_POD\020\003\022\026\n\022IN_USE_MAN" +
-      "AGED_POD\020\004\"\275\001\n\020UsableSubnetwork\022\022\n\nsubne" +
-      "twork\030\001 \001(\t\022\017\n\007network\030\002 \001(\t\022\025\n\rip_cidr_" +
-      "range\030\003 \001(\t\022U\n\023secondary_ip_ranges\030\004 \003(\013" +
-      "28.google.container.v1beta1.UsableSubnet" +
-      "workSecondaryRange\022\026\n\016status_message\030\005 \001" +
-      "(\t\")\n\026VerticalPodAutoscaling\022\017\n\007enabled\030" +
-      "\001 \001(\010\"%\n\021DefaultSnatStatus\022\020\n\010disabled\030\001" +
-      " \001(\010\",\n\031IntraNodeVisibilityConfig\022\017\n\007ena" +
-      "bled\030\001 \001(\010\".\n\021MaxPodsConstraint\022\031\n\021max_p" +
-      "ods_per_node\030\001 \001(\003\"j\n\026WorkloadIdentityCo" +
-      "nfig\022\036\n\022identity_namespace\030\001 \001(\tB\002\030\001\022\025\n\r" +
-      "workload_pool\030\002 \001(\t\022\031\n\021identity_provider" +
-      "\030\003 \001(\t\"\235\001\n\022DatabaseEncryption\022A\n\005state\030\002" +
-      " \001(\01622.google.container.v1beta1.Database" +
-      "Encryption.State\022\020\n\010key_name\030\001 \001(\t\"2\n\005St" +
-      "ate\022\013\n\007UNKNOWN\020\000\022\r\n\tENCRYPTED\020\001\022\r\n\tDECRY" +
-      "PTED\020\002\"\367\002\n\031ResourceUsageExportConfig\022e\n\024" +
-      "bigquery_destination\030\001 \001(\0132G.google.cont" +
-      "ainer.v1beta1.ResourceUsageExportConfig." +
-      "BigQueryDestination\022&\n\036enable_network_eg" +
-      "ress_metering\030\002 \001(\010\022r\n\033consumption_meter" +
-      "ing_config\030\003 \001(\0132M.google.container.v1be" +
-      "ta1.ResourceUsageExportConfig.Consumptio" +
-      "nMeteringConfig\032)\n\023BigQueryDestination\022\022" +
-      "\n\ndataset_id\030\001 \001(\t\032,\n\031ConsumptionMeterin" +
-      "gConfig\022\017\n\007enabled\030\001 \001(\010\" \n\rShieldedNode" +
-      "s\022\017\n\007enabled\030\001 \001(\010\"(\n\026GetOpenIDConfigReq" +
-      "uest\022\016\n\006parent\030\001 \001(\t\"\334\001\n\027GetOpenIDConfig" +
-      "Response\022\016\n\006issuer\030\001 \001(\t\022\020\n\010jwks_uri\030\002 \001" +
-      "(\t\022 \n\030response_types_supported\030\003 \003(\t\022\037\n\027" +
-      "subject_types_supported\030\004 \003(\t\022-\n%id_toke" +
-      "n_signing_alg_values_supported\030\005 \003(\t\022\030\n\020" +
-      "claims_supported\030\006 \003(\t\022\023\n\013grant_types\030\007 " +
-      "\003(\t\"\'\n\025GetJSONWebKeysRequest\022\016\n\006parent\030\001" +
-      " \001(\t\"r\n\003Jwk\022\013\n\003kty\030\001 \001(\t\022\013\n\003alg\030\002 \001(\t\022\013\n" +
-      "\003use\030\003 \001(\t\022\013\n\003kid\030\004 \001(\t\022\t\n\001n\030\005 \001(\t\022\t\n\001e\030" +
-      "\006 \001(\t\022\t\n\001x\030\007 \001(\t\022\t\n\001y\030\010 \001(\t\022\013\n\003crv\030\t \001(\t" +
-      "\"E\n\026GetJSONWebKeysResponse\022+\n\004keys\030\001 \003(\013" +
-      "2\035.google.container.v1beta1.Jwk\"\223\001\n\016Rele" +
-      "aseChannel\022A\n\007channel\030\001 \001(\01620.google.con" +
-      "tainer.v1beta1.ReleaseChannel.Channel\">\n" +
-      "\007Channel\022\017\n\013UNSPECIFIED\020\000\022\t\n\005RAPID\020\001\022\013\n\007" +
-      "REGULAR\020\002\022\n\n\006STABLE\020\003\"U\n\tTpuConfig\022\017\n\007en" +
-      "abled\030\001 \001(\010\022\036\n\026use_service_networking\030\002 " +
-      "\001(\010\022\027\n\017ipv4_cidr_block\030\003 \001(\t\"\010\n\006Master\"\245" +
-      "\001\n\022NotificationConfig\022C\n\006pubsub\030\001 \001(\01323." +
-      "google.container.v1beta1.NotificationCon" +
-      "fig.PubSub\032J\n\006PubSub\022\017\n\007enabled\030\001 \001(\010\022/\n" +
-      "\005topic\030\002 \001(\tB \372A\035\n\033pubsub.googleapis.com" +
-      "/Topic\"$\n\021ConfidentialNodes\022\017\n\007enabled\030\001" +
-      " \001(\010\"\202\002\n\014UpgradeEvent\022I\n\rresource_type\030\001" +
-      " \001(\0162-.google.container.v1beta1.UpgradeR" +
-      "esourceTypeB\003\340A\002\022\026\n\toperation\030\002 \001(\tB\003\340A\002" +
-      "\022=\n\024operation_start_time\030\003 \001(\0132\032.google." +
-      "protobuf.TimestampB\003\340A\002\022\034\n\017current_versi" +
-      "on\030\004 \001(\tB\003\340A\002\022\033\n\016target_version\030\005 \001(\tB\003\340" +
-      "A\002\022\025\n\010resource\030\006 \001(\tB\003\340A\001*a\n\020DatapathPro" +
-      "vider\022!\n\035DATAPATH_PROVIDER_UNSPECIFIED\020\000" +
-      "\022\023\n\017LEGACY_DATAPATH\020\001\022\025\n\021ADVANCED_DATAPA" +
-      "TH\020\002*W\n\023UpgradeResourceType\022%\n!UPGRADE_R" +
-      "ESOURCE_TYPE_UNSPECIFIED\020\000\022\n\n\006MASTER\020\001\022\r" +
-      "\n\tNODE_POOL\020\0022\352J\n\016ClusterManager\022\363\001\n\014Lis" +
-      "tClusters\022-.google.container.v1beta1.Lis" +
-      "tClustersRequest\032..google.container.v1be" +
-      "ta1.ListClustersResponse\"\203\001\202\323\344\223\002k\0221/v1be" +
-      "ta1/{parent=projects/*/locations/*}/clus" +
-      "tersZ6\0224/v1beta1/projects/{project_id}/z" +
-      "ones/{zone}/clusters\332A\017project_id,zone\022\372" +
-      "\001\n\nGetCluster\022+.google.container.v1beta1" +
-      ".GetClusterRequest\032!.google.container.v1" +
-      "beta1.Cluster\"\233\001\202\323\344\223\002x\0221/v1beta1/{name=p" +
-      "rojects/*/locations/*/clusters/*}ZC\022A/v1" +
-      "beta1/projects/{project_id}/zones/{zone}" +
-      "/clusters/{cluster_id}\332A\032project_id,zone" +
-      ",cluster_id\022\370\001\n\rCreateCluster\022..google.c" +
-      "ontainer.v1beta1.CreateClusterRequest\032#." +
-      "google.container.v1beta1.Operation\"\221\001\202\323\344" +
-      "\223\002q\"1/v1beta1/{parent=projects/*/locatio" +
-      "ns/*}/clusters:\001*Z9\"4/v1beta1/projects/{" +
-      "project_id}/zones/{zone}/clusters:\001*\332A\027p" +
-      "roject_id,zone,cluster\022\217\002\n\rUpdateCluster" +
-      "\022..google.container.v1beta1.UpdateCluste" +
-      "rRequest\032#.google.container.v1beta1.Oper" +
-      "ation\"\250\001\202\323\344\223\002~\0321/v1beta1/{name=projects/" +
-      "*/locations/*/clusters/*}:\001*ZF\032A/v1beta1" +
-      "/projects/{project_id}/zones/{zone}/clus" +
-      "ters/{cluster_id}:\001*\332A!project_id,zone,c" +
-      "luster_id,update\022\232\002\n\016UpdateNodePool\022/.go" +
-      "ogle.container.v1beta1.UpdateNodePoolReq" +
-      "uest\032#.google.container.v1beta1.Operatio" +
-      "n\"\261\001\202\323\344\223\002\252\001\032=/v1beta1/{name=projects/*/l" +
-      "ocations/*/clusters/*/nodePools/*}:\001*Zf\"" +
-      "a/v1beta1/projects/{project_id}/zones/{z" +
-      "one}/clusters/{cluster_id}/nodePools/{no" +
-      "de_pool_id}/update:\001*\022\276\002\n\026SetNodePoolAut" +
-      "oscaling\0227.google.container.v1beta1.SetN" +
-      "odePoolAutoscalingRequest\032#.google.conta" +
-      "iner.v1beta1.Operation\"\305\001\202\323\344\223\002\276\001\"L/v1bet" +
-      "a1/{name=projects/*/locations/*/clusters" +
-      "/*/nodePools/*}:setAutoscaling:\001*Zk\"f/v1" +
-      "beta1/projects/{project_id}/zones/{zone}" +
-      "/clusters/{cluster_id}/nodePools/{node_p" +
-      "ool_id}/autoscaling:\001*\022\264\002\n\021SetLoggingSer" +
-      "vice\0222.google.container.v1beta1.SetLoggi" +
-      "ngServiceRequest\032#.google.container.v1be" +
-      "ta1.Operation\"\305\001\202\323\344\223\002\221\001\"</v1beta1/{name=" +
-      "projects/*/locations/*/clusters/*}:setLo" +
-      "gging:\001*ZN\"I/v1beta1/projects/{project_i" +
-      "d}/zones/{zone}/clusters/{cluster_id}/lo" +
-      "gging:\001*\332A*project_id,zone,cluster_id,lo" +
-      "gging_service\022\303\002\n\024SetMonitoringService\0225" +
-      ".google.container.v1beta1.SetMonitoringS" +
-      "erviceRequest\032#.google.container.v1beta1" +
-      ".Operation\"\316\001\202\323\344\223\002\227\001\"?/v1beta1/{name=pro" +
-      "jects/*/locations/*/clusters/*}:setMonit" +
-      "oring:\001*ZQ\"L/v1beta1/projects/{project_i" +
-      "d}/zones/{zone}/clusters/{cluster_id}/mo" +
-      "nitoring:\001*\332A-project_id,zone,cluster_id" +
-      ",monitoring_service\022\254\002\n\017SetAddonsConfig\022" +
-      "0.google.container.v1beta1.SetAddonsConf" +
-      "igRequest\032#.google.container.v1beta1.Ope" +
-      "ration\"\301\001\202\323\344\223\002\217\001\";/v1beta1/{name=project" +
-      "s/*/locations/*/clusters/*}:setAddons:\001*" +
-      "ZM\"H/v1beta1/projects/{project_id}/zones" +
-      "/{zone}/clusters/{cluster_id}/addons:\001*\332" +
-      "A(project_id,zone,cluster_id,addons_conf" +
-      "ig\022\253\002\n\014SetLocations\022-.google.container.v" +
-      "1beta1.SetLocationsRequest\032#.google.cont" +
-      "ainer.v1beta1.Operation\"\306\001\210\002\001\202\323\344\223\002\225\001\">/v" +
-      "1beta1/{name=projects/*/locations/*/clus" +
-      "ters/*}:setLocations:\001*ZP\"K/v1beta1/proj" +
-      "ects/{project_id}/zones/{zone}/clusters/" +
-      "{cluster_id}/locations:\001*\332A$project_id,z" +
-      "one,cluster_id,locations\022\252\002\n\014UpdateMaste" +
-      "r\022-.google.container.v1beta1.UpdateMaste" +
-      "rRequest\032#.google.container.v1beta1.Oper" +
-      "ation\"\305\001\202\323\344\223\002\222\001\">/v1beta1/{name=projects" +
-      "/*/locations/*/clusters/*}:updateMaster:" +
-      "\001*ZM\"H/v1beta1/projects/{project_id}/zon" +
-      "es/{zone}/clusters/{cluster_id}/master:\001" +
-      "*\332A)project_id,zone,cluster_id,master_ve" +
-      "rsion\022\210\002\n\rSetMasterAuth\022..google.contain" +
-      "er.v1beta1.SetMasterAuthRequest\032#.google" +
-      ".container.v1beta1.Operation\"\241\001\202\323\344\223\002\232\001\"?" +
-      "/v1beta1/{name=projects/*/locations/*/cl" +
-      "usters/*}:setMasterAuth:\001*ZT\"O/v1beta1/p" +
-      "rojects/{project_id}/zones/{zone}/cluste" +
-      "rs/{cluster_id}:setMasterAuth:\001*\022\202\002\n\rDel" +
-      "eteCluster\022..google.container.v1beta1.De" +
-      "leteClusterRequest\032#.google.container.v1" +
-      "beta1.Operation\"\233\001\202\323\344\223\002x*1/v1beta1/{name" +
-      "=projects/*/locations/*/clusters/*}ZC*A/" +
-      "v1beta1/projects/{project_id}/zones/{zon" +
-      "e}/clusters/{cluster_id}\332A\032project_id,zo" +
-      "ne,cluster_id\022\375\001\n\016ListOperations\022/.googl" +
-      "e.container.v1beta1.ListOperationsReques" +
-      "t\0320.google.container.v1beta1.ListOperati" +
-      "onsResponse\"\207\001\202\323\344\223\002o\0223/v1beta1/{parent=p" +
-      "rojects/*/locations/*}/operationsZ8\0226/v1" +
-      "beta1/projects/{project_id}/zones/{zone}" +
-      "/operations\332A\017project_id,zone\022\210\002\n\014GetOpe" +
-      "ration\022-.google.container.v1beta1.GetOpe" +
-      "rationRequest\032#.google.container.v1beta1" +
-      ".Operation\"\243\001\202\323\344\223\002~\0223/v1beta1/{name=proj" +
-      "ects/*/locations/*/operations/*}ZG\022E/v1b" +
-      "eta1/projects/{project_id}/zones/{zone}/" +
-      "operations/{operation_id}\332A\034project_id,z" +
-      "one,operation_id\022\226\002\n\017CancelOperation\0220.g" +
-      "oogle.container.v1beta1.CancelOperationR" +
-      "equest\032\026.google.protobuf.Empty\"\270\001\202\323\344\223\002\222\001" +
-      "\":/v1beta1/{name=projects/*/locations/*/" +
-      "operations/*}:cancel:\001*ZQ\"L/v1beta1/proj" +
-      "ects/{project_id}/zones/{zone}/operation" +
-      "s/{operation_id}:cancel:\001*\332A\034project_id," +
-      "zone,operation_id\022\367\001\n\017GetServerConfig\0220." +
-      "google.container.v1beta1.GetServerConfig" +
-      "Request\032&.google.container.v1beta1.Serve" +
-      "rConfig\"\211\001\202\323\344\223\002q\0223/v1beta1/{name=project" +
-      "s/*/locations/*}/serverConfigZ:\0228/v1beta" +
-      "1/projects/{project_id}/zones/{zone}/ser" +
-      "verconfig\332A\017project_id,zone\022\245\002\n\rListNode" +
-      "Pools\022..google.container.v1beta1.ListNod" +
-      "ePoolsRequest\032/.google.container.v1beta1" +
-      ".ListNodePoolsResponse\"\262\001\202\323\344\223\002\216\001\022=/v1bet" +
-      "a1/{parent=projects/*/locations/*/cluste" +
-      "rs/*}/nodePoolsZM\022K/v1beta1/projects/{pr" +
-      "oject_id}/zones/{zone}/clusters/{cluster" +
-      "_id}/nodePools\332A\032project_id,zone,cluster" +
-      "_id\022\265\001\n\016GetJSONWebKeys\022/.google.containe" +
-      "r.v1beta1.GetJSONWebKeysRequest\0320.google" +
-      ".container.v1beta1.GetJSONWebKeysRespons" +
-      "e\"@\202\323\344\223\002:\0228/v1beta1/{parent=projects/*/l" +
-      "ocations/*/clusters/*}/jwks\022\260\002\n\013GetNodeP" +
-      "ool\022,.google.container.v1beta1.GetNodePo" +
-      "olRequest\032\".google.container.v1beta1.Nod" +
-      "ePool\"\316\001\202\323\344\223\002\235\001\022=/v1beta1/{name=projects" +
-      "/*/locations/*/clusters/*/nodePools/*}Z\\" +
-      "\022Z/v1beta1/projects/{project_id}/zones/{" +
-      "zone}/clusters/{cluster_id}/nodePools/{n" +
-      "ode_pool_id}\332A\'project_id,zone,cluster_i" +
-      "d,node_pool_id\022\253\002\n\016CreateNodePool\022/.goog" +
-      "le.container.v1beta1.CreateNodePoolReque" +
-      "st\032#.google.container.v1beta1.Operation\"" +
-      "\302\001\202\323\344\223\002\224\001\"=/v1beta1/{parent=projects/*/l" +
-      "ocations/*/clusters/*}/nodePools:\001*ZP\"K/" +
-      "v1beta1/projects/{project_id}/zones/{zon" +
-      "e}/clusters/{cluster_id}/nodePools:\001*\332A$" +
-      "project_id,zone,cluster_id,node_pool\022\267\002\n" +
-      "\016DeleteNodePool\022/.google.container.v1bet" +
-      "a1.DeleteNodePoolRequest\032#.google.contai" +
-      "ner.v1beta1.Operation\"\316\001\202\323\344\223\002\235\001*=/v1beta" +
-      "1/{name=projects/*/locations/*/clusters/" +
-      "*/nodePools/*}Z\\*Z/v1beta1/projects/{pro" +
-      "ject_id}/zones/{zone}/clusters/{cluster_" +
-      "id}/nodePools/{node_pool_id}\332A\'project_i" +
-      "d,zone,cluster_id,node_pool_id\022\341\002\n\027Rollb" +
-      "ackNodePoolUpgrade\0228.google.container.v1" +
-      "beta1.RollbackNodePoolUpgradeRequest\032#.g" +
-      "oogle.container.v1beta1.Operation\"\346\001\202\323\344\223" +
-      "\002\265\001\"F/v1beta1/{name=projects/*/locations" +
-      "/*/clusters/*/nodePools/*}:rollback:\001*Zh" +
-      "\"c/v1beta1/projects/{project_id}/zones/{" +
-      "zone}/clusters/{cluster_id}/nodePools/{n" +
-      "ode_pool_id}:rollback:\001*\332A\'project_id,zo" +
-      "ne,cluster_id,node_pool_id\022\362\002\n\025SetNodePo" +
-      "olManagement\0226.google.container.v1beta1." +
-      "SetNodePoolManagementRequest\032#.google.co" +
-      "ntainer.v1beta1.Operation\"\373\001\202\323\344\223\002\277\001\"K/v1" +
-      "beta1/{name=projects/*/locations/*/clust" +
-      "ers/*/nodePools/*}:setManagement:\001*Zm\"h/" +
-      "v1beta1/projects/{project_id}/zones/{zon" +
-      "e}/clusters/{cluster_id}/nodePools/{node" +
-      "_pool_id}/setManagement:\001*\332A2project_id," +
-      "zone,cluster_id,node_pool_id,management\022",
-      "\304\002\n\tSetLabels\022*.google.container.v1beta1" +
-      ".SetLabelsRequest\032#.google.container.v1b" +
-      "eta1.Operation\"\345\001\202\323\344\223\002\237\001\"C/v1beta1/{name" +
-      "=projects/*/locations/*/clusters/*}:setR" +
-      "esourceLabels:\001*ZU\"P/v1beta1/projects/{p" +
-      "roject_id}/zones/{zone}/clusters/{cluste" +
-      "r_id}/resourceLabels:\001*\332A<project_id,zon" +
-      "e,cluster_id,resource_labels,label_finge" +
-      "rprint\022\252\002\n\rSetLegacyAbac\022..google.contai" +
-      "ner.v1beta1.SetLegacyAbacRequest\032#.googl" +
-      "e.container.v1beta1.Operation\"\303\001\202\323\344\223\002\227\001\"" +
-      "?/v1beta1/{name=projects/*/locations/*/c" +
-      "lusters/*}:setLegacyAbac:\001*ZQ\"L/v1beta1/" +
-      "projects/{project_id}/zones/{zone}/clust" +
-      "ers/{cluster_id}/legacyAbac:\001*\332A\"project" +
-      "_id,zone,cluster_id,enabled\022\255\002\n\017StartIPR" +
-      "otation\0220.google.container.v1beta1.Start" +
-      "IPRotationRequest\032#.google.container.v1b" +
-      "eta1.Operation\"\302\001\202\323\344\223\002\236\001\"A/v1beta1/{name" +
-      "=projects/*/locations/*/clusters/*}:star" +
-      "tIpRotation:\001*ZV\"Q/v1beta1/projects/{pro" +
-      "ject_id}/zones/{zone}/clusters/{cluster_" +
-      "id}:startIpRotation:\001*\332A\032project_id,zone" +
-      ",cluster_id\022\271\002\n\022CompleteIPRotation\0223.goo" +
-      "gle.container.v1beta1.CompleteIPRotation" +
-      "Request\032#.google.container.v1beta1.Opera" +
-      "tion\"\310\001\202\323\344\223\002\244\001\"D/v1beta1/{name=projects/" +
-      "*/locations/*/clusters/*}:completeIpRota" +
-      "tion:\001*ZY\"T/v1beta1/projects/{project_id" +
-      "}/zones/{zone}/clusters/{cluster_id}:com" +
-      "pleteIpRotation:\001*\332A\032project_id,zone,clu" +
-      "ster_id\022\245\002\n\017SetNodePoolSize\0220.google.con" +
-      "tainer.v1beta1.SetNodePoolSizeRequest\032#." +
-      "google.container.v1beta1.Operation\"\272\001\202\323\344" +
-      "\223\002\263\001\"E/v1beta1/{name=projects/*/location" +
-      "s/*/clusters/*/nodePools/*}:setSize:\001*Zg" +
-      "\"b/v1beta1/projects/{project_id}/zones/{" +
-      "zone}/clusters/{cluster_id}/nodePools/{n" +
-      "ode_pool_id}/setSize:\001*\022\300\002\n\020SetNetworkPo" +
-      "licy\0221.google.container.v1beta1.SetNetwo" +
-      "rkPolicyRequest\032#.google.container.v1bet" +
-      "a1.Operation\"\323\001\202\323\344\223\002\240\001\"B/v1beta1/{name=p" +
-      "rojects/*/locations/*/clusters/*}:setNet" +
-      "workPolicy:\001*ZW\"R/v1beta1/projects/{proj" +
+      "ceConfig\022\031\n\021boot_disk_kms_key\030\t \001(\t\022\022\n\ni" +
+      "mage_type\030\n \001(\t\"H\n\rResourceLimit\022\025\n\rreso" +
+      "urce_type\030\001 \001(\t\022\017\n\007minimum\030\002 \001(\003\022\017\n\007maxi" +
+      "mum\030\003 \001(\003\"o\n\023NodePoolAutoscaling\022\017\n\007enab" +
+      "led\030\001 \001(\010\022\026\n\016min_node_count\030\002 \001(\005\022\026\n\016max" +
+      "_node_count\030\003 \001(\005\022\027\n\017autoprovisioned\030\004 \001" +
+      "(\010\"\240\002\n\020SetLabelsRequest\022\031\n\nproject_id\030\001 " +
+      "\001(\tB\005\030\001\340A\002\022\023\n\004zone\030\002 \001(\tB\005\030\001\340A\002\022\031\n\nclust" +
+      "er_id\030\003 \001(\tB\005\030\001\340A\002\022\\\n\017resource_labels\030\004 " +
+      "\003(\0132>.google.container.v1beta1.SetLabels" +
+      "Request.ResourceLabelsEntryB\003\340A\002\022\036\n\021labe" +
+      "l_fingerprint\030\005 \001(\tB\003\340A\002\022\014\n\004name\030\007 \001(\t\0325" +
+      "\n\023ResourceLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
+      "lue\030\002 \001(\t:\0028\001\"\205\001\n\024SetLegacyAbacRequest\022\031" +
+      "\n\nproject_id\030\001 \001(\tB\005\030\001\340A\002\022\023\n\004zone\030\002 \001(\tB" +
+      "\005\030\001\340A\002\022\031\n\ncluster_id\030\003 \001(\tB\005\030\001\340A\002\022\024\n\007ena" +
+      "bled\030\004 \001(\010B\003\340A\002\022\014\n\004name\030\006 \001(\t\"\215\001\n\026StartI" +
+      "PRotationRequest\022\031\n\nproject_id\030\001 \001(\tB\005\030\001" +
+      "\340A\002\022\023\n\004zone\030\002 \001(\tB\005\030\001\340A\002\022\031\n\ncluster_id\030\003" +
+      " \001(\tB\005\030\001\340A\002\022\014\n\004name\030\006 \001(\t\022\032\n\022rotate_cred" +
+      "entials\030\007 \001(\010\"t\n\031CompleteIPRotationReque" +
+      "st\022\031\n\nproject_id\030\001 \001(\tB\005\030\001\340A\002\022\023\n\004zone\030\002 " +
+      "\001(\tB\005\030\001\340A\002\022\031\n\ncluster_id\030\003 \001(\tB\005\030\001\340A\002\022\014\n" +
+      "\004name\030\007 \001(\t\"H\n\021AcceleratorConfig\022\031\n\021acce" +
+      "lerator_count\030\001 \001(\003\022\030\n\020accelerator_type\030" +
+      "\002 \001(\t\"\313\002\n\026WorkloadMetadataConfig\022X\n\rnode" +
+      "_metadata\030\001 \001(\0162=.google.container.v1bet" +
+      "a1.WorkloadMetadataConfig.NodeMetadataB\002" +
+      "\030\001\022C\n\004mode\030\002 \001(\01625.google.container.v1be" +
+      "ta1.WorkloadMetadataConfig.Mode\"P\n\014NodeM" +
+      "etadata\022\017\n\013UNSPECIFIED\020\000\022\n\n\006SECURE\020\001\022\n\n\006" +
+      "EXPOSE\020\002\022\027\n\023GKE_METADATA_SERVER\020\003\"@\n\004Mod" +
+      "e\022\024\n\020MODE_UNSPECIFIED\020\000\022\020\n\014GCE_METADATA\020" +
+      "\001\022\020\n\014GKE_METADATA\020\002\"\270\001\n\027SetNetworkPolicy" +
+      "Request\022\031\n\nproject_id\030\001 \001(\tB\005\030\001\340A\002\022\023\n\004zo" +
+      "ne\030\002 \001(\tB\005\030\001\340A\002\022\031\n\ncluster_id\030\003 \001(\tB\005\030\001\340" +
+      "A\002\022D\n\016network_policy\030\004 \001(\0132\'.google.cont" +
+      "ainer.v1beta1.NetworkPolicyB\003\340A\002\022\014\n\004name" +
+      "\030\006 \001(\t\"\276\001\n\033SetMaintenancePolicyRequest\022\027" +
+      "\n\nproject_id\030\001 \001(\tB\003\340A\002\022\021\n\004zone\030\002 \001(\tB\003\340" +
+      "A\002\022\027\n\ncluster_id\030\003 \001(\tB\003\340A\002\022L\n\022maintenan" +
+      "ce_policy\030\004 \001(\0132+.google.container.v1bet" +
+      "a1.MaintenancePolicyB\003\340A\002\022\014\n\004name\030\005 \001(\t\"" +
+      "+\n\024ListLocationsRequest\022\023\n\006parent\030\001 \001(\tB" +
+      "\003\340A\002\"g\n\025ListLocationsResponse\0225\n\tlocatio" +
+      "ns\030\001 \003(\0132\".google.container.v1beta1.Loca" +
+      "tion\022\027\n\017next_page_token\030\002 \001(\t\"\261\001\n\010Locati" +
+      "on\022=\n\004type\030\001 \001(\0162/.google.container.v1be" +
+      "ta1.Location.LocationType\022\014\n\004name\030\002 \001(\t\022" +
+      "\023\n\013recommended\030\003 \001(\010\"C\n\014LocationType\022\035\n\031" +
+      "LOCATION_TYPE_UNSPECIFIED\020\000\022\010\n\004ZONE\020\001\022\n\n" +
+      "\006REGION\020\002\"\235\002\n\017StatusCondition\022@\n\004code\030\001 " +
+      "\001(\0162..google.container.v1beta1.StatusCon" +
+      "dition.CodeB\002\030\001\022\017\n\007message\030\002 \001(\t\022(\n\016cano" +
+      "nical_code\030\003 \001(\0162\020.google.rpc.Code\"\214\001\n\004C" +
+      "ode\022\013\n\007UNKNOWN\020\000\022\020\n\014GCE_STOCKOUT\020\001\022\037\n\033GK" +
+      "E_SERVICE_ACCOUNT_DELETED\020\002\022\026\n\022GCE_QUOTA" +
+      "_EXCEEDED\020\003\022\023\n\017SET_BY_OPERATOR\020\004\022\027\n\023CLOU" +
+      "D_KMS_KEY_ERROR\020\007\"\353\001\n\rNetworkConfig\022\017\n\007n" +
+      "etwork\030\001 \001(\t\022\022\n\nsubnetwork\030\002 \001(\t\022$\n\034enab" +
+      "le_intra_node_visibility\030\005 \001(\010\022H\n\023defaul" +
+      "t_snat_status\030\007 \001(\0132+.google.container.v" +
+      "1beta1.DefaultSnatStatus\022E\n\021datapath_pro" +
+      "vider\030\013 \001(\0162*.google.container.v1beta1.D" +
+      "atapathProvider\"j\n\034ListUsableSubnetworks" +
+      "Request\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\016\n\006filter\030\002" +
+      " \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 " +
+      "\001(\t\"y\n\035ListUsableSubnetworksResponse\022?\n\013" +
+      "subnetworks\030\001 \003(\0132*.google.container.v1b" +
+      "eta1.UsableSubnetwork\022\027\n\017next_page_token" +
+      "\030\002 \001(\t\"\205\002\n\036UsableSubnetworkSecondaryRang" +
+      "e\022\022\n\nrange_name\030\001 \001(\t\022\025\n\rip_cidr_range\030\002" +
+      " \001(\t\022O\n\006status\030\003 \001(\0162?.google.container." +
+      "v1beta1.UsableSubnetworkSecondaryRange.S" +
+      "tatus\"g\n\006Status\022\013\n\007UNKNOWN\020\000\022\n\n\006UNUSED\020\001" +
+      "\022\022\n\016IN_USE_SERVICE\020\002\022\030\n\024IN_USE_SHAREABLE" +
+      "_POD\020\003\022\026\n\022IN_USE_MANAGED_POD\020\004\"\275\001\n\020Usabl" +
+      "eSubnetwork\022\022\n\nsubnetwork\030\001 \001(\t\022\017\n\007netwo" +
+      "rk\030\002 \001(\t\022\025\n\rip_cidr_range\030\003 \001(\t\022U\n\023secon" +
+      "dary_ip_ranges\030\004 \003(\01328.google.container." +
+      "v1beta1.UsableSubnetworkSecondaryRange\022\026" +
+      "\n\016status_message\030\005 \001(\t\")\n\026VerticalPodAut" +
+      "oscaling\022\017\n\007enabled\030\001 \001(\010\"%\n\021DefaultSnat" +
+      "Status\022\020\n\010disabled\030\001 \001(\010\",\n\031IntraNodeVis" +
+      "ibilityConfig\022\017\n\007enabled\030\001 \001(\010\".\n\021MaxPod" +
+      "sConstraint\022\031\n\021max_pods_per_node\030\001 \001(\003\"j" +
+      "\n\026WorkloadIdentityConfig\022\036\n\022identity_nam" +
+      "espace\030\001 \001(\tB\002\030\001\022\025\n\rworkload_pool\030\002 \001(\t\022" +
+      "\031\n\021identity_provider\030\003 \001(\t\"\235\001\n\022DatabaseE" +
+      "ncryption\022A\n\005state\030\002 \001(\01622.google.contai" +
+      "ner.v1beta1.DatabaseEncryption.State\022\020\n\010" +
+      "key_name\030\001 \001(\t\"2\n\005State\022\013\n\007UNKNOWN\020\000\022\r\n\t" +
+      "ENCRYPTED\020\001\022\r\n\tDECRYPTED\020\002\"\367\002\n\031ResourceU" +
+      "sageExportConfig\022e\n\024bigquery_destination" +
+      "\030\001 \001(\0132G.google.container.v1beta1.Resour" +
+      "ceUsageExportConfig.BigQueryDestination\022" +
+      "&\n\036enable_network_egress_metering\030\002 \001(\010\022" +
+      "r\n\033consumption_metering_config\030\003 \001(\0132M.g" +
+      "oogle.container.v1beta1.ResourceUsageExp" +
+      "ortConfig.ConsumptionMeteringConfig\032)\n\023B" +
+      "igQueryDestination\022\022\n\ndataset_id\030\001 \001(\t\032," +
+      "\n\031ConsumptionMeteringConfig\022\017\n\007enabled\030\001" +
+      " \001(\010\" \n\rShieldedNodes\022\017\n\007enabled\030\001 \001(\010\"(" +
+      "\n\026GetOpenIDConfigRequest\022\016\n\006parent\030\001 \001(\t" +
+      "\"\334\001\n\027GetOpenIDConfigResponse\022\016\n\006issuer\030\001" +
+      " \001(\t\022\020\n\010jwks_uri\030\002 \001(\t\022 \n\030response_types" +
+      "_supported\030\003 \003(\t\022\037\n\027subject_types_suppor" +
+      "ted\030\004 \003(\t\022-\n%id_token_signing_alg_values" +
+      "_supported\030\005 \003(\t\022\030\n\020claims_supported\030\006 \003" +
+      "(\t\022\023\n\013grant_types\030\007 \003(\t\"\'\n\025GetJSONWebKey" +
+      "sRequest\022\016\n\006parent\030\001 \001(\t\"r\n\003Jwk\022\013\n\003kty\030\001" +
+      " \001(\t\022\013\n\003alg\030\002 \001(\t\022\013\n\003use\030\003 \001(\t\022\013\n\003kid\030\004 " +
+      "\001(\t\022\t\n\001n\030\005 \001(\t\022\t\n\001e\030\006 \001(\t\022\t\n\001x\030\007 \001(\t\022\t\n\001" +
+      "y\030\010 \001(\t\022\013\n\003crv\030\t \001(\t\"E\n\026GetJSONWebKeysRe" +
+      "sponse\022+\n\004keys\030\001 \003(\0132\035.google.container." +
+      "v1beta1.Jwk\"\223\001\n\016ReleaseChannel\022A\n\007channe" +
+      "l\030\001 \001(\01620.google.container.v1beta1.Relea" +
+      "seChannel.Channel\">\n\007Channel\022\017\n\013UNSPECIF" +
+      "IED\020\000\022\t\n\005RAPID\020\001\022\013\n\007REGULAR\020\002\022\n\n\006STABLE\020" +
+      "\003\"U\n\tTpuConfig\022\017\n\007enabled\030\001 \001(\010\022\036\n\026use_s" +
+      "ervice_networking\030\002 \001(\010\022\027\n\017ipv4_cidr_blo" +
+      "ck\030\003 \001(\t\"\010\n\006Master\"\245\001\n\022NotificationConfi" +
+      "g\022C\n\006pubsub\030\001 \001(\01323.google.container.v1b" +
+      "eta1.NotificationConfig.PubSub\032J\n\006PubSub" +
+      "\022\017\n\007enabled\030\001 \001(\010\022/\n\005topic\030\002 \001(\tB \372A\035\n\033p" +
+      "ubsub.googleapis.com/Topic\"$\n\021Confidenti" +
+      "alNodes\022\017\n\007enabled\030\001 \001(\010\"\202\002\n\014UpgradeEven" +
+      "t\022I\n\rresource_type\030\001 \001(\0162-.google.contai" +
+      "ner.v1beta1.UpgradeResourceTypeB\003\340A\002\022\026\n\t" +
+      "operation\030\002 \001(\tB\003\340A\002\022=\n\024operation_start_" +
+      "time\030\003 \001(\0132\032.google.protobuf.TimestampB\003" +
+      "\340A\002\022\034\n\017current_version\030\004 \001(\tB\003\340A\002\022\033\n\016tar" +
+      "get_version\030\005 \001(\tB\003\340A\002\022\025\n\010resource\030\006 \001(\t" +
+      "B\003\340A\001*a\n\020DatapathProvider\022!\n\035DATAPATH_PR" +
+      "OVIDER_UNSPECIFIED\020\000\022\023\n\017LEGACY_DATAPATH\020" +
+      "\001\022\025\n\021ADVANCED_DATAPATH\020\002*W\n\023UpgradeResou" +
+      "rceType\022%\n!UPGRADE_RESOURCE_TYPE_UNSPECI" +
+      "FIED\020\000\022\n\n\006MASTER\020\001\022\r\n\tNODE_POOL\020\0022\352J\n\016Cl" +
+      "usterManager\022\363\001\n\014ListClusters\022-.google.c" +
+      "ontainer.v1beta1.ListClustersRequest\032..g" +
+      "oogle.container.v1beta1.ListClustersResp" +
+      "onse\"\203\001\202\323\344\223\002k\0221/v1beta1/{parent=projects" +
+      "/*/locations/*}/clustersZ6\0224/v1beta1/pro" +
+      "jects/{project_id}/zones/{zone}/clusters" +
+      "\332A\017project_id,zone\022\372\001\n\nGetCluster\022+.goog" +
+      "le.container.v1beta1.GetClusterRequest\032!" +
+      ".google.container.v1beta1.Cluster\"\233\001\202\323\344\223" +
+      "\002x\0221/v1beta1/{name=projects/*/locations/" +
+      "*/clusters/*}ZC\022A/v1beta1/projects/{proj" +
       "ect_id}/zones/{zone}/clusters/{cluster_i" +
-      "d}:setNetworkPolicy:\001*\332A)project_id,zone" +
-      ",cluster_id,network_policy\022\324\002\n\024SetMainte" +
-      "nancePolicy\0225.google.container.v1beta1.S" +
-      "etMaintenancePolicyRequest\032#.google.cont" +
-      "ainer.v1beta1.Operation\"\337\001\202\323\344\223\002\250\001\"F/v1be" +
-      "ta1/{name=projects/*/locations/*/cluster" +
-      "s/*}:setMaintenancePolicy:\001*Z[\"V/v1beta1" +
+      "d}\332A\032project_id,zone,cluster_id\022\370\001\n\rCrea" +
+      "teCluster\022..google.container.v1beta1.Cre" +
+      "ateClusterRequest\032#.google.container.v1b" +
+      "eta1.Operation\"\221\001\202\323\344\223\002q\"1/v1beta1/{paren" +
+      "t=projects/*/locations/*}/clusters:\001*Z9\"" +
+      "4/v1beta1/projects/{project_id}/zones/{z" +
+      "one}/clusters:\001*\332A\027project_id,zone,clust" +
+      "er\022\217\002\n\rUpdateCluster\022..google.container." +
+      "v1beta1.UpdateClusterRequest\032#.google.co" +
+      "ntainer.v1beta1.Operation\"\250\001\202\323\344\223\002~\0321/v1b" +
+      "eta1/{name=projects/*/locations/*/cluste" +
+      "rs/*}:\001*ZF\032A/v1beta1/projects/{project_i" +
+      "d}/zones/{zone}/clusters/{cluster_id}:\001*" +
+      "\332A!project_id,zone,cluster_id,update\022\232\002\n" +
+      "\016UpdateNodePool\022/.google.container.v1bet" +
+      "a1.UpdateNodePoolRequest\032#.google.contai" +
+      "ner.v1beta1.Operation\"\261\001\202\323\344\223\002\252\001\032=/v1beta" +
+      "1/{name=projects/*/locations/*/clusters/" +
+      "*/nodePools/*}:\001*Zf\"a/v1beta1/projects/{" +
+      "project_id}/zones/{zone}/clusters/{clust" +
+      "er_id}/nodePools/{node_pool_id}/update:\001" +
+      "*\022\276\002\n\026SetNodePoolAutoscaling\0227.google.co" +
+      "ntainer.v1beta1.SetNodePoolAutoscalingRe" +
+      "quest\032#.google.container.v1beta1.Operati" +
+      "on\"\305\001\202\323\344\223\002\276\001\"L/v1beta1/{name=projects/*/" +
+      "locations/*/clusters/*/nodePools/*}:setA" +
+      "utoscaling:\001*Zk\"f/v1beta1/projects/{proj" +
+      "ect_id}/zones/{zone}/clusters/{cluster_i" +
+      "d}/nodePools/{node_pool_id}/autoscaling:" +
+      "\001*\022\264\002\n\021SetLoggingService\0222.google.contai" +
+      "ner.v1beta1.SetLoggingServiceRequest\032#.g" +
+      "oogle.container.v1beta1.Operation\"\305\001\202\323\344\223" +
+      "\002\221\001\"</v1beta1/{name=projects/*/locations" +
+      "/*/clusters/*}:setLogging:\001*ZN\"I/v1beta1" +
       "/projects/{project_id}/zones/{zone}/clus" +
-      "ters/{cluster_id}:setMaintenancePolicy:\001" +
-      "*\332A-project_id,zone,cluster_id,maintenan" +
-      "ce_policy\022\324\001\n\025ListUsableSubnetworks\0226.go" +
-      "ogle.container.v1beta1.ListUsableSubnetw" +
-      "orksRequest\0327.google.container.v1beta1.L" +
-      "istUsableSubnetworksResponse\"J\202\323\344\223\002;\0229/v" +
-      "1beta1/{parent=projects/*}/aggregated/us" +
-      "ableSubnetworks\332A\006parent\022\251\001\n\rListLocatio" +
-      "ns\022..google.container.v1beta1.ListLocati" +
-      "onsRequest\032/.google.container.v1beta1.Li" +
-      "stLocationsResponse\"7\202\323\344\223\002(\022&/v1beta1/{p" +
-      "arent=projects/*}/locations\332A\006parent\032L\312A" +
-      "\030container.googleapis.com\322A.https://www." +
-      "googleapis.com/auth/cloud-platformB\241\002\n\034c" +
-      "om.google.container.v1beta1B\023ClusterServ" +
-      "iceProtoP\001ZAgoogle.golang.org/genproto/g" +
-      "oogleapis/container/v1beta1;container\252\002\036" +
-      "Google.Cloud.Container.V1Beta1\312\002\036Google\\" +
-      "Cloud\\Container\\V1beta1\352\002!Google::Cloud:" +
-      ":Container::V1beta1\352A@\n\033pubsub.googleapi" +
-      "s.com/Topic\022!projects/{project}/topics/{" +
-      "topic}b\006proto3"
+      "ters/{cluster_id}/logging:\001*\332A*project_i" +
+      "d,zone,cluster_id,logging_service\022\303\002\n\024Se" +
+      "tMonitoringService\0225.google.container.v1" +
+      "beta1.SetMonitoringServiceRequest\032#.goog" +
+      "le.container.v1beta1.Operation\"\316\001\202\323\344\223\002\227\001" +
+      "\"?/v1beta1/{name=projects/*/locations/*/" +
+      "clusters/*}:setMonitoring:\001*ZQ\"L/v1beta1" +
+      "/projects/{project_id}/zones/{zone}/clus" +
+      "ters/{cluster_id}/monitoring:\001*\332A-projec" +
+      "t_id,zone,cluster_id,monitoring_service\022" +
+      "\254\002\n\017SetAddonsConfig\0220.google.container.v" +
+      "1beta1.SetAddonsConfigRequest\032#.google.c" +
+      "ontainer.v1beta1.Operation\"\301\001\202\323\344\223\002\217\001\";/v" +
+      "1beta1/{name=projects/*/locations/*/clus" +
+      "ters/*}:setAddons:\001*ZM\"H/v1beta1/project" +
+      "s/{project_id}/zones/{zone}/clusters/{cl" +
+      "uster_id}/addons:\001*\332A(project_id,zone,cl" +
+      "uster_id,addons_config\022\253\002\n\014SetLocations\022" +
+      "-.google.container.v1beta1.SetLocationsR" +
+      "equest\032#.google.container.v1beta1.Operat" +
+      "ion\"\306\001\210\002\001\202\323\344\223\002\225\001\">/v1beta1/{name=project" +
+      "s/*/locations/*/clusters/*}:setLocations" +
+      ":\001*ZP\"K/v1beta1/projects/{project_id}/zo" +
+      "nes/{zone}/clusters/{cluster_id}/locatio" +
+      "ns:\001*\332A$project_id,zone,cluster_id,locat" +
+      "ions\022\252\002\n\014UpdateMaster\022-.google.container" +
+      ".v1beta1.UpdateMasterRequest\032#.google.co" +
+      "ntainer.v1beta1.Operation\"\305\001\202\323\344\223\002\222\001\">/v1" +
+      "beta1/{name=projects/*/locations/*/clust" +
+      "ers/*}:updateMaster:\001*ZM\"H/v1beta1/proje" +
+      "cts/{project_id}/zones/{zone}/clusters/{" +
+      "cluster_id}/master:\001*\332A)project_id,zone," +
+      "cluster_id,master_version\022\210\002\n\rSetMasterA" +
+      "uth\022..google.container.v1beta1.SetMaster" +
+      "AuthRequest\032#.google.container.v1beta1.O" +
+      "peration\"\241\001\202\323\344\223\002\232\001\"?/v1beta1/{name=proje" +
+      "cts/*/locations/*/clusters/*}:setMasterA" +
+      "uth:\001*ZT\"O/v1beta1/projects/{project_id}" +
+      "/zones/{zone}/clusters/{cluster_id}:setM" +
+      "asterAuth:\001*\022\202\002\n\rDeleteCluster\022..google." +
+      "container.v1beta1.DeleteClusterRequest\032#" +
+      ".google.container.v1beta1.Operation\"\233\001\202\323" +
+      "\344\223\002x*1/v1beta1/{name=projects/*/location" +
+      "s/*/clusters/*}ZC*A/v1beta1/projects/{pr" +
+      "oject_id}/zones/{zone}/clusters/{cluster" +
+      "_id}\332A\032project_id,zone,cluster_id\022\375\001\n\016Li" +
+      "stOperations\022/.google.container.v1beta1." +
+      "ListOperationsRequest\0320.google.container" +
+      ".v1beta1.ListOperationsResponse\"\207\001\202\323\344\223\002o" +
+      "\0223/v1beta1/{parent=projects/*/locations/" +
+      "*}/operationsZ8\0226/v1beta1/projects/{proj" +
+      "ect_id}/zones/{zone}/operations\332A\017projec" +
+      "t_id,zone\022\210\002\n\014GetOperation\022-.google.cont" +
+      "ainer.v1beta1.GetOperationRequest\032#.goog" +
+      "le.container.v1beta1.Operation\"\243\001\202\323\344\223\002~\022" +
+      "3/v1beta1/{name=projects/*/locations/*/o" +
+      "perations/*}ZG\022E/v1beta1/projects/{proje" +
+      "ct_id}/zones/{zone}/operations/{operatio" +
+      "n_id}\332A\034project_id,zone,operation_id\022\226\002\n" +
+      "\017CancelOperation\0220.google.container.v1be" +
+      "ta1.CancelOperationRequest\032\026.google.prot" +
+      "obuf.Empty\"\270\001\202\323\344\223\002\222\001\":/v1beta1/{name=pro" +
+      "jects/*/locations/*/operations/*}:cancel" +
+      ":\001*ZQ\"L/v1beta1/projects/{project_id}/zo" +
+      "nes/{zone}/operations/{operation_id}:can" +
+      "cel:\001*\332A\034project_id,zone,operation_id\022\367\001" +
+      "\n\017GetServerConfig\0220.google.container.v1b" +
+      "eta1.GetServerConfigRequest\032&.google.con" +
+      "tainer.v1beta1.ServerConfig\"\211\001\202\323\344\223\002q\0223/v" +
+      "1beta1/{name=projects/*/locations/*}/ser" +
+      "verConfigZ:\0228/v1beta1/projects/{project_" +
+      "id}/zones/{zone}/serverconfig\332A\017project_" +
+      "id,zone\022\245\002\n\rListNodePools\022..google.conta" +
+      "iner.v1beta1.ListNodePoolsRequest\032/.goog" +
+      "le.container.v1beta1.ListNodePoolsRespon" +
+      "se\"\262\001\202\323\344\223\002\216\001\022=/v1beta1/{parent=projects/" +
+      "*/locations/*/clusters/*}/nodePoolsZM\022K/" +
+      "v1beta1/projects/{project_id}/zones/{zon" +
+      "e}/clusters/{cluster_id}/nodePools\332A\032pro" +
+      "ject_id,zone,cluster_id\022\265\001\n\016GetJSONWebKe" +
+      "ys\022/.google.container.v1beta1.GetJSONWeb" +
+      "KeysRequest\0320.google.container.v1beta1.G" +
+      "etJSONWebKeysResponse\"@\202\323\344\223\002:\0228/v1beta1/" +
+      "{parent=projects/*/locations/*/clusters/" +
+      "*}/jwks\022\260\002\n\013GetNodePool\022,.google.contain" +
+      "er.v1beta1.GetNodePoolRequest\032\".google.c" +
+      "ontainer.v1beta1.NodePool\"\316\001\202\323\344\223\002\235\001\022=/v1" +
+      "beta1/{name=projects/*/locations/*/clust" +
+      "ers/*/nodePools/*}Z\\\022Z/v1beta1/projects/" +
+      "{project_id}/zones/{zone}/clusters/{clus" +
+      "ter_id}/nodePools/{node_pool_id}\332A\'proje" +
+      "ct_id,zone,cluster_id,node_pool_id\022\253\002\n\016C" +
+      "reateNodePool\022/.google.container.v1beta1" +
+      ".CreateNodePoolRequest\032#.google.containe" +
+      "r.v1beta1.Operation\"\302\001\202\323\344\223\002\224\001\"=/v1beta1/" +
+      "{parent=projects/*/locations/*/clusters/" +
+      "*}/nodePools:\001*ZP\"K/v1beta1/projects/{pr" +
+      "oject_id}/zones/{zone}/clusters/{cluster" +
+      "_id}/nodePools:\001*\332A$project_id,zone,clus" +
+      "ter_id,node_pool\022\267\002\n\016DeleteNodePool\022/.go" +
+      "ogle.container.v1beta1.DeleteNodePoolReq" +
+      "uest\032#.google.container.v1beta1.Operatio" +
+      "n\"\316\001\202\323\344\223\002\235\001*=/v1beta1/{name=projects/*/l" +
+      "ocations/*/clusters/*/nodePools/*}Z\\*Z/v" +
+      "1beta1/projects/{project_id}/zones/{zone" +
+      "}/clusters/{cluster_id}/nodePools/{node_" +
+      "pool_id}\332A\'project_id,zone,cluster_id,no" +
+      "de_pool_id\022\341\002\n\027RollbackNodePoolUpgrade\0228" +
+      ".google.container.v1beta1.RollbackNodePo" +
+      "olUpgradeRequest\032#.google.container.v1be" +
+      "ta1.Operation\"\346\001\202\323\344\223\002\265\001\"F/v1beta1/{name=" +
+      "projects/*/locations/*/clusters/*/nodePo" +
+      "ols/*}:rollback:\001*Zh\"c/v1beta1/projects/" +
+      "{project_id}/zones/{zone}/clusters/{clus" +
+      "ter_id}/nodePools/{node_pool_id}:rollbac" +
+      "k:\001*\332A\'project_id,zone,cluster_id,node_p" +
+      "ool_id\022\362\002\n\025SetNodePoolManagement\0226.googl" +
+      "e.container.v1beta1.SetNodePoolManagemen" +
+      "tRequest\032#.google.container.v1beta1.Oper" +
+      "ation\"\373\001\202\323\344\223\002\277\001\"K/v1beta1/{name=projects" +
+      "/*/locations/*/clusters/*/nodePools/*}:s" +
+      "etManagement:\001*Zm\"h/v1beta1/projects/{pr" +
+      "oject_id}/zones/{zone}/clusters/{cluster" +
+      "_id}/nodePools/{node_pool_id}/setManagem" +
+      "ent:\001*\332A2project_id,zone,cluster_id,node",
+      "_pool_id,management\022\304\002\n\tSetLabels\022*.goog" +
+      "le.container.v1beta1.SetLabelsRequest\032#." +
+      "google.container.v1beta1.Operation\"\345\001\202\323\344" +
+      "\223\002\237\001\"C/v1beta1/{name=projects/*/location" +
+      "s/*/clusters/*}:setResourceLabels:\001*ZU\"P" +
+      "/v1beta1/projects/{project_id}/zones/{zo" +
+      "ne}/clusters/{cluster_id}/resourceLabels" +
+      ":\001*\332A<project_id,zone,cluster_id,resourc" +
+      "e_labels,label_fingerprint\022\252\002\n\rSetLegacy" +
+      "Abac\022..google.container.v1beta1.SetLegac" +
+      "yAbacRequest\032#.google.container.v1beta1." +
+      "Operation\"\303\001\202\323\344\223\002\227\001\"?/v1beta1/{name=proj" +
+      "ects/*/locations/*/clusters/*}:setLegacy" +
+      "Abac:\001*ZQ\"L/v1beta1/projects/{project_id" +
+      "}/zones/{zone}/clusters/{cluster_id}/leg" +
+      "acyAbac:\001*\332A\"project_id,zone,cluster_id," +
+      "enabled\022\255\002\n\017StartIPRotation\0220.google.con" +
+      "tainer.v1beta1.StartIPRotationRequest\032#." +
+      "google.container.v1beta1.Operation\"\302\001\202\323\344" +
+      "\223\002\236\001\"A/v1beta1/{name=projects/*/location" +
+      "s/*/clusters/*}:startIpRotation:\001*ZV\"Q/v" +
+      "1beta1/projects/{project_id}/zones/{zone" +
+      "}/clusters/{cluster_id}:startIpRotation:" +
+      "\001*\332A\032project_id,zone,cluster_id\022\271\002\n\022Comp" +
+      "leteIPRotation\0223.google.container.v1beta" +
+      "1.CompleteIPRotationRequest\032#.google.con" +
+      "tainer.v1beta1.Operation\"\310\001\202\323\344\223\002\244\001\"D/v1b" +
+      "eta1/{name=projects/*/locations/*/cluste" +
+      "rs/*}:completeIpRotation:\001*ZY\"T/v1beta1/" +
+      "projects/{project_id}/zones/{zone}/clust" +
+      "ers/{cluster_id}:completeIpRotation:\001*\332A" +
+      "\032project_id,zone,cluster_id\022\245\002\n\017SetNodeP" +
+      "oolSize\0220.google.container.v1beta1.SetNo" +
+      "dePoolSizeRequest\032#.google.container.v1b" +
+      "eta1.Operation\"\272\001\202\323\344\223\002\263\001\"E/v1beta1/{name" +
+      "=projects/*/locations/*/clusters/*/nodeP" +
+      "ools/*}:setSize:\001*Zg\"b/v1beta1/projects/" +
+      "{project_id}/zones/{zone}/clusters/{clus" +
+      "ter_id}/nodePools/{node_pool_id}/setSize" +
+      ":\001*\022\300\002\n\020SetNetworkPolicy\0221.google.contai" +
+      "ner.v1beta1.SetNetworkPolicyRequest\032#.go" +
+      "ogle.container.v1beta1.Operation\"\323\001\202\323\344\223\002" +
+      "\240\001\"B/v1beta1/{name=projects/*/locations/" +
+      "*/clusters/*}:setNetworkPolicy:\001*ZW\"R/v1" +
+      "beta1/projects/{project_id}/zones/{zone}" +
+      "/clusters/{cluster_id}:setNetworkPolicy:" +
+      "\001*\332A)project_id,zone,cluster_id,network_" +
+      "policy\022\324\002\n\024SetMaintenancePolicy\0225.google" +
+      ".container.v1beta1.SetMaintenancePolicyR" +
+      "equest\032#.google.container.v1beta1.Operat" +
+      "ion\"\337\001\202\323\344\223\002\250\001\"F/v1beta1/{name=projects/*" +
+      "/locations/*/clusters/*}:setMaintenanceP" +
+      "olicy:\001*Z[\"V/v1beta1/projects/{project_i" +
+      "d}/zones/{zone}/clusters/{cluster_id}:se" +
+      "tMaintenancePolicy:\001*\332A-project_id,zone," +
+      "cluster_id,maintenance_policy\022\324\001\n\025ListUs" +
+      "ableSubnetworks\0226.google.container.v1bet" +
+      "a1.ListUsableSubnetworksRequest\0327.google" +
+      ".container.v1beta1.ListUsableSubnetworks" +
+      "Response\"J\202\323\344\223\002;\0229/v1beta1/{parent=proje" +
+      "cts/*}/aggregated/usableSubnetworks\332A\006pa" +
+      "rent\022\251\001\n\rListLocations\022..google.containe" +
+      "r.v1beta1.ListLocationsRequest\032/.google." +
+      "container.v1beta1.ListLocationsResponse\"" +
+      "7\202\323\344\223\002(\022&/v1beta1/{parent=projects/*}/lo" +
+      "cations\332A\006parent\032L\312A\030container.googleapi" +
+      "s.com\322A.https://www.googleapis.com/auth/" +
+      "cloud-platformB\241\002\n\034com.google.container." +
+      "v1beta1B\023ClusterServiceProtoP\001ZAgoogle.g" +
+      "olang.org/genproto/googleapis/container/" +
+      "v1beta1;container\252\002\036Google.Cloud.Contain" +
+      "er.V1Beta1\312\002\036Google\\Cloud\\Container\\V1be" +
+      "ta1\352\002!Google::Cloud::Container::V1beta1\352" +
+      "A@\n\033pubsub.googleapis.com/Topic\022!project" +
+      "s/{project}/topics/{topic}b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2034,7 +2034,7 @@ public final class ClusterServiceProto {
     internal_static_google_container_v1beta1_AutoprovisioningNodePoolDefaults_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_container_v1beta1_AutoprovisioningNodePoolDefaults_descriptor,
-        new java.lang.String[] { "OauthScopes", "ServiceAccount", "UpgradeSettings", "Management", "MinCpuPlatform", "DiskSizeGb", "DiskType", "ShieldedInstanceConfig", "BootDiskKmsKey", });
+        new java.lang.String[] { "OauthScopes", "ServiceAccount", "UpgradeSettings", "Management", "MinCpuPlatform", "DiskSizeGb", "DiskType", "ShieldedInstanceConfig", "BootDiskKmsKey", "ImageType", });
     internal_static_google_container_v1beta1_ResourceLimit_descriptor =
       getDescriptor().getMessageTypes().get(73);
     internal_static_google_container_v1beta1_ResourceLimit_fieldAccessorTable = new
