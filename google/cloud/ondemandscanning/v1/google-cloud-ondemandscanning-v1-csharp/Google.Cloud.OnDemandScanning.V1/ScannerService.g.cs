@@ -62,7 +62,7 @@ namespace Google.Cloud.OnDemandScanning.V1 {
             "aW5nLlYxygIgR29vZ2xlXENsb3VkXE9uRGVtYW5kU2Nhbm5pbmdcVjHqAiNH",
             "b29nbGU6OkNsb3VkOjpPbkRlbWFuZFNjYW5uaW5nOjpWMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::CloudContainers.Workflow.Analysis.Vulnerability.Proto.PackageReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Grafeas.V1.GrafeasReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Cloud.Containers.Workflow.Analysis.Vulnerability.PackageReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Grafeas.V1.GrafeasReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.OnDemandScanning.V1.AnalyzePackagesRequest), global::Google.Cloud.OnDemandScanning.V1.AnalyzePackagesRequest.Parser, new[]{ "Parent", "ResourceUri", "Packages" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.OnDemandScanning.V1.AnalyzePackagesResponse), global::Google.Cloud.OnDemandScanning.V1.AnalyzePackagesResponse.Parser, new[]{ "Scan" }, null, null, null, null),
@@ -150,14 +150,14 @@ namespace Google.Cloud.OnDemandScanning.V1 {
 
     /// <summary>Field number for the "packages" field.</summary>
     public const int PackagesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::CloudContainers.Workflow.Analysis.Vulnerability.Proto.PackageData> _repeated_packages_codec
-        = pb::FieldCodec.ForMessage(26, global::CloudContainers.Workflow.Analysis.Vulnerability.Proto.PackageData.Parser);
-    private readonly pbc::RepeatedField<global::CloudContainers.Workflow.Analysis.Vulnerability.Proto.PackageData> packages_ = new pbc::RepeatedField<global::CloudContainers.Workflow.Analysis.Vulnerability.Proto.PackageData>();
+    private static readonly pb::FieldCodec<global::Google.Cloud.Containers.Workflow.Analysis.Vulnerability.PackageData> _repeated_packages_codec
+        = pb::FieldCodec.ForMessage(26, global::Google.Cloud.Containers.Workflow.Analysis.Vulnerability.PackageData.Parser);
+    private readonly pbc::RepeatedField<global::Google.Cloud.Containers.Workflow.Analysis.Vulnerability.PackageData> packages_ = new pbc::RepeatedField<global::Google.Cloud.Containers.Workflow.Analysis.Vulnerability.PackageData>();
     /// <summary>
     /// The packages to analyze.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::CloudContainers.Workflow.Analysis.Vulnerability.Proto.PackageData> Packages {
+    public pbc::RepeatedField<global::Google.Cloud.Containers.Workflow.Analysis.Vulnerability.PackageData> Packages {
       get { return packages_; }
     }
 

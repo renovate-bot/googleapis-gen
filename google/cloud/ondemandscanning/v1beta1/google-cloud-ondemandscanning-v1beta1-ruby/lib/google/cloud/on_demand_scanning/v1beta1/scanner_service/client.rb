@@ -189,7 +189,7 @@ module Google
             #       projects/[project_name]/locations/[location]
             #   @param resource_uri [::String]
             #     Required. The resource URI of the container image being scanned.
-            #   @param packages [::Array<::CloudContainers::Workflow::Analysis::Vulnerability::Proto::PackageData, ::Hash>]
+            #   @param packages [::Array<::Google::Cloud::Containers::Workflow::Analysis::Vulnerability::PackageData, ::Hash>]
             #     The packages to analyze.
             #
             # @yield [response, operation] Access the result along with the RPC operation

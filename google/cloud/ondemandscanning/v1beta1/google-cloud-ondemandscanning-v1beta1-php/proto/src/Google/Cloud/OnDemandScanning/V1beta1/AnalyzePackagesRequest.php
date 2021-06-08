@@ -47,7 +47,7 @@ class AnalyzePackagesRequest extends \Google\Protobuf\Internal\Message
      *             projects/[project_name]/locations/[location]
      *     @type string $resource_uri
      *           Required. The resource URI of the container image being scanned.
-     *     @type \Cloud_containers\Workflow\Analysis\Vulnerability\Proto\PackageData[]|\Google\Protobuf\Internal\RepeatedField $packages
+     *     @type \Google\Cloud\Containers\Workflow\Analysis\Vulnerability\PackageData[]|\Google\Protobuf\Internal\RepeatedField $packages
      *           The packages to analyze.
      * }
      */
@@ -125,12 +125,12 @@ class AnalyzePackagesRequest extends \Google\Protobuf\Internal\Message
      * The packages to analyze.
      *
      * Generated from protobuf field <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
-     * @param \Cloud_containers\Workflow\Analysis\Vulnerability\Proto\PackageData[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Cloud\Containers\Workflow\Analysis\Vulnerability\PackageData[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPackages($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Cloud_containers\Workflow\Analysis\Vulnerability\Proto\PackageData::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Containers\Workflow\Analysis\Vulnerability\PackageData::class);
         $this->packages = $arr;
 
         return $this;

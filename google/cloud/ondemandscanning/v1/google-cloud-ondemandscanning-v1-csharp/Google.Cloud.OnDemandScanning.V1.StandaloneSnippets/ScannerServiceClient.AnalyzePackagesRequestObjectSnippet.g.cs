@@ -16,7 +16,7 @@
 
 namespace Google.Cloud.OnDemandScanning.V1.Snippets
 {
-    using CloudContainers.Workflow.Analysis.Vulnerability.Proto;
+    using Google.Cloud.Containers.Workflow.Analysis.Vulnerability;
     using Google.Cloud.OnDemandScanning.V1;
     using Google.LongRunning;
 

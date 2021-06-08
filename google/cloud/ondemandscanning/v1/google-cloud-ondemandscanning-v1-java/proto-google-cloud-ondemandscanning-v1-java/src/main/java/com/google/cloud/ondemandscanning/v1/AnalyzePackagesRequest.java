@@ -71,11 +71,11 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              packages_ = new java.util.ArrayList<cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData>();
+              packages_ = new java.util.ArrayList<com.google.cloud.containers.workflow.analysis.vulnerability.PackageData>();
               mutable_bitField0_ |= 0x00000001;
             }
             packages_.add(
-                input.readMessage(cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.parser(), extensionRegistry));
+                input.readMessage(com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -208,7 +208,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PACKAGES_FIELD_NUMBER = 3;
-  private java.util.List<cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData> packages_;
+  private java.util.List<com.google.cloud.containers.workflow.analysis.vulnerability.PackageData> packages_;
   /**
    * <pre>
    * The packages to analyze.
@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData> getPackagesList() {
+  public java.util.List<com.google.cloud.containers.workflow.analysis.vulnerability.PackageData> getPackagesList() {
     return packages_;
   }
   /**
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageDataOrBuilder> 
+  public java.util.List<? extends com.google.cloud.containers.workflow.analysis.vulnerability.PackageDataOrBuilder> 
       getPackagesOrBuilderList() {
     return packages_;
   }
@@ -251,7 +251,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
    */
   @java.lang.Override
-  public cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData getPackages(int index) {
+  public com.google.cloud.containers.workflow.analysis.vulnerability.PackageData getPackages(int index) {
     return packages_.get(index);
   }
   /**
@@ -262,7 +262,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
    */
   @java.lang.Override
-  public cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageDataOrBuilder getPackagesOrBuilder(
+  public com.google.cloud.containers.workflow.analysis.vulnerability.PackageDataOrBuilder getPackagesOrBuilder(
       int index) {
     return packages_.get(index);
   }
@@ -845,17 +845,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData> packages_ =
+    private java.util.List<com.google.cloud.containers.workflow.analysis.vulnerability.PackageData> packages_ =
       java.util.Collections.emptyList();
     private void ensurePackagesIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        packages_ = new java.util.ArrayList<cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData>(packages_);
+        packages_ = new java.util.ArrayList<com.google.cloud.containers.workflow.analysis.vulnerability.PackageData>(packages_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData, cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.Builder, cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageDataOrBuilder> packagesBuilder_;
+        com.google.cloud.containers.workflow.analysis.vulnerability.PackageData, com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.Builder, com.google.cloud.containers.workflow.analysis.vulnerability.PackageDataOrBuilder> packagesBuilder_;
 
     /**
      * <pre>
@@ -864,7 +864,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
-    public java.util.List<cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData> getPackagesList() {
+    public java.util.List<com.google.cloud.containers.workflow.analysis.vulnerability.PackageData> getPackagesList() {
       if (packagesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(packages_);
       } else {
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
-    public cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData getPackages(int index) {
+    public com.google.cloud.containers.workflow.analysis.vulnerability.PackageData getPackages(int index) {
       if (packagesBuilder_ == null) {
         return packages_.get(index);
       } else {
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
     public Builder setPackages(
-        int index, cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData value) {
+        int index, com.google.cloud.containers.workflow.analysis.vulnerability.PackageData value) {
       if (packagesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -928,7 +928,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
     public Builder setPackages(
-        int index, cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.Builder builderForValue) {
+        int index, com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.Builder builderForValue) {
       if (packagesBuilder_ == null) {
         ensurePackagesIsMutable();
         packages_.set(index, builderForValue.build());
@@ -945,7 +945,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
-    public Builder addPackages(cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData value) {
+    public Builder addPackages(com.google.cloud.containers.workflow.analysis.vulnerability.PackageData value) {
       if (packagesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -966,7 +966,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
     public Builder addPackages(
-        int index, cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData value) {
+        int index, com.google.cloud.containers.workflow.analysis.vulnerability.PackageData value) {
       if (packagesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -987,7 +987,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
     public Builder addPackages(
-        cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.Builder builderForValue) {
+        com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.Builder builderForValue) {
       if (packagesBuilder_ == null) {
         ensurePackagesIsMutable();
         packages_.add(builderForValue.build());
@@ -1005,7 +1005,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
     public Builder addPackages(
-        int index, cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.Builder builderForValue) {
+        int index, com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.Builder builderForValue) {
       if (packagesBuilder_ == null) {
         ensurePackagesIsMutable();
         packages_.add(index, builderForValue.build());
@@ -1023,7 +1023,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
     public Builder addAllPackages(
-        java.lang.Iterable<? extends cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData> values) {
+        java.lang.Iterable<? extends com.google.cloud.containers.workflow.analysis.vulnerability.PackageData> values) {
       if (packagesBuilder_ == null) {
         ensurePackagesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1075,7 +1075,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
-    public cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.Builder getPackagesBuilder(
+    public com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.Builder getPackagesBuilder(
         int index) {
       return getPackagesFieldBuilder().getBuilder(index);
     }
@@ -1086,7 +1086,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
-    public cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageDataOrBuilder getPackagesOrBuilder(
+    public com.google.cloud.containers.workflow.analysis.vulnerability.PackageDataOrBuilder getPackagesOrBuilder(
         int index) {
       if (packagesBuilder_ == null) {
         return packages_.get(index);  } else {
@@ -1100,7 +1100,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
-    public java.util.List<? extends cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageDataOrBuilder> 
+    public java.util.List<? extends com.google.cloud.containers.workflow.analysis.vulnerability.PackageDataOrBuilder> 
          getPackagesOrBuilderList() {
       if (packagesBuilder_ != null) {
         return packagesBuilder_.getMessageOrBuilderList();
@@ -1115,9 +1115,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
-    public cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.Builder addPackagesBuilder() {
+    public com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.Builder addPackagesBuilder() {
       return getPackagesFieldBuilder().addBuilder(
-          cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.getDefaultInstance());
+          com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.getDefaultInstance());
     }
     /**
      * <pre>
@@ -1126,10 +1126,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
-    public cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.Builder addPackagesBuilder(
+    public com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.Builder addPackagesBuilder(
         int index) {
       return getPackagesFieldBuilder().addBuilder(
-          index, cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.getDefaultInstance());
+          index, com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.getDefaultInstance());
     }
     /**
      * <pre>
@@ -1138,16 +1138,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
      */
-    public java.util.List<cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.Builder> 
+    public java.util.List<com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.Builder> 
          getPackagesBuilderList() {
       return getPackagesFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData, cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.Builder, cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageDataOrBuilder> 
+        com.google.cloud.containers.workflow.analysis.vulnerability.PackageData, com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.Builder, com.google.cloud.containers.workflow.analysis.vulnerability.PackageDataOrBuilder> 
         getPackagesFieldBuilder() {
       if (packagesBuilder_ == null) {
         packagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData, cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData.Builder, cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageDataOrBuilder>(
+            com.google.cloud.containers.workflow.analysis.vulnerability.PackageData, com.google.cloud.containers.workflow.analysis.vulnerability.PackageData.Builder, com.google.cloud.containers.workflow.analysis.vulnerability.PackageDataOrBuilder>(
                 packages_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),

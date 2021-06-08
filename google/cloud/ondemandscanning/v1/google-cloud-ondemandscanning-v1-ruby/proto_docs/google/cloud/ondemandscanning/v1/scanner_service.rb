@@ -31,7 +31,7 @@ module Google
         #   @return [::String]
         #     Required. The resource URI of the container image being scanned.
         # @!attribute [rw] packages
-        #   @return [::Array<::CloudContainers::Workflow::Analysis::Vulnerability::Proto::PackageData>]
+        #   @return [::Array<::Google::Cloud::Containers::Workflow::Analysis::Vulnerability::PackageData>]
         #     The packages to analyze.
         class AnalyzePackagesRequest
           include ::Google::Protobuf::MessageExts

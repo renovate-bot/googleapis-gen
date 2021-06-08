@@ -203,7 +203,7 @@ public class ScannerServiceClient implements BackgroundResource {
    *       AnalyzePackagesRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setResourceUri("resourceUri1234527870")
-   *           .addAllPackages(new ArrayList<Package.PackageData>())
+   *           .addAllPackages(new ArrayList<PackageData>())
    *           .build();
    *   AnalyzePackagesResponse response = scannerServiceClient.analyzePackagesAsync(request).get();
    * }
@@ -229,7 +229,7 @@ public class ScannerServiceClient implements BackgroundResource {
    *       AnalyzePackagesRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setResourceUri("resourceUri1234527870")
-   *           .addAllPackages(new ArrayList<Package.PackageData>())
+   *           .addAllPackages(new ArrayList<PackageData>())
    *           .build();
    *   OperationFuture<AnalyzePackagesResponse, AnalyzePackagesMetadata> future =
    *       scannerServiceClient.analyzePackagesOperationCallable().futureCall(request);
@@ -256,7 +256,7 @@ public class ScannerServiceClient implements BackgroundResource {
    *       AnalyzePackagesRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setResourceUri("resourceUri1234527870")
-   *           .addAllPackages(new ArrayList<Package.PackageData>())
+   *           .addAllPackages(new ArrayList<PackageData>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       scannerServiceClient.analyzePackagesCallable().futureCall(request);

@@ -24,12 +24,11 @@
 
 namespace Google\Cloud\OnDemandScanning\V1\Gapic;
 
-use Cloud_containers\Workflow\Analysis\Vulnerability\Proto\PackageData;
 use Google\ApiCore\ApiException;
-
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
@@ -37,6 +36,7 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\Containers\Workflow\Analysis\Vulnerability\PackageData;
 use Google\Cloud\OnDemandScanning\V1\AnalyzePackagesRequest;
 use Google\Cloud\OnDemandScanning\V1\ListVulnerabilitiesRequest;
 use Google\Cloud\OnDemandScanning\V1\ListVulnerabilitiesResponse;

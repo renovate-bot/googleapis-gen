@@ -94,7 +94,7 @@ public final class ScannerServiceProto {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          cloud_containers.workflow.analysis.vulnerability.proto.Package.getDescriptor(),
+          com.google.cloud.containers.workflow.analysis.vulnerability.PackageDataProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ClientProto.getDescriptor(),
           com.google.api.FieldBehaviorProto.getDescriptor(),
@@ -142,7 +142,7 @@ public final class ScannerServiceProto {
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    cloud_containers.workflow.analysis.vulnerability.proto.Package.getDescriptor();
+    com.google.cloud.containers.workflow.analysis.vulnerability.PackageDataProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();

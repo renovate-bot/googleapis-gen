@@ -16,8 +16,8 @@
 
 namespace Google.Cloud.OnDemandScanning.V1Beta1.Snippets
 {
-    using CloudContainers.Workflow.Analysis.Vulnerability.Proto;
     using Google.Api.Gax;
+    using Google.Cloud.Containers.Workflow.Analysis.Vulnerability;
     using Google.LongRunning;
     using Grafeas.V1;
     using System;

@@ -56,7 +56,7 @@ public interface AnalyzePackagesRequestOrBuilder extends
    *
    * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
    */
-  java.util.List<cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData> 
+  java.util.List<com.google.cloud.containers.workflow.analysis.vulnerability.PackageData> 
       getPackagesList();
   /**
    * <pre>
@@ -65,7 +65,7 @@ public interface AnalyzePackagesRequestOrBuilder extends
    *
    * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
    */
-  cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageData getPackages(int index);
+  com.google.cloud.containers.workflow.analysis.vulnerability.PackageData getPackages(int index);
   /**
    * <pre>
    * The packages to analyze.
@@ -81,7 +81,7 @@ public interface AnalyzePackagesRequestOrBuilder extends
    *
    * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
    */
-  java.util.List<? extends cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageDataOrBuilder> 
+  java.util.List<? extends com.google.cloud.containers.workflow.analysis.vulnerability.PackageDataOrBuilder> 
       getPackagesOrBuilderList();
   /**
    * <pre>
@@ -90,6 +90,6 @@ public interface AnalyzePackagesRequestOrBuilder extends
    *
    * <code>repeated .cloud_containers.workflow.analysis.vulnerability.proto.PackageData packages = 3;</code>
    */
-  cloud_containers.workflow.analysis.vulnerability.proto.Package.PackageDataOrBuilder getPackagesOrBuilder(
+  com.google.cloud.containers.workflow.analysis.vulnerability.PackageDataOrBuilder getPackagesOrBuilder(
       int index);
 }

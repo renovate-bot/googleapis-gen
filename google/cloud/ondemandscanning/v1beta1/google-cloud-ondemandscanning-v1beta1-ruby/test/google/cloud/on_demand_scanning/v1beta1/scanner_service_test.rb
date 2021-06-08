@@ -64,7 +64,7 @@ class ::Google::Cloud::OnDemandScanning::V1beta1::ScannerService::ClientTest < M
       assert_kind_of ::Google::Cloud::OnDemandScanning::V1beta1::AnalyzePackagesRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal "hello world", request["resource_uri"]
-      assert_kind_of ::CloudContainers::Workflow::Analysis::Vulnerability::Proto::PackageData, request["packages"].first
+      assert_kind_of ::Google::Cloud::Containers::Workflow::Analysis::Vulnerability::PackageData, request["packages"].first
       refute_nil options
     end
 
