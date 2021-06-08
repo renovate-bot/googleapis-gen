@@ -1,2 +1,2 @@
-recursive-include google/devtools/clouddebugger *.py
-recursive-include google/devtools/clouddebugger_v2 *.py
+recursive-include google/cloud/debugger *.py
+recursive-include google/cloud/debugger_v2 *.py

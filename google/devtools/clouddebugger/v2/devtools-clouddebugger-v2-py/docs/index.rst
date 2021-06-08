@@ -3,5 +3,5 @@ API Reference
 .. toctree::
     :maxdepth: 2
 
-    clouddebugger_v2/services
-    clouddebugger_v2/types
+    debugger_v2/services
+    debugger_v2/types
