@@ -44,8 +44,8 @@ import org.junit.Test;
 public class DriveActivityServiceClientTest {
   private static MockDriveActivityService mockDriveActivityService;
   private static MockServiceHelper mockServiceHelper;
-  private DriveActivityServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DriveActivityServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -48,8 +48,8 @@ import org.junit.Test;
 public class CustomerServiceClientTest {
   private static MockCustomerService mockCustomerService;
   private static MockServiceHelper mockServiceHelper;
-  private CustomerServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CustomerServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -87,6 +87,16 @@ public class CustomerServiceClientTest {
     Customer expectedResponse =
         Customer.newBuilder()
             .setResourceName(CustomerName.of("[CUSTOMER_ID]").toString())
+            .setId(3355)
+            .setDescriptiveName("descriptiveName1177759095")
+            .setCurrencyCode("currencyCode1004773790")
+            .setTimeZone("timeZone-2077180903")
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
+            .setAutoTaggingEnabled(true)
+            .setHasPartnersBadge(true)
+            .setManager(true)
+            .setTestAccount(true)
             .setCallReportingSetting(CallReportingSetting.newBuilder().build())
             .setConversionTrackingSetting(ConversionTrackingSetting.newBuilder().build())
             .setRemarketingSetting(RemarketingSetting.newBuilder().build())
@@ -94,6 +104,7 @@ public class CustomerServiceClientTest {
                 new ArrayList<
                     CustomerPayPerConversionEligibilityFailureReasonEnum
                         .CustomerPayPerConversionEligibilityFailureReason>())
+            .setOptimizationScore(-1699828416)
             .setOptimizationScoreWeight(997272151)
             .build();
     mockCustomerService.addResponse(expectedResponse);
@@ -133,6 +144,16 @@ public class CustomerServiceClientTest {
     Customer expectedResponse =
         Customer.newBuilder()
             .setResourceName(CustomerName.of("[CUSTOMER_ID]").toString())
+            .setId(3355)
+            .setDescriptiveName("descriptiveName1177759095")
+            .setCurrencyCode("currencyCode1004773790")
+            .setTimeZone("timeZone-2077180903")
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
+            .setAutoTaggingEnabled(true)
+            .setHasPartnersBadge(true)
+            .setManager(true)
+            .setTestAccount(true)
             .setCallReportingSetting(CallReportingSetting.newBuilder().build())
             .setConversionTrackingSetting(ConversionTrackingSetting.newBuilder().build())
             .setRemarketingSetting(RemarketingSetting.newBuilder().build())
@@ -140,6 +161,7 @@ public class CustomerServiceClientTest {
                 new ArrayList<
                     CustomerPayPerConversionEligibilityFailureReasonEnum
                         .CustomerPayPerConversionEligibilityFailureReason>())
+            .setOptimizationScore(-1699828416)
             .setOptimizationScoreWeight(997272151)
             .build();
     mockCustomerService.addResponse(expectedResponse);

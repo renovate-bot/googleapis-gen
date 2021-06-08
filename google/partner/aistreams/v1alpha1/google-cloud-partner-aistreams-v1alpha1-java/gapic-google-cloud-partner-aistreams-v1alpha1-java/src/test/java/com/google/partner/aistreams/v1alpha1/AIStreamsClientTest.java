@@ -53,8 +53,8 @@ import org.junit.Test;
 public class AIStreamsClientTest {
   private static MockAIStreams mockAIStreams;
   private static MockServiceHelper mockServiceHelper;
-  private AIStreamsClient client;
   private LocalChannelProvider channelProvider;
+  private AIStreamsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -18,6 +18,7 @@ package com.google.ads.googleads.v5.services;
 
 import com.google.ads.googleads.v5.resources.SharedCriterion;
 import com.google.ads.googleads.v5.resources.SharedCriterionName;
+import com.google.ads.googleads.v5.resources.SharedSetName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -43,10 +44,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class SharedCriterionServiceClientTest {
-  private static MockSharedCriterionService mockSharedCriterionService;
   private static MockServiceHelper mockServiceHelper;
-  private SharedCriterionServiceClient client;
+  private static MockSharedCriterionService mockSharedCriterionService;
   private LocalChannelProvider channelProvider;
+  private SharedCriterionServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -85,6 +86,8 @@ public class SharedCriterionServiceClientTest {
     SharedCriterion expectedResponse =
         SharedCriterion.newBuilder()
             .setResourceName(SharedCriterionName.of("[CUSTOMER]", "[SHARED_CRITERION]").toString())
+            .setSharedSet(SharedSetName.of("[CUSTOMER]", "[SHARED_SET]").toString())
+            .setCriterionId(-326773895)
             .build();
     mockSharedCriterionService.addResponse(expectedResponse);
 
@@ -123,6 +126,8 @@ public class SharedCriterionServiceClientTest {
     SharedCriterion expectedResponse =
         SharedCriterion.newBuilder()
             .setResourceName(SharedCriterionName.of("[CUSTOMER]", "[SHARED_CRITERION]").toString())
+            .setSharedSet(SharedSetName.of("[CUSTOMER]", "[SHARED_SET]").toString())
+            .setCriterionId(-326773895)
             .build();
     mockSharedCriterionService.addResponse(expectedResponse);
 

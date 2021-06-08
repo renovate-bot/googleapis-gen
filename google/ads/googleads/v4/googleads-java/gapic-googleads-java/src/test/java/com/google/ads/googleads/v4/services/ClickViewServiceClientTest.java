@@ -46,8 +46,8 @@ import org.junit.Test;
 public class ClickViewServiceClientTest {
   private static MockClickViewService mockClickViewService;
   private static MockServiceHelper mockServiceHelper;
-  private ClickViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ClickViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

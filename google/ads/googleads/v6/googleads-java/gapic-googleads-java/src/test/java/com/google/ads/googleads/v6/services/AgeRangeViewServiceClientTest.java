@@ -43,8 +43,8 @@ import org.junit.Test;
 public class AgeRangeViewServiceClientTest {
   private static MockAgeRangeViewService mockAgeRangeViewService;
   private static MockServiceHelper mockServiceHelper;
-  private AgeRangeViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AgeRangeViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

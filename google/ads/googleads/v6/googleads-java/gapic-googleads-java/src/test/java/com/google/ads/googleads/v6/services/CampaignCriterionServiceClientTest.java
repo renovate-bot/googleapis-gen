@@ -18,6 +18,7 @@ package com.google.ads.googleads.v6.services;
 
 import com.google.ads.googleads.v6.resources.CampaignCriterion;
 import com.google.ads.googleads.v6.resources.CampaignCriterionName;
+import com.google.ads.googleads.v6.resources.CampaignName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -45,8 +46,8 @@ import org.junit.Test;
 public class CampaignCriterionServiceClientTest {
   private static MockCampaignCriterionService mockCampaignCriterionService;
   private static MockServiceHelper mockServiceHelper;
-  private CampaignCriterionServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CampaignCriterionServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -87,6 +88,10 @@ public class CampaignCriterionServiceClientTest {
             .setResourceName(
                 CampaignCriterionName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[CRITERION_ID]")
                     .toString())
+            .setCampaign(CampaignName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]").toString())
+            .setCriterionId(-326773895)
+            .setBidModifier(1362363353)
+            .setNegative(true)
             .build();
     mockCampaignCriterionService.addResponse(expectedResponse);
 
@@ -130,6 +135,10 @@ public class CampaignCriterionServiceClientTest {
             .setResourceName(
                 CampaignCriterionName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[CRITERION_ID]")
                     .toString())
+            .setCampaign(CampaignName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]").toString())
+            .setCriterionId(-326773895)
+            .setBidModifier(1362363353)
+            .setNegative(true)
             .build();
     mockCampaignCriterionService.addResponse(expectedResponse);
 

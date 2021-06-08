@@ -47,8 +47,8 @@ import org.junit.Test;
 public class AdServiceClientTest {
   private static MockAdService mockAdService;
   private static MockServiceHelper mockServiceHelper;
-  private AdServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AdServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -86,11 +86,17 @@ public class AdServiceClientTest {
     Ad expectedResponse =
         Ad.newBuilder()
             .setResourceName(AdName.of("[CUSTOMER]", "[AD]").toString())
+            .setId(3355)
             .addAllFinalUrls(new ArrayList<String>())
             .addAllFinalAppUrls(new ArrayList<FinalAppUrl>())
             .addAllFinalMobileUrls(new ArrayList<String>())
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
             .addAllUrlCustomParameters(new ArrayList<CustomParameter>())
+            .setDisplayUrl("displayUrl-914528947")
+            .setAddedByGoogleAds(true)
             .addAllUrlCollections(new ArrayList<UrlCollection>())
+            .setName(AdName.of("[CUSTOMER]", "[AD]").toString())
             .build();
     mockAdService.addResponse(expectedResponse);
 
@@ -129,11 +135,17 @@ public class AdServiceClientTest {
     Ad expectedResponse =
         Ad.newBuilder()
             .setResourceName(AdName.of("[CUSTOMER]", "[AD]").toString())
+            .setId(3355)
             .addAllFinalUrls(new ArrayList<String>())
             .addAllFinalAppUrls(new ArrayList<FinalAppUrl>())
             .addAllFinalMobileUrls(new ArrayList<String>())
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
             .addAllUrlCustomParameters(new ArrayList<CustomParameter>())
+            .setDisplayUrl("displayUrl-914528947")
+            .setAddedByGoogleAds(true)
             .addAllUrlCollections(new ArrayList<UrlCollection>())
+            .setName(AdName.of("[CUSTOMER]", "[AD]").toString())
             .build();
     mockAdService.addResponse(expectedResponse);
 

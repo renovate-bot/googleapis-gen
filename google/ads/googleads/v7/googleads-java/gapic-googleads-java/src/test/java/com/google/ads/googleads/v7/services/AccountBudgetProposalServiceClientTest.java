@@ -16,8 +16,10 @@
 
 package com.google.ads.googleads.v7.services;
 
+import com.google.ads.googleads.v7.resources.AccountBudgetName;
 import com.google.ads.googleads.v7.resources.AccountBudgetProposal;
 import com.google.ads.googleads.v7.resources.AccountBudgetProposalName;
+import com.google.ads.googleads.v7.resources.BillingSetupName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -43,8 +45,8 @@ import org.junit.Test;
 public class AccountBudgetProposalServiceClientTest {
   private static MockAccountBudgetProposalService mockAccountBudgetProposalService;
   private static MockServiceHelper mockServiceHelper;
-  private AccountBudgetProposalServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AccountBudgetProposalServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -85,6 +87,16 @@ public class AccountBudgetProposalServiceClientTest {
             .setResourceName(
                 AccountBudgetProposalName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_PROPOSAL_ID]")
                     .toString())
+            .setId(3355)
+            .setBillingSetup(BillingSetupName.of("[CUSTOMER_ID]", "[BILLING_SETUP_ID]").toString())
+            .setAccountBudget(
+                AccountBudgetName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_ID]").toString())
+            .setProposedName("proposedName-177785071")
+            .setApprovedStartDateTime("approvedStartDateTime-479625050")
+            .setProposedPurchaseOrderNumber("proposedPurchaseOrderNumber-935843024")
+            .setProposedNotes("proposedNotes-1215945989")
+            .setCreationDateTime("creationDateTime1501934490")
+            .setApprovalDateTime("approvalDateTime1383991038")
             .build();
     mockAccountBudgetProposalService.addResponse(expectedResponse);
 
@@ -128,6 +140,16 @@ public class AccountBudgetProposalServiceClientTest {
             .setResourceName(
                 AccountBudgetProposalName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_PROPOSAL_ID]")
                     .toString())
+            .setId(3355)
+            .setBillingSetup(BillingSetupName.of("[CUSTOMER_ID]", "[BILLING_SETUP_ID]").toString())
+            .setAccountBudget(
+                AccountBudgetName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_ID]").toString())
+            .setProposedName("proposedName-177785071")
+            .setApprovedStartDateTime("approvedStartDateTime-479625050")
+            .setProposedPurchaseOrderNumber("proposedPurchaseOrderNumber-935843024")
+            .setProposedNotes("proposedNotes-1215945989")
+            .setCreationDateTime("creationDateTime1501934490")
+            .setApprovalDateTime("approvalDateTime1383991038")
             .build();
     mockAccountBudgetProposalService.addResponse(expectedResponse);
 

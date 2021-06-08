@@ -45,8 +45,8 @@ import org.junit.Test;
 public class CurrencyConstantServiceClientTest {
   private static MockCurrencyConstantService mockCurrencyConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private CurrencyConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CurrencyConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

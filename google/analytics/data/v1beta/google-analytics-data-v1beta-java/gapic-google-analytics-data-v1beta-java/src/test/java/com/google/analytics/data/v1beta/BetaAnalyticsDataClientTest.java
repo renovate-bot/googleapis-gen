@@ -42,8 +42,8 @@ import org.junit.Test;
 public class BetaAnalyticsDataClientTest {
   private static MockBetaAnalyticsData mockBetaAnalyticsData;
   private static MockServiceHelper mockServiceHelper;
-  private BetaAnalyticsDataClient client;
   private LocalChannelProvider channelProvider;
+  private BetaAnalyticsDataClient client;
 
   @BeforeClass
   public static void startStaticServer() {

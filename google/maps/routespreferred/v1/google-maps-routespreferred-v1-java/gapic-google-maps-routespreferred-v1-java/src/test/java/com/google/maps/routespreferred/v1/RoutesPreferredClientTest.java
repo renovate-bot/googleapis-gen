@@ -66,8 +66,8 @@ import org.junit.Test;
 public class RoutesPreferredClientTest {
   private static MockRoutesPreferred mockRoutesPreferred;
   private static MockServiceHelper mockServiceHelper;
-  private RoutesPreferredClient client;
   private LocalChannelProvider channelProvider;
+  private RoutesPreferredClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -18,6 +18,7 @@ package com.google.ads.googleads.v5.services;
 
 import com.google.ads.googleads.v5.resources.AdGroupBidModifier;
 import com.google.ads.googleads.v5.resources.AdGroupBidModifierName;
+import com.google.ads.googleads.v5.resources.AdGroupName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -45,8 +46,8 @@ import org.junit.Test;
 public class AdGroupBidModifierServiceClientTest {
   private static MockAdGroupBidModifierService mockAdGroupBidModifierService;
   private static MockServiceHelper mockServiceHelper;
-  private AdGroupBidModifierServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AdGroupBidModifierServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -86,6 +87,10 @@ public class AdGroupBidModifierServiceClientTest {
         AdGroupBidModifier.newBuilder()
             .setResourceName(
                 AdGroupBidModifierName.of("[CUSTOMER]", "[AD_GROUP_BID_MODIFIER]").toString())
+            .setAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
+            .setCriterionId(-326773895)
+            .setBidModifier(1362363353)
+            .setBaseAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
             .build();
     mockAdGroupBidModifierService.addResponse(expectedResponse);
 
@@ -128,6 +133,10 @@ public class AdGroupBidModifierServiceClientTest {
         AdGroupBidModifier.newBuilder()
             .setResourceName(
                 AdGroupBidModifierName.of("[CUSTOMER]", "[AD_GROUP_BID_MODIFIER]").toString())
+            .setAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
+            .setCriterionId(-326773895)
+            .setBidModifier(1362363353)
+            .setBaseAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
             .build();
     mockAdGroupBidModifierService.addResponse(expectedResponse);
 

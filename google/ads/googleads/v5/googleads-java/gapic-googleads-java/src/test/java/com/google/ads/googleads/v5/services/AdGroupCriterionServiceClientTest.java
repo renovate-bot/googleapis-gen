@@ -19,6 +19,7 @@ package com.google.ads.googleads.v5.services;
 import com.google.ads.googleads.v5.common.CustomParameter;
 import com.google.ads.googleads.v5.resources.AdGroupCriterion;
 import com.google.ads.googleads.v5.resources.AdGroupCriterionName;
+import com.google.ads.googleads.v5.resources.AdGroupName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -46,8 +47,8 @@ import org.junit.Test;
 public class AdGroupCriterionServiceClientTest {
   private static MockAdGroupCriterionService mockAdGroupCriterionService;
   private static MockServiceHelper mockServiceHelper;
-  private AdGroupCriterionServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AdGroupCriterionServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -87,11 +88,25 @@ public class AdGroupCriterionServiceClientTest {
         AdGroupCriterion.newBuilder()
             .setResourceName(
                 AdGroupCriterionName.of("[CUSTOMER]", "[AD_GROUP_CRITERION]").toString())
+            .setCriterionId(-326773895)
             .setQualityInfo(AdGroupCriterion.QualityInfo.newBuilder().build())
+            .setAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
+            .setNegative(true)
             .addAllDisapprovalReasons(new ArrayList<String>())
+            .setBidModifier(1362363353)
+            .setCpcBidMicros(909381114)
+            .setCpmBidMicros(-2094758992)
+            .setCpvBidMicros(-933014521)
+            .setPercentCpcBidMicros(2098488628)
+            .setEffectiveCpcBidMicros(-1373966446)
+            .setEffectiveCpmBidMicros(-83139256)
+            .setEffectiveCpvBidMicros(1078605215)
+            .setEffectivePercentCpcBidMicros(-584306996)
             .setPositionEstimates(AdGroupCriterion.PositionEstimates.newBuilder().build())
             .addAllFinalUrls(new ArrayList<String>())
             .addAllFinalMobileUrls(new ArrayList<String>())
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
             .addAllUrlCustomParameters(new ArrayList<CustomParameter>())
             .build();
     mockAdGroupCriterionService.addResponse(expectedResponse);
@@ -134,11 +149,25 @@ public class AdGroupCriterionServiceClientTest {
         AdGroupCriterion.newBuilder()
             .setResourceName(
                 AdGroupCriterionName.of("[CUSTOMER]", "[AD_GROUP_CRITERION]").toString())
+            .setCriterionId(-326773895)
             .setQualityInfo(AdGroupCriterion.QualityInfo.newBuilder().build())
+            .setAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
+            .setNegative(true)
             .addAllDisapprovalReasons(new ArrayList<String>())
+            .setBidModifier(1362363353)
+            .setCpcBidMicros(909381114)
+            .setCpmBidMicros(-2094758992)
+            .setCpvBidMicros(-933014521)
+            .setPercentCpcBidMicros(2098488628)
+            .setEffectiveCpcBidMicros(-1373966446)
+            .setEffectiveCpmBidMicros(-83139256)
+            .setEffectiveCpvBidMicros(1078605215)
+            .setEffectivePercentCpcBidMicros(-584306996)
             .setPositionEstimates(AdGroupCriterion.PositionEstimates.newBuilder().build())
             .addAllFinalUrls(new ArrayList<String>())
             .addAllFinalMobileUrls(new ArrayList<String>())
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
             .addAllUrlCustomParameters(new ArrayList<CustomParameter>())
             .build();
     mockAdGroupCriterionService.addResponse(expectedResponse);

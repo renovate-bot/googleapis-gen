@@ -107,8 +107,8 @@ import org.junit.Test;
 public class IAMClientTest {
   private static MockIAM mockIAM;
   private static MockServiceHelper mockServiceHelper;
-  private IAMClient client;
   private LocalChannelProvider channelProvider;
+  private IAMClient client;
 
   @BeforeClass
   public static void startStaticServer() {

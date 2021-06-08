@@ -45,8 +45,8 @@ import org.junit.Test;
 public class MobileAppCategoryConstantServiceClientTest {
   private static MockMobileAppCategoryConstantService mockMobileAppCategoryConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private MobileAppCategoryConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private MobileAppCategoryConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

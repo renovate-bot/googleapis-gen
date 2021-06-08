@@ -19,6 +19,7 @@ package com.google.ads.googleads.v6.services;
 import com.google.ads.googleads.v6.resources.AttributeFieldMapping;
 import com.google.ads.googleads.v6.resources.FeedMapping;
 import com.google.ads.googleads.v6.resources.FeedMappingName;
+import com.google.ads.googleads.v6.resources.FeedName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -46,8 +47,8 @@ import org.junit.Test;
 public class FeedMappingServiceClientTest {
   private static MockFeedMappingService mockFeedMappingService;
   private static MockServiceHelper mockServiceHelper;
-  private FeedMappingServiceClient client;
   private LocalChannelProvider channelProvider;
+  private FeedMappingServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -86,6 +87,7 @@ public class FeedMappingServiceClientTest {
         FeedMapping.newBuilder()
             .setResourceName(
                 FeedMappingName.of("[CUSTOMER_ID]", "[FEED_ID]", "[FEED_MAPPING_ID]").toString())
+            .setFeed(FeedName.of("[CUSTOMER_ID]", "[FEED_ID]").toString())
             .addAllAttributeFieldMappings(new ArrayList<AttributeFieldMapping>())
             .build();
     mockFeedMappingService.addResponse(expectedResponse);
@@ -128,6 +130,7 @@ public class FeedMappingServiceClientTest {
         FeedMapping.newBuilder()
             .setResourceName(
                 FeedMappingName.of("[CUSTOMER_ID]", "[FEED_ID]", "[FEED_MAPPING_ID]").toString())
+            .setFeed(FeedName.of("[CUSTOMER_ID]", "[FEED_ID]").toString())
             .addAllAttributeFieldMappings(new ArrayList<AttributeFieldMapping>())
             .build();
     mockFeedMappingService.addResponse(expectedResponse);

@@ -49,8 +49,8 @@ import org.junit.Test;
 public class ScannerServiceClientTest {
   private static MockScannerService mockScannerService;
   private static MockServiceHelper mockServiceHelper;
-  private ScannerServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ScannerServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

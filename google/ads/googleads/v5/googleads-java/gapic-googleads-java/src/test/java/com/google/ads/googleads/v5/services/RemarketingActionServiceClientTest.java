@@ -46,8 +46,8 @@ import org.junit.Test;
 public class RemarketingActionServiceClientTest {
   private static MockRemarketingActionService mockRemarketingActionService;
   private static MockServiceHelper mockServiceHelper;
-  private RemarketingActionServiceClient client;
   private LocalChannelProvider channelProvider;
+  private RemarketingActionServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -87,6 +87,8 @@ public class RemarketingActionServiceClientTest {
         RemarketingAction.newBuilder()
             .setResourceName(
                 RemarketingActionName.of("[CUSTOMER]", "[REMARKETING_ACTION]").toString())
+            .setId(3355)
+            .setName(RemarketingActionName.of("[CUSTOMER]", "[REMARKETING_ACTION]").toString())
             .addAllTagSnippets(new ArrayList<TagSnippet>())
             .build();
     mockRemarketingActionService.addResponse(expectedResponse);
@@ -130,6 +132,8 @@ public class RemarketingActionServiceClientTest {
         RemarketingAction.newBuilder()
             .setResourceName(
                 RemarketingActionName.of("[CUSTOMER]", "[REMARKETING_ACTION]").toString())
+            .setId(3355)
+            .setName(RemarketingActionName.of("[CUSTOMER]", "[REMARKETING_ACTION]").toString())
             .addAllTagSnippets(new ArrayList<TagSnippet>())
             .build();
     mockRemarketingActionService.addResponse(expectedResponse);

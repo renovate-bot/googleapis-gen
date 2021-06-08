@@ -439,8 +439,11 @@ public class ReachPlanServiceClient implements BackgroundResource {
    *   GenerateReachForecastRequest request =
    *       GenerateReachForecastRequest.newBuilder()
    *           .setCustomerId("customerId-1581184615")
+   *           .setCurrencyCode("currencyCode1004773790")
    *           .setCampaignDuration(CampaignDuration.newBuilder().build())
+   *           .setCookieFrequencyCap(-1372585004)
    *           .setCookieFrequencyCapSetting(FrequencyCap.newBuilder().build())
+   *           .setMinEffectiveFrequency(-1801725097)
    *           .setTargeting(Targeting.newBuilder().build())
    *           .addAllPlannedProducts(new ArrayList<PlannedProduct>())
    *           .build();
@@ -472,8 +475,11 @@ public class ReachPlanServiceClient implements BackgroundResource {
    *   GenerateReachForecastRequest request =
    *       GenerateReachForecastRequest.newBuilder()
    *           .setCustomerId("customerId-1581184615")
+   *           .setCurrencyCode("currencyCode1004773790")
    *           .setCampaignDuration(CampaignDuration.newBuilder().build())
+   *           .setCookieFrequencyCap(-1372585004)
    *           .setCookieFrequencyCapSetting(FrequencyCap.newBuilder().build())
+   *           .setMinEffectiveFrequency(-1801725097)
    *           .setTargeting(Targeting.newBuilder().build())
    *           .addAllPlannedProducts(new ArrayList<PlannedProduct>())
    *           .build();

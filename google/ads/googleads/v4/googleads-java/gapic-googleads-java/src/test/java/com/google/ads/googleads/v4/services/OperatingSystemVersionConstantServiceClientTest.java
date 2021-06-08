@@ -47,8 +47,8 @@ public class OperatingSystemVersionConstantServiceClientTest {
   private static MockOperatingSystemVersionConstantService
       mockOperatingSystemVersionConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private OperatingSystemVersionConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private OperatingSystemVersionConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

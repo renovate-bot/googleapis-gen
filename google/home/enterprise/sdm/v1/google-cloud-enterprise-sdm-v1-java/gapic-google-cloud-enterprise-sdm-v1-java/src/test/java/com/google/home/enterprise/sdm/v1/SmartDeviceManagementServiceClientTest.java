@@ -46,10 +46,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class SmartDeviceManagementServiceClientTest {
-  private static MockSmartDeviceManagementService mockSmartDeviceManagementService;
   private static MockServiceHelper mockServiceHelper;
-  private SmartDeviceManagementServiceClient client;
+  private static MockSmartDeviceManagementService mockSmartDeviceManagementService;
   private LocalChannelProvider channelProvider;
+  private SmartDeviceManagementServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

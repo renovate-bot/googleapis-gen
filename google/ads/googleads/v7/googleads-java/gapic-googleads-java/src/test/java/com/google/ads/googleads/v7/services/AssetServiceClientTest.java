@@ -47,8 +47,8 @@ import org.junit.Test;
 public class AssetServiceClientTest {
   private static MockAssetService mockAssetService;
   private static MockServiceHelper mockServiceHelper;
-  private AssetServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AssetServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -86,9 +86,13 @@ public class AssetServiceClientTest {
     Asset expectedResponse =
         Asset.newBuilder()
             .setResourceName(AssetName.of("[CUSTOMER_ID]", "[ASSET_ID]").toString())
+            .setId(3355)
+            .setName(AssetName.of("[CUSTOMER_ID]", "[ASSET_ID]").toString())
             .addAllFinalUrls(new ArrayList<String>())
             .addAllFinalMobileUrls(new ArrayList<String>())
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
             .addAllUrlCustomParameters(new ArrayList<CustomParameter>())
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
             .setPolicySummary(AssetPolicySummary.newBuilder().build())
             .build();
     mockAssetService.addResponse(expectedResponse);
@@ -128,9 +132,13 @@ public class AssetServiceClientTest {
     Asset expectedResponse =
         Asset.newBuilder()
             .setResourceName(AssetName.of("[CUSTOMER_ID]", "[ASSET_ID]").toString())
+            .setId(3355)
+            .setName(AssetName.of("[CUSTOMER_ID]", "[ASSET_ID]").toString())
             .addAllFinalUrls(new ArrayList<String>())
             .addAllFinalMobileUrls(new ArrayList<String>())
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
             .addAllUrlCustomParameters(new ArrayList<CustomParameter>())
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
             .setPolicySummary(AssetPolicySummary.newBuilder().build())
             .build();
     mockAssetService.addResponse(expectedResponse);

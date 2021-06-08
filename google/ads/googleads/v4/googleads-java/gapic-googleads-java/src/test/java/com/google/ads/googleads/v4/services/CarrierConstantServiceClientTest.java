@@ -45,8 +45,8 @@ import org.junit.Test;
 public class CarrierConstantServiceClientTest {
   private static MockCarrierConstantService mockCarrierConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private CarrierConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CarrierConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

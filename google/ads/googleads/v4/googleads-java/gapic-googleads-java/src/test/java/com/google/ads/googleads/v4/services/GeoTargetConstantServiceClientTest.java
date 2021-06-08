@@ -46,8 +46,8 @@ import org.junit.Test;
 public class GeoTargetConstantServiceClientTest {
   private static MockGeoTargetConstantService mockGeoTargetConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private GeoTargetConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private GeoTargetConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

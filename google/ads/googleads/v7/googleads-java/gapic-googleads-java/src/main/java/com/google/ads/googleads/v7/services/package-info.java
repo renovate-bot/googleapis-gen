@@ -1469,6 +1469,7 @@
  *   GenerateKeywordIdeasRequest request =
  *       GenerateKeywordIdeasRequest.newBuilder()
  *           .setCustomerId("customerId-1581184615")
+ *           .setLanguage("language-1613589672")
  *           .addAllGeoTargetConstants(new ArrayList<String>())
  *           .setIncludeAdultKeywords(true)
  *           .setPageToken("pageToken873572522")

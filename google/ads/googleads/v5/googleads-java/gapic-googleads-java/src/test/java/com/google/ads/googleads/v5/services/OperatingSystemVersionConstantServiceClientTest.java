@@ -44,8 +44,8 @@ public class OperatingSystemVersionConstantServiceClientTest {
   private static MockOperatingSystemVersionConstantService
       mockOperatingSystemVersionConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private OperatingSystemVersionConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private OperatingSystemVersionConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -86,6 +86,12 @@ public class OperatingSystemVersionConstantServiceClientTest {
             .setResourceName(
                 OperatingSystemVersionConstantName.of("[OPERATING_SYSTEM_VERSION_CONSTANT]")
                     .toString())
+            .setId(3355)
+            .setName(
+                OperatingSystemVersionConstantName.of("[OPERATING_SYSTEM_VERSION_CONSTANT]")
+                    .toString())
+            .setOsMajorVersion(-1346408137)
+            .setOsMinorVersion(1088382771)
             .build();
     mockOperatingSystemVersionConstantService.addResponse(expectedResponse);
 
@@ -130,6 +136,12 @@ public class OperatingSystemVersionConstantServiceClientTest {
             .setResourceName(
                 OperatingSystemVersionConstantName.of("[OPERATING_SYSTEM_VERSION_CONSTANT]")
                     .toString())
+            .setId(3355)
+            .setName(
+                OperatingSystemVersionConstantName.of("[OPERATING_SYSTEM_VERSION_CONSTANT]")
+                    .toString())
+            .setOsMajorVersion(-1346408137)
+            .setOsMinorVersion(1088382771)
             .build();
     mockOperatingSystemVersionConstantService.addResponse(expectedResponse);
 

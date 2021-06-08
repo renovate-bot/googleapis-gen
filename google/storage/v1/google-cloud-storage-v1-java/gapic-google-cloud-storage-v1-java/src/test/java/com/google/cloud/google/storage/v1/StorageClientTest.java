@@ -138,10 +138,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class StorageClientTest {
-  private static MockStorage mockStorage;
   private static MockServiceHelper mockServiceHelper;
-  private StorageClient client;
+  private static MockStorage mockStorage;
   private LocalChannelProvider channelProvider;
+  private StorageClient client;
 
   @BeforeClass
   public static void startStaticServer() {

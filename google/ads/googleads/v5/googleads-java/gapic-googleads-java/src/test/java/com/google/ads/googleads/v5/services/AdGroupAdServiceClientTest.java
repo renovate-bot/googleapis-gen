@@ -20,6 +20,7 @@ import com.google.ads.googleads.v5.resources.Ad;
 import com.google.ads.googleads.v5.resources.AdGroupAd;
 import com.google.ads.googleads.v5.resources.AdGroupAdName;
 import com.google.ads.googleads.v5.resources.AdGroupAdPolicySummary;
+import com.google.ads.googleads.v5.resources.AdGroupName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -47,8 +48,8 @@ import org.junit.Test;
 public class AdGroupAdServiceClientTest {
   private static MockAdGroupAdService mockAdGroupAdService;
   private static MockServiceHelper mockServiceHelper;
-  private AdGroupAdServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AdGroupAdServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -86,6 +87,7 @@ public class AdGroupAdServiceClientTest {
     AdGroupAd expectedResponse =
         AdGroupAd.newBuilder()
             .setResourceName(AdGroupAdName.of("[CUSTOMER]", "[AD_GROUP_AD]").toString())
+            .setAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
             .setAd(Ad.newBuilder().build())
             .setPolicySummary(AdGroupAdPolicySummary.newBuilder().build())
             .build();
@@ -126,6 +128,7 @@ public class AdGroupAdServiceClientTest {
     AdGroupAd expectedResponse =
         AdGroupAd.newBuilder()
             .setResourceName(AdGroupAdName.of("[CUSTOMER]", "[AD_GROUP_AD]").toString())
+            .setAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
             .setAd(Ad.newBuilder().build())
             .setPolicySummary(AdGroupAdPolicySummary.newBuilder().build())
             .build();

@@ -44,8 +44,8 @@ public class DynamicSearchAdsSearchTermViewServiceClientTest {
   private static MockDynamicSearchAdsSearchTermViewService
       mockDynamicSearchAdsSearchTermViewService;
   private static MockServiceHelper mockServiceHelper;
-  private DynamicSearchAdsSearchTermViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DynamicSearchAdsSearchTermViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -87,6 +87,13 @@ public class DynamicSearchAdsSearchTermViewServiceClientTest {
                 DynamicSearchAdsSearchTermViewName.of(
                         "[CUSTOMER]", "[DYNAMIC_SEARCH_ADS_SEARCH_TERM_VIEW]")
                     .toString())
+            .setSearchTerm("searchTerm-710473164")
+            .setHeadline("headline-1115058732")
+            .setLandingPage("landingPage497102150")
+            .setPageUrl("pageUrl-803558304")
+            .setHasNegativeKeyword(true)
+            .setHasMatchingKeyword(true)
+            .setHasNegativeUrl(true)
             .build();
     mockDynamicSearchAdsSearchTermViewService.addResponse(expectedResponse);
 
@@ -134,6 +141,13 @@ public class DynamicSearchAdsSearchTermViewServiceClientTest {
                 DynamicSearchAdsSearchTermViewName.of(
                         "[CUSTOMER]", "[DYNAMIC_SEARCH_ADS_SEARCH_TERM_VIEW]")
                     .toString())
+            .setSearchTerm("searchTerm-710473164")
+            .setHeadline("headline-1115058732")
+            .setLandingPage("landingPage497102150")
+            .setPageUrl("pageUrl-803558304")
+            .setHasNegativeKeyword(true)
+            .setHasMatchingKeyword(true)
+            .setHasNegativeUrl(true)
             .build();
     mockDynamicSearchAdsSearchTermViewService.addResponse(expectedResponse);
 

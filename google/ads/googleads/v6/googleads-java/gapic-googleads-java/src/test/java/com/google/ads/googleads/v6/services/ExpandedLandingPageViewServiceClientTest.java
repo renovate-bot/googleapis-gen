@@ -43,8 +43,8 @@ import org.junit.Test;
 public class ExpandedLandingPageViewServiceClientTest {
   private static MockExpandedLandingPageViewService mockExpandedLandingPageViewService;
   private static MockServiceHelper mockServiceHelper;
-  private ExpandedLandingPageViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ExpandedLandingPageViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -85,6 +85,7 @@ public class ExpandedLandingPageViewServiceClientTest {
             .setResourceName(
                 ExpandedLandingPageViewName.of("[CUSTOMER_ID]", "[EXPANDED_FINAL_URL_FINGERPRINT]")
                     .toString())
+            .setExpandedFinalUrl("expandedFinalUrl-323823630")
             .build();
     mockExpandedLandingPageViewService.addResponse(expectedResponse);
 
@@ -128,6 +129,7 @@ public class ExpandedLandingPageViewServiceClientTest {
             .setResourceName(
                 ExpandedLandingPageViewName.of("[CUSTOMER_ID]", "[EXPANDED_FINAL_URL_FINGERPRINT]")
                     .toString())
+            .setExpandedFinalUrl("expandedFinalUrl-323823630")
             .build();
     mockExpandedLandingPageViewService.addResponse(expectedResponse);
 

@@ -47,8 +47,8 @@ import org.junit.Test;
 public class RecommendationServiceClientTest {
   private static MockRecommendationService mockRecommendationService;
   private static MockServiceHelper mockServiceHelper;
-  private RecommendationServiceClient client;
   private LocalChannelProvider channelProvider;
+  private RecommendationServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

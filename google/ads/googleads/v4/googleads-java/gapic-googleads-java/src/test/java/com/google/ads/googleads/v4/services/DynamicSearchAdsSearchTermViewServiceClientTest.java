@@ -46,8 +46,8 @@ public class DynamicSearchAdsSearchTermViewServiceClientTest {
   private static MockDynamicSearchAdsSearchTermViewService
       mockDynamicSearchAdsSearchTermViewService;
   private static MockServiceHelper mockServiceHelper;
-  private DynamicSearchAdsSearchTermViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DynamicSearchAdsSearchTermViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

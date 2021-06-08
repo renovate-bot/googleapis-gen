@@ -62,8 +62,8 @@ import org.junit.Test;
 public class DatastoreAdminClientTest {
   private static MockDatastoreAdmin mockDatastoreAdmin;
   private static MockServiceHelper mockServiceHelper;
-  private DatastoreAdminClient client;
   private LocalChannelProvider channelProvider;
+  private DatastoreAdminClient client;
 
   @BeforeClass
   public static void startStaticServer() {

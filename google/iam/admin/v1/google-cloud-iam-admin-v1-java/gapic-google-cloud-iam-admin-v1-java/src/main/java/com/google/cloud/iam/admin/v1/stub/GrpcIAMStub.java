@@ -731,6 +731,15 @@ public class GrpcIAMStub extends IAMStub {
     GrpcCallSettings<ListRolesRequest, ListRolesResponse> listRolesTransportSettings =
         GrpcCallSettings.<ListRolesRequest, ListRolesResponse>newBuilder()
             .setMethodDescriptor(listRolesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListRolesRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListRolesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetRoleRequest, Role> getRoleTransportSettings =
         GrpcCallSettings.<GetRoleRequest, Role>newBuilder()

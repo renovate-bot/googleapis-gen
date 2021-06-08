@@ -436,6 +436,7 @@ public class CustomerServiceClient implements BackgroundResource {
    *       CreateCustomerClientRequest.newBuilder()
    *           .setCustomerId("customerId-1581184615")
    *           .setCustomerClient(Customer.newBuilder().build())
+   *           .setEmailAddress("emailAddress-1070931784")
    *           .setValidateOnly(true)
    *           .build();
    *   CreateCustomerClientResponse response = customerServiceClient.createCustomerClient(request);
@@ -466,6 +467,7 @@ public class CustomerServiceClient implements BackgroundResource {
    *       CreateCustomerClientRequest.newBuilder()
    *           .setCustomerId("customerId-1581184615")
    *           .setCustomerClient(Customer.newBuilder().build())
+   *           .setEmailAddress("emailAddress-1070931784")
    *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<CreateCustomerClientResponse> future =

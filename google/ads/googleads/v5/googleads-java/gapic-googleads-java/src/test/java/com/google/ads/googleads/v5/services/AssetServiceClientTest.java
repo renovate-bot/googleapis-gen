@@ -44,8 +44,8 @@ import org.junit.Test;
 public class AssetServiceClientTest {
   private static MockAssetService mockAssetService;
   private static MockServiceHelper mockServiceHelper;
-  private AssetServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AssetServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -83,6 +83,8 @@ public class AssetServiceClientTest {
     Asset expectedResponse =
         Asset.newBuilder()
             .setResourceName(AssetName.of("[CUSTOMER]", "[ASSET]").toString())
+            .setId(3355)
+            .setName(AssetName.of("[CUSTOMER]", "[ASSET]").toString())
             .build();
     mockAssetService.addResponse(expectedResponse);
 
@@ -121,6 +123,8 @@ public class AssetServiceClientTest {
     Asset expectedResponse =
         Asset.newBuilder()
             .setResourceName(AssetName.of("[CUSTOMER]", "[ASSET]").toString())
+            .setId(3355)
+            .setName(AssetName.of("[CUSTOMER]", "[ASSET]").toString())
             .build();
     mockAssetService.addResponse(expectedResponse);
 

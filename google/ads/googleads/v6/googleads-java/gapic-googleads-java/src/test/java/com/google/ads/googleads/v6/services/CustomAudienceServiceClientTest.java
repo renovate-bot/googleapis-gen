@@ -45,8 +45,8 @@ import org.junit.Test;
 public class CustomAudienceServiceClientTest {
   private static MockCustomAudienceService mockCustomAudienceService;
   private static MockServiceHelper mockServiceHelper;
-  private CustomAudienceServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CustomAudienceServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

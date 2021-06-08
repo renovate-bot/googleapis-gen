@@ -48,8 +48,8 @@ import org.junit.Test;
 public class CampaignFeedServiceClientTest {
   private static MockCampaignFeedService mockCampaignFeedService;
   private static MockServiceHelper mockServiceHelper;
-  private CampaignFeedServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CampaignFeedServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

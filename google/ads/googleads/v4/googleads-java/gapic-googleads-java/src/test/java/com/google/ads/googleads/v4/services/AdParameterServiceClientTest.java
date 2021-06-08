@@ -47,8 +47,8 @@ import org.junit.Test;
 public class AdParameterServiceClientTest {
   private static MockAdParameterService mockAdParameterService;
   private static MockServiceHelper mockServiceHelper;
-  private AdParameterServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AdParameterServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

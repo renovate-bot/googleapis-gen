@@ -44,8 +44,8 @@ import org.junit.Test;
 public class GeographicViewServiceClientTest {
   private static MockGeographicViewService mockGeographicViewService;
   private static MockServiceHelper mockServiceHelper;
-  private GeographicViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private GeographicViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

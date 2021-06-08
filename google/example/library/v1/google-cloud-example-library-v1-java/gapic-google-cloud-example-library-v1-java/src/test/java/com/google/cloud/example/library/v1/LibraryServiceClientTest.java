@@ -64,8 +64,8 @@ import org.junit.Test;
 public class LibraryServiceClientTest {
   private static MockLibraryService mockLibraryService;
   private static MockServiceHelper mockServiceHelper;
-  private LibraryServiceClient client;
   private LocalChannelProvider channelProvider;
+  private LibraryServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

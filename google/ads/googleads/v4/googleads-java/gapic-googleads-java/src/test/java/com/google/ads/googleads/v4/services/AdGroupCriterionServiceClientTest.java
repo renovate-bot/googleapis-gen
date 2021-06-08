@@ -50,8 +50,8 @@ import org.junit.Test;
 public class AdGroupCriterionServiceClientTest {
   private static MockAdGroupCriterionService mockAdGroupCriterionService;
   private static MockServiceHelper mockServiceHelper;
-  private AdGroupCriterionServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AdGroupCriterionServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

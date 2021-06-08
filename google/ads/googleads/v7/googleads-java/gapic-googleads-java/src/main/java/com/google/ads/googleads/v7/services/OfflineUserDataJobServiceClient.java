@@ -465,6 +465,7 @@ public class OfflineUserDataJobServiceClient implements BackgroundResource {
    *           .setResourceName(
    *               OfflineUserDataJobName.of("[CUSTOMER_ID]", "[OFFLINE_USER_DATA_UPDATE_ID]")
    *                   .toString())
+   *           .setEnablePartialFailure(true)
    *           .addAllOperations(new ArrayList<OfflineUserDataJobOperation>())
    *           .setValidateOnly(true)
    *           .build();
@@ -499,6 +500,7 @@ public class OfflineUserDataJobServiceClient implements BackgroundResource {
    *           .setResourceName(
    *               OfflineUserDataJobName.of("[CUSTOMER_ID]", "[OFFLINE_USER_DATA_UPDATE_ID]")
    *                   .toString())
+   *           .setEnablePartialFailure(true)
    *           .addAllOperations(new ArrayList<OfflineUserDataJobOperation>())
    *           .setValidateOnly(true)
    *           .build();

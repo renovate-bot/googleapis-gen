@@ -47,8 +47,8 @@ import org.junit.Test;
 public class MediaFileServiceClientTest {
   private static MockMediaFileService mockMediaFileService;
   private static MockServiceHelper mockServiceHelper;
-  private MediaFileServiceClient client;
   private LocalChannelProvider channelProvider;
+  private MediaFileServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

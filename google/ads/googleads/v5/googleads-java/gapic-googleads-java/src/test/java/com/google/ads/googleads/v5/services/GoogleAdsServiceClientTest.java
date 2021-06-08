@@ -51,8 +51,8 @@ import org.junit.Test;
 public class GoogleAdsServiceClientTest {
   private static MockGoogleAdsService mockGoogleAdsService;
   private static MockServiceHelper mockServiceHelper;
-  private GoogleAdsServiceClient client;
   private LocalChannelProvider channelProvider;
+  private GoogleAdsServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

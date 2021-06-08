@@ -43,8 +43,8 @@ import org.junit.Test;
 public class GeographicViewServiceClientTest {
   private static MockGeographicViewService mockGeographicViewService;
   private static MockServiceHelper mockServiceHelper;
-  private GeographicViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private GeographicViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -83,6 +83,7 @@ public class GeographicViewServiceClientTest {
     GeographicView expectedResponse =
         GeographicView.newBuilder()
             .setResourceName(GeographicViewName.of("[CUSTOMER]", "[GEOGRAPHIC_VIEW]").toString())
+            .setCountryCriterionId(-1427674750)
             .build();
     mockGeographicViewService.addResponse(expectedResponse);
 
@@ -121,6 +122,7 @@ public class GeographicViewServiceClientTest {
     GeographicView expectedResponse =
         GeographicView.newBuilder()
             .setResourceName(GeographicViewName.of("[CUSTOMER]", "[GEOGRAPHIC_VIEW]").toString())
+            .setCountryCriterionId(-1427674750)
             .build();
     mockGeographicViewService.addResponse(expectedResponse);
 

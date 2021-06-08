@@ -43,8 +43,8 @@ import org.junit.Test;
 public class PaymentsAccountServiceClientTest {
   private static MockPaymentsAccountService mockPaymentsAccountService;
   private static MockServiceHelper mockServiceHelper;
-  private PaymentsAccountServiceClient client;
   private LocalChannelProvider channelProvider;
+  private PaymentsAccountServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

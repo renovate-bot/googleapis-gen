@@ -43,8 +43,8 @@ import org.junit.Test;
 public class CustomerUserAccessInvitationServiceClientTest {
   private static MockCustomerUserAccessInvitationService mockCustomerUserAccessInvitationService;
   private static MockServiceHelper mockServiceHelper;
-  private CustomerUserAccessInvitationServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CustomerUserAccessInvitationServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

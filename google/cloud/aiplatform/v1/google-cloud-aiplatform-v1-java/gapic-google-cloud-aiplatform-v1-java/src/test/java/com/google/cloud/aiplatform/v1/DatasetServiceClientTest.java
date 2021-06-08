@@ -56,8 +56,8 @@ import org.junit.Test;
 public class DatasetServiceClientTest {
   private static MockDatasetService mockDatasetService;
   private static MockServiceHelper mockServiceHelper;
-  private DatasetServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DatasetServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -45,8 +45,8 @@ import org.junit.Test;
 public class AdGroupAdAssetViewServiceClientTest {
   private static MockAdGroupAdAssetViewService mockAdGroupAdAssetViewService;
   private static MockServiceHelper mockServiceHelper;
-  private AdGroupAdAssetViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AdGroupAdAssetViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -88,6 +88,7 @@ public class AdGroupAdAssetViewServiceClientTest {
                 AdGroupAdAssetViewName.of("[CUSTOMER]", "[AD_GROUP_AD_ASSET_VIEW]").toString())
             .setAdGroupAd(StringValue.newBuilder().build())
             .setAsset(StringValue.newBuilder().build())
+            .setEnabled(true)
             .setPolicySummary(AdGroupAdAssetPolicySummary.newBuilder().build())
             .build();
     mockAdGroupAdAssetViewService.addResponse(expectedResponse);
@@ -133,6 +134,7 @@ public class AdGroupAdAssetViewServiceClientTest {
                 AdGroupAdAssetViewName.of("[CUSTOMER]", "[AD_GROUP_AD_ASSET_VIEW]").toString())
             .setAdGroupAd(StringValue.newBuilder().build())
             .setAsset(StringValue.newBuilder().build())
+            .setEnabled(true)
             .setPolicySummary(AdGroupAdAssetPolicySummary.newBuilder().build())
             .build();
     mockAdGroupAdAssetViewService.addResponse(expectedResponse);

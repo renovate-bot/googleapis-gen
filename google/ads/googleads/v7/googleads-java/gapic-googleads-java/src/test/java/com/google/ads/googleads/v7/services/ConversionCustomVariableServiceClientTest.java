@@ -46,8 +46,8 @@ import org.junit.Test;
 public class ConversionCustomVariableServiceClientTest {
   private static MockConversionCustomVariableService mockConversionCustomVariableService;
   private static MockServiceHelper mockServiceHelper;
-  private ConversionCustomVariableServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ConversionCustomVariableServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

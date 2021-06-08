@@ -44,8 +44,8 @@ import org.junit.Test;
 public class MerchantCenterLinkServiceClientTest {
   private static MockMerchantCenterLinkService mockMerchantCenterLinkService;
   private static MockServiceHelper mockServiceHelper;
-  private MerchantCenterLinkServiceClient client;
   private LocalChannelProvider channelProvider;
+  private MerchantCenterLinkServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -124,6 +124,8 @@ public class MerchantCenterLinkServiceClientTest {
         MerchantCenterLink.newBuilder()
             .setResourceName(
                 MerchantCenterLinkName.of("[CUSTOMER_ID]", "[MERCHANT_CENTER_ID]").toString())
+            .setId(3355)
+            .setMerchantCenterAccountName("merchantCenterAccountName1180638683")
             .build();
     mockMerchantCenterLinkService.addResponse(expectedResponse);
 
@@ -166,6 +168,8 @@ public class MerchantCenterLinkServiceClientTest {
         MerchantCenterLink.newBuilder()
             .setResourceName(
                 MerchantCenterLinkName.of("[CUSTOMER_ID]", "[MERCHANT_CENTER_ID]").toString())
+            .setId(3355)
+            .setMerchantCenterAccountName("merchantCenterAccountName1180638683")
             .build();
     mockMerchantCenterLinkService.addResponse(expectedResponse);
 

@@ -44,8 +44,8 @@ import org.junit.Test;
 public class PaidOrganicSearchTermViewServiceClientTest {
   private static MockPaidOrganicSearchTermViewService mockPaidOrganicSearchTermViewService;
   private static MockServiceHelper mockServiceHelper;
-  private PaidOrganicSearchTermViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private PaidOrganicSearchTermViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

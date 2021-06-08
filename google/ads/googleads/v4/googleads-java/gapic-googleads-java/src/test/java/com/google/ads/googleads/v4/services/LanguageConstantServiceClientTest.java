@@ -46,8 +46,8 @@ import org.junit.Test;
 public class LanguageConstantServiceClientTest {
   private static MockLanguageConstantService mockLanguageConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private LanguageConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private LanguageConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

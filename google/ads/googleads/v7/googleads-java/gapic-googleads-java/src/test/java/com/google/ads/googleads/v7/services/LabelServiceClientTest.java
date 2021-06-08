@@ -46,8 +46,8 @@ import org.junit.Test;
 public class LabelServiceClientTest {
   private static MockLabelService mockLabelService;
   private static MockServiceHelper mockServiceHelper;
-  private LabelServiceClient client;
   private LocalChannelProvider channelProvider;
+  private LabelServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -85,6 +85,8 @@ public class LabelServiceClientTest {
     Label expectedResponse =
         Label.newBuilder()
             .setResourceName(LabelName.of("[CUSTOMER_ID]", "[LABEL_ID]").toString())
+            .setId(3355)
+            .setName(LabelName.of("[CUSTOMER_ID]", "[LABEL_ID]").toString())
             .setTextLabel(TextLabel.newBuilder().build())
             .build();
     mockLabelService.addResponse(expectedResponse);
@@ -124,6 +126,8 @@ public class LabelServiceClientTest {
     Label expectedResponse =
         Label.newBuilder()
             .setResourceName(LabelName.of("[CUSTOMER_ID]", "[LABEL_ID]").toString())
+            .setId(3355)
+            .setName(LabelName.of("[CUSTOMER_ID]", "[LABEL_ID]").toString())
             .setTextLabel(TextLabel.newBuilder().build())
             .build();
     mockLabelService.addResponse(expectedResponse);

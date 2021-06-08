@@ -68,10 +68,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class WorkloadIdentityPoolsClientTest {
-  private static MockWorkloadIdentityPools mockWorkloadIdentityPools;
   private static MockServiceHelper mockServiceHelper;
-  private WorkloadIdentityPoolsClient client;
+  private static MockWorkloadIdentityPools mockWorkloadIdentityPools;
   private LocalChannelProvider channelProvider;
+  private WorkloadIdentityPoolsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

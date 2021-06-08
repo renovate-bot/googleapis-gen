@@ -48,8 +48,8 @@ import org.junit.Test;
 public class AdMobApiClientTest {
   private static MockAdMobApi mockAdMobApi;
   private static MockServiceHelper mockServiceHelper;
-  private AdMobApiClient client;
   private LocalChannelProvider channelProvider;
+  private AdMobApiClient client;
 
   @BeforeClass
   public static void startStaticServer() {

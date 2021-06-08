@@ -49,10 +49,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class SpecialistPoolServiceClientTest {
-  private static MockSpecialistPoolService mockSpecialistPoolService;
   private static MockServiceHelper mockServiceHelper;
-  private SpecialistPoolServiceClient client;
+  private static MockSpecialistPoolService mockSpecialistPoolService;
   private LocalChannelProvider channelProvider;
+  private SpecialistPoolServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

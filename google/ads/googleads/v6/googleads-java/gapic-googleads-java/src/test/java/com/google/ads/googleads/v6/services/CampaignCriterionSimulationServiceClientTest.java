@@ -43,8 +43,8 @@ import org.junit.Test;
 public class CampaignCriterionSimulationServiceClientTest {
   private static MockCampaignCriterionSimulationService mockCampaignCriterionSimulationService;
   private static MockServiceHelper mockServiceHelper;
-  private CampaignCriterionSimulationServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CampaignCriterionSimulationServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -92,6 +92,10 @@ public class CampaignCriterionSimulationServiceClientTest {
                         "[START_DATE]",
                         "[END_DATE]")
                     .toString())
+            .setCampaignId(2083788458)
+            .setCriterionId(-326773895)
+            .setStartDate("startDate-2129778896")
+            .setEndDate("endDate-1607727319")
             .build();
     mockCampaignCriterionSimulationService.addResponse(expectedResponse);
 
@@ -157,6 +161,10 @@ public class CampaignCriterionSimulationServiceClientTest {
                         "[START_DATE]",
                         "[END_DATE]")
                     .toString())
+            .setCampaignId(2083788458)
+            .setCriterionId(-326773895)
+            .setStartDate("startDate-2129778896")
+            .setEndDate("endDate-1607727319")
             .build();
     mockCampaignCriterionSimulationService.addResponse(expectedResponse);
 

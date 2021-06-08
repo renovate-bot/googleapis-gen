@@ -44,8 +44,8 @@ import org.junit.Test;
 public class AccountLinkServiceClientTest {
   private static MockAccountLinkService mockAccountLinkService;
   private static MockServiceHelper mockServiceHelper;
-  private AccountLinkServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AccountLinkServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

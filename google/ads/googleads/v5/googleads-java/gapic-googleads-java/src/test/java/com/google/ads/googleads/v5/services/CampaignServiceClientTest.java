@@ -21,6 +21,7 @@ import com.google.ads.googleads.v5.common.FrequencyCapEntry;
 import com.google.ads.googleads.v5.common.RealTimeBiddingSetting;
 import com.google.ads.googleads.v5.common.TargetingSetting;
 import com.google.ads.googleads.v5.resources.Campaign;
+import com.google.ads.googleads.v5.resources.CampaignBudgetName;
 import com.google.ads.googleads.v5.resources.CampaignName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -49,8 +50,8 @@ import org.junit.Test;
 public class CampaignServiceClientTest {
   private static MockCampaignService mockCampaignService;
   private static MockServiceHelper mockServiceHelper;
-  private CampaignServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CampaignServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -88,6 +89,9 @@ public class CampaignServiceClientTest {
     Campaign expectedResponse =
         Campaign.newBuilder()
             .setResourceName(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setId(3355)
+            .setName(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
             .addAllUrlCustomParameters(new ArrayList<CustomParameter>())
             .setRealTimeBiddingSetting(RealTimeBiddingSetting.newBuilder().build())
             .setNetworkSettings(Campaign.NetworkSettings.newBuilder().build())
@@ -99,11 +103,17 @@ public class CampaignServiceClientTest {
             .setLocalCampaignSetting(Campaign.LocalCampaignSetting.newBuilder().build())
             .setAppCampaignSetting(Campaign.AppCampaignSetting.newBuilder().build())
             .addAllLabels(new ArrayList<String>())
+            .setBaseCampaign(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setCampaignBudget(CampaignBudgetName.of("[CUSTOMER]", "[CAMPAIGN_BUDGET]").toString())
+            .setStartDate("startDate-2129778896")
+            .setEndDate("endDate-1607727319")
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
             .addAllFrequencyCaps(new ArrayList<FrequencyCapEntry>())
             .setVanityPharma(Campaign.VanityPharma.newBuilder().build())
             .setSelectiveOptimization(Campaign.SelectiveOptimization.newBuilder().build())
             .setOptimizationGoalSetting(Campaign.OptimizationGoalSetting.newBuilder().build())
             .setTrackingSetting(Campaign.TrackingSetting.newBuilder().build())
+            .setOptimizationScore(-1699828416)
             .build();
     mockCampaignService.addResponse(expectedResponse);
 
@@ -142,6 +152,9 @@ public class CampaignServiceClientTest {
     Campaign expectedResponse =
         Campaign.newBuilder()
             .setResourceName(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setId(3355)
+            .setName(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
             .addAllUrlCustomParameters(new ArrayList<CustomParameter>())
             .setRealTimeBiddingSetting(RealTimeBiddingSetting.newBuilder().build())
             .setNetworkSettings(Campaign.NetworkSettings.newBuilder().build())
@@ -153,11 +166,17 @@ public class CampaignServiceClientTest {
             .setLocalCampaignSetting(Campaign.LocalCampaignSetting.newBuilder().build())
             .setAppCampaignSetting(Campaign.AppCampaignSetting.newBuilder().build())
             .addAllLabels(new ArrayList<String>())
+            .setBaseCampaign(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setCampaignBudget(CampaignBudgetName.of("[CUSTOMER]", "[CAMPAIGN_BUDGET]").toString())
+            .setStartDate("startDate-2129778896")
+            .setEndDate("endDate-1607727319")
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
             .addAllFrequencyCaps(new ArrayList<FrequencyCapEntry>())
             .setVanityPharma(Campaign.VanityPharma.newBuilder().build())
             .setSelectiveOptimization(Campaign.SelectiveOptimization.newBuilder().build())
             .setOptimizationGoalSetting(Campaign.OptimizationGoalSetting.newBuilder().build())
             .setTrackingSetting(Campaign.TrackingSetting.newBuilder().build())
+            .setOptimizationScore(-1699828416)
             .build();
     mockCampaignService.addResponse(expectedResponse);
 

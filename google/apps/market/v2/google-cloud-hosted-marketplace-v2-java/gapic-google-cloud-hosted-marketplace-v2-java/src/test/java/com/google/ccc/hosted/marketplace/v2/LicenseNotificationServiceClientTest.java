@@ -42,8 +42,8 @@ import org.junit.Test;
 public class LicenseNotificationServiceClientTest {
   private static MockLicenseNotificationService mockLicenseNotificationService;
   private static MockServiceHelper mockServiceHelper;
-  private LicenseNotificationServiceClient client;
   private LocalChannelProvider channelProvider;
+  private LicenseNotificationServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

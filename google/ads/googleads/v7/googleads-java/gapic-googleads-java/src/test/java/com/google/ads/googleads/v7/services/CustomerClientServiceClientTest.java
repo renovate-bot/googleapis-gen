@@ -18,6 +18,7 @@ package com.google.ads.googleads.v7.services;
 
 import com.google.ads.googleads.v7.resources.CustomerClient;
 import com.google.ads.googleads.v7.resources.CustomerClientName;
+import com.google.ads.googleads.v7.resources.CustomerName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -43,8 +44,8 @@ import org.junit.Test;
 public class CustomerClientServiceClientTest {
   private static MockCustomerClientService mockCustomerClientService;
   private static MockServiceHelper mockServiceHelper;
-  private CustomerClientServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CustomerClientServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -84,6 +85,15 @@ public class CustomerClientServiceClientTest {
         CustomerClient.newBuilder()
             .setResourceName(
                 CustomerClientName.of("[CUSTOMER_ID]", "[CLIENT_CUSTOMER_ID]").toString())
+            .setClientCustomer(CustomerName.of("[CUSTOMER_ID]").toString())
+            .setHidden(true)
+            .setLevel(102865796)
+            .setTimeZone("timeZone-2077180903")
+            .setTestAccount(true)
+            .setManager(true)
+            .setDescriptiveName("descriptiveName1177759095")
+            .setCurrencyCode("currencyCode1004773790")
+            .setId(3355)
             .build();
     mockCustomerClientService.addResponse(expectedResponse);
 
@@ -125,6 +135,15 @@ public class CustomerClientServiceClientTest {
         CustomerClient.newBuilder()
             .setResourceName(
                 CustomerClientName.of("[CUSTOMER_ID]", "[CLIENT_CUSTOMER_ID]").toString())
+            .setClientCustomer(CustomerName.of("[CUSTOMER_ID]").toString())
+            .setHidden(true)
+            .setLevel(102865796)
+            .setTimeZone("timeZone-2077180903")
+            .setTestAccount(true)
+            .setManager(true)
+            .setDescriptiveName("descriptiveName1177759095")
+            .setCurrencyCode("currencyCode1004773790")
+            .setId(3355)
             .build();
     mockCustomerClientService.addResponse(expectedResponse);
 

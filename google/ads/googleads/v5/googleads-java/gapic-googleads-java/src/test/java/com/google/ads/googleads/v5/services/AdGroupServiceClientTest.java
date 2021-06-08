@@ -21,6 +21,7 @@ import com.google.ads.googleads.v5.common.ExplorerAutoOptimizerSetting;
 import com.google.ads.googleads.v5.common.TargetingSetting;
 import com.google.ads.googleads.v5.resources.AdGroup;
 import com.google.ads.googleads.v5.resources.AdGroupName;
+import com.google.ads.googleads.v5.resources.CampaignName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -48,8 +49,8 @@ import org.junit.Test;
 public class AdGroupServiceClientTest {
   private static MockAdGroupService mockAdGroupService;
   private static MockServiceHelper mockServiceHelper;
-  private AdGroupServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AdGroupServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -87,9 +88,24 @@ public class AdGroupServiceClientTest {
     AdGroup expectedResponse =
         AdGroup.newBuilder()
             .setResourceName(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
+            .setId(3355)
+            .setName(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
+            .setBaseAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
             .addAllUrlCustomParameters(new ArrayList<CustomParameter>())
+            .setCampaign(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setCpcBidMicros(909381114)
+            .setCpmBidMicros(-2094758992)
+            .setTargetCpaMicros(-733096280)
+            .setCpvBidMicros(-933014521)
+            .setTargetCpmMicros(-1294208740)
+            .setTargetRoas(-2084628195)
+            .setPercentCpcBidMicros(2098488628)
             .setExplorerAutoOptimizerSetting(ExplorerAutoOptimizerSetting.newBuilder().build())
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
             .setTargetingSetting(TargetingSetting.newBuilder().build())
+            .setEffectiveTargetCpaMicros(-248222192)
+            .setEffectiveTargetRoas(-1717215611)
             .addAllLabels(new ArrayList<String>())
             .build();
     mockAdGroupService.addResponse(expectedResponse);
@@ -129,9 +145,24 @@ public class AdGroupServiceClientTest {
     AdGroup expectedResponse =
         AdGroup.newBuilder()
             .setResourceName(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
+            .setId(3355)
+            .setName(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
+            .setBaseAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
+            .setTrackingUrlTemplate("trackingUrlTemplate-939780142")
             .addAllUrlCustomParameters(new ArrayList<CustomParameter>())
+            .setCampaign(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setCpcBidMicros(909381114)
+            .setCpmBidMicros(-2094758992)
+            .setTargetCpaMicros(-733096280)
+            .setCpvBidMicros(-933014521)
+            .setTargetCpmMicros(-1294208740)
+            .setTargetRoas(-2084628195)
+            .setPercentCpcBidMicros(2098488628)
             .setExplorerAutoOptimizerSetting(ExplorerAutoOptimizerSetting.newBuilder().build())
+            .setFinalUrlSuffix("finalUrlSuffix-59294518")
             .setTargetingSetting(TargetingSetting.newBuilder().build())
+            .setEffectiveTargetCpaMicros(-248222192)
+            .setEffectiveTargetRoas(-1717215611)
             .addAllLabels(new ArrayList<String>())
             .build();
     mockAdGroupService.addResponse(expectedResponse);

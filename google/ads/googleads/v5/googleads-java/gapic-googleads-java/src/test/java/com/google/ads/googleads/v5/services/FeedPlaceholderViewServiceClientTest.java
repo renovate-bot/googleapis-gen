@@ -43,8 +43,8 @@ import org.junit.Test;
 public class FeedPlaceholderViewServiceClientTest {
   private static MockFeedPlaceholderViewService mockFeedPlaceholderViewService;
   private static MockServiceHelper mockServiceHelper;
-  private FeedPlaceholderViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private FeedPlaceholderViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -51,8 +51,8 @@ import org.junit.Test;
 public class BotsClientTest {
   private static MockBots mockBots;
   private static MockServiceHelper mockServiceHelper;
-  private BotsClient client;
   private LocalChannelProvider channelProvider;
+  private BotsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

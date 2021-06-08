@@ -47,8 +47,8 @@ import org.junit.Test;
 public class CustomInterestServiceClientTest {
   private static MockCustomInterestService mockCustomInterestService;
   private static MockServiceHelper mockServiceHelper;
-  private CustomInterestServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CustomInterestServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

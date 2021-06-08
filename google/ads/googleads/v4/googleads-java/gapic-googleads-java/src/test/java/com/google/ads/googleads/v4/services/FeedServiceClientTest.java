@@ -49,8 +49,8 @@ import org.junit.Test;
 public class FeedServiceClientTest {
   private static MockFeedService mockFeedService;
   private static MockServiceHelper mockServiceHelper;
-  private FeedServiceClient client;
   private LocalChannelProvider channelProvider;
+  private FeedServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

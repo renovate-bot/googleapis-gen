@@ -18,6 +18,7 @@ package com.google.ads.googleads.v6.services;
 
 import com.google.ads.googleads.v6.resources.KeywordPlanCampaignKeyword;
 import com.google.ads.googleads.v6.resources.KeywordPlanCampaignKeywordName;
+import com.google.ads.googleads.v6.resources.KeywordPlanCampaignName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -45,8 +46,8 @@ import org.junit.Test;
 public class KeywordPlanCampaignKeywordServiceClientTest {
   private static MockKeywordPlanCampaignKeywordService mockKeywordPlanCampaignKeywordService;
   private static MockServiceHelper mockServiceHelper;
-  private KeywordPlanCampaignKeywordServiceClient client;
   private LocalChannelProvider channelProvider;
+  private KeywordPlanCampaignKeywordServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -88,6 +89,12 @@ public class KeywordPlanCampaignKeywordServiceClientTest {
                 KeywordPlanCampaignKeywordName.of(
                         "[CUSTOMER_ID]", "[KEYWORD_PLAN_CAMPAIGN_KEYWORD_ID]")
                     .toString())
+            .setKeywordPlanCampaign(
+                KeywordPlanCampaignName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_CAMPAIGN_ID]")
+                    .toString())
+            .setId(3355)
+            .setText("text3556653")
+            .setNegative(true)
             .build();
     mockKeywordPlanCampaignKeywordService.addResponse(expectedResponse);
 
@@ -132,6 +139,12 @@ public class KeywordPlanCampaignKeywordServiceClientTest {
                 KeywordPlanCampaignKeywordName.of(
                         "[CUSTOMER_ID]", "[KEYWORD_PLAN_CAMPAIGN_KEYWORD_ID]")
                     .toString())
+            .setKeywordPlanCampaign(
+                KeywordPlanCampaignName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_CAMPAIGN_ID]")
+                    .toString())
+            .setId(3355)
+            .setText("text3556653")
+            .setNegative(true)
             .build();
     mockKeywordPlanCampaignKeywordService.addResponse(expectedResponse);
 

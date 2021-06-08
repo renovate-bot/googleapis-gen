@@ -45,8 +45,8 @@ import org.junit.Test;
 public class BiddingStrategyServiceClientTest {
   private static MockBiddingStrategyService mockBiddingStrategyService;
   private static MockServiceHelper mockServiceHelper;
-  private BiddingStrategyServiceClient client;
   private LocalChannelProvider channelProvider;
+  private BiddingStrategyServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -85,6 +85,11 @@ public class BiddingStrategyServiceClientTest {
     BiddingStrategy expectedResponse =
         BiddingStrategy.newBuilder()
             .setResourceName(BiddingStrategyName.of("[CUSTOMER]", "[BIDDING_STRATEGY]").toString())
+            .setId(3355)
+            .setName(BiddingStrategyName.of("[CUSTOMER]", "[BIDDING_STRATEGY]").toString())
+            .setEffectiveCurrencyCode("effectiveCurrencyCode-2136417051")
+            .setCampaignCount(-1320441568)
+            .setNonRemovedCampaignCount(789221521)
             .build();
     mockBiddingStrategyService.addResponse(expectedResponse);
 
@@ -123,6 +128,11 @@ public class BiddingStrategyServiceClientTest {
     BiddingStrategy expectedResponse =
         BiddingStrategy.newBuilder()
             .setResourceName(BiddingStrategyName.of("[CUSTOMER]", "[BIDDING_STRATEGY]").toString())
+            .setId(3355)
+            .setName(BiddingStrategyName.of("[CUSTOMER]", "[BIDDING_STRATEGY]").toString())
+            .setEffectiveCurrencyCode("effectiveCurrencyCode-2136417051")
+            .setCampaignCount(-1320441568)
+            .setNonRemovedCampaignCount(789221521)
             .build();
     mockBiddingStrategyService.addResponse(expectedResponse);
 

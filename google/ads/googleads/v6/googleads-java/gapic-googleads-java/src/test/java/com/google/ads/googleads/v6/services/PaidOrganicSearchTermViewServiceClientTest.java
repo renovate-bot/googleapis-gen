@@ -43,8 +43,8 @@ import org.junit.Test;
 public class PaidOrganicSearchTermViewServiceClientTest {
   private static MockPaidOrganicSearchTermViewService mockPaidOrganicSearchTermViewService;
   private static MockServiceHelper mockServiceHelper;
-  private PaidOrganicSearchTermViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private PaidOrganicSearchTermViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -86,6 +86,7 @@ public class PaidOrganicSearchTermViewServiceClientTest {
                 PaidOrganicSearchTermViewName.of(
                         "[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[AD_GROUP_ID]", "[BASE64_SEARCH_TERM]")
                     .toString())
+            .setSearchTerm("searchTerm-710473164")
             .build();
     mockPaidOrganicSearchTermViewService.addResponse(expectedResponse);
 
@@ -132,6 +133,7 @@ public class PaidOrganicSearchTermViewServiceClientTest {
                 PaidOrganicSearchTermViewName.of(
                         "[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[AD_GROUP_ID]", "[BASE64_SEARCH_TERM]")
                     .toString())
+            .setSearchTerm("searchTerm-710473164")
             .build();
     mockPaidOrganicSearchTermViewService.addResponse(expectedResponse);
 

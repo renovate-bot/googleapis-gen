@@ -47,8 +47,8 @@ import org.junit.Test;
 public class DomainCategoryServiceClientTest {
   private static MockDomainCategoryService mockDomainCategoryService;
   private static MockServiceHelper mockServiceHelper;
-  private DomainCategoryServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DomainCategoryServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

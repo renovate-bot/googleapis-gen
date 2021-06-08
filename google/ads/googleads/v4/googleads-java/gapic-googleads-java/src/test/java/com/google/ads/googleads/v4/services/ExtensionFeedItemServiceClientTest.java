@@ -49,8 +49,8 @@ import org.junit.Test;
 public class ExtensionFeedItemServiceClientTest {
   private static MockExtensionFeedItemService mockExtensionFeedItemService;
   private static MockServiceHelper mockServiceHelper;
-  private ExtensionFeedItemServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ExtensionFeedItemServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

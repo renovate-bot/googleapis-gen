@@ -50,8 +50,8 @@ import org.junit.Test;
 public class MigrationServiceClientTest {
   private static MockMigrationService mockMigrationService;
   private static MockServiceHelper mockServiceHelper;
-  private MigrationServiceClient client;
   private LocalChannelProvider channelProvider;
+  private MigrationServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -47,10 +47,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class StreetViewPublishServiceClientTest {
-  private static MockStreetViewPublishService mockStreetViewPublishService;
   private static MockServiceHelper mockServiceHelper;
-  private StreetViewPublishServiceClient client;
+  private static MockStreetViewPublishService mockStreetViewPublishService;
   private LocalChannelProvider channelProvider;
+  private StreetViewPublishServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -45,8 +45,8 @@ import org.junit.Test;
 public class CustomInterestServiceClientTest {
   private static MockCustomInterestService mockCustomInterestService;
   private static MockServiceHelper mockServiceHelper;
-  private CustomInterestServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CustomInterestServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -86,6 +86,9 @@ public class CustomInterestServiceClientTest {
         CustomInterest.newBuilder()
             .setResourceName(
                 CustomInterestName.of("[CUSTOMER_ID]", "[CUSTOM_INTEREST_ID]").toString())
+            .setId(3355)
+            .setName(CustomInterestName.of("[CUSTOMER_ID]", "[CUSTOM_INTEREST_ID]").toString())
+            .setDescription("description-1724546052")
             .addAllMembers(new ArrayList<CustomInterestMember>())
             .build();
     mockCustomInterestService.addResponse(expectedResponse);
@@ -128,6 +131,9 @@ public class CustomInterestServiceClientTest {
         CustomInterest.newBuilder()
             .setResourceName(
                 CustomInterestName.of("[CUSTOMER_ID]", "[CUSTOM_INTEREST_ID]").toString())
+            .setId(3355)
+            .setName(CustomInterestName.of("[CUSTOMER_ID]", "[CUSTOM_INTEREST_ID]").toString())
+            .setDescription("description-1724546052")
             .addAllMembers(new ArrayList<CustomInterestMember>())
             .build();
     mockCustomInterestService.addResponse(expectedResponse);

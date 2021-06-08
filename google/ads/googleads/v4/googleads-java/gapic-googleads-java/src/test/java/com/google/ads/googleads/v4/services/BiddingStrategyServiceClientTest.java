@@ -47,8 +47,8 @@ import org.junit.Test;
 public class BiddingStrategyServiceClientTest {
   private static MockBiddingStrategyService mockBiddingStrategyService;
   private static MockServiceHelper mockServiceHelper;
-  private BiddingStrategyServiceClient client;
   private LocalChannelProvider channelProvider;
+  private BiddingStrategyServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

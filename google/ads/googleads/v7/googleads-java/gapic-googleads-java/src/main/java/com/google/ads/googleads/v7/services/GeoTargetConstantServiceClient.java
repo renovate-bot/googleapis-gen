@@ -272,7 +272,10 @@ public class GeoTargetConstantServiceClient implements BackgroundResource {
    * try (GeoTargetConstantServiceClient geoTargetConstantServiceClient =
    *     GeoTargetConstantServiceClient.create()) {
    *   SuggestGeoTargetConstantsRequest request =
-   *       SuggestGeoTargetConstantsRequest.newBuilder().build();
+   *       SuggestGeoTargetConstantsRequest.newBuilder()
+   *           .setLocale("locale-1097462182")
+   *           .setCountryCode("countryCode-1477067101")
+   *           .build();
    *   SuggestGeoTargetConstantsResponse response =
    *       geoTargetConstantServiceClient.suggestGeoTargetConstants(request);
    * }
@@ -300,7 +303,10 @@ public class GeoTargetConstantServiceClient implements BackgroundResource {
    * try (GeoTargetConstantServiceClient geoTargetConstantServiceClient =
    *     GeoTargetConstantServiceClient.create()) {
    *   SuggestGeoTargetConstantsRequest request =
-   *       SuggestGeoTargetConstantsRequest.newBuilder().build();
+   *       SuggestGeoTargetConstantsRequest.newBuilder()
+   *           .setLocale("locale-1097462182")
+   *           .setCountryCode("countryCode-1477067101")
+   *           .build();
    *   ApiFuture<SuggestGeoTargetConstantsResponse> future =
    *       geoTargetConstantServiceClient.suggestGeoTargetConstantsCallable().futureCall(request);
    *   // Do something.

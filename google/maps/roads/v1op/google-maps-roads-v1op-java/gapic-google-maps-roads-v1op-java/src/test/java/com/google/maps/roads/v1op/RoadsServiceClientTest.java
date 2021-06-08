@@ -42,8 +42,8 @@ import org.junit.Test;
 public class RoadsServiceClientTest {
   private static MockRoadsService mockRoadsService;
   private static MockServiceHelper mockServiceHelper;
-  private RoadsServiceClient client;
   private LocalChannelProvider channelProvider;
+  private RoadsServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -46,8 +46,8 @@ import org.junit.Test;
 public class AgentEndpointServiceClientTest {
   private static MockAgentEndpointService mockAgentEndpointService;
   private static MockServiceHelper mockServiceHelper;
-  private AgentEndpointServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AgentEndpointServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

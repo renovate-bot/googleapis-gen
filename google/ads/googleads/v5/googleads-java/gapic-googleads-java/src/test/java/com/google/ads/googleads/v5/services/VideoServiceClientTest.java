@@ -43,10 +43,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class VideoServiceClientTest {
-  private static MockVideoService mockVideoService;
   private static MockServiceHelper mockServiceHelper;
-  private VideoServiceClient client;
+  private static MockVideoService mockVideoService;
   private LocalChannelProvider channelProvider;
+  private VideoServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

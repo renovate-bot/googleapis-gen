@@ -48,8 +48,8 @@ import org.junit.Test;
 public class PlayableLocationsClientTest {
   private static MockPlayableLocations mockPlayableLocations;
   private static MockServiceHelper mockServiceHelper;
-  private PlayableLocationsClient client;
   private LocalChannelProvider channelProvider;
+  private PlayableLocationsClient client;
 
   @BeforeClass
   public static void startStaticServer() {

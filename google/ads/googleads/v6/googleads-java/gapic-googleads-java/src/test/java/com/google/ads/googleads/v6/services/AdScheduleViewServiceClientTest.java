@@ -43,8 +43,8 @@ import org.junit.Test;
 public class AdScheduleViewServiceClientTest {
   private static MockAdScheduleViewService mockAdScheduleViewService;
   private static MockServiceHelper mockServiceHelper;
-  private AdScheduleViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AdScheduleViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

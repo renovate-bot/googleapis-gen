@@ -65,8 +65,8 @@ import org.junit.Test;
 public class BaseBigtableDataClientTest {
   private static MockBigtable mockBigtable;
   private static MockServiceHelper mockServiceHelper;
-  private BaseBigtableDataClient client;
   private LocalChannelProvider channelProvider;
+  private BaseBigtableDataClient client;
 
   @BeforeClass
   public static void startStaticServer() {

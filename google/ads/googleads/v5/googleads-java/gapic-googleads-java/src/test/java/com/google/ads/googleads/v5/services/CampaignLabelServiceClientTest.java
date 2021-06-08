@@ -46,8 +46,8 @@ import org.junit.Test;
 public class CampaignLabelServiceClientTest {
   private static MockCampaignLabelService mockCampaignLabelService;
   private static MockServiceHelper mockServiceHelper;
-  private CampaignLabelServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CampaignLabelServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

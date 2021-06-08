@@ -44,8 +44,8 @@ import org.junit.Test;
 public class ChangeStatusServiceClientTest {
   private static MockChangeStatusService mockChangeStatusService;
   private static MockServiceHelper mockServiceHelper;
-  private ChangeStatusServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ChangeStatusServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

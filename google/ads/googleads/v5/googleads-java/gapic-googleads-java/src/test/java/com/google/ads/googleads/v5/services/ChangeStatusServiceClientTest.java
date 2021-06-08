@@ -16,6 +16,8 @@
 
 package com.google.ads.googleads.v5.services;
 
+import com.google.ads.googleads.v5.resources.AdGroupName;
+import com.google.ads.googleads.v5.resources.CampaignName;
 import com.google.ads.googleads.v5.resources.ChangeStatus;
 import com.google.ads.googleads.v5.resources.ChangeStatusName;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -44,8 +46,8 @@ import org.junit.Test;
 public class ChangeStatusServiceClientTest {
   private static MockChangeStatusService mockChangeStatusService;
   private static MockServiceHelper mockServiceHelper;
-  private ChangeStatusServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ChangeStatusServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -84,6 +86,8 @@ public class ChangeStatusServiceClientTest {
         ChangeStatus.newBuilder()
             .setResourceName(ChangeStatusName.of("[CUSTOMER]", "[CHANGE_STATUS]").toString())
             .setLastChangeDateTime(StringValue.newBuilder().build())
+            .setCampaign(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
             .setAdGroupAd(StringValue.newBuilder().build())
             .setAdGroupCriterion(StringValue.newBuilder().build())
             .setCampaignCriterion(StringValue.newBuilder().build())
@@ -131,6 +135,8 @@ public class ChangeStatusServiceClientTest {
         ChangeStatus.newBuilder()
             .setResourceName(ChangeStatusName.of("[CUSTOMER]", "[CHANGE_STATUS]").toString())
             .setLastChangeDateTime(StringValue.newBuilder().build())
+            .setCampaign(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setAdGroup(AdGroupName.of("[CUSTOMER]", "[AD_GROUP]").toString())
             .setAdGroupAd(StringValue.newBuilder().build())
             .setAdGroupCriterion(StringValue.newBuilder().build())
             .setCampaignCriterion(StringValue.newBuilder().build())

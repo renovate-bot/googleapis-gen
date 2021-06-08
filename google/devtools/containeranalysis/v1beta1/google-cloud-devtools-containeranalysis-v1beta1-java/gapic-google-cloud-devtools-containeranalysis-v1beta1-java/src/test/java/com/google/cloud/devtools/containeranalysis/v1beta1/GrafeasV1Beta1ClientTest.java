@@ -77,8 +77,8 @@ import org.junit.Test;
 public class GrafeasV1Beta1ClientTest {
   private static MockGrafeasV1Beta1 mockGrafeasV1Beta1;
   private static MockServiceHelper mockServiceHelper;
-  private GrafeasV1Beta1Client client;
   private LocalChannelProvider channelProvider;
+  private GrafeasV1Beta1Client client;
 
   @BeforeClass
   public static void startStaticServer() {

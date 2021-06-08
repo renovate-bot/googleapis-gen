@@ -46,8 +46,8 @@ import org.junit.Test;
 public class CampaignExtensionSettingServiceClientTest {
   private static MockCampaignExtensionSettingService mockCampaignExtensionSettingService;
   private static MockServiceHelper mockServiceHelper;
-  private CampaignExtensionSettingServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CampaignExtensionSettingServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

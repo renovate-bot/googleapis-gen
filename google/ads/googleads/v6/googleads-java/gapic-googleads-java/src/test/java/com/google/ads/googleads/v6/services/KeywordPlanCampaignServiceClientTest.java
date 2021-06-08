@@ -19,6 +19,7 @@ package com.google.ads.googleads.v6.services;
 import com.google.ads.googleads.v6.resources.KeywordPlanCampaign;
 import com.google.ads.googleads.v6.resources.KeywordPlanCampaignName;
 import com.google.ads.googleads.v6.resources.KeywordPlanGeoTarget;
+import com.google.ads.googleads.v6.resources.KeywordPlanName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -46,8 +47,8 @@ import org.junit.Test;
 public class KeywordPlanCampaignServiceClientTest {
   private static MockKeywordPlanCampaignService mockKeywordPlanCampaignService;
   private static MockServiceHelper mockServiceHelper;
-  private KeywordPlanCampaignServiceClient client;
   private LocalChannelProvider channelProvider;
+  private KeywordPlanCampaignServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -88,7 +89,13 @@ public class KeywordPlanCampaignServiceClientTest {
             .setResourceName(
                 KeywordPlanCampaignName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_CAMPAIGN_ID]")
                     .toString())
+            .setKeywordPlan(KeywordPlanName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_ID]").toString())
+            .setId(3355)
+            .setName(
+                KeywordPlanCampaignName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_CAMPAIGN_ID]")
+                    .toString())
             .addAllLanguageConstants(new ArrayList<String>())
+            .setCpcBidMicros(909381114)
             .addAllGeoTargets(new ArrayList<KeywordPlanGeoTarget>())
             .build();
     mockKeywordPlanCampaignService.addResponse(expectedResponse);
@@ -133,7 +140,13 @@ public class KeywordPlanCampaignServiceClientTest {
             .setResourceName(
                 KeywordPlanCampaignName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_CAMPAIGN_ID]")
                     .toString())
+            .setKeywordPlan(KeywordPlanName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_ID]").toString())
+            .setId(3355)
+            .setName(
+                KeywordPlanCampaignName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_CAMPAIGN_ID]")
+                    .toString())
             .addAllLanguageConstants(new ArrayList<String>())
+            .setCpcBidMicros(909381114)
             .addAllGeoTargets(new ArrayList<KeywordPlanGeoTarget>())
             .build();
     mockKeywordPlanCampaignService.addResponse(expectedResponse);

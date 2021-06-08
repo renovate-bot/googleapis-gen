@@ -52,8 +52,8 @@ import org.junit.Test;
 public class BatchJobServiceClientTest {
   private static MockBatchJobService mockBatchJobService;
   private static MockServiceHelper mockServiceHelper;
-  private BatchJobServiceClient client;
   private LocalChannelProvider channelProvider;
+  private BatchJobServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -132,7 +132,10 @@ public class BatchJobServiceClientTest {
     BatchJob expectedResponse =
         BatchJob.newBuilder()
             .setResourceName(BatchJobName.of("[CUSTOMER_ID]", "[BATCH_JOB_ID]").toString())
+            .setId(3355)
+            .setNextAddSequenceToken("nextAddSequenceToken-74772310")
             .setMetadata(BatchJob.BatchJobMetadata.newBuilder().build())
+            .setLongRunningOperation("longRunningOperation-234653436")
             .build();
     mockBatchJobService.addResponse(expectedResponse);
 
@@ -171,7 +174,10 @@ public class BatchJobServiceClientTest {
     BatchJob expectedResponse =
         BatchJob.newBuilder()
             .setResourceName(BatchJobName.of("[CUSTOMER_ID]", "[BATCH_JOB_ID]").toString())
+            .setId(3355)
+            .setNextAddSequenceToken("nextAddSequenceToken-74772310")
             .setMetadata(BatchJob.BatchJobMetadata.newBuilder().build())
+            .setLongRunningOperation("longRunningOperation-234653436")
             .build();
     mockBatchJobService.addResponse(expectedResponse);
 

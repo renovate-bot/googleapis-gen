@@ -47,8 +47,8 @@ import org.junit.Test;
 public class KeywordPlanAdGroupServiceClientTest {
   private static MockKeywordPlanAdGroupService mockKeywordPlanAdGroupService;
   private static MockServiceHelper mockServiceHelper;
-  private KeywordPlanAdGroupServiceClient client;
   private LocalChannelProvider channelProvider;
+  private KeywordPlanAdGroupServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

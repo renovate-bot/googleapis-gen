@@ -46,8 +46,8 @@ import org.junit.Test;
 public class CustomerManagerLinkServiceClientTest {
   private static MockCustomerManagerLinkService mockCustomerManagerLinkService;
   private static MockServiceHelper mockServiceHelper;
-  private CustomerManagerLinkServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CustomerManagerLinkServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

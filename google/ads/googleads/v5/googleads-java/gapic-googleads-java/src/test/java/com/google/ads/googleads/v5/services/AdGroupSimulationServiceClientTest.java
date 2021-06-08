@@ -43,8 +43,8 @@ import org.junit.Test;
 public class AdGroupSimulationServiceClientTest {
   private static MockAdGroupSimulationService mockAdGroupSimulationService;
   private static MockServiceHelper mockServiceHelper;
-  private AdGroupSimulationServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AdGroupSimulationServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -84,6 +84,9 @@ public class AdGroupSimulationServiceClientTest {
         AdGroupSimulation.newBuilder()
             .setResourceName(
                 AdGroupSimulationName.of("[CUSTOMER]", "[AD_GROUP_SIMULATION]").toString())
+            .setAdGroupId(-85224585)
+            .setStartDate("startDate-2129778896")
+            .setEndDate("endDate-1607727319")
             .build();
     mockAdGroupSimulationService.addResponse(expectedResponse);
 
@@ -126,6 +129,9 @@ public class AdGroupSimulationServiceClientTest {
         AdGroupSimulation.newBuilder()
             .setResourceName(
                 AdGroupSimulationName.of("[CUSTOMER]", "[AD_GROUP_SIMULATION]").toString())
+            .setAdGroupId(-85224585)
+            .setStartDate("startDate-2129778896")
+            .setEndDate("endDate-1607727319")
             .build();
     mockAdGroupSimulationService.addResponse(expectedResponse);
 

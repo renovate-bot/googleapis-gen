@@ -46,8 +46,8 @@ import org.junit.Test;
 public class FeedItemSetLinkServiceClientTest {
   private static MockFeedItemSetLinkService mockFeedItemSetLinkService;
   private static MockServiceHelper mockServiceHelper;
-  private FeedItemSetLinkServiceClient client;
   private LocalChannelProvider channelProvider;
+  private FeedItemSetLinkServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

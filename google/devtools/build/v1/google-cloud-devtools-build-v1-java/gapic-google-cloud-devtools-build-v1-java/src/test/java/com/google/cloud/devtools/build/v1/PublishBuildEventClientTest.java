@@ -54,8 +54,8 @@ import org.junit.Test;
 public class PublishBuildEventClientTest {
   private static MockPublishBuildEvent mockPublishBuildEvent;
   private static MockServiceHelper mockServiceHelper;
-  private PublishBuildEventClient client;
   private LocalChannelProvider channelProvider;
+  private PublishBuildEventClient client;
 
   @BeforeClass
   public static void startStaticServer() {

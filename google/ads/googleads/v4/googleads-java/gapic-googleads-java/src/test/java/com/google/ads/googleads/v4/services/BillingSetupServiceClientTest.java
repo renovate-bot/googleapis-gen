@@ -45,8 +45,8 @@ import org.junit.Test;
 public class BillingSetupServiceClientTest {
   private static MockBillingSetupService mockBillingSetupService;
   private static MockServiceHelper mockServiceHelper;
-  private BillingSetupServiceClient client;
   private LocalChannelProvider channelProvider;
+  private BillingSetupServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

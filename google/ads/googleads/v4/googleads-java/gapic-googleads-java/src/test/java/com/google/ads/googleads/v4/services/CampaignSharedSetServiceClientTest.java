@@ -46,8 +46,8 @@ import org.junit.Test;
 public class CampaignSharedSetServiceClientTest {
   private static MockCampaignSharedSetService mockCampaignSharedSetService;
   private static MockServiceHelper mockServiceHelper;
-  private CampaignSharedSetServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CampaignSharedSetServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

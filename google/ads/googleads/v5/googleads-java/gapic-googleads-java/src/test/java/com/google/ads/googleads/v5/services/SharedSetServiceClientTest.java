@@ -43,10 +43,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class SharedSetServiceClientTest {
-  private static MockSharedSetService mockSharedSetService;
   private static MockServiceHelper mockServiceHelper;
-  private SharedSetServiceClient client;
+  private static MockSharedSetService mockSharedSetService;
   private LocalChannelProvider channelProvider;
+  private SharedSetServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -84,6 +84,10 @@ public class SharedSetServiceClientTest {
     SharedSet expectedResponse =
         SharedSet.newBuilder()
             .setResourceName(SharedSetName.of("[CUSTOMER]", "[SHARED_SET]").toString())
+            .setId(3355)
+            .setName(SharedSetName.of("[CUSTOMER]", "[SHARED_SET]").toString())
+            .setMemberCount(-59350230)
+            .setReferenceCount(1214713627)
             .build();
     mockSharedSetService.addResponse(expectedResponse);
 
@@ -122,6 +126,10 @@ public class SharedSetServiceClientTest {
     SharedSet expectedResponse =
         SharedSet.newBuilder()
             .setResourceName(SharedSetName.of("[CUSTOMER]", "[SHARED_SET]").toString())
+            .setId(3355)
+            .setName(SharedSetName.of("[CUSTOMER]", "[SHARED_SET]").toString())
+            .setMemberCount(-59350230)
+            .setReferenceCount(1214713627)
             .build();
     mockSharedSetService.addResponse(expectedResponse);
 

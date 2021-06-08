@@ -398,6 +398,7 @@ public class CustomerServiceClient implements BackgroundResource {
    *       CreateCustomerClientRequest.newBuilder()
    *           .setCustomerId("customerId-1581184615")
    *           .setCustomerClient(Customer.newBuilder().build())
+   *           .setEmailAddress("emailAddress-1070931784")
    *           .build();
    *   CreateCustomerClientResponse response = customerServiceClient.createCustomerClient(request);
    * }
@@ -423,6 +424,7 @@ public class CustomerServiceClient implements BackgroundResource {
    *       CreateCustomerClientRequest.newBuilder()
    *           .setCustomerId("customerId-1581184615")
    *           .setCustomerClient(Customer.newBuilder().build())
+   *           .setEmailAddress("emailAddress-1070931784")
    *           .build();
    *   ApiFuture<CreateCustomerClientResponse> future =
    *       customerServiceClient.createCustomerClientCallable().futureCall(request);

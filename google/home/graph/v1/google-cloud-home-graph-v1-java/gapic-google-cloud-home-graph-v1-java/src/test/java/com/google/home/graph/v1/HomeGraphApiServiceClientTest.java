@@ -43,8 +43,8 @@ import org.junit.Test;
 public class HomeGraphApiServiceClientTest {
   private static MockHomeGraphApiService mockHomeGraphApiService;
   private static MockServiceHelper mockServiceHelper;
-  private HomeGraphApiServiceClient client;
   private LocalChannelProvider channelProvider;
+  private HomeGraphApiServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

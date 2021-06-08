@@ -18,6 +18,7 @@ package com.google.ads.googleads.v6.services;
 
 import com.google.ads.googleads.v6.resources.CampaignExtensionSetting;
 import com.google.ads.googleads.v6.resources.CampaignExtensionSettingName;
+import com.google.ads.googleads.v6.resources.CampaignName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -45,8 +46,8 @@ import org.junit.Test;
 public class CampaignExtensionSettingServiceClientTest {
   private static MockCampaignExtensionSettingService mockCampaignExtensionSettingService;
   private static MockServiceHelper mockServiceHelper;
-  private CampaignExtensionSettingServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CampaignExtensionSettingServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -88,6 +89,7 @@ public class CampaignExtensionSettingServiceClientTest {
                 CampaignExtensionSettingName.of(
                         "[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[EXTENSION_TYPE]")
                     .toString())
+            .setCampaign(CampaignName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]").toString())
             .addAllExtensionFeedItems(new ArrayList<String>())
             .build();
     mockCampaignExtensionSettingService.addResponse(expectedResponse);
@@ -133,6 +135,7 @@ public class CampaignExtensionSettingServiceClientTest {
                 CampaignExtensionSettingName.of(
                         "[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[EXTENSION_TYPE]")
                     .toString())
+            .setCampaign(CampaignName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]").toString())
             .addAllExtensionFeedItems(new ArrayList<String>())
             .build();
     mockCampaignExtensionSettingService.addResponse(expectedResponse);

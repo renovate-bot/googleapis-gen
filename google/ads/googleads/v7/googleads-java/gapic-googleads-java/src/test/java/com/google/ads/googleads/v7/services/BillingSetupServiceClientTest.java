@@ -18,6 +18,7 @@ package com.google.ads.googleads.v7.services;
 
 import com.google.ads.googleads.v7.resources.BillingSetup;
 import com.google.ads.googleads.v7.resources.BillingSetupName;
+import com.google.ads.googleads.v7.resources.PaymentsAccountName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -43,8 +44,8 @@ import org.junit.Test;
 public class BillingSetupServiceClientTest {
   private static MockBillingSetupService mockBillingSetupService;
   private static MockServiceHelper mockServiceHelper;
-  private BillingSetupServiceClient client;
   private LocalChannelProvider channelProvider;
+  private BillingSetupServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -82,6 +83,9 @@ public class BillingSetupServiceClientTest {
     BillingSetup expectedResponse =
         BillingSetup.newBuilder()
             .setResourceName(BillingSetupName.of("[CUSTOMER_ID]", "[BILLING_SETUP_ID]").toString())
+            .setId(3355)
+            .setPaymentsAccount(
+                PaymentsAccountName.of("[CUSTOMER_ID]", "[PAYMENTS_ACCOUNT_ID]").toString())
             .setPaymentsAccountInfo(BillingSetup.PaymentsAccountInfo.newBuilder().build())
             .build();
     mockBillingSetupService.addResponse(expectedResponse);
@@ -121,6 +125,9 @@ public class BillingSetupServiceClientTest {
     BillingSetup expectedResponse =
         BillingSetup.newBuilder()
             .setResourceName(BillingSetupName.of("[CUSTOMER_ID]", "[BILLING_SETUP_ID]").toString())
+            .setId(3355)
+            .setPaymentsAccount(
+                PaymentsAccountName.of("[CUSTOMER_ID]", "[PAYMENTS_ACCOUNT_ID]").toString())
             .setPaymentsAccountInfo(BillingSetup.PaymentsAccountInfo.newBuilder().build())
             .build();
     mockBillingSetupService.addResponse(expectedResponse);

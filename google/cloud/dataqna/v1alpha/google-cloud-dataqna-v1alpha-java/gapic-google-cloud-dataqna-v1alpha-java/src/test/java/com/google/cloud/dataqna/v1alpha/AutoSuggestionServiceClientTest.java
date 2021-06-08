@@ -42,8 +42,8 @@ import org.junit.Test;
 public class AutoSuggestionServiceClientTest {
   private static MockAutoSuggestionService mockAutoSuggestionService;
   private static MockServiceHelper mockServiceHelper;
-  private AutoSuggestionServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AutoSuggestionServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -46,8 +46,8 @@ public class ProductBiddingCategoryConstantServiceClientTest {
   private static MockProductBiddingCategoryConstantService
       mockProductBiddingCategoryConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private ProductBiddingCategoryConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ProductBiddingCategoryConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -54,8 +54,8 @@ import org.junit.Test;
 public class BatchJobServiceClientTest {
   private static MockBatchJobService mockBatchJobService;
   private static MockServiceHelper mockServiceHelper;
-  private BatchJobServiceClient client;
   private LocalChannelProvider channelProvider;
+  private BatchJobServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

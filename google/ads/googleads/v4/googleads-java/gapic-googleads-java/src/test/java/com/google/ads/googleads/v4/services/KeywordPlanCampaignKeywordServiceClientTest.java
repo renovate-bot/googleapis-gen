@@ -48,8 +48,8 @@ import org.junit.Test;
 public class KeywordPlanCampaignKeywordServiceClientTest {
   private static MockKeywordPlanCampaignKeywordService mockKeywordPlanCampaignKeywordService;
   private static MockServiceHelper mockServiceHelper;
-  private KeywordPlanCampaignKeywordServiceClient client;
   private LocalChannelProvider channelProvider;
+  private KeywordPlanCampaignKeywordServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

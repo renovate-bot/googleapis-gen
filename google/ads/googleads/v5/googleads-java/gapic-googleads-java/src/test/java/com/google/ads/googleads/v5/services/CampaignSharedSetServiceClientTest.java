@@ -16,8 +16,10 @@
 
 package com.google.ads.googleads.v5.services;
 
+import com.google.ads.googleads.v5.resources.CampaignName;
 import com.google.ads.googleads.v5.resources.CampaignSharedSet;
 import com.google.ads.googleads.v5.resources.CampaignSharedSetName;
+import com.google.ads.googleads.v5.resources.SharedSetName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -45,8 +47,8 @@ import org.junit.Test;
 public class CampaignSharedSetServiceClientTest {
   private static MockCampaignSharedSetService mockCampaignSharedSetService;
   private static MockServiceHelper mockServiceHelper;
-  private CampaignSharedSetServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CampaignSharedSetServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -86,6 +88,8 @@ public class CampaignSharedSetServiceClientTest {
         CampaignSharedSet.newBuilder()
             .setResourceName(
                 CampaignSharedSetName.of("[CUSTOMER]", "[CAMPAIGN_SHARED_SET]").toString())
+            .setCampaign(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setSharedSet(SharedSetName.of("[CUSTOMER]", "[SHARED_SET]").toString())
             .build();
     mockCampaignSharedSetService.addResponse(expectedResponse);
 
@@ -128,6 +132,8 @@ public class CampaignSharedSetServiceClientTest {
         CampaignSharedSet.newBuilder()
             .setResourceName(
                 CampaignSharedSetName.of("[CUSTOMER]", "[CAMPAIGN_SHARED_SET]").toString())
+            .setCampaign(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setSharedSet(SharedSetName.of("[CUSTOMER]", "[SHARED_SET]").toString())
             .build();
     mockCampaignSharedSetService.addResponse(expectedResponse);
 

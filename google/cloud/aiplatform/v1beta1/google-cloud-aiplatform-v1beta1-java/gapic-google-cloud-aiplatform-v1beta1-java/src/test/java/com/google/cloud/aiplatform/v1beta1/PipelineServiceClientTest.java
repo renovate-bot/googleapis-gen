@@ -55,8 +55,8 @@ import org.junit.Test;
 public class PipelineServiceClientTest {
   private static MockPipelineService mockPipelineService;
   private static MockServiceHelper mockServiceHelper;
-  private PipelineServiceClient client;
   private LocalChannelProvider channelProvider;
+  private PipelineServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

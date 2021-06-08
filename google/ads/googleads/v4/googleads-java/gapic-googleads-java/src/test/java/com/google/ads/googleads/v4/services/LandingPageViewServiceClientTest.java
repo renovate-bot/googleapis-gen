@@ -44,8 +44,8 @@ import org.junit.Test;
 public class LandingPageViewServiceClientTest {
   private static MockLandingPageViewService mockLandingPageViewService;
   private static MockServiceHelper mockServiceHelper;
-  private LandingPageViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private LandingPageViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

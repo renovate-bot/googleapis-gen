@@ -45,8 +45,8 @@ import org.junit.Test;
 public class AdGroupAdAssetViewServiceClientTest {
   private static MockAdGroupAdAssetViewService mockAdGroupAdAssetViewService;
   private static MockServiceHelper mockServiceHelper;
-  private AdGroupAdAssetViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private AdGroupAdAssetViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

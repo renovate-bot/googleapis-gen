@@ -43,8 +43,8 @@ import org.junit.Test;
 public class ManagedPlacementViewServiceClientTest {
   private static MockManagedPlacementViewService mockManagedPlacementViewService;
   private static MockServiceHelper mockServiceHelper;
-  private ManagedPlacementViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ManagedPlacementViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

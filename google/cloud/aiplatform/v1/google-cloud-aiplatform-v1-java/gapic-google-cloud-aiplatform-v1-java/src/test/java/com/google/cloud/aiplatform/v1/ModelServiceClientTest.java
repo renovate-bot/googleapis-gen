@@ -56,8 +56,8 @@ import org.junit.Test;
 public class ModelServiceClientTest {
   private static MockModelService mockModelService;
   private static MockServiceHelper mockServiceHelper;
-  private ModelServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ModelServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

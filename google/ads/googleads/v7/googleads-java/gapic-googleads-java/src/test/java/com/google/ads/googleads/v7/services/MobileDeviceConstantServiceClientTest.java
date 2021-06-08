@@ -43,8 +43,8 @@ import org.junit.Test;
 public class MobileDeviceConstantServiceClientTest {
   private static MockMobileDeviceConstantService mockMobileDeviceConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private MobileDeviceConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private MobileDeviceConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -83,6 +83,10 @@ public class MobileDeviceConstantServiceClientTest {
     MobileDeviceConstant expectedResponse =
         MobileDeviceConstant.newBuilder()
             .setResourceName(MobileDeviceConstantName.of("[CRITERION_ID]").toString())
+            .setId(3355)
+            .setName(MobileDeviceConstantName.of("[CRITERION_ID]").toString())
+            .setManufacturerName("manufacturerName75153916")
+            .setOperatingSystemName("operatingSystemName2122745211")
             .build();
     mockMobileDeviceConstantService.addResponse(expectedResponse);
 
@@ -122,6 +126,10 @@ public class MobileDeviceConstantServiceClientTest {
     MobileDeviceConstant expectedResponse =
         MobileDeviceConstant.newBuilder()
             .setResourceName(MobileDeviceConstantName.of("[CRITERION_ID]").toString())
+            .setId(3355)
+            .setName(MobileDeviceConstantName.of("[CRITERION_ID]").toString())
+            .setManufacturerName("manufacturerName75153916")
+            .setOperatingSystemName("operatingSystemName2122745211")
             .build();
     mockMobileDeviceConstantService.addResponse(expectedResponse);
 

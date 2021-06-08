@@ -16,6 +16,7 @@
 
 package com.google.ads.googleads.v6.services;
 
+import com.google.ads.googleads.v6.resources.FeedItemName;
 import com.google.ads.googleads.v6.resources.FeedItemTarget;
 import com.google.ads.googleads.v6.resources.FeedItemTargetName;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -44,8 +45,8 @@ import org.junit.Test;
 public class FeedItemTargetServiceClientTest {
   private static MockFeedItemTargetService mockFeedItemTargetService;
   private static MockServiceHelper mockServiceHelper;
-  private FeedItemTargetServiceClient client;
   private LocalChannelProvider channelProvider;
+  private FeedItemTargetServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -91,6 +92,8 @@ public class FeedItemTargetServiceClientTest {
                         "[FEED_ITEM_TARGET_TYPE]",
                         "[FEED_ITEM_TARGET_ID]")
                     .toString())
+            .setFeedItem(FeedItemName.of("[CUSTOMER_ID]", "[FEED_ID]", "[FEED_ITEM_ID]").toString())
+            .setFeedItemTargetId(1682840862)
             .build();
     mockFeedItemTargetService.addResponse(expectedResponse);
 
@@ -148,6 +151,8 @@ public class FeedItemTargetServiceClientTest {
                         "[FEED_ITEM_TARGET_TYPE]",
                         "[FEED_ITEM_TARGET_ID]")
                     .toString())
+            .setFeedItem(FeedItemName.of("[CUSTOMER_ID]", "[FEED_ID]", "[FEED_ITEM_ID]").toString())
+            .setFeedItemTargetId(1682840862)
             .build();
     mockFeedItemTargetService.addResponse(expectedResponse);
 

@@ -57,8 +57,8 @@ import org.junit.Test;
 public class DatastreamClientTest {
   private static MockDatastream mockDatastream;
   private static MockServiceHelper mockServiceHelper;
-  private DatastreamClient client;
   private LocalChannelProvider channelProvider;
+  private DatastreamClient client;
 
   @BeforeClass
   public static void startStaticServer() {

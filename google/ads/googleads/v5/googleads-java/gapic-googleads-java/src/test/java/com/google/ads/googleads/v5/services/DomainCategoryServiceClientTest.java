@@ -16,6 +16,7 @@
 
 package com.google.ads.googleads.v5.services;
 
+import com.google.ads.googleads.v5.resources.CampaignName;
 import com.google.ads.googleads.v5.resources.DomainCategory;
 import com.google.ads.googleads.v5.resources.DomainCategoryName;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -43,8 +44,8 @@ import org.junit.Test;
 public class DomainCategoryServiceClientTest {
   private static MockDomainCategoryService mockDomainCategoryService;
   private static MockServiceHelper mockServiceHelper;
-  private DomainCategoryServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DomainCategoryServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -83,6 +84,14 @@ public class DomainCategoryServiceClientTest {
     DomainCategory expectedResponse =
         DomainCategory.newBuilder()
             .setResourceName(DomainCategoryName.of("[CUSTOMER]", "[DOMAIN_CATEGORY]").toString())
+            .setCampaign(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setCategory("category50511102")
+            .setLanguageCode("languageCode-2092349083")
+            .setDomain("domain-1326197564")
+            .setCoverageFraction(-1811111303)
+            .setCategoryRank(338802381)
+            .setHasChildren(true)
+            .setRecommendedCpcBidMicros(1202568286)
             .build();
     mockDomainCategoryService.addResponse(expectedResponse);
 
@@ -121,6 +130,14 @@ public class DomainCategoryServiceClientTest {
     DomainCategory expectedResponse =
         DomainCategory.newBuilder()
             .setResourceName(DomainCategoryName.of("[CUSTOMER]", "[DOMAIN_CATEGORY]").toString())
+            .setCampaign(CampaignName.of("[CUSTOMER]", "[CAMPAIGN]").toString())
+            .setCategory("category50511102")
+            .setLanguageCode("languageCode-2092349083")
+            .setDomain("domain-1326197564")
+            .setCoverageFraction(-1811111303)
+            .setCategoryRank(338802381)
+            .setHasChildren(true)
+            .setRecommendedCpcBidMicros(1202568286)
             .build();
     mockDomainCategoryService.addResponse(expectedResponse);
 

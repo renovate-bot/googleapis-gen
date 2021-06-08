@@ -43,10 +43,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class UserInterestServiceClientTest {
-  private static MockUserInterestService mockUserInterestService;
   private static MockServiceHelper mockServiceHelper;
-  private UserInterestServiceClient client;
+  private static MockUserInterestService mockUserInterestService;
   private LocalChannelProvider channelProvider;
+  private UserInterestServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -84,6 +84,11 @@ public class UserInterestServiceClientTest {
     UserInterest expectedResponse =
         UserInterest.newBuilder()
             .setResourceName(UserInterestName.of("[CUSTOMER_ID]", "[USER_INTEREST_ID]").toString())
+            .setUserInterestId(413168604)
+            .setName(UserInterestName.of("[CUSTOMER_ID]", "[USER_INTEREST_ID]").toString())
+            .setUserInterestParent(
+                UserInterestName.of("[CUSTOMER_ID]", "[USER_INTEREST_ID]").toString())
+            .setLaunchedToAll(true)
             .addAllAvailabilities(new ArrayList<CriterionCategoryAvailability>())
             .build();
     mockUserInterestService.addResponse(expectedResponse);
@@ -123,6 +128,11 @@ public class UserInterestServiceClientTest {
     UserInterest expectedResponse =
         UserInterest.newBuilder()
             .setResourceName(UserInterestName.of("[CUSTOMER_ID]", "[USER_INTEREST_ID]").toString())
+            .setUserInterestId(413168604)
+            .setName(UserInterestName.of("[CUSTOMER_ID]", "[USER_INTEREST_ID]").toString())
+            .setUserInterestParent(
+                UserInterestName.of("[CUSTOMER_ID]", "[USER_INTEREST_ID]").toString())
+            .setLaunchedToAll(true)
             .addAllAvailabilities(new ArrayList<CriterionCategoryAvailability>())
             .build();
     mockUserInterestService.addResponse(expectedResponse);

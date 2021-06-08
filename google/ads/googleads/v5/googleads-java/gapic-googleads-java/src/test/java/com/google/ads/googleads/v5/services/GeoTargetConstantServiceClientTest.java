@@ -44,8 +44,8 @@ import org.junit.Test;
 public class GeoTargetConstantServiceClientTest {
   private static MockGeoTargetConstantService mockGeoTargetConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private GeoTargetConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private GeoTargetConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -84,6 +84,12 @@ public class GeoTargetConstantServiceClientTest {
     GeoTargetConstant expectedResponse =
         GeoTargetConstant.newBuilder()
             .setResourceName(GeoTargetConstantName.of("[GEO_TARGET_CONSTANT]").toString())
+            .setId(3355)
+            .setName(GeoTargetConstantName.of("[GEO_TARGET_CONSTANT]").toString())
+            .setCountryCode("countryCode-1477067101")
+            .setTargetType("targetType486622315")
+            .setCanonicalName("canonicalName2122381727")
+            .setParentGeoTarget(GeoTargetConstantName.of("[GEO_TARGET_CONSTANT]").toString())
             .build();
     mockGeoTargetConstantService.addResponse(expectedResponse);
 
@@ -123,6 +129,12 @@ public class GeoTargetConstantServiceClientTest {
     GeoTargetConstant expectedResponse =
         GeoTargetConstant.newBuilder()
             .setResourceName(GeoTargetConstantName.of("[GEO_TARGET_CONSTANT]").toString())
+            .setId(3355)
+            .setName(GeoTargetConstantName.of("[GEO_TARGET_CONSTANT]").toString())
+            .setCountryCode("countryCode-1477067101")
+            .setTargetType("targetType486622315")
+            .setCanonicalName("canonicalName2122381727")
+            .setParentGeoTarget(GeoTargetConstantName.of("[GEO_TARGET_CONSTANT]").toString())
             .build();
     mockGeoTargetConstantService.addResponse(expectedResponse);
 
@@ -166,7 +178,10 @@ public class GeoTargetConstantServiceClientTest {
     mockGeoTargetConstantService.addResponse(expectedResponse);
 
     SuggestGeoTargetConstantsRequest request =
-        SuggestGeoTargetConstantsRequest.newBuilder().build();
+        SuggestGeoTargetConstantsRequest.newBuilder()
+            .setLocale("locale-1097462182")
+            .setCountryCode("countryCode-1477067101")
+            .build();
 
     SuggestGeoTargetConstantsResponse actualResponse = client.suggestGeoTargetConstants(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -193,7 +208,10 @@ public class GeoTargetConstantServiceClientTest {
 
     try {
       SuggestGeoTargetConstantsRequest request =
-          SuggestGeoTargetConstantsRequest.newBuilder().build();
+          SuggestGeoTargetConstantsRequest.newBuilder()
+              .setLocale("locale-1097462182")
+              .setCountryCode("countryCode-1477067101")
+              .build();
       client.suggestGeoTargetConstants(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

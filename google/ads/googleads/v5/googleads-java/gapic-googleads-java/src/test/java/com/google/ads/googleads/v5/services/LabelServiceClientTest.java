@@ -48,8 +48,8 @@ import org.junit.Test;
 public class LabelServiceClientTest {
   private static MockLabelService mockLabelService;
   private static MockServiceHelper mockServiceHelper;
-  private LabelServiceClient client;
   private LocalChannelProvider channelProvider;
+  private LabelServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -51,8 +51,8 @@ import org.junit.Test;
 public class OfflineUserDataJobServiceClientTest {
   private static MockOfflineUserDataJobService mockOfflineUserDataJobService;
   private static MockServiceHelper mockServiceHelper;
-  private OfflineUserDataJobServiceClient client;
   private LocalChannelProvider channelProvider;
+  private OfflineUserDataJobServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -54,8 +54,8 @@ import org.junit.Test;
 public class Debugger2ClientTest {
   private static MockDebugger2 mockDebugger2;
   private static MockServiceHelper mockServiceHelper;
-  private Debugger2Client client;
   private LocalChannelProvider channelProvider;
+  private Debugger2Client client;
 
   @BeforeClass
   public static void startStaticServer() {

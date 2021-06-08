@@ -48,8 +48,8 @@ import org.junit.Test;
 public class BuildServiceClientTest {
   private static MockBuildService mockBuildService;
   private static MockServiceHelper mockServiceHelper;
-  private BuildServiceClient client;
   private LocalChannelProvider channelProvider;
+  private BuildServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

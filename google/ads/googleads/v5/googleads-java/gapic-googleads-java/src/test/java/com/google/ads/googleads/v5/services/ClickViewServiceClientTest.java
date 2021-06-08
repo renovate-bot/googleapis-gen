@@ -17,8 +17,11 @@
 package com.google.ads.googleads.v5.services;
 
 import com.google.ads.googleads.v5.common.ClickLocation;
+import com.google.ads.googleads.v5.resources.AdGroupAdName;
 import com.google.ads.googleads.v5.resources.ClickView;
 import com.google.ads.googleads.v5.resources.ClickViewName;
+import com.google.ads.googleads.v5.resources.GeoTargetConstantName;
+import com.google.ads.googleads.v5.resources.UserListName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -44,8 +47,8 @@ import org.junit.Test;
 public class ClickViewServiceClientTest {
   private static MockClickViewService mockClickViewService;
   private static MockServiceHelper mockServiceHelper;
-  private ClickViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private ClickViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -83,8 +86,13 @@ public class ClickViewServiceClientTest {
     ClickView expectedResponse =
         ClickView.newBuilder()
             .setResourceName(ClickViewName.of("[CUSTOMER]", "[CLICK_VIEW]").toString())
+            .setGclid("gclid98179115")
             .setAreaOfInterest(ClickLocation.newBuilder().build())
             .setLocationOfPresence(ClickLocation.newBuilder().build())
+            .setPageNumber(-1156954375)
+            .setAdGroupAd(AdGroupAdName.of("[CUSTOMER]", "[AD_GROUP_AD]").toString())
+            .setCampaignLocationTarget(GeoTargetConstantName.of("[GEO_TARGET_CONSTANT]").toString())
+            .setUserList(UserListName.of("[CUSTOMER]", "[USER_LIST]").toString())
             .build();
     mockClickViewService.addResponse(expectedResponse);
 
@@ -123,8 +131,13 @@ public class ClickViewServiceClientTest {
     ClickView expectedResponse =
         ClickView.newBuilder()
             .setResourceName(ClickViewName.of("[CUSTOMER]", "[CLICK_VIEW]").toString())
+            .setGclid("gclid98179115")
             .setAreaOfInterest(ClickLocation.newBuilder().build())
             .setLocationOfPresence(ClickLocation.newBuilder().build())
+            .setPageNumber(-1156954375)
+            .setAdGroupAd(AdGroupAdName.of("[CUSTOMER]", "[AD_GROUP_AD]").toString())
+            .setCampaignLocationTarget(GeoTargetConstantName.of("[GEO_TARGET_CONSTANT]").toString())
+            .setUserList(UserListName.of("[CUSTOMER]", "[USER_LIST]").toString())
             .build();
     mockClickViewService.addResponse(expectedResponse);
 

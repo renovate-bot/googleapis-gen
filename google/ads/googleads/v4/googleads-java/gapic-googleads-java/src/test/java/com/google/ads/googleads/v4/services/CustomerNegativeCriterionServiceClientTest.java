@@ -46,8 +46,8 @@ import org.junit.Test;
 public class CustomerNegativeCriterionServiceClientTest {
   private static MockCustomerNegativeCriterionService mockCustomerNegativeCriterionService;
   private static MockServiceHelper mockServiceHelper;
-  private CustomerNegativeCriterionServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CustomerNegativeCriterionServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

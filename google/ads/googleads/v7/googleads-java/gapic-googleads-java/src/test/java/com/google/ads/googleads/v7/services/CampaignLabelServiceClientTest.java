@@ -18,6 +18,8 @@ package com.google.ads.googleads.v7.services;
 
 import com.google.ads.googleads.v7.resources.CampaignLabel;
 import com.google.ads.googleads.v7.resources.CampaignLabelName;
+import com.google.ads.googleads.v7.resources.CampaignName;
+import com.google.ads.googleads.v7.resources.LabelName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -45,8 +47,8 @@ import org.junit.Test;
 public class CampaignLabelServiceClientTest {
   private static MockCampaignLabelService mockCampaignLabelService;
   private static MockServiceHelper mockServiceHelper;
-  private CampaignLabelServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CampaignLabelServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -85,6 +87,8 @@ public class CampaignLabelServiceClientTest {
         CampaignLabel.newBuilder()
             .setResourceName(
                 CampaignLabelName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[LABEL_ID]").toString())
+            .setCampaign(CampaignName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]").toString())
+            .setLabel(LabelName.of("[CUSTOMER_ID]", "[LABEL_ID]").toString())
             .build();
     mockCampaignLabelService.addResponse(expectedResponse);
 
@@ -126,6 +130,8 @@ public class CampaignLabelServiceClientTest {
         CampaignLabel.newBuilder()
             .setResourceName(
                 CampaignLabelName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[LABEL_ID]").toString())
+            .setCampaign(CampaignName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]").toString())
+            .setLabel(LabelName.of("[CUSTOMER_ID]", "[LABEL_ID]").toString())
             .build();
     mockCampaignLabelService.addResponse(expectedResponse);
 

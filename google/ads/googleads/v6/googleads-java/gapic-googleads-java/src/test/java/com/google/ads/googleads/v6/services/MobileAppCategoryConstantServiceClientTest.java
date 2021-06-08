@@ -43,8 +43,8 @@ import org.junit.Test;
 public class MobileAppCategoryConstantServiceClientTest {
   private static MockMobileAppCategoryConstantService mockMobileAppCategoryConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private MobileAppCategoryConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private MobileAppCategoryConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -84,6 +84,8 @@ public class MobileAppCategoryConstantServiceClientTest {
         MobileAppCategoryConstant.newBuilder()
             .setResourceName(
                 MobileAppCategoryConstantName.of("[MOBILE_APP_CATEGORY_ID]").toString())
+            .setId(3355)
+            .setName(MobileAppCategoryConstantName.of("[MOBILE_APP_CATEGORY_ID]").toString())
             .build();
     mockMobileAppCategoryConstantService.addResponse(expectedResponse);
 
@@ -126,6 +128,8 @@ public class MobileAppCategoryConstantServiceClientTest {
         MobileAppCategoryConstant.newBuilder()
             .setResourceName(
                 MobileAppCategoryConstantName.of("[MOBILE_APP_CATEGORY_ID]").toString())
+            .setId(3355)
+            .setName(MobileAppCategoryConstantName.of("[MOBILE_APP_CATEGORY_ID]").toString())
             .build();
     mockMobileAppCategoryConstantService.addResponse(expectedResponse);
 

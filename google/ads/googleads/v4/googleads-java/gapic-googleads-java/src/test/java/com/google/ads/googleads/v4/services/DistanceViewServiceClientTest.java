@@ -44,8 +44,8 @@ import org.junit.Test;
 public class DistanceViewServiceClientTest {
   private static MockDistanceViewService mockDistanceViewService;
   private static MockServiceHelper mockServiceHelper;
-  private DistanceViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DistanceViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

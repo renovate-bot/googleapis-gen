@@ -45,10 +45,10 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class SharedSetServiceClientTest {
-  private static MockSharedSetService mockSharedSetService;
   private static MockServiceHelper mockServiceHelper;
-  private SharedSetServiceClient client;
+  private static MockSharedSetService mockSharedSetService;
   private LocalChannelProvider channelProvider;
+  private SharedSetServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -44,8 +44,8 @@ import org.junit.Test;
 public class DetailPlacementViewServiceClientTest {
   private static MockDetailPlacementViewService mockDetailPlacementViewService;
   private static MockServiceHelper mockServiceHelper;
-  private DetailPlacementViewServiceClient client;
   private LocalChannelProvider channelProvider;
+  private DetailPlacementViewServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {

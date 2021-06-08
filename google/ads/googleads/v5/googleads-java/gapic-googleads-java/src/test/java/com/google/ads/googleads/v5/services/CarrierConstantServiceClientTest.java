@@ -43,8 +43,8 @@ import org.junit.Test;
 public class CarrierConstantServiceClientTest {
   private static MockCarrierConstantService mockCarrierConstantService;
   private static MockServiceHelper mockServiceHelper;
-  private CarrierConstantServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CarrierConstantServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -83,6 +83,9 @@ public class CarrierConstantServiceClientTest {
     CarrierConstant expectedResponse =
         CarrierConstant.newBuilder()
             .setResourceName(CarrierConstantName.of("[CARRIER_CONSTANT]").toString())
+            .setId(3355)
+            .setName(CarrierConstantName.of("[CARRIER_CONSTANT]").toString())
+            .setCountryCode("countryCode-1477067101")
             .build();
     mockCarrierConstantService.addResponse(expectedResponse);
 
@@ -121,6 +124,9 @@ public class CarrierConstantServiceClientTest {
     CarrierConstant expectedResponse =
         CarrierConstant.newBuilder()
             .setResourceName(CarrierConstantName.of("[CARRIER_CONSTANT]").toString())
+            .setId(3355)
+            .setName(CarrierConstantName.of("[CARRIER_CONSTANT]").toString())
+            .setCountryCode("countryCode-1477067101")
             .build();
     mockCarrierConstantService.addResponse(expectedResponse);
 

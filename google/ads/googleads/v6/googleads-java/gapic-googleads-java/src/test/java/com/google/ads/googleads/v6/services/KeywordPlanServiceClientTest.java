@@ -46,8 +46,8 @@ import org.junit.Test;
 public class KeywordPlanServiceClientTest {
   private static MockKeywordPlanService mockKeywordPlanService;
   private static MockServiceHelper mockServiceHelper;
-  private KeywordPlanServiceClient client;
   private LocalChannelProvider channelProvider;
+  private KeywordPlanServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -85,6 +85,8 @@ public class KeywordPlanServiceClientTest {
     KeywordPlan expectedResponse =
         KeywordPlan.newBuilder()
             .setResourceName(KeywordPlanName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_ID]").toString())
+            .setId(3355)
+            .setName(KeywordPlanName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_ID]").toString())
             .setForecastPeriod(KeywordPlanForecastPeriod.newBuilder().build())
             .build();
     mockKeywordPlanService.addResponse(expectedResponse);
@@ -124,6 +126,8 @@ public class KeywordPlanServiceClientTest {
     KeywordPlan expectedResponse =
         KeywordPlan.newBuilder()
             .setResourceName(KeywordPlanName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_ID]").toString())
+            .setId(3355)
+            .setName(KeywordPlanName.of("[CUSTOMER_ID]", "[KEYWORD_PLAN_ID]").toString())
             .setForecastPeriod(KeywordPlanForecastPeriod.newBuilder().build())
             .build();
     mockKeywordPlanService.addResponse(expectedResponse);

@@ -18,6 +18,8 @@ package com.google.ads.googleads.v7.services;
 
 import com.google.ads.googleads.v7.resources.CustomerLabel;
 import com.google.ads.googleads.v7.resources.CustomerLabelName;
+import com.google.ads.googleads.v7.resources.CustomerName;
+import com.google.ads.googleads.v7.resources.LabelName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -45,8 +47,8 @@ import org.junit.Test;
 public class CustomerLabelServiceClientTest {
   private static MockCustomerLabelService mockCustomerLabelService;
   private static MockServiceHelper mockServiceHelper;
-  private CustomerLabelServiceClient client;
   private LocalChannelProvider channelProvider;
+  private CustomerLabelServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -84,6 +86,8 @@ public class CustomerLabelServiceClientTest {
     CustomerLabel expectedResponse =
         CustomerLabel.newBuilder()
             .setResourceName(CustomerLabelName.of("[CUSTOMER_ID]", "[LABEL_ID]").toString())
+            .setCustomer(CustomerName.of("[CUSTOMER_ID]").toString())
+            .setLabel(LabelName.of("[CUSTOMER_ID]", "[LABEL_ID]").toString())
             .build();
     mockCustomerLabelService.addResponse(expectedResponse);
 
@@ -122,6 +126,8 @@ public class CustomerLabelServiceClientTest {
     CustomerLabel expectedResponse =
         CustomerLabel.newBuilder()
             .setResourceName(CustomerLabelName.of("[CUSTOMER_ID]", "[LABEL_ID]").toString())
+            .setCustomer(CustomerName.of("[CUSTOMER_ID]").toString())
+            .setLabel(LabelName.of("[CUSTOMER_ID]", "[LABEL_ID]").toString())
             .build();
     mockCustomerLabelService.addResponse(expectedResponse);
 

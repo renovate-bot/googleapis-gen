@@ -48,8 +48,8 @@ import org.junit.Test;
 public class RemarketingActionServiceClientTest {
   private static MockRemarketingActionService mockRemarketingActionService;
   private static MockServiceHelper mockServiceHelper;
-  private RemarketingActionServiceClient client;
   private LocalChannelProvider channelProvider;
+  private RemarketingActionServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
