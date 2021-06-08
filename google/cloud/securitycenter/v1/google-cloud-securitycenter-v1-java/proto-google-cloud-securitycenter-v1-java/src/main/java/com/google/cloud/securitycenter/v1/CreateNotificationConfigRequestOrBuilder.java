@@ -9,8 +9,8 @@ public interface CreateNotificationConfigRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Resource name of the new notification config's parent. Its format is
-   * "organizations/[organization_id]".
+   * Required. Resource name of the new notification config's parent. Its format
+   * is "organizations/[organization_id]".
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,8 +19,8 @@ public interface CreateNotificationConfigRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. Resource name of the new notification config's parent. Its format is
-   * "organizations/[organization_id]".
+   * Required. Resource name of the new notification config's parent. Its format
+   * is "organizations/[organization_id]".
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -57,8 +57,9 @@ public interface CreateNotificationConfigRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The notification config being created. The name and the service account
-   * will be ignored as they are both output only fields on this resource.
+   * Required. The notification config being created. The name and the service
+   * account will be ignored as they are both output only fields on this
+   * resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -67,8 +68,9 @@ public interface CreateNotificationConfigRequestOrBuilder extends
   boolean hasNotificationConfig();
   /**
    * <pre>
-   * Required. The notification config being created. The name and the service account
-   * will be ignored as they are both output only fields on this resource.
+   * Required. The notification config being created. The name and the service
+   * account will be ignored as they are both output only fields on this
+   * resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -77,8 +79,9 @@ public interface CreateNotificationConfigRequestOrBuilder extends
   com.google.cloud.securitycenter.v1.NotificationConfig getNotificationConfig();
   /**
    * <pre>
-   * Required. The notification config being created. The name and the service account
-   * will be ignored as they are both output only fields on this resource.
+   * Required. The notification config being created. The name and the service
+   * account will be ignored as they are both output only fields on this
+   * resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -55,8 +55,8 @@ public interface CreateFindingRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be ignored as
-   * they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be
+   * ignored as they are both output only fields on this resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -65,8 +65,8 @@ public interface CreateFindingRequestOrBuilder extends
   boolean hasFinding();
   /**
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be ignored as
-   * they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be
+   * ignored as they are both output only fields on this resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -75,8 +75,8 @@ public interface CreateFindingRequestOrBuilder extends
   com.google.cloud.securitycenter.v1.Finding getFinding();
   /**
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be ignored as
-   * they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be
+   * ignored as they are both output only fields on this resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>

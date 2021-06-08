@@ -66,18 +66,26 @@ public interface GroupFindingsRequestOrBuilder extends
    * * category: `=`, `:`
    * * external_uri: `=`, `:`
    * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
-   * * severity: `=`, `:`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `event_time = "2019-06-10T16:07:18-07:00"`
    *     `event_time = 1560208038000`
+   * * severity: `=`, `:`
+   * * workflow_state: `=`, `:`
    * * security_marks.marks: `=`, `:`
    * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
-   * For example, `source_properties.size = 100` is a valid filter string.
-   * Use a partial match on the empty string to filter based on a property
-   * existing: `source_properties.my_property : ""`
-   * Use a negated partial match on the empty string to filter based on a
-   * property not existing: `-source_properties.my_property : ""`
+   *   For example, `source_properties.size = 100` is a valid filter string.
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `source_properties.my_property : ""`
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-source_properties.my_property : ""`
+   * * resource:
+   *   * resource.name: `=`, `:`
+   *   * resource.parent_name: `=`, `:`
+   *   * resource.parent_display_name: `=`, `:`
+   *   * resource.project_name: `=`, `:`
+   *   * resource.project_display_name: `=`, `:`
+   *   * resource.type: `=`, `:`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -111,18 +119,26 @@ public interface GroupFindingsRequestOrBuilder extends
    * * category: `=`, `:`
    * * external_uri: `=`, `:`
    * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
-   * * severity: `=`, `:`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `event_time = "2019-06-10T16:07:18-07:00"`
    *     `event_time = 1560208038000`
+   * * severity: `=`, `:`
+   * * workflow_state: `=`, `:`
    * * security_marks.marks: `=`, `:`
    * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
-   * For example, `source_properties.size = 100` is a valid filter string.
-   * Use a partial match on the empty string to filter based on a property
-   * existing: `source_properties.my_property : ""`
-   * Use a negated partial match on the empty string to filter based on a
-   * property not existing: `-source_properties.my_property : ""`
+   *   For example, `source_properties.size = 100` is a valid filter string.
+   *   Use a partial match on the empty string to filter based on a property
+   *   existing: `source_properties.my_property : ""`
+   *   Use a negated partial match on the empty string to filter based on a
+   *   property not existing: `-source_properties.my_property : ""`
+   * * resource:
+   *   * resource.name: `=`, `:`
+   *   * resource.parent_name: `=`, `:`
+   *   * resource.parent_display_name: `=`, `:`
+   *   * resource.project_name: `=`, `:`
+   *   * resource.project_display_name: `=`, `:`
+   *   * resource.type: `=`, `:`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -133,9 +149,9 @@ public interface GroupFindingsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Expression that defines what assets fields to use for grouping (including
-   * `state_change`). The string value should follow SQL syntax: comma separated
-   * list of fields. For example: "parent,resource_name".
+   * Required. Expression that defines what assets fields to use for grouping
+   * (including `state_change`). The string value should follow SQL syntax:
+   * comma separated list of fields. For example: "parent,resource_name".
    * The following fields are supported:
    * * resource_name
    * * category
@@ -152,9 +168,9 @@ public interface GroupFindingsRequestOrBuilder extends
   java.lang.String getGroupBy();
   /**
    * <pre>
-   * Required. Expression that defines what assets fields to use for grouping (including
-   * `state_change`). The string value should follow SQL syntax: comma separated
-   * list of fields. For example: "parent,resource_name".
+   * Required. Expression that defines what assets fields to use for grouping
+   * (including `state_change`). The string value should follow SQL syntax:
+   * comma separated list of fields. For example: "parent,resource_name".
    * The following fields are supported:
    * * resource_name
    * * category
