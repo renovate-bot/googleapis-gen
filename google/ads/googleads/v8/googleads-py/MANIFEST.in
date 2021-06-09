@@ -1,0 +1,2 @@
+recursive-include google/ads/googleads *.py
+recursive-include google/ads/googleads.v8 *.py
