@@ -21,11 +21,11 @@ compileJava.options.encoding = 'UTF-8'
 javadoc.options.encoding = 'UTF-8'
 
 dependencies {
-  compile 'com.google.api:gax:1.63.3'
-  testCompile 'com.google.api:gax:1.63.3:testlib'
-  compile 'com.google.api:gax-grpc:1.63.3'
-  testCompile 'com.google.api:gax-grpc:1.63.3:testlib'
-  testCompile 'io.grpc:grpc-netty-shaded:1.36.0'
+  compile 'com.google.api:gax:1.65.1'
+  testCompile 'com.google.api:gax:1.65.1:testlib'
+  compile 'com.google.api:gax-grpc:1.65.1'
+  testCompile 'com.google.api:gax-grpc:1.65.1:testlib'
+  testCompile 'io.grpc:grpc-netty-shaded:1.37.0'
   testCompile 'junit:junit:4.13.2'
   compile project(':proto-google-cloud-ondemandscanning-v1-java')
   testCompile project(':grpc-google-cloud-ondemandscanning-v1-java')
