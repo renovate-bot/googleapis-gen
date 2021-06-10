@@ -30,7 +30,7 @@ class CreateMigrationJobRequest extends \Google\Protobuf\Internal\Message
     protected $migration_job_id = '';
     /**
      * Required. Represents a [migration
-     * job](https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs)
+     * job](https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs)
      * object.
      *
      * Generated from protobuf field <code>.google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -59,7 +59,7 @@ class CreateMigrationJobRequest extends \Google\Protobuf\Internal\Message
      *           Required. The ID of the instance to create.
      *     @type \Google\Cloud\CloudDms\V1\MigrationJob $migration_job
      *           Required. Represents a [migration
-     *           job](https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs)
+     *           job](https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs)
      *           object.
      *     @type string $request_id
      *           A unique id used to identify the request. If the server receives two
@@ -128,7 +128,7 @@ class CreateMigrationJobRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Represents a [migration
-     * job](https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs)
+     * job](https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs)
      * object.
      *
      * Generated from protobuf field <code>.google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -151,7 +151,7 @@ class CreateMigrationJobRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Represents a [migration
-     * job](https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs)
+     * job](https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs)
      * object.
      *
      * Generated from protobuf field <code>.google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = REQUIRED];</code>

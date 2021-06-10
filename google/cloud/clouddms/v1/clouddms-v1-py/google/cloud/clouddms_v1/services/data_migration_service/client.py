@@ -539,7 +539,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
                 should not be set.
             migration_job (google.cloud.clouddms_v1.types.MigrationJob):
                 Required. Represents a `migration
-                job <https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs>`__
+                job <https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs>`__
                 object.
 
                 This corresponds to the ``migration_job`` field

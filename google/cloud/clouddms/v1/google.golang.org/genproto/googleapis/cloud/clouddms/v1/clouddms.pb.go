@@ -277,7 +277,7 @@ type CreateMigrationJobRequest struct {
 	// Required. The ID of the instance to create.
 	MigrationJobId string `protobuf:"bytes,2,opt,name=migration_job_id,json=migrationJobId,proto3" json:"migration_job_id,omitempty"`
 	// Required. Represents a [migration
-	// job](https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs)
+	// job](https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs)
 	// object.
 	MigrationJob *MigrationJob `protobuf:"bytes,3,opt,name=migration_job,json=migrationJob,proto3" json:"migration_job,omitempty"`
 	// A unique id used to identify the request. If the server receives two

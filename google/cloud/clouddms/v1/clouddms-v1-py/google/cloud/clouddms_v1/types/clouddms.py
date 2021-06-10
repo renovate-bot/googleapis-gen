@@ -171,7 +171,7 @@ class CreateMigrationJobRequest(proto.Message):
             Required. The ID of the instance to create.
         migration_job (google.cloud.clouddms_v1.types.MigrationJob):
             Required. Represents a `migration
-            job <https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs>`__
+            job <https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs>`__
             object.
         request_id (str):
             A unique id used to identify the request. If the server

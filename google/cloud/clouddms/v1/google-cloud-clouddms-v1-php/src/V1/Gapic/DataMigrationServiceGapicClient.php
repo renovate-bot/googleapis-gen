@@ -525,7 +525,7 @@ class DataMigrationServiceGapicClient
      * @param string       $parent         Required. The parent, which owns this collection of migration jobs.
      * @param string       $migrationJobId Required. The ID of the instance to create.
      * @param MigrationJob $migrationJob   Required. Represents a [migration
-     *                                     job](https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs)
+     *                                     job](https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs)
      *                                     object.
      * @param array        $optionalArgs   {
      *     Optional.

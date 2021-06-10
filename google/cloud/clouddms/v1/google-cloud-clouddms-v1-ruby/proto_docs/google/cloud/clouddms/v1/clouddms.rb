@@ -94,7 +94,7 @@ module Google
         # @!attribute [rw] migration_job
         #   @return [::Google::Cloud::CloudDMS::V1::MigrationJob]
         #     Required. Represents a [migration
-        #     job](https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs)
+        #     job](https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs)
         #     object.
         # @!attribute [rw] request_id
         #   @return [::String]
