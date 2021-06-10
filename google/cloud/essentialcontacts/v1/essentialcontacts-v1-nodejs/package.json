@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/essentialcontacts",
+  "name": "@google-cloud/essential-contacts",
   "version": "0.1.0",
   "description": "Essentialcontacts client for Node.js",
   "repository": "googleapis/nodejs-essentialcontacts",

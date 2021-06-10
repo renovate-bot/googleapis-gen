@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const essentialcontacts = require('@google-cloud/essentialcontacts');
+const essentialcontacts = require('@google-cloud/essential-contacts');
 
 function main() {
   const essentialContactsServiceClient = new essentialcontacts.EssentialContactsServiceClient();
