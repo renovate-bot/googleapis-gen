@@ -1,5 +1,5 @@
 {
-  "name": "gaming",
+  "name": "@google-cloud/game-servers",
   "version": "0.1.0",
   "description": "Gaming client for Node.js",
   "repository": "googleapis/nodejs-gaming",

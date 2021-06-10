@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {GameServerClustersServiceClient, GameServerConfigsServiceClient, GameServerDeploymentsServiceClient, RealmsServiceClient} from 'gaming';
+import {GameServerClustersServiceClient, GameServerConfigsServiceClient, GameServerDeploymentsServiceClient, RealmsServiceClient} from '@google-cloud/game-servers';
 
 // check that the client class type name can be used
 function doStuffWithGameServerClustersServiceClient(client: GameServerClustersServiceClient) {
