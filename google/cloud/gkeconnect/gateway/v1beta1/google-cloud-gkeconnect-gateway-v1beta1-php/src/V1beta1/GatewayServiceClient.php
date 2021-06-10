@@ -24,9 +24,9 @@
  * @experimental
  */
 
-namespace Google\Cloud\Gkeconnect\Gateway\V1beta1;
+namespace Google\Cloud\GkeConnect\Gateway\V1beta1;
 
-use Google\Cloud\Gkeconnect\Gateway\V1beta1\Gapic\GatewayServiceGapicClient;
+use Google\Cloud\GkeConnect\Gateway\V1beta1\Gapic\GatewayServiceGapicClient;
 
 /** {@inheritdoc} */
 class GatewayServiceClient extends GatewayServiceGapicClient

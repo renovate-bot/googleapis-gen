@@ -13,7 +13,7 @@ end
 
 module Google
   module Cloud
-    module Gkeconnect
+    module GkeConnect
       module Gateway
         module V1beta1
         end

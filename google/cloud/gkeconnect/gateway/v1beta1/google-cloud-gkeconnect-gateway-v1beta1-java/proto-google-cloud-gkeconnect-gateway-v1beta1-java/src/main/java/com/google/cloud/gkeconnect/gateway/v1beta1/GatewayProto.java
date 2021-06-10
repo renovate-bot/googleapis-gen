@@ -44,9 +44,9 @@ public final class GatewayProto {
       "ateway.v1beta1B\014GatewayProtoP\001ZNgoogle.g" +
       "olang.org/genproto/googleapis/cloud/gkec" +
       "onnect/gateway/v1beta1;gateway\252\002\'Google." +
-      "Cloud.Gkeconnect.Gateway.V1Beta1\312\002\'Googl" +
-      "e\\Cloud\\Gkeconnect\\Gateway\\V1beta1\352\002+Goo" +
-      "gle::Cloud::Gkeconnect::Gateway::V1beta1" +
+      "Cloud.GkeConnect.Gateway.V1Beta1\312\002\'Googl" +
+      "e\\Cloud\\GkeConnect\\Gateway\\V1beta1\352\002+Goo" +
+      "gle::Cloud::GkeConnect::Gateway::V1beta1" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

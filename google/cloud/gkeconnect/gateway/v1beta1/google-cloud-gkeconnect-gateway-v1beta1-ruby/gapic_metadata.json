@@ -3,12 +3,12 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "ruby",
   "protoPackage": "google.cloud.gkeconnect.gateway.v1beta1",
-  "libraryPackage": "::Google::Cloud::Gkeconnect::Gateway::V1beta1",
+  "libraryPackage": "::Google::Cloud::GkeConnect::Gateway::V1beta1",
   "services": {
     "GatewayService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Gkeconnect::Gateway::V1beta1::GatewayService::Client",
+          "libraryClient": "::Google::Cloud::GkeConnect::Gateway::V1beta1::GatewayService::Client",
           "rpcs": {
             "GetResource": {
               "methods": [

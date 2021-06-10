@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Gkeconnect\Gateway\V1beta1\Gapic;
+namespace Google\Cloud\GkeConnect\Gateway\V1beta1\Gapic;
 
 use Google\Api\HttpBody;
 

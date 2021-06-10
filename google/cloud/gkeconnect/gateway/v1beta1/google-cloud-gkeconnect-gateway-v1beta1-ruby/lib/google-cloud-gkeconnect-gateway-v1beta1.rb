@@ -18,4 +18,4 @@
 
 # This gem does not autoload during Bundler.require. To load this gem,
 # issue explicit require statements for the packages desired, e.g.:
-# require "google/cloud/gkeconnect/gateway/v1beta1"
+# require "google/cloud/gke_connect/gateway/v1beta1"

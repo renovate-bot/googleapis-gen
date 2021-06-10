@@ -29,9 +29,9 @@ In order to use this library, you first need to go through the following steps:
 ## Quick Start
 
 ```ruby
-require "google/cloud/gkeconnect/gateway/v1beta1"
+require "google/cloud/gke_connect/gateway/v1beta1"
 
-client = ::Google::Cloud::Gkeconnect::Gateway::V1beta1::GatewayService::Client.new
+client = ::Google::Cloud::GkeConnect::Gateway::V1beta1::GatewayService::Client.new
 request = my_create_request
 response = client.get_resource request
 ```

@@ -25,9 +25,9 @@ export V1BETA1_CREDENTIALS=path/to/keyfile.json
 3. Initialize the client.
 
 ```ruby
-require "google/cloud/gkeconnect/gateway/v1beta1"
+require "google/cloud/gke_connect/gateway/v1beta1"
 
-client = ::Google::Cloud::Gkeconnect::Gateway::V1beta1::GatewayService::Client.new
+client = ::Google::Cloud::GkeConnect::Gateway::V1beta1::GatewayService::Client.new
 ```
 
 ## Credential Lookup
@@ -64,7 +64,7 @@ containers where writing files is difficult or not encouraged.
 
 The environment variables that google-cloud-gkeconnect-gateway-v1beta1
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Gkeconnect::Gateway::V1beta1::GatewayService::Credentials}):
+{::Google::Cloud::GkeConnect::Gateway::V1beta1::GatewayService::Credentials}):
 
 1. `V1BETA1_CREDENTIALS` - Path to JSON file, or JSON contents
 2. `V1BETA1_KEYFILE` - Path to JSON file, or JSON contents
@@ -73,11 +73,11 @@ checks for credentials are configured on the service Credentials class (such as
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
-require "google/cloud/gkeconnect/gateway/v1beta1"
+require "google/cloud/gke_connect/gateway/v1beta1"
 
 ENV["V1BETA1_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Gkeconnect::Gateway::V1beta1::GatewayService::Client.new
+client = ::Google::Cloud::GkeConnect::Gateway::V1beta1::GatewayService::Client.new
 ```
 
 ### Configuration
@@ -86,9 +86,9 @@ The **Credentials JSON** can be configured instead of placing them in
 environment variables. Either on an individual client initialization:
 
 ```ruby
-require "google/cloud/gkeconnect/gateway/v1beta1"
+require "google/cloud/gke_connect/gateway/v1beta1"
 
-client = ::Google::Cloud::Gkeconnect::Gateway::V1beta1::GatewayService::Client.new do |config|
+client = ::Google::Cloud::GkeConnect::Gateway::V1beta1::GatewayService::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -96,13 +96,13 @@ end
 Or configured globally for all clients:
 
 ```ruby
-require "google/cloud/gkeconnect/gateway/v1beta1"
+require "google/cloud/gke_connect/gateway/v1beta1"
 
-::Google::Cloud::Gkeconnect::Gateway::V1beta1::GatewayService::Client.configure do |config|
+::Google::Cloud::GkeConnect::Gateway::V1beta1::GatewayService::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Gkeconnect::Gateway::V1beta1::GatewayService::Client.new
+client = ::Google::Cloud::GkeConnect::Gateway::V1beta1::GatewayService::Client.new
 ```
 
 ### Cloud SDK

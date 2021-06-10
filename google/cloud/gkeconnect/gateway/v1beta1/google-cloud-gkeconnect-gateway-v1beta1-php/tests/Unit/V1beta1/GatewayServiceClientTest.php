@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Gkeconnect\Gateway\Tests\Unit\V1beta1;
+namespace Google\Cloud\GkeConnect\Gateway\Tests\Unit\V1beta1;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -28,7 +28,7 @@ use Google\Api\HttpBody;
 
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Gkeconnect\Gateway\V1beta1\GatewayServiceClient;
+use Google\Cloud\GkeConnect\Gateway\V1beta1\GatewayServiceClient;
 use Google\Rpc\Code;
 use stdClass;
 
