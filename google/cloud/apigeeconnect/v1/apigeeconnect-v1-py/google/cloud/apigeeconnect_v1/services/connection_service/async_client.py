@@ -248,7 +248,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-apigeeconnect",
+            "google-cloud-apigee-connect",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-cloud-apigeeconnect documentation build configuration file
+# google-cloud-apigee-connect documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-apigeeconnect"
+project = u"google-cloud-apigee-connect"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-apigeeconnect-doc"
+htmlhelp_basename = "google-cloud-apigee-connect-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-apigeeconnect.tex",
-        u"google-cloud-apigeeconnect Documentation",
+        "google-cloud-apigee-connect.tex",
+        u"google-cloud-apigee-connect Documentation",
         author,
         "manual",
     )
@@ -308,7 +308,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-apigeeconnect",
+        "google-cloud-apigee-connect",
         u"Google Cloud Apigeeconnect Documentation",
         [author],
         1,
@@ -327,10 +327,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-apigeeconnect",
-        u"google-cloud-apigeeconnect Documentation",
+        "google-cloud-apigee-connect",
+        u"google-cloud-apigee-connect Documentation",
         author,
-        "google-cloud-apigeeconnect",
+        "google-cloud-apigee-connect",
         "GAPIC library for Google Cloud Apigeeconnect API",
         "APIs",
     )
