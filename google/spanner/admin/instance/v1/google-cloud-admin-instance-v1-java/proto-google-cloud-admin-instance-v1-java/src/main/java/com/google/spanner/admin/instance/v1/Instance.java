@@ -109,6 +109,11 @@ private static final long serialVersionUID = 0L;
             endpointUris_.add(s);
             break;
           }
+          case 72: {
+
+            processingUnits_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -478,6 +483,23 @@ private static final long serialVersionUID = 0L;
     return nodeCount_;
   }
 
+  public static final int PROCESSING_UNITS_FIELD_NUMBER = 9;
+  private int processingUnits_;
+  /**
+   * <pre>
+   * The number of processing units allocated to this instance. At most one of
+   * processing_units or node_count should be present in the message. This may
+   * be zero in API responses for instances that are not yet in state `READY`.
+   * </pre>
+   *
+   * <code>int32 processing_units = 9;</code>
+   * @return The processingUnits.
+   */
+  @java.lang.Override
+  public int getProcessingUnits() {
+    return processingUnits_;
+  }
+
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_;
   /**
@@ -767,6 +789,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < endpointUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, endpointUris_.getRaw(i));
     }
+    if (processingUnits_ != 0) {
+      output.writeInt32(9, processingUnits_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -811,6 +836,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getEndpointUrisList().size();
     }
+    if (processingUnits_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(9, processingUnits_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -834,6 +863,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDisplayName())) return false;
     if (getNodeCount()
         != other.getNodeCount()) return false;
+    if (getProcessingUnits()
+        != other.getProcessingUnits()) return false;
     if (state_ != other.state_) return false;
     if (!internalGetLabels().equals(
         other.internalGetLabels())) return false;
@@ -858,6 +889,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + NODE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getNodeCount();
+    hash = (37 * hash) + PROCESSING_UNITS_FIELD_NUMBER;
+    hash = (53 * hash) + getProcessingUnits();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     if (!internalGetLabels().getMap().isEmpty()) {
@@ -1035,6 +1068,8 @@ private static final long serialVersionUID = 0L;
 
       nodeCount_ = 0;
 
+      processingUnits_ = 0;
+
       state_ = 0;
 
       internalGetMutableLabels().clear();
@@ -1071,6 +1106,7 @@ private static final long serialVersionUID = 0L;
       result.config_ = config_;
       result.displayName_ = displayName_;
       result.nodeCount_ = nodeCount_;
+      result.processingUnits_ = processingUnits_;
       result.state_ = state_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
@@ -1141,6 +1177,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getNodeCount() != 0) {
         setNodeCount(other.getNodeCount());
+      }
+      if (other.getProcessingUnits() != 0) {
+        setProcessingUnits(other.getProcessingUnits());
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
@@ -1561,6 +1600,55 @@ private static final long serialVersionUID = 0L;
     public Builder clearNodeCount() {
       
       nodeCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int processingUnits_ ;
+    /**
+     * <pre>
+     * The number of processing units allocated to this instance. At most one of
+     * processing_units or node_count should be present in the message. This may
+     * be zero in API responses for instances that are not yet in state `READY`.
+     * </pre>
+     *
+     * <code>int32 processing_units = 9;</code>
+     * @return The processingUnits.
+     */
+    @java.lang.Override
+    public int getProcessingUnits() {
+      return processingUnits_;
+    }
+    /**
+     * <pre>
+     * The number of processing units allocated to this instance. At most one of
+     * processing_units or node_count should be present in the message. This may
+     * be zero in API responses for instances that are not yet in state `READY`.
+     * </pre>
+     *
+     * <code>int32 processing_units = 9;</code>
+     * @param value The processingUnits to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProcessingUnits(int value) {
+      
+      processingUnits_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The number of processing units allocated to this instance. At most one of
+     * processing_units or node_count should be present in the message. This may
+     * be zero in API responses for instances that are not yet in state `READY`.
+     * </pre>
+     *
+     * <code>int32 processing_units = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProcessingUnits() {
+      
+      processingUnits_ = 0;
       onChanged();
       return this;
     }
