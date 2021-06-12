@@ -86,9 +86,11 @@ class SessionsClientTest extends GeneratedTest
         // Mock response
         $responseId = 'responseId1847552473';
         $outputAudio = '24';
+        $allowCancellation = false;
         $expectedResponse = new DetectIntentResponse();
         $expectedResponse->setResponseId($responseId);
         $expectedResponse->setOutputAudio($outputAudio);
+        $expectedResponse->setAllowCancellation($allowCancellation);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedSession = $client->sessionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[SESSION]');

@@ -38,6 +38,20 @@ class Fulfillment extends \Google\Protobuf\Internal\Message
      */
     protected $webhook = '';
     /**
+     * Whether Dialogflow should return currently queued fulfillment response
+     * messages in streaming APIs. If a webhook is specified, it happens before
+     * Dialogflow invokes webhook.
+     * Warning:
+     * 1) This flag only affects streaming API. Responses are still queued
+     * and returned once in non-streaming API.
+     * 2) The flag can be enabled in any fulfillment but only the first 3 partial
+     * responses will be returned. You may only want to apply it to fulfillments
+     * that have slow webhooks.
+     *
+     * Generated from protobuf field <code>bool return_partial_responses = 8;</code>
+     */
+    protected $return_partial_responses = false;
+    /**
      * The tag used by the webhook to identify which fulfillment is being called.
      * This field is required if `webhook` is specified.
      *
@@ -69,6 +83,16 @@ class Fulfillment extends \Google\Protobuf\Internal\Message
      *           The webhook to call.
      *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *           ID>/webhooks/<Webhook ID>`.
+     *     @type bool $return_partial_responses
+     *           Whether Dialogflow should return currently queued fulfillment response
+     *           messages in streaming APIs. If a webhook is specified, it happens before
+     *           Dialogflow invokes webhook.
+     *           Warning:
+     *           1) This flag only affects streaming API. Responses are still queued
+     *           and returned once in non-streaming API.
+     *           2) The flag can be enabled in any fulfillment but only the first 3 partial
+     *           responses will be returned. You may only want to apply it to fulfillments
+     *           that have slow webhooks.
      *     @type string $tag
      *           The tag used by the webhook to identify which fulfillment is being called.
      *           This field is required if `webhook` is specified.
@@ -135,6 +159,48 @@ class Fulfillment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->webhook = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether Dialogflow should return currently queued fulfillment response
+     * messages in streaming APIs. If a webhook is specified, it happens before
+     * Dialogflow invokes webhook.
+     * Warning:
+     * 1) This flag only affects streaming API. Responses are still queued
+     * and returned once in non-streaming API.
+     * 2) The flag can be enabled in any fulfillment but only the first 3 partial
+     * responses will be returned. You may only want to apply it to fulfillments
+     * that have slow webhooks.
+     *
+     * Generated from protobuf field <code>bool return_partial_responses = 8;</code>
+     * @return bool
+     */
+    public function getReturnPartialResponses()
+    {
+        return $this->return_partial_responses;
+    }
+
+    /**
+     * Whether Dialogflow should return currently queued fulfillment response
+     * messages in streaming APIs. If a webhook is specified, it happens before
+     * Dialogflow invokes webhook.
+     * Warning:
+     * 1) This flag only affects streaming API. Responses are still queued
+     * and returned once in non-streaming API.
+     * 2) The flag can be enabled in any fulfillment but only the first 3 partial
+     * responses will be returned. You may only want to apply it to fulfillments
+     * that have slow webhooks.
+     *
+     * Generated from protobuf field <code>bool return_partial_responses = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReturnPartialResponses($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->return_partial_responses = $var;
 
         return $this;
     }

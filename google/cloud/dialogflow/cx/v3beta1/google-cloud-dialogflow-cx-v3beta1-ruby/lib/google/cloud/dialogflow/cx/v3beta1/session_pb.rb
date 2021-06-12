@@ -30,12 +30,20 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :query_result, :message, 2, "google.cloud.dialogflow.cx.v3beta1.QueryResult"
       optional :output_audio, :bytes, 4
       optional :output_audio_config, :message, 5, "google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig"
+      optional :response_type, :enum, 6, "google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType"
+      optional :allow_cancellation, :bool, 7
+    end
+    add_enum "google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType" do
+      value :RESPONSE_TYPE_UNSPECIFIED, 0
+      value :PARTIAL, 1
+      value :FINAL, 2
     end
     add_message "google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest" do
       optional :session, :string, 1
       optional :query_params, :message, 2, "google.cloud.dialogflow.cx.v3beta1.QueryParameters"
       optional :query_input, :message, 3, "google.cloud.dialogflow.cx.v3beta1.QueryInput"
       optional :output_audio_config, :message, 4, "google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig"
+      optional :enable_partial_response, :bool, 5
     end
     add_message "google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse" do
       oneof :response do
@@ -171,6 +179,7 @@ module Google
         module V3beta1
           DetectIntentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest").msgclass
           DetectIntentResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse").msgclass
+          DetectIntentResponse::ResponseType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.ResponseType").enummodule
           StreamingDetectIntentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest").msgclass
           StreamingDetectIntentResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse").msgclass
           StreamingRecognitionResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult").msgclass

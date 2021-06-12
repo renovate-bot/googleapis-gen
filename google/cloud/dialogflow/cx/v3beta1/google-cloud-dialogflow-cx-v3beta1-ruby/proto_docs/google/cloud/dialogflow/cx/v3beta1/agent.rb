@@ -50,7 +50,7 @@ module Google
           #     Required. The human-readable name of the agent, unique within the location.
           # @!attribute [rw] default_language_code
           #   @return [::String]
-          #     Immutable. The default language of the agent as a language tag.
+          #     Required. Immutable. The default language of the agent as a language tag.
           #     See [Language
           #     Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     for a list of the currently supported language codes.

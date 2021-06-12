@@ -123,6 +123,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Sessions::ClientTest < Minitest:
     query_params = {}
     query_input = {}
     output_audio_config = {}
+    enable_partial_response = true
 
     streaming_detect_intent_client_stub = ClientStub.new [grpc_response].to_enum, grpc_operation do |name, request, options:|
       assert_equal :streaming_detect_intent, name
@@ -138,8 +139,8 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Sessions::ClientTest < Minitest:
       end
 
       # Use enumerable object with hash and protobuf object.
-      request_hash = { session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config }
-      request_proto = ::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest.new session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config
+      request_hash = { session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config, enable_partial_response: enable_partial_response }
+      request_proto = ::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest.new session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config, enable_partial_response: enable_partial_response
       enum_input = [request_hash, request_proto].to_enum
       client.streaming_detect_intent enum_input do |response, operation|
         assert_kind_of Enumerable, response
@@ -150,8 +151,8 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Sessions::ClientTest < Minitest:
       end
 
       # Use stream input object (from gapic-common).
-      request_hash = { session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config }
-      request_proto = ::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest.new session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config
+      request_hash = { session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config, enable_partial_response: enable_partial_response }
+      request_proto = ::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest.new session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config, enable_partial_response: enable_partial_response
       stream_input = Gapic::StreamInput.new
       client.streaming_detect_intent stream_input do |response, operation|
         assert_kind_of Enumerable, response
@@ -165,8 +166,8 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Sessions::ClientTest < Minitest:
       stream_input.close
 
       # Use enumerable object with hash and protobuf object with options.
-      request_hash = { session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config }
-      request_proto = ::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest.new session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config
+      request_hash = { session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config, enable_partial_response: enable_partial_response }
+      request_proto = ::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest.new session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config, enable_partial_response: enable_partial_response
       enum_input = [request_hash, request_proto].to_enum
       client.streaming_detect_intent enum_input, grpc_options do |response, operation|
         assert_kind_of Enumerable, response
@@ -177,8 +178,8 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Sessions::ClientTest < Minitest:
       end
 
       # Use stream input object (from gapic-common) with options.
-      request_hash = { session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config }
-      request_proto = ::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest.new session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config
+      request_hash = { session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config, enable_partial_response: enable_partial_response }
+      request_proto = ::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest.new session: session, query_params: query_params, query_input: query_input, output_audio_config: output_audio_config, enable_partial_response: enable_partial_response
       stream_input = Gapic::StreamInput.new
       client.streaming_detect_intent stream_input, grpc_options do |response, operation|
         assert_kind_of Enumerable, response
@@ -200,6 +201,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Sessions::ClientTest < Minitest:
           assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::QueryParameters), r["query_params"]
           assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::QueryInput), r["query_input"]
           assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::OutputAudioConfig), r["output_audio_config"]
+          assert_equal true, r["enable_partial_response"]
         end
       end
     end

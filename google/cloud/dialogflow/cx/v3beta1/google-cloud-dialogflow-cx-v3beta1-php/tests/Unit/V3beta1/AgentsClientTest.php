@@ -114,6 +114,8 @@ class AgentsClientTest extends GeneratedTest
         $agent = new Agent();
         $agentDisplayName = 'agentDisplayName2121176616';
         $agent->setDisplayName($agentDisplayName);
+        $agentDefaultLanguageCode = 'agentDefaultLanguageCode-1905463551';
+        $agent->setDefaultLanguageCode($agentDefaultLanguageCode);
         $agentTimeZone = 'agentTimeZone-453669314';
         $agent->setTimeZone($agentTimeZone);
         $response = $client->createAgent($formattedParent, $agent);
@@ -155,6 +157,8 @@ class AgentsClientTest extends GeneratedTest
         $agent = new Agent();
         $agentDisplayName = 'agentDisplayName2121176616';
         $agent->setDisplayName($agentDisplayName);
+        $agentDefaultLanguageCode = 'agentDefaultLanguageCode-1905463551';
+        $agent->setDefaultLanguageCode($agentDefaultLanguageCode);
         $agentTimeZone = 'agentTimeZone-453669314';
         $agent->setTimeZone($agentTimeZone);
         try {
@@ -730,6 +734,8 @@ class AgentsClientTest extends GeneratedTest
         $agent = new Agent();
         $agentDisplayName = 'agentDisplayName2121176616';
         $agent->setDisplayName($agentDisplayName);
+        $agentDefaultLanguageCode = 'agentDefaultLanguageCode-1905463551';
+        $agent->setDefaultLanguageCode($agentDefaultLanguageCode);
         $agentTimeZone = 'agentTimeZone-453669314';
         $agent->setTimeZone($agentTimeZone);
         $response = $client->updateAgent($agent);
@@ -768,6 +774,8 @@ class AgentsClientTest extends GeneratedTest
         $agent = new Agent();
         $agentDisplayName = 'agentDisplayName2121176616';
         $agent->setDisplayName($agentDisplayName);
+        $agentDefaultLanguageCode = 'agentDefaultLanguageCode-1905463551';
+        $agent->setDefaultLanguageCode($agentDefaultLanguageCode);
         $agentTimeZone = 'agentTimeZone-453669314';
         $agent->setTimeZone($agentTimeZone);
         try {

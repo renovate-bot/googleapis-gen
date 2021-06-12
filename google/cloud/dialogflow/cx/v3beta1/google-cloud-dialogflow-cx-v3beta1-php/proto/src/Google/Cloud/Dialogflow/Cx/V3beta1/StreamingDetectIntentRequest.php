@@ -74,6 +74,15 @@ class StreamingDetectIntentRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig output_audio_config = 4;</code>
      */
     protected $output_audio_config = null;
+    /**
+     * Enable partial detect intent response. If this flag is not enabled,
+     * response stream still contains only one final `DetectIntentResponse` even
+     * if some `Fulfillment`s in the agent have been configured to return partial
+     * responses.
+     *
+     * Generated from protobuf field <code>bool enable_partial_response = 5;</code>
+     */
+    protected $enable_partial_response = false;
 
     /**
      * Constructor.
@@ -103,6 +112,11 @@ class StreamingDetectIntentRequest extends \Google\Protobuf\Internal\Message
      *           Required. The input specification.
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\OutputAudioConfig $output_audio_config
      *           Instructs the speech synthesizer how to generate the output audio.
+     *     @type bool $enable_partial_response
+     *           Enable partial detect intent response. If this flag is not enabled,
+     *           response stream still contains only one final `DetectIntentResponse` even
+     *           if some `Fulfillment`s in the agent have been configured to return partial
+     *           responses.
      * }
      */
     public function __construct($data = NULL) {
@@ -268,6 +282,38 @@ class StreamingDetectIntentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3beta1\OutputAudioConfig::class);
         $this->output_audio_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Enable partial detect intent response. If this flag is not enabled,
+     * response stream still contains only one final `DetectIntentResponse` even
+     * if some `Fulfillment`s in the agent have been configured to return partial
+     * responses.
+     *
+     * Generated from protobuf field <code>bool enable_partial_response = 5;</code>
+     * @return bool
+     */
+    public function getEnablePartialResponse()
+    {
+        return $this->enable_partial_response;
+    }
+
+    /**
+     * Enable partial detect intent response. If this flag is not enabled,
+     * response stream still contains only one final `DetectIntentResponse` even
+     * if some `Fulfillment`s in the agent have been configured to return partial
+     * responses.
+     *
+     * Generated from protobuf field <code>bool enable_partial_response = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnablePartialResponse($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_partial_response = $var;
 
         return $this;
     }
