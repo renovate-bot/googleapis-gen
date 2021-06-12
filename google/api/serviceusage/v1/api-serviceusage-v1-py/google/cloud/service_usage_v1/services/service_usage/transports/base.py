@@ -26,14 +26,14 @@ from google.api_core import retry as retries  # type: ignore
 from google.api_core import operations_v1  # type: ignore
 from google.auth import credentials as ga_credentials  # type: ignore
 
-from google.api.serviceusage_v1.types import resources
-from google.api.serviceusage_v1.types import serviceusage
+from google.cloud.service_usage_v1.types import resources
+from google.cloud.service_usage_v1.types import serviceusage
 from google.longrunning import operations_pb2  # type: ignore
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-api-serviceusage',
+            'google-cloud-service-usage',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

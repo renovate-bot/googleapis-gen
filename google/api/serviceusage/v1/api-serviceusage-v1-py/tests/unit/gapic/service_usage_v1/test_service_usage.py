@@ -24,14 +24,6 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 
-from google.api.serviceusage_v1.services.service_usage import ServiceUsageAsyncClient
-from google.api.serviceusage_v1.services.service_usage import ServiceUsageClient
-from google.api.serviceusage_v1.services.service_usage import pagers
-from google.api.serviceusage_v1.services.service_usage import transports
-from google.api.serviceusage_v1.services.service_usage.transports.base import _API_CORE_VERSION
-from google.api.serviceusage_v1.services.service_usage.transports.base import _GOOGLE_AUTH_VERSION
-from google.api.serviceusage_v1.types import resources
-from google.api.serviceusage_v1.types import serviceusage
 from google.api_core import client_options
 from google.api_core import exceptions as core_exceptions
 from google.api_core import future
@@ -42,6 +34,14 @@ from google.api_core import operation_async  # type: ignore
 from google.api_core import operations_v1
 from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
+from google.cloud.service_usage_v1.services.service_usage import ServiceUsageAsyncClient
+from google.cloud.service_usage_v1.services.service_usage import ServiceUsageClient
+from google.cloud.service_usage_v1.services.service_usage import pagers
+from google.cloud.service_usage_v1.services.service_usage import transports
+from google.cloud.service_usage_v1.services.service_usage.transports.base import _API_CORE_VERSION
+from google.cloud.service_usage_v1.services.service_usage.transports.base import _GOOGLE_AUTH_VERSION
+from google.cloud.service_usage_v1.types import resources
+from google.cloud.service_usage_v1.types import serviceusage
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
 import google.auth
@@ -360,7 +360,7 @@ def test_service_usage_client_client_options_credentials_file(client_class, tran
 
 
 def test_service_usage_client_client_options_from_dict():
-    with mock.patch('google.api.serviceusage_v1.services.service_usage.transports.ServiceUsageGrpcTransport.__init__') as grpc_transport:
+    with mock.patch('google.cloud.service_usage_v1.services.service_usage.transports.ServiceUsageGrpcTransport.__init__') as grpc_transport:
         grpc_transport.return_value = None
         client = ServiceUsageClient(
             client_options={'api_endpoint': 'squid.clam.whelk'}
@@ -1546,7 +1546,7 @@ def test_service_usage_base_transport_error():
 
 def test_service_usage_base_transport():
     # Instantiate the base transport.
-    with mock.patch('google.api.serviceusage_v1.services.service_usage.transports.ServiceUsageTransport.__init__') as Transport:
+    with mock.patch('google.cloud.service_usage_v1.services.service_usage.transports.ServiceUsageTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.ServiceUsageTransport(
             credentials=ga_credentials.AnonymousCredentials(),
@@ -1575,7 +1575,7 @@ def test_service_usage_base_transport():
 @requires_google_auth_gte_1_25_0
 def test_service_usage_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.api.serviceusage_v1.services.service_usage.transports.ServiceUsageTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.service_usage_v1.services.service_usage.transports.ServiceUsageTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.ServiceUsageTransport(
@@ -1596,7 +1596,7 @@ def test_service_usage_base_transport_with_credentials_file():
 @requires_google_auth_lt_1_25_0
 def test_service_usage_base_transport_with_credentials_file_old_google_auth():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.api.serviceusage_v1.services.service_usage.transports.ServiceUsageTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.service_usage_v1.services.service_usage.transports.ServiceUsageTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.ServiceUsageTransport(
@@ -1614,7 +1614,7 @@ def test_service_usage_base_transport_with_credentials_file_old_google_auth():
 
 def test_service_usage_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.api.serviceusage_v1.services.service_usage.transports.ServiceUsageTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.service_usage_v1.services.service_usage.transports.ServiceUsageTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.ServiceUsageTransport()

@@ -26,11 +26,11 @@ from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
-from google.api.serviceusage_v1.services.service_usage import pagers
-from google.api.serviceusage_v1.types import resources
-from google.api.serviceusage_v1.types import serviceusage
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
+from google.cloud.service_usage_v1.services.service_usage import pagers
+from google.cloud.service_usage_v1.types import resources
+from google.cloud.service_usage_v1.types import serviceusage
 from .transports.base import ServiceUsageTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ServiceUsageGrpcAsyncIOTransport
 from .client import ServiceUsageClient
@@ -162,7 +162,7 @@ class ServiceUsageAsyncClient:
         project.
 
         Args:
-            request (:class:`google.api.serviceusage_v1.types.EnableServiceRequest`):
+            request (:class:`google.cloud.service_usage_v1.types.EnableServiceRequest`):
                 The request object. Request message for the
                 `EnableService` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -175,7 +175,7 @@ class ServiceUsageAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be :class:`google.api.serviceusage_v1.types.EnableServiceResponse` Response message for the EnableService method.
+                The result type for the operation will be :class:`google.cloud.service_usage_v1.types.EnableServiceResponse` Response message for the EnableService method.
                    This response message is assigned to the response
                    field of the returned Operation when that operation
                    is done.
@@ -236,7 +236,7 @@ class ServiceUsageAsyncClient:
         currently enabled.
 
         Args:
-            request (:class:`google.api.serviceusage_v1.types.DisableServiceRequest`):
+            request (:class:`google.cloud.service_usage_v1.types.DisableServiceRequest`):
                 The request object. Request message for the
                 `DisableService` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -249,7 +249,7 @@ class ServiceUsageAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be :class:`google.api.serviceusage_v1.types.DisableServiceResponse` Response message for the DisableService method.
+                The result type for the operation will be :class:`google.cloud.service_usage_v1.types.DisableServiceResponse` Response message for the DisableService method.
                    This response message is assigned to the response
                    field of the returned Operation when that operation
                    is done.
@@ -304,7 +304,7 @@ class ServiceUsageAsyncClient:
         for a given service.
 
         Args:
-            request (:class:`google.api.serviceusage_v1.types.GetServiceRequest`):
+            request (:class:`google.cloud.service_usage_v1.types.GetServiceRequest`):
                 The request object. Request message for the `GetService`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -314,7 +314,7 @@ class ServiceUsageAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api.serviceusage_v1.types.Service:
+            google.cloud.service_usage_v1.types.Service:
                 A service that is available for use
                 by the consumer.
 
@@ -372,7 +372,7 @@ class ServiceUsageAsyncClient:
         capability.
 
         Args:
-            request (:class:`google.api.serviceusage_v1.types.ListServicesRequest`):
+            request (:class:`google.cloud.service_usage_v1.types.ListServicesRequest`):
                 The request object. Request message for the
                 `ListServices` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -382,7 +382,7 @@ class ServiceUsageAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api.serviceusage_v1.services.service_usage.pagers.ListServicesAsyncPager:
+            google.cloud.service_usage_v1.services.service_usage.pagers.ListServicesAsyncPager:
                 Response message for the ListServices method.
 
                 Iterating over this object will yield results and
@@ -441,7 +441,7 @@ class ServiceUsageAsyncClient:
         ``EnableService`` method instead.
 
         Args:
-            request (:class:`google.api.serviceusage_v1.types.BatchEnableServicesRequest`):
+            request (:class:`google.cloud.service_usage_v1.types.BatchEnableServicesRequest`):
                 The request object. Request message for the
                 `BatchEnableServices` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -454,7 +454,7 @@ class ServiceUsageAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be :class:`google.api.serviceusage_v1.types.BatchEnableServicesResponse` Response message for the BatchEnableServices method.
+                The result type for the operation will be :class:`google.cloud.service_usage_v1.types.BatchEnableServicesResponse` Response message for the BatchEnableServices method.
                    This response message is assigned to the response
                    field of the returned Operation when that operation
                    is done.
@@ -509,7 +509,7 @@ class ServiceUsageAsyncClient:
         for a given list of services.
 
         Args:
-            request (:class:`google.api.serviceusage_v1.types.BatchGetServicesRequest`):
+            request (:class:`google.cloud.service_usage_v1.types.BatchGetServicesRequest`):
                 The request object. Request message for the
                 `BatchGetServices` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -519,7 +519,7 @@ class ServiceUsageAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api.serviceusage_v1.types.BatchGetServicesResponse:
+            google.cloud.service_usage_v1.types.BatchGetServicesResponse:
                 Response message for the BatchGetServices method.
         """
         # Create or coerce a protobuf request object.
@@ -559,7 +559,7 @@ class ServiceUsageAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-api-serviceusage",
+            "google-cloud-service-usage",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

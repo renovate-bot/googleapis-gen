@@ -15,7 +15,7 @@
 #
 import proto  # type: ignore
 
-from google.api.serviceusage_v1.types import resources
+from google.cloud.service_usage_v1.types import resources
 
 
 __protobuf__ = proto.module(
@@ -65,7 +65,7 @@ class EnableServiceResponse(proto.Message):
     Operation when that operation is done.
 
     Attributes:
-        service (google.api.serviceusage_v1.types.Service):
+        service (google.cloud.service_usage_v1.types.Service):
             The new state of the service after enabling.
     """
 
@@ -96,7 +96,7 @@ class DisableServiceRequest(proto.Message):
             be disabled. When set, the service, and any
             enabled services that depend on it, will be
             disabled together.
-        check_if_service_has_usage (google.api.serviceusage_v1.types.DisableServiceRequest.CheckIfServiceHasUsage):
+        check_if_service_has_usage (google.cloud.service_usage_v1.types.DisableServiceRequest.CheckIfServiceHasUsage):
             Defines the behavior for checking service
             usage when disabling a service.
     """
@@ -129,7 +129,7 @@ class DisableServiceResponse(proto.Message):
     Operation when that operation is done.
 
     Attributes:
-        service (google.api.serviceusage_v1.types.Service):
+        service (google.cloud.service_usage_v1.types.Service):
             The new state of the service after disabling.
     """
 
@@ -200,7 +200,7 @@ class ListServicesRequest(proto.Message):
 class ListServicesResponse(proto.Message):
     r"""Response message for the ``ListServices`` method.
     Attributes:
-        services (Sequence[google.api.serviceusage_v1.types.Service]):
+        services (Sequence[google.cloud.service_usage_v1.types.Service]):
             The available services for the requested
             project.
         next_page_token (str):
@@ -266,9 +266,9 @@ class BatchEnableServicesResponse(proto.Message):
     returned Operation when that operation is done.
 
     Attributes:
-        services (Sequence[google.api.serviceusage_v1.types.Service]):
+        services (Sequence[google.cloud.service_usage_v1.types.Service]):
             The new state of the services after enabling.
-        failures (Sequence[google.api.serviceusage_v1.types.BatchEnableServicesResponse.EnableFailure]):
+        failures (Sequence[google.cloud.service_usage_v1.types.BatchEnableServicesResponse.EnableFailure]):
             If allow_partial_success is true, and one or more services
             could not be enabled, this field contains the details about
             each failure.
@@ -337,7 +337,7 @@ class BatchGetServicesRequest(proto.Message):
 class BatchGetServicesResponse(proto.Message):
     r"""Response message for the ``BatchGetServices`` method.
     Attributes:
-        services (Sequence[google.api.serviceusage_v1.types.Service]):
+        services (Sequence[google.cloud.service_usage_v1.types.Service]):
             The requested Service states.
     """
 

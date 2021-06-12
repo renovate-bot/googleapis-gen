@@ -1,2 +1,2 @@
-recursive-include google/api/serviceusage *.py
-recursive-include google/api/serviceusage_v1 *.py
+recursive-include google/cloud/service_usage *.py
+recursive-include google/cloud/service_usage_v1 *.py

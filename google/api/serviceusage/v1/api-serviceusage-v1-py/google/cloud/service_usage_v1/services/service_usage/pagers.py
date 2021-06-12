@@ -15,15 +15,15 @@
 #
 from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
 
-from google.api.serviceusage_v1.types import resources
-from google.api.serviceusage_v1.types import serviceusage
+from google.cloud.service_usage_v1.types import resources
+from google.cloud.service_usage_v1.types import serviceusage
 
 
 class ListServicesPager:
     """A pager for iterating through ``list_services`` requests.
 
     This class thinly wraps an initial
-    :class:`google.api.serviceusage_v1.types.ListServicesResponse` object, and
+    :class:`google.cloud.service_usage_v1.types.ListServicesResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``services`` field.
 
@@ -32,7 +32,7 @@ class ListServicesPager:
     through the ``services`` field on the
     corresponding responses.
 
-    All the usual :class:`google.api.serviceusage_v1.types.ListServicesResponse`
+    All the usual :class:`google.cloud.service_usage_v1.types.ListServicesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -47,9 +47,9 @@ class ListServicesPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.api.serviceusage_v1.types.ListServicesRequest):
+            request (google.cloud.service_usage_v1.types.ListServicesRequest):
                 The initial request object.
-            response (google.api.serviceusage_v1.types.ListServicesResponse):
+            response (google.cloud.service_usage_v1.types.ListServicesResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -82,7 +82,7 @@ class ListServicesAsyncPager:
     """A pager for iterating through ``list_services`` requests.
 
     This class thinly wraps an initial
-    :class:`google.api.serviceusage_v1.types.ListServicesResponse` object, and
+    :class:`google.cloud.service_usage_v1.types.ListServicesResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``services`` field.
 
@@ -91,7 +91,7 @@ class ListServicesAsyncPager:
     through the ``services`` field on the
     corresponding responses.
 
-    All the usual :class:`google.api.serviceusage_v1.types.ListServicesResponse`
+    All the usual :class:`google.cloud.service_usage_v1.types.ListServicesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -106,9 +106,9 @@ class ListServicesAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.api.serviceusage_v1.types.ListServicesRequest):
+            request (google.cloud.service_usage_v1.types.ListServicesRequest):
                 The initial request object.
-            response (google.api.serviceusage_v1.types.ListServicesResponse):
+            response (google.cloud.service_usage_v1.types.ListServicesResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.

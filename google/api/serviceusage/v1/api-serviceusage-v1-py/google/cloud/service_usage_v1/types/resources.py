@@ -58,12 +58,12 @@ class Service(proto.Message):
             The resource name of the consumer.
             A valid name would be:
             - projects/123
-        config (google.api.serviceusage_v1.types.ServiceConfig):
+        config (google.cloud.service_usage_v1.types.ServiceConfig):
             The service configuration of the available service. Some
             fields may be filtered out of the configuration in responses
             to the ``ListServices`` method. These fields are present
             only in responses to the ``GetService`` method.
-        state (google.api.serviceusage_v1.types.State):
+        state (google.cloud.service_usage_v1.types.State):
             Whether or not the service has been enabled
             for use by the consumer.
     """

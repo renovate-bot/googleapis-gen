@@ -25,8 +25,8 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
-from google.api.serviceusage_v1.types import resources
-from google.api.serviceusage_v1.types import serviceusage
+from google.cloud.service_usage_v1.types import resources
+from google.cloud.service_usage_v1.types import serviceusage
 from google.longrunning import operations_pb2  # type: ignore
 from .base import ServiceUsageTransport, DEFAULT_CLIENT_INFO
 
