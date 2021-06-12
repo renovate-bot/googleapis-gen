@@ -32,7 +32,7 @@ from google.longrunning import operations_pb2  # type: ignore
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-lifesciences',
+            'google-cloud-life-sciences',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

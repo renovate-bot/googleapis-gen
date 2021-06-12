@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-cloud-lifesciences documentation build configuration file
+# google-cloud-life-sciences documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-lifesciences"
+project = u"google-cloud-life-sciences"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-lifesciences-doc"
+htmlhelp_basename = "google-cloud-life-sciences-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-lifesciences.tex",
-        u"google-cloud-lifesciences Documentation",
+        "google-cloud-life-sciences.tex",
+        u"google-cloud-life-sciences Documentation",
         author,
         "manual",
     )
@@ -308,7 +308,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-lifesciences",
+        "google-cloud-life-sciences",
         u"Google Cloud Lifesciences Documentation",
         [author],
         1,
@@ -327,10 +327,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-lifesciences",
-        u"google-cloud-lifesciences Documentation",
+        "google-cloud-life-sciences",
+        u"google-cloud-life-sciences Documentation",
         author,
-        "google-cloud-lifesciences",
+        "google-cloud-life-sciences",
         "GAPIC library for Google Cloud Lifesciences API",
         "APIs",
     )
