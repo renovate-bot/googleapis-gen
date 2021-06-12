@@ -388,7 +388,20 @@ class AutomatedAgentReply(proto.Message):
             The collection of current Dialogflow CX agent session
             parameters at the time of this response. Deprecated: Use
             ``parameters`` instead.
+        automated_agent_reply_type (google.cloud.dialogflow_v2beta1.types.AutomatedAgentReply.AutomatedAgentReplyType):
+            AutomatedAgentReply type.
+        allow_cancellation (bool):
+            Indicates whether the partial automated agent
+            reply is interruptible when a later reply
+            message arrives. e.g. if the agent specified
+            some music as partial response, it can be
+            cancelled.
     """
+    class AutomatedAgentReplyType(proto.Enum):
+        r"""Represents different automated agent reply types."""
+        AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED = 0
+        PARTIAL = 1
+        FINAL = 2
 
     detect_intent_response = proto.Field(
         proto.MESSAGE,
@@ -424,6 +437,15 @@ class AutomatedAgentReply(proto.Message):
         proto.MESSAGE,
         number=6,
         message=struct_pb2.Struct,
+    )
+    automated_agent_reply_type = proto.Field(
+        proto.ENUM,
+        number=7,
+        enum=AutomatedAgentReplyType,
+    )
+    allow_cancellation = proto.Field(
+        proto.BOOL,
+        number=8,
     )
 
 

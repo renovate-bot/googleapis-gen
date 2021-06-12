@@ -47,6 +47,20 @@ class AutomatedAgentReply extends \Google\Protobuf\Internal\Message
      * @deprecated
      */
     protected $cx_session_parameters = null;
+    /**
+     * AutomatedAgentReply type.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;</code>
+     */
+    protected $automated_agent_reply_type = 0;
+    /**
+     * Indicates whether the partial automated agent reply is interruptible when a
+     * later reply message arrives. e.g. if the agent specified some music as
+     * partial response, it can be cancelled.
+     *
+     * Generated from protobuf field <code>bool allow_cancellation = 8;</code>
+     */
+    protected $allow_cancellation = false;
     protected $response;
     protected $match;
 
@@ -81,6 +95,12 @@ class AutomatedAgentReply extends \Google\Protobuf\Internal\Message
      *           The collection of current Dialogflow CX agent session parameters at the
      *           time of this response.
      *           Deprecated: Use `parameters` instead.
+     *     @type int $automated_agent_reply_type
+     *           AutomatedAgentReply type.
+     *     @type bool $allow_cancellation
+     *           Indicates whether the partial automated agent reply is interruptible when a
+     *           later reply message arrives. e.g. if the agent specified some music as
+     *           partial response, it can be cancelled.
      * }
      */
     public function __construct($data = NULL) {
@@ -329,6 +349,62 @@ class AutomatedAgentReply extends \Google\Protobuf\Internal\Message
         @trigger_error('cx_session_parameters is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->cx_session_parameters = $var;
+
+        return $this;
+    }
+
+    /**
+     * AutomatedAgentReply type.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;</code>
+     * @return int
+     */
+    public function getAutomatedAgentReplyType()
+    {
+        return $this->automated_agent_reply_type;
+    }
+
+    /**
+     * AutomatedAgentReply type.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType automated_agent_reply_type = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAutomatedAgentReplyType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Dialogflow\V2beta1\AutomatedAgentReply\AutomatedAgentReplyType::class);
+        $this->automated_agent_reply_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Indicates whether the partial automated agent reply is interruptible when a
+     * later reply message arrives. e.g. if the agent specified some music as
+     * partial response, it can be cancelled.
+     *
+     * Generated from protobuf field <code>bool allow_cancellation = 8;</code>
+     * @return bool
+     */
+    public function getAllowCancellation()
+    {
+        return $this->allow_cancellation;
+    }
+
+    /**
+     * Indicates whether the partial automated agent reply is interruptible when a
+     * later reply message arrives. e.g. if the agent specified some music as
+     * partial response, it can be cancelled.
+     *
+     * Generated from protobuf field <code>bool allow_cancellation = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowCancellation($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_cancellation = $var;
 
         return $this;
     }
