@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -3982,7 +3982,8 @@ type KeyManagementServiceClient interface {
 	AsymmetricDecrypt(ctx context.Context, in *AsymmetricDecryptRequest, opts ...grpc.CallOption) (*AsymmetricDecryptResponse, error)
 	// Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
 	//
-	// Returns an error if called on an asymmetric key.
+	// Returns an error if called on a key whose purpose is not
+	// [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
 	UpdateCryptoKeyPrimaryVersion(ctx context.Context, in *UpdateCryptoKeyPrimaryVersionRequest, opts ...grpc.CallOption) (*CryptoKey, error)
 	// Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
 	//
@@ -4297,7 +4298,8 @@ type KeyManagementServiceServer interface {
 	AsymmetricDecrypt(context.Context, *AsymmetricDecryptRequest) (*AsymmetricDecryptResponse, error)
 	// Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
 	//
-	// Returns an error if called on an asymmetric key.
+	// Returns an error if called on a key whose purpose is not
+	// [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
 	UpdateCryptoKeyPrimaryVersion(context.Context, *UpdateCryptoKeyPrimaryVersionRequest) (*CryptoKey, error)
 	// Schedule a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] for destruction.
 	//

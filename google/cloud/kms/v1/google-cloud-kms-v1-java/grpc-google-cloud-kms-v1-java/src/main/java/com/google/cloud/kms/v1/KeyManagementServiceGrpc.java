@@ -1026,7 +1026,8 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-     * Returns an error if called on an asymmetric key.
+     * Returns an error if called on a key whose purpose is not
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public void updateCryptoKeyPrimaryVersion(com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request,
@@ -1509,7 +1510,8 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-     * Returns an error if called on an asymmetric key.
+     * Returns an error if called on a key whose purpose is not
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public void updateCryptoKeyPrimaryVersion(com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request,
@@ -1809,7 +1811,8 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-     * Returns an error if called on an asymmetric key.
+     * Returns an error if called on a key whose purpose is not
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKey updateCryptoKeyPrimaryVersion(com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request) {
@@ -2126,7 +2129,8 @@ public final class KeyManagementServiceGrpc {
     /**
      * <pre>
      * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-     * Returns an error if called on an asymmetric key.
+     * Returns an error if called on a key whose purpose is not
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.CryptoKey> updateCryptoKeyPrimaryVersion(
