@@ -1,0 +1,61 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.devtools.testing.v1",
+    "libraryPackage": "Google\\Devtools\\Testing\\V1",
+    "services": {
+        "TestExecutionService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "TestExecutionServiceGapicClient",
+                    "rpcs": {
+                        "CancelTestMatrix": {
+                            "methods": [
+                                "cancelTestMatrix"
+                            ]
+                        },
+                        "CreateTestMatrix": {
+                            "methods": [
+                                "createTestMatrix"
+                            ]
+                        },
+                        "GetTestMatrix": {
+                            "methods": [
+                                "getTestMatrix"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ApplicationDetailService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ApplicationDetailServiceGapicClient",
+                    "rpcs": {
+                        "GetApkDetails": {
+                            "methods": [
+                                "getApkDetails"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "TestEnvironmentDiscoveryService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "TestEnvironmentDiscoveryServiceGapicClient",
+                    "rpcs": {
+                        "GetTestEnvironmentCatalog": {
+                            "methods": [
+                                "getTestEnvironmentCatalog"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

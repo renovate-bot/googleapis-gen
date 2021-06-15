@@ -1,0 +1,101 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.devtools.testing.v1",
+  "libraryPackage": "@google-cloud/testing",
+  "services": {
+    "ApplicationDetailService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApplicationDetailServiceClient",
+          "rpcs": {
+            "GetApkDetails": {
+              "methods": [
+                "getApkDetails"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ApplicationDetailServiceClient",
+          "rpcs": {
+            "GetApkDetails": {
+              "methods": [
+                "getApkDetails"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "TestEnvironmentDiscoveryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TestEnvironmentDiscoveryServiceClient",
+          "rpcs": {
+            "GetTestEnvironmentCatalog": {
+              "methods": [
+                "getTestEnvironmentCatalog"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "TestEnvironmentDiscoveryServiceClient",
+          "rpcs": {
+            "GetTestEnvironmentCatalog": {
+              "methods": [
+                "getTestEnvironmentCatalog"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "TestExecutionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TestExecutionServiceClient",
+          "rpcs": {
+            "CreateTestMatrix": {
+              "methods": [
+                "createTestMatrix"
+              ]
+            },
+            "GetTestMatrix": {
+              "methods": [
+                "getTestMatrix"
+              ]
+            },
+            "CancelTestMatrix": {
+              "methods": [
+                "cancelTestMatrix"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "TestExecutionServiceClient",
+          "rpcs": {
+            "CreateTestMatrix": {
+              "methods": [
+                "createTestMatrix"
+              ]
+            },
+            "GetTestMatrix": {
+              "methods": [
+                "getTestMatrix"
+              ]
+            },
+            "CancelTestMatrix": {
+              "methods": [
+                "cancelTestMatrix"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

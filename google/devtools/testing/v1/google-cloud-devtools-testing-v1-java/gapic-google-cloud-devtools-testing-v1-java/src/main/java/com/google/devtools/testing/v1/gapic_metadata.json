@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.devtools.testing.v1",
+  "libraryPackage": "com.google.devtools.testing.v1",
+  "services": {
+    "ApplicationDetailService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApplicationDetailServiceClient",
+          "rpcs": {
+            "GetApkDetails": {
+              "methods": ["getApkDetails", "getApkDetailsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TestEnvironmentDiscoveryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TestEnvironmentDiscoveryServiceClient",
+          "rpcs": {
+            "GetTestEnvironmentCatalog": {
+              "methods": ["getTestEnvironmentCatalog", "getTestEnvironmentCatalogCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TestExecutionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TestExecutionServiceClient",
+          "rpcs": {
+            "CancelTestMatrix": {
+              "methods": ["cancelTestMatrix", "cancelTestMatrixCallable"]
+            },
+            "CreateTestMatrix": {
+              "methods": ["createTestMatrix", "createTestMatrixCallable"]
+            },
+            "GetTestMatrix": {
+              "methods": ["getTestMatrix", "getTestMatrixCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

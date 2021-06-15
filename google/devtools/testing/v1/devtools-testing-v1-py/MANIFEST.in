@@ -1,0 +1,2 @@
+recursive-include google/devtools/testing *.py
+recursive-include google/devtools/testing_v1 *.py

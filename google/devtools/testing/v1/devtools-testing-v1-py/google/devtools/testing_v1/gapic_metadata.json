@@ -1,0 +1,101 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.devtools.testing_v1",
+  "protoPackage": "google.devtools.testing.v1",
+  "schema": "1.0",
+  "services": {
+    "ApplicationDetailService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApplicationDetailServiceClient",
+          "rpcs": {
+            "GetApkDetails": {
+              "methods": [
+                "get_apk_details"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "ApplicationDetailServiceAsyncClient",
+          "rpcs": {
+            "GetApkDetails": {
+              "methods": [
+                "get_apk_details"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "TestEnvironmentDiscoveryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TestEnvironmentDiscoveryServiceClient",
+          "rpcs": {
+            "GetTestEnvironmentCatalog": {
+              "methods": [
+                "get_test_environment_catalog"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "TestEnvironmentDiscoveryServiceAsyncClient",
+          "rpcs": {
+            "GetTestEnvironmentCatalog": {
+              "methods": [
+                "get_test_environment_catalog"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "TestExecutionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TestExecutionServiceClient",
+          "rpcs": {
+            "CancelTestMatrix": {
+              "methods": [
+                "cancel_test_matrix"
+              ]
+            },
+            "CreateTestMatrix": {
+              "methods": [
+                "create_test_matrix"
+              ]
+            },
+            "GetTestMatrix": {
+              "methods": [
+                "get_test_matrix"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "TestExecutionServiceAsyncClient",
+          "rpcs": {
+            "CancelTestMatrix": {
+              "methods": [
+                "cancel_test_matrix"
+              ]
+            },
+            "CreateTestMatrix": {
+              "methods": [
+                "create_test_matrix"
+              ]
+            },
+            "GetTestMatrix": {
+              "methods": [
+                "get_test_matrix"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
