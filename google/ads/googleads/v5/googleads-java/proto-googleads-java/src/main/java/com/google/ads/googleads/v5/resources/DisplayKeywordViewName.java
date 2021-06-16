@@ -187,8 +187,8 @@ public class DisplayKeywordViewName implements ResourceName {
     }
 
     private Builder(DisplayKeywordViewName displayKeywordViewName) {
-      customer = displayKeywordViewName.customer;
-      displayKeywordView = displayKeywordViewName.displayKeywordView;
+      this.customer = displayKeywordViewName.customer;
+      this.displayKeywordView = displayKeywordViewName.displayKeywordView;
     }
 
     public DisplayKeywordViewName build() {

@@ -167,7 +167,7 @@ public class OperatingSystemVersionConstantName implements ResourceName {
     }
 
     private Builder(OperatingSystemVersionConstantName operatingSystemVersionConstantName) {
-      operatingSystemVersionConstant =
+      this.operatingSystemVersionConstant =
           operatingSystemVersionConstantName.operatingSystemVersionConstant;
     }
 

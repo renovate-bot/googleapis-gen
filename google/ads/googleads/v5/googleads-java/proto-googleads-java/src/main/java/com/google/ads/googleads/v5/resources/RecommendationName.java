@@ -183,8 +183,8 @@ public class RecommendationName implements ResourceName {
     }
 
     private Builder(RecommendationName recommendationName) {
-      customer = recommendationName.customer;
-      recommendation = recommendationName.recommendation;
+      this.customer = recommendationName.customer;
+      this.recommendation = recommendationName.recommendation;
     }
 
     public RecommendationName build() {

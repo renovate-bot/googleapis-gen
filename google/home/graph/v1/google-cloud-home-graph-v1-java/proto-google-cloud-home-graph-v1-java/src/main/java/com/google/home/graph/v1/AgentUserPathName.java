@@ -158,7 +158,7 @@ public class AgentUserPathName implements ResourceName {
     }
 
     private Builder(AgentUserPathName agentUserPathName) {
-      agentUserPath = agentUserPathName.agentUserPath;
+      this.agentUserPath = agentUserPathName.agentUserPath;
     }
 
     public AgentUserPathName build() {

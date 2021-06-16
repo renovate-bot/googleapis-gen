@@ -191,8 +191,8 @@ public class AdGroupCriterionLabelName implements ResourceName {
     }
 
     private Builder(AdGroupCriterionLabelName adGroupCriterionLabelName) {
-      customer = adGroupCriterionLabelName.customer;
-      adGroupCriterionLabel = adGroupCriterionLabelName.adGroupCriterionLabel;
+      this.customer = adGroupCriterionLabelName.customer;
+      this.adGroupCriterionLabel = adGroupCriterionLabelName.adGroupCriterionLabel;
     }
 
     public AdGroupCriterionLabelName build() {

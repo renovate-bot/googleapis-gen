@@ -181,8 +181,8 @@ public class BatchJobName implements ResourceName {
     }
 
     private Builder(BatchJobName batchJobName) {
-      customer = batchJobName.customer;
-      batchJob = batchJobName.batchJob;
+      this.customer = batchJobName.customer;
+      this.batchJob = batchJobName.batchJob;
     }
 
     public BatchJobName build() {

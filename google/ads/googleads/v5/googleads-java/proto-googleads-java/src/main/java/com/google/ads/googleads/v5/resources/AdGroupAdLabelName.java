@@ -183,8 +183,8 @@ public class AdGroupAdLabelName implements ResourceName {
     }
 
     private Builder(AdGroupAdLabelName adGroupAdLabelName) {
-      customer = adGroupAdLabelName.customer;
-      adGroupAdLabel = adGroupAdLabelName.adGroupAdLabel;
+      this.customer = adGroupAdLabelName.customer;
+      this.adGroupAdLabel = adGroupAdLabelName.adGroupAdLabel;
     }
 
     public AdGroupAdLabelName build() {

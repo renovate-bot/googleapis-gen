@@ -187,8 +187,8 @@ public class CampaignExperimentName implements ResourceName {
     }
 
     private Builder(CampaignExperimentName campaignExperimentName) {
-      customer = campaignExperimentName.customer;
-      campaignExperiment = campaignExperimentName.campaignExperiment;
+      this.customer = campaignExperimentName.customer;
+      this.campaignExperiment = campaignExperimentName.campaignExperiment;
     }
 
     public CampaignExperimentName build() {

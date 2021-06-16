@@ -211,9 +211,9 @@ public class QuestionName implements ResourceName {
     }
 
     private Builder(QuestionName questionName) {
-      project = questionName.project;
-      location = questionName.location;
-      question = questionName.question;
+      this.project = questionName.project;
+      this.location = questionName.location;
+      this.question = questionName.question;
     }
 
     public QuestionName build() {

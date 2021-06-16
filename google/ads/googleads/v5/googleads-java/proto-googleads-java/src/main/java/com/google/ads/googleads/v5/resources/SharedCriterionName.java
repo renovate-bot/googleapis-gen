@@ -187,8 +187,8 @@ public class SharedCriterionName implements ResourceName {
     }
 
     private Builder(SharedCriterionName sharedCriterionName) {
-      customer = sharedCriterionName.customer;
-      sharedCriterion = sharedCriterionName.sharedCriterion;
+      this.customer = sharedCriterionName.customer;
+      this.sharedCriterion = sharedCriterionName.sharedCriterion;
     }
 
     public SharedCriterionName build() {

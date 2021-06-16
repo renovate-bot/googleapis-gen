@@ -181,8 +181,8 @@ public class FeedMappingName implements ResourceName {
     }
 
     private Builder(FeedMappingName feedMappingName) {
-      customer = feedMappingName.customer;
-      feedMapping = feedMappingName.feedMapping;
+      this.customer = feedMappingName.customer;
+      this.feedMapping = feedMappingName.feedMapping;
     }
 
     public FeedMappingName build() {

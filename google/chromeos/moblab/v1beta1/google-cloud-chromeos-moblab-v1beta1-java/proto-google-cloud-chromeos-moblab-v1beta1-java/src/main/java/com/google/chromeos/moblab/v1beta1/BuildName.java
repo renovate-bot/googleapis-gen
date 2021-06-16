@@ -211,9 +211,9 @@ public class BuildName implements ResourceName {
     }
 
     private Builder(BuildName buildName) {
-      buildTarget = buildName.buildTarget;
-      model = buildName.model;
-      build = buildName.build;
+      this.buildTarget = buildName.buildTarget;
+      this.model = buildName.model;
+      this.build = buildName.build;
     }
 
     public BuildName build() {

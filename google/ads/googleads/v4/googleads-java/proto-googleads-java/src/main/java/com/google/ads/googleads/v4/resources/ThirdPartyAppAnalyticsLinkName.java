@@ -195,8 +195,8 @@ public class ThirdPartyAppAnalyticsLinkName implements ResourceName {
     }
 
     private Builder(ThirdPartyAppAnalyticsLinkName thirdPartyAppAnalyticsLinkName) {
-      customer = thirdPartyAppAnalyticsLinkName.customer;
-      thirdPartyAppAnalyticsLink = thirdPartyAppAnalyticsLinkName.thirdPartyAppAnalyticsLink;
+      this.customer = thirdPartyAppAnalyticsLinkName.customer;
+      this.thirdPartyAppAnalyticsLink = thirdPartyAppAnalyticsLinkName.thirdPartyAppAnalyticsLink;
     }
 
     public ThirdPartyAppAnalyticsLinkName build() {

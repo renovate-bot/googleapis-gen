@@ -187,8 +187,8 @@ public class IncomeRangeViewName implements ResourceName {
     }
 
     private Builder(IncomeRangeViewName incomeRangeViewName) {
-      customer = incomeRangeViewName.customer;
-      incomeRangeView = incomeRangeViewName.incomeRangeView;
+      this.customer = incomeRangeViewName.customer;
+      this.incomeRangeView = incomeRangeViewName.incomeRangeView;
     }
 
     public IncomeRangeViewName build() {

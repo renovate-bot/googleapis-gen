@@ -187,8 +187,8 @@ public class ExtensionFeedItemName implements ResourceName {
     }
 
     private Builder(ExtensionFeedItemName extensionFeedItemName) {
-      customer = extensionFeedItemName.customer;
-      extensionFeedItem = extensionFeedItemName.extensionFeedItem;
+      this.customer = extensionFeedItemName.customer;
+      this.extensionFeedItem = extensionFeedItemName.extensionFeedItem;
     }
 
     public ExtensionFeedItemName build() {

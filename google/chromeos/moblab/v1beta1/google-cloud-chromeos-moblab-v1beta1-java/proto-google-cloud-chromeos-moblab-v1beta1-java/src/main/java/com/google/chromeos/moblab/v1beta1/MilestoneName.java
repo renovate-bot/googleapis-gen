@@ -158,7 +158,7 @@ public class MilestoneName implements ResourceName {
     }
 
     private Builder(MilestoneName milestoneName) {
-      milestone = milestoneName.milestone;
+      this.milestone = milestoneName.milestone;
     }
 
     public MilestoneName build() {

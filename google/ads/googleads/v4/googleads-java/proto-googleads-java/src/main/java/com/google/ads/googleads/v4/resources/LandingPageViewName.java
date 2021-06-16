@@ -187,8 +187,8 @@ public class LandingPageViewName implements ResourceName {
     }
 
     private Builder(LandingPageViewName landingPageViewName) {
-      customer = landingPageViewName.customer;
-      landingPageView = landingPageViewName.landingPageView;
+      this.customer = landingPageViewName.customer;
+      this.landingPageView = landingPageViewName.landingPageView;
     }
 
     public LandingPageViewName build() {

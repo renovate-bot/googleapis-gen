@@ -211,9 +211,9 @@ public class MigrationWorkflowName implements ResourceName {
     }
 
     private Builder(MigrationWorkflowName migrationWorkflowName) {
-      project = migrationWorkflowName.project;
-      location = migrationWorkflowName.location;
-      workflow = migrationWorkflowName.workflow;
+      this.project = migrationWorkflowName.project;
+      this.location = migrationWorkflowName.location;
+      this.workflow = migrationWorkflowName.workflow;
     }
 
     public MigrationWorkflowName build() {

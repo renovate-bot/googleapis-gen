@@ -183,8 +183,8 @@ public class CampaignBudgetName implements ResourceName {
     }
 
     private Builder(CampaignBudgetName campaignBudgetName) {
-      customer = campaignBudgetName.customer;
-      campaignBudget = campaignBudgetName.campaignBudget;
+      this.customer = campaignBudgetName.customer;
+      this.campaignBudget = campaignBudgetName.campaignBudget;
     }
 
     public CampaignBudgetName build() {

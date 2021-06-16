@@ -182,8 +182,8 @@ public class AgeRangeViewName implements ResourceName {
     }
 
     private Builder(AgeRangeViewName ageRangeViewName) {
-      customer = ageRangeViewName.customer;
-      ageRangeView = ageRangeViewName.ageRangeView;
+      this.customer = ageRangeViewName.customer;
+      this.ageRangeView = ageRangeViewName.ageRangeView;
     }
 
     public AgeRangeViewName build() {

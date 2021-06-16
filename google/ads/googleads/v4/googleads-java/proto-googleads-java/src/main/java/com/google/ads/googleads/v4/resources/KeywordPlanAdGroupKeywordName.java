@@ -194,8 +194,8 @@ public class KeywordPlanAdGroupKeywordName implements ResourceName {
     }
 
     private Builder(KeywordPlanAdGroupKeywordName keywordPlanAdGroupKeywordName) {
-      customer = keywordPlanAdGroupKeywordName.customer;
-      keywordPlanAdGroupKeyword = keywordPlanAdGroupKeywordName.keywordPlanAdGroupKeyword;
+      this.customer = keywordPlanAdGroupKeywordName.customer;
+      this.keywordPlanAdGroupKeyword = keywordPlanAdGroupKeywordName.keywordPlanAdGroupKeyword;
     }
 
     public KeywordPlanAdGroupKeywordName build() {

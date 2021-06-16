@@ -181,8 +181,8 @@ public class ModelName implements ResourceName {
     }
 
     private Builder(ModelName modelName) {
-      buildTarget = modelName.buildTarget;
-      model = modelName.model;
+      this.buildTarget = modelName.buildTarget;
+      this.model = modelName.model;
     }
 
     public ModelName build() {

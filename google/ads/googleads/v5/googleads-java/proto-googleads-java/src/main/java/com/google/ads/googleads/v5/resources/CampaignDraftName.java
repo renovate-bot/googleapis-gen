@@ -182,8 +182,8 @@ public class CampaignDraftName implements ResourceName {
     }
 
     private Builder(CampaignDraftName campaignDraftName) {
-      customer = campaignDraftName.customer;
-      campaignDraft = campaignDraftName.campaignDraft;
+      this.customer = campaignDraftName.customer;
+      this.campaignDraft = campaignDraftName.campaignDraft;
     }
 
     public CampaignDraftName build() {

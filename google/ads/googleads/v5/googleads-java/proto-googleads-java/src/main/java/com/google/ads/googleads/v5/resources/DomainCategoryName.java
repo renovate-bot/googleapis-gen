@@ -183,8 +183,8 @@ public class DomainCategoryName implements ResourceName {
     }
 
     private Builder(DomainCategoryName domainCategoryName) {
-      customer = domainCategoryName.customer;
-      domainCategory = domainCategoryName.domainCategory;
+      this.customer = domainCategoryName.customer;
+      this.domainCategory = domainCategoryName.domainCategory;
     }
 
     public DomainCategoryName build() {

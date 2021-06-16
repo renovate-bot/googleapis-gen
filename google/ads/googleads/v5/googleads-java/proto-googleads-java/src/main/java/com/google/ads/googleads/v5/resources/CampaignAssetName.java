@@ -182,8 +182,8 @@ public class CampaignAssetName implements ResourceName {
     }
 
     private Builder(CampaignAssetName campaignAssetName) {
-      customer = campaignAssetName.customer;
-      campaignAsset = campaignAssetName.campaignAsset;
+      this.customer = campaignAssetName.customer;
+      this.campaignAsset = campaignAssetName.campaignAsset;
     }
 
     public CampaignAssetName build() {

@@ -211,9 +211,9 @@ public class RoomName implements ResourceName {
     }
 
     private Builder(RoomName roomName) {
-      enterprise = roomName.enterprise;
-      structure = roomName.structure;
-      room = roomName.room;
+      this.enterprise = roomName.enterprise;
+      this.structure = roomName.structure;
+      this.room = roomName.room;
     }
 
     public RoomName build() {

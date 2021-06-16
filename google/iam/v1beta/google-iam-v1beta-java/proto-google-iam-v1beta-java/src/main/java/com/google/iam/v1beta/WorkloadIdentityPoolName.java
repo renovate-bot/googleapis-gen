@@ -220,9 +220,9 @@ public class WorkloadIdentityPoolName implements ResourceName {
     }
 
     private Builder(WorkloadIdentityPoolName workloadIdentityPoolName) {
-      project = workloadIdentityPoolName.project;
-      location = workloadIdentityPoolName.location;
-      workloadIdentityPool = workloadIdentityPoolName.workloadIdentityPool;
+      this.project = workloadIdentityPoolName.project;
+      this.location = workloadIdentityPoolName.location;
+      this.workloadIdentityPool = workloadIdentityPoolName.workloadIdentityPool;
     }
 
     public WorkloadIdentityPoolName build() {

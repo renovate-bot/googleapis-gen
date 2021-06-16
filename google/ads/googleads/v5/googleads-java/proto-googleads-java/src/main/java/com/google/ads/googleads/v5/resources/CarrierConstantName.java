@@ -158,7 +158,7 @@ public class CarrierConstantName implements ResourceName {
     }
 
     private Builder(CarrierConstantName carrierConstantName) {
-      carrierConstant = carrierConstantName.carrierConstant;
+      this.carrierConstant = carrierConstantName.carrierConstant;
     }
 
     public CarrierConstantName build() {

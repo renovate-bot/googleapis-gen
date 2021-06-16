@@ -191,8 +191,8 @@ public class CampaignExtensionSettingName implements ResourceName {
     }
 
     private Builder(CampaignExtensionSettingName campaignExtensionSettingName) {
-      customer = campaignExtensionSettingName.customer;
-      campaignExtensionSetting = campaignExtensionSettingName.campaignExtensionSetting;
+      this.customer = campaignExtensionSettingName.customer;
+      this.campaignExtensionSetting = campaignExtensionSettingName.campaignExtensionSetting;
     }
 
     public CampaignExtensionSettingName build() {

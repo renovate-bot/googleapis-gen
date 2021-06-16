@@ -187,8 +187,8 @@ public class AdGroupSimulationName implements ResourceName {
     }
 
     private Builder(AdGroupSimulationName adGroupSimulationName) {
-      customer = adGroupSimulationName.customer;
-      adGroupSimulation = adGroupSimulationName.adGroupSimulation;
+      this.customer = adGroupSimulationName.customer;
+      this.adGroupSimulation = adGroupSimulationName.adGroupSimulation;
     }
 
     public AdGroupSimulationName build() {

@@ -181,8 +181,8 @@ public class VehicleName implements ResourceName {
     }
 
     private Builder(VehicleName vehicleName) {
-      provider = vehicleName.provider;
-      vehicle = vehicleName.vehicle;
+      this.provider = vehicleName.provider;
+      this.vehicle = vehicleName.vehicle;
     }
 
     public VehicleName build() {

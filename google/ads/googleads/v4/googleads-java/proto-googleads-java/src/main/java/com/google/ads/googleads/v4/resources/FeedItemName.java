@@ -181,8 +181,8 @@ public class FeedItemName implements ResourceName {
     }
 
     private Builder(FeedItemName feedItemName) {
-      customer = feedItemName.customer;
-      feedItem = feedItemName.feedItem;
+      this.customer = feedItemName.customer;
+      this.feedItem = feedItemName.feedItem;
     }
 
     public FeedItemName build() {

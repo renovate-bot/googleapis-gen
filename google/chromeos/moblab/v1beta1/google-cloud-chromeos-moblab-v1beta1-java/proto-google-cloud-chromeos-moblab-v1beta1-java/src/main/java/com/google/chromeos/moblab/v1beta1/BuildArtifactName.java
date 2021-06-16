@@ -245,10 +245,10 @@ public class BuildArtifactName implements ResourceName {
     }
 
     private Builder(BuildArtifactName buildArtifactName) {
-      buildTarget = buildArtifactName.buildTarget;
-      model = buildArtifactName.model;
-      build = buildArtifactName.build;
-      artifact = buildArtifactName.artifact;
+      this.buildTarget = buildArtifactName.buildTarget;
+      this.model = buildArtifactName.model;
+      this.build = buildArtifactName.build;
+      this.artifact = buildArtifactName.artifact;
     }
 
     public BuildArtifactName build() {

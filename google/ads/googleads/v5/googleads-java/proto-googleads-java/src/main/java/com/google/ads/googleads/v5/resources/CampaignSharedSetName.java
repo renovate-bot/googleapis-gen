@@ -187,8 +187,8 @@ public class CampaignSharedSetName implements ResourceName {
     }
 
     private Builder(CampaignSharedSetName campaignSharedSetName) {
-      customer = campaignSharedSetName.customer;
-      campaignSharedSet = campaignSharedSetName.campaignSharedSet;
+      this.customer = campaignSharedSetName.customer;
+      this.campaignSharedSet = campaignSharedSetName.campaignSharedSet;
     }
 
     public CampaignSharedSetName build() {

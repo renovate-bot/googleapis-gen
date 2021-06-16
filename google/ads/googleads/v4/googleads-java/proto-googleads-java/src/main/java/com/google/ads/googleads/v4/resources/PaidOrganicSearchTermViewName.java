@@ -194,8 +194,8 @@ public class PaidOrganicSearchTermViewName implements ResourceName {
     }
 
     private Builder(PaidOrganicSearchTermViewName paidOrganicSearchTermViewName) {
-      customer = paidOrganicSearchTermViewName.customer;
-      paidOrganicSearchTermView = paidOrganicSearchTermViewName.paidOrganicSearchTermView;
+      this.customer = paidOrganicSearchTermViewName.customer;
+      this.paidOrganicSearchTermView = paidOrganicSearchTermViewName.paidOrganicSearchTermView;
     }
 
     public PaidOrganicSearchTermViewName build() {

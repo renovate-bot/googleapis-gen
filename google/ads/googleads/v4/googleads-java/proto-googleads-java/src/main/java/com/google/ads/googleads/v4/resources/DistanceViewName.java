@@ -181,8 +181,8 @@ public class DistanceViewName implements ResourceName {
     }
 
     private Builder(DistanceViewName distanceViewName) {
-      customer = distanceViewName.customer;
-      distanceView = distanceViewName.distanceView;
+      this.customer = distanceViewName.customer;
+      this.distanceView = distanceViewName.distanceView;
     }
 
     public DistanceViewName build() {

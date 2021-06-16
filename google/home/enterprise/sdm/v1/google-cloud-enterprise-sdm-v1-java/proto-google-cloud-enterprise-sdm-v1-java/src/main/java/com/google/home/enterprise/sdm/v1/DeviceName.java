@@ -181,8 +181,8 @@ public class DeviceName implements ResourceName {
     }
 
     private Builder(DeviceName deviceName) {
-      enterprise = deviceName.enterprise;
-      device = deviceName.device;
+      this.enterprise = deviceName.enterprise;
+      this.device = deviceName.device;
     }
 
     public DeviceName build() {

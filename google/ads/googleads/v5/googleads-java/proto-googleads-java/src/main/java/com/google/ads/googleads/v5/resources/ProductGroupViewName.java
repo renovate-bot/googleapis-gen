@@ -187,8 +187,8 @@ public class ProductGroupViewName implements ResourceName {
     }
 
     private Builder(ProductGroupViewName productGroupViewName) {
-      customer = productGroupViewName.customer;
-      productGroupView = productGroupViewName.productGroupView;
+      this.customer = productGroupViewName.customer;
+      this.productGroupView = productGroupViewName.productGroupView;
     }
 
     public ProductGroupViewName build() {

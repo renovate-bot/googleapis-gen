@@ -181,8 +181,8 @@ public class ClickViewName implements ResourceName {
     }
 
     private Builder(ClickViewName clickViewName) {
-      customer = clickViewName.customer;
-      clickView = clickViewName.clickView;
+      this.customer = clickViewName.customer;
+      this.clickView = clickViewName.clickView;
     }
 
     public ClickViewName build() {

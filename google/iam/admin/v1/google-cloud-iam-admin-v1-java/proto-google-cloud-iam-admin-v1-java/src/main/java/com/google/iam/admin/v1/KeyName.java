@@ -211,9 +211,9 @@ public class KeyName implements ResourceName {
     }
 
     private Builder(KeyName keyName) {
-      project = keyName.project;
-      serviceAccount = keyName.serviceAccount;
-      key = keyName.key;
+      this.project = keyName.project;
+      this.serviceAccount = keyName.serviceAccount;
+      this.key = keyName.key;
     }
 
     public KeyName build() {

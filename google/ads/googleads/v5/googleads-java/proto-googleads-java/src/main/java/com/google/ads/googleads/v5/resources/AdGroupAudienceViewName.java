@@ -187,8 +187,8 @@ public class AdGroupAudienceViewName implements ResourceName {
     }
 
     private Builder(AdGroupAudienceViewName adGroupAudienceViewName) {
-      customer = adGroupAudienceViewName.customer;
-      adGroupAudienceView = adGroupAudienceViewName.adGroupAudienceView;
+      this.customer = adGroupAudienceViewName.customer;
+      this.adGroupAudienceView = adGroupAudienceViewName.adGroupAudienceView;
     }
 
     public AdGroupAudienceViewName build() {

@@ -181,8 +181,8 @@ public class AdGroupFeedName implements ResourceName {
     }
 
     private Builder(AdGroupFeedName adGroupFeedName) {
-      customer = adGroupFeedName.customer;
-      adGroupFeed = adGroupFeedName.adGroupFeed;
+      this.customer = adGroupFeedName.customer;
+      this.adGroupFeed = adGroupFeedName.adGroupFeed;
     }
 
     public AdGroupFeedName build() {

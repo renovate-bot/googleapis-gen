@@ -182,8 +182,8 @@ public class BotSessionName implements ResourceName {
     }
 
     private Builder(BotSessionName botSessionName) {
-      unknownPath = botSessionName.unknownPath;
-      botSession = botSessionName.botSession;
+      this.unknownPath = botSessionName.unknownPath;
+      this.botSession = botSessionName.botSession;
     }
 
     public BotSessionName build() {

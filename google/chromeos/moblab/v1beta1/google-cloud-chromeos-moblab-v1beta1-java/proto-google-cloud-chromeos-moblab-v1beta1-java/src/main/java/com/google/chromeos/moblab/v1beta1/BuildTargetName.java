@@ -158,7 +158,7 @@ public class BuildTargetName implements ResourceName {
     }
 
     private Builder(BuildTargetName buildTargetName) {
-      buildTarget = buildTargetName.buildTarget;
+      this.buildTarget = buildTargetName.buildTarget;
     }
 
     public BuildTargetName build() {

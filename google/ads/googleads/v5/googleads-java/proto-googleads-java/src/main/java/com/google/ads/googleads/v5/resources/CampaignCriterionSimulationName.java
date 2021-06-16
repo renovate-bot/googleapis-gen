@@ -195,8 +195,9 @@ public class CampaignCriterionSimulationName implements ResourceName {
     }
 
     private Builder(CampaignCriterionSimulationName campaignCriterionSimulationName) {
-      customer = campaignCriterionSimulationName.customer;
-      campaignCriterionSimulation = campaignCriterionSimulationName.campaignCriterionSimulation;
+      this.customer = campaignCriterionSimulationName.customer;
+      this.campaignCriterionSimulation =
+          campaignCriterionSimulationName.campaignCriterionSimulation;
     }
 
     public CampaignCriterionSimulationName build() {

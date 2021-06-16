@@ -187,8 +187,8 @@ public class ParentalStatusViewName implements ResourceName {
     }
 
     private Builder(ParentalStatusViewName parentalStatusViewName) {
-      customer = parentalStatusViewName.customer;
-      parentalStatusView = parentalStatusViewName.parentalStatusView;
+      this.customer = parentalStatusViewName.customer;
+      this.parentalStatusView = parentalStatusViewName.parentalStatusView;
     }
 
     public ParentalStatusViewName build() {

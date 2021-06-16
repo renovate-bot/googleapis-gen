@@ -187,8 +187,8 @@ public class GroupPlacementViewName implements ResourceName {
     }
 
     private Builder(GroupPlacementViewName groupPlacementViewName) {
-      customer = groupPlacementViewName.customer;
-      groupPlacementView = groupPlacementViewName.groupPlacementView;
+      this.customer = groupPlacementViewName.customer;
+      this.groupPlacementView = groupPlacementViewName.groupPlacementView;
     }
 
     public GroupPlacementViewName build() {

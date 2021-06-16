@@ -211,9 +211,9 @@ public class UserFeedbackName implements ResourceName {
     }
 
     private Builder(UserFeedbackName userFeedbackName) {
-      project = userFeedbackName.project;
-      location = userFeedbackName.location;
-      question = userFeedbackName.question;
+      this.project = userFeedbackName.project;
+      this.location = userFeedbackName.location;
+      this.question = userFeedbackName.question;
     }
 
     public UserFeedbackName build() {

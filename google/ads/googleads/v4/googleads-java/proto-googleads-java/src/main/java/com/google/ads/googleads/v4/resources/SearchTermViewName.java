@@ -183,8 +183,8 @@ public class SearchTermViewName implements ResourceName {
     }
 
     private Builder(SearchTermViewName searchTermViewName) {
-      customer = searchTermViewName.customer;
-      searchTermView = searchTermViewName.searchTermView;
+      this.customer = searchTermViewName.customer;
+      this.searchTermView = searchTermViewName.searchTermView;
     }
 
     public SearchTermViewName build() {

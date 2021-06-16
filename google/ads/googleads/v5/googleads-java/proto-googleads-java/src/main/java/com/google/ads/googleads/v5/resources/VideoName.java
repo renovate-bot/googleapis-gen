@@ -180,8 +180,8 @@ public class VideoName implements ResourceName {
     }
 
     private Builder(VideoName videoName) {
-      customer = videoName.customer;
-      video = videoName.video;
+      this.customer = videoName.customer;
+      this.video = videoName.video;
     }
 
     public VideoName build() {

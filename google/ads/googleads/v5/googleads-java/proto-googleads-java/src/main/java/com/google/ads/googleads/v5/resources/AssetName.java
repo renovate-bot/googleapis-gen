@@ -180,8 +180,8 @@ public class AssetName implements ResourceName {
     }
 
     private Builder(AssetName assetName) {
-      customer = assetName.customer;
-      asset = assetName.asset;
+      this.customer = assetName.customer;
+      this.asset = assetName.asset;
     }
 
     public AssetName build() {

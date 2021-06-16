@@ -183,8 +183,8 @@ public class AdScheduleViewName implements ResourceName {
     }
 
     private Builder(AdScheduleViewName adScheduleViewName) {
-      customer = adScheduleViewName.customer;
-      adScheduleView = adScheduleViewName.adScheduleView;
+      this.customer = adScheduleViewName.customer;
+      this.adScheduleView = adScheduleViewName.adScheduleView;
     }
 
     public AdScheduleViewName build() {

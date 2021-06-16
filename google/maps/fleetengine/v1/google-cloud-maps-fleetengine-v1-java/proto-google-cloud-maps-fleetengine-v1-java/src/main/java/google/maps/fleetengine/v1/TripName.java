@@ -180,8 +180,8 @@ public class TripName implements ResourceName {
     }
 
     private Builder(TripName tripName) {
-      provider = tripName.provider;
-      trip = tripName.trip;
+      this.provider = tripName.provider;
+      this.trip = tripName.trip;
     }
 
     public TripName build() {

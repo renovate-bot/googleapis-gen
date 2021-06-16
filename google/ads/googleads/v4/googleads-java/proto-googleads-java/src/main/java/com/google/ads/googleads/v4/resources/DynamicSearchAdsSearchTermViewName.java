@@ -201,8 +201,8 @@ public class DynamicSearchAdsSearchTermViewName implements ResourceName {
     }
 
     private Builder(DynamicSearchAdsSearchTermViewName dynamicSearchAdsSearchTermViewName) {
-      customer = dynamicSearchAdsSearchTermViewName.customer;
-      dynamicSearchAdsSearchTermView =
+      this.customer = dynamicSearchAdsSearchTermViewName.customer;
+      this.dynamicSearchAdsSearchTermView =
           dynamicSearchAdsSearchTermViewName.dynamicSearchAdsSearchTermView;
     }
 

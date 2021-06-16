@@ -215,9 +215,9 @@ public class BiReservationName implements ResourceName {
     }
 
     private Builder(BiReservationName biReservationName) {
-      project = biReservationName.project;
-      location = biReservationName.location;
-      bireservation = biReservationName.bireservation;
+      this.project = biReservationName.project;
+      this.location = biReservationName.location;
+      this.bireservation = biReservationName.bireservation;
     }
 
     public BiReservationName build() {

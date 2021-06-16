@@ -256,10 +256,10 @@ public class RouteName implements ResourceName {
     }
 
     private Builder(RouteName routeName) {
-      project = routeName.project;
-      location = routeName.location;
-      privateConnection = routeName.privateConnection;
-      route = routeName.route;
+      this.project = routeName.project;
+      this.location = routeName.location;
+      this.privateConnection = routeName.privateConnection;
+      this.route = routeName.route;
     }
 
     public RouteName build() {

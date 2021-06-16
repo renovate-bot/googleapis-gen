@@ -181,8 +181,8 @@ public class CampaignName implements ResourceName {
     }
 
     private Builder(CampaignName campaignName) {
-      customer = campaignName.customer;
-      campaign = campaignName.campaign;
+      this.customer = campaignName.customer;
+      this.campaign = campaignName.campaign;
     }
 
     public CampaignName build() {

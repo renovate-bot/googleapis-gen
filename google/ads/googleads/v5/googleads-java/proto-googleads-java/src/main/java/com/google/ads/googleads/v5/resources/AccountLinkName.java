@@ -181,8 +181,8 @@ public class AccountLinkName implements ResourceName {
     }
 
     private Builder(AccountLinkName accountLinkName) {
-      customer = accountLinkName.customer;
-      accountLink = accountLinkName.accountLink;
+      this.customer = accountLinkName.customer;
+      this.accountLink = accountLinkName.accountLink;
     }
 
     public AccountLinkName build() {

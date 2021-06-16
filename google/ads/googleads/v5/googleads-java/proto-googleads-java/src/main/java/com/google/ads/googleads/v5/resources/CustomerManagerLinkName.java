@@ -187,8 +187,8 @@ public class CustomerManagerLinkName implements ResourceName {
     }
 
     private Builder(CustomerManagerLinkName customerManagerLinkName) {
-      customer = customerManagerLinkName.customer;
-      customerManagerLink = customerManagerLinkName.customerManagerLink;
+      this.customer = customerManagerLinkName.customer;
+      this.customerManagerLink = customerManagerLinkName.customerManagerLink;
     }
 
     public CustomerManagerLinkName build() {

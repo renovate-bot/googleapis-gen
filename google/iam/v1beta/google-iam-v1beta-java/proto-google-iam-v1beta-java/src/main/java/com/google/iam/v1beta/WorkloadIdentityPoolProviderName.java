@@ -266,10 +266,11 @@ public class WorkloadIdentityPoolProviderName implements ResourceName {
     }
 
     private Builder(WorkloadIdentityPoolProviderName workloadIdentityPoolProviderName) {
-      project = workloadIdentityPoolProviderName.project;
-      location = workloadIdentityPoolProviderName.location;
-      workloadIdentityPool = workloadIdentityPoolProviderName.workloadIdentityPool;
-      workloadIdentityPoolProvider = workloadIdentityPoolProviderName.workloadIdentityPoolProvider;
+      this.project = workloadIdentityPoolProviderName.project;
+      this.location = workloadIdentityPoolProviderName.location;
+      this.workloadIdentityPool = workloadIdentityPoolProviderName.workloadIdentityPool;
+      this.workloadIdentityPoolProvider =
+          workloadIdentityPoolProviderName.workloadIdentityPoolProvider;
     }
 
     public WorkloadIdentityPoolProviderName build() {

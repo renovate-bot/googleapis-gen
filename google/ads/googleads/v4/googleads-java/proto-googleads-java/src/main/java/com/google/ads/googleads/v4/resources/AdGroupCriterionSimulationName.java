@@ -195,8 +195,8 @@ public class AdGroupCriterionSimulationName implements ResourceName {
     }
 
     private Builder(AdGroupCriterionSimulationName adGroupCriterionSimulationName) {
-      customer = adGroupCriterionSimulationName.customer;
-      adGroupCriterionSimulation = adGroupCriterionSimulationName.adGroupCriterionSimulation;
+      this.customer = adGroupCriterionSimulationName.customer;
+      this.adGroupCriterionSimulation = adGroupCriterionSimulationName.adGroupCriterionSimulation;
     }
 
     public AdGroupCriterionSimulationName build() {

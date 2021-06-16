@@ -187,8 +187,8 @@ public class CampaignAudienceViewName implements ResourceName {
     }
 
     private Builder(CampaignAudienceViewName campaignAudienceViewName) {
-      customer = campaignAudienceViewName.customer;
-      campaignAudienceView = campaignAudienceViewName.campaignAudienceView;
+      this.customer = campaignAudienceViewName.customer;
+      this.campaignAudienceView = campaignAudienceViewName.campaignAudienceView;
     }
 
     public CampaignAudienceViewName build() {

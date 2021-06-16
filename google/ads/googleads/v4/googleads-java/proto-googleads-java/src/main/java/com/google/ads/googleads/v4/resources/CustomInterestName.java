@@ -183,8 +183,8 @@ public class CustomInterestName implements ResourceName {
     }
 
     private Builder(CustomInterestName customInterestName) {
-      customer = customInterestName.customer;
-      customInterest = customInterestName.customInterest;
+      this.customer = customInterestName.customer;
+      this.customInterest = customInterestName.customInterest;
     }
 
     public CustomInterestName build() {

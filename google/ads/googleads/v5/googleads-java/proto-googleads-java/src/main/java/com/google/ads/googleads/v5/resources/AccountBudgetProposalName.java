@@ -191,8 +191,8 @@ public class AccountBudgetProposalName implements ResourceName {
     }
 
     private Builder(AccountBudgetProposalName accountBudgetProposalName) {
-      customer = accountBudgetProposalName.customer;
-      accountBudgetProposal = accountBudgetProposalName.accountBudgetProposal;
+      this.customer = accountBudgetProposalName.customer;
+      this.accountBudgetProposal = accountBudgetProposalName.accountBudgetProposal;
     }
 
     public AccountBudgetProposalName build() {

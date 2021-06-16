@@ -181,8 +181,8 @@ public class AdParameterName implements ResourceName {
     }
 
     private Builder(AdParameterName adParameterName) {
-      customer = adParameterName.customer;
-      adParameter = adParameterName.adParameter;
+      this.customer = adParameterName.customer;
+      this.adParameter = adParameterName.adParameter;
     }
 
     public AdParameterName build() {

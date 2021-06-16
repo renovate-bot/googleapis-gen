@@ -180,8 +180,8 @@ public class LabelName implements ResourceName {
     }
 
     private Builder(LabelName labelName) {
-      customer = labelName.customer;
-      label = labelName.label;
+      this.customer = labelName.customer;
+      this.label = labelName.label;
     }
 
     public LabelName build() {

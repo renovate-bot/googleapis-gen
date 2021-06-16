@@ -180,8 +180,8 @@ public class FeedName implements ResourceName {
     }
 
     private Builder(FeedName feedName) {
-      customer = feedName.customer;
-      feed = feedName.feed;
+      this.customer = feedName.customer;
+      this.feed = feedName.feed;
     }
 
     public FeedName build() {

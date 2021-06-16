@@ -181,8 +181,8 @@ public class LocationViewName implements ResourceName {
     }
 
     private Builder(LocationViewName locationViewName) {
-      customer = locationViewName.customer;
-      locationView = locationViewName.locationView;
+      this.customer = locationViewName.customer;
+      this.locationView = locationViewName.locationView;
     }
 
     public LocationViewName build() {

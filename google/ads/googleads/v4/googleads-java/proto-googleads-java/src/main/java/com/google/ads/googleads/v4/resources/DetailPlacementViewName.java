@@ -187,8 +187,8 @@ public class DetailPlacementViewName implements ResourceName {
     }
 
     private Builder(DetailPlacementViewName detailPlacementViewName) {
-      customer = detailPlacementViewName.customer;
-      detailPlacementView = detailPlacementViewName.detailPlacementView;
+      this.customer = detailPlacementViewName.customer;
+      this.detailPlacementView = detailPlacementViewName.detailPlacementView;
     }
 
     public DetailPlacementViewName build() {

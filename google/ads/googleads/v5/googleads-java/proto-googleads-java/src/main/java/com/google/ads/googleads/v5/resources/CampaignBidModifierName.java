@@ -187,8 +187,8 @@ public class CampaignBidModifierName implements ResourceName {
     }
 
     private Builder(CampaignBidModifierName campaignBidModifierName) {
-      customer = campaignBidModifierName.customer;
-      campaignBidModifier = campaignBidModifierName.campaignBidModifier;
+      this.customer = campaignBidModifierName.customer;
+      this.campaignBidModifier = campaignBidModifierName.campaignBidModifier;
     }
 
     public CampaignBidModifierName build() {

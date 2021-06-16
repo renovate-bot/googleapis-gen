@@ -181,8 +181,8 @@ public class ChangeStatusName implements ResourceName {
     }
 
     private Builder(ChangeStatusName changeStatusName) {
-      customer = changeStatusName.customer;
-      changeStatus = changeStatusName.changeStatus;
+      this.customer = changeStatusName.customer;
+      this.changeStatus = changeStatusName.changeStatus;
     }
 
     public ChangeStatusName build() {

@@ -183,8 +183,8 @@ public class CustomerClientName implements ResourceName {
     }
 
     private Builder(CustomerClientName customerClientName) {
-      customer = customerClientName.customer;
-      customerClient = customerClientName.customerClient;
+      this.customer = customerClientName.customer;
+      this.customerClient = customerClientName.customerClient;
     }
 
     public CustomerClientName build() {

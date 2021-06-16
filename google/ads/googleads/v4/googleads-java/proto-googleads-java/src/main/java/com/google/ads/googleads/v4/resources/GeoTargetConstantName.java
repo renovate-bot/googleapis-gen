@@ -158,7 +158,7 @@ public class GeoTargetConstantName implements ResourceName {
     }
 
     private Builder(GeoTargetConstantName geoTargetConstantName) {
-      geoTargetConstant = geoTargetConstantName.geoTargetConstant;
+      this.geoTargetConstant = geoTargetConstantName.geoTargetConstant;
     }
 
     public GeoTargetConstantName build() {

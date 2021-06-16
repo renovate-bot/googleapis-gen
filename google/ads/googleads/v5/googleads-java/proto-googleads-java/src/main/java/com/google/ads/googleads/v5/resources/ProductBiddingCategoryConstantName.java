@@ -167,7 +167,7 @@ public class ProductBiddingCategoryConstantName implements ResourceName {
     }
 
     private Builder(ProductBiddingCategoryConstantName productBiddingCategoryConstantName) {
-      productBiddingCategoryConstant =
+      this.productBiddingCategoryConstant =
           productBiddingCategoryConstantName.productBiddingCategoryConstant;
     }
 

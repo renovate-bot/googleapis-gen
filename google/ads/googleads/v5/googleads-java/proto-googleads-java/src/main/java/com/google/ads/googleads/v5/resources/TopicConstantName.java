@@ -158,7 +158,7 @@ public class TopicConstantName implements ResourceName {
     }
 
     private Builder(TopicConstantName topicConstantName) {
-      topicConstant = topicConstantName.topicConstant;
+      this.topicConstant = topicConstantName.topicConstant;
     }
 
     public TopicConstantName build() {

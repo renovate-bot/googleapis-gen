@@ -187,8 +187,8 @@ public class CampaignCriterionName implements ResourceName {
     }
 
     private Builder(CampaignCriterionName campaignCriterionName) {
-      customer = campaignCriterionName.customer;
-      campaignCriterion = campaignCriterionName.campaignCriterion;
+      this.customer = campaignCriterionName.customer;
+      this.campaignCriterion = campaignCriterionName.campaignCriterion;
     }
 
     public CampaignCriterionName build() {

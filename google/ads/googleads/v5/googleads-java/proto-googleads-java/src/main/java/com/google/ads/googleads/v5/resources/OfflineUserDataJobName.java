@@ -187,8 +187,8 @@ public class OfflineUserDataJobName implements ResourceName {
     }
 
     private Builder(OfflineUserDataJobName offlineUserDataJobName) {
-      customer = offlineUserDataJobName.customer;
-      offlineUserDataJob = offlineUserDataJobName.offlineUserDataJob;
+      this.customer = offlineUserDataJobName.customer;
+      this.offlineUserDataJob = offlineUserDataJobName.offlineUserDataJob;
     }
 
     public OfflineUserDataJobName build() {

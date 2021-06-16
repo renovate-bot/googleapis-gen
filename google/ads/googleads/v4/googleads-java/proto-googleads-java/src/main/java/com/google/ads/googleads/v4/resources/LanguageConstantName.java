@@ -158,7 +158,7 @@ public class LanguageConstantName implements ResourceName {
     }
 
     private Builder(LanguageConstantName languageConstantName) {
-      languageConstant = languageConstantName.languageConstant;
+      this.languageConstant = languageConstantName.languageConstant;
     }
 
     public LanguageConstantName build() {

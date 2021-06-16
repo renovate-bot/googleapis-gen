@@ -159,7 +159,7 @@ public class ShoppingPerformanceViewName implements ResourceName {
     }
 
     private Builder(ShoppingPerformanceViewName shoppingPerformanceViewName) {
-      customer = shoppingPerformanceViewName.customer;
+      this.customer = shoppingPerformanceViewName.customer;
     }
 
     public ShoppingPerformanceViewName build() {

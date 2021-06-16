@@ -183,8 +183,8 @@ public class HotelGroupViewName implements ResourceName {
     }
 
     private Builder(HotelGroupViewName hotelGroupViewName) {
-      customer = hotelGroupViewName.customer;
-      hotelGroupView = hotelGroupViewName.hotelGroupView;
+      this.customer = hotelGroupViewName.customer;
+      this.hotelGroupView = hotelGroupViewName.hotelGroupView;
     }
 
     public HotelGroupViewName build() {

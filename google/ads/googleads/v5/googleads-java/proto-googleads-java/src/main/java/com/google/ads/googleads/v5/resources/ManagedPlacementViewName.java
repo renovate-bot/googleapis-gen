@@ -187,8 +187,8 @@ public class ManagedPlacementViewName implements ResourceName {
     }
 
     private Builder(ManagedPlacementViewName managedPlacementViewName) {
-      customer = managedPlacementViewName.customer;
-      managedPlacementView = managedPlacementViewName.managedPlacementView;
+      this.customer = managedPlacementViewName.customer;
+      this.managedPlacementView = managedPlacementViewName.managedPlacementView;
     }
 
     public ManagedPlacementViewName build() {

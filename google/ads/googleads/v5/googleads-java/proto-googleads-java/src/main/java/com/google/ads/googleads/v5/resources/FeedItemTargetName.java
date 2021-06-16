@@ -183,8 +183,8 @@ public class FeedItemTargetName implements ResourceName {
     }
 
     private Builder(FeedItemTargetName feedItemTargetName) {
-      customer = feedItemTargetName.customer;
-      feedItemTarget = feedItemTargetName.feedItemTarget;
+      this.customer = feedItemTargetName.customer;
+      this.feedItemTarget = feedItemTargetName.feedItemTarget;
     }
 
     public FeedItemTargetName build() {

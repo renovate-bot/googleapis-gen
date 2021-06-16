@@ -191,8 +191,8 @@ public class ExpandedLandingPageViewName implements ResourceName {
     }
 
     private Builder(ExpandedLandingPageViewName expandedLandingPageViewName) {
-      customer = expandedLandingPageViewName.customer;
-      expandedLandingPageView = expandedLandingPageViewName.expandedLandingPageView;
+      this.customer = expandedLandingPageViewName.customer;
+      this.expandedLandingPageView = expandedLandingPageViewName.expandedLandingPageView;
     }
 
     public ExpandedLandingPageViewName build() {

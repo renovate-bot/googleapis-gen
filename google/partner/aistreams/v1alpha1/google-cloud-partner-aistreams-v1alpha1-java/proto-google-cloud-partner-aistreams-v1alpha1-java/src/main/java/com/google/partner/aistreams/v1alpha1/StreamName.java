@@ -244,10 +244,10 @@ public class StreamName implements ResourceName {
     }
 
     private Builder(StreamName streamName) {
-      project = streamName.project;
-      location = streamName.location;
-      cluster = streamName.cluster;
-      stream = streamName.stream;
+      this.project = streamName.project;
+      this.location = streamName.location;
+      this.cluster = streamName.cluster;
+      this.stream = streamName.stream;
     }
 
     public StreamName build() {

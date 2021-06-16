@@ -181,8 +181,8 @@ public class StructureName implements ResourceName {
     }
 
     private Builder(StructureName structureName) {
-      enterprise = structureName.enterprise;
-      structure = structureName.structure;
+      this.enterprise = structureName.enterprise;
+      this.structure = structureName.structure;
     }
 
     public StructureName build() {

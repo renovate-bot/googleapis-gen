@@ -183,8 +183,8 @@ public class GeographicViewName implements ResourceName {
     }
 
     private Builder(GeographicViewName geographicViewName) {
-      customer = geographicViewName.customer;
-      geographicView = geographicViewName.geographicView;
+      this.customer = geographicViewName.customer;
+      this.geographicView = geographicViewName.geographicView;
     }
 
     public GeographicViewName build() {

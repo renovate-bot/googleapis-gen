@@ -181,8 +181,8 @@ public class GenderViewName implements ResourceName {
     }
 
     private Builder(GenderViewName genderViewName) {
-      customer = genderViewName.customer;
-      genderView = genderViewName.genderView;
+      this.customer = genderViewName.customer;
+      this.genderView = genderViewName.genderView;
     }
 
     public GenderViewName build() {

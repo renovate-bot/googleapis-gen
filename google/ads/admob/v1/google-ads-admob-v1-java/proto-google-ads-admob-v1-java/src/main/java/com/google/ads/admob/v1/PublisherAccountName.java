@@ -158,7 +158,7 @@ public class PublisherAccountName implements ResourceName {
     }
 
     private Builder(PublisherAccountName publisherAccountName) {
-      publisher = publisherAccountName.publisher;
+      this.publisher = publisherAccountName.publisher;
     }
 
     public PublisherAccountName build() {

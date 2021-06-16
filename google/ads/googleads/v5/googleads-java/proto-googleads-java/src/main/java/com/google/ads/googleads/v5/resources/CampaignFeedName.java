@@ -181,8 +181,8 @@ public class CampaignFeedName implements ResourceName {
     }
 
     private Builder(CampaignFeedName campaignFeedName) {
-      customer = campaignFeedName.customer;
-      campaignFeed = campaignFeedName.campaignFeed;
+      this.customer = campaignFeedName.customer;
+      this.campaignFeed = campaignFeedName.campaignFeed;
     }
 
     public CampaignFeedName build() {

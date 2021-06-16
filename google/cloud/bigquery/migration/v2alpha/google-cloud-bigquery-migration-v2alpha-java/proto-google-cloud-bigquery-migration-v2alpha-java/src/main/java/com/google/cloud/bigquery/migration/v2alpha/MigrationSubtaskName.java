@@ -247,10 +247,10 @@ public class MigrationSubtaskName implements ResourceName {
     }
 
     private Builder(MigrationSubtaskName migrationSubtaskName) {
-      project = migrationSubtaskName.project;
-      location = migrationSubtaskName.location;
-      workflow = migrationSubtaskName.workflow;
-      subtask = migrationSubtaskName.subtask;
+      this.project = migrationSubtaskName.project;
+      this.location = migrationSubtaskName.location;
+      this.workflow = migrationSubtaskName.workflow;
+      this.subtask = migrationSubtaskName.subtask;
     }
 
     public MigrationSubtaskName build() {

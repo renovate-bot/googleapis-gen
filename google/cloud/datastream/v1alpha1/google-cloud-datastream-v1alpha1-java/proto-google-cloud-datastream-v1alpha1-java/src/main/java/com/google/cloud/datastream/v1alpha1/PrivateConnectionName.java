@@ -216,9 +216,9 @@ public class PrivateConnectionName implements ResourceName {
     }
 
     private Builder(PrivateConnectionName privateConnectionName) {
-      project = privateConnectionName.project;
-      location = privateConnectionName.location;
-      privateConnection = privateConnectionName.privateConnection;
+      this.project = privateConnectionName.project;
+      this.location = privateConnectionName.location;
+      this.privateConnection = privateConnectionName.privateConnection;
     }
 
     public PrivateConnectionName build() {

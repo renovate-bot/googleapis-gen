@@ -181,8 +181,8 @@ public class TopicViewName implements ResourceName {
     }
 
     private Builder(TopicViewName topicViewName) {
-      customer = topicViewName.customer;
-      topicView = topicViewName.topicView;
+      this.customer = topicViewName.customer;
+      this.topicView = topicViewName.topicView;
     }
 
     public TopicViewName build() {

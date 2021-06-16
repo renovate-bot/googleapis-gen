@@ -158,7 +158,7 @@ public class MobileDeviceConstantName implements ResourceName {
     }
 
     private Builder(MobileDeviceConstantName mobileDeviceConstantName) {
-      mobileDeviceConstant = mobileDeviceConstantName.mobileDeviceConstant;
+      this.mobileDeviceConstant = mobileDeviceConstantName.mobileDeviceConstant;
     }
 
     public MobileDeviceConstantName build() {
