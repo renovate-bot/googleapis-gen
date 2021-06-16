@@ -31,7 +31,7 @@ In order to use this library, you first need to go through the following steps:
 ```ruby
 require "google/cloud/security/private_ca/v1"
 
-client = ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.new
+client = ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.new
 request = my_create_request
 response = client.create_certificate request
 ```

@@ -3,12 +3,12 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "ruby",
   "protoPackage": "google.cloud.security.privateca.v1",
-  "libraryPackage": "::Google::Cloud::Security::PrivateCA::v1",
+  "libraryPackage": "::Google::Cloud::Security::PrivateCA::V1",
   "services": {
     "CertificateAuthorityService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client",
+          "libraryClient": "::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client",
           "rpcs": {
             "CreateCertificate": {
               "methods": [

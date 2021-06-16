@@ -31,7 +31,7 @@ module Google
   module Cloud
     module Security
       module PrivateCA
-        module v1
+        module V1
           ##
           # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client Certificate Authority Service} manages private
           # certificate authorities and issued certificates.
@@ -39,7 +39,7 @@ module Google
           # To load this service and instantiate a client:
           #
           #     require "google/cloud/security/private_ca/v1/certificate_authority_service"
-          #     client = ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.new
+          #     client = ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.new
           #
           module CertificateAuthorityService
           end
@@ -51,4 +51,3 @@ end
 
 helper_path = ::File.join __dir__, "certificate_authority_service", "helpers.rb"
 require "google/cloud/security/private_ca/v1/certificate_authority_service/helpers" if ::File.file? helper_path
-

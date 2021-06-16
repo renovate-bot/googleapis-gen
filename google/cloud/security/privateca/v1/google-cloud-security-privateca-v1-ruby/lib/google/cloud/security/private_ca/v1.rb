@@ -27,9 +27,9 @@ module Google
         # To load this package, including all its services, and instantiate a client:
         #
         #     require "google/cloud/security/private_ca/v1"
-        #     client = ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.new
+        #     client = ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.new
         #
-        module v1
+        module V1
         end
       end
     end
@@ -38,4 +38,3 @@ end
 
 helper_path = ::File.join __dir__, "v1", "_helpers.rb"
 require "google/cloud/security/private_ca/v1/_helpers" if ::File.file? helper_path
-

@@ -208,7 +208,7 @@ module Google
   module Cloud
     module Security
       module PrivateCA
-        module v1
+        module V1
           CreateCertificateRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.CreateCertificateRequest").msgclass
           GetCertificateRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.GetCertificateRequest").msgclass
           ListCertificatesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.security.privateca.v1.ListCertificatesRequest").msgclass

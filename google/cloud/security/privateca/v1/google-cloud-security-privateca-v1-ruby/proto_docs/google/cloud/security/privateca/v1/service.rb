@@ -21,7 +21,7 @@ module Google
   module Cloud
     module Security
       module PrivateCA
-        module v1
+        module V1
           # Request message for {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client#create_certificate CertificateAuthorityService.CreateCertificate}.
           # @!attribute [rw] parent
           #   @return [::String]
@@ -590,7 +590,7 @@ module Google
           # Response message for
           # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client#fetch_ca_certs CertificateAuthorityService.FetchCaCerts}.
           # @!attribute [rw] ca_certs
-          #   @return [::Array<::Google::Cloud::Security::PrivateCA::v1::FetchCaCertsResponse::CertChain>]
+          #   @return [::Array<::Google::Cloud::Security::PrivateCA::V1::FetchCaCertsResponse::CertChain>]
           #     The PEM encoded CA certificate chains of all
           #     [ACTIVE][CertificateAuthority.State.ACTIVE] {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthority CertificateAuthority}
           #     resources in this {::Google::Cloud::Security::PrivateCA::V1::CaPool CaPool}.
@@ -932,4 +932,3 @@ module Google
     end
   end
 end
-

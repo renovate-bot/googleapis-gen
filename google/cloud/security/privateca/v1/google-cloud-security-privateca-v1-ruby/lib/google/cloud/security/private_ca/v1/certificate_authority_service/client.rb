@@ -23,7 +23,7 @@ module Google
   module Cloud
     module Security
       module PrivateCA
-        module v1
+        module V1
           module CertificateAuthorityService
             ##
             # Client for the CertificateAuthorityService service.
@@ -40,14 +40,14 @@ module Google
               ##
               # Configure the CertificateAuthorityService Client class.
               #
-              # See {::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client::Configuration}
+              # See {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client::Configuration}
               # for a description of the configuration fields.
               #
               # ## Example
               #
               # To modify the configuration for all CertificateAuthorityService clients:
               #
-              #     ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.configure do |config|
+              #     ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.configure do |config|
               #       config.timeout = 10.0
               #     end
               #
@@ -58,7 +58,7 @@ module Google
               #
               def self.configure
                 @configure ||= begin
-                  namespace = ["Google", "Cloud", "Security", "PrivateCA", "v1"]
+                  namespace = ["Google", "Cloud", "Security", "PrivateCA", "V1"]
                   parent_config = while namespace.any?
                                     parent_name = namespace.join "::"
                                     parent_const = const_get parent_name
@@ -67,9 +67,9 @@ module Google
                                   end
                   default_config = Client::Configuration.new parent_config
 
-                    default_config.timeout = 60.0
-                    default_config.retry_policy = {
-                  initial_delay: 0.1,
+                  default_config.timeout = 60.0
+                  default_config.retry_policy = {
+                    initial_delay: 0.1,
                     max_delay: 60.0,
                     multiplier: 1.3,
                     retry_codes: [2, 14, 4]
@@ -88,7 +88,7 @@ module Google
               # but structural changes (adding new fields, etc.) are not allowed. Structural changes
               # should be made on {Client.configure}.
               #
-              # See {::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client::Configuration}
+              # See {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @yield [config] Configure the Client client.
@@ -109,12 +109,12 @@ module Google
               # To create a new CertificateAuthorityService client with the default
               # configuration:
               #
-              #     client = ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.new
+              #     client = ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.new
               #
               # To create a new CertificateAuthorityService client with a custom
               # configuration:
               #
-              #     client = ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.new do |config|
+              #     client = ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.new do |config|
               #       config.timeout = 10.0
               #     end
               #
@@ -155,7 +155,7 @@ module Google
                 end
 
                 @certificate_authority_service_stub = ::Gapic::ServiceStub.new(
-                  ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Stub,
+                  ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Stub,
                   credentials:  credentials,
                   endpoint:     @config.endpoint,
                   channel_args: @config.channel_args,
@@ -166,7 +166,7 @@ module Google
               ##
               # Get the associated client for long-running operations.
               #
-              # @return [::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Operations]
+              # @return [::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Operations]
               #
               attr_reader :operations_client
 
@@ -178,9 +178,9 @@ module Google
               #
               # @overload create_certificate(request, options = nil)
               #   Pass arguments to `create_certificate` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::CreateCertificateRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::CreateCertificateRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::CreateCertificateRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::CreateCertificateRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -243,7 +243,7 @@ module Google
               def create_certificate request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::CreateCertificateRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::CreateCertificateRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -282,9 +282,9 @@ module Google
               #
               # @overload get_certificate(request, options = nil)
               #   Pass arguments to `get_certificate` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::GetCertificateRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::GetCertificateRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::GetCertificateRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::GetCertificateRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -309,7 +309,7 @@ module Google
               def get_certificate request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::GetCertificateRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::GetCertificateRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -348,9 +348,9 @@ module Google
               #
               # @overload list_certificates(request, options = nil)
               #   Pass arguments to `list_certificates` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::ListCertificatesRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::ListCertificatesRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::ListCertificatesRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::ListCertificatesRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -395,7 +395,7 @@ module Google
               def list_certificates request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::ListCertificatesRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::ListCertificatesRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -435,9 +435,9 @@ module Google
               #
               # @overload revoke_certificate(request, options = nil)
               #   Pass arguments to `revoke_certificate` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::RevokeCertificateRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::RevokeCertificateRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::RevokeCertificateRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::RevokeCertificateRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -480,7 +480,7 @@ module Google
               def revoke_certificate request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::RevokeCertificateRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::RevokeCertificateRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -520,9 +520,9 @@ module Google
               #
               # @overload update_certificate(request, options = nil)
               #   Pass arguments to `update_certificate` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -563,7 +563,7 @@ module Google
               def update_certificate request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -607,9 +607,9 @@ module Google
               #
               # @overload activate_certificate_authority(request, options = nil)
               #   Pass arguments to `activate_certificate_authority` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::ActivateCertificateAuthorityRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::ActivateCertificateAuthorityRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::ActivateCertificateAuthorityRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::ActivateCertificateAuthorityRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -655,7 +655,7 @@ module Google
               def activate_certificate_authority request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::ActivateCertificateAuthorityRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::ActivateCertificateAuthorityRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -695,9 +695,9 @@ module Google
               #
               # @overload create_certificate_authority(request, options = nil)
               #   Pass arguments to `create_certificate_authority` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::CreateCertificateAuthorityRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::CreateCertificateAuthorityRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::CreateCertificateAuthorityRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::CreateCertificateAuthorityRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -743,7 +743,7 @@ module Google
               def create_certificate_authority request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::CreateCertificateAuthorityRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::CreateCertificateAuthorityRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -783,9 +783,9 @@ module Google
               #
               # @overload disable_certificate_authority(request, options = nil)
               #   Pass arguments to `disable_certificate_authority` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::DisableCertificateAuthorityRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::DisableCertificateAuthorityRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::DisableCertificateAuthorityRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::DisableCertificateAuthorityRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -825,7 +825,7 @@ module Google
               def disable_certificate_authority request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::DisableCertificateAuthorityRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::DisableCertificateAuthorityRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -865,9 +865,9 @@ module Google
               #
               # @overload enable_certificate_authority(request, options = nil)
               #   Pass arguments to `enable_certificate_authority` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::EnableCertificateAuthorityRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::EnableCertificateAuthorityRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::EnableCertificateAuthorityRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::EnableCertificateAuthorityRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -907,7 +907,7 @@ module Google
               def enable_certificate_authority request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::EnableCertificateAuthorityRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::EnableCertificateAuthorityRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -953,9 +953,9 @@ module Google
               #
               # @overload fetch_certificate_authority_csr(request, options = nil)
               #   Pass arguments to `fetch_certificate_authority_csr` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::FetchCertificateAuthorityCsrRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::FetchCertificateAuthorityCsrRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::FetchCertificateAuthorityCsrRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::FetchCertificateAuthorityCsrRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -971,17 +971,17 @@ module Google
               #     format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Security::PrivateCA::v1::FetchCertificateAuthorityCsrResponse]
+              # @yieldparam response [::Google::Cloud::Security::PrivateCA::V1::FetchCertificateAuthorityCsrResponse]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Security::PrivateCA::v1::FetchCertificateAuthorityCsrResponse]
+              # @return [::Google::Cloud::Security::PrivateCA::V1::FetchCertificateAuthorityCsrResponse]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def fetch_certificate_authority_csr request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::FetchCertificateAuthorityCsrRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::FetchCertificateAuthorityCsrRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1020,9 +1020,9 @@ module Google
               #
               # @overload get_certificate_authority(request, options = nil)
               #   Pass arguments to `get_certificate_authority` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::GetCertificateAuthorityRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::GetCertificateAuthorityRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::GetCertificateAuthorityRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::GetCertificateAuthorityRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1048,7 +1048,7 @@ module Google
               def get_certificate_authority request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::GetCertificateAuthorityRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::GetCertificateAuthorityRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1087,9 +1087,9 @@ module Google
               #
               # @overload list_certificate_authorities(request, options = nil)
               #   Pass arguments to `list_certificate_authorities` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::ListCertificateAuthoritiesRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::ListCertificateAuthoritiesRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::ListCertificateAuthoritiesRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::ListCertificateAuthoritiesRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1130,7 +1130,7 @@ module Google
               def list_certificate_authorities request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::ListCertificateAuthoritiesRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::ListCertificateAuthoritiesRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1170,9 +1170,9 @@ module Google
               #
               # @overload undelete_certificate_authority(request, options = nil)
               #   Pass arguments to `undelete_certificate_authority` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::UndeleteCertificateAuthorityRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::UndeleteCertificateAuthorityRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::UndeleteCertificateAuthorityRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::UndeleteCertificateAuthorityRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1212,7 +1212,7 @@ module Google
               def undelete_certificate_authority request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::UndeleteCertificateAuthorityRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::UndeleteCertificateAuthorityRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1252,9 +1252,9 @@ module Google
               #
               # @overload delete_certificate_authority(request, options = nil)
               #   Pass arguments to `delete_certificate_authority` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::DeleteCertificateAuthorityRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::DeleteCertificateAuthorityRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::DeleteCertificateAuthorityRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::DeleteCertificateAuthorityRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1297,7 +1297,7 @@ module Google
               def delete_certificate_authority request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::DeleteCertificateAuthorityRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::DeleteCertificateAuthorityRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1337,9 +1337,9 @@ module Google
               #
               # @overload update_certificate_authority(request, options = nil)
               #   Pass arguments to `update_certificate_authority` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateAuthorityRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateAuthorityRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateAuthorityRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateAuthorityRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1380,7 +1380,7 @@ module Google
               def update_certificate_authority request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateAuthorityRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateAuthorityRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1420,9 +1420,9 @@ module Google
               #
               # @overload create_ca_pool(request, options = nil)
               #   Pass arguments to `create_ca_pool` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::CreateCaPoolRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::CreateCaPoolRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::CreateCaPoolRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::CreateCaPoolRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1467,7 +1467,7 @@ module Google
               def create_ca_pool request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::CreateCaPoolRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::CreateCaPoolRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1507,9 +1507,9 @@ module Google
               #
               # @overload update_ca_pool(request, options = nil)
               #   Pass arguments to `update_ca_pool` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::UpdateCaPoolRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::UpdateCaPoolRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::UpdateCaPoolRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::UpdateCaPoolRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1550,7 +1550,7 @@ module Google
               def update_ca_pool request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::UpdateCaPoolRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::UpdateCaPoolRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1590,9 +1590,9 @@ module Google
               #
               # @overload get_ca_pool(request, options = nil)
               #   Pass arguments to `get_ca_pool` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::GetCaPoolRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::GetCaPoolRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::GetCaPoolRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::GetCaPoolRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1617,7 +1617,7 @@ module Google
               def get_ca_pool request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::GetCaPoolRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::GetCaPoolRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1656,9 +1656,9 @@ module Google
               #
               # @overload list_ca_pools(request, options = nil)
               #   Pass arguments to `list_ca_pools` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::ListCaPoolsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::ListCaPoolsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::ListCaPoolsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::ListCaPoolsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1699,7 +1699,7 @@ module Google
               def list_ca_pools request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::ListCaPoolsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::ListCaPoolsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1739,9 +1739,9 @@ module Google
               #
               # @overload delete_ca_pool(request, options = nil)
               #   Pass arguments to `delete_ca_pool` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::DeleteCaPoolRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::DeleteCaPoolRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::DeleteCaPoolRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::DeleteCaPoolRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1781,7 +1781,7 @@ module Google
               def delete_ca_pool request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::DeleteCaPoolRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::DeleteCaPoolRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1823,9 +1823,9 @@ module Google
               #
               # @overload fetch_ca_certs(request, options = nil)
               #   Pass arguments to `fetch_ca_certs` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::FetchCaCertsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::FetchCaCertsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::FetchCaCertsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::FetchCaCertsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1855,17 +1855,17 @@ module Google
               #     not supported (00000000-0000-0000-0000-000000000000).
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Security::PrivateCA::v1::FetchCaCertsResponse]
+              # @yieldparam response [::Google::Cloud::Security::PrivateCA::V1::FetchCaCertsResponse]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Security::PrivateCA::v1::FetchCaCertsResponse]
+              # @return [::Google::Cloud::Security::PrivateCA::V1::FetchCaCertsResponse]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def fetch_ca_certs request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::FetchCaCertsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::FetchCaCertsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1904,9 +1904,9 @@ module Google
               #
               # @overload get_certificate_revocation_list(request, options = nil)
               #   Pass arguments to `get_certificate_revocation_list` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::GetCertificateRevocationListRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::GetCertificateRevocationListRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::GetCertificateRevocationListRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::GetCertificateRevocationListRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1932,7 +1932,7 @@ module Google
               def get_certificate_revocation_list request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::GetCertificateRevocationListRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::GetCertificateRevocationListRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1971,9 +1971,9 @@ module Google
               #
               # @overload list_certificate_revocation_lists(request, options = nil)
               #   Pass arguments to `list_certificate_revocation_lists` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::ListCertificateRevocationListsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::ListCertificateRevocationListsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::ListCertificateRevocationListsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::ListCertificateRevocationListsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -2014,7 +2014,7 @@ module Google
               def list_certificate_revocation_lists request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::ListCertificateRevocationListsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::ListCertificateRevocationListsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -2054,9 +2054,9 @@ module Google
               #
               # @overload update_certificate_revocation_list(request, options = nil)
               #   Pass arguments to `update_certificate_revocation_list` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateRevocationListRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateRevocationListRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateRevocationListRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateRevocationListRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -2097,7 +2097,7 @@ module Google
               def update_certificate_revocation_list request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateRevocationListRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateRevocationListRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -2137,9 +2137,9 @@ module Google
               #
               # @overload create_certificate_template(request, options = nil)
               #   Pass arguments to `create_certificate_template` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::CreateCertificateTemplateRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::CreateCertificateTemplateRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::CreateCertificateTemplateRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::CreateCertificateTemplateRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -2185,7 +2185,7 @@ module Google
               def create_certificate_template request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::CreateCertificateTemplateRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::CreateCertificateTemplateRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -2225,9 +2225,9 @@ module Google
               #
               # @overload delete_certificate_template(request, options = nil)
               #   Pass arguments to `delete_certificate_template` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::DeleteCertificateTemplateRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::DeleteCertificateTemplateRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::DeleteCertificateTemplateRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::DeleteCertificateTemplateRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -2267,7 +2267,7 @@ module Google
               def delete_certificate_template request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::DeleteCertificateTemplateRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::DeleteCertificateTemplateRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -2307,9 +2307,9 @@ module Google
               #
               # @overload get_certificate_template(request, options = nil)
               #   Pass arguments to `get_certificate_template` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::GetCertificateTemplateRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::GetCertificateTemplateRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::GetCertificateTemplateRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::GetCertificateTemplateRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -2335,7 +2335,7 @@ module Google
               def get_certificate_template request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::GetCertificateTemplateRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::GetCertificateTemplateRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -2374,9 +2374,9 @@ module Google
               #
               # @overload list_certificate_templates(request, options = nil)
               #   Pass arguments to `list_certificate_templates` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::ListCertificateTemplatesRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::ListCertificateTemplatesRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::ListCertificateTemplatesRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::ListCertificateTemplatesRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -2417,7 +2417,7 @@ module Google
               def list_certificate_templates request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::ListCertificateTemplatesRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::ListCertificateTemplatesRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -2457,9 +2457,9 @@ module Google
               #
               # @overload update_certificate_template(request, options = nil)
               #   Pass arguments to `update_certificate_template` via a request object, either of type
-              #   {::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateTemplateRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateTemplateRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateTemplateRequest, ::Hash]
+              #   @param request [::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateTemplateRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -2500,7 +2500,7 @@ module Google
               def update_certificate_template request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::v1::UpdateCertificateTemplateRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Security::PrivateCA::V1::UpdateCertificateTemplateRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -2542,7 +2542,7 @@ module Google
               # providing control over timeouts, retry behavior, logging, transport
               # parameters, and other low-level controls. Certain parameters can also be
               # applied individually to specific RPCs. See
-              # {::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client::Configuration::Rpcs}
+              # {::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client::Configuration::Rpcs}
               # for a list of RPCs that can be configured independently.
               #
               # Configuration can be applied globally to all clients, or to a single client
@@ -2553,14 +2553,14 @@ module Google
               # To modify the global config, setting the timeout for create_certificate
               # to 20 seconds, and all remaining timeouts to 10 seconds:
               #
-              #     ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.configure do |config|
+              #     ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.configure do |config|
               #       config.timeout = 10.0
               #       config.rpcs.create_certificate.timeout = 20.0
               #     end
               #
               # To apply the above configuration only to a new client:
               #
-              #     client = ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.new do |config|
+              #     client = ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.new do |config|
               #       config.timeout = 10.0
               #       config.rpcs.create_certificate.timeout = 20.0
               #     end
@@ -2627,7 +2627,7 @@ module Google
                 config_attr :scope,         nil, ::String, ::Array, nil
                 config_attr :lib_name,      nil, ::String, nil
                 config_attr :lib_version,   nil, ::String, nil
-                config_attr(:channel_args,  {"grpc.service_config_disable_resolution"=>1}, ::Hash, nil)
+                config_attr(:channel_args,  { "grpc.service_config_disable_resolution" => 1 }, ::Hash, nil)
                 config_attr :interceptors,  nil, ::Array, nil
                 config_attr :timeout,       nil, ::Numeric, nil
                 config_attr :metadata,      nil, ::Hash, nil
@@ -2889,4 +2889,3 @@ module Google
     end
   end
 end
-

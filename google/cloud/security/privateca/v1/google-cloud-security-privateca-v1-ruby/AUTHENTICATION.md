@@ -27,7 +27,7 @@ export V1_CREDENTIALS=path/to/keyfile.json
 ```ruby
 require "google/cloud/security/private_ca/v1"
 
-client = ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.new
+client = ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.new
 ```
 
 ## Credential Lookup
@@ -64,7 +64,7 @@ containers where writing files is difficult or not encouraged.
 
 The environment variables that google-cloud-security-privateca-v1
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Credentials}):
+{::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Credentials}):
 
 1. `V1_CREDENTIALS` - Path to JSON file, or JSON contents
 2. `V1_KEYFILE` - Path to JSON file, or JSON contents
@@ -77,7 +77,7 @@ require "google/cloud/security/private_ca/v1"
 
 ENV["V1_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.new
+client = ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.new
 ```
 
 ### Configuration
@@ -88,7 +88,7 @@ environment variables. Either on an individual client initialization:
 ```ruby
 require "google/cloud/security/private_ca/v1"
 
-client = ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.new do |config|
+client = ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -98,11 +98,11 @@ Or configured globally for all clients:
 ```ruby
 require "google/cloud/security/private_ca/v1"
 
-::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.configure do |config|
+::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Security::PrivateCA::v1::CertificateAuthorityService::Client.new
+client = ::Google::Cloud::Security::PrivateCA::V1::CertificateAuthorityService::Client.new
 ```
 
 ### Cloud SDK

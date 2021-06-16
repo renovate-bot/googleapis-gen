@@ -22,7 +22,7 @@ module Google
   module Cloud
     module Security
       module PrivateCA
-        module v1
+        module V1
           module CertificateAuthorityService
             # Credentials for the CertificateAuthorityService API.
             class Credentials < ::Google::Auth::Credentials
@@ -51,4 +51,3 @@ module Google
     end
   end
 end
-
