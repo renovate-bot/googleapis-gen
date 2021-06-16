@@ -26,13 +26,13 @@ module Google
           # Credentials for the RoadsService API.
           class Credentials < ::Google::Auth::Credentials
             self.env_vars = [
-              "V1OP_CREDENTIALS",
-              "V1OP_KEYFILE",
+              "ROADS_CREDENTIALS",
+              "ROADS_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "V1OP_CREDENTIALS_JSON",
-              "V1OP_KEYFILE_JSON",
+              "ROADS_CREDENTIALS_JSON",
+              "ROADS_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

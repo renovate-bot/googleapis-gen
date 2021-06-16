@@ -29,13 +29,13 @@ module Google
               "https://www.googleapis.com/auth/streetviewpublish"
             ]
             self.env_vars = [
-              "V1_CREDENTIALS",
-              "V1_KEYFILE",
+              "PUBLISH_CREDENTIALS",
+              "PUBLISH_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "V1_CREDENTIALS_JSON",
-              "V1_KEYFILE_JSON",
+              "PUBLISH_CREDENTIALS_JSON",
+              "PUBLISH_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

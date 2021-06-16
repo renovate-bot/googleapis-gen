@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V1BETA_CREDENTIALS=path/to/keyfile.json
+export OSCONFIG_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-osconfig-v1beta
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Osconfig::V1beta::OsConfigService::Credentials}):
 
-1. `V1BETA_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V1BETA_KEYFILE` - Path to JSON file, or JSON contents
+1. `OSCONFIG_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `OSCONFIG_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/osconfig/v1beta"
 
-ENV["V1BETA_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["OSCONFIG_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Osconfig::V1beta::OsConfigService::Client.new
 ```

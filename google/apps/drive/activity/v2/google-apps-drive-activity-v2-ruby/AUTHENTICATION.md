@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V2_CREDENTIALS=path/to/keyfile.json
+export ACTIVITY_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-apps-drive-activity-v2
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Apps::Drive::Activity::V2::DriveActivityService::Credentials}):
 
-1. `V2_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V2_KEYFILE` - Path to JSON file, or JSON contents
+1. `ACTIVITY_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `ACTIVITY_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/apps/drive/activity/v2"
 
-ENV["V2_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["ACTIVITY_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Apps::Drive::Activity::V2::DriveActivityService::Client.new
 ```

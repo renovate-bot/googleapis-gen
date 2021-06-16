@@ -5,5 +5,7 @@
     "name_pretty": "Google Cloud Asset V1p4beta1 API",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-asset-v1p4beta1 is the official client library for the Google Cloud Asset V1p4beta1 API. Note that google-cloud-asset-v1p4beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-asset instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "ASSET",
     "library_type": "GAPIC_AUTO"
 }

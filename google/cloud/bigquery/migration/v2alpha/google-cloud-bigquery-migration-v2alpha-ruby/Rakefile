@@ -69,29 +69,29 @@ desc "Run the google-cloud-bigquery-migration-v2alpha acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["V2ALPHA_TEST_PROJECT"] ||
+    ENV["MIGRATION_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["V2ALPHA_TEST_KEYFILE"] ||
+    ENV["MIGRATION_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["V2ALPHA_TEST_KEYFILE_JSON"] ||
+      ENV["MIGRATION_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V2ALPHA_TEST_PROJECT=test123 V2ALPHA_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or MIGRATION_TEST_PROJECT=test123 MIGRATION_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/cloud/bigquery/migration/v2alpha/migration_service/credentials"
   ::Google::Cloud::Bigquery::Migration::V2alpha::MigrationService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["V2ALPHA_PROJECT"] = project
-  ENV["V2ALPHA_TEST_PROJECT"] = project
-  ENV["V2ALPHA_KEYFILE_JSON"] = keyfile
+  ENV["MIGRATION_PROJECT"] = project
+  ENV["MIGRATION_TEST_PROJECT"] = project
+  ENV["MIGRATION_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

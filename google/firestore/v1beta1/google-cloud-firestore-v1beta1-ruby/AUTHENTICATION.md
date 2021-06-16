@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V1BETA1_CREDENTIALS=path/to/keyfile.json
+export FIRESTORE_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-firestore-v1beta1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Firestore::V1beta1::Firestore::Credentials}):
 
-1. `V1BETA1_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V1BETA1_KEYFILE` - Path to JSON file, or JSON contents
+1. `FIRESTORE_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `FIRESTORE_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/firestore/v1beta1"
 
-ENV["V1BETA1_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["FIRESTORE_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Firestore::V1beta1::Firestore::Client.new
 ```

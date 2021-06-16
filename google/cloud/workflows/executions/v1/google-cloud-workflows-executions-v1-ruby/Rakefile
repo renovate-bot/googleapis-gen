@@ -69,29 +69,29 @@ desc "Run the google-cloud-executions-v1 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["V1_TEST_PROJECT"] ||
+    ENV["EXECUTIONS_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["V1_TEST_KEYFILE"] ||
+    ENV["EXECUTIONS_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["V1_TEST_KEYFILE_JSON"] ||
+      ENV["EXECUTIONS_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V1_TEST_PROJECT=test123 V1_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or EXECUTIONS_TEST_PROJECT=test123 EXECUTIONS_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/cloud/workflows/executions/v1/executions/credentials"
   ::Google::Cloud::Workflows::Executions::V1::Executions::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["V1_PROJECT"] = project
-  ENV["V1_TEST_PROJECT"] = project
-  ENV["V1_KEYFILE_JSON"] = keyfile
+  ENV["EXECUTIONS_PROJECT"] = project
+  ENV["EXECUTIONS_TEST_PROJECT"] = project
+  ENV["EXECUTIONS_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

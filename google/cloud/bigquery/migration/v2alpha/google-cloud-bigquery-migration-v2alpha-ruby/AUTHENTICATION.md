@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V2ALPHA_CREDENTIALS=path/to/keyfile.json
+export MIGRATION_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-bigquery-migration-v2alpha
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Bigquery::Migration::V2alpha::MigrationService::Credentials}):
 
-1. `V2ALPHA_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V2ALPHA_KEYFILE` - Path to JSON file, or JSON contents
+1. `MIGRATION_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `MIGRATION_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/bigquery/migration/v2alpha"
 
-ENV["V2ALPHA_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["MIGRATION_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Bigquery::Migration::V2alpha::MigrationService::Client.new
 ```

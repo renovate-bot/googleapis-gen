@@ -5,5 +5,7 @@
     "name_pretty": "Google Cloud Lifesciences V2beta API",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-lifesciences-v2beta is the official client library for the Google Cloud Lifesciences V2beta API. Note that google-cloud-lifesciences-v2beta is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-lifesciences instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "LIFESCIENCES",
     "library_type": "GAPIC_AUTO"
 }

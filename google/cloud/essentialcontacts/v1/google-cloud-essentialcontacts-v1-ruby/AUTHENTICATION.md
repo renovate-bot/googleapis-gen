@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V1_CREDENTIALS=path/to/keyfile.json
+export ESSENTIALCONTACTS_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-essentialcontacts-v1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::EssentialContacts::V1::EssentialContactsService::Credentials}):
 
-1. `V1_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V1_KEYFILE` - Path to JSON file, or JSON contents
+1. `ESSENTIALCONTACTS_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `ESSENTIALCONTACTS_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/essential_contacts/v1"
 
-ENV["V1_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["ESSENTIALCONTACTS_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::EssentialContacts::V1::EssentialContactsService::Client.new
 ```

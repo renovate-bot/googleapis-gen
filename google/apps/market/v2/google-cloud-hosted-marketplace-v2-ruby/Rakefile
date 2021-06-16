@@ -69,29 +69,29 @@ desc "Run the google-cloud-hosted-marketplace-v2 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["V2_TEST_PROJECT"] ||
+    ENV["MARKETPLACE_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["V2_TEST_KEYFILE"] ||
+    ENV["MARKETPLACE_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["V2_TEST_KEYFILE_JSON"] ||
+      ENV["MARKETPLACE_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V2_TEST_PROJECT=test123 V2_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or MARKETPLACE_TEST_PROJECT=test123 MARKETPLACE_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "ccc/hosted/marketplace/v2/customer_license_service/credentials"
   ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["V2_PROJECT"] = project
-  ENV["V2_TEST_PROJECT"] = project
-  ENV["V2_KEYFILE_JSON"] = keyfile
+  ENV["MARKETPLACE_PROJECT"] = project
+  ENV["MARKETPLACE_TEST_PROJECT"] = project
+  ENV["MARKETPLACE_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

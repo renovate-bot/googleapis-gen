@@ -5,5 +5,7 @@
     "name_pretty": "Google Cloud Bigquery Migration V2alpha API",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-bigquery-migration-v2alpha is the official client library for the Google Cloud Bigquery Migration V2alpha API. Note that google-cloud-bigquery-migration-v2alpha is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-bigquery-migration instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "MIGRATION",
     "library_type": "GAPIC_AUTO"
 }

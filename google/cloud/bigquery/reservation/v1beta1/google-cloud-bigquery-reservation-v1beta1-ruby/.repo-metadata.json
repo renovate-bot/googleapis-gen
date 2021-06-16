@@ -5,5 +5,7 @@
     "name_pretty": "Google Cloud Reservation V1beta1 API",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-reservation-v1beta1 is the official client library for the Google Cloud Reservation V1beta1 API. Note that google-cloud-reservation-v1beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-reservation instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "RESERVATION",
     "library_type": "GAPIC_AUTO"
 }

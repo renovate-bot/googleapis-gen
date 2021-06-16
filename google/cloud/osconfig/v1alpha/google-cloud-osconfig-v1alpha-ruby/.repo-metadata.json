@@ -8,5 +8,8 @@
     "product_documentation": "https://cloud.google.com/compute/docs/manage-os",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-os_config-v1alpha is the official client library for the Google Cloud OsConfig V1alpha API. Note that google-cloud-os_config-v1alpha is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-os_config instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "OS_CONFIG",
+    "ruby-cloud-product-url": "https://cloud.google.com/compute/docs/manage-os",
     "library_type": "GAPIC_AUTO"
 }

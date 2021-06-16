@@ -69,29 +69,29 @@ desc "Run the google-cloud-gsuiteaddons-v1 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["V1_TEST_PROJECT"] ||
+    ENV["GSUITEADDONS_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["V1_TEST_KEYFILE"] ||
+    ENV["GSUITEADDONS_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["V1_TEST_KEYFILE_JSON"] ||
+      ENV["GSUITEADDONS_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V1_TEST_PROJECT=test123 V1_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or GSUITEADDONS_TEST_PROJECT=test123 GSUITEADDONS_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/cloud/g_suite_add_ons/v1/g_suite_add_ons/credentials"
   ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["V1_PROJECT"] = project
-  ENV["V1_TEST_PROJECT"] = project
-  ENV["V1_KEYFILE_JSON"] = keyfile
+  ENV["GSUITEADDONS_PROJECT"] = project
+  ENV["GSUITEADDONS_TEST_PROJECT"] = project
+  ENV["GSUITEADDONS_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

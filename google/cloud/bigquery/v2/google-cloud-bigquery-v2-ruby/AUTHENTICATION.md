@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V2_CREDENTIALS=path/to/keyfile.json
+export BIGQUERY_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-bigquery-v2
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Bigquery::V2::ModelService::Credentials}):
 
-1. `V2_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V2_KEYFILE` - Path to JSON file, or JSON contents
+1. `BIGQUERY_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `BIGQUERY_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/bigquery/v2"
 
-ENV["V2_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["BIGQUERY_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Bigquery::V2::ModelService::Client.new
 ```

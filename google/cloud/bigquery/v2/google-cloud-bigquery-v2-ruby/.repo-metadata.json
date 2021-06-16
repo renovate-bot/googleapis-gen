@@ -5,5 +5,7 @@
     "name_pretty": "Google Cloud Bigquery V2 API",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-bigquery-v2 is the official client library for the Google Cloud Bigquery V2 API. Note that google-cloud-bigquery-v2 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-bigquery instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "BIGQUERY",
     "library_type": "GAPIC_AUTO"
 }

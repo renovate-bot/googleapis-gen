@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V1BETA4_CREDENTIALS=path/to/keyfile.json
+export SQL_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-sql-v1beta4
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Sql::V1beta4::SqlBackupRunsService::Credentials}):
 
-1. `V1BETA4_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V1BETA4_KEYFILE` - Path to JSON file, or JSON contents
+1. `SQL_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `SQL_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/sql/v1beta4"
 
-ENV["V1BETA4_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["SQL_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Sql::V1beta4::SqlBackupRunsService::Client.new
 ```

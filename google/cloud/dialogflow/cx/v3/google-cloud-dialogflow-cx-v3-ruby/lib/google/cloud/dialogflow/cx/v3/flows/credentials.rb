@@ -31,13 +31,13 @@ module Google
                 "https://www.googleapis.com/auth/dialogflow"
               ]
               self.env_vars = [
-                "V3_CREDENTIALS",
-                "V3_KEYFILE",
+                "CX_CREDENTIALS",
+                "CX_KEYFILE",
                 "GOOGLE_CLOUD_CREDENTIALS",
                 "GOOGLE_CLOUD_KEYFILE",
                 "GCLOUD_KEYFILE",
-                "V3_CREDENTIALS_JSON",
-                "V3_KEYFILE_JSON",
+                "CX_CREDENTIALS_JSON",
+                "CX_KEYFILE_JSON",
                 "GOOGLE_CLOUD_CREDENTIALS_JSON",
                 "GOOGLE_CLOUD_KEYFILE_JSON",
                 "GCLOUD_KEYFILE_JSON"

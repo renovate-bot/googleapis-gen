@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V3BETA1_CREDENTIALS=path/to/keyfile.json
+export TRANSLATION_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-translation-v3beta1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Translate::V3beta1::TranslationService::Credentials}):
 
-1. `V3BETA1_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V3BETA1_KEYFILE` - Path to JSON file, or JSON contents
+1. `TRANSLATION_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `TRANSLATION_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/translate/v3beta1"
 
-ENV["V3BETA1_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["TRANSLATION_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Translate::V3beta1::TranslationService::Client.new
 ```

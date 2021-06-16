@@ -69,29 +69,29 @@ desc "Run the google-cloud-dialogflow-cx-v3 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["V3_TEST_PROJECT"] ||
+    ENV["CX_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["V3_TEST_KEYFILE"] ||
+    ENV["CX_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["V3_TEST_KEYFILE_JSON"] ||
+      ENV["CX_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V3_TEST_PROJECT=test123 V3_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or CX_TEST_PROJECT=test123 CX_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/cloud/dialogflow/cx/v3/pages/credentials"
   ::Google::Cloud::Dialogflow::Cx::V3::Pages::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["V3_PROJECT"] = project
-  ENV["V3_TEST_PROJECT"] = project
-  ENV["V3_KEYFILE_JSON"] = keyfile
+  ENV["CX_PROJECT"] = project
+  ENV["CX_TEST_PROJECT"] = project
+  ENV["CX_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

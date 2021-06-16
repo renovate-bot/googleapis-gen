@@ -5,5 +5,7 @@
     "name_pretty": "Google Cloud Sql V1beta4 API",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-sql-v1beta4 is the official client library for the Google Cloud Sql V1beta4 API. Note that google-cloud-sql-v1beta4 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-sql instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "SQL",
     "library_type": "GAPIC_AUTO"
 }

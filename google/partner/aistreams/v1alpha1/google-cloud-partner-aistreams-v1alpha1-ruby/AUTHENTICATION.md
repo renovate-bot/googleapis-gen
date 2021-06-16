@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V1ALPHA1_CREDENTIALS=path/to/keyfile.json
+export AISTREAMS_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-aistreams-v1alpha1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Partner::Aistreams::V1alpha1::AIStreams::Credentials}):
 
-1. `V1ALPHA1_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V1ALPHA1_KEYFILE` - Path to JSON file, or JSON contents
+1. `AISTREAMS_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `AISTREAMS_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/partner/aistreams/v1alpha1"
 
-ENV["V1ALPHA1_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["AISTREAMS_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
 ```

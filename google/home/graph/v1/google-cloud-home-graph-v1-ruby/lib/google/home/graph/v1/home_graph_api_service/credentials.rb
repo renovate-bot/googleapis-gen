@@ -26,13 +26,13 @@ module Google
           # Credentials for the HomeGraphApiService API.
           class Credentials < ::Google::Auth::Credentials
             self.env_vars = [
-              "V1_CREDENTIALS",
-              "V1_KEYFILE",
+              "GRAPH_CREDENTIALS",
+              "GRAPH_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "V1_CREDENTIALS_JSON",
-              "V1_KEYFILE_JSON",
+              "GRAPH_CREDENTIALS_JSON",
+              "GRAPH_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

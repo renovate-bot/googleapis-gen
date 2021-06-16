@@ -69,29 +69,29 @@ desc "Run the google-cloud-chromeos-moblab-v1beta1 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["V1BETA1_TEST_PROJECT"] ||
+    ENV["MOBLAB_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["V1BETA1_TEST_KEYFILE"] ||
+    ENV["MOBLAB_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["V1BETA1_TEST_KEYFILE_JSON"] ||
+      ENV["MOBLAB_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V1BETA1_TEST_PROJECT=test123 V1BETA1_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or MOBLAB_TEST_PROJECT=test123 MOBLAB_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/chromeos/moblab/v1beta1/build_service/credentials"
   ::Google::Chromeos::Moblab::V1beta1::BuildService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["V1BETA1_PROJECT"] = project
-  ENV["V1BETA1_TEST_PROJECT"] = project
-  ENV["V1BETA1_KEYFILE_JSON"] = keyfile
+  ENV["MOBLAB_PROJECT"] = project
+  ENV["MOBLAB_TEST_PROJECT"] = project
+  ENV["MOBLAB_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

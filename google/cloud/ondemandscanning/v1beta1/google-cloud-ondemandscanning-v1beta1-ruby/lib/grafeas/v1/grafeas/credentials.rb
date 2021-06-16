@@ -24,13 +24,13 @@ module Grafeas
       # Credentials for the Grafeas API.
       class Credentials < ::Google::Auth::Credentials
         self.env_vars = [
-          "V1BETA1_CREDENTIALS",
-          "V1BETA1_KEYFILE",
+          "ONDEMANDSCANNING_CREDENTIALS",
+          "ONDEMANDSCANNING_KEYFILE",
           "GOOGLE_CLOUD_CREDENTIALS",
           "GOOGLE_CLOUD_KEYFILE",
           "GCLOUD_KEYFILE",
-          "V1BETA1_CREDENTIALS_JSON",
-          "V1BETA1_KEYFILE_JSON",
+          "ONDEMANDSCANNING_CREDENTIALS_JSON",
+          "ONDEMANDSCANNING_KEYFILE_JSON",
           "GOOGLE_CLOUD_CREDENTIALS_JSON",
           "GOOGLE_CLOUD_KEYFILE_JSON",
           "GCLOUD_KEYFILE_JSON"

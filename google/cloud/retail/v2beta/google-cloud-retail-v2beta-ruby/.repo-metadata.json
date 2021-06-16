@@ -5,5 +5,7 @@
     "name_pretty": "Google Cloud Retail V2beta API",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-retail-v2beta is the official client library for the Google Cloud Retail V2beta API. Note that google-cloud-retail-v2beta is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-retail instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "RETAIL",
     "library_type": "GAPIC_AUTO"
 }

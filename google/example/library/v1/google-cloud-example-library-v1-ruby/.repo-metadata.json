@@ -8,5 +8,8 @@
     "product_documentation": "https://cloud.google.com",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
+    "ruby-cloud-description": "This is a Google example service representing a simple digital library. It manages a collection of shelf resources, and each shelf owns a collection of book resources. Note that google-cloud-example_library-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-example_library instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "LIBRARY",
+    "ruby-cloud-product-url": "https://cloud.google.com",
     "library_type": "GAPIC_AUTO"
 }

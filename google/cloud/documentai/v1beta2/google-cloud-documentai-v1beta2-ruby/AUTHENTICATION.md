@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V1BETA2_CREDENTIALS=path/to/keyfile.json
+export DOCUMENTAI_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-documentai-v1beta2
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::DocumentAI::V1beta2::DocumentUnderstandingService::Credentials}):
 
-1. `V1BETA2_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V1BETA2_KEYFILE` - Path to JSON file, or JSON contents
+1. `DOCUMENTAI_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `DOCUMENTAI_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/document_ai/v1beta2"
 
-ENV["V1BETA2_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["DOCUMENTAI_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::DocumentAI::V1beta2::DocumentUnderstandingService::Client.new
 ```

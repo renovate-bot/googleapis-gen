@@ -29,13 +29,13 @@ module Google
               "https://www.googleapis.com/auth/cloud-platform"
             ]
             self.env_vars = [
-              "V1BETA1_CREDENTIALS",
-              "V1BETA1_KEYFILE",
+              "RECOMMENDER_CREDENTIALS",
+              "RECOMMENDER_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "V1BETA1_CREDENTIALS_JSON",
-              "V1BETA1_KEYFILE_JSON",
+              "RECOMMENDER_CREDENTIALS_JSON",
+              "RECOMMENDER_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

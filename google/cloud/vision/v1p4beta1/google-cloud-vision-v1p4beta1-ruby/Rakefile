@@ -69,29 +69,29 @@ desc "Run the google-cloud-vision-v1p4beta1 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["V1P4BETA1_TEST_PROJECT"] ||
+    ENV["VISION_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["V1P4BETA1_TEST_KEYFILE"] ||
+    ENV["VISION_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["V1P4BETA1_TEST_KEYFILE_JSON"] ||
+      ENV["VISION_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V1P4BETA1_TEST_PROJECT=test123 V1P4BETA1_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or VISION_TEST_PROJECT=test123 VISION_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/cloud/vision/v1p4beta1/product_search/credentials"
   ::Google::Cloud::Vision::V1p4beta1::ProductSearch::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["V1P4BETA1_PROJECT"] = project
-  ENV["V1P4BETA1_TEST_PROJECT"] = project
-  ENV["V1P4BETA1_KEYFILE_JSON"] = keyfile
+  ENV["VISION_PROJECT"] = project
+  ENV["VISION_TEST_PROJECT"] = project
+  ENV["VISION_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

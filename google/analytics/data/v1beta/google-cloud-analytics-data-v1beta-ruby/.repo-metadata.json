@@ -8,5 +8,8 @@
     "product_documentation": "https://developers.google.com/analytics/devguides/reporting/data/v1",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
+    "ruby-cloud-description": "The Google Analytics Data API V1 provides programmatic methods to access report data in Google Analytics 4 (GA4) properties. Note that google-analytics-data-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-analytics-data instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "ANALYTICSDATA",
+    "ruby-cloud-product-url": "https://developers.google.com/analytics/devguides/reporting/data/v1",
     "library_type": "GAPIC_AUTO"
 }

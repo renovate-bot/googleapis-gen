@@ -30,13 +30,13 @@ module Google
               "https://www.googleapis.com/auth/sqlservice.admin"
             ]
             self.env_vars = [
-              "V1BETA4_CREDENTIALS",
-              "V1BETA4_KEYFILE",
+              "SQL_CREDENTIALS",
+              "SQL_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "V1BETA4_CREDENTIALS_JSON",
-              "V1BETA4_KEYFILE_JSON",
+              "SQL_CREDENTIALS_JSON",
+              "SQL_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

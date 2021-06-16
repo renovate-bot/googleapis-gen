@@ -69,29 +69,29 @@ desc "Run the google-cloud-asset-v1p4beta1 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["V1P4BETA1_TEST_PROJECT"] ||
+    ENV["ASSET_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["V1P4BETA1_TEST_KEYFILE"] ||
+    ENV["ASSET_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["V1P4BETA1_TEST_KEYFILE_JSON"] ||
+      ENV["ASSET_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V1P4BETA1_TEST_PROJECT=test123 V1P4BETA1_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or ASSET_TEST_PROJECT=test123 ASSET_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/cloud/asset/v1p4beta1/asset_service/credentials"
   ::Google::Cloud::Asset::V1p4beta1::AssetService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["V1P4BETA1_PROJECT"] = project
-  ENV["V1P4BETA1_TEST_PROJECT"] = project
-  ENV["V1P4BETA1_KEYFILE_JSON"] = keyfile
+  ENV["ASSET_PROJECT"] = project
+  ENV["ASSET_TEST_PROJECT"] = project
+  ENV["ASSET_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

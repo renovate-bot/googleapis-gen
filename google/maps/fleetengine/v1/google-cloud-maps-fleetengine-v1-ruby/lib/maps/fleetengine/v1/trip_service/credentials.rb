@@ -25,13 +25,13 @@ module Maps
         # Credentials for the TripService API.
         class Credentials < ::Google::Auth::Credentials
           self.env_vars = [
-            "V1_CREDENTIALS",
-            "V1_KEYFILE",
+            "FLEETENGINE_CREDENTIALS",
+            "FLEETENGINE_KEYFILE",
             "GOOGLE_CLOUD_CREDENTIALS",
             "GOOGLE_CLOUD_KEYFILE",
             "GCLOUD_KEYFILE",
-            "V1_CREDENTIALS_JSON",
-            "V1_KEYFILE_JSON",
+            "FLEETENGINE_CREDENTIALS_JSON",
+            "FLEETENGINE_KEYFILE_JSON",
             "GOOGLE_CLOUD_CREDENTIALS_JSON",
             "GOOGLE_CLOUD_KEYFILE_JSON",
             "GCLOUD_KEYFILE_JSON"

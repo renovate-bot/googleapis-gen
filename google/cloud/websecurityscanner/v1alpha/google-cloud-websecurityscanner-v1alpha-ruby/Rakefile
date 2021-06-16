@@ -69,29 +69,29 @@ desc "Run the google-cloud-websecurityscanner-v1alpha acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["V1ALPHA_TEST_PROJECT"] ||
+    ENV["WEBSECURITYSCANNER_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["V1ALPHA_TEST_KEYFILE"] ||
+    ENV["WEBSECURITYSCANNER_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["V1ALPHA_TEST_KEYFILE_JSON"] ||
+      ENV["WEBSECURITYSCANNER_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V1ALPHA_TEST_PROJECT=test123 V1ALPHA_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or WEBSECURITYSCANNER_TEST_PROJECT=test123 WEBSECURITYSCANNER_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/cloud/websecurityscanner/v1alpha/web_security_scanner/credentials"
   ::Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["V1ALPHA_PROJECT"] = project
-  ENV["V1ALPHA_TEST_PROJECT"] = project
-  ENV["V1ALPHA_KEYFILE_JSON"] = keyfile
+  ENV["WEBSECURITYSCANNER_PROJECT"] = project
+  ENV["WEBSECURITYSCANNER_TEST_PROJECT"] = project
+  ENV["WEBSECURITYSCANNER_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

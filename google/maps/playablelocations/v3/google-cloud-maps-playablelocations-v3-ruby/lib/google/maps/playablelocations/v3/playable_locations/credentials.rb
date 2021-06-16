@@ -26,13 +26,13 @@ module Google
           # Credentials for the PlayableLocations API.
           class Credentials < ::Google::Auth::Credentials
             self.env_vars = [
-              "V3_CREDENTIALS",
-              "V3_KEYFILE",
+              "PLAYABLELOCATIONS_CREDENTIALS",
+              "PLAYABLELOCATIONS_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "V3_CREDENTIALS_JSON",
-              "V3_KEYFILE_JSON",
+              "PLAYABLELOCATIONS_CREDENTIALS_JSON",
+              "PLAYABLELOCATIONS_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

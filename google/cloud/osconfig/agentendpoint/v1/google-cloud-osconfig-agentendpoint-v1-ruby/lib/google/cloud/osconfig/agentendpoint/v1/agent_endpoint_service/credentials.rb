@@ -27,13 +27,13 @@ module Google
             # Credentials for the AgentEndpointService API.
             class Credentials < ::Google::Auth::Credentials
               self.env_vars = [
-                "V1_CREDENTIALS",
-                "V1_KEYFILE",
+                "AGENTENDPOINT_CREDENTIALS",
+                "AGENTENDPOINT_KEYFILE",
                 "GOOGLE_CLOUD_CREDENTIALS",
                 "GOOGLE_CLOUD_KEYFILE",
                 "GCLOUD_KEYFILE",
-                "V1_CREDENTIALS_JSON",
-                "V1_KEYFILE_JSON",
+                "AGENTENDPOINT_CREDENTIALS_JSON",
+                "AGENTENDPOINT_KEYFILE_JSON",
                 "GOOGLE_CLOUD_CREDENTIALS_JSON",
                 "GOOGLE_CLOUD_KEYFILE_JSON",
                 "GCLOUD_KEYFILE_JSON"

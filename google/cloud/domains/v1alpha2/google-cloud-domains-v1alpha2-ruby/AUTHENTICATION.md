@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V1ALPHA2_CREDENTIALS=path/to/keyfile.json
+export DOMAINS_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-domains-v1alpha2
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Domains::V1alpha2::Domains::Credentials}):
 
-1. `V1ALPHA2_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V1ALPHA2_KEYFILE` - Path to JSON file, or JSON contents
+1. `DOMAINS_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `DOMAINS_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/domains/v1alpha2"
 
-ENV["V1ALPHA2_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["DOMAINS_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Domains::V1alpha2::Domains::Client.new
 ```

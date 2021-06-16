@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V1BETA1_CREDENTIALS=path/to/keyfile.json
+export GATEWAY_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-gkeconnect-gateway-v1beta1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::GkeConnect::Gateway::V1beta1::GatewayService::Credentials}):
 
-1. `V1BETA1_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V1BETA1_KEYFILE` - Path to JSON file, or JSON contents
+1. `GATEWAY_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `GATEWAY_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/gke_connect/gateway/v1beta1"
 
-ENV["V1BETA1_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["GATEWAY_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::GkeConnect::Gateway::V1beta1::GatewayService::Client.new
 ```

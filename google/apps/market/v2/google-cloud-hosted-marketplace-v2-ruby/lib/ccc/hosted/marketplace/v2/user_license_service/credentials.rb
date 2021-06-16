@@ -29,13 +29,13 @@ module Ccc
               "https://www.googleapis.com/auth/appsmarketplace.license"
             ]
             self.env_vars = [
-              "V2_CREDENTIALS",
-              "V2_KEYFILE",
+              "MARKETPLACE_CREDENTIALS",
+              "MARKETPLACE_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "V2_CREDENTIALS_JSON",
-              "V2_KEYFILE_JSON",
+              "MARKETPLACE_CREDENTIALS_JSON",
+              "MARKETPLACE_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

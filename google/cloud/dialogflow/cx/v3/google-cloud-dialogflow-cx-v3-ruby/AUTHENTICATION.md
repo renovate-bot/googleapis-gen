@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V3_CREDENTIALS=path/to/keyfile.json
+export CX_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-dialogflow-cx-v3
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Dialogflow::Cx::V3::Pages::Credentials}):
 
-1. `V3_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V3_KEYFILE` - Path to JSON file, or JSON contents
+1. `CX_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `CX_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/dialogflow/cx/v3"
 
-ENV["V3_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["CX_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new
 ```

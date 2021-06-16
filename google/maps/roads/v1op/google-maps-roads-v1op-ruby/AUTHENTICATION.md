@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V1OP_CREDENTIALS=path/to/keyfile.json
+export ROADS_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-roads-v1op
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Maps::Roads::V1op::RoadsService::Credentials}):
 
-1. `V1OP_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V1OP_KEYFILE` - Path to JSON file, or JSON contents
+1. `ROADS_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `ROADS_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/maps/roads/v1op"
 
-ENV["V1OP_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["ROADS_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Maps::Roads::V1op::RoadsService::Client.new
 ```

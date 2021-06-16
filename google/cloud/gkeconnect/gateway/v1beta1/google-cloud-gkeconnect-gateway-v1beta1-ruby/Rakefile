@@ -69,29 +69,29 @@ desc "Run the google-cloud-gkeconnect-gateway-v1beta1 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["V1BETA1_TEST_PROJECT"] ||
+    ENV["GATEWAY_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["V1BETA1_TEST_KEYFILE"] ||
+    ENV["GATEWAY_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["V1BETA1_TEST_KEYFILE_JSON"] ||
+      ENV["GATEWAY_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V1BETA1_TEST_PROJECT=test123 V1BETA1_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or GATEWAY_TEST_PROJECT=test123 GATEWAY_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/cloud/gke_connect/gateway/v1beta1/gateway_service/credentials"
   ::Google::Cloud::GkeConnect::Gateway::V1beta1::GatewayService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["V1BETA1_PROJECT"] = project
-  ENV["V1BETA1_TEST_PROJECT"] = project
-  ENV["V1BETA1_KEYFILE_JSON"] = keyfile
+  ENV["GATEWAY_PROJECT"] = project
+  ENV["GATEWAY_TEST_PROJECT"] = project
+  ENV["GATEWAY_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

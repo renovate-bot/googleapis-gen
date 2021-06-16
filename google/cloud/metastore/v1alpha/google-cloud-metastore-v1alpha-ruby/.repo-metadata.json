@@ -5,5 +5,7 @@
     "name_pretty": "Google Cloud Metastore V1alpha API",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-metastore-v1alpha is the official client library for the Google Cloud Metastore V1alpha API. Note that google-cloud-metastore-v1alpha is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-metastore instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "METASTORE",
     "library_type": "GAPIC_AUTO"
 }

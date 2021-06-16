@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V3_CREDENTIALS=path/to/keyfile.json
+export PLAYABLELOCATIONS_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-playablelocations-v3
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Maps::Playablelocations::V3::PlayableLocations::Credentials}):
 
-1. `V3_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V3_KEYFILE` - Path to JSON file, or JSON contents
+1. `PLAYABLELOCATIONS_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `PLAYABLELOCATIONS_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/maps/playablelocations/v3"
 
-ENV["V3_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["PLAYABLELOCATIONS_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Maps::Playablelocations::V3::PlayableLocations::Client.new
 ```

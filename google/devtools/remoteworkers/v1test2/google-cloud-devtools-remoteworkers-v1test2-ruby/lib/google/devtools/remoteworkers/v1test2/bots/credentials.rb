@@ -26,13 +26,13 @@ module Google
           # Credentials for the Bots API.
           class Credentials < ::Google::Auth::Credentials
             self.env_vars = [
-              "V1TEST2_CREDENTIALS",
-              "V1TEST2_KEYFILE",
+              "REMOTEWORKERS_CREDENTIALS",
+              "REMOTEWORKERS_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "V1TEST2_CREDENTIALS_JSON",
-              "V1TEST2_KEYFILE_JSON",
+              "REMOTEWORKERS_CREDENTIALS_JSON",
+              "REMOTEWORKERS_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

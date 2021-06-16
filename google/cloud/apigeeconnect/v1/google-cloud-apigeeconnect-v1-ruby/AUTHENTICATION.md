@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export V1_CREDENTIALS=path/to/keyfile.json
+export APIGEE_CONNECT_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-apigee_connect-v1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::ApigeeConnect::V1::ConnectionService::Credentials}):
 
-1. `V1_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `V1_KEYFILE` - Path to JSON file, or JSON contents
+1. `APIGEE_CONNECT_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `APIGEE_CONNECT_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/apigee_connect/v1"
 
-ENV["V1_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["APIGEE_CONNECT_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::ApigeeConnect::V1::ConnectionService::Client.new
 ```
