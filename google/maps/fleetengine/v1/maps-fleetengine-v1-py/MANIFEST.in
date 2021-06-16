@@ -1,0 +1,2 @@
+recursive-include maps/fleetengine *.py
+recursive-include maps/fleetengine_v1 *.py
