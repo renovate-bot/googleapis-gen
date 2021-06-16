@@ -50,6 +50,12 @@ class FormField extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string value_type = 5;</code>
      */
     protected $value_type = '';
+    /**
+     * The history of this annotation.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 8;</code>
+     */
+    protected $provenance = null;
 
     /**
      * Constructor.
@@ -72,6 +78,8 @@ class FormField extends \Google\Protobuf\Internal\Message
      *           - blank (this indicates the field_value is normal text)
      *           - "unfilled_checkbox"
      *           - "filled_checkbox"
+     *     @type \Google\Cloud\DocumentAI\V1beta3\Document\Provenance $provenance
+     *           The history of this annotation.
      * }
      */
     public function __construct($data = NULL) {
@@ -235,6 +243,42 @@ class FormField extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->value_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * The history of this annotation.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 8;</code>
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Provenance|null
+     */
+    public function getProvenance()
+    {
+        return isset($this->provenance) ? $this->provenance : null;
+    }
+
+    public function hasProvenance()
+    {
+        return isset($this->provenance);
+    }
+
+    public function clearProvenance()
+    {
+        unset($this->provenance);
+    }
+
+    /**
+     * The history of this annotation.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 8;</code>
+     * @param \Google\Cloud\DocumentAI\V1beta3\Document\Provenance $var
+     * @return $this
+     */
+    public function setProvenance($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\Document\Provenance::class);
+        $this->provenance = $var;
 
         return $this;
     }

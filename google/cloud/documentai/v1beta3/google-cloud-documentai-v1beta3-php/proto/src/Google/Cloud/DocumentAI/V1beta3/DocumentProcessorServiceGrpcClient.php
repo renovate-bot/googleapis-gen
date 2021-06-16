@@ -67,6 +67,98 @@ class DocumentProcessorServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Fetches processor types.
+     * @param \Google\Cloud\DocumentAI\V1beta3\FetchProcessorTypesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function FetchProcessorTypes(\Google\Cloud\DocumentAI\V1beta3\FetchProcessorTypesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.documentai.v1beta3.DocumentProcessorService/FetchProcessorTypes',
+        $argument,
+        ['\Google\Cloud\DocumentAI\V1beta3\FetchProcessorTypesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Lists all processors which belong to this project.
+     * @param \Google\Cloud\DocumentAI\V1beta3\ListProcessorsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListProcessors(\Google\Cloud\DocumentAI\V1beta3\ListProcessorsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.documentai.v1beta3.DocumentProcessorService/ListProcessors',
+        $argument,
+        ['\Google\Cloud\DocumentAI\V1beta3\ListProcessorsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Creates a processor from the type processor that the user chose.
+     * The processor will be at "ENABLED" state by default after its creation.
+     * @param \Google\Cloud\DocumentAI\V1beta3\CreateProcessorRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreateProcessor(\Google\Cloud\DocumentAI\V1beta3\CreateProcessorRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.documentai.v1beta3.DocumentProcessorService/CreateProcessor',
+        $argument,
+        ['\Google\Cloud\DocumentAI\V1beta3\Processor', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Deletes the processor, unloads all deployed model artifacts if it was
+     * enabled and then deletes all artifacts associated with this processor.
+     * @param \Google\Cloud\DocumentAI\V1beta3\DeleteProcessorRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteProcessor(\Google\Cloud\DocumentAI\V1beta3\DeleteProcessorRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.documentai.v1beta3.DocumentProcessorService/DeleteProcessor',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Enables a processor
+     * @param \Google\Cloud\DocumentAI\V1beta3\EnableProcessorRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function EnableProcessor(\Google\Cloud\DocumentAI\V1beta3\EnableProcessorRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.documentai.v1beta3.DocumentProcessorService/EnableProcessor',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Disables a processor
+     * @param \Google\Cloud\DocumentAI\V1beta3\DisableProcessorRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DisableProcessor(\Google\Cloud\DocumentAI\V1beta3\DisableProcessorRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.documentai.v1beta3.DocumentProcessorService/DisableProcessor',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Send a document for Human Review. The input document should be processed by
      * the specified processor.
      * @param \Google\Cloud\DocumentAI\V1beta3\ReviewDocumentRequest $argument input argument

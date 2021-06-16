@@ -10,6 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for review document method.
+ * Next Id: 6.
  *
  * Generated from protobuf message <code>google.cloud.documentai.v1beta3.ReviewDocumentRequest</code>
  */
@@ -29,6 +30,18 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
      * @deprecated
      */
     protected $document = null;
+    /**
+     * Whether the validation should be performed on the ad-hoc review request.
+     *
+     * Generated from protobuf field <code>bool enable_schema_validation = 3;</code>
+     */
+    protected $enable_schema_validation = false;
+    /**
+     * The priority of the human review task.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority priority = 5;</code>
+     */
+    protected $priority = 0;
     protected $source;
 
     /**
@@ -44,6 +57,10 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
      *           reviewed with.
      *     @type \Google\Cloud\DocumentAI\V1beta3\Document $document
      *           The document that needs human review.
+     *     @type bool $enable_schema_validation
+     *           Whether the validation should be performed on the ad-hoc review request.
+     *     @type int $priority
+     *           The priority of the human review task.
      * }
      */
     public function __construct($data = NULL) {
@@ -148,6 +165,58 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
         @trigger_error('document is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\Document::class);
         $this->document = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether the validation should be performed on the ad-hoc review request.
+     *
+     * Generated from protobuf field <code>bool enable_schema_validation = 3;</code>
+     * @return bool
+     */
+    public function getEnableSchemaValidation()
+    {
+        return $this->enable_schema_validation;
+    }
+
+    /**
+     * Whether the validation should be performed on the ad-hoc review request.
+     *
+     * Generated from protobuf field <code>bool enable_schema_validation = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableSchemaValidation($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_schema_validation = $var;
+
+        return $this;
+    }
+
+    /**
+     * The priority of the human review task.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority priority = 5;</code>
+     * @return int
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    /**
+     * The priority of the human review task.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority priority = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPriority($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\DocumentAI\V1beta3\ReviewDocumentRequest\Priority::class);
+        $this->priority = $var;
 
         return $this;
     }

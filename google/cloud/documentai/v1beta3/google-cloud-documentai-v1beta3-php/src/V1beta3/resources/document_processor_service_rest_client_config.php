@@ -15,6 +15,75 @@ return [
                     ],
                 ],
             ],
+            'CreateProcessor' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta3/{parent=projects/*/locations/*}/processors',
+                'body' => 'processor',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteProcessor' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta3/{name=projects/*/locations/*/processors/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DisableProcessor' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta3/{name=projects/*/locations/*/processors/*}:disable',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'EnableProcessor' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta3/{name=projects/*/locations/*/processors/*}:enable',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'FetchProcessorTypes' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta3/{parent=projects/*/locations/*}:fetchProcessorTypes',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListProcessors' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta3/{parent=projects/*/locations/*}/processors',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'ProcessDocument' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta3/{name=projects/*/locations/*/processors/*}:process',

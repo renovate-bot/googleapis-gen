@@ -35,7 +35,9 @@ namespace Google.Cloud.DocumentAI.V1Beta3.Snippets
             ReviewDocumentRequest request = new ReviewDocumentRequest
             {
                 HumanReviewConfigAsHumanReviewConfigName = HumanReviewConfigName.FromProjectLocationProcessor("[PROJECT]", "[LOCATION]", "[PROCESSOR]"),
+                EnableSchemaValidation = false,
                 InlineDocument = new Document(),
+                Priority = ReviewDocumentRequest.Types.Priority.Default,
             };
             // Make the request
             Operation<ReviewDocumentResponse, ReviewDocumentOperationMetadata> response = await documentProcessorServiceClient.ReviewDocumentAsync(request);

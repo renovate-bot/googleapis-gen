@@ -28,7 +28,20 @@ from .document_processor_service import (
     BatchProcessMetadata,
     BatchProcessRequest,
     BatchProcessResponse,
+    CreateProcessorRequest,
+    DeleteProcessorMetadata,
+    DeleteProcessorRequest,
+    DisableProcessorMetadata,
+    DisableProcessorRequest,
+    DisableProcessorResponse,
+    EnableProcessorMetadata,
+    EnableProcessorRequest,
+    EnableProcessorResponse,
+    FetchProcessorTypesRequest,
+    FetchProcessorTypesResponse,
     HumanReviewStatus,
+    ListProcessorsRequest,
+    ListProcessorsResponse,
     ProcessRequest,
     ProcessResponse,
     ReviewDocumentOperationMetadata,
@@ -43,6 +56,12 @@ from .geometry import (
 from .operation_metadata import (
     CommonOperationMetadata,
 )
+from .processor import (
+    Processor,
+)
+from .processor_type import (
+    ProcessorType,
+)
 
 __all__ = (
     'Document',
@@ -55,7 +74,20 @@ __all__ = (
     'BatchProcessMetadata',
     'BatchProcessRequest',
     'BatchProcessResponse',
+    'CreateProcessorRequest',
+    'DeleteProcessorMetadata',
+    'DeleteProcessorRequest',
+    'DisableProcessorMetadata',
+    'DisableProcessorRequest',
+    'DisableProcessorResponse',
+    'EnableProcessorMetadata',
+    'EnableProcessorRequest',
+    'EnableProcessorResponse',
+    'FetchProcessorTypesRequest',
+    'FetchProcessorTypesResponse',
     'HumanReviewStatus',
+    'ListProcessorsRequest',
+    'ListProcessorsResponse',
     'ProcessRequest',
     'ProcessResponse',
     'ReviewDocumentOperationMetadata',
@@ -65,4 +97,6 @@ __all__ = (
     'NormalizedVertex',
     'Vertex',
     'CommonOperationMetadata',
+    'Processor',
+    'ProcessorType',
 )

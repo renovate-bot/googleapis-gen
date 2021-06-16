@@ -6,6 +6,7 @@ package com.google.cloud.documentai.v1beta3;
 /**
  * <pre>
  * Request message for review document method.
+ * Next Id: 6.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.ReviewDocumentRequest}
@@ -21,6 +22,7 @@ private static final long serialVersionUID = 0L;
   }
   private ReviewDocumentRequest() {
     humanReviewConfig_ = "";
+    priority_ = 0;
   }
 
   @java.lang.Override
@@ -72,6 +74,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 24: {
+
+            enableSchemaValidation_ = input.readBool();
+            break;
+          }
           case 34: {
             com.google.cloud.documentai.v1beta3.Document.Builder subBuilder = null;
             if (sourceCase_ == 4) {
@@ -84,6 +91,12 @@ private static final long serialVersionUID = 0L;
               source_ = subBuilder.buildPartial();
             }
             sourceCase_ = 4;
+            break;
+          }
+          case 40: {
+            int rawValue = input.readEnum();
+
+            priority_ = rawValue;
             break;
           }
           default: {
@@ -116,6 +129,136 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService.internal_static_google_cloud_documentai_v1beta3_ReviewDocumentRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.class, com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * The priority level of the human review task.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority}
+   */
+  public enum Priority
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * The default priority level.
+     * </pre>
+     *
+     * <code>DEFAULT = 0;</code>
+     */
+    DEFAULT(0),
+    /**
+     * <pre>
+     * The urgent priority level. The labeling manager should allocate labeler
+     * resource to the urgent task queue to respect this priority level.
+     * </pre>
+     *
+     * <code>URGENT = 1;</code>
+     */
+    URGENT(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * The default priority level.
+     * </pre>
+     *
+     * <code>DEFAULT = 0;</code>
+     */
+    public static final int DEFAULT_VALUE = 0;
+    /**
+     * <pre>
+     * The urgent priority level. The labeling manager should allocate labeler
+     * resource to the urgent task queue to respect this priority level.
+     * </pre>
+     *
+     * <code>URGENT = 1;</code>
+     */
+    public static final int URGENT_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Priority valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Priority forNumber(int value) {
+      switch (value) {
+        case 0: return DEFAULT;
+        case 1: return URGENT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Priority>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Priority> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Priority>() {
+            public Priority findValueByNumber(int number) {
+              return Priority.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Priority[] VALUES = values();
+
+    public static Priority valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Priority(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority)
   }
 
   private int sourceCase_ = 0;
@@ -286,6 +429,48 @@ private static final long serialVersionUID = 0L;
     return getDocument();
   }
 
+  public static final int ENABLE_SCHEMA_VALIDATION_FIELD_NUMBER = 3;
+  private boolean enableSchemaValidation_;
+  /**
+   * <pre>
+   * Whether the validation should be performed on the ad-hoc review request.
+   * </pre>
+   *
+   * <code>bool enable_schema_validation = 3;</code>
+   * @return The enableSchemaValidation.
+   */
+  @java.lang.Override
+  public boolean getEnableSchemaValidation() {
+    return enableSchemaValidation_;
+  }
+
+  public static final int PRIORITY_FIELD_NUMBER = 5;
+  private int priority_;
+  /**
+   * <pre>
+   * The priority of the human review task.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority priority = 5;</code>
+   * @return The enum numeric value on the wire for priority.
+   */
+  @java.lang.Override public int getPriorityValue() {
+    return priority_;
+  }
+  /**
+   * <pre>
+   * The priority of the human review task.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority priority = 5;</code>
+   * @return The priority.
+   */
+  @java.lang.Override public com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority getPriority() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority result = com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.valueOf(priority_);
+    return result == null ? com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -306,8 +491,14 @@ private static final long serialVersionUID = 0L;
     if (document_ != null) {
       output.writeMessage(2, getDocument());
     }
+    if (enableSchemaValidation_ != false) {
+      output.writeBool(3, enableSchemaValidation_);
+    }
     if (sourceCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.documentai.v1beta3.Document) source_);
+    }
+    if (priority_ != com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.DEFAULT.getNumber()) {
+      output.writeEnum(5, priority_);
     }
     unknownFields.writeTo(output);
   }
@@ -325,9 +516,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getDocument());
     }
+    if (enableSchemaValidation_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, enableSchemaValidation_);
+    }
     if (sourceCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.google.cloud.documentai.v1beta3.Document) source_);
+    }
+    if (priority_ != com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.DEFAULT.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(5, priority_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -351,6 +550,9 @@ private static final long serialVersionUID = 0L;
       if (!getDocument()
           .equals(other.getDocument())) return false;
     }
+    if (getEnableSchemaValidation()
+        != other.getEnableSchemaValidation()) return false;
+    if (priority_ != other.priority_) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 4:
@@ -377,6 +579,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
       hash = (53 * hash) + getDocument().hashCode();
     }
+    hash = (37 * hash) + ENABLE_SCHEMA_VALIDATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableSchemaValidation());
+    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + priority_;
     switch (sourceCase_) {
       case 4:
         hash = (37 * hash) + INLINE_DOCUMENT_FIELD_NUMBER;
@@ -483,6 +690,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Request message for review document method.
+   * Next Id: 6.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.ReviewDocumentRequest}
@@ -530,6 +738,10 @@ private static final long serialVersionUID = 0L;
         document_ = null;
         documentBuilder_ = null;
       }
+      enableSchemaValidation_ = false;
+
+      priority_ = 0;
+
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -571,6 +783,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.document_ = documentBuilder_.build();
       }
+      result.enableSchemaValidation_ = enableSchemaValidation_;
+      result.priority_ = priority_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -626,6 +840,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasDocument()) {
         mergeDocument(other.getDocument());
+      }
+      if (other.getEnableSchemaValidation() != false) {
+        setEnableSchemaValidation(other.getEnableSchemaValidation());
+      }
+      if (other.priority_ != 0) {
+        setPriorityValue(other.getPriorityValue());
       }
       switch (other.getSourceCase()) {
         case INLINE_DOCUMENT: {
@@ -1111,6 +1331,123 @@ private static final long serialVersionUID = 0L;
         document_ = null;
       }
       return documentBuilder_;
+    }
+
+    private boolean enableSchemaValidation_ ;
+    /**
+     * <pre>
+     * Whether the validation should be performed on the ad-hoc review request.
+     * </pre>
+     *
+     * <code>bool enable_schema_validation = 3;</code>
+     * @return The enableSchemaValidation.
+     */
+    @java.lang.Override
+    public boolean getEnableSchemaValidation() {
+      return enableSchemaValidation_;
+    }
+    /**
+     * <pre>
+     * Whether the validation should be performed on the ad-hoc review request.
+     * </pre>
+     *
+     * <code>bool enable_schema_validation = 3;</code>
+     * @param value The enableSchemaValidation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableSchemaValidation(boolean value) {
+      
+      enableSchemaValidation_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether the validation should be performed on the ad-hoc review request.
+     * </pre>
+     *
+     * <code>bool enable_schema_validation = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableSchemaValidation() {
+      
+      enableSchemaValidation_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int priority_ = 0;
+    /**
+     * <pre>
+     * The priority of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority priority = 5;</code>
+     * @return The enum numeric value on the wire for priority.
+     */
+    @java.lang.Override public int getPriorityValue() {
+      return priority_;
+    }
+    /**
+     * <pre>
+     * The priority of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority priority = 5;</code>
+     * @param value The enum numeric value on the wire for priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriorityValue(int value) {
+      
+      priority_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The priority of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority priority = 5;</code>
+     * @return The priority.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority getPriority() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority result = com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.valueOf(priority_);
+      return result == null ? com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The priority of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority priority = 5;</code>
+     * @param value The priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriority(com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      priority_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The priority of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority priority = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPriority() {
+      
+      priority_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

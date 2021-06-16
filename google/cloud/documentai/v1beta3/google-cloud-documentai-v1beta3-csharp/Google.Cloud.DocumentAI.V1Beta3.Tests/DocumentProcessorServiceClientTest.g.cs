@@ -16,6 +16,7 @@
 
 using gaxgrpc = Google.Api.Gax.Grpc;
 using lro = Google.LongRunning;
+using wkt = Google.Protobuf.WellKnownTypes;
 using grpccore = Grpc.Core;
 using moq = Moq;
 using st = System.Threading;
@@ -185,6 +186,430 @@ namespace Google.Cloud.DocumentAI.V1Beta3.Tests
             ProcessResponse responseCallSettings = await client.ProcessDocumentAsync(request.ProcessorName, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
             xunit::Assert.Same(expectedResponse, responseCallSettings);
             ProcessResponse responseCancellationToken = await client.ProcessDocumentAsync(request.ProcessorName, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void FetchProcessorTypesRequestObject()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FetchProcessorTypesRequest request = new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+            };
+            FetchProcessorTypesResponse expectedResponse = new FetchProcessorTypesResponse
+            {
+                ProcessorTypes =
+                {
+                    new ProcessorType(),
+                },
+            };
+            mockGrpcClient.Setup(x => x.FetchProcessorTypes(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            FetchProcessorTypesResponse response = client.FetchProcessorTypes(request);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task FetchProcessorTypesRequestObjectAsync()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FetchProcessorTypesRequest request = new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+            };
+            FetchProcessorTypesResponse expectedResponse = new FetchProcessorTypesResponse
+            {
+                ProcessorTypes =
+                {
+                    new ProcessorType(),
+                },
+            };
+            mockGrpcClient.Setup(x => x.FetchProcessorTypesAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<FetchProcessorTypesResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            FetchProcessorTypesResponse responseCallSettings = await client.FetchProcessorTypesAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            FetchProcessorTypesResponse responseCancellationToken = await client.FetchProcessorTypesAsync(request, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void FetchProcessorTypes()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FetchProcessorTypesRequest request = new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+            };
+            FetchProcessorTypesResponse expectedResponse = new FetchProcessorTypesResponse
+            {
+                ProcessorTypes =
+                {
+                    new ProcessorType(),
+                },
+            };
+            mockGrpcClient.Setup(x => x.FetchProcessorTypes(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            FetchProcessorTypesResponse response = client.FetchProcessorTypes(request.Parent);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task FetchProcessorTypesAsync()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FetchProcessorTypesRequest request = new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+            };
+            FetchProcessorTypesResponse expectedResponse = new FetchProcessorTypesResponse
+            {
+                ProcessorTypes =
+                {
+                    new ProcessorType(),
+                },
+            };
+            mockGrpcClient.Setup(x => x.FetchProcessorTypesAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<FetchProcessorTypesResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            FetchProcessorTypesResponse responseCallSettings = await client.FetchProcessorTypesAsync(request.Parent, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            FetchProcessorTypesResponse responseCancellationToken = await client.FetchProcessorTypesAsync(request.Parent, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void FetchProcessorTypesResourceNames1()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FetchProcessorTypesRequest request = new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+            };
+            FetchProcessorTypesResponse expectedResponse = new FetchProcessorTypesResponse
+            {
+                ProcessorTypes =
+                {
+                    new ProcessorType(),
+                },
+            };
+            mockGrpcClient.Setup(x => x.FetchProcessorTypes(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            FetchProcessorTypesResponse response = client.FetchProcessorTypes(request.ParentAsLocationName);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task FetchProcessorTypesResourceNames1Async()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FetchProcessorTypesRequest request = new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+            };
+            FetchProcessorTypesResponse expectedResponse = new FetchProcessorTypesResponse
+            {
+                ProcessorTypes =
+                {
+                    new ProcessorType(),
+                },
+            };
+            mockGrpcClient.Setup(x => x.FetchProcessorTypesAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<FetchProcessorTypesResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            FetchProcessorTypesResponse responseCallSettings = await client.FetchProcessorTypesAsync(request.ParentAsLocationName, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            FetchProcessorTypesResponse responseCancellationToken = await client.FetchProcessorTypesAsync(request.ParentAsLocationName, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void FetchProcessorTypesResourceNames2()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FetchProcessorTypesRequest request = new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+            };
+            FetchProcessorTypesResponse expectedResponse = new FetchProcessorTypesResponse
+            {
+                ProcessorTypes =
+                {
+                    new ProcessorType(),
+                },
+            };
+            mockGrpcClient.Setup(x => x.FetchProcessorTypes(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            FetchProcessorTypesResponse response = client.FetchProcessorTypes(request.ParentAsLocationName);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task FetchProcessorTypesResourceNames2Async()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FetchProcessorTypesRequest request = new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+            };
+            FetchProcessorTypesResponse expectedResponse = new FetchProcessorTypesResponse
+            {
+                ProcessorTypes =
+                {
+                    new ProcessorType(),
+                },
+            };
+            mockGrpcClient.Setup(x => x.FetchProcessorTypesAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<FetchProcessorTypesResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            FetchProcessorTypesResponse responseCallSettings = await client.FetchProcessorTypesAsync(request.ParentAsLocationName, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            FetchProcessorTypesResponse responseCancellationToken = await client.FetchProcessorTypesAsync(request.ParentAsLocationName, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void CreateProcessorRequestObject()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            CreateProcessorRequest request = new CreateProcessorRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Processor = new Processor(),
+            };
+            Processor expectedResponse = new Processor
+            {
+                ProcessorName = ProcessorName.FromProjectLocationProcessor("[PROJECT]", "[LOCATION]", "[PROCESSOR]"),
+                Type = "typee2cc9d59",
+                DisplayName = "display_name137f65c2",
+                State = Processor.Types.State.Failed,
+                ProcessEndpoint = "process_endpoint4445f26d",
+                CreateTime = new wkt::Timestamp(),
+                KmsKeyName = "kms_key_name06bd122b",
+                DefaultProcessorVersion = "default_processor_versiona99cda5e",
+            };
+            mockGrpcClient.Setup(x => x.CreateProcessor(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            Processor response = client.CreateProcessor(request);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task CreateProcessorRequestObjectAsync()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            CreateProcessorRequest request = new CreateProcessorRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Processor = new Processor(),
+            };
+            Processor expectedResponse = new Processor
+            {
+                ProcessorName = ProcessorName.FromProjectLocationProcessor("[PROJECT]", "[LOCATION]", "[PROCESSOR]"),
+                Type = "typee2cc9d59",
+                DisplayName = "display_name137f65c2",
+                State = Processor.Types.State.Failed,
+                ProcessEndpoint = "process_endpoint4445f26d",
+                CreateTime = new wkt::Timestamp(),
+                KmsKeyName = "kms_key_name06bd122b",
+                DefaultProcessorVersion = "default_processor_versiona99cda5e",
+            };
+            mockGrpcClient.Setup(x => x.CreateProcessorAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Processor>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            Processor responseCallSettings = await client.CreateProcessorAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Processor responseCancellationToken = await client.CreateProcessorAsync(request, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void CreateProcessor()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            CreateProcessorRequest request = new CreateProcessorRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Processor = new Processor(),
+            };
+            Processor expectedResponse = new Processor
+            {
+                ProcessorName = ProcessorName.FromProjectLocationProcessor("[PROJECT]", "[LOCATION]", "[PROCESSOR]"),
+                Type = "typee2cc9d59",
+                DisplayName = "display_name137f65c2",
+                State = Processor.Types.State.Failed,
+                ProcessEndpoint = "process_endpoint4445f26d",
+                CreateTime = new wkt::Timestamp(),
+                KmsKeyName = "kms_key_name06bd122b",
+                DefaultProcessorVersion = "default_processor_versiona99cda5e",
+            };
+            mockGrpcClient.Setup(x => x.CreateProcessor(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            Processor response = client.CreateProcessor(request.Parent, request.Processor);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task CreateProcessorAsync()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            CreateProcessorRequest request = new CreateProcessorRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Processor = new Processor(),
+            };
+            Processor expectedResponse = new Processor
+            {
+                ProcessorName = ProcessorName.FromProjectLocationProcessor("[PROJECT]", "[LOCATION]", "[PROCESSOR]"),
+                Type = "typee2cc9d59",
+                DisplayName = "display_name137f65c2",
+                State = Processor.Types.State.Failed,
+                ProcessEndpoint = "process_endpoint4445f26d",
+                CreateTime = new wkt::Timestamp(),
+                KmsKeyName = "kms_key_name06bd122b",
+                DefaultProcessorVersion = "default_processor_versiona99cda5e",
+            };
+            mockGrpcClient.Setup(x => x.CreateProcessorAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Processor>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            Processor responseCallSettings = await client.CreateProcessorAsync(request.Parent, request.Processor, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Processor responseCancellationToken = await client.CreateProcessorAsync(request.Parent, request.Processor, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void CreateProcessorResourceNames1()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            CreateProcessorRequest request = new CreateProcessorRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Processor = new Processor(),
+            };
+            Processor expectedResponse = new Processor
+            {
+                ProcessorName = ProcessorName.FromProjectLocationProcessor("[PROJECT]", "[LOCATION]", "[PROCESSOR]"),
+                Type = "typee2cc9d59",
+                DisplayName = "display_name137f65c2",
+                State = Processor.Types.State.Failed,
+                ProcessEndpoint = "process_endpoint4445f26d",
+                CreateTime = new wkt::Timestamp(),
+                KmsKeyName = "kms_key_name06bd122b",
+                DefaultProcessorVersion = "default_processor_versiona99cda5e",
+            };
+            mockGrpcClient.Setup(x => x.CreateProcessor(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            Processor response = client.CreateProcessor(request.ParentAsLocationName, request.Processor);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task CreateProcessorResourceNames1Async()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            CreateProcessorRequest request = new CreateProcessorRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Processor = new Processor(),
+            };
+            Processor expectedResponse = new Processor
+            {
+                ProcessorName = ProcessorName.FromProjectLocationProcessor("[PROJECT]", "[LOCATION]", "[PROCESSOR]"),
+                Type = "typee2cc9d59",
+                DisplayName = "display_name137f65c2",
+                State = Processor.Types.State.Failed,
+                ProcessEndpoint = "process_endpoint4445f26d",
+                CreateTime = new wkt::Timestamp(),
+                KmsKeyName = "kms_key_name06bd122b",
+                DefaultProcessorVersion = "default_processor_versiona99cda5e",
+            };
+            mockGrpcClient.Setup(x => x.CreateProcessorAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Processor>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            Processor responseCallSettings = await client.CreateProcessorAsync(request.ParentAsLocationName, request.Processor, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Processor responseCancellationToken = await client.CreateProcessorAsync(request.ParentAsLocationName, request.Processor, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void CreateProcessorResourceNames2()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            CreateProcessorRequest request = new CreateProcessorRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Processor = new Processor(),
+            };
+            Processor expectedResponse = new Processor
+            {
+                ProcessorName = ProcessorName.FromProjectLocationProcessor("[PROJECT]", "[LOCATION]", "[PROCESSOR]"),
+                Type = "typee2cc9d59",
+                DisplayName = "display_name137f65c2",
+                State = Processor.Types.State.Failed,
+                ProcessEndpoint = "process_endpoint4445f26d",
+                CreateTime = new wkt::Timestamp(),
+                KmsKeyName = "kms_key_name06bd122b",
+                DefaultProcessorVersion = "default_processor_versiona99cda5e",
+            };
+            mockGrpcClient.Setup(x => x.CreateProcessor(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            Processor response = client.CreateProcessor(request.ParentAsLocationName, request.Processor);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task CreateProcessorResourceNames2Async()
+        {
+            moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient> mockGrpcClient = new moq::Mock<DocumentProcessorService.DocumentProcessorServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            CreateProcessorRequest request = new CreateProcessorRequest
+            {
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                Processor = new Processor(),
+            };
+            Processor expectedResponse = new Processor
+            {
+                ProcessorName = ProcessorName.FromProjectLocationProcessor("[PROJECT]", "[LOCATION]", "[PROCESSOR]"),
+                Type = "typee2cc9d59",
+                DisplayName = "display_name137f65c2",
+                State = Processor.Types.State.Failed,
+                ProcessEndpoint = "process_endpoint4445f26d",
+                CreateTime = new wkt::Timestamp(),
+                KmsKeyName = "kms_key_name06bd122b",
+                DefaultProcessorVersion = "default_processor_versiona99cda5e",
+            };
+            mockGrpcClient.Setup(x => x.CreateProcessorAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Processor>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            DocumentProcessorServiceClient client = new DocumentProcessorServiceClientImpl(mockGrpcClient.Object, null);
+            Processor responseCallSettings = await client.CreateProcessorAsync(request.ParentAsLocationName, request.Processor, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            Processor responseCancellationToken = await client.CreateProcessorAsync(request.ParentAsLocationName, request.Processor, st::CancellationToken.None);
             xunit::Assert.Same(expectedResponse, responseCancellationToken);
             mockGrpcClient.VerifyAll();
         }

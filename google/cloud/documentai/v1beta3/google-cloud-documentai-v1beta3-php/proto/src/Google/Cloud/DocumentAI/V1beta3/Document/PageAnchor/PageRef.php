@@ -18,6 +18,8 @@ class PageRef extends \Google\Protobuf\Internal\Message
     /**
      * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
      * [Document.pages][page_refs.page] to locate the related page element.
+     * This field is skipped when its value is the default 0. See
+     * https://developers.google.com/protocol-buffers/docs/proto3#json.
      *
      * Generated from protobuf field <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -57,6 +59,8 @@ class PageRef extends \Google\Protobuf\Internal\Message
      *     @type int|string $page
      *           Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
      *           [Document.pages][page_refs.page] to locate the related page element.
+     *           This field is skipped when its value is the default 0. See
+     *           https://developers.google.com/protocol-buffers/docs/proto3#json.
      *     @type int $layout_type
      *           Optional. The type of the layout element that is being referenced if any.
      *     @type string $layout_id
@@ -75,6 +79,8 @@ class PageRef extends \Google\Protobuf\Internal\Message
     /**
      * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
      * [Document.pages][page_refs.page] to locate the related page element.
+     * This field is skipped when its value is the default 0. See
+     * https://developers.google.com/protocol-buffers/docs/proto3#json.
      *
      * Generated from protobuf field <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return int|string
@@ -87,6 +93,8 @@ class PageRef extends \Google\Protobuf\Internal\Message
     /**
      * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
      * [Document.pages][page_refs.page] to locate the related page element.
+     * This field is skipped when its value is the default 0. See
+     * https://developers.google.com/protocol-buffers/docs/proto3#json.
      *
      * Generated from protobuf field <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int|string $var

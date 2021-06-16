@@ -17,11 +17,14 @@
 using gax = Google.Api.Gax;
 using gaxgrpc = Google.Api.Gax.Grpc;
 using gaxgrpccore = Google.Api.Gax.Grpc.GrpcCore;
+using gagr = Google.Api.Gax.ResourceNames;
 using lro = Google.LongRunning;
 using proto = Google.Protobuf;
+using wkt = Google.Protobuf.WellKnownTypes;
 using grpccore = Grpc.Core;
 using grpcinter = Grpc.Core.Interceptors;
 using sys = System;
+using sc = System.Collections;
 using scg = System.Collections.Generic;
 using sco = System.Collections.ObjectModel;
 using st = System.Threading;
@@ -49,6 +52,15 @@ namespace Google.Cloud.DocumentAI.V1Beta3
             ProcessDocumentSettings = existing.ProcessDocumentSettings;
             BatchProcessDocumentsSettings = existing.BatchProcessDocumentsSettings;
             BatchProcessDocumentsOperationsSettings = existing.BatchProcessDocumentsOperationsSettings.Clone();
+            FetchProcessorTypesSettings = existing.FetchProcessorTypesSettings;
+            ListProcessorsSettings = existing.ListProcessorsSettings;
+            CreateProcessorSettings = existing.CreateProcessorSettings;
+            DeleteProcessorSettings = existing.DeleteProcessorSettings;
+            DeleteProcessorOperationsSettings = existing.DeleteProcessorOperationsSettings.Clone();
+            EnableProcessorSettings = existing.EnableProcessorSettings;
+            EnableProcessorOperationsSettings = existing.EnableProcessorOperationsSettings.Clone();
+            DisableProcessorSettings = existing.DisableProcessorSettings;
+            DisableProcessorOperationsSettings = existing.DisableProcessorOperationsSettings.Clone();
             ReviewDocumentSettings = existing.ReviewDocumentSettings;
             ReviewDocumentOperationsSettings = existing.ReviewDocumentOperationsSettings.Clone();
             OnCopy(existing);
@@ -102,6 +114,138 @@ namespace Google.Cloud.DocumentAI.V1Beta3
         /// </list>
         /// </remarks>
         public lro::OperationsSettings BatchProcessDocumentsOperationsSettings { get; set; } = new lro::OperationsSettings
+        {
+            DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
+        };
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>DocumentProcessorServiceClient.FetchProcessorTypes</c> and
+        /// <c>DocumentProcessorServiceClient.FetchProcessorTypesAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>This call will not be retried.</description></item>
+        /// <item><description>No timeout is applied.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings FetchProcessorTypesSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>DocumentProcessorServiceClient.ListProcessors</c> and
+        /// <c>DocumentProcessorServiceClient.ListProcessorsAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>This call will not be retried.</description></item>
+        /// <item><description>No timeout is applied.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings ListProcessorsSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>DocumentProcessorServiceClient.CreateProcessor</c> and
+        /// <c>DocumentProcessorServiceClient.CreateProcessorAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>This call will not be retried.</description></item>
+        /// <item><description>No timeout is applied.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings CreateProcessorSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>DocumentProcessorServiceClient.DeleteProcessor</c> and
+        /// <c>DocumentProcessorServiceClient.DeleteProcessorAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>This call will not be retried.</description></item>
+        /// <item><description>No timeout is applied.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings DeleteProcessorSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+
+        /// <summary>
+        /// Long Running Operation settings for calls to <c>DocumentProcessorServiceClient.DeleteProcessor</c> and
+        /// <c>DocumentProcessorServiceClient.DeleteProcessorAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// Uses default <see cref="gax::PollSettings"/> of:
+        /// <list type="bullet">
+        /// <item><description>Initial delay: 20 seconds.</description></item>
+        /// <item><description>Delay multiplier: 1.5</description></item>
+        /// <item><description>Maximum delay: 45 seconds.</description></item>
+        /// <item><description>Total timeout: 24 hours.</description></item>
+        /// </list>
+        /// </remarks>
+        public lro::OperationsSettings DeleteProcessorOperationsSettings { get; set; } = new lro::OperationsSettings
+        {
+            DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
+        };
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>DocumentProcessorServiceClient.EnableProcessor</c> and
+        /// <c>DocumentProcessorServiceClient.EnableProcessorAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>This call will not be retried.</description></item>
+        /// <item><description>No timeout is applied.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings EnableProcessorSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+
+        /// <summary>
+        /// Long Running Operation settings for calls to <c>DocumentProcessorServiceClient.EnableProcessor</c> and
+        /// <c>DocumentProcessorServiceClient.EnableProcessorAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// Uses default <see cref="gax::PollSettings"/> of:
+        /// <list type="bullet">
+        /// <item><description>Initial delay: 20 seconds.</description></item>
+        /// <item><description>Delay multiplier: 1.5</description></item>
+        /// <item><description>Maximum delay: 45 seconds.</description></item>
+        /// <item><description>Total timeout: 24 hours.</description></item>
+        /// </list>
+        /// </remarks>
+        public lro::OperationsSettings EnableProcessorOperationsSettings { get; set; } = new lro::OperationsSettings
+        {
+            DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
+        };
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>DocumentProcessorServiceClient.DisableProcessor</c> and
+        /// <c>DocumentProcessorServiceClient.DisableProcessorAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>This call will not be retried.</description></item>
+        /// <item><description>No timeout is applied.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings DisableProcessorSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+
+        /// <summary>
+        /// Long Running Operation settings for calls to <c>DocumentProcessorServiceClient.DisableProcessor</c> and
+        /// <c>DocumentProcessorServiceClient.DisableProcessorAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// Uses default <see cref="gax::PollSettings"/> of:
+        /// <list type="bullet">
+        /// <item><description>Initial delay: 20 seconds.</description></item>
+        /// <item><description>Delay multiplier: 1.5</description></item>
+        /// <item><description>Maximum delay: 45 seconds.</description></item>
+        /// <item><description>Total timeout: 24 hours.</description></item>
+        /// </list>
+        /// </remarks>
+        public lro::OperationsSettings DisableProcessorOperationsSettings { get; set; } = new lro::OperationsSettings
         {
             DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
         };
@@ -536,6 +680,780 @@ namespace Google.Cloud.DocumentAI.V1Beta3
             BatchProcessDocumentsAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
         /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual FetchProcessorTypesResponse FetchProcessorTypes(FetchProcessorTypesRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FetchProcessorTypesResponse> FetchProcessorTypesAsync(FetchProcessorTypesRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FetchProcessorTypesResponse> FetchProcessorTypesAsync(FetchProcessorTypesRequest request, st::CancellationToken cancellationToken) =>
+            FetchProcessorTypesAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The project of processor type to list.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual FetchProcessorTypesResponse FetchProcessorTypes(string parent, gaxgrpc::CallSettings callSettings = null) =>
+            FetchProcessorTypes(new FetchProcessorTypesRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+            }, callSettings);
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The project of processor type to list.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FetchProcessorTypesResponse> FetchProcessorTypesAsync(string parent, gaxgrpc::CallSettings callSettings = null) =>
+            FetchProcessorTypesAsync(new FetchProcessorTypesRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+            }, callSettings);
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The project of processor type to list.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FetchProcessorTypesResponse> FetchProcessorTypesAsync(string parent, st::CancellationToken cancellationToken) =>
+            FetchProcessorTypesAsync(parent, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The project of processor type to list.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual FetchProcessorTypesResponse FetchProcessorTypes(LocationName parent, gaxgrpc::CallSettings callSettings = null) =>
+            FetchProcessorTypes(new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+            }, callSettings);
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The project of processor type to list.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FetchProcessorTypesResponse> FetchProcessorTypesAsync(LocationName parent, gaxgrpc::CallSettings callSettings = null) =>
+            FetchProcessorTypesAsync(new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+            }, callSettings);
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The project of processor type to list.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FetchProcessorTypesResponse> FetchProcessorTypesAsync(LocationName parent, st::CancellationToken cancellationToken) =>
+            FetchProcessorTypesAsync(parent, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The project of processor type to list.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual FetchProcessorTypesResponse FetchProcessorTypes(gagr::LocationName parent, gaxgrpc::CallSettings callSettings = null) =>
+            FetchProcessorTypes(new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+            }, callSettings);
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The project of processor type to list.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FetchProcessorTypesResponse> FetchProcessorTypesAsync(gagr::LocationName parent, gaxgrpc::CallSettings callSettings = null) =>
+            FetchProcessorTypesAsync(new FetchProcessorTypesRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+            }, callSettings);
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The project of processor type to list.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FetchProcessorTypesResponse> FetchProcessorTypesAsync(gagr::LocationName parent, st::CancellationToken cancellationToken) =>
+            FetchProcessorTypesAsync(parent, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Lists all processors which belong to this project.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Processor"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListProcessorsResponse, Processor> ListProcessors(ListProcessorsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Lists all processors which belong to this project.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Processor"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListProcessorsResponse, Processor> ListProcessorsAsync(ListProcessorsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Lists all processors which belong to this project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) which owns this collection of Processors.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Processor"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListProcessorsResponse, Processor> ListProcessors(string parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListProcessors(new ListProcessorsRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists all processors which belong to this project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) which owns this collection of Processors.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Processor"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListProcessorsResponse, Processor> ListProcessorsAsync(string parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListProcessorsAsync(new ListProcessorsRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists all processors which belong to this project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) which owns this collection of Processors.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Processor"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListProcessorsResponse, Processor> ListProcessors(LocationName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListProcessors(new ListProcessorsRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists all processors which belong to this project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) which owns this collection of Processors.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Processor"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListProcessorsResponse, Processor> ListProcessorsAsync(LocationName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListProcessorsAsync(new ListProcessorsRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists all processors which belong to this project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) which owns this collection of Processors.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Processor"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListProcessorsResponse, Processor> ListProcessors(gagr::LocationName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListProcessors(new ListProcessorsRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists all processors which belong to this project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) which owns this collection of Processors.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Processor"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListProcessorsResponse, Processor> ListProcessorsAsync(gagr::LocationName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListProcessorsAsync(new ListProcessorsRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Processor CreateProcessor(CreateProcessorRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Processor> CreateProcessorAsync(CreateProcessorRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Processor> CreateProcessorAsync(CreateProcessorRequest request, st::CancellationToken cancellationToken) =>
+            CreateProcessorAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) under which to create the processor.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="processor">
+        /// Required. The processor to be created, requires [processor_type] and [display_name]
+        /// to be set. Also, the processor is under CMEK if CMEK fields are set.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Processor CreateProcessor(string parent, Processor processor, gaxgrpc::CallSettings callSettings = null) =>
+            CreateProcessor(new CreateProcessorRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                Processor = gax::GaxPreconditions.CheckNotNull(processor, nameof(processor)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) under which to create the processor.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="processor">
+        /// Required. The processor to be created, requires [processor_type] and [display_name]
+        /// to be set. Also, the processor is under CMEK if CMEK fields are set.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Processor> CreateProcessorAsync(string parent, Processor processor, gaxgrpc::CallSettings callSettings = null) =>
+            CreateProcessorAsync(new CreateProcessorRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                Processor = gax::GaxPreconditions.CheckNotNull(processor, nameof(processor)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) under which to create the processor.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="processor">
+        /// Required. The processor to be created, requires [processor_type] and [display_name]
+        /// to be set. Also, the processor is under CMEK if CMEK fields are set.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Processor> CreateProcessorAsync(string parent, Processor processor, st::CancellationToken cancellationToken) =>
+            CreateProcessorAsync(parent, processor, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) under which to create the processor.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="processor">
+        /// Required. The processor to be created, requires [processor_type] and [display_name]
+        /// to be set. Also, the processor is under CMEK if CMEK fields are set.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Processor CreateProcessor(LocationName parent, Processor processor, gaxgrpc::CallSettings callSettings = null) =>
+            CreateProcessor(new CreateProcessorRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                Processor = gax::GaxPreconditions.CheckNotNull(processor, nameof(processor)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) under which to create the processor.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="processor">
+        /// Required. The processor to be created, requires [processor_type] and [display_name]
+        /// to be set. Also, the processor is under CMEK if CMEK fields are set.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Processor> CreateProcessorAsync(LocationName parent, Processor processor, gaxgrpc::CallSettings callSettings = null) =>
+            CreateProcessorAsync(new CreateProcessorRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                Processor = gax::GaxPreconditions.CheckNotNull(processor, nameof(processor)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) under which to create the processor.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="processor">
+        /// Required. The processor to be created, requires [processor_type] and [display_name]
+        /// to be set. Also, the processor is under CMEK if CMEK fields are set.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Processor> CreateProcessorAsync(LocationName parent, Processor processor, st::CancellationToken cancellationToken) =>
+            CreateProcessorAsync(parent, processor, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) under which to create the processor.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="processor">
+        /// Required. The processor to be created, requires [processor_type] and [display_name]
+        /// to be set. Also, the processor is under CMEK if CMEK fields are set.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Processor CreateProcessor(gagr::LocationName parent, Processor processor, gaxgrpc::CallSettings callSettings = null) =>
+            CreateProcessor(new CreateProcessorRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                Processor = gax::GaxPreconditions.CheckNotNull(processor, nameof(processor)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) under which to create the processor.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="processor">
+        /// Required. The processor to be created, requires [processor_type] and [display_name]
+        /// to be set. Also, the processor is under CMEK if CMEK fields are set.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Processor> CreateProcessorAsync(gagr::LocationName parent, Processor processor, gaxgrpc::CallSettings callSettings = null) =>
+            CreateProcessorAsync(new CreateProcessorRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                Processor = gax::GaxPreconditions.CheckNotNull(processor, nameof(processor)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent (project and location) under which to create the processor.
+        /// Format: projects/{project}/locations/{location}
+        /// </param>
+        /// <param name="processor">
+        /// Required. The processor to be created, requires [processor_type] and [display_name]
+        /// to be set. Also, the processor is under CMEK if CMEK fields are set.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Processor> CreateProcessorAsync(gagr::LocationName parent, Processor processor, st::CancellationToken cancellationToken) =>
+            CreateProcessorAsync(parent, processor, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes the processor, unloads all deployed model artifacts if it was
+        /// enabled and then deletes all artifacts associated with this processor.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<wkt::Empty, DeleteProcessorMetadata> DeleteProcessor(DeleteProcessorRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Deletes the processor, unloads all deployed model artifacts if it was
+        /// enabled and then deletes all artifacts associated with this processor.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<wkt::Empty, DeleteProcessorMetadata>> DeleteProcessorAsync(DeleteProcessorRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Deletes the processor, unloads all deployed model artifacts if it was
+        /// enabled and then deletes all artifacts associated with this processor.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<wkt::Empty, DeleteProcessorMetadata>> DeleteProcessorAsync(DeleteProcessorRequest request, st::CancellationToken cancellationToken) =>
+            DeleteProcessorAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>The long-running operations client for <c>DeleteProcessor</c>.</summary>
+        public virtual lro::OperationsClient DeleteProcessorOperationsClient => throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Poll an operation once, using an <c>operationName</c> from a previous invocation of <c>DeleteProcessor</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The result of polling the operation.</returns>
+        public virtual lro::Operation<wkt::Empty, DeleteProcessorMetadata> PollOnceDeleteProcessor(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<wkt::Empty, DeleteProcessorMetadata>.PollOnceFromName(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), DeleteProcessorOperationsClient, callSettings);
+
+        /// <summary>
+        /// Asynchronously poll an operation once, using an <c>operationName</c> from a previous invocation of
+        /// <c>DeleteProcessor</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A task representing the result of polling the operation.</returns>
+        public virtual stt::Task<lro::Operation<wkt::Empty, DeleteProcessorMetadata>> PollOnceDeleteProcessorAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<wkt::Empty, DeleteProcessorMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), DeleteProcessorOperationsClient, callSettings);
+
+        /// <summary>
+        /// Deletes the processor, unloads all deployed model artifacts if it was
+        /// enabled and then deletes all artifacts associated with this processor.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The processor resource name to be deleted.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<wkt::Empty, DeleteProcessorMetadata> DeleteProcessor(string name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteProcessor(new DeleteProcessorRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes the processor, unloads all deployed model artifacts if it was
+        /// enabled and then deletes all artifacts associated with this processor.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The processor resource name to be deleted.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<wkt::Empty, DeleteProcessorMetadata>> DeleteProcessorAsync(string name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteProcessorAsync(new DeleteProcessorRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes the processor, unloads all deployed model artifacts if it was
+        /// enabled and then deletes all artifacts associated with this processor.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The processor resource name to be deleted.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<wkt::Empty, DeleteProcessorMetadata>> DeleteProcessorAsync(string name, st::CancellationToken cancellationToken) =>
+            DeleteProcessorAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes the processor, unloads all deployed model artifacts if it was
+        /// enabled and then deletes all artifacts associated with this processor.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The processor resource name to be deleted.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<wkt::Empty, DeleteProcessorMetadata> DeleteProcessor(ProcessorName name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteProcessor(new DeleteProcessorRequest
+            {
+                ProcessorName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes the processor, unloads all deployed model artifacts if it was
+        /// enabled and then deletes all artifacts associated with this processor.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The processor resource name to be deleted.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<wkt::Empty, DeleteProcessorMetadata>> DeleteProcessorAsync(ProcessorName name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteProcessorAsync(new DeleteProcessorRequest
+            {
+                ProcessorName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes the processor, unloads all deployed model artifacts if it was
+        /// enabled and then deletes all artifacts associated with this processor.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The processor resource name to be deleted.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<wkt::Empty, DeleteProcessorMetadata>> DeleteProcessorAsync(ProcessorName name, st::CancellationToken cancellationToken) =>
+            DeleteProcessorAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Enables a processor
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<EnableProcessorResponse, EnableProcessorMetadata> EnableProcessor(EnableProcessorRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Enables a processor
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<EnableProcessorResponse, EnableProcessorMetadata>> EnableProcessorAsync(EnableProcessorRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Enables a processor
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<EnableProcessorResponse, EnableProcessorMetadata>> EnableProcessorAsync(EnableProcessorRequest request, st::CancellationToken cancellationToken) =>
+            EnableProcessorAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>The long-running operations client for <c>EnableProcessor</c>.</summary>
+        public virtual lro::OperationsClient EnableProcessorOperationsClient => throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Poll an operation once, using an <c>operationName</c> from a previous invocation of <c>EnableProcessor</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The result of polling the operation.</returns>
+        public virtual lro::Operation<EnableProcessorResponse, EnableProcessorMetadata> PollOnceEnableProcessor(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<EnableProcessorResponse, EnableProcessorMetadata>.PollOnceFromName(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), EnableProcessorOperationsClient, callSettings);
+
+        /// <summary>
+        /// Asynchronously poll an operation once, using an <c>operationName</c> from a previous invocation of
+        /// <c>EnableProcessor</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A task representing the result of polling the operation.</returns>
+        public virtual stt::Task<lro::Operation<EnableProcessorResponse, EnableProcessorMetadata>> PollOnceEnableProcessorAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<EnableProcessorResponse, EnableProcessorMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), EnableProcessorOperationsClient, callSettings);
+
+        /// <summary>
+        /// Disables a processor
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<DisableProcessorResponse, DisableProcessorMetadata> DisableProcessor(DisableProcessorRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Disables a processor
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<DisableProcessorResponse, DisableProcessorMetadata>> DisableProcessorAsync(DisableProcessorRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Disables a processor
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<DisableProcessorResponse, DisableProcessorMetadata>> DisableProcessorAsync(DisableProcessorRequest request, st::CancellationToken cancellationToken) =>
+            DisableProcessorAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>The long-running operations client for <c>DisableProcessor</c>.</summary>
+        public virtual lro::OperationsClient DisableProcessorOperationsClient => throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Poll an operation once, using an <c>operationName</c> from a previous invocation of <c>DisableProcessor</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The result of polling the operation.</returns>
+        public virtual lro::Operation<DisableProcessorResponse, DisableProcessorMetadata> PollOnceDisableProcessor(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<DisableProcessorResponse, DisableProcessorMetadata>.PollOnceFromName(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), DisableProcessorOperationsClient, callSettings);
+
+        /// <summary>
+        /// Asynchronously poll an operation once, using an <c>operationName</c> from a previous invocation of
+        /// <c>DisableProcessor</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A task representing the result of polling the operation.</returns>
+        public virtual stt::Task<lro::Operation<DisableProcessorResponse, DisableProcessorMetadata>> PollOnceDisableProcessorAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<DisableProcessorResponse, DisableProcessorMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), DisableProcessorOperationsClient, callSettings);
+
+        /// <summary>
         /// Send a document for Human Review. The input document should be processed by
         /// the specified processor.
         /// </summary>
@@ -695,6 +1613,18 @@ namespace Google.Cloud.DocumentAI.V1Beta3
 
         private readonly gaxgrpc::ApiCall<BatchProcessRequest, lro::Operation> _callBatchProcessDocuments;
 
+        private readonly gaxgrpc::ApiCall<FetchProcessorTypesRequest, FetchProcessorTypesResponse> _callFetchProcessorTypes;
+
+        private readonly gaxgrpc::ApiCall<ListProcessorsRequest, ListProcessorsResponse> _callListProcessors;
+
+        private readonly gaxgrpc::ApiCall<CreateProcessorRequest, Processor> _callCreateProcessor;
+
+        private readonly gaxgrpc::ApiCall<DeleteProcessorRequest, lro::Operation> _callDeleteProcessor;
+
+        private readonly gaxgrpc::ApiCall<EnableProcessorRequest, lro::Operation> _callEnableProcessor;
+
+        private readonly gaxgrpc::ApiCall<DisableProcessorRequest, lro::Operation> _callDisableProcessor;
+
         private readonly gaxgrpc::ApiCall<ReviewDocumentRequest, lro::Operation> _callReviewDocument;
 
         /// <summary>
@@ -711,6 +1641,9 @@ namespace Google.Cloud.DocumentAI.V1Beta3
             DocumentProcessorServiceSettings effectiveSettings = settings ?? DocumentProcessorServiceSettings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
             BatchProcessDocumentsOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.BatchProcessDocumentsOperationsSettings);
+            DeleteProcessorOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.DeleteProcessorOperationsSettings);
+            EnableProcessorOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.EnableProcessorOperationsSettings);
+            DisableProcessorOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.DisableProcessorOperationsSettings);
             ReviewDocumentOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.ReviewDocumentOperationsSettings);
             _callProcessDocument = clientHelper.BuildApiCall<ProcessRequest, ProcessResponse>(grpcClient.ProcessDocumentAsync, grpcClient.ProcessDocument, effectiveSettings.ProcessDocumentSettings).WithGoogleRequestParam("name", request => request.Name);
             Modify_ApiCall(ref _callProcessDocument);
@@ -718,6 +1651,24 @@ namespace Google.Cloud.DocumentAI.V1Beta3
             _callBatchProcessDocuments = clientHelper.BuildApiCall<BatchProcessRequest, lro::Operation>(grpcClient.BatchProcessDocumentsAsync, grpcClient.BatchProcessDocuments, effectiveSettings.BatchProcessDocumentsSettings).WithGoogleRequestParam("name", request => request.Name);
             Modify_ApiCall(ref _callBatchProcessDocuments);
             Modify_BatchProcessDocumentsApiCall(ref _callBatchProcessDocuments);
+            _callFetchProcessorTypes = clientHelper.BuildApiCall<FetchProcessorTypesRequest, FetchProcessorTypesResponse>(grpcClient.FetchProcessorTypesAsync, grpcClient.FetchProcessorTypes, effectiveSettings.FetchProcessorTypesSettings).WithGoogleRequestParam("parent", request => request.Parent);
+            Modify_ApiCall(ref _callFetchProcessorTypes);
+            Modify_FetchProcessorTypesApiCall(ref _callFetchProcessorTypes);
+            _callListProcessors = clientHelper.BuildApiCall<ListProcessorsRequest, ListProcessorsResponse>(grpcClient.ListProcessorsAsync, grpcClient.ListProcessors, effectiveSettings.ListProcessorsSettings).WithGoogleRequestParam("parent", request => request.Parent);
+            Modify_ApiCall(ref _callListProcessors);
+            Modify_ListProcessorsApiCall(ref _callListProcessors);
+            _callCreateProcessor = clientHelper.BuildApiCall<CreateProcessorRequest, Processor>(grpcClient.CreateProcessorAsync, grpcClient.CreateProcessor, effectiveSettings.CreateProcessorSettings).WithGoogleRequestParam("parent", request => request.Parent);
+            Modify_ApiCall(ref _callCreateProcessor);
+            Modify_CreateProcessorApiCall(ref _callCreateProcessor);
+            _callDeleteProcessor = clientHelper.BuildApiCall<DeleteProcessorRequest, lro::Operation>(grpcClient.DeleteProcessorAsync, grpcClient.DeleteProcessor, effectiveSettings.DeleteProcessorSettings).WithGoogleRequestParam("name", request => request.Name);
+            Modify_ApiCall(ref _callDeleteProcessor);
+            Modify_DeleteProcessorApiCall(ref _callDeleteProcessor);
+            _callEnableProcessor = clientHelper.BuildApiCall<EnableProcessorRequest, lro::Operation>(grpcClient.EnableProcessorAsync, grpcClient.EnableProcessor, effectiveSettings.EnableProcessorSettings).WithGoogleRequestParam("name", request => request.Name);
+            Modify_ApiCall(ref _callEnableProcessor);
+            Modify_EnableProcessorApiCall(ref _callEnableProcessor);
+            _callDisableProcessor = clientHelper.BuildApiCall<DisableProcessorRequest, lro::Operation>(grpcClient.DisableProcessorAsync, grpcClient.DisableProcessor, effectiveSettings.DisableProcessorSettings).WithGoogleRequestParam("name", request => request.Name);
+            Modify_ApiCall(ref _callDisableProcessor);
+            Modify_DisableProcessorApiCall(ref _callDisableProcessor);
             _callReviewDocument = clientHelper.BuildApiCall<ReviewDocumentRequest, lro::Operation>(grpcClient.ReviewDocumentAsync, grpcClient.ReviewDocument, effectiveSettings.ReviewDocumentSettings).WithGoogleRequestParam("human_review_config", request => request.HumanReviewConfig);
             Modify_ApiCall(ref _callReviewDocument);
             Modify_ReviewDocumentApiCall(ref _callReviewDocument);
@@ -730,6 +1681,18 @@ namespace Google.Cloud.DocumentAI.V1Beta3
 
         partial void Modify_BatchProcessDocumentsApiCall(ref gaxgrpc::ApiCall<BatchProcessRequest, lro::Operation> call);
 
+        partial void Modify_FetchProcessorTypesApiCall(ref gaxgrpc::ApiCall<FetchProcessorTypesRequest, FetchProcessorTypesResponse> call);
+
+        partial void Modify_ListProcessorsApiCall(ref gaxgrpc::ApiCall<ListProcessorsRequest, ListProcessorsResponse> call);
+
+        partial void Modify_CreateProcessorApiCall(ref gaxgrpc::ApiCall<CreateProcessorRequest, Processor> call);
+
+        partial void Modify_DeleteProcessorApiCall(ref gaxgrpc::ApiCall<DeleteProcessorRequest, lro::Operation> call);
+
+        partial void Modify_EnableProcessorApiCall(ref gaxgrpc::ApiCall<EnableProcessorRequest, lro::Operation> call);
+
+        partial void Modify_DisableProcessorApiCall(ref gaxgrpc::ApiCall<DisableProcessorRequest, lro::Operation> call);
+
         partial void Modify_ReviewDocumentApiCall(ref gaxgrpc::ApiCall<ReviewDocumentRequest, lro::Operation> call);
 
         partial void OnConstruction(DocumentProcessorService.DocumentProcessorServiceClient grpcClient, DocumentProcessorServiceSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
@@ -740,6 +1703,18 @@ namespace Google.Cloud.DocumentAI.V1Beta3
         partial void Modify_ProcessRequest(ref ProcessRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_BatchProcessRequest(ref BatchProcessRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_FetchProcessorTypesRequest(ref FetchProcessorTypesRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_ListProcessorsRequest(ref ListProcessorsRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_CreateProcessorRequest(ref CreateProcessorRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_DeleteProcessorRequest(ref DeleteProcessorRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_EnableProcessorRequest(ref EnableProcessorRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_DisableProcessorRequest(ref DisableProcessorRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_ReviewDocumentRequest(ref ReviewDocumentRequest request, ref gaxgrpc::CallSettings settings);
 
@@ -796,6 +1771,163 @@ namespace Google.Cloud.DocumentAI.V1Beta3
             return new lro::Operation<BatchProcessResponse, BatchProcessMetadata>(await _callBatchProcessDocuments.Async(request, callSettings).ConfigureAwait(false), BatchProcessDocumentsOperationsClient);
         }
 
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override FetchProcessorTypesResponse FetchProcessorTypes(FetchProcessorTypesRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_FetchProcessorTypesRequest(ref request, ref callSettings);
+            return _callFetchProcessorTypes.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Fetches processor types.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override stt::Task<FetchProcessorTypesResponse> FetchProcessorTypesAsync(FetchProcessorTypesRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_FetchProcessorTypesRequest(ref request, ref callSettings);
+            return _callFetchProcessorTypes.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Lists all processors which belong to this project.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Processor"/> resources.</returns>
+        public override gax::PagedEnumerable<ListProcessorsResponse, Processor> ListProcessors(ListProcessorsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListProcessorsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedEnumerable<ListProcessorsRequest, ListProcessorsResponse, Processor>(_callListProcessors, request, callSettings);
+        }
+
+        /// <summary>
+        /// Lists all processors which belong to this project.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Processor"/> resources.</returns>
+        public override gax::PagedAsyncEnumerable<ListProcessorsResponse, Processor> ListProcessorsAsync(ListProcessorsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListProcessorsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedAsyncEnumerable<ListProcessorsRequest, ListProcessorsResponse, Processor>(_callListProcessors, request, callSettings);
+        }
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override Processor CreateProcessor(CreateProcessorRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_CreateProcessorRequest(ref request, ref callSettings);
+            return _callCreateProcessor.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Creates a processor from the type processor that the user chose.
+        /// The processor will be at "ENABLED" state by default after its creation.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override stt::Task<Processor> CreateProcessorAsync(CreateProcessorRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_CreateProcessorRequest(ref request, ref callSettings);
+            return _callCreateProcessor.Async(request, callSettings);
+        }
+
+        /// <summary>The long-running operations client for <c>DeleteProcessor</c>.</summary>
+        public override lro::OperationsClient DeleteProcessorOperationsClient { get; }
+
+        /// <summary>
+        /// Deletes the processor, unloads all deployed model artifacts if it was
+        /// enabled and then deletes all artifacts associated with this processor.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override lro::Operation<wkt::Empty, DeleteProcessorMetadata> DeleteProcessor(DeleteProcessorRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteProcessorRequest(ref request, ref callSettings);
+            return new lro::Operation<wkt::Empty, DeleteProcessorMetadata>(_callDeleteProcessor.Sync(request, callSettings), DeleteProcessorOperationsClient);
+        }
+
+        /// <summary>
+        /// Deletes the processor, unloads all deployed model artifacts if it was
+        /// enabled and then deletes all artifacts associated with this processor.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override async stt::Task<lro::Operation<wkt::Empty, DeleteProcessorMetadata>> DeleteProcessorAsync(DeleteProcessorRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteProcessorRequest(ref request, ref callSettings);
+            return new lro::Operation<wkt::Empty, DeleteProcessorMetadata>(await _callDeleteProcessor.Async(request, callSettings).ConfigureAwait(false), DeleteProcessorOperationsClient);
+        }
+
+        /// <summary>The long-running operations client for <c>EnableProcessor</c>.</summary>
+        public override lro::OperationsClient EnableProcessorOperationsClient { get; }
+
+        /// <summary>
+        /// Enables a processor
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override lro::Operation<EnableProcessorResponse, EnableProcessorMetadata> EnableProcessor(EnableProcessorRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_EnableProcessorRequest(ref request, ref callSettings);
+            return new lro::Operation<EnableProcessorResponse, EnableProcessorMetadata>(_callEnableProcessor.Sync(request, callSettings), EnableProcessorOperationsClient);
+        }
+
+        /// <summary>
+        /// Enables a processor
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override async stt::Task<lro::Operation<EnableProcessorResponse, EnableProcessorMetadata>> EnableProcessorAsync(EnableProcessorRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_EnableProcessorRequest(ref request, ref callSettings);
+            return new lro::Operation<EnableProcessorResponse, EnableProcessorMetadata>(await _callEnableProcessor.Async(request, callSettings).ConfigureAwait(false), EnableProcessorOperationsClient);
+        }
+
+        /// <summary>The long-running operations client for <c>DisableProcessor</c>.</summary>
+        public override lro::OperationsClient DisableProcessorOperationsClient { get; }
+
+        /// <summary>
+        /// Disables a processor
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override lro::Operation<DisableProcessorResponse, DisableProcessorMetadata> DisableProcessor(DisableProcessorRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DisableProcessorRequest(ref request, ref callSettings);
+            return new lro::Operation<DisableProcessorResponse, DisableProcessorMetadata>(_callDisableProcessor.Sync(request, callSettings), DisableProcessorOperationsClient);
+        }
+
+        /// <summary>
+        /// Disables a processor
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override async stt::Task<lro::Operation<DisableProcessorResponse, DisableProcessorMetadata>> DisableProcessorAsync(DisableProcessorRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DisableProcessorRequest(ref request, ref callSettings);
+            return new lro::Operation<DisableProcessorResponse, DisableProcessorMetadata>(await _callDisableProcessor.Async(request, callSettings).ConfigureAwait(false), DisableProcessorOperationsClient);
+        }
+
         /// <summary>The long-running operations client for <c>ReviewDocument</c>.</summary>
         public override lro::OperationsClient ReviewDocumentOperationsClient { get; }
 
@@ -824,6 +1956,18 @@ namespace Google.Cloud.DocumentAI.V1Beta3
             Modify_ReviewDocumentRequest(ref request, ref callSettings);
             return new lro::Operation<ReviewDocumentResponse, ReviewDocumentOperationMetadata>(await _callReviewDocument.Async(request, callSettings).ConfigureAwait(false), ReviewDocumentOperationsClient);
         }
+    }
+
+    public partial class ListProcessorsRequest : gaxgrpc::IPageRequest
+    {
+    }
+
+    public partial class ListProcessorsResponse : gaxgrpc::IPageResponse<Processor>
+    {
+        /// <summary>Returns an enumerator that iterates through the resources in this response.</summary>
+        public scg::IEnumerator<Processor> GetEnumerator() => Processors.GetEnumerator();
+
+        sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();
     }
 
     public static partial class DocumentProcessorService

@@ -67,6 +67,15 @@ namespace Google.Cloud.DocumentAI.V1Beta3 {
     static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.ProcessResponse> __Marshaller_google_cloud_documentai_v1beta3_ProcessResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.ProcessResponse.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.BatchProcessRequest> __Marshaller_google_cloud_documentai_v1beta3_BatchProcessRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.BatchProcessRequest.Parser));
     static readonly grpc::Marshaller<global::Google.LongRunning.Operation> __Marshaller_google_longrunning_Operation = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.LongRunning.Operation.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesRequest> __Marshaller_google_cloud_documentai_v1beta3_FetchProcessorTypesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesResponse> __Marshaller_google_cloud_documentai_v1beta3_FetchProcessorTypesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesResponse.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsRequest> __Marshaller_google_cloud_documentai_v1beta3_ListProcessorsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsResponse> __Marshaller_google_cloud_documentai_v1beta3_ListProcessorsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsResponse.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.CreateProcessorRequest> __Marshaller_google_cloud_documentai_v1beta3_CreateProcessorRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.CreateProcessorRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.Processor> __Marshaller_google_cloud_documentai_v1beta3_Processor = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.Processor.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.DeleteProcessorRequest> __Marshaller_google_cloud_documentai_v1beta3_DeleteProcessorRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.DeleteProcessorRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.EnableProcessorRequest> __Marshaller_google_cloud_documentai_v1beta3_EnableProcessorRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.EnableProcessorRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.DisableProcessorRequest> __Marshaller_google_cloud_documentai_v1beta3_DisableProcessorRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.DisableProcessorRequest.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.DocumentAI.V1Beta3.ReviewDocumentRequest> __Marshaller_google_cloud_documentai_v1beta3_ReviewDocumentRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.DocumentAI.V1Beta3.ReviewDocumentRequest.Parser));
 
     static readonly grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.ProcessRequest, global::Google.Cloud.DocumentAI.V1Beta3.ProcessResponse> __Method_ProcessDocument = new grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.ProcessRequest, global::Google.Cloud.DocumentAI.V1Beta3.ProcessResponse>(
@@ -81,6 +90,48 @@ namespace Google.Cloud.DocumentAI.V1Beta3 {
         __ServiceName,
         "BatchProcessDocuments",
         __Marshaller_google_cloud_documentai_v1beta3_BatchProcessRequest,
+        __Marshaller_google_longrunning_Operation);
+
+    static readonly grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesRequest, global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesResponse> __Method_FetchProcessorTypes = new grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesRequest, global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "FetchProcessorTypes",
+        __Marshaller_google_cloud_documentai_v1beta3_FetchProcessorTypesRequest,
+        __Marshaller_google_cloud_documentai_v1beta3_FetchProcessorTypesResponse);
+
+    static readonly grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsRequest, global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsResponse> __Method_ListProcessors = new grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsRequest, global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListProcessors",
+        __Marshaller_google_cloud_documentai_v1beta3_ListProcessorsRequest,
+        __Marshaller_google_cloud_documentai_v1beta3_ListProcessorsResponse);
+
+    static readonly grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.CreateProcessorRequest, global::Google.Cloud.DocumentAI.V1Beta3.Processor> __Method_CreateProcessor = new grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.CreateProcessorRequest, global::Google.Cloud.DocumentAI.V1Beta3.Processor>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateProcessor",
+        __Marshaller_google_cloud_documentai_v1beta3_CreateProcessorRequest,
+        __Marshaller_google_cloud_documentai_v1beta3_Processor);
+
+    static readonly grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.DeleteProcessorRequest, global::Google.LongRunning.Operation> __Method_DeleteProcessor = new grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.DeleteProcessorRequest, global::Google.LongRunning.Operation>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DeleteProcessor",
+        __Marshaller_google_cloud_documentai_v1beta3_DeleteProcessorRequest,
+        __Marshaller_google_longrunning_Operation);
+
+    static readonly grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.EnableProcessorRequest, global::Google.LongRunning.Operation> __Method_EnableProcessor = new grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.EnableProcessorRequest, global::Google.LongRunning.Operation>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "EnableProcessor",
+        __Marshaller_google_cloud_documentai_v1beta3_EnableProcessorRequest,
+        __Marshaller_google_longrunning_Operation);
+
+    static readonly grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.DisableProcessorRequest, global::Google.LongRunning.Operation> __Method_DisableProcessor = new grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.DisableProcessorRequest, global::Google.LongRunning.Operation>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DisableProcessor",
+        __Marshaller_google_cloud_documentai_v1beta3_DisableProcessorRequest,
         __Marshaller_google_longrunning_Operation);
 
     static readonly grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.ReviewDocumentRequest, global::Google.LongRunning.Operation> __Method_ReviewDocument = new grpc::Method<global::Google.Cloud.DocumentAI.V1Beta3.ReviewDocumentRequest, global::Google.LongRunning.Operation>(
@@ -119,6 +170,74 @@ namespace Google.Cloud.DocumentAI.V1Beta3 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::Google.LongRunning.Operation> BatchProcessDocuments(global::Google.Cloud.DocumentAI.V1Beta3.BatchProcessRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Fetches processor types.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesResponse> FetchProcessorTypes(global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Lists all processors which belong to this project.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsResponse> ListProcessors(global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Creates a processor from the type processor that the user chose.
+      /// The processor will be at "ENABLED" state by default after its creation.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.DocumentAI.V1Beta3.Processor> CreateProcessor(global::Google.Cloud.DocumentAI.V1Beta3.CreateProcessorRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Deletes the processor, unloads all deployed model artifacts if it was
+      /// enabled and then deletes all artifacts associated with this processor.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.LongRunning.Operation> DeleteProcessor(global::Google.Cloud.DocumentAI.V1Beta3.DeleteProcessorRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Enables a processor
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.LongRunning.Operation> EnableProcessor(global::Google.Cloud.DocumentAI.V1Beta3.EnableProcessorRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Disables a processor
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.LongRunning.Operation> DisableProcessor(global::Google.Cloud.DocumentAI.V1Beta3.DisableProcessorRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -253,6 +372,278 @@ namespace Google.Cloud.DocumentAI.V1Beta3 {
         return CallInvoker.AsyncUnaryCall(__Method_BatchProcessDocuments, null, options, request);
       }
       /// <summary>
+      /// Fetches processor types.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesResponse FetchProcessorTypes(global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return FetchProcessorTypes(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Fetches processor types.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesResponse FetchProcessorTypes(global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_FetchProcessorTypes, null, options, request);
+      }
+      /// <summary>
+      /// Fetches processor types.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesResponse> FetchProcessorTypesAsync(global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return FetchProcessorTypesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Fetches processor types.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesResponse> FetchProcessorTypesAsync(global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_FetchProcessorTypes, null, options, request);
+      }
+      /// <summary>
+      /// Lists all processors which belong to this project.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsResponse ListProcessors(global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListProcessors(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Lists all processors which belong to this project.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsResponse ListProcessors(global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListProcessors, null, options, request);
+      }
+      /// <summary>
+      /// Lists all processors which belong to this project.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsResponse> ListProcessorsAsync(global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListProcessorsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Lists all processors which belong to this project.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsResponse> ListProcessorsAsync(global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListProcessors, null, options, request);
+      }
+      /// <summary>
+      /// Creates a processor from the type processor that the user chose.
+      /// The processor will be at "ENABLED" state by default after its creation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.DocumentAI.V1Beta3.Processor CreateProcessor(global::Google.Cloud.DocumentAI.V1Beta3.CreateProcessorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateProcessor(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Creates a processor from the type processor that the user chose.
+      /// The processor will be at "ENABLED" state by default after its creation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.DocumentAI.V1Beta3.Processor CreateProcessor(global::Google.Cloud.DocumentAI.V1Beta3.CreateProcessorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateProcessor, null, options, request);
+      }
+      /// <summary>
+      /// Creates a processor from the type processor that the user chose.
+      /// The processor will be at "ENABLED" state by default after its creation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.DocumentAI.V1Beta3.Processor> CreateProcessorAsync(global::Google.Cloud.DocumentAI.V1Beta3.CreateProcessorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateProcessorAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Creates a processor from the type processor that the user chose.
+      /// The processor will be at "ENABLED" state by default after its creation.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.DocumentAI.V1Beta3.Processor> CreateProcessorAsync(global::Google.Cloud.DocumentAI.V1Beta3.CreateProcessorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateProcessor, null, options, request);
+      }
+      /// <summary>
+      /// Deletes the processor, unloads all deployed model artifacts if it was
+      /// enabled and then deletes all artifacts associated with this processor.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation DeleteProcessor(global::Google.Cloud.DocumentAI.V1Beta3.DeleteProcessorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteProcessor(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Deletes the processor, unloads all deployed model artifacts if it was
+      /// enabled and then deletes all artifacts associated with this processor.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation DeleteProcessor(global::Google.Cloud.DocumentAI.V1Beta3.DeleteProcessorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DeleteProcessor, null, options, request);
+      }
+      /// <summary>
+      /// Deletes the processor, unloads all deployed model artifacts if it was
+      /// enabled and then deletes all artifacts associated with this processor.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> DeleteProcessorAsync(global::Google.Cloud.DocumentAI.V1Beta3.DeleteProcessorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteProcessorAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Deletes the processor, unloads all deployed model artifacts if it was
+      /// enabled and then deletes all artifacts associated with this processor.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> DeleteProcessorAsync(global::Google.Cloud.DocumentAI.V1Beta3.DeleteProcessorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DeleteProcessor, null, options, request);
+      }
+      /// <summary>
+      /// Enables a processor
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation EnableProcessor(global::Google.Cloud.DocumentAI.V1Beta3.EnableProcessorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return EnableProcessor(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Enables a processor
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation EnableProcessor(global::Google.Cloud.DocumentAI.V1Beta3.EnableProcessorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_EnableProcessor, null, options, request);
+      }
+      /// <summary>
+      /// Enables a processor
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> EnableProcessorAsync(global::Google.Cloud.DocumentAI.V1Beta3.EnableProcessorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return EnableProcessorAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Enables a processor
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> EnableProcessorAsync(global::Google.Cloud.DocumentAI.V1Beta3.EnableProcessorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_EnableProcessor, null, options, request);
+      }
+      /// <summary>
+      /// Disables a processor
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation DisableProcessor(global::Google.Cloud.DocumentAI.V1Beta3.DisableProcessorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DisableProcessor(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Disables a processor
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation DisableProcessor(global::Google.Cloud.DocumentAI.V1Beta3.DisableProcessorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DisableProcessor, null, options, request);
+      }
+      /// <summary>
+      /// Disables a processor
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> DisableProcessorAsync(global::Google.Cloud.DocumentAI.V1Beta3.DisableProcessorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DisableProcessorAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Disables a processor
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> DisableProcessorAsync(global::Google.Cloud.DocumentAI.V1Beta3.DisableProcessorRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DisableProcessor, null, options, request);
+      }
+      /// <summary>
       /// Send a document for Human Review. The input document should be processed by
       /// the specified processor.
       /// </summary>
@@ -314,6 +705,12 @@ namespace Google.Cloud.DocumentAI.V1Beta3 {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_ProcessDocument, serviceImpl.ProcessDocument)
           .AddMethod(__Method_BatchProcessDocuments, serviceImpl.BatchProcessDocuments)
+          .AddMethod(__Method_FetchProcessorTypes, serviceImpl.FetchProcessorTypes)
+          .AddMethod(__Method_ListProcessors, serviceImpl.ListProcessors)
+          .AddMethod(__Method_CreateProcessor, serviceImpl.CreateProcessor)
+          .AddMethod(__Method_DeleteProcessor, serviceImpl.DeleteProcessor)
+          .AddMethod(__Method_EnableProcessor, serviceImpl.EnableProcessor)
+          .AddMethod(__Method_DisableProcessor, serviceImpl.DisableProcessor)
           .AddMethod(__Method_ReviewDocument, serviceImpl.ReviewDocument).Build();
     }
 
@@ -325,6 +722,12 @@ namespace Google.Cloud.DocumentAI.V1Beta3 {
     {
       serviceBinder.AddMethod(__Method_ProcessDocument, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.DocumentAI.V1Beta3.ProcessRequest, global::Google.Cloud.DocumentAI.V1Beta3.ProcessResponse>(serviceImpl.ProcessDocument));
       serviceBinder.AddMethod(__Method_BatchProcessDocuments, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.DocumentAI.V1Beta3.BatchProcessRequest, global::Google.LongRunning.Operation>(serviceImpl.BatchProcessDocuments));
+      serviceBinder.AddMethod(__Method_FetchProcessorTypes, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesRequest, global::Google.Cloud.DocumentAI.V1Beta3.FetchProcessorTypesResponse>(serviceImpl.FetchProcessorTypes));
+      serviceBinder.AddMethod(__Method_ListProcessors, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsRequest, global::Google.Cloud.DocumentAI.V1Beta3.ListProcessorsResponse>(serviceImpl.ListProcessors));
+      serviceBinder.AddMethod(__Method_CreateProcessor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.DocumentAI.V1Beta3.CreateProcessorRequest, global::Google.Cloud.DocumentAI.V1Beta3.Processor>(serviceImpl.CreateProcessor));
+      serviceBinder.AddMethod(__Method_DeleteProcessor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.DocumentAI.V1Beta3.DeleteProcessorRequest, global::Google.LongRunning.Operation>(serviceImpl.DeleteProcessor));
+      serviceBinder.AddMethod(__Method_EnableProcessor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.DocumentAI.V1Beta3.EnableProcessorRequest, global::Google.LongRunning.Operation>(serviceImpl.EnableProcessor));
+      serviceBinder.AddMethod(__Method_DisableProcessor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.DocumentAI.V1Beta3.DisableProcessorRequest, global::Google.LongRunning.Operation>(serviceImpl.DisableProcessor));
       serviceBinder.AddMethod(__Method_ReviewDocument, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.DocumentAI.V1Beta3.ReviewDocumentRequest, global::Google.LongRunning.Operation>(serviceImpl.ReviewDocument));
     }
 

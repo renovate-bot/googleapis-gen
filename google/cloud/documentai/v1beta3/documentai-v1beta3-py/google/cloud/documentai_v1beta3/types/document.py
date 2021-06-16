@@ -249,6 +249,8 @@ class Document(proto.Message):
             form_fields (Sequence[google.cloud.documentai_v1beta3.types.Document.Page.FormField]):
                 A list of visually detected form fields on
                 the page.
+            provenance (google.cloud.documentai_v1beta3.types.Document.Provenance):
+                The history of this page.
         """
 
         class Dimension(proto.Message):
@@ -688,6 +690,8 @@ class Document(proto.Message):
                     -  blank (this indicates the field_value is normal text)
                     -  "unfilled_checkbox"
                     -  "filled_checkbox".
+                provenance (google.cloud.documentai_v1beta3.types.Document.Provenance):
+                    The history of this annotation.
             """
 
             field_name = proto.Field(
@@ -713,6 +717,11 @@ class Document(proto.Message):
             value_type = proto.Field(
                 proto.STRING,
                 number=5,
+            )
+            provenance = proto.Field(
+                proto.MESSAGE,
+                number=8,
+                message='Document.Provenance',
             )
 
         class DetectedLanguage(proto.Message):
@@ -798,6 +807,11 @@ class Document(proto.Message):
             proto.MESSAGE,
             number=11,
             message='Document.Page.FormField',
+        )
+        provenance = proto.Field(
+            proto.MESSAGE,
+            number=16,
+            message='Document.Provenance',
         )
 
     class Entity(proto.Message):
@@ -1058,7 +1072,9 @@ class Document(proto.Message):
                     Required. Index into the
                     [Document.pages][google.cloud.documentai.v1beta3.Document.pages]
                     element, for example using [Document.pages][page_refs.page]
-                    to locate the related page element.
+                    to locate the related page element. This field is skipped
+                    when its value is the default 0. See
+                    https://developers.google.com/protocol-buffers/docs/proto3#json.
                 layout_type (google.cloud.documentai_v1beta3.types.Document.PageAnchor.PageRef.LayoutType):
                     Optional. The type of the layout element that
                     is being referenced if any.
@@ -1151,6 +1167,10 @@ class Document(proto.Message):
                 revision (int):
                     The index of the [Document.revisions] identifying the parent
                     revision.
+                index (int):
+                    The index of the parent revisions
+                    corresponding collection of items (eg. list of
+                    entities, properties within entities, etc.)
                 id (int):
                     The id of the parent provenance.
             """
@@ -1158,6 +1178,10 @@ class Document(proto.Message):
             revision = proto.Field(
                 proto.INT32,
                 number=1,
+            )
+            index = proto.Field(
+                proto.INT32,
+                number=3,
             )
             id = proto.Field(
                 proto.INT32,

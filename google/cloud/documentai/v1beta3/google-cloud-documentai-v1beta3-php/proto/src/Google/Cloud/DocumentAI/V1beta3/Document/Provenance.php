@@ -26,7 +26,8 @@ class Provenance extends \Google\Protobuf\Internal\Message
      * The Id of this operation.  Needs to be unique within the scope of the
      * revision.
      *
-     * Generated from protobuf field <code>int32 id = 2;</code>
+     * Generated from protobuf field <code>int32 id = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $id = 0;
     /**
@@ -94,11 +95,13 @@ class Provenance extends \Google\Protobuf\Internal\Message
      * The Id of this operation.  Needs to be unique within the scope of the
      * revision.
      *
-     * Generated from protobuf field <code>int32 id = 2;</code>
+     * Generated from protobuf field <code>int32 id = 2 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getId()
     {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
         return $this->id;
     }
 
@@ -106,12 +109,14 @@ class Provenance extends \Google\Protobuf\Internal\Message
      * The Id of this operation.  Needs to be unique within the scope of the
      * revision.
      *
-     * Generated from protobuf field <code>int32 id = 2;</code>
+     * Generated from protobuf field <code>int32 id = 2 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setId($var)
     {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkInt32($var);
         $this->id = $var;
 

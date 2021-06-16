@@ -40,8 +40,14 @@ class documentaiCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
           'batch_process_documents': ('name', 'input_configs', 'output_config', 'input_documents', 'document_output_config', 'skip_human_review', ),
+          'create_processor': ('parent', 'processor', ),
+          'delete_processor': ('name', ),
+          'disable_processor': ('name', ),
+          'enable_processor': ('name', ),
+          'fetch_processor_types': ('parent', ),
+          'list_processors': ('parent', 'page_size', 'page_token', ),
           'process_document': ('name', 'inline_document', 'raw_document', 'document', 'skip_human_review', ),
-          'review_document': ('human_review_config', 'inline_document', 'document', ),
+          'review_document': ('human_review_config', 'inline_document', 'document', 'enable_schema_validation', 'priority', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
