@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/privatecatalog/v1beta1/version"
+require "google/cloud/private_catalog/v1beta1/version"
 
 require "google/cloud/private_catalog/v1beta1/private_catalog/credentials"
 require "google/cloud/private_catalog/v1beta1/private_catalog/client"

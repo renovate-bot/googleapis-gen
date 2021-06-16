@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/vpcaccess/v1/version"
+require "google/cloud/vpc_access/v1/version"
 
 require "google/cloud/vpc_access/v1/vpc_access_service/credentials"
 require "google/cloud/vpc_access/v1/vpc_access_service/paths"

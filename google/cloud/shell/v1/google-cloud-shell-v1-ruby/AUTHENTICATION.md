@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export SHELL_CREDENTIALS=path/to/keyfile.json
+export CLOUD_SHELL_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,8 +66,8 @@ The environment variables that google-cloud-shell-v1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Shell::V1::CloudShellService::Credentials}):
 
-1. `SHELL_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `SHELL_KEYFILE` - Path to JSON file, or JSON contents
+1. `CLOUD_SHELL_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `CLOUD_SHELL_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/shell/v1"
 
-ENV["SHELL_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["CLOUD_SHELL_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Shell::V1::CloudShellService::Client.new
 ```

@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/security/privateca/v1/version"
+require "google/cloud/security/private_ca/v1/version"
 
 require "google/cloud/security/private_ca/v1/certificate_authority_service/credentials"
 require "google/cloud/security/private_ca/v1/certificate_authority_service/paths"

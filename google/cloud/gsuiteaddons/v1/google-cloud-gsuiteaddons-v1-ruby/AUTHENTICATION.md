@@ -1,6 +1,6 @@
 # Authentication
 
-In general, the google-cloud-gsuiteaddons-v1 library uses
+In general, the google-cloud-gsuite_add_ons-v1 library uses
 [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
 credentials to connect to Google Cloud services. When running within
 [Google Cloud Platform environments](#google-cloud-platform-environments) the
@@ -19,20 +19,20 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export GSUITEADDONS_CREDENTIALS=path/to/keyfile.json
+export GSUITE_ADD_ONS_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
 
 ```ruby
-require "google/cloud/g_suite_add_ons/v1"
+require "google/cloud/gsuite_add_ons/v1"
 
 client = ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.new
 ```
 
 ## Credential Lookup
 
-The google-cloud-gsuiteaddons-v1 library aims to make authentication
+The google-cloud-gsuite_add_ons-v1 library aims to make authentication
 as simple as possible, and provides several mechanisms to configure your system
 without requiring **Service Account Credentials** directly in code.
 
@@ -62,20 +62,20 @@ the READMEs for the individual service gems for details.) The path to the
 **Credentials JSON** itself can be stored for environments such as Docker
 containers where writing files is difficult or not encouraged.
 
-The environment variables that google-cloud-gsuiteaddons-v1
+The environment variables that google-cloud-gsuite_add_ons-v1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Credentials}):
 
-1. `GSUITEADDONS_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `GSUITEADDONS_KEYFILE` - Path to JSON file, or JSON contents
+1. `GSUITE_ADD_ONS_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `GSUITE_ADD_ONS_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
-require "google/cloud/g_suite_add_ons/v1"
+require "google/cloud/gsuite_add_ons/v1"
 
-ENV["GSUITEADDONS_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["GSUITE_ADD_ONS_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.new
 ```
@@ -86,7 +86,7 @@ The **Credentials JSON** can be configured instead of placing them in
 environment variables. Either on an individual client initialization:
 
 ```ruby
-require "google/cloud/g_suite_add_ons/v1"
+require "google/cloud/gsuite_add_ons/v1"
 
 client = ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
@@ -96,7 +96,7 @@ end
 Or configured globally for all clients:
 
 ```ruby
-require "google/cloud/g_suite_add_ons/v1"
+require "google/cloud/gsuite_add_ons/v1"
 
 ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
@@ -133,7 +133,7 @@ To configure your system for this, simply:
 
 Google Cloud requires **Service Account Credentials** to
 connect to the APIs. You will use the **JSON key file** to
-connect to most services with google-cloud-gsuiteaddons-v1.
+connect to most services with google-cloud-gsuite_add_ons-v1.
 
 If you are not running this client within
 [Google Cloud Platform environments](#google-cloud-platform-environments), you

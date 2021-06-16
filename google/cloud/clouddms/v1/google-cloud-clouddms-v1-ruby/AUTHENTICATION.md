@@ -1,6 +1,6 @@
 # Authentication
 
-In general, the google-cloud-clouddms-v1 library uses
+In general, the google-cloud-cloud_dms-v1 library uses
 [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
 credentials to connect to Google Cloud services. When running within
 [Google Cloud Platform environments](#google-cloud-platform-environments) the
@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export CLOUDDMS_CREDENTIALS=path/to/keyfile.json
+export DATABASE_MIGRATION_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -32,7 +32,7 @@ client = ::Google::Cloud::CloudDMS::V1::DataMigrationService::Client.new
 
 ## Credential Lookup
 
-The google-cloud-clouddms-v1 library aims to make authentication
+The google-cloud-cloud_dms-v1 library aims to make authentication
 as simple as possible, and provides several mechanisms to configure your system
 without requiring **Service Account Credentials** directly in code.
 
@@ -62,12 +62,12 @@ the READMEs for the individual service gems for details.) The path to the
 **Credentials JSON** itself can be stored for environments such as Docker
 containers where writing files is difficult or not encouraged.
 
-The environment variables that google-cloud-clouddms-v1
+The environment variables that google-cloud-cloud_dms-v1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::CloudDMS::V1::DataMigrationService::Credentials}):
 
-1. `CLOUDDMS_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `CLOUDDMS_KEYFILE` - Path to JSON file, or JSON contents
+1. `DATABASE_MIGRATION_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `DATABASE_MIGRATION_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/cloud_dms/v1"
 
-ENV["CLOUDDMS_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["DATABASE_MIGRATION_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::CloudDMS::V1::DataMigrationService::Client.new
 ```
@@ -133,7 +133,7 @@ To configure your system for this, simply:
 
 Google Cloud requires **Service Account Credentials** to
 connect to the APIs. You will use the **JSON key file** to
-connect to most services with google-cloud-clouddms-v1.
+connect to most services with google-cloud-cloud_dms-v1.
 
 If you are not running this client within
 [Google Cloud Platform environments](#google-cloud-platform-environments), you

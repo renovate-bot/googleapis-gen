@@ -1,6 +1,6 @@
 # Authentication
 
-In general, the google-analytics-data-v1 library uses
+In general, the google-analytics-data-v1beta library uses
 [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
 credentials to connect to Google Cloud services. When running within
 [Google Cloud Platform environments](#google-cloud-platform-environments) the
@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export ANALYTICSDATA_CREDENTIALS=path/to/keyfile.json
+export ANALYTICS_DATA_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -27,12 +27,12 @@ export ANALYTICSDATA_CREDENTIALS=path/to/keyfile.json
 ```ruby
 require "google/analytics/data/v1beta"
 
-client = ::Google::Analytics::Data::V1beta::BetaAnalyticsData::Client.new
+client = ::Google::Analytics::Data::V1beta::AnalyticsData::Client.new
 ```
 
 ## Credential Lookup
 
-The google-analytics-data-v1 library aims to make authentication
+The google-analytics-data-v1beta library aims to make authentication
 as simple as possible, and provides several mechanisms to configure your system
 without requiring **Service Account Credentials** directly in code.
 
@@ -62,12 +62,12 @@ the READMEs for the individual service gems for details.) The path to the
 **Credentials JSON** itself can be stored for environments such as Docker
 containers where writing files is difficult or not encouraged.
 
-The environment variables that google-analytics-data-v1
+The environment variables that google-analytics-data-v1beta
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Analytics::Data::V1beta::BetaAnalyticsData::Credentials}):
+{::Google::Analytics::Data::V1beta::AnalyticsData::Credentials}):
 
-1. `ANALYTICSDATA_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `ANALYTICSDATA_KEYFILE` - Path to JSON file, or JSON contents
+1. `ANALYTICS_DATA_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `ANALYTICS_DATA_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,9 +75,9 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/analytics/data/v1beta"
 
-ENV["ANALYTICSDATA_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["ANALYTICS_DATA_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Analytics::Data::V1beta::BetaAnalyticsData::Client.new
+client = ::Google::Analytics::Data::V1beta::AnalyticsData::Client.new
 ```
 
 ### Configuration
@@ -88,7 +88,7 @@ environment variables. Either on an individual client initialization:
 ```ruby
 require "google/analytics/data/v1beta"
 
-client = ::Google::Analytics::Data::V1beta::BetaAnalyticsData::Client.new do |config|
+client = ::Google::Analytics::Data::V1beta::AnalyticsData::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -98,11 +98,11 @@ Or configured globally for all clients:
 ```ruby
 require "google/analytics/data/v1beta"
 
-::Google::Analytics::Data::V1beta::BetaAnalyticsData::Client.configure do |config|
+::Google::Analytics::Data::V1beta::AnalyticsData::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Analytics::Data::V1beta::BetaAnalyticsData::Client.new
+client = ::Google::Analytics::Data::V1beta::AnalyticsData::Client.new
 ```
 
 ### Cloud SDK
@@ -133,7 +133,7 @@ To configure your system for this, simply:
 
 Google Cloud requires **Service Account Credentials** to
 connect to the APIs. You will use the **JSON key file** to
-connect to most services with google-analytics-data-v1.
+connect to most services with google-analytics-data-v1beta.
 
 If you are not running this client within
 [Google Cloud Platform environments](#google-cloud-platform-environments), you

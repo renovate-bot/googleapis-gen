@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/gkeconnect/gateway/v1beta1/version"
+require "google/cloud/gke_connect/gateway/v1beta1/version"
 
 require "google/cloud/gke_connect/gateway/v1beta1/gateway_service/credentials"
 require "google/cloud/gke_connect/gateway/v1beta1/gateway_service/client"

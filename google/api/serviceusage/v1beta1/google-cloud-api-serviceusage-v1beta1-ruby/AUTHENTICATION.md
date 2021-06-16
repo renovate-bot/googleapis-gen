@@ -1,6 +1,6 @@
 # Authentication
 
-In general, the google-cloud-api-serviceusage-v1beta1 library uses
+In general, the google-cloud-service_usage-v1beta1 library uses
 [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
 credentials to connect to Google Cloud services. When running within
 [Google Cloud Platform environments](#google-cloud-platform-environments) the
@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export SERVICEUSAGE_CREDENTIALS=path/to/keyfile.json
+export SERVICE_USAGE_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -32,7 +32,7 @@ client = ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
 
 ## Credential Lookup
 
-The google-cloud-api-serviceusage-v1beta1 library aims to make authentication
+The google-cloud-service_usage-v1beta1 library aims to make authentication
 as simple as possible, and provides several mechanisms to configure your system
 without requiring **Service Account Credentials** directly in code.
 
@@ -62,12 +62,12 @@ the READMEs for the individual service gems for details.) The path to the
 **Credentials JSON** itself can be stored for environments such as Docker
 containers where writing files is difficult or not encouraged.
 
-The environment variables that google-cloud-api-serviceusage-v1beta1
+The environment variables that google-cloud-service_usage-v1beta1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Credentials}):
 
-1. `SERVICEUSAGE_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `SERVICEUSAGE_KEYFILE` - Path to JSON file, or JSON contents
+1. `SERVICE_USAGE_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `SERVICE_USAGE_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -75,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/api/service_usage/v1beta1"
 
-ENV["SERVICEUSAGE_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["SERVICE_USAGE_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
 ```
@@ -133,7 +133,7 @@ To configure your system for this, simply:
 
 Google Cloud requires **Service Account Credentials** to
 connect to the APIs. You will use the **JSON key file** to
-connect to most services with google-cloud-api-serviceusage-v1beta1.
+connect to most services with google-cloud-service_usage-v1beta1.
 
 If you are not running this client within
 [Google Cloud Platform environments](#google-cloud-platform-environments), you

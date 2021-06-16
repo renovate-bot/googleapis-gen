@@ -1,13 +1,13 @@
-# Ruby Client for the Google Cloud Tpu V1 API
+# Ruby Client for the Cloud TPU V1 API
 
-API Client library for the Google Cloud Tpu V1 API
+API Client library for the Cloud TPU V1 API
 
-google-cloud-tpu-v1 is the official client library for the Google Cloud Tpu V1 API.
+Tensor Processing Units (TPUs) are Google's custom-developed application-specific integrated circuits (ASICs) used to accelerate machine learning workloads. Cloud TPUs allow you to access TPUs from Compute Engine, Google Kubernetes Engine and AI Platform.
 
 https://github.com/googleapis/google-cloud-ruby
 
 This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Google Cloud Tpu V1 API. Most users should consider using
+specific version of the Cloud TPU V1 API. Most users should consider using
 the main client gem,
 [google-cloud-tpu](https://rubygems.org/gems/google-cloud-tpu).
 See the section below titled *Which client should I use?* for more information.
@@ -24,6 +24,7 @@ In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. [Enable the API.](https://console.cloud.google.com/apis/library/tpu.googleapis.com)
 1. [Set up authentication.](AUTHENTICATION.md)
 
 ## Quick Start
@@ -38,6 +39,9 @@ response = client.list_nodes request
 
 View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-tpu-v1/latest)
 for class and method documentation.
+
+See also the [Product Documentation](https://cloud.google.com/tpu/)
+for general usage information.
 
 ## Enabling Logging
 

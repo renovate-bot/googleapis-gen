@@ -35,7 +35,7 @@ namespace :test do
   task :coverage do
     require "simplecov"
     SimpleCov.start do
-      command_name "google-cloud-lifesciences-v2beta"
+      command_name "google-cloud-life_sciences-v2beta"
       track_files "lib/**/*.rb"
       add_filter "test/"
     end
@@ -55,7 +55,7 @@ namespace :smoke_test do
   task :coverage do
     require "simplecov"
     SimpleCov.start do
-      command_name "google-cloud-lifesciences-v2beta"
+      command_name "google-cloud-life_sciences-v2beta"
       track_files "lib/**/*.rb"
       add_filter "test/"
     end
@@ -65,33 +65,33 @@ namespace :smoke_test do
 end
 
 # Acceptance tests
-desc "Run the google-cloud-lifesciences-v2beta acceptance tests."
+desc "Run the google-cloud-life_sciences-v2beta acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["LIFESCIENCES_TEST_PROJECT"] ||
+    ENV["LIFE_SCIENCES_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["LIFESCIENCES_TEST_KEYFILE"] ||
+    ENV["LIFE_SCIENCES_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["LIFESCIENCES_TEST_KEYFILE_JSON"] ||
+      ENV["LIFE_SCIENCES_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or LIFESCIENCES_TEST_PROJECT=test123 LIFESCIENCES_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or LIFE_SCIENCES_TEST_PROJECT=test123 LIFE_SCIENCES_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
-  require "google/cloud/life_sciences/v2beta/workflows_service_v2_beta/credentials"
-  ::Google::Cloud::LifeSciences::V2beta::WorkflowsServiceV2Beta::Credentials.env_vars.each do |path|
+  require "google/cloud/life_sciences/v2beta/workflows_service/credentials"
+  ::Google::Cloud::LifeSciences::V2beta::WorkflowsService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["LIFESCIENCES_PROJECT"] = project
-  ENV["LIFESCIENCES_TEST_PROJECT"] = project
-  ENV["LIFESCIENCES_KEYFILE_JSON"] = keyfile
+  ENV["LIFE_SCIENCES_PROJECT"] = project
+  ENV["LIFE_SCIENCES_TEST_PROJECT"] = project
+  ENV["LIFE_SCIENCES_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end
@@ -101,7 +101,7 @@ namespace :acceptance do
     if File.directory? "acceptance"
       Rake::Task[:smoke_test].invoke
     else
-      puts "The google-cloud-lifesciences-v2beta gem has no acceptance tests."
+      puts "The google-cloud-life_sciences-v2beta gem has no acceptance tests."
     end
   end
 
@@ -129,7 +129,7 @@ namespace :samples do
         end
       end
     else
-      puts "The google-cloud-lifesciences-v2beta gem has no samples to test."
+      puts "The google-cloud-life_sciences-v2beta gem has no samples to test."
     end
   end
 
@@ -143,7 +143,7 @@ namespace :samples do
         end
       end
     else
-      puts "The google-cloud-lifesciences-v2beta gem has no samples to test."
+      puts "The google-cloud-life_sciences-v2beta gem has no samples to test."
     end
   end
 end
@@ -156,22 +156,22 @@ end
 
 desc "Run yard-doctest example tests."
 task :doctest do
-  puts "The google-cloud-lifesciences-v2beta gem does not have doctest tests."
+  puts "The google-cloud-life_sciences-v2beta gem does not have doctest tests."
 end
 
 task :cloudrad do
-  ENV["CLOUDRAD_GEM_NAME"] = "google-cloud-lifesciences-v2beta"
+  ENV["CLOUDRAD_GEM_NAME"] = "google-cloud-life_sciences-v2beta"
   sh "bundle exec yard doc --fail-on-warning --yardopts .yardopts-cloudrad"
 end
 
 desc "Run the CI build"
 task :ci do
-  header "BUILDING google-cloud-lifesciences-v2beta"
-  header "google-cloud-lifesciences-v2beta rubocop", "*"
+  header "BUILDING google-cloud-life_sciences-v2beta"
+  header "google-cloud-life_sciences-v2beta rubocop", "*"
   Rake::Task[:rubocop].invoke
-  header "google-cloud-lifesciences-v2beta yard", "*"
+  header "google-cloud-life_sciences-v2beta yard", "*"
   Rake::Task[:yard].invoke
-  header "google-cloud-lifesciences-v2beta test", "*"
+  header "google-cloud-life_sciences-v2beta test", "*"
   Rake::Task[:test].invoke
 end
 
@@ -179,13 +179,13 @@ namespace :ci do
   desc "Run the CI build, with smoke tests."
   task :smoke_test do
     Rake::Task[:ci].invoke
-    header "google-cloud-lifesciences-v2beta smoke_test", "*"
+    header "google-cloud-life_sciences-v2beta smoke_test", "*"
     Rake::Task[:smoke_test].invoke
   end
   desc "Run the CI build, with acceptance tests."
   task :acceptance do
     Rake::Task[:ci].invoke
-    header "google-cloud-lifesciences-v2beta acceptance", "*"
+    header "google-cloud-life_sciences-v2beta acceptance", "*"
     Rake::Task[:acceptance].invoke
   end
   task :a do

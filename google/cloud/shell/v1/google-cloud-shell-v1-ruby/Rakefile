@@ -69,29 +69,29 @@ desc "Run the google-cloud-shell-v1 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["SHELL_TEST_PROJECT"] ||
+    ENV["CLOUD_SHELL_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["SHELL_TEST_KEYFILE"] ||
+    ENV["CLOUD_SHELL_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["SHELL_TEST_KEYFILE_JSON"] ||
+      ENV["CLOUD_SHELL_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or SHELL_TEST_PROJECT=test123 SHELL_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or CLOUD_SHELL_TEST_PROJECT=test123 CLOUD_SHELL_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/cloud/shell/v1/cloud_shell_service/credentials"
   ::Google::Cloud::Shell::V1::CloudShellService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["SHELL_PROJECT"] = project
-  ENV["SHELL_TEST_PROJECT"] = project
-  ENV["SHELL_KEYFILE_JSON"] = keyfile
+  ENV["CLOUD_SHELL_PROJECT"] = project
+  ENV["CLOUD_SHELL_TEST_PROJECT"] = project
+  ENV["CLOUD_SHELL_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

@@ -29,13 +29,13 @@ module Google
               "https://www.googleapis.com/auth/cloud-platform"
             ]
             self.env_vars = [
-              "ESSENTIALCONTACTS_CREDENTIALS",
-              "ESSENTIALCONTACTS_KEYFILE",
+              "ESSENTIAL_CONTACTS_CREDENTIALS",
+              "ESSENTIAL_CONTACTS_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "ESSENTIALCONTACTS_CREDENTIALS_JSON",
-              "ESSENTIALCONTACTS_KEYFILE_JSON",
+              "ESSENTIAL_CONTACTS_CREDENTIALS_JSON",
+              "ESSENTIAL_CONTACTS_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

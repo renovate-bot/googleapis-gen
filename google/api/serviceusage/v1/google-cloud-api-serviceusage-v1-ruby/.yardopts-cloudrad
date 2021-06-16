@@ -1,5 +1,5 @@
 --no-private
---title=Google Cloud Api Serviceusage V1 API
+--title=Service Usage V1 API
 --exclude _pb\.rb$
 --format yaml
 --template-path ../template

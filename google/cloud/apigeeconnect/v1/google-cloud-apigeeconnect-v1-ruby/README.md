@@ -1,13 +1,13 @@
-# Ruby Client for the Google Cloud ApigeeConnect V1 API
+# Ruby Client for the Apigee Connect V1 API
 
-API Client library for the Google Cloud ApigeeConnect V1 API
+API Client library for the Apigee Connect V1 API
 
-google-cloud-apigee_connect-v1 is the official client library for the Google Cloud ApigeeConnect V1 API.
+Apigee Connect allows the Apigee hybrid management plane to connect securely to the MART service in the runtime plane without requiring you to expose the MART endpoint on the internet. If you use Apigee Connect, you do not need to configure the MART ingress gateway with a host alias and an authorized DNS certificate.
 
 https://github.com/googleapis/google-cloud-ruby
 
 This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Google Cloud ApigeeConnect V1 API. Most users should consider using
+specific version of the Apigee Connect V1 API. Most users should consider using
 the main client gem,
 [google-cloud-apigee_connect](https://rubygems.org/gems/google-cloud-apigee_connect).
 See the section below titled *Which client should I use?* for more information.
@@ -24,6 +24,7 @@ In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. [Enable the API.](https://console.cloud.google.com/apis/library/apigeeconnect.googleapis.com)
 1. [Set up authentication.](AUTHENTICATION.md)
 
 ## Quick Start
@@ -38,6 +39,9 @@ response = client.list_connections request
 
 View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-apigee_connect-v1/latest)
 for class and method documentation.
+
+See also the [Product Documentation](https://cloud.google.com/apigee/docs/hybrid/v1.4/apigee-connect)
+for general usage information.
 
 ## Enabling Logging
 

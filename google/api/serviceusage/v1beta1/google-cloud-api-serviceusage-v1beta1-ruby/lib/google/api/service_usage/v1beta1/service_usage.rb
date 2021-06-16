@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/api/serviceusage/v1beta1/version"
+require "google/cloud/service_usage/v1beta1/version"
 
 require "google/api/service_usage/v1beta1/service_usage/credentials"
 require "google/api/service_usage/v1beta1/service_usage/operations"

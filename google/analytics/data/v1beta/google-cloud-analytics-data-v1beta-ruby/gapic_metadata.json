@@ -8,7 +8,7 @@
     "BetaAnalyticsData": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Analytics::Data::V1beta::BetaAnalyticsData::Client",
+          "libraryClient": "::Google::Analytics::Data::V1beta::AnalyticsData::Client",
           "rpcs": {
             "RunReport": {
               "methods": [

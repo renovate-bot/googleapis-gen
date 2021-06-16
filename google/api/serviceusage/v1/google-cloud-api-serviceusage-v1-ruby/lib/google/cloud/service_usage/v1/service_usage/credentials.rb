@@ -31,13 +31,13 @@ module Google
               "https://www.googleapis.com/auth/service.management"
             ]
             self.env_vars = [
-              "SERVICEUSAGE_CREDENTIALS",
-              "SERVICEUSAGE_KEYFILE",
+              "SERVICE_USAGE_CREDENTIALS",
+              "SERVICE_USAGE_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "SERVICEUSAGE_CREDENTIALS_JSON",
-              "SERVICEUSAGE_KEYFILE_JSON",
+              "SERVICE_USAGE_CREDENTIALS_JSON",
+              "SERVICE_USAGE_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

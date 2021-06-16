@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/clouddms/v1/version"
+require "google/cloud/cloud_dms/v1/version"
 
 require "google/cloud/cloud_dms/v1/data_migration_service/credentials"
 require "google/cloud/cloud_dms/v1/data_migration_service/paths"

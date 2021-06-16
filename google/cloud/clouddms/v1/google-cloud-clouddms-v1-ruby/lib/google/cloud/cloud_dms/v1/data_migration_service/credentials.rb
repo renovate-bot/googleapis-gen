@@ -29,13 +29,13 @@ module Google
               "https://www.googleapis.com/auth/cloud-platform"
             ]
             self.env_vars = [
-              "CLOUDDMS_CREDENTIALS",
-              "CLOUDDMS_KEYFILE",
+              "DATABASE_MIGRATION_CREDENTIALS",
+              "DATABASE_MIGRATION_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "CLOUDDMS_CREDENTIALS_JSON",
-              "CLOUDDMS_KEYFILE_JSON",
+              "DATABASE_MIGRATION_CREDENTIALS_JSON",
+              "DATABASE_MIGRATION_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

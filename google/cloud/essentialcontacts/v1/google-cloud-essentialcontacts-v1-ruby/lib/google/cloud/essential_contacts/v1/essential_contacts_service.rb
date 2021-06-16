@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/essentialcontacts/v1/version"
+require "google/cloud/essential_contacts/v1/version"
 
 require "google/cloud/essential_contacts/v1/essential_contacts_service/credentials"
 require "google/cloud/essential_contacts/v1/essential_contacts_service/paths"

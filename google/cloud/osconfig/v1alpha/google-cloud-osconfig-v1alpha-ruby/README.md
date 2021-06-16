@@ -1,13 +1,13 @@
-# Ruby Client for the Google Cloud OsConfig V1alpha API
+# Ruby Client for the Cloud OS Config V1alpha API
 
-API Client library for the Google Cloud OsConfig V1alpha API
+API Client library for the Cloud OS Config V1alpha API
 
-google-cloud-os_config-v1alpha is the official client library for the Google Cloud OsConfig V1alpha API.
+Cloud OS Config provides OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.
 
 https://github.com/googleapis/google-cloud-ruby
 
 This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Google Cloud OsConfig V1alpha API. Most users should consider using
+specific version of the Cloud OS Config V1alpha API. Most users should consider using
 the main client gem,
 [google-cloud-os_config](https://rubygems.org/gems/google-cloud-os_config).
 See the section below titled *Which client should I use?* for more information.

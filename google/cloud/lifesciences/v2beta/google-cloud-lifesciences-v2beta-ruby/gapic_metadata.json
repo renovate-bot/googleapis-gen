@@ -8,7 +8,7 @@
     "WorkflowsServiceV2Beta": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::LifeSciences::V2beta::WorkflowsServiceV2Beta::Client",
+          "libraryClient": "::Google::Cloud::LifeSciences::V2beta::WorkflowsService::Client",
           "rpcs": {
             "RunPipeline": {
               "methods": [

@@ -35,7 +35,7 @@ namespace :test do
   task :coverage do
     require "simplecov"
     SimpleCov.start do
-      command_name "google-analytics-data-v1"
+      command_name "google-analytics-data-v1beta"
       track_files "lib/**/*.rb"
       add_filter "test/"
     end
@@ -55,7 +55,7 @@ namespace :smoke_test do
   task :coverage do
     require "simplecov"
     SimpleCov.start do
-      command_name "google-analytics-data-v1"
+      command_name "google-analytics-data-v1beta"
       track_files "lib/**/*.rb"
       add_filter "test/"
     end
@@ -65,33 +65,33 @@ namespace :smoke_test do
 end
 
 # Acceptance tests
-desc "Run the google-analytics-data-v1 acceptance tests."
+desc "Run the google-analytics-data-v1beta acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["ANALYTICSDATA_TEST_PROJECT"] ||
+    ENV["ANALYTICS_DATA_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["ANALYTICSDATA_TEST_KEYFILE"] ||
+    ENV["ANALYTICS_DATA_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["ANALYTICSDATA_TEST_KEYFILE_JSON"] ||
+      ENV["ANALYTICS_DATA_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or ANALYTICSDATA_TEST_PROJECT=test123 ANALYTICSDATA_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or ANALYTICS_DATA_TEST_PROJECT=test123 ANALYTICS_DATA_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
-  require "google/analytics/data/v1beta/beta_analytics_data/credentials"
-  ::Google::Analytics::Data::V1beta::BetaAnalyticsData::Credentials.env_vars.each do |path|
+  require "google/analytics/data/v1beta/analytics_data/credentials"
+  ::Google::Analytics::Data::V1beta::AnalyticsData::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["ANALYTICSDATA_PROJECT"] = project
-  ENV["ANALYTICSDATA_TEST_PROJECT"] = project
-  ENV["ANALYTICSDATA_KEYFILE_JSON"] = keyfile
+  ENV["ANALYTICS_DATA_PROJECT"] = project
+  ENV["ANALYTICS_DATA_TEST_PROJECT"] = project
+  ENV["ANALYTICS_DATA_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end
@@ -101,7 +101,7 @@ namespace :acceptance do
     if File.directory? "acceptance"
       Rake::Task[:smoke_test].invoke
     else
-      puts "The google-analytics-data-v1 gem has no acceptance tests."
+      puts "The google-analytics-data-v1beta gem has no acceptance tests."
     end
   end
 
@@ -129,7 +129,7 @@ namespace :samples do
         end
       end
     else
-      puts "The google-analytics-data-v1 gem has no samples to test."
+      puts "The google-analytics-data-v1beta gem has no samples to test."
     end
   end
 
@@ -143,7 +143,7 @@ namespace :samples do
         end
       end
     else
-      puts "The google-analytics-data-v1 gem has no samples to test."
+      puts "The google-analytics-data-v1beta gem has no samples to test."
     end
   end
 end
@@ -156,22 +156,22 @@ end
 
 desc "Run yard-doctest example tests."
 task :doctest do
-  puts "The google-analytics-data-v1 gem does not have doctest tests."
+  puts "The google-analytics-data-v1beta gem does not have doctest tests."
 end
 
 task :cloudrad do
-  ENV["CLOUDRAD_GEM_NAME"] = "google-analytics-data-v1"
+  ENV["CLOUDRAD_GEM_NAME"] = "google-analytics-data-v1beta"
   sh "bundle exec yard doc --fail-on-warning --yardopts .yardopts-cloudrad"
 end
 
 desc "Run the CI build"
 task :ci do
-  header "BUILDING google-analytics-data-v1"
-  header "google-analytics-data-v1 rubocop", "*"
+  header "BUILDING google-analytics-data-v1beta"
+  header "google-analytics-data-v1beta rubocop", "*"
   Rake::Task[:rubocop].invoke
-  header "google-analytics-data-v1 yard", "*"
+  header "google-analytics-data-v1beta yard", "*"
   Rake::Task[:yard].invoke
-  header "google-analytics-data-v1 test", "*"
+  header "google-analytics-data-v1beta test", "*"
   Rake::Task[:test].invoke
 end
 
@@ -179,13 +179,13 @@ namespace :ci do
   desc "Run the CI build, with smoke tests."
   task :smoke_test do
     Rake::Task[:ci].invoke
-    header "google-analytics-data-v1 smoke_test", "*"
+    header "google-analytics-data-v1beta smoke_test", "*"
     Rake::Task[:smoke_test].invoke
   end
   desc "Run the CI build, with acceptance tests."
   task :acceptance do
     Rake::Task[:ci].invoke
-    header "google-analytics-data-v1 acceptance", "*"
+    header "google-analytics-data-v1beta acceptance", "*"
     Rake::Task[:acceptance].invoke
   end
   task :a do
