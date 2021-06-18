@@ -525,6 +525,10 @@ class IntentsClient(metaclass=IntentsClientMeta):
             ) -> gcdc_intent.Intent:
         r"""Creates an intent in the specified agent.
 
+        Note: You should always train a flow prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
+
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.CreateIntentRequest):
                 The request object. The request message for
@@ -613,6 +617,10 @@ class IntentsClient(metaclass=IntentsClientMeta):
             ) -> gcdc_intent.Intent:
         r"""Updates the specified intent.
 
+        Note: You should always train a flow prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
+
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.UpdateIntentRequest):
                 The request object. The request message for
@@ -700,6 +708,10 @@ class IntentsClient(metaclass=IntentsClientMeta):
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes the specified intent.
+
+        Note: You should always train a flow prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.DeleteIntentRequest):

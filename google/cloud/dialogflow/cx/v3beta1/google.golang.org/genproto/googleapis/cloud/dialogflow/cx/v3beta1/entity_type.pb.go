@@ -1317,8 +1317,16 @@ type EntityTypesClient interface {
 	// Creates an entity type in the specified agent.
 	CreateEntityType(ctx context.Context, in *CreateEntityTypeRequest, opts ...grpc.CallOption) (*EntityType, error)
 	// Updates the specified entity type.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	UpdateEntityType(ctx context.Context, in *UpdateEntityTypeRequest, opts ...grpc.CallOption) (*EntityType, error)
 	// Deletes the specified entity type.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	DeleteEntityType(ctx context.Context, in *DeleteEntityTypeRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
@@ -1384,8 +1392,16 @@ type EntityTypesServer interface {
 	// Creates an entity type in the specified agent.
 	CreateEntityType(context.Context, *CreateEntityTypeRequest) (*EntityType, error)
 	// Updates the specified entity type.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	UpdateEntityType(context.Context, *UpdateEntityTypeRequest) (*EntityType, error)
 	// Deletes the specified entity type.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	DeleteEntityType(context.Context, *DeleteEntityTypeRequest) (*emptypb.Empty, error)
 }
 

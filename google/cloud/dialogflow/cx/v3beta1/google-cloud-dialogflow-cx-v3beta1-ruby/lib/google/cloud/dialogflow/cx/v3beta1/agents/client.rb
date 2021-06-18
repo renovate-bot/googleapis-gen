@@ -314,6 +314,10 @@ module Google
               ##
               # Creates an agent in the specified location.
               #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+              #
               # @overload create_agent(request, options = nil)
               #   Pass arguments to `create_agent` via a request object, either of type
               #   {::Google::Cloud::Dialogflow::Cx::V3beta1::CreateAgentRequest} or an equivalent Hash.
@@ -382,6 +386,10 @@ module Google
 
               ##
               # Updates the specified agent.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               #
               # @overload update_agent(request, options = nil)
               #   Pass arguments to `update_agent` via a request object, either of type
@@ -598,6 +606,10 @@ module Google
               #
               # Replaces the current agent with a new one. Note that all existing resources
               # in agent (e.g. intents, entity types, flows) will be removed.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               #
               # @overload restore_agent(request, options = nil)
               #   Pass arguments to `restore_agent` via a request object, either of type

@@ -34,6 +34,10 @@ class FlowsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Creates a flow in the specified agent.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\CreateFlowRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -94,6 +98,10 @@ class FlowsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates the specified flow.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\UpdateFlowRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -110,6 +118,10 @@ class FlowsGrpcClient extends \Grpc\BaseStub {
     /**
      * Trains the specified flow. Note that only the flow in 'draft' environment
      * is trained.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\TrainFlowRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -158,6 +170,10 @@ class FlowsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Imports the specified flow to the specified agent from a binary file.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\ImportFlowRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

@@ -180,11 +180,19 @@ func (c *EntityTypesClient) CreateEntityType(ctx context.Context, req *cxpb.Crea
 }
 
 // UpdateEntityType updates the specified entity type.
+//
+// Note: You should always train a flow prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/cx/docs/concept/training).
 func (c *EntityTypesClient) UpdateEntityType(ctx context.Context, req *cxpb.UpdateEntityTypeRequest, opts ...gax.CallOption) (*cxpb.EntityType, error) {
 	return c.internalClient.UpdateEntityType(ctx, req, opts...)
 }
 
 // DeleteEntityType deletes the specified entity type.
+//
+// Note: You should always train a flow prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/cx/docs/concept/training).
 func (c *EntityTypesClient) DeleteEntityType(ctx context.Context, req *cxpb.DeleteEntityTypeRequest, opts ...gax.CallOption) error {
 	return c.internalClient.DeleteEntityType(ctx, req, opts...)
 }

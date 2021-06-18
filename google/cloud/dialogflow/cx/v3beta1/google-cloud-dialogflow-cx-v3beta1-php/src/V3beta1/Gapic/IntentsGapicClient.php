@@ -308,6 +308,10 @@ class IntentsGapicClient
     /**
      * Creates an intent in the specified agent.
      *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     *
      * Sample code:
      * ```
      * $intentsClient = new IntentsClient();
@@ -367,6 +371,10 @@ class IntentsGapicClient
 
     /**
      * Deletes the specified intent.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      *
      * Sample code:
      * ```
@@ -562,6 +570,10 @@ class IntentsGapicClient
 
     /**
      * Updates the specified intent.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      *
      * Sample code:
      * ```

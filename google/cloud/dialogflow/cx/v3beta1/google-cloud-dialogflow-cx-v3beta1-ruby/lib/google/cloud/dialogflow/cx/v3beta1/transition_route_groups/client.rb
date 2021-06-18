@@ -330,6 +330,10 @@ module Google
               ##
               # Creates an {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup TransitionRouteGroup} in the specified flow.
               #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+              #
               # @overload create_transition_route_group(request, options = nil)
               #   Pass arguments to `create_transition_route_group` via a request object, either of type
               #   {::Google::Cloud::Dialogflow::Cx::V3beta1::CreateTransitionRouteGroupRequest} or an equivalent Hash.
@@ -412,6 +416,10 @@ module Google
               ##
               # Updates the specified {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup TransitionRouteGroup}.
               #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+              #
               # @overload update_transition_route_group(request, options = nil)
               #   Pass arguments to `update_transition_route_group` via a request object, either of type
               #   {::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateTransitionRouteGroupRequest} or an equivalent Hash.
@@ -491,6 +499,10 @@ module Google
 
               ##
               # Deletes the specified {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup TransitionRouteGroup}.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               #
               # @overload delete_transition_route_group(request, options = nil)
               #   Pass arguments to `delete_transition_route_group` via a request object, either of type

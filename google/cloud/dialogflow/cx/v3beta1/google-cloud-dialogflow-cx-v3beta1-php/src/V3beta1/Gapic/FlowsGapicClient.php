@@ -428,6 +428,10 @@ class FlowsGapicClient
     /**
      * Creates a flow in the specified agent.
      *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     *
      * Sample code:
      * ```
      * $flowsClient = new FlowsClient();
@@ -748,6 +752,10 @@ class FlowsGapicClient
     /**
      * Imports the specified flow to the specified agent from a binary file.
      *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     *
      * Sample code:
      * ```
      * $flowsClient = new FlowsClient();
@@ -928,6 +936,10 @@ class FlowsGapicClient
      * Trains the specified flow. Note that only the flow in 'draft' environment
      * is trained.
      *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     *
      * Sample code:
      * ```
      * $flowsClient = new FlowsClient();
@@ -994,6 +1006,10 @@ class FlowsGapicClient
 
     /**
      * Updates the specified flow.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      *
      * Sample code:
      * ```

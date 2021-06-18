@@ -246,6 +246,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] in the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void createTransitionRouteGroup(com.google.cloud.dialogflow.cx.v3beta1.CreateTransitionRouteGroupRequest request,
@@ -256,6 +259,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updateTransitionRouteGroup(com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest request,
@@ -266,6 +272,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void deleteTransitionRouteGroup(com.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest request,
@@ -356,6 +365,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] in the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void createTransitionRouteGroup(com.google.cloud.dialogflow.cx.v3beta1.CreateTransitionRouteGroupRequest request,
@@ -367,6 +379,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updateTransitionRouteGroup(com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest request,
@@ -378,6 +393,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void deleteTransitionRouteGroup(com.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest request,
@@ -427,6 +445,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] in the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup createTransitionRouteGroup(com.google.cloud.dialogflow.cx.v3beta1.CreateTransitionRouteGroupRequest request) {
@@ -437,6 +458,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup updateTransitionRouteGroup(com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest request) {
@@ -447,6 +471,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.protobuf.Empty deleteTransitionRouteGroup(com.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest request) {
@@ -497,6 +524,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] in the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup> createTransitionRouteGroup(
@@ -508,6 +538,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup> updateTransitionRouteGroup(
@@ -519,6 +552,9 @@ public final class TransitionRouteGroupsGrpc {
     /**
      * <pre>
      * Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTransitionRouteGroup(

@@ -369,6 +369,10 @@ class EntityTypesGapicClient
     /**
      * Deletes the specified entity type.
      *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     *
      * Sample code:
      * ```
      * $entityTypesClient = new EntityTypesClient();
@@ -575,6 +579,10 @@ class EntityTypesGapicClient
 
     /**
      * Updates the specified entity type.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      *
      * Sample code:
      * ```

@@ -256,6 +256,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates the specified entity type.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updateEntityType(com.google.cloud.dialogflow.cx.v3beta1.UpdateEntityTypeRequest request,
@@ -266,6 +269,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes the specified entity type.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void deleteEntityType(com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest request,
@@ -367,6 +373,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates the specified entity type.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updateEntityType(com.google.cloud.dialogflow.cx.v3beta1.UpdateEntityTypeRequest request,
@@ -378,6 +387,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes the specified entity type.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void deleteEntityType(com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest request,
@@ -437,6 +449,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates the specified entity type.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.EntityType updateEntityType(com.google.cloud.dialogflow.cx.v3beta1.UpdateEntityTypeRequest request) {
@@ -447,6 +462,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes the specified entity type.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.protobuf.Empty deleteEntityType(com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest request) {
@@ -508,6 +526,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates the specified entity type.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.cx.v3beta1.EntityType> updateEntityType(
@@ -519,6 +540,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes the specified entity type.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteEntityType(

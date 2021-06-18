@@ -79,6 +79,10 @@ class EntityTypesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates the specified entity type.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\UpdateEntityTypeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -94,6 +98,10 @@ class EntityTypesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Deletes the specified entity type.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\DeleteEntityTypeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

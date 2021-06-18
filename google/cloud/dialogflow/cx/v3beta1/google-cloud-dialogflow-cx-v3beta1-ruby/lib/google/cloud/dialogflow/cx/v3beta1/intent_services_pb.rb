@@ -39,10 +39,22 @@ module Google
               # Retrieves the specified intent.
               rpc :GetIntent, ::Google::Cloud::Dialogflow::Cx::V3beta1::GetIntentRequest, ::Google::Cloud::Dialogflow::Cx::V3beta1::Intent
               # Creates an intent in the specified agent.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :CreateIntent, ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateIntentRequest, ::Google::Cloud::Dialogflow::Cx::V3beta1::Intent
               # Updates the specified intent.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :UpdateIntent, ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateIntentRequest, ::Google::Cloud::Dialogflow::Cx::V3beta1::Intent
               # Deletes the specified intent.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :DeleteIntent, ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteIntentRequest, ::Google::Protobuf::Empty
             end
 

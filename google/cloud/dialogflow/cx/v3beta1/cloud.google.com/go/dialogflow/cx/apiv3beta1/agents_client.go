@@ -238,11 +238,19 @@ func (c *AgentsClient) GetAgent(ctx context.Context, req *cxpb.GetAgentRequest, 
 }
 
 // CreateAgent creates an agent in the specified location.
+//
+// Note: You should always train a flow prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/cx/docs/concept/training).
 func (c *AgentsClient) CreateAgent(ctx context.Context, req *cxpb.CreateAgentRequest, opts ...gax.CallOption) (*cxpb.Agent, error) {
 	return c.internalClient.CreateAgent(ctx, req, opts...)
 }
 
 // UpdateAgent updates the specified agent.
+//
+// Note: You should always train a flow prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/cx/docs/concept/training).
 func (c *AgentsClient) UpdateAgent(ctx context.Context, req *cxpb.UpdateAgentRequest, opts ...gax.CallOption) (*cxpb.Agent, error) {
 	return c.internalClient.UpdateAgent(ctx, req, opts...)
 }
@@ -267,6 +275,10 @@ func (c *AgentsClient) ExportAgentOperation(name string) *ExportAgentOperation {
 //
 // Replaces the current agent with a new one. Note that all existing resources
 // in agent (e.g. intents, entity types, flows) will be removed.
+//
+// Note: You should always train a flow prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/cx/docs/concept/training).
 func (c *AgentsClient) RestoreAgent(ctx context.Context, req *cxpb.RestoreAgentRequest, opts ...gax.CallOption) (*RestoreAgentOperation, error) {
 	return c.internalClient.RestoreAgent(ctx, req, opts...)
 }

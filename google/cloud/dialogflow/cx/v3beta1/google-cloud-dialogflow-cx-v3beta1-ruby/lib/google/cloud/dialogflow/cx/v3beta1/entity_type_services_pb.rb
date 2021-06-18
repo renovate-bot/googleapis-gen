@@ -41,8 +41,16 @@ module Google
               # Creates an entity type in the specified agent.
               rpc :CreateEntityType, ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateEntityTypeRequest, ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityType
               # Updates the specified entity type.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :UpdateEntityType, ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateEntityTypeRequest, ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityType
               # Deletes the specified entity type.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :DeleteEntityType, ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteEntityTypeRequest, ::Google::Protobuf::Empty
             end
 

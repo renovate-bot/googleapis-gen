@@ -64,6 +64,10 @@ class IntentsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Creates an intent in the specified agent.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\CreateIntentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -79,6 +83,10 @@ class IntentsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates the specified intent.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\UpdateIntentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -94,6 +102,10 @@ class IntentsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Deletes the specified intent.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\DeleteIntentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

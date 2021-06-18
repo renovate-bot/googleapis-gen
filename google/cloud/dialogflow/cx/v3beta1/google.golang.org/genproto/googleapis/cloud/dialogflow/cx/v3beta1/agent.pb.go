@@ -1749,8 +1749,16 @@ type AgentsClient interface {
 	// Retrieves the specified agent.
 	GetAgent(ctx context.Context, in *GetAgentRequest, opts ...grpc.CallOption) (*Agent, error)
 	// Creates an agent in the specified location.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	CreateAgent(ctx context.Context, in *CreateAgentRequest, opts ...grpc.CallOption) (*Agent, error)
 	// Updates the specified agent.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	UpdateAgent(ctx context.Context, in *UpdateAgentRequest, opts ...grpc.CallOption) (*Agent, error)
 	// Deletes the specified agent.
 	DeleteAgent(ctx context.Context, in *DeleteAgentRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
@@ -1760,6 +1768,10 @@ type AgentsClient interface {
 	//
 	// Replaces the current agent with a new one. Note that all existing resources
 	// in agent (e.g. intents, entity types, flows) will be removed.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	RestoreAgent(ctx context.Context, in *RestoreAgentRequest, opts ...grpc.CallOption) (*longrunning.Operation, error)
 	// Validates the specified agent and creates or updates validation results.
 	// The agent in draft version is validated. Please call this API after the
@@ -1866,8 +1878,16 @@ type AgentsServer interface {
 	// Retrieves the specified agent.
 	GetAgent(context.Context, *GetAgentRequest) (*Agent, error)
 	// Creates an agent in the specified location.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	CreateAgent(context.Context, *CreateAgentRequest) (*Agent, error)
 	// Updates the specified agent.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	UpdateAgent(context.Context, *UpdateAgentRequest) (*Agent, error)
 	// Deletes the specified agent.
 	DeleteAgent(context.Context, *DeleteAgentRequest) (*emptypb.Empty, error)
@@ -1877,6 +1897,10 @@ type AgentsServer interface {
 	//
 	// Replaces the current agent with a new one. Note that all existing resources
 	// in agent (e.g. intents, entity types, flows) will be removed.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	RestoreAgent(context.Context, *RestoreAgentRequest) (*longrunning.Operation, error)
 	// Validates the specified agent and creates or updates validation results.
 	// The agent in draft version is validated. Please call this API after the

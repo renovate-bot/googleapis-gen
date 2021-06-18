@@ -311,6 +311,10 @@ class TransitionRouteGroupsGapicClient
     /**
      * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] in the specified flow.
      *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     *
      * Sample code:
      * ```
      * $transitionRouteGroupsClient = new TransitionRouteGroupsClient();
@@ -373,6 +377,10 @@ class TransitionRouteGroupsGapicClient
 
     /**
      * Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      *
      * Sample code:
      * ```
@@ -578,6 +586,10 @@ class TransitionRouteGroupsGapicClient
 
     /**
      * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      *
      * Sample code:
      * ```
