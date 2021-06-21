@@ -299,6 +299,10 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
 
         Creates an entity type in the specified agent.
 
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
+
         Returns:
             Callable[[~.CreateEntityTypeRequest],
                     ~.EntityType]:
@@ -324,6 +328,10 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
         r"""Return a callable for the update entity type method over gRPC.
 
         Updates the specified entity type.
+
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.UpdateEntityTypeRequest],
@@ -351,6 +359,10 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
 
         Deletes the specified entity type.
 
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
+
         Returns:
             Callable[[~.DeleteEntityTypeRequest],
                     ~.Empty]:
@@ -377,8 +389,9 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
 
         Updates/Creates multiple entity types in the specified agent.
 
-        Operation <response:
-        [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.BatchUpdateEntityTypesRequest],
@@ -406,8 +419,9 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
 
         Deletes entity types in the specified agent.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.BatchDeleteEntityTypesRequest],
@@ -435,8 +449,9 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
 
         Creates multiple new entities in the specified entity type.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.BatchCreateEntitiesRequest],
@@ -466,8 +481,9 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
         type. This method does not affect entities in the entity type
         that aren't explicitly specified in the request.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.BatchUpdateEntitiesRequest],
@@ -495,8 +511,9 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
 
         Deletes entities in the specified entity type.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.BatchDeleteEntitiesRequest],

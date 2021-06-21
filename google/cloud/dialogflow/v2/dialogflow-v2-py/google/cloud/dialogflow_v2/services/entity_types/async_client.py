@@ -365,6 +365,10 @@ class EntityTypesAsyncClient:
             ) -> gcd_entity_type.EntityType:
         r"""Creates an entity type in the specified agent.
 
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
+
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.CreateEntityTypeRequest`):
                 The request object. The request message for
@@ -473,6 +477,10 @@ class EntityTypesAsyncClient:
             ) -> gcd_entity_type.EntityType:
         r"""Updates the specified entity type.
 
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
+
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.UpdateEntityTypeRequest`):
                 The request object. The request message for
@@ -571,6 +579,10 @@ class EntityTypesAsyncClient:
             ) -> None:
         r"""Deletes the specified entity type.
 
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
+
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.DeleteEntityTypeRequest`):
                 The request object. The request message for
@@ -636,8 +648,9 @@ class EntityTypesAsyncClient:
             ) -> operation_async.AsyncOperation:
         r"""Updates/Creates multiple entity types in the specified agent.
 
-        Operation <response:
-        [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.BatchUpdateEntityTypesRequest`):
@@ -708,8 +721,9 @@ class EntityTypesAsyncClient:
             ) -> operation_async.AsyncOperation:
         r"""Deletes entity types in the specified agent.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.BatchDeleteEntityTypesRequest`):
@@ -818,8 +832,9 @@ class EntityTypesAsyncClient:
             ) -> operation_async.AsyncOperation:
         r"""Creates multiple new entities in the specified entity type.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.BatchCreateEntitiesRequest`):
@@ -941,8 +956,9 @@ class EntityTypesAsyncClient:
         type. This method does not affect entities in the entity type
         that aren't explicitly specified in the request.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.BatchUpdateEntitiesRequest`):
@@ -1064,8 +1080,9 @@ class EntityTypesAsyncClient:
             ) -> operation_async.AsyncOperation:
         r"""Deletes entities in the specified entity type.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.BatchDeleteEntitiesRequest`):

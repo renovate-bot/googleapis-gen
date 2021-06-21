@@ -436,14 +436,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object agentVersion_;
   /**
    * <pre>
-   * Optional. The agent version loaded into this environment.
+   * Required. The agent version loaded into this environment.
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
    * </pre>
    *
-   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
    * @return The agentVersion.
    */
   @java.lang.Override
@@ -461,14 +461,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The agent version loaded into this environment.
+   * Required. The agent version loaded into this environment.
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
    * </pre>
    *
-   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for agentVersion.
    */
   @java.lang.Override
@@ -1311,14 +1311,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object agentVersion_ = "";
     /**
      * <pre>
-     * Optional. The agent version loaded into this environment.
+     * Required. The agent version loaded into this environment.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
      * </pre>
      *
-     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @return The agentVersion.
      */
     public java.lang.String getAgentVersion() {
@@ -1335,14 +1335,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The agent version loaded into this environment.
+     * Required. The agent version loaded into this environment.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
      * </pre>
      *
-     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for agentVersion.
      */
     public com.google.protobuf.ByteString
@@ -1360,14 +1360,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The agent version loaded into this environment.
+     * Required. The agent version loaded into this environment.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
      * </pre>
      *
-     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @param value The agentVersion to set.
      * @return This builder for chaining.
      */
@@ -1383,14 +1383,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The agent version loaded into this environment.
+     * Required. The agent version loaded into this environment.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
      * </pre>
      *
-     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearAgentVersion() {
@@ -1401,14 +1401,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The agent version loaded into this environment.
+     * Required. The agent version loaded into this environment.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
      * </pre>
      *
-     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for agentVersion to set.
      * @return This builder for chaining.
      */

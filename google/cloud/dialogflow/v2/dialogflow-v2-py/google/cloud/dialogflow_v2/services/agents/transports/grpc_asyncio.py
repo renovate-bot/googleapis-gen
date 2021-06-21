@@ -276,6 +276,10 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
 
         Creates/updates the specified agent.
 
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
+
         Returns:
             Callable[[~.SetAgentRequest],
                     Awaitable[~.Agent]]:
@@ -360,8 +364,9 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
 
         Trains the specified agent.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.TrainAgentRequest],
@@ -388,9 +393,6 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
         r"""Return a callable for the export agent method over gRPC.
 
         Exports the specified agent to a ZIP file.
-
-        Operation <response:
-        [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]>
 
         Returns:
             Callable[[~.ExportAgentRequest],
@@ -429,10 +431,13 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
         and wait for the operation it returns in order to train
         explicitly.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]> An operation
-        which tracks when importing is complete. It only tracks when the
-        draft agent is updated not when it is done training.
+        An operation which tracks when importing is complete. It only
+        tracks when the draft agent is updated not when it is done
+        training.
+
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.ImportAgentRequest],
@@ -469,10 +474,13 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
         and wait for the operation it returns in order to train
         explicitly.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]> An operation
-        which tracks when restoring is complete. It only tracks when the
-        draft agent is updated not when it is done training.
+        An operation which tracks when restoring is complete. It only
+        tracks when the draft agent is updated not when it is done
+        training.
+
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.RestoreAgentRequest],
