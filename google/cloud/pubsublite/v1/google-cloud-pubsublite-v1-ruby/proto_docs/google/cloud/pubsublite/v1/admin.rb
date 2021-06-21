@@ -250,6 +250,63 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
+        # Request for SeekSubscription.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     Required. The name of the subscription to seek.
+        # @!attribute [rw] named_target
+        #   @return [::Google::Cloud::PubSubLite::V1::SeekSubscriptionRequest::NamedTarget]
+        #     Seek to a named position with respect to the message backlog.
+        # @!attribute [rw] time_target
+        #   @return [::Google::Cloud::PubSubLite::V1::TimeTarget]
+        #     Seek to the first message whose publish or event time is greater than or
+        #     equal to the specified query time. If no such message can be located,
+        #     will seek to the end of the message backlog.
+        class SeekSubscriptionRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # A named position with respect to the message backlog.
+          module NamedTarget
+            # Unspecified named target. Do not use.
+            NAMED_TARGET_UNSPECIFIED = 0
+
+            # Seek to the oldest retained message.
+            TAIL = 1
+
+            # Seek past all recently published messages, skipping the entire message
+            # backlog.
+            HEAD = 2
+          end
+        end
+
+        # Response for SeekSubscription long running operation.
+        class SeekSubscriptionResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Metadata for long running operations.
+        # @!attribute [rw] create_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     The time the operation was created.
+        # @!attribute [rw] end_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     The time the operation finished running. Not set if the operation has not
+        #     completed.
+        # @!attribute [rw] target
+        #   @return [::String]
+        #     Resource path for the target of the operation. For example, targets of
+        #     seeks are subscription resources, structured like:
+        #     projects/\\{project_number}/locations/\\{location}/subscriptions/\\{subscription_id}
+        # @!attribute [rw] verb
+        #   @return [::String]
+        #     Name of the verb executed by the operation.
+        class OperationMetadata
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # Request for CreateReservation.
         # @!attribute [rw] parent
         #   @return [::String]

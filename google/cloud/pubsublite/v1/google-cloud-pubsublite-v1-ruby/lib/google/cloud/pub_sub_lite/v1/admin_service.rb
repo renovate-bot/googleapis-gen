@@ -24,6 +24,7 @@ require "google/cloud/pubsublite/v1/version"
 
 require "google/cloud/pub_sub_lite/v1/admin_service/credentials"
 require "google/cloud/pub_sub_lite/v1/admin_service/paths"
+require "google/cloud/pub_sub_lite/v1/admin_service/operations"
 require "google/cloud/pub_sub_lite/v1/admin_service/client"
 
 module Google

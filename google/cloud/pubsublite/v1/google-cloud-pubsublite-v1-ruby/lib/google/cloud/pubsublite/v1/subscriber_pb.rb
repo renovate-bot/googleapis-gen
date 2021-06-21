@@ -5,6 +5,7 @@ require 'google/protobuf'
 
 require 'google/api/field_behavior_pb'
 require 'google/cloud/pubsublite/v1/common_pb'
+require 'google/api/annotations_pb'
 require 'google/api/client_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/pubsublite/v1/subscriber.proto", :syntax => :proto3) do

@@ -25,7 +25,7 @@ import * as adminserviceModule from '../src';
 
 import {PassThrough} from 'stream';
 
-import {protobuf} from 'google-gax';
+import {protobuf, LROperation, operationsProtos} from 'google-gax';
 
 function generateSampleMessage<T extends object>(instance: T) {
     const filledObject = (instance.constructor as typeof protobuf.Message)
@@ -39,6 +39,22 @@ function stubSimpleCall<ResponseType>(response?: ResponseType, error?: Error) {
 
 function stubSimpleCallWithCallback<ResponseType>(response?: ResponseType, error?: Error) {
     return error ? sinon.stub().callsArgWith(2, error) : sinon.stub().callsArgWith(2, null, response);
+}
+
+function stubLongRunningCall<ResponseType>(response?: ResponseType, callError?: Error, lroError?: Error) {
+    const innerStub = lroError ? sinon.stub().rejects(lroError) : sinon.stub().resolves([response]);
+    const mockOperation = {
+        promise: innerStub,
+    };
+    return callError ? sinon.stub().rejects(callError) : sinon.stub().resolves([mockOperation]);
+}
+
+function stubLongRunningCallWithCallback<ResponseType>(response?: ResponseType, callError?: Error, lroError?: Error) {
+    const innerStub = lroError ? sinon.stub().rejects(lroError) : sinon.stub().resolves([response]);
+    const mockOperation = {
+        promise: innerStub,
+    };
+    return callError ? sinon.stub().callsArgWith(2, callError) : sinon.stub().callsArgWith(2, null, mockOperation);
 }
 
 function stubPageStreamingCall<ResponseType>(responses?: ResponseType[], error?: Error) {
@@ -1263,6 +1279,150 @@ describe('v1.AdminServiceClient', () => {
             await assert.rejects(client.deleteReservation(request), expectedError);
             assert((client.innerApiCalls.deleteReservation as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('seekSubscription', () => {
+        it('invokes seekSubscription without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.SeekSubscriptionRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
+            client.innerApiCalls.seekSubscription = stubLongRunningCall(expectedResponse);
+            const [operation] = await client.seekSubscription(request);
+            const [response] = await operation.promise();
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.seekSubscription as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes seekSubscription without error using callback', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.SeekSubscriptionRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
+            client.innerApiCalls.seekSubscription = stubLongRunningCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.seekSubscription(
+                    request,
+                    (err?: Error|null,
+                     result?: LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>|null
+                    ) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const operation = await promise as LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>;
+            const [response] = await operation.promise();
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.seekSubscription as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes seekSubscription with call error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.SeekSubscriptionRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.seekSubscription = stubLongRunningCall(undefined, expectedError);
+            await assert.rejects(client.seekSubscription(request), expectedError);
+            assert((client.innerApiCalls.seekSubscription as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes seekSubscription with LRO error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.SeekSubscriptionRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.seekSubscription = stubLongRunningCall(undefined, undefined, expectedError);
+            const [operation] = await client.seekSubscription(request);
+            await assert.rejects(operation.promise(), expectedError);
+            assert((client.innerApiCalls.seekSubscription as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes checkSeekSubscriptionProgress without error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
+            expectedResponse.name = 'test';
+            expectedResponse.response = {type_url: 'url', value: Buffer.from('')};
+            expectedResponse.metadata = {type_url: 'url', value: Buffer.from('')}
+
+            client.operationsClient.getOperation = stubSimpleCall(expectedResponse);
+            const decodedOperation = await client.checkSeekSubscriptionProgress(expectedResponse.name);
+            assert.deepStrictEqual(decodedOperation.name, expectedResponse.name);
+            assert(decodedOperation.metadata);
+            assert((client.operationsClient.getOperation as SinonStub).getCall(0));
+        });
+
+        it('invokes checkSeekSubscriptionProgress with error', async () => {
+            const client = new adminserviceModule.v1.AdminServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const expectedError = new Error('expected');
+
+            client.operationsClient.getOperation = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.checkSeekSubscriptionProgress(''), expectedError);
+            assert((client.operationsClient.getOperation as SinonStub)
+                .getCall(0));
         });
     });
 

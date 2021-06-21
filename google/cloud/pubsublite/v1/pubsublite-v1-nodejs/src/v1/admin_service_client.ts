@@ -18,7 +18,7 @@
 
 /* global window */
 import * as gax from 'google-gax';
-import {Callback, CallOptions, Descriptors, ClientOptions, PaginationCallback, GaxCall} from 'google-gax';
+import {Callback, CallOptions, Descriptors, ClientOptions, LROperation, PaginationCallback, GaxCall} from 'google-gax';
 
 import { Transform } from 'stream';
 import { RequestType } from 'google-gax/build/src/apitypes';
@@ -30,7 +30,7 @@ import jsonProtos = require('../../protos/protos.json');
  * This file defines retry strategy and timeouts for all API methods in this library.
  */
 import * as gapicConfig from './admin_service_client_config.json';
-
+import { operationsProtos } from 'google-gax';
 const version = require('../../../package.json').version;
 
 /**
@@ -55,6 +55,7 @@ export class AdminServiceClient {
   };
   innerApiCalls: {[name: string]: Function};
   pathTemplates: {[name: string]: gax.PathTemplate};
+  operationsClient: gax.OperationsClient;
   adminServiceStub?: Promise<{[name: string]: Function}>;
 
   /**
@@ -177,6 +178,28 @@ export class AdminServiceClient {
           new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'topics')
     };
 
+    const protoFilesRoot = this._gaxModule.protobuf.Root.fromJSON(jsonProtos);
+
+    // This API contains "long-running operations", which return a
+    // an Operation object that allows for tracking of the operation,
+    // rather than holding a request open.
+
+    this.operationsClient = this._gaxModule.lro({
+      auth: this.auth,
+      grpc: 'grpc' in this._gaxGrpc ? this._gaxGrpc.grpc : undefined
+    }).operationsClient(opts);
+    const seekSubscriptionResponse = protoFilesRoot.lookup(
+      '.google.cloud.pubsublite.v1.SeekSubscriptionResponse') as gax.protobuf.Type;
+    const seekSubscriptionMetadata = protoFilesRoot.lookup(
+      '.google.cloud.pubsublite.v1.OperationMetadata') as gax.protobuf.Type;
+
+    this.descriptors.longrunning = {
+      seekSubscription: new this._gaxModule.LongrunningDescriptor(
+        this.operationsClient,
+        seekSubscriptionResponse.decode.bind(seekSubscriptionResponse),
+        seekSubscriptionMetadata.decode.bind(seekSubscriptionMetadata))
+    };
+
     // Put together the default options sent with requests.
     this._defaults = this._gaxGrpc.constructSettings(
         'google.cloud.pubsublite.v1.AdminService', gapicConfig as gax.ClientConfig,
@@ -217,7 +240,7 @@ export class AdminServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const adminServiceStubMethods =
-        ['createTopic', 'getTopic', 'getTopicPartitions', 'listTopics', 'updateTopic', 'deleteTopic', 'listTopicSubscriptions', 'createSubscription', 'getSubscription', 'listSubscriptions', 'updateSubscription', 'deleteSubscription', 'createReservation', 'getReservation', 'listReservations', 'updateReservation', 'deleteReservation', 'listReservationTopics'];
+        ['createTopic', 'getTopic', 'getTopicPartitions', 'listTopics', 'updateTopic', 'deleteTopic', 'listTopicSubscriptions', 'createSubscription', 'getSubscription', 'listSubscriptions', 'updateSubscription', 'deleteSubscription', 'seekSubscription', 'createReservation', 'getReservation', 'listReservations', 'updateReservation', 'deleteReservation', 'listReservationTopics'];
     for (const methodName of adminServiceStubMethods) {
       const callPromise = this.adminServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -233,6 +256,7 @@ export class AdminServiceClient {
 
       const descriptor =
         this.descriptors.page[methodName] ||
+        this.descriptors.longrunning[methodName] ||
         undefined;
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
@@ -1263,6 +1287,127 @@ export class AdminServiceClient {
     return this.innerApiCalls.deleteReservation(request, options, callback);
   }
 
+  seekSubscription(
+      request?: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  seekSubscription(
+      request: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  seekSubscription(
+      request: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Performs an out-of-band seek for a subscription to a specified target,
+ * which may be timestamps or named positions within the message backlog.
+ * Seek translates these targets to cursors for each partition and
+ * orchestrates subscribers to start consuming messages from these seek
+ * cursors.
+ *
+ * If an operation is returned, the seek has been registered and subscribers
+ * will eventually receive messages from the seek cursors (i.e. eventual
+ * consistency), as long as they are using a minimum supported client library
+ * version and not a system that tracks cursors independently of Pub/Sub Lite
+ * (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+ * unsupported clients.
+ *
+ * If clients would like to know when subscribers react to the seek (or not),
+ * they can poll the operation. The seek operation will succeed and complete
+ * once subscribers are ready to receive messages from the seek cursors for
+ * all partitions of the topic. This means that the seek operation will not
+ * complete until all subscribers come online.
+ *
+ * If the previous seek operation has not yet completed, it will be aborted
+ * and the new invocation of seek will supersede it.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the subscription to seek.
+ * @param {google.cloud.pubsublite.v1.SeekSubscriptionRequest.NamedTarget} request.namedTarget
+ *   Seek to a named position with respect to the message backlog.
+ * @param {google.cloud.pubsublite.v1.TimeTarget} request.timeTarget
+ *   Seek to the first message whose publish or event time is greater than or
+ *   equal to the specified query time. If no such message can be located,
+ *   will seek to the end of the message backlog.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example
+ * const [operation] = await client.seekSubscription(request);
+ * const [response] = await operation.promise();
+ */
+  seekSubscription(
+      request?: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.seekSubscription(request, options, callback);
+  }
+/**
+ * Check the status of the long running operation returned by `seekSubscription()`.
+ * @param {String} name
+ *   The operation name that will be passed.
+ * @returns {Promise} - The promise which resolves to an object.
+ *   The decoded operation object has result and metadata field to get information from.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example
+ * const decodedOperation = await checkSeekSubscriptionProgress(name);
+ * console.log(decodedOperation.result);
+ * console.log(decodedOperation.done);
+ * console.log(decodedOperation.metadata);
+ */
+  async checkSeekSubscriptionProgress(name: string): Promise<LROperation<protos.google.cloud.pubsublite.v1.SeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.OperationMetadata>>{
+    const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
+    const [operation] = await this.operationsClient.getOperation(request);
+    const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.seekSubscription, gax.createDefaultBackoffSettings());
+    return decodeOperation as LROperation<protos.google.cloud.pubsublite.v1.SeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.OperationMetadata>;
+  }
   listTopics(
       request?: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
       options?: CallOptions):

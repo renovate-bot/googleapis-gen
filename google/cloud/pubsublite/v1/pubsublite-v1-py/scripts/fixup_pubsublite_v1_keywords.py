@@ -61,6 +61,7 @@ class pubsubliteCallTransformer(cst.CSTTransformer):
           'list_topics': ('parent', 'page_size', 'page_token', ),
           'list_topic_subscriptions': ('name', 'page_size', 'page_token', ),
           'publish': ('initial_request', 'message_publish_request', ),
+          'seek_subscription': ('name', 'named_target', 'time_target', ),
           'streaming_commit_cursor': ('initial', 'commit', ),
           'subscribe': ('initial', 'seek', 'flow_control', ),
           'update_reservation': ('reservation', 'update_mask', ),

@@ -80,6 +80,8 @@ namespace Google.Cloud.PubSubLite.V1 {
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.ListSubscriptionsResponse> __Marshaller_google_cloud_pubsublite_v1_ListSubscriptionsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.ListSubscriptionsResponse.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.UpdateSubscriptionRequest> __Marshaller_google_cloud_pubsublite_v1_UpdateSubscriptionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.UpdateSubscriptionRequest.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest> __Marshaller_google_cloud_pubsublite_v1_DeleteSubscriptionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.SeekSubscriptionRequest> __Marshaller_google_cloud_pubsublite_v1_SeekSubscriptionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.SeekSubscriptionRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.LongRunning.Operation> __Marshaller_google_longrunning_Operation = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.LongRunning.Operation.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.CreateReservationRequest> __Marshaller_google_cloud_pubsublite_v1_CreateReservationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.CreateReservationRequest.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.Reservation> __Marshaller_google_cloud_pubsublite_v1_Reservation = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.Reservation.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.PubSubLite.V1.GetReservationRequest> __Marshaller_google_cloud_pubsublite_v1_GetReservationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.PubSubLite.V1.GetReservationRequest.Parser));
@@ -173,6 +175,13 @@ namespace Google.Cloud.PubSubLite.V1 {
         "DeleteSubscription",
         __Marshaller_google_cloud_pubsublite_v1_DeleteSubscriptionRequest,
         __Marshaller_google_protobuf_Empty);
+
+    static readonly grpc::Method<global::Google.Cloud.PubSubLite.V1.SeekSubscriptionRequest, global::Google.LongRunning.Operation> __Method_SeekSubscription = new grpc::Method<global::Google.Cloud.PubSubLite.V1.SeekSubscriptionRequest, global::Google.LongRunning.Operation>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SeekSubscription",
+        __Marshaller_google_cloud_pubsublite_v1_SeekSubscriptionRequest,
+        __Marshaller_google_longrunning_Operation);
 
     static readonly grpc::Method<global::Google.Cloud.PubSubLite.V1.CreateReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation> __Method_CreateReservation = new grpc::Method<global::Google.Cloud.PubSubLite.V1.CreateReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation>(
         grpc::MethodType.Unary,
@@ -354,6 +363,37 @@ namespace Google.Cloud.PubSubLite.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> DeleteSubscription(global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Performs an out-of-band seek for a subscription to a specified target,
+      /// which may be timestamps or named positions within the message backlog.
+      /// Seek translates these targets to cursors for each partition and
+      /// orchestrates subscribers to start consuming messages from these seek
+      /// cursors.
+      ///
+      /// If an operation is returned, the seek has been registered and subscribers
+      /// will eventually receive messages from the seek cursors (i.e. eventual
+      /// consistency), as long as they are using a minimum supported client library
+      /// version and not a system that tracks cursors independently of Pub/Sub Lite
+      /// (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+      /// unsupported clients.
+      ///
+      /// If clients would like to know when subscribers react to the seek (or not),
+      /// they can poll the operation. The seek operation will succeed and complete
+      /// once subscribers are ready to receive messages from the seek cursors for
+      /// all partitions of the topic. This means that the seek operation will not
+      /// complete until all subscribers come online.
+      ///
+      /// If the previous seek operation has not yet completed, it will be aborted
+      /// and the new invocation of seek will supersede it.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.LongRunning.Operation> SeekSubscription(global::Google.Cloud.PubSubLite.V1.SeekSubscriptionRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -978,6 +1018,130 @@ namespace Google.Cloud.PubSubLite.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteSubscription, null, options, request);
       }
       /// <summary>
+      /// Performs an out-of-band seek for a subscription to a specified target,
+      /// which may be timestamps or named positions within the message backlog.
+      /// Seek translates these targets to cursors for each partition and
+      /// orchestrates subscribers to start consuming messages from these seek
+      /// cursors.
+      ///
+      /// If an operation is returned, the seek has been registered and subscribers
+      /// will eventually receive messages from the seek cursors (i.e. eventual
+      /// consistency), as long as they are using a minimum supported client library
+      /// version and not a system that tracks cursors independently of Pub/Sub Lite
+      /// (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+      /// unsupported clients.
+      ///
+      /// If clients would like to know when subscribers react to the seek (or not),
+      /// they can poll the operation. The seek operation will succeed and complete
+      /// once subscribers are ready to receive messages from the seek cursors for
+      /// all partitions of the topic. This means that the seek operation will not
+      /// complete until all subscribers come online.
+      ///
+      /// If the previous seek operation has not yet completed, it will be aborted
+      /// and the new invocation of seek will supersede it.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation SeekSubscription(global::Google.Cloud.PubSubLite.V1.SeekSubscriptionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SeekSubscription(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Performs an out-of-band seek for a subscription to a specified target,
+      /// which may be timestamps or named positions within the message backlog.
+      /// Seek translates these targets to cursors for each partition and
+      /// orchestrates subscribers to start consuming messages from these seek
+      /// cursors.
+      ///
+      /// If an operation is returned, the seek has been registered and subscribers
+      /// will eventually receive messages from the seek cursors (i.e. eventual
+      /// consistency), as long as they are using a minimum supported client library
+      /// version and not a system that tracks cursors independently of Pub/Sub Lite
+      /// (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+      /// unsupported clients.
+      ///
+      /// If clients would like to know when subscribers react to the seek (or not),
+      /// they can poll the operation. The seek operation will succeed and complete
+      /// once subscribers are ready to receive messages from the seek cursors for
+      /// all partitions of the topic. This means that the seek operation will not
+      /// complete until all subscribers come online.
+      ///
+      /// If the previous seek operation has not yet completed, it will be aborted
+      /// and the new invocation of seek will supersede it.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation SeekSubscription(global::Google.Cloud.PubSubLite.V1.SeekSubscriptionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SeekSubscription, null, options, request);
+      }
+      /// <summary>
+      /// Performs an out-of-band seek for a subscription to a specified target,
+      /// which may be timestamps or named positions within the message backlog.
+      /// Seek translates these targets to cursors for each partition and
+      /// orchestrates subscribers to start consuming messages from these seek
+      /// cursors.
+      ///
+      /// If an operation is returned, the seek has been registered and subscribers
+      /// will eventually receive messages from the seek cursors (i.e. eventual
+      /// consistency), as long as they are using a minimum supported client library
+      /// version and not a system that tracks cursors independently of Pub/Sub Lite
+      /// (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+      /// unsupported clients.
+      ///
+      /// If clients would like to know when subscribers react to the seek (or not),
+      /// they can poll the operation. The seek operation will succeed and complete
+      /// once subscribers are ready to receive messages from the seek cursors for
+      /// all partitions of the topic. This means that the seek operation will not
+      /// complete until all subscribers come online.
+      ///
+      /// If the previous seek operation has not yet completed, it will be aborted
+      /// and the new invocation of seek will supersede it.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> SeekSubscriptionAsync(global::Google.Cloud.PubSubLite.V1.SeekSubscriptionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SeekSubscriptionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Performs an out-of-band seek for a subscription to a specified target,
+      /// which may be timestamps or named positions within the message backlog.
+      /// Seek translates these targets to cursors for each partition and
+      /// orchestrates subscribers to start consuming messages from these seek
+      /// cursors.
+      ///
+      /// If an operation is returned, the seek has been registered and subscribers
+      /// will eventually receive messages from the seek cursors (i.e. eventual
+      /// consistency), as long as they are using a minimum supported client library
+      /// version and not a system that tracks cursors independently of Pub/Sub Lite
+      /// (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+      /// unsupported clients.
+      ///
+      /// If clients would like to know when subscribers react to the seek (or not),
+      /// they can poll the operation. The seek operation will succeed and complete
+      /// once subscribers are ready to receive messages from the seek cursors for
+      /// all partitions of the topic. This means that the seek operation will not
+      /// complete until all subscribers come online.
+      ///
+      /// If the previous seek operation has not yet completed, it will be aborted
+      /// and the new invocation of seek will supersede it.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> SeekSubscriptionAsync(global::Google.Cloud.PubSubLite.V1.SeekSubscriptionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SeekSubscription, null, options, request);
+      }
+      /// <summary>
       /// Creates a new reservation.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -1265,6 +1429,7 @@ namespace Google.Cloud.PubSubLite.V1 {
           .AddMethod(__Method_ListSubscriptions, serviceImpl.ListSubscriptions)
           .AddMethod(__Method_UpdateSubscription, serviceImpl.UpdateSubscription)
           .AddMethod(__Method_DeleteSubscription, serviceImpl.DeleteSubscription)
+          .AddMethod(__Method_SeekSubscription, serviceImpl.SeekSubscription)
           .AddMethod(__Method_CreateReservation, serviceImpl.CreateReservation)
           .AddMethod(__Method_GetReservation, serviceImpl.GetReservation)
           .AddMethod(__Method_ListReservations, serviceImpl.ListReservations)
@@ -1291,6 +1456,7 @@ namespace Google.Cloud.PubSubLite.V1 {
       serviceBinder.AddMethod(__Method_ListSubscriptions, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.ListSubscriptionsRequest, global::Google.Cloud.PubSubLite.V1.ListSubscriptionsResponse>(serviceImpl.ListSubscriptions));
       serviceBinder.AddMethod(__Method_UpdateSubscription, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.UpdateSubscriptionRequest, global::Google.Cloud.PubSubLite.V1.Subscription>(serviceImpl.UpdateSubscription));
       serviceBinder.AddMethod(__Method_DeleteSubscription, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.DeleteSubscriptionRequest, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.DeleteSubscription));
+      serviceBinder.AddMethod(__Method_SeekSubscription, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.SeekSubscriptionRequest, global::Google.LongRunning.Operation>(serviceImpl.SeekSubscription));
       serviceBinder.AddMethod(__Method_CreateReservation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.CreateReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation>(serviceImpl.CreateReservation));
       serviceBinder.AddMethod(__Method_GetReservation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.GetReservationRequest, global::Google.Cloud.PubSubLite.V1.Reservation>(serviceImpl.GetReservation));
       serviceBinder.AddMethod(__Method_ListReservations, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.PubSubLite.V1.ListReservationsRequest, global::Google.Cloud.PubSubLite.V1.ListReservationsResponse>(serviceImpl.ListReservations));

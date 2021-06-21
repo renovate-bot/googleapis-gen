@@ -148,6 +148,11 @@ module Google
               @quota_project_id = @config.quota_project
               @quota_project_id ||= credentials.quota_project_id if credentials.respond_to? :quota_project_id
 
+              @operations_client = Operations.new do |config|
+                config.credentials = credentials
+                config.endpoint = @config.endpoint
+              end
+
               @admin_service_stub = ::Gapic::ServiceStub.new(
                 ::Google::Cloud::PubSubLite::V1::AdminService::Stub,
                 credentials:  credentials,
@@ -156,6 +161,13 @@ module Google
                 interceptors: @config.interceptors
               )
             end
+
+            ##
+            # Get the associated client for long-running operations.
+            #
+            # @return [::Google::Cloud::PubSubLite::V1::AdminService::Operations]
+            #
+            attr_reader :operations_client
 
             # Service calls
 
@@ -1011,6 +1023,99 @@ module Google
             end
 
             ##
+            # Performs an out-of-band seek for a subscription to a specified target,
+            # which may be timestamps or named positions within the message backlog.
+            # Seek translates these targets to cursors for each partition and
+            # orchestrates subscribers to start consuming messages from these seek
+            # cursors.
+            #
+            # If an operation is returned, the seek has been registered and subscribers
+            # will eventually receive messages from the seek cursors (i.e. eventual
+            # consistency), as long as they are using a minimum supported client library
+            # version and not a system that tracks cursors independently of Pub/Sub Lite
+            # (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+            # unsupported clients.
+            #
+            # If clients would like to know when subscribers react to the seek (or not),
+            # they can poll the operation. The seek operation will succeed and complete
+            # once subscribers are ready to receive messages from the seek cursors for
+            # all partitions of the topic. This means that the seek operation will not
+            # complete until all subscribers come online.
+            #
+            # If the previous seek operation has not yet completed, it will be aborted
+            # and the new invocation of seek will supersede it.
+            #
+            # @overload seek_subscription(request, options = nil)
+            #   Pass arguments to `seek_subscription` via a request object, either of type
+            #   {::Google::Cloud::PubSubLite::V1::SeekSubscriptionRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::PubSubLite::V1::SeekSubscriptionRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload seek_subscription(name: nil, named_target: nil, time_target: nil)
+            #   Pass arguments to `seek_subscription` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The name of the subscription to seek.
+            #   @param named_target [::Google::Cloud::PubSubLite::V1::SeekSubscriptionRequest::NamedTarget]
+            #     Seek to a named position with respect to the message backlog.
+            #   @param time_target [::Google::Cloud::PubSubLite::V1::TimeTarget, ::Hash]
+            #     Seek to the first message whose publish or event time is greater than or
+            #     equal to the specified query time. If no such message can be located,
+            #     will seek to the end of the message backlog.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::Operation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::Operation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def seek_subscription request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::PubSubLite::V1::SeekSubscriptionRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.seek_subscription.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Pubsublite::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.seek_subscription.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.seek_subscription.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @admin_service_stub.call_rpc :seek_subscription, request, options: options do |response, operation|
+                response = ::Gapic::Operation.new response, @operations_client, options: options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Creates a new reservation.
             #
             # @overload create_reservation(request, options = nil)
@@ -1641,6 +1746,11 @@ module Google
                 #
                 attr_reader :delete_subscription
                 ##
+                # RPC-specific configuration for `seek_subscription`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :seek_subscription
+                ##
                 # RPC-specific configuration for `create_reservation`
                 # @return [::Gapic::Config::Method]
                 #
@@ -1697,6 +1807,8 @@ module Google
                   @update_subscription = ::Gapic::Config::Method.new update_subscription_config
                   delete_subscription_config = parent_rpcs.delete_subscription if parent_rpcs.respond_to? :delete_subscription
                   @delete_subscription = ::Gapic::Config::Method.new delete_subscription_config
+                  seek_subscription_config = parent_rpcs.seek_subscription if parent_rpcs.respond_to? :seek_subscription
+                  @seek_subscription = ::Gapic::Config::Method.new seek_subscription_config
                   create_reservation_config = parent_rpcs.create_reservation if parent_rpcs.respond_to? :create_reservation
                   @create_reservation = ::Gapic::Config::Method.new create_reservation_config
                   get_reservation_config = parent_rpcs.get_reservation if parent_rpcs.respond_to? :get_reservation

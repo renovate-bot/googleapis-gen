@@ -18,6 +18,7 @@ using gax = Google.Api.Gax;
 using gaxgrpc = Google.Api.Gax.Grpc;
 using gaxgrpccore = Google.Api.Gax.Grpc.GrpcCore;
 using gagr = Google.Api.Gax.ResourceNames;
+using lro = Google.LongRunning;
 using proto = Google.Protobuf;
 using wkt = Google.Protobuf.WellKnownTypes;
 using grpccore = Grpc.Core;
@@ -58,6 +59,8 @@ namespace Google.Cloud.PubSubLite.V1
             ListSubscriptionsSettings = existing.ListSubscriptionsSettings;
             UpdateSubscriptionSettings = existing.UpdateSubscriptionSettings;
             DeleteSubscriptionSettings = existing.DeleteSubscriptionSettings;
+            SeekSubscriptionSettings = existing.SeekSubscriptionSettings;
+            SeekSubscriptionOperationsSettings = existing.SeekSubscriptionOperationsSettings.Clone();
             CreateReservationSettings = existing.CreateReservationSettings;
             GetReservationSettings = existing.GetReservationSettings;
             ListReservationsSettings = existing.ListReservationsSettings;
@@ -248,6 +251,39 @@ namespace Google.Cloud.PubSubLite.V1
         /// </list>
         /// </remarks>
         public gaxgrpc::CallSettings DeleteSubscriptionSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable, grpccore::StatusCode.Aborted, grpccore::StatusCode.Internal, grpccore::StatusCode.Unknown)));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>AdminServiceClient.SeekSubscription</c> and <c>AdminServiceClient.SeekSubscriptionAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>Timeout: 600 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings SeekSubscriptionSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable, grpccore::StatusCode.Aborted, grpccore::StatusCode.Internal, grpccore::StatusCode.Unknown)));
+
+        /// <summary>
+        /// Long Running Operation settings for calls to <c>AdminServiceClient.SeekSubscription</c> and
+        /// <c>AdminServiceClient.SeekSubscriptionAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// Uses default <see cref="gax::PollSettings"/> of:
+        /// <list type="bullet">
+        /// <item><description>Initial delay: 20 seconds.</description></item>
+        /// <item><description>Delay multiplier: 1.5</description></item>
+        /// <item><description>Maximum delay: 45 seconds.</description></item>
+        /// <item><description>Total timeout: 24 hours.</description></item>
+        /// </list>
+        /// </remarks>
+        public lro::OperationsSettings SeekSubscriptionOperationsSettings { get; set; } = new lro::OperationsSettings
+        {
+            DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
+        };
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -1861,6 +1897,119 @@ namespace Google.Cloud.PubSubLite.V1
             DeleteSubscriptionAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
         /// <summary>
+        /// Performs an out-of-band seek for a subscription to a specified target,
+        /// which may be timestamps or named positions within the message backlog.
+        /// Seek translates these targets to cursors for each partition and
+        /// orchestrates subscribers to start consuming messages from these seek
+        /// cursors.
+        /// 
+        /// If an operation is returned, the seek has been registered and subscribers
+        /// will eventually receive messages from the seek cursors (i.e. eventual
+        /// consistency), as long as they are using a minimum supported client library
+        /// version and not a system that tracks cursors independently of Pub/Sub Lite
+        /// (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+        /// unsupported clients.
+        /// 
+        /// If clients would like to know when subscribers react to the seek (or not),
+        /// they can poll the operation. The seek operation will succeed and complete
+        /// once subscribers are ready to receive messages from the seek cursors for
+        /// all partitions of the topic. This means that the seek operation will not
+        /// complete until all subscribers come online.
+        /// 
+        /// If the previous seek operation has not yet completed, it will be aborted
+        /// and the new invocation of seek will supersede it.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<SeekSubscriptionResponse, OperationMetadata> SeekSubscription(SeekSubscriptionRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Performs an out-of-band seek for a subscription to a specified target,
+        /// which may be timestamps or named positions within the message backlog.
+        /// Seek translates these targets to cursors for each partition and
+        /// orchestrates subscribers to start consuming messages from these seek
+        /// cursors.
+        /// 
+        /// If an operation is returned, the seek has been registered and subscribers
+        /// will eventually receive messages from the seek cursors (i.e. eventual
+        /// consistency), as long as they are using a minimum supported client library
+        /// version and not a system that tracks cursors independently of Pub/Sub Lite
+        /// (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+        /// unsupported clients.
+        /// 
+        /// If clients would like to know when subscribers react to the seek (or not),
+        /// they can poll the operation. The seek operation will succeed and complete
+        /// once subscribers are ready to receive messages from the seek cursors for
+        /// all partitions of the topic. This means that the seek operation will not
+        /// complete until all subscribers come online.
+        /// 
+        /// If the previous seek operation has not yet completed, it will be aborted
+        /// and the new invocation of seek will supersede it.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<SeekSubscriptionResponse, OperationMetadata>> SeekSubscriptionAsync(SeekSubscriptionRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Performs an out-of-band seek for a subscription to a specified target,
+        /// which may be timestamps or named positions within the message backlog.
+        /// Seek translates these targets to cursors for each partition and
+        /// orchestrates subscribers to start consuming messages from these seek
+        /// cursors.
+        /// 
+        /// If an operation is returned, the seek has been registered and subscribers
+        /// will eventually receive messages from the seek cursors (i.e. eventual
+        /// consistency), as long as they are using a minimum supported client library
+        /// version and not a system that tracks cursors independently of Pub/Sub Lite
+        /// (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+        /// unsupported clients.
+        /// 
+        /// If clients would like to know when subscribers react to the seek (or not),
+        /// they can poll the operation. The seek operation will succeed and complete
+        /// once subscribers are ready to receive messages from the seek cursors for
+        /// all partitions of the topic. This means that the seek operation will not
+        /// complete until all subscribers come online.
+        /// 
+        /// If the previous seek operation has not yet completed, it will be aborted
+        /// and the new invocation of seek will supersede it.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<SeekSubscriptionResponse, OperationMetadata>> SeekSubscriptionAsync(SeekSubscriptionRequest request, st::CancellationToken cancellationToken) =>
+            SeekSubscriptionAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>The long-running operations client for <c>SeekSubscription</c>.</summary>
+        public virtual lro::OperationsClient SeekSubscriptionOperationsClient => throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Poll an operation once, using an <c>operationName</c> from a previous invocation of <c>SeekSubscription</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The result of polling the operation.</returns>
+        public virtual lro::Operation<SeekSubscriptionResponse, OperationMetadata> PollOnceSeekSubscription(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<SeekSubscriptionResponse, OperationMetadata>.PollOnceFromName(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), SeekSubscriptionOperationsClient, callSettings);
+
+        /// <summary>
+        /// Asynchronously poll an operation once, using an <c>operationName</c> from a previous invocation of
+        /// <c>SeekSubscription</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A task representing the result of polling the operation.</returns>
+        public virtual stt::Task<lro::Operation<SeekSubscriptionResponse, OperationMetadata>> PollOnceSeekSubscriptionAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<SeekSubscriptionResponse, OperationMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), SeekSubscriptionOperationsClient, callSettings);
+
+        /// <summary>
         /// Creates a new reservation.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
@@ -2616,6 +2765,8 @@ namespace Google.Cloud.PubSubLite.V1
 
         private readonly gaxgrpc::ApiCall<DeleteSubscriptionRequest, wkt::Empty> _callDeleteSubscription;
 
+        private readonly gaxgrpc::ApiCall<SeekSubscriptionRequest, lro::Operation> _callSeekSubscription;
+
         private readonly gaxgrpc::ApiCall<CreateReservationRequest, Reservation> _callCreateReservation;
 
         private readonly gaxgrpc::ApiCall<GetReservationRequest, Reservation> _callGetReservation;
@@ -2638,6 +2789,7 @@ namespace Google.Cloud.PubSubLite.V1
             GrpcClient = grpcClient;
             AdminServiceSettings effectiveSettings = settings ?? AdminServiceSettings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
+            SeekSubscriptionOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.SeekSubscriptionOperationsSettings);
             _callCreateTopic = clientHelper.BuildApiCall<CreateTopicRequest, Topic>(grpcClient.CreateTopicAsync, grpcClient.CreateTopic, effectiveSettings.CreateTopicSettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callCreateTopic);
             Modify_CreateTopicApiCall(ref _callCreateTopic);
@@ -2674,6 +2826,9 @@ namespace Google.Cloud.PubSubLite.V1
             _callDeleteSubscription = clientHelper.BuildApiCall<DeleteSubscriptionRequest, wkt::Empty>(grpcClient.DeleteSubscriptionAsync, grpcClient.DeleteSubscription, effectiveSettings.DeleteSubscriptionSettings).WithGoogleRequestParam("name", request => request.Name);
             Modify_ApiCall(ref _callDeleteSubscription);
             Modify_DeleteSubscriptionApiCall(ref _callDeleteSubscription);
+            _callSeekSubscription = clientHelper.BuildApiCall<SeekSubscriptionRequest, lro::Operation>(grpcClient.SeekSubscriptionAsync, grpcClient.SeekSubscription, effectiveSettings.SeekSubscriptionSettings).WithGoogleRequestParam("name", request => request.Name);
+            Modify_ApiCall(ref _callSeekSubscription);
+            Modify_SeekSubscriptionApiCall(ref _callSeekSubscription);
             _callCreateReservation = clientHelper.BuildApiCall<CreateReservationRequest, Reservation>(grpcClient.CreateReservationAsync, grpcClient.CreateReservation, effectiveSettings.CreateReservationSettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callCreateReservation);
             Modify_CreateReservationApiCall(ref _callCreateReservation);
@@ -2721,6 +2876,8 @@ namespace Google.Cloud.PubSubLite.V1
 
         partial void Modify_DeleteSubscriptionApiCall(ref gaxgrpc::ApiCall<DeleteSubscriptionRequest, wkt::Empty> call);
 
+        partial void Modify_SeekSubscriptionApiCall(ref gaxgrpc::ApiCall<SeekSubscriptionRequest, lro::Operation> call);
+
         partial void Modify_CreateReservationApiCall(ref gaxgrpc::ApiCall<CreateReservationRequest, Reservation> call);
 
         partial void Modify_GetReservationApiCall(ref gaxgrpc::ApiCall<GetReservationRequest, Reservation> call);
@@ -2761,6 +2918,8 @@ namespace Google.Cloud.PubSubLite.V1
         partial void Modify_UpdateSubscriptionRequest(ref UpdateSubscriptionRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_DeleteSubscriptionRequest(ref DeleteSubscriptionRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_SeekSubscriptionRequest(ref SeekSubscriptionRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_CreateReservationRequest(ref CreateReservationRequest request, ref gaxgrpc::CallSettings settings);
 
@@ -3062,6 +3221,73 @@ namespace Google.Cloud.PubSubLite.V1
             return _callDeleteSubscription.Async(request, callSettings);
         }
 
+        /// <summary>The long-running operations client for <c>SeekSubscription</c>.</summary>
+        public override lro::OperationsClient SeekSubscriptionOperationsClient { get; }
+
+        /// <summary>
+        /// Performs an out-of-band seek for a subscription to a specified target,
+        /// which may be timestamps or named positions within the message backlog.
+        /// Seek translates these targets to cursors for each partition and
+        /// orchestrates subscribers to start consuming messages from these seek
+        /// cursors.
+        /// 
+        /// If an operation is returned, the seek has been registered and subscribers
+        /// will eventually receive messages from the seek cursors (i.e. eventual
+        /// consistency), as long as they are using a minimum supported client library
+        /// version and not a system that tracks cursors independently of Pub/Sub Lite
+        /// (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+        /// unsupported clients.
+        /// 
+        /// If clients would like to know when subscribers react to the seek (or not),
+        /// they can poll the operation. The seek operation will succeed and complete
+        /// once subscribers are ready to receive messages from the seek cursors for
+        /// all partitions of the topic. This means that the seek operation will not
+        /// complete until all subscribers come online.
+        /// 
+        /// If the previous seek operation has not yet completed, it will be aborted
+        /// and the new invocation of seek will supersede it.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override lro::Operation<SeekSubscriptionResponse, OperationMetadata> SeekSubscription(SeekSubscriptionRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_SeekSubscriptionRequest(ref request, ref callSettings);
+            return new lro::Operation<SeekSubscriptionResponse, OperationMetadata>(_callSeekSubscription.Sync(request, callSettings), SeekSubscriptionOperationsClient);
+        }
+
+        /// <summary>
+        /// Performs an out-of-band seek for a subscription to a specified target,
+        /// which may be timestamps or named positions within the message backlog.
+        /// Seek translates these targets to cursors for each partition and
+        /// orchestrates subscribers to start consuming messages from these seek
+        /// cursors.
+        /// 
+        /// If an operation is returned, the seek has been registered and subscribers
+        /// will eventually receive messages from the seek cursors (i.e. eventual
+        /// consistency), as long as they are using a minimum supported client library
+        /// version and not a system that tracks cursors independently of Pub/Sub Lite
+        /// (e.g. Apache Beam, Dataflow, Spark). The seek operation will fail for
+        /// unsupported clients.
+        /// 
+        /// If clients would like to know when subscribers react to the seek (or not),
+        /// they can poll the operation. The seek operation will succeed and complete
+        /// once subscribers are ready to receive messages from the seek cursors for
+        /// all partitions of the topic. This means that the seek operation will not
+        /// complete until all subscribers come online.
+        /// 
+        /// If the previous seek operation has not yet completed, it will be aborted
+        /// and the new invocation of seek will supersede it.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override async stt::Task<lro::Operation<SeekSubscriptionResponse, OperationMetadata>> SeekSubscriptionAsync(SeekSubscriptionRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_SeekSubscriptionRequest(ref request, ref callSettings);
+            return new lro::Operation<SeekSubscriptionResponse, OperationMetadata>(await _callSeekSubscription.Async(request, callSettings).ConfigureAwait(false), SeekSubscriptionOperationsClient);
+        }
+
         /// <summary>
         /// Creates a new reservation.
         /// </summary>
@@ -3265,5 +3491,19 @@ namespace Google.Cloud.PubSubLite.V1
         public scg::IEnumerator<string> GetEnumerator() => Topics.GetEnumerator();
 
         sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();
+    }
+
+    public static partial class AdminService
+    {
+        public partial class AdminServiceClient
+        {
+            /// <summary>
+            /// Creates a new instance of <see cref="lro::Operations.OperationsClient"/> using the same call invoker as
+            /// this client.
+            /// </summary>
+            /// <returns>A new Operations client for the same target as this client.</returns>
+            public virtual lro::Operations.OperationsClient CreateOperationsClient() =>
+                new lro::Operations.OperationsClient(CallInvoker);
+        }
     }
 }

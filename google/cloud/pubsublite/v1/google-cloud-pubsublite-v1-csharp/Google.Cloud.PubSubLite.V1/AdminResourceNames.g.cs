@@ -139,6 +139,18 @@ namespace Google.Cloud.PubSubLite.V1
         }
     }
 
+    public partial class SeekSubscriptionRequest
+    {
+        /// <summary>
+        /// <see cref="gcpv::SubscriptionName"/>-typed view over the <see cref="Name"/> resource name property.
+        /// </summary>
+        public gcpv::SubscriptionName SubscriptionName
+        {
+            get => string.IsNullOrEmpty(Name) ? null : gcpv::SubscriptionName.Parse(Name, allowUnparsed: true);
+            set => Name = value?.ToString() ?? "";
+        }
+    }
+
     public partial class CreateReservationRequest
     {
         /// <summary>

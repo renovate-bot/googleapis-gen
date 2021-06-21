@@ -18,6 +18,7 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System;
     using System.Linq;
@@ -1614,6 +1615,73 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             SubscriptionName name = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
             // Make the request
             await adminServiceClient.DeleteSubscriptionAsync(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for SeekSubscription</summary>
+        public void SeekSubscriptionRequestObject()
+        {
+            // Snippet: SeekSubscription(SeekSubscriptionRequest, CallSettings)
+            // Create client
+            AdminServiceClient adminServiceClient = AdminServiceClient.Create();
+            // Initialize request argument(s)
+            SeekSubscriptionRequest request = new SeekSubscriptionRequest
+            {
+                SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
+                NamedTarget = SeekSubscriptionRequest.Types.NamedTarget.Unspecified,
+            };
+            // Make the request
+            Operation<SeekSubscriptionResponse, OperationMetadata> response = adminServiceClient.SeekSubscription(request);
+
+            // Poll until the returned long-running operation is complete
+            Operation<SeekSubscriptionResponse, OperationMetadata> completedResponse = response.PollUntilCompleted();
+            // Retrieve the operation result
+            SeekSubscriptionResponse result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<SeekSubscriptionResponse, OperationMetadata> retrievedResponse = adminServiceClient.PollOnceSeekSubscription(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                SeekSubscriptionResponse retrievedResult = retrievedResponse.Result;
+            }
+            // End snippet
+        }
+
+        /// <summary>Snippet for SeekSubscriptionAsync</summary>
+        public async Task SeekSubscriptionRequestObjectAsync()
+        {
+            // Snippet: SeekSubscriptionAsync(SeekSubscriptionRequest, CallSettings)
+            // Additional: SeekSubscriptionAsync(SeekSubscriptionRequest, CancellationToken)
+            // Create client
+            AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            SeekSubscriptionRequest request = new SeekSubscriptionRequest
+            {
+                SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
+                NamedTarget = SeekSubscriptionRequest.Types.NamedTarget.Unspecified,
+            };
+            // Make the request
+            Operation<SeekSubscriptionResponse, OperationMetadata> response = await adminServiceClient.SeekSubscriptionAsync(request);
+
+            // Poll until the returned long-running operation is complete
+            Operation<SeekSubscriptionResponse, OperationMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            SeekSubscriptionResponse result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<SeekSubscriptionResponse, OperationMetadata> retrievedResponse = await adminServiceClient.PollOnceSeekSubscriptionAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                SeekSubscriptionResponse retrievedResult = retrievedResponse.Result;
+            }
             // End snippet
         }
 

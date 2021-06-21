@@ -47,6 +47,9 @@ from google.cloud.pubsublite_v1.types.admin import ListTopicsRequest
 from google.cloud.pubsublite_v1.types.admin import ListTopicsResponse
 from google.cloud.pubsublite_v1.types.admin import ListTopicSubscriptionsRequest
 from google.cloud.pubsublite_v1.types.admin import ListTopicSubscriptionsResponse
+from google.cloud.pubsublite_v1.types.admin import OperationMetadata
+from google.cloud.pubsublite_v1.types.admin import SeekSubscriptionRequest
+from google.cloud.pubsublite_v1.types.admin import SeekSubscriptionResponse
 from google.cloud.pubsublite_v1.types.admin import TopicPartitions
 from google.cloud.pubsublite_v1.types.admin import UpdateReservationRequest
 from google.cloud.pubsublite_v1.types.admin import UpdateSubscriptionRequest
@@ -127,6 +130,9 @@ __all__ = ('AdminServiceClient',
     'ListTopicsResponse',
     'ListTopicSubscriptionsRequest',
     'ListTopicSubscriptionsResponse',
+    'OperationMetadata',
+    'SeekSubscriptionRequest',
+    'SeekSubscriptionResponse',
     'TopicPartitions',
     'UpdateReservationRequest',
     'UpdateSubscriptionRequest',

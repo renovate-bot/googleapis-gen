@@ -75,6 +75,11 @@
                 "deleteReservation"
               ]
             },
+            "SeekSubscription": {
+              "methods": [
+                "seekSubscription"
+              ]
+            },
             "ListTopics": {
               "methods": [
                 "listTopics",
@@ -178,6 +183,11 @@
             "DeleteReservation": {
               "methods": [
                 "deleteReservation"
+              ]
+            },
+            "SeekSubscription": {
+              "methods": [
+                "seekSubscription"
               ]
             },
             "ListTopics": {

@@ -70,6 +70,11 @@
                 "delete_subscription"
               ]
             },
+            "SeekSubscription": {
+              "methods": [
+                "seek_subscription"
+              ]
+            },
             "CreateReservation": {
               "methods": [
                 "create_reservation"

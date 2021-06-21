@@ -16,6 +16,7 @@
 
 using gaxgrpc = Google.Api.Gax.Grpc;
 using gagr = Google.Api.Gax.ResourceNames;
+using lro = Google.LongRunning;
 using wkt = Google.Protobuf.WellKnownTypes;
 using grpccore = Grpc.Core;
 using moq = Moq;
@@ -32,6 +33,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void CreateTopicRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateTopicRequest request = new CreateTopicRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -56,6 +58,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task CreateTopicRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateTopicRequest request = new CreateTopicRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -82,6 +85,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void CreateTopic()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateTopicRequest request = new CreateTopicRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -106,6 +110,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task CreateTopicAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateTopicRequest request = new CreateTopicRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -132,6 +137,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void CreateTopicResourceNames()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateTopicRequest request = new CreateTopicRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -156,6 +162,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task CreateTopicResourceNamesAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateTopicRequest request = new CreateTopicRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -182,6 +189,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetTopicRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicRequest request = new GetTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -204,6 +212,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetTopicRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicRequest request = new GetTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -228,6 +237,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetTopic()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicRequest request = new GetTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -250,6 +260,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetTopicAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicRequest request = new GetTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -274,6 +285,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetTopicResourceNames()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicRequest request = new GetTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -296,6 +308,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetTopicResourceNamesAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicRequest request = new GetTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -320,6 +333,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetTopicPartitionsRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicPartitionsRequest request = new GetTopicPartitionsRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -339,6 +353,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetTopicPartitionsRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicPartitionsRequest request = new GetTopicPartitionsRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -360,6 +375,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetTopicPartitions()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicPartitionsRequest request = new GetTopicPartitionsRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -379,6 +395,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetTopicPartitionsAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicPartitionsRequest request = new GetTopicPartitionsRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -400,6 +417,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetTopicPartitionsResourceNames()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicPartitionsRequest request = new GetTopicPartitionsRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -419,6 +437,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetTopicPartitionsResourceNamesAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetTopicPartitionsRequest request = new GetTopicPartitionsRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -440,6 +459,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void UpdateTopicRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateTopicRequest request = new UpdateTopicRequest
             {
                 Topic = new Topic(),
@@ -463,6 +483,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task UpdateTopicRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateTopicRequest request = new UpdateTopicRequest
             {
                 Topic = new Topic(),
@@ -488,6 +509,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void UpdateTopic()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateTopicRequest request = new UpdateTopicRequest
             {
                 Topic = new Topic(),
@@ -511,6 +533,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task UpdateTopicAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateTopicRequest request = new UpdateTopicRequest
             {
                 Topic = new Topic(),
@@ -536,6 +559,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void DeleteTopicRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteTopicRequest request = new DeleteTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -551,6 +575,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task DeleteTopicRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteTopicRequest request = new DeleteTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -567,6 +592,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void DeleteTopic()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteTopicRequest request = new DeleteTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -582,6 +608,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task DeleteTopicAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteTopicRequest request = new DeleteTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -598,6 +625,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void DeleteTopicResourceNames()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteTopicRequest request = new DeleteTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -613,6 +641,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task DeleteTopicResourceNamesAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteTopicRequest request = new DeleteTopicRequest
             {
                 TopicName = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]"),
@@ -629,6 +658,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void CreateSubscriptionRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateSubscriptionRequest request = new CreateSubscriptionRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -653,6 +683,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task CreateSubscriptionRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateSubscriptionRequest request = new CreateSubscriptionRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -679,6 +710,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void CreateSubscription()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateSubscriptionRequest request = new CreateSubscriptionRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -702,6 +734,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task CreateSubscriptionAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateSubscriptionRequest request = new CreateSubscriptionRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -727,6 +760,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void CreateSubscriptionResourceNames()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateSubscriptionRequest request = new CreateSubscriptionRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -750,6 +784,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task CreateSubscriptionResourceNamesAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateSubscriptionRequest request = new CreateSubscriptionRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -775,6 +810,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetSubscriptionRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetSubscriptionRequest request = new GetSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -796,6 +832,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetSubscriptionRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetSubscriptionRequest request = new GetSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -819,6 +856,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetSubscription()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetSubscriptionRequest request = new GetSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -840,6 +878,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetSubscriptionAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetSubscriptionRequest request = new GetSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -863,6 +902,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetSubscriptionResourceNames()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetSubscriptionRequest request = new GetSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -884,6 +924,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetSubscriptionResourceNamesAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetSubscriptionRequest request = new GetSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -907,6 +948,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void UpdateSubscriptionRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateSubscriptionRequest request = new UpdateSubscriptionRequest
             {
                 Subscription = new Subscription(),
@@ -929,6 +971,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task UpdateSubscriptionRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateSubscriptionRequest request = new UpdateSubscriptionRequest
             {
                 Subscription = new Subscription(),
@@ -953,6 +996,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void UpdateSubscription()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateSubscriptionRequest request = new UpdateSubscriptionRequest
             {
                 Subscription = new Subscription(),
@@ -975,6 +1019,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task UpdateSubscriptionAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateSubscriptionRequest request = new UpdateSubscriptionRequest
             {
                 Subscription = new Subscription(),
@@ -999,6 +1044,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void DeleteSubscriptionRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteSubscriptionRequest request = new DeleteSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -1014,6 +1060,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task DeleteSubscriptionRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteSubscriptionRequest request = new DeleteSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -1030,6 +1077,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void DeleteSubscription()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteSubscriptionRequest request = new DeleteSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -1045,6 +1093,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task DeleteSubscriptionAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteSubscriptionRequest request = new DeleteSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -1061,6 +1110,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void DeleteSubscriptionResourceNames()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteSubscriptionRequest request = new DeleteSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -1076,6 +1126,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task DeleteSubscriptionResourceNamesAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteSubscriptionRequest request = new DeleteSubscriptionRequest
             {
                 SubscriptionName = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]"),
@@ -1092,6 +1143,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void CreateReservationRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateReservationRequest request = new CreateReservationRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -1114,6 +1166,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task CreateReservationRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateReservationRequest request = new CreateReservationRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -1138,6 +1191,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void CreateReservation()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateReservationRequest request = new CreateReservationRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -1160,6 +1214,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task CreateReservationAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateReservationRequest request = new CreateReservationRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -1184,6 +1239,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void CreateReservationResourceNames()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateReservationRequest request = new CreateReservationRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -1206,6 +1262,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task CreateReservationResourceNamesAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             CreateReservationRequest request = new CreateReservationRequest
             {
                 ParentAsLocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
@@ -1230,6 +1287,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetReservationRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetReservationRequest request = new GetReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
@@ -1250,6 +1308,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetReservationRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetReservationRequest request = new GetReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
@@ -1272,6 +1331,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetReservation()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetReservationRequest request = new GetReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
@@ -1292,6 +1352,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetReservationAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetReservationRequest request = new GetReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
@@ -1314,6 +1375,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void GetReservationResourceNames()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetReservationRequest request = new GetReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
@@ -1334,6 +1396,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task GetReservationResourceNamesAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             GetReservationRequest request = new GetReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
@@ -1356,6 +1419,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void UpdateReservationRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateReservationRequest request = new UpdateReservationRequest
             {
                 Reservation = new Reservation(),
@@ -1377,6 +1441,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task UpdateReservationRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateReservationRequest request = new UpdateReservationRequest
             {
                 Reservation = new Reservation(),
@@ -1400,6 +1465,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void UpdateReservation()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateReservationRequest request = new UpdateReservationRequest
             {
                 Reservation = new Reservation(),
@@ -1421,6 +1487,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task UpdateReservationAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             UpdateReservationRequest request = new UpdateReservationRequest
             {
                 Reservation = new Reservation(),
@@ -1444,6 +1511,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void DeleteReservationRequestObject()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteReservationRequest request = new DeleteReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
@@ -1459,6 +1527,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task DeleteReservationRequestObjectAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteReservationRequest request = new DeleteReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
@@ -1475,6 +1544,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void DeleteReservation()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteReservationRequest request = new DeleteReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
@@ -1490,6 +1560,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task DeleteReservationAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteReservationRequest request = new DeleteReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
@@ -1506,6 +1577,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public void DeleteReservationResourceNames()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteReservationRequest request = new DeleteReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
@@ -1521,6 +1593,7 @@ namespace Google.Cloud.PubSubLite.V1.Tests
         public async stt::Task DeleteReservationResourceNamesAsync()
         {
             moq::Mock<AdminService.AdminServiceClient> mockGrpcClient = new moq::Mock<AdminService.AdminServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
             DeleteReservationRequest request = new DeleteReservationRequest
             {
                 ReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
