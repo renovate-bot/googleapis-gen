@@ -313,7 +313,7 @@ export class AssuredWorkloadsServiceClient {
   // -- Service calls --
   // -------------------
   updateWorkload(
-      request: protos.google.cloud.assuredworkloads.v1beta1.IUpdateWorkloadRequest,
+      request?: protos.google.cloud.assuredworkloads.v1beta1.IUpdateWorkloadRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.assuredworkloads.v1beta1.IWorkload,
@@ -358,7 +358,7 @@ export class AssuredWorkloadsServiceClient {
  * const [response] = await client.updateWorkload(request);
  */
   updateWorkload(
-      request: protos.google.cloud.assuredworkloads.v1beta1.IUpdateWorkloadRequest,
+      request?: protos.google.cloud.assuredworkloads.v1beta1.IUpdateWorkloadRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.assuredworkloads.v1beta1.IWorkload,
           protos.google.cloud.assuredworkloads.v1beta1.IUpdateWorkloadRequest|null|undefined,
@@ -392,7 +392,7 @@ export class AssuredWorkloadsServiceClient {
     return this.innerApiCalls.updateWorkload(request, options, callback);
   }
   deleteWorkload(
-      request: protos.google.cloud.assuredworkloads.v1beta1.IDeleteWorkloadRequest,
+      request?: protos.google.cloud.assuredworkloads.v1beta1.IDeleteWorkloadRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -436,7 +436,7 @@ export class AssuredWorkloadsServiceClient {
  * const [response] = await client.deleteWorkload(request);
  */
   deleteWorkload(
-      request: protos.google.cloud.assuredworkloads.v1beta1.IDeleteWorkloadRequest,
+      request?: protos.google.cloud.assuredworkloads.v1beta1.IDeleteWorkloadRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.assuredworkloads.v1beta1.IDeleteWorkloadRequest|null|undefined,
@@ -470,7 +470,7 @@ export class AssuredWorkloadsServiceClient {
     return this.innerApiCalls.deleteWorkload(request, options, callback);
   }
   getWorkload(
-      request: protos.google.cloud.assuredworkloads.v1beta1.IGetWorkloadRequest,
+      request?: protos.google.cloud.assuredworkloads.v1beta1.IGetWorkloadRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.assuredworkloads.v1beta1.IWorkload,
@@ -511,7 +511,7 @@ export class AssuredWorkloadsServiceClient {
  * const [response] = await client.getWorkload(request);
  */
   getWorkload(
-      request: protos.google.cloud.assuredworkloads.v1beta1.IGetWorkloadRequest,
+      request?: protos.google.cloud.assuredworkloads.v1beta1.IGetWorkloadRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.assuredworkloads.v1beta1.IWorkload,
           protos.google.cloud.assuredworkloads.v1beta1.IGetWorkloadRequest|null|undefined,
@@ -546,7 +546,7 @@ export class AssuredWorkloadsServiceClient {
   }
 
   createWorkload(
-      request: protos.google.cloud.assuredworkloads.v1beta1.ICreateWorkloadRequest,
+      request?: protos.google.cloud.assuredworkloads.v1beta1.ICreateWorkloadRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.assuredworkloads.v1beta1.IWorkload, protos.google.cloud.assuredworkloads.v1beta1.ICreateWorkloadOperationMetadata>,
@@ -594,7 +594,7 @@ export class AssuredWorkloadsServiceClient {
  * const [response] = await operation.promise();
  */
   createWorkload(
-      request: protos.google.cloud.assuredworkloads.v1beta1.ICreateWorkloadRequest,
+      request?: protos.google.cloud.assuredworkloads.v1beta1.ICreateWorkloadRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.assuredworkloads.v1beta1.IWorkload, protos.google.cloud.assuredworkloads.v1beta1.ICreateWorkloadOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -649,7 +649,7 @@ export class AssuredWorkloadsServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.assuredworkloads.v1beta1.Workload, protos.google.cloud.assuredworkloads.v1beta1.CreateWorkloadOperationMetadata>;
   }
   listWorkloads(
-      request: protos.google.cloud.assuredworkloads.v1beta1.IListWorkloadsRequest,
+      request?: protos.google.cloud.assuredworkloads.v1beta1.IListWorkloadsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.assuredworkloads.v1beta1.IWorkload[],
@@ -700,7 +700,7 @@ export class AssuredWorkloadsServiceClient {
  *   for more details and examples.
  */
   listWorkloads(
-      request: protos.google.cloud.assuredworkloads.v1beta1.IListWorkloadsRequest,
+      request?: protos.google.cloud.assuredworkloads.v1beta1.IListWorkloadsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.assuredworkloads.v1beta1.IListWorkloadsRequest,
           protos.google.cloud.assuredworkloads.v1beta1.IListWorkloadsResponse|null|undefined,

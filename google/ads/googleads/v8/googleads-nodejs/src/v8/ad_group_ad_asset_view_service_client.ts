@@ -653,7 +653,7 @@ export class AdGroupAdAssetViewServiceClient {
   // -- Service calls --
   // -------------------
   getAdGroupAdAssetView(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IAdGroupAdAssetView,
@@ -698,7 +698,7 @@ export class AdGroupAdAssetViewServiceClient {
  * const [response] = await client.getAdGroupAdAssetView(request);
  */
   getAdGroupAdAssetView(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IAdGroupAdAssetView,
           protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest|null|undefined,

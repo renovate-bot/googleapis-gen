@@ -635,7 +635,7 @@ export class ConversionUploadServiceClient {
   // -- Service calls --
   // -------------------
   uploadClickConversions(
-      request: protos.google.ads.googleads.v7.services.IUploadClickConversionsRequest,
+      request?: protos.google.ads.googleads.v7.services.IUploadClickConversionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IUploadClickConversionsResponse,
@@ -695,7 +695,7 @@ export class ConversionUploadServiceClient {
  * const [response] = await client.uploadClickConversions(request);
  */
   uploadClickConversions(
-      request: protos.google.ads.googleads.v7.services.IUploadClickConversionsRequest,
+      request?: protos.google.ads.googleads.v7.services.IUploadClickConversionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IUploadClickConversionsResponse,
           protos.google.ads.googleads.v7.services.IUploadClickConversionsRequest|null|undefined,
@@ -729,7 +729,7 @@ export class ConversionUploadServiceClient {
     return this.innerApiCalls.uploadClickConversions(request, options, callback);
   }
   uploadCallConversions(
-      request: protos.google.ads.googleads.v7.services.IUploadCallConversionsRequest,
+      request?: protos.google.ads.googleads.v7.services.IUploadCallConversionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IUploadCallConversionsResponse,
@@ -788,7 +788,7 @@ export class ConversionUploadServiceClient {
  * const [response] = await client.uploadCallConversions(request);
  */
   uploadCallConversions(
-      request: protos.google.ads.googleads.v7.services.IUploadCallConversionsRequest,
+      request?: protos.google.ads.googleads.v7.services.IUploadCallConversionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IUploadCallConversionsResponse,
           protos.google.ads.googleads.v7.services.IUploadCallConversionsRequest|null|undefined,

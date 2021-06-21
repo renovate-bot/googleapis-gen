@@ -262,7 +262,7 @@ export class SqlBackupRunsServiceClient {
   // -- Service calls --
   // -------------------
   delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -305,7 +305,7 @@ export class SqlBackupRunsServiceClient {
  * const [response] = await client.delete(request);
  */
   delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest|null|undefined,
@@ -339,7 +339,7 @@ export class SqlBackupRunsServiceClient {
     return this.innerApiCalls.delete(request, options, callback);
   }
   get(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsGetRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsGetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IBackupRun,
@@ -380,7 +380,7 @@ export class SqlBackupRunsServiceClient {
  * const [response] = await client.get(request);
  */
   get(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsGetRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsGetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IBackupRun,
           protos.google.cloud.sql.v1beta4.ISqlBackupRunsGetRequest|null|undefined,
@@ -414,7 +414,7 @@ export class SqlBackupRunsServiceClient {
     return this.innerApiCalls.get(request, options, callback);
   }
   insert(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsInsertRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsInsertRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -455,7 +455,7 @@ export class SqlBackupRunsServiceClient {
  * const [response] = await client.insert(request);
  */
   insert(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsInsertRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsInsertRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlBackupRunsInsertRequest|null|undefined,
@@ -489,7 +489,7 @@ export class SqlBackupRunsServiceClient {
     return this.innerApiCalls.insert(request, options, callback);
   }
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IBackupRunsListResponse,
@@ -534,7 +534,7 @@ export class SqlBackupRunsServiceClient {
  * const [response] = await client.list(request);
  */
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IBackupRunsListResponse,
           protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest|null|undefined,

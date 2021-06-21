@@ -305,7 +305,7 @@ export class CompanyServiceClient {
   // -- Service calls --
   // -------------------
   createCompany(
-      request: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
+      request?: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.talent.v4beta1.ICompany,
@@ -348,7 +348,7 @@ export class CompanyServiceClient {
  * const [response] = await client.createCompany(request);
  */
   createCompany(
-      request: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
+      request?: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.talent.v4beta1.ICompany,
           protos.google.cloud.talent.v4beta1.ICreateCompanyRequest|null|undefined,
@@ -382,7 +382,7 @@ export class CompanyServiceClient {
     return this.innerApiCalls.createCompany(request, options, callback);
   }
   getCompany(
-      request: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
+      request?: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.talent.v4beta1.ICompany,
@@ -426,7 +426,7 @@ export class CompanyServiceClient {
  * const [response] = await client.getCompany(request);
  */
   getCompany(
-      request: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
+      request?: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.talent.v4beta1.ICompany,
           protos.google.cloud.talent.v4beta1.IGetCompanyRequest|null|undefined,
@@ -460,7 +460,7 @@ export class CompanyServiceClient {
     return this.innerApiCalls.getCompany(request, options, callback);
   }
   updateCompany(
-      request: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
+      request?: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.talent.v4beta1.ICompany,
@@ -505,7 +505,7 @@ export class CompanyServiceClient {
  * const [response] = await client.updateCompany(request);
  */
   updateCompany(
-      request: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
+      request?: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.talent.v4beta1.ICompany,
           protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest|null|undefined,
@@ -539,7 +539,7 @@ export class CompanyServiceClient {
     return this.innerApiCalls.updateCompany(request, options, callback);
   }
   deleteCompany(
-      request: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
+      request?: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -584,7 +584,7 @@ export class CompanyServiceClient {
  * const [response] = await client.deleteCompany(request);
  */
   deleteCompany(
-      request: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
+      request?: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest|null|undefined,
@@ -619,7 +619,7 @@ export class CompanyServiceClient {
   }
 
   listCompanies(
-      request: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
+      request?: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.talent.v4beta1.ICompany[],
@@ -678,7 +678,7 @@ export class CompanyServiceClient {
  *   for more details and examples.
  */
   listCompanies(
-      request: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
+      request?: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
           protos.google.cloud.talent.v4beta1.IListCompaniesResponse|null|undefined,

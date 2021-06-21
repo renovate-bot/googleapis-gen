@@ -416,7 +416,7 @@ export class NotebookServiceClient {
   // -- Service calls --
   // -------------------
   getInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IGetInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IGetInstanceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.notebooks.v1beta1.IInstance,
@@ -454,7 +454,7 @@ export class NotebookServiceClient {
  * const [response] = await client.getInstance(request);
  */
   getInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IGetInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IGetInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.notebooks.v1beta1.IInstance,
           protos.google.cloud.notebooks.v1beta1.IGetInstanceRequest|null|undefined,
@@ -488,7 +488,7 @@ export class NotebookServiceClient {
     return this.innerApiCalls.getInstance(request, options, callback);
   }
   isInstanceUpgradeable(
-      request: protos.google.cloud.notebooks.v1beta1.IIsInstanceUpgradeableRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IIsInstanceUpgradeableRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.notebooks.v1beta1.IIsInstanceUpgradeableResponse,
@@ -526,7 +526,7 @@ export class NotebookServiceClient {
  * const [response] = await client.isInstanceUpgradeable(request);
  */
   isInstanceUpgradeable(
-      request: protos.google.cloud.notebooks.v1beta1.IIsInstanceUpgradeableRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IIsInstanceUpgradeableRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.notebooks.v1beta1.IIsInstanceUpgradeableResponse,
           protos.google.cloud.notebooks.v1beta1.IIsInstanceUpgradeableRequest|null|undefined,
@@ -560,7 +560,7 @@ export class NotebookServiceClient {
     return this.innerApiCalls.isInstanceUpgradeable(request, options, callback);
   }
   getEnvironment(
-      request: protos.google.cloud.notebooks.v1beta1.IGetEnvironmentRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IGetEnvironmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.notebooks.v1beta1.IEnvironment,
@@ -598,7 +598,7 @@ export class NotebookServiceClient {
  * const [response] = await client.getEnvironment(request);
  */
   getEnvironment(
-      request: protos.google.cloud.notebooks.v1beta1.IGetEnvironmentRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IGetEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.notebooks.v1beta1.IEnvironment,
           protos.google.cloud.notebooks.v1beta1.IGetEnvironmentRequest|null|undefined,
@@ -633,7 +633,7 @@ export class NotebookServiceClient {
   }
 
   createInstance(
-      request: protos.google.cloud.notebooks.v1beta1.ICreateInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.ICreateInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -678,7 +678,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   createInstance(
-      request: protos.google.cloud.notebooks.v1beta1.ICreateInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.ICreateInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -733,7 +733,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   registerInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IRegisterInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IRegisterInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -782,7 +782,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   registerInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IRegisterInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IRegisterInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -837,7 +837,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   setInstanceAccelerator(
-      request: protos.google.cloud.notebooks.v1beta1.ISetInstanceAcceleratorRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.ISetInstanceAcceleratorRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -885,7 +885,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   setInstanceAccelerator(
-      request: protos.google.cloud.notebooks.v1beta1.ISetInstanceAcceleratorRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.ISetInstanceAcceleratorRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -940,7 +940,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   setInstanceMachineType(
-      request: protos.google.cloud.notebooks.v1beta1.ISetInstanceMachineTypeRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.ISetInstanceMachineTypeRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -984,7 +984,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   setInstanceMachineType(
-      request: protos.google.cloud.notebooks.v1beta1.ISetInstanceMachineTypeRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.ISetInstanceMachineTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1039,7 +1039,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   setInstanceLabels(
-      request: protos.google.cloud.notebooks.v1beta1.ISetInstanceLabelsRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.ISetInstanceLabelsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -1083,7 +1083,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   setInstanceLabels(
-      request: protos.google.cloud.notebooks.v1beta1.ISetInstanceLabelsRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.ISetInstanceLabelsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1138,7 +1138,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   deleteInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IDeleteInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IDeleteInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -1179,7 +1179,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   deleteInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IDeleteInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IDeleteInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1234,7 +1234,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   startInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IStartInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IStartInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -1275,7 +1275,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   startInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IStartInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IStartInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1330,7 +1330,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   stopInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IStopInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IStopInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -1371,7 +1371,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   stopInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IStopInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IStopInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1426,7 +1426,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   resetInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IResetInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IResetInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -1467,7 +1467,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   resetInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IResetInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IResetInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1522,7 +1522,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   reportInstanceInfo(
-      request: protos.google.cloud.notebooks.v1beta1.IReportInstanceInfoRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IReportInstanceInfoRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -1572,7 +1572,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   reportInstanceInfo(
-      request: protos.google.cloud.notebooks.v1beta1.IReportInstanceInfoRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IReportInstanceInfoRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1627,7 +1627,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   upgradeInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IUpgradeInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IUpgradeInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -1668,7 +1668,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   upgradeInstance(
-      request: protos.google.cloud.notebooks.v1beta1.IUpgradeInstanceRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IUpgradeInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1723,7 +1723,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   upgradeInstanceInternal(
-      request: protos.google.cloud.notebooks.v1beta1.IUpgradeInstanceInternalRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IUpgradeInstanceInternalRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -1768,7 +1768,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   upgradeInstanceInternal(
-      request: protos.google.cloud.notebooks.v1beta1.IUpgradeInstanceInternalRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IUpgradeInstanceInternalRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IInstance, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1823,7 +1823,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   createEnvironment(
-      request: protos.google.cloud.notebooks.v1beta1.ICreateEnvironmentRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.ICreateEnvironmentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.notebooks.v1beta1.IEnvironment, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -1870,7 +1870,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   createEnvironment(
-      request: protos.google.cloud.notebooks.v1beta1.ICreateEnvironmentRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.ICreateEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.notebooks.v1beta1.IEnvironment, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1925,7 +1925,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1beta1.Environment, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   deleteEnvironment(
-      request: protos.google.cloud.notebooks.v1beta1.IDeleteEnvironmentRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IDeleteEnvironmentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
@@ -1966,7 +1966,7 @@ export class NotebookServiceClient {
  * const [response] = await operation.promise();
  */
   deleteEnvironment(
-      request: protos.google.cloud.notebooks.v1beta1.IDeleteEnvironmentRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IDeleteEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.notebooks.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2021,7 +2021,7 @@ export class NotebookServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.notebooks.v1beta1.OperationMetadata>;
   }
   listInstances(
-      request: protos.google.cloud.notebooks.v1beta1.IListInstancesRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IListInstancesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.notebooks.v1beta1.IInstance[],
@@ -2068,7 +2068,7 @@ export class NotebookServiceClient {
  *   for more details and examples.
  */
   listInstances(
-      request: protos.google.cloud.notebooks.v1beta1.IListInstancesRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IListInstancesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.notebooks.v1beta1.IListInstancesRequest,
           protos.google.cloud.notebooks.v1beta1.IListInstancesResponse|null|undefined,
@@ -2202,7 +2202,7 @@ export class NotebookServiceClient {
     ) as AsyncIterable<protos.google.cloud.notebooks.v1beta1.IInstance>;
   }
   listEnvironments(
-      request: protos.google.cloud.notebooks.v1beta1.IListEnvironmentsRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IListEnvironmentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.notebooks.v1beta1.IEnvironment[],
@@ -2248,7 +2248,7 @@ export class NotebookServiceClient {
  *   for more details and examples.
  */
   listEnvironments(
-      request: protos.google.cloud.notebooks.v1beta1.IListEnvironmentsRequest,
+      request?: protos.google.cloud.notebooks.v1beta1.IListEnvironmentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.notebooks.v1beta1.IListEnvironmentsRequest,
           protos.google.cloud.notebooks.v1beta1.IListEnvironmentsResponse|null|undefined,

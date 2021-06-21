@@ -653,7 +653,7 @@ export class CampaignBidModifierServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignBidModifier(
-      request: protos.google.ads.googleads.v8.services.IGetCampaignBidModifierRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCampaignBidModifierRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICampaignBidModifier,
@@ -698,7 +698,7 @@ export class CampaignBidModifierServiceClient {
  * const [response] = await client.getCampaignBidModifier(request);
  */
   getCampaignBidModifier(
-      request: protos.google.ads.googleads.v8.services.IGetCampaignBidModifierRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCampaignBidModifierRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICampaignBidModifier,
           protos.google.ads.googleads.v8.services.IGetCampaignBidModifierRequest|null|undefined,
@@ -732,7 +732,7 @@ export class CampaignBidModifierServiceClient {
     return this.innerApiCalls.getCampaignBidModifier(request, options, callback);
   }
   mutateCampaignBidModifiers(
-      request: protos.google.ads.googleads.v8.services.IMutateCampaignBidModifiersRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCampaignBidModifiersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateCampaignBidModifiersResponse,
@@ -807,7 +807,7 @@ export class CampaignBidModifierServiceClient {
  * const [response] = await client.mutateCampaignBidModifiers(request);
  */
   mutateCampaignBidModifiers(
-      request: protos.google.ads.googleads.v8.services.IMutateCampaignBidModifiersRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCampaignBidModifiersRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateCampaignBidModifiersResponse,
           protos.google.ads.googleads.v8.services.IMutateCampaignBidModifiersRequest|null|undefined,

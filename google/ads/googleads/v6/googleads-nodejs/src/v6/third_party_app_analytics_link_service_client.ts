@@ -615,7 +615,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
   // -- Service calls --
   // -------------------
   getThirdPartyAppAnalyticsLink(
-      request: protos.google.ads.googleads.v6.services.IGetThirdPartyAppAnalyticsLinkRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetThirdPartyAppAnalyticsLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IThirdPartyAppAnalyticsLink,
@@ -652,7 +652,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
  * const [response] = await client.getThirdPartyAppAnalyticsLink(request);
  */
   getThirdPartyAppAnalyticsLink(
-      request: protos.google.ads.googleads.v6.services.IGetThirdPartyAppAnalyticsLinkRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetThirdPartyAppAnalyticsLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IThirdPartyAppAnalyticsLink,
           protos.google.ads.googleads.v6.services.IGetThirdPartyAppAnalyticsLinkRequest|null|undefined,
@@ -686,7 +686,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
     return this.innerApiCalls.getThirdPartyAppAnalyticsLink(request, options, callback);
   }
   regenerateShareableLinkId(
-      request: protos.google.ads.googleads.v6.services.IRegenerateShareableLinkIdRequest,
+      request?: protos.google.ads.googleads.v6.services.IRegenerateShareableLinkIdRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IRegenerateShareableLinkIdResponse,
@@ -724,7 +724,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
  * const [response] = await client.regenerateShareableLinkId(request);
  */
   regenerateShareableLinkId(
-      request: protos.google.ads.googleads.v6.services.IRegenerateShareableLinkIdRequest,
+      request?: protos.google.ads.googleads.v6.services.IRegenerateShareableLinkIdRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IRegenerateShareableLinkIdResponse,
           protos.google.ads.googleads.v6.services.IRegenerateShareableLinkIdRequest|null|undefined,

@@ -635,7 +635,7 @@ export class CampaignCriterionServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignCriterion(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignCriterionRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignCriterionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.ICampaignCriterion,
@@ -680,7 +680,7 @@ export class CampaignCriterionServiceClient {
  * const [response] = await client.getCampaignCriterion(request);
  */
   getCampaignCriterion(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignCriterionRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignCriterionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.ICampaignCriterion,
           protos.google.ads.googleads.v7.services.IGetCampaignCriterionRequest|null|undefined,
@@ -714,7 +714,7 @@ export class CampaignCriterionServiceClient {
     return this.innerApiCalls.getCampaignCriterion(request, options, callback);
   }
   mutateCampaignCriteria(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignCriteriaRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateCampaignCriteriaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IMutateCampaignCriteriaResponse,
@@ -795,7 +795,7 @@ export class CampaignCriterionServiceClient {
  * const [response] = await client.mutateCampaignCriteria(request);
  */
   mutateCampaignCriteria(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignCriteriaRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateCampaignCriteriaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IMutateCampaignCriteriaResponse,
           protos.google.ads.googleads.v7.services.IMutateCampaignCriteriaRequest|null|undefined,

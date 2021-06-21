@@ -2262,6 +2262,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual SignBlobResponse SignBlob(SignBlobRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -2278,6 +2279,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignBlobResponse> SignBlobAsync(SignBlobRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -2294,6 +2296,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignBlobResponse> SignBlobAsync(SignBlobRequest request, st::CancellationToken cancellationToken) =>
             SignBlobAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
@@ -2325,13 +2328,12 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual SignBlobResponse SignBlob(string name, proto::ByteString bytesToSign, gaxgrpc::CallSettings callSettings = null) =>
             SignBlob(new SignBlobRequest
             {
-#pragma warning disable CS0612
                 Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
                 BytesToSign = gax::GaxPreconditions.CheckNotNull(bytesToSign, nameof(bytesToSign)),
-#pragma warning restore CS0612
             }, callSettings);
 
         /// <summary>
@@ -2362,13 +2364,12 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignBlobResponse> SignBlobAsync(string name, proto::ByteString bytesToSign, gaxgrpc::CallSettings callSettings = null) =>
             SignBlobAsync(new SignBlobRequest
             {
-#pragma warning disable CS0612
                 Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
                 BytesToSign = gax::GaxPreconditions.CheckNotNull(bytesToSign, nameof(bytesToSign)),
-#pragma warning restore CS0612
             }, callSettings);
 
         /// <summary>
@@ -2399,6 +2400,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignBlobResponse> SignBlobAsync(string name, proto::ByteString bytesToSign, st::CancellationToken cancellationToken) =>
             SignBlobAsync(name, bytesToSign, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
@@ -2430,13 +2432,12 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual SignBlobResponse SignBlob(ServiceAccountName name, proto::ByteString bytesToSign, gaxgrpc::CallSettings callSettings = null) =>
             SignBlob(new SignBlobRequest
             {
-#pragma warning disable CS0612
                 ServiceAccountName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                 BytesToSign = gax::GaxPreconditions.CheckNotNull(bytesToSign, nameof(bytesToSign)),
-#pragma warning restore CS0612
             }, callSettings);
 
         /// <summary>
@@ -2467,13 +2468,12 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignBlobResponse> SignBlobAsync(ServiceAccountName name, proto::ByteString bytesToSign, gaxgrpc::CallSettings callSettings = null) =>
             SignBlobAsync(new SignBlobRequest
             {
-#pragma warning disable CS0612
                 ServiceAccountName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                 BytesToSign = gax::GaxPreconditions.CheckNotNull(bytesToSign, nameof(bytesToSign)),
-#pragma warning restore CS0612
             }, callSettings);
 
         /// <summary>
@@ -2504,6 +2504,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignBlobResponse> SignBlobAsync(ServiceAccountName name, proto::ByteString bytesToSign, st::CancellationToken cancellationToken) =>
             SignBlobAsync(name, bytesToSign, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
@@ -2521,6 +2522,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual SignJwtResponse SignJwt(SignJwtRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -2538,6 +2540,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignJwtResponse> SignJwtAsync(SignJwtRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -2555,6 +2558,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignJwtResponse> SignJwtAsync(SignJwtRequest request, st::CancellationToken cancellationToken) =>
             SignJwtAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
@@ -2596,13 +2600,12 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual SignJwtResponse SignJwt(string name, string payload, gaxgrpc::CallSettings callSettings = null) =>
             SignJwt(new SignJwtRequest
             {
-#pragma warning disable CS0612
                 Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
                 Payload = gax::GaxPreconditions.CheckNotNullOrEmpty(payload, nameof(payload)),
-#pragma warning restore CS0612
             }, callSettings);
 
         /// <summary>
@@ -2643,13 +2646,12 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignJwtResponse> SignJwtAsync(string name, string payload, gaxgrpc::CallSettings callSettings = null) =>
             SignJwtAsync(new SignJwtRequest
             {
-#pragma warning disable CS0612
                 Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
                 Payload = gax::GaxPreconditions.CheckNotNullOrEmpty(payload, nameof(payload)),
-#pragma warning restore CS0612
             }, callSettings);
 
         /// <summary>
@@ -2690,6 +2692,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignJwtResponse> SignJwtAsync(string name, string payload, st::CancellationToken cancellationToken) =>
             SignJwtAsync(name, payload, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
@@ -2731,13 +2734,12 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual SignJwtResponse SignJwt(ServiceAccountName name, string payload, gaxgrpc::CallSettings callSettings = null) =>
             SignJwt(new SignJwtRequest
             {
-#pragma warning disable CS0612
                 ServiceAccountName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                 Payload = gax::GaxPreconditions.CheckNotNullOrEmpty(payload, nameof(payload)),
-#pragma warning restore CS0612
             }, callSettings);
 
         /// <summary>
@@ -2778,13 +2780,12 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignJwtResponse> SignJwtAsync(ServiceAccountName name, string payload, gaxgrpc::CallSettings callSettings = null) =>
             SignJwtAsync(new SignJwtRequest
             {
-#pragma warning disable CS0612
                 ServiceAccountName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                 Payload = gax::GaxPreconditions.CheckNotNullOrEmpty(payload, nameof(payload)),
-#pragma warning restore CS0612
             }, callSettings);
 
         /// <summary>
@@ -2825,6 +2826,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<SignJwtResponse> SignJwtAsync(ServiceAccountName name, string payload, st::CancellationToken cancellationToken) =>
             SignJwtAsync(name, payload, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
@@ -4010,10 +4012,14 @@ namespace Google.Cloud.Iam.Admin.V1
             _callDeleteServiceAccountKey = clientHelper.BuildApiCall<DeleteServiceAccountKeyRequest, wkt::Empty>(grpcClient.DeleteServiceAccountKeyAsync, grpcClient.DeleteServiceAccountKey, effectiveSettings.DeleteServiceAccountKeySettings).WithGoogleRequestParam("name", request => request.Name);
             Modify_ApiCall(ref _callDeleteServiceAccountKey);
             Modify_DeleteServiceAccountKeyApiCall(ref _callDeleteServiceAccountKey);
+#pragma warning disable CS0612
             _callSignBlob = clientHelper.BuildApiCall<SignBlobRequest, SignBlobResponse>(grpcClient.SignBlobAsync, grpcClient.SignBlob, effectiveSettings.SignBlobSettings).WithGoogleRequestParam("name", request => request.Name);
+#pragma warning restore CS0612
             Modify_ApiCall(ref _callSignBlob);
             Modify_SignBlobApiCall(ref _callSignBlob);
+#pragma warning disable CS0612
             _callSignJwt = clientHelper.BuildApiCall<SignJwtRequest, SignJwtResponse>(grpcClient.SignJwtAsync, grpcClient.SignJwt, effectiveSettings.SignJwtSettings).WithGoogleRequestParam("name", request => request.Name);
+#pragma warning restore CS0612
             Modify_ApiCall(ref _callSignJwt);
             Modify_SignJwtApiCall(ref _callSignJwt);
             _callGetIamPolicy = clientHelper.BuildApiCall<gciv::GetIamPolicyRequest, gciv::Policy>(grpcClient.GetIamPolicyAsync, grpcClient.GetIamPolicy, effectiveSettings.GetIamPolicySettings).WithGoogleRequestParam("resource", request => request.Resource);
@@ -4630,6 +4636,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override SignBlobResponse SignBlob(SignBlobRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_SignBlobRequest(ref request, ref callSettings);
@@ -4649,6 +4656,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override stt::Task<SignBlobResponse> SignBlobAsync(SignBlobRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_SignBlobRequest(ref request, ref callSettings);
@@ -4669,6 +4677,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override SignJwtResponse SignJwt(SignJwtRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_SignJwtRequest(ref request, ref callSettings);
@@ -4689,6 +4698,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override stt::Task<SignJwtResponse> SignJwtAsync(SignJwtRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_SignJwtRequest(ref request, ref callSettings);

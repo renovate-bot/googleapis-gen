@@ -410,7 +410,7 @@ export class DatastreamClient {
   // -- Service calls --
   // -------------------
   getConnectionProfile(
-      request: protos.google.cloud.datastream.v1alpha1.IGetConnectionProfileRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IGetConnectionProfileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datastream.v1alpha1.IConnectionProfile,
@@ -447,7 +447,7 @@ export class DatastreamClient {
  * const [response] = await client.getConnectionProfile(request);
  */
   getConnectionProfile(
-      request: protos.google.cloud.datastream.v1alpha1.IGetConnectionProfileRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IGetConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datastream.v1alpha1.IConnectionProfile,
           protos.google.cloud.datastream.v1alpha1.IGetConnectionProfileRequest|null|undefined,
@@ -481,7 +481,7 @@ export class DatastreamClient {
     return this.innerApiCalls.getConnectionProfile(request, options, callback);
   }
   discoverConnectionProfile(
-      request: protos.google.cloud.datastream.v1alpha1.IDiscoverConnectionProfileRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IDiscoverConnectionProfileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datastream.v1alpha1.IDiscoverConnectionProfileResponse,
@@ -535,7 +535,7 @@ export class DatastreamClient {
  * const [response] = await client.discoverConnectionProfile(request);
  */
   discoverConnectionProfile(
-      request: protos.google.cloud.datastream.v1alpha1.IDiscoverConnectionProfileRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IDiscoverConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datastream.v1alpha1.IDiscoverConnectionProfileResponse,
           protos.google.cloud.datastream.v1alpha1.IDiscoverConnectionProfileRequest|null|undefined,
@@ -569,7 +569,7 @@ export class DatastreamClient {
     return this.innerApiCalls.discoverConnectionProfile(request, options, callback);
   }
   getStream(
-      request: protos.google.cloud.datastream.v1alpha1.IGetStreamRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IGetStreamRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datastream.v1alpha1.IStream,
@@ -606,7 +606,7 @@ export class DatastreamClient {
  * const [response] = await client.getStream(request);
  */
   getStream(
-      request: protos.google.cloud.datastream.v1alpha1.IGetStreamRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IGetStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datastream.v1alpha1.IStream,
           protos.google.cloud.datastream.v1alpha1.IGetStreamRequest|null|undefined,
@@ -640,7 +640,7 @@ export class DatastreamClient {
     return this.innerApiCalls.getStream(request, options, callback);
   }
   getPrivateConnection(
-      request: protos.google.cloud.datastream.v1alpha1.IGetPrivateConnectionRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IGetPrivateConnectionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datastream.v1alpha1.IPrivateConnection,
@@ -677,7 +677,7 @@ export class DatastreamClient {
  * const [response] = await client.getPrivateConnection(request);
  */
   getPrivateConnection(
-      request: protos.google.cloud.datastream.v1alpha1.IGetPrivateConnectionRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IGetPrivateConnectionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datastream.v1alpha1.IPrivateConnection,
           protos.google.cloud.datastream.v1alpha1.IGetPrivateConnectionRequest|null|undefined,
@@ -711,7 +711,7 @@ export class DatastreamClient {
     return this.innerApiCalls.getPrivateConnection(request, options, callback);
   }
   getRoute(
-      request: protos.google.cloud.datastream.v1alpha1.IGetRouteRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IGetRouteRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datastream.v1alpha1.IRoute,
@@ -748,7 +748,7 @@ export class DatastreamClient {
  * const [response] = await client.getRoute(request);
  */
   getRoute(
-      request: protos.google.cloud.datastream.v1alpha1.IGetRouteRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IGetRouteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datastream.v1alpha1.IRoute,
           protos.google.cloud.datastream.v1alpha1.IGetRouteRequest|null|undefined,
@@ -783,7 +783,7 @@ export class DatastreamClient {
   }
 
   createConnectionProfile(
-      request: protos.google.cloud.datastream.v1alpha1.ICreateConnectionProfileRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.ICreateConnectionProfileRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.datastream.v1alpha1.IConnectionProfile, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
@@ -841,7 +841,7 @@ export class DatastreamClient {
  * const [response] = await operation.promise();
  */
   createConnectionProfile(
-      request: protos.google.cloud.datastream.v1alpha1.ICreateConnectionProfileRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.ICreateConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.datastream.v1alpha1.IConnectionProfile, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -896,7 +896,7 @@ export class DatastreamClient {
     return decodeOperation as LROperation<protos.google.cloud.datastream.v1alpha1.ConnectionProfile, protos.google.cloud.datastream.v1alpha1.OperationMetadata>;
   }
   updateConnectionProfile(
-      request: protos.google.cloud.datastream.v1alpha1.IUpdateConnectionProfileRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IUpdateConnectionProfileRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.datastream.v1alpha1.IConnectionProfile, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
@@ -956,7 +956,7 @@ export class DatastreamClient {
  * const [response] = await operation.promise();
  */
   updateConnectionProfile(
-      request: protos.google.cloud.datastream.v1alpha1.IUpdateConnectionProfileRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IUpdateConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.datastream.v1alpha1.IConnectionProfile, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1011,7 +1011,7 @@ export class DatastreamClient {
     return decodeOperation as LROperation<protos.google.cloud.datastream.v1alpha1.ConnectionProfile, protos.google.cloud.datastream.v1alpha1.OperationMetadata>;
   }
   deleteConnectionProfile(
-      request: protos.google.cloud.datastream.v1alpha1.IDeleteConnectionProfileRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IDeleteConnectionProfileRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
@@ -1065,7 +1065,7 @@ export class DatastreamClient {
  * const [response] = await operation.promise();
  */
   deleteConnectionProfile(
-      request: protos.google.cloud.datastream.v1alpha1.IDeleteConnectionProfileRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IDeleteConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1120,7 +1120,7 @@ export class DatastreamClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.datastream.v1alpha1.OperationMetadata>;
   }
   createStream(
-      request: protos.google.cloud.datastream.v1alpha1.ICreateStreamRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.ICreateStreamRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.datastream.v1alpha1.IStream, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
@@ -1183,7 +1183,7 @@ export class DatastreamClient {
  * const [response] = await operation.promise();
  */
   createStream(
-      request: protos.google.cloud.datastream.v1alpha1.ICreateStreamRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.ICreateStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.datastream.v1alpha1.IStream, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1238,7 +1238,7 @@ export class DatastreamClient {
     return decodeOperation as LROperation<protos.google.cloud.datastream.v1alpha1.Stream, protos.google.cloud.datastream.v1alpha1.OperationMetadata>;
   }
   updateStream(
-      request: protos.google.cloud.datastream.v1alpha1.IUpdateStreamRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IUpdateStreamRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.datastream.v1alpha1.IStream, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
@@ -1303,7 +1303,7 @@ export class DatastreamClient {
  * const [response] = await operation.promise();
  */
   updateStream(
-      request: protos.google.cloud.datastream.v1alpha1.IUpdateStreamRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IUpdateStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.datastream.v1alpha1.IStream, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1358,7 +1358,7 @@ export class DatastreamClient {
     return decodeOperation as LROperation<protos.google.cloud.datastream.v1alpha1.Stream, protos.google.cloud.datastream.v1alpha1.OperationMetadata>;
   }
   deleteStream(
-      request: protos.google.cloud.datastream.v1alpha1.IDeleteStreamRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IDeleteStreamRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
@@ -1412,7 +1412,7 @@ export class DatastreamClient {
  * const [response] = await operation.promise();
  */
   deleteStream(
-      request: protos.google.cloud.datastream.v1alpha1.IDeleteStreamRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IDeleteStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1467,7 +1467,7 @@ export class DatastreamClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.datastream.v1alpha1.OperationMetadata>;
   }
   fetchErrors(
-      request: protos.google.cloud.datastream.v1alpha1.IFetchErrorsRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IFetchErrorsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.datastream.v1alpha1.IFetchErrorsResponse, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
@@ -1507,7 +1507,7 @@ export class DatastreamClient {
  * const [response] = await operation.promise();
  */
   fetchErrors(
-      request: protos.google.cloud.datastream.v1alpha1.IFetchErrorsRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IFetchErrorsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.datastream.v1alpha1.IFetchErrorsResponse, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1562,7 +1562,7 @@ export class DatastreamClient {
     return decodeOperation as LROperation<protos.google.cloud.datastream.v1alpha1.FetchErrorsResponse, protos.google.cloud.datastream.v1alpha1.OperationMetadata>;
   }
   createPrivateConnection(
-      request: protos.google.cloud.datastream.v1alpha1.ICreatePrivateConnectionRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.ICreatePrivateConnectionRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.datastream.v1alpha1.IPrivateConnection, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
@@ -1620,7 +1620,7 @@ export class DatastreamClient {
  * const [response] = await operation.promise();
  */
   createPrivateConnection(
-      request: protos.google.cloud.datastream.v1alpha1.ICreatePrivateConnectionRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.ICreatePrivateConnectionRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.datastream.v1alpha1.IPrivateConnection, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1675,7 +1675,7 @@ export class DatastreamClient {
     return decodeOperation as LROperation<protos.google.cloud.datastream.v1alpha1.PrivateConnection, protos.google.cloud.datastream.v1alpha1.OperationMetadata>;
   }
   deletePrivateConnection(
-      request: protos.google.cloud.datastream.v1alpha1.IDeletePrivateConnectionRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IDeletePrivateConnectionRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
@@ -1732,7 +1732,7 @@ export class DatastreamClient {
  * const [response] = await operation.promise();
  */
   deletePrivateConnection(
-      request: protos.google.cloud.datastream.v1alpha1.IDeletePrivateConnectionRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IDeletePrivateConnectionRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1787,7 +1787,7 @@ export class DatastreamClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.datastream.v1alpha1.OperationMetadata>;
   }
   createRoute(
-      request: protos.google.cloud.datastream.v1alpha1.ICreateRouteRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.ICreateRouteRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.datastream.v1alpha1.IRoute, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
@@ -1846,7 +1846,7 @@ export class DatastreamClient {
  * const [response] = await operation.promise();
  */
   createRoute(
-      request: protos.google.cloud.datastream.v1alpha1.ICreateRouteRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.ICreateRouteRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.datastream.v1alpha1.IRoute, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1901,7 +1901,7 @@ export class DatastreamClient {
     return decodeOperation as LROperation<protos.google.cloud.datastream.v1alpha1.Route, protos.google.cloud.datastream.v1alpha1.OperationMetadata>;
   }
   deleteRoute(
-      request: protos.google.cloud.datastream.v1alpha1.IDeleteRouteRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IDeleteRouteRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
@@ -1955,7 +1955,7 @@ export class DatastreamClient {
  * const [response] = await operation.promise();
  */
   deleteRoute(
-      request: protos.google.cloud.datastream.v1alpha1.IDeleteRouteRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IDeleteRouteRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.datastream.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2010,7 +2010,7 @@ export class DatastreamClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.datastream.v1alpha1.OperationMetadata>;
   }
   listConnectionProfiles(
-      request: protos.google.cloud.datastream.v1alpha1.IListConnectionProfilesRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IListConnectionProfilesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datastream.v1alpha1.IConnectionProfile[],
@@ -2066,7 +2066,7 @@ export class DatastreamClient {
  *   for more details and examples.
  */
   listConnectionProfiles(
-      request: protos.google.cloud.datastream.v1alpha1.IListConnectionProfilesRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IListConnectionProfilesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.datastream.v1alpha1.IListConnectionProfilesRequest,
           protos.google.cloud.datastream.v1alpha1.IListConnectionProfilesResponse|null|undefined,
@@ -2216,7 +2216,7 @@ export class DatastreamClient {
     ) as AsyncIterable<protos.google.cloud.datastream.v1alpha1.IConnectionProfile>;
   }
   listStreams(
-      request: protos.google.cloud.datastream.v1alpha1.IListStreamsRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IListStreamsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datastream.v1alpha1.IStream[],
@@ -2271,7 +2271,7 @@ export class DatastreamClient {
  *   for more details and examples.
  */
   listStreams(
-      request: protos.google.cloud.datastream.v1alpha1.IListStreamsRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IListStreamsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.datastream.v1alpha1.IListStreamsRequest,
           protos.google.cloud.datastream.v1alpha1.IListStreamsResponse|null|undefined,
@@ -2421,7 +2421,7 @@ export class DatastreamClient {
     ) as AsyncIterable<protos.google.cloud.datastream.v1alpha1.IStream>;
   }
   fetchStaticIps(
-      request: protos.google.cloud.datastream.v1alpha1.IFetchStaticIpsRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IFetchStaticIpsRequest,
       options?: CallOptions):
       Promise<[
         string[],
@@ -2470,7 +2470,7 @@ export class DatastreamClient {
  *   for more details and examples.
  */
   fetchStaticIps(
-      request: protos.google.cloud.datastream.v1alpha1.IFetchStaticIpsRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IFetchStaticIpsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.datastream.v1alpha1.IFetchStaticIpsRequest,
           protos.google.cloud.datastream.v1alpha1.IFetchStaticIpsResponse|null|undefined,
@@ -2604,7 +2604,7 @@ export class DatastreamClient {
     ) as AsyncIterable<string>;
   }
   listPrivateConnections(
-      request: protos.google.cloud.datastream.v1alpha1.IListPrivateConnectionsRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IListPrivateConnectionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datastream.v1alpha1.IPrivateConnection[],
@@ -2662,7 +2662,7 @@ export class DatastreamClient {
  *   for more details and examples.
  */
   listPrivateConnections(
-      request: protos.google.cloud.datastream.v1alpha1.IListPrivateConnectionsRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IListPrivateConnectionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.datastream.v1alpha1.IListPrivateConnectionsRequest,
           protos.google.cloud.datastream.v1alpha1.IListPrivateConnectionsResponse|null|undefined,
@@ -2816,7 +2816,7 @@ export class DatastreamClient {
     ) as AsyncIterable<protos.google.cloud.datastream.v1alpha1.IPrivateConnection>;
   }
   listRoutes(
-      request: protos.google.cloud.datastream.v1alpha1.IListRoutesRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IListRoutesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datastream.v1alpha1.IRoute[],
@@ -2874,7 +2874,7 @@ export class DatastreamClient {
  *   for more details and examples.
  */
   listRoutes(
-      request: protos.google.cloud.datastream.v1alpha1.IListRoutesRequest,
+      request?: protos.google.cloud.datastream.v1alpha1.IListRoutesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.datastream.v1alpha1.IListRoutesRequest,
           protos.google.cloud.datastream.v1alpha1.IListRoutesResponse|null|undefined,

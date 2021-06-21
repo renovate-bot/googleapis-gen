@@ -261,7 +261,7 @@ export class LicenseNotificationServiceClient {
   // -- Service calls --
   // -------------------
   list(
-      request: protos.ccc.hosted.marketplace.v2.ILicenseNotificationListRequest,
+      request?: protos.ccc.hosted.marketplace.v2.ILicenseNotificationListRequest,
       options?: CallOptions):
       Promise<[
         protos.ccc.hosted.marketplace.v2.ILicenseNotificationList,
@@ -302,7 +302,7 @@ export class LicenseNotificationServiceClient {
  * const [response] = await client.list(request);
  */
   list(
-      request: protos.ccc.hosted.marketplace.v2.ILicenseNotificationListRequest,
+      request?: protos.ccc.hosted.marketplace.v2.ILicenseNotificationListRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.ccc.hosted.marketplace.v2.ILicenseNotificationList,
           protos.ccc.hosted.marketplace.v2.ILicenseNotificationListRequest|null|undefined,

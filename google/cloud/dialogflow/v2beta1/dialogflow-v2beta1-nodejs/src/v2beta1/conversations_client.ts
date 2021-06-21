@@ -388,7 +388,7 @@ export class ConversationsClient {
   // -- Service calls --
   // -------------------
   createConversation(
-      request: protos.google.cloud.dialogflow.v2beta1.ICreateConversationRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ICreateConversationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IConversation,
@@ -456,7 +456,7 @@ export class ConversationsClient {
  * const [response] = await client.createConversation(request);
  */
   createConversation(
-      request: protos.google.cloud.dialogflow.v2beta1.ICreateConversationRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ICreateConversationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IConversation,
           protos.google.cloud.dialogflow.v2beta1.ICreateConversationRequest|null|undefined,
@@ -490,7 +490,7 @@ export class ConversationsClient {
     return this.innerApiCalls.createConversation(request, options, callback);
   }
   getConversation(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetConversationRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetConversationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IConversation,
@@ -529,7 +529,7 @@ export class ConversationsClient {
  * const [response] = await client.getConversation(request);
  */
   getConversation(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetConversationRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetConversationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IConversation,
           protos.google.cloud.dialogflow.v2beta1.IGetConversationRequest|null|undefined,
@@ -563,7 +563,7 @@ export class ConversationsClient {
     return this.innerApiCalls.getConversation(request, options, callback);
   }
   completeConversation(
-      request: protos.google.cloud.dialogflow.v2beta1.ICompleteConversationRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ICompleteConversationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IConversation,
@@ -603,7 +603,7 @@ export class ConversationsClient {
  * const [response] = await client.completeConversation(request);
  */
   completeConversation(
-      request: protos.google.cloud.dialogflow.v2beta1.ICompleteConversationRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ICompleteConversationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IConversation,
           protos.google.cloud.dialogflow.v2beta1.ICompleteConversationRequest|null|undefined,
@@ -637,7 +637,7 @@ export class ConversationsClient {
     return this.innerApiCalls.completeConversation(request, options, callback);
   }
   batchCreateMessages(
-      request: protos.google.cloud.dialogflow.v2beta1.IBatchCreateMessagesRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IBatchCreateMessagesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IBatchCreateMessagesResponse,
@@ -681,7 +681,7 @@ export class ConversationsClient {
  * const [response] = await client.batchCreateMessages(request);
  */
   batchCreateMessages(
-      request: protos.google.cloud.dialogflow.v2beta1.IBatchCreateMessagesRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IBatchCreateMessagesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IBatchCreateMessagesResponse,
           protos.google.cloud.dialogflow.v2beta1.IBatchCreateMessagesRequest|null|undefined,
@@ -716,7 +716,7 @@ export class ConversationsClient {
   }
 
   listConversations(
-      request: protos.google.cloud.dialogflow.v2beta1.IListConversationsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListConversationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IConversation[],
@@ -781,7 +781,7 @@ export class ConversationsClient {
  *   for more details and examples.
  */
   listConversations(
-      request: protos.google.cloud.dialogflow.v2beta1.IListConversationsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListConversationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2beta1.IListConversationsRequest,
           protos.google.cloud.dialogflow.v2beta1.IListConversationsResponse|null|undefined,
@@ -951,7 +951,7 @@ export class ConversationsClient {
     ) as AsyncIterable<protos.google.cloud.dialogflow.v2beta1.IConversation>;
   }
   listMessages(
-      request: protos.google.cloud.dialogflow.v2beta1.IListMessagesRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListMessagesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IMessage[],
@@ -1012,7 +1012,7 @@ export class ConversationsClient {
  *   for more details and examples.
  */
   listMessages(
-      request: protos.google.cloud.dialogflow.v2beta1.IListMessagesRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListMessagesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2beta1.IListMessagesRequest,
           protos.google.cloud.dialogflow.v2beta1.IListMessagesResponse|null|undefined,

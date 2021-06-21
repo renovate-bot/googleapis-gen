@@ -614,7 +614,7 @@ export class CustomerFeedServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerFeed(
-      request: protos.google.ads.googleads.v6.services.IGetCustomerFeedRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCustomerFeedRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.ICustomerFeed,
@@ -651,7 +651,7 @@ export class CustomerFeedServiceClient {
  * const [response] = await client.getCustomerFeed(request);
  */
   getCustomerFeed(
-      request: protos.google.ads.googleads.v6.services.IGetCustomerFeedRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCustomerFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.ICustomerFeed,
           protos.google.ads.googleads.v6.services.IGetCustomerFeedRequest|null|undefined,
@@ -685,7 +685,7 @@ export class CustomerFeedServiceClient {
     return this.innerApiCalls.getCustomerFeed(request, options, callback);
   }
   mutateCustomerFeeds(
-      request: protos.google.ads.googleads.v6.services.IMutateCustomerFeedsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCustomerFeedsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateCustomerFeedsResponse,
@@ -736,7 +736,7 @@ export class CustomerFeedServiceClient {
  * const [response] = await client.mutateCustomerFeeds(request);
  */
   mutateCustomerFeeds(
-      request: protos.google.ads.googleads.v6.services.IMutateCustomerFeedsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCustomerFeedsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateCustomerFeedsResponse,
           protos.google.ads.googleads.v6.services.IMutateCustomerFeedsRequest|null|undefined,

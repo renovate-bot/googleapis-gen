@@ -343,7 +343,7 @@ export class AutoSuggestionServiceClient {
   // -- Service calls --
   // -------------------
   suggestQueries(
-      request: protos.google.cloud.dataqna.v1alpha.ISuggestQueriesRequest,
+      request?: protos.google.cloud.dataqna.v1alpha.ISuggestQueriesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataqna.v1alpha.ISuggestQueriesResponse,
@@ -397,7 +397,7 @@ export class AutoSuggestionServiceClient {
  * const [response] = await client.suggestQueries(request);
  */
   suggestQueries(
-      request: protos.google.cloud.dataqna.v1alpha.ISuggestQueriesRequest,
+      request?: protos.google.cloud.dataqna.v1alpha.ISuggestQueriesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dataqna.v1alpha.ISuggestQueriesResponse,
           protos.google.cloud.dataqna.v1alpha.ISuggestQueriesRequest|null|undefined,

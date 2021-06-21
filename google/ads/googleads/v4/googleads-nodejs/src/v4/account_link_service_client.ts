@@ -588,7 +588,7 @@ export class AccountLinkServiceClient {
   // -- Service calls --
   // -------------------
   getAccountLink(
-      request: protos.google.ads.googleads.v4.services.IGetAccountLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetAccountLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.IAccountLink,
@@ -625,7 +625,7 @@ export class AccountLinkServiceClient {
  * const [response] = await client.getAccountLink(request);
  */
   getAccountLink(
-      request: protos.google.ads.googleads.v4.services.IGetAccountLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetAccountLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.IAccountLink,
           protos.google.ads.googleads.v4.services.IGetAccountLinkRequest|null|undefined,
@@ -659,7 +659,7 @@ export class AccountLinkServiceClient {
     return this.innerApiCalls.getAccountLink(request, options, callback);
   }
   mutateAccountLink(
-      request: protos.google.ads.googleads.v4.services.IMutateAccountLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateAccountLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IMutateAccountLinkResponse,
@@ -709,7 +709,7 @@ export class AccountLinkServiceClient {
  * const [response] = await client.mutateAccountLink(request);
  */
   mutateAccountLink(
-      request: protos.google.ads.googleads.v4.services.IMutateAccountLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateAccountLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IMutateAccountLinkResponse,
           protos.google.ads.googleads.v4.services.IMutateAccountLinkRequest|null|undefined,

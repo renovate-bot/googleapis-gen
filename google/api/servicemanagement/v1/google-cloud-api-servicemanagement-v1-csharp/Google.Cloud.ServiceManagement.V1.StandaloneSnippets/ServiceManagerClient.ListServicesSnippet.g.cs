@@ -35,7 +35,9 @@ namespace Google.Cloud.ServiceManagement.V1.Snippets
             string producerProjectId = "";
             string consumerId = "";
             // Make the request
+#pragma warning disable CS0612
             PagedEnumerable<ListServicesResponse, ManagedService> response = serviceManagerClient.ListServices(producerProjectId, consumerId);
+#pragma warning restore CS0612
 
             // Iterate over all response items, lazily performing RPCs as required
             foreach (ManagedService item in response)

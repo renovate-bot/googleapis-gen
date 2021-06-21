@@ -274,7 +274,7 @@ export class StorageClient {
   // -- Service calls --
   // -------------------
   deleteBucketAccessControl(
-      request: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
+      request?: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -322,7 +322,7 @@ export class StorageClient {
  * const [response] = await client.deleteBucketAccessControl(request);
  */
   deleteBucketAccessControl(
-      request: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
+      request?: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.storage.v1.IDeleteBucketAccessControlRequest|null|undefined,
@@ -349,7 +349,7 @@ export class StorageClient {
     return this.innerApiCalls.deleteBucketAccessControl(request, options, callback);
   }
   getBucketAccessControl(
-      request: protos.google.storage.v1.IGetBucketAccessControlRequest,
+      request?: protos.google.storage.v1.IGetBucketAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IBucketAccessControl,
@@ -396,7 +396,7 @@ export class StorageClient {
  * const [response] = await client.getBucketAccessControl(request);
  */
   getBucketAccessControl(
-      request: protos.google.storage.v1.IGetBucketAccessControlRequest,
+      request?: protos.google.storage.v1.IGetBucketAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IBucketAccessControl,
           protos.google.storage.v1.IGetBucketAccessControlRequest|null|undefined,
@@ -423,7 +423,7 @@ export class StorageClient {
     return this.innerApiCalls.getBucketAccessControl(request, options, callback);
   }
   insertBucketAccessControl(
-      request: protos.google.storage.v1.IInsertBucketAccessControlRequest,
+      request?: protos.google.storage.v1.IInsertBucketAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IBucketAccessControl,
@@ -464,7 +464,7 @@ export class StorageClient {
  * const [response] = await client.insertBucketAccessControl(request);
  */
   insertBucketAccessControl(
-      request: protos.google.storage.v1.IInsertBucketAccessControlRequest,
+      request?: protos.google.storage.v1.IInsertBucketAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IBucketAccessControl,
           protos.google.storage.v1.IInsertBucketAccessControlRequest|null|undefined,
@@ -491,7 +491,7 @@ export class StorageClient {
     return this.innerApiCalls.insertBucketAccessControl(request, options, callback);
   }
   listBucketAccessControls(
-      request: protos.google.storage.v1.IListBucketAccessControlsRequest,
+      request?: protos.google.storage.v1.IListBucketAccessControlsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IListBucketAccessControlsResponse,
@@ -530,7 +530,7 @@ export class StorageClient {
  * const [response] = await client.listBucketAccessControls(request);
  */
   listBucketAccessControls(
-      request: protos.google.storage.v1.IListBucketAccessControlsRequest,
+      request?: protos.google.storage.v1.IListBucketAccessControlsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IListBucketAccessControlsResponse,
           protos.google.storage.v1.IListBucketAccessControlsRequest|null|undefined,
@@ -557,7 +557,7 @@ export class StorageClient {
     return this.innerApiCalls.listBucketAccessControls(request, options, callback);
   }
   updateBucketAccessControl(
-      request: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
+      request?: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IBucketAccessControl,
@@ -608,7 +608,7 @@ export class StorageClient {
  * const [response] = await client.updateBucketAccessControl(request);
  */
   updateBucketAccessControl(
-      request: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
+      request?: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IBucketAccessControl,
           protos.google.storage.v1.IUpdateBucketAccessControlRequest|null|undefined,
@@ -635,7 +635,7 @@ export class StorageClient {
     return this.innerApiCalls.updateBucketAccessControl(request, options, callback);
   }
   patchBucketAccessControl(
-      request: protos.google.storage.v1.IPatchBucketAccessControlRequest,
+      request?: protos.google.storage.v1.IPatchBucketAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IBucketAccessControl,
@@ -694,7 +694,7 @@ export class StorageClient {
  * const [response] = await client.patchBucketAccessControl(request);
  */
   patchBucketAccessControl(
-      request: protos.google.storage.v1.IPatchBucketAccessControlRequest,
+      request?: protos.google.storage.v1.IPatchBucketAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IBucketAccessControl,
           protos.google.storage.v1.IPatchBucketAccessControlRequest|null|undefined,
@@ -721,7 +721,7 @@ export class StorageClient {
     return this.innerApiCalls.patchBucketAccessControl(request, options, callback);
   }
   deleteBucket(
-      request: protos.google.storage.v1.IDeleteBucketRequest,
+      request?: protos.google.storage.v1.IDeleteBucketRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -765,7 +765,7 @@ export class StorageClient {
  * const [response] = await client.deleteBucket(request);
  */
   deleteBucket(
-      request: protos.google.storage.v1.IDeleteBucketRequest,
+      request?: protos.google.storage.v1.IDeleteBucketRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.storage.v1.IDeleteBucketRequest|null|undefined,
@@ -792,7 +792,7 @@ export class StorageClient {
     return this.innerApiCalls.deleteBucket(request, options, callback);
   }
   getBucket(
-      request: protos.google.storage.v1.IGetBucketRequest,
+      request?: protos.google.storage.v1.IGetBucketRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IBucket,
@@ -839,7 +839,7 @@ export class StorageClient {
  * const [response] = await client.getBucket(request);
  */
   getBucket(
-      request: protos.google.storage.v1.IGetBucketRequest,
+      request?: protos.google.storage.v1.IGetBucketRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IBucket,
           protos.google.storage.v1.IGetBucketRequest|null|undefined,
@@ -866,7 +866,7 @@ export class StorageClient {
     return this.innerApiCalls.getBucket(request, options, callback);
   }
   insertBucket(
-      request: protos.google.storage.v1.IInsertBucketRequest,
+      request?: protos.google.storage.v1.IInsertBucketRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IBucket,
@@ -915,7 +915,7 @@ export class StorageClient {
  * const [response] = await client.insertBucket(request);
  */
   insertBucket(
-      request: protos.google.storage.v1.IInsertBucketRequest,
+      request?: protos.google.storage.v1.IInsertBucketRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IBucket,
           protos.google.storage.v1.IInsertBucketRequest|null|undefined,
@@ -942,7 +942,7 @@ export class StorageClient {
     return this.innerApiCalls.insertBucket(request, options, callback);
   }
   listChannels(
-      request: protos.google.storage.v1.IListChannelsRequest,
+      request?: protos.google.storage.v1.IListChannelsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IListChannelsResponse,
@@ -981,7 +981,7 @@ export class StorageClient {
  * const [response] = await client.listChannels(request);
  */
   listChannels(
-      request: protos.google.storage.v1.IListChannelsRequest,
+      request?: protos.google.storage.v1.IListChannelsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IListChannelsResponse,
           protos.google.storage.v1.IListChannelsRequest|null|undefined,
@@ -1008,7 +1008,7 @@ export class StorageClient {
     return this.innerApiCalls.listChannels(request, options, callback);
   }
   listBuckets(
-      request: protos.google.storage.v1.IListBucketsRequest,
+      request?: protos.google.storage.v1.IListBucketsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IListBucketsResponse,
@@ -1057,7 +1057,7 @@ export class StorageClient {
  * const [response] = await client.listBuckets(request);
  */
   listBuckets(
-      request: protos.google.storage.v1.IListBucketsRequest,
+      request?: protos.google.storage.v1.IListBucketsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IListBucketsResponse,
           protos.google.storage.v1.IListBucketsRequest|null|undefined,
@@ -1084,7 +1084,7 @@ export class StorageClient {
     return this.innerApiCalls.listBuckets(request, options, callback);
   }
   lockBucketRetentionPolicy(
-      request: protos.google.storage.v1.ILockRetentionPolicyRequest,
+      request?: protos.google.storage.v1.ILockRetentionPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IBucket,
@@ -1126,7 +1126,7 @@ export class StorageClient {
  * const [response] = await client.lockBucketRetentionPolicy(request);
  */
   lockBucketRetentionPolicy(
-      request: protos.google.storage.v1.ILockRetentionPolicyRequest,
+      request?: protos.google.storage.v1.ILockRetentionPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IBucket,
           protos.google.storage.v1.ILockRetentionPolicyRequest|null|undefined,
@@ -1153,7 +1153,7 @@ export class StorageClient {
     return this.innerApiCalls.lockBucketRetentionPolicy(request, options, callback);
   }
   getBucketIamPolicy(
-      request: protos.google.storage.v1.IGetIamPolicyRequest,
+      request?: protos.google.storage.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -1192,7 +1192,7 @@ export class StorageClient {
  * const [response] = await client.getBucketIamPolicy(request);
  */
   getBucketIamPolicy(
-      request: protos.google.storage.v1.IGetIamPolicyRequest,
+      request?: protos.google.storage.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.storage.v1.IGetIamPolicyRequest|null|undefined,
@@ -1219,7 +1219,7 @@ export class StorageClient {
     return this.innerApiCalls.getBucketIamPolicy(request, options, callback);
   }
   setBucketIamPolicy(
-      request: protos.google.storage.v1.ISetIamPolicyRequest,
+      request?: protos.google.storage.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -1258,7 +1258,7 @@ export class StorageClient {
  * const [response] = await client.setBucketIamPolicy(request);
  */
   setBucketIamPolicy(
-      request: protos.google.storage.v1.ISetIamPolicyRequest,
+      request?: protos.google.storage.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.storage.v1.ISetIamPolicyRequest|null|undefined,
@@ -1285,7 +1285,7 @@ export class StorageClient {
     return this.innerApiCalls.setBucketIamPolicy(request, options, callback);
   }
   testBucketIamPermissions(
-      request: protos.google.storage.v1.ITestIamPermissionsRequest,
+      request?: protos.google.storage.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -1325,7 +1325,7 @@ export class StorageClient {
  * const [response] = await client.testBucketIamPermissions(request);
  */
   testBucketIamPermissions(
-      request: protos.google.storage.v1.ITestIamPermissionsRequest,
+      request?: protos.google.storage.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.storage.v1.ITestIamPermissionsRequest|null|undefined,
@@ -1352,7 +1352,7 @@ export class StorageClient {
     return this.innerApiCalls.testBucketIamPermissions(request, options, callback);
   }
   patchBucket(
-      request: protos.google.storage.v1.IPatchBucketRequest,
+      request?: protos.google.storage.v1.IPatchBucketRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IBucket,
@@ -1417,7 +1417,7 @@ export class StorageClient {
  * const [response] = await client.patchBucket(request);
  */
   patchBucket(
-      request: protos.google.storage.v1.IPatchBucketRequest,
+      request?: protos.google.storage.v1.IPatchBucketRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IBucket,
           protos.google.storage.v1.IPatchBucketRequest|null|undefined,
@@ -1444,7 +1444,7 @@ export class StorageClient {
     return this.innerApiCalls.patchBucket(request, options, callback);
   }
   updateBucket(
-      request: protos.google.storage.v1.IUpdateBucketRequest,
+      request?: protos.google.storage.v1.IUpdateBucketRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IBucket,
@@ -1501,7 +1501,7 @@ export class StorageClient {
  * const [response] = await client.updateBucket(request);
  */
   updateBucket(
-      request: protos.google.storage.v1.IUpdateBucketRequest,
+      request?: protos.google.storage.v1.IUpdateBucketRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IBucket,
           protos.google.storage.v1.IUpdateBucketRequest|null|undefined,
@@ -1528,7 +1528,7 @@ export class StorageClient {
     return this.innerApiCalls.updateBucket(request, options, callback);
   }
   stopChannel(
-      request: protos.google.storage.v1.IStopChannelRequest,
+      request?: protos.google.storage.v1.IStopChannelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1570,7 +1570,7 @@ export class StorageClient {
  * const [response] = await client.stopChannel(request);
  */
   stopChannel(
-      request: protos.google.storage.v1.IStopChannelRequest,
+      request?: protos.google.storage.v1.IStopChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.storage.v1.IStopChannelRequest|null|undefined,
@@ -1597,7 +1597,7 @@ export class StorageClient {
     return this.innerApiCalls.stopChannel(request, options, callback);
   }
   deleteDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1645,7 +1645,7 @@ export class StorageClient {
  * const [response] = await client.deleteDefaultObjectAccessControl(request);
  */
   deleteDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest|null|undefined,
@@ -1672,7 +1672,7 @@ export class StorageClient {
     return this.innerApiCalls.deleteDefaultObjectAccessControl(request, options, callback);
   }
   getDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObjectAccessControl,
@@ -1720,7 +1720,7 @@ export class StorageClient {
  * const [response] = await client.getDefaultObjectAccessControl(request);
  */
   getDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObjectAccessControl,
           protos.google.storage.v1.IGetDefaultObjectAccessControlRequest|null|undefined,
@@ -1747,7 +1747,7 @@ export class StorageClient {
     return this.innerApiCalls.getDefaultObjectAccessControl(request, options, callback);
   }
   insertDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IInsertDefaultObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IInsertDefaultObjectAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObjectAccessControl,
@@ -1788,7 +1788,7 @@ export class StorageClient {
  * const [response] = await client.insertDefaultObjectAccessControl(request);
  */
   insertDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IInsertDefaultObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IInsertDefaultObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObjectAccessControl,
           protos.google.storage.v1.IInsertDefaultObjectAccessControlRequest|null|undefined,
@@ -1815,7 +1815,7 @@ export class StorageClient {
     return this.innerApiCalls.insertDefaultObjectAccessControl(request, options, callback);
   }
   listDefaultObjectAccessControls(
-      request: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
+      request?: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IListObjectAccessControlsResponse,
@@ -1860,7 +1860,7 @@ export class StorageClient {
  * const [response] = await client.listDefaultObjectAccessControls(request);
  */
   listDefaultObjectAccessControls(
-      request: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
+      request?: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IListObjectAccessControlsResponse,
           protos.google.storage.v1.IListDefaultObjectAccessControlsRequest|null|undefined,
@@ -1887,7 +1887,7 @@ export class StorageClient {
     return this.innerApiCalls.listDefaultObjectAccessControls(request, options, callback);
   }
   patchDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObjectAccessControl,
@@ -1947,7 +1947,7 @@ export class StorageClient {
  * const [response] = await client.patchDefaultObjectAccessControl(request);
  */
   patchDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObjectAccessControl,
           protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest|null|undefined,
@@ -1974,7 +1974,7 @@ export class StorageClient {
     return this.innerApiCalls.patchDefaultObjectAccessControl(request, options, callback);
   }
   updateDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObjectAccessControl,
@@ -2025,7 +2025,7 @@ export class StorageClient {
  * const [response] = await client.updateDefaultObjectAccessControl(request);
  */
   updateDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObjectAccessControl,
           protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest|null|undefined,
@@ -2052,7 +2052,7 @@ export class StorageClient {
     return this.innerApiCalls.updateDefaultObjectAccessControl(request, options, callback);
   }
   deleteNotification(
-      request: protos.google.storage.v1.IDeleteNotificationRequest,
+      request?: protos.google.storage.v1.IDeleteNotificationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -2095,7 +2095,7 @@ export class StorageClient {
  * const [response] = await client.deleteNotification(request);
  */
   deleteNotification(
-      request: protos.google.storage.v1.IDeleteNotificationRequest,
+      request?: protos.google.storage.v1.IDeleteNotificationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.storage.v1.IDeleteNotificationRequest|null|undefined,
@@ -2122,7 +2122,7 @@ export class StorageClient {
     return this.innerApiCalls.deleteNotification(request, options, callback);
   }
   getNotification(
-      request: protos.google.storage.v1.IGetNotificationRequest,
+      request?: protos.google.storage.v1.IGetNotificationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.INotification,
@@ -2164,7 +2164,7 @@ export class StorageClient {
  * const [response] = await client.getNotification(request);
  */
   getNotification(
-      request: protos.google.storage.v1.IGetNotificationRequest,
+      request?: protos.google.storage.v1.IGetNotificationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.INotification,
           protos.google.storage.v1.IGetNotificationRequest|null|undefined,
@@ -2191,7 +2191,7 @@ export class StorageClient {
     return this.innerApiCalls.getNotification(request, options, callback);
   }
   insertNotification(
-      request: protos.google.storage.v1.IInsertNotificationRequest,
+      request?: protos.google.storage.v1.IInsertNotificationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.INotification,
@@ -2235,7 +2235,7 @@ export class StorageClient {
  * const [response] = await client.insertNotification(request);
  */
   insertNotification(
-      request: protos.google.storage.v1.IInsertNotificationRequest,
+      request?: protos.google.storage.v1.IInsertNotificationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.INotification,
           protos.google.storage.v1.IInsertNotificationRequest|null|undefined,
@@ -2262,7 +2262,7 @@ export class StorageClient {
     return this.innerApiCalls.insertNotification(request, options, callback);
   }
   listNotifications(
-      request: protos.google.storage.v1.IListNotificationsRequest,
+      request?: protos.google.storage.v1.IListNotificationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IListNotificationsResponse,
@@ -2301,7 +2301,7 @@ export class StorageClient {
  * const [response] = await client.listNotifications(request);
  */
   listNotifications(
-      request: protos.google.storage.v1.IListNotificationsRequest,
+      request?: protos.google.storage.v1.IListNotificationsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IListNotificationsResponse,
           protos.google.storage.v1.IListNotificationsRequest|null|undefined,
@@ -2328,7 +2328,7 @@ export class StorageClient {
     return this.innerApiCalls.listNotifications(request, options, callback);
   }
   deleteObjectAccessControl(
-      request: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -2381,7 +2381,7 @@ export class StorageClient {
  * const [response] = await client.deleteObjectAccessControl(request);
  */
   deleteObjectAccessControl(
-      request: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.storage.v1.IDeleteObjectAccessControlRequest|null|undefined,
@@ -2408,7 +2408,7 @@ export class StorageClient {
     return this.innerApiCalls.deleteObjectAccessControl(request, options, callback);
   }
   getObjectAccessControl(
-      request: protos.google.storage.v1.IGetObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IGetObjectAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObjectAccessControl,
@@ -2460,7 +2460,7 @@ export class StorageClient {
  * const [response] = await client.getObjectAccessControl(request);
  */
   getObjectAccessControl(
-      request: protos.google.storage.v1.IGetObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IGetObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObjectAccessControl,
           protos.google.storage.v1.IGetObjectAccessControlRequest|null|undefined,
@@ -2487,7 +2487,7 @@ export class StorageClient {
     return this.innerApiCalls.getObjectAccessControl(request, options, callback);
   }
   insertObjectAccessControl(
-      request: protos.google.storage.v1.IInsertObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IInsertObjectAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObjectAccessControl,
@@ -2533,7 +2533,7 @@ export class StorageClient {
  * const [response] = await client.insertObjectAccessControl(request);
  */
   insertObjectAccessControl(
-      request: protos.google.storage.v1.IInsertObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IInsertObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObjectAccessControl,
           protos.google.storage.v1.IInsertObjectAccessControlRequest|null|undefined,
@@ -2560,7 +2560,7 @@ export class StorageClient {
     return this.innerApiCalls.insertObjectAccessControl(request, options, callback);
   }
   listObjectAccessControls(
-      request: protos.google.storage.v1.IListObjectAccessControlsRequest,
+      request?: protos.google.storage.v1.IListObjectAccessControlsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IListObjectAccessControlsResponse,
@@ -2604,7 +2604,7 @@ export class StorageClient {
  * const [response] = await client.listObjectAccessControls(request);
  */
   listObjectAccessControls(
-      request: protos.google.storage.v1.IListObjectAccessControlsRequest,
+      request?: protos.google.storage.v1.IListObjectAccessControlsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IListObjectAccessControlsResponse,
           protos.google.storage.v1.IListObjectAccessControlsRequest|null|undefined,
@@ -2631,7 +2631,7 @@ export class StorageClient {
     return this.innerApiCalls.listObjectAccessControls(request, options, callback);
   }
   patchObjectAccessControl(
-      request: protos.google.storage.v1.IPatchObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IPatchObjectAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObjectAccessControl,
@@ -2699,7 +2699,7 @@ export class StorageClient {
  * const [response] = await client.patchObjectAccessControl(request);
  */
   patchObjectAccessControl(
-      request: protos.google.storage.v1.IPatchObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IPatchObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObjectAccessControl,
           protos.google.storage.v1.IPatchObjectAccessControlRequest|null|undefined,
@@ -2726,7 +2726,7 @@ export class StorageClient {
     return this.innerApiCalls.patchObjectAccessControl(request, options, callback);
   }
   updateObjectAccessControl(
-      request: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObjectAccessControl,
@@ -2792,7 +2792,7 @@ export class StorageClient {
  * const [response] = await client.updateObjectAccessControl(request);
  */
   updateObjectAccessControl(
-      request: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
+      request?: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObjectAccessControl,
           protos.google.storage.v1.IUpdateObjectAccessControlRequest|null|undefined,
@@ -2819,7 +2819,7 @@ export class StorageClient {
     return this.innerApiCalls.updateObjectAccessControl(request, options, callback);
   }
   composeObject(
-      request: protos.google.storage.v1.IComposeObjectRequest,
+      request?: protos.google.storage.v1.IComposeObjectRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObject,
@@ -2882,7 +2882,7 @@ export class StorageClient {
  * const [response] = await client.composeObject(request);
  */
   composeObject(
-      request: protos.google.storage.v1.IComposeObjectRequest,
+      request?: protos.google.storage.v1.IComposeObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObject,
           protos.google.storage.v1.IComposeObjectRequest|null|undefined,
@@ -2909,7 +2909,7 @@ export class StorageClient {
     return this.innerApiCalls.composeObject(request, options, callback);
   }
   copyObject(
-      request: protos.google.storage.v1.ICopyObjectRequest,
+      request?: protos.google.storage.v1.ICopyObjectRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObject,
@@ -3005,7 +3005,7 @@ export class StorageClient {
  * const [response] = await client.copyObject(request);
  */
   copyObject(
-      request: protos.google.storage.v1.ICopyObjectRequest,
+      request?: protos.google.storage.v1.ICopyObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObject,
           protos.google.storage.v1.ICopyObjectRequest|null|undefined,
@@ -3032,7 +3032,7 @@ export class StorageClient {
     return this.innerApiCalls.copyObject(request, options, callback);
   }
   deleteObject(
-      request: protos.google.storage.v1.IDeleteObjectRequest,
+      request?: protos.google.storage.v1.IDeleteObjectRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -3099,7 +3099,7 @@ export class StorageClient {
  * const [response] = await client.deleteObject(request);
  */
   deleteObject(
-      request: protos.google.storage.v1.IDeleteObjectRequest,
+      request?: protos.google.storage.v1.IDeleteObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.storage.v1.IDeleteObjectRequest|null|undefined,
@@ -3126,7 +3126,7 @@ export class StorageClient {
     return this.innerApiCalls.deleteObject(request, options, callback);
   }
   getObject(
-      request: protos.google.storage.v1.IGetObjectRequest,
+      request?: protos.google.storage.v1.IGetObjectRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObject,
@@ -3189,7 +3189,7 @@ export class StorageClient {
  * const [response] = await client.getObject(request);
  */
   getObject(
-      request: protos.google.storage.v1.IGetObjectRequest,
+      request?: protos.google.storage.v1.IGetObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObject,
           protos.google.storage.v1.IGetObjectRequest|null|undefined,
@@ -3216,7 +3216,7 @@ export class StorageClient {
     return this.innerApiCalls.getObject(request, options, callback);
   }
   listObjects(
-      request: protos.google.storage.v1.IListObjectsRequest,
+      request?: protos.google.storage.v1.IListObjectsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IListObjectsResponse,
@@ -3283,7 +3283,7 @@ export class StorageClient {
  * const [response] = await client.listObjects(request);
  */
   listObjects(
-      request: protos.google.storage.v1.IListObjectsRequest,
+      request?: protos.google.storage.v1.IListObjectsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IListObjectsResponse,
           protos.google.storage.v1.IListObjectsRequest|null|undefined,
@@ -3310,7 +3310,7 @@ export class StorageClient {
     return this.innerApiCalls.listObjects(request, options, callback);
   }
   rewriteObject(
-      request: protos.google.storage.v1.IRewriteObjectRequest,
+      request?: protos.google.storage.v1.IRewriteObjectRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IRewriteResponse,
@@ -3425,7 +3425,7 @@ export class StorageClient {
  * const [response] = await client.rewriteObject(request);
  */
   rewriteObject(
-      request: protos.google.storage.v1.IRewriteObjectRequest,
+      request?: protos.google.storage.v1.IRewriteObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IRewriteResponse,
           protos.google.storage.v1.IRewriteObjectRequest|null|undefined,
@@ -3452,7 +3452,7 @@ export class StorageClient {
     return this.innerApiCalls.rewriteObject(request, options, callback);
   }
   startResumableWrite(
-      request: protos.google.storage.v1.IStartResumableWriteRequest,
+      request?: protos.google.storage.v1.IStartResumableWriteRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IStartResumableWriteResponse,
@@ -3495,7 +3495,7 @@ export class StorageClient {
  * const [response] = await client.startResumableWrite(request);
  */
   startResumableWrite(
-      request: protos.google.storage.v1.IStartResumableWriteRequest,
+      request?: protos.google.storage.v1.IStartResumableWriteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IStartResumableWriteResponse,
           protos.google.storage.v1.IStartResumableWriteRequest|null|undefined,
@@ -3522,7 +3522,7 @@ export class StorageClient {
     return this.innerApiCalls.startResumableWrite(request, options, callback);
   }
   queryWriteStatus(
-      request: protos.google.storage.v1.IQueryWriteStatusRequest,
+      request?: protos.google.storage.v1.IQueryWriteStatusRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IQueryWriteStatusResponse,
@@ -3576,7 +3576,7 @@ export class StorageClient {
  * const [response] = await client.queryWriteStatus(request);
  */
   queryWriteStatus(
-      request: protos.google.storage.v1.IQueryWriteStatusRequest,
+      request?: protos.google.storage.v1.IQueryWriteStatusRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IQueryWriteStatusResponse,
           protos.google.storage.v1.IQueryWriteStatusRequest|null|undefined,
@@ -3603,7 +3603,7 @@ export class StorageClient {
     return this.innerApiCalls.queryWriteStatus(request, options, callback);
   }
   patchObject(
-      request: protos.google.storage.v1.IPatchObjectRequest,
+      request?: protos.google.storage.v1.IPatchObjectRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObject,
@@ -3681,7 +3681,7 @@ export class StorageClient {
  * const [response] = await client.patchObject(request);
  */
   patchObject(
-      request: protos.google.storage.v1.IPatchObjectRequest,
+      request?: protos.google.storage.v1.IPatchObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObject,
           protos.google.storage.v1.IPatchObjectRequest|null|undefined,
@@ -3708,7 +3708,7 @@ export class StorageClient {
     return this.innerApiCalls.patchObject(request, options, callback);
   }
   updateObject(
-      request: protos.google.storage.v1.IUpdateObjectRequest,
+      request?: protos.google.storage.v1.IUpdateObjectRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IObject,
@@ -3777,7 +3777,7 @@ export class StorageClient {
  * const [response] = await client.updateObject(request);
  */
   updateObject(
-      request: protos.google.storage.v1.IUpdateObjectRequest,
+      request?: protos.google.storage.v1.IUpdateObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IObject,
           protos.google.storage.v1.IUpdateObjectRequest|null|undefined,
@@ -3804,7 +3804,7 @@ export class StorageClient {
     return this.innerApiCalls.updateObject(request, options, callback);
   }
   getObjectIamPolicy(
-      request: protos.google.storage.v1.IGetIamPolicyRequest,
+      request?: protos.google.storage.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -3843,7 +3843,7 @@ export class StorageClient {
  * const [response] = await client.getObjectIamPolicy(request);
  */
   getObjectIamPolicy(
-      request: protos.google.storage.v1.IGetIamPolicyRequest,
+      request?: protos.google.storage.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.storage.v1.IGetIamPolicyRequest|null|undefined,
@@ -3870,7 +3870,7 @@ export class StorageClient {
     return this.innerApiCalls.getObjectIamPolicy(request, options, callback);
   }
   setObjectIamPolicy(
-      request: protos.google.storage.v1.ISetIamPolicyRequest,
+      request?: protos.google.storage.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -3909,7 +3909,7 @@ export class StorageClient {
  * const [response] = await client.setObjectIamPolicy(request);
  */
   setObjectIamPolicy(
-      request: protos.google.storage.v1.ISetIamPolicyRequest,
+      request?: protos.google.storage.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.storage.v1.ISetIamPolicyRequest|null|undefined,
@@ -3936,7 +3936,7 @@ export class StorageClient {
     return this.innerApiCalls.setObjectIamPolicy(request, options, callback);
   }
   testObjectIamPermissions(
-      request: protos.google.storage.v1.ITestIamPermissionsRequest,
+      request?: protos.google.storage.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -3976,7 +3976,7 @@ export class StorageClient {
  * const [response] = await client.testObjectIamPermissions(request);
  */
   testObjectIamPermissions(
-      request: protos.google.storage.v1.ITestIamPermissionsRequest,
+      request?: protos.google.storage.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.storage.v1.ITestIamPermissionsRequest|null|undefined,
@@ -4003,7 +4003,7 @@ export class StorageClient {
     return this.innerApiCalls.testObjectIamPermissions(request, options, callback);
   }
   watchAllObjects(
-      request: protos.google.storage.v1.IWatchAllObjectsRequest,
+      request?: protos.google.storage.v1.IWatchAllObjectsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IChannel,
@@ -4072,7 +4072,7 @@ export class StorageClient {
  * const [response] = await client.watchAllObjects(request);
  */
   watchAllObjects(
-      request: protos.google.storage.v1.IWatchAllObjectsRequest,
+      request?: protos.google.storage.v1.IWatchAllObjectsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IChannel,
           protos.google.storage.v1.IWatchAllObjectsRequest|null|undefined,
@@ -4099,7 +4099,7 @@ export class StorageClient {
     return this.innerApiCalls.watchAllObjects(request, options, callback);
   }
   getServiceAccount(
-      request: protos.google.storage.v1.IGetProjectServiceAccountRequest,
+      request?: protos.google.storage.v1.IGetProjectServiceAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IServiceAccount,
@@ -4138,7 +4138,7 @@ export class StorageClient {
  * const [response] = await client.getServiceAccount(request);
  */
   getServiceAccount(
-      request: protos.google.storage.v1.IGetProjectServiceAccountRequest,
+      request?: protos.google.storage.v1.IGetProjectServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IServiceAccount,
           protos.google.storage.v1.IGetProjectServiceAccountRequest|null|undefined,
@@ -4165,7 +4165,7 @@ export class StorageClient {
     return this.innerApiCalls.getServiceAccount(request, options, callback);
   }
   createHmacKey(
-      request: protos.google.storage.v1.ICreateHmacKeyRequest,
+      request?: protos.google.storage.v1.ICreateHmacKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.ICreateHmacKeyResponse,
@@ -4206,7 +4206,7 @@ export class StorageClient {
  * const [response] = await client.createHmacKey(request);
  */
   createHmacKey(
-      request: protos.google.storage.v1.ICreateHmacKeyRequest,
+      request?: protos.google.storage.v1.ICreateHmacKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.ICreateHmacKeyResponse,
           protos.google.storage.v1.ICreateHmacKeyRequest|null|undefined,
@@ -4233,7 +4233,7 @@ export class StorageClient {
     return this.innerApiCalls.createHmacKey(request, options, callback);
   }
   deleteHmacKey(
-      request: protos.google.storage.v1.IDeleteHmacKeyRequest,
+      request?: protos.google.storage.v1.IDeleteHmacKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -4274,7 +4274,7 @@ export class StorageClient {
  * const [response] = await client.deleteHmacKey(request);
  */
   deleteHmacKey(
-      request: protos.google.storage.v1.IDeleteHmacKeyRequest,
+      request?: protos.google.storage.v1.IDeleteHmacKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.storage.v1.IDeleteHmacKeyRequest|null|undefined,
@@ -4301,7 +4301,7 @@ export class StorageClient {
     return this.innerApiCalls.deleteHmacKey(request, options, callback);
   }
   getHmacKey(
-      request: protos.google.storage.v1.IGetHmacKeyRequest,
+      request?: protos.google.storage.v1.IGetHmacKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IHmacKeyMetadata,
@@ -4342,7 +4342,7 @@ export class StorageClient {
  * const [response] = await client.getHmacKey(request);
  */
   getHmacKey(
-      request: protos.google.storage.v1.IGetHmacKeyRequest,
+      request?: protos.google.storage.v1.IGetHmacKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IHmacKeyMetadata,
           protos.google.storage.v1.IGetHmacKeyRequest|null|undefined,
@@ -4369,7 +4369,7 @@ export class StorageClient {
     return this.innerApiCalls.getHmacKey(request, options, callback);
   }
   listHmacKeys(
-      request: protos.google.storage.v1.IListHmacKeysRequest,
+      request?: protos.google.storage.v1.IListHmacKeysRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IListHmacKeysResponse,
@@ -4416,7 +4416,7 @@ export class StorageClient {
  * const [response] = await client.listHmacKeys(request);
  */
   listHmacKeys(
-      request: protos.google.storage.v1.IListHmacKeysRequest,
+      request?: protos.google.storage.v1.IListHmacKeysRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IListHmacKeysResponse,
           protos.google.storage.v1.IListHmacKeysRequest|null|undefined,
@@ -4443,7 +4443,7 @@ export class StorageClient {
     return this.innerApiCalls.listHmacKeys(request, options, callback);
   }
   updateHmacKey(
-      request: protos.google.storage.v1.IUpdateHmacKeyRequest,
+      request?: protos.google.storage.v1.IUpdateHmacKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.storage.v1.IHmacKeyMetadata,
@@ -4486,7 +4486,7 @@ export class StorageClient {
  * const [response] = await client.updateHmacKey(request);
  */
   updateHmacKey(
-      request: protos.google.storage.v1.IUpdateHmacKeyRequest,
+      request?: protos.google.storage.v1.IUpdateHmacKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.storage.v1.IHmacKeyMetadata,
           protos.google.storage.v1.IUpdateHmacKeyRequest|null|undefined,

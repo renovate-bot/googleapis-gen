@@ -341,7 +341,7 @@ export class IntentsClient {
   // -- Service calls --
   // -------------------
   getIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IGetIntentRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IGetIntentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.IIntent,
@@ -391,7 +391,7 @@ export class IntentsClient {
  * const [response] = await client.getIntent(request);
  */
   getIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IGetIntentRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IGetIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3.IIntent,
           protos.google.cloud.dialogflow.cx.v3.IGetIntentRequest|null|undefined,
@@ -425,7 +425,7 @@ export class IntentsClient {
     return this.innerApiCalls.getIntent(request, options, callback);
   }
   createIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.ICreateIntentRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.ICreateIntentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.IIntent,
@@ -475,7 +475,7 @@ export class IntentsClient {
  * const [response] = await client.createIntent(request);
  */
   createIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.ICreateIntentRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.ICreateIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3.IIntent,
           protos.google.cloud.dialogflow.cx.v3.ICreateIntentRequest|null|undefined,
@@ -509,7 +509,7 @@ export class IntentsClient {
     return this.innerApiCalls.createIntent(request, options, callback);
   }
   updateIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IUpdateIntentRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IUpdateIntentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.IIntent,
@@ -559,7 +559,7 @@ export class IntentsClient {
  * const [response] = await client.updateIntent(request);
  */
   updateIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IUpdateIntentRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IUpdateIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3.IIntent,
           protos.google.cloud.dialogflow.cx.v3.IUpdateIntentRequest|null|undefined,
@@ -593,7 +593,7 @@ export class IntentsClient {
     return this.innerApiCalls.updateIntent(request, options, callback);
   }
   deleteIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IDeleteIntentRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IDeleteIntentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -632,7 +632,7 @@ export class IntentsClient {
  * const [response] = await client.deleteIntent(request);
  */
   deleteIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IDeleteIntentRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IDeleteIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.cx.v3.IDeleteIntentRequest|null|undefined,
@@ -667,7 +667,7 @@ export class IntentsClient {
   }
 
   listIntents(
-      request: protos.google.cloud.dialogflow.cx.v3.IListIntentsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IListIntentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.IIntent[],
@@ -727,7 +727,7 @@ export class IntentsClient {
  *   for more details and examples.
  */
   listIntents(
-      request: protos.google.cloud.dialogflow.cx.v3.IListIntentsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IListIntentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.cx.v3.IListIntentsRequest,
           protos.google.cloud.dialogflow.cx.v3.IListIntentsResponse|null|undefined,

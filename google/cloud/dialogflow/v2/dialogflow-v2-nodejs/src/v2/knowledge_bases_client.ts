@@ -386,7 +386,7 @@ export class KnowledgeBasesClient {
   // -- Service calls --
   // -------------------
   getKnowledgeBase(
-      request: protos.google.cloud.dialogflow.v2.IGetKnowledgeBaseRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetKnowledgeBaseRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IKnowledgeBase,
@@ -425,7 +425,7 @@ export class KnowledgeBasesClient {
  * const [response] = await client.getKnowledgeBase(request);
  */
   getKnowledgeBase(
-      request: protos.google.cloud.dialogflow.v2.IGetKnowledgeBaseRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetKnowledgeBaseRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IKnowledgeBase,
           protos.google.cloud.dialogflow.v2.IGetKnowledgeBaseRequest|null|undefined,
@@ -459,7 +459,7 @@ export class KnowledgeBasesClient {
     return this.innerApiCalls.getKnowledgeBase(request, options, callback);
   }
   createKnowledgeBase(
-      request: protos.google.cloud.dialogflow.v2.ICreateKnowledgeBaseRequest,
+      request?: protos.google.cloud.dialogflow.v2.ICreateKnowledgeBaseRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IKnowledgeBase,
@@ -499,7 +499,7 @@ export class KnowledgeBasesClient {
  * const [response] = await client.createKnowledgeBase(request);
  */
   createKnowledgeBase(
-      request: protos.google.cloud.dialogflow.v2.ICreateKnowledgeBaseRequest,
+      request?: protos.google.cloud.dialogflow.v2.ICreateKnowledgeBaseRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IKnowledgeBase,
           protos.google.cloud.dialogflow.v2.ICreateKnowledgeBaseRequest|null|undefined,
@@ -533,7 +533,7 @@ export class KnowledgeBasesClient {
     return this.innerApiCalls.createKnowledgeBase(request, options, callback);
   }
   deleteKnowledgeBase(
-      request: protos.google.cloud.dialogflow.v2.IDeleteKnowledgeBaseRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteKnowledgeBaseRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -575,7 +575,7 @@ export class KnowledgeBasesClient {
  * const [response] = await client.deleteKnowledgeBase(request);
  */
   deleteKnowledgeBase(
-      request: protos.google.cloud.dialogflow.v2.IDeleteKnowledgeBaseRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteKnowledgeBaseRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.v2.IDeleteKnowledgeBaseRequest|null|undefined,
@@ -609,7 +609,7 @@ export class KnowledgeBasesClient {
     return this.innerApiCalls.deleteKnowledgeBase(request, options, callback);
   }
   updateKnowledgeBase(
-      request: protos.google.cloud.dialogflow.v2.IUpdateKnowledgeBaseRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateKnowledgeBaseRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IKnowledgeBase,
@@ -650,7 +650,7 @@ export class KnowledgeBasesClient {
  * const [response] = await client.updateKnowledgeBase(request);
  */
   updateKnowledgeBase(
-      request: protos.google.cloud.dialogflow.v2.IUpdateKnowledgeBaseRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateKnowledgeBaseRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IKnowledgeBase,
           protos.google.cloud.dialogflow.v2.IUpdateKnowledgeBaseRequest|null|undefined,
@@ -685,7 +685,7 @@ export class KnowledgeBasesClient {
   }
 
   listKnowledgeBases(
-      request: protos.google.cloud.dialogflow.v2.IListKnowledgeBasesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListKnowledgeBasesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IKnowledgeBase[],
@@ -732,7 +732,7 @@ export class KnowledgeBasesClient {
  *   for more details and examples.
  */
   listKnowledgeBases(
-      request: protos.google.cloud.dialogflow.v2.IListKnowledgeBasesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListKnowledgeBasesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2.IListKnowledgeBasesRequest,
           protos.google.cloud.dialogflow.v2.IListKnowledgeBasesResponse|null|undefined,

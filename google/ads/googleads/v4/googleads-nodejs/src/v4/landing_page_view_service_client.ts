@@ -587,7 +587,7 @@ export class LandingPageViewServiceClient {
   // -- Service calls --
   // -------------------
   getLandingPageView(
-      request: protos.google.ads.googleads.v4.services.IGetLandingPageViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetLandingPageViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.ILandingPageView,
@@ -624,7 +624,7 @@ export class LandingPageViewServiceClient {
  * const [response] = await client.getLandingPageView(request);
  */
   getLandingPageView(
-      request: protos.google.ads.googleads.v4.services.IGetLandingPageViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetLandingPageViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.ILandingPageView,
           protos.google.ads.googleads.v4.services.IGetLandingPageViewRequest|null|undefined,

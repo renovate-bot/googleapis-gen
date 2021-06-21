@@ -355,7 +355,7 @@ export class AIStreamsClient {
   // -- Service calls --
   // -------------------
   getCluster(
-      request: protos.google.partner.aistreams.v1alpha1.IGetClusterRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IGetClusterRequest,
       options?: CallOptions):
       Promise<[
         protos.google.partner.aistreams.v1alpha1.ICluster,
@@ -392,7 +392,7 @@ export class AIStreamsClient {
  * const [response] = await client.getCluster(request);
  */
   getCluster(
-      request: protos.google.partner.aistreams.v1alpha1.IGetClusterRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IGetClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.partner.aistreams.v1alpha1.ICluster,
           protos.google.partner.aistreams.v1alpha1.IGetClusterRequest|null|undefined,
@@ -426,7 +426,7 @@ export class AIStreamsClient {
     return this.innerApiCalls.getCluster(request, options, callback);
   }
   getStream(
-      request: protos.google.partner.aistreams.v1alpha1.IGetStreamRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IGetStreamRequest,
       options?: CallOptions):
       Promise<[
         protos.google.partner.aistreams.v1alpha1.IStream,
@@ -463,7 +463,7 @@ export class AIStreamsClient {
  * const [response] = await client.getStream(request);
  */
   getStream(
-      request: protos.google.partner.aistreams.v1alpha1.IGetStreamRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IGetStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.partner.aistreams.v1alpha1.IStream,
           protos.google.partner.aistreams.v1alpha1.IGetStreamRequest|null|undefined,
@@ -498,7 +498,7 @@ export class AIStreamsClient {
   }
 
   createCluster(
-      request: protos.google.partner.aistreams.v1alpha1.ICreateClusterRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.ICreateClusterRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
@@ -556,7 +556,7 @@ export class AIStreamsClient {
  * const [response] = await operation.promise();
  */
   createCluster(
-      request: protos.google.partner.aistreams.v1alpha1.ICreateClusterRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.ICreateClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -611,7 +611,7 @@ export class AIStreamsClient {
     return decodeOperation as LROperation<protos.google.partner.aistreams.v1alpha1.Cluster, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
   updateCluster(
-      request: protos.google.partner.aistreams.v1alpha1.IUpdateClusterRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IUpdateClusterRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
@@ -671,7 +671,7 @@ export class AIStreamsClient {
  * const [response] = await operation.promise();
  */
   updateCluster(
-      request: protos.google.partner.aistreams.v1alpha1.IUpdateClusterRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IUpdateClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -726,7 +726,7 @@ export class AIStreamsClient {
     return decodeOperation as LROperation<protos.google.partner.aistreams.v1alpha1.Cluster, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
   deleteCluster(
-      request: protos.google.partner.aistreams.v1alpha1.IDeleteClusterRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IDeleteClusterRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
@@ -780,7 +780,7 @@ export class AIStreamsClient {
  * const [response] = await operation.promise();
  */
   deleteCluster(
-      request: protos.google.partner.aistreams.v1alpha1.IDeleteClusterRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IDeleteClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -835,7 +835,7 @@ export class AIStreamsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
   createStream(
-      request: protos.google.partner.aistreams.v1alpha1.ICreateStreamRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.ICreateStreamRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
@@ -893,7 +893,7 @@ export class AIStreamsClient {
  * const [response] = await operation.promise();
  */
   createStream(
-      request: protos.google.partner.aistreams.v1alpha1.ICreateStreamRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.ICreateStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -948,7 +948,7 @@ export class AIStreamsClient {
     return decodeOperation as LROperation<protos.google.partner.aistreams.v1alpha1.Stream, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
   updateStream(
-      request: protos.google.partner.aistreams.v1alpha1.IUpdateStreamRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IUpdateStreamRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
@@ -1008,7 +1008,7 @@ export class AIStreamsClient {
  * const [response] = await operation.promise();
  */
   updateStream(
-      request: protos.google.partner.aistreams.v1alpha1.IUpdateStreamRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IUpdateStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1063,7 +1063,7 @@ export class AIStreamsClient {
     return decodeOperation as LROperation<protos.google.partner.aistreams.v1alpha1.Stream, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
   deleteStream(
-      request: protos.google.partner.aistreams.v1alpha1.IDeleteStreamRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IDeleteStreamRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
@@ -1117,7 +1117,7 @@ export class AIStreamsClient {
  * const [response] = await operation.promise();
  */
   deleteStream(
-      request: protos.google.partner.aistreams.v1alpha1.IDeleteStreamRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IDeleteStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1172,7 +1172,7 @@ export class AIStreamsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
   listClusters(
-      request: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.partner.aistreams.v1alpha1.ICluster[],
@@ -1224,7 +1224,7 @@ export class AIStreamsClient {
  *   for more details and examples.
  */
   listClusters(
-      request: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
           protos.google.partner.aistreams.v1alpha1.IListClustersResponse|null|undefined,
@@ -1368,7 +1368,7 @@ export class AIStreamsClient {
     ) as AsyncIterable<protos.google.partner.aistreams.v1alpha1.ICluster>;
   }
   listStreams(
-      request: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.partner.aistreams.v1alpha1.IStream[],
@@ -1420,7 +1420,7 @@ export class AIStreamsClient {
  *   for more details and examples.
  */
   listStreams(
-      request: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
+      request?: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
           protos.google.partner.aistreams.v1alpha1.IListStreamsResponse|null|undefined,

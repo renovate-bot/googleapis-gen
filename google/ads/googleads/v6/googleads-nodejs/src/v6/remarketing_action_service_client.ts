@@ -614,7 +614,7 @@ export class RemarketingActionServiceClient {
   // -- Service calls --
   // -------------------
   getRemarketingAction(
-      request: protos.google.ads.googleads.v6.services.IGetRemarketingActionRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetRemarketingActionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IRemarketingAction,
@@ -651,7 +651,7 @@ export class RemarketingActionServiceClient {
  * const [response] = await client.getRemarketingAction(request);
  */
   getRemarketingAction(
-      request: protos.google.ads.googleads.v6.services.IGetRemarketingActionRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetRemarketingActionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IRemarketingAction,
           protos.google.ads.googleads.v6.services.IGetRemarketingActionRequest|null|undefined,
@@ -685,7 +685,7 @@ export class RemarketingActionServiceClient {
     return this.innerApiCalls.getRemarketingAction(request, options, callback);
   }
   mutateRemarketingActions(
-      request: protos.google.ads.googleads.v6.services.IMutateRemarketingActionsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateRemarketingActionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateRemarketingActionsResponse,
@@ -732,7 +732,7 @@ export class RemarketingActionServiceClient {
  * const [response] = await client.mutateRemarketingActions(request);
  */
   mutateRemarketingActions(
-      request: protos.google.ads.googleads.v6.services.IMutateRemarketingActionsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateRemarketingActionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateRemarketingActionsResponse,
           protos.google.ads.googleads.v6.services.IMutateRemarketingActionsRequest|null|undefined,

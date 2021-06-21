@@ -635,7 +635,7 @@ export class DynamicSearchAdsSearchTermViewServiceClient {
   // -- Service calls --
   // -------------------
   getDynamicSearchAdsSearchTermView(
-      request: protos.google.ads.googleads.v7.services.IGetDynamicSearchAdsSearchTermViewRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetDynamicSearchAdsSearchTermViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IDynamicSearchAdsSearchTermView,
@@ -680,7 +680,7 @@ export class DynamicSearchAdsSearchTermViewServiceClient {
  * const [response] = await client.getDynamicSearchAdsSearchTermView(request);
  */
   getDynamicSearchAdsSearchTermView(
-      request: protos.google.ads.googleads.v7.services.IGetDynamicSearchAdsSearchTermViewRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetDynamicSearchAdsSearchTermViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IDynamicSearchAdsSearchTermView,
           protos.google.ads.googleads.v7.services.IGetDynamicSearchAdsSearchTermViewRequest|null|undefined,

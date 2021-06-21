@@ -410,7 +410,9 @@ namespace Maps.Fleetengine.V1.Tests
             };
             mockGrpcClient.Setup(x => x.UpdateVehicleLocation(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             VehicleServiceClient client = new VehicleServiceClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             VehicleLocation response = client.UpdateVehicleLocation(request);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
         }
@@ -467,9 +469,13 @@ namespace Maps.Fleetengine.V1.Tests
             };
             mockGrpcClient.Setup(x => x.UpdateVehicleLocationAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<VehicleLocation>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             VehicleServiceClient client = new VehicleServiceClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             VehicleLocation responseCallSettings = await client.UpdateVehicleLocationAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCallSettings);
+#pragma warning disable CS0612
             VehicleLocation responseCancellationToken = await client.UpdateVehicleLocationAsync(request, st::CancellationToken.None);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCancellationToken);
             mockGrpcClient.VerifyAll();
         }

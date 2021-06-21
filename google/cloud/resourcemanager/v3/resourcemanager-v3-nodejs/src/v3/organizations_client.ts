@@ -299,7 +299,7 @@ export class OrganizationsClient {
   // -- Service calls --
   // -------------------
   getOrganization(
-      request: protos.google.cloud.resourcemanager.v3.IGetOrganizationRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IGetOrganizationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.resourcemanager.v3.IOrganization,
@@ -338,7 +338,7 @@ export class OrganizationsClient {
  * const [response] = await client.getOrganization(request);
  */
   getOrganization(
-      request: protos.google.cloud.resourcemanager.v3.IGetOrganizationRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IGetOrganizationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.resourcemanager.v3.IOrganization,
           protos.google.cloud.resourcemanager.v3.IGetOrganizationRequest|null|undefined,
@@ -372,7 +372,7 @@ export class OrganizationsClient {
     return this.innerApiCalls.getOrganization(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -418,7 +418,7 @@ export class OrganizationsClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -452,7 +452,7 @@ export class OrganizationsClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -500,7 +500,7 @@ export class OrganizationsClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -534,7 +534,7 @@ export class OrganizationsClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -581,7 +581,7 @@ export class OrganizationsClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -616,7 +616,7 @@ export class OrganizationsClient {
   }
 
   searchOrganizations(
-      request: protos.google.cloud.resourcemanager.v3.ISearchOrganizationsRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ISearchOrganizationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.resourcemanager.v3.IOrganization[],
@@ -685,7 +685,7 @@ export class OrganizationsClient {
  *   for more details and examples.
  */
   searchOrganizations(
-      request: protos.google.cloud.resourcemanager.v3.ISearchOrganizationsRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ISearchOrganizationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.resourcemanager.v3.ISearchOrganizationsRequest,
           protos.google.cloud.resourcemanager.v3.ISearchOrganizationsResponse|null|undefined,

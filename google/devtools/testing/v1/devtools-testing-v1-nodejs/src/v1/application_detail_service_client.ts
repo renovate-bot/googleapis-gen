@@ -263,7 +263,7 @@ export class ApplicationDetailServiceClient {
   // -- Service calls --
   // -------------------
   getApkDetails(
-      request: protos.google.devtools.testing.v1.IGetApkDetailsRequest,
+      request?: protos.google.devtools.testing.v1.IGetApkDetailsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.testing.v1.IGetApkDetailsResponse,
@@ -300,7 +300,7 @@ export class ApplicationDetailServiceClient {
  * const [response] = await client.getApkDetails(request);
  */
   getApkDetails(
-      request: protos.google.devtools.testing.v1.IGetApkDetailsRequest,
+      request?: protos.google.devtools.testing.v1.IGetApkDetailsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.testing.v1.IGetApkDetailsResponse,
           protos.google.devtools.testing.v1.IGetApkDetailsRequest|null|undefined,

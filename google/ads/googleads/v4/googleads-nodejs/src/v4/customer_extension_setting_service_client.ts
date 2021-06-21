@@ -587,7 +587,7 @@ export class CustomerExtensionSettingServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerExtensionSetting(
-      request: protos.google.ads.googleads.v4.services.IGetCustomerExtensionSettingRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetCustomerExtensionSettingRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.ICustomerExtensionSetting,
@@ -624,7 +624,7 @@ export class CustomerExtensionSettingServiceClient {
  * const [response] = await client.getCustomerExtensionSetting(request);
  */
   getCustomerExtensionSetting(
-      request: protos.google.ads.googleads.v4.services.IGetCustomerExtensionSettingRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetCustomerExtensionSettingRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.ICustomerExtensionSetting,
           protos.google.ads.googleads.v4.services.IGetCustomerExtensionSettingRequest|null|undefined,
@@ -658,7 +658,7 @@ export class CustomerExtensionSettingServiceClient {
     return this.innerApiCalls.getCustomerExtensionSetting(request, options, callback);
   }
   mutateCustomerExtensionSettings(
-      request: protos.google.ads.googleads.v4.services.IMutateCustomerExtensionSettingsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateCustomerExtensionSettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IMutateCustomerExtensionSettingsResponse,
@@ -708,7 +708,7 @@ export class CustomerExtensionSettingServiceClient {
  * const [response] = await client.mutateCustomerExtensionSettings(request);
  */
   mutateCustomerExtensionSettings(
-      request: protos.google.ads.googleads.v4.services.IMutateCustomerExtensionSettingsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateCustomerExtensionSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IMutateCustomerExtensionSettingsResponse,
           protos.google.ads.googleads.v4.services.IMutateCustomerExtensionSettingsRequest|null|undefined,

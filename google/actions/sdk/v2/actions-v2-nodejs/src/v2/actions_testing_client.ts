@@ -282,7 +282,7 @@ export class ActionsTestingClient {
   // -- Service calls --
   // -------------------
   sendInteraction(
-      request: protos.google.actions.sdk.v2.ISendInteractionRequest,
+      request?: protos.google.actions.sdk.v2.ISendInteractionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.actions.sdk.v2.ISendInteractionResponse,
@@ -329,7 +329,7 @@ export class ActionsTestingClient {
  * const [response] = await client.sendInteraction(request);
  */
   sendInteraction(
-      request: protos.google.actions.sdk.v2.ISendInteractionRequest,
+      request?: protos.google.actions.sdk.v2.ISendInteractionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.actions.sdk.v2.ISendInteractionResponse,
           protos.google.actions.sdk.v2.ISendInteractionRequest|null|undefined,
@@ -363,7 +363,7 @@ export class ActionsTestingClient {
     return this.innerApiCalls.sendInteraction(request, options, callback);
   }
   matchIntents(
-      request: protos.google.actions.sdk.v2.IMatchIntentsRequest,
+      request?: protos.google.actions.sdk.v2.IMatchIntentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.actions.sdk.v2.IMatchIntentsResponse,
@@ -408,7 +408,7 @@ export class ActionsTestingClient {
  * const [response] = await client.matchIntents(request);
  */
   matchIntents(
-      request: protos.google.actions.sdk.v2.IMatchIntentsRequest,
+      request?: protos.google.actions.sdk.v2.IMatchIntentsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.actions.sdk.v2.IMatchIntentsResponse,
           protos.google.actions.sdk.v2.IMatchIntentsRequest|null|undefined,
@@ -442,7 +442,7 @@ export class ActionsTestingClient {
     return this.innerApiCalls.matchIntents(request, options, callback);
   }
   setWebAndAppActivityControl(
-      request: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,
+      request?: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -489,7 +489,7 @@ export class ActionsTestingClient {
  * const [response] = await client.setWebAndAppActivityControl(request);
  */
   setWebAndAppActivityControl(
-      request: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,
+      request?: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest|null|undefined,

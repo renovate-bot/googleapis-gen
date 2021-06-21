@@ -284,7 +284,7 @@ export class PredictionServiceClient {
   // -------------------
 
   predict(
-      request: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommendationengine.v1beta1.PredictResponse.IPredictionResult[],
@@ -415,7 +415,7 @@ export class PredictionServiceClient {
  *   for more details and examples.
  */
   predict(
-      request: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
           protos.google.cloud.recommendationengine.v1beta1.IPredictResponse|null|undefined,

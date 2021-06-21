@@ -616,7 +616,7 @@ export class AccountBudgetServiceClient {
   // -- Service calls --
   // -------------------
   getAccountBudget(
-      request: protos.google.ads.googleads.v6.services.IGetAccountBudgetRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetAccountBudgetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IAccountBudget,
@@ -653,7 +653,7 @@ export class AccountBudgetServiceClient {
  * const [response] = await client.getAccountBudget(request);
  */
   getAccountBudget(
-      request: protos.google.ads.googleads.v6.services.IGetAccountBudgetRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetAccountBudgetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IAccountBudget,
           protos.google.ads.googleads.v6.services.IGetAccountBudgetRequest|null|undefined,

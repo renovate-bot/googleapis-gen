@@ -419,7 +419,7 @@ export class IndexServiceClient {
   // -- Service calls --
   // -------------------
   getIndex(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetIndexRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetIndexRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IIndex,
@@ -458,7 +458,7 @@ export class IndexServiceClient {
  * const [response] = await client.getIndex(request);
  */
   getIndex(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetIndexRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetIndexRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IIndex,
           protos.google.cloud.aiplatform.v1beta1.IGetIndexRequest|null|undefined,
@@ -493,7 +493,7 @@ export class IndexServiceClient {
   }
 
   createIndex(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateIndexRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateIndexRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1beta1.IIndex, protos.google.cloud.aiplatform.v1beta1.ICreateIndexOperationMetadata>,
@@ -536,7 +536,7 @@ export class IndexServiceClient {
  * const [response] = await operation.promise();
  */
   createIndex(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateIndexRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateIndexRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1beta1.IIndex, protos.google.cloud.aiplatform.v1beta1.ICreateIndexOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -591,7 +591,7 @@ export class IndexServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.Index, protos.google.cloud.aiplatform.v1beta1.CreateIndexOperationMetadata>;
   }
   updateIndex(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateIndexRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateIndexRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1beta1.IIndex, protos.google.cloud.aiplatform.v1beta1.IUpdateIndexOperationMetadata>,
@@ -634,7 +634,7 @@ export class IndexServiceClient {
  * const [response] = await operation.promise();
  */
   updateIndex(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateIndexRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateIndexRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1beta1.IIndex, protos.google.cloud.aiplatform.v1beta1.IUpdateIndexOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -689,7 +689,7 @@ export class IndexServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.Index, protos.google.cloud.aiplatform.v1beta1.UpdateIndexOperationMetadata>;
   }
   deleteIndex(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteIndexRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteIndexRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
@@ -733,7 +733,7 @@ export class IndexServiceClient {
  * const [response] = await operation.promise();
  */
   deleteIndex(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteIndexRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteIndexRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -788,7 +788,7 @@ export class IndexServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>;
   }
   listIndexes(
-      request: protos.google.cloud.aiplatform.v1beta1.IListIndexesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListIndexesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IIndex[],
@@ -841,7 +841,7 @@ export class IndexServiceClient {
  *   for more details and examples.
  */
   listIndexes(
-      request: protos.google.cloud.aiplatform.v1beta1.IListIndexesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListIndexesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.IListIndexesRequest,
           protos.google.cloud.aiplatform.v1beta1.IListIndexesResponse|null|undefined,

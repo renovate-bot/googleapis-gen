@@ -388,7 +388,7 @@ export class ParticipantsClient {
   // -- Service calls --
   // -------------------
   createParticipant(
-      request: protos.google.cloud.dialogflow.v2beta1.ICreateParticipantRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ICreateParticipantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IParticipant,
@@ -429,7 +429,7 @@ export class ParticipantsClient {
  * const [response] = await client.createParticipant(request);
  */
   createParticipant(
-      request: protos.google.cloud.dialogflow.v2beta1.ICreateParticipantRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ICreateParticipantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IParticipant,
           protos.google.cloud.dialogflow.v2beta1.ICreateParticipantRequest|null|undefined,
@@ -463,7 +463,7 @@ export class ParticipantsClient {
     return this.innerApiCalls.createParticipant(request, options, callback);
   }
   getParticipant(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetParticipantRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetParticipantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IParticipant,
@@ -502,7 +502,7 @@ export class ParticipantsClient {
  * const [response] = await client.getParticipant(request);
  */
   getParticipant(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetParticipantRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetParticipantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IParticipant,
           protos.google.cloud.dialogflow.v2beta1.IGetParticipantRequest|null|undefined,
@@ -536,7 +536,7 @@ export class ParticipantsClient {
     return this.innerApiCalls.getParticipant(request, options, callback);
   }
   updateParticipant(
-      request: protos.google.cloud.dialogflow.v2beta1.IUpdateParticipantRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IUpdateParticipantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IParticipant,
@@ -575,7 +575,7 @@ export class ParticipantsClient {
  * const [response] = await client.updateParticipant(request);
  */
   updateParticipant(
-      request: protos.google.cloud.dialogflow.v2beta1.IUpdateParticipantRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IUpdateParticipantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IParticipant,
           protos.google.cloud.dialogflow.v2beta1.IUpdateParticipantRequest|null|undefined,
@@ -609,7 +609,7 @@ export class ParticipantsClient {
     return this.innerApiCalls.updateParticipant(request, options, callback);
   }
   analyzeContent(
-      request: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentResponse,
@@ -684,7 +684,7 @@ export class ParticipantsClient {
  * const [response] = await client.analyzeContent(request);
  */
   analyzeContent(
-      request: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentResponse,
           protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest|null|undefined,
@@ -718,7 +718,7 @@ export class ParticipantsClient {
     return this.innerApiCalls.analyzeContent(request, options, callback);
   }
   suggestArticles(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesResponse,
@@ -772,7 +772,7 @@ export class ParticipantsClient {
  * const [response] = await client.suggestArticles(request);
  */
   suggestArticles(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesResponse,
           protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest|null|undefined,
@@ -806,7 +806,7 @@ export class ParticipantsClient {
     return this.innerApiCalls.suggestArticles(request, options, callback);
   }
   suggestFaqAnswers(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersResponse,
@@ -856,7 +856,7 @@ export class ParticipantsClient {
  * const [response] = await client.suggestFaqAnswers(request);
  */
   suggestFaqAnswers(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersResponse,
           protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest|null|undefined,
@@ -890,7 +890,7 @@ export class ParticipantsClient {
     return this.innerApiCalls.suggestFaqAnswers(request, options, callback);
   }
   suggestSmartReplies(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesResponse,
@@ -944,7 +944,7 @@ export class ParticipantsClient {
  * const [response] = await client.suggestSmartReplies(request);
  */
   suggestSmartReplies(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesResponse,
           protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest|null|undefined,
@@ -978,7 +978,7 @@ export class ParticipantsClient {
     return this.innerApiCalls.suggestSmartReplies(request, options, callback);
   }
   compileSuggestion(
-      request: protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionResponse,
@@ -1032,9 +1032,10 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.compileSuggestion(request);
+ * @deprecated CompileSuggestion is deprecated and may be removed in a future version.
  */
   compileSuggestion(
-      request: protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionResponse,
           protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest|null|undefined,
@@ -1065,11 +1066,12 @@ export class ParticipantsClient {
       'parent': request.parent || '',
     });
     this.initialize();
+    gax.warn('DEP$Participants-$CompileSuggestion','CompileSuggestion is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.compileSuggestion(request, options, callback);
   }
 
   listParticipants(
-      request: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IParticipant[],
@@ -1117,7 +1119,7 @@ export class ParticipantsClient {
  *   for more details and examples.
  */
   listParticipants(
-      request: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
           protos.google.cloud.dialogflow.v2beta1.IListParticipantsResponse|null|undefined,
@@ -1253,7 +1255,7 @@ export class ParticipantsClient {
     ) as AsyncIterable<protos.google.cloud.dialogflow.v2beta1.IParticipant>;
   }
   listSuggestions(
-      request: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.ISuggestion[],
@@ -1327,9 +1329,10 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ * @deprecated ListSuggestions is deprecated and may be removed in a future version.
  */
   listSuggestions(
-      request: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
           protos.google.cloud.dialogflow.v2beta1.IListSuggestionsResponse|null|undefined,
@@ -1361,6 +1364,7 @@ export class ParticipantsClient {
       'parent': request.parent || '',
     });
     this.initialize();
+    gax.warn('DEP$Participants-$ListSuggestions','ListSuggestions is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.listSuggestions(request, options, callback);
   }
 
@@ -1397,6 +1401,7 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ * @deprecated ListSuggestions is deprecated and may be removed in a future version.
  */
   listSuggestionsStream(
       request?: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
@@ -1413,6 +1418,7 @@ export class ParticipantsClient {
     });
     const callSettings = new gax.CallSettings(options);
     this.initialize();
+    gax.warn('DEP$Participants-$ListSuggestions','ListSuggestions is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.descriptors.page.listSuggestions.createStream(
       this.innerApiCalls.listSuggestions as gax.GaxCall,
       request,
@@ -1459,6 +1465,7 @@ export class ParticipantsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ * @deprecated ListSuggestions is deprecated and may be removed in a future version.
  */
   listSuggestionsAsync(
       request?: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
@@ -1476,6 +1483,7 @@ export class ParticipantsClient {
     options = options || {};
     const callSettings = new gax.CallSettings(options);
     this.initialize();
+    gax.warn('DEP$Participants-$ListSuggestions','ListSuggestions is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.descriptors.page.listSuggestions.asyncIterate(
       this.innerApiCalls['listSuggestions'] as GaxCall,
       request as unknown as RequestType,

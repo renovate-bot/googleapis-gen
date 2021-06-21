@@ -437,7 +437,7 @@ export class CloudChannelServiceClient {
   // -- Service calls --
   // -------------------
   getCustomer(
-      request: protos.google.cloud.channel.v1.IGetCustomerRequest,
+      request?: protos.google.cloud.channel.v1.IGetCustomerRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.ICustomer,
@@ -486,7 +486,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.getCustomer(request);
  */
   getCustomer(
-      request: protos.google.cloud.channel.v1.IGetCustomerRequest,
+      request?: protos.google.cloud.channel.v1.IGetCustomerRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.channel.v1.ICustomer,
           protos.google.cloud.channel.v1.IGetCustomerRequest|null|undefined,
@@ -520,7 +520,7 @@ export class CloudChannelServiceClient {
     return this.innerApiCalls.getCustomer(request, options, callback);
   }
   checkCloudIdentityAccountsExist(
-      request: protos.google.cloud.channel.v1.ICheckCloudIdentityAccountsExistRequest,
+      request?: protos.google.cloud.channel.v1.ICheckCloudIdentityAccountsExistRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.ICheckCloudIdentityAccountsExistResponse,
@@ -575,7 +575,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.checkCloudIdentityAccountsExist(request);
  */
   checkCloudIdentityAccountsExist(
-      request: protos.google.cloud.channel.v1.ICheckCloudIdentityAccountsExistRequest,
+      request?: protos.google.cloud.channel.v1.ICheckCloudIdentityAccountsExistRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.channel.v1.ICheckCloudIdentityAccountsExistResponse,
           protos.google.cloud.channel.v1.ICheckCloudIdentityAccountsExistRequest|null|undefined,
@@ -609,7 +609,7 @@ export class CloudChannelServiceClient {
     return this.innerApiCalls.checkCloudIdentityAccountsExist(request, options, callback);
   }
   createCustomer(
-      request: protos.google.cloud.channel.v1.ICreateCustomerRequest,
+      request?: protos.google.cloud.channel.v1.ICreateCustomerRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.ICustomer,
@@ -661,7 +661,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.createCustomer(request);
  */
   createCustomer(
-      request: protos.google.cloud.channel.v1.ICreateCustomerRequest,
+      request?: protos.google.cloud.channel.v1.ICreateCustomerRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.channel.v1.ICustomer,
           protos.google.cloud.channel.v1.ICreateCustomerRequest|null|undefined,
@@ -695,7 +695,7 @@ export class CloudChannelServiceClient {
     return this.innerApiCalls.createCustomer(request, options, callback);
   }
   updateCustomer(
-      request: protos.google.cloud.channel.v1.IUpdateCustomerRequest,
+      request?: protos.google.cloud.channel.v1.IUpdateCustomerRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.ICustomer,
@@ -746,7 +746,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.updateCustomer(request);
  */
   updateCustomer(
-      request: protos.google.cloud.channel.v1.IUpdateCustomerRequest,
+      request?: protos.google.cloud.channel.v1.IUpdateCustomerRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.channel.v1.ICustomer,
           protos.google.cloud.channel.v1.IUpdateCustomerRequest|null|undefined,
@@ -780,7 +780,7 @@ export class CloudChannelServiceClient {
     return this.innerApiCalls.updateCustomer(request, options, callback);
   }
   deleteCustomer(
-      request: protos.google.cloud.channel.v1.IDeleteCustomerRequest,
+      request?: protos.google.cloud.channel.v1.IDeleteCustomerRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -825,7 +825,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.deleteCustomer(request);
  */
   deleteCustomer(
-      request: protos.google.cloud.channel.v1.IDeleteCustomerRequest,
+      request?: protos.google.cloud.channel.v1.IDeleteCustomerRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.channel.v1.IDeleteCustomerRequest|null|undefined,
@@ -859,7 +859,7 @@ export class CloudChannelServiceClient {
     return this.innerApiCalls.deleteCustomer(request, options, callback);
   }
   getEntitlement(
-      request: protos.google.cloud.channel.v1.IGetEntitlementRequest,
+      request?: protos.google.cloud.channel.v1.IGetEntitlementRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IEntitlement,
@@ -907,7 +907,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.getEntitlement(request);
  */
   getEntitlement(
-      request: protos.google.cloud.channel.v1.IGetEntitlementRequest,
+      request?: protos.google.cloud.channel.v1.IGetEntitlementRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.channel.v1.IEntitlement,
           protos.google.cloud.channel.v1.IGetEntitlementRequest|null|undefined,
@@ -941,7 +941,7 @@ export class CloudChannelServiceClient {
     return this.innerApiCalls.getEntitlement(request, options, callback);
   }
   getChannelPartnerLink(
-      request: protos.google.cloud.channel.v1.IGetChannelPartnerLinkRequest,
+      request?: protos.google.cloud.channel.v1.IGetChannelPartnerLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IChannelPartnerLink,
@@ -994,7 +994,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.getChannelPartnerLink(request);
  */
   getChannelPartnerLink(
-      request: protos.google.cloud.channel.v1.IGetChannelPartnerLinkRequest,
+      request?: protos.google.cloud.channel.v1.IGetChannelPartnerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.channel.v1.IChannelPartnerLink,
           protos.google.cloud.channel.v1.IGetChannelPartnerLinkRequest|null|undefined,
@@ -1028,7 +1028,7 @@ export class CloudChannelServiceClient {
     return this.innerApiCalls.getChannelPartnerLink(request, options, callback);
   }
   createChannelPartnerLink(
-      request: protos.google.cloud.channel.v1.ICreateChannelPartnerLinkRequest,
+      request?: protos.google.cloud.channel.v1.ICreateChannelPartnerLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IChannelPartnerLink,
@@ -1092,7 +1092,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.createChannelPartnerLink(request);
  */
   createChannelPartnerLink(
-      request: protos.google.cloud.channel.v1.ICreateChannelPartnerLinkRequest,
+      request?: protos.google.cloud.channel.v1.ICreateChannelPartnerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.channel.v1.IChannelPartnerLink,
           protos.google.cloud.channel.v1.ICreateChannelPartnerLinkRequest|null|undefined,
@@ -1126,7 +1126,7 @@ export class CloudChannelServiceClient {
     return this.innerApiCalls.createChannelPartnerLink(request, options, callback);
   }
   updateChannelPartnerLink(
-      request: protos.google.cloud.channel.v1.IUpdateChannelPartnerLinkRequest,
+      request?: protos.google.cloud.channel.v1.IUpdateChannelPartnerLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IChannelPartnerLink,
@@ -1192,7 +1192,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.updateChannelPartnerLink(request);
  */
   updateChannelPartnerLink(
-      request: protos.google.cloud.channel.v1.IUpdateChannelPartnerLinkRequest,
+      request?: protos.google.cloud.channel.v1.IUpdateChannelPartnerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.channel.v1.IChannelPartnerLink,
           protos.google.cloud.channel.v1.IUpdateChannelPartnerLinkRequest|null|undefined,
@@ -1226,7 +1226,7 @@ export class CloudChannelServiceClient {
     return this.innerApiCalls.updateChannelPartnerLink(request, options, callback);
   }
   lookupOffer(
-      request: protos.google.cloud.channel.v1.ILookupOfferRequest,
+      request?: protos.google.cloud.channel.v1.ILookupOfferRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IOffer,
@@ -1274,7 +1274,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.lookupOffer(request);
  */
   lookupOffer(
-      request: protos.google.cloud.channel.v1.ILookupOfferRequest,
+      request?: protos.google.cloud.channel.v1.ILookupOfferRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.channel.v1.IOffer,
           protos.google.cloud.channel.v1.ILookupOfferRequest|null|undefined,
@@ -1308,7 +1308,7 @@ export class CloudChannelServiceClient {
     return this.innerApiCalls.lookupOffer(request, options, callback);
   }
   registerSubscriber(
-      request: protos.google.cloud.channel.v1.IRegisterSubscriberRequest,
+      request?: protos.google.cloud.channel.v1.IRegisterSubscriberRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IRegisterSubscriberResponse,
@@ -1363,7 +1363,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.registerSubscriber(request);
  */
   registerSubscriber(
-      request: protos.google.cloud.channel.v1.IRegisterSubscriberRequest,
+      request?: protos.google.cloud.channel.v1.IRegisterSubscriberRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.channel.v1.IRegisterSubscriberResponse,
           protos.google.cloud.channel.v1.IRegisterSubscriberRequest|null|undefined,
@@ -1397,7 +1397,7 @@ export class CloudChannelServiceClient {
     return this.innerApiCalls.registerSubscriber(request, options, callback);
   }
   unregisterSubscriber(
-      request: protos.google.cloud.channel.v1.IUnregisterSubscriberRequest,
+      request?: protos.google.cloud.channel.v1.IUnregisterSubscriberRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IUnregisterSubscriberResponse,
@@ -1456,7 +1456,7 @@ export class CloudChannelServiceClient {
  * const [response] = await client.unregisterSubscriber(request);
  */
   unregisterSubscriber(
-      request: protos.google.cloud.channel.v1.IUnregisterSubscriberRequest,
+      request?: protos.google.cloud.channel.v1.IUnregisterSubscriberRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.channel.v1.IUnregisterSubscriberResponse,
           protos.google.cloud.channel.v1.IUnregisterSubscriberRequest|null|undefined,
@@ -1491,7 +1491,7 @@ export class CloudChannelServiceClient {
   }
 
   provisionCloudIdentity(
-      request: protos.google.cloud.channel.v1.IProvisionCloudIdentityRequest,
+      request?: protos.google.cloud.channel.v1.IProvisionCloudIdentityRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.channel.v1.ICustomer, protos.google.cloud.channel.v1.IOperationMetadata>,
@@ -1558,7 +1558,7 @@ export class CloudChannelServiceClient {
  * const [response] = await operation.promise();
  */
   provisionCloudIdentity(
-      request: protos.google.cloud.channel.v1.IProvisionCloudIdentityRequest,
+      request?: protos.google.cloud.channel.v1.IProvisionCloudIdentityRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.channel.v1.ICustomer, protos.google.cloud.channel.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1613,7 +1613,7 @@ export class CloudChannelServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.channel.v1.Customer, protos.google.cloud.channel.v1.OperationMetadata>;
   }
   createEntitlement(
-      request: protos.google.cloud.channel.v1.ICreateEntitlementRequest,
+      request?: protos.google.cloud.channel.v1.ICreateEntitlementRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
@@ -1704,7 +1704,7 @@ export class CloudChannelServiceClient {
  * const [response] = await operation.promise();
  */
   createEntitlement(
-      request: protos.google.cloud.channel.v1.ICreateEntitlementRequest,
+      request?: protos.google.cloud.channel.v1.ICreateEntitlementRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1759,7 +1759,7 @@ export class CloudChannelServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>;
   }
   changeParameters(
-      request: protos.google.cloud.channel.v1.IChangeParametersRequest,
+      request?: protos.google.cloud.channel.v1.IChangeParametersRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
@@ -1839,7 +1839,7 @@ export class CloudChannelServiceClient {
  * const [response] = await operation.promise();
  */
   changeParameters(
-      request: protos.google.cloud.channel.v1.IChangeParametersRequest,
+      request?: protos.google.cloud.channel.v1.IChangeParametersRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1894,7 +1894,7 @@ export class CloudChannelServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>;
   }
   changeRenewalSettings(
-      request: protos.google.cloud.channel.v1.IChangeRenewalSettingsRequest,
+      request?: protos.google.cloud.channel.v1.IChangeRenewalSettingsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
@@ -1972,7 +1972,7 @@ export class CloudChannelServiceClient {
  * const [response] = await operation.promise();
  */
   changeRenewalSettings(
-      request: protos.google.cloud.channel.v1.IChangeRenewalSettingsRequest,
+      request?: protos.google.cloud.channel.v1.IChangeRenewalSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2027,7 +2027,7 @@ export class CloudChannelServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>;
   }
   changeOffer(
-      request: protos.google.cloud.channel.v1.IChangeOfferRequest,
+      request?: protos.google.cloud.channel.v1.IChangeOfferRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
@@ -2108,7 +2108,7 @@ export class CloudChannelServiceClient {
  * const [response] = await operation.promise();
  */
   changeOffer(
-      request: protos.google.cloud.channel.v1.IChangeOfferRequest,
+      request?: protos.google.cloud.channel.v1.IChangeOfferRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2163,7 +2163,7 @@ export class CloudChannelServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>;
   }
   startPaidService(
-      request: protos.google.cloud.channel.v1.IStartPaidServiceRequest,
+      request?: protos.google.cloud.channel.v1.IStartPaidServiceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
@@ -2240,7 +2240,7 @@ export class CloudChannelServiceClient {
  * const [response] = await operation.promise();
  */
   startPaidService(
-      request: protos.google.cloud.channel.v1.IStartPaidServiceRequest,
+      request?: protos.google.cloud.channel.v1.IStartPaidServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2295,7 +2295,7 @@ export class CloudChannelServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>;
   }
   suspendEntitlement(
-      request: protos.google.cloud.channel.v1.ISuspendEntitlementRequest,
+      request?: protos.google.cloud.channel.v1.ISuspendEntitlementRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
@@ -2369,7 +2369,7 @@ export class CloudChannelServiceClient {
  * const [response] = await operation.promise();
  */
   suspendEntitlement(
-      request: protos.google.cloud.channel.v1.ISuspendEntitlementRequest,
+      request?: protos.google.cloud.channel.v1.ISuspendEntitlementRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2424,7 +2424,7 @@ export class CloudChannelServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>;
   }
   cancelEntitlement(
-      request: protos.google.cloud.channel.v1.ICancelEntitlementRequest,
+      request?: protos.google.cloud.channel.v1.ICancelEntitlementRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.channel.v1.IOperationMetadata>,
@@ -2503,7 +2503,7 @@ export class CloudChannelServiceClient {
  * const [response] = await operation.promise();
  */
   cancelEntitlement(
-      request: protos.google.cloud.channel.v1.ICancelEntitlementRequest,
+      request?: protos.google.cloud.channel.v1.ICancelEntitlementRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.channel.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2558,7 +2558,7 @@ export class CloudChannelServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.channel.v1.OperationMetadata>;
   }
   activateEntitlement(
-      request: protos.google.cloud.channel.v1.IActivateEntitlementRequest,
+      request?: protos.google.cloud.channel.v1.IActivateEntitlementRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
@@ -2638,7 +2638,7 @@ export class CloudChannelServiceClient {
  * const [response] = await operation.promise();
  */
   activateEntitlement(
-      request: protos.google.cloud.channel.v1.IActivateEntitlementRequest,
+      request?: protos.google.cloud.channel.v1.IActivateEntitlementRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.channel.v1.IEntitlement, protos.google.cloud.channel.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2693,7 +2693,7 @@ export class CloudChannelServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>;
   }
   transferEntitlements(
-      request: protos.google.cloud.channel.v1.ITransferEntitlementsRequest,
+      request?: protos.google.cloud.channel.v1.ITransferEntitlementsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.channel.v1.ITransferEntitlementsResponse, protos.google.cloud.channel.v1.IOperationMetadata>,
@@ -2782,7 +2782,7 @@ export class CloudChannelServiceClient {
  * const [response] = await operation.promise();
  */
   transferEntitlements(
-      request: protos.google.cloud.channel.v1.ITransferEntitlementsRequest,
+      request?: protos.google.cloud.channel.v1.ITransferEntitlementsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.channel.v1.ITransferEntitlementsResponse, protos.google.cloud.channel.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2837,7 +2837,7 @@ export class CloudChannelServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.channel.v1.TransferEntitlementsResponse, protos.google.cloud.channel.v1.OperationMetadata>;
   }
   transferEntitlementsToGoogle(
-      request: protos.google.cloud.channel.v1.ITransferEntitlementsToGoogleRequest,
+      request?: protos.google.cloud.channel.v1.ITransferEntitlementsToGoogleRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.channel.v1.IOperationMetadata>,
@@ -2921,7 +2921,7 @@ export class CloudChannelServiceClient {
  * const [response] = await operation.promise();
  */
   transferEntitlementsToGoogle(
-      request: protos.google.cloud.channel.v1.ITransferEntitlementsToGoogleRequest,
+      request?: protos.google.cloud.channel.v1.ITransferEntitlementsToGoogleRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.channel.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2976,7 +2976,7 @@ export class CloudChannelServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.channel.v1.OperationMetadata>;
   }
   listCustomers(
-      request: protos.google.cloud.channel.v1.IListCustomersRequest,
+      request?: protos.google.cloud.channel.v1.IListCustomersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.ICustomer[],
@@ -3036,7 +3036,7 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  */
   listCustomers(
-      request: protos.google.cloud.channel.v1.IListCustomersRequest,
+      request?: protos.google.cloud.channel.v1.IListCustomersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.channel.v1.IListCustomersRequest,
           protos.google.cloud.channel.v1.IListCustomersResponse|null|undefined,
@@ -3178,7 +3178,7 @@ export class CloudChannelServiceClient {
     ) as AsyncIterable<protos.google.cloud.channel.v1.ICustomer>;
   }
   listEntitlements(
-      request: protos.google.cloud.channel.v1.IListEntitlementsRequest,
+      request?: protos.google.cloud.channel.v1.IListEntitlementsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IEntitlement[],
@@ -3238,7 +3238,7 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  */
   listEntitlements(
-      request: protos.google.cloud.channel.v1.IListEntitlementsRequest,
+      request?: protos.google.cloud.channel.v1.IListEntitlementsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.channel.v1.IListEntitlementsRequest,
           protos.google.cloud.channel.v1.IListEntitlementsResponse|null|undefined,
@@ -3382,7 +3382,7 @@ export class CloudChannelServiceClient {
     ) as AsyncIterable<protos.google.cloud.channel.v1.IEntitlement>;
   }
   listTransferableSkus(
-      request: protos.google.cloud.channel.v1.IListTransferableSkusRequest,
+      request?: protos.google.cloud.channel.v1.IListTransferableSkusRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.ITransferableSku[],
@@ -3469,7 +3469,7 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  */
   listTransferableSkus(
-      request: protos.google.cloud.channel.v1.IListTransferableSkusRequest,
+      request?: protos.google.cloud.channel.v1.IListTransferableSkusRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.channel.v1.IListTransferableSkusRequest,
           protos.google.cloud.channel.v1.IListTransferableSkusResponse|null|undefined,
@@ -3649,7 +3649,7 @@ export class CloudChannelServiceClient {
     ) as AsyncIterable<protos.google.cloud.channel.v1.ITransferableSku>;
   }
   listTransferableOffers(
-      request: protos.google.cloud.channel.v1.IListTransferableOffersRequest,
+      request?: protos.google.cloud.channel.v1.IListTransferableOffersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.ITransferableOffer[],
@@ -3727,7 +3727,7 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  */
   listTransferableOffers(
-      request: protos.google.cloud.channel.v1.IListTransferableOffersRequest,
+      request?: protos.google.cloud.channel.v1.IListTransferableOffersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.channel.v1.IListTransferableOffersRequest,
           protos.google.cloud.channel.v1.IListTransferableOffersResponse|null|undefined,
@@ -3889,7 +3889,7 @@ export class CloudChannelServiceClient {
     ) as AsyncIterable<protos.google.cloud.channel.v1.ITransferableOffer>;
   }
   listChannelPartnerLinks(
-      request: protos.google.cloud.channel.v1.IListChannelPartnerLinksRequest,
+      request?: protos.google.cloud.channel.v1.IListChannelPartnerLinksRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IChannelPartnerLink[],
@@ -3953,7 +3953,7 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  */
   listChannelPartnerLinks(
-      request: protos.google.cloud.channel.v1.IListChannelPartnerLinksRequest,
+      request?: protos.google.cloud.channel.v1.IListChannelPartnerLinksRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.channel.v1.IListChannelPartnerLinksRequest,
           protos.google.cloud.channel.v1.IListChannelPartnerLinksResponse|null|undefined,
@@ -4101,7 +4101,7 @@ export class CloudChannelServiceClient {
     ) as AsyncIterable<protos.google.cloud.channel.v1.IChannelPartnerLink>;
   }
   listProducts(
-      request: protos.google.cloud.channel.v1.IListProductsRequest,
+      request?: protos.google.cloud.channel.v1.IListProductsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IProduct[],
@@ -4157,7 +4157,7 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  */
   listProducts(
-      request: protos.google.cloud.channel.v1.IListProductsRequest,
+      request?: protos.google.cloud.channel.v1.IListProductsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.channel.v1.IListProductsRequest,
           protos.google.cloud.channel.v1.IListProductsResponse|null|undefined,
@@ -4280,7 +4280,7 @@ export class CloudChannelServiceClient {
     ) as AsyncIterable<protos.google.cloud.channel.v1.IProduct>;
   }
   listSkus(
-      request: protos.google.cloud.channel.v1.IListSkusRequest,
+      request?: protos.google.cloud.channel.v1.IListSkusRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.ISku[],
@@ -4341,7 +4341,7 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  */
   listSkus(
-      request: protos.google.cloud.channel.v1.IListSkusRequest,
+      request?: protos.google.cloud.channel.v1.IListSkusRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.channel.v1.IListSkusRequest,
           protos.google.cloud.channel.v1.IListSkusResponse|null|undefined,
@@ -4495,7 +4495,7 @@ export class CloudChannelServiceClient {
     ) as AsyncIterable<protos.google.cloud.channel.v1.ISku>;
   }
   listOffers(
-      request: protos.google.cloud.channel.v1.IListOffersRequest,
+      request?: protos.google.cloud.channel.v1.IListOffersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IOffer[],
@@ -4557,7 +4557,7 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  */
   listOffers(
-      request: protos.google.cloud.channel.v1.IListOffersRequest,
+      request?: protos.google.cloud.channel.v1.IListOffersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.channel.v1.IListOffersRequest,
           protos.google.cloud.channel.v1.IListOffersResponse|null|undefined,
@@ -4713,7 +4713,7 @@ export class CloudChannelServiceClient {
     ) as AsyncIterable<protos.google.cloud.channel.v1.IOffer>;
   }
   listPurchasableSkus(
-      request: protos.google.cloud.channel.v1.IListPurchasableSkusRequest,
+      request?: protos.google.cloud.channel.v1.IListPurchasableSkusRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IPurchasableSku[],
@@ -4777,7 +4777,7 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  */
   listPurchasableSkus(
-      request: protos.google.cloud.channel.v1.IListPurchasableSkusRequest,
+      request?: protos.google.cloud.channel.v1.IListPurchasableSkusRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.channel.v1.IListPurchasableSkusRequest,
           protos.google.cloud.channel.v1.IListPurchasableSkusResponse|null|undefined,
@@ -4929,7 +4929,7 @@ export class CloudChannelServiceClient {
     ) as AsyncIterable<protos.google.cloud.channel.v1.IPurchasableSku>;
   }
   listPurchasableOffers(
-      request: protos.google.cloud.channel.v1.IListPurchasableOffersRequest,
+      request?: protos.google.cloud.channel.v1.IListPurchasableOffersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.channel.v1.IPurchasableOffer[],
@@ -4993,7 +4993,7 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  */
   listPurchasableOffers(
-      request: protos.google.cloud.channel.v1.IListPurchasableOffersRequest,
+      request?: protos.google.cloud.channel.v1.IListPurchasableOffersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.channel.v1.IListPurchasableOffersRequest,
           protos.google.cloud.channel.v1.IListPurchasableOffersResponse|null|undefined,
@@ -5145,7 +5145,7 @@ export class CloudChannelServiceClient {
     ) as AsyncIterable<protos.google.cloud.channel.v1.IPurchasableOffer>;
   }
   listSubscribers(
-      request: protos.google.cloud.channel.v1.IListSubscribersRequest,
+      request?: protos.google.cloud.channel.v1.IListSubscribersRequest,
       options?: CallOptions):
       Promise<[
         string[],
@@ -5213,7 +5213,7 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  */
   listSubscribers(
-      request: protos.google.cloud.channel.v1.IListSubscribersRequest,
+      request?: protos.google.cloud.channel.v1.IListSubscribersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.channel.v1.IListSubscribersRequest,
           protos.google.cloud.channel.v1.IListSubscribersResponse|null|undefined,

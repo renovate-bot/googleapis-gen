@@ -315,7 +315,7 @@ export class UserEventServiceClient {
   // -- Service calls --
   // -------------------
   writeUserEvent(
-      request: protos.google.cloud.retail.v2.IWriteUserEventRequest,
+      request?: protos.google.cloud.retail.v2.IWriteUserEventRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.retail.v2.IUserEvent,
@@ -355,7 +355,7 @@ export class UserEventServiceClient {
  * const [response] = await client.writeUserEvent(request);
  */
   writeUserEvent(
-      request: protos.google.cloud.retail.v2.IWriteUserEventRequest,
+      request?: protos.google.cloud.retail.v2.IWriteUserEventRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.retail.v2.IUserEvent,
           protos.google.cloud.retail.v2.IWriteUserEventRequest|null|undefined,
@@ -389,7 +389,7 @@ export class UserEventServiceClient {
     return this.innerApiCalls.writeUserEvent(request, options, callback);
   }
   collectUserEvent(
-      request: protos.google.cloud.retail.v2.ICollectUserEventRequest,
+      request?: protos.google.cloud.retail.v2.ICollectUserEventRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.IHttpBody,
@@ -443,7 +443,7 @@ export class UserEventServiceClient {
  * const [response] = await client.collectUserEvent(request);
  */
   collectUserEvent(
-      request: protos.google.cloud.retail.v2.ICollectUserEventRequest,
+      request?: protos.google.cloud.retail.v2.ICollectUserEventRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.IHttpBody,
           protos.google.cloud.retail.v2.ICollectUserEventRequest|null|undefined,
@@ -478,7 +478,7 @@ export class UserEventServiceClient {
   }
 
   purgeUserEvents(
-      request: protos.google.cloud.retail.v2.IPurgeUserEventsRequest,
+      request?: protos.google.cloud.retail.v2.IPurgeUserEventsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.retail.v2.IPurgeUserEventsResponse, protos.google.cloud.retail.v2.IPurgeMetadata>,
@@ -551,7 +551,7 @@ export class UserEventServiceClient {
  * const [response] = await operation.promise();
  */
   purgeUserEvents(
-      request: protos.google.cloud.retail.v2.IPurgeUserEventsRequest,
+      request?: protos.google.cloud.retail.v2.IPurgeUserEventsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.retail.v2.IPurgeUserEventsResponse, protos.google.cloud.retail.v2.IPurgeMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -606,7 +606,7 @@ export class UserEventServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.retail.v2.PurgeUserEventsResponse, protos.google.cloud.retail.v2.PurgeMetadata>;
   }
   importUserEvents(
-      request: protos.google.cloud.retail.v2.IImportUserEventsRequest,
+      request?: protos.google.cloud.retail.v2.IImportUserEventsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.retail.v2.IImportUserEventsResponse, protos.google.cloud.retail.v2.IImportMetadata>,
@@ -657,7 +657,7 @@ export class UserEventServiceClient {
  * const [response] = await operation.promise();
  */
   importUserEvents(
-      request: protos.google.cloud.retail.v2.IImportUserEventsRequest,
+      request?: protos.google.cloud.retail.v2.IImportUserEventsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.retail.v2.IImportUserEventsResponse, protos.google.cloud.retail.v2.IImportMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -712,7 +712,7 @@ export class UserEventServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.retail.v2.ImportUserEventsResponse, protos.google.cloud.retail.v2.ImportMetadata>;
   }
   rejoinUserEvents(
-      request: protos.google.cloud.retail.v2.IRejoinUserEventsRequest,
+      request?: protos.google.cloud.retail.v2.IRejoinUserEventsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.retail.v2.IRejoinUserEventsResponse, protos.google.cloud.retail.v2.IRejoinUserEventsMetadata>,
@@ -764,7 +764,7 @@ export class UserEventServiceClient {
  * const [response] = await operation.promise();
  */
   rejoinUserEvents(
-      request: protos.google.cloud.retail.v2.IRejoinUserEventsRequest,
+      request?: protos.google.cloud.retail.v2.IRejoinUserEventsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.retail.v2.IRejoinUserEventsResponse, protos.google.cloud.retail.v2.IRejoinUserEventsMetadata>,
           protos.google.longrunning.IOperation|null|undefined,

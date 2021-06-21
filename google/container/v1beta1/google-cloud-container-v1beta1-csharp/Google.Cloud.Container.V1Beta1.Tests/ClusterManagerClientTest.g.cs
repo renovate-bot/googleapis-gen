@@ -1981,7 +1981,9 @@ namespace Google.Cloud.Container.V1Beta1.Tests
             };
             mockGrpcClient.Setup(x => x.SetLocations(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ClusterManagerClient client = new ClusterManagerClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             Operation response = client.SetLocations(request);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
         }
@@ -2037,9 +2039,13 @@ namespace Google.Cloud.Container.V1Beta1.Tests
             };
             mockGrpcClient.Setup(x => x.SetLocationsAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Operation>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ClusterManagerClient client = new ClusterManagerClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             Operation responseCallSettings = await client.SetLocationsAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCallSettings);
+#pragma warning disable CS0612
             Operation responseCancellationToken = await client.SetLocationsAsync(request, st::CancellationToken.None);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCancellationToken);
             mockGrpcClient.VerifyAll();
         }

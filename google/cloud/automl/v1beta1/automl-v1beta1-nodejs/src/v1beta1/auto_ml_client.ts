@@ -410,7 +410,7 @@ export class AutoMlClient {
   // -- Service calls --
   // -------------------
   createDataset(
-      request: protos.google.cloud.automl.v1beta1.ICreateDatasetRequest,
+      request?: protos.google.cloud.automl.v1beta1.ICreateDatasetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IDataset,
@@ -449,7 +449,7 @@ export class AutoMlClient {
  * const [response] = await client.createDataset(request);
  */
   createDataset(
-      request: protos.google.cloud.automl.v1beta1.ICreateDatasetRequest,
+      request?: protos.google.cloud.automl.v1beta1.ICreateDatasetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.automl.v1beta1.IDataset,
           protos.google.cloud.automl.v1beta1.ICreateDatasetRequest|null|undefined,
@@ -483,7 +483,7 @@ export class AutoMlClient {
     return this.innerApiCalls.createDataset(request, options, callback);
   }
   getDataset(
-      request: protos.google.cloud.automl.v1beta1.IGetDatasetRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetDatasetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IDataset,
@@ -520,7 +520,7 @@ export class AutoMlClient {
  * const [response] = await client.getDataset(request);
  */
   getDataset(
-      request: protos.google.cloud.automl.v1beta1.IGetDatasetRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetDatasetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.automl.v1beta1.IDataset,
           protos.google.cloud.automl.v1beta1.IGetDatasetRequest|null|undefined,
@@ -554,7 +554,7 @@ export class AutoMlClient {
     return this.innerApiCalls.getDataset(request, options, callback);
   }
   updateDataset(
-      request: protos.google.cloud.automl.v1beta1.IUpdateDatasetRequest,
+      request?: protos.google.cloud.automl.v1beta1.IUpdateDatasetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IDataset,
@@ -593,7 +593,7 @@ export class AutoMlClient {
  * const [response] = await client.updateDataset(request);
  */
   updateDataset(
-      request: protos.google.cloud.automl.v1beta1.IUpdateDatasetRequest,
+      request?: protos.google.cloud.automl.v1beta1.IUpdateDatasetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.automl.v1beta1.IDataset,
           protos.google.cloud.automl.v1beta1.IUpdateDatasetRequest|null|undefined,
@@ -627,7 +627,7 @@ export class AutoMlClient {
     return this.innerApiCalls.updateDataset(request, options, callback);
   }
   getAnnotationSpec(
-      request: protos.google.cloud.automl.v1beta1.IGetAnnotationSpecRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetAnnotationSpecRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IAnnotationSpec,
@@ -664,7 +664,7 @@ export class AutoMlClient {
  * const [response] = await client.getAnnotationSpec(request);
  */
   getAnnotationSpec(
-      request: protos.google.cloud.automl.v1beta1.IGetAnnotationSpecRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetAnnotationSpecRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.automl.v1beta1.IAnnotationSpec,
           protos.google.cloud.automl.v1beta1.IGetAnnotationSpecRequest|null|undefined,
@@ -698,7 +698,7 @@ export class AutoMlClient {
     return this.innerApiCalls.getAnnotationSpec(request, options, callback);
   }
   getTableSpec(
-      request: protos.google.cloud.automl.v1beta1.IGetTableSpecRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetTableSpecRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.ITableSpec,
@@ -737,7 +737,7 @@ export class AutoMlClient {
  * const [response] = await client.getTableSpec(request);
  */
   getTableSpec(
-      request: protos.google.cloud.automl.v1beta1.IGetTableSpecRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetTableSpecRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.automl.v1beta1.ITableSpec,
           protos.google.cloud.automl.v1beta1.IGetTableSpecRequest|null|undefined,
@@ -771,7 +771,7 @@ export class AutoMlClient {
     return this.innerApiCalls.getTableSpec(request, options, callback);
   }
   updateTableSpec(
-      request: protos.google.cloud.automl.v1beta1.IUpdateTableSpecRequest,
+      request?: protos.google.cloud.automl.v1beta1.IUpdateTableSpecRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.ITableSpec,
@@ -810,7 +810,7 @@ export class AutoMlClient {
  * const [response] = await client.updateTableSpec(request);
  */
   updateTableSpec(
-      request: protos.google.cloud.automl.v1beta1.IUpdateTableSpecRequest,
+      request?: protos.google.cloud.automl.v1beta1.IUpdateTableSpecRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.automl.v1beta1.ITableSpec,
           protos.google.cloud.automl.v1beta1.IUpdateTableSpecRequest|null|undefined,
@@ -844,7 +844,7 @@ export class AutoMlClient {
     return this.innerApiCalls.updateTableSpec(request, options, callback);
   }
   getColumnSpec(
-      request: protos.google.cloud.automl.v1beta1.IGetColumnSpecRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetColumnSpecRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IColumnSpec,
@@ -883,7 +883,7 @@ export class AutoMlClient {
  * const [response] = await client.getColumnSpec(request);
  */
   getColumnSpec(
-      request: protos.google.cloud.automl.v1beta1.IGetColumnSpecRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetColumnSpecRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.automl.v1beta1.IColumnSpec,
           protos.google.cloud.automl.v1beta1.IGetColumnSpecRequest|null|undefined,
@@ -917,7 +917,7 @@ export class AutoMlClient {
     return this.innerApiCalls.getColumnSpec(request, options, callback);
   }
   updateColumnSpec(
-      request: protos.google.cloud.automl.v1beta1.IUpdateColumnSpecRequest,
+      request?: protos.google.cloud.automl.v1beta1.IUpdateColumnSpecRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IColumnSpec,
@@ -956,7 +956,7 @@ export class AutoMlClient {
  * const [response] = await client.updateColumnSpec(request);
  */
   updateColumnSpec(
-      request: protos.google.cloud.automl.v1beta1.IUpdateColumnSpecRequest,
+      request?: protos.google.cloud.automl.v1beta1.IUpdateColumnSpecRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.automl.v1beta1.IColumnSpec,
           protos.google.cloud.automl.v1beta1.IUpdateColumnSpecRequest|null|undefined,
@@ -990,7 +990,7 @@ export class AutoMlClient {
     return this.innerApiCalls.updateColumnSpec(request, options, callback);
   }
   getModel(
-      request: protos.google.cloud.automl.v1beta1.IGetModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetModelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IModel,
@@ -1027,7 +1027,7 @@ export class AutoMlClient {
  * const [response] = await client.getModel(request);
  */
   getModel(
-      request: protos.google.cloud.automl.v1beta1.IGetModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetModelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.automl.v1beta1.IModel,
           protos.google.cloud.automl.v1beta1.IGetModelRequest|null|undefined,
@@ -1061,7 +1061,7 @@ export class AutoMlClient {
     return this.innerApiCalls.getModel(request, options, callback);
   }
   getModelEvaluation(
-      request: protos.google.cloud.automl.v1beta1.IGetModelEvaluationRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetModelEvaluationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IModelEvaluation,
@@ -1098,7 +1098,7 @@ export class AutoMlClient {
  * const [response] = await client.getModelEvaluation(request);
  */
   getModelEvaluation(
-      request: protos.google.cloud.automl.v1beta1.IGetModelEvaluationRequest,
+      request?: protos.google.cloud.automl.v1beta1.IGetModelEvaluationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.automl.v1beta1.IModelEvaluation,
           protos.google.cloud.automl.v1beta1.IGetModelEvaluationRequest|null|undefined,
@@ -1133,7 +1133,7 @@ export class AutoMlClient {
   }
 
   deleteDataset(
-      request: protos.google.cloud.automl.v1beta1.IDeleteDatasetRequest,
+      request?: protos.google.cloud.automl.v1beta1.IDeleteDatasetRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
@@ -1177,7 +1177,7 @@ export class AutoMlClient {
  * const [response] = await operation.promise();
  */
   deleteDataset(
-      request: protos.google.cloud.automl.v1beta1.IDeleteDatasetRequest,
+      request?: protos.google.cloud.automl.v1beta1.IDeleteDatasetRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1232,7 +1232,7 @@ export class AutoMlClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1beta1.OperationMetadata>;
   }
   importData(
-      request: protos.google.cloud.automl.v1beta1.IImportDataRequest,
+      request?: protos.google.cloud.automl.v1beta1.IImportDataRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
@@ -1284,7 +1284,7 @@ export class AutoMlClient {
  * const [response] = await operation.promise();
  */
   importData(
-      request: protos.google.cloud.automl.v1beta1.IImportDataRequest,
+      request?: protos.google.cloud.automl.v1beta1.IImportDataRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1339,7 +1339,7 @@ export class AutoMlClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1beta1.OperationMetadata>;
   }
   exportData(
-      request: protos.google.cloud.automl.v1beta1.IExportDataRequest,
+      request?: protos.google.cloud.automl.v1beta1.IExportDataRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
@@ -1383,7 +1383,7 @@ export class AutoMlClient {
  * const [response] = await operation.promise();
  */
   exportData(
-      request: protos.google.cloud.automl.v1beta1.IExportDataRequest,
+      request?: protos.google.cloud.automl.v1beta1.IExportDataRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1438,7 +1438,7 @@ export class AutoMlClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1beta1.OperationMetadata>;
   }
   createModel(
-      request: protos.google.cloud.automl.v1beta1.ICreateModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.ICreateModelRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.automl.v1beta1.IModel, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
@@ -1484,7 +1484,7 @@ export class AutoMlClient {
  * const [response] = await operation.promise();
  */
   createModel(
-      request: protos.google.cloud.automl.v1beta1.ICreateModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.ICreateModelRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.automl.v1beta1.IModel, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1539,7 +1539,7 @@ export class AutoMlClient {
     return decodeOperation as LROperation<protos.google.cloud.automl.v1beta1.Model, protos.google.cloud.automl.v1beta1.OperationMetadata>;
   }
   deleteModel(
-      request: protos.google.cloud.automl.v1beta1.IDeleteModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.IDeleteModelRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
@@ -1583,7 +1583,7 @@ export class AutoMlClient {
  * const [response] = await operation.promise();
  */
   deleteModel(
-      request: protos.google.cloud.automl.v1beta1.IDeleteModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.IDeleteModelRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1638,7 +1638,7 @@ export class AutoMlClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1beta1.OperationMetadata>;
   }
   deployModel(
-      request: protos.google.cloud.automl.v1beta1.IDeployModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.IDeployModelRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
@@ -1693,7 +1693,7 @@ export class AutoMlClient {
  * const [response] = await operation.promise();
  */
   deployModel(
-      request: protos.google.cloud.automl.v1beta1.IDeployModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.IDeployModelRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1748,7 +1748,7 @@ export class AutoMlClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1beta1.OperationMetadata>;
   }
   undeployModel(
-      request: protos.google.cloud.automl.v1beta1.IUndeployModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.IUndeployModelRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
@@ -1794,7 +1794,7 @@ export class AutoMlClient {
  * const [response] = await operation.promise();
  */
   undeployModel(
-      request: protos.google.cloud.automl.v1beta1.IUndeployModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.IUndeployModelRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1849,7 +1849,7 @@ export class AutoMlClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1beta1.OperationMetadata>;
   }
   exportModel(
-      request: protos.google.cloud.automl.v1beta1.IExportModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.IExportModelRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
@@ -1898,7 +1898,7 @@ export class AutoMlClient {
  * const [response] = await operation.promise();
  */
   exportModel(
-      request: protos.google.cloud.automl.v1beta1.IExportModelRequest,
+      request?: protos.google.cloud.automl.v1beta1.IExportModelRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1953,7 +1953,7 @@ export class AutoMlClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1beta1.OperationMetadata>;
   }
   exportEvaluatedExamples(
-      request: protos.google.cloud.automl.v1beta1.IExportEvaluatedExamplesRequest,
+      request?: protos.google.cloud.automl.v1beta1.IExportEvaluatedExamplesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
@@ -2009,7 +2009,7 @@ export class AutoMlClient {
  * const [response] = await operation.promise();
  */
   exportEvaluatedExamples(
-      request: protos.google.cloud.automl.v1beta1.IExportEvaluatedExamplesRequest,
+      request?: protos.google.cloud.automl.v1beta1.IExportEvaluatedExamplesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.automl.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2064,7 +2064,7 @@ export class AutoMlClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1beta1.OperationMetadata>;
   }
   listDatasets(
-      request: protos.google.cloud.automl.v1beta1.IListDatasetsRequest,
+      request?: protos.google.cloud.automl.v1beta1.IListDatasetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IDataset[],
@@ -2121,7 +2121,7 @@ export class AutoMlClient {
  *   for more details and examples.
  */
   listDatasets(
-      request: protos.google.cloud.automl.v1beta1.IListDatasetsRequest,
+      request?: protos.google.cloud.automl.v1beta1.IListDatasetsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.automl.v1beta1.IListDatasetsRequest,
           protos.google.cloud.automl.v1beta1.IListDatasetsResponse|null|undefined,
@@ -2275,7 +2275,7 @@ export class AutoMlClient {
     ) as AsyncIterable<protos.google.cloud.automl.v1beta1.IDataset>;
   }
   listTableSpecs(
-      request: protos.google.cloud.automl.v1beta1.IListTableSpecsRequest,
+      request?: protos.google.cloud.automl.v1beta1.IListTableSpecsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.ITableSpec[],
@@ -2328,7 +2328,7 @@ export class AutoMlClient {
  *   for more details and examples.
  */
   listTableSpecs(
-      request: protos.google.cloud.automl.v1beta1.IListTableSpecsRequest,
+      request?: protos.google.cloud.automl.v1beta1.IListTableSpecsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.automl.v1beta1.IListTableSpecsRequest,
           protos.google.cloud.automl.v1beta1.IListTableSpecsResponse|null|undefined,
@@ -2474,7 +2474,7 @@ export class AutoMlClient {
     ) as AsyncIterable<protos.google.cloud.automl.v1beta1.ITableSpec>;
   }
   listColumnSpecs(
-      request: protos.google.cloud.automl.v1beta1.IListColumnSpecsRequest,
+      request?: protos.google.cloud.automl.v1beta1.IListColumnSpecsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IColumnSpec[],
@@ -2527,7 +2527,7 @@ export class AutoMlClient {
  *   for more details and examples.
  */
   listColumnSpecs(
-      request: protos.google.cloud.automl.v1beta1.IListColumnSpecsRequest,
+      request?: protos.google.cloud.automl.v1beta1.IListColumnSpecsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.automl.v1beta1.IListColumnSpecsRequest,
           protos.google.cloud.automl.v1beta1.IListColumnSpecsResponse|null|undefined,
@@ -2673,7 +2673,7 @@ export class AutoMlClient {
     ) as AsyncIterable<protos.google.cloud.automl.v1beta1.IColumnSpec>;
   }
   listModels(
-      request: protos.google.cloud.automl.v1beta1.IListModelsRequest,
+      request?: protos.google.cloud.automl.v1beta1.IListModelsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IModel[],
@@ -2731,7 +2731,7 @@ export class AutoMlClient {
  *   for more details and examples.
  */
   listModels(
-      request: protos.google.cloud.automl.v1beta1.IListModelsRequest,
+      request?: protos.google.cloud.automl.v1beta1.IListModelsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.automl.v1beta1.IListModelsRequest,
           protos.google.cloud.automl.v1beta1.IListModelsResponse|null|undefined,
@@ -2887,7 +2887,7 @@ export class AutoMlClient {
     ) as AsyncIterable<protos.google.cloud.automl.v1beta1.IModel>;
   }
   listModelEvaluations(
-      request: protos.google.cloud.automl.v1beta1.IListModelEvaluationsRequest,
+      request?: protos.google.cloud.automl.v1beta1.IListModelEvaluationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.automl.v1beta1.IModelEvaluation[],
@@ -2949,7 +2949,7 @@ export class AutoMlClient {
  *   for more details and examples.
  */
   listModelEvaluations(
-      request: protos.google.cloud.automl.v1beta1.IListModelEvaluationsRequest,
+      request?: protos.google.cloud.automl.v1beta1.IListModelEvaluationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.automl.v1beta1.IListModelEvaluationsRequest,
           protos.google.cloud.automl.v1beta1.IListModelEvaluationsResponse|null|undefined,

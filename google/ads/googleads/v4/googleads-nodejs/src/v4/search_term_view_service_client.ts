@@ -587,7 +587,7 @@ export class SearchTermViewServiceClient {
   // -- Service calls --
   // -------------------
   getSearchTermView(
-      request: protos.google.ads.googleads.v4.services.IGetSearchTermViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetSearchTermViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.ISearchTermView,
@@ -624,7 +624,7 @@ export class SearchTermViewServiceClient {
  * const [response] = await client.getSearchTermView(request);
  */
   getSearchTermView(
-      request: protos.google.ads.googleads.v4.services.IGetSearchTermViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetSearchTermViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.ISearchTermView,
           protos.google.ads.googleads.v4.services.IGetSearchTermViewRequest|null|undefined,

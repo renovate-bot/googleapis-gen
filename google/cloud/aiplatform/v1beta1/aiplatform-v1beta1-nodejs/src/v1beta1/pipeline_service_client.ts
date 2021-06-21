@@ -415,7 +415,7 @@ export class PipelineServiceClient {
   // -- Service calls --
   // -------------------
   createTrainingPipeline(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateTrainingPipelineRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateTrainingPipelineRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.ITrainingPipeline,
@@ -456,7 +456,7 @@ export class PipelineServiceClient {
  * const [response] = await client.createTrainingPipeline(request);
  */
   createTrainingPipeline(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateTrainingPipelineRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateTrainingPipelineRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.ITrainingPipeline,
           protos.google.cloud.aiplatform.v1beta1.ICreateTrainingPipelineRequest|null|undefined,
@@ -490,7 +490,7 @@ export class PipelineServiceClient {
     return this.innerApiCalls.createTrainingPipeline(request, options, callback);
   }
   getTrainingPipeline(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetTrainingPipelineRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetTrainingPipelineRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.ITrainingPipeline,
@@ -529,7 +529,7 @@ export class PipelineServiceClient {
  * const [response] = await client.getTrainingPipeline(request);
  */
   getTrainingPipeline(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetTrainingPipelineRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetTrainingPipelineRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.ITrainingPipeline,
           protos.google.cloud.aiplatform.v1beta1.IGetTrainingPipelineRequest|null|undefined,
@@ -563,7 +563,7 @@ export class PipelineServiceClient {
     return this.innerApiCalls.getTrainingPipeline(request, options, callback);
   }
   cancelTrainingPipeline(
-      request: protos.google.cloud.aiplatform.v1beta1.ICancelTrainingPipelineRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICancelTrainingPipelineRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -611,7 +611,7 @@ export class PipelineServiceClient {
  * const [response] = await client.cancelTrainingPipeline(request);
  */
   cancelTrainingPipeline(
-      request: protos.google.cloud.aiplatform.v1beta1.ICancelTrainingPipelineRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICancelTrainingPipelineRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.aiplatform.v1beta1.ICancelTrainingPipelineRequest|null|undefined,
@@ -645,7 +645,7 @@ export class PipelineServiceClient {
     return this.innerApiCalls.cancelTrainingPipeline(request, options, callback);
   }
   createPipelineJob(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreatePipelineJobRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreatePipelineJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IPipelineJob,
@@ -692,7 +692,7 @@ export class PipelineServiceClient {
  * const [response] = await client.createPipelineJob(request);
  */
   createPipelineJob(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreatePipelineJobRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreatePipelineJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IPipelineJob,
           protos.google.cloud.aiplatform.v1beta1.ICreatePipelineJobRequest|null|undefined,
@@ -726,7 +726,7 @@ export class PipelineServiceClient {
     return this.innerApiCalls.createPipelineJob(request, options, callback);
   }
   getPipelineJob(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetPipelineJobRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetPipelineJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IPipelineJob,
@@ -765,7 +765,7 @@ export class PipelineServiceClient {
  * const [response] = await client.getPipelineJob(request);
  */
   getPipelineJob(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetPipelineJobRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetPipelineJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IPipelineJob,
           protos.google.cloud.aiplatform.v1beta1.IGetPipelineJobRequest|null|undefined,
@@ -799,7 +799,7 @@ export class PipelineServiceClient {
     return this.innerApiCalls.getPipelineJob(request, options, callback);
   }
   cancelPipelineJob(
-      request: protos.google.cloud.aiplatform.v1beta1.ICancelPipelineJobRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICancelPipelineJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -847,7 +847,7 @@ export class PipelineServiceClient {
  * const [response] = await client.cancelPipelineJob(request);
  */
   cancelPipelineJob(
-      request: protos.google.cloud.aiplatform.v1beta1.ICancelPipelineJobRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICancelPipelineJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.aiplatform.v1beta1.ICancelPipelineJobRequest|null|undefined,
@@ -882,7 +882,7 @@ export class PipelineServiceClient {
   }
 
   deleteTrainingPipeline(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteTrainingPipelineRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteTrainingPipelineRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
@@ -924,7 +924,7 @@ export class PipelineServiceClient {
  * const [response] = await operation.promise();
  */
   deleteTrainingPipeline(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteTrainingPipelineRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteTrainingPipelineRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -979,7 +979,7 @@ export class PipelineServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>;
   }
   deletePipelineJob(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeletePipelineJobRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeletePipelineJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
@@ -1021,7 +1021,7 @@ export class PipelineServiceClient {
  * const [response] = await operation.promise();
  */
   deletePipelineJob(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeletePipelineJobRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeletePipelineJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1076,7 +1076,7 @@ export class PipelineServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>;
   }
   listTrainingPipelines(
-      request: protos.google.cloud.aiplatform.v1beta1.IListTrainingPipelinesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListTrainingPipelinesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.ITrainingPipeline[],
@@ -1144,7 +1144,7 @@ export class PipelineServiceClient {
  *   for more details and examples.
  */
   listTrainingPipelines(
-      request: protos.google.cloud.aiplatform.v1beta1.IListTrainingPipelinesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListTrainingPipelinesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.IListTrainingPipelinesRequest,
           protos.google.cloud.aiplatform.v1beta1.IListTrainingPipelinesResponse|null|undefined,
@@ -1320,7 +1320,7 @@ export class PipelineServiceClient {
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.ITrainingPipeline>;
   }
   listPipelineJobs(
-      request: protos.google.cloud.aiplatform.v1beta1.IListPipelineJobsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListPipelineJobsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IPipelineJob[],
@@ -1382,7 +1382,7 @@ export class PipelineServiceClient {
  *   for more details and examples.
  */
   listPipelineJobs(
-      request: protos.google.cloud.aiplatform.v1beta1.IListPipelineJobsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListPipelineJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.IListPipelineJobsRequest,
           protos.google.cloud.aiplatform.v1beta1.IListPipelineJobsResponse|null|undefined,

@@ -262,7 +262,7 @@ export class SqlSslCertsServiceClient {
   // -- Service calls --
   // -------------------
   delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlSslCertsDeleteRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlSslCertsDeleteRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -304,7 +304,7 @@ export class SqlSslCertsServiceClient {
  * const [response] = await client.delete(request);
  */
   delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlSslCertsDeleteRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlSslCertsDeleteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlSslCertsDeleteRequest|null|undefined,
@@ -338,7 +338,7 @@ export class SqlSslCertsServiceClient {
     return this.innerApiCalls.delete(request, options, callback);
   }
   get(
-      request: protos.google.cloud.sql.v1beta4.ISqlSslCertsGetRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlSslCertsGetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.ISslCert,
@@ -381,7 +381,7 @@ export class SqlSslCertsServiceClient {
  * const [response] = await client.get(request);
  */
   get(
-      request: protos.google.cloud.sql.v1beta4.ISqlSslCertsGetRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlSslCertsGetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.ISslCert,
           protos.google.cloud.sql.v1beta4.ISqlSslCertsGetRequest|null|undefined,
@@ -415,7 +415,7 @@ export class SqlSslCertsServiceClient {
     return this.innerApiCalls.get(request, options, callback);
   }
   insert(
-      request: protos.google.cloud.sql.v1beta4.ISqlSslCertsInsertRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlSslCertsInsertRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.ISslCertsInsertResponse,
@@ -457,7 +457,7 @@ export class SqlSslCertsServiceClient {
  * const [response] = await client.insert(request);
  */
   insert(
-      request: protos.google.cloud.sql.v1beta4.ISqlSslCertsInsertRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlSslCertsInsertRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.ISslCertsInsertResponse,
           protos.google.cloud.sql.v1beta4.ISqlSslCertsInsertRequest|null|undefined,
@@ -491,7 +491,7 @@ export class SqlSslCertsServiceClient {
     return this.innerApiCalls.insert(request, options, callback);
   }
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlSslCertsListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlSslCertsListRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.ISslCertsListResponse,
@@ -530,7 +530,7 @@ export class SqlSslCertsServiceClient {
  * const [response] = await client.list(request);
  */
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlSslCertsListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlSslCertsListRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.ISslCertsListResponse,
           protos.google.cloud.sql.v1beta4.ISqlSslCertsListRequest|null|undefined,

@@ -635,7 +635,7 @@ export class AdScheduleViewServiceClient {
   // -- Service calls --
   // -------------------
   getAdScheduleView(
-      request: protos.google.ads.googleads.v7.services.IGetAdScheduleViewRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetAdScheduleViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IAdScheduleView,
@@ -680,7 +680,7 @@ export class AdScheduleViewServiceClient {
  * const [response] = await client.getAdScheduleView(request);
  */
   getAdScheduleView(
-      request: protos.google.ads.googleads.v7.services.IGetAdScheduleViewRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetAdScheduleViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IAdScheduleView,
           protos.google.ads.googleads.v7.services.IGetAdScheduleViewRequest|null|undefined,

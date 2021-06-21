@@ -653,7 +653,7 @@ export class AccessibleBiddingStrategyServiceClient {
   // -- Service calls --
   // -------------------
   getAccessibleBiddingStrategy(
-      request: protos.google.ads.googleads.v8.services.IGetAccessibleBiddingStrategyRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAccessibleBiddingStrategyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IAccessibleBiddingStrategy,
@@ -690,7 +690,7 @@ export class AccessibleBiddingStrategyServiceClient {
  * const [response] = await client.getAccessibleBiddingStrategy(request);
  */
   getAccessibleBiddingStrategy(
-      request: protos.google.ads.googleads.v8.services.IGetAccessibleBiddingStrategyRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAccessibleBiddingStrategyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IAccessibleBiddingStrategy,
           protos.google.ads.googleads.v8.services.IGetAccessibleBiddingStrategyRequest|null|undefined,

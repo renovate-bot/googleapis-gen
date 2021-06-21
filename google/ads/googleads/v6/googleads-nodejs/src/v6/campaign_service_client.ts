@@ -614,7 +614,7 @@ export class CampaignServiceClient {
   // -- Service calls --
   // -------------------
   getCampaign(
-      request: protos.google.ads.googleads.v6.services.IGetCampaignRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCampaignRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.ICampaign,
@@ -651,7 +651,7 @@ export class CampaignServiceClient {
  * const [response] = await client.getCampaign(request);
  */
   getCampaign(
-      request: protos.google.ads.googleads.v6.services.IGetCampaignRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCampaignRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.ICampaign,
           protos.google.ads.googleads.v6.services.IGetCampaignRequest|null|undefined,
@@ -685,7 +685,7 @@ export class CampaignServiceClient {
     return this.innerApiCalls.getCampaign(request, options, callback);
   }
   mutateCampaigns(
-      request: protos.google.ads.googleads.v6.services.IMutateCampaignsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCampaignsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateCampaignsResponse,
@@ -735,7 +735,7 @@ export class CampaignServiceClient {
  * const [response] = await client.mutateCampaigns(request);
  */
   mutateCampaigns(
-      request: protos.google.ads.googleads.v6.services.IMutateCampaignsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCampaignsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateCampaignsResponse,
           protos.google.ads.googleads.v6.services.IMutateCampaignsRequest|null|undefined,

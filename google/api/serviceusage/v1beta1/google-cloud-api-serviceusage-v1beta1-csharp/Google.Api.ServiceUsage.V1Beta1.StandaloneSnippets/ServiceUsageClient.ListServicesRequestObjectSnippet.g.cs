@@ -38,7 +38,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
                 Filter = "",
             };
             // Make the request
+#pragma warning disable CS0612
             PagedEnumerable<ListServicesResponse, Service> response = serviceUsageClient.ListServices(request);
+#pragma warning restore CS0612
 
             // Iterate over all response items, lazily performing RPCs as required
             foreach (Service item in response)

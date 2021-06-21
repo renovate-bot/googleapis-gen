@@ -614,7 +614,7 @@ export class ClickViewServiceClient {
   // -- Service calls --
   // -------------------
   getClickView(
-      request: protos.google.ads.googleads.v6.services.IGetClickViewRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetClickViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IClickView,
@@ -651,7 +651,7 @@ export class ClickViewServiceClient {
  * const [response] = await client.getClickView(request);
  */
   getClickView(
-      request: protos.google.ads.googleads.v6.services.IGetClickViewRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetClickViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IClickView,
           protos.google.ads.googleads.v6.services.IGetClickViewRequest|null|undefined,

@@ -274,7 +274,7 @@ export class Debugger2Client {
   // -- Service calls --
   // -------------------
   setBreakpoint(
-      request: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
+      request?: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouddebugger.v2.ISetBreakpointResponse,
@@ -317,7 +317,7 @@ export class Debugger2Client {
  * const [response] = await client.setBreakpoint(request);
  */
   setBreakpoint(
-      request: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
+      request?: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.clouddebugger.v2.ISetBreakpointResponse,
           protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest|null|undefined,
@@ -351,7 +351,7 @@ export class Debugger2Client {
     return this.innerApiCalls.setBreakpoint(request, options, callback);
   }
   getBreakpoint(
-      request: protos.google.devtools.clouddebugger.v2.IGetBreakpointRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IGetBreakpointRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouddebugger.v2.IGetBreakpointResponse,
@@ -393,7 +393,7 @@ export class Debugger2Client {
  * const [response] = await client.getBreakpoint(request);
  */
   getBreakpoint(
-      request: protos.google.devtools.clouddebugger.v2.IGetBreakpointRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IGetBreakpointRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.clouddebugger.v2.IGetBreakpointResponse,
           protos.google.devtools.clouddebugger.v2.IGetBreakpointRequest|null|undefined,
@@ -427,7 +427,7 @@ export class Debugger2Client {
     return this.innerApiCalls.getBreakpoint(request, options, callback);
   }
   deleteBreakpoint(
-      request: protos.google.devtools.clouddebugger.v2.IDeleteBreakpointRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IDeleteBreakpointRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -469,7 +469,7 @@ export class Debugger2Client {
  * const [response] = await client.deleteBreakpoint(request);
  */
   deleteBreakpoint(
-      request: protos.google.devtools.clouddebugger.v2.IDeleteBreakpointRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IDeleteBreakpointRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.devtools.clouddebugger.v2.IDeleteBreakpointRequest|null|undefined,
@@ -503,7 +503,7 @@ export class Debugger2Client {
     return this.innerApiCalls.deleteBreakpoint(request, options, callback);
   }
   listBreakpoints(
-      request: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouddebugger.v2.IListBreakpointsResponse,
@@ -560,7 +560,7 @@ export class Debugger2Client {
  * const [response] = await client.listBreakpoints(request);
  */
   listBreakpoints(
-      request: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.clouddebugger.v2.IListBreakpointsResponse,
           protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest|null|undefined,
@@ -594,7 +594,7 @@ export class Debugger2Client {
     return this.innerApiCalls.listBreakpoints(request, options, callback);
   }
   listDebuggees(
-      request: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouddebugger.v2.IListDebuggeesResponse,
@@ -637,7 +637,7 @@ export class Debugger2Client {
  * const [response] = await client.listDebuggees(request);
  */
   listDebuggees(
-      request: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.clouddebugger.v2.IListDebuggeesResponse,
           protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest|null|undefined,

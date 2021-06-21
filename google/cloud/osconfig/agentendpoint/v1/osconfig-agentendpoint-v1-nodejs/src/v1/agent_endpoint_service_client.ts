@@ -267,7 +267,7 @@ export class AgentEndpointServiceClient {
   // -- Service calls --
   // -------------------
   startNextTask(
-      request: protos.google.cloud.osconfig.agentendpoint.v1.IStartNextTaskRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1.IStartNextTaskRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.agentendpoint.v1.IStartNextTaskResponse,
@@ -306,7 +306,7 @@ export class AgentEndpointServiceClient {
  * const [response] = await client.startNextTask(request);
  */
   startNextTask(
-      request: protos.google.cloud.osconfig.agentendpoint.v1.IStartNextTaskRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1.IStartNextTaskRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.agentendpoint.v1.IStartNextTaskResponse,
           protos.google.cloud.osconfig.agentendpoint.v1.IStartNextTaskRequest|null|undefined,
@@ -333,7 +333,7 @@ export class AgentEndpointServiceClient {
     return this.innerApiCalls.startNextTask(request, options, callback);
   }
   reportTaskProgress(
-      request: protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskProgressRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskProgressRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskProgressResponse,
@@ -388,7 +388,7 @@ export class AgentEndpointServiceClient {
  * const [response] = await client.reportTaskProgress(request);
  */
   reportTaskProgress(
-      request: protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskProgressRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskProgressRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskProgressResponse,
           protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskProgressRequest|null|undefined,
@@ -415,7 +415,7 @@ export class AgentEndpointServiceClient {
     return this.innerApiCalls.reportTaskProgress(request, options, callback);
   }
   reportTaskComplete(
-      request: protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskCompleteRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskCompleteRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskCompleteResponse,
@@ -473,7 +473,7 @@ export class AgentEndpointServiceClient {
  * const [response] = await client.reportTaskComplete(request);
  */
   reportTaskComplete(
-      request: protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskCompleteRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskCompleteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskCompleteResponse,
           protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskCompleteRequest|null|undefined,
@@ -500,7 +500,7 @@ export class AgentEndpointServiceClient {
     return this.innerApiCalls.reportTaskComplete(request, options, callback);
   }
   registerAgent(
-      request: protos.google.cloud.osconfig.agentendpoint.v1.IRegisterAgentRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1.IRegisterAgentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.agentendpoint.v1.IRegisterAgentResponse,
@@ -546,7 +546,7 @@ export class AgentEndpointServiceClient {
  * const [response] = await client.registerAgent(request);
  */
   registerAgent(
-      request: protos.google.cloud.osconfig.agentendpoint.v1.IRegisterAgentRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1.IRegisterAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.agentendpoint.v1.IRegisterAgentResponse,
           protos.google.cloud.osconfig.agentendpoint.v1.IRegisterAgentRequest|null|undefined,
@@ -573,7 +573,7 @@ export class AgentEndpointServiceClient {
     return this.innerApiCalls.registerAgent(request, options, callback);
   }
   reportInventory(
-      request: protos.google.cloud.osconfig.agentendpoint.v1.IReportInventoryRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1.IReportInventoryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.agentendpoint.v1.IReportInventoryResponse,
@@ -620,7 +620,7 @@ export class AgentEndpointServiceClient {
  * const [response] = await client.reportInventory(request);
  */
   reportInventory(
-      request: protos.google.cloud.osconfig.agentendpoint.v1.IReportInventoryRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1.IReportInventoryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.agentendpoint.v1.IReportInventoryResponse,
           protos.google.cloud.osconfig.agentendpoint.v1.IReportInventoryRequest|null|undefined,

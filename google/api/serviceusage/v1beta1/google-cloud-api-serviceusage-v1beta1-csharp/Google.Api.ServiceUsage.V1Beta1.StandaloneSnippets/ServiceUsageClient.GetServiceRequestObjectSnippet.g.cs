@@ -32,7 +32,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Initialize request argument(s)
             GetServiceRequest request = new GetServiceRequest { Name = "", };
             // Make the request
+#pragma warning disable CS0612
             Service response = serviceUsageClient.GetService(request);
+#pragma warning restore CS0612
         }
     }
 }

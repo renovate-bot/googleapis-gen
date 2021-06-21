@@ -653,7 +653,7 @@ export class CarrierConstantServiceClient {
   // -- Service calls --
   // -------------------
   getCarrierConstant(
-      request: protos.google.ads.googleads.v8.services.IGetCarrierConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCarrierConstantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICarrierConstant,
@@ -698,7 +698,7 @@ export class CarrierConstantServiceClient {
  * const [response] = await client.getCarrierConstant(request);
  */
   getCarrierConstant(
-      request: protos.google.ads.googleads.v8.services.IGetCarrierConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCarrierConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICarrierConstant,
           protos.google.ads.googleads.v8.services.IGetCarrierConstantRequest|null|undefined,

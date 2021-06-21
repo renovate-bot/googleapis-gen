@@ -325,7 +325,7 @@ export class VersionsClient {
   // -- Service calls --
   // -------------------
   getVersion(
-      request: protos.google.appengine.v1.IGetVersionRequest,
+      request?: protos.google.appengine.v1.IGetVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IVersion,
@@ -367,7 +367,7 @@ export class VersionsClient {
  * const [response] = await client.getVersion(request);
  */
   getVersion(
-      request: protos.google.appengine.v1.IGetVersionRequest,
+      request?: protos.google.appengine.v1.IGetVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.appengine.v1.IVersion,
           protos.google.appengine.v1.IGetVersionRequest|null|undefined,
@@ -402,7 +402,7 @@ export class VersionsClient {
   }
 
   createVersion(
-      request: protos.google.appengine.v1.ICreateVersionRequest,
+      request?: protos.google.appengine.v1.ICreateVersionRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.appengine.v1.IVersion, protos.google.appengine.v1.ICreateVersionMetadataV1>,
@@ -445,7 +445,7 @@ export class VersionsClient {
  * const [response] = await operation.promise();
  */
   createVersion(
-      request: protos.google.appengine.v1.ICreateVersionRequest,
+      request?: protos.google.appengine.v1.ICreateVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.appengine.v1.IVersion, protos.google.appengine.v1.ICreateVersionMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -500,7 +500,7 @@ export class VersionsClient {
     return decodeOperation as LROperation<protos.google.appengine.v1.Version, protos.google.appengine.v1.CreateVersionMetadataV1>;
   }
   updateVersion(
-      request: protos.google.appengine.v1.IUpdateVersionRequest,
+      request?: protos.google.appengine.v1.IUpdateVersionRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.appengine.v1.IVersion, protos.google.appengine.v1.IOperationMetadataV1>,
@@ -581,7 +581,7 @@ export class VersionsClient {
  * const [response] = await operation.promise();
  */
   updateVersion(
-      request: protos.google.appengine.v1.IUpdateVersionRequest,
+      request?: protos.google.appengine.v1.IUpdateVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.appengine.v1.IVersion, protos.google.appengine.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -636,7 +636,7 @@ export class VersionsClient {
     return decodeOperation as LROperation<protos.google.appengine.v1.Version, protos.google.appengine.v1.OperationMetadataV1>;
   }
   deleteVersion(
-      request: protos.google.appengine.v1.IDeleteVersionRequest,
+      request?: protos.google.appengine.v1.IDeleteVersionRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.appengine.v1.IOperationMetadataV1>,
@@ -677,7 +677,7 @@ export class VersionsClient {
  * const [response] = await operation.promise();
  */
   deleteVersion(
-      request: protos.google.appengine.v1.IDeleteVersionRequest,
+      request?: protos.google.appengine.v1.IDeleteVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.appengine.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -732,7 +732,7 @@ export class VersionsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.appengine.v1.OperationMetadataV1>;
   }
   listVersions(
-      request: protos.google.appengine.v1.IListVersionsRequest,
+      request?: protos.google.appengine.v1.IListVersionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IVersion[],
@@ -780,7 +780,7 @@ export class VersionsClient {
  *   for more details and examples.
  */
   listVersions(
-      request: protos.google.appengine.v1.IListVersionsRequest,
+      request?: protos.google.appengine.v1.IListVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.appengine.v1.IListVersionsRequest,
           protos.google.appengine.v1.IListVersionsResponse|null|undefined,

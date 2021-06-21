@@ -251,6 +251,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual AnswerRecord GetAnswerRecord(GetAnswerRecordRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -261,6 +262,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<AnswerRecord> GetAnswerRecordAsync(GetAnswerRecordRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -271,6 +273,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<AnswerRecord> GetAnswerRecordAsync(GetAnswerRecordRequest request, st::CancellationToken cancellationToken) =>
             GetAnswerRecordAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
@@ -556,7 +559,9 @@ namespace Google.Cloud.Dialogflow.V2beta1
             GrpcClient = grpcClient;
             AnswerRecordsSettings effectiveSettings = settings ?? AnswerRecordsSettings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
+#pragma warning disable CS0612
             _callGetAnswerRecord = clientHelper.BuildApiCall<GetAnswerRecordRequest, AnswerRecord>(grpcClient.GetAnswerRecordAsync, grpcClient.GetAnswerRecord, effectiveSettings.GetAnswerRecordSettings).WithGoogleRequestParam("name", request => request.Name);
+#pragma warning restore CS0612
             Modify_ApiCall(ref _callGetAnswerRecord);
             Modify_GetAnswerRecordApiCall(ref _callGetAnswerRecord);
             _callListAnswerRecords = clientHelper.BuildApiCall<ListAnswerRecordsRequest, ListAnswerRecordsResponse>(grpcClient.ListAnswerRecordsAsync, grpcClient.ListAnswerRecords, effectiveSettings.ListAnswerRecordsSettings).WithGoogleRequestParam("parent", request => request.Parent);
@@ -594,6 +599,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override AnswerRecord GetAnswerRecord(GetAnswerRecordRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_GetAnswerRecordRequest(ref request, ref callSettings);
@@ -607,6 +613,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override stt::Task<AnswerRecord> GetAnswerRecordAsync(GetAnswerRecordRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_GetAnswerRecordRequest(ref request, ref callSettings);

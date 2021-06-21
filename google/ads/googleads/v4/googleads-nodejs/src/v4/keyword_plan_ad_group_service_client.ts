@@ -587,7 +587,7 @@ export class KeywordPlanAdGroupServiceClient {
   // -- Service calls --
   // -------------------
   getKeywordPlanAdGroup(
-      request: protos.google.ads.googleads.v4.services.IGetKeywordPlanAdGroupRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetKeywordPlanAdGroupRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.IKeywordPlanAdGroup,
@@ -624,7 +624,7 @@ export class KeywordPlanAdGroupServiceClient {
  * const [response] = await client.getKeywordPlanAdGroup(request);
  */
   getKeywordPlanAdGroup(
-      request: protos.google.ads.googleads.v4.services.IGetKeywordPlanAdGroupRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetKeywordPlanAdGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.IKeywordPlanAdGroup,
           protos.google.ads.googleads.v4.services.IGetKeywordPlanAdGroupRequest|null|undefined,
@@ -658,7 +658,7 @@ export class KeywordPlanAdGroupServiceClient {
     return this.innerApiCalls.getKeywordPlanAdGroup(request, options, callback);
   }
   mutateKeywordPlanAdGroups(
-      request: protos.google.ads.googleads.v4.services.IMutateKeywordPlanAdGroupsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateKeywordPlanAdGroupsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IMutateKeywordPlanAdGroupsResponse,
@@ -706,7 +706,7 @@ export class KeywordPlanAdGroupServiceClient {
  * const [response] = await client.mutateKeywordPlanAdGroups(request);
  */
   mutateKeywordPlanAdGroups(
-      request: protos.google.ads.googleads.v4.services.IMutateKeywordPlanAdGroupsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateKeywordPlanAdGroupsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IMutateKeywordPlanAdGroupsResponse,
           protos.google.ads.googleads.v4.services.IMutateKeywordPlanAdGroupsRequest|null|undefined,

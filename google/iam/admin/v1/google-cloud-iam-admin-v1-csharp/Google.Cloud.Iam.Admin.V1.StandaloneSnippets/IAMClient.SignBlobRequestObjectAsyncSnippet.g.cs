@@ -33,7 +33,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             // Initialize request argument(s)
             SignBlobRequest request = new SignBlobRequest { };
             // Make the request
+#pragma warning disable CS0612
             SignBlobResponse response = await iAMClient.SignBlobAsync(request);
+#pragma warning restore CS0612
         }
     }
 }

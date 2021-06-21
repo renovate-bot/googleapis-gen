@@ -392,7 +392,7 @@ export class TestCasesClient {
   // -- Service calls --
   // -------------------
   batchDeleteTestCases(
-      request: protos.google.cloud.dialogflow.cx.v3.IBatchDeleteTestCasesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IBatchDeleteTestCasesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -433,7 +433,7 @@ export class TestCasesClient {
  * const [response] = await client.batchDeleteTestCases(request);
  */
   batchDeleteTestCases(
-      request: protos.google.cloud.dialogflow.cx.v3.IBatchDeleteTestCasesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IBatchDeleteTestCasesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.cx.v3.IBatchDeleteTestCasesRequest|null|undefined,
@@ -467,7 +467,7 @@ export class TestCasesClient {
     return this.innerApiCalls.batchDeleteTestCases(request, options, callback);
   }
   getTestCase(
-      request: protos.google.cloud.dialogflow.cx.v3.IGetTestCaseRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IGetTestCaseRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.ITestCase,
@@ -506,7 +506,7 @@ export class TestCasesClient {
  * const [response] = await client.getTestCase(request);
  */
   getTestCase(
-      request: protos.google.cloud.dialogflow.cx.v3.IGetTestCaseRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IGetTestCaseRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3.ITestCase,
           protos.google.cloud.dialogflow.cx.v3.IGetTestCaseRequest|null|undefined,
@@ -540,7 +540,7 @@ export class TestCasesClient {
     return this.innerApiCalls.getTestCase(request, options, callback);
   }
   createTestCase(
-      request: protos.google.cloud.dialogflow.cx.v3.ICreateTestCaseRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.ICreateTestCaseRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.ITestCase,
@@ -580,7 +580,7 @@ export class TestCasesClient {
  * const [response] = await client.createTestCase(request);
  */
   createTestCase(
-      request: protos.google.cloud.dialogflow.cx.v3.ICreateTestCaseRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.ICreateTestCaseRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3.ITestCase,
           protos.google.cloud.dialogflow.cx.v3.ICreateTestCaseRequest|null|undefined,
@@ -614,7 +614,7 @@ export class TestCasesClient {
     return this.innerApiCalls.createTestCase(request, options, callback);
   }
   updateTestCase(
-      request: protos.google.cloud.dialogflow.cx.v3.IUpdateTestCaseRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IUpdateTestCaseRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.ITestCase,
@@ -655,7 +655,7 @@ export class TestCasesClient {
  * const [response] = await client.updateTestCase(request);
  */
   updateTestCase(
-      request: protos.google.cloud.dialogflow.cx.v3.IUpdateTestCaseRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IUpdateTestCaseRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3.ITestCase,
           protos.google.cloud.dialogflow.cx.v3.IUpdateTestCaseRequest|null|undefined,
@@ -689,7 +689,7 @@ export class TestCasesClient {
     return this.innerApiCalls.updateTestCase(request, options, callback);
   }
   calculateCoverage(
-      request: protos.google.cloud.dialogflow.cx.v3.ICalculateCoverageRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.ICalculateCoverageRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.ICalculateCoverageResponse,
@@ -729,7 +729,7 @@ export class TestCasesClient {
  * const [response] = await client.calculateCoverage(request);
  */
   calculateCoverage(
-      request: protos.google.cloud.dialogflow.cx.v3.ICalculateCoverageRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.ICalculateCoverageRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3.ICalculateCoverageResponse,
           protos.google.cloud.dialogflow.cx.v3.ICalculateCoverageRequest|null|undefined,
@@ -763,7 +763,7 @@ export class TestCasesClient {
     return this.innerApiCalls.calculateCoverage(request, options, callback);
   }
   getTestCaseResult(
-      request: protos.google.cloud.dialogflow.cx.v3.IGetTestCaseResultRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IGetTestCaseResultRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.ITestCaseResult,
@@ -802,7 +802,7 @@ export class TestCasesClient {
  * const [response] = await client.getTestCaseResult(request);
  */
   getTestCaseResult(
-      request: protos.google.cloud.dialogflow.cx.v3.IGetTestCaseResultRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IGetTestCaseResultRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3.ITestCaseResult,
           protos.google.cloud.dialogflow.cx.v3.IGetTestCaseResultRequest|null|undefined,
@@ -837,7 +837,7 @@ export class TestCasesClient {
   }
 
   runTestCase(
-      request: protos.google.cloud.dialogflow.cx.v3.IRunTestCaseRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IRunTestCaseRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.cx.v3.IRunTestCaseResponse, protos.google.cloud.dialogflow.cx.v3.IRunTestCaseMetadata>,
@@ -882,7 +882,7 @@ export class TestCasesClient {
  * const [response] = await operation.promise();
  */
   runTestCase(
-      request: protos.google.cloud.dialogflow.cx.v3.IRunTestCaseRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IRunTestCaseRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.cx.v3.IRunTestCaseResponse, protos.google.cloud.dialogflow.cx.v3.IRunTestCaseMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -937,7 +937,7 @@ export class TestCasesClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.cx.v3.RunTestCaseResponse, protos.google.cloud.dialogflow.cx.v3.RunTestCaseMetadata>;
   }
   batchRunTestCases(
-      request: protos.google.cloud.dialogflow.cx.v3.IBatchRunTestCasesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IBatchRunTestCasesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.cx.v3.IBatchRunTestCasesResponse, protos.google.cloud.dialogflow.cx.v3.IBatchRunTestCasesMetadata>,
@@ -985,7 +985,7 @@ export class TestCasesClient {
  * const [response] = await operation.promise();
  */
   batchRunTestCases(
-      request: protos.google.cloud.dialogflow.cx.v3.IBatchRunTestCasesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IBatchRunTestCasesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.cx.v3.IBatchRunTestCasesResponse, protos.google.cloud.dialogflow.cx.v3.IBatchRunTestCasesMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1040,7 +1040,7 @@ export class TestCasesClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse, protos.google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata>;
   }
   importTestCases(
-      request: protos.google.cloud.dialogflow.cx.v3.IImportTestCasesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IImportTestCasesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.cx.v3.IImportTestCasesResponse, protos.google.cloud.dialogflow.cx.v3.IImportTestCasesMetadata>,
@@ -1089,7 +1089,7 @@ export class TestCasesClient {
  * const [response] = await operation.promise();
  */
   importTestCases(
-      request: protos.google.cloud.dialogflow.cx.v3.IImportTestCasesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IImportTestCasesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.cx.v3.IImportTestCasesResponse, protos.google.cloud.dialogflow.cx.v3.IImportTestCasesMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1144,7 +1144,7 @@ export class TestCasesClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.cx.v3.ImportTestCasesResponse, protos.google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata>;
   }
   exportTestCases(
-      request: protos.google.cloud.dialogflow.cx.v3.IExportTestCasesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IExportTestCasesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.cx.v3.IExportTestCasesResponse, protos.google.cloud.dialogflow.cx.v3.IExportTestCasesMetadata>,
@@ -1205,7 +1205,7 @@ export class TestCasesClient {
  * const [response] = await operation.promise();
  */
   exportTestCases(
-      request: protos.google.cloud.dialogflow.cx.v3.IExportTestCasesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IExportTestCasesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.cx.v3.IExportTestCasesResponse, protos.google.cloud.dialogflow.cx.v3.IExportTestCasesMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1260,7 +1260,7 @@ export class TestCasesClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.cx.v3.ExportTestCasesResponse, protos.google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata>;
   }
   listTestCases(
-      request: protos.google.cloud.dialogflow.cx.v3.IListTestCasesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IListTestCasesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.ITestCase[],
@@ -1310,7 +1310,7 @@ export class TestCasesClient {
  *   for more details and examples.
  */
   listTestCases(
-      request: protos.google.cloud.dialogflow.cx.v3.IListTestCasesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IListTestCasesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.cx.v3.IListTestCasesRequest,
           protos.google.cloud.dialogflow.cx.v3.IListTestCasesResponse|null|undefined,
@@ -1450,7 +1450,7 @@ export class TestCasesClient {
     ) as AsyncIterable<protos.google.cloud.dialogflow.cx.v3.ITestCase>;
   }
   listTestCaseResults(
-      request: protos.google.cloud.dialogflow.cx.v3.IListTestCaseResultsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IListTestCaseResultsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.ITestCaseResult[],
@@ -1524,7 +1524,7 @@ export class TestCasesClient {
  *   for more details and examples.
  */
   listTestCaseResults(
-      request: protos.google.cloud.dialogflow.cx.v3.IListTestCaseResultsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IListTestCaseResultsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.cx.v3.IListTestCaseResultsRequest,
           protos.google.cloud.dialogflow.cx.v3.IListTestCaseResultsResponse|null|undefined,

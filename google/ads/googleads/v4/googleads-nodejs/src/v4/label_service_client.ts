@@ -587,7 +587,7 @@ export class LabelServiceClient {
   // -- Service calls --
   // -------------------
   getLabel(
-      request: protos.google.ads.googleads.v4.services.IGetLabelRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetLabelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.ILabel,
@@ -624,7 +624,7 @@ export class LabelServiceClient {
  * const [response] = await client.getLabel(request);
  */
   getLabel(
-      request: protos.google.ads.googleads.v4.services.IGetLabelRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetLabelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.ILabel,
           protos.google.ads.googleads.v4.services.IGetLabelRequest|null|undefined,
@@ -658,7 +658,7 @@ export class LabelServiceClient {
     return this.innerApiCalls.getLabel(request, options, callback);
   }
   mutateLabels(
-      request: protos.google.ads.googleads.v4.services.IMutateLabelsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateLabelsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IMutateLabelsResponse,
@@ -705,7 +705,7 @@ export class LabelServiceClient {
  * const [response] = await client.mutateLabels(request);
  */
   mutateLabels(
-      request: protos.google.ads.googleads.v4.services.IMutateLabelsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateLabelsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IMutateLabelsResponse,
           protos.google.ads.googleads.v4.services.IMutateLabelsRequest|null|undefined,

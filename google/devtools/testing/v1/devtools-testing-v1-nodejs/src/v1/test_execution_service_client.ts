@@ -286,7 +286,7 @@ export class TestExecutionServiceClient {
   // -- Service calls --
   // -------------------
   createTestMatrix(
-      request: protos.google.devtools.testing.v1.ICreateTestMatrixRequest,
+      request?: protos.google.devtools.testing.v1.ICreateTestMatrixRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.testing.v1.ITestMatrix,
@@ -340,7 +340,7 @@ export class TestExecutionServiceClient {
  * const [response] = await client.createTestMatrix(request);
  */
   createTestMatrix(
-      request: protos.google.devtools.testing.v1.ICreateTestMatrixRequest,
+      request?: protos.google.devtools.testing.v1.ICreateTestMatrixRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.testing.v1.ITestMatrix,
           protos.google.devtools.testing.v1.ICreateTestMatrixRequest|null|undefined,
@@ -374,7 +374,7 @@ export class TestExecutionServiceClient {
     return this.innerApiCalls.createTestMatrix(request, options, callback);
   }
   getTestMatrix(
-      request: protos.google.devtools.testing.v1.IGetTestMatrixRequest,
+      request?: protos.google.devtools.testing.v1.IGetTestMatrixRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.testing.v1.ITestMatrix,
@@ -419,7 +419,7 @@ export class TestExecutionServiceClient {
  * const [response] = await client.getTestMatrix(request);
  */
   getTestMatrix(
-      request: protos.google.devtools.testing.v1.IGetTestMatrixRequest,
+      request?: protos.google.devtools.testing.v1.IGetTestMatrixRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.testing.v1.ITestMatrix,
           protos.google.devtools.testing.v1.IGetTestMatrixRequest|null|undefined,
@@ -453,7 +453,7 @@ export class TestExecutionServiceClient {
     return this.innerApiCalls.getTestMatrix(request, options, callback);
   }
   cancelTestMatrix(
-      request: protos.google.devtools.testing.v1.ICancelTestMatrixRequest,
+      request?: protos.google.devtools.testing.v1.ICancelTestMatrixRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.testing.v1.ICancelTestMatrixResponse,
@@ -500,7 +500,7 @@ export class TestExecutionServiceClient {
  * const [response] = await client.cancelTestMatrix(request);
  */
   cancelTestMatrix(
-      request: protos.google.devtools.testing.v1.ICancelTestMatrixRequest,
+      request?: protos.google.devtools.testing.v1.ICancelTestMatrixRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.testing.v1.ICancelTestMatrixResponse,
           protos.google.devtools.testing.v1.ICancelTestMatrixRequest|null|undefined,

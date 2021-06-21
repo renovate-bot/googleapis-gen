@@ -45,7 +45,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Tests
             };
             mockGrpcClient.Setup(x => x.GetService(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ServiceUsageClient client = new ServiceUsageClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             Service response = client.GetService(request);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
         }
@@ -68,9 +70,13 @@ namespace Google.Api.ServiceUsage.V1Beta1.Tests
             };
             mockGrpcClient.Setup(x => x.GetServiceAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Service>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ServiceUsageClient client = new ServiceUsageClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             Service responseCallSettings = await client.GetServiceAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCallSettings);
+#pragma warning disable CS0612
             Service responseCancellationToken = await client.GetServiceAsync(request, st::CancellationToken.None);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCancellationToken);
             mockGrpcClient.VerifyAll();
         }

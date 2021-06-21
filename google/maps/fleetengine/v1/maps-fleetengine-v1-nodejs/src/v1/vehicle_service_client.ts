@@ -284,7 +284,7 @@ export class VehicleServiceClient {
   // -- Service calls --
   // -------------------
   createVehicle(
-      request: protos.maps.fleetengine.v1.ICreateVehicleRequest,
+      request?: protos.maps.fleetengine.v1.ICreateVehicleRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.IVehicle,
@@ -376,7 +376,7 @@ export class VehicleServiceClient {
  * const [response] = await client.createVehicle(request);
  */
   createVehicle(
-      request: protos.maps.fleetengine.v1.ICreateVehicleRequest,
+      request?: protos.maps.fleetengine.v1.ICreateVehicleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.maps.fleetengine.v1.IVehicle,
           protos.maps.fleetengine.v1.ICreateVehicleRequest|null|undefined,
@@ -410,7 +410,7 @@ export class VehicleServiceClient {
     return this.innerApiCalls.createVehicle(request, options, callback);
   }
   getVehicle(
-      request: protos.maps.fleetengine.v1.IGetVehicleRequest,
+      request?: protos.maps.fleetengine.v1.IGetVehicleRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.IVehicle,
@@ -464,7 +464,7 @@ export class VehicleServiceClient {
  * const [response] = await client.getVehicle(request);
  */
   getVehicle(
-      request: protos.maps.fleetengine.v1.IGetVehicleRequest,
+      request?: protos.maps.fleetengine.v1.IGetVehicleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.maps.fleetengine.v1.IVehicle,
           protos.maps.fleetengine.v1.IGetVehicleRequest|null|undefined,
@@ -498,7 +498,7 @@ export class VehicleServiceClient {
     return this.innerApiCalls.getVehicle(request, options, callback);
   }
   updateVehicle(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
+      request?: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.IVehicle,
@@ -570,7 +570,7 @@ export class VehicleServiceClient {
  * const [response] = await client.updateVehicle(request);
  */
   updateVehicle(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
+      request?: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.maps.fleetengine.v1.IVehicle,
           protos.maps.fleetengine.v1.IUpdateVehicleRequest|null|undefined,
@@ -604,7 +604,7 @@ export class VehicleServiceClient {
     return this.innerApiCalls.updateVehicle(request, options, callback);
   }
   updateVehicleLocation(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest,
+      request?: protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.IVehicleLocation,
@@ -652,9 +652,10 @@ export class VehicleServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateVehicleLocation(request);
+ * @deprecated UpdateVehicleLocation is deprecated and may be removed in a future version.
  */
   updateVehicleLocation(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest,
+      request?: protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.maps.fleetengine.v1.IVehicleLocation,
           protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest|null|undefined,
@@ -685,10 +686,11 @@ export class VehicleServiceClient {
       'name': request.name || '',
     });
     this.initialize();
+    gax.warn('DEP$VehicleService-$UpdateVehicleLocation','UpdateVehicleLocation is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.updateVehicleLocation(request, options, callback);
   }
   updateVehicleAttributes(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
+      request?: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.IUpdateVehicleAttributesResponse,
@@ -740,7 +742,7 @@ export class VehicleServiceClient {
  * const [response] = await client.updateVehicleAttributes(request);
  */
   updateVehicleAttributes(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
+      request?: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.maps.fleetengine.v1.IUpdateVehicleAttributesResponse,
           protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest|null|undefined,
@@ -774,7 +776,7 @@ export class VehicleServiceClient {
     return this.innerApiCalls.updateVehicleAttributes(request, options, callback);
   }
   searchVehicles(
-      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
+      request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.ISearchVehiclesResponse,
@@ -887,7 +889,7 @@ export class VehicleServiceClient {
  * const [response] = await client.searchVehicles(request);
  */
   searchVehicles(
-      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
+      request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.maps.fleetengine.v1.ISearchVehiclesResponse,
           protos.maps.fleetengine.v1.ISearchVehiclesRequest|null|undefined,
@@ -921,7 +923,7 @@ export class VehicleServiceClient {
     return this.innerApiCalls.searchVehicles(request, options, callback);
   }
   searchFuzzedVehicles(
-      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
+      request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.ISearchVehiclesResponse,
@@ -1039,7 +1041,7 @@ export class VehicleServiceClient {
  * const [response] = await client.searchFuzzedVehicles(request);
  */
   searchFuzzedVehicles(
-      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
+      request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.maps.fleetengine.v1.ISearchVehiclesResponse,
           protos.maps.fleetengine.v1.ISearchVehiclesRequest|null|undefined,
@@ -1074,7 +1076,7 @@ export class VehicleServiceClient {
   }
 
   listVehicles(
-      request: protos.maps.fleetengine.v1.IListVehiclesRequest,
+      request?: protos.maps.fleetengine.v1.IListVehiclesRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.IVehicle[],
@@ -1179,7 +1181,7 @@ export class VehicleServiceClient {
  *   for more details and examples.
  */
   listVehicles(
-      request: protos.maps.fleetengine.v1.IListVehiclesRequest,
+      request?: protos.maps.fleetengine.v1.IListVehiclesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.maps.fleetengine.v1.IListVehiclesRequest,
           protos.maps.fleetengine.v1.IListVehiclesResponse|null|undefined,

@@ -284,7 +284,7 @@ export class OsLoginServiceClient {
   // -- Service calls --
   // -------------------
   deletePosixAccount(
-      request: protos.google.cloud.oslogin.v1beta.IDeletePosixAccountRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IDeletePosixAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -323,7 +323,7 @@ export class OsLoginServiceClient {
  * const [response] = await client.deletePosixAccount(request);
  */
   deletePosixAccount(
-      request: protos.google.cloud.oslogin.v1beta.IDeletePosixAccountRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IDeletePosixAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.oslogin.v1beta.IDeletePosixAccountRequest|null|undefined,
@@ -357,7 +357,7 @@ export class OsLoginServiceClient {
     return this.innerApiCalls.deletePosixAccount(request, options, callback);
   }
   deleteSshPublicKey(
-      request: protos.google.cloud.oslogin.v1beta.IDeleteSshPublicKeyRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IDeleteSshPublicKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -396,7 +396,7 @@ export class OsLoginServiceClient {
  * const [response] = await client.deleteSshPublicKey(request);
  */
   deleteSshPublicKey(
-      request: protos.google.cloud.oslogin.v1beta.IDeleteSshPublicKeyRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IDeleteSshPublicKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.oslogin.v1beta.IDeleteSshPublicKeyRequest|null|undefined,
@@ -430,7 +430,7 @@ export class OsLoginServiceClient {
     return this.innerApiCalls.deleteSshPublicKey(request, options, callback);
   }
   getLoginProfile(
-      request: protos.google.cloud.oslogin.v1beta.IGetLoginProfileRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IGetLoginProfileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.oslogin.v1beta.ILoginProfile,
@@ -472,7 +472,7 @@ export class OsLoginServiceClient {
  * const [response] = await client.getLoginProfile(request);
  */
   getLoginProfile(
-      request: protos.google.cloud.oslogin.v1beta.IGetLoginProfileRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IGetLoginProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.oslogin.v1beta.ILoginProfile,
           protos.google.cloud.oslogin.v1beta.IGetLoginProfileRequest|null|undefined,
@@ -506,7 +506,7 @@ export class OsLoginServiceClient {
     return this.innerApiCalls.getLoginProfile(request, options, callback);
   }
   getSshPublicKey(
-      request: protos.google.cloud.oslogin.v1beta.IGetSshPublicKeyRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IGetSshPublicKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.oslogin.common.ISshPublicKey,
@@ -545,7 +545,7 @@ export class OsLoginServiceClient {
  * const [response] = await client.getSshPublicKey(request);
  */
   getSshPublicKey(
-      request: protos.google.cloud.oslogin.v1beta.IGetSshPublicKeyRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IGetSshPublicKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.oslogin.common.ISshPublicKey,
           protos.google.cloud.oslogin.v1beta.IGetSshPublicKeyRequest|null|undefined,
@@ -579,7 +579,7 @@ export class OsLoginServiceClient {
     return this.innerApiCalls.getSshPublicKey(request, options, callback);
   }
   importSshPublicKey(
-      request: protos.google.cloud.oslogin.v1beta.IImportSshPublicKeyRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IImportSshPublicKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.oslogin.v1beta.IImportSshPublicKeyResponse,
@@ -622,7 +622,7 @@ export class OsLoginServiceClient {
  * const [response] = await client.importSshPublicKey(request);
  */
   importSshPublicKey(
-      request: protos.google.cloud.oslogin.v1beta.IImportSshPublicKeyRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IImportSshPublicKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.oslogin.v1beta.IImportSshPublicKeyResponse,
           protos.google.cloud.oslogin.v1beta.IImportSshPublicKeyRequest|null|undefined,
@@ -656,7 +656,7 @@ export class OsLoginServiceClient {
     return this.innerApiCalls.importSshPublicKey(request, options, callback);
   }
   updateSshPublicKey(
-      request: protos.google.cloud.oslogin.v1beta.IUpdateSshPublicKeyRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IUpdateSshPublicKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.oslogin.common.ISshPublicKey,
@@ -700,7 +700,7 @@ export class OsLoginServiceClient {
  * const [response] = await client.updateSshPublicKey(request);
  */
   updateSshPublicKey(
-      request: protos.google.cloud.oslogin.v1beta.IUpdateSshPublicKeyRequest,
+      request?: protos.google.cloud.oslogin.v1beta.IUpdateSshPublicKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.oslogin.common.ISshPublicKey,
           protos.google.cloud.oslogin.v1beta.IUpdateSshPublicKeyRequest|null|undefined,

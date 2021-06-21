@@ -635,7 +635,7 @@ export class MobileAppCategoryConstantServiceClient {
   // -- Service calls --
   // -------------------
   getMobileAppCategoryConstant(
-      request: protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IMobileAppCategoryConstant,
@@ -680,7 +680,7 @@ export class MobileAppCategoryConstantServiceClient {
  * const [response] = await client.getMobileAppCategoryConstant(request);
  */
   getMobileAppCategoryConstant(
-      request: protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IMobileAppCategoryConstant,
           protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest|null|undefined,

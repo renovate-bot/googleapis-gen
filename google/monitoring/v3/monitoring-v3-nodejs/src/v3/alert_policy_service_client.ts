@@ -365,7 +365,7 @@ export class AlertPolicyServiceClient {
   // -- Service calls --
   // -------------------
   getAlertPolicy(
-      request: protos.google.monitoring.v3.IGetAlertPolicyRequest,
+      request?: protos.google.monitoring.v3.IGetAlertPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IAlertPolicy,
@@ -404,7 +404,7 @@ export class AlertPolicyServiceClient {
  * const [response] = await client.getAlertPolicy(request);
  */
   getAlertPolicy(
-      request: protos.google.monitoring.v3.IGetAlertPolicyRequest,
+      request?: protos.google.monitoring.v3.IGetAlertPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.IAlertPolicy,
           protos.google.monitoring.v3.IGetAlertPolicyRequest|null|undefined,
@@ -438,7 +438,7 @@ export class AlertPolicyServiceClient {
     return this.innerApiCalls.getAlertPolicy(request, options, callback);
   }
   createAlertPolicy(
-      request: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
+      request?: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IAlertPolicy,
@@ -489,7 +489,7 @@ export class AlertPolicyServiceClient {
  * const [response] = await client.createAlertPolicy(request);
  */
   createAlertPolicy(
-      request: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
+      request?: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.IAlertPolicy,
           protos.google.monitoring.v3.ICreateAlertPolicyRequest|null|undefined,
@@ -523,7 +523,7 @@ export class AlertPolicyServiceClient {
     return this.innerApiCalls.createAlertPolicy(request, options, callback);
   }
   deleteAlertPolicy(
-      request: protos.google.monitoring.v3.IDeleteAlertPolicyRequest,
+      request?: protos.google.monitoring.v3.IDeleteAlertPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -564,7 +564,7 @@ export class AlertPolicyServiceClient {
  * const [response] = await client.deleteAlertPolicy(request);
  */
   deleteAlertPolicy(
-      request: protos.google.monitoring.v3.IDeleteAlertPolicyRequest,
+      request?: protos.google.monitoring.v3.IDeleteAlertPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.monitoring.v3.IDeleteAlertPolicyRequest|null|undefined,
@@ -598,7 +598,7 @@ export class AlertPolicyServiceClient {
     return this.innerApiCalls.deleteAlertPolicy(request, options, callback);
   }
   updateAlertPolicy(
-      request: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
+      request?: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IAlertPolicy,
@@ -663,7 +663,7 @@ export class AlertPolicyServiceClient {
  * const [response] = await client.updateAlertPolicy(request);
  */
   updateAlertPolicy(
-      request: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
+      request?: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.IAlertPolicy,
           protos.google.monitoring.v3.IUpdateAlertPolicyRequest|null|undefined,
@@ -698,7 +698,7 @@ export class AlertPolicyServiceClient {
   }
 
   listAlertPolicies(
-      request: protos.google.monitoring.v3.IListAlertPoliciesRequest,
+      request?: protos.google.monitoring.v3.IListAlertPoliciesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IAlertPolicy[],
@@ -766,7 +766,7 @@ export class AlertPolicyServiceClient {
  *   for more details and examples.
  */
   listAlertPolicies(
-      request: protos.google.monitoring.v3.IListAlertPoliciesRequest,
+      request?: protos.google.monitoring.v3.IListAlertPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.monitoring.v3.IListAlertPoliciesRequest,
           protos.google.monitoring.v3.IListAlertPoliciesResponse|null|undefined,

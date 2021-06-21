@@ -653,7 +653,7 @@ export class SmartCampaignSettingServiceClient {
   // -- Service calls --
   // -------------------
   getSmartCampaignSetting(
-      request: protos.google.ads.googleads.v8.services.IGetSmartCampaignSettingRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetSmartCampaignSettingRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ISmartCampaignSetting,
@@ -690,7 +690,7 @@ export class SmartCampaignSettingServiceClient {
  * const [response] = await client.getSmartCampaignSetting(request);
  */
   getSmartCampaignSetting(
-      request: protos.google.ads.googleads.v8.services.IGetSmartCampaignSettingRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetSmartCampaignSettingRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ISmartCampaignSetting,
           protos.google.ads.googleads.v8.services.IGetSmartCampaignSettingRequest|null|undefined,
@@ -724,7 +724,7 @@ export class SmartCampaignSettingServiceClient {
     return this.innerApiCalls.getSmartCampaignSetting(request, options, callback);
   }
   mutateSmartCampaignSettings(
-      request: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsResponse,
@@ -774,7 +774,7 @@ export class SmartCampaignSettingServiceClient {
  * const [response] = await client.mutateSmartCampaignSettings(request);
  */
   mutateSmartCampaignSettings(
-      request: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsResponse,
           protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest|null|undefined,

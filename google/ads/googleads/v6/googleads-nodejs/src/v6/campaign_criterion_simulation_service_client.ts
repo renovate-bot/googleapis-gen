@@ -614,7 +614,7 @@ export class CampaignCriterionSimulationServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignCriterionSimulation(
-      request: protos.google.ads.googleads.v6.services.IGetCampaignCriterionSimulationRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCampaignCriterionSimulationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.ICampaignCriterionSimulation,
@@ -651,7 +651,7 @@ export class CampaignCriterionSimulationServiceClient {
  * const [response] = await client.getCampaignCriterionSimulation(request);
  */
   getCampaignCriterionSimulation(
-      request: protos.google.ads.googleads.v6.services.IGetCampaignCriterionSimulationRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCampaignCriterionSimulationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.ICampaignCriterionSimulation,
           protos.google.ads.googleads.v6.services.IGetCampaignCriterionSimulationRequest|null|undefined,

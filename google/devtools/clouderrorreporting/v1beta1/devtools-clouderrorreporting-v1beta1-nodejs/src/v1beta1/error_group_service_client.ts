@@ -272,7 +272,7 @@ export class ErrorGroupServiceClient {
   // -- Service calls --
   // -------------------
   getGroup(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IGetGroupRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IGetGroupRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroup,
@@ -314,7 +314,7 @@ export class ErrorGroupServiceClient {
  * const [response] = await client.getGroup(request);
  */
   getGroup(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IGetGroupRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IGetGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroup,
           protos.google.devtools.clouderrorreporting.v1beta1.IGetGroupRequest|null|undefined,
@@ -348,7 +348,7 @@ export class ErrorGroupServiceClient {
     return this.innerApiCalls.getGroup(request, options, callback);
   }
   updateGroup(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IUpdateGroupRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IUpdateGroupRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroup,
@@ -386,7 +386,7 @@ export class ErrorGroupServiceClient {
  * const [response] = await client.updateGroup(request);
  */
   updateGroup(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IUpdateGroupRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IUpdateGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroup,
           protos.google.devtools.clouderrorreporting.v1beta1.IUpdateGroupRequest|null|undefined,

@@ -653,7 +653,7 @@ export class MobileDeviceConstantServiceClient {
   // -- Service calls --
   // -------------------
   getMobileDeviceConstant(
-      request: protos.google.ads.googleads.v8.services.IGetMobileDeviceConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetMobileDeviceConstantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IMobileDeviceConstant,
@@ -698,7 +698,7 @@ export class MobileDeviceConstantServiceClient {
  * const [response] = await client.getMobileDeviceConstant(request);
  */
   getMobileDeviceConstant(
-      request: protos.google.ads.googleads.v8.services.IGetMobileDeviceConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetMobileDeviceConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IMobileDeviceConstant,
           protos.google.ads.googleads.v8.services.IGetMobileDeviceConstantRequest|null|undefined,

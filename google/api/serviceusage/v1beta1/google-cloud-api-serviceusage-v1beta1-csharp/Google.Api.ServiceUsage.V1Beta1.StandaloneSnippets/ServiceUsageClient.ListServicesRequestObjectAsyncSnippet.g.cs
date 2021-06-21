@@ -40,7 +40,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
                 Filter = "",
             };
             // Make the request
+#pragma warning disable CS0612
             PagedAsyncEnumerable<ListServicesResponse, Service> response = serviceUsageClient.ListServicesAsync(request);
+#pragma warning restore CS0612
 
             // Iterate over all response items, lazily performing RPCs as required
             await response.ForEachAsync((Service item) =>

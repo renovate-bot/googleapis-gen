@@ -294,7 +294,7 @@ export class FirewallClient {
   // -- Service calls --
   // -------------------
   batchUpdateIngressRules(
-      request: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
+      request?: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IBatchUpdateIngressRulesResponse,
@@ -338,7 +338,7 @@ export class FirewallClient {
  * const [response] = await client.batchUpdateIngressRules(request);
  */
   batchUpdateIngressRules(
-      request: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
+      request?: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.appengine.v1.IBatchUpdateIngressRulesResponse,
           protos.google.appengine.v1.IBatchUpdateIngressRulesRequest|null|undefined,
@@ -372,7 +372,7 @@ export class FirewallClient {
     return this.innerApiCalls.batchUpdateIngressRules(request, options, callback);
   }
   createIngressRule(
-      request: protos.google.appengine.v1.ICreateIngressRuleRequest,
+      request?: protos.google.appengine.v1.ICreateIngressRuleRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IFirewallRule,
@@ -421,7 +421,7 @@ export class FirewallClient {
  * const [response] = await client.createIngressRule(request);
  */
   createIngressRule(
-      request: protos.google.appengine.v1.ICreateIngressRuleRequest,
+      request?: protos.google.appengine.v1.ICreateIngressRuleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.appengine.v1.IFirewallRule,
           protos.google.appengine.v1.ICreateIngressRuleRequest|null|undefined,
@@ -455,7 +455,7 @@ export class FirewallClient {
     return this.innerApiCalls.createIngressRule(request, options, callback);
   }
   getIngressRule(
-      request: protos.google.appengine.v1.IGetIngressRuleRequest,
+      request?: protos.google.appengine.v1.IGetIngressRuleRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IFirewallRule,
@@ -493,7 +493,7 @@ export class FirewallClient {
  * const [response] = await client.getIngressRule(request);
  */
   getIngressRule(
-      request: protos.google.appengine.v1.IGetIngressRuleRequest,
+      request?: protos.google.appengine.v1.IGetIngressRuleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.appengine.v1.IFirewallRule,
           protos.google.appengine.v1.IGetIngressRuleRequest|null|undefined,
@@ -527,7 +527,7 @@ export class FirewallClient {
     return this.innerApiCalls.getIngressRule(request, options, callback);
   }
   updateIngressRule(
-      request: protos.google.appengine.v1.IUpdateIngressRuleRequest,
+      request?: protos.google.appengine.v1.IUpdateIngressRuleRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IFirewallRule,
@@ -569,7 +569,7 @@ export class FirewallClient {
  * const [response] = await client.updateIngressRule(request);
  */
   updateIngressRule(
-      request: protos.google.appengine.v1.IUpdateIngressRuleRequest,
+      request?: protos.google.appengine.v1.IUpdateIngressRuleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.appengine.v1.IFirewallRule,
           protos.google.appengine.v1.IUpdateIngressRuleRequest|null|undefined,
@@ -603,7 +603,7 @@ export class FirewallClient {
     return this.innerApiCalls.updateIngressRule(request, options, callback);
   }
   deleteIngressRule(
-      request: protos.google.appengine.v1.IDeleteIngressRuleRequest,
+      request?: protos.google.appengine.v1.IDeleteIngressRuleRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -641,7 +641,7 @@ export class FirewallClient {
  * const [response] = await client.deleteIngressRule(request);
  */
   deleteIngressRule(
-      request: protos.google.appengine.v1.IDeleteIngressRuleRequest,
+      request?: protos.google.appengine.v1.IDeleteIngressRuleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.appengine.v1.IDeleteIngressRuleRequest|null|undefined,
@@ -676,7 +676,7 @@ export class FirewallClient {
   }
 
   listIngressRules(
-      request: protos.google.appengine.v1.IListIngressRulesRequest,
+      request?: protos.google.appengine.v1.IListIngressRulesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IFirewallRule[],
@@ -726,7 +726,7 @@ export class FirewallClient {
  *   for more details and examples.
  */
   listIngressRules(
-      request: protos.google.appengine.v1.IListIngressRulesRequest,
+      request?: protos.google.appengine.v1.IListIngressRulesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.appengine.v1.IListIngressRulesRequest,
           protos.google.appengine.v1.IListIngressRulesResponse|null|undefined,

@@ -639,7 +639,7 @@ export class KeywordPlanAdGroupKeywordServiceClient {
   // -- Service calls --
   // -------------------
   getKeywordPlanAdGroupKeyword(
-      request: protos.google.ads.googleads.v7.services.IGetKeywordPlanAdGroupKeywordRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetKeywordPlanAdGroupKeywordRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IKeywordPlanAdGroupKeyword,
@@ -684,7 +684,7 @@ export class KeywordPlanAdGroupKeywordServiceClient {
  * const [response] = await client.getKeywordPlanAdGroupKeyword(request);
  */
   getKeywordPlanAdGroupKeyword(
-      request: protos.google.ads.googleads.v7.services.IGetKeywordPlanAdGroupKeywordRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetKeywordPlanAdGroupKeywordRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IKeywordPlanAdGroupKeyword,
           protos.google.ads.googleads.v7.services.IGetKeywordPlanAdGroupKeywordRequest|null|undefined,
@@ -718,7 +718,7 @@ export class KeywordPlanAdGroupKeywordServiceClient {
     return this.innerApiCalls.getKeywordPlanAdGroupKeyword(request, options, callback);
   }
   mutateKeywordPlanAdGroupKeywords(
-      request: protos.google.ads.googleads.v7.services.IMutateKeywordPlanAdGroupKeywordsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateKeywordPlanAdGroupKeywordsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IMutateKeywordPlanAdGroupKeywordsResponse,
@@ -782,7 +782,7 @@ export class KeywordPlanAdGroupKeywordServiceClient {
  * const [response] = await client.mutateKeywordPlanAdGroupKeywords(request);
  */
   mutateKeywordPlanAdGroupKeywords(
-      request: protos.google.ads.googleads.v7.services.IMutateKeywordPlanAdGroupKeywordsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateKeywordPlanAdGroupKeywordsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IMutateKeywordPlanAdGroupKeywordsResponse,
           protos.google.ads.googleads.v7.services.IMutateKeywordPlanAdGroupKeywordsRequest|null|undefined,

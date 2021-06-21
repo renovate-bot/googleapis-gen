@@ -37,7 +37,9 @@ namespace Google.Cloud.Container.V1.Snippets
                 Name = "",
             };
             // Make the request
+#pragma warning disable CS0612
             Operation response = await clusterManagerClient.SetLocationsAsync(request);
+#pragma warning restore CS0612
         }
     }
 }

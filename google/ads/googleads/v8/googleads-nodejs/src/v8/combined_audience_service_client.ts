@@ -655,7 +655,7 @@ export class CombinedAudienceServiceClient {
   // -- Service calls --
   // -------------------
   getCombinedAudience(
-      request: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICombinedAudience,
@@ -700,7 +700,7 @@ export class CombinedAudienceServiceClient {
  * const [response] = await client.getCombinedAudience(request);
  */
   getCombinedAudience(
-      request: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICombinedAudience,
           protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest|null|undefined,

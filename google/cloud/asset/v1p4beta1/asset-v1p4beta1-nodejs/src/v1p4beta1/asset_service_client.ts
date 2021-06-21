@@ -286,7 +286,7 @@ export class AssetServiceClient {
   // -- Service calls --
   // -------------------
   analyzeIamPolicy(
-      request: protos.google.cloud.asset.v1p4beta1.IAnalyzeIamPolicyRequest,
+      request?: protos.google.cloud.asset.v1p4beta1.IAnalyzeIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.asset.v1p4beta1.IAnalyzeIamPolicyResponse,
@@ -326,7 +326,7 @@ export class AssetServiceClient {
  * const [response] = await client.analyzeIamPolicy(request);
  */
   analyzeIamPolicy(
-      request: protos.google.cloud.asset.v1p4beta1.IAnalyzeIamPolicyRequest,
+      request?: protos.google.cloud.asset.v1p4beta1.IAnalyzeIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.asset.v1p4beta1.IAnalyzeIamPolicyResponse,
           protos.google.cloud.asset.v1p4beta1.IAnalyzeIamPolicyRequest|null|undefined,
@@ -361,7 +361,7 @@ export class AssetServiceClient {
   }
 
   exportIamPolicyAnalysis(
-      request: protos.google.cloud.asset.v1p4beta1.IExportIamPolicyAnalysisRequest,
+      request?: protos.google.cloud.asset.v1p4beta1.IExportIamPolicyAnalysisRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.asset.v1p4beta1.IExportIamPolicyAnalysisResponse, protos.google.cloud.asset.v1p4beta1.IExportIamPolicyAnalysisRequest>,
@@ -408,7 +408,7 @@ export class AssetServiceClient {
  * const [response] = await operation.promise();
  */
   exportIamPolicyAnalysis(
-      request: protos.google.cloud.asset.v1p4beta1.IExportIamPolicyAnalysisRequest,
+      request?: protos.google.cloud.asset.v1p4beta1.IExportIamPolicyAnalysisRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.asset.v1p4beta1.IExportIamPolicyAnalysisResponse, protos.google.cloud.asset.v1p4beta1.IExportIamPolicyAnalysisRequest>,
           protos.google.longrunning.IOperation|null|undefined,

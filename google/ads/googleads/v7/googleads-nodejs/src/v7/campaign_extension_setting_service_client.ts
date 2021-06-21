@@ -635,7 +635,7 @@ export class CampaignExtensionSettingServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignExtensionSetting(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignExtensionSettingRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignExtensionSettingRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.ICampaignExtensionSetting,
@@ -680,7 +680,7 @@ export class CampaignExtensionSettingServiceClient {
  * const [response] = await client.getCampaignExtensionSetting(request);
  */
   getCampaignExtensionSetting(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignExtensionSettingRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignExtensionSettingRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.ICampaignExtensionSetting,
           protos.google.ads.googleads.v7.services.IGetCampaignExtensionSettingRequest|null|undefined,
@@ -714,7 +714,7 @@ export class CampaignExtensionSettingServiceClient {
     return this.innerApiCalls.getCampaignExtensionSetting(request, options, callback);
   }
   mutateCampaignExtensionSettings(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignExtensionSettingsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateCampaignExtensionSettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IMutateCampaignExtensionSettingsResponse,
@@ -796,7 +796,7 @@ export class CampaignExtensionSettingServiceClient {
  * const [response] = await client.mutateCampaignExtensionSettings(request);
  */
   mutateCampaignExtensionSettings(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignExtensionSettingsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateCampaignExtensionSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IMutateCampaignExtensionSettingsResponse,
           protos.google.ads.googleads.v7.services.IMutateCampaignExtensionSettingsRequest|null|undefined,

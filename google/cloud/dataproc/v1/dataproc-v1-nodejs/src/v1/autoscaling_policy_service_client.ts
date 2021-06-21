@@ -299,7 +299,7 @@ export class AutoscalingPolicyServiceClient {
   // -- Service calls --
   // -------------------
   createAutoscalingPolicy(
-      request: protos.google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest,
+      request?: protos.google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IAutoscalingPolicy,
@@ -347,7 +347,7 @@ export class AutoscalingPolicyServiceClient {
  * const [response] = await client.createAutoscalingPolicy(request);
  */
   createAutoscalingPolicy(
-      request: protos.google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest,
+      request?: protos.google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dataproc.v1.IAutoscalingPolicy,
           protos.google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest|null|undefined,
@@ -381,7 +381,7 @@ export class AutoscalingPolicyServiceClient {
     return this.innerApiCalls.createAutoscalingPolicy(request, options, callback);
   }
   updateAutoscalingPolicy(
-      request: protos.google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest,
+      request?: protos.google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IAutoscalingPolicy,
@@ -421,7 +421,7 @@ export class AutoscalingPolicyServiceClient {
  * const [response] = await client.updateAutoscalingPolicy(request);
  */
   updateAutoscalingPolicy(
-      request: protos.google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest,
+      request?: protos.google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dataproc.v1.IAutoscalingPolicy,
           protos.google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest|null|undefined,
@@ -455,7 +455,7 @@ export class AutoscalingPolicyServiceClient {
     return this.innerApiCalls.updateAutoscalingPolicy(request, options, callback);
   }
   getAutoscalingPolicy(
-      request: protos.google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest,
+      request?: protos.google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IAutoscalingPolicy,
@@ -501,7 +501,7 @@ export class AutoscalingPolicyServiceClient {
  * const [response] = await client.getAutoscalingPolicy(request);
  */
   getAutoscalingPolicy(
-      request: protos.google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest,
+      request?: protos.google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dataproc.v1.IAutoscalingPolicy,
           protos.google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest|null|undefined,
@@ -535,7 +535,7 @@ export class AutoscalingPolicyServiceClient {
     return this.innerApiCalls.getAutoscalingPolicy(request, options, callback);
   }
   deleteAutoscalingPolicy(
-      request: protos.google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest,
+      request?: protos.google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -582,7 +582,7 @@ export class AutoscalingPolicyServiceClient {
  * const [response] = await client.deleteAutoscalingPolicy(request);
  */
   deleteAutoscalingPolicy(
-      request: protos.google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest,
+      request?: protos.google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest|null|undefined,
@@ -617,7 +617,7 @@ export class AutoscalingPolicyServiceClient {
   }
 
   listAutoscalingPolicies(
-      request: protos.google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest,
+      request?: protos.google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IAutoscalingPolicy[],
@@ -673,7 +673,7 @@ export class AutoscalingPolicyServiceClient {
  *   for more details and examples.
  */
   listAutoscalingPolicies(
-      request: protos.google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest,
+      request?: protos.google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest,
           protos.google.cloud.dataproc.v1.IListAutoscalingPoliciesResponse|null|undefined,

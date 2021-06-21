@@ -266,7 +266,7 @@ export class GatewayServiceClient {
   // -- Service calls --
   // -------------------
   getResource(
-      request: protos.google.api.IHttpBody,
+      request?: protos.google.api.IHttpBody,
       options?: CallOptions):
       Promise<[
         protos.google.api.IHttpBody,
@@ -308,7 +308,7 @@ export class GatewayServiceClient {
  * const [response] = await client.getResource(request);
  */
   getResource(
-      request: protos.google.api.IHttpBody,
+      request?: protos.google.api.IHttpBody,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.IHttpBody,
           protos.google.api.IHttpBody|null|undefined,
@@ -335,7 +335,7 @@ export class GatewayServiceClient {
     return this.innerApiCalls.getResource(request, options, callback);
   }
   postResource(
-      request: protos.google.api.IHttpBody,
+      request?: protos.google.api.IHttpBody,
       options?: CallOptions):
       Promise<[
         protos.google.api.IHttpBody,
@@ -377,7 +377,7 @@ export class GatewayServiceClient {
  * const [response] = await client.postResource(request);
  */
   postResource(
-      request: protos.google.api.IHttpBody,
+      request?: protos.google.api.IHttpBody,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.IHttpBody,
           protos.google.api.IHttpBody|null|undefined,
@@ -404,7 +404,7 @@ export class GatewayServiceClient {
     return this.innerApiCalls.postResource(request, options, callback);
   }
   deleteResource(
-      request: protos.google.api.IHttpBody,
+      request?: protos.google.api.IHttpBody,
       options?: CallOptions):
       Promise<[
         protos.google.api.IHttpBody,
@@ -446,7 +446,7 @@ export class GatewayServiceClient {
  * const [response] = await client.deleteResource(request);
  */
   deleteResource(
-      request: protos.google.api.IHttpBody,
+      request?: protos.google.api.IHttpBody,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.IHttpBody,
           protos.google.api.IHttpBody|null|undefined,
@@ -473,7 +473,7 @@ export class GatewayServiceClient {
     return this.innerApiCalls.deleteResource(request, options, callback);
   }
   putResource(
-      request: protos.google.api.IHttpBody,
+      request?: protos.google.api.IHttpBody,
       options?: CallOptions):
       Promise<[
         protos.google.api.IHttpBody,
@@ -515,7 +515,7 @@ export class GatewayServiceClient {
  * const [response] = await client.putResource(request);
  */
   putResource(
-      request: protos.google.api.IHttpBody,
+      request?: protos.google.api.IHttpBody,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.IHttpBody,
           protos.google.api.IHttpBody|null|undefined,
@@ -542,7 +542,7 @@ export class GatewayServiceClient {
     return this.innerApiCalls.putResource(request, options, callback);
   }
   patchResource(
-      request: protos.google.api.IHttpBody,
+      request?: protos.google.api.IHttpBody,
       options?: CallOptions):
       Promise<[
         protos.google.api.IHttpBody,
@@ -584,7 +584,7 @@ export class GatewayServiceClient {
  * const [response] = await client.patchResource(request);
  */
   patchResource(
-      request: protos.google.api.IHttpBody,
+      request?: protos.google.api.IHttpBody,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.IHttpBody,
           protos.google.api.IHttpBody|null|undefined,

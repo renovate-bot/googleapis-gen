@@ -434,7 +434,7 @@ export class AgentsClient {
   // -- Service calls --
   // -------------------
   getAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetAgentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IAgent,
@@ -473,7 +473,7 @@ export class AgentsClient {
  * const [response] = await client.getAgent(request);
  */
   getAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IAgent,
           protos.google.cloud.dialogflow.v2beta1.IGetAgentRequest|null|undefined,
@@ -507,7 +507,7 @@ export class AgentsClient {
     return this.innerApiCalls.getAgent(request, options, callback);
   }
   setAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IAgent,
@@ -546,7 +546,7 @@ export class AgentsClient {
  * const [response] = await client.setAgent(request);
  */
   setAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IAgent,
           protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest|null|undefined,
@@ -580,7 +580,7 @@ export class AgentsClient {
     return this.innerApiCalls.setAgent(request, options, callback);
   }
   deleteAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IDeleteAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IDeleteAgentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -619,7 +619,7 @@ export class AgentsClient {
  * const [response] = await client.deleteAgent(request);
  */
   deleteAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IDeleteAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IDeleteAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.v2beta1.IDeleteAgentRequest|null|undefined,
@@ -653,7 +653,7 @@ export class AgentsClient {
     return this.innerApiCalls.deleteAgent(request, options, callback);
   }
   getValidationResult(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IValidationResult,
@@ -699,7 +699,7 @@ export class AgentsClient {
  * const [response] = await client.getValidationResult(request);
  */
   getValidationResult(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IValidationResult,
           protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest|null|undefined,
@@ -734,7 +734,7 @@ export class AgentsClient {
   }
 
   trainAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.ITrainAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ITrainAgentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
@@ -779,7 +779,7 @@ export class AgentsClient {
  * const [response] = await operation.promise();
  */
   trainAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.ITrainAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ITrainAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -834,7 +834,7 @@ export class AgentsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
   exportAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IExportAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IExportAgentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.v2beta1.IExportAgentResponse, protos.google.protobuf.IStruct>,
@@ -885,7 +885,7 @@ export class AgentsClient {
  * const [response] = await operation.promise();
  */
   exportAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IExportAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IExportAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.v2beta1.IExportAgentResponse, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -940,7 +940,7 @@ export class AgentsClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2beta1.ExportAgentResponse, protos.google.protobuf.Struct>;
   }
   importAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IImportAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IImportAgentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
@@ -1000,7 +1000,7 @@ export class AgentsClient {
  * const [response] = await operation.promise();
  */
   importAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IImportAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IImportAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1055,7 +1055,7 @@ export class AgentsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
   restoreAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IRestoreAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IRestoreAgentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
@@ -1114,7 +1114,7 @@ export class AgentsClient {
  * const [response] = await operation.promise();
  */
   restoreAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IRestoreAgentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IRestoreAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1169,7 +1169,7 @@ export class AgentsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
   searchAgents(
-      request: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IAgent[],
@@ -1222,7 +1222,7 @@ export class AgentsClient {
  *   for more details and examples.
  */
   searchAgents(
-      request: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
           protos.google.cloud.dialogflow.v2beta1.ISearchAgentsResponse|null|undefined,

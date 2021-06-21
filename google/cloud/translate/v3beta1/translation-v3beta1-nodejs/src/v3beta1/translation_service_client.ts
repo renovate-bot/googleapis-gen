@@ -335,7 +335,7 @@ export class TranslationServiceClient {
   // -- Service calls --
   // -------------------
   translateText(
-      request: protos.google.cloud.translation.v3beta1.ITranslateTextRequest,
+      request?: protos.google.cloud.translation.v3beta1.ITranslateTextRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.translation.v3beta1.ITranslateTextResponse,
@@ -433,7 +433,7 @@ export class TranslationServiceClient {
  * const [response] = await client.translateText(request);
  */
   translateText(
-      request: protos.google.cloud.translation.v3beta1.ITranslateTextRequest,
+      request?: protos.google.cloud.translation.v3beta1.ITranslateTextRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.translation.v3beta1.ITranslateTextResponse,
           protos.google.cloud.translation.v3beta1.ITranslateTextRequest|null|undefined,
@@ -467,7 +467,7 @@ export class TranslationServiceClient {
     return this.innerApiCalls.translateText(request, options, callback);
   }
   detectLanguage(
-      request: protos.google.cloud.translation.v3beta1.IDetectLanguageRequest,
+      request?: protos.google.cloud.translation.v3beta1.IDetectLanguageRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.translation.v3beta1.IDetectLanguageResponse,
@@ -538,7 +538,7 @@ export class TranslationServiceClient {
  * const [response] = await client.detectLanguage(request);
  */
   detectLanguage(
-      request: protos.google.cloud.translation.v3beta1.IDetectLanguageRequest,
+      request?: protos.google.cloud.translation.v3beta1.IDetectLanguageRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.translation.v3beta1.IDetectLanguageResponse,
           protos.google.cloud.translation.v3beta1.IDetectLanguageRequest|null|undefined,
@@ -572,7 +572,7 @@ export class TranslationServiceClient {
     return this.innerApiCalls.detectLanguage(request, options, callback);
   }
   getSupportedLanguages(
-      request: protos.google.cloud.translation.v3beta1.IGetSupportedLanguagesRequest,
+      request?: protos.google.cloud.translation.v3beta1.IGetSupportedLanguagesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.translation.v3beta1.ISupportedLanguages,
@@ -640,7 +640,7 @@ export class TranslationServiceClient {
  * const [response] = await client.getSupportedLanguages(request);
  */
   getSupportedLanguages(
-      request: protos.google.cloud.translation.v3beta1.IGetSupportedLanguagesRequest,
+      request?: protos.google.cloud.translation.v3beta1.IGetSupportedLanguagesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.translation.v3beta1.ISupportedLanguages,
           protos.google.cloud.translation.v3beta1.IGetSupportedLanguagesRequest|null|undefined,
@@ -674,7 +674,7 @@ export class TranslationServiceClient {
     return this.innerApiCalls.getSupportedLanguages(request, options, callback);
   }
   translateDocument(
-      request: protos.google.cloud.translation.v3beta1.ITranslateDocumentRequest,
+      request?: protos.google.cloud.translation.v3beta1.ITranslateDocumentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.translation.v3beta1.ITranslateDocumentResponse,
@@ -769,7 +769,7 @@ export class TranslationServiceClient {
  * const [response] = await client.translateDocument(request);
  */
   translateDocument(
-      request: protos.google.cloud.translation.v3beta1.ITranslateDocumentRequest,
+      request?: protos.google.cloud.translation.v3beta1.ITranslateDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.translation.v3beta1.ITranslateDocumentResponse,
           protos.google.cloud.translation.v3beta1.ITranslateDocumentRequest|null|undefined,
@@ -803,7 +803,7 @@ export class TranslationServiceClient {
     return this.innerApiCalls.translateDocument(request, options, callback);
   }
   getGlossary(
-      request: protos.google.cloud.translation.v3beta1.IGetGlossaryRequest,
+      request?: protos.google.cloud.translation.v3beta1.IGetGlossaryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.translation.v3beta1.IGlossary,
@@ -841,7 +841,7 @@ export class TranslationServiceClient {
  * const [response] = await client.getGlossary(request);
  */
   getGlossary(
-      request: protos.google.cloud.translation.v3beta1.IGetGlossaryRequest,
+      request?: protos.google.cloud.translation.v3beta1.IGetGlossaryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.translation.v3beta1.IGlossary,
           protos.google.cloud.translation.v3beta1.IGetGlossaryRequest|null|undefined,
@@ -876,7 +876,7 @@ export class TranslationServiceClient {
   }
 
   batchTranslateText(
-      request: protos.google.cloud.translation.v3beta1.IBatchTranslateTextRequest,
+      request?: protos.google.cloud.translation.v3beta1.IBatchTranslateTextRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.translation.v3beta1.IBatchTranslateResponse, protos.google.cloud.translation.v3beta1.IBatchTranslateMetadata>,
@@ -972,7 +972,7 @@ export class TranslationServiceClient {
  * const [response] = await operation.promise();
  */
   batchTranslateText(
-      request: protos.google.cloud.translation.v3beta1.IBatchTranslateTextRequest,
+      request?: protos.google.cloud.translation.v3beta1.IBatchTranslateTextRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.translation.v3beta1.IBatchTranslateResponse, protos.google.cloud.translation.v3beta1.IBatchTranslateMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1027,7 +1027,7 @@ export class TranslationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.translation.v3beta1.BatchTranslateResponse, protos.google.cloud.translation.v3beta1.BatchTranslateMetadata>;
   }
   batchTranslateDocument(
-      request: protos.google.cloud.translation.v3beta1.IBatchTranslateDocumentRequest,
+      request?: protos.google.cloud.translation.v3beta1.IBatchTranslateDocumentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.translation.v3beta1.IBatchTranslateDocumentResponse, protos.google.cloud.translation.v3beta1.IBatchTranslateDocumentMetadata>,
@@ -1116,7 +1116,7 @@ export class TranslationServiceClient {
  * const [response] = await operation.promise();
  */
   batchTranslateDocument(
-      request: protos.google.cloud.translation.v3beta1.IBatchTranslateDocumentRequest,
+      request?: protos.google.cloud.translation.v3beta1.IBatchTranslateDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.translation.v3beta1.IBatchTranslateDocumentResponse, protos.google.cloud.translation.v3beta1.IBatchTranslateDocumentMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1171,7 +1171,7 @@ export class TranslationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.translation.v3beta1.BatchTranslateDocumentResponse, protos.google.cloud.translation.v3beta1.BatchTranslateDocumentMetadata>;
   }
   createGlossary(
-      request: protos.google.cloud.translation.v3beta1.ICreateGlossaryRequest,
+      request?: protos.google.cloud.translation.v3beta1.ICreateGlossaryRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.translation.v3beta1.IGlossary, protos.google.cloud.translation.v3beta1.ICreateGlossaryMetadata>,
@@ -1214,7 +1214,7 @@ export class TranslationServiceClient {
  * const [response] = await operation.promise();
  */
   createGlossary(
-      request: protos.google.cloud.translation.v3beta1.ICreateGlossaryRequest,
+      request?: protos.google.cloud.translation.v3beta1.ICreateGlossaryRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.translation.v3beta1.IGlossary, protos.google.cloud.translation.v3beta1.ICreateGlossaryMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1269,7 +1269,7 @@ export class TranslationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.translation.v3beta1.Glossary, protos.google.cloud.translation.v3beta1.CreateGlossaryMetadata>;
   }
   deleteGlossary(
-      request: protos.google.cloud.translation.v3beta1.IDeleteGlossaryRequest,
+      request?: protos.google.cloud.translation.v3beta1.IDeleteGlossaryRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.translation.v3beta1.IDeleteGlossaryResponse, protos.google.cloud.translation.v3beta1.IDeleteGlossaryMetadata>,
@@ -1311,7 +1311,7 @@ export class TranslationServiceClient {
  * const [response] = await operation.promise();
  */
   deleteGlossary(
-      request: protos.google.cloud.translation.v3beta1.IDeleteGlossaryRequest,
+      request?: protos.google.cloud.translation.v3beta1.IDeleteGlossaryRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.translation.v3beta1.IDeleteGlossaryResponse, protos.google.cloud.translation.v3beta1.IDeleteGlossaryMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1366,7 +1366,7 @@ export class TranslationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.translation.v3beta1.DeleteGlossaryResponse, protos.google.cloud.translation.v3beta1.DeleteGlossaryMetadata>;
   }
   listGlossaries(
-      request: protos.google.cloud.translation.v3beta1.IListGlossariesRequest,
+      request?: protos.google.cloud.translation.v3beta1.IListGlossariesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.translation.v3beta1.IGlossary[],
@@ -1433,7 +1433,7 @@ export class TranslationServiceClient {
  *   for more details and examples.
  */
   listGlossaries(
-      request: protos.google.cloud.translation.v3beta1.IListGlossariesRequest,
+      request?: protos.google.cloud.translation.v3beta1.IListGlossariesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.translation.v3beta1.IListGlossariesRequest,
           protos.google.cloud.translation.v3beta1.IListGlossariesResponse|null|undefined,

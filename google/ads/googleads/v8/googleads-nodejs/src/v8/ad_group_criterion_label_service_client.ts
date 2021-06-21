@@ -653,7 +653,7 @@ export class AdGroupCriterionLabelServiceClient {
   // -- Service calls --
   // -------------------
   getAdGroupCriterionLabel(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupCriterionLabelRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupCriterionLabelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IAdGroupCriterionLabel,
@@ -698,7 +698,7 @@ export class AdGroupCriterionLabelServiceClient {
  * const [response] = await client.getAdGroupCriterionLabel(request);
  */
   getAdGroupCriterionLabel(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupCriterionLabelRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupCriterionLabelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IAdGroupCriterionLabel,
           protos.google.ads.googleads.v8.services.IGetAdGroupCriterionLabelRequest|null|undefined,
@@ -732,7 +732,7 @@ export class AdGroupCriterionLabelServiceClient {
     return this.innerApiCalls.getAdGroupCriterionLabel(request, options, callback);
   }
   mutateAdGroupCriterionLabels(
-      request: protos.google.ads.googleads.v8.services.IMutateAdGroupCriterionLabelsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateAdGroupCriterionLabelsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateAdGroupCriterionLabelsResponse,
@@ -790,7 +790,7 @@ export class AdGroupCriterionLabelServiceClient {
  * const [response] = await client.mutateAdGroupCriterionLabels(request);
  */
   mutateAdGroupCriterionLabels(
-      request: protos.google.ads.googleads.v8.services.IMutateAdGroupCriterionLabelsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateAdGroupCriterionLabelsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateAdGroupCriterionLabelsResponse,
           protos.google.ads.googleads.v8.services.IMutateAdGroupCriterionLabelsRequest|null|undefined,

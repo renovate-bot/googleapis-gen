@@ -287,7 +287,7 @@ export class AssetServiceClient {
   // -------------------
 
   exportAssets(
-      request: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
+      request?: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.asset.v1p7beta1.IExportAssetsResponse, protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest>,
@@ -382,7 +382,7 @@ export class AssetServiceClient {
  * const [response] = await operation.promise();
  */
   exportAssets(
-      request: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
+      request?: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.asset.v1p7beta1.IExportAssetsResponse, protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest>,
           protos.google.longrunning.IOperation|null|undefined,

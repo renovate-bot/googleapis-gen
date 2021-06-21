@@ -287,7 +287,7 @@ export class ExecutionsClient {
   // -- Service calls --
   // -------------------
   createExecution(
-      request: protos.google.cloud.workflows.executions.v1.ICreateExecutionRequest,
+      request?: protos.google.cloud.workflows.executions.v1.ICreateExecutionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.workflows.executions.v1.IExecution,
@@ -328,7 +328,7 @@ export class ExecutionsClient {
  * const [response] = await client.createExecution(request);
  */
   createExecution(
-      request: protos.google.cloud.workflows.executions.v1.ICreateExecutionRequest,
+      request?: protos.google.cloud.workflows.executions.v1.ICreateExecutionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.workflows.executions.v1.IExecution,
           protos.google.cloud.workflows.executions.v1.ICreateExecutionRequest|null|undefined,
@@ -362,7 +362,7 @@ export class ExecutionsClient {
     return this.innerApiCalls.createExecution(request, options, callback);
   }
   getExecution(
-      request: protos.google.cloud.workflows.executions.v1.IGetExecutionRequest,
+      request?: protos.google.cloud.workflows.executions.v1.IGetExecutionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.workflows.executions.v1.IExecution,
@@ -404,7 +404,7 @@ export class ExecutionsClient {
  * const [response] = await client.getExecution(request);
  */
   getExecution(
-      request: protos.google.cloud.workflows.executions.v1.IGetExecutionRequest,
+      request?: protos.google.cloud.workflows.executions.v1.IGetExecutionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.workflows.executions.v1.IExecution,
           protos.google.cloud.workflows.executions.v1.IGetExecutionRequest|null|undefined,
@@ -438,7 +438,7 @@ export class ExecutionsClient {
     return this.innerApiCalls.getExecution(request, options, callback);
   }
   cancelExecution(
-      request: protos.google.cloud.workflows.executions.v1.ICancelExecutionRequest,
+      request?: protos.google.cloud.workflows.executions.v1.ICancelExecutionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.workflows.executions.v1.IExecution,
@@ -477,7 +477,7 @@ export class ExecutionsClient {
  * const [response] = await client.cancelExecution(request);
  */
   cancelExecution(
-      request: protos.google.cloud.workflows.executions.v1.ICancelExecutionRequest,
+      request?: protos.google.cloud.workflows.executions.v1.ICancelExecutionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.workflows.executions.v1.IExecution,
           protos.google.cloud.workflows.executions.v1.ICancelExecutionRequest|null|undefined,
@@ -512,7 +512,7 @@ export class ExecutionsClient {
   }
 
   listExecutions(
-      request: protos.google.cloud.workflows.executions.v1.IListExecutionsRequest,
+      request?: protos.google.cloud.workflows.executions.v1.IListExecutionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.workflows.executions.v1.IExecution[],
@@ -572,7 +572,7 @@ export class ExecutionsClient {
  *   for more details and examples.
  */
   listExecutions(
-      request: protos.google.cloud.workflows.executions.v1.IListExecutionsRequest,
+      request?: protos.google.cloud.workflows.executions.v1.IListExecutionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.workflows.executions.v1.IListExecutionsRequest,
           protos.google.cloud.workflows.executions.v1.IListExecutionsResponse|null|undefined,

@@ -35,7 +35,9 @@ namespace Google.Cloud.Container.V1.Snippets
             string clusterId = "";
             string nodePoolId = "";
             // Make the request
+#pragma warning disable CS0612
             Operation response = clusterManagerClient.RollbackNodePoolUpgrade(projectId, zone, clusterId, nodePoolId);
+#pragma warning restore CS0612
         }
     }
 }

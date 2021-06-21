@@ -317,7 +317,7 @@ export class ScannerServiceClient {
   // -------------------
 
   analyzePackages(
-      request: protos.google.cloud.ondemandscanning.v1.IAnalyzePackagesRequest,
+      request?: protos.google.cloud.ondemandscanning.v1.IAnalyzePackagesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.g.IAnalyzePackagesResponse, protos.g.IAnalyzePackagesMetadata>,
@@ -362,7 +362,7 @@ export class ScannerServiceClient {
  * const [response] = await operation.promise();
  */
   analyzePackages(
-      request: protos.google.cloud.ondemandscanning.v1.IAnalyzePackagesRequest,
+      request?: protos.google.cloud.ondemandscanning.v1.IAnalyzePackagesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.g.IAnalyzePackagesResponse, protos.g.IAnalyzePackagesMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -417,7 +417,7 @@ export class ScannerServiceClient {
     return decodeOperation as LROperation<protos.g.AnalyzePackagesResponse, protos.g.AnalyzePackagesMetadata>;
   }
   listVulnerabilities(
-      request: protos.google.cloud.ondemandscanning.v1.IListVulnerabilitiesRequest,
+      request?: protos.google.cloud.ondemandscanning.v1.IListVulnerabilitiesRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.IOccurrence[],
@@ -463,7 +463,7 @@ export class ScannerServiceClient {
  *   for more details and examples.
  */
   listVulnerabilities(
-      request: protos.google.cloud.ondemandscanning.v1.IListVulnerabilitiesRequest,
+      request?: protos.google.cloud.ondemandscanning.v1.IListVulnerabilitiesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.ondemandscanning.v1.IListVulnerabilitiesRequest,
           protos.google.cloud.ondemandscanning.v1.IListVulnerabilitiesResponse|null|undefined,

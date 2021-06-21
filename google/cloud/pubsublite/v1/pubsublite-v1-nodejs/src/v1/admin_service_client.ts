@@ -301,7 +301,7 @@ export class AdminServiceClient {
   // -- Service calls --
   // -------------------
   createTopic(
-      request: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
+      request?: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.ITopic,
@@ -346,7 +346,7 @@ export class AdminServiceClient {
  * const [response] = await client.createTopic(request);
  */
   createTopic(
-      request: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
+      request?: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.pubsublite.v1.ITopic,
           protos.google.cloud.pubsublite.v1.ICreateTopicRequest|null|undefined,
@@ -380,7 +380,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.createTopic(request, options, callback);
   }
   getTopic(
-      request: protos.google.cloud.pubsublite.v1.IGetTopicRequest,
+      request?: protos.google.cloud.pubsublite.v1.IGetTopicRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.ITopic,
@@ -417,7 +417,7 @@ export class AdminServiceClient {
  * const [response] = await client.getTopic(request);
  */
   getTopic(
-      request: protos.google.cloud.pubsublite.v1.IGetTopicRequest,
+      request?: protos.google.cloud.pubsublite.v1.IGetTopicRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.pubsublite.v1.ITopic,
           protos.google.cloud.pubsublite.v1.IGetTopicRequest|null|undefined,
@@ -451,7 +451,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.getTopic(request, options, callback);
   }
   getTopicPartitions(
-      request: protos.google.cloud.pubsublite.v1.IGetTopicPartitionsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IGetTopicPartitionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.ITopicPartitions,
@@ -488,7 +488,7 @@ export class AdminServiceClient {
  * const [response] = await client.getTopicPartitions(request);
  */
   getTopicPartitions(
-      request: protos.google.cloud.pubsublite.v1.IGetTopicPartitionsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IGetTopicPartitionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.pubsublite.v1.ITopicPartitions,
           protos.google.cloud.pubsublite.v1.IGetTopicPartitionsRequest|null|undefined,
@@ -522,7 +522,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.getTopicPartitions(request, options, callback);
   }
   updateTopic(
-      request: protos.google.cloud.pubsublite.v1.IUpdateTopicRequest,
+      request?: protos.google.cloud.pubsublite.v1.IUpdateTopicRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.ITopic,
@@ -561,7 +561,7 @@ export class AdminServiceClient {
  * const [response] = await client.updateTopic(request);
  */
   updateTopic(
-      request: protos.google.cloud.pubsublite.v1.IUpdateTopicRequest,
+      request?: protos.google.cloud.pubsublite.v1.IUpdateTopicRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.pubsublite.v1.ITopic,
           protos.google.cloud.pubsublite.v1.IUpdateTopicRequest|null|undefined,
@@ -595,7 +595,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.updateTopic(request, options, callback);
   }
   deleteTopic(
-      request: protos.google.cloud.pubsublite.v1.IDeleteTopicRequest,
+      request?: protos.google.cloud.pubsublite.v1.IDeleteTopicRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -632,7 +632,7 @@ export class AdminServiceClient {
  * const [response] = await client.deleteTopic(request);
  */
   deleteTopic(
-      request: protos.google.cloud.pubsublite.v1.IDeleteTopicRequest,
+      request?: protos.google.cloud.pubsublite.v1.IDeleteTopicRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.pubsublite.v1.IDeleteTopicRequest|null|undefined,
@@ -666,7 +666,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.deleteTopic(request, options, callback);
   }
   createSubscription(
-      request: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
+      request?: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.ISubscription,
@@ -715,7 +715,7 @@ export class AdminServiceClient {
  * const [response] = await client.createSubscription(request);
  */
   createSubscription(
-      request: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
+      request?: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.pubsublite.v1.ISubscription,
           protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest|null|undefined,
@@ -749,7 +749,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.createSubscription(request, options, callback);
   }
   getSubscription(
-      request: protos.google.cloud.pubsublite.v1.IGetSubscriptionRequest,
+      request?: protos.google.cloud.pubsublite.v1.IGetSubscriptionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.ISubscription,
@@ -786,7 +786,7 @@ export class AdminServiceClient {
  * const [response] = await client.getSubscription(request);
  */
   getSubscription(
-      request: protos.google.cloud.pubsublite.v1.IGetSubscriptionRequest,
+      request?: protos.google.cloud.pubsublite.v1.IGetSubscriptionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.pubsublite.v1.ISubscription,
           protos.google.cloud.pubsublite.v1.IGetSubscriptionRequest|null|undefined,
@@ -820,7 +820,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.getSubscription(request, options, callback);
   }
   updateSubscription(
-      request: protos.google.cloud.pubsublite.v1.IUpdateSubscriptionRequest,
+      request?: protos.google.cloud.pubsublite.v1.IUpdateSubscriptionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.ISubscription,
@@ -860,7 +860,7 @@ export class AdminServiceClient {
  * const [response] = await client.updateSubscription(request);
  */
   updateSubscription(
-      request: protos.google.cloud.pubsublite.v1.IUpdateSubscriptionRequest,
+      request?: protos.google.cloud.pubsublite.v1.IUpdateSubscriptionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.pubsublite.v1.ISubscription,
           protos.google.cloud.pubsublite.v1.IUpdateSubscriptionRequest|null|undefined,
@@ -894,7 +894,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.updateSubscription(request, options, callback);
   }
   deleteSubscription(
-      request: protos.google.cloud.pubsublite.v1.IDeleteSubscriptionRequest,
+      request?: protos.google.cloud.pubsublite.v1.IDeleteSubscriptionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -931,7 +931,7 @@ export class AdminServiceClient {
  * const [response] = await client.deleteSubscription(request);
  */
   deleteSubscription(
-      request: protos.google.cloud.pubsublite.v1.IDeleteSubscriptionRequest,
+      request?: protos.google.cloud.pubsublite.v1.IDeleteSubscriptionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.pubsublite.v1.IDeleteSubscriptionRequest|null|undefined,
@@ -965,7 +965,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.deleteSubscription(request, options, callback);
   }
   createReservation(
-      request: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
+      request?: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.IReservation,
@@ -1010,7 +1010,7 @@ export class AdminServiceClient {
  * const [response] = await client.createReservation(request);
  */
   createReservation(
-      request: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
+      request?: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.pubsublite.v1.IReservation,
           protos.google.cloud.pubsublite.v1.ICreateReservationRequest|null|undefined,
@@ -1044,7 +1044,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.createReservation(request, options, callback);
   }
   getReservation(
-      request: protos.google.cloud.pubsublite.v1.IGetReservationRequest,
+      request?: protos.google.cloud.pubsublite.v1.IGetReservationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.IReservation,
@@ -1083,7 +1083,7 @@ export class AdminServiceClient {
  * const [response] = await client.getReservation(request);
  */
   getReservation(
-      request: protos.google.cloud.pubsublite.v1.IGetReservationRequest,
+      request?: protos.google.cloud.pubsublite.v1.IGetReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.pubsublite.v1.IReservation,
           protos.google.cloud.pubsublite.v1.IGetReservationRequest|null|undefined,
@@ -1117,7 +1117,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.getReservation(request, options, callback);
   }
   updateReservation(
-      request: protos.google.cloud.pubsublite.v1.IUpdateReservationRequest,
+      request?: protos.google.cloud.pubsublite.v1.IUpdateReservationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.IReservation,
@@ -1156,7 +1156,7 @@ export class AdminServiceClient {
  * const [response] = await client.updateReservation(request);
  */
   updateReservation(
-      request: protos.google.cloud.pubsublite.v1.IUpdateReservationRequest,
+      request?: protos.google.cloud.pubsublite.v1.IUpdateReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.pubsublite.v1.IReservation,
           protos.google.cloud.pubsublite.v1.IUpdateReservationRequest|null|undefined,
@@ -1190,7 +1190,7 @@ export class AdminServiceClient {
     return this.innerApiCalls.updateReservation(request, options, callback);
   }
   deleteReservation(
-      request: protos.google.cloud.pubsublite.v1.IDeleteReservationRequest,
+      request?: protos.google.cloud.pubsublite.v1.IDeleteReservationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1229,7 +1229,7 @@ export class AdminServiceClient {
  * const [response] = await client.deleteReservation(request);
  */
   deleteReservation(
-      request: protos.google.cloud.pubsublite.v1.IDeleteReservationRequest,
+      request?: protos.google.cloud.pubsublite.v1.IDeleteReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.pubsublite.v1.IDeleteReservationRequest|null|undefined,
@@ -1264,7 +1264,7 @@ export class AdminServiceClient {
   }
 
   listTopics(
-      request: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.ITopic[],
@@ -1316,7 +1316,7 @@ export class AdminServiceClient {
  *   for more details and examples.
  */
   listTopics(
-      request: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.pubsublite.v1.IListTopicsRequest,
           protos.google.cloud.pubsublite.v1.IListTopicsResponse|null|undefined,
@@ -1460,7 +1460,7 @@ export class AdminServiceClient {
     ) as AsyncIterable<protos.google.cloud.pubsublite.v1.ITopic>;
   }
   listTopicSubscriptions(
-      request: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
       options?: CallOptions):
       Promise<[
         string[],
@@ -1511,7 +1511,7 @@ export class AdminServiceClient {
  *   for more details and examples.
  */
   listTopicSubscriptions(
-      request: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
           protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsResponse|null|undefined,
@@ -1653,7 +1653,7 @@ export class AdminServiceClient {
     ) as AsyncIterable<string>;
   }
   listSubscriptions(
-      request: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.ISubscription[],
@@ -1705,7 +1705,7 @@ export class AdminServiceClient {
  *   for more details and examples.
  */
   listSubscriptions(
-      request: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
           protos.google.cloud.pubsublite.v1.IListSubscriptionsResponse|null|undefined,
@@ -1849,7 +1849,7 @@ export class AdminServiceClient {
     ) as AsyncIterable<protos.google.cloud.pubsublite.v1.ISubscription>;
   }
   listReservations(
-      request: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.IReservation[],
@@ -1901,7 +1901,7 @@ export class AdminServiceClient {
  *   for more details and examples.
  */
   listReservations(
-      request: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.pubsublite.v1.IListReservationsRequest,
           protos.google.cloud.pubsublite.v1.IListReservationsResponse|null|undefined,
@@ -2045,7 +2045,7 @@ export class AdminServiceClient {
     ) as AsyncIterable<protos.google.cloud.pubsublite.v1.IReservation>;
   }
   listReservationTopics(
-      request: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
       options?: CallOptions):
       Promise<[
         string[],
@@ -2098,7 +2098,7 @@ export class AdminServiceClient {
  *   for more details and examples.
  */
   listReservationTopics(
-      request: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
           protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse|null|undefined,

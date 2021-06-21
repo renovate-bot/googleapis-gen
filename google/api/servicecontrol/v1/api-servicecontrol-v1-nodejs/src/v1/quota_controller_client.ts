@@ -266,7 +266,7 @@ export class QuotaControllerClient {
   // -- Service calls --
   // -------------------
   allocateQuota(
-      request: protos.google.api.servicecontrol.v1.IAllocateQuotaRequest,
+      request?: protos.google.api.servicecontrol.v1.IAllocateQuotaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.servicecontrol.v1.IAllocateQuotaResponse,
@@ -322,7 +322,7 @@ export class QuotaControllerClient {
  * const [response] = await client.allocateQuota(request);
  */
   allocateQuota(
-      request: protos.google.api.servicecontrol.v1.IAllocateQuotaRequest,
+      request?: protos.google.api.servicecontrol.v1.IAllocateQuotaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.servicecontrol.v1.IAllocateQuotaResponse,
           protos.google.api.servicecontrol.v1.IAllocateQuotaRequest|null|undefined,

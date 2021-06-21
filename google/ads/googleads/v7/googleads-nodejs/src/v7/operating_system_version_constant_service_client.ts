@@ -635,7 +635,7 @@ export class OperatingSystemVersionConstantServiceClient {
   // -- Service calls --
   // -------------------
   getOperatingSystemVersionConstant(
-      request: protos.google.ads.googleads.v7.services.IGetOperatingSystemVersionConstantRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetOperatingSystemVersionConstantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IOperatingSystemVersionConstant,
@@ -680,7 +680,7 @@ export class OperatingSystemVersionConstantServiceClient {
  * const [response] = await client.getOperatingSystemVersionConstant(request);
  */
   getOperatingSystemVersionConstant(
-      request: protos.google.ads.googleads.v7.services.IGetOperatingSystemVersionConstantRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetOperatingSystemVersionConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IOperatingSystemVersionConstant,
           protos.google.ads.googleads.v7.services.IGetOperatingSystemVersionConstantRequest|null|undefined,

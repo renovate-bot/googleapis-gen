@@ -294,7 +294,7 @@ export class SmartDeviceManagementServiceClient {
   // -- Service calls --
   // -------------------
   getDevice(
-      request: protos.google.home.enterprise.sdm.v1.IGetDeviceRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IGetDeviceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.home.enterprise.sdm.v1.IDevice,
@@ -332,7 +332,7 @@ export class SmartDeviceManagementServiceClient {
  * const [response] = await client.getDevice(request);
  */
   getDevice(
-      request: protos.google.home.enterprise.sdm.v1.IGetDeviceRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IGetDeviceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.home.enterprise.sdm.v1.IDevice,
           protos.google.home.enterprise.sdm.v1.IGetDeviceRequest|null|undefined,
@@ -366,7 +366,7 @@ export class SmartDeviceManagementServiceClient {
     return this.innerApiCalls.getDevice(request, options, callback);
   }
   executeDeviceCommand(
-      request: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
       options?: CallOptions):
       Promise<[
         protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandResponse,
@@ -409,7 +409,7 @@ export class SmartDeviceManagementServiceClient {
  * const [response] = await client.executeDeviceCommand(request);
  */
   executeDeviceCommand(
-      request: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandResponse,
           protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest|null|undefined,
@@ -443,7 +443,7 @@ export class SmartDeviceManagementServiceClient {
     return this.innerApiCalls.executeDeviceCommand(request, options, callback);
   }
   getStructure(
-      request: protos.google.home.enterprise.sdm.v1.IGetStructureRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IGetStructureRequest,
       options?: CallOptions):
       Promise<[
         protos.google.home.enterprise.sdm.v1.IStructure,
@@ -481,7 +481,7 @@ export class SmartDeviceManagementServiceClient {
  * const [response] = await client.getStructure(request);
  */
   getStructure(
-      request: protos.google.home.enterprise.sdm.v1.IGetStructureRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IGetStructureRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.home.enterprise.sdm.v1.IStructure,
           protos.google.home.enterprise.sdm.v1.IGetStructureRequest|null|undefined,
@@ -515,7 +515,7 @@ export class SmartDeviceManagementServiceClient {
     return this.innerApiCalls.getStructure(request, options, callback);
   }
   getRoom(
-      request: protos.google.home.enterprise.sdm.v1.IGetRoomRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IGetRoomRequest,
       options?: CallOptions):
       Promise<[
         protos.google.home.enterprise.sdm.v1.IRoom,
@@ -553,7 +553,7 @@ export class SmartDeviceManagementServiceClient {
  * const [response] = await client.getRoom(request);
  */
   getRoom(
-      request: protos.google.home.enterprise.sdm.v1.IGetRoomRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IGetRoomRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.home.enterprise.sdm.v1.IRoom,
           protos.google.home.enterprise.sdm.v1.IGetRoomRequest|null|undefined,
@@ -588,7 +588,7 @@ export class SmartDeviceManagementServiceClient {
   }
 
   listDevices(
-      request: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.home.enterprise.sdm.v1.IDevice[],
@@ -641,7 +641,7 @@ export class SmartDeviceManagementServiceClient {
  *   for more details and examples.
  */
   listDevices(
-      request: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
           protos.google.home.enterprise.sdm.v1.IListDevicesResponse|null|undefined,
@@ -787,7 +787,7 @@ export class SmartDeviceManagementServiceClient {
     ) as AsyncIterable<protos.google.home.enterprise.sdm.v1.IDevice>;
   }
   listStructures(
-      request: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
       options?: CallOptions):
       Promise<[
         protos.google.home.enterprise.sdm.v1.IStructure[],
@@ -835,7 +835,7 @@ export class SmartDeviceManagementServiceClient {
  *   for more details and examples.
  */
   listStructures(
-      request: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
           protos.google.home.enterprise.sdm.v1.IListStructuresResponse|null|undefined,
@@ -971,7 +971,7 @@ export class SmartDeviceManagementServiceClient {
     ) as AsyncIterable<protos.google.home.enterprise.sdm.v1.IStructure>;
   }
   listRooms(
-      request: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.home.enterprise.sdm.v1.IRoom[],
@@ -1018,7 +1018,7 @@ export class SmartDeviceManagementServiceClient {
  *   for more details and examples.
  */
   listRooms(
-      request: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
+      request?: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
           protos.google.home.enterprise.sdm.v1.IListRoomsResponse|null|undefined,

@@ -344,7 +344,7 @@ export class InstanceAdminClient {
   // -- Service calls --
   // -------------------
   getInstanceConfig(
-      request: protos.google.spanner.admin.instance.v1.IGetInstanceConfigRequest,
+      request?: protos.google.spanner.admin.instance.v1.IGetInstanceConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.admin.instance.v1.IInstanceConfig,
@@ -382,7 +382,7 @@ export class InstanceAdminClient {
  * const [response] = await client.getInstanceConfig(request);
  */
   getInstanceConfig(
-      request: protos.google.spanner.admin.instance.v1.IGetInstanceConfigRequest,
+      request?: protos.google.spanner.admin.instance.v1.IGetInstanceConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.admin.instance.v1.IInstanceConfig,
           protos.google.spanner.admin.instance.v1.IGetInstanceConfigRequest|null|undefined,
@@ -416,7 +416,7 @@ export class InstanceAdminClient {
     return this.innerApiCalls.getInstanceConfig(request, options, callback);
   }
   getInstance(
-      request: protos.google.spanner.admin.instance.v1.IGetInstanceRequest,
+      request?: protos.google.spanner.admin.instance.v1.IGetInstanceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.admin.instance.v1.IInstance,
@@ -458,7 +458,7 @@ export class InstanceAdminClient {
  * const [response] = await client.getInstance(request);
  */
   getInstance(
-      request: protos.google.spanner.admin.instance.v1.IGetInstanceRequest,
+      request?: protos.google.spanner.admin.instance.v1.IGetInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.admin.instance.v1.IInstance,
           protos.google.spanner.admin.instance.v1.IGetInstanceRequest|null|undefined,
@@ -492,7 +492,7 @@ export class InstanceAdminClient {
     return this.innerApiCalls.getInstance(request, options, callback);
   }
   deleteInstance(
-      request: protos.google.spanner.admin.instance.v1.IDeleteInstanceRequest,
+      request?: protos.google.spanner.admin.instance.v1.IDeleteInstanceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -540,7 +540,7 @@ export class InstanceAdminClient {
  * const [response] = await client.deleteInstance(request);
  */
   deleteInstance(
-      request: protos.google.spanner.admin.instance.v1.IDeleteInstanceRequest,
+      request?: protos.google.spanner.admin.instance.v1.IDeleteInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.spanner.admin.instance.v1.IDeleteInstanceRequest|null|undefined,
@@ -574,7 +574,7 @@ export class InstanceAdminClient {
     return this.innerApiCalls.deleteInstance(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -621,7 +621,7 @@ export class InstanceAdminClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -655,7 +655,7 @@ export class InstanceAdminClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -700,7 +700,7 @@ export class InstanceAdminClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -734,7 +734,7 @@ export class InstanceAdminClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -782,7 +782,7 @@ export class InstanceAdminClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -817,7 +817,7 @@ export class InstanceAdminClient {
   }
 
   createInstance(
-      request: protos.google.spanner.admin.instance.v1.ICreateInstanceRequest,
+      request?: protos.google.spanner.admin.instance.v1.ICreateInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.spanner.admin.instance.v1.IInstance, protos.google.spanner.admin.instance.v1.ICreateInstanceMetadata>,
@@ -898,7 +898,7 @@ export class InstanceAdminClient {
  * const [response] = await operation.promise();
  */
   createInstance(
-      request: protos.google.spanner.admin.instance.v1.ICreateInstanceRequest,
+      request?: protos.google.spanner.admin.instance.v1.ICreateInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.spanner.admin.instance.v1.IInstance, protos.google.spanner.admin.instance.v1.ICreateInstanceMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -953,7 +953,7 @@ export class InstanceAdminClient {
     return decodeOperation as LROperation<protos.google.spanner.admin.instance.v1.Instance, protos.google.spanner.admin.instance.v1.CreateInstanceMetadata>;
   }
   updateInstance(
-      request: protos.google.spanner.admin.instance.v1.IUpdateInstanceRequest,
+      request?: protos.google.spanner.admin.instance.v1.IUpdateInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.spanner.admin.instance.v1.IInstance, protos.google.spanner.admin.instance.v1.IUpdateInstanceMetadata>,
@@ -1038,7 +1038,7 @@ export class InstanceAdminClient {
  * const [response] = await operation.promise();
  */
   updateInstance(
-      request: protos.google.spanner.admin.instance.v1.IUpdateInstanceRequest,
+      request?: protos.google.spanner.admin.instance.v1.IUpdateInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.spanner.admin.instance.v1.IInstance, protos.google.spanner.admin.instance.v1.IUpdateInstanceMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1093,7 +1093,7 @@ export class InstanceAdminClient {
     return decodeOperation as LROperation<protos.google.spanner.admin.instance.v1.Instance, protos.google.spanner.admin.instance.v1.UpdateInstanceMetadata>;
   }
   listInstanceConfigs(
-      request: protos.google.spanner.admin.instance.v1.IListInstanceConfigsRequest,
+      request?: protos.google.spanner.admin.instance.v1.IListInstanceConfigsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.admin.instance.v1.IInstanceConfig[],
@@ -1143,7 +1143,7 @@ export class InstanceAdminClient {
  *   for more details and examples.
  */
   listInstanceConfigs(
-      request: protos.google.spanner.admin.instance.v1.IListInstanceConfigsRequest,
+      request?: protos.google.spanner.admin.instance.v1.IListInstanceConfigsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.spanner.admin.instance.v1.IListInstanceConfigsRequest,
           protos.google.spanner.admin.instance.v1.IListInstanceConfigsResponse|null|undefined,
@@ -1283,7 +1283,7 @@ export class InstanceAdminClient {
     ) as AsyncIterable<protos.google.spanner.admin.instance.v1.IInstanceConfig>;
   }
   listInstances(
-      request: protos.google.spanner.admin.instance.v1.IListInstancesRequest,
+      request?: protos.google.spanner.admin.instance.v1.IListInstancesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.admin.instance.v1.IInstance[],
@@ -1352,7 +1352,7 @@ export class InstanceAdminClient {
  *   for more details and examples.
  */
   listInstances(
-      request: protos.google.spanner.admin.instance.v1.IListInstancesRequest,
+      request?: protos.google.spanner.admin.instance.v1.IListInstancesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.spanner.admin.instance.v1.IListInstancesRequest,
           protos.google.spanner.admin.instance.v1.IListInstancesResponse|null|undefined,

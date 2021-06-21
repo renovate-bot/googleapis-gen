@@ -381,7 +381,7 @@ export class FlowsClient {
   // -- Service calls --
   // -------------------
   createFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateFlowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IFlow,
@@ -438,7 +438,7 @@ export class FlowsClient {
  * const [response] = await client.createFlow(request);
  */
   createFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateFlowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IFlow,
           protos.google.cloud.dialogflow.cx.v3beta1.ICreateFlowRequest|null|undefined,
@@ -472,7 +472,7 @@ export class FlowsClient {
     return this.innerApiCalls.createFlow(request, options, callback);
   }
   deleteFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteFlowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -522,7 +522,7 @@ export class FlowsClient {
  * const [response] = await client.deleteFlow(request);
  */
   deleteFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteFlowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.cx.v3beta1.IDeleteFlowRequest|null|undefined,
@@ -556,7 +556,7 @@ export class FlowsClient {
     return this.innerApiCalls.deleteFlow(request, options, callback);
   }
   getFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IFlow,
@@ -609,7 +609,7 @@ export class FlowsClient {
  * const [response] = await client.getFlow(request);
  */
   getFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IFlow,
           protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowRequest|null|undefined,
@@ -643,7 +643,7 @@ export class FlowsClient {
     return this.innerApiCalls.getFlow(request, options, callback);
   }
   updateFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateFlowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IFlow,
@@ -700,7 +700,7 @@ export class FlowsClient {
  * const [response] = await client.updateFlow(request);
  */
   updateFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateFlowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IFlow,
           protos.google.cloud.dialogflow.cx.v3beta1.IUpdateFlowRequest|null|undefined,
@@ -734,7 +734,7 @@ export class FlowsClient {
     return this.innerApiCalls.updateFlow(request, options, callback);
   }
   validateFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IValidateFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IValidateFlowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IFlowValidationResult,
@@ -777,7 +777,7 @@ export class FlowsClient {
  * const [response] = await client.validateFlow(request);
  */
   validateFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IValidateFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IValidateFlowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IFlowValidationResult,
           protos.google.cloud.dialogflow.cx.v3beta1.IValidateFlowRequest|null|undefined,
@@ -811,7 +811,7 @@ export class FlowsClient {
     return this.innerApiCalls.validateFlow(request, options, callback);
   }
   getFlowValidationResult(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowValidationResultRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowValidationResultRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IFlowValidationResult,
@@ -853,7 +853,7 @@ export class FlowsClient {
  * const [response] = await client.getFlowValidationResult(request);
  */
   getFlowValidationResult(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowValidationResultRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowValidationResultRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IFlowValidationResult,
           protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowValidationResultRequest|null|undefined,
@@ -888,7 +888,7 @@ export class FlowsClient {
   }
 
   trainFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ITrainFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ITrainFlowRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
@@ -935,7 +935,7 @@ export class FlowsClient {
  * const [response] = await operation.promise();
  */
   trainFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ITrainFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ITrainFlowRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -990,7 +990,7 @@ export class FlowsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
   importFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IImportFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IImportFlowRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.cx.v3beta1.IImportFlowResponse, protos.google.protobuf.IStruct>,
@@ -1043,7 +1043,7 @@ export class FlowsClient {
  * const [response] = await operation.promise();
  */
   importFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IImportFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IImportFlowRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.cx.v3beta1.IImportFlowResponse, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1098,7 +1098,7 @@ export class FlowsClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse, protos.google.protobuf.Struct>;
   }
   exportFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IExportFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IExportFlowRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.cx.v3beta1.IExportFlowResponse, protos.google.protobuf.IStruct>,
@@ -1150,7 +1150,7 @@ export class FlowsClient {
  * const [response] = await operation.promise();
  */
   exportFlow(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IExportFlowRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IExportFlowRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.cx.v3beta1.IExportFlowResponse, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1205,7 +1205,7 @@ export class FlowsClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse, protos.google.protobuf.Struct>;
   }
   listFlows(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListFlowsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListFlowsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IFlow[],
@@ -1266,7 +1266,7 @@ export class FlowsClient {
  *   for more details and examples.
  */
   listFlows(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListFlowsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListFlowsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.cx.v3beta1.IListFlowsRequest,
           protos.google.cloud.dialogflow.cx.v3beta1.IListFlowsResponse|null|undefined,

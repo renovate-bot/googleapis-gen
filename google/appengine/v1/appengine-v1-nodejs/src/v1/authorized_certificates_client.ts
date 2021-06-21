@@ -286,7 +286,7 @@ export class AuthorizedCertificatesClient {
   // -- Service calls --
   // -------------------
   getAuthorizedCertificate(
-      request: protos.google.appengine.v1.IGetAuthorizedCertificateRequest,
+      request?: protos.google.appengine.v1.IGetAuthorizedCertificateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IAuthorizedCertificate,
@@ -326,7 +326,7 @@ export class AuthorizedCertificatesClient {
  * const [response] = await client.getAuthorizedCertificate(request);
  */
   getAuthorizedCertificate(
-      request: protos.google.appengine.v1.IGetAuthorizedCertificateRequest,
+      request?: protos.google.appengine.v1.IGetAuthorizedCertificateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.appengine.v1.IAuthorizedCertificate,
           protos.google.appengine.v1.IGetAuthorizedCertificateRequest|null|undefined,
@@ -360,7 +360,7 @@ export class AuthorizedCertificatesClient {
     return this.innerApiCalls.getAuthorizedCertificate(request, options, callback);
   }
   createAuthorizedCertificate(
-      request: protos.google.appengine.v1.ICreateAuthorizedCertificateRequest,
+      request?: protos.google.appengine.v1.ICreateAuthorizedCertificateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IAuthorizedCertificate,
@@ -399,7 +399,7 @@ export class AuthorizedCertificatesClient {
  * const [response] = await client.createAuthorizedCertificate(request);
  */
   createAuthorizedCertificate(
-      request: protos.google.appengine.v1.ICreateAuthorizedCertificateRequest,
+      request?: protos.google.appengine.v1.ICreateAuthorizedCertificateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.appengine.v1.IAuthorizedCertificate,
           protos.google.appengine.v1.ICreateAuthorizedCertificateRequest|null|undefined,
@@ -433,7 +433,7 @@ export class AuthorizedCertificatesClient {
     return this.innerApiCalls.createAuthorizedCertificate(request, options, callback);
   }
   updateAuthorizedCertificate(
-      request: protos.google.appengine.v1.IUpdateAuthorizedCertificateRequest,
+      request?: protos.google.appengine.v1.IUpdateAuthorizedCertificateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IAuthorizedCertificate,
@@ -481,7 +481,7 @@ export class AuthorizedCertificatesClient {
  * const [response] = await client.updateAuthorizedCertificate(request);
  */
   updateAuthorizedCertificate(
-      request: protos.google.appengine.v1.IUpdateAuthorizedCertificateRequest,
+      request?: protos.google.appengine.v1.IUpdateAuthorizedCertificateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.appengine.v1.IAuthorizedCertificate,
           protos.google.appengine.v1.IUpdateAuthorizedCertificateRequest|null|undefined,
@@ -515,7 +515,7 @@ export class AuthorizedCertificatesClient {
     return this.innerApiCalls.updateAuthorizedCertificate(request, options, callback);
   }
   deleteAuthorizedCertificate(
-      request: protos.google.appengine.v1.IDeleteAuthorizedCertificateRequest,
+      request?: protos.google.appengine.v1.IDeleteAuthorizedCertificateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -553,7 +553,7 @@ export class AuthorizedCertificatesClient {
  * const [response] = await client.deleteAuthorizedCertificate(request);
  */
   deleteAuthorizedCertificate(
-      request: protos.google.appengine.v1.IDeleteAuthorizedCertificateRequest,
+      request?: protos.google.appengine.v1.IDeleteAuthorizedCertificateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.appengine.v1.IDeleteAuthorizedCertificateRequest|null|undefined,
@@ -588,7 +588,7 @@ export class AuthorizedCertificatesClient {
   }
 
   listAuthorizedCertificates(
-      request: protos.google.appengine.v1.IListAuthorizedCertificatesRequest,
+      request?: protos.google.appengine.v1.IListAuthorizedCertificatesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IAuthorizedCertificate[],
@@ -635,7 +635,7 @@ export class AuthorizedCertificatesClient {
  *   for more details and examples.
  */
   listAuthorizedCertificates(
-      request: protos.google.appengine.v1.IListAuthorizedCertificatesRequest,
+      request?: protos.google.appengine.v1.IListAuthorizedCertificatesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.appengine.v1.IListAuthorizedCertificatesRequest,
           protos.google.appengine.v1.IListAuthorizedCertificatesResponse|null|undefined,

@@ -276,7 +276,7 @@ export class HomeGraphApiServiceClient {
   // -- Service calls --
   // -------------------
   requestSyncDevices(
-      request: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
+      request?: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.home.graph.v1.IRequestSyncDevicesResponse,
@@ -326,7 +326,7 @@ export class HomeGraphApiServiceClient {
  * const [response] = await client.requestSyncDevices(request);
  */
   requestSyncDevices(
-      request: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
+      request?: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.home.graph.v1.IRequestSyncDevicesResponse,
           protos.google.home.graph.v1.IRequestSyncDevicesRequest|null|undefined,
@@ -353,7 +353,7 @@ export class HomeGraphApiServiceClient {
     return this.innerApiCalls.requestSyncDevices(request, options, callback);
   }
   reportStateAndNotification(
-      request: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
+      request?: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.home.graph.v1.IReportStateAndNotificationResponse,
@@ -418,7 +418,7 @@ export class HomeGraphApiServiceClient {
  * const [response] = await client.reportStateAndNotification(request);
  */
   reportStateAndNotification(
-      request: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
+      request?: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.home.graph.v1.IReportStateAndNotificationResponse,
           protos.google.home.graph.v1.IReportStateAndNotificationRequest|null|undefined,
@@ -445,7 +445,7 @@ export class HomeGraphApiServiceClient {
     return this.innerApiCalls.reportStateAndNotification(request, options, callback);
   }
   deleteAgentUser(
-      request: protos.google.home.graph.v1.IDeleteAgentUserRequest,
+      request?: protos.google.home.graph.v1.IDeleteAgentUserRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -495,7 +495,7 @@ export class HomeGraphApiServiceClient {
  * const [response] = await client.deleteAgentUser(request);
  */
   deleteAgentUser(
-      request: protos.google.home.graph.v1.IDeleteAgentUserRequest,
+      request?: protos.google.home.graph.v1.IDeleteAgentUserRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.home.graph.v1.IDeleteAgentUserRequest|null|undefined,
@@ -529,7 +529,7 @@ export class HomeGraphApiServiceClient {
     return this.innerApiCalls.deleteAgentUser(request, options, callback);
   }
   query(
-      request: protos.google.home.graph.v1.IQueryRequest,
+      request?: protos.google.home.graph.v1.IQueryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.home.graph.v1.IQueryResponse,
@@ -577,7 +577,7 @@ export class HomeGraphApiServiceClient {
  * const [response] = await client.query(request);
  */
   query(
-      request: protos.google.home.graph.v1.IQueryRequest,
+      request?: protos.google.home.graph.v1.IQueryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.home.graph.v1.IQueryResponse,
           protos.google.home.graph.v1.IQueryRequest|null|undefined,
@@ -604,7 +604,7 @@ export class HomeGraphApiServiceClient {
     return this.innerApiCalls.query(request, options, callback);
   }
   sync(
-      request: protos.google.home.graph.v1.ISyncRequest,
+      request?: protos.google.home.graph.v1.ISyncRequest,
       options?: CallOptions):
       Promise<[
         protos.google.home.graph.v1.ISyncResponse,
@@ -648,7 +648,7 @@ export class HomeGraphApiServiceClient {
  * const [response] = await client.sync(request);
  */
   sync(
-      request: protos.google.home.graph.v1.ISyncRequest,
+      request?: protos.google.home.graph.v1.ISyncRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.home.graph.v1.ISyncResponse,
           protos.google.home.graph.v1.ISyncRequest|null|undefined,

@@ -294,7 +294,7 @@ export class LibraryServiceClient {
   // -- Service calls --
   // -------------------
   createShelf(
-      request: protos.google.example.library.v1.ICreateShelfRequest,
+      request?: protos.google.example.library.v1.ICreateShelfRequest,
       options?: CallOptions):
       Promise<[
         protos.google.example.library.v1.IShelf,
@@ -331,7 +331,7 @@ export class LibraryServiceClient {
  * const [response] = await client.createShelf(request);
  */
   createShelf(
-      request: protos.google.example.library.v1.ICreateShelfRequest,
+      request?: protos.google.example.library.v1.ICreateShelfRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.example.library.v1.IShelf,
           protos.google.example.library.v1.ICreateShelfRequest|null|undefined,
@@ -358,7 +358,7 @@ export class LibraryServiceClient {
     return this.innerApiCalls.createShelf(request, options, callback);
   }
   getShelf(
-      request: protos.google.example.library.v1.IGetShelfRequest,
+      request?: protos.google.example.library.v1.IGetShelfRequest,
       options?: CallOptions):
       Promise<[
         protos.google.example.library.v1.IShelf,
@@ -395,7 +395,7 @@ export class LibraryServiceClient {
  * const [response] = await client.getShelf(request);
  */
   getShelf(
-      request: protos.google.example.library.v1.IGetShelfRequest,
+      request?: protos.google.example.library.v1.IGetShelfRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.example.library.v1.IShelf,
           protos.google.example.library.v1.IGetShelfRequest|null|undefined,
@@ -429,7 +429,7 @@ export class LibraryServiceClient {
     return this.innerApiCalls.getShelf(request, options, callback);
   }
   deleteShelf(
-      request: protos.google.example.library.v1.IDeleteShelfRequest,
+      request?: protos.google.example.library.v1.IDeleteShelfRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -466,7 +466,7 @@ export class LibraryServiceClient {
  * const [response] = await client.deleteShelf(request);
  */
   deleteShelf(
-      request: protos.google.example.library.v1.IDeleteShelfRequest,
+      request?: protos.google.example.library.v1.IDeleteShelfRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.example.library.v1.IDeleteShelfRequest|null|undefined,
@@ -500,7 +500,7 @@ export class LibraryServiceClient {
     return this.innerApiCalls.deleteShelf(request, options, callback);
   }
   mergeShelves(
-      request: protos.google.example.library.v1.IMergeShelvesRequest,
+      request?: protos.google.example.library.v1.IMergeShelvesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.example.library.v1.IShelf,
@@ -545,7 +545,7 @@ export class LibraryServiceClient {
  * const [response] = await client.mergeShelves(request);
  */
   mergeShelves(
-      request: protos.google.example.library.v1.IMergeShelvesRequest,
+      request?: protos.google.example.library.v1.IMergeShelvesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.example.library.v1.IShelf,
           protos.google.example.library.v1.IMergeShelvesRequest|null|undefined,
@@ -579,7 +579,7 @@ export class LibraryServiceClient {
     return this.innerApiCalls.mergeShelves(request, options, callback);
   }
   createBook(
-      request: protos.google.example.library.v1.ICreateBookRequest,
+      request?: protos.google.example.library.v1.ICreateBookRequest,
       options?: CallOptions):
       Promise<[
         protos.google.example.library.v1.IBook,
@@ -618,7 +618,7 @@ export class LibraryServiceClient {
  * const [response] = await client.createBook(request);
  */
   createBook(
-      request: protos.google.example.library.v1.ICreateBookRequest,
+      request?: protos.google.example.library.v1.ICreateBookRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.example.library.v1.IBook,
           protos.google.example.library.v1.ICreateBookRequest|null|undefined,
@@ -652,7 +652,7 @@ export class LibraryServiceClient {
     return this.innerApiCalls.createBook(request, options, callback);
   }
   getBook(
-      request: protos.google.example.library.v1.IGetBookRequest,
+      request?: protos.google.example.library.v1.IGetBookRequest,
       options?: CallOptions):
       Promise<[
         protos.google.example.library.v1.IBook,
@@ -689,7 +689,7 @@ export class LibraryServiceClient {
  * const [response] = await client.getBook(request);
  */
   getBook(
-      request: protos.google.example.library.v1.IGetBookRequest,
+      request?: protos.google.example.library.v1.IGetBookRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.example.library.v1.IBook,
           protos.google.example.library.v1.IGetBookRequest|null|undefined,
@@ -723,7 +723,7 @@ export class LibraryServiceClient {
     return this.innerApiCalls.getBook(request, options, callback);
   }
   deleteBook(
-      request: protos.google.example.library.v1.IDeleteBookRequest,
+      request?: protos.google.example.library.v1.IDeleteBookRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -760,7 +760,7 @@ export class LibraryServiceClient {
  * const [response] = await client.deleteBook(request);
  */
   deleteBook(
-      request: protos.google.example.library.v1.IDeleteBookRequest,
+      request?: protos.google.example.library.v1.IDeleteBookRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.example.library.v1.IDeleteBookRequest|null|undefined,
@@ -794,7 +794,7 @@ export class LibraryServiceClient {
     return this.innerApiCalls.deleteBook(request, options, callback);
   }
   updateBook(
-      request: protos.google.example.library.v1.IUpdateBookRequest,
+      request?: protos.google.example.library.v1.IUpdateBookRequest,
       options?: CallOptions):
       Promise<[
         protos.google.example.library.v1.IBook,
@@ -834,7 +834,7 @@ export class LibraryServiceClient {
  * const [response] = await client.updateBook(request);
  */
   updateBook(
-      request: protos.google.example.library.v1.IUpdateBookRequest,
+      request?: protos.google.example.library.v1.IUpdateBookRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.example.library.v1.IBook,
           protos.google.example.library.v1.IUpdateBookRequest|null|undefined,
@@ -868,7 +868,7 @@ export class LibraryServiceClient {
     return this.innerApiCalls.updateBook(request, options, callback);
   }
   moveBook(
-      request: protos.google.example.library.v1.IMoveBookRequest,
+      request?: protos.google.example.library.v1.IMoveBookRequest,
       options?: CallOptions):
       Promise<[
         protos.google.example.library.v1.IBook,
@@ -908,7 +908,7 @@ export class LibraryServiceClient {
  * const [response] = await client.moveBook(request);
  */
   moveBook(
-      request: protos.google.example.library.v1.IMoveBookRequest,
+      request?: protos.google.example.library.v1.IMoveBookRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.example.library.v1.IBook,
           protos.google.example.library.v1.IMoveBookRequest|null|undefined,
@@ -943,7 +943,7 @@ export class LibraryServiceClient {
   }
 
   listShelves(
-      request: protos.google.example.library.v1.IListShelvesRequest,
+      request?: protos.google.example.library.v1.IListShelvesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.example.library.v1.IShelf[],
@@ -991,7 +991,7 @@ export class LibraryServiceClient {
  *   for more details and examples.
  */
   listShelves(
-      request: protos.google.example.library.v1.IListShelvesRequest,
+      request?: protos.google.example.library.v1.IListShelvesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.example.library.v1.IListShelvesRequest,
           protos.google.example.library.v1.IListShelvesResponse|null|undefined,
@@ -1104,7 +1104,7 @@ export class LibraryServiceClient {
     ) as AsyncIterable<protos.google.example.library.v1.IShelf>;
   }
   listBooks(
-      request: protos.google.example.library.v1.IListBooksRequest,
+      request?: protos.google.example.library.v1.IListBooksRequest,
       options?: CallOptions):
       Promise<[
         protos.google.example.library.v1.IBook[],
@@ -1155,7 +1155,7 @@ export class LibraryServiceClient {
  *   for more details and examples.
  */
   listBooks(
-      request: protos.google.example.library.v1.IListBooksRequest,
+      request?: protos.google.example.library.v1.IListBooksRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.example.library.v1.IListBooksRequest,
           protos.google.example.library.v1.IListBooksResponse|null|undefined,

@@ -333,7 +333,7 @@ export class TagBindingsClient {
   // -------------------
 
   createTagBinding(
-      request: protos.google.cloud.resourcemanager.v3.ICreateTagBindingRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ICreateTagBindingRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.ITagBinding, protos.google.cloud.resourcemanager.v3.ICreateTagBindingMetadata>,
@@ -377,7 +377,7 @@ export class TagBindingsClient {
  * const [response] = await operation.promise();
  */
   createTagBinding(
-      request: protos.google.cloud.resourcemanager.v3.ICreateTagBindingRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ICreateTagBindingRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.ITagBinding, protos.google.cloud.resourcemanager.v3.ICreateTagBindingMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -425,7 +425,7 @@ export class TagBindingsClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.TagBinding, protos.google.cloud.resourcemanager.v3.CreateTagBindingMetadata>;
   }
   deleteTagBinding(
-      request: protos.google.cloud.resourcemanager.v3.IDeleteTagBindingRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IDeleteTagBindingRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.resourcemanager.v3.IDeleteTagBindingMetadata>,
@@ -467,7 +467,7 @@ export class TagBindingsClient {
  * const [response] = await operation.promise();
  */
   deleteTagBinding(
-      request: protos.google.cloud.resourcemanager.v3.IDeleteTagBindingRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IDeleteTagBindingRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.resourcemanager.v3.IDeleteTagBindingMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -522,7 +522,7 @@ export class TagBindingsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.resourcemanager.v3.DeleteTagBindingMetadata>;
   }
   listTagBindings(
-      request: protos.google.cloud.resourcemanager.v3.IListTagBindingsRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IListTagBindingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.resourcemanager.v3.ITagBinding[],
@@ -576,7 +576,7 @@ export class TagBindingsClient {
  *   for more details and examples.
  */
   listTagBindings(
-      request: protos.google.cloud.resourcemanager.v3.IListTagBindingsRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IListTagBindingsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.resourcemanager.v3.IListTagBindingsRequest,
           protos.google.cloud.resourcemanager.v3.IListTagBindingsResponse|null|undefined,

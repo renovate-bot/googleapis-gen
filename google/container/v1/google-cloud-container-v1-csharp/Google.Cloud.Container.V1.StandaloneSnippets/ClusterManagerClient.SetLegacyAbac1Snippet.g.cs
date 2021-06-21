@@ -35,7 +35,9 @@ namespace Google.Cloud.Container.V1.Snippets
             string clusterId = "";
             bool enabled = false;
             // Make the request
+#pragma warning disable CS0612
             Operation response = clusterManagerClient.SetLegacyAbac(projectId, zone, clusterId, enabled);
+#pragma warning restore CS0612
         }
     }
 }

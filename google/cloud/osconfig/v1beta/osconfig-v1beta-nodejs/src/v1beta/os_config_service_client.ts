@@ -292,7 +292,7 @@ export class OsConfigServiceClient {
   // -- Service calls --
   // -------------------
   executePatchJob(
-      request: protos.google.cloud.osconfig.v1beta.IExecutePatchJobRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IExecutePatchJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IPatchJob,
@@ -346,7 +346,7 @@ export class OsConfigServiceClient {
  * const [response] = await client.executePatchJob(request);
  */
   executePatchJob(
-      request: protos.google.cloud.osconfig.v1beta.IExecutePatchJobRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IExecutePatchJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1beta.IPatchJob,
           protos.google.cloud.osconfig.v1beta.IExecutePatchJobRequest|null|undefined,
@@ -380,7 +380,7 @@ export class OsConfigServiceClient {
     return this.innerApiCalls.executePatchJob(request, options, callback);
   }
   getPatchJob(
-      request: protos.google.cloud.osconfig.v1beta.IGetPatchJobRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IGetPatchJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IPatchJob,
@@ -418,7 +418,7 @@ export class OsConfigServiceClient {
  * const [response] = await client.getPatchJob(request);
  */
   getPatchJob(
-      request: protos.google.cloud.osconfig.v1beta.IGetPatchJobRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IGetPatchJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1beta.IPatchJob,
           protos.google.cloud.osconfig.v1beta.IGetPatchJobRequest|null|undefined,
@@ -452,7 +452,7 @@ export class OsConfigServiceClient {
     return this.innerApiCalls.getPatchJob(request, options, callback);
   }
   cancelPatchJob(
-      request: protos.google.cloud.osconfig.v1beta.ICancelPatchJobRequest,
+      request?: protos.google.cloud.osconfig.v1beta.ICancelPatchJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IPatchJob,
@@ -490,7 +490,7 @@ export class OsConfigServiceClient {
  * const [response] = await client.cancelPatchJob(request);
  */
   cancelPatchJob(
-      request: protos.google.cloud.osconfig.v1beta.ICancelPatchJobRequest,
+      request?: protos.google.cloud.osconfig.v1beta.ICancelPatchJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1beta.IPatchJob,
           protos.google.cloud.osconfig.v1beta.ICancelPatchJobRequest|null|undefined,
@@ -524,7 +524,7 @@ export class OsConfigServiceClient {
     return this.innerApiCalls.cancelPatchJob(request, options, callback);
   }
   createPatchDeployment(
-      request: protos.google.cloud.osconfig.v1beta.ICreatePatchDeploymentRequest,
+      request?: protos.google.cloud.osconfig.v1beta.ICreatePatchDeploymentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IPatchDeployment,
@@ -571,7 +571,7 @@ export class OsConfigServiceClient {
  * const [response] = await client.createPatchDeployment(request);
  */
   createPatchDeployment(
-      request: protos.google.cloud.osconfig.v1beta.ICreatePatchDeploymentRequest,
+      request?: protos.google.cloud.osconfig.v1beta.ICreatePatchDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1beta.IPatchDeployment,
           protos.google.cloud.osconfig.v1beta.ICreatePatchDeploymentRequest|null|undefined,
@@ -605,7 +605,7 @@ export class OsConfigServiceClient {
     return this.innerApiCalls.createPatchDeployment(request, options, callback);
   }
   getPatchDeployment(
-      request: protos.google.cloud.osconfig.v1beta.IGetPatchDeploymentRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IGetPatchDeploymentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IPatchDeployment,
@@ -643,7 +643,7 @@ export class OsConfigServiceClient {
  * const [response] = await client.getPatchDeployment(request);
  */
   getPatchDeployment(
-      request: protos.google.cloud.osconfig.v1beta.IGetPatchDeploymentRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IGetPatchDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1beta.IPatchDeployment,
           protos.google.cloud.osconfig.v1beta.IGetPatchDeploymentRequest|null|undefined,
@@ -677,7 +677,7 @@ export class OsConfigServiceClient {
     return this.innerApiCalls.getPatchDeployment(request, options, callback);
   }
   deletePatchDeployment(
-      request: protos.google.cloud.osconfig.v1beta.IDeletePatchDeploymentRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IDeletePatchDeploymentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -715,7 +715,7 @@ export class OsConfigServiceClient {
  * const [response] = await client.deletePatchDeployment(request);
  */
   deletePatchDeployment(
-      request: protos.google.cloud.osconfig.v1beta.IDeletePatchDeploymentRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IDeletePatchDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.osconfig.v1beta.IDeletePatchDeploymentRequest|null|undefined,
@@ -749,7 +749,7 @@ export class OsConfigServiceClient {
     return this.innerApiCalls.deletePatchDeployment(request, options, callback);
   }
   createGuestPolicy(
-      request: protos.google.cloud.osconfig.v1beta.ICreateGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.v1beta.ICreateGuestPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IGuestPolicy,
@@ -798,7 +798,7 @@ export class OsConfigServiceClient {
  * const [response] = await client.createGuestPolicy(request);
  */
   createGuestPolicy(
-      request: protos.google.cloud.osconfig.v1beta.ICreateGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.v1beta.ICreateGuestPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1beta.IGuestPolicy,
           protos.google.cloud.osconfig.v1beta.ICreateGuestPolicyRequest|null|undefined,
@@ -832,7 +832,7 @@ export class OsConfigServiceClient {
     return this.innerApiCalls.createGuestPolicy(request, options, callback);
   }
   getGuestPolicy(
-      request: protos.google.cloud.osconfig.v1beta.IGetGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IGetGuestPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IGuestPolicy,
@@ -870,7 +870,7 @@ export class OsConfigServiceClient {
  * const [response] = await client.getGuestPolicy(request);
  */
   getGuestPolicy(
-      request: protos.google.cloud.osconfig.v1beta.IGetGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IGetGuestPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1beta.IGuestPolicy,
           protos.google.cloud.osconfig.v1beta.IGetGuestPolicyRequest|null|undefined,
@@ -904,7 +904,7 @@ export class OsConfigServiceClient {
     return this.innerApiCalls.getGuestPolicy(request, options, callback);
   }
   updateGuestPolicy(
-      request: protos.google.cloud.osconfig.v1beta.IUpdateGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IUpdateGuestPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IGuestPolicy,
@@ -944,7 +944,7 @@ export class OsConfigServiceClient {
  * const [response] = await client.updateGuestPolicy(request);
  */
   updateGuestPolicy(
-      request: protos.google.cloud.osconfig.v1beta.IUpdateGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IUpdateGuestPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1beta.IGuestPolicy,
           protos.google.cloud.osconfig.v1beta.IUpdateGuestPolicyRequest|null|undefined,
@@ -978,7 +978,7 @@ export class OsConfigServiceClient {
     return this.innerApiCalls.updateGuestPolicy(request, options, callback);
   }
   deleteGuestPolicy(
-      request: protos.google.cloud.osconfig.v1beta.IDeleteGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IDeleteGuestPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1016,7 +1016,7 @@ export class OsConfigServiceClient {
  * const [response] = await client.deleteGuestPolicy(request);
  */
   deleteGuestPolicy(
-      request: protos.google.cloud.osconfig.v1beta.IDeleteGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IDeleteGuestPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.osconfig.v1beta.IDeleteGuestPolicyRequest|null|undefined,
@@ -1050,7 +1050,7 @@ export class OsConfigServiceClient {
     return this.innerApiCalls.deleteGuestPolicy(request, options, callback);
   }
   lookupEffectiveGuestPolicy(
-      request: protos.google.cloud.osconfig.v1beta.ILookupEffectiveGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.v1beta.ILookupEffectiveGuestPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IEffectiveGuestPolicy,
@@ -1100,7 +1100,7 @@ export class OsConfigServiceClient {
  * const [response] = await client.lookupEffectiveGuestPolicy(request);
  */
   lookupEffectiveGuestPolicy(
-      request: protos.google.cloud.osconfig.v1beta.ILookupEffectiveGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.v1beta.ILookupEffectiveGuestPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1beta.IEffectiveGuestPolicy,
           protos.google.cloud.osconfig.v1beta.ILookupEffectiveGuestPolicyRequest|null|undefined,
@@ -1135,7 +1135,7 @@ export class OsConfigServiceClient {
   }
 
   listPatchJobs(
-      request: protos.google.cloud.osconfig.v1beta.IListPatchJobsRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IListPatchJobsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IPatchJob[],
@@ -1185,7 +1185,7 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  */
   listPatchJobs(
-      request: protos.google.cloud.osconfig.v1beta.IListPatchJobsRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IListPatchJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.osconfig.v1beta.IListPatchJobsRequest,
           protos.google.cloud.osconfig.v1beta.IListPatchJobsResponse|null|undefined,
@@ -1325,7 +1325,7 @@ export class OsConfigServiceClient {
     ) as AsyncIterable<protos.google.cloud.osconfig.v1beta.IPatchJob>;
   }
   listPatchJobInstanceDetails(
-      request: protos.google.cloud.osconfig.v1beta.IListPatchJobInstanceDetailsRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IListPatchJobInstanceDetailsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IPatchJobInstanceDetails[],
@@ -1375,7 +1375,7 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  */
   listPatchJobInstanceDetails(
-      request: protos.google.cloud.osconfig.v1beta.IListPatchJobInstanceDetailsRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IListPatchJobInstanceDetailsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.osconfig.v1beta.IListPatchJobInstanceDetailsRequest,
           protos.google.cloud.osconfig.v1beta.IListPatchJobInstanceDetailsResponse|null|undefined,
@@ -1515,7 +1515,7 @@ export class OsConfigServiceClient {
     ) as AsyncIterable<protos.google.cloud.osconfig.v1beta.IPatchJobInstanceDetails>;
   }
   listPatchDeployments(
-      request: protos.google.cloud.osconfig.v1beta.IListPatchDeploymentsRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IListPatchDeploymentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IPatchDeployment[],
@@ -1561,7 +1561,7 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  */
   listPatchDeployments(
-      request: protos.google.cloud.osconfig.v1beta.IListPatchDeploymentsRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IListPatchDeploymentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.osconfig.v1beta.IListPatchDeploymentsRequest,
           protos.google.cloud.osconfig.v1beta.IListPatchDeploymentsResponse|null|undefined,
@@ -1693,7 +1693,7 @@ export class OsConfigServiceClient {
     ) as AsyncIterable<protos.google.cloud.osconfig.v1beta.IPatchDeployment>;
   }
   listGuestPolicies(
-      request: protos.google.cloud.osconfig.v1beta.IListGuestPoliciesRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IListGuestPoliciesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1beta.IGuestPolicy[],
@@ -1740,7 +1740,7 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  */
   listGuestPolicies(
-      request: protos.google.cloud.osconfig.v1beta.IListGuestPoliciesRequest,
+      request?: protos.google.cloud.osconfig.v1beta.IListGuestPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.osconfig.v1beta.IListGuestPoliciesRequest,
           protos.google.cloud.osconfig.v1beta.IListGuestPoliciesResponse|null|undefined,

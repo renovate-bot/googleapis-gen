@@ -36,7 +36,9 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             string clusterId = "";
             NodePool nodePool = new NodePool();
             // Make the request
+#pragma warning disable CS0612
             Operation response = await clusterManagerClient.CreateNodePoolAsync(projectId, zone, clusterId, nodePool);
+#pragma warning restore CS0612
         }
     }
 }

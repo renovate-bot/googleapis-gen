@@ -653,7 +653,7 @@ export class ProductBiddingCategoryConstantServiceClient {
   // -- Service calls --
   // -------------------
   getProductBiddingCategoryConstant(
-      request: protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IProductBiddingCategoryConstant,
@@ -698,7 +698,7 @@ export class ProductBiddingCategoryConstantServiceClient {
  * const [response] = await client.getProductBiddingCategoryConstant(request);
  */
   getProductBiddingCategoryConstant(
-      request: protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IProductBiddingCategoryConstant,
           protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest|null|undefined,

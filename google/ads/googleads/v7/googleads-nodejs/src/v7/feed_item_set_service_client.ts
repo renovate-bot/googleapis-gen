@@ -635,7 +635,7 @@ export class FeedItemSetServiceClient {
   // -- Service calls --
   // -------------------
   getFeedItemSet(
-      request: protos.google.ads.googleads.v7.services.IGetFeedItemSetRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetFeedItemSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IFeedItemSet,
@@ -680,7 +680,7 @@ export class FeedItemSetServiceClient {
  * const [response] = await client.getFeedItemSet(request);
  */
   getFeedItemSet(
-      request: protos.google.ads.googleads.v7.services.IGetFeedItemSetRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetFeedItemSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IFeedItemSet,
           protos.google.ads.googleads.v7.services.IGetFeedItemSetRequest|null|undefined,
@@ -714,7 +714,7 @@ export class FeedItemSetServiceClient {
     return this.innerApiCalls.getFeedItemSet(request, options, callback);
   }
   mutateFeedItemSets(
-      request: protos.google.ads.googleads.v7.services.IMutateFeedItemSetsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateFeedItemSetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IMutateFeedItemSetsResponse,
@@ -771,7 +771,7 @@ export class FeedItemSetServiceClient {
  * const [response] = await client.mutateFeedItemSets(request);
  */
   mutateFeedItemSets(
-      request: protos.google.ads.googleads.v7.services.IMutateFeedItemSetsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateFeedItemSetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IMutateFeedItemSetsResponse,
           protos.google.ads.googleads.v7.services.IMutateFeedItemSetsRequest|null|undefined,

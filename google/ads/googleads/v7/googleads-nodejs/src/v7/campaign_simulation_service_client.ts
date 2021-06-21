@@ -635,7 +635,7 @@ export class CampaignSimulationServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignSimulation(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignSimulationRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignSimulationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.ICampaignSimulation,
@@ -672,7 +672,7 @@ export class CampaignSimulationServiceClient {
  * const [response] = await client.getCampaignSimulation(request);
  */
   getCampaignSimulation(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignSimulationRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignSimulationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.ICampaignSimulation,
           protos.google.ads.googleads.v7.services.IGetCampaignSimulationRequest|null|undefined,

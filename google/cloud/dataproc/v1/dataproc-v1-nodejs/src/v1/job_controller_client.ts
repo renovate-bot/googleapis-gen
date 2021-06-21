@@ -316,7 +316,7 @@ export class JobControllerClient {
   // -- Service calls --
   // -------------------
   submitJob(
-      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
+      request?: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IJob,
@@ -371,7 +371,7 @@ export class JobControllerClient {
  * const [response] = await client.submitJob(request);
  */
   submitJob(
-      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
+      request?: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dataproc.v1.IJob,
           protos.google.cloud.dataproc.v1.ISubmitJobRequest|null|undefined,
@@ -405,7 +405,7 @@ export class JobControllerClient {
     return this.innerApiCalls.submitJob(request, options, callback);
   }
   getJob(
-      request: protos.google.cloud.dataproc.v1.IGetJobRequest,
+      request?: protos.google.cloud.dataproc.v1.IGetJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IJob,
@@ -447,7 +447,7 @@ export class JobControllerClient {
  * const [response] = await client.getJob(request);
  */
   getJob(
-      request: protos.google.cloud.dataproc.v1.IGetJobRequest,
+      request?: protos.google.cloud.dataproc.v1.IGetJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dataproc.v1.IJob,
           protos.google.cloud.dataproc.v1.IGetJobRequest|null|undefined,
@@ -481,7 +481,7 @@ export class JobControllerClient {
     return this.innerApiCalls.getJob(request, options, callback);
   }
   updateJob(
-      request: protos.google.cloud.dataproc.v1.IUpdateJobRequest,
+      request?: protos.google.cloud.dataproc.v1.IUpdateJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IJob,
@@ -532,7 +532,7 @@ export class JobControllerClient {
  * const [response] = await client.updateJob(request);
  */
   updateJob(
-      request: protos.google.cloud.dataproc.v1.IUpdateJobRequest,
+      request?: protos.google.cloud.dataproc.v1.IUpdateJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dataproc.v1.IJob,
           protos.google.cloud.dataproc.v1.IUpdateJobRequest|null|undefined,
@@ -566,7 +566,7 @@ export class JobControllerClient {
     return this.innerApiCalls.updateJob(request, options, callback);
   }
   cancelJob(
-      request: protos.google.cloud.dataproc.v1.ICancelJobRequest,
+      request?: protos.google.cloud.dataproc.v1.ICancelJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IJob,
@@ -612,7 +612,7 @@ export class JobControllerClient {
  * const [response] = await client.cancelJob(request);
  */
   cancelJob(
-      request: protos.google.cloud.dataproc.v1.ICancelJobRequest,
+      request?: protos.google.cloud.dataproc.v1.ICancelJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dataproc.v1.IJob,
           protos.google.cloud.dataproc.v1.ICancelJobRequest|null|undefined,
@@ -646,7 +646,7 @@ export class JobControllerClient {
     return this.innerApiCalls.cancelJob(request, options, callback);
   }
   deleteJob(
-      request: protos.google.cloud.dataproc.v1.IDeleteJobRequest,
+      request?: protos.google.cloud.dataproc.v1.IDeleteJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -689,7 +689,7 @@ export class JobControllerClient {
  * const [response] = await client.deleteJob(request);
  */
   deleteJob(
-      request: protos.google.cloud.dataproc.v1.IDeleteJobRequest,
+      request?: protos.google.cloud.dataproc.v1.IDeleteJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dataproc.v1.IDeleteJobRequest|null|undefined,
@@ -724,7 +724,7 @@ export class JobControllerClient {
   }
 
   submitJobAsOperation(
-      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
+      request?: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dataproc.v1.IJob, protos.google.cloud.dataproc.v1.IJobMetadata>,
@@ -782,7 +782,7 @@ export class JobControllerClient {
  * const [response] = await operation.promise();
  */
   submitJobAsOperation(
-      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
+      request?: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dataproc.v1.IJob, protos.google.cloud.dataproc.v1.IJobMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -837,7 +837,7 @@ export class JobControllerClient {
     return decodeOperation as LROperation<protos.google.cloud.dataproc.v1.Job, protos.google.cloud.dataproc.v1.JobMetadata>;
   }
   listJobs(
-      request: protos.google.cloud.dataproc.v1.IListJobsRequest,
+      request?: protos.google.cloud.dataproc.v1.IListJobsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IJob[],
@@ -909,7 +909,7 @@ export class JobControllerClient {
  *   for more details and examples.
  */
   listJobs(
-      request: protos.google.cloud.dataproc.v1.IListJobsRequest,
+      request?: protos.google.cloud.dataproc.v1.IListJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dataproc.v1.IListJobsRequest,
           protos.google.cloud.dataproc.v1.IListJobsResponse|null|undefined,

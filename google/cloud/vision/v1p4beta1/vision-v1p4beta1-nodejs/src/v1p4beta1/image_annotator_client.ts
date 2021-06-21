@@ -313,7 +313,7 @@ export class ImageAnnotatorClient {
   // -- Service calls --
   // -------------------
   batchAnnotateImages(
-      request: protos.google.cloud.vision.v1p4beta1.IBatchAnnotateImagesRequest,
+      request?: protos.google.cloud.vision.v1p4beta1.IBatchAnnotateImagesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1p4beta1.IBatchAnnotateImagesResponse,
@@ -350,7 +350,7 @@ export class ImageAnnotatorClient {
  * const [response] = await client.batchAnnotateImages(request);
  */
   batchAnnotateImages(
-      request: protos.google.cloud.vision.v1p4beta1.IBatchAnnotateImagesRequest,
+      request?: protos.google.cloud.vision.v1p4beta1.IBatchAnnotateImagesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.vision.v1p4beta1.IBatchAnnotateImagesResponse,
           protos.google.cloud.vision.v1p4beta1.IBatchAnnotateImagesRequest|null|undefined,
@@ -377,7 +377,7 @@ export class ImageAnnotatorClient {
     return this.innerApiCalls.batchAnnotateImages(request, options, callback);
   }
   batchAnnotateFiles(
-      request: protos.google.cloud.vision.v1p4beta1.IBatchAnnotateFilesRequest,
+      request?: protos.google.cloud.vision.v1p4beta1.IBatchAnnotateFilesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1p4beta1.IBatchAnnotateFilesResponse,
@@ -421,7 +421,7 @@ export class ImageAnnotatorClient {
  * const [response] = await client.batchAnnotateFiles(request);
  */
   batchAnnotateFiles(
-      request: protos.google.cloud.vision.v1p4beta1.IBatchAnnotateFilesRequest,
+      request?: protos.google.cloud.vision.v1p4beta1.IBatchAnnotateFilesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.vision.v1p4beta1.IBatchAnnotateFilesResponse,
           protos.google.cloud.vision.v1p4beta1.IBatchAnnotateFilesRequest|null|undefined,
@@ -449,7 +449,7 @@ export class ImageAnnotatorClient {
   }
 
   asyncBatchAnnotateImages(
-      request: protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateImagesRequest,
+      request?: protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateImagesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateImagesResponse, protos.google.cloud.vision.v1p4beta1.IOperationMetadata>,
@@ -499,7 +499,7 @@ export class ImageAnnotatorClient {
  * const [response] = await operation.promise();
  */
   asyncBatchAnnotateImages(
-      request: protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateImagesRequest,
+      request?: protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateImagesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateImagesResponse, protos.google.cloud.vision.v1p4beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -547,7 +547,7 @@ export class ImageAnnotatorClient {
     return decodeOperation as LROperation<protos.google.cloud.vision.v1p4beta1.AsyncBatchAnnotateImagesResponse, protos.google.cloud.vision.v1p4beta1.OperationMetadata>;
   }
   asyncBatchAnnotateFiles(
-      request: protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateFilesRequest,
+      request?: protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateFilesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateFilesResponse, protos.google.cloud.vision.v1p4beta1.IOperationMetadata>,
@@ -592,7 +592,7 @@ export class ImageAnnotatorClient {
  * const [response] = await operation.promise();
  */
   asyncBatchAnnotateFiles(
-      request: protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateFilesRequest,
+      request?: protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateFilesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.vision.v1p4beta1.IAsyncBatchAnnotateFilesResponse, protos.google.cloud.vision.v1p4beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,

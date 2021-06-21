@@ -267,7 +267,7 @@ export class AgentEndpointServiceClient {
   // -- Service calls --
   // -------------------
   startNextTask(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskResponse,
@@ -306,7 +306,7 @@ export class AgentEndpointServiceClient {
  * const [response] = await client.startNextTask(request);
  */
   startNextTask(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskResponse,
           protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskRequest|null|undefined,
@@ -333,7 +333,7 @@ export class AgentEndpointServiceClient {
     return this.innerApiCalls.startNextTask(request, options, callback);
   }
   reportTaskProgress(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressResponse,
@@ -385,7 +385,7 @@ export class AgentEndpointServiceClient {
  * const [response] = await client.reportTaskProgress(request);
  */
   reportTaskProgress(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressResponse,
           protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest|null|undefined,
@@ -412,7 +412,7 @@ export class AgentEndpointServiceClient {
     return this.innerApiCalls.reportTaskProgress(request, options, callback);
   }
   reportTaskComplete(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteResponse,
@@ -467,7 +467,7 @@ export class AgentEndpointServiceClient {
  * const [response] = await client.reportTaskComplete(request);
  */
   reportTaskComplete(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteResponse,
           protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest|null|undefined,
@@ -494,7 +494,7 @@ export class AgentEndpointServiceClient {
     return this.innerApiCalls.reportTaskComplete(request, options, callback);
   }
   lookupEffectiveGuestPolicy(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.agentendpoint.v1beta.IEffectiveGuestPolicy,
@@ -546,7 +546,7 @@ export class AgentEndpointServiceClient {
  * const [response] = await client.lookupEffectiveGuestPolicy(request);
  */
   lookupEffectiveGuestPolicy(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.agentendpoint.v1beta.IEffectiveGuestPolicy,
           protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest|null|undefined,
@@ -573,7 +573,7 @@ export class AgentEndpointServiceClient {
     return this.innerApiCalls.lookupEffectiveGuestPolicy(request, options, callback);
   }
   registerAgent(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentResponse,
@@ -618,7 +618,7 @@ export class AgentEndpointServiceClient {
  * const [response] = await client.registerAgent(request);
  */
   registerAgent(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentResponse,
           protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest|null|undefined,

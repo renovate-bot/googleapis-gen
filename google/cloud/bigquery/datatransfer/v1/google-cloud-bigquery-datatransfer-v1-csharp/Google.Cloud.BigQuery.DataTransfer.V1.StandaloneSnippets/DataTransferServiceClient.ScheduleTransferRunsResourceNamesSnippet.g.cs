@@ -35,7 +35,9 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
             Timestamp startTime = new Timestamp();
             Timestamp endTime = new Timestamp();
             // Make the request
+#pragma warning disable CS0612
             ScheduleTransferRunsResponse response = dataTransferServiceClient.ScheduleTransferRuns(parent, startTime, endTime);
+#pragma warning restore CS0612
         }
     }
 }

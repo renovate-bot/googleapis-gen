@@ -304,7 +304,7 @@ export class GrafeasClient {
   // -- Service calls --
   // -------------------
   getOccurrence(
-      request: protos.grafeas.v1.IGetOccurrenceRequest,
+      request?: protos.grafeas.v1.IGetOccurrenceRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.IOccurrence,
@@ -342,7 +342,7 @@ export class GrafeasClient {
  * const [response] = await client.getOccurrence(request);
  */
   getOccurrence(
-      request: protos.grafeas.v1.IGetOccurrenceRequest,
+      request?: protos.grafeas.v1.IGetOccurrenceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.grafeas.v1.IOccurrence,
           protos.grafeas.v1.IGetOccurrenceRequest|null|undefined,
@@ -376,7 +376,7 @@ export class GrafeasClient {
     return this.innerApiCalls.getOccurrence(request, options, callback);
   }
   deleteOccurrence(
-      request: protos.grafeas.v1.IDeleteOccurrenceRequest,
+      request?: protos.grafeas.v1.IDeleteOccurrenceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -416,7 +416,7 @@ export class GrafeasClient {
  * const [response] = await client.deleteOccurrence(request);
  */
   deleteOccurrence(
-      request: protos.grafeas.v1.IDeleteOccurrenceRequest,
+      request?: protos.grafeas.v1.IDeleteOccurrenceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.grafeas.v1.IDeleteOccurrenceRequest|null|undefined,
@@ -450,7 +450,7 @@ export class GrafeasClient {
     return this.innerApiCalls.deleteOccurrence(request, options, callback);
   }
   createOccurrence(
-      request: protos.grafeas.v1.ICreateOccurrenceRequest,
+      request?: protos.grafeas.v1.ICreateOccurrenceRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.IOccurrence,
@@ -490,7 +490,7 @@ export class GrafeasClient {
  * const [response] = await client.createOccurrence(request);
  */
   createOccurrence(
-      request: protos.grafeas.v1.ICreateOccurrenceRequest,
+      request?: protos.grafeas.v1.ICreateOccurrenceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.grafeas.v1.IOccurrence,
           protos.grafeas.v1.ICreateOccurrenceRequest|null|undefined,
@@ -524,7 +524,7 @@ export class GrafeasClient {
     return this.innerApiCalls.createOccurrence(request, options, callback);
   }
   batchCreateOccurrences(
-      request: protos.grafeas.v1.IBatchCreateOccurrencesRequest,
+      request?: protos.grafeas.v1.IBatchCreateOccurrencesRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.IBatchCreateOccurrencesResponse,
@@ -564,7 +564,7 @@ export class GrafeasClient {
  * const [response] = await client.batchCreateOccurrences(request);
  */
   batchCreateOccurrences(
-      request: protos.grafeas.v1.IBatchCreateOccurrencesRequest,
+      request?: protos.grafeas.v1.IBatchCreateOccurrencesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.grafeas.v1.IBatchCreateOccurrencesResponse,
           protos.grafeas.v1.IBatchCreateOccurrencesRequest|null|undefined,
@@ -598,7 +598,7 @@ export class GrafeasClient {
     return this.innerApiCalls.batchCreateOccurrences(request, options, callback);
   }
   updateOccurrence(
-      request: protos.grafeas.v1.IUpdateOccurrenceRequest,
+      request?: protos.grafeas.v1.IUpdateOccurrenceRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.IOccurrence,
@@ -640,7 +640,7 @@ export class GrafeasClient {
  * const [response] = await client.updateOccurrence(request);
  */
   updateOccurrence(
-      request: protos.grafeas.v1.IUpdateOccurrenceRequest,
+      request?: protos.grafeas.v1.IUpdateOccurrenceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.grafeas.v1.IOccurrence,
           protos.grafeas.v1.IUpdateOccurrenceRequest|null|undefined,
@@ -674,7 +674,7 @@ export class GrafeasClient {
     return this.innerApiCalls.updateOccurrence(request, options, callback);
   }
   getOccurrenceNote(
-      request: protos.grafeas.v1.IGetOccurrenceNoteRequest,
+      request?: protos.grafeas.v1.IGetOccurrenceNoteRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.INote,
@@ -713,7 +713,7 @@ export class GrafeasClient {
  * const [response] = await client.getOccurrenceNote(request);
  */
   getOccurrenceNote(
-      request: protos.grafeas.v1.IGetOccurrenceNoteRequest,
+      request?: protos.grafeas.v1.IGetOccurrenceNoteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.grafeas.v1.INote,
           protos.grafeas.v1.IGetOccurrenceNoteRequest|null|undefined,
@@ -747,7 +747,7 @@ export class GrafeasClient {
     return this.innerApiCalls.getOccurrenceNote(request, options, callback);
   }
   getNote(
-      request: protos.grafeas.v1.IGetNoteRequest,
+      request?: protos.grafeas.v1.IGetNoteRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.INote,
@@ -785,7 +785,7 @@ export class GrafeasClient {
  * const [response] = await client.getNote(request);
  */
   getNote(
-      request: protos.grafeas.v1.IGetNoteRequest,
+      request?: protos.grafeas.v1.IGetNoteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.grafeas.v1.INote,
           protos.grafeas.v1.IGetNoteRequest|null|undefined,
@@ -819,7 +819,7 @@ export class GrafeasClient {
     return this.innerApiCalls.getNote(request, options, callback);
   }
   deleteNote(
-      request: protos.grafeas.v1.IDeleteNoteRequest,
+      request?: protos.grafeas.v1.IDeleteNoteRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -857,7 +857,7 @@ export class GrafeasClient {
  * const [response] = await client.deleteNote(request);
  */
   deleteNote(
-      request: protos.grafeas.v1.IDeleteNoteRequest,
+      request?: protos.grafeas.v1.IDeleteNoteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.grafeas.v1.IDeleteNoteRequest|null|undefined,
@@ -891,7 +891,7 @@ export class GrafeasClient {
     return this.innerApiCalls.deleteNote(request, options, callback);
   }
   createNote(
-      request: protos.grafeas.v1.ICreateNoteRequest,
+      request?: protos.grafeas.v1.ICreateNoteRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.INote,
@@ -933,7 +933,7 @@ export class GrafeasClient {
  * const [response] = await client.createNote(request);
  */
   createNote(
-      request: protos.grafeas.v1.ICreateNoteRequest,
+      request?: protos.grafeas.v1.ICreateNoteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.grafeas.v1.INote,
           protos.grafeas.v1.ICreateNoteRequest|null|undefined,
@@ -967,7 +967,7 @@ export class GrafeasClient {
     return this.innerApiCalls.createNote(request, options, callback);
   }
   batchCreateNotes(
-      request: protos.grafeas.v1.IBatchCreateNotesRequest,
+      request?: protos.grafeas.v1.IBatchCreateNotesRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.IBatchCreateNotesResponse,
@@ -1007,7 +1007,7 @@ export class GrafeasClient {
  * const [response] = await client.batchCreateNotes(request);
  */
   batchCreateNotes(
-      request: protos.grafeas.v1.IBatchCreateNotesRequest,
+      request?: protos.grafeas.v1.IBatchCreateNotesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.grafeas.v1.IBatchCreateNotesResponse,
           protos.grafeas.v1.IBatchCreateNotesRequest|null|undefined,
@@ -1041,7 +1041,7 @@ export class GrafeasClient {
     return this.innerApiCalls.batchCreateNotes(request, options, callback);
   }
   updateNote(
-      request: protos.grafeas.v1.IUpdateNoteRequest,
+      request?: protos.grafeas.v1.IUpdateNoteRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.INote,
@@ -1083,7 +1083,7 @@ export class GrafeasClient {
  * const [response] = await client.updateNote(request);
  */
   updateNote(
-      request: protos.grafeas.v1.IUpdateNoteRequest,
+      request?: protos.grafeas.v1.IUpdateNoteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.grafeas.v1.INote,
           protos.grafeas.v1.IUpdateNoteRequest|null|undefined,
@@ -1118,7 +1118,7 @@ export class GrafeasClient {
   }
 
   listOccurrences(
-      request: protos.grafeas.v1.IListOccurrencesRequest,
+      request?: protos.grafeas.v1.IListOccurrencesRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.IOccurrence[],
@@ -1167,7 +1167,7 @@ export class GrafeasClient {
  *   for more details and examples.
  */
   listOccurrences(
-      request: protos.grafeas.v1.IListOccurrencesRequest,
+      request?: protos.grafeas.v1.IListOccurrencesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.grafeas.v1.IListOccurrencesRequest,
           protos.grafeas.v1.IListOccurrencesResponse|null|undefined,
@@ -1305,7 +1305,7 @@ export class GrafeasClient {
     ) as AsyncIterable<protos.grafeas.v1.IOccurrence>;
   }
   listNotes(
-      request: protos.grafeas.v1.IListNotesRequest,
+      request?: protos.grafeas.v1.IListNotesRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.INote[],
@@ -1354,7 +1354,7 @@ export class GrafeasClient {
  *   for more details and examples.
  */
   listNotes(
-      request: protos.grafeas.v1.IListNotesRequest,
+      request?: protos.grafeas.v1.IListNotesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.grafeas.v1.IListNotesRequest,
           protos.grafeas.v1.IListNotesResponse|null|undefined,
@@ -1492,7 +1492,7 @@ export class GrafeasClient {
     ) as AsyncIterable<protos.grafeas.v1.INote>;
   }
   listNoteOccurrences(
-      request: protos.grafeas.v1.IListNoteOccurrencesRequest,
+      request?: protos.grafeas.v1.IListNoteOccurrencesRequest,
       options?: CallOptions):
       Promise<[
         protos.grafeas.v1.IOccurrence[],
@@ -1542,7 +1542,7 @@ export class GrafeasClient {
  *   for more details and examples.
  */
   listNoteOccurrences(
-      request: protos.grafeas.v1.IListNoteOccurrencesRequest,
+      request?: protos.grafeas.v1.IListNoteOccurrencesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.grafeas.v1.IListNoteOccurrencesRequest,
           protos.grafeas.v1.IListNoteOccurrencesResponse|null|undefined,

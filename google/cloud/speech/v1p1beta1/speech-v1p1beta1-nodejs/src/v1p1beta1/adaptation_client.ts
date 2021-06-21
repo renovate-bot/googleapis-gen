@@ -294,7 +294,7 @@ export class AdaptationClient {
   // -- Service calls --
   // -------------------
   createPhraseSet(
-      request: protos.google.cloud.speech.v1p1beta1.ICreatePhraseSetRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.ICreatePhraseSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.speech.v1p1beta1.IPhraseSet,
@@ -343,7 +343,7 @@ export class AdaptationClient {
  * const [response] = await client.createPhraseSet(request);
  */
   createPhraseSet(
-      request: protos.google.cloud.speech.v1p1beta1.ICreatePhraseSetRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.ICreatePhraseSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.speech.v1p1beta1.IPhraseSet,
           protos.google.cloud.speech.v1p1beta1.ICreatePhraseSetRequest|null|undefined,
@@ -377,7 +377,7 @@ export class AdaptationClient {
     return this.innerApiCalls.createPhraseSet(request, options, callback);
   }
   getPhraseSet(
-      request: protos.google.cloud.speech.v1p1beta1.IGetPhraseSetRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IGetPhraseSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.speech.v1p1beta1.IPhraseSet,
@@ -416,7 +416,7 @@ export class AdaptationClient {
  * const [response] = await client.getPhraseSet(request);
  */
   getPhraseSet(
-      request: protos.google.cloud.speech.v1p1beta1.IGetPhraseSetRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IGetPhraseSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.speech.v1p1beta1.IPhraseSet,
           protos.google.cloud.speech.v1p1beta1.IGetPhraseSetRequest|null|undefined,
@@ -450,7 +450,7 @@ export class AdaptationClient {
     return this.innerApiCalls.getPhraseSet(request, options, callback);
   }
   updatePhraseSet(
-      request: protos.google.cloud.speech.v1p1beta1.IUpdatePhraseSetRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IUpdatePhraseSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.speech.v1p1beta1.IPhraseSet,
@@ -493,7 +493,7 @@ export class AdaptationClient {
  * const [response] = await client.updatePhraseSet(request);
  */
   updatePhraseSet(
-      request: protos.google.cloud.speech.v1p1beta1.IUpdatePhraseSetRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IUpdatePhraseSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.speech.v1p1beta1.IPhraseSet,
           protos.google.cloud.speech.v1p1beta1.IUpdatePhraseSetRequest|null|undefined,
@@ -527,7 +527,7 @@ export class AdaptationClient {
     return this.innerApiCalls.updatePhraseSet(request, options, callback);
   }
   deletePhraseSet(
-      request: protos.google.cloud.speech.v1p1beta1.IDeletePhraseSetRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IDeletePhraseSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -566,7 +566,7 @@ export class AdaptationClient {
  * const [response] = await client.deletePhraseSet(request);
  */
   deletePhraseSet(
-      request: protos.google.cloud.speech.v1p1beta1.IDeletePhraseSetRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IDeletePhraseSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.speech.v1p1beta1.IDeletePhraseSetRequest|null|undefined,
@@ -600,7 +600,7 @@ export class AdaptationClient {
     return this.innerApiCalls.deletePhraseSet(request, options, callback);
   }
   createCustomClass(
-      request: protos.google.cloud.speech.v1p1beta1.ICreateCustomClassRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.ICreateCustomClassRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.speech.v1p1beta1.ICustomClass,
@@ -647,7 +647,7 @@ export class AdaptationClient {
  * const [response] = await client.createCustomClass(request);
  */
   createCustomClass(
-      request: protos.google.cloud.speech.v1p1beta1.ICreateCustomClassRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.ICreateCustomClassRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.speech.v1p1beta1.ICustomClass,
           protos.google.cloud.speech.v1p1beta1.ICreateCustomClassRequest|null|undefined,
@@ -681,7 +681,7 @@ export class AdaptationClient {
     return this.innerApiCalls.createCustomClass(request, options, callback);
   }
   getCustomClass(
-      request: protos.google.cloud.speech.v1p1beta1.IGetCustomClassRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IGetCustomClassRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.speech.v1p1beta1.ICustomClass,
@@ -720,7 +720,7 @@ export class AdaptationClient {
  * const [response] = await client.getCustomClass(request);
  */
   getCustomClass(
-      request: protos.google.cloud.speech.v1p1beta1.IGetCustomClassRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IGetCustomClassRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.speech.v1p1beta1.ICustomClass,
           protos.google.cloud.speech.v1p1beta1.IGetCustomClassRequest|null|undefined,
@@ -754,7 +754,7 @@ export class AdaptationClient {
     return this.innerApiCalls.getCustomClass(request, options, callback);
   }
   updateCustomClass(
-      request: protos.google.cloud.speech.v1p1beta1.IUpdateCustomClassRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IUpdateCustomClassRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.speech.v1p1beta1.ICustomClass,
@@ -797,7 +797,7 @@ export class AdaptationClient {
  * const [response] = await client.updateCustomClass(request);
  */
   updateCustomClass(
-      request: protos.google.cloud.speech.v1p1beta1.IUpdateCustomClassRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IUpdateCustomClassRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.speech.v1p1beta1.ICustomClass,
           protos.google.cloud.speech.v1p1beta1.IUpdateCustomClassRequest|null|undefined,
@@ -831,7 +831,7 @@ export class AdaptationClient {
     return this.innerApiCalls.updateCustomClass(request, options, callback);
   }
   deleteCustomClass(
-      request: protos.google.cloud.speech.v1p1beta1.IDeleteCustomClassRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IDeleteCustomClassRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -870,7 +870,7 @@ export class AdaptationClient {
  * const [response] = await client.deleteCustomClass(request);
  */
   deleteCustomClass(
-      request: protos.google.cloud.speech.v1p1beta1.IDeleteCustomClassRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IDeleteCustomClassRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.speech.v1p1beta1.IDeleteCustomClassRequest|null|undefined,
@@ -905,7 +905,7 @@ export class AdaptationClient {
   }
 
   listPhraseSet(
-      request: protos.google.cloud.speech.v1p1beta1.IListPhraseSetRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IListPhraseSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.speech.v1p1beta1.IPhraseSet[],
@@ -959,7 +959,7 @@ export class AdaptationClient {
  *   for more details and examples.
  */
   listPhraseSet(
-      request: protos.google.cloud.speech.v1p1beta1.IListPhraseSetRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IListPhraseSetRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.speech.v1p1beta1.IListPhraseSetRequest,
           protos.google.cloud.speech.v1p1beta1.IListPhraseSetResponse|null|undefined,
@@ -1107,7 +1107,7 @@ export class AdaptationClient {
     ) as AsyncIterable<protos.google.cloud.speech.v1p1beta1.IPhraseSet>;
   }
   listCustomClasses(
-      request: protos.google.cloud.speech.v1p1beta1.IListCustomClassesRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IListCustomClassesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.speech.v1p1beta1.ICustomClass[],
@@ -1161,7 +1161,7 @@ export class AdaptationClient {
  *   for more details and examples.
  */
   listCustomClasses(
-      request: protos.google.cloud.speech.v1p1beta1.IListCustomClassesRequest,
+      request?: protos.google.cloud.speech.v1p1beta1.IListCustomClassesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.speech.v1p1beta1.IListCustomClassesRequest,
           protos.google.cloud.speech.v1p1beta1.IListCustomClassesResponse|null|undefined,

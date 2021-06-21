@@ -430,7 +430,7 @@ export class MetadataServiceClient {
   // -- Service calls --
   // -------------------
   getMetadataStore(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetMetadataStoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetMetadataStoreRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IMetadataStore,
@@ -469,7 +469,7 @@ export class MetadataServiceClient {
  * const [response] = await client.getMetadataStore(request);
  */
   getMetadataStore(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetMetadataStoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetMetadataStoreRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IMetadataStore,
           protos.google.cloud.aiplatform.v1beta1.IGetMetadataStoreRequest|null|undefined,
@@ -503,7 +503,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.getMetadataStore(request, options, callback);
   }
   createArtifact(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateArtifactRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateArtifactRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IArtifact,
@@ -553,7 +553,7 @@ export class MetadataServiceClient {
  * const [response] = await client.createArtifact(request);
  */
   createArtifact(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateArtifactRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateArtifactRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IArtifact,
           protos.google.cloud.aiplatform.v1beta1.ICreateArtifactRequest|null|undefined,
@@ -587,7 +587,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.createArtifact(request, options, callback);
   }
   getArtifact(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetArtifactRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetArtifactRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IArtifact,
@@ -626,7 +626,7 @@ export class MetadataServiceClient {
  * const [response] = await client.getArtifact(request);
  */
   getArtifact(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetArtifactRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetArtifactRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IArtifact,
           protos.google.cloud.aiplatform.v1beta1.IGetArtifactRequest|null|undefined,
@@ -660,7 +660,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.getArtifact(request, options, callback);
   }
   updateArtifact(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateArtifactRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateArtifactRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IArtifact,
@@ -706,7 +706,7 @@ export class MetadataServiceClient {
  * const [response] = await client.updateArtifact(request);
  */
   updateArtifact(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateArtifactRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateArtifactRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IArtifact,
           protos.google.cloud.aiplatform.v1beta1.IUpdateArtifactRequest|null|undefined,
@@ -740,7 +740,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.updateArtifact(request, options, callback);
   }
   createContext(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateContextRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateContextRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IContext,
@@ -790,7 +790,7 @@ export class MetadataServiceClient {
  * const [response] = await client.createContext(request);
  */
   createContext(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateContextRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateContextRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IContext,
           protos.google.cloud.aiplatform.v1beta1.ICreateContextRequest|null|undefined,
@@ -824,7 +824,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.createContext(request, options, callback);
   }
   getContext(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetContextRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetContextRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IContext,
@@ -863,7 +863,7 @@ export class MetadataServiceClient {
  * const [response] = await client.getContext(request);
  */
   getContext(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetContextRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetContextRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IContext,
           protos.google.cloud.aiplatform.v1beta1.IGetContextRequest|null|undefined,
@@ -897,7 +897,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.getContext(request, options, callback);
   }
   updateContext(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateContextRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateContextRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IContext,
@@ -943,7 +943,7 @@ export class MetadataServiceClient {
  * const [response] = await client.updateContext(request);
  */
   updateContext(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateContextRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateContextRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IContext,
           protos.google.cloud.aiplatform.v1beta1.IUpdateContextRequest|null|undefined,
@@ -977,7 +977,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.updateContext(request, options, callback);
   }
   addContextArtifactsAndExecutions(
-      request: protos.google.cloud.aiplatform.v1beta1.IAddContextArtifactsAndExecutionsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IAddContextArtifactsAndExecutionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IAddContextArtifactsAndExecutionsResponse,
@@ -1030,7 +1030,7 @@ export class MetadataServiceClient {
  * const [response] = await client.addContextArtifactsAndExecutions(request);
  */
   addContextArtifactsAndExecutions(
-      request: protos.google.cloud.aiplatform.v1beta1.IAddContextArtifactsAndExecutionsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IAddContextArtifactsAndExecutionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IAddContextArtifactsAndExecutionsResponse,
           protos.google.cloud.aiplatform.v1beta1.IAddContextArtifactsAndExecutionsRequest|null|undefined,
@@ -1064,7 +1064,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.addContextArtifactsAndExecutions(request, options, callback);
   }
   addContextChildren(
-      request: protos.google.cloud.aiplatform.v1beta1.IAddContextChildrenRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IAddContextChildrenRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IAddContextChildrenResponse,
@@ -1110,7 +1110,7 @@ export class MetadataServiceClient {
  * const [response] = await client.addContextChildren(request);
  */
   addContextChildren(
-      request: protos.google.cloud.aiplatform.v1beta1.IAddContextChildrenRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IAddContextChildrenRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IAddContextChildrenResponse,
           protos.google.cloud.aiplatform.v1beta1.IAddContextChildrenRequest|null|undefined,
@@ -1144,7 +1144,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.addContextChildren(request, options, callback);
   }
   queryContextLineageSubgraph(
-      request: protos.google.cloud.aiplatform.v1beta1.IQueryContextLineageSubgraphRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IQueryContextLineageSubgraphRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.ILineageSubgraph,
@@ -1189,7 +1189,7 @@ export class MetadataServiceClient {
  * const [response] = await client.queryContextLineageSubgraph(request);
  */
   queryContextLineageSubgraph(
-      request: protos.google.cloud.aiplatform.v1beta1.IQueryContextLineageSubgraphRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IQueryContextLineageSubgraphRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.ILineageSubgraph,
           protos.google.cloud.aiplatform.v1beta1.IQueryContextLineageSubgraphRequest|null|undefined,
@@ -1223,7 +1223,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.queryContextLineageSubgraph(request, options, callback);
   }
   createExecution(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateExecutionRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateExecutionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IExecution,
@@ -1274,7 +1274,7 @@ export class MetadataServiceClient {
  * const [response] = await client.createExecution(request);
  */
   createExecution(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateExecutionRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateExecutionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IExecution,
           protos.google.cloud.aiplatform.v1beta1.ICreateExecutionRequest|null|undefined,
@@ -1308,7 +1308,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.createExecution(request, options, callback);
   }
   getExecution(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetExecutionRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetExecutionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IExecution,
@@ -1347,7 +1347,7 @@ export class MetadataServiceClient {
  * const [response] = await client.getExecution(request);
  */
   getExecution(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetExecutionRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetExecutionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IExecution,
           protos.google.cloud.aiplatform.v1beta1.IGetExecutionRequest|null|undefined,
@@ -1381,7 +1381,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.getExecution(request, options, callback);
   }
   updateExecution(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateExecutionRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateExecutionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IExecution,
@@ -1427,7 +1427,7 @@ export class MetadataServiceClient {
  * const [response] = await client.updateExecution(request);
  */
   updateExecution(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateExecutionRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateExecutionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IExecution,
           protos.google.cloud.aiplatform.v1beta1.IUpdateExecutionRequest|null|undefined,
@@ -1461,7 +1461,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.updateExecution(request, options, callback);
   }
   addExecutionEvents(
-      request: protos.google.cloud.aiplatform.v1beta1.IAddExecutionEventsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IAddExecutionEventsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IAddExecutionEventsResponse,
@@ -1506,7 +1506,7 @@ export class MetadataServiceClient {
  * const [response] = await client.addExecutionEvents(request);
  */
   addExecutionEvents(
-      request: protos.google.cloud.aiplatform.v1beta1.IAddExecutionEventsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IAddExecutionEventsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IAddExecutionEventsResponse,
           protos.google.cloud.aiplatform.v1beta1.IAddExecutionEventsRequest|null|undefined,
@@ -1540,7 +1540,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.addExecutionEvents(request, options, callback);
   }
   queryExecutionInputsAndOutputs(
-      request: protos.google.cloud.aiplatform.v1beta1.IQueryExecutionInputsAndOutputsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IQueryExecutionInputsAndOutputsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.ILineageSubgraph,
@@ -1582,7 +1582,7 @@ export class MetadataServiceClient {
  * const [response] = await client.queryExecutionInputsAndOutputs(request);
  */
   queryExecutionInputsAndOutputs(
-      request: protos.google.cloud.aiplatform.v1beta1.IQueryExecutionInputsAndOutputsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IQueryExecutionInputsAndOutputsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.ILineageSubgraph,
           protos.google.cloud.aiplatform.v1beta1.IQueryExecutionInputsAndOutputsRequest|null|undefined,
@@ -1616,7 +1616,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.queryExecutionInputsAndOutputs(request, options, callback);
   }
   createMetadataSchema(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateMetadataSchemaRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateMetadataSchemaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IMetadataSchema,
@@ -1667,7 +1667,7 @@ export class MetadataServiceClient {
  * const [response] = await client.createMetadataSchema(request);
  */
   createMetadataSchema(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateMetadataSchemaRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateMetadataSchemaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IMetadataSchema,
           protos.google.cloud.aiplatform.v1beta1.ICreateMetadataSchemaRequest|null|undefined,
@@ -1701,7 +1701,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.createMetadataSchema(request, options, callback);
   }
   getMetadataSchema(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetMetadataSchemaRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetMetadataSchemaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IMetadataSchema,
@@ -1740,7 +1740,7 @@ export class MetadataServiceClient {
  * const [response] = await client.getMetadataSchema(request);
  */
   getMetadataSchema(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetMetadataSchemaRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetMetadataSchemaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IMetadataSchema,
           protos.google.cloud.aiplatform.v1beta1.IGetMetadataSchemaRequest|null|undefined,
@@ -1774,7 +1774,7 @@ export class MetadataServiceClient {
     return this.innerApiCalls.getMetadataSchema(request, options, callback);
   }
   queryArtifactLineageSubgraph(
-      request: protos.google.cloud.aiplatform.v1beta1.IQueryArtifactLineageSubgraphRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IQueryArtifactLineageSubgraphRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.ILineageSubgraph,
@@ -1847,7 +1847,7 @@ export class MetadataServiceClient {
  * const [response] = await client.queryArtifactLineageSubgraph(request);
  */
   queryArtifactLineageSubgraph(
-      request: protos.google.cloud.aiplatform.v1beta1.IQueryArtifactLineageSubgraphRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IQueryArtifactLineageSubgraphRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.ILineageSubgraph,
           protos.google.cloud.aiplatform.v1beta1.IQueryArtifactLineageSubgraphRequest|null|undefined,
@@ -1882,7 +1882,7 @@ export class MetadataServiceClient {
   }
 
   createMetadataStore(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateMetadataStoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateMetadataStoreRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1beta1.IMetadataStore, protos.google.cloud.aiplatform.v1beta1.ICreateMetadataStoreOperationMetadata>,
@@ -1935,7 +1935,7 @@ export class MetadataServiceClient {
  * const [response] = await operation.promise();
  */
   createMetadataStore(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateMetadataStoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateMetadataStoreRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1beta1.IMetadataStore, protos.google.cloud.aiplatform.v1beta1.ICreateMetadataStoreOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1990,7 +1990,7 @@ export class MetadataServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.MetadataStore, protos.google.cloud.aiplatform.v1beta1.CreateMetadataStoreOperationMetadata>;
   }
   deleteMetadataStore(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteMetadataStoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteMetadataStoreRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteMetadataStoreOperationMetadata>,
@@ -2036,7 +2036,7 @@ export class MetadataServiceClient {
  * const [response] = await operation.promise();
  */
   deleteMetadataStore(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteMetadataStoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteMetadataStoreRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteMetadataStoreOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2091,7 +2091,7 @@ export class MetadataServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreOperationMetadata>;
   }
   deleteContext(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteContextRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteContextRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
@@ -2138,7 +2138,7 @@ export class MetadataServiceClient {
  * const [response] = await operation.promise();
  */
   deleteContext(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteContextRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteContextRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2193,7 +2193,7 @@ export class MetadataServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>;
   }
   listMetadataStores(
-      request: protos.google.cloud.aiplatform.v1beta1.IListMetadataStoresRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListMetadataStoresRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IMetadataStore[],
@@ -2248,7 +2248,7 @@ export class MetadataServiceClient {
  *   for more details and examples.
  */
   listMetadataStores(
-      request: protos.google.cloud.aiplatform.v1beta1.IListMetadataStoresRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListMetadataStoresRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.IListMetadataStoresRequest,
           protos.google.cloud.aiplatform.v1beta1.IListMetadataStoresResponse|null|undefined,
@@ -2398,7 +2398,7 @@ export class MetadataServiceClient {
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IMetadataStore>;
   }
   listArtifacts(
-      request: protos.google.cloud.aiplatform.v1beta1.IListArtifactsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListArtifactsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IArtifact[],
@@ -2479,7 +2479,7 @@ export class MetadataServiceClient {
  *   for more details and examples.
  */
   listArtifacts(
-      request: protos.google.cloud.aiplatform.v1beta1.IListArtifactsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListArtifactsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.IListArtifactsRequest,
           protos.google.cloud.aiplatform.v1beta1.IListArtifactsResponse|null|undefined,
@@ -2681,7 +2681,7 @@ export class MetadataServiceClient {
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IArtifact>;
   }
   listContexts(
-      request: protos.google.cloud.aiplatform.v1beta1.IListContextsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListContextsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IContext[],
@@ -2766,7 +2766,7 @@ export class MetadataServiceClient {
  *   for more details and examples.
  */
   listContexts(
-      request: protos.google.cloud.aiplatform.v1beta1.IListContextsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListContextsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.IListContextsRequest,
           protos.google.cloud.aiplatform.v1beta1.IListContextsResponse|null|undefined,
@@ -2976,7 +2976,7 @@ export class MetadataServiceClient {
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IContext>;
   }
   listExecutions(
-      request: protos.google.cloud.aiplatform.v1beta1.IListExecutionsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListExecutionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IExecution[],
@@ -3056,7 +3056,7 @@ export class MetadataServiceClient {
  *   for more details and examples.
  */
   listExecutions(
-      request: protos.google.cloud.aiplatform.v1beta1.IListExecutionsRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListExecutionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.IListExecutionsRequest,
           protos.google.cloud.aiplatform.v1beta1.IListExecutionsResponse|null|undefined,
@@ -3256,7 +3256,7 @@ export class MetadataServiceClient {
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IExecution>;
   }
   listMetadataSchemas(
-      request: protos.google.cloud.aiplatform.v1beta1.IListMetadataSchemasRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListMetadataSchemasRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IMetadataSchema[],
@@ -3313,7 +3313,7 @@ export class MetadataServiceClient {
  *   for more details and examples.
  */
   listMetadataSchemas(
-      request: protos.google.cloud.aiplatform.v1beta1.IListMetadataSchemasRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListMetadataSchemasRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.IListMetadataSchemasRequest,
           protos.google.cloud.aiplatform.v1beta1.IListMetadataSchemasResponse|null|undefined,

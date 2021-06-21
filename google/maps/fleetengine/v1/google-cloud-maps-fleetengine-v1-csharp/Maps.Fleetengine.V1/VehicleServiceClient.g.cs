@@ -501,6 +501,7 @@ namespace Maps.Fleetengine.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public virtual VehicleLocation UpdateVehicleLocation(UpdateVehicleLocationRequest request, gaxgrpc::CallSettings callSettings = null) =>
 #pragma warning restore CS0612
@@ -513,6 +514,7 @@ namespace Maps.Fleetengine.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public virtual stt::Task<VehicleLocation> UpdateVehicleLocationAsync(UpdateVehicleLocationRequest request, gaxgrpc::CallSettings callSettings = null) =>
 #pragma warning restore CS0612
@@ -525,6 +527,7 @@ namespace Maps.Fleetengine.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public virtual stt::Task<VehicleLocation> UpdateVehicleLocationAsync(UpdateVehicleLocationRequest request, st::CancellationToken cancellationToken) =>
 #pragma warning restore CS0612
@@ -914,6 +917,7 @@ namespace Maps.Fleetengine.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public override VehicleLocation UpdateVehicleLocation(UpdateVehicleLocationRequest request, gaxgrpc::CallSettings callSettings = null)
 #pragma warning restore CS0612
@@ -929,6 +933,7 @@ namespace Maps.Fleetengine.V1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public override stt::Task<VehicleLocation> UpdateVehicleLocationAsync(UpdateVehicleLocationRequest request, gaxgrpc::CallSettings callSettings = null)
 #pragma warning restore CS0612

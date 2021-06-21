@@ -295,7 +295,7 @@ export class BinauthzManagementServiceV1Beta1Client {
   // -- Service calls --
   // -------------------
   getPolicy(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IGetPolicyRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IGetPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.binaryauthorization.v1beta1.IPolicy,
@@ -343,7 +343,7 @@ export class BinauthzManagementServiceV1Beta1Client {
  * const [response] = await client.getPolicy(request);
  */
   getPolicy(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IGetPolicyRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IGetPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.binaryauthorization.v1beta1.IPolicy,
           protos.google.cloud.binaryauthorization.v1beta1.IGetPolicyRequest|null|undefined,
@@ -377,7 +377,7 @@ export class BinauthzManagementServiceV1Beta1Client {
     return this.innerApiCalls.getPolicy(request, options, callback);
   }
   updatePolicy(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IUpdatePolicyRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IUpdatePolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.binaryauthorization.v1beta1.IPolicy,
@@ -424,7 +424,7 @@ export class BinauthzManagementServiceV1Beta1Client {
  * const [response] = await client.updatePolicy(request);
  */
   updatePolicy(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IUpdatePolicyRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IUpdatePolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.binaryauthorization.v1beta1.IPolicy,
           protos.google.cloud.binaryauthorization.v1beta1.IUpdatePolicyRequest|null|undefined,
@@ -458,7 +458,7 @@ export class BinauthzManagementServiceV1Beta1Client {
     return this.innerApiCalls.updatePolicy(request, options, callback);
   }
   createAttestor(
-      request: protos.google.cloud.binaryauthorization.v1beta1.ICreateAttestorRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.ICreateAttestorRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.binaryauthorization.v1beta1.IAttestor,
@@ -511,7 +511,7 @@ export class BinauthzManagementServiceV1Beta1Client {
  * const [response] = await client.createAttestor(request);
  */
   createAttestor(
-      request: protos.google.cloud.binaryauthorization.v1beta1.ICreateAttestorRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.ICreateAttestorRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.binaryauthorization.v1beta1.IAttestor,
           protos.google.cloud.binaryauthorization.v1beta1.ICreateAttestorRequest|null|undefined,
@@ -545,7 +545,7 @@ export class BinauthzManagementServiceV1Beta1Client {
     return this.innerApiCalls.createAttestor(request, options, callback);
   }
   getAttestor(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IGetAttestorRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IGetAttestorRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.binaryauthorization.v1beta1.IAttestor,
@@ -587,7 +587,7 @@ export class BinauthzManagementServiceV1Beta1Client {
  * const [response] = await client.getAttestor(request);
  */
   getAttestor(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IGetAttestorRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IGetAttestorRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.binaryauthorization.v1beta1.IAttestor,
           protos.google.cloud.binaryauthorization.v1beta1.IGetAttestorRequest|null|undefined,
@@ -621,7 +621,7 @@ export class BinauthzManagementServiceV1Beta1Client {
     return this.innerApiCalls.getAttestor(request, options, callback);
   }
   updateAttestor(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IUpdateAttestorRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IUpdateAttestorRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.binaryauthorization.v1beta1.IAttestor,
@@ -666,7 +666,7 @@ export class BinauthzManagementServiceV1Beta1Client {
  * const [response] = await client.updateAttestor(request);
  */
   updateAttestor(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IUpdateAttestorRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IUpdateAttestorRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.binaryauthorization.v1beta1.IAttestor,
           protos.google.cloud.binaryauthorization.v1beta1.IUpdateAttestorRequest|null|undefined,
@@ -700,7 +700,7 @@ export class BinauthzManagementServiceV1Beta1Client {
     return this.innerApiCalls.updateAttestor(request, options, callback);
   }
   deleteAttestor(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IDeleteAttestorRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IDeleteAttestorRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -742,7 +742,7 @@ export class BinauthzManagementServiceV1Beta1Client {
  * const [response] = await client.deleteAttestor(request);
  */
   deleteAttestor(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IDeleteAttestorRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IDeleteAttestorRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.binaryauthorization.v1beta1.IDeleteAttestorRequest|null|undefined,
@@ -777,7 +777,7 @@ export class BinauthzManagementServiceV1Beta1Client {
   }
 
   listAttestors(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IListAttestorsRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IListAttestorsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.binaryauthorization.v1beta1.IAttestor[],
@@ -829,7 +829,7 @@ export class BinauthzManagementServiceV1Beta1Client {
  *   for more details and examples.
  */
   listAttestors(
-      request: protos.google.cloud.binaryauthorization.v1beta1.IListAttestorsRequest,
+      request?: protos.google.cloud.binaryauthorization.v1beta1.IListAttestorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.binaryauthorization.v1beta1.IListAttestorsRequest,
           protos.google.cloud.binaryauthorization.v1beta1.IListAttestorsResponse|null|undefined,

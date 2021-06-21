@@ -310,7 +310,7 @@ export class CatalogServiceClient {
   // -- Service calls --
   // -------------------
   createCatalogItem(
-      request: protos.google.cloud.recommendationengine.v1beta1.ICreateCatalogItemRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.ICreateCatalogItemRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
@@ -350,7 +350,7 @@ export class CatalogServiceClient {
  * const [response] = await client.createCatalogItem(request);
  */
   createCatalogItem(
-      request: protos.google.cloud.recommendationengine.v1beta1.ICreateCatalogItemRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.ICreateCatalogItemRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
           protos.google.cloud.recommendationengine.v1beta1.ICreateCatalogItemRequest|null|undefined,
@@ -384,7 +384,7 @@ export class CatalogServiceClient {
     return this.innerApiCalls.createCatalogItem(request, options, callback);
   }
   getCatalogItem(
-      request: protos.google.cloud.recommendationengine.v1beta1.IGetCatalogItemRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IGetCatalogItemRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
@@ -422,7 +422,7 @@ export class CatalogServiceClient {
  * const [response] = await client.getCatalogItem(request);
  */
   getCatalogItem(
-      request: protos.google.cloud.recommendationengine.v1beta1.IGetCatalogItemRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IGetCatalogItemRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
           protos.google.cloud.recommendationengine.v1beta1.IGetCatalogItemRequest|null|undefined,
@@ -456,7 +456,7 @@ export class CatalogServiceClient {
     return this.innerApiCalls.getCatalogItem(request, options, callback);
   }
   updateCatalogItem(
-      request: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
@@ -501,7 +501,7 @@ export class CatalogServiceClient {
  * const [response] = await client.updateCatalogItem(request);
  */
   updateCatalogItem(
-      request: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
           protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest|null|undefined,
@@ -535,7 +535,7 @@ export class CatalogServiceClient {
     return this.innerApiCalls.updateCatalogItem(request, options, callback);
   }
   deleteCatalogItem(
-      request: protos.google.cloud.recommendationengine.v1beta1.IDeleteCatalogItemRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IDeleteCatalogItemRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -573,7 +573,7 @@ export class CatalogServiceClient {
  * const [response] = await client.deleteCatalogItem(request);
  */
   deleteCatalogItem(
-      request: protos.google.cloud.recommendationengine.v1beta1.IDeleteCatalogItemRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IDeleteCatalogItemRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.recommendationengine.v1beta1.IDeleteCatalogItemRequest|null|undefined,
@@ -608,7 +608,7 @@ export class CatalogServiceClient {
   }
 
   importCatalogItems(
-      request: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
@@ -662,7 +662,7 @@ export class CatalogServiceClient {
  * const [response] = await operation.promise();
  */
   importCatalogItems(
-      request: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -717,7 +717,7 @@ export class CatalogServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.ImportMetadata>;
   }
   listCatalogItems(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommendationengine.v1beta1.ICatalogItem[],
@@ -766,7 +766,7 @@ export class CatalogServiceClient {
  *   for more details and examples.
  */
   listCatalogItems(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
           protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsResponse|null|undefined,

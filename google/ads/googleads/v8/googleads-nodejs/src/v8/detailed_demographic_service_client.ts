@@ -653,7 +653,7 @@ export class DetailedDemographicServiceClient {
   // -- Service calls --
   // -------------------
   getDetailedDemographic(
-      request: protos.google.ads.googleads.v8.services.IGetDetailedDemographicRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetDetailedDemographicRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IDetailedDemographic,
@@ -690,7 +690,7 @@ export class DetailedDemographicServiceClient {
  * const [response] = await client.getDetailedDemographic(request);
  */
   getDetailedDemographic(
-      request: protos.google.ads.googleads.v8.services.IGetDetailedDemographicRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetDetailedDemographicRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IDetailedDemographic,
           protos.google.ads.googleads.v8.services.IGetDetailedDemographicRequest|null|undefined,

@@ -159,7 +159,9 @@ namespace Maps.Fleetengine.V1.Snippets
                 CurrentState = VehicleState.UnknownVehicleState,
             };
             // Make the request
+#pragma warning disable CS0612
             VehicleLocation response = vehicleServiceClient.UpdateVehicleLocation(request);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -181,7 +183,9 @@ namespace Maps.Fleetengine.V1.Snippets
                 CurrentState = VehicleState.UnknownVehicleState,
             };
             // Make the request
+#pragma warning disable CS0612
             VehicleLocation response = await vehicleServiceClient.UpdateVehicleLocationAsync(request);
+#pragma warning restore CS0612
             // End snippet
         }
 

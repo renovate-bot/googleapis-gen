@@ -276,7 +276,7 @@ export class AssetServiceClient {
   // -------------------
 
   searchAllResources(
-      request: protos.google.cloud.asset.v1p1beta1.ISearchAllResourcesRequest,
+      request?: protos.google.cloud.asset.v1p1beta1.ISearchAllResourcesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.asset.v1p1beta1.IStandardResourceMetadata[],
@@ -347,7 +347,7 @@ export class AssetServiceClient {
  *   for more details and examples.
  */
   searchAllResources(
-      request: protos.google.cloud.asset.v1p1beta1.ISearchAllResourcesRequest,
+      request?: protos.google.cloud.asset.v1p1beta1.ISearchAllResourcesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.asset.v1p1beta1.ISearchAllResourcesRequest,
           protos.google.cloud.asset.v1p1beta1.ISearchAllResourcesResponse|null|undefined,
@@ -519,7 +519,7 @@ export class AssetServiceClient {
     ) as AsyncIterable<protos.google.cloud.asset.v1p1beta1.IStandardResourceMetadata>;
   }
   searchAllIamPolicies(
-      request: protos.google.cloud.asset.v1p1beta1.ISearchAllIamPoliciesRequest,
+      request?: protos.google.cloud.asset.v1p1beta1.ISearchAllIamPoliciesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.asset.v1p1beta1.IIamPolicySearchResult[],
@@ -585,7 +585,7 @@ export class AssetServiceClient {
  *   for more details and examples.
  */
   searchAllIamPolicies(
-      request: protos.google.cloud.asset.v1p1beta1.ISearchAllIamPoliciesRequest,
+      request?: protos.google.cloud.asset.v1p1beta1.ISearchAllIamPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.asset.v1p1beta1.ISearchAllIamPoliciesRequest,
           protos.google.cloud.asset.v1p1beta1.ISearchAllIamPoliciesResponse|null|undefined,

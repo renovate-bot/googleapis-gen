@@ -357,7 +357,7 @@ export class ProjectsClient {
   // -- Service calls --
   // -------------------
   getProject(
-      request: protos.google.cloud.resourcemanager.v3.IGetProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IGetProjectRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.resourcemanager.v3.IProject,
@@ -398,7 +398,7 @@ export class ProjectsClient {
  * const [response] = await client.getProject(request);
  */
   getProject(
-      request: protos.google.cloud.resourcemanager.v3.IGetProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IGetProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.resourcemanager.v3.IProject,
           protos.google.cloud.resourcemanager.v3.IGetProjectRequest|null|undefined,
@@ -432,7 +432,7 @@ export class ProjectsClient {
     return this.innerApiCalls.getProject(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -474,7 +474,7 @@ export class ProjectsClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -508,7 +508,7 @@ export class ProjectsClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -594,7 +594,7 @@ export class ProjectsClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -628,7 +628,7 @@ export class ProjectsClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -671,7 +671,7 @@ export class ProjectsClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -706,7 +706,7 @@ export class ProjectsClient {
   }
 
   createProject(
-      request: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.ICreateProjectMetadata>,
@@ -758,7 +758,7 @@ export class ProjectsClient {
  * const [response] = await operation.promise();
  */
   createProject(
-      request: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.ICreateProjectMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -806,7 +806,7 @@ export class ProjectsClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.CreateProjectMetadata>;
   }
   updateProject(
-      request: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUpdateProjectMetadata>,
@@ -853,7 +853,7 @@ export class ProjectsClient {
  * const [response] = await operation.promise();
  */
   updateProject(
-      request: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUpdateProjectMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -908,7 +908,7 @@ export class ProjectsClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.UpdateProjectMetadata>;
   }
   moveProject(
-      request: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IMoveProjectMetadata>,
@@ -962,7 +962,7 @@ export class ProjectsClient {
  * const [response] = await operation.promise();
  */
   moveProject(
-      request: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IMoveProjectMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1017,7 +1017,7 @@ export class ProjectsClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.MoveProjectMetadata>;
   }
   deleteProject(
-      request: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IDeleteProjectMetadata>,
@@ -1088,7 +1088,7 @@ export class ProjectsClient {
  * const [response] = await operation.promise();
  */
   deleteProject(
-      request: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IDeleteProjectMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1143,7 +1143,7 @@ export class ProjectsClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.DeleteProjectMetadata>;
   }
   undeleteProject(
-      request: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUndeleteProjectMetadata>,
@@ -1193,7 +1193,7 @@ export class ProjectsClient {
  * const [response] = await operation.promise();
  */
   undeleteProject(
-      request: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUndeleteProjectMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1248,7 +1248,7 @@ export class ProjectsClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.UndeleteProjectMetadata>;
   }
   listProjects(
-      request: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.resourcemanager.v3.IProject[],
@@ -1308,7 +1308,7 @@ export class ProjectsClient {
  *   for more details and examples.
  */
   listProjects(
-      request: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
           protos.google.cloud.resourcemanager.v3.IListProjectsResponse|null|undefined,
@@ -1437,7 +1437,7 @@ export class ProjectsClient {
     ) as AsyncIterable<protos.google.cloud.resourcemanager.v3.IProject>;
   }
   searchProjects(
-      request: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.resourcemanager.v3.IProject[],
@@ -1529,7 +1529,7 @@ export class ProjectsClient {
  *   for more details and examples.
  */
   searchProjects(
-      request: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
           protos.google.cloud.resourcemanager.v3.ISearchProjectsResponse|null|undefined,

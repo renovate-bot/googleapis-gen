@@ -310,7 +310,7 @@ export class PolicyTagManagerClient {
   // -- Service calls --
   // -------------------
   createTaxonomy(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateTaxonomyRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateTaxonomyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITaxonomy,
@@ -349,7 +349,7 @@ export class PolicyTagManagerClient {
  * const [response] = await client.createTaxonomy(request);
  */
   createTaxonomy(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateTaxonomyRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateTaxonomyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.ITaxonomy,
           protos.google.cloud.datacatalog.v1beta1.ICreateTaxonomyRequest|null|undefined,
@@ -383,7 +383,7 @@ export class PolicyTagManagerClient {
     return this.innerApiCalls.createTaxonomy(request, options, callback);
   }
   deleteTaxonomy(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteTaxonomyRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteTaxonomyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -422,7 +422,7 @@ export class PolicyTagManagerClient {
  * const [response] = await client.deleteTaxonomy(request);
  */
   deleteTaxonomy(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteTaxonomyRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteTaxonomyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.datacatalog.v1beta1.IDeleteTaxonomyRequest|null|undefined,
@@ -456,7 +456,7 @@ export class PolicyTagManagerClient {
     return this.innerApiCalls.deleteTaxonomy(request, options, callback);
   }
   updateTaxonomy(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateTaxonomyRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateTaxonomyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITaxonomy,
@@ -499,7 +499,7 @@ export class PolicyTagManagerClient {
  * const [response] = await client.updateTaxonomy(request);
  */
   updateTaxonomy(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateTaxonomyRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateTaxonomyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.ITaxonomy,
           protos.google.cloud.datacatalog.v1beta1.IUpdateTaxonomyRequest|null|undefined,
@@ -533,7 +533,7 @@ export class PolicyTagManagerClient {
     return this.innerApiCalls.updateTaxonomy(request, options, callback);
   }
   getTaxonomy(
-      request: protos.google.cloud.datacatalog.v1beta1.IGetTaxonomyRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IGetTaxonomyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITaxonomy,
@@ -570,7 +570,7 @@ export class PolicyTagManagerClient {
  * const [response] = await client.getTaxonomy(request);
  */
   getTaxonomy(
-      request: protos.google.cloud.datacatalog.v1beta1.IGetTaxonomyRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IGetTaxonomyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.ITaxonomy,
           protos.google.cloud.datacatalog.v1beta1.IGetTaxonomyRequest|null|undefined,
@@ -604,7 +604,7 @@ export class PolicyTagManagerClient {
     return this.innerApiCalls.getTaxonomy(request, options, callback);
   }
   createPolicyTag(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreatePolicyTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreatePolicyTagRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IPolicyTag,
@@ -643,7 +643,7 @@ export class PolicyTagManagerClient {
  * const [response] = await client.createPolicyTag(request);
  */
   createPolicyTag(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreatePolicyTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreatePolicyTagRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IPolicyTag,
           protos.google.cloud.datacatalog.v1beta1.ICreatePolicyTagRequest|null|undefined,
@@ -677,7 +677,7 @@ export class PolicyTagManagerClient {
     return this.innerApiCalls.createPolicyTag(request, options, callback);
   }
   deletePolicyTag(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeletePolicyTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeletePolicyTagRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -715,7 +715,7 @@ export class PolicyTagManagerClient {
  * const [response] = await client.deletePolicyTag(request);
  */
   deletePolicyTag(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeletePolicyTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeletePolicyTagRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.datacatalog.v1beta1.IDeletePolicyTagRequest|null|undefined,
@@ -749,7 +749,7 @@ export class PolicyTagManagerClient {
     return this.innerApiCalls.deletePolicyTag(request, options, callback);
   }
   updatePolicyTag(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdatePolicyTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdatePolicyTagRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IPolicyTag,
@@ -795,7 +795,7 @@ export class PolicyTagManagerClient {
  * const [response] = await client.updatePolicyTag(request);
  */
   updatePolicyTag(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdatePolicyTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdatePolicyTagRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IPolicyTag,
           protos.google.cloud.datacatalog.v1beta1.IUpdatePolicyTagRequest|null|undefined,
@@ -829,7 +829,7 @@ export class PolicyTagManagerClient {
     return this.innerApiCalls.updatePolicyTag(request, options, callback);
   }
   getPolicyTag(
-      request: protos.google.cloud.datacatalog.v1beta1.IGetPolicyTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IGetPolicyTagRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IPolicyTag,
@@ -866,7 +866,7 @@ export class PolicyTagManagerClient {
  * const [response] = await client.getPolicyTag(request);
  */
   getPolicyTag(
-      request: protos.google.cloud.datacatalog.v1beta1.IGetPolicyTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IGetPolicyTagRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IPolicyTag,
           protos.google.cloud.datacatalog.v1beta1.IGetPolicyTagRequest|null|undefined,
@@ -900,7 +900,7 @@ export class PolicyTagManagerClient {
     return this.innerApiCalls.getPolicyTag(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -941,7 +941,7 @@ export class PolicyTagManagerClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -975,7 +975,7 @@ export class PolicyTagManagerClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -1018,7 +1018,7 @@ export class PolicyTagManagerClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -1052,7 +1052,7 @@ export class PolicyTagManagerClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -1096,7 +1096,7 @@ export class PolicyTagManagerClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -1131,7 +1131,7 @@ export class PolicyTagManagerClient {
   }
 
   listTaxonomies(
-      request: protos.google.cloud.datacatalog.v1beta1.IListTaxonomiesRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IListTaxonomiesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITaxonomy[],
@@ -1179,7 +1179,7 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  */
   listTaxonomies(
-      request: protos.google.cloud.datacatalog.v1beta1.IListTaxonomiesRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IListTaxonomiesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.datacatalog.v1beta1.IListTaxonomiesRequest,
           protos.google.cloud.datacatalog.v1beta1.IListTaxonomiesResponse|null|undefined,
@@ -1313,7 +1313,7 @@ export class PolicyTagManagerClient {
     ) as AsyncIterable<protos.google.cloud.datacatalog.v1beta1.ITaxonomy>;
   }
   listPolicyTags(
-      request: protos.google.cloud.datacatalog.v1beta1.IListPolicyTagsRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IListPolicyTagsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IPolicyTag[],
@@ -1360,7 +1360,7 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  */
   listPolicyTags(
-      request: protos.google.cloud.datacatalog.v1beta1.IListPolicyTagsRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IListPolicyTagsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.datacatalog.v1beta1.IListPolicyTagsRequest,
           protos.google.cloud.datacatalog.v1beta1.IListPolicyTagsResponse|null|undefined,

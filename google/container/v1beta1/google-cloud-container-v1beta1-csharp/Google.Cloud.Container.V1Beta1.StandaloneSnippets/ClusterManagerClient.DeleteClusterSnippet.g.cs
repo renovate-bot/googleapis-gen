@@ -34,7 +34,9 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             string zone = "";
             string clusterId = "";
             // Make the request
+#pragma warning disable CS0612
             Operation response = clusterManagerClient.DeleteCluster(projectId, zone, clusterId);
+#pragma warning restore CS0612
         }
     }
 }

@@ -344,7 +344,7 @@ export class ProductSearchClient {
   // -- Service calls --
   // -------------------
   createProductSet(
-      request: protos.google.cloud.vision.v1.ICreateProductSetRequest,
+      request?: protos.google.cloud.vision.v1.ICreateProductSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IProductSet,
@@ -395,7 +395,7 @@ export class ProductSearchClient {
  * const [response] = await client.createProductSet(request);
  */
   createProductSet(
-      request: protos.google.cloud.vision.v1.ICreateProductSetRequest,
+      request?: protos.google.cloud.vision.v1.ICreateProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.vision.v1.IProductSet,
           protos.google.cloud.vision.v1.ICreateProductSetRequest|null|undefined,
@@ -429,7 +429,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.createProductSet(request, options, callback);
   }
   getProductSet(
-      request: protos.google.cloud.vision.v1.IGetProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IGetProductSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IProductSet,
@@ -473,7 +473,7 @@ export class ProductSearchClient {
  * const [response] = await client.getProductSet(request);
  */
   getProductSet(
-      request: protos.google.cloud.vision.v1.IGetProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IGetProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.vision.v1.IProductSet,
           protos.google.cloud.vision.v1.IGetProductSetRequest|null|undefined,
@@ -507,7 +507,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.getProductSet(request, options, callback);
   }
   updateProductSet(
-      request: protos.google.cloud.vision.v1.IUpdateProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IUpdateProductSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IProductSet,
@@ -556,7 +556,7 @@ export class ProductSearchClient {
  * const [response] = await client.updateProductSet(request);
  */
   updateProductSet(
-      request: protos.google.cloud.vision.v1.IUpdateProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IUpdateProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.vision.v1.IProductSet,
           protos.google.cloud.vision.v1.IUpdateProductSetRequest|null|undefined,
@@ -590,7 +590,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.updateProductSet(request, options, callback);
   }
   deleteProductSet(
-      request: protos.google.cloud.vision.v1.IDeleteProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IDeleteProductSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -633,7 +633,7 @@ export class ProductSearchClient {
  * const [response] = await client.deleteProductSet(request);
  */
   deleteProductSet(
-      request: protos.google.cloud.vision.v1.IDeleteProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IDeleteProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.vision.v1.IDeleteProductSetRequest|null|undefined,
@@ -667,7 +667,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.deleteProductSet(request, options, callback);
   }
   createProduct(
-      request: protos.google.cloud.vision.v1.ICreateProductRequest,
+      request?: protos.google.cloud.vision.v1.ICreateProductRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IProduct,
@@ -721,7 +721,7 @@ export class ProductSearchClient {
  * const [response] = await client.createProduct(request);
  */
   createProduct(
-      request: protos.google.cloud.vision.v1.ICreateProductRequest,
+      request?: protos.google.cloud.vision.v1.ICreateProductRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.vision.v1.IProduct,
           protos.google.cloud.vision.v1.ICreateProductRequest|null|undefined,
@@ -755,7 +755,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.createProduct(request, options, callback);
   }
   getProduct(
-      request: protos.google.cloud.vision.v1.IGetProductRequest,
+      request?: protos.google.cloud.vision.v1.IGetProductRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IProduct,
@@ -799,7 +799,7 @@ export class ProductSearchClient {
  * const [response] = await client.getProduct(request);
  */
   getProduct(
-      request: protos.google.cloud.vision.v1.IGetProductRequest,
+      request?: protos.google.cloud.vision.v1.IGetProductRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.vision.v1.IProduct,
           protos.google.cloud.vision.v1.IGetProductRequest|null|undefined,
@@ -833,7 +833,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.getProduct(request, options, callback);
   }
   updateProduct(
-      request: protos.google.cloud.vision.v1.IUpdateProductRequest,
+      request?: protos.google.cloud.vision.v1.IUpdateProductRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IProduct,
@@ -891,7 +891,7 @@ export class ProductSearchClient {
  * const [response] = await client.updateProduct(request);
  */
   updateProduct(
-      request: protos.google.cloud.vision.v1.IUpdateProductRequest,
+      request?: protos.google.cloud.vision.v1.IUpdateProductRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.vision.v1.IProduct,
           protos.google.cloud.vision.v1.IUpdateProductRequest|null|undefined,
@@ -925,7 +925,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.updateProduct(request, options, callback);
   }
   deleteProduct(
-      request: protos.google.cloud.vision.v1.IDeleteProductRequest,
+      request?: protos.google.cloud.vision.v1.IDeleteProductRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -969,7 +969,7 @@ export class ProductSearchClient {
  * const [response] = await client.deleteProduct(request);
  */
   deleteProduct(
-      request: protos.google.cloud.vision.v1.IDeleteProductRequest,
+      request?: protos.google.cloud.vision.v1.IDeleteProductRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.vision.v1.IDeleteProductRequest|null|undefined,
@@ -1003,7 +1003,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.deleteProduct(request, options, callback);
   }
   createReferenceImage(
-      request: protos.google.cloud.vision.v1.ICreateReferenceImageRequest,
+      request?: protos.google.cloud.vision.v1.ICreateReferenceImageRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IReferenceImage,
@@ -1069,7 +1069,7 @@ export class ProductSearchClient {
  * const [response] = await client.createReferenceImage(request);
  */
   createReferenceImage(
-      request: protos.google.cloud.vision.v1.ICreateReferenceImageRequest,
+      request?: protos.google.cloud.vision.v1.ICreateReferenceImageRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.vision.v1.IReferenceImage,
           protos.google.cloud.vision.v1.ICreateReferenceImageRequest|null|undefined,
@@ -1103,7 +1103,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.createReferenceImage(request, options, callback);
   }
   deleteReferenceImage(
-      request: protos.google.cloud.vision.v1.IDeleteReferenceImageRequest,
+      request?: protos.google.cloud.vision.v1.IDeleteReferenceImageRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1149,7 +1149,7 @@ export class ProductSearchClient {
  * const [response] = await client.deleteReferenceImage(request);
  */
   deleteReferenceImage(
-      request: protos.google.cloud.vision.v1.IDeleteReferenceImageRequest,
+      request?: protos.google.cloud.vision.v1.IDeleteReferenceImageRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.vision.v1.IDeleteReferenceImageRequest|null|undefined,
@@ -1183,7 +1183,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.deleteReferenceImage(request, options, callback);
   }
   getReferenceImage(
-      request: protos.google.cloud.vision.v1.IGetReferenceImageRequest,
+      request?: protos.google.cloud.vision.v1.IGetReferenceImageRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IReferenceImage,
@@ -1227,7 +1227,7 @@ export class ProductSearchClient {
  * const [response] = await client.getReferenceImage(request);
  */
   getReferenceImage(
-      request: protos.google.cloud.vision.v1.IGetReferenceImageRequest,
+      request?: protos.google.cloud.vision.v1.IGetReferenceImageRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.vision.v1.IReferenceImage,
           protos.google.cloud.vision.v1.IGetReferenceImageRequest|null|undefined,
@@ -1261,7 +1261,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.getReferenceImage(request, options, callback);
   }
   addProductToProductSet(
-      request: protos.google.cloud.vision.v1.IAddProductToProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IAddProductToProductSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1313,7 +1313,7 @@ export class ProductSearchClient {
  * const [response] = await client.addProductToProductSet(request);
  */
   addProductToProductSet(
-      request: protos.google.cloud.vision.v1.IAddProductToProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IAddProductToProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.vision.v1.IAddProductToProductSetRequest|null|undefined,
@@ -1347,7 +1347,7 @@ export class ProductSearchClient {
     return this.innerApiCalls.addProductToProductSet(request, options, callback);
   }
   removeProductFromProductSet(
-      request: protos.google.cloud.vision.v1.IRemoveProductFromProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IRemoveProductFromProductSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1392,7 +1392,7 @@ export class ProductSearchClient {
  * const [response] = await client.removeProductFromProductSet(request);
  */
   removeProductFromProductSet(
-      request: protos.google.cloud.vision.v1.IRemoveProductFromProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IRemoveProductFromProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.vision.v1.IRemoveProductFromProductSetRequest|null|undefined,
@@ -1427,7 +1427,7 @@ export class ProductSearchClient {
   }
 
   importProductSets(
-      request: protos.google.cloud.vision.v1.IImportProductSetsRequest,
+      request?: protos.google.cloud.vision.v1.IImportProductSetsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.vision.v1.IImportProductSetsResponse, protos.google.cloud.vision.v1.IBatchOperationMetadata>,
@@ -1481,7 +1481,7 @@ export class ProductSearchClient {
  * const [response] = await operation.promise();
  */
   importProductSets(
-      request: protos.google.cloud.vision.v1.IImportProductSetsRequest,
+      request?: protos.google.cloud.vision.v1.IImportProductSetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.vision.v1.IImportProductSetsResponse, protos.google.cloud.vision.v1.IBatchOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1536,7 +1536,7 @@ export class ProductSearchClient {
     return decodeOperation as LROperation<protos.google.cloud.vision.v1.ImportProductSetsResponse, protos.google.cloud.vision.v1.BatchOperationMetadata>;
   }
   purgeProducts(
-      request: protos.google.cloud.vision.v1.IPurgeProductsRequest,
+      request?: protos.google.cloud.vision.v1.IPurgeProductsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.vision.v1.IBatchOperationMetadata>,
@@ -1609,7 +1609,7 @@ export class ProductSearchClient {
  * const [response] = await operation.promise();
  */
   purgeProducts(
-      request: protos.google.cloud.vision.v1.IPurgeProductsRequest,
+      request?: protos.google.cloud.vision.v1.IPurgeProductsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.vision.v1.IBatchOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1664,7 +1664,7 @@ export class ProductSearchClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.vision.v1.BatchOperationMetadata>;
   }
   listProductSets(
-      request: protos.google.cloud.vision.v1.IListProductSetsRequest,
+      request?: protos.google.cloud.vision.v1.IListProductSetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IProductSet[],
@@ -1716,7 +1716,7 @@ export class ProductSearchClient {
  *   for more details and examples.
  */
   listProductSets(
-      request: protos.google.cloud.vision.v1.IListProductSetsRequest,
+      request?: protos.google.cloud.vision.v1.IListProductSetsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.vision.v1.IListProductSetsRequest,
           protos.google.cloud.vision.v1.IListProductSetsResponse|null|undefined,
@@ -1850,7 +1850,7 @@ export class ProductSearchClient {
     ) as AsyncIterable<protos.google.cloud.vision.v1.IProductSet>;
   }
   listProducts(
-      request: protos.google.cloud.vision.v1.IListProductsRequest,
+      request?: protos.google.cloud.vision.v1.IListProductsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IProduct[],
@@ -1902,7 +1902,7 @@ export class ProductSearchClient {
  *   for more details and examples.
  */
   listProducts(
-      request: protos.google.cloud.vision.v1.IListProductsRequest,
+      request?: protos.google.cloud.vision.v1.IListProductsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.vision.v1.IListProductsRequest,
           protos.google.cloud.vision.v1.IListProductsResponse|null|undefined,
@@ -2038,7 +2038,7 @@ export class ProductSearchClient {
     ) as AsyncIterable<protos.google.cloud.vision.v1.IProduct>;
   }
   listReferenceImages(
-      request: protos.google.cloud.vision.v1.IListReferenceImagesRequest,
+      request?: protos.google.cloud.vision.v1.IListReferenceImagesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IReferenceImage[],
@@ -2095,7 +2095,7 @@ export class ProductSearchClient {
  *   for more details and examples.
  */
   listReferenceImages(
-      request: protos.google.cloud.vision.v1.IListReferenceImagesRequest,
+      request?: protos.google.cloud.vision.v1.IListReferenceImagesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.vision.v1.IListReferenceImagesRequest,
           protos.google.cloud.vision.v1.IListReferenceImagesResponse|null|undefined,
@@ -2237,7 +2237,7 @@ export class ProductSearchClient {
     ) as AsyncIterable<protos.google.cloud.vision.v1.IReferenceImage>;
   }
   listProductsInProductSet(
-      request: protos.google.cloud.vision.v1.IListProductsInProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IListProductsInProductSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vision.v1.IProduct[],
@@ -2291,7 +2291,7 @@ export class ProductSearchClient {
  *   for more details and examples.
  */
   listProductsInProductSet(
-      request: protos.google.cloud.vision.v1.IListProductsInProductSetRequest,
+      request?: protos.google.cloud.vision.v1.IListProductsInProductSetRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.vision.v1.IListProductsInProductSetRequest,
           protos.google.cloud.vision.v1.IListProductsInProductSetResponse|null|undefined,

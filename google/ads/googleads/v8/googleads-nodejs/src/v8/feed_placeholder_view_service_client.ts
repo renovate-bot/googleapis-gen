@@ -653,7 +653,7 @@ export class FeedPlaceholderViewServiceClient {
   // -- Service calls --
   // -------------------
   getFeedPlaceholderView(
-      request: protos.google.ads.googleads.v8.services.IGetFeedPlaceholderViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetFeedPlaceholderViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IFeedPlaceholderView,
@@ -698,7 +698,7 @@ export class FeedPlaceholderViewServiceClient {
  * const [response] = await client.getFeedPlaceholderView(request);
  */
   getFeedPlaceholderView(
-      request: protos.google.ads.googleads.v8.services.IGetFeedPlaceholderViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetFeedPlaceholderViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IFeedPlaceholderView,
           protos.google.ads.googleads.v8.services.IGetFeedPlaceholderViewRequest|null|undefined,

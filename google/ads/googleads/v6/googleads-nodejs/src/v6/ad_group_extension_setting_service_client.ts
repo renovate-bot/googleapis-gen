@@ -614,7 +614,7 @@ export class AdGroupExtensionSettingServiceClient {
   // -- Service calls --
   // -------------------
   getAdGroupExtensionSetting(
-      request: protos.google.ads.googleads.v6.services.IGetAdGroupExtensionSettingRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetAdGroupExtensionSettingRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IAdGroupExtensionSetting,
@@ -651,7 +651,7 @@ export class AdGroupExtensionSettingServiceClient {
  * const [response] = await client.getAdGroupExtensionSetting(request);
  */
   getAdGroupExtensionSetting(
-      request: protos.google.ads.googleads.v6.services.IGetAdGroupExtensionSettingRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetAdGroupExtensionSettingRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IAdGroupExtensionSetting,
           protos.google.ads.googleads.v6.services.IGetAdGroupExtensionSettingRequest|null|undefined,
@@ -685,7 +685,7 @@ export class AdGroupExtensionSettingServiceClient {
     return this.innerApiCalls.getAdGroupExtensionSetting(request, options, callback);
   }
   mutateAdGroupExtensionSettings(
-      request: protos.google.ads.googleads.v6.services.IMutateAdGroupExtensionSettingsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateAdGroupExtensionSettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateAdGroupExtensionSettingsResponse,
@@ -735,7 +735,7 @@ export class AdGroupExtensionSettingServiceClient {
  * const [response] = await client.mutateAdGroupExtensionSettings(request);
  */
   mutateAdGroupExtensionSettings(
-      request: protos.google.ads.googleads.v6.services.IMutateAdGroupExtensionSettingsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateAdGroupExtensionSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateAdGroupExtensionSettingsResponse,
           protos.google.ads.googleads.v6.services.IMutateAdGroupExtensionSettingsRequest|null|undefined,

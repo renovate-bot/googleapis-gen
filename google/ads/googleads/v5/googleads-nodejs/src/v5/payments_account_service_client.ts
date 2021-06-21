@@ -591,7 +591,7 @@ export class PaymentsAccountServiceClient {
   // -- Service calls --
   // -------------------
   listPaymentsAccounts(
-      request: protos.google.ads.googleads.v5.services.IListPaymentsAccountsRequest,
+      request?: protos.google.ads.googleads.v5.services.IListPaymentsAccountsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.services.IListPaymentsAccountsResponse,
@@ -630,7 +630,7 @@ export class PaymentsAccountServiceClient {
  * const [response] = await client.listPaymentsAccounts(request);
  */
   listPaymentsAccounts(
-      request: protos.google.ads.googleads.v5.services.IListPaymentsAccountsRequest,
+      request?: protos.google.ads.googleads.v5.services.IListPaymentsAccountsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.services.IListPaymentsAccountsResponse,
           protos.google.ads.googleads.v5.services.IListPaymentsAccountsRequest|null|undefined,

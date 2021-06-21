@@ -653,7 +653,7 @@ export class SmartCampaignSearchTermViewServiceClient {
   // -- Service calls --
   // -------------------
   getSmartCampaignSearchTermView(
-      request: protos.google.ads.googleads.v8.services.IGetSmartCampaignSearchTermViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetSmartCampaignSearchTermViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ISmartCampaignSearchTermView,
@@ -698,7 +698,7 @@ export class SmartCampaignSearchTermViewServiceClient {
  * const [response] = await client.getSmartCampaignSearchTermView(request);
  */
   getSmartCampaignSearchTermView(
-      request: protos.google.ads.googleads.v8.services.IGetSmartCampaignSearchTermViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetSmartCampaignSearchTermViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ISmartCampaignSearchTermView,
           protos.google.ads.googleads.v8.services.IGetSmartCampaignSearchTermViewRequest|null|undefined,

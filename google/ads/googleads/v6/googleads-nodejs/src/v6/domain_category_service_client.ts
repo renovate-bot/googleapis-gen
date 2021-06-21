@@ -614,7 +614,7 @@ export class DomainCategoryServiceClient {
   // -- Service calls --
   // -------------------
   getDomainCategory(
-      request: protos.google.ads.googleads.v6.services.IGetDomainCategoryRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetDomainCategoryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IDomainCategory,
@@ -651,7 +651,7 @@ export class DomainCategoryServiceClient {
  * const [response] = await client.getDomainCategory(request);
  */
   getDomainCategory(
-      request: protos.google.ads.googleads.v6.services.IGetDomainCategoryRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetDomainCategoryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IDomainCategory,
           protos.google.ads.googleads.v6.services.IGetDomainCategoryRequest|null|undefined,

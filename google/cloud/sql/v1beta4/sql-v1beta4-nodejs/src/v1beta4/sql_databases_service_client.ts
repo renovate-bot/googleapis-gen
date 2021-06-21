@@ -262,7 +262,7 @@ export class SqlDatabasesServiceClient {
   // -- Service calls --
   // -------------------
   delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesDeleteRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesDeleteRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -303,7 +303,7 @@ export class SqlDatabasesServiceClient {
  * const [response] = await client.delete(request);
  */
   delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesDeleteRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesDeleteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlDatabasesDeleteRequest|null|undefined,
@@ -337,7 +337,7 @@ export class SqlDatabasesServiceClient {
     return this.innerApiCalls.delete(request, options, callback);
   }
   get(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesGetRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesGetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IDatabase,
@@ -379,7 +379,7 @@ export class SqlDatabasesServiceClient {
  * const [response] = await client.get(request);
  */
   get(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesGetRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesGetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IDatabase,
           protos.google.cloud.sql.v1beta4.ISqlDatabasesGetRequest|null|undefined,
@@ -413,7 +413,7 @@ export class SqlDatabasesServiceClient {
     return this.innerApiCalls.get(request, options, callback);
   }
   insert(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesInsertRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesInsertRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -454,7 +454,7 @@ export class SqlDatabasesServiceClient {
  * const [response] = await client.insert(request);
  */
   insert(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesInsertRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesInsertRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlDatabasesInsertRequest|null|undefined,
@@ -488,7 +488,7 @@ export class SqlDatabasesServiceClient {
     return this.innerApiCalls.insert(request, options, callback);
   }
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesListRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IDatabasesListResponse,
@@ -527,7 +527,7 @@ export class SqlDatabasesServiceClient {
  * const [response] = await client.list(request);
  */
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesListRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IDatabasesListResponse,
           protos.google.cloud.sql.v1beta4.ISqlDatabasesListRequest|null|undefined,
@@ -561,7 +561,7 @@ export class SqlDatabasesServiceClient {
     return this.innerApiCalls.list(request, options, callback);
   }
   patch(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesUpdateRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesUpdateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -604,7 +604,7 @@ export class SqlDatabasesServiceClient {
  * const [response] = await client.patch(request);
  */
   patch(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesUpdateRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesUpdateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlDatabasesUpdateRequest|null|undefined,
@@ -638,7 +638,7 @@ export class SqlDatabasesServiceClient {
     return this.innerApiCalls.patch(request, options, callback);
   }
   update(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesUpdateRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesUpdateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -681,7 +681,7 @@ export class SqlDatabasesServiceClient {
  * const [response] = await client.update(request);
  */
   update(
-      request: protos.google.cloud.sql.v1beta4.ISqlDatabasesUpdateRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlDatabasesUpdateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlDatabasesUpdateRequest|null|undefined,

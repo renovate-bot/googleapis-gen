@@ -635,7 +635,7 @@ export class DistanceViewServiceClient {
   // -- Service calls --
   // -------------------
   getDistanceView(
-      request: protos.google.ads.googleads.v7.services.IGetDistanceViewRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetDistanceViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IDistanceView,
@@ -680,7 +680,7 @@ export class DistanceViewServiceClient {
  * const [response] = await client.getDistanceView(request);
  */
   getDistanceView(
-      request: protos.google.ads.googleads.v7.services.IGetDistanceViewRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetDistanceViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IDistanceView,
           protos.google.ads.googleads.v7.services.IGetDistanceViewRequest|null|undefined,

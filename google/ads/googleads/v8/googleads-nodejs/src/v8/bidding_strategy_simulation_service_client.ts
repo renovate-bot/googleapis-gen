@@ -653,7 +653,7 @@ export class BiddingStrategySimulationServiceClient {
   // -- Service calls --
   // -------------------
   getBiddingStrategySimulation(
-      request: protos.google.ads.googleads.v8.services.IGetBiddingStrategySimulationRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetBiddingStrategySimulationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IBiddingStrategySimulation,
@@ -690,7 +690,7 @@ export class BiddingStrategySimulationServiceClient {
  * const [response] = await client.getBiddingStrategySimulation(request);
  */
   getBiddingStrategySimulation(
-      request: protos.google.ads.googleads.v8.services.IGetBiddingStrategySimulationRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetBiddingStrategySimulationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IBiddingStrategySimulation,
           protos.google.ads.googleads.v8.services.IGetBiddingStrategySimulationRequest|null|undefined,

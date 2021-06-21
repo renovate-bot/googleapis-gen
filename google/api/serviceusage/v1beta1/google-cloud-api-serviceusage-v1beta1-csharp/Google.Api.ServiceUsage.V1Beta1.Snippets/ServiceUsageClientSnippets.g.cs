@@ -35,7 +35,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Initialize request argument(s)
             EnableServiceRequest request = new EnableServiceRequest { Name = "", };
             // Make the request
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> response = serviceUsageClient.EnableService(request);
+#pragma warning restore CS0612
 
             // Poll until the returned long-running operation is complete
             Operation<Empty, OperationMetadata> completedResponse = response.PollUntilCompleted();
@@ -45,7 +47,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Or get the name of the operation
             string operationName = response.Name;
             // This name can be stored, then the long-running operation retrieved later by name
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> retrievedResponse = serviceUsageClient.PollOnceEnableService(operationName);
+#pragma warning restore CS0612
             // Check if the retrieved long-running operation has completed
             if (retrievedResponse.IsCompleted)
             {
@@ -65,7 +69,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Initialize request argument(s)
             EnableServiceRequest request = new EnableServiceRequest { Name = "", };
             // Make the request
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> response = await serviceUsageClient.EnableServiceAsync(request);
+#pragma warning restore CS0612
 
             // Poll until the returned long-running operation is complete
             Operation<Empty, OperationMetadata> completedResponse = await response.PollUntilCompletedAsync();
@@ -75,7 +81,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Or get the name of the operation
             string operationName = response.Name;
             // This name can be stored, then the long-running operation retrieved later by name
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> retrievedResponse = await serviceUsageClient.PollOnceEnableServiceAsync(operationName);
+#pragma warning restore CS0612
             // Check if the retrieved long-running operation has completed
             if (retrievedResponse.IsCompleted)
             {
@@ -94,7 +102,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Initialize request argument(s)
             DisableServiceRequest request = new DisableServiceRequest { Name = "", };
             // Make the request
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> response = serviceUsageClient.DisableService(request);
+#pragma warning restore CS0612
 
             // Poll until the returned long-running operation is complete
             Operation<Empty, OperationMetadata> completedResponse = response.PollUntilCompleted();
@@ -104,7 +114,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Or get the name of the operation
             string operationName = response.Name;
             // This name can be stored, then the long-running operation retrieved later by name
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> retrievedResponse = serviceUsageClient.PollOnceDisableService(operationName);
+#pragma warning restore CS0612
             // Check if the retrieved long-running operation has completed
             if (retrievedResponse.IsCompleted)
             {
@@ -124,7 +136,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Initialize request argument(s)
             DisableServiceRequest request = new DisableServiceRequest { Name = "", };
             // Make the request
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> response = await serviceUsageClient.DisableServiceAsync(request);
+#pragma warning restore CS0612
 
             // Poll until the returned long-running operation is complete
             Operation<Empty, OperationMetadata> completedResponse = await response.PollUntilCompletedAsync();
@@ -134,7 +148,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Or get the name of the operation
             string operationName = response.Name;
             // This name can be stored, then the long-running operation retrieved later by name
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> retrievedResponse = await serviceUsageClient.PollOnceDisableServiceAsync(operationName);
+#pragma warning restore CS0612
             // Check if the retrieved long-running operation has completed
             if (retrievedResponse.IsCompleted)
             {
@@ -153,7 +169,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Initialize request argument(s)
             GetServiceRequest request = new GetServiceRequest { Name = "", };
             // Make the request
+#pragma warning disable CS0612
             Service response = serviceUsageClient.GetService(request);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -167,7 +185,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Initialize request argument(s)
             GetServiceRequest request = new GetServiceRequest { Name = "", };
             // Make the request
+#pragma warning disable CS0612
             Service response = await serviceUsageClient.GetServiceAsync(request);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -184,7 +204,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
                 Filter = "",
             };
             // Make the request
+#pragma warning disable CS0612
             PagedEnumerable<ListServicesResponse, Service> response = serviceUsageClient.ListServices(request);
+#pragma warning restore CS0612
 
             // Iterate over all response items, lazily performing RPCs as required
             foreach (Service item in response)
@@ -233,7 +255,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
                 Filter = "",
             };
             // Make the request
+#pragma warning disable CS0612
             PagedAsyncEnumerable<ListServicesResponse, Service> response = serviceUsageClient.ListServicesAsync(request);
+#pragma warning restore CS0612
 
             // Iterate over all response items, lazily performing RPCs as required
             await response.ForEachAsync((Service item) =>
@@ -282,7 +306,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
                 ServiceIds = { "", },
             };
             // Make the request
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> response = serviceUsageClient.BatchEnableServices(request);
+#pragma warning restore CS0612
 
             // Poll until the returned long-running operation is complete
             Operation<Empty, OperationMetadata> completedResponse = response.PollUntilCompleted();
@@ -292,7 +318,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Or get the name of the operation
             string operationName = response.Name;
             // This name can be stored, then the long-running operation retrieved later by name
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> retrievedResponse = serviceUsageClient.PollOnceBatchEnableServices(operationName);
+#pragma warning restore CS0612
             // Check if the retrieved long-running operation has completed
             if (retrievedResponse.IsCompleted)
             {
@@ -316,7 +344,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
                 ServiceIds = { "", },
             };
             // Make the request
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> response = await serviceUsageClient.BatchEnableServicesAsync(request);
+#pragma warning restore CS0612
 
             // Poll until the returned long-running operation is complete
             Operation<Empty, OperationMetadata> completedResponse = await response.PollUntilCompletedAsync();
@@ -326,7 +356,9 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // Or get the name of the operation
             string operationName = response.Name;
             // This name can be stored, then the long-running operation retrieved later by name
+#pragma warning disable CS0612
             Operation<Empty, OperationMetadata> retrievedResponse = await serviceUsageClient.PollOnceBatchEnableServicesAsync(operationName);
+#pragma warning restore CS0612
             // Check if the retrieved long-running operation has completed
             if (retrievedResponse.IsCompleted)
             {

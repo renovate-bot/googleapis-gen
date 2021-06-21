@@ -614,7 +614,7 @@ export class KeywordPlanServiceClient {
   // -- Service calls --
   // -------------------
   getKeywordPlan(
-      request: protos.google.ads.googleads.v6.services.IGetKeywordPlanRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetKeywordPlanRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IKeywordPlan,
@@ -651,7 +651,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.getKeywordPlan(request);
  */
   getKeywordPlan(
-      request: protos.google.ads.googleads.v6.services.IGetKeywordPlanRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetKeywordPlanRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IKeywordPlan,
           protos.google.ads.googleads.v6.services.IGetKeywordPlanRequest|null|undefined,
@@ -685,7 +685,7 @@ export class KeywordPlanServiceClient {
     return this.innerApiCalls.getKeywordPlan(request, options, callback);
   }
   mutateKeywordPlans(
-      request: protos.google.ads.googleads.v6.services.IMutateKeywordPlansRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateKeywordPlansRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateKeywordPlansResponse,
@@ -733,7 +733,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.mutateKeywordPlans(request);
  */
   mutateKeywordPlans(
-      request: protos.google.ads.googleads.v6.services.IMutateKeywordPlansRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateKeywordPlansRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateKeywordPlansResponse,
           protos.google.ads.googleads.v6.services.IMutateKeywordPlansRequest|null|undefined,
@@ -767,7 +767,7 @@ export class KeywordPlanServiceClient {
     return this.innerApiCalls.mutateKeywordPlans(request, options, callback);
   }
   generateForecastCurve(
-      request: protos.google.ads.googleads.v6.services.IGenerateForecastCurveRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateForecastCurveRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IGenerateForecastCurveResponse,
@@ -809,7 +809,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.generateForecastCurve(request);
  */
   generateForecastCurve(
-      request: protos.google.ads.googleads.v6.services.IGenerateForecastCurveRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateForecastCurveRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IGenerateForecastCurveResponse,
           protos.google.ads.googleads.v6.services.IGenerateForecastCurveRequest|null|undefined,
@@ -843,7 +843,7 @@ export class KeywordPlanServiceClient {
     return this.innerApiCalls.generateForecastCurve(request, options, callback);
   }
   generateForecastTimeSeries(
-      request: protos.google.ads.googleads.v6.services.IGenerateForecastTimeSeriesRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateForecastTimeSeriesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IGenerateForecastTimeSeriesResponse,
@@ -886,7 +886,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.generateForecastTimeSeries(request);
  */
   generateForecastTimeSeries(
-      request: protos.google.ads.googleads.v6.services.IGenerateForecastTimeSeriesRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateForecastTimeSeriesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IGenerateForecastTimeSeriesResponse,
           protos.google.ads.googleads.v6.services.IGenerateForecastTimeSeriesRequest|null|undefined,
@@ -920,7 +920,7 @@ export class KeywordPlanServiceClient {
     return this.innerApiCalls.generateForecastTimeSeries(request, options, callback);
   }
   generateForecastMetrics(
-      request: protos.google.ads.googleads.v6.services.IGenerateForecastMetricsRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateForecastMetricsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IGenerateForecastMetricsResponse,
@@ -957,7 +957,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.generateForecastMetrics(request);
  */
   generateForecastMetrics(
-      request: protos.google.ads.googleads.v6.services.IGenerateForecastMetricsRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateForecastMetricsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IGenerateForecastMetricsResponse,
           protos.google.ads.googleads.v6.services.IGenerateForecastMetricsRequest|null|undefined,
@@ -991,7 +991,7 @@ export class KeywordPlanServiceClient {
     return this.innerApiCalls.generateForecastMetrics(request, options, callback);
   }
   generateHistoricalMetrics(
-      request: protos.google.ads.googleads.v6.services.IGenerateHistoricalMetricsRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateHistoricalMetricsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IGenerateHistoricalMetricsResponse,
@@ -1029,7 +1029,7 @@ export class KeywordPlanServiceClient {
  * const [response] = await client.generateHistoricalMetrics(request);
  */
   generateHistoricalMetrics(
-      request: protos.google.ads.googleads.v6.services.IGenerateHistoricalMetricsRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateHistoricalMetricsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IGenerateHistoricalMetricsResponse,
           protos.google.ads.googleads.v6.services.IGenerateHistoricalMetricsRequest|null|undefined,

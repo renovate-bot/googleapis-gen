@@ -653,7 +653,7 @@ export class CustomerAssetServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerAsset(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerAssetRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerAssetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICustomerAsset,
@@ -698,7 +698,7 @@ export class CustomerAssetServiceClient {
  * const [response] = await client.getCustomerAsset(request);
  */
   getCustomerAsset(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerAssetRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerAssetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICustomerAsset,
           protos.google.ads.googleads.v8.services.IGetCustomerAssetRequest|null|undefined,
@@ -732,7 +732,7 @@ export class CustomerAssetServiceClient {
     return this.innerApiCalls.getCustomerAsset(request, options, callback);
   }
   mutateCustomerAssets(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerAssetsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerAssetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateCustomerAssetsResponse,
@@ -794,7 +794,7 @@ export class CustomerAssetServiceClient {
  * const [response] = await client.mutateCustomerAssets(request);
  */
   mutateCustomerAssets(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerAssetsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateCustomerAssetsResponse,
           protos.google.ads.googleads.v8.services.IMutateCustomerAssetsRequest|null|undefined,

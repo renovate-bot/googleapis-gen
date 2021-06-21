@@ -34,7 +34,9 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             string projectId = "";
             string zone = "";
             // Make the request
+#pragma warning disable CS0612
             ListOperationsResponse response = await clusterManagerClient.ListOperationsAsync(projectId, zone);
+#pragma warning restore CS0612
         }
     }
 }

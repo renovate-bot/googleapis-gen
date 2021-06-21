@@ -326,7 +326,7 @@ export class CloudShellServiceClient {
   // -- Service calls --
   // -------------------
   getEnvironment(
-      request: protos.google.cloud.shell.v1.IGetEnvironmentRequest,
+      request?: protos.google.cloud.shell.v1.IGetEnvironmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.shell.v1.IEnvironment,
@@ -364,7 +364,7 @@ export class CloudShellServiceClient {
  * const [response] = await client.getEnvironment(request);
  */
   getEnvironment(
-      request: protos.google.cloud.shell.v1.IGetEnvironmentRequest,
+      request?: protos.google.cloud.shell.v1.IGetEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.shell.v1.IEnvironment,
           protos.google.cloud.shell.v1.IGetEnvironmentRequest|null|undefined,
@@ -399,7 +399,7 @@ export class CloudShellServiceClient {
   }
 
   startEnvironment(
-      request: protos.google.cloud.shell.v1.IStartEnvironmentRequest,
+      request?: protos.google.cloud.shell.v1.IStartEnvironmentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.shell.v1.IStartEnvironmentResponse, protos.google.cloud.shell.v1.IStartEnvironmentMetadata>,
@@ -453,7 +453,7 @@ export class CloudShellServiceClient {
  * const [response] = await operation.promise();
  */
   startEnvironment(
-      request: protos.google.cloud.shell.v1.IStartEnvironmentRequest,
+      request?: protos.google.cloud.shell.v1.IStartEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.shell.v1.IStartEnvironmentResponse, protos.google.cloud.shell.v1.IStartEnvironmentMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -508,7 +508,7 @@ export class CloudShellServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.shell.v1.StartEnvironmentResponse, protos.google.cloud.shell.v1.StartEnvironmentMetadata>;
   }
   authorizeEnvironment(
-      request: protos.google.cloud.shell.v1.IAuthorizeEnvironmentRequest,
+      request?: protos.google.cloud.shell.v1.IAuthorizeEnvironmentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.shell.v1.IAuthorizeEnvironmentResponse, protos.google.cloud.shell.v1.IAuthorizeEnvironmentMetadata>,
@@ -560,7 +560,7 @@ export class CloudShellServiceClient {
  * const [response] = await operation.promise();
  */
   authorizeEnvironment(
-      request: protos.google.cloud.shell.v1.IAuthorizeEnvironmentRequest,
+      request?: protos.google.cloud.shell.v1.IAuthorizeEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.shell.v1.IAuthorizeEnvironmentResponse, protos.google.cloud.shell.v1.IAuthorizeEnvironmentMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -615,7 +615,7 @@ export class CloudShellServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.shell.v1.AuthorizeEnvironmentResponse, protos.google.cloud.shell.v1.AuthorizeEnvironmentMetadata>;
   }
   addPublicKey(
-      request: protos.google.cloud.shell.v1.IAddPublicKeyRequest,
+      request?: protos.google.cloud.shell.v1.IAddPublicKeyRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.shell.v1.IAddPublicKeyResponse, protos.google.cloud.shell.v1.IAddPublicKeyMetadata>,
@@ -665,7 +665,7 @@ export class CloudShellServiceClient {
  * const [response] = await operation.promise();
  */
   addPublicKey(
-      request: protos.google.cloud.shell.v1.IAddPublicKeyRequest,
+      request?: protos.google.cloud.shell.v1.IAddPublicKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.shell.v1.IAddPublicKeyResponse, protos.google.cloud.shell.v1.IAddPublicKeyMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -720,7 +720,7 @@ export class CloudShellServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.shell.v1.AddPublicKeyResponse, protos.google.cloud.shell.v1.AddPublicKeyMetadata>;
   }
   removePublicKey(
-      request: protos.google.cloud.shell.v1.IRemovePublicKeyRequest,
+      request?: protos.google.cloud.shell.v1.IRemovePublicKeyRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.shell.v1.IRemovePublicKeyResponse, protos.google.cloud.shell.v1.IRemovePublicKeyMetadata>,
@@ -766,7 +766,7 @@ export class CloudShellServiceClient {
  * const [response] = await operation.promise();
  */
   removePublicKey(
-      request: protos.google.cloud.shell.v1.IRemovePublicKeyRequest,
+      request?: protos.google.cloud.shell.v1.IRemovePublicKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.shell.v1.IRemovePublicKeyResponse, protos.google.cloud.shell.v1.IRemovePublicKeyMetadata>,
           protos.google.longrunning.IOperation|null|undefined,

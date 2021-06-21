@@ -677,7 +677,7 @@ export class OfflineUserDataJobServiceClient {
   // -- Service calls --
   // -------------------
   createOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobResponse,
@@ -731,7 +731,7 @@ export class OfflineUserDataJobServiceClient {
  * const [response] = await client.createOfflineUserDataJob(request);
  */
   createOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobResponse,
           protos.google.ads.googleads.v8.services.ICreateOfflineUserDataJobRequest|null|undefined,
@@ -765,7 +765,7 @@ export class OfflineUserDataJobServiceClient {
     return this.innerApiCalls.createOfflineUserDataJob(request, options, callback);
   }
   getOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.IGetOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetOfflineUserDataJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IOfflineUserDataJob,
@@ -810,7 +810,7 @@ export class OfflineUserDataJobServiceClient {
  * const [response] = await client.getOfflineUserDataJob(request);
  */
   getOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.IGetOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetOfflineUserDataJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IOfflineUserDataJob,
           protos.google.ads.googleads.v8.services.IGetOfflineUserDataJobRequest|null|undefined,
@@ -844,7 +844,7 @@ export class OfflineUserDataJobServiceClient {
     return this.innerApiCalls.getOfflineUserDataJob(request, options, callback);
   }
   addOfflineUserDataJobOperations(
-      request: protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsRequest,
+      request?: protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsResponse,
@@ -900,7 +900,7 @@ export class OfflineUserDataJobServiceClient {
  * const [response] = await client.addOfflineUserDataJobOperations(request);
  */
   addOfflineUserDataJobOperations(
-      request: protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsRequest,
+      request?: protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsResponse,
           protos.google.ads.googleads.v8.services.IAddOfflineUserDataJobOperationsRequest|null|undefined,
@@ -935,7 +935,7 @@ export class OfflineUserDataJobServiceClient {
   }
 
   runOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.IRunOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.IRunOfflineUserDataJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
@@ -991,7 +991,7 @@ export class OfflineUserDataJobServiceClient {
  * const [response] = await operation.promise();
  */
   runOfflineUserDataJob(
-      request: protos.google.ads.googleads.v8.services.IRunOfflineUserDataJobRequest,
+      request?: protos.google.ads.googleads.v8.services.IRunOfflineUserDataJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
           protos.google.longrunning.IOperation|null|undefined,

@@ -278,7 +278,7 @@ export class LookupServiceClient {
   // -- Service calls --
   // -------------------
   resolveService(
-      request: protos.google.cloud.servicedirectory.v1beta1.IResolveServiceRequest,
+      request?: protos.google.cloud.servicedirectory.v1beta1.IResolveServiceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.servicedirectory.v1beta1.IResolveServiceResponse,
@@ -340,7 +340,7 @@ export class LookupServiceClient {
  * const [response] = await client.resolveService(request);
  */
   resolveService(
-      request: protos.google.cloud.servicedirectory.v1beta1.IResolveServiceRequest,
+      request?: protos.google.cloud.servicedirectory.v1beta1.IResolveServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.servicedirectory.v1beta1.IResolveServiceResponse,
           protos.google.cloud.servicedirectory.v1beta1.IResolveServiceRequest|null|undefined,

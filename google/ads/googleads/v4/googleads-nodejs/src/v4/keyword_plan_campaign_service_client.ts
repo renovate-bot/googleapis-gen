@@ -587,7 +587,7 @@ export class KeywordPlanCampaignServiceClient {
   // -- Service calls --
   // -------------------
   getKeywordPlanCampaign(
-      request: protos.google.ads.googleads.v4.services.IGetKeywordPlanCampaignRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetKeywordPlanCampaignRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.IKeywordPlanCampaign,
@@ -624,7 +624,7 @@ export class KeywordPlanCampaignServiceClient {
  * const [response] = await client.getKeywordPlanCampaign(request);
  */
   getKeywordPlanCampaign(
-      request: protos.google.ads.googleads.v4.services.IGetKeywordPlanCampaignRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetKeywordPlanCampaignRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.IKeywordPlanCampaign,
           protos.google.ads.googleads.v4.services.IGetKeywordPlanCampaignRequest|null|undefined,
@@ -658,7 +658,7 @@ export class KeywordPlanCampaignServiceClient {
     return this.innerApiCalls.getKeywordPlanCampaign(request, options, callback);
   }
   mutateKeywordPlanCampaigns(
-      request: protos.google.ads.googleads.v4.services.IMutateKeywordPlanCampaignsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateKeywordPlanCampaignsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IMutateKeywordPlanCampaignsResponse,
@@ -706,7 +706,7 @@ export class KeywordPlanCampaignServiceClient {
  * const [response] = await client.mutateKeywordPlanCampaigns(request);
  */
   mutateKeywordPlanCampaigns(
-      request: protos.google.ads.googleads.v4.services.IMutateKeywordPlanCampaignsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateKeywordPlanCampaignsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IMutateKeywordPlanCampaignsResponse,
           protos.google.ads.googleads.v4.services.IMutateKeywordPlanCampaignsRequest|null|undefined,

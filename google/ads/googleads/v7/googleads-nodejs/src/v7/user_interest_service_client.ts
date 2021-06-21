@@ -635,7 +635,7 @@ export class UserInterestServiceClient {
   // -- Service calls --
   // -------------------
   getUserInterest(
-      request: protos.google.ads.googleads.v7.services.IGetUserInterestRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetUserInterestRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IUserInterest,
@@ -680,7 +680,7 @@ export class UserInterestServiceClient {
  * const [response] = await client.getUserInterest(request);
  */
   getUserInterest(
-      request: protos.google.ads.googleads.v7.services.IGetUserInterestRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetUserInterestRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IUserInterest,
           protos.google.ads.googleads.v7.services.IGetUserInterestRequest|null|undefined,

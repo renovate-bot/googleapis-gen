@@ -1176,7 +1176,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             // Initialize request argument(s)
             SignBlobRequest request = new SignBlobRequest { };
             // Make the request
+#pragma warning disable CS0612
             SignBlobResponse response = iAMClient.SignBlob(request);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -1190,7 +1192,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             // Initialize request argument(s)
             SignBlobRequest request = new SignBlobRequest { };
             // Make the request
+#pragma warning disable CS0612
             SignBlobResponse response = await iAMClient.SignBlobAsync(request);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -1204,7 +1208,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             string name = "projects/[PROJECT]/serviceAccounts/[SERVICE_ACCOUNT]";
             ByteString bytesToSign = ByteString.Empty;
             // Make the request
+#pragma warning disable CS0612
             SignBlobResponse response = iAMClient.SignBlob(name, bytesToSign);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -1219,7 +1225,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             string name = "projects/[PROJECT]/serviceAccounts/[SERVICE_ACCOUNT]";
             ByteString bytesToSign = ByteString.Empty;
             // Make the request
+#pragma warning disable CS0612
             SignBlobResponse response = await iAMClient.SignBlobAsync(name, bytesToSign);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -1233,7 +1241,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             ServiceAccountName name = ServiceAccountName.FromProjectServiceAccount("[PROJECT]", "[SERVICE_ACCOUNT]");
             ByteString bytesToSign = ByteString.Empty;
             // Make the request
+#pragma warning disable CS0612
             SignBlobResponse response = iAMClient.SignBlob(name, bytesToSign);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -1248,7 +1258,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             ServiceAccountName name = ServiceAccountName.FromProjectServiceAccount("[PROJECT]", "[SERVICE_ACCOUNT]");
             ByteString bytesToSign = ByteString.Empty;
             // Make the request
+#pragma warning disable CS0612
             SignBlobResponse response = await iAMClient.SignBlobAsync(name, bytesToSign);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -1261,7 +1273,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             // Initialize request argument(s)
             SignJwtRequest request = new SignJwtRequest { };
             // Make the request
+#pragma warning disable CS0612
             SignJwtResponse response = iAMClient.SignJwt(request);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -1275,7 +1289,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             // Initialize request argument(s)
             SignJwtRequest request = new SignJwtRequest { };
             // Make the request
+#pragma warning disable CS0612
             SignJwtResponse response = await iAMClient.SignJwtAsync(request);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -1289,7 +1305,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             string name = "projects/[PROJECT]/serviceAccounts/[SERVICE_ACCOUNT]";
             string payload = "";
             // Make the request
+#pragma warning disable CS0612
             SignJwtResponse response = iAMClient.SignJwt(name, payload);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -1304,7 +1322,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             string name = "projects/[PROJECT]/serviceAccounts/[SERVICE_ACCOUNT]";
             string payload = "";
             // Make the request
+#pragma warning disable CS0612
             SignJwtResponse response = await iAMClient.SignJwtAsync(name, payload);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -1318,7 +1338,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             ServiceAccountName name = ServiceAccountName.FromProjectServiceAccount("[PROJECT]", "[SERVICE_ACCOUNT]");
             string payload = "";
             // Make the request
+#pragma warning disable CS0612
             SignJwtResponse response = iAMClient.SignJwt(name, payload);
+#pragma warning restore CS0612
             // End snippet
         }
 
@@ -1333,7 +1355,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             ServiceAccountName name = ServiceAccountName.FromProjectServiceAccount("[PROJECT]", "[SERVICE_ACCOUNT]");
             string payload = "";
             // Make the request
+#pragma warning disable CS0612
             SignJwtResponse response = await iAMClient.SignJwtAsync(name, payload);
+#pragma warning restore CS0612
             // End snippet
         }
 

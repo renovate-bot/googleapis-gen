@@ -381,7 +381,7 @@ export class ApiGatewayServiceClient {
   // -- Service calls --
   // -------------------
   getGateway(
-      request: protos.google.cloud.apigateway.v1.IGetGatewayRequest,
+      request?: protos.google.cloud.apigateway.v1.IGetGatewayRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.apigateway.v1.IGateway,
@@ -419,7 +419,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await client.getGateway(request);
  */
   getGateway(
-      request: protos.google.cloud.apigateway.v1.IGetGatewayRequest,
+      request?: protos.google.cloud.apigateway.v1.IGetGatewayRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.apigateway.v1.IGateway,
           protos.google.cloud.apigateway.v1.IGetGatewayRequest|null|undefined,
@@ -453,7 +453,7 @@ export class ApiGatewayServiceClient {
     return this.innerApiCalls.getGateway(request, options, callback);
   }
   getApi(
-      request: protos.google.cloud.apigateway.v1.IGetApiRequest,
+      request?: protos.google.cloud.apigateway.v1.IGetApiRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.apigateway.v1.IApi,
@@ -491,7 +491,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await client.getApi(request);
  */
   getApi(
-      request: protos.google.cloud.apigateway.v1.IGetApiRequest,
+      request?: protos.google.cloud.apigateway.v1.IGetApiRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.apigateway.v1.IApi,
           protos.google.cloud.apigateway.v1.IGetApiRequest|null|undefined,
@@ -525,7 +525,7 @@ export class ApiGatewayServiceClient {
     return this.innerApiCalls.getApi(request, options, callback);
   }
   getApiConfig(
-      request: protos.google.cloud.apigateway.v1.IGetApiConfigRequest,
+      request?: protos.google.cloud.apigateway.v1.IGetApiConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.apigateway.v1.IApiConfig,
@@ -566,7 +566,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await client.getApiConfig(request);
  */
   getApiConfig(
-      request: protos.google.cloud.apigateway.v1.IGetApiConfigRequest,
+      request?: protos.google.cloud.apigateway.v1.IGetApiConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.apigateway.v1.IApiConfig,
           protos.google.cloud.apigateway.v1.IGetApiConfigRequest|null|undefined,
@@ -601,7 +601,7 @@ export class ApiGatewayServiceClient {
   }
 
   createGateway(
-      request: protos.google.cloud.apigateway.v1.ICreateGatewayRequest,
+      request?: protos.google.cloud.apigateway.v1.ICreateGatewayRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.apigateway.v1.IGateway, protos.google.cloud.apigateway.v1.IOperationMetadata>,
@@ -647,7 +647,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await operation.promise();
  */
   createGateway(
-      request: protos.google.cloud.apigateway.v1.ICreateGatewayRequest,
+      request?: protos.google.cloud.apigateway.v1.ICreateGatewayRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.apigateway.v1.IGateway, protos.google.cloud.apigateway.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -702,7 +702,7 @@ export class ApiGatewayServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.apigateway.v1.Gateway, protos.google.cloud.apigateway.v1.OperationMetadata>;
   }
   updateGateway(
-      request: protos.google.cloud.apigateway.v1.IUpdateGatewayRequest,
+      request?: protos.google.cloud.apigateway.v1.IUpdateGatewayRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.apigateway.v1.IGateway, protos.google.cloud.apigateway.v1.IOperationMetadata>,
@@ -748,7 +748,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await operation.promise();
  */
   updateGateway(
-      request: protos.google.cloud.apigateway.v1.IUpdateGatewayRequest,
+      request?: protos.google.cloud.apigateway.v1.IUpdateGatewayRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.apigateway.v1.IGateway, protos.google.cloud.apigateway.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -803,7 +803,7 @@ export class ApiGatewayServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.apigateway.v1.Gateway, protos.google.cloud.apigateway.v1.OperationMetadata>;
   }
   deleteGateway(
-      request: protos.google.cloud.apigateway.v1.IDeleteGatewayRequest,
+      request?: protos.google.cloud.apigateway.v1.IDeleteGatewayRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.apigateway.v1.IOperationMetadata>,
@@ -844,7 +844,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await operation.promise();
  */
   deleteGateway(
-      request: protos.google.cloud.apigateway.v1.IDeleteGatewayRequest,
+      request?: protos.google.cloud.apigateway.v1.IDeleteGatewayRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.apigateway.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -899,7 +899,7 @@ export class ApiGatewayServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.apigateway.v1.OperationMetadata>;
   }
   createApi(
-      request: protos.google.cloud.apigateway.v1.ICreateApiRequest,
+      request?: protos.google.cloud.apigateway.v1.ICreateApiRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.apigateway.v1.IApi, protos.google.cloud.apigateway.v1.IOperationMetadata>,
@@ -945,7 +945,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await operation.promise();
  */
   createApi(
-      request: protos.google.cloud.apigateway.v1.ICreateApiRequest,
+      request?: protos.google.cloud.apigateway.v1.ICreateApiRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.apigateway.v1.IApi, protos.google.cloud.apigateway.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1000,7 +1000,7 @@ export class ApiGatewayServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.apigateway.v1.Api, protos.google.cloud.apigateway.v1.OperationMetadata>;
   }
   updateApi(
-      request: protos.google.cloud.apigateway.v1.IUpdateApiRequest,
+      request?: protos.google.cloud.apigateway.v1.IUpdateApiRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.apigateway.v1.IApi, protos.google.cloud.apigateway.v1.IOperationMetadata>,
@@ -1046,7 +1046,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await operation.promise();
  */
   updateApi(
-      request: protos.google.cloud.apigateway.v1.IUpdateApiRequest,
+      request?: protos.google.cloud.apigateway.v1.IUpdateApiRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.apigateway.v1.IApi, protos.google.cloud.apigateway.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1101,7 +1101,7 @@ export class ApiGatewayServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.apigateway.v1.Api, protos.google.cloud.apigateway.v1.OperationMetadata>;
   }
   deleteApi(
-      request: protos.google.cloud.apigateway.v1.IDeleteApiRequest,
+      request?: protos.google.cloud.apigateway.v1.IDeleteApiRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.apigateway.v1.IOperationMetadata>,
@@ -1142,7 +1142,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await operation.promise();
  */
   deleteApi(
-      request: protos.google.cloud.apigateway.v1.IDeleteApiRequest,
+      request?: protos.google.cloud.apigateway.v1.IDeleteApiRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.apigateway.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1197,7 +1197,7 @@ export class ApiGatewayServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.apigateway.v1.OperationMetadata>;
   }
   createApiConfig(
-      request: protos.google.cloud.apigateway.v1.ICreateApiConfigRequest,
+      request?: protos.google.cloud.apigateway.v1.ICreateApiConfigRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.apigateway.v1.IApiConfig, protos.google.cloud.apigateway.v1.IOperationMetadata>,
@@ -1243,7 +1243,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await operation.promise();
  */
   createApiConfig(
-      request: protos.google.cloud.apigateway.v1.ICreateApiConfigRequest,
+      request?: protos.google.cloud.apigateway.v1.ICreateApiConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.apigateway.v1.IApiConfig, protos.google.cloud.apigateway.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1298,7 +1298,7 @@ export class ApiGatewayServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.apigateway.v1.ApiConfig, protos.google.cloud.apigateway.v1.OperationMetadata>;
   }
   updateApiConfig(
-      request: protos.google.cloud.apigateway.v1.IUpdateApiConfigRequest,
+      request?: protos.google.cloud.apigateway.v1.IUpdateApiConfigRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.apigateway.v1.IApiConfig, protos.google.cloud.apigateway.v1.IOperationMetadata>,
@@ -1344,7 +1344,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await operation.promise();
  */
   updateApiConfig(
-      request: protos.google.cloud.apigateway.v1.IUpdateApiConfigRequest,
+      request?: protos.google.cloud.apigateway.v1.IUpdateApiConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.apigateway.v1.IApiConfig, protos.google.cloud.apigateway.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1399,7 +1399,7 @@ export class ApiGatewayServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.apigateway.v1.ApiConfig, protos.google.cloud.apigateway.v1.OperationMetadata>;
   }
   deleteApiConfig(
-      request: protos.google.cloud.apigateway.v1.IDeleteApiConfigRequest,
+      request?: protos.google.cloud.apigateway.v1.IDeleteApiConfigRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.apigateway.v1.IOperationMetadata>,
@@ -1440,7 +1440,7 @@ export class ApiGatewayServiceClient {
  * const [response] = await operation.promise();
  */
   deleteApiConfig(
-      request: protos.google.cloud.apigateway.v1.IDeleteApiConfigRequest,
+      request?: protos.google.cloud.apigateway.v1.IDeleteApiConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.apigateway.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1495,7 +1495,7 @@ export class ApiGatewayServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.apigateway.v1.OperationMetadata>;
   }
   listGateways(
-      request: protos.google.cloud.apigateway.v1.IListGatewaysRequest,
+      request?: protos.google.cloud.apigateway.v1.IListGatewaysRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.apigateway.v1.IGateway[],
@@ -1545,7 +1545,7 @@ export class ApiGatewayServiceClient {
  *   for more details and examples.
  */
   listGateways(
-      request: protos.google.cloud.apigateway.v1.IListGatewaysRequest,
+      request?: protos.google.cloud.apigateway.v1.IListGatewaysRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.apigateway.v1.IListGatewaysRequest,
           protos.google.cloud.apigateway.v1.IListGatewaysResponse|null|undefined,
@@ -1685,7 +1685,7 @@ export class ApiGatewayServiceClient {
     ) as AsyncIterable<protos.google.cloud.apigateway.v1.IGateway>;
   }
   listApis(
-      request: protos.google.cloud.apigateway.v1.IListApisRequest,
+      request?: protos.google.cloud.apigateway.v1.IListApisRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.apigateway.v1.IApi[],
@@ -1735,7 +1735,7 @@ export class ApiGatewayServiceClient {
  *   for more details and examples.
  */
   listApis(
-      request: protos.google.cloud.apigateway.v1.IListApisRequest,
+      request?: protos.google.cloud.apigateway.v1.IListApisRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.apigateway.v1.IListApisRequest,
           protos.google.cloud.apigateway.v1.IListApisResponse|null|undefined,
@@ -1875,7 +1875,7 @@ export class ApiGatewayServiceClient {
     ) as AsyncIterable<protos.google.cloud.apigateway.v1.IApi>;
   }
   listApiConfigs(
-      request: protos.google.cloud.apigateway.v1.IListApiConfigsRequest,
+      request?: protos.google.cloud.apigateway.v1.IListApiConfigsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.apigateway.v1.IApiConfig[],
@@ -1925,7 +1925,7 @@ export class ApiGatewayServiceClient {
  *   for more details and examples.
  */
   listApiConfigs(
-      request: protos.google.cloud.apigateway.v1.IListApiConfigsRequest,
+      request?: protos.google.cloud.apigateway.v1.IListApiConfigsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.apigateway.v1.IListApiConfigsRequest,
           protos.google.cloud.apigateway.v1.IListApiConfigsResponse|null|undefined,

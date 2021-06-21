@@ -264,7 +264,7 @@ export class ModelServiceClient {
   // -- Service calls --
   // -------------------
   getModel(
-      request: protos.google.cloud.bigquery.v2.IGetModelRequest,
+      request?: protos.google.cloud.bigquery.v2.IGetModelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.v2.IModel,
@@ -305,7 +305,7 @@ export class ModelServiceClient {
  * const [response] = await client.getModel(request);
  */
   getModel(
-      request: protos.google.cloud.bigquery.v2.IGetModelRequest,
+      request?: protos.google.cloud.bigquery.v2.IGetModelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.v2.IModel,
           protos.google.cloud.bigquery.v2.IGetModelRequest|null|undefined,
@@ -332,7 +332,7 @@ export class ModelServiceClient {
     return this.innerApiCalls.getModel(request, options, callback);
   }
   listModels(
-      request: protos.google.cloud.bigquery.v2.IListModelsRequest,
+      request?: protos.google.cloud.bigquery.v2.IListModelsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.v2.IListModelsResponse,
@@ -378,7 +378,7 @@ export class ModelServiceClient {
  * const [response] = await client.listModels(request);
  */
   listModels(
-      request: protos.google.cloud.bigquery.v2.IListModelsRequest,
+      request?: protos.google.cloud.bigquery.v2.IListModelsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.v2.IListModelsResponse,
           protos.google.cloud.bigquery.v2.IListModelsRequest|null|undefined,
@@ -405,7 +405,7 @@ export class ModelServiceClient {
     return this.innerApiCalls.listModels(request, options, callback);
   }
   patchModel(
-      request: protos.google.cloud.bigquery.v2.IPatchModelRequest,
+      request?: protos.google.cloud.bigquery.v2.IPatchModelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.v2.IModel,
@@ -450,7 +450,7 @@ export class ModelServiceClient {
  * const [response] = await client.patchModel(request);
  */
   patchModel(
-      request: protos.google.cloud.bigquery.v2.IPatchModelRequest,
+      request?: protos.google.cloud.bigquery.v2.IPatchModelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.v2.IModel,
           protos.google.cloud.bigquery.v2.IPatchModelRequest|null|undefined,
@@ -477,7 +477,7 @@ export class ModelServiceClient {
     return this.innerApiCalls.patchModel(request, options, callback);
   }
   deleteModel(
-      request: protos.google.cloud.bigquery.v2.IDeleteModelRequest,
+      request?: protos.google.cloud.bigquery.v2.IDeleteModelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -518,7 +518,7 @@ export class ModelServiceClient {
  * const [response] = await client.deleteModel(request);
  */
   deleteModel(
-      request: protos.google.cloud.bigquery.v2.IDeleteModelRequest,
+      request?: protos.google.cloud.bigquery.v2.IDeleteModelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.v2.IDeleteModelRequest|null|undefined,

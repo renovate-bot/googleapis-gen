@@ -37,7 +37,9 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             string clusterId = "";
             IEnumerable<string> locations = new string[] { "", };
             // Make the request
+#pragma warning disable CS0612
             Operation response = await clusterManagerClient.SetLocationsAsync(projectId, zone, clusterId, locations);
+#pragma warning restore CS0612
         }
     }
 }

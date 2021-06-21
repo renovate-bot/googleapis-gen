@@ -372,7 +372,7 @@ export class CloudRedisClient {
   // -- Service calls --
   // -------------------
   getInstance(
-      request: protos.google.cloud.redis.v1beta1.IGetInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IGetInstanceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.redis.v1beta1.IInstance,
@@ -411,7 +411,7 @@ export class CloudRedisClient {
  * const [response] = await client.getInstance(request);
  */
   getInstance(
-      request: protos.google.cloud.redis.v1beta1.IGetInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IGetInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.redis.v1beta1.IInstance,
           protos.google.cloud.redis.v1beta1.IGetInstanceRequest|null|undefined,
@@ -446,7 +446,7 @@ export class CloudRedisClient {
   }
 
   createInstance(
-      request: protos.google.cloud.redis.v1beta1.ICreateInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.ICreateInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
@@ -510,7 +510,7 @@ export class CloudRedisClient {
  * const [response] = await operation.promise();
  */
   createInstance(
-      request: protos.google.cloud.redis.v1beta1.ICreateInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.ICreateInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -565,7 +565,7 @@ export class CloudRedisClient {
     return decodeOperation as LROperation<protos.google.cloud.redis.v1beta1.Instance, protos.google.protobuf.Any>;
   }
   updateInstance(
-      request: protos.google.cloud.redis.v1beta1.IUpdateInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IUpdateInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
@@ -619,7 +619,7 @@ export class CloudRedisClient {
  * const [response] = await operation.promise();
  */
   updateInstance(
-      request: protos.google.cloud.redis.v1beta1.IUpdateInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IUpdateInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -674,7 +674,7 @@ export class CloudRedisClient {
     return decodeOperation as LROperation<protos.google.cloud.redis.v1beta1.Instance, protos.google.protobuf.Any>;
   }
   upgradeInstance(
-      request: protos.google.cloud.redis.v1beta1.IUpgradeInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IUpgradeInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
@@ -719,7 +719,7 @@ export class CloudRedisClient {
  * const [response] = await operation.promise();
  */
   upgradeInstance(
-      request: protos.google.cloud.redis.v1beta1.IUpgradeInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IUpgradeInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -774,7 +774,7 @@ export class CloudRedisClient {
     return decodeOperation as LROperation<protos.google.cloud.redis.v1beta1.Instance, protos.google.protobuf.Any>;
   }
   importInstance(
-      request: protos.google.cloud.redis.v1beta1.IImportInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IImportInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
@@ -825,7 +825,7 @@ export class CloudRedisClient {
  * const [response] = await operation.promise();
  */
   importInstance(
-      request: protos.google.cloud.redis.v1beta1.IImportInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IImportInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -880,7 +880,7 @@ export class CloudRedisClient {
     return decodeOperation as LROperation<protos.google.cloud.redis.v1beta1.Instance, protos.google.protobuf.Any>;
   }
   exportInstance(
-      request: protos.google.cloud.redis.v1beta1.IExportInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IExportInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
@@ -929,7 +929,7 @@ export class CloudRedisClient {
  * const [response] = await operation.promise();
  */
   exportInstance(
-      request: protos.google.cloud.redis.v1beta1.IExportInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IExportInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -984,7 +984,7 @@ export class CloudRedisClient {
     return decodeOperation as LROperation<protos.google.cloud.redis.v1beta1.Instance, protos.google.protobuf.Any>;
   }
   failoverInstance(
-      request: protos.google.cloud.redis.v1beta1.IFailoverInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IFailoverInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
@@ -1030,7 +1030,7 @@ export class CloudRedisClient {
  * const [response] = await operation.promise();
  */
   failoverInstance(
-      request: protos.google.cloud.redis.v1beta1.IFailoverInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IFailoverInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.redis.v1beta1.IInstance, protos.google.protobuf.IAny>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1085,7 +1085,7 @@ export class CloudRedisClient {
     return decodeOperation as LROperation<protos.google.cloud.redis.v1beta1.Instance, protos.google.protobuf.Any>;
   }
   deleteInstance(
-      request: protos.google.cloud.redis.v1beta1.IDeleteInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IDeleteInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IAny>,
@@ -1128,7 +1128,7 @@ export class CloudRedisClient {
  * const [response] = await operation.promise();
  */
   deleteInstance(
-      request: protos.google.cloud.redis.v1beta1.IDeleteInstanceRequest,
+      request?: protos.google.cloud.redis.v1beta1.IDeleteInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IAny>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1183,7 +1183,7 @@ export class CloudRedisClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Any>;
   }
   listInstances(
-      request: protos.google.cloud.redis.v1beta1.IListInstancesRequest,
+      request?: protos.google.cloud.redis.v1beta1.IListInstancesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.redis.v1beta1.IInstance[],
@@ -1245,7 +1245,7 @@ export class CloudRedisClient {
  *   for more details and examples.
  */
   listInstances(
-      request: protos.google.cloud.redis.v1beta1.IListInstancesRequest,
+      request?: protos.google.cloud.redis.v1beta1.IListInstancesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.redis.v1beta1.IListInstancesRequest,
           protos.google.cloud.redis.v1beta1.IListInstancesResponse|null|undefined,

@@ -35,7 +35,6 @@ from google.cloud.tasks_v2beta2.services.cloud_tasks import CloudTasksAsyncClien
 from google.cloud.tasks_v2beta2.services.cloud_tasks import CloudTasksClient
 from google.cloud.tasks_v2beta2.services.cloud_tasks import pagers
 from google.cloud.tasks_v2beta2.services.cloud_tasks import transports
-from google.cloud.tasks_v2beta2.services.cloud_tasks.transports.base import _API_CORE_VERSION
 from google.cloud.tasks_v2beta2.services.cloud_tasks.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.tasks_v2beta2.types import cloudtasks
 from google.cloud.tasks_v2beta2.types import queue
@@ -56,8 +55,9 @@ from google.type import expr_pb2  # type: ignore
 import google.auth
 
 
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
+# TODO(busunkim): Once google-auth >= 1.25.0 is required transitively
+# through google-api-core:
+# - Delete the auth "less than" test cases
 # - Delete these pytest markers (Make the "greater than or equal to" tests the default).
 requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
     packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
@@ -66,16 +66,6 @@ requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
 requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
     packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
     reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
 )
 
 def client_cert_source_callback():
@@ -118,6 +108,17 @@ def test_cloud_tasks_client_from_service_account_info(client_class):
         assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudtasks.googleapis.com:443'
+
+
+@pytest.mark.parametrize("client_class", [
+    CloudTasksClient,
+    CloudTasksAsyncClient,
+])
+def test_cloud_tasks_client_service_account_always_use_jwt(client_class):
+    with mock.patch.object(service_account.Credentials, 'with_always_use_jwt_access', create=True) as use_jwt:
+        creds = service_account.Credentials(None, None, None)
+        client = client_class(credentials=creds)
+        use_jwt.assert_called_with(True)
 
 
 @pytest.mark.parametrize("client_class", [
@@ -4503,7 +4504,7 @@ def test_lease_tasks_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].parent == 'parent_value'
-        assert args[0].lease_duration == duration_pb2.Duration(seconds=751)
+        assert DurationRule().to_proto(args[0].lease_duration) == duration_pb2.Duration(seconds=751)
 
 
 def test_lease_tasks_flattened_error():
@@ -4547,7 +4548,7 @@ async def test_lease_tasks_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].parent == 'parent_value'
-        assert args[0].lease_duration == duration_pb2.Duration(seconds=751)
+        assert DurationRule().to_proto(args[0].lease_duration) == duration_pb2.Duration(seconds=751)
 
 
 @pytest.mark.asyncio
@@ -4734,7 +4735,7 @@ def test_acknowledge_task_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
-        assert args[0].schedule_time == timestamp_pb2.Timestamp(seconds=751)
+        assert TimestampRule().to_proto(args[0].schedule_time) == timestamp_pb2.Timestamp(seconds=751)
 
 
 def test_acknowledge_task_flattened_error():
@@ -4778,7 +4779,7 @@ async def test_acknowledge_task_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
-        assert args[0].schedule_time == timestamp_pb2.Timestamp(seconds=751)
+        assert TimestampRule().to_proto(args[0].schedule_time) == timestamp_pb2.Timestamp(seconds=751)
 
 
 @pytest.mark.asyncio
@@ -4977,8 +4978,8 @@ def test_renew_lease_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
-        assert args[0].schedule_time == timestamp_pb2.Timestamp(seconds=751)
-        assert args[0].lease_duration == duration_pb2.Duration(seconds=751)
+        assert TimestampRule().to_proto(args[0].schedule_time) == timestamp_pb2.Timestamp(seconds=751)
+        assert DurationRule().to_proto(args[0].lease_duration) == duration_pb2.Duration(seconds=751)
 
 
 def test_renew_lease_flattened_error():
@@ -5024,8 +5025,8 @@ async def test_renew_lease_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
-        assert args[0].schedule_time == timestamp_pb2.Timestamp(seconds=751)
-        assert args[0].lease_duration == duration_pb2.Duration(seconds=751)
+        assert TimestampRule().to_proto(args[0].schedule_time) == timestamp_pb2.Timestamp(seconds=751)
+        assert DurationRule().to_proto(args[0].lease_duration) == duration_pb2.Duration(seconds=751)
 
 
 @pytest.mark.asyncio
@@ -5224,7 +5225,7 @@ def test_cancel_lease_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
-        assert args[0].schedule_time == timestamp_pb2.Timestamp(seconds=751)
+        assert TimestampRule().to_proto(args[0].schedule_time) == timestamp_pb2.Timestamp(seconds=751)
 
 
 def test_cancel_lease_flattened_error():
@@ -5268,7 +5269,7 @@ async def test_cancel_lease_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
-        assert args[0].schedule_time == timestamp_pb2.Timestamp(seconds=751)
+        assert TimestampRule().to_proto(args[0].schedule_time) == timestamp_pb2.Timestamp(seconds=751)
 
 
 @pytest.mark.asyncio
@@ -5765,7 +5766,6 @@ def test_cloud_tasks_transport_auth_adc_old_google_auth(transport_class):
         (transports.CloudTasksGrpcAsyncIOTransport, grpc_helpers_async)
     ],
 )
-@requires_api_core_gte_1_26_0
 def test_cloud_tasks_transport_create_channel(transport_class, grpc_helpers):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
@@ -5789,73 +5789,6 @@ def test_cloud_tasks_transport_create_channel(transport_class, grpc_helpers):
 ),
             scopes=["1", "2"],
             default_host="cloudtasks.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.CloudTasksGrpcTransport, grpc_helpers),
-        (transports.CloudTasksGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_cloud_tasks_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = ga_credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "cloudtasks.googleapis.com:443",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(
-                'https://www.googleapis.com/auth/cloud-platform',
-),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.CloudTasksGrpcTransport, grpc_helpers),
-        (transports.CloudTasksGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_cloud_tasks_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = ga_credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "cloudtasks.googleapis.com:443",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
             ssl_credentials=None,
             options=[
                 ("grpc.max_send_message_length", -1),

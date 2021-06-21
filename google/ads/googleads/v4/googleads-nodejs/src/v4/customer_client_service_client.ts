@@ -587,7 +587,7 @@ export class CustomerClientServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerClient(
-      request: protos.google.ads.googleads.v4.services.IGetCustomerClientRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetCustomerClientRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.ICustomerClient,
@@ -624,7 +624,7 @@ export class CustomerClientServiceClient {
  * const [response] = await client.getCustomerClient(request);
  */
   getCustomerClient(
-      request: protos.google.ads.googleads.v4.services.IGetCustomerClientRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetCustomerClientRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.ICustomerClient,
           protos.google.ads.googleads.v4.services.IGetCustomerClientRequest|null|undefined,

@@ -34,7 +34,9 @@ namespace Google.Cloud.PubSub.V1.Snippets
             bool returnImmediately = false;
             int maxMessages = 0;
             // Make the request
+#pragma warning disable CS0612
             PullResponse response = subscriberClient.Pull(subscription, returnImmediately, maxMessages);
+#pragma warning restore CS0612
         }
     }
 }

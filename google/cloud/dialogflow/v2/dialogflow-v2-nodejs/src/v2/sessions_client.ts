@@ -394,7 +394,7 @@ export class SessionsClient {
   // -- Service calls --
   // -------------------
   detectIntent(
-      request: protos.google.cloud.dialogflow.v2.IDetectIntentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDetectIntentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IDetectIntentResponse,
@@ -480,7 +480,7 @@ export class SessionsClient {
  * const [response] = await client.detectIntent(request);
  */
   detectIntent(
-      request: protos.google.cloud.dialogflow.v2.IDetectIntentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDetectIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IDetectIntentResponse,
           protos.google.cloud.dialogflow.v2.IDetectIntentRequest|null|undefined,

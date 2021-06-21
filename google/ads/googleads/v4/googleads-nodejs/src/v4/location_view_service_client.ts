@@ -587,7 +587,7 @@ export class LocationViewServiceClient {
   // -- Service calls --
   // -------------------
   getLocationView(
-      request: protos.google.ads.googleads.v4.services.IGetLocationViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetLocationViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.ILocationView,
@@ -624,7 +624,7 @@ export class LocationViewServiceClient {
  * const [response] = await client.getLocationView(request);
  */
   getLocationView(
-      request: protos.google.ads.googleads.v4.services.IGetLocationViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetLocationViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.ILocationView,
           protos.google.ads.googleads.v4.services.IGetLocationViewRequest|null|undefined,

@@ -315,7 +315,7 @@ export class UserEventServiceClient {
   // -- Service calls --
   // -------------------
   writeUserEvent(
-      request: protos.google.cloud.recommendationengine.v1beta1.IWriteUserEventRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IWriteUserEventRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommendationengine.v1beta1.IUserEvent,
@@ -355,7 +355,7 @@ export class UserEventServiceClient {
  * const [response] = await client.writeUserEvent(request);
  */
   writeUserEvent(
-      request: protos.google.cloud.recommendationengine.v1beta1.IWriteUserEventRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IWriteUserEventRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.recommendationengine.v1beta1.IUserEvent,
           protos.google.cloud.recommendationengine.v1beta1.IWriteUserEventRequest|null|undefined,
@@ -389,7 +389,7 @@ export class UserEventServiceClient {
     return this.innerApiCalls.writeUserEvent(request, options, callback);
   }
   collectUserEvent(
-      request: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.IHttpBody,
@@ -442,7 +442,7 @@ export class UserEventServiceClient {
  * const [response] = await client.collectUserEvent(request);
  */
   collectUserEvent(
-      request: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.IHttpBody,
           protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest|null|undefined,
@@ -477,7 +477,7 @@ export class UserEventServiceClient {
   }
 
   purgeUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsMetadata>,
@@ -545,7 +545,7 @@ export class UserEventServiceClient {
  * const [response] = await operation.promise();
  */
   purgeUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -600,7 +600,7 @@ export class UserEventServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsMetadata>;
   }
   importUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
@@ -658,7 +658,7 @@ export class UserEventServiceClient {
  * const [response] = await operation.promise();
  */
   importUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -713,7 +713,7 @@ export class UserEventServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.recommendationengine.v1beta1.ImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.ImportMetadata>;
   }
   listUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommendationengine.v1beta1.IUserEvent[],
@@ -793,7 +793,7 @@ export class UserEventServiceClient {
  *   for more details and examples.
  */
   listUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
           protos.google.cloud.recommendationengine.v1beta1.IListUserEventsResponse|null|undefined,

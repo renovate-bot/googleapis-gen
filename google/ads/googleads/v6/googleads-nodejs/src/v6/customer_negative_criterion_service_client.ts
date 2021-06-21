@@ -614,7 +614,7 @@ export class CustomerNegativeCriterionServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerNegativeCriterion(
-      request: protos.google.ads.googleads.v6.services.IGetCustomerNegativeCriterionRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCustomerNegativeCriterionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.ICustomerNegativeCriterion,
@@ -651,7 +651,7 @@ export class CustomerNegativeCriterionServiceClient {
  * const [response] = await client.getCustomerNegativeCriterion(request);
  */
   getCustomerNegativeCriterion(
-      request: protos.google.ads.googleads.v6.services.IGetCustomerNegativeCriterionRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCustomerNegativeCriterionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.ICustomerNegativeCriterion,
           protos.google.ads.googleads.v6.services.IGetCustomerNegativeCriterionRequest|null|undefined,
@@ -685,7 +685,7 @@ export class CustomerNegativeCriterionServiceClient {
     return this.innerApiCalls.getCustomerNegativeCriterion(request, options, callback);
   }
   mutateCustomerNegativeCriteria(
-      request: protos.google.ads.googleads.v6.services.IMutateCustomerNegativeCriteriaRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCustomerNegativeCriteriaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateCustomerNegativeCriteriaResponse,
@@ -735,7 +735,7 @@ export class CustomerNegativeCriterionServiceClient {
  * const [response] = await client.mutateCustomerNegativeCriteria(request);
  */
   mutateCustomerNegativeCriteria(
-      request: protos.google.ads.googleads.v6.services.IMutateCustomerNegativeCriteriaRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCustomerNegativeCriteriaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateCustomerNegativeCriteriaResponse,
           protos.google.ads.googleads.v6.services.IMutateCustomerNegativeCriteriaRequest|null|undefined,

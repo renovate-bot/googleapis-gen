@@ -337,7 +337,7 @@ export class ContactCenterInsightsClient {
   // -- Service calls --
   // -------------------
   createConversation(
-      request: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IConversation,
@@ -383,7 +383,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.createConversation(request);
  */
   createConversation(
-      request: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.IConversation,
           protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest|null|undefined,
@@ -417,7 +417,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.createConversation(request, options, callback);
   }
   updateConversation(
-      request: protos.google.cloud.contactcenterinsights.v1.IUpdateConversationRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IUpdateConversationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IConversation,
@@ -456,7 +456,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.updateConversation(request);
  */
   updateConversation(
-      request: protos.google.cloud.contactcenterinsights.v1.IUpdateConversationRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IUpdateConversationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.IConversation,
           protos.google.cloud.contactcenterinsights.v1.IUpdateConversationRequest|null|undefined,
@@ -490,7 +490,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.updateConversation(request, options, callback);
   }
   getConversation(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetConversationRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetConversationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IConversation,
@@ -529,7 +529,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.getConversation(request);
  */
   getConversation(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetConversationRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetConversationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.IConversation,
           protos.google.cloud.contactcenterinsights.v1.IGetConversationRequest|null|undefined,
@@ -563,7 +563,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.getConversation(request, options, callback);
   }
   deleteConversation(
-      request: protos.google.cloud.contactcenterinsights.v1.IDeleteConversationRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IDeleteConversationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -604,7 +604,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.deleteConversation(request);
  */
   deleteConversation(
-      request: protos.google.cloud.contactcenterinsights.v1.IDeleteConversationRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IDeleteConversationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.contactcenterinsights.v1.IDeleteConversationRequest|null|undefined,
@@ -638,7 +638,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.deleteConversation(request, options, callback);
   }
   getAnalysis(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetAnalysisRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetAnalysisRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IAnalysis,
@@ -675,7 +675,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.getAnalysis(request);
  */
   getAnalysis(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetAnalysisRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetAnalysisRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.IAnalysis,
           protos.google.cloud.contactcenterinsights.v1.IGetAnalysisRequest|null|undefined,
@@ -709,7 +709,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.getAnalysis(request, options, callback);
   }
   deleteAnalysis(
-      request: protos.google.cloud.contactcenterinsights.v1.IDeleteAnalysisRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IDeleteAnalysisRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -746,7 +746,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.deleteAnalysis(request);
  */
   deleteAnalysis(
-      request: protos.google.cloud.contactcenterinsights.v1.IDeleteAnalysisRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IDeleteAnalysisRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.contactcenterinsights.v1.IDeleteAnalysisRequest|null|undefined,
@@ -780,7 +780,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.deleteAnalysis(request, options, callback);
   }
   getIssueModel(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetIssueModelRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetIssueModelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IIssueModel,
@@ -817,7 +817,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.getIssueModel(request);
  */
   getIssueModel(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetIssueModelRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetIssueModelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.IIssueModel,
           protos.google.cloud.contactcenterinsights.v1.IGetIssueModelRequest|null|undefined,
@@ -851,7 +851,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.getIssueModel(request, options, callback);
   }
   listIssueModels(
-      request: protos.google.cloud.contactcenterinsights.v1.IListIssueModelsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IListIssueModelsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IListIssueModelsResponse,
@@ -888,7 +888,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.listIssueModels(request);
  */
   listIssueModels(
-      request: protos.google.cloud.contactcenterinsights.v1.IListIssueModelsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IListIssueModelsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.IListIssueModelsResponse,
           protos.google.cloud.contactcenterinsights.v1.IListIssueModelsRequest|null|undefined,
@@ -922,7 +922,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.listIssueModels(request, options, callback);
   }
   getIssue(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetIssueRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetIssueRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IIssue,
@@ -959,7 +959,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.getIssue(request);
  */
   getIssue(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetIssueRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetIssueRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.IIssue,
           protos.google.cloud.contactcenterinsights.v1.IGetIssueRequest|null|undefined,
@@ -993,7 +993,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.getIssue(request, options, callback);
   }
   listIssues(
-      request: protos.google.cloud.contactcenterinsights.v1.IListIssuesRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IListIssuesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IListIssuesResponse,
@@ -1030,7 +1030,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.listIssues(request);
  */
   listIssues(
-      request: protos.google.cloud.contactcenterinsights.v1.IListIssuesRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IListIssuesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.IListIssuesResponse,
           protos.google.cloud.contactcenterinsights.v1.IListIssuesRequest|null|undefined,
@@ -1064,7 +1064,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.listIssues(request, options, callback);
   }
   calculateIssueModelStats(
-      request: protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsResponse,
@@ -1101,7 +1101,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.calculateIssueModelStats(request);
  */
   calculateIssueModelStats(
-      request: protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsResponse,
           protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsRequest|null|undefined,
@@ -1135,7 +1135,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.calculateIssueModelStats(request, options, callback);
   }
   createPhraseMatcher(
-      request: protos.google.cloud.contactcenterinsights.v1.ICreatePhraseMatcherRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.ICreatePhraseMatcherRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
@@ -1177,7 +1177,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.createPhraseMatcher(request);
  */
   createPhraseMatcher(
-      request: protos.google.cloud.contactcenterinsights.v1.ICreatePhraseMatcherRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.ICreatePhraseMatcherRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
           protos.google.cloud.contactcenterinsights.v1.ICreatePhraseMatcherRequest|null|undefined,
@@ -1211,7 +1211,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.createPhraseMatcher(request, options, callback);
   }
   getPhraseMatcher(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetPhraseMatcherRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetPhraseMatcherRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
@@ -1248,7 +1248,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.getPhraseMatcher(request);
  */
   getPhraseMatcher(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetPhraseMatcherRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetPhraseMatcherRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
           protos.google.cloud.contactcenterinsights.v1.IGetPhraseMatcherRequest|null|undefined,
@@ -1282,7 +1282,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.getPhraseMatcher(request, options, callback);
   }
   deletePhraseMatcher(
-      request: protos.google.cloud.contactcenterinsights.v1.IDeletePhraseMatcherRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IDeletePhraseMatcherRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1319,7 +1319,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.deletePhraseMatcher(request);
  */
   deletePhraseMatcher(
-      request: protos.google.cloud.contactcenterinsights.v1.IDeletePhraseMatcherRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IDeletePhraseMatcherRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.contactcenterinsights.v1.IDeletePhraseMatcherRequest|null|undefined,
@@ -1353,7 +1353,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.deletePhraseMatcher(request, options, callback);
   }
   calculateStats(
-      request: protos.google.cloud.contactcenterinsights.v1.ICalculateStatsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.ICalculateStatsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.ICalculateStatsResponse,
@@ -1393,7 +1393,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.calculateStats(request);
  */
   calculateStats(
-      request: protos.google.cloud.contactcenterinsights.v1.ICalculateStatsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.ICalculateStatsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.ICalculateStatsResponse,
           protos.google.cloud.contactcenterinsights.v1.ICalculateStatsRequest|null|undefined,
@@ -1427,7 +1427,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.calculateStats(request, options, callback);
   }
   getSettings(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetSettingsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetSettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.ISettings,
@@ -1464,7 +1464,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.getSettings(request);
  */
   getSettings(
-      request: protos.google.cloud.contactcenterinsights.v1.IGetSettingsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IGetSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.ISettings,
           protos.google.cloud.contactcenterinsights.v1.IGetSettingsRequest|null|undefined,
@@ -1498,7 +1498,7 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.getSettings(request, options, callback);
   }
   updateSettings(
-      request: protos.google.cloud.contactcenterinsights.v1.IUpdateSettingsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IUpdateSettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.ISettings,
@@ -1537,7 +1537,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await client.updateSettings(request);
  */
   updateSettings(
-      request: protos.google.cloud.contactcenterinsights.v1.IUpdateSettingsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IUpdateSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.contactcenterinsights.v1.ISettings,
           protos.google.cloud.contactcenterinsights.v1.IUpdateSettingsRequest|null|undefined,
@@ -1572,7 +1572,7 @@ export class ContactCenterInsightsClient {
   }
 
   createAnalysis(
-      request: protos.google.cloud.contactcenterinsights.v1.ICreateAnalysisRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.ICreateAnalysisRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.contactcenterinsights.v1.IAnalysis, protos.google.cloud.contactcenterinsights.v1.ICreateAnalysisOperationMetadata>,
@@ -1615,7 +1615,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await operation.promise();
  */
   createAnalysis(
-      request: protos.google.cloud.contactcenterinsights.v1.ICreateAnalysisRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.ICreateAnalysisRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.contactcenterinsights.v1.IAnalysis, protos.google.cloud.contactcenterinsights.v1.ICreateAnalysisOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1670,7 +1670,7 @@ export class ContactCenterInsightsClient {
     return decodeOperation as LROperation<protos.google.cloud.contactcenterinsights.v1.Analysis, protos.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata>;
   }
   exportInsightsData(
-      request: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataMetadata>,
@@ -1719,7 +1719,7 @@ export class ContactCenterInsightsClient {
  * const [response] = await operation.promise();
  */
   exportInsightsData(
-      request: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1774,7 +1774,7 @@ export class ContactCenterInsightsClient {
     return decodeOperation as LROperation<protos.google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata>;
   }
   listConversations(
-      request: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IConversation[],
@@ -1829,7 +1829,7 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  */
   listConversations(
-      request: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
           protos.google.cloud.contactcenterinsights.v1.IListConversationsResponse|null|undefined,
@@ -1979,7 +1979,7 @@ export class ContactCenterInsightsClient {
     ) as AsyncIterable<protos.google.cloud.contactcenterinsights.v1.IConversation>;
   }
   listAnalyses(
-      request: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IAnalysis[],
@@ -2032,7 +2032,7 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  */
   listAnalyses(
-      request: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
           protos.google.cloud.contactcenterinsights.v1.IListAnalysesResponse|null|undefined,
@@ -2178,7 +2178,7 @@ export class ContactCenterInsightsClient {
     ) as AsyncIterable<protos.google.cloud.contactcenterinsights.v1.IAnalysis>;
   }
   listPhraseMatchers(
-      request: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher[],
@@ -2231,7 +2231,7 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  */
   listPhraseMatchers(
-      request: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
+      request?: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
           protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersResponse|null|undefined,

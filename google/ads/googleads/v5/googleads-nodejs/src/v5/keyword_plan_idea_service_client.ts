@@ -602,7 +602,7 @@ export class KeywordPlanIdeaServiceClient {
   // -------------------
 
   generateKeywordIdeas(
-      request: protos.google.ads.googleads.v5.services.IGenerateKeywordIdeasRequest,
+      request?: protos.google.ads.googleads.v5.services.IGenerateKeywordIdeasRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.services.IGenerateKeywordIdeaResult[],
@@ -676,7 +676,7 @@ export class KeywordPlanIdeaServiceClient {
  *   for more details and examples.
  */
   generateKeywordIdeas(
-      request: protos.google.ads.googleads.v5.services.IGenerateKeywordIdeasRequest,
+      request?: protos.google.ads.googleads.v5.services.IGenerateKeywordIdeasRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.ads.googleads.v5.services.IGenerateKeywordIdeasRequest,
           protos.google.ads.googleads.v5.services.IGenerateKeywordIdeaResponse|null|undefined,

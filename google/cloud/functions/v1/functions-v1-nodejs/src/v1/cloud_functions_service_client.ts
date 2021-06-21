@@ -326,7 +326,7 @@ export class CloudFunctionsServiceClient {
   // -- Service calls --
   // -------------------
   getFunction(
-      request: protos.google.cloud.functions.v1.IGetFunctionRequest,
+      request?: protos.google.cloud.functions.v1.IGetFunctionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.functions.v1.ICloudFunction,
@@ -363,7 +363,7 @@ export class CloudFunctionsServiceClient {
  * const [response] = await client.getFunction(request);
  */
   getFunction(
-      request: protos.google.cloud.functions.v1.IGetFunctionRequest,
+      request?: protos.google.cloud.functions.v1.IGetFunctionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.functions.v1.ICloudFunction,
           protos.google.cloud.functions.v1.IGetFunctionRequest|null|undefined,
@@ -397,7 +397,7 @@ export class CloudFunctionsServiceClient {
     return this.innerApiCalls.getFunction(request, options, callback);
   }
   callFunction(
-      request: protos.google.cloud.functions.v1.ICallFunctionRequest,
+      request?: protos.google.cloud.functions.v1.ICallFunctionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.functions.v1.ICallFunctionResponse,
@@ -439,7 +439,7 @@ export class CloudFunctionsServiceClient {
  * const [response] = await client.callFunction(request);
  */
   callFunction(
-      request: protos.google.cloud.functions.v1.ICallFunctionRequest,
+      request?: protos.google.cloud.functions.v1.ICallFunctionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.functions.v1.ICallFunctionResponse,
           protos.google.cloud.functions.v1.ICallFunctionRequest|null|undefined,
@@ -473,7 +473,7 @@ export class CloudFunctionsServiceClient {
     return this.innerApiCalls.callFunction(request, options, callback);
   }
   generateUploadUrl(
-      request: protos.google.cloud.functions.v1.IGenerateUploadUrlRequest,
+      request?: protos.google.cloud.functions.v1.IGenerateUploadUrlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.functions.v1.IGenerateUploadUrlResponse,
@@ -535,7 +535,7 @@ export class CloudFunctionsServiceClient {
  * const [response] = await client.generateUploadUrl(request);
  */
   generateUploadUrl(
-      request: protos.google.cloud.functions.v1.IGenerateUploadUrlRequest,
+      request?: protos.google.cloud.functions.v1.IGenerateUploadUrlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.functions.v1.IGenerateUploadUrlResponse,
           protos.google.cloud.functions.v1.IGenerateUploadUrlRequest|null|undefined,
@@ -569,7 +569,7 @@ export class CloudFunctionsServiceClient {
     return this.innerApiCalls.generateUploadUrl(request, options, callback);
   }
   generateDownloadUrl(
-      request: protos.google.cloud.functions.v1.IGenerateDownloadUrlRequest,
+      request?: protos.google.cloud.functions.v1.IGenerateDownloadUrlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.functions.v1.IGenerateDownloadUrlResponse,
@@ -614,7 +614,7 @@ export class CloudFunctionsServiceClient {
  * const [response] = await client.generateDownloadUrl(request);
  */
   generateDownloadUrl(
-      request: protos.google.cloud.functions.v1.IGenerateDownloadUrlRequest,
+      request?: protos.google.cloud.functions.v1.IGenerateDownloadUrlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.functions.v1.IGenerateDownloadUrlResponse,
           protos.google.cloud.functions.v1.IGenerateDownloadUrlRequest|null|undefined,
@@ -648,7 +648,7 @@ export class CloudFunctionsServiceClient {
     return this.innerApiCalls.generateDownloadUrl(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -692,7 +692,7 @@ export class CloudFunctionsServiceClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -726,7 +726,7 @@ export class CloudFunctionsServiceClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -769,7 +769,7 @@ export class CloudFunctionsServiceClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -803,7 +803,7 @@ export class CloudFunctionsServiceClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -849,7 +849,7 @@ export class CloudFunctionsServiceClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -884,7 +884,7 @@ export class CloudFunctionsServiceClient {
   }
 
   createFunction(
-      request: protos.google.cloud.functions.v1.ICreateFunctionRequest,
+      request?: protos.google.cloud.functions.v1.ICreateFunctionRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.functions.v1.ICloudFunction, protos.google.cloud.functions.v1.IOperationMetadataV1>,
@@ -929,7 +929,7 @@ export class CloudFunctionsServiceClient {
  * const [response] = await operation.promise();
  */
   createFunction(
-      request: protos.google.cloud.functions.v1.ICreateFunctionRequest,
+      request?: protos.google.cloud.functions.v1.ICreateFunctionRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.functions.v1.ICloudFunction, protos.google.cloud.functions.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -984,7 +984,7 @@ export class CloudFunctionsServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.functions.v1.CloudFunction, protos.google.cloud.functions.v1.OperationMetadataV1>;
   }
   updateFunction(
-      request: protos.google.cloud.functions.v1.IUpdateFunctionRequest,
+      request?: protos.google.cloud.functions.v1.IUpdateFunctionRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.functions.v1.ICloudFunction, protos.google.cloud.functions.v1.IOperationMetadataV1>,
@@ -1026,7 +1026,7 @@ export class CloudFunctionsServiceClient {
  * const [response] = await operation.promise();
  */
   updateFunction(
-      request: protos.google.cloud.functions.v1.IUpdateFunctionRequest,
+      request?: protos.google.cloud.functions.v1.IUpdateFunctionRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.functions.v1.ICloudFunction, protos.google.cloud.functions.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1081,7 +1081,7 @@ export class CloudFunctionsServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.functions.v1.CloudFunction, protos.google.cloud.functions.v1.OperationMetadataV1>;
   }
   deleteFunction(
-      request: protos.google.cloud.functions.v1.IDeleteFunctionRequest,
+      request?: protos.google.cloud.functions.v1.IDeleteFunctionRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.functions.v1.IOperationMetadataV1>,
@@ -1123,7 +1123,7 @@ export class CloudFunctionsServiceClient {
  * const [response] = await operation.promise();
  */
   deleteFunction(
-      request: protos.google.cloud.functions.v1.IDeleteFunctionRequest,
+      request?: protos.google.cloud.functions.v1.IDeleteFunctionRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.functions.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1178,7 +1178,7 @@ export class CloudFunctionsServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.functions.v1.OperationMetadataV1>;
   }
   listFunctions(
-      request: protos.google.cloud.functions.v1.IListFunctionsRequest,
+      request?: protos.google.cloud.functions.v1.IListFunctionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.functions.v1.ICloudFunction[],
@@ -1231,7 +1231,7 @@ export class CloudFunctionsServiceClient {
  *   for more details and examples.
  */
   listFunctions(
-      request: protos.google.cloud.functions.v1.IListFunctionsRequest,
+      request?: protos.google.cloud.functions.v1.IListFunctionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.functions.v1.IListFunctionsRequest,
           protos.google.cloud.functions.v1.IListFunctionsResponse|null|undefined,

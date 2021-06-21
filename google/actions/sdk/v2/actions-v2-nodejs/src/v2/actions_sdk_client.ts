@@ -311,7 +311,7 @@ export class ActionsSdkClient {
   // -- Service calls --
   // -------------------
   encryptSecret(
-      request: protos.google.actions.sdk.v2.IEncryptSecretRequest,
+      request?: protos.google.actions.sdk.v2.IEncryptSecretRequest,
       options?: CallOptions):
       Promise<[
         protos.google.actions.sdk.v2.IEncryptSecretResponse,
@@ -352,7 +352,7 @@ export class ActionsSdkClient {
  * const [response] = await client.encryptSecret(request);
  */
   encryptSecret(
-      request: protos.google.actions.sdk.v2.IEncryptSecretRequest,
+      request?: protos.google.actions.sdk.v2.IEncryptSecretRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.actions.sdk.v2.IEncryptSecretResponse,
           protos.google.actions.sdk.v2.IEncryptSecretRequest|null|undefined,
@@ -379,7 +379,7 @@ export class ActionsSdkClient {
     return this.innerApiCalls.encryptSecret(request, options, callback);
   }
   decryptSecret(
-      request: protos.google.actions.sdk.v2.IDecryptSecretRequest,
+      request?: protos.google.actions.sdk.v2.IDecryptSecretRequest,
       options?: CallOptions):
       Promise<[
         protos.google.actions.sdk.v2.IDecryptSecretResponse,
@@ -417,7 +417,7 @@ export class ActionsSdkClient {
  * const [response] = await client.decryptSecret(request);
  */
   decryptSecret(
-      request: protos.google.actions.sdk.v2.IDecryptSecretRequest,
+      request?: protos.google.actions.sdk.v2.IDecryptSecretRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.actions.sdk.v2.IDecryptSecretResponse,
           protos.google.actions.sdk.v2.IDecryptSecretRequest|null|undefined,
@@ -673,7 +673,7 @@ export class ActionsSdkClient {
   }
 
   listSampleProjects(
-      request: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+      request?: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.actions.sdk.v2.ISampleProject[],
@@ -720,7 +720,7 @@ export class ActionsSdkClient {
  *   for more details and examples.
  */
   listSampleProjects(
-      request: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+      request?: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.actions.sdk.v2.IListSampleProjectsRequest,
           protos.google.actions.sdk.v2.IListSampleProjectsResponse|null|undefined,
@@ -833,7 +833,7 @@ export class ActionsSdkClient {
     ) as AsyncIterable<protos.google.actions.sdk.v2.ISampleProject>;
   }
   listReleaseChannels(
-      request: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
+      request?: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.actions.sdk.v2.IReleaseChannel[],
@@ -884,7 +884,7 @@ export class ActionsSdkClient {
  *   for more details and examples.
  */
   listReleaseChannels(
-      request: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
+      request?: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
           protos.google.actions.sdk.v2.IListReleaseChannelsResponse|null|undefined,
@@ -1026,7 +1026,7 @@ export class ActionsSdkClient {
     ) as AsyncIterable<protos.google.actions.sdk.v2.IReleaseChannel>;
   }
   listVersions(
-      request: protos.google.actions.sdk.v2.IListVersionsRequest,
+      request?: protos.google.actions.sdk.v2.IListVersionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.actions.sdk.v2.IVersion[],
@@ -1077,7 +1077,7 @@ export class ActionsSdkClient {
  *   for more details and examples.
  */
   listVersions(
-      request: protos.google.actions.sdk.v2.IListVersionsRequest,
+      request?: protos.google.actions.sdk.v2.IListVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.actions.sdk.v2.IListVersionsRequest,
           protos.google.actions.sdk.v2.IListVersionsResponse|null|undefined,

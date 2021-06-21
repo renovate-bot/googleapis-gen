@@ -442,7 +442,7 @@ export class EntityTypesClient {
   // -- Service calls --
   // -------------------
   getEntityType(
-      request: protos.google.cloud.dialogflow.v2.IGetEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IEntityType,
@@ -486,7 +486,7 @@ export class EntityTypesClient {
  * const [response] = await client.getEntityType(request);
  */
   getEntityType(
-      request: protos.google.cloud.dialogflow.v2.IGetEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IEntityType,
           protos.google.cloud.dialogflow.v2.IGetEntityTypeRequest|null|undefined,
@@ -520,7 +520,7 @@ export class EntityTypesClient {
     return this.innerApiCalls.getEntityType(request, options, callback);
   }
   createEntityType(
-      request: protos.google.cloud.dialogflow.v2.ICreateEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.v2.ICreateEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IEntityType,
@@ -570,7 +570,7 @@ export class EntityTypesClient {
  * const [response] = await client.createEntityType(request);
  */
   createEntityType(
-      request: protos.google.cloud.dialogflow.v2.ICreateEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.v2.ICreateEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IEntityType,
           protos.google.cloud.dialogflow.v2.ICreateEntityTypeRequest|null|undefined,
@@ -604,7 +604,7 @@ export class EntityTypesClient {
     return this.innerApiCalls.createEntityType(request, options, callback);
   }
   updateEntityType(
-      request: protos.google.cloud.dialogflow.v2.IUpdateEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IEntityType,
@@ -653,7 +653,7 @@ export class EntityTypesClient {
  * const [response] = await client.updateEntityType(request);
  */
   updateEntityType(
-      request: protos.google.cloud.dialogflow.v2.IUpdateEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IEntityType,
           protos.google.cloud.dialogflow.v2.IUpdateEntityTypeRequest|null|undefined,
@@ -687,7 +687,7 @@ export class EntityTypesClient {
     return this.innerApiCalls.updateEntityType(request, options, callback);
   }
   deleteEntityType(
-      request: protos.google.cloud.dialogflow.v2.IDeleteEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -729,7 +729,7 @@ export class EntityTypesClient {
  * const [response] = await client.deleteEntityType(request);
  */
   deleteEntityType(
-      request: protos.google.cloud.dialogflow.v2.IDeleteEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.v2.IDeleteEntityTypeRequest|null|undefined,
@@ -764,7 +764,7 @@ export class EntityTypesClient {
   }
 
   batchUpdateEntityTypes(
-      request: protos.google.cloud.dialogflow.v2.IBatchUpdateEntityTypesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchUpdateEntityTypesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.v2.IBatchUpdateEntityTypesResponse, protos.google.protobuf.IStruct>,
@@ -825,7 +825,7 @@ export class EntityTypesClient {
  * const [response] = await operation.promise();
  */
   batchUpdateEntityTypes(
-      request: protos.google.cloud.dialogflow.v2.IBatchUpdateEntityTypesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchUpdateEntityTypesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.v2.IBatchUpdateEntityTypesResponse, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -880,7 +880,7 @@ export class EntityTypesClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse, protos.google.protobuf.Struct>;
   }
   batchDeleteEntityTypes(
-      request: protos.google.cloud.dialogflow.v2.IBatchDeleteEntityTypesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchDeleteEntityTypesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
@@ -928,7 +928,7 @@ export class EntityTypesClient {
  * const [response] = await operation.promise();
  */
   batchDeleteEntityTypes(
-      request: protos.google.cloud.dialogflow.v2.IBatchDeleteEntityTypesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchDeleteEntityTypesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -983,7 +983,7 @@ export class EntityTypesClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
   batchCreateEntities(
-      request: protos.google.cloud.dialogflow.v2.IBatchCreateEntitiesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchCreateEntitiesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
@@ -1036,7 +1036,7 @@ export class EntityTypesClient {
  * const [response] = await operation.promise();
  */
   batchCreateEntities(
-      request: protos.google.cloud.dialogflow.v2.IBatchCreateEntitiesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchCreateEntitiesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1091,7 +1091,7 @@ export class EntityTypesClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
   batchUpdateEntities(
-      request: protos.google.cloud.dialogflow.v2.IBatchUpdateEntitiesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchUpdateEntitiesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
@@ -1148,7 +1148,7 @@ export class EntityTypesClient {
  * const [response] = await operation.promise();
  */
   batchUpdateEntities(
-      request: protos.google.cloud.dialogflow.v2.IBatchUpdateEntitiesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchUpdateEntitiesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1203,7 +1203,7 @@ export class EntityTypesClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
   batchDeleteEntities(
-      request: protos.google.cloud.dialogflow.v2.IBatchDeleteEntitiesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchDeleteEntitiesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
@@ -1258,7 +1258,7 @@ export class EntityTypesClient {
  * const [response] = await operation.promise();
  */
   batchDeleteEntities(
-      request: protos.google.cloud.dialogflow.v2.IBatchDeleteEntitiesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchDeleteEntitiesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1313,7 +1313,7 @@ export class EntityTypesClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
   listEntityTypes(
-      request: protos.google.cloud.dialogflow.v2.IListEntityTypesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListEntityTypesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IEntityType[],
@@ -1366,7 +1366,7 @@ export class EntityTypesClient {
  *   for more details and examples.
  */
   listEntityTypes(
-      request: protos.google.cloud.dialogflow.v2.IListEntityTypesRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListEntityTypesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2.IListEntityTypesRequest,
           protos.google.cloud.dialogflow.v2.IListEntityTypesResponse|null|undefined,

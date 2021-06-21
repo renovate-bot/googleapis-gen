@@ -362,7 +362,7 @@ export class ServiceMonitoringServiceClient {
   // -- Service calls --
   // -------------------
   createService(
-      request: protos.google.monitoring.v3.ICreateServiceRequest,
+      request?: protos.google.monitoring.v3.ICreateServiceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IService,
@@ -406,7 +406,7 @@ export class ServiceMonitoringServiceClient {
  * const [response] = await client.createService(request);
  */
   createService(
-      request: protos.google.monitoring.v3.ICreateServiceRequest,
+      request?: protos.google.monitoring.v3.ICreateServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.IService,
           protos.google.monitoring.v3.ICreateServiceRequest|null|undefined,
@@ -440,7 +440,7 @@ export class ServiceMonitoringServiceClient {
     return this.innerApiCalls.createService(request, options, callback);
   }
   getService(
-      request: protos.google.monitoring.v3.IGetServiceRequest,
+      request?: protos.google.monitoring.v3.IGetServiceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IService,
@@ -479,7 +479,7 @@ export class ServiceMonitoringServiceClient {
  * const [response] = await client.getService(request);
  */
   getService(
-      request: protos.google.monitoring.v3.IGetServiceRequest,
+      request?: protos.google.monitoring.v3.IGetServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.IService,
           protos.google.monitoring.v3.IGetServiceRequest|null|undefined,
@@ -513,7 +513,7 @@ export class ServiceMonitoringServiceClient {
     return this.innerApiCalls.getService(request, options, callback);
   }
   updateService(
-      request: protos.google.monitoring.v3.IUpdateServiceRequest,
+      request?: protos.google.monitoring.v3.IUpdateServiceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IService,
@@ -553,7 +553,7 @@ export class ServiceMonitoringServiceClient {
  * const [response] = await client.updateService(request);
  */
   updateService(
-      request: protos.google.monitoring.v3.IUpdateServiceRequest,
+      request?: protos.google.monitoring.v3.IUpdateServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.IService,
           protos.google.monitoring.v3.IUpdateServiceRequest|null|undefined,
@@ -587,7 +587,7 @@ export class ServiceMonitoringServiceClient {
     return this.innerApiCalls.updateService(request, options, callback);
   }
   deleteService(
-      request: protos.google.monitoring.v3.IDeleteServiceRequest,
+      request?: protos.google.monitoring.v3.IDeleteServiceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -626,7 +626,7 @@ export class ServiceMonitoringServiceClient {
  * const [response] = await client.deleteService(request);
  */
   deleteService(
-      request: protos.google.monitoring.v3.IDeleteServiceRequest,
+      request?: protos.google.monitoring.v3.IDeleteServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.monitoring.v3.IDeleteServiceRequest|null|undefined,
@@ -660,7 +660,7 @@ export class ServiceMonitoringServiceClient {
     return this.innerApiCalls.deleteService(request, options, callback);
   }
   createServiceLevelObjective(
-      request: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
+      request?: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IServiceLevelObjective,
@@ -707,7 +707,7 @@ export class ServiceMonitoringServiceClient {
  * const [response] = await client.createServiceLevelObjective(request);
  */
   createServiceLevelObjective(
-      request: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
+      request?: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.IServiceLevelObjective,
           protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest|null|undefined,
@@ -741,7 +741,7 @@ export class ServiceMonitoringServiceClient {
     return this.innerApiCalls.createServiceLevelObjective(request, options, callback);
   }
   getServiceLevelObjective(
-      request: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
+      request?: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IServiceLevelObjective,
@@ -785,7 +785,7 @@ export class ServiceMonitoringServiceClient {
  * const [response] = await client.getServiceLevelObjective(request);
  */
   getServiceLevelObjective(
-      request: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
+      request?: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.IServiceLevelObjective,
           protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest|null|undefined,
@@ -819,7 +819,7 @@ export class ServiceMonitoringServiceClient {
     return this.innerApiCalls.getServiceLevelObjective(request, options, callback);
   }
   updateServiceLevelObjective(
-      request: protos.google.monitoring.v3.IUpdateServiceLevelObjectiveRequest,
+      request?: protos.google.monitoring.v3.IUpdateServiceLevelObjectiveRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IServiceLevelObjective,
@@ -859,7 +859,7 @@ export class ServiceMonitoringServiceClient {
  * const [response] = await client.updateServiceLevelObjective(request);
  */
   updateServiceLevelObjective(
-      request: protos.google.monitoring.v3.IUpdateServiceLevelObjectiveRequest,
+      request?: protos.google.monitoring.v3.IUpdateServiceLevelObjectiveRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.IServiceLevelObjective,
           protos.google.monitoring.v3.IUpdateServiceLevelObjectiveRequest|null|undefined,
@@ -893,7 +893,7 @@ export class ServiceMonitoringServiceClient {
     return this.innerApiCalls.updateServiceLevelObjective(request, options, callback);
   }
   deleteServiceLevelObjective(
-      request: protos.google.monitoring.v3.IDeleteServiceLevelObjectiveRequest,
+      request?: protos.google.monitoring.v3.IDeleteServiceLevelObjectiveRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -932,7 +932,7 @@ export class ServiceMonitoringServiceClient {
  * const [response] = await client.deleteServiceLevelObjective(request);
  */
   deleteServiceLevelObjective(
-      request: protos.google.monitoring.v3.IDeleteServiceLevelObjectiveRequest,
+      request?: protos.google.monitoring.v3.IDeleteServiceLevelObjectiveRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.monitoring.v3.IDeleteServiceLevelObjectiveRequest|null|undefined,
@@ -967,7 +967,7 @@ export class ServiceMonitoringServiceClient {
   }
 
   listServices(
-      request: protos.google.monitoring.v3.IListServicesRequest,
+      request?: protos.google.monitoring.v3.IListServicesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IService[],
@@ -1039,7 +1039,7 @@ export class ServiceMonitoringServiceClient {
  *   for more details and examples.
  */
   listServices(
-      request: protos.google.monitoring.v3.IListServicesRequest,
+      request?: protos.google.monitoring.v3.IListServicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.monitoring.v3.IListServicesRequest,
           protos.google.monitoring.v3.IListServicesResponse|null|undefined,
@@ -1223,7 +1223,7 @@ export class ServiceMonitoringServiceClient {
     ) as AsyncIterable<protos.google.monitoring.v3.IService>;
   }
   listServiceLevelObjectives(
-      request: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
+      request?: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IServiceLevelObjective[],
@@ -1282,7 +1282,7 @@ export class ServiceMonitoringServiceClient {
  *   for more details and examples.
  */
   listServiceLevelObjectives(
-      request: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
+      request?: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
           protos.google.monitoring.v3.IListServiceLevelObjectivesResponse|null|undefined,

@@ -590,7 +590,7 @@ export class ProductGroupViewServiceClient {
   // -- Service calls --
   // -------------------
   getProductGroupView(
-      request: protos.google.ads.googleads.v5.services.IGetProductGroupViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetProductGroupViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.IProductGroupView,
@@ -627,7 +627,7 @@ export class ProductGroupViewServiceClient {
  * const [response] = await client.getProductGroupView(request);
  */
   getProductGroupView(
-      request: protos.google.ads.googleads.v5.services.IGetProductGroupViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetProductGroupViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.IProductGroupView,
           protos.google.ads.googleads.v5.services.IGetProductGroupViewRequest|null|undefined,

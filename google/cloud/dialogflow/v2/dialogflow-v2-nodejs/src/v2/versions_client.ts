@@ -386,7 +386,7 @@ export class VersionsClient {
   // -- Service calls --
   // -------------------
   getVersion(
-      request: protos.google.cloud.dialogflow.v2.IGetVersionRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IVersion,
@@ -427,7 +427,7 @@ export class VersionsClient {
  * const [response] = await client.getVersion(request);
  */
   getVersion(
-      request: protos.google.cloud.dialogflow.v2.IGetVersionRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IVersion,
           protos.google.cloud.dialogflow.v2.IGetVersionRequest|null|undefined,
@@ -461,7 +461,7 @@ export class VersionsClient {
     return this.innerApiCalls.getVersion(request, options, callback);
   }
   createVersion(
-      request: protos.google.cloud.dialogflow.v2.ICreateVersionRequest,
+      request?: protos.google.cloud.dialogflow.v2.ICreateVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IVersion,
@@ -505,7 +505,7 @@ export class VersionsClient {
  * const [response] = await client.createVersion(request);
  */
   createVersion(
-      request: protos.google.cloud.dialogflow.v2.ICreateVersionRequest,
+      request?: protos.google.cloud.dialogflow.v2.ICreateVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IVersion,
           protos.google.cloud.dialogflow.v2.ICreateVersionRequest|null|undefined,
@@ -539,7 +539,7 @@ export class VersionsClient {
     return this.innerApiCalls.createVersion(request, options, callback);
   }
   updateVersion(
-      request: protos.google.cloud.dialogflow.v2.IUpdateVersionRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IVersion,
@@ -586,7 +586,7 @@ export class VersionsClient {
  * const [response] = await client.updateVersion(request);
  */
   updateVersion(
-      request: protos.google.cloud.dialogflow.v2.IUpdateVersionRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IVersion,
           protos.google.cloud.dialogflow.v2.IUpdateVersionRequest|null|undefined,
@@ -620,7 +620,7 @@ export class VersionsClient {
     return this.innerApiCalls.updateVersion(request, options, callback);
   }
   deleteVersion(
-      request: protos.google.cloud.dialogflow.v2.IDeleteVersionRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -661,7 +661,7 @@ export class VersionsClient {
  * const [response] = await client.deleteVersion(request);
  */
   deleteVersion(
-      request: protos.google.cloud.dialogflow.v2.IDeleteVersionRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.v2.IDeleteVersionRequest|null|undefined,
@@ -696,7 +696,7 @@ export class VersionsClient {
   }
 
   listVersions(
-      request: protos.google.cloud.dialogflow.v2.IListVersionsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListVersionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IVersion[],
@@ -745,7 +745,7 @@ export class VersionsClient {
  *   for more details and examples.
  */
   listVersions(
-      request: protos.google.cloud.dialogflow.v2.IListVersionsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2.IListVersionsRequest,
           protos.google.cloud.dialogflow.v2.IListVersionsResponse|null|undefined,

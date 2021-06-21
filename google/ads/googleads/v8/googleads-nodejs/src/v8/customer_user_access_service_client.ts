@@ -653,7 +653,7 @@ export class CustomerUserAccessServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerUserAccess(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICustomerUserAccess,
@@ -698,7 +698,7 @@ export class CustomerUserAccessServiceClient {
  * const [response] = await client.getCustomerUserAccess(request);
  */
   getCustomerUserAccess(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICustomerUserAccess,
           protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest|null|undefined,
@@ -732,7 +732,7 @@ export class CustomerUserAccessServiceClient {
     return this.innerApiCalls.getCustomerUserAccess(request, options, callback);
   }
   mutateCustomerUserAccess(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessResponse,
@@ -783,7 +783,7 @@ export class CustomerUserAccessServiceClient {
  * const [response] = await client.mutateCustomerUserAccess(request);
  */
   mutateCustomerUserAccess(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessResponse,
           protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest|null|undefined,

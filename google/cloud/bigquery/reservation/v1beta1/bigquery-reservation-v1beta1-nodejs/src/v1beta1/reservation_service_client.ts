@@ -319,7 +319,7 @@ export class ReservationServiceClient {
   // -- Service calls --
   // -------------------
   createReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.ICreateReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.ICreateReservationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.IReservation,
@@ -362,7 +362,7 @@ export class ReservationServiceClient {
  * const [response] = await client.createReservation(request);
  */
   createReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.ICreateReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.ICreateReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.IReservation,
           protos.google.cloud.bigquery.reservation.v1beta1.ICreateReservationRequest|null|undefined,
@@ -396,7 +396,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.createReservation(request, options, callback);
   }
   getReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IGetReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IGetReservationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.IReservation,
@@ -434,7 +434,7 @@ export class ReservationServiceClient {
  * const [response] = await client.getReservation(request);
  */
   getReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IGetReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IGetReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.IReservation,
           protos.google.cloud.bigquery.reservation.v1beta1.IGetReservationRequest|null|undefined,
@@ -468,7 +468,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.getReservation(request, options, callback);
   }
   deleteReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteReservationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -508,7 +508,7 @@ export class ReservationServiceClient {
  * const [response] = await client.deleteReservation(request);
  */
   deleteReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.reservation.v1beta1.IDeleteReservationRequest|null|undefined,
@@ -542,7 +542,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.deleteReservation(request, options, callback);
   }
   updateReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateReservationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.IReservation,
@@ -581,7 +581,7 @@ export class ReservationServiceClient {
  * const [response] = await client.updateReservation(request);
  */
   updateReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.IReservation,
           protos.google.cloud.bigquery.reservation.v1beta1.IUpdateReservationRequest|null|undefined,
@@ -615,7 +615,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.updateReservation(request, options, callback);
   }
   createCapacityCommitment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.ICreateCapacityCommitmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.ICreateCapacityCommitmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.ICapacityCommitment,
@@ -658,7 +658,7 @@ export class ReservationServiceClient {
  * const [response] = await client.createCapacityCommitment(request);
  */
   createCapacityCommitment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.ICreateCapacityCommitmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.ICreateCapacityCommitmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.ICapacityCommitment,
           protos.google.cloud.bigquery.reservation.v1beta1.ICreateCapacityCommitmentRequest|null|undefined,
@@ -692,7 +692,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.createCapacityCommitment(request, options, callback);
   }
   getCapacityCommitment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IGetCapacityCommitmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IGetCapacityCommitmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.ICapacityCommitment,
@@ -730,7 +730,7 @@ export class ReservationServiceClient {
  * const [response] = await client.getCapacityCommitment(request);
  */
   getCapacityCommitment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IGetCapacityCommitmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IGetCapacityCommitmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.ICapacityCommitment,
           protos.google.cloud.bigquery.reservation.v1beta1.IGetCapacityCommitmentRequest|null|undefined,
@@ -764,7 +764,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.getCapacityCommitment(request, options, callback);
   }
   deleteCapacityCommitment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteCapacityCommitmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteCapacityCommitmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -804,7 +804,7 @@ export class ReservationServiceClient {
  * const [response] = await client.deleteCapacityCommitment(request);
  */
   deleteCapacityCommitment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteCapacityCommitmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteCapacityCommitmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.reservation.v1beta1.IDeleteCapacityCommitmentRequest|null|undefined,
@@ -838,7 +838,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.deleteCapacityCommitment(request, options, callback);
   }
   updateCapacityCommitment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateCapacityCommitmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateCapacityCommitmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.ICapacityCommitment,
@@ -883,7 +883,7 @@ export class ReservationServiceClient {
  * const [response] = await client.updateCapacityCommitment(request);
  */
   updateCapacityCommitment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateCapacityCommitmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateCapacityCommitmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.ICapacityCommitment,
           protos.google.cloud.bigquery.reservation.v1beta1.IUpdateCapacityCommitmentRequest|null|undefined,
@@ -917,7 +917,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.updateCapacityCommitment(request, options, callback);
   }
   splitCapacityCommitment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.ISplitCapacityCommitmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.ISplitCapacityCommitmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.ISplitCapacityCommitmentResponse,
@@ -964,7 +964,7 @@ export class ReservationServiceClient {
  * const [response] = await client.splitCapacityCommitment(request);
  */
   splitCapacityCommitment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.ISplitCapacityCommitmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.ISplitCapacityCommitmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.ISplitCapacityCommitmentResponse,
           protos.google.cloud.bigquery.reservation.v1beta1.ISplitCapacityCommitmentRequest|null|undefined,
@@ -998,7 +998,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.splitCapacityCommitment(request, options, callback);
   }
   mergeCapacityCommitments(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IMergeCapacityCommitmentsRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IMergeCapacityCommitmentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.ICapacityCommitment,
@@ -1046,7 +1046,7 @@ export class ReservationServiceClient {
  * const [response] = await client.mergeCapacityCommitments(request);
  */
   mergeCapacityCommitments(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IMergeCapacityCommitmentsRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IMergeCapacityCommitmentsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.ICapacityCommitment,
           protos.google.cloud.bigquery.reservation.v1beta1.IMergeCapacityCommitmentsRequest|null|undefined,
@@ -1080,7 +1080,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.mergeCapacityCommitments(request, options, callback);
   }
   createAssignment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.ICreateAssignmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.ICreateAssignmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.IAssignment,
@@ -1149,7 +1149,7 @@ export class ReservationServiceClient {
  * const [response] = await client.createAssignment(request);
  */
   createAssignment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.ICreateAssignmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.ICreateAssignmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.IAssignment,
           protos.google.cloud.bigquery.reservation.v1beta1.ICreateAssignmentRequest|null|undefined,
@@ -1183,7 +1183,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.createAssignment(request, options, callback);
   }
   deleteAssignment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteAssignmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteAssignmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1235,7 +1235,7 @@ export class ReservationServiceClient {
  * const [response] = await client.deleteAssignment(request);
  */
   deleteAssignment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteAssignmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteAssignmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.reservation.v1beta1.IDeleteAssignmentRequest|null|undefined,
@@ -1269,7 +1269,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.deleteAssignment(request, options, callback);
   }
   moveAssignment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IMoveAssignmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IMoveAssignmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.IAssignment,
@@ -1315,7 +1315,7 @@ export class ReservationServiceClient {
  * const [response] = await client.moveAssignment(request);
  */
   moveAssignment(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IMoveAssignmentRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IMoveAssignmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.IAssignment,
           protos.google.cloud.bigquery.reservation.v1beta1.IMoveAssignmentRequest|null|undefined,
@@ -1349,7 +1349,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.moveAssignment(request, options, callback);
   }
   getBiReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IGetBiReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IGetBiReservationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.IBiReservation,
@@ -1387,7 +1387,7 @@ export class ReservationServiceClient {
  * const [response] = await client.getBiReservation(request);
  */
   getBiReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IGetBiReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IGetBiReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.IBiReservation,
           protos.google.cloud.bigquery.reservation.v1beta1.IGetBiReservationRequest|null|undefined,
@@ -1421,7 +1421,7 @@ export class ReservationServiceClient {
     return this.innerApiCalls.getBiReservation(request, options, callback);
   }
   updateBiReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateBiReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateBiReservationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.IBiReservation,
@@ -1467,7 +1467,7 @@ export class ReservationServiceClient {
  * const [response] = await client.updateBiReservation(request);
  */
   updateBiReservation(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateBiReservationRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateBiReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.reservation.v1beta1.IBiReservation,
           protos.google.cloud.bigquery.reservation.v1beta1.IUpdateBiReservationRequest|null|undefined,
@@ -1502,7 +1502,7 @@ export class ReservationServiceClient {
   }
 
   listReservations(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IListReservationsRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IListReservationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.IReservation[],
@@ -1554,7 +1554,7 @@ export class ReservationServiceClient {
  *   for more details and examples.
  */
   listReservations(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IListReservationsRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IListReservationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.bigquery.reservation.v1beta1.IListReservationsRequest,
           protos.google.cloud.bigquery.reservation.v1beta1.IListReservationsResponse|null|undefined,
@@ -1698,7 +1698,7 @@ export class ReservationServiceClient {
     ) as AsyncIterable<protos.google.cloud.bigquery.reservation.v1beta1.IReservation>;
   }
   listCapacityCommitments(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IListCapacityCommitmentsRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IListCapacityCommitmentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.ICapacityCommitment[],
@@ -1744,7 +1744,7 @@ export class ReservationServiceClient {
  *   for more details and examples.
  */
   listCapacityCommitments(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IListCapacityCommitmentsRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IListCapacityCommitmentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.bigquery.reservation.v1beta1.IListCapacityCommitmentsRequest,
           protos.google.cloud.bigquery.reservation.v1beta1.IListCapacityCommitmentsResponse|null|undefined,
@@ -1876,7 +1876,7 @@ export class ReservationServiceClient {
     ) as AsyncIterable<protos.google.cloud.bigquery.reservation.v1beta1.ICapacityCommitment>;
   }
   listAssignments(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IListAssignmentsRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IListAssignmentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.IAssignment[],
@@ -1947,7 +1947,7 @@ export class ReservationServiceClient {
  *   for more details and examples.
  */
   listAssignments(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.IListAssignmentsRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.IListAssignmentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.bigquery.reservation.v1beta1.IListAssignmentsRequest,
           protos.google.cloud.bigquery.reservation.v1beta1.IListAssignmentsResponse|null|undefined,
@@ -2089,7 +2089,7 @@ export class ReservationServiceClient {
     ) as AsyncIterable<protos.google.cloud.bigquery.reservation.v1beta1.IAssignment>;
   }
   searchAssignments(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.ISearchAssignmentsRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.ISearchAssignmentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.reservation.v1beta1.IAssignment[],
@@ -2166,7 +2166,7 @@ export class ReservationServiceClient {
  *   for more details and examples.
  */
   searchAssignments(
-      request: protos.google.cloud.bigquery.reservation.v1beta1.ISearchAssignmentsRequest,
+      request?: protos.google.cloud.bigquery.reservation.v1beta1.ISearchAssignmentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.bigquery.reservation.v1beta1.ISearchAssignmentsRequest,
           protos.google.cloud.bigquery.reservation.v1beta1.ISearchAssignmentsResponse|null|undefined,

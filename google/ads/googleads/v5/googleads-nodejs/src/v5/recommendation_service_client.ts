@@ -590,7 +590,7 @@ export class RecommendationServiceClient {
   // -- Service calls --
   // -------------------
   getRecommendation(
-      request: protos.google.ads.googleads.v5.services.IGetRecommendationRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetRecommendationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.IRecommendation,
@@ -627,7 +627,7 @@ export class RecommendationServiceClient {
  * const [response] = await client.getRecommendation(request);
  */
   getRecommendation(
-      request: protos.google.ads.googleads.v5.services.IGetRecommendationRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetRecommendationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.IRecommendation,
           protos.google.ads.googleads.v5.services.IGetRecommendationRequest|null|undefined,
@@ -661,7 +661,7 @@ export class RecommendationServiceClient {
     return this.innerApiCalls.getRecommendation(request, options, callback);
   }
   applyRecommendation(
-      request: protos.google.ads.googleads.v5.services.IApplyRecommendationRequest,
+      request?: protos.google.ads.googleads.v5.services.IApplyRecommendationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.services.IApplyRecommendationResponse,
@@ -707,7 +707,7 @@ export class RecommendationServiceClient {
  * const [response] = await client.applyRecommendation(request);
  */
   applyRecommendation(
-      request: protos.google.ads.googleads.v5.services.IApplyRecommendationRequest,
+      request?: protos.google.ads.googleads.v5.services.IApplyRecommendationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.services.IApplyRecommendationResponse,
           protos.google.ads.googleads.v5.services.IApplyRecommendationRequest|null|undefined,
@@ -741,7 +741,7 @@ export class RecommendationServiceClient {
     return this.innerApiCalls.applyRecommendation(request, options, callback);
   }
   dismissRecommendation(
-      request: protos.google.ads.googleads.v5.services.IDismissRecommendationRequest,
+      request?: protos.google.ads.googleads.v5.services.IDismissRecommendationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.services.IDismissRecommendationResponse,
@@ -787,7 +787,7 @@ export class RecommendationServiceClient {
  * const [response] = await client.dismissRecommendation(request);
  */
   dismissRecommendation(
-      request: protos.google.ads.googleads.v5.services.IDismissRecommendationRequest,
+      request?: protos.google.ads.googleads.v5.services.IDismissRecommendationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.services.IDismissRecommendationResponse,
           protos.google.ads.googleads.v5.services.IDismissRecommendationRequest|null|undefined,

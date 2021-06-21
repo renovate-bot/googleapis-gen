@@ -406,7 +406,7 @@ export class DataMigrationServiceClient {
   // -- Service calls --
   // -------------------
   getMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IGetMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IGetMigrationJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.clouddms.v1.IMigrationJob,
@@ -443,7 +443,7 @@ export class DataMigrationServiceClient {
  * const [response] = await client.getMigrationJob(request);
  */
   getMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IGetMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IGetMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.clouddms.v1.IMigrationJob,
           protos.google.cloud.clouddms.v1.IGetMigrationJobRequest|null|undefined,
@@ -477,7 +477,7 @@ export class DataMigrationServiceClient {
     return this.innerApiCalls.getMigrationJob(request, options, callback);
   }
   generateSshScript(
-      request: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
+      request?: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.clouddms.v1.ISshScript,
@@ -523,7 +523,7 @@ export class DataMigrationServiceClient {
  * const [response] = await client.generateSshScript(request);
  */
   generateSshScript(
-      request: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
+      request?: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.clouddms.v1.ISshScript,
           protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest|null|undefined,
@@ -557,7 +557,7 @@ export class DataMigrationServiceClient {
     return this.innerApiCalls.generateSshScript(request, options, callback);
   }
   getConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.IGetConnectionProfileRequest,
+      request?: protos.google.cloud.clouddms.v1.IGetConnectionProfileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.clouddms.v1.IConnectionProfile,
@@ -594,7 +594,7 @@ export class DataMigrationServiceClient {
  * const [response] = await client.getConnectionProfile(request);
  */
   getConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.IGetConnectionProfileRequest,
+      request?: protos.google.cloud.clouddms.v1.IGetConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.clouddms.v1.IConnectionProfile,
           protos.google.cloud.clouddms.v1.IGetConnectionProfileRequest|null|undefined,
@@ -629,7 +629,7 @@ export class DataMigrationServiceClient {
   }
 
   createMigrationJob(
-      request: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -683,7 +683,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   createMigrationJob(
-      request: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -738,7 +738,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   updateMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -789,7 +789,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   updateMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -844,7 +844,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   deleteMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -896,7 +896,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   deleteMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -951,7 +951,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   startMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IStartMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IStartMigrationJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -991,7 +991,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   startMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IStartMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IStartMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1046,7 +1046,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   stopMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IStopMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IStopMigrationJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -1086,7 +1086,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   stopMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IStopMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IStopMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1141,7 +1141,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   resumeMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IResumeMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IResumeMigrationJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -1182,7 +1182,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   resumeMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IResumeMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IResumeMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1237,7 +1237,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   promoteMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IPromoteMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IPromoteMigrationJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -1278,7 +1278,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   promoteMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IPromoteMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IPromoteMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1333,7 +1333,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   verifyMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IVerifyMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IVerifyMigrationJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -1374,7 +1374,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   verifyMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IVerifyMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IVerifyMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1429,7 +1429,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   restartMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IRestartMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IRestartMigrationJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -1471,7 +1471,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   restartMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IRestartMigrationJobRequest,
+      request?: protos.google.cloud.clouddms.v1.IRestartMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1526,7 +1526,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   createConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
+      request?: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -1578,7 +1578,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   createConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
+      request?: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1633,7 +1633,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.ConnectionProfile, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   updateConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
+      request?: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -1684,7 +1684,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   updateConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
+      request?: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1739,7 +1739,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.ConnectionProfile, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   deleteConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
+      request?: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
@@ -1792,7 +1792,7 @@ export class DataMigrationServiceClient {
  * const [response] = await operation.promise();
  */
   deleteConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
+      request?: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1847,7 +1847,7 @@ export class DataMigrationServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
   listMigrationJobs(
-      request: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
+      request?: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.clouddms.v1.IMigrationJob[],
@@ -1912,7 +1912,7 @@ export class DataMigrationServiceClient {
  *   for more details and examples.
  */
   listMigrationJobs(
-      request: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
+      request?: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
           protos.google.cloud.clouddms.v1.IListMigrationJobsResponse|null|undefined,
@@ -2082,7 +2082,7 @@ export class DataMigrationServiceClient {
     ) as AsyncIterable<protos.google.cloud.clouddms.v1.IMigrationJob>;
   }
   listConnectionProfiles(
-      request: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
+      request?: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.clouddms.v1.IConnectionProfile[],
@@ -2146,7 +2146,7 @@ export class DataMigrationServiceClient {
  *   for more details and examples.
  */
   listConnectionProfiles(
-      request: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
+      request?: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
           protos.google.cloud.clouddms.v1.IListConnectionProfilesResponse|null|undefined,

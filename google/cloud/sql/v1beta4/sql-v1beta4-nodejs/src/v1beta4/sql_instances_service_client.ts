@@ -262,7 +262,7 @@ export class SqlInstancesServiceClient {
   // -- Service calls --
   // -------------------
   addServerCa(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesAddServerCaRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesAddServerCaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -305,7 +305,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.addServerCa(request);
  */
   addServerCa(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesAddServerCaRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesAddServerCaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesAddServerCaRequest|null|undefined,
@@ -339,7 +339,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.addServerCa(request, options, callback);
   }
   clone(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesCloneRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesCloneRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -381,7 +381,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.clone(request);
  */
   clone(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesCloneRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesCloneRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesCloneRequest|null|undefined,
@@ -415,7 +415,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.clone(request, options, callback);
   }
   delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesDeleteRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesDeleteRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -454,7 +454,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.delete(request);
  */
   delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesDeleteRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesDeleteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesDeleteRequest|null|undefined,
@@ -488,7 +488,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.delete(request, options, callback);
   }
   demoteMaster(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesDemoteMasterRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesDemoteMasterRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -529,7 +529,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.demoteMaster(request);
  */
   demoteMaster(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesDemoteMasterRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesDemoteMasterRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesDemoteMasterRequest|null|undefined,
@@ -563,7 +563,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.demoteMaster(request, options, callback);
   }
   export(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesExportRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesExportRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -604,7 +604,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.export(request);
  */
   export(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesExportRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesExportRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesExportRequest|null|undefined,
@@ -638,7 +638,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.export(request, options, callback);
   }
   failover(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesFailoverRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesFailoverRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -679,7 +679,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.failover(request);
  */
   failover(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesFailoverRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesFailoverRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesFailoverRequest|null|undefined,
@@ -713,7 +713,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.failover(request, options, callback);
   }
   get(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesGetRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesGetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IDatabaseInstance,
@@ -752,7 +752,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.get(request);
  */
   get(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesGetRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesGetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IDatabaseInstance,
           protos.google.cloud.sql.v1beta4.ISqlInstancesGetRequest|null|undefined,
@@ -786,7 +786,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.get(request, options, callback);
   }
   import(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesImportRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesImportRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -827,7 +827,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.import(request);
  */
   import(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesImportRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesImportRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesImportRequest|null|undefined,
@@ -861,7 +861,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.import(request, options, callback);
   }
   insert(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesInsertRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesInsertRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -900,7 +900,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.insert(request);
  */
   insert(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesInsertRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesInsertRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesInsertRequest|null|undefined,
@@ -934,7 +934,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.insert(request, options, callback);
   }
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesListRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IInstancesListResponse,
@@ -986,7 +986,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.list(request);
  */
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesListRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IInstancesListResponse,
           protos.google.cloud.sql.v1beta4.ISqlInstancesListRequest|null|undefined,
@@ -1020,7 +1020,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.list(request, options, callback);
   }
   listServerCas(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesListServerCasRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesListServerCasRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IInstancesListServerCasResponse,
@@ -1063,7 +1063,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.listServerCas(request);
  */
   listServerCas(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesListServerCasRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesListServerCasRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IInstancesListServerCasResponse,
           protos.google.cloud.sql.v1beta4.ISqlInstancesListServerCasRequest|null|undefined,
@@ -1097,7 +1097,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.listServerCas(request, options, callback);
   }
   patch(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesPatchRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesPatchRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -1138,7 +1138,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.patch(request);
  */
   patch(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesPatchRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesPatchRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesPatchRequest|null|undefined,
@@ -1172,7 +1172,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.patch(request, options, callback);
   }
   promoteReplica(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesPromoteReplicaRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesPromoteReplicaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -1212,7 +1212,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.promoteReplica(request);
  */
   promoteReplica(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesPromoteReplicaRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesPromoteReplicaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesPromoteReplicaRequest|null|undefined,
@@ -1246,7 +1246,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.promoteReplica(request, options, callback);
   }
   resetSslConfig(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesResetSslConfigRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesResetSslConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -1286,7 +1286,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.resetSslConfig(request);
  */
   resetSslConfig(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesResetSslConfigRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesResetSslConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesResetSslConfigRequest|null|undefined,
@@ -1320,7 +1320,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.resetSslConfig(request, options, callback);
   }
   restart(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesRestartRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRestartRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -1359,7 +1359,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.restart(request);
  */
   restart(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesRestartRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRestartRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesRestartRequest|null|undefined,
@@ -1393,7 +1393,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.restart(request, options, callback);
   }
   restoreBackup(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesRestoreBackupRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRestoreBackupRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -1434,7 +1434,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.restoreBackup(request);
  */
   restoreBackup(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesRestoreBackupRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRestoreBackupRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesRestoreBackupRequest|null|undefined,
@@ -1468,7 +1468,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.restoreBackup(request, options, callback);
   }
   rotateServerCa(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesRotateServerCaRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRotateServerCaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -1509,7 +1509,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.rotateServerCa(request);
  */
   rotateServerCa(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesRotateServerCaRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRotateServerCaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesRotateServerCaRequest|null|undefined,
@@ -1543,7 +1543,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.rotateServerCa(request, options, callback);
   }
   startReplica(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesStartReplicaRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesStartReplicaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -1582,7 +1582,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.startReplica(request);
  */
   startReplica(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesStartReplicaRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesStartReplicaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesStartReplicaRequest|null|undefined,
@@ -1616,7 +1616,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.startReplica(request, options, callback);
   }
   stopReplica(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesStopReplicaRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesStopReplicaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -1655,7 +1655,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.stopReplica(request);
  */
   stopReplica(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesStopReplicaRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesStopReplicaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesStopReplicaRequest|null|undefined,
@@ -1689,7 +1689,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.stopReplica(request, options, callback);
   }
   truncateLog(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesTruncateLogRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesTruncateLogRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -1730,7 +1730,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.truncateLog(request);
  */
   truncateLog(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesTruncateLogRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesTruncateLogRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesTruncateLogRequest|null|undefined,
@@ -1764,7 +1764,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.truncateLog(request, options, callback);
   }
   update(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesUpdateRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesUpdateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -1805,7 +1805,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.update(request);
  */
   update(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesUpdateRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesUpdateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesUpdateRequest|null|undefined,
@@ -1839,7 +1839,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.update(request, options, callback);
   }
   createEphemeral(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesCreateEphemeralCertRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesCreateEphemeralCertRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.ISslCert,
@@ -1882,7 +1882,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.createEphemeral(request);
  */
   createEphemeral(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesCreateEphemeralCertRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesCreateEphemeralCertRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.ISslCert,
           protos.google.cloud.sql.v1beta4.ISqlInstancesCreateEphemeralCertRequest|null|undefined,
@@ -1916,7 +1916,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.createEphemeral(request, options, callback);
   }
   rescheduleMaintenance(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesRescheduleMaintenanceRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRescheduleMaintenanceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -1956,7 +1956,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.rescheduleMaintenance(request);
  */
   rescheduleMaintenance(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesRescheduleMaintenanceRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRescheduleMaintenanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesRescheduleMaintenanceRequest|null|undefined,
@@ -1990,7 +1990,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.rescheduleMaintenance(request, options, callback);
   }
   verifyExternalSyncSettings(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesVerifyExternalSyncSettingsRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesVerifyExternalSyncSettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.ISqlInstancesVerifyExternalSyncSettingsResponse,
@@ -2033,7 +2033,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.verifyExternalSyncSettings(request);
  */
   verifyExternalSyncSettings(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesVerifyExternalSyncSettingsRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesVerifyExternalSyncSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.ISqlInstancesVerifyExternalSyncSettingsResponse,
           protos.google.cloud.sql.v1beta4.ISqlInstancesVerifyExternalSyncSettingsRequest|null|undefined,
@@ -2067,7 +2067,7 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.verifyExternalSyncSettings(request, options, callback);
   }
   startExternalSync(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesStartExternalSyncRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesStartExternalSyncRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IOperation,
@@ -2110,7 +2110,7 @@ export class SqlInstancesServiceClient {
  * const [response] = await client.startExternalSync(request);
  */
   startExternalSync(
-      request: protos.google.cloud.sql.v1beta4.ISqlInstancesStartExternalSyncRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlInstancesStartExternalSyncRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlInstancesStartExternalSyncRequest|null|undefined,

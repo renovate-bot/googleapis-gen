@@ -614,7 +614,7 @@ export class CampaignAssetServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignAsset(
-      request: protos.google.ads.googleads.v6.services.IGetCampaignAssetRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCampaignAssetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.ICampaignAsset,
@@ -651,7 +651,7 @@ export class CampaignAssetServiceClient {
  * const [response] = await client.getCampaignAsset(request);
  */
   getCampaignAsset(
-      request: protos.google.ads.googleads.v6.services.IGetCampaignAssetRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCampaignAssetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.ICampaignAsset,
           protos.google.ads.googleads.v6.services.IGetCampaignAssetRequest|null|undefined,
@@ -685,7 +685,7 @@ export class CampaignAssetServiceClient {
     return this.innerApiCalls.getCampaignAsset(request, options, callback);
   }
   mutateCampaignAssets(
-      request: protos.google.ads.googleads.v6.services.IMutateCampaignAssetsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCampaignAssetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateCampaignAssetsResponse,
@@ -732,7 +732,7 @@ export class CampaignAssetServiceClient {
  * const [response] = await client.mutateCampaignAssets(request);
  */
   mutateCampaignAssets(
-      request: protos.google.ads.googleads.v6.services.IMutateCampaignAssetsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCampaignAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateCampaignAssetsResponse,
           protos.google.ads.googleads.v6.services.IMutateCampaignAssetsRequest|null|undefined,

@@ -347,7 +347,7 @@ export class WebhooksClient {
   // -- Service calls --
   // -------------------
   getWebhook(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetWebhookRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetWebhookRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IWebhook,
@@ -386,7 +386,7 @@ export class WebhooksClient {
  * const [response] = await client.getWebhook(request);
  */
   getWebhook(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetWebhookRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetWebhookRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IWebhook,
           protos.google.cloud.dialogflow.cx.v3beta1.IGetWebhookRequest|null|undefined,
@@ -420,7 +420,7 @@ export class WebhooksClient {
     return this.innerApiCalls.getWebhook(request, options, callback);
   }
   createWebhook(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateWebhookRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateWebhookRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IWebhook,
@@ -460,7 +460,7 @@ export class WebhooksClient {
  * const [response] = await client.createWebhook(request);
  */
   createWebhook(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateWebhookRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateWebhookRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IWebhook,
           protos.google.cloud.dialogflow.cx.v3beta1.ICreateWebhookRequest|null|undefined,
@@ -494,7 +494,7 @@ export class WebhooksClient {
     return this.innerApiCalls.createWebhook(request, options, callback);
   }
   updateWebhook(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateWebhookRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateWebhookRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IWebhook,
@@ -534,7 +534,7 @@ export class WebhooksClient {
  * const [response] = await client.updateWebhook(request);
  */
   updateWebhook(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateWebhookRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateWebhookRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IWebhook,
           protos.google.cloud.dialogflow.cx.v3beta1.IUpdateWebhookRequest|null|undefined,
@@ -568,7 +568,7 @@ export class WebhooksClient {
     return this.innerApiCalls.updateWebhook(request, options, callback);
   }
   deleteWebhook(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteWebhookRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteWebhookRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -617,7 +617,7 @@ export class WebhooksClient {
  * const [response] = await client.deleteWebhook(request);
  */
   deleteWebhook(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteWebhookRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteWebhookRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.cx.v3beta1.IDeleteWebhookRequest|null|undefined,
@@ -652,7 +652,7 @@ export class WebhooksClient {
   }
 
   listWebhooks(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListWebhooksRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListWebhooksRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IWebhook[],
@@ -699,7 +699,7 @@ export class WebhooksClient {
  *   for more details and examples.
  */
   listWebhooks(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListWebhooksRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListWebhooksRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.cx.v3beta1.IListWebhooksRequest,
           protos.google.cloud.dialogflow.cx.v3beta1.IListWebhooksResponse|null|undefined,

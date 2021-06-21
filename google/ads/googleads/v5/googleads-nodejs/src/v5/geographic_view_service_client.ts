@@ -590,7 +590,7 @@ export class GeographicViewServiceClient {
   // -- Service calls --
   // -------------------
   getGeographicView(
-      request: protos.google.ads.googleads.v5.services.IGetGeographicViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetGeographicViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.IGeographicView,
@@ -627,7 +627,7 @@ export class GeographicViewServiceClient {
  * const [response] = await client.getGeographicView(request);
  */
   getGeographicView(
-      request: protos.google.ads.googleads.v5.services.IGetGeographicViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetGeographicViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.IGeographicView,
           protos.google.ads.googleads.v5.services.IGetGeographicViewRequest|null|undefined,

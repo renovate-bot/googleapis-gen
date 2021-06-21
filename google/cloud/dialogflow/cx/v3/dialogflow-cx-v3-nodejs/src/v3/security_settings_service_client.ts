@@ -341,7 +341,7 @@ export class SecuritySettingsServiceClient {
   // -- Service calls --
   // -------------------
   createSecuritySettings(
-      request: protos.google.cloud.dialogflow.cx.v3.ICreateSecuritySettingsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.ICreateSecuritySettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.ISecuritySettings,
@@ -381,7 +381,7 @@ export class SecuritySettingsServiceClient {
  * const [response] = await client.createSecuritySettings(request);
  */
   createSecuritySettings(
-      request: protos.google.cloud.dialogflow.cx.v3.ICreateSecuritySettingsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.ICreateSecuritySettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3.ISecuritySettings,
           protos.google.cloud.dialogflow.cx.v3.ICreateSecuritySettingsRequest|null|undefined,
@@ -415,7 +415,7 @@ export class SecuritySettingsServiceClient {
     return this.innerApiCalls.createSecuritySettings(request, options, callback);
   }
   getSecuritySettings(
-      request: protos.google.cloud.dialogflow.cx.v3.IGetSecuritySettingsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IGetSecuritySettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.ISecuritySettings,
@@ -455,7 +455,7 @@ export class SecuritySettingsServiceClient {
  * const [response] = await client.getSecuritySettings(request);
  */
   getSecuritySettings(
-      request: protos.google.cloud.dialogflow.cx.v3.IGetSecuritySettingsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IGetSecuritySettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3.ISecuritySettings,
           protos.google.cloud.dialogflow.cx.v3.IGetSecuritySettingsRequest|null|undefined,
@@ -489,7 +489,7 @@ export class SecuritySettingsServiceClient {
     return this.innerApiCalls.getSecuritySettings(request, options, callback);
   }
   updateSecuritySettings(
-      request: protos.google.cloud.dialogflow.cx.v3.IUpdateSecuritySettingsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IUpdateSecuritySettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.ISecuritySettings,
@@ -530,7 +530,7 @@ export class SecuritySettingsServiceClient {
  * const [response] = await client.updateSecuritySettings(request);
  */
   updateSecuritySettings(
-      request: protos.google.cloud.dialogflow.cx.v3.IUpdateSecuritySettingsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IUpdateSecuritySettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3.ISecuritySettings,
           protos.google.cloud.dialogflow.cx.v3.IUpdateSecuritySettingsRequest|null|undefined,
@@ -564,7 +564,7 @@ export class SecuritySettingsServiceClient {
     return this.innerApiCalls.updateSecuritySettings(request, options, callback);
   }
   deleteSecuritySettings(
-      request: protos.google.cloud.dialogflow.cx.v3.IDeleteSecuritySettingsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IDeleteSecuritySettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -603,7 +603,7 @@ export class SecuritySettingsServiceClient {
  * const [response] = await client.deleteSecuritySettings(request);
  */
   deleteSecuritySettings(
-      request: protos.google.cloud.dialogflow.cx.v3.IDeleteSecuritySettingsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IDeleteSecuritySettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.cx.v3.IDeleteSecuritySettingsRequest|null|undefined,
@@ -638,7 +638,7 @@ export class SecuritySettingsServiceClient {
   }
 
   listSecuritySettings(
-      request: protos.google.cloud.dialogflow.cx.v3.IListSecuritySettingsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IListSecuritySettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3.ISecuritySettings[],
@@ -685,7 +685,7 @@ export class SecuritySettingsServiceClient {
  *   for more details and examples.
  */
   listSecuritySettings(
-      request: protos.google.cloud.dialogflow.cx.v3.IListSecuritySettingsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3.IListSecuritySettingsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.cx.v3.IListSecuritySettingsRequest,
           protos.google.cloud.dialogflow.cx.v3.IListSecuritySettingsResponse|null|undefined,

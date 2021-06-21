@@ -296,7 +296,7 @@ export class BotsClient {
   // -- Service calls --
   // -------------------
   createBotSession(
-      request: protos.google.devtools.remoteworkers.v1test2.ICreateBotSessionRequest,
+      request?: protos.google.devtools.remoteworkers.v1test2.ICreateBotSessionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.remoteworkers.v1test2.IBotSession,
@@ -337,7 +337,7 @@ export class BotsClient {
  * const [response] = await client.createBotSession(request);
  */
   createBotSession(
-      request: protos.google.devtools.remoteworkers.v1test2.ICreateBotSessionRequest,
+      request?: protos.google.devtools.remoteworkers.v1test2.ICreateBotSessionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.remoteworkers.v1test2.IBotSession,
           protos.google.devtools.remoteworkers.v1test2.ICreateBotSessionRequest|null|undefined,
@@ -371,7 +371,7 @@ export class BotsClient {
     return this.innerApiCalls.createBotSession(request, options, callback);
   }
   updateBotSession(
-      request: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,
+      request?: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.remoteworkers.v1test2.IBotSession,
@@ -415,7 +415,7 @@ export class BotsClient {
  * const [response] = await client.updateBotSession(request);
  */
   updateBotSession(
-      request: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,
+      request?: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.remoteworkers.v1test2.IBotSession,
           protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest|null|undefined,

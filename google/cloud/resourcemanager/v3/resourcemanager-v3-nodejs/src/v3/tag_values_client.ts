@@ -339,7 +339,7 @@ export class TagValuesClient {
   // -- Service calls --
   // -------------------
   getTagValue(
-      request: protos.google.cloud.resourcemanager.v3.IGetTagValueRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IGetTagValueRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.resourcemanager.v3.ITagValue,
@@ -378,7 +378,7 @@ export class TagValuesClient {
  * const [response] = await client.getTagValue(request);
  */
   getTagValue(
-      request: protos.google.cloud.resourcemanager.v3.IGetTagValueRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IGetTagValueRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.resourcemanager.v3.ITagValue,
           protos.google.cloud.resourcemanager.v3.IGetTagValueRequest|null|undefined,
@@ -412,7 +412,7 @@ export class TagValuesClient {
     return this.innerApiCalls.getTagValue(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -458,7 +458,7 @@ export class TagValuesClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -492,7 +492,7 @@ export class TagValuesClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -539,7 +539,7 @@ export class TagValuesClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -573,7 +573,7 @@ export class TagValuesClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -620,7 +620,7 @@ export class TagValuesClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -655,7 +655,7 @@ export class TagValuesClient {
   }
 
   createTagValue(
-      request: protos.google.cloud.resourcemanager.v3.ICreateTagValueRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ICreateTagValueRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.ITagValue, protos.google.cloud.resourcemanager.v3.ICreateTagValueMetadata>,
@@ -702,7 +702,7 @@ export class TagValuesClient {
  * const [response] = await operation.promise();
  */
   createTagValue(
-      request: protos.google.cloud.resourcemanager.v3.ICreateTagValueRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ICreateTagValueRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.ITagValue, protos.google.cloud.resourcemanager.v3.ICreateTagValueMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -750,7 +750,7 @@ export class TagValuesClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.TagValue, protos.google.cloud.resourcemanager.v3.CreateTagValueMetadata>;
   }
   updateTagValue(
-      request: protos.google.cloud.resourcemanager.v3.IUpdateTagValueRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IUpdateTagValueRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.ITagValue, protos.google.cloud.resourcemanager.v3.IUpdateTagValueMetadata>,
@@ -798,7 +798,7 @@ export class TagValuesClient {
  * const [response] = await operation.promise();
  */
   updateTagValue(
-      request: protos.google.cloud.resourcemanager.v3.IUpdateTagValueRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IUpdateTagValueRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.ITagValue, protos.google.cloud.resourcemanager.v3.IUpdateTagValueMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -853,7 +853,7 @@ export class TagValuesClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.TagValue, protos.google.cloud.resourcemanager.v3.UpdateTagValueMetadata>;
   }
   deleteTagValue(
-      request: protos.google.cloud.resourcemanager.v3.IDeleteTagValueRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IDeleteTagValueRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.ITagValue, protos.google.cloud.resourcemanager.v3.IDeleteTagValueMetadata>,
@@ -900,7 +900,7 @@ export class TagValuesClient {
  * const [response] = await operation.promise();
  */
   deleteTagValue(
-      request: protos.google.cloud.resourcemanager.v3.IDeleteTagValueRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IDeleteTagValueRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.ITagValue, protos.google.cloud.resourcemanager.v3.IDeleteTagValueMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -955,7 +955,7 @@ export class TagValuesClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.TagValue, protos.google.cloud.resourcemanager.v3.DeleteTagValueMetadata>;
   }
   listTagValues(
-      request: protos.google.cloud.resourcemanager.v3.IListTagValuesRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IListTagValuesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.resourcemanager.v3.ITagValue[],
@@ -1004,7 +1004,7 @@ export class TagValuesClient {
  *   for more details and examples.
  */
   listTagValues(
-      request: protos.google.cloud.resourcemanager.v3.IListTagValuesRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IListTagValuesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.resourcemanager.v3.IListTagValuesRequest,
           protos.google.cloud.resourcemanager.v3.IListTagValuesResponse|null|undefined,

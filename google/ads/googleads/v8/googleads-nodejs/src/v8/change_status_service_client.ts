@@ -653,7 +653,7 @@ export class ChangeStatusServiceClient {
   // -- Service calls --
   // -------------------
   getChangeStatus(
-      request: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IChangeStatus,
@@ -698,7 +698,7 @@ export class ChangeStatusServiceClient {
  * const [response] = await client.getChangeStatus(request);
  */
   getChangeStatus(
-      request: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IChangeStatus,
           protos.google.ads.googleads.v8.services.IGetChangeStatusRequest|null|undefined,

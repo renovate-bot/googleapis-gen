@@ -683,6 +683,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual lro::Operation<wkt::Empty, OperationMetadata> EnableService(EnableServiceRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -694,6 +695,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> EnableServiceAsync(EnableServiceRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -705,6 +707,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> EnableServiceAsync(EnableServiceRequest request, st::CancellationToken cancellationToken) =>
             EnableServiceAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
@@ -719,6 +722,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The result of polling the operation.</returns>
+        [sys::ObsoleteAttribute]
         public virtual lro::Operation<wkt::Empty, OperationMetadata> PollOnceEnableService(string operationName, gaxgrpc::CallSettings callSettings = null) =>
             lro::Operation<wkt::Empty, OperationMetadata>.PollOnceFromName(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), EnableServiceOperationsClient, callSettings);
 
@@ -731,6 +735,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A task representing the result of polling the operation.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> PollOnceEnableServiceAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
             lro::Operation<wkt::Empty, OperationMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), EnableServiceOperationsClient, callSettings);
 
@@ -748,6 +753,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual lro::Operation<wkt::Empty, OperationMetadata> DisableService(DisableServiceRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -765,6 +771,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> DisableServiceAsync(DisableServiceRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -782,6 +789,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> DisableServiceAsync(DisableServiceRequest request, st::CancellationToken cancellationToken) =>
             DisableServiceAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
@@ -796,6 +804,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The result of polling the operation.</returns>
+        [sys::ObsoleteAttribute]
         public virtual lro::Operation<wkt::Empty, OperationMetadata> PollOnceDisableService(string operationName, gaxgrpc::CallSettings callSettings = null) =>
             lro::Operation<wkt::Empty, OperationMetadata>.PollOnceFromName(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), DisableServiceOperationsClient, callSettings);
 
@@ -808,6 +817,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A task representing the result of polling the operation.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> PollOnceDisableServiceAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
             lro::Operation<wkt::Empty, OperationMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), DisableServiceOperationsClient, callSettings);
 
@@ -817,6 +827,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual Service GetService(GetServiceRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -826,6 +837,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<Service> GetServiceAsync(GetServiceRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -835,6 +847,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<Service> GetServiceAsync(GetServiceRequest request, st::CancellationToken cancellationToken) =>
             GetServiceAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
@@ -850,6 +863,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A pageable sequence of <see cref="Service"/> resources.</returns>
+        [sys::ObsoleteAttribute]
         public virtual gax::PagedEnumerable<ListServicesResponse, Service> ListServices(ListServicesRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -865,6 +879,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A pageable asynchronous sequence of <see cref="Service"/> resources.</returns>
+        [sys::ObsoleteAttribute]
         public virtual gax::PagedAsyncEnumerable<ListServicesResponse, Service> ListServicesAsync(ListServicesRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -878,6 +893,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual lro::Operation<wkt::Empty, OperationMetadata> BatchEnableServices(BatchEnableServicesRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -891,6 +907,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> BatchEnableServicesAsync(BatchEnableServicesRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
 
@@ -904,6 +921,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> BatchEnableServicesAsync(BatchEnableServicesRequest request, st::CancellationToken cancellationToken) =>
             BatchEnableServicesAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
@@ -919,6 +937,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The result of polling the operation.</returns>
+        [sys::ObsoleteAttribute]
         public virtual lro::Operation<wkt::Empty, OperationMetadata> PollOnceBatchEnableServices(string operationName, gaxgrpc::CallSettings callSettings = null) =>
             lro::Operation<wkt::Empty, OperationMetadata>.PollOnceFromName(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), BatchEnableServicesOperationsClient, callSettings);
 
@@ -931,6 +950,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A task representing the result of polling the operation.</returns>
+        [sys::ObsoleteAttribute]
         public virtual stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> PollOnceBatchEnableServicesAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
             lro::Operation<wkt::Empty, OperationMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), BatchEnableServicesOperationsClient, callSettings);
 
@@ -1642,19 +1662,29 @@ namespace Google.Api.ServiceUsage.V1Beta1
             DeleteConsumerOverrideOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.DeleteConsumerOverrideOperationsSettings);
             ImportConsumerOverridesOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.ImportConsumerOverridesOperationsSettings);
             GenerateServiceIdentityOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.GenerateServiceIdentityOperationsSettings);
+#pragma warning disable CS0612
             _callEnableService = clientHelper.BuildApiCall<EnableServiceRequest, lro::Operation>(grpcClient.EnableServiceAsync, grpcClient.EnableService, effectiveSettings.EnableServiceSettings).WithGoogleRequestParam("name", request => request.Name);
+#pragma warning restore CS0612
             Modify_ApiCall(ref _callEnableService);
             Modify_EnableServiceApiCall(ref _callEnableService);
+#pragma warning disable CS0612
             _callDisableService = clientHelper.BuildApiCall<DisableServiceRequest, lro::Operation>(grpcClient.DisableServiceAsync, grpcClient.DisableService, effectiveSettings.DisableServiceSettings).WithGoogleRequestParam("name", request => request.Name);
+#pragma warning restore CS0612
             Modify_ApiCall(ref _callDisableService);
             Modify_DisableServiceApiCall(ref _callDisableService);
+#pragma warning disable CS0612
             _callGetService = clientHelper.BuildApiCall<GetServiceRequest, Service>(grpcClient.GetServiceAsync, grpcClient.GetService, effectiveSettings.GetServiceSettings).WithGoogleRequestParam("name", request => request.Name);
+#pragma warning restore CS0612
             Modify_ApiCall(ref _callGetService);
             Modify_GetServiceApiCall(ref _callGetService);
+#pragma warning disable CS0612
             _callListServices = clientHelper.BuildApiCall<ListServicesRequest, ListServicesResponse>(grpcClient.ListServicesAsync, grpcClient.ListServices, effectiveSettings.ListServicesSettings).WithGoogleRequestParam("parent", request => request.Parent);
+#pragma warning restore CS0612
             Modify_ApiCall(ref _callListServices);
             Modify_ListServicesApiCall(ref _callListServices);
+#pragma warning disable CS0612
             _callBatchEnableServices = clientHelper.BuildApiCall<BatchEnableServicesRequest, lro::Operation>(grpcClient.BatchEnableServicesAsync, grpcClient.BatchEnableServices, effectiveSettings.BatchEnableServicesSettings).WithGoogleRequestParam("parent", request => request.Parent);
+#pragma warning restore CS0612
             Modify_ApiCall(ref _callBatchEnableServices);
             Modify_BatchEnableServicesApiCall(ref _callBatchEnableServices);
             _callListConsumerQuotaMetrics = clientHelper.BuildApiCall<ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse>(grpcClient.ListConsumerQuotaMetricsAsync, grpcClient.ListConsumerQuotaMetrics, effectiveSettings.ListConsumerQuotaMetricsSettings).WithGoogleRequestParam("parent", request => request.Parent);
@@ -1796,6 +1826,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override lro::Operation<wkt::Empty, OperationMetadata> EnableService(EnableServiceRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_EnableServiceRequest(ref request, ref callSettings);
@@ -1810,6 +1841,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override async stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> EnableServiceAsync(EnableServiceRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_EnableServiceRequest(ref request, ref callSettings);
@@ -1833,6 +1865,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override lro::Operation<wkt::Empty, OperationMetadata> DisableService(DisableServiceRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_DisableServiceRequest(ref request, ref callSettings);
@@ -1853,6 +1886,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override async stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> DisableServiceAsync(DisableServiceRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_DisableServiceRequest(ref request, ref callSettings);
@@ -1865,6 +1899,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override Service GetService(GetServiceRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_GetServiceRequest(ref request, ref callSettings);
@@ -1877,6 +1912,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override stt::Task<Service> GetServiceAsync(GetServiceRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_GetServiceRequest(ref request, ref callSettings);
@@ -1895,6 +1931,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A pageable sequence of <see cref="Service"/> resources.</returns>
+        [sys::ObsoleteAttribute]
         public override gax::PagedEnumerable<ListServicesResponse, Service> ListServices(ListServicesRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_ListServicesRequest(ref request, ref callSettings);
@@ -1913,6 +1950,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A pageable asynchronous sequence of <see cref="Service"/> resources.</returns>
+        [sys::ObsoleteAttribute]
         public override gax::PagedAsyncEnumerable<ListServicesResponse, Service> ListServicesAsync(ListServicesRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_ListServicesRequest(ref request, ref callSettings);
@@ -1932,6 +1970,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override lro::Operation<wkt::Empty, OperationMetadata> BatchEnableServices(BatchEnableServicesRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_BatchEnableServicesRequest(ref request, ref callSettings);
@@ -1948,6 +1987,7 @@ namespace Google.Api.ServiceUsage.V1Beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
         public override async stt::Task<lro::Operation<wkt::Empty, OperationMetadata>> BatchEnableServicesAsync(BatchEnableServicesRequest request, gaxgrpc::CallSettings callSettings = null)
         {
             Modify_BatchEnableServicesRequest(ref request, ref callSettings);

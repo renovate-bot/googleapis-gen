@@ -615,7 +615,7 @@ export class UserDataServiceClient {
   // -- Service calls --
   // -------------------
   uploadUserData(
-      request: protos.google.ads.googleads.v6.services.IUploadUserDataRequest,
+      request?: protos.google.ads.googleads.v6.services.IUploadUserDataRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IUploadUserDataResponse,
@@ -656,7 +656,7 @@ export class UserDataServiceClient {
  * const [response] = await client.uploadUserData(request);
  */
   uploadUserData(
-      request: protos.google.ads.googleads.v6.services.IUploadUserDataRequest,
+      request?: protos.google.ads.googleads.v6.services.IUploadUserDataRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IUploadUserDataResponse,
           protos.google.ads.googleads.v6.services.IUploadUserDataRequest|null|undefined,

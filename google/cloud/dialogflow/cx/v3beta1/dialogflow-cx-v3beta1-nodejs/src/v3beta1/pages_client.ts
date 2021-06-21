@@ -341,7 +341,7 @@ export class PagesClient {
   // -- Service calls --
   // -------------------
   getPage(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetPageRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetPageRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IPage,
@@ -402,7 +402,7 @@ export class PagesClient {
  * const [response] = await client.getPage(request);
  */
   getPage(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetPageRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetPageRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IPage,
           protos.google.cloud.dialogflow.cx.v3beta1.IGetPageRequest|null|undefined,
@@ -436,7 +436,7 @@ export class PagesClient {
     return this.innerApiCalls.getPage(request, options, callback);
   }
   createPage(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreatePageRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreatePageRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IPage,
@@ -498,7 +498,7 @@ export class PagesClient {
  * const [response] = await client.createPage(request);
  */
   createPage(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreatePageRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreatePageRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IPage,
           protos.google.cloud.dialogflow.cx.v3beta1.ICreatePageRequest|null|undefined,
@@ -532,7 +532,7 @@ export class PagesClient {
     return this.innerApiCalls.createPage(request, options, callback);
   }
   updatePage(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdatePageRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdatePageRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IPage,
@@ -593,7 +593,7 @@ export class PagesClient {
  * const [response] = await client.updatePage(request);
  */
   updatePage(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdatePageRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdatePageRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IPage,
           protos.google.cloud.dialogflow.cx.v3beta1.IUpdatePageRequest|null|undefined,
@@ -627,7 +627,7 @@ export class PagesClient {
     return this.innerApiCalls.updatePage(request, options, callback);
   }
   deletePage(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeletePageRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeletePageRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -677,7 +677,7 @@ export class PagesClient {
  * const [response] = await client.deletePage(request);
  */
   deletePage(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeletePageRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeletePageRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.cx.v3beta1.IDeletePageRequest|null|undefined,
@@ -712,7 +712,7 @@ export class PagesClient {
   }
 
   listPages(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListPagesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListPagesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IPage[],
@@ -782,7 +782,7 @@ export class PagesClient {
  *   for more details and examples.
  */
   listPages(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListPagesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListPagesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.cx.v3beta1.IListPagesRequest,
           protos.google.cloud.dialogflow.cx.v3beta1.IListPagesResponse|null|undefined,

@@ -262,7 +262,7 @@ export class SqlFlagsServiceClient {
   // -- Service calls --
   // -------------------
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlFlagsListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlFlagsListRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.IFlagsListResponse,
@@ -300,7 +300,7 @@ export class SqlFlagsServiceClient {
  * const [response] = await client.list(request);
  */
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlFlagsListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlFlagsListRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.IFlagsListResponse,
           protos.google.cloud.sql.v1beta4.ISqlFlagsListRequest|null|undefined,

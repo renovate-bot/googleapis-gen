@@ -287,7 +287,7 @@ export class VideoIntelligenceServiceClient {
   // -------------------
 
   annotateVideo(
-      request: protos.google.cloud.videointelligence.v1p2beta1.IAnnotateVideoRequest,
+      request?: protos.google.cloud.videointelligence.v1p2beta1.IAnnotateVideoRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.videointelligence.v1p2beta1.IAnnotateVideoResponse, protos.google.cloud.videointelligence.v1p2beta1.IAnnotateVideoProgress>,
@@ -358,7 +358,7 @@ export class VideoIntelligenceServiceClient {
  * const [response] = await operation.promise();
  */
   annotateVideo(
-      request: protos.google.cloud.videointelligence.v1p2beta1.IAnnotateVideoRequest,
+      request?: protos.google.cloud.videointelligence.v1p2beta1.IAnnotateVideoRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.videointelligence.v1p2beta1.IAnnotateVideoResponse, protos.google.cloud.videointelligence.v1p2beta1.IAnnotateVideoProgress>,
           protos.google.longrunning.IOperation|null|undefined,

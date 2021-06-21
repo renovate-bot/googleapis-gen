@@ -35,7 +35,9 @@ namespace Google.Cloud.Container.V1.Snippets
             string zone = "";
             Cluster cluster = new Cluster();
             // Make the request
+#pragma warning disable CS0612
             Operation response = await clusterManagerClient.CreateClusterAsync(projectId, zone, cluster);
+#pragma warning restore CS0612
         }
     }
 }

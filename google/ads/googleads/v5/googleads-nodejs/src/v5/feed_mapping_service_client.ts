@@ -590,7 +590,7 @@ export class FeedMappingServiceClient {
   // -- Service calls --
   // -------------------
   getFeedMapping(
-      request: protos.google.ads.googleads.v5.services.IGetFeedMappingRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetFeedMappingRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.IFeedMapping,
@@ -627,7 +627,7 @@ export class FeedMappingServiceClient {
  * const [response] = await client.getFeedMapping(request);
  */
   getFeedMapping(
-      request: protos.google.ads.googleads.v5.services.IGetFeedMappingRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetFeedMappingRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.IFeedMapping,
           protos.google.ads.googleads.v5.services.IGetFeedMappingRequest|null|undefined,
@@ -661,7 +661,7 @@ export class FeedMappingServiceClient {
     return this.innerApiCalls.getFeedMapping(request, options, callback);
   }
   mutateFeedMappings(
-      request: protos.google.ads.googleads.v5.services.IMutateFeedMappingsRequest,
+      request?: protos.google.ads.googleads.v5.services.IMutateFeedMappingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.services.IMutateFeedMappingsResponse,
@@ -709,7 +709,7 @@ export class FeedMappingServiceClient {
  * const [response] = await client.mutateFeedMappings(request);
  */
   mutateFeedMappings(
-      request: protos.google.ads.googleads.v5.services.IMutateFeedMappingsRequest,
+      request?: protos.google.ads.googleads.v5.services.IMutateFeedMappingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.services.IMutateFeedMappingsResponse,
           protos.google.ads.googleads.v5.services.IMutateFeedMappingsRequest|null|undefined,

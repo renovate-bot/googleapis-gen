@@ -36,7 +36,9 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             string clusterId = "";
             NetworkPolicy networkPolicy = new NetworkPolicy();
             // Make the request
+#pragma warning disable CS0612
             Operation response = await clusterManagerClient.SetNetworkPolicyAsync(projectId, zone, clusterId, networkPolicy);
+#pragma warning restore CS0612
         }
     }
 }

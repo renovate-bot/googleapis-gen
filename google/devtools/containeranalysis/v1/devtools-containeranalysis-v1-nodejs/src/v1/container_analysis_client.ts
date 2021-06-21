@@ -290,7 +290,7 @@ export class ContainerAnalysisClient {
   // -- Service calls --
   // -------------------
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -340,7 +340,7 @@ export class ContainerAnalysisClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -374,7 +374,7 @@ export class ContainerAnalysisClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -422,7 +422,7 @@ export class ContainerAnalysisClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -456,7 +456,7 @@ export class ContainerAnalysisClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -505,7 +505,7 @@ export class ContainerAnalysisClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -539,7 +539,7 @@ export class ContainerAnalysisClient {
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
   getVulnerabilityOccurrencesSummary(
-      request: protos.google.devtools.containeranalysis.v1.IGetVulnerabilityOccurrencesSummaryRequest,
+      request?: protos.google.devtools.containeranalysis.v1.IGetVulnerabilityOccurrencesSummaryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.containeranalysis.v1.IVulnerabilityOccurrencesSummary,
@@ -579,7 +579,7 @@ export class ContainerAnalysisClient {
  * const [response] = await client.getVulnerabilityOccurrencesSummary(request);
  */
   getVulnerabilityOccurrencesSummary(
-      request: protos.google.devtools.containeranalysis.v1.IGetVulnerabilityOccurrencesSummaryRequest,
+      request?: protos.google.devtools.containeranalysis.v1.IGetVulnerabilityOccurrencesSummaryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.containeranalysis.v1.IVulnerabilityOccurrencesSummary,
           protos.google.devtools.containeranalysis.v1.IGetVulnerabilityOccurrencesSummaryRequest|null|undefined,

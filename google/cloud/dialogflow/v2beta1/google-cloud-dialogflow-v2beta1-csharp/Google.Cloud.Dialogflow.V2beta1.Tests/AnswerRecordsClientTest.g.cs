@@ -43,7 +43,9 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
             };
             mockGrpcClient.Setup(x => x.GetAnswerRecord(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             AnswerRecordsClient client = new AnswerRecordsClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             AnswerRecord response = client.GetAnswerRecord(request);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
         }
@@ -64,9 +66,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
             };
             mockGrpcClient.Setup(x => x.GetAnswerRecordAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<AnswerRecord>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             AnswerRecordsClient client = new AnswerRecordsClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             AnswerRecord responseCallSettings = await client.GetAnswerRecordAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCallSettings);
+#pragma warning disable CS0612
             AnswerRecord responseCancellationToken = await client.GetAnswerRecordAsync(request, st::CancellationToken.None);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCancellationToken);
             mockGrpcClient.VerifyAll();
         }

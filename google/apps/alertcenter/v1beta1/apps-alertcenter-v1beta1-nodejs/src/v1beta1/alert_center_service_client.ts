@@ -273,7 +273,7 @@ export class AlertCenterServiceClient {
   // -- Service calls --
   // -------------------
   getAlert(
-      request: protos.google.apps.alertcenter.v1beta1.IGetAlertRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IGetAlertRequest,
       options?: CallOptions):
       Promise<[
         protos.google.apps.alertcenter.v1beta1.IAlert,
@@ -315,7 +315,7 @@ export class AlertCenterServiceClient {
  * const [response] = await client.getAlert(request);
  */
   getAlert(
-      request: protos.google.apps.alertcenter.v1beta1.IGetAlertRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IGetAlertRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.apps.alertcenter.v1beta1.IAlert,
           protos.google.apps.alertcenter.v1beta1.IGetAlertRequest|null|undefined,
@@ -349,7 +349,7 @@ export class AlertCenterServiceClient {
     return this.innerApiCalls.getAlert(request, options, callback);
   }
   deleteAlert(
-      request: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -394,7 +394,7 @@ export class AlertCenterServiceClient {
  * const [response] = await client.deleteAlert(request);
  */
   deleteAlert(
-      request: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest|null|undefined,
@@ -428,7 +428,7 @@ export class AlertCenterServiceClient {
     return this.innerApiCalls.deleteAlert(request, options, callback);
   }
   undeleteAlert(
-      request: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
       options?: CallOptions):
       Promise<[
         protos.google.apps.alertcenter.v1beta1.IAlert,
@@ -473,7 +473,7 @@ export class AlertCenterServiceClient {
  * const [response] = await client.undeleteAlert(request);
  */
   undeleteAlert(
-      request: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.apps.alertcenter.v1beta1.IAlert,
           protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest|null|undefined,
@@ -507,7 +507,7 @@ export class AlertCenterServiceClient {
     return this.innerApiCalls.undeleteAlert(request, options, callback);
   }
   createAlertFeedback(
-      request: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
       options?: CallOptions):
       Promise<[
         protos.google.apps.alertcenter.v1beta1.IAlertFeedback,
@@ -553,7 +553,7 @@ export class AlertCenterServiceClient {
  * const [response] = await client.createAlertFeedback(request);
  */
   createAlertFeedback(
-      request: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.apps.alertcenter.v1beta1.IAlertFeedback,
           protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest|null|undefined,
@@ -587,7 +587,7 @@ export class AlertCenterServiceClient {
     return this.innerApiCalls.createAlertFeedback(request, options, callback);
   }
   listAlertFeedback(
-      request: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
       options?: CallOptions):
       Promise<[
         protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackResponse,
@@ -636,7 +636,7 @@ export class AlertCenterServiceClient {
  * const [response] = await client.listAlertFeedback(request);
  */
   listAlertFeedback(
-      request: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackResponse,
           protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest|null|undefined,
@@ -670,7 +670,7 @@ export class AlertCenterServiceClient {
     return this.innerApiCalls.listAlertFeedback(request, options, callback);
   }
   getAlertMetadata(
-      request: protos.google.apps.alertcenter.v1beta1.IGetAlertMetadataRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IGetAlertMetadataRequest,
       options?: CallOptions):
       Promise<[
         protos.google.apps.alertcenter.v1beta1.IAlertMetadata,
@@ -712,7 +712,7 @@ export class AlertCenterServiceClient {
  * const [response] = await client.getAlertMetadata(request);
  */
   getAlertMetadata(
-      request: protos.google.apps.alertcenter.v1beta1.IGetAlertMetadataRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IGetAlertMetadataRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.apps.alertcenter.v1beta1.IAlertMetadata,
           protos.google.apps.alertcenter.v1beta1.IGetAlertMetadataRequest|null|undefined,
@@ -746,7 +746,7 @@ export class AlertCenterServiceClient {
     return this.innerApiCalls.getAlertMetadata(request, options, callback);
   }
   getSettings(
-      request: protos.google.apps.alertcenter.v1beta1.IGetSettingsRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IGetSettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.apps.alertcenter.v1beta1.ISettings,
@@ -785,7 +785,7 @@ export class AlertCenterServiceClient {
  * const [response] = await client.getSettings(request);
  */
   getSettings(
-      request: protos.google.apps.alertcenter.v1beta1.IGetSettingsRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IGetSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.apps.alertcenter.v1beta1.ISettings,
           protos.google.apps.alertcenter.v1beta1.IGetSettingsRequest|null|undefined,
@@ -812,7 +812,7 @@ export class AlertCenterServiceClient {
     return this.innerApiCalls.getSettings(request, options, callback);
   }
   updateSettings(
-      request: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.apps.alertcenter.v1beta1.ISettings,
@@ -853,7 +853,7 @@ export class AlertCenterServiceClient {
  * const [response] = await client.updateSettings(request);
  */
   updateSettings(
-      request: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.apps.alertcenter.v1beta1.ISettings,
           protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest|null|undefined,
@@ -880,7 +880,7 @@ export class AlertCenterServiceClient {
     return this.innerApiCalls.updateSettings(request, options, callback);
   }
   batchDeleteAlerts(
-      request: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsResponse,
@@ -920,7 +920,7 @@ export class AlertCenterServiceClient {
  * const [response] = await client.batchDeleteAlerts(request);
  */
   batchDeleteAlerts(
-      request: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsResponse,
           protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest|null|undefined,
@@ -947,7 +947,7 @@ export class AlertCenterServiceClient {
     return this.innerApiCalls.batchDeleteAlerts(request, options, callback);
   }
   batchUndeleteAlerts(
-      request: protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsResponse,
@@ -987,7 +987,7 @@ export class AlertCenterServiceClient {
  * const [response] = await client.batchUndeleteAlerts(request);
  */
   batchUndeleteAlerts(
-      request: protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsResponse,
           protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsRequest|null|undefined,
@@ -1015,7 +1015,7 @@ export class AlertCenterServiceClient {
   }
 
   listAlerts(
-      request: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.apps.alertcenter.v1beta1.IAlert[],
@@ -1079,7 +1079,7 @@ export class AlertCenterServiceClient {
  *   for more details and examples.
  */
   listAlerts(
-      request: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
+      request?: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
           protos.google.apps.alertcenter.v1beta1.IListAlertsResponse|null|undefined,

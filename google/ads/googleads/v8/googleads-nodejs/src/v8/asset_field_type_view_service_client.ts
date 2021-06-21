@@ -653,7 +653,7 @@ export class AssetFieldTypeViewServiceClient {
   // -- Service calls --
   // -------------------
   getAssetFieldTypeView(
-      request: protos.google.ads.googleads.v8.services.IGetAssetFieldTypeViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAssetFieldTypeViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IAssetFieldTypeView,
@@ -690,7 +690,7 @@ export class AssetFieldTypeViewServiceClient {
  * const [response] = await client.getAssetFieldTypeView(request);
  */
   getAssetFieldTypeView(
-      request: protos.google.ads.googleads.v8.services.IGetAssetFieldTypeViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAssetFieldTypeViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IAssetFieldTypeView,
           protos.google.ads.googleads.v8.services.IGetAssetFieldTypeViewRequest|null|undefined,

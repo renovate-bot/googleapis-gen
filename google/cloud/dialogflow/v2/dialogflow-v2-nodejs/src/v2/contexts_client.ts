@@ -389,7 +389,7 @@ export class ContextsClient {
   // -- Service calls --
   // -------------------
   getContext(
-      request: protos.google.cloud.dialogflow.v2.IGetContextRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetContextRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IContext,
@@ -431,7 +431,7 @@ export class ContextsClient {
  * const [response] = await client.getContext(request);
  */
   getContext(
-      request: protos.google.cloud.dialogflow.v2.IGetContextRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetContextRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IContext,
           protos.google.cloud.dialogflow.v2.IGetContextRequest|null|undefined,
@@ -465,7 +465,7 @@ export class ContextsClient {
     return this.innerApiCalls.getContext(request, options, callback);
   }
   createContext(
-      request: protos.google.cloud.dialogflow.v2.ICreateContextRequest,
+      request?: protos.google.cloud.dialogflow.v2.ICreateContextRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IContext,
@@ -511,7 +511,7 @@ export class ContextsClient {
  * const [response] = await client.createContext(request);
  */
   createContext(
-      request: protos.google.cloud.dialogflow.v2.ICreateContextRequest,
+      request?: protos.google.cloud.dialogflow.v2.ICreateContextRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IContext,
           protos.google.cloud.dialogflow.v2.ICreateContextRequest|null|undefined,
@@ -545,7 +545,7 @@ export class ContextsClient {
     return this.innerApiCalls.createContext(request, options, callback);
   }
   updateContext(
-      request: protos.google.cloud.dialogflow.v2.IUpdateContextRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateContextRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IContext,
@@ -584,7 +584,7 @@ export class ContextsClient {
  * const [response] = await client.updateContext(request);
  */
   updateContext(
-      request: protos.google.cloud.dialogflow.v2.IUpdateContextRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateContextRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IContext,
           protos.google.cloud.dialogflow.v2.IUpdateContextRequest|null|undefined,
@@ -618,7 +618,7 @@ export class ContextsClient {
     return this.innerApiCalls.updateContext(request, options, callback);
   }
   deleteContext(
-      request: protos.google.cloud.dialogflow.v2.IDeleteContextRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteContextRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -660,7 +660,7 @@ export class ContextsClient {
  * const [response] = await client.deleteContext(request);
  */
   deleteContext(
-      request: protos.google.cloud.dialogflow.v2.IDeleteContextRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteContextRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.v2.IDeleteContextRequest|null|undefined,
@@ -694,7 +694,7 @@ export class ContextsClient {
     return this.innerApiCalls.deleteContext(request, options, callback);
   }
   deleteAllContexts(
-      request: protos.google.cloud.dialogflow.v2.IDeleteAllContextsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteAllContextsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -736,7 +736,7 @@ export class ContextsClient {
  * const [response] = await client.deleteAllContexts(request);
  */
   deleteAllContexts(
-      request: protos.google.cloud.dialogflow.v2.IDeleteAllContextsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteAllContextsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.v2.IDeleteAllContextsRequest|null|undefined,
@@ -771,7 +771,7 @@ export class ContextsClient {
   }
 
   listContexts(
-      request: protos.google.cloud.dialogflow.v2.IListContextsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListContextsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IContext[],
@@ -822,7 +822,7 @@ export class ContextsClient {
  *   for more details and examples.
  */
   listContexts(
-      request: protos.google.cloud.dialogflow.v2.IListContextsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListContextsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2.IListContextsRequest,
           protos.google.cloud.dialogflow.v2.IListContextsResponse|null|undefined,

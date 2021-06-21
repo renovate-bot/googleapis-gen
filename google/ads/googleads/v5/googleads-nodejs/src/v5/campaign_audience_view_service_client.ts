@@ -590,7 +590,7 @@ export class CampaignAudienceViewServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignAudienceView(
-      request: protos.google.ads.googleads.v5.services.IGetCampaignAudienceViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetCampaignAudienceViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.ICampaignAudienceView,
@@ -627,7 +627,7 @@ export class CampaignAudienceViewServiceClient {
  * const [response] = await client.getCampaignAudienceView(request);
  */
   getCampaignAudienceView(
-      request: protos.google.ads.googleads.v5.services.IGetCampaignAudienceViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetCampaignAudienceViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.ICampaignAudienceView,
           protos.google.ads.googleads.v5.services.IGetCampaignAudienceViewRequest|null|undefined,

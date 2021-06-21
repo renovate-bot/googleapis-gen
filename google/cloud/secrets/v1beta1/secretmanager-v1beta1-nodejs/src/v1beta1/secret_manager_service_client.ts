@@ -297,7 +297,7 @@ export class SecretManagerServiceClient {
   // -- Service calls --
   // -------------------
   createSecret(
-      request: protos.google.cloud.secrets.v1beta1.ICreateSecretRequest,
+      request?: protos.google.cloud.secrets.v1beta1.ICreateSecretRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.secrets.v1beta1.ISecret,
@@ -343,7 +343,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.createSecret(request);
  */
   createSecret(
-      request: protos.google.cloud.secrets.v1beta1.ICreateSecretRequest,
+      request?: protos.google.cloud.secrets.v1beta1.ICreateSecretRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.secrets.v1beta1.ISecret,
           protos.google.cloud.secrets.v1beta1.ICreateSecretRequest|null|undefined,
@@ -377,7 +377,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.createSecret(request, options, callback);
   }
   addSecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IAddSecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IAddSecretVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.secrets.v1beta1.ISecretVersion,
@@ -418,7 +418,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.addSecretVersion(request);
  */
   addSecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IAddSecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IAddSecretVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.secrets.v1beta1.ISecretVersion,
           protos.google.cloud.secrets.v1beta1.IAddSecretVersionRequest|null|undefined,
@@ -452,7 +452,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.addSecretVersion(request, options, callback);
   }
   getSecret(
-      request: protos.google.cloud.secrets.v1beta1.IGetSecretRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IGetSecretRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.secrets.v1beta1.ISecret,
@@ -489,7 +489,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.getSecret(request);
  */
   getSecret(
-      request: protos.google.cloud.secrets.v1beta1.IGetSecretRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IGetSecretRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.secrets.v1beta1.ISecret,
           protos.google.cloud.secrets.v1beta1.IGetSecretRequest|null|undefined,
@@ -523,7 +523,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.getSecret(request, options, callback);
   }
   updateSecret(
-      request: protos.google.cloud.secrets.v1beta1.IUpdateSecretRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IUpdateSecretRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.secrets.v1beta1.ISecret,
@@ -562,7 +562,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.updateSecret(request);
  */
   updateSecret(
-      request: protos.google.cloud.secrets.v1beta1.IUpdateSecretRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IUpdateSecretRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.secrets.v1beta1.ISecret,
           protos.google.cloud.secrets.v1beta1.IUpdateSecretRequest|null|undefined,
@@ -596,7 +596,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.updateSecret(request, options, callback);
   }
   deleteSecret(
-      request: protos.google.cloud.secrets.v1beta1.IDeleteSecretRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IDeleteSecretRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -634,7 +634,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.deleteSecret(request);
  */
   deleteSecret(
-      request: protos.google.cloud.secrets.v1beta1.IDeleteSecretRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IDeleteSecretRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.secrets.v1beta1.IDeleteSecretRequest|null|undefined,
@@ -668,7 +668,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.deleteSecret(request, options, callback);
   }
   getSecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IGetSecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IGetSecretVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.secrets.v1beta1.ISecretVersion,
@@ -711,7 +711,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.getSecretVersion(request);
  */
   getSecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IGetSecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IGetSecretVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.secrets.v1beta1.ISecretVersion,
           protos.google.cloud.secrets.v1beta1.IGetSecretVersionRequest|null|undefined,
@@ -745,7 +745,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.getSecretVersion(request, options, callback);
   }
   accessSecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IAccessSecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IAccessSecretVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.secrets.v1beta1.IAccessSecretVersionResponse,
@@ -786,7 +786,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.accessSecretVersion(request);
  */
   accessSecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IAccessSecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IAccessSecretVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.secrets.v1beta1.IAccessSecretVersionResponse,
           protos.google.cloud.secrets.v1beta1.IAccessSecretVersionRequest|null|undefined,
@@ -820,7 +820,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.accessSecretVersion(request, options, callback);
   }
   disableSecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IDisableSecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IDisableSecretVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.secrets.v1beta1.ISecretVersion,
@@ -861,7 +861,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.disableSecretVersion(request);
  */
   disableSecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IDisableSecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IDisableSecretVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.secrets.v1beta1.ISecretVersion,
           protos.google.cloud.secrets.v1beta1.IDisableSecretVersionRequest|null|undefined,
@@ -895,7 +895,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.disableSecretVersion(request, options, callback);
   }
   enableSecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IEnableSecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IEnableSecretVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.secrets.v1beta1.ISecretVersion,
@@ -936,7 +936,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.enableSecretVersion(request);
  */
   enableSecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IEnableSecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IEnableSecretVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.secrets.v1beta1.ISecretVersion,
           protos.google.cloud.secrets.v1beta1.IEnableSecretVersionRequest|null|undefined,
@@ -970,7 +970,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.enableSecretVersion(request, options, callback);
   }
   destroySecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IDestroySecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IDestroySecretVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.secrets.v1beta1.ISecretVersion,
@@ -1012,7 +1012,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.destroySecretVersion(request);
  */
   destroySecretVersion(
-      request: protos.google.cloud.secrets.v1beta1.IDestroySecretVersionRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IDestroySecretVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.secrets.v1beta1.ISecretVersion,
           protos.google.cloud.secrets.v1beta1.IDestroySecretVersionRequest|null|undefined,
@@ -1046,7 +1046,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.destroySecretVersion(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -1093,7 +1093,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -1127,7 +1127,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -1169,7 +1169,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -1203,7 +1203,7 @@ export class SecretManagerServiceClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -1252,7 +1252,7 @@ export class SecretManagerServiceClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -1287,7 +1287,7 @@ export class SecretManagerServiceClient {
   }
 
   listSecrets(
-      request: protos.google.cloud.secrets.v1beta1.IListSecretsRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IListSecretsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.secrets.v1beta1.ISecret[],
@@ -1336,7 +1336,7 @@ export class SecretManagerServiceClient {
  *   for more details and examples.
  */
   listSecrets(
-      request: protos.google.cloud.secrets.v1beta1.IListSecretsRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IListSecretsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.secrets.v1beta1.IListSecretsRequest,
           protos.google.cloud.secrets.v1beta1.IListSecretsResponse|null|undefined,
@@ -1474,7 +1474,7 @@ export class SecretManagerServiceClient {
     ) as AsyncIterable<protos.google.cloud.secrets.v1beta1.ISecret>;
   }
   listSecretVersions(
-      request: protos.google.cloud.secrets.v1beta1.IListSecretVersionsRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IListSecretVersionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.secrets.v1beta1.ISecretVersion[],
@@ -1525,7 +1525,7 @@ export class SecretManagerServiceClient {
  *   for more details and examples.
  */
   listSecretVersions(
-      request: protos.google.cloud.secrets.v1beta1.IListSecretVersionsRequest,
+      request?: protos.google.cloud.secrets.v1beta1.IListSecretVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.secrets.v1beta1.IListSecretVersionsRequest,
           protos.google.cloud.secrets.v1beta1.IListSecretVersionsResponse|null|undefined,

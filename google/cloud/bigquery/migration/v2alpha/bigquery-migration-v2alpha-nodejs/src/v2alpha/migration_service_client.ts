@@ -291,7 +291,7 @@ export class MigrationServiceClient {
   // -- Service calls --
   // -------------------
   createMigrationWorkflow(
-      request: protos.google.cloud.bigquery.migration.v2alpha.ICreateMigrationWorkflowRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.ICreateMigrationWorkflowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow,
@@ -331,7 +331,7 @@ export class MigrationServiceClient {
  * const [response] = await client.createMigrationWorkflow(request);
  */
   createMigrationWorkflow(
-      request: protos.google.cloud.bigquery.migration.v2alpha.ICreateMigrationWorkflowRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.ICreateMigrationWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow,
           protos.google.cloud.bigquery.migration.v2alpha.ICreateMigrationWorkflowRequest|null|undefined,
@@ -365,7 +365,7 @@ export class MigrationServiceClient {
     return this.innerApiCalls.createMigrationWorkflow(request, options, callback);
   }
   getMigrationWorkflow(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationWorkflowRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationWorkflowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow,
@@ -405,7 +405,7 @@ export class MigrationServiceClient {
  * const [response] = await client.getMigrationWorkflow(request);
  */
   getMigrationWorkflow(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationWorkflowRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow,
           protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationWorkflowRequest|null|undefined,
@@ -439,7 +439,7 @@ export class MigrationServiceClient {
     return this.innerApiCalls.getMigrationWorkflow(request, options, callback);
   }
   deleteMigrationWorkflow(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IDeleteMigrationWorkflowRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IDeleteMigrationWorkflowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -477,7 +477,7 @@ export class MigrationServiceClient {
  * const [response] = await client.deleteMigrationWorkflow(request);
  */
   deleteMigrationWorkflow(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IDeleteMigrationWorkflowRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IDeleteMigrationWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.migration.v2alpha.IDeleteMigrationWorkflowRequest|null|undefined,
@@ -511,7 +511,7 @@ export class MigrationServiceClient {
     return this.innerApiCalls.deleteMigrationWorkflow(request, options, callback);
   }
   startMigrationWorkflow(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IStartMigrationWorkflowRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IStartMigrationWorkflowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -552,7 +552,7 @@ export class MigrationServiceClient {
  * const [response] = await client.startMigrationWorkflow(request);
  */
   startMigrationWorkflow(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IStartMigrationWorkflowRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IStartMigrationWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.migration.v2alpha.IStartMigrationWorkflowRequest|null|undefined,
@@ -586,7 +586,7 @@ export class MigrationServiceClient {
     return this.innerApiCalls.startMigrationWorkflow(request, options, callback);
   }
   getMigrationSubtask(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationSubtaskRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationSubtaskRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.migration.v2alpha.IMigrationSubtask,
@@ -626,7 +626,7 @@ export class MigrationServiceClient {
  * const [response] = await client.getMigrationSubtask(request);
  */
   getMigrationSubtask(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationSubtaskRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationSubtaskRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.migration.v2alpha.IMigrationSubtask,
           protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationSubtaskRequest|null|undefined,
@@ -661,7 +661,7 @@ export class MigrationServiceClient {
   }
 
   listMigrationWorkflows(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow[],
@@ -714,7 +714,7 @@ export class MigrationServiceClient {
  *   for more details and examples.
  */
   listMigrationWorkflows(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
           protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsResponse|null|undefined,
@@ -860,7 +860,7 @@ export class MigrationServiceClient {
     ) as AsyncIterable<protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow>;
   }
   listMigrationSubtasks(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.migration.v2alpha.IMigrationSubtask[],
@@ -917,7 +917,7 @@ export class MigrationServiceClient {
  *   for more details and examples.
  */
   listMigrationSubtasks(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
           protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksResponse|null|undefined,

@@ -587,7 +587,7 @@ export class ConversionActionServiceClient {
   // -- Service calls --
   // -------------------
   getConversionAction(
-      request: protos.google.ads.googleads.v4.services.IGetConversionActionRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetConversionActionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.IConversionAction,
@@ -624,7 +624,7 @@ export class ConversionActionServiceClient {
  * const [response] = await client.getConversionAction(request);
  */
   getConversionAction(
-      request: protos.google.ads.googleads.v4.services.IGetConversionActionRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetConversionActionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.IConversionAction,
           protos.google.ads.googleads.v4.services.IGetConversionActionRequest|null|undefined,
@@ -658,7 +658,7 @@ export class ConversionActionServiceClient {
     return this.innerApiCalls.getConversionAction(request, options, callback);
   }
   mutateConversionActions(
-      request: protos.google.ads.googleads.v4.services.IMutateConversionActionsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateConversionActionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IMutateConversionActionsResponse,
@@ -706,7 +706,7 @@ export class ConversionActionServiceClient {
  * const [response] = await client.mutateConversionActions(request);
  */
   mutateConversionActions(
-      request: protos.google.ads.googleads.v4.services.IMutateConversionActionsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateConversionActionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IMutateConversionActionsResponse,
           protos.google.ads.googleads.v4.services.IMutateConversionActionsRequest|null|undefined,

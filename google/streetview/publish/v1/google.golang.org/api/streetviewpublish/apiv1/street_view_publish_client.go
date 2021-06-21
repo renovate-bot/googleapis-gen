@@ -22,7 +22,6 @@ import (
 	"math"
 	"net/url"
 
-	"github.com/golang/protobuf/proto"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
@@ -31,6 +30,7 @@ import (
 	publishpb "google.golang.org/genproto/googleapis/streetview/publish/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
+	"google.golang.org/protobuf/proto"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 

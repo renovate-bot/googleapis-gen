@@ -590,7 +590,7 @@ export class AgeRangeViewServiceClient {
   // -- Service calls --
   // -------------------
   getAgeRangeView(
-      request: protos.google.ads.googleads.v5.services.IGetAgeRangeViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetAgeRangeViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.IAgeRangeView,
@@ -627,7 +627,7 @@ export class AgeRangeViewServiceClient {
  * const [response] = await client.getAgeRangeView(request);
  */
   getAgeRangeView(
-      request: protos.google.ads.googleads.v5.services.IGetAgeRangeViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetAgeRangeViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.IAgeRangeView,
           protos.google.ads.googleads.v5.services.IGetAgeRangeViewRequest|null|undefined,

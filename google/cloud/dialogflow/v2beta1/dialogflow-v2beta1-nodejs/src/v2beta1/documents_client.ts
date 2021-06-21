@@ -442,7 +442,7 @@ export class DocumentsClient {
   // -- Service calls --
   // -------------------
   getDocument(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetDocumentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetDocumentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IDocument,
@@ -484,7 +484,7 @@ export class DocumentsClient {
  * const [response] = await client.getDocument(request);
  */
   getDocument(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetDocumentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IDocument,
           protos.google.cloud.dialogflow.v2beta1.IGetDocumentRequest|null|undefined,
@@ -519,7 +519,7 @@ export class DocumentsClient {
   }
 
   createDocument(
-      request: protos.google.cloud.dialogflow.v2beta1.ICreateDocumentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ICreateDocumentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.v2beta1.IDocument, protos.google.cloud.dialogflow.v2beta1.IKnowledgeOperationMetadata>,
@@ -569,7 +569,7 @@ export class DocumentsClient {
  * const [response] = await operation.promise();
  */
   createDocument(
-      request: protos.google.cloud.dialogflow.v2beta1.ICreateDocumentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.ICreateDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.v2beta1.IDocument, protos.google.cloud.dialogflow.v2beta1.IKnowledgeOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -624,7 +624,7 @@ export class DocumentsClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2beta1.Document, protos.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata>;
   }
   importDocuments(
-      request: protos.google.cloud.dialogflow.v2beta1.IImportDocumentsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IImportDocumentsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.v2beta1.IImportDocumentsResponse, protos.google.cloud.dialogflow.v2beta1.IKnowledgeOperationMetadata>,
@@ -680,7 +680,7 @@ export class DocumentsClient {
  * const [response] = await operation.promise();
  */
   importDocuments(
-      request: protos.google.cloud.dialogflow.v2beta1.IImportDocumentsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IImportDocumentsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.v2beta1.IImportDocumentsResponse, protos.google.cloud.dialogflow.v2beta1.IKnowledgeOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -735,7 +735,7 @@ export class DocumentsClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2beta1.ImportDocumentsResponse, protos.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata>;
   }
   deleteDocument(
-      request: protos.google.cloud.dialogflow.v2beta1.IDeleteDocumentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IDeleteDocumentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dialogflow.v2beta1.IKnowledgeOperationMetadata>,
@@ -780,7 +780,7 @@ export class DocumentsClient {
  * const [response] = await operation.promise();
  */
   deleteDocument(
-      request: protos.google.cloud.dialogflow.v2beta1.IDeleteDocumentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IDeleteDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dialogflow.v2beta1.IKnowledgeOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -835,7 +835,7 @@ export class DocumentsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata>;
   }
   updateDocument(
-      request: protos.google.cloud.dialogflow.v2beta1.IUpdateDocumentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IUpdateDocumentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.v2beta1.IDocument, protos.google.cloud.dialogflow.v2beta1.IKnowledgeOperationMetadata>,
@@ -882,7 +882,7 @@ export class DocumentsClient {
  * const [response] = await operation.promise();
  */
   updateDocument(
-      request: protos.google.cloud.dialogflow.v2beta1.IUpdateDocumentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IUpdateDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.v2beta1.IDocument, protos.google.cloud.dialogflow.v2beta1.IKnowledgeOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -937,7 +937,7 @@ export class DocumentsClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2beta1.Document, protos.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata>;
   }
   reloadDocument(
-      request: protos.google.cloud.dialogflow.v2beta1.IReloadDocumentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IReloadDocumentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.v2beta1.IDocument, protos.google.cloud.dialogflow.v2beta1.IKnowledgeOperationMetadata>,
@@ -994,7 +994,7 @@ export class DocumentsClient {
  * const [response] = await operation.promise();
  */
   reloadDocument(
-      request: protos.google.cloud.dialogflow.v2beta1.IReloadDocumentRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IReloadDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.v2beta1.IDocument, protos.google.cloud.dialogflow.v2beta1.IKnowledgeOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1049,7 +1049,7 @@ export class DocumentsClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2beta1.Document, protos.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata>;
   }
   listDocuments(
-      request: protos.google.cloud.dialogflow.v2beta1.IListDocumentsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListDocumentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IDocument[],
@@ -1122,7 +1122,7 @@ export class DocumentsClient {
  *   for more details and examples.
  */
   listDocuments(
-      request: protos.google.cloud.dialogflow.v2beta1.IListDocumentsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListDocumentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2beta1.IListDocumentsRequest,
           protos.google.cloud.dialogflow.v2beta1.IListDocumentsResponse|null|undefined,

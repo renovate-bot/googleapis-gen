@@ -639,7 +639,7 @@ export class CampaignExperimentServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignExperiment(
-      request: protos.google.ads.googleads.v4.services.IGetCampaignExperimentRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetCampaignExperimentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.ICampaignExperiment,
@@ -676,7 +676,7 @@ export class CampaignExperimentServiceClient {
  * const [response] = await client.getCampaignExperiment(request);
  */
   getCampaignExperiment(
-      request: protos.google.ads.googleads.v4.services.IGetCampaignExperimentRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetCampaignExperimentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.ICampaignExperiment,
           protos.google.ads.googleads.v4.services.IGetCampaignExperimentRequest|null|undefined,
@@ -710,7 +710,7 @@ export class CampaignExperimentServiceClient {
     return this.innerApiCalls.getCampaignExperiment(request, options, callback);
   }
   mutateCampaignExperiments(
-      request: protos.google.ads.googleads.v4.services.IMutateCampaignExperimentsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateCampaignExperimentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IMutateCampaignExperimentsResponse,
@@ -757,7 +757,7 @@ export class CampaignExperimentServiceClient {
  * const [response] = await client.mutateCampaignExperiments(request);
  */
   mutateCampaignExperiments(
-      request: protos.google.ads.googleads.v4.services.IMutateCampaignExperimentsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateCampaignExperimentsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IMutateCampaignExperimentsResponse,
           protos.google.ads.googleads.v4.services.IMutateCampaignExperimentsRequest|null|undefined,
@@ -791,7 +791,7 @@ export class CampaignExperimentServiceClient {
     return this.innerApiCalls.mutateCampaignExperiments(request, options, callback);
   }
   graduateCampaignExperiment(
-      request: protos.google.ads.googleads.v4.services.IGraduateCampaignExperimentRequest,
+      request?: protos.google.ads.googleads.v4.services.IGraduateCampaignExperimentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IGraduateCampaignExperimentResponse,
@@ -832,7 +832,7 @@ export class CampaignExperimentServiceClient {
  * const [response] = await client.graduateCampaignExperiment(request);
  */
   graduateCampaignExperiment(
-      request: protos.google.ads.googleads.v4.services.IGraduateCampaignExperimentRequest,
+      request?: protos.google.ads.googleads.v4.services.IGraduateCampaignExperimentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IGraduateCampaignExperimentResponse,
           protos.google.ads.googleads.v4.services.IGraduateCampaignExperimentRequest|null|undefined,
@@ -866,7 +866,7 @@ export class CampaignExperimentServiceClient {
     return this.innerApiCalls.graduateCampaignExperiment(request, options, callback);
   }
   endCampaignExperiment(
-      request: protos.google.ads.googleads.v4.services.IEndCampaignExperimentRequest,
+      request?: protos.google.ads.googleads.v4.services.IEndCampaignExperimentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -905,7 +905,7 @@ export class CampaignExperimentServiceClient {
  * const [response] = await client.endCampaignExperiment(request);
  */
   endCampaignExperiment(
-      request: protos.google.ads.googleads.v4.services.IEndCampaignExperimentRequest,
+      request?: protos.google.ads.googleads.v4.services.IEndCampaignExperimentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.ads.googleads.v4.services.IEndCampaignExperimentRequest|null|undefined,
@@ -940,7 +940,7 @@ export class CampaignExperimentServiceClient {
   }
 
   createCampaignExperiment(
-      request: protos.google.ads.googleads.v4.services.ICreateCampaignExperimentRequest,
+      request?: protos.google.ads.googleads.v4.services.ICreateCampaignExperimentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v4.services.ICreateCampaignExperimentMetadata>,
@@ -994,7 +994,7 @@ export class CampaignExperimentServiceClient {
  * const [response] = await operation.promise();
  */
   createCampaignExperiment(
-      request: protos.google.ads.googleads.v4.services.ICreateCampaignExperimentRequest,
+      request?: protos.google.ads.googleads.v4.services.ICreateCampaignExperimentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v4.services.ICreateCampaignExperimentMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1049,7 +1049,7 @@ export class CampaignExperimentServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v4.services.CreateCampaignExperimentMetadata>;
   }
   promoteCampaignExperiment(
-      request: protos.google.ads.googleads.v4.services.IPromoteCampaignExperimentRequest,
+      request?: protos.google.ads.googleads.v4.services.IPromoteCampaignExperimentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
@@ -1094,7 +1094,7 @@ export class CampaignExperimentServiceClient {
  * const [response] = await operation.promise();
  */
   promoteCampaignExperiment(
-      request: protos.google.ads.googleads.v4.services.IPromoteCampaignExperimentRequest,
+      request?: protos.google.ads.googleads.v4.services.IPromoteCampaignExperimentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1149,7 +1149,7 @@ export class CampaignExperimentServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Empty>;
   }
   listCampaignExperimentAsyncErrors(
-      request: protos.google.ads.googleads.v4.services.IListCampaignExperimentAsyncErrorsRequest,
+      request?: protos.google.ads.googleads.v4.services.IListCampaignExperimentAsyncErrorsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.rpc.IStatus[],
@@ -1202,7 +1202,7 @@ export class CampaignExperimentServiceClient {
  *   for more details and examples.
  */
   listCampaignExperimentAsyncErrors(
-      request: protos.google.ads.googleads.v4.services.IListCampaignExperimentAsyncErrorsRequest,
+      request?: protos.google.ads.googleads.v4.services.IListCampaignExperimentAsyncErrorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.ads.googleads.v4.services.IListCampaignExperimentAsyncErrorsRequest,
           protos.google.ads.googleads.v4.services.IListCampaignExperimentAsyncErrorsResponse|null|undefined,

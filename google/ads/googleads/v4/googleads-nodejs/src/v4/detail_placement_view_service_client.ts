@@ -587,7 +587,7 @@ export class DetailPlacementViewServiceClient {
   // -- Service calls --
   // -------------------
   getDetailPlacementView(
-      request: protos.google.ads.googleads.v4.services.IGetDetailPlacementViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetDetailPlacementViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.IDetailPlacementView,
@@ -624,7 +624,7 @@ export class DetailPlacementViewServiceClient {
  * const [response] = await client.getDetailPlacementView(request);
  */
   getDetailPlacementView(
-      request: protos.google.ads.googleads.v4.services.IGetDetailPlacementViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetDetailPlacementViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.IDetailPlacementView,
           protos.google.ads.googleads.v4.services.IGetDetailPlacementViewRequest|null|undefined,

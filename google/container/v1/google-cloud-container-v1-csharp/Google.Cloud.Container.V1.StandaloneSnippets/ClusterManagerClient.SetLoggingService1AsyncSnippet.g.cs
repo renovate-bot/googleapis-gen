@@ -36,7 +36,9 @@ namespace Google.Cloud.Container.V1.Snippets
             string clusterId = "";
             string loggingService = "";
             // Make the request
+#pragma warning disable CS0612
             Operation response = await clusterManagerClient.SetLoggingServiceAsync(projectId, zone, clusterId, loggingService);
+#pragma warning restore CS0612
         }
     }
 }

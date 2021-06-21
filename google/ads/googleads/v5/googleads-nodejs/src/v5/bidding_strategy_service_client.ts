@@ -590,7 +590,7 @@ export class BiddingStrategyServiceClient {
   // -- Service calls --
   // -------------------
   getBiddingStrategy(
-      request: protos.google.ads.googleads.v5.services.IGetBiddingStrategyRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetBiddingStrategyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.IBiddingStrategy,
@@ -627,7 +627,7 @@ export class BiddingStrategyServiceClient {
  * const [response] = await client.getBiddingStrategy(request);
  */
   getBiddingStrategy(
-      request: protos.google.ads.googleads.v5.services.IGetBiddingStrategyRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetBiddingStrategyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.IBiddingStrategy,
           protos.google.ads.googleads.v5.services.IGetBiddingStrategyRequest|null|undefined,
@@ -661,7 +661,7 @@ export class BiddingStrategyServiceClient {
     return this.innerApiCalls.getBiddingStrategy(request, options, callback);
   }
   mutateBiddingStrategies(
-      request: protos.google.ads.googleads.v5.services.IMutateBiddingStrategiesRequest,
+      request?: protos.google.ads.googleads.v5.services.IMutateBiddingStrategiesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.services.IMutateBiddingStrategiesResponse,
@@ -709,7 +709,7 @@ export class BiddingStrategyServiceClient {
  * const [response] = await client.mutateBiddingStrategies(request);
  */
   mutateBiddingStrategies(
-      request: protos.google.ads.googleads.v5.services.IMutateBiddingStrategiesRequest,
+      request?: protos.google.ads.googleads.v5.services.IMutateBiddingStrategiesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.services.IMutateBiddingStrategiesResponse,
           protos.google.ads.googleads.v5.services.IMutateBiddingStrategiesRequest|null|undefined,

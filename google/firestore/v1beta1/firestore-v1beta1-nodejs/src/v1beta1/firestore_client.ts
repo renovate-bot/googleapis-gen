@@ -295,7 +295,7 @@ export class FirestoreClient {
   // -- Service calls --
   // -------------------
   getDocument(
-      request: protos.google.firestore.v1beta1.IGetDocumentRequest,
+      request?: protos.google.firestore.v1beta1.IGetDocumentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.firestore.v1beta1.IDocument,
@@ -343,7 +343,7 @@ export class FirestoreClient {
  * const [response] = await client.getDocument(request);
  */
   getDocument(
-      request: protos.google.firestore.v1beta1.IGetDocumentRequest,
+      request?: protos.google.firestore.v1beta1.IGetDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.firestore.v1beta1.IDocument,
           protos.google.firestore.v1beta1.IGetDocumentRequest|null|undefined,
@@ -377,7 +377,7 @@ export class FirestoreClient {
     return this.innerApiCalls.getDocument(request, options, callback);
   }
   updateDocument(
-      request: protos.google.firestore.v1beta1.IUpdateDocumentRequest,
+      request?: protos.google.firestore.v1beta1.IUpdateDocumentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.firestore.v1beta1.IDocument,
@@ -431,7 +431,7 @@ export class FirestoreClient {
  * const [response] = await client.updateDocument(request);
  */
   updateDocument(
-      request: protos.google.firestore.v1beta1.IUpdateDocumentRequest,
+      request?: protos.google.firestore.v1beta1.IUpdateDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.firestore.v1beta1.IDocument,
           protos.google.firestore.v1beta1.IUpdateDocumentRequest|null|undefined,
@@ -465,7 +465,7 @@ export class FirestoreClient {
     return this.innerApiCalls.updateDocument(request, options, callback);
   }
   deleteDocument(
-      request: protos.google.firestore.v1beta1.IDeleteDocumentRequest,
+      request?: protos.google.firestore.v1beta1.IDeleteDocumentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -506,7 +506,7 @@ export class FirestoreClient {
  * const [response] = await client.deleteDocument(request);
  */
   deleteDocument(
-      request: protos.google.firestore.v1beta1.IDeleteDocumentRequest,
+      request?: protos.google.firestore.v1beta1.IDeleteDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.firestore.v1beta1.IDeleteDocumentRequest|null|undefined,
@@ -540,7 +540,7 @@ export class FirestoreClient {
     return this.innerApiCalls.deleteDocument(request, options, callback);
   }
   beginTransaction(
-      request: protos.google.firestore.v1beta1.IBeginTransactionRequest,
+      request?: protos.google.firestore.v1beta1.IBeginTransactionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.firestore.v1beta1.IBeginTransactionResponse,
@@ -581,7 +581,7 @@ export class FirestoreClient {
  * const [response] = await client.beginTransaction(request);
  */
   beginTransaction(
-      request: protos.google.firestore.v1beta1.IBeginTransactionRequest,
+      request?: protos.google.firestore.v1beta1.IBeginTransactionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.firestore.v1beta1.IBeginTransactionResponse,
           protos.google.firestore.v1beta1.IBeginTransactionRequest|null|undefined,
@@ -615,7 +615,7 @@ export class FirestoreClient {
     return this.innerApiCalls.beginTransaction(request, options, callback);
   }
   commit(
-      request: protos.google.firestore.v1beta1.ICommitRequest,
+      request?: protos.google.firestore.v1beta1.ICommitRequest,
       options?: CallOptions):
       Promise<[
         protos.google.firestore.v1beta1.ICommitResponse,
@@ -659,7 +659,7 @@ export class FirestoreClient {
  * const [response] = await client.commit(request);
  */
   commit(
-      request: protos.google.firestore.v1beta1.ICommitRequest,
+      request?: protos.google.firestore.v1beta1.ICommitRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.firestore.v1beta1.ICommitResponse,
           protos.google.firestore.v1beta1.ICommitRequest|null|undefined,
@@ -693,7 +693,7 @@ export class FirestoreClient {
     return this.innerApiCalls.commit(request, options, callback);
   }
   rollback(
-      request: protos.google.firestore.v1beta1.IRollbackRequest,
+      request?: protos.google.firestore.v1beta1.IRollbackRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -733,7 +733,7 @@ export class FirestoreClient {
  * const [response] = await client.rollback(request);
  */
   rollback(
-      request: protos.google.firestore.v1beta1.IRollbackRequest,
+      request?: protos.google.firestore.v1beta1.IRollbackRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.firestore.v1beta1.IRollbackRequest|null|undefined,
@@ -767,7 +767,7 @@ export class FirestoreClient {
     return this.innerApiCalls.rollback(request, options, callback);
   }
   batchWrite(
-      request: protos.google.firestore.v1beta1.IBatchWriteRequest,
+      request?: protos.google.firestore.v1beta1.IBatchWriteRequest,
       options?: CallOptions):
       Promise<[
         protos.google.firestore.v1beta1.IBatchWriteResponse,
@@ -821,7 +821,7 @@ export class FirestoreClient {
  * const [response] = await client.batchWrite(request);
  */
   batchWrite(
-      request: protos.google.firestore.v1beta1.IBatchWriteRequest,
+      request?: protos.google.firestore.v1beta1.IBatchWriteRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.firestore.v1beta1.IBatchWriteResponse,
           protos.google.firestore.v1beta1.IBatchWriteRequest|null|undefined,
@@ -855,7 +855,7 @@ export class FirestoreClient {
     return this.innerApiCalls.batchWrite(request, options, callback);
   }
   createDocument(
-      request: protos.google.firestore.v1beta1.ICreateDocumentRequest,
+      request?: protos.google.firestore.v1beta1.ICreateDocumentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.firestore.v1beta1.IDocument,
@@ -907,7 +907,7 @@ export class FirestoreClient {
  * const [response] = await client.createDocument(request);
  */
   createDocument(
-      request: protos.google.firestore.v1beta1.ICreateDocumentRequest,
+      request?: protos.google.firestore.v1beta1.ICreateDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.firestore.v1beta1.IDocument,
           protos.google.firestore.v1beta1.ICreateDocumentRequest|null|undefined,
@@ -1107,7 +1107,7 @@ export class FirestoreClient {
   }
 
   listDocuments(
-      request: protos.google.firestore.v1beta1.IListDocumentsRequest,
+      request?: protos.google.firestore.v1beta1.IListDocumentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.firestore.v1beta1.IDocument[],
@@ -1180,7 +1180,7 @@ export class FirestoreClient {
  *   for more details and examples.
  */
   listDocuments(
-      request: protos.google.firestore.v1beta1.IListDocumentsRequest,
+      request?: protos.google.firestore.v1beta1.IListDocumentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.firestore.v1beta1.IListDocumentsRequest,
           protos.google.firestore.v1beta1.IListDocumentsResponse|null|undefined,
@@ -1366,7 +1366,7 @@ export class FirestoreClient {
     ) as AsyncIterable<protos.google.firestore.v1beta1.IDocument>;
   }
   partitionQuery(
-      request: protos.google.firestore.v1beta1.IPartitionQueryRequest,
+      request?: protos.google.firestore.v1beta1.IPartitionQueryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.firestore.v1beta1.ICursor[],
@@ -1448,7 +1448,7 @@ export class FirestoreClient {
  *   for more details and examples.
  */
   partitionQuery(
-      request: protos.google.firestore.v1beta1.IPartitionQueryRequest,
+      request?: protos.google.firestore.v1beta1.IPartitionQueryRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.firestore.v1beta1.IPartitionQueryRequest,
           protos.google.firestore.v1beta1.IPartitionQueryResponse|null|undefined,
@@ -1648,7 +1648,7 @@ export class FirestoreClient {
     ) as AsyncIterable<protos.google.firestore.v1beta1.ICursor>;
   }
   listCollectionIds(
-      request: protos.google.firestore.v1beta1.IListCollectionIdsRequest,
+      request?: protos.google.firestore.v1beta1.IListCollectionIdsRequest,
       options?: CallOptions):
       Promise<[
         string[],
@@ -1697,7 +1697,7 @@ export class FirestoreClient {
  *   for more details and examples.
  */
   listCollectionIds(
-      request: protos.google.firestore.v1beta1.IListCollectionIdsRequest,
+      request?: protos.google.firestore.v1beta1.IListCollectionIdsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.firestore.v1beta1.IListCollectionIdsRequest,
           protos.google.firestore.v1beta1.IListCollectionIdsResponse|null|undefined,

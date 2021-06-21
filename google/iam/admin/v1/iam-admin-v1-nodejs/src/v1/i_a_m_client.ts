@@ -313,7 +313,7 @@ export class IAMClient {
   // -- Service calls --
   // -------------------
   getServiceAccount(
-      request: protos.google.iam.admin.v1.IGetServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IGetServiceAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IServiceAccount,
@@ -354,7 +354,7 @@ export class IAMClient {
  * const [response] = await client.getServiceAccount(request);
  */
   getServiceAccount(
-      request: protos.google.iam.admin.v1.IGetServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IGetServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IServiceAccount,
           protos.google.iam.admin.v1.IGetServiceAccountRequest|null|undefined,
@@ -388,7 +388,7 @@ export class IAMClient {
     return this.innerApiCalls.getServiceAccount(request, options, callback);
   }
   createServiceAccount(
-      request: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IServiceAccount,
@@ -435,7 +435,7 @@ export class IAMClient {
  * const [response] = await client.createServiceAccount(request);
  */
   createServiceAccount(
-      request: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IServiceAccount,
           protos.google.iam.admin.v1.ICreateServiceAccountRequest|null|undefined,
@@ -469,7 +469,7 @@ export class IAMClient {
     return this.innerApiCalls.createServiceAccount(request, options, callback);
   }
   updateServiceAccount(
-      request: protos.google.iam.admin.v1.IServiceAccount,
+      request?: protos.google.iam.admin.v1.IServiceAccount,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IServiceAccount,
@@ -552,7 +552,7 @@ export class IAMClient {
  * const [response] = await client.updateServiceAccount(request);
  */
   updateServiceAccount(
-      request: protos.google.iam.admin.v1.IServiceAccount,
+      request?: protos.google.iam.admin.v1.IServiceAccount,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IServiceAccount,
           protos.google.iam.admin.v1.IServiceAccount|null|undefined,
@@ -586,7 +586,7 @@ export class IAMClient {
     return this.innerApiCalls.updateServiceAccount(request, options, callback);
   }
   patchServiceAccount(
-      request: protos.google.iam.admin.v1.IPatchServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IPatchServiceAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IServiceAccount,
@@ -623,7 +623,7 @@ export class IAMClient {
  * const [response] = await client.patchServiceAccount(request);
  */
   patchServiceAccount(
-      request: protos.google.iam.admin.v1.IPatchServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IPatchServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IServiceAccount,
           protos.google.iam.admin.v1.IPatchServiceAccountRequest|null|undefined,
@@ -657,7 +657,7 @@ export class IAMClient {
     return this.innerApiCalls.patchServiceAccount(request, options, callback);
   }
   deleteServiceAccount(
-      request: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -712,7 +712,7 @@ export class IAMClient {
  * const [response] = await client.deleteServiceAccount(request);
  */
   deleteServiceAccount(
-      request: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.iam.admin.v1.IDeleteServiceAccountRequest|null|undefined,
@@ -746,7 +746,7 @@ export class IAMClient {
     return this.innerApiCalls.deleteServiceAccount(request, options, callback);
   }
   undeleteServiceAccount(
-      request: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
@@ -793,7 +793,7 @@ export class IAMClient {
  * const [response] = await client.undeleteServiceAccount(request);
  */
   undeleteServiceAccount(
-      request: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
           protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|null|undefined,
@@ -827,7 +827,7 @@ export class IAMClient {
     return this.innerApiCalls.undeleteServiceAccount(request, options, callback);
   }
   enableServiceAccount(
-      request: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -875,7 +875,7 @@ export class IAMClient {
  * const [response] = await client.enableServiceAccount(request);
  */
   enableServiceAccount(
-      request: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.iam.admin.v1.IEnableServiceAccountRequest|null|undefined,
@@ -909,7 +909,7 @@ export class IAMClient {
     return this.innerApiCalls.enableServiceAccount(request, options, callback);
   }
   disableServiceAccount(
-      request: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -965,7 +965,7 @@ export class IAMClient {
  * const [response] = await client.disableServiceAccount(request);
  */
   disableServiceAccount(
-      request: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
+      request?: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.iam.admin.v1.IDisableServiceAccountRequest|null|undefined,
@@ -999,7 +999,7 @@ export class IAMClient {
     return this.innerApiCalls.disableServiceAccount(request, options, callback);
   }
   listServiceAccountKeys(
-      request: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
+      request?: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IListServiceAccountKeysResponse,
@@ -1045,7 +1045,7 @@ export class IAMClient {
  * const [response] = await client.listServiceAccountKeys(request);
  */
   listServiceAccountKeys(
-      request: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
+      request?: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IListServiceAccountKeysResponse,
           protos.google.iam.admin.v1.IListServiceAccountKeysRequest|null|undefined,
@@ -1079,7 +1079,7 @@ export class IAMClient {
     return this.innerApiCalls.listServiceAccountKeys(request, options, callback);
   }
   getServiceAccountKey(
-      request: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
+      request?: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IServiceAccountKey,
@@ -1124,7 +1124,7 @@ export class IAMClient {
  * const [response] = await client.getServiceAccountKey(request);
  */
   getServiceAccountKey(
-      request: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
+      request?: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IServiceAccountKey,
           protos.google.iam.admin.v1.IGetServiceAccountKeyRequest|null|undefined,
@@ -1158,7 +1158,7 @@ export class IAMClient {
     return this.innerApiCalls.getServiceAccountKey(request, options, callback);
   }
   createServiceAccountKey(
-      request: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
+      request?: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IServiceAccountKey,
@@ -1207,7 +1207,7 @@ export class IAMClient {
  * const [response] = await client.createServiceAccountKey(request);
  */
   createServiceAccountKey(
-      request: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
+      request?: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IServiceAccountKey,
           protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest|null|undefined,
@@ -1241,7 +1241,7 @@ export class IAMClient {
     return this.innerApiCalls.createServiceAccountKey(request, options, callback);
   }
   uploadServiceAccountKey(
-      request: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
+      request?: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IServiceAccountKey,
@@ -1287,7 +1287,7 @@ export class IAMClient {
  * const [response] = await client.uploadServiceAccountKey(request);
  */
   uploadServiceAccountKey(
-      request: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
+      request?: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IServiceAccountKey,
           protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|null|undefined,
@@ -1321,7 +1321,7 @@ export class IAMClient {
     return this.innerApiCalls.uploadServiceAccountKey(request, options, callback);
   }
   deleteServiceAccountKey(
-      request: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
+      request?: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1364,7 +1364,7 @@ export class IAMClient {
  * const [response] = await client.deleteServiceAccountKey(request);
  */
   deleteServiceAccountKey(
-      request: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
+      request?: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest|null|undefined,
@@ -1398,7 +1398,7 @@ export class IAMClient {
     return this.innerApiCalls.deleteServiceAccountKey(request, options, callback);
   }
   signBlob(
-      request: protos.google.iam.admin.v1.ISignBlobRequest,
+      request?: protos.google.iam.admin.v1.ISignBlobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.ISignBlobResponse,
@@ -1452,9 +1452,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.signBlob(request);
+ * @deprecated SignBlob is deprecated and may be removed in a future version.
  */
   signBlob(
-      request: protos.google.iam.admin.v1.ISignBlobRequest,
+      request?: protos.google.iam.admin.v1.ISignBlobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.ISignBlobResponse,
           protos.google.iam.admin.v1.ISignBlobRequest|null|undefined,
@@ -1485,10 +1486,11 @@ export class IAMClient {
       'name': request.name || '',
     });
     this.initialize();
+    gax.warn('DEP$IAM-$SignBlob','SignBlob is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.signBlob(request, options, callback);
   }
   signJwt(
-      request: protos.google.iam.admin.v1.ISignJwtRequest,
+      request?: protos.google.iam.admin.v1.ISignJwtRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.ISignJwtResponse,
@@ -1552,9 +1554,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.signJwt(request);
+ * @deprecated SignJwt is deprecated and may be removed in a future version.
  */
   signJwt(
-      request: protos.google.iam.admin.v1.ISignJwtRequest,
+      request?: protos.google.iam.admin.v1.ISignJwtRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.ISignJwtResponse,
           protos.google.iam.admin.v1.ISignJwtRequest|null|undefined,
@@ -1585,10 +1588,11 @@ export class IAMClient {
       'name': request.name || '',
     });
     this.initialize();
+    gax.warn('DEP$IAM-$SignJwt','SignJwt is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.signJwt(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -1638,7 +1642,7 @@ export class IAMClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -1672,7 +1676,7 @@ export class IAMClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -1731,7 +1735,7 @@ export class IAMClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -1765,7 +1769,7 @@ export class IAMClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -1809,7 +1813,7 @@ export class IAMClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -1843,7 +1847,7 @@ export class IAMClient {
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
   getRole(
-      request: protos.google.iam.admin.v1.IGetRoleRequest,
+      request?: protos.google.iam.admin.v1.IGetRoleRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IRole,
@@ -1906,7 +1910,7 @@ export class IAMClient {
  * const [response] = await client.getRole(request);
  */
   getRole(
-      request: protos.google.iam.admin.v1.IGetRoleRequest,
+      request?: protos.google.iam.admin.v1.IGetRoleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IRole,
           protos.google.iam.admin.v1.IGetRoleRequest|null|undefined,
@@ -1940,7 +1944,7 @@ export class IAMClient {
     return this.innerApiCalls.getRole(request, options, callback);
   }
   createRole(
-      request: protos.google.iam.admin.v1.ICreateRoleRequest,
+      request?: protos.google.iam.admin.v1.ICreateRoleRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IRole,
@@ -2004,7 +2008,7 @@ export class IAMClient {
  * const [response] = await client.createRole(request);
  */
   createRole(
-      request: protos.google.iam.admin.v1.ICreateRoleRequest,
+      request?: protos.google.iam.admin.v1.ICreateRoleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IRole,
           protos.google.iam.admin.v1.ICreateRoleRequest|null|undefined,
@@ -2038,7 +2042,7 @@ export class IAMClient {
     return this.innerApiCalls.createRole(request, options, callback);
   }
   updateRole(
-      request: protos.google.iam.admin.v1.IUpdateRoleRequest,
+      request?: protos.google.iam.admin.v1.IUpdateRoleRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IRole,
@@ -2098,7 +2102,7 @@ export class IAMClient {
  * const [response] = await client.updateRole(request);
  */
   updateRole(
-      request: protos.google.iam.admin.v1.IUpdateRoleRequest,
+      request?: protos.google.iam.admin.v1.IUpdateRoleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IRole,
           protos.google.iam.admin.v1.IUpdateRoleRequest|null|undefined,
@@ -2132,7 +2136,7 @@ export class IAMClient {
     return this.innerApiCalls.updateRole(request, options, callback);
   }
   deleteRole(
-      request: protos.google.iam.admin.v1.IDeleteRoleRequest,
+      request?: protos.google.iam.admin.v1.IDeleteRoleRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IRole,
@@ -2206,7 +2210,7 @@ export class IAMClient {
  * const [response] = await client.deleteRole(request);
  */
   deleteRole(
-      request: protos.google.iam.admin.v1.IDeleteRoleRequest,
+      request?: protos.google.iam.admin.v1.IDeleteRoleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IRole,
           protos.google.iam.admin.v1.IDeleteRoleRequest|null|undefined,
@@ -2240,7 +2244,7 @@ export class IAMClient {
     return this.innerApiCalls.deleteRole(request, options, callback);
   }
   undeleteRole(
-      request: protos.google.iam.admin.v1.IUndeleteRoleRequest,
+      request?: protos.google.iam.admin.v1.IUndeleteRoleRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IRole,
@@ -2298,7 +2302,7 @@ export class IAMClient {
  * const [response] = await client.undeleteRole(request);
  */
   undeleteRole(
-      request: protos.google.iam.admin.v1.IUndeleteRoleRequest,
+      request?: protos.google.iam.admin.v1.IUndeleteRoleRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IRole,
           protos.google.iam.admin.v1.IUndeleteRoleRequest|null|undefined,
@@ -2332,7 +2336,7 @@ export class IAMClient {
     return this.innerApiCalls.undeleteRole(request, options, callback);
   }
   queryAuditableServices(
-      request: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
+      request?: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
@@ -2378,7 +2382,7 @@ export class IAMClient {
  * const [response] = await client.queryAuditableServices(request);
  */
   queryAuditableServices(
-      request: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
+      request?: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
           protos.google.iam.admin.v1.IQueryAuditableServicesRequest|null|undefined,
@@ -2405,7 +2409,7 @@ export class IAMClient {
     return this.innerApiCalls.queryAuditableServices(request, options, callback);
   }
   lintPolicy(
-      request: protos.google.iam.admin.v1.ILintPolicyRequest,
+      request?: protos.google.iam.admin.v1.ILintPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.ILintPolicyResponse,
@@ -2457,7 +2461,7 @@ export class IAMClient {
  * const [response] = await client.lintPolicy(request);
  */
   lintPolicy(
-      request: protos.google.iam.admin.v1.ILintPolicyRequest,
+      request?: protos.google.iam.admin.v1.ILintPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.admin.v1.ILintPolicyResponse,
           protos.google.iam.admin.v1.ILintPolicyRequest|null|undefined,
@@ -2485,7 +2489,7 @@ export class IAMClient {
   }
 
   listServiceAccounts(
-      request: protos.google.iam.admin.v1.IListServiceAccountsRequest,
+      request?: protos.google.iam.admin.v1.IListServiceAccountsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IServiceAccount[],
@@ -2537,7 +2541,7 @@ export class IAMClient {
  *   for more details and examples.
  */
   listServiceAccounts(
-      request: protos.google.iam.admin.v1.IListServiceAccountsRequest,
+      request?: protos.google.iam.admin.v1.IListServiceAccountsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.iam.admin.v1.IListServiceAccountsRequest,
           protos.google.iam.admin.v1.IListServiceAccountsResponse|null|undefined,
@@ -2681,7 +2685,7 @@ export class IAMClient {
     ) as AsyncIterable<protos.google.iam.admin.v1.IServiceAccount>;
   }
   queryGrantableRoles(
-      request: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
+      request?: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IRole[],
@@ -2736,7 +2740,7 @@ export class IAMClient {
  *   for more details and examples.
  */
   queryGrantableRoles(
-      request: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
+      request?: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
           protos.google.iam.admin.v1.IQueryGrantableRolesResponse|null|undefined,
@@ -2861,7 +2865,7 @@ export class IAMClient {
     ) as AsyncIterable<protos.google.iam.admin.v1.IRole>;
   }
   listRoles(
-      request: protos.google.iam.admin.v1.IListRolesRequest,
+      request?: protos.google.iam.admin.v1.IListRolesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IRole[],
@@ -2942,7 +2946,7 @@ export class IAMClient {
  *   for more details and examples.
  */
   listRoles(
-      request: protos.google.iam.admin.v1.IListRolesRequest,
+      request?: protos.google.iam.admin.v1.IListRolesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.iam.admin.v1.IListRolesRequest,
           protos.google.iam.admin.v1.IListRolesResponse|null|undefined,
@@ -3142,7 +3146,7 @@ export class IAMClient {
     ) as AsyncIterable<protos.google.iam.admin.v1.IRole>;
   }
   queryTestablePermissions(
-      request: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
+      request?: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.admin.v1.IPermission[],
@@ -3197,7 +3201,7 @@ export class IAMClient {
  *   for more details and examples.
  */
   queryTestablePermissions(
-      request: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
+      request?: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
           protos.google.iam.admin.v1.IQueryTestablePermissionsResponse|null|undefined,

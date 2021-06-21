@@ -282,7 +282,7 @@ export class Controller2Client {
   // -- Service calls --
   // -------------------
   registerDebuggee(
-      request: protos.google.devtools.clouddebugger.v2.IRegisterDebuggeeRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IRegisterDebuggeeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouddebugger.v2.IRegisterDebuggeeResponse,
@@ -330,7 +330,7 @@ export class Controller2Client {
  * const [response] = await client.registerDebuggee(request);
  */
   registerDebuggee(
-      request: protos.google.devtools.clouddebugger.v2.IRegisterDebuggeeRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IRegisterDebuggeeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.clouddebugger.v2.IRegisterDebuggeeResponse,
           protos.google.devtools.clouddebugger.v2.IRegisterDebuggeeRequest|null|undefined,
@@ -357,7 +357,7 @@ export class Controller2Client {
     return this.innerApiCalls.registerDebuggee(request, options, callback);
   }
   listActiveBreakpoints(
-      request: protos.google.devtools.clouddebugger.v2.IListActiveBreakpointsRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IListActiveBreakpointsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouddebugger.v2.IListActiveBreakpointsResponse,
@@ -418,7 +418,7 @@ export class Controller2Client {
  * const [response] = await client.listActiveBreakpoints(request);
  */
   listActiveBreakpoints(
-      request: protos.google.devtools.clouddebugger.v2.IListActiveBreakpointsRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IListActiveBreakpointsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.clouddebugger.v2.IListActiveBreakpointsResponse,
           protos.google.devtools.clouddebugger.v2.IListActiveBreakpointsRequest|null|undefined,
@@ -452,7 +452,7 @@ export class Controller2Client {
     return this.innerApiCalls.listActiveBreakpoints(request, options, callback);
   }
   updateActiveBreakpoint(
-      request: protos.google.devtools.clouddebugger.v2.IUpdateActiveBreakpointRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IUpdateActiveBreakpointRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouddebugger.v2.IUpdateActiveBreakpointResponse,
@@ -500,7 +500,7 @@ export class Controller2Client {
  * const [response] = await client.updateActiveBreakpoint(request);
  */
   updateActiveBreakpoint(
-      request: protos.google.devtools.clouddebugger.v2.IUpdateActiveBreakpointRequest,
+      request?: protos.google.devtools.clouddebugger.v2.IUpdateActiveBreakpointRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.clouddebugger.v2.IUpdateActiveBreakpointResponse,
           protos.google.devtools.clouddebugger.v2.IUpdateActiveBreakpointRequest|null|undefined,

@@ -614,7 +614,7 @@ export class HotelGroupViewServiceClient {
   // -- Service calls --
   // -------------------
   getHotelGroupView(
-      request: protos.google.ads.googleads.v6.services.IGetHotelGroupViewRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetHotelGroupViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IHotelGroupView,
@@ -651,7 +651,7 @@ export class HotelGroupViewServiceClient {
  * const [response] = await client.getHotelGroupView(request);
  */
   getHotelGroupView(
-      request: protos.google.ads.googleads.v6.services.IGetHotelGroupViewRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetHotelGroupViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IHotelGroupView,
           protos.google.ads.googleads.v6.services.IGetHotelGroupViewRequest|null|undefined,

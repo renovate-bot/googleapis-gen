@@ -360,7 +360,7 @@ export class NotificationChannelServiceClient {
   // -- Service calls --
   // -------------------
   getNotificationChannelDescriptor(
-      request: protos.google.monitoring.v3.IGetNotificationChannelDescriptorRequest,
+      request?: protos.google.monitoring.v3.IGetNotificationChannelDescriptorRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.INotificationChannelDescriptor,
@@ -400,7 +400,7 @@ export class NotificationChannelServiceClient {
  * const [response] = await client.getNotificationChannelDescriptor(request);
  */
   getNotificationChannelDescriptor(
-      request: protos.google.monitoring.v3.IGetNotificationChannelDescriptorRequest,
+      request?: protos.google.monitoring.v3.IGetNotificationChannelDescriptorRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.INotificationChannelDescriptor,
           protos.google.monitoring.v3.IGetNotificationChannelDescriptorRequest|null|undefined,
@@ -434,7 +434,7 @@ export class NotificationChannelServiceClient {
     return this.innerApiCalls.getNotificationChannelDescriptor(request, options, callback);
   }
   getNotificationChannel(
-      request: protos.google.monitoring.v3.IGetNotificationChannelRequest,
+      request?: protos.google.monitoring.v3.IGetNotificationChannelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.INotificationChannel,
@@ -477,7 +477,7 @@ export class NotificationChannelServiceClient {
  * const [response] = await client.getNotificationChannel(request);
  */
   getNotificationChannel(
-      request: protos.google.monitoring.v3.IGetNotificationChannelRequest,
+      request?: protos.google.monitoring.v3.IGetNotificationChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.INotificationChannel,
           protos.google.monitoring.v3.IGetNotificationChannelRequest|null|undefined,
@@ -511,7 +511,7 @@ export class NotificationChannelServiceClient {
     return this.innerApiCalls.getNotificationChannel(request, options, callback);
   }
   createNotificationChannel(
-      request: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
+      request?: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.INotificationChannel,
@@ -558,7 +558,7 @@ export class NotificationChannelServiceClient {
  * const [response] = await client.createNotificationChannel(request);
  */
   createNotificationChannel(
-      request: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
+      request?: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.INotificationChannel,
           protos.google.monitoring.v3.ICreateNotificationChannelRequest|null|undefined,
@@ -592,7 +592,7 @@ export class NotificationChannelServiceClient {
     return this.innerApiCalls.createNotificationChannel(request, options, callback);
   }
   updateNotificationChannel(
-      request: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
+      request?: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.INotificationChannel,
@@ -635,7 +635,7 @@ export class NotificationChannelServiceClient {
  * const [response] = await client.updateNotificationChannel(request);
  */
   updateNotificationChannel(
-      request: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
+      request?: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.INotificationChannel,
           protos.google.monitoring.v3.IUpdateNotificationChannelRequest|null|undefined,
@@ -669,7 +669,7 @@ export class NotificationChannelServiceClient {
     return this.innerApiCalls.updateNotificationChannel(request, options, callback);
   }
   deleteNotificationChannel(
-      request: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
+      request?: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -713,7 +713,7 @@ export class NotificationChannelServiceClient {
  * const [response] = await client.deleteNotificationChannel(request);
  */
   deleteNotificationChannel(
-      request: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
+      request?: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.monitoring.v3.IDeleteNotificationChannelRequest|null|undefined,
@@ -747,7 +747,7 @@ export class NotificationChannelServiceClient {
     return this.innerApiCalls.deleteNotificationChannel(request, options, callback);
   }
   sendNotificationChannelVerificationCode(
-      request: protos.google.monitoring.v3.ISendNotificationChannelVerificationCodeRequest,
+      request?: protos.google.monitoring.v3.ISendNotificationChannelVerificationCodeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -785,7 +785,7 @@ export class NotificationChannelServiceClient {
  * const [response] = await client.sendNotificationChannelVerificationCode(request);
  */
   sendNotificationChannelVerificationCode(
-      request: protos.google.monitoring.v3.ISendNotificationChannelVerificationCodeRequest,
+      request?: protos.google.monitoring.v3.ISendNotificationChannelVerificationCodeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.monitoring.v3.ISendNotificationChannelVerificationCodeRequest|null|undefined,
@@ -819,7 +819,7 @@ export class NotificationChannelServiceClient {
     return this.innerApiCalls.sendNotificationChannelVerificationCode(request, options, callback);
   }
   getNotificationChannelVerificationCode(
-      request: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
+      request?: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeResponse,
@@ -888,7 +888,7 @@ export class NotificationChannelServiceClient {
  * const [response] = await client.getNotificationChannelVerificationCode(request);
  */
   getNotificationChannelVerificationCode(
-      request: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
+      request?: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeResponse,
           protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest|null|undefined,
@@ -922,7 +922,7 @@ export class NotificationChannelServiceClient {
     return this.innerApiCalls.getNotificationChannelVerificationCode(request, options, callback);
   }
   verifyNotificationChannel(
-      request: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
+      request?: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.INotificationChannel,
@@ -969,7 +969,7 @@ export class NotificationChannelServiceClient {
  * const [response] = await client.verifyNotificationChannel(request);
  */
   verifyNotificationChannel(
-      request: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
+      request?: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.monitoring.v3.INotificationChannel,
           protos.google.monitoring.v3.IVerifyNotificationChannelRequest|null|undefined,
@@ -1004,7 +1004,7 @@ export class NotificationChannelServiceClient {
   }
 
   listNotificationChannelDescriptors(
-      request: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
+      request?: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.INotificationChannelDescriptor[],
@@ -1062,7 +1062,7 @@ export class NotificationChannelServiceClient {
  *   for more details and examples.
  */
   listNotificationChannelDescriptors(
-      request: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
+      request?: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
           protos.google.monitoring.v3.IListNotificationChannelDescriptorsResponse|null|undefined,
@@ -1216,7 +1216,7 @@ export class NotificationChannelServiceClient {
     ) as AsyncIterable<protos.google.monitoring.v3.INotificationChannelDescriptor>;
   }
   listNotificationChannels(
-      request: protos.google.monitoring.v3.IListNotificationChannelsRequest,
+      request?: protos.google.monitoring.v3.IListNotificationChannelsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.INotificationChannel[],
@@ -1287,7 +1287,7 @@ export class NotificationChannelServiceClient {
  *   for more details and examples.
  */
   listNotificationChannels(
-      request: protos.google.monitoring.v3.IListNotificationChannelsRequest,
+      request?: protos.google.monitoring.v3.IListNotificationChannelsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.monitoring.v3.IListNotificationChannelsRequest,
           protos.google.monitoring.v3.IListNotificationChannelsResponse|null|undefined,

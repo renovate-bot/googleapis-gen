@@ -653,7 +653,7 @@ export class AdGroupAssetServiceClient {
   // -- Service calls --
   // -------------------
   getAdGroupAsset(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupAssetRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupAssetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IAdGroupAsset,
@@ -698,7 +698,7 @@ export class AdGroupAssetServiceClient {
  * const [response] = await client.getAdGroupAsset(request);
  */
   getAdGroupAsset(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupAssetRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupAssetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IAdGroupAsset,
           protos.google.ads.googleads.v8.services.IGetAdGroupAssetRequest|null|undefined,
@@ -732,7 +732,7 @@ export class AdGroupAssetServiceClient {
     return this.innerApiCalls.getAdGroupAsset(request, options, callback);
   }
   mutateAdGroupAssets(
-      request: protos.google.ads.googleads.v8.services.IMutateAdGroupAssetsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateAdGroupAssetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateAdGroupAssetsResponse,
@@ -796,7 +796,7 @@ export class AdGroupAssetServiceClient {
  * const [response] = await client.mutateAdGroupAssets(request);
  */
   mutateAdGroupAssets(
-      request: protos.google.ads.googleads.v8.services.IMutateAdGroupAssetsRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateAdGroupAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateAdGroupAssetsResponse,
           protos.google.ads.googleads.v8.services.IMutateAdGroupAssetsRequest|null|undefined,

@@ -322,7 +322,7 @@ export class OrgPolicyClient {
   // -- Service calls --
   // -------------------
   getPolicy(
-      request: protos.google.cloud.orgpolicy.v2.IGetPolicyRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IGetPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.orgpolicy.v2.IPolicy,
@@ -363,7 +363,7 @@ export class OrgPolicyClient {
  * const [response] = await client.getPolicy(request);
  */
   getPolicy(
-      request: protos.google.cloud.orgpolicy.v2.IGetPolicyRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IGetPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.orgpolicy.v2.IPolicy,
           protos.google.cloud.orgpolicy.v2.IGetPolicyRequest|null|undefined,
@@ -397,7 +397,7 @@ export class OrgPolicyClient {
     return this.innerApiCalls.getPolicy(request, options, callback);
   }
   getEffectivePolicy(
-      request: protos.google.cloud.orgpolicy.v2.IGetEffectivePolicyRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IGetEffectivePolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.orgpolicy.v2.IPolicy,
@@ -439,7 +439,7 @@ export class OrgPolicyClient {
  * const [response] = await client.getEffectivePolicy(request);
  */
   getEffectivePolicy(
-      request: protos.google.cloud.orgpolicy.v2.IGetEffectivePolicyRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IGetEffectivePolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.orgpolicy.v2.IPolicy,
           protos.google.cloud.orgpolicy.v2.IGetEffectivePolicyRequest|null|undefined,
@@ -473,7 +473,7 @@ export class OrgPolicyClient {
     return this.innerApiCalls.getEffectivePolicy(request, options, callback);
   }
   createPolicy(
-      request: protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest,
+      request?: protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.orgpolicy.v2.IPolicy,
@@ -522,7 +522,7 @@ export class OrgPolicyClient {
  * const [response] = await client.createPolicy(request);
  */
   createPolicy(
-      request: protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest,
+      request?: protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.orgpolicy.v2.IPolicy,
           protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest|null|undefined,
@@ -556,7 +556,7 @@ export class OrgPolicyClient {
     return this.innerApiCalls.createPolicy(request, options, callback);
   }
   updatePolicy(
-      request: protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.orgpolicy.v2.IPolicy,
@@ -601,7 +601,7 @@ export class OrgPolicyClient {
  * const [response] = await client.updatePolicy(request);
  */
   updatePolicy(
-      request: protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.orgpolicy.v2.IPolicy,
           protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest|null|undefined,
@@ -635,7 +635,7 @@ export class OrgPolicyClient {
     return this.innerApiCalls.updatePolicy(request, options, callback);
   }
   deletePolicy(
-      request: protos.google.cloud.orgpolicy.v2.IDeletePolicyRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IDeletePolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -676,7 +676,7 @@ export class OrgPolicyClient {
  * const [response] = await client.deletePolicy(request);
  */
   deletePolicy(
-      request: protos.google.cloud.orgpolicy.v2.IDeletePolicyRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IDeletePolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.orgpolicy.v2.IDeletePolicyRequest|null|undefined,
@@ -711,7 +711,7 @@ export class OrgPolicyClient {
   }
 
   listConstraints(
-      request: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.orgpolicy.v2.IConstraint[],
@@ -764,7 +764,7 @@ export class OrgPolicyClient {
  *   for more details and examples.
  */
   listConstraints(
-      request: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
           protos.google.cloud.orgpolicy.v2.IListConstraintsResponse|null|undefined,
@@ -910,7 +910,7 @@ export class OrgPolicyClient {
     ) as AsyncIterable<protos.google.cloud.orgpolicy.v2.IConstraint>;
   }
   listPolicies(
-      request: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.orgpolicy.v2.IPolicy[],
@@ -964,7 +964,7 @@ export class OrgPolicyClient {
  *   for more details and examples.
  */
   listPolicies(
-      request: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
+      request?: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
           protos.google.cloud.orgpolicy.v2.IListPoliciesResponse|null|undefined,

@@ -590,7 +590,7 @@ export class GroupPlacementViewServiceClient {
   // -- Service calls --
   // -------------------
   getGroupPlacementView(
-      request: protos.google.ads.googleads.v5.services.IGetGroupPlacementViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetGroupPlacementViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.IGroupPlacementView,
@@ -627,7 +627,7 @@ export class GroupPlacementViewServiceClient {
  * const [response] = await client.getGroupPlacementView(request);
  */
   getGroupPlacementView(
-      request: protos.google.ads.googleads.v5.services.IGetGroupPlacementViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetGroupPlacementViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.IGroupPlacementView,
           protos.google.ads.googleads.v5.services.IGetGroupPlacementViewRequest|null|undefined,

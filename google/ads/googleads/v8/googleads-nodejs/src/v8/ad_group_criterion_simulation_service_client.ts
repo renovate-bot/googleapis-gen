@@ -653,7 +653,7 @@ export class AdGroupCriterionSimulationServiceClient {
   // -- Service calls --
   // -------------------
   getAdGroupCriterionSimulation(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupCriterionSimulationRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupCriterionSimulationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IAdGroupCriterionSimulation,
@@ -698,7 +698,7 @@ export class AdGroupCriterionSimulationServiceClient {
  * const [response] = await client.getAdGroupCriterionSimulation(request);
  */
   getAdGroupCriterionSimulation(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupCriterionSimulationRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupCriterionSimulationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IAdGroupCriterionSimulation,
           protos.google.ads.googleads.v8.services.IGetAdGroupCriterionSimulationRequest|null|undefined,

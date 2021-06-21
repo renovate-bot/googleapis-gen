@@ -286,7 +286,7 @@ export class BigtableClient {
   // -- Service calls --
   // -------------------
   mutateRow(
-      request: protos.google.bigtable.v2.IMutateRowRequest,
+      request?: protos.google.bigtable.v2.IMutateRowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.bigtable.v2.IMutateRowResponse,
@@ -335,7 +335,7 @@ export class BigtableClient {
  * const [response] = await client.mutateRow(request);
  */
   mutateRow(
-      request: protos.google.bigtable.v2.IMutateRowRequest,
+      request?: protos.google.bigtable.v2.IMutateRowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.bigtable.v2.IMutateRowResponse,
           protos.google.bigtable.v2.IMutateRowRequest|null|undefined,
@@ -369,7 +369,7 @@ export class BigtableClient {
     return this.innerApiCalls.mutateRow(request, options, callback);
   }
   checkAndMutateRow(
-      request: protos.google.bigtable.v2.ICheckAndMutateRowRequest,
+      request?: protos.google.bigtable.v2.ICheckAndMutateRowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.bigtable.v2.ICheckAndMutateRowResponse,
@@ -431,7 +431,7 @@ export class BigtableClient {
  * const [response] = await client.checkAndMutateRow(request);
  */
   checkAndMutateRow(
-      request: protos.google.bigtable.v2.ICheckAndMutateRowRequest,
+      request?: protos.google.bigtable.v2.ICheckAndMutateRowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.bigtable.v2.ICheckAndMutateRowResponse,
           protos.google.bigtable.v2.ICheckAndMutateRowRequest|null|undefined,
@@ -465,7 +465,7 @@ export class BigtableClient {
     return this.innerApiCalls.checkAndMutateRow(request, options, callback);
   }
   readModifyWriteRow(
-      request: protos.google.bigtable.v2.IReadModifyWriteRowRequest,
+      request?: protos.google.bigtable.v2.IReadModifyWriteRowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.bigtable.v2.IReadModifyWriteRowResponse,
@@ -518,7 +518,7 @@ export class BigtableClient {
  * const [response] = await client.readModifyWriteRow(request);
  */
   readModifyWriteRow(
-      request: protos.google.bigtable.v2.IReadModifyWriteRowRequest,
+      request?: protos.google.bigtable.v2.IReadModifyWriteRowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.bigtable.v2.IReadModifyWriteRowResponse,
           protos.google.bigtable.v2.IReadModifyWriteRowRequest|null|undefined,

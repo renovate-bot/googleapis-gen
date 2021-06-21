@@ -355,7 +355,7 @@ export class ArtifactRegistryClient {
   // -- Service calls --
   // -------------------
   getRepository(
-      request: protos.google.devtools.artifactregistry.v1beta2.IGetRepositoryRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IGetRepositoryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.IRepository,
@@ -392,7 +392,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.getRepository(request);
  */
   getRepository(
-      request: protos.google.devtools.artifactregistry.v1beta2.IGetRepositoryRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IGetRepositoryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.artifactregistry.v1beta2.IRepository,
           protos.google.devtools.artifactregistry.v1beta2.IGetRepositoryRequest|null|undefined,
@@ -426,7 +426,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.getRepository(request, options, callback);
   }
   updateRepository(
-      request: protos.google.devtools.artifactregistry.v1beta2.IUpdateRepositoryRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IUpdateRepositoryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.IRepository,
@@ -467,7 +467,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.updateRepository(request);
  */
   updateRepository(
-      request: protos.google.devtools.artifactregistry.v1beta2.IUpdateRepositoryRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IUpdateRepositoryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.artifactregistry.v1beta2.IRepository,
           protos.google.devtools.artifactregistry.v1beta2.IUpdateRepositoryRequest|null|undefined,
@@ -501,7 +501,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.updateRepository(request, options, callback);
   }
   getPackage(
-      request: protos.google.devtools.artifactregistry.v1beta2.IGetPackageRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IGetPackageRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.IPackage,
@@ -538,7 +538,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.getPackage(request);
  */
   getPackage(
-      request: protos.google.devtools.artifactregistry.v1beta2.IGetPackageRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IGetPackageRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.artifactregistry.v1beta2.IPackage,
           protos.google.devtools.artifactregistry.v1beta2.IGetPackageRequest|null|undefined,
@@ -572,7 +572,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.getPackage(request, options, callback);
   }
   getVersion(
-      request: protos.google.devtools.artifactregistry.v1beta2.IGetVersionRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IGetVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.IVersion,
@@ -611,7 +611,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.getVersion(request);
  */
   getVersion(
-      request: protos.google.devtools.artifactregistry.v1beta2.IGetVersionRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IGetVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.artifactregistry.v1beta2.IVersion,
           protos.google.devtools.artifactregistry.v1beta2.IGetVersionRequest|null|undefined,
@@ -645,7 +645,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.getVersion(request, options, callback);
   }
   getFile(
-      request: protos.google.devtools.artifactregistry.v1beta2.IGetFileRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IGetFileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.IFile,
@@ -682,7 +682,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.getFile(request);
  */
   getFile(
-      request: protos.google.devtools.artifactregistry.v1beta2.IGetFileRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IGetFileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.artifactregistry.v1beta2.IFile,
           protos.google.devtools.artifactregistry.v1beta2.IGetFileRequest|null|undefined,
@@ -716,7 +716,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.getFile(request, options, callback);
   }
   getTag(
-      request: protos.google.devtools.artifactregistry.v1beta2.IGetTagRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IGetTagRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.ITag,
@@ -753,7 +753,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.getTag(request);
  */
   getTag(
-      request: protos.google.devtools.artifactregistry.v1beta2.IGetTagRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IGetTagRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.artifactregistry.v1beta2.ITag,
           protos.google.devtools.artifactregistry.v1beta2.IGetTagRequest|null|undefined,
@@ -787,7 +787,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.getTag(request, options, callback);
   }
   createTag(
-      request: protos.google.devtools.artifactregistry.v1beta2.ICreateTagRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.ICreateTagRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.ITag,
@@ -828,7 +828,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.createTag(request);
  */
   createTag(
-      request: protos.google.devtools.artifactregistry.v1beta2.ICreateTagRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.ICreateTagRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.artifactregistry.v1beta2.ITag,
           protos.google.devtools.artifactregistry.v1beta2.ICreateTagRequest|null|undefined,
@@ -862,7 +862,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.createTag(request, options, callback);
   }
   updateTag(
-      request: protos.google.devtools.artifactregistry.v1beta2.IUpdateTagRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IUpdateTagRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.ITag,
@@ -903,7 +903,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.updateTag(request);
  */
   updateTag(
-      request: protos.google.devtools.artifactregistry.v1beta2.IUpdateTagRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IUpdateTagRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.artifactregistry.v1beta2.ITag,
           protos.google.devtools.artifactregistry.v1beta2.IUpdateTagRequest|null|undefined,
@@ -937,7 +937,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.updateTag(request, options, callback);
   }
   deleteTag(
-      request: protos.google.devtools.artifactregistry.v1beta2.IDeleteTagRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IDeleteTagRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -974,7 +974,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.deleteTag(request);
  */
   deleteTag(
-      request: protos.google.devtools.artifactregistry.v1beta2.IDeleteTagRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IDeleteTagRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.devtools.artifactregistry.v1beta2.IDeleteTagRequest|null|undefined,
@@ -1008,7 +1008,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.deleteTag(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -1051,7 +1051,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -1085,7 +1085,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -1126,7 +1126,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -1160,7 +1160,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -1203,7 +1203,7 @@ export class ArtifactRegistryClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -1238,7 +1238,7 @@ export class ArtifactRegistryClient {
   }
 
   createRepository(
-      request: protos.google.devtools.artifactregistry.v1beta2.ICreateRepositoryRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.ICreateRepositoryRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.devtools.artifactregistry.v1beta2.IRepository, protos.google.devtools.artifactregistry.v1beta2.IOperationMetadata>,
@@ -1283,7 +1283,7 @@ export class ArtifactRegistryClient {
  * const [response] = await operation.promise();
  */
   createRepository(
-      request: protos.google.devtools.artifactregistry.v1beta2.ICreateRepositoryRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.ICreateRepositoryRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.devtools.artifactregistry.v1beta2.IRepository, protos.google.devtools.artifactregistry.v1beta2.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1338,7 +1338,7 @@ export class ArtifactRegistryClient {
     return decodeOperation as LROperation<protos.google.devtools.artifactregistry.v1beta2.Repository, protos.google.devtools.artifactregistry.v1beta2.OperationMetadata>;
   }
   deleteRepository(
-      request: protos.google.devtools.artifactregistry.v1beta2.IDeleteRepositoryRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IDeleteRepositoryRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.devtools.artifactregistry.v1beta2.IOperationMetadata>,
@@ -1380,7 +1380,7 @@ export class ArtifactRegistryClient {
  * const [response] = await operation.promise();
  */
   deleteRepository(
-      request: protos.google.devtools.artifactregistry.v1beta2.IDeleteRepositoryRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IDeleteRepositoryRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.devtools.artifactregistry.v1beta2.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1435,7 +1435,7 @@ export class ArtifactRegistryClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.devtools.artifactregistry.v1beta2.OperationMetadata>;
   }
   deletePackage(
-      request: protos.google.devtools.artifactregistry.v1beta2.IDeletePackageRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IDeletePackageRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.devtools.artifactregistry.v1beta2.IOperationMetadata>,
@@ -1476,7 +1476,7 @@ export class ArtifactRegistryClient {
  * const [response] = await operation.promise();
  */
   deletePackage(
-      request: protos.google.devtools.artifactregistry.v1beta2.IDeletePackageRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IDeletePackageRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.devtools.artifactregistry.v1beta2.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1531,7 +1531,7 @@ export class ArtifactRegistryClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.devtools.artifactregistry.v1beta2.OperationMetadata>;
   }
   deleteVersion(
-      request: protos.google.devtools.artifactregistry.v1beta2.IDeleteVersionRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IDeleteVersionRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.devtools.artifactregistry.v1beta2.IOperationMetadata>,
@@ -1575,7 +1575,7 @@ export class ArtifactRegistryClient {
  * const [response] = await operation.promise();
  */
   deleteVersion(
-      request: protos.google.devtools.artifactregistry.v1beta2.IDeleteVersionRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IDeleteVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.devtools.artifactregistry.v1beta2.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1630,7 +1630,7 @@ export class ArtifactRegistryClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.devtools.artifactregistry.v1beta2.OperationMetadata>;
   }
   listRepositories(
-      request: protos.google.devtools.artifactregistry.v1beta2.IListRepositoriesRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IListRepositoriesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.IRepository[],
@@ -1676,7 +1676,7 @@ export class ArtifactRegistryClient {
  *   for more details and examples.
  */
   listRepositories(
-      request: protos.google.devtools.artifactregistry.v1beta2.IListRepositoriesRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IListRepositoriesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.devtools.artifactregistry.v1beta2.IListRepositoriesRequest,
           protos.google.devtools.artifactregistry.v1beta2.IListRepositoriesResponse|null|undefined,
@@ -1808,7 +1808,7 @@ export class ArtifactRegistryClient {
     ) as AsyncIterable<protos.google.devtools.artifactregistry.v1beta2.IRepository>;
   }
   listPackages(
-      request: protos.google.devtools.artifactregistry.v1beta2.IListPackagesRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IListPackagesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.IPackage[],
@@ -1854,7 +1854,7 @@ export class ArtifactRegistryClient {
  *   for more details and examples.
  */
   listPackages(
-      request: protos.google.devtools.artifactregistry.v1beta2.IListPackagesRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IListPackagesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.devtools.artifactregistry.v1beta2.IListPackagesRequest,
           protos.google.devtools.artifactregistry.v1beta2.IListPackagesResponse|null|undefined,
@@ -1986,7 +1986,7 @@ export class ArtifactRegistryClient {
     ) as AsyncIterable<protos.google.devtools.artifactregistry.v1beta2.IPackage>;
   }
   listVersions(
-      request: protos.google.devtools.artifactregistry.v1beta2.IListVersionsRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IListVersionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.IVersion[],
@@ -2034,7 +2034,7 @@ export class ArtifactRegistryClient {
  *   for more details and examples.
  */
   listVersions(
-      request: protos.google.devtools.artifactregistry.v1beta2.IListVersionsRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IListVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.devtools.artifactregistry.v1beta2.IListVersionsRequest,
           protos.google.devtools.artifactregistry.v1beta2.IListVersionsResponse|null|undefined,
@@ -2170,7 +2170,7 @@ export class ArtifactRegistryClient {
     ) as AsyncIterable<protos.google.devtools.artifactregistry.v1beta2.IVersion>;
   }
   listFiles(
-      request: protos.google.devtools.artifactregistry.v1beta2.IListFilesRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IListFilesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.IFile[],
@@ -2228,7 +2228,7 @@ export class ArtifactRegistryClient {
  *   for more details and examples.
  */
   listFiles(
-      request: protos.google.devtools.artifactregistry.v1beta2.IListFilesRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IListFilesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.devtools.artifactregistry.v1beta2.IListFilesRequest,
           protos.google.devtools.artifactregistry.v1beta2.IListFilesResponse|null|undefined,
@@ -2384,7 +2384,7 @@ export class ArtifactRegistryClient {
     ) as AsyncIterable<protos.google.devtools.artifactregistry.v1beta2.IFile>;
   }
   listTags(
-      request: protos.google.devtools.artifactregistry.v1beta2.IListTagsRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IListTagsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.artifactregistry.v1beta2.ITag[],
@@ -2440,7 +2440,7 @@ export class ArtifactRegistryClient {
  *   for more details and examples.
  */
   listTags(
-      request: protos.google.devtools.artifactregistry.v1beta2.IListTagsRequest,
+      request?: protos.google.devtools.artifactregistry.v1beta2.IListTagsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.devtools.artifactregistry.v1beta2.IListTagsRequest,
           protos.google.devtools.artifactregistry.v1beta2.IListTagsResponse|null|undefined,

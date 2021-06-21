@@ -635,7 +635,7 @@ export class CampaignBudgetServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignBudget(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignBudgetRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignBudgetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.ICampaignBudget,
@@ -680,7 +680,7 @@ export class CampaignBudgetServiceClient {
  * const [response] = await client.getCampaignBudget(request);
  */
   getCampaignBudget(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignBudgetRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignBudgetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.ICampaignBudget,
           protos.google.ads.googleads.v7.services.IGetCampaignBudgetRequest|null|undefined,
@@ -714,7 +714,7 @@ export class CampaignBudgetServiceClient {
     return this.innerApiCalls.getCampaignBudget(request, options, callback);
   }
   mutateCampaignBudgets(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignBudgetsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateCampaignBudgetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IMutateCampaignBudgetsResponse,
@@ -784,7 +784,7 @@ export class CampaignBudgetServiceClient {
  * const [response] = await client.mutateCampaignBudgets(request);
  */
   mutateCampaignBudgets(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignBudgetsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateCampaignBudgetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IMutateCampaignBudgetsResponse,
           protos.google.ads.googleads.v7.services.IMutateCampaignBudgetsRequest|null|undefined,

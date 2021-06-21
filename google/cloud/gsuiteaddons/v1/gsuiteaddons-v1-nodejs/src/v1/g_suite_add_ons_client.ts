@@ -319,7 +319,7 @@ export class GSuiteAddOnsClient {
   // -- Service calls --
   // -------------------
   getAuthorization(
-      request: protos.google.cloud.gsuiteaddons.v1.IGetAuthorizationRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IGetAuthorizationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.gsuiteaddons.v1.IAuthorization,
@@ -359,7 +359,7 @@ export class GSuiteAddOnsClient {
  * const [response] = await client.getAuthorization(request);
  */
   getAuthorization(
-      request: protos.google.cloud.gsuiteaddons.v1.IGetAuthorizationRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IGetAuthorizationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.gsuiteaddons.v1.IAuthorization,
           protos.google.cloud.gsuiteaddons.v1.IGetAuthorizationRequest|null|undefined,
@@ -393,7 +393,7 @@ export class GSuiteAddOnsClient {
     return this.innerApiCalls.getAuthorization(request, options, callback);
   }
   createDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.gsuiteaddons.v1.IDeployment,
@@ -437,7 +437,7 @@ export class GSuiteAddOnsClient {
  * const [response] = await client.createDeployment(request);
  */
   createDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.gsuiteaddons.v1.IDeployment,
           protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest|null|undefined,
@@ -471,7 +471,7 @@ export class GSuiteAddOnsClient {
     return this.innerApiCalls.createDeployment(request, options, callback);
   }
   replaceDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.IReplaceDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IReplaceDeploymentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.gsuiteaddons.v1.IDeployment,
@@ -508,7 +508,7 @@ export class GSuiteAddOnsClient {
  * const [response] = await client.replaceDeployment(request);
  */
   replaceDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.IReplaceDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IReplaceDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.gsuiteaddons.v1.IDeployment,
           protos.google.cloud.gsuiteaddons.v1.IReplaceDeploymentRequest|null|undefined,
@@ -542,7 +542,7 @@ export class GSuiteAddOnsClient {
     return this.innerApiCalls.replaceDeployment(request, options, callback);
   }
   getDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.IGetDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IGetDeploymentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.gsuiteaddons.v1.IDeployment,
@@ -581,7 +581,7 @@ export class GSuiteAddOnsClient {
  * const [response] = await client.getDeployment(request);
  */
   getDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.IGetDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IGetDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.gsuiteaddons.v1.IDeployment,
           protos.google.cloud.gsuiteaddons.v1.IGetDeploymentRequest|null|undefined,
@@ -615,7 +615,7 @@ export class GSuiteAddOnsClient {
     return this.innerApiCalls.getDeployment(request, options, callback);
   }
   deleteDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.IDeleteDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IDeleteDeploymentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -657,7 +657,7 @@ export class GSuiteAddOnsClient {
  * const [response] = await client.deleteDeployment(request);
  */
   deleteDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.IDeleteDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IDeleteDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.gsuiteaddons.v1.IDeleteDeploymentRequest|null|undefined,
@@ -691,7 +691,7 @@ export class GSuiteAddOnsClient {
     return this.innerApiCalls.deleteDeployment(request, options, callback);
   }
   installDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.IInstallDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IInstallDeploymentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -732,7 +732,7 @@ export class GSuiteAddOnsClient {
  * const [response] = await client.installDeployment(request);
  */
   installDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.IInstallDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IInstallDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.gsuiteaddons.v1.IInstallDeploymentRequest|null|undefined,
@@ -766,7 +766,7 @@ export class GSuiteAddOnsClient {
     return this.innerApiCalls.installDeployment(request, options, callback);
   }
   uninstallDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.IUninstallDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IUninstallDeploymentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -807,7 +807,7 @@ export class GSuiteAddOnsClient {
  * const [response] = await client.uninstallDeployment(request);
  */
   uninstallDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.IUninstallDeploymentRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IUninstallDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.gsuiteaddons.v1.IUninstallDeploymentRequest|null|undefined,
@@ -841,7 +841,7 @@ export class GSuiteAddOnsClient {
     return this.innerApiCalls.uninstallDeployment(request, options, callback);
   }
   getInstallStatus(
-      request: protos.google.cloud.gsuiteaddons.v1.IGetInstallStatusRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IGetInstallStatusRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.gsuiteaddons.v1.IInstallStatus,
@@ -880,7 +880,7 @@ export class GSuiteAddOnsClient {
  * const [response] = await client.getInstallStatus(request);
  */
   getInstallStatus(
-      request: protos.google.cloud.gsuiteaddons.v1.IGetInstallStatusRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IGetInstallStatusRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.gsuiteaddons.v1.IInstallStatus,
           protos.google.cloud.gsuiteaddons.v1.IGetInstallStatusRequest|null|undefined,
@@ -915,7 +915,7 @@ export class GSuiteAddOnsClient {
   }
 
   listDeployments(
-      request: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.gsuiteaddons.v1.IDeployment[],
@@ -969,7 +969,7 @@ export class GSuiteAddOnsClient {
  *   for more details and examples.
  */
   listDeployments(
-      request: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
+      request?: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
           protos.google.cloud.gsuiteaddons.v1.IListDeploymentsResponse|null|undefined,

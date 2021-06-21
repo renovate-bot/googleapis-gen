@@ -343,7 +343,7 @@ export class OsConfigZonalServiceClient {
   // -- Service calls --
   // -------------------
   getOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment,
@@ -387,7 +387,7 @@ export class OsConfigZonalServiceClient {
  * const [response] = await client.getOSPolicyAssignment(request);
  */
   getOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment,
           protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest|null|undefined,
@@ -421,7 +421,7 @@ export class OsConfigZonalServiceClient {
     return this.innerApiCalls.getOSPolicyAssignment(request, options, callback);
   }
   getInstanceOSPoliciesCompliance(
-      request: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance,
@@ -467,7 +467,7 @@ export class OsConfigZonalServiceClient {
  * const [response] = await client.getInstanceOSPoliciesCompliance(request);
  */
   getInstanceOSPoliciesCompliance(
-      request: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance,
           protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest|null|undefined,
@@ -501,7 +501,7 @@ export class OsConfigZonalServiceClient {
     return this.innerApiCalls.getInstanceOSPoliciesCompliance(request, options, callback);
   }
   getInventory(
-      request: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1alpha.IInventory,
@@ -549,7 +549,7 @@ export class OsConfigZonalServiceClient {
  * const [response] = await client.getInventory(request);
  */
   getInventory(
-      request: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1alpha.IInventory,
           protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest|null|undefined,
@@ -583,7 +583,7 @@ export class OsConfigZonalServiceClient {
     return this.innerApiCalls.getInventory(request, options, callback);
   }
   getVulnerabilityReport(
-      request: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport,
@@ -628,7 +628,7 @@ export class OsConfigZonalServiceClient {
  * const [response] = await client.getVulnerabilityReport(request);
  */
   getVulnerabilityReport(
-      request: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport,
           protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest|null|undefined,
@@ -663,7 +663,7 @@ export class OsConfigZonalServiceClient {
   }
 
   createOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
@@ -723,7 +723,7 @@ export class OsConfigZonalServiceClient {
  * const [response] = await operation.promise();
  */
   createOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -778,7 +778,7 @@ export class OsConfigZonalServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>;
   }
   updateOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
@@ -828,7 +828,7 @@ export class OsConfigZonalServiceClient {
  * const [response] = await operation.promise();
  */
   updateOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -883,7 +883,7 @@ export class OsConfigZonalServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>;
   }
   deleteOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
@@ -934,7 +934,7 @@ export class OsConfigZonalServiceClient {
  * const [response] = await operation.promise();
  */
   deleteOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -989,7 +989,7 @@ export class OsConfigZonalServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>;
   }
   listOSPolicyAssignments(
-      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment[],
@@ -1038,7 +1038,7 @@ export class OsConfigZonalServiceClient {
  *   for more details and examples.
  */
   listOSPolicyAssignments(
-      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
           protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsResponse|null|undefined,
@@ -1172,7 +1172,7 @@ export class OsConfigZonalServiceClient {
     ) as AsyncIterable<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>;
   }
   listOSPolicyAssignmentRevisions(
-      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment[],
@@ -1219,7 +1219,7 @@ export class OsConfigZonalServiceClient {
  *   for more details and examples.
  */
   listOSPolicyAssignmentRevisions(
-      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
           protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsResponse|null|undefined,
@@ -1353,7 +1353,7 @@ export class OsConfigZonalServiceClient {
     ) as AsyncIterable<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>;
   }
   listInstanceOSPoliciesCompliances(
-      request: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance[],
@@ -1409,7 +1409,7 @@ export class OsConfigZonalServiceClient {
  *   for more details and examples.
  */
   listInstanceOSPoliciesCompliances(
-      request: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
           protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesResponse|null|undefined,
@@ -1559,7 +1559,7 @@ export class OsConfigZonalServiceClient {
     ) as AsyncIterable<protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance>;
   }
   listInventories(
-      request: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1alpha.IInventory[],
@@ -1618,7 +1618,7 @@ export class OsConfigZonalServiceClient {
  *   for more details and examples.
  */
   listInventories(
-      request: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
           protos.google.cloud.osconfig.v1alpha.IListInventoriesResponse|null|undefined,
@@ -1776,7 +1776,7 @@ export class OsConfigZonalServiceClient {
     ) as AsyncIterable<protos.google.cloud.osconfig.v1alpha.IInventory>;
   }
   listVulnerabilityReports(
-      request: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport[],
@@ -1832,7 +1832,7 @@ export class OsConfigZonalServiceClient {
  *   for more details and examples.
  */
   listVulnerabilityReports(
-      request: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
+      request?: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
           protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsResponse|null|undefined,

@@ -590,7 +590,7 @@ export class CustomInterestServiceClient {
   // -- Service calls --
   // -------------------
   getCustomInterest(
-      request: protos.google.ads.googleads.v5.services.IGetCustomInterestRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetCustomInterestRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.ICustomInterest,
@@ -627,7 +627,7 @@ export class CustomInterestServiceClient {
  * const [response] = await client.getCustomInterest(request);
  */
   getCustomInterest(
-      request: protos.google.ads.googleads.v5.services.IGetCustomInterestRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetCustomInterestRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.ICustomInterest,
           protos.google.ads.googleads.v5.services.IGetCustomInterestRequest|null|undefined,
@@ -661,7 +661,7 @@ export class CustomInterestServiceClient {
     return this.innerApiCalls.getCustomInterest(request, options, callback);
   }
   mutateCustomInterests(
-      request: protos.google.ads.googleads.v5.services.IMutateCustomInterestsRequest,
+      request?: protos.google.ads.googleads.v5.services.IMutateCustomInterestsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.services.IMutateCustomInterestsResponse,
@@ -703,7 +703,7 @@ export class CustomInterestServiceClient {
  * const [response] = await client.mutateCustomInterests(request);
  */
   mutateCustomInterests(
-      request: protos.google.ads.googleads.v5.services.IMutateCustomInterestsRequest,
+      request?: protos.google.ads.googleads.v5.services.IMutateCustomInterestsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.services.IMutateCustomInterestsResponse,
           protos.google.ads.googleads.v5.services.IMutateCustomInterestsRequest|null|undefined,

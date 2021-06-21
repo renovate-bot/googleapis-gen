@@ -1667,6 +1667,7 @@ class IAMClient(metaclass=IAMClientMeta):
                    The service account sign blob response.
 
         """
+        warnings.warn("sign_blob is deprecated", warnings.DeprecationWarning)
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
@@ -1787,6 +1788,7 @@ class IAMClient(metaclass=IAMClientMeta):
                    The service account sign JWT response.
 
         """
+        warnings.warn("sign_jwt is deprecated", warnings.DeprecationWarning)
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.

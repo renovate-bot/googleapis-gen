@@ -653,7 +653,7 @@ export class LifeEventServiceClient {
   // -- Service calls --
   // -------------------
   getLifeEvent(
-      request: protos.google.ads.googleads.v8.services.IGetLifeEventRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetLifeEventRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ILifeEvent,
@@ -690,7 +690,7 @@ export class LifeEventServiceClient {
  * const [response] = await client.getLifeEvent(request);
  */
   getLifeEvent(
-      request: protos.google.ads.googleads.v8.services.IGetLifeEventRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetLifeEventRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ILifeEvent,
           protos.google.ads.googleads.v8.services.IGetLifeEventRequest|null|undefined,

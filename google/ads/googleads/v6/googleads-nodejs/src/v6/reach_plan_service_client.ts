@@ -618,7 +618,7 @@ export class ReachPlanServiceClient {
   // -- Service calls --
   // -------------------
   listPlannableLocations(
-      request: protos.google.ads.googleads.v6.services.IListPlannableLocationsRequest,
+      request?: protos.google.ads.googleads.v6.services.IListPlannableLocationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IListPlannableLocationsResponse,
@@ -653,7 +653,7 @@ export class ReachPlanServiceClient {
  * const [response] = await client.listPlannableLocations(request);
  */
   listPlannableLocations(
-      request: protos.google.ads.googleads.v6.services.IListPlannableLocationsRequest,
+      request?: protos.google.ads.googleads.v6.services.IListPlannableLocationsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IListPlannableLocationsResponse,
           protos.google.ads.googleads.v6.services.IListPlannableLocationsRequest|null|undefined,
@@ -680,7 +680,7 @@ export class ReachPlanServiceClient {
     return this.innerApiCalls.listPlannableLocations(request, options, callback);
   }
   listPlannableProducts(
-      request: protos.google.ads.googleads.v6.services.IListPlannableProductsRequest,
+      request?: protos.google.ads.googleads.v6.services.IListPlannableProductsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IListPlannableProductsResponse,
@@ -719,7 +719,7 @@ export class ReachPlanServiceClient {
  * const [response] = await client.listPlannableProducts(request);
  */
   listPlannableProducts(
-      request: protos.google.ads.googleads.v6.services.IListPlannableProductsRequest,
+      request?: protos.google.ads.googleads.v6.services.IListPlannableProductsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IListPlannableProductsResponse,
           protos.google.ads.googleads.v6.services.IListPlannableProductsRequest|null|undefined,
@@ -746,7 +746,7 @@ export class ReachPlanServiceClient {
     return this.innerApiCalls.listPlannableProducts(request, options, callback);
   }
   generateProductMixIdeas(
-      request: protos.google.ads.googleads.v6.services.IGenerateProductMixIdeasRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateProductMixIdeasRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IGenerateProductMixIdeasResponse,
@@ -798,7 +798,7 @@ export class ReachPlanServiceClient {
  * const [response] = await client.generateProductMixIdeas(request);
  */
   generateProductMixIdeas(
-      request: protos.google.ads.googleads.v6.services.IGenerateProductMixIdeasRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateProductMixIdeasRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IGenerateProductMixIdeasResponse,
           protos.google.ads.googleads.v6.services.IGenerateProductMixIdeasRequest|null|undefined,
@@ -832,7 +832,7 @@ export class ReachPlanServiceClient {
     return this.innerApiCalls.generateProductMixIdeas(request, options, callback);
   }
   generateReachForecast(
-      request: protos.google.ads.googleads.v6.services.IGenerateReachForecastRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateReachForecastRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IGenerateReachForecastResponse,
@@ -909,7 +909,7 @@ export class ReachPlanServiceClient {
  * const [response] = await client.generateReachForecast(request);
  */
   generateReachForecast(
-      request: protos.google.ads.googleads.v6.services.IGenerateReachForecastRequest,
+      request?: protos.google.ads.googleads.v6.services.IGenerateReachForecastRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IGenerateReachForecastResponse,
           protos.google.ads.googleads.v6.services.IGenerateReachForecastRequest|null|undefined,

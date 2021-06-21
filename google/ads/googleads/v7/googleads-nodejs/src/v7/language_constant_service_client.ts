@@ -635,7 +635,7 @@ export class LanguageConstantServiceClient {
   // -- Service calls --
   // -------------------
   getLanguageConstant(
-      request: protos.google.ads.googleads.v7.services.IGetLanguageConstantRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetLanguageConstantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.ILanguageConstant,
@@ -680,7 +680,7 @@ export class LanguageConstantServiceClient {
  * const [response] = await client.getLanguageConstant(request);
  */
   getLanguageConstant(
-      request: protos.google.ads.googleads.v7.services.IGetLanguageConstantRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetLanguageConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.ILanguageConstant,
           protos.google.ads.googleads.v7.services.IGetLanguageConstantRequest|null|undefined,

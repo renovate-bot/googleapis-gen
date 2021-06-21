@@ -635,7 +635,7 @@ export class VideoServiceClient {
   // -- Service calls --
   // -------------------
   getVideo(
-      request: protos.google.ads.googleads.v7.services.IGetVideoRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetVideoRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IVideo,
@@ -680,7 +680,7 @@ export class VideoServiceClient {
  * const [response] = await client.getVideo(request);
  */
   getVideo(
-      request: protos.google.ads.googleads.v7.services.IGetVideoRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetVideoRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IVideo,
           protos.google.ads.googleads.v7.services.IGetVideoRequest|null|undefined,

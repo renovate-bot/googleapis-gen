@@ -614,7 +614,7 @@ export class DisplayKeywordViewServiceClient {
   // -- Service calls --
   // -------------------
   getDisplayKeywordView(
-      request: protos.google.ads.googleads.v6.services.IGetDisplayKeywordViewRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetDisplayKeywordViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IDisplayKeywordView,
@@ -651,7 +651,7 @@ export class DisplayKeywordViewServiceClient {
  * const [response] = await client.getDisplayKeywordView(request);
  */
   getDisplayKeywordView(
-      request: protos.google.ads.googleads.v6.services.IGetDisplayKeywordViewRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetDisplayKeywordViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IDisplayKeywordView,
           protos.google.ads.googleads.v6.services.IGetDisplayKeywordViewRequest|null|undefined,

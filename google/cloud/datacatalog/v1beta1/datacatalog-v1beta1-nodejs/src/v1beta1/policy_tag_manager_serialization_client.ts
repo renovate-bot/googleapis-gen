@@ -297,7 +297,7 @@ export class PolicyTagManagerSerializationClient {
   // -- Service calls --
   // -------------------
   importTaxonomies(
-      request: protos.google.cloud.datacatalog.v1beta1.IImportTaxonomiesRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IImportTaxonomiesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IImportTaxonomiesResponse,
@@ -341,7 +341,7 @@ export class PolicyTagManagerSerializationClient {
  * const [response] = await client.importTaxonomies(request);
  */
   importTaxonomies(
-      request: protos.google.cloud.datacatalog.v1beta1.IImportTaxonomiesRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IImportTaxonomiesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IImportTaxonomiesResponse,
           protos.google.cloud.datacatalog.v1beta1.IImportTaxonomiesRequest|null|undefined,
@@ -375,7 +375,7 @@ export class PolicyTagManagerSerializationClient {
     return this.innerApiCalls.importTaxonomies(request, options, callback);
   }
   exportTaxonomies(
-      request: protos.google.cloud.datacatalog.v1beta1.IExportTaxonomiesRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IExportTaxonomiesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IExportTaxonomiesResponse,
@@ -420,7 +420,7 @@ export class PolicyTagManagerSerializationClient {
  * const [response] = await client.exportTaxonomies(request);
  */
   exportTaxonomies(
-      request: protos.google.cloud.datacatalog.v1beta1.IExportTaxonomiesRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IExportTaxonomiesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IExportTaxonomiesResponse,
           protos.google.cloud.datacatalog.v1beta1.IExportTaxonomiesRequest|null|undefined,

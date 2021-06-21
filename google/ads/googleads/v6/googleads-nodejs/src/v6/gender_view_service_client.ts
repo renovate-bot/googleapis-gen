@@ -614,7 +614,7 @@ export class GenderViewServiceClient {
   // -- Service calls --
   // -------------------
   getGenderView(
-      request: protos.google.ads.googleads.v6.services.IGetGenderViewRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetGenderViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IGenderView,
@@ -651,7 +651,7 @@ export class GenderViewServiceClient {
  * const [response] = await client.getGenderView(request);
  */
   getGenderView(
-      request: protos.google.ads.googleads.v6.services.IGetGenderViewRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetGenderViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IGenderView,
           protos.google.ads.googleads.v6.services.IGetGenderViewRequest|null|undefined,

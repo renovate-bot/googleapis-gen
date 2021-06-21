@@ -291,7 +291,7 @@ export class CloudBillingClient {
   // -- Service calls --
   // -------------------
   getBillingAccount(
-      request: protos.google.cloud.billing.v1.IGetBillingAccountRequest,
+      request?: protos.google.cloud.billing.v1.IGetBillingAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.v1.IBillingAccount,
@@ -331,7 +331,7 @@ export class CloudBillingClient {
  * const [response] = await client.getBillingAccount(request);
  */
   getBillingAccount(
-      request: protos.google.cloud.billing.v1.IGetBillingAccountRequest,
+      request?: protos.google.cloud.billing.v1.IGetBillingAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.billing.v1.IBillingAccount,
           protos.google.cloud.billing.v1.IGetBillingAccountRequest|null|undefined,
@@ -365,7 +365,7 @@ export class CloudBillingClient {
     return this.innerApiCalls.getBillingAccount(request, options, callback);
   }
   updateBillingAccount(
-      request: protos.google.cloud.billing.v1.IUpdateBillingAccountRequest,
+      request?: protos.google.cloud.billing.v1.IUpdateBillingAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.v1.IBillingAccount,
@@ -412,7 +412,7 @@ export class CloudBillingClient {
  * const [response] = await client.updateBillingAccount(request);
  */
   updateBillingAccount(
-      request: protos.google.cloud.billing.v1.IUpdateBillingAccountRequest,
+      request?: protos.google.cloud.billing.v1.IUpdateBillingAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.billing.v1.IBillingAccount,
           protos.google.cloud.billing.v1.IUpdateBillingAccountRequest|null|undefined,
@@ -446,7 +446,7 @@ export class CloudBillingClient {
     return this.innerApiCalls.updateBillingAccount(request, options, callback);
   }
   createBillingAccount(
-      request: protos.google.cloud.billing.v1.ICreateBillingAccountRequest,
+      request?: protos.google.cloud.billing.v1.ICreateBillingAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.v1.IBillingAccount,
@@ -495,7 +495,7 @@ export class CloudBillingClient {
  * const [response] = await client.createBillingAccount(request);
  */
   createBillingAccount(
-      request: protos.google.cloud.billing.v1.ICreateBillingAccountRequest,
+      request?: protos.google.cloud.billing.v1.ICreateBillingAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.billing.v1.IBillingAccount,
           protos.google.cloud.billing.v1.ICreateBillingAccountRequest|null|undefined,
@@ -522,7 +522,7 @@ export class CloudBillingClient {
     return this.innerApiCalls.createBillingAccount(request, options, callback);
   }
   getProjectBillingInfo(
-      request: protos.google.cloud.billing.v1.IGetProjectBillingInfoRequest,
+      request?: protos.google.cloud.billing.v1.IGetProjectBillingInfoRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.v1.IProjectBillingInfo,
@@ -563,7 +563,7 @@ export class CloudBillingClient {
  * const [response] = await client.getProjectBillingInfo(request);
  */
   getProjectBillingInfo(
-      request: protos.google.cloud.billing.v1.IGetProjectBillingInfoRequest,
+      request?: protos.google.cloud.billing.v1.IGetProjectBillingInfoRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.billing.v1.IProjectBillingInfo,
           protos.google.cloud.billing.v1.IGetProjectBillingInfoRequest|null|undefined,
@@ -597,7 +597,7 @@ export class CloudBillingClient {
     return this.innerApiCalls.getProjectBillingInfo(request, options, callback);
   }
   updateProjectBillingInfo(
-      request: protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest,
+      request?: protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.v1.IProjectBillingInfo,
@@ -668,7 +668,7 @@ export class CloudBillingClient {
  * const [response] = await client.updateProjectBillingInfo(request);
  */
   updateProjectBillingInfo(
-      request: protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest,
+      request?: protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.billing.v1.IProjectBillingInfo,
           protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest|null|undefined,
@@ -702,7 +702,7 @@ export class CloudBillingClient {
     return this.innerApiCalls.updateProjectBillingInfo(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -746,7 +746,7 @@ export class CloudBillingClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -780,7 +780,7 @@ export class CloudBillingClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -827,7 +827,7 @@ export class CloudBillingClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -861,7 +861,7 @@ export class CloudBillingClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -906,7 +906,7 @@ export class CloudBillingClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -941,7 +941,7 @@ export class CloudBillingClient {
   }
 
   listBillingAccounts(
-      request: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
+      request?: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.v1.IBillingAccount[],
@@ -996,7 +996,7 @@ export class CloudBillingClient {
  *   for more details and examples.
  */
   listBillingAccounts(
-      request: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
+      request?: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.billing.v1.IListBillingAccountsRequest,
           protos.google.cloud.billing.v1.IListBillingAccountsResponse|null|undefined,
@@ -1121,7 +1121,7 @@ export class CloudBillingClient {
     ) as AsyncIterable<protos.google.cloud.billing.v1.IBillingAccount>;
   }
   listProjectBillingInfo(
-      request: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
+      request?: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.v1.IProjectBillingInfo[],
@@ -1173,7 +1173,7 @@ export class CloudBillingClient {
  *   for more details and examples.
  */
   listProjectBillingInfo(
-      request: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
+      request?: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
           protos.google.cloud.billing.v1.IListProjectBillingInfoResponse|null|undefined,

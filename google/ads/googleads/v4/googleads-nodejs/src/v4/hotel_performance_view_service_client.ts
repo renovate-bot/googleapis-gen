@@ -587,7 +587,7 @@ export class HotelPerformanceViewServiceClient {
   // -- Service calls --
   // -------------------
   getHotelPerformanceView(
-      request: protos.google.ads.googleads.v4.services.IGetHotelPerformanceViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetHotelPerformanceViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.IHotelPerformanceView,
@@ -624,7 +624,7 @@ export class HotelPerformanceViewServiceClient {
  * const [response] = await client.getHotelPerformanceView(request);
  */
   getHotelPerformanceView(
-      request: protos.google.ads.googleads.v4.services.IGetHotelPerformanceViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetHotelPerformanceViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.IHotelPerformanceView,
           protos.google.ads.googleads.v4.services.IGetHotelPerformanceViewRequest|null|undefined,

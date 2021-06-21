@@ -260,7 +260,7 @@ export class PlayableLocationsClient {
   // -- Service calls --
   // -------------------
   samplePlayableLocations(
-      request: protos.google.maps.playablelocations.v3.ISamplePlayableLocationsRequest,
+      request?: protos.google.maps.playablelocations.v3.ISamplePlayableLocationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.maps.playablelocations.v3.ISamplePlayableLocationsResponse,
@@ -304,7 +304,7 @@ export class PlayableLocationsClient {
  * const [response] = await client.samplePlayableLocations(request);
  */
   samplePlayableLocations(
-      request: protos.google.maps.playablelocations.v3.ISamplePlayableLocationsRequest,
+      request?: protos.google.maps.playablelocations.v3.ISamplePlayableLocationsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.maps.playablelocations.v3.ISamplePlayableLocationsResponse,
           protos.google.maps.playablelocations.v3.ISamplePlayableLocationsRequest|null|undefined,
@@ -331,7 +331,7 @@ export class PlayableLocationsClient {
     return this.innerApiCalls.samplePlayableLocations(request, options, callback);
   }
   logPlayerReports(
-      request: protos.google.maps.playablelocations.v3.ILogPlayerReportsRequest,
+      request?: protos.google.maps.playablelocations.v3.ILogPlayerReportsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.maps.playablelocations.v3.ILogPlayerReportsResponse,
@@ -383,7 +383,7 @@ export class PlayableLocationsClient {
  * const [response] = await client.logPlayerReports(request);
  */
   logPlayerReports(
-      request: protos.google.maps.playablelocations.v3.ILogPlayerReportsRequest,
+      request?: protos.google.maps.playablelocations.v3.ILogPlayerReportsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.maps.playablelocations.v3.ILogPlayerReportsResponse,
           protos.google.maps.playablelocations.v3.ILogPlayerReportsRequest|null|undefined,
@@ -410,7 +410,7 @@ export class PlayableLocationsClient {
     return this.innerApiCalls.logPlayerReports(request, options, callback);
   }
   logImpressions(
-      request: protos.google.maps.playablelocations.v3.ILogImpressionsRequest,
+      request?: protos.google.maps.playablelocations.v3.ILogImpressionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.maps.playablelocations.v3.ILogImpressionsResponse,
@@ -463,7 +463,7 @@ export class PlayableLocationsClient {
  * const [response] = await client.logImpressions(request);
  */
   logImpressions(
-      request: protos.google.maps.playablelocations.v3.ILogImpressionsRequest,
+      request?: protos.google.maps.playablelocations.v3.ILogImpressionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.maps.playablelocations.v3.ILogImpressionsResponse,
           protos.google.maps.playablelocations.v3.ILogImpressionsRequest|null|undefined,

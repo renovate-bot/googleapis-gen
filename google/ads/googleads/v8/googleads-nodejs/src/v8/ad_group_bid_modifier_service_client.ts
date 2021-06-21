@@ -653,7 +653,7 @@ export class AdGroupBidModifierServiceClient {
   // -- Service calls --
   // -------------------
   getAdGroupBidModifier(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupBidModifierRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupBidModifierRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IAdGroupBidModifier,
@@ -698,7 +698,7 @@ export class AdGroupBidModifierServiceClient {
  * const [response] = await client.getAdGroupBidModifier(request);
  */
   getAdGroupBidModifier(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupBidModifierRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupBidModifierRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IAdGroupBidModifier,
           protos.google.ads.googleads.v8.services.IGetAdGroupBidModifierRequest|null|undefined,
@@ -732,7 +732,7 @@ export class AdGroupBidModifierServiceClient {
     return this.innerApiCalls.getAdGroupBidModifier(request, options, callback);
   }
   mutateAdGroupBidModifiers(
-      request: protos.google.ads.googleads.v8.services.IMutateAdGroupBidModifiersRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateAdGroupBidModifiersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateAdGroupBidModifiersResponse,
@@ -808,7 +808,7 @@ export class AdGroupBidModifierServiceClient {
  * const [response] = await client.mutateAdGroupBidModifiers(request);
  */
   mutateAdGroupBidModifiers(
-      request: protos.google.ads.googleads.v8.services.IMutateAdGroupBidModifiersRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateAdGroupBidModifiersRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateAdGroupBidModifiersResponse,
           protos.google.ads.googleads.v8.services.IMutateAdGroupBidModifiersRequest|null|undefined,

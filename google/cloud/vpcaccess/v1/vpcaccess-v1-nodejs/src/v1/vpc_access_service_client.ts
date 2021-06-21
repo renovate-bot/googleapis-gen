@@ -320,7 +320,7 @@ export class VpcAccessServiceClient {
   // -- Service calls --
   // -------------------
   getConnector(
-      request: protos.google.cloud.vpcaccess.v1.IGetConnectorRequest,
+      request?: protos.google.cloud.vpcaccess.v1.IGetConnectorRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vpcaccess.v1.IConnector,
@@ -358,7 +358,7 @@ export class VpcAccessServiceClient {
  * const [response] = await client.getConnector(request);
  */
   getConnector(
-      request: protos.google.cloud.vpcaccess.v1.IGetConnectorRequest,
+      request?: protos.google.cloud.vpcaccess.v1.IGetConnectorRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.vpcaccess.v1.IConnector,
           protos.google.cloud.vpcaccess.v1.IGetConnectorRequest|null|undefined,
@@ -393,7 +393,7 @@ export class VpcAccessServiceClient {
   }
 
   createConnector(
-      request: protos.google.cloud.vpcaccess.v1.ICreateConnectorRequest,
+      request?: protos.google.cloud.vpcaccess.v1.ICreateConnectorRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.vpcaccess.v1.IConnector, protos.google.cloud.vpcaccess.v1.IOperationMetadata>,
@@ -438,7 +438,7 @@ export class VpcAccessServiceClient {
  * const [response] = await operation.promise();
  */
   createConnector(
-      request: protos.google.cloud.vpcaccess.v1.ICreateConnectorRequest,
+      request?: protos.google.cloud.vpcaccess.v1.ICreateConnectorRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.vpcaccess.v1.IConnector, protos.google.cloud.vpcaccess.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -493,7 +493,7 @@ export class VpcAccessServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.vpcaccess.v1.Connector, protos.google.cloud.vpcaccess.v1.OperationMetadata>;
   }
   deleteConnector(
-      request: protos.google.cloud.vpcaccess.v1.IDeleteConnectorRequest,
+      request?: protos.google.cloud.vpcaccess.v1.IDeleteConnectorRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.vpcaccess.v1.IOperationMetadata>,
@@ -534,7 +534,7 @@ export class VpcAccessServiceClient {
  * const [response] = await operation.promise();
  */
   deleteConnector(
-      request: protos.google.cloud.vpcaccess.v1.IDeleteConnectorRequest,
+      request?: protos.google.cloud.vpcaccess.v1.IDeleteConnectorRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.vpcaccess.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -589,7 +589,7 @@ export class VpcAccessServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.vpcaccess.v1.OperationMetadata>;
   }
   listConnectors(
-      request: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
+      request?: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.vpcaccess.v1.IConnector[],
@@ -634,7 +634,7 @@ export class VpcAccessServiceClient {
  *   for more details and examples.
  */
   listConnectors(
-      request: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
+      request?: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
           protos.google.cloud.vpcaccess.v1.IListConnectorsResponse|null|undefined,

@@ -357,7 +357,7 @@ export class TpuClient {
   // -- Service calls --
   // -------------------
   getNode(
-      request: protos.google.cloud.tpu.v1.IGetNodeRequest,
+      request?: protos.google.cloud.tpu.v1.IGetNodeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.tpu.v1.INode,
@@ -394,7 +394,7 @@ export class TpuClient {
  * const [response] = await client.getNode(request);
  */
   getNode(
-      request: protos.google.cloud.tpu.v1.IGetNodeRequest,
+      request?: protos.google.cloud.tpu.v1.IGetNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.tpu.v1.INode,
           protos.google.cloud.tpu.v1.IGetNodeRequest|null|undefined,
@@ -428,7 +428,7 @@ export class TpuClient {
     return this.innerApiCalls.getNode(request, options, callback);
   }
   getTensorFlowVersion(
-      request: protos.google.cloud.tpu.v1.IGetTensorFlowVersionRequest,
+      request?: protos.google.cloud.tpu.v1.IGetTensorFlowVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.tpu.v1.ITensorFlowVersion,
@@ -465,7 +465,7 @@ export class TpuClient {
  * const [response] = await client.getTensorFlowVersion(request);
  */
   getTensorFlowVersion(
-      request: protos.google.cloud.tpu.v1.IGetTensorFlowVersionRequest,
+      request?: protos.google.cloud.tpu.v1.IGetTensorFlowVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.tpu.v1.ITensorFlowVersion,
           protos.google.cloud.tpu.v1.IGetTensorFlowVersionRequest|null|undefined,
@@ -499,7 +499,7 @@ export class TpuClient {
     return this.innerApiCalls.getTensorFlowVersion(request, options, callback);
   }
   getAcceleratorType(
-      request: protos.google.cloud.tpu.v1.IGetAcceleratorTypeRequest,
+      request?: protos.google.cloud.tpu.v1.IGetAcceleratorTypeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.tpu.v1.IAcceleratorType,
@@ -536,7 +536,7 @@ export class TpuClient {
  * const [response] = await client.getAcceleratorType(request);
  */
   getAcceleratorType(
-      request: protos.google.cloud.tpu.v1.IGetAcceleratorTypeRequest,
+      request?: protos.google.cloud.tpu.v1.IGetAcceleratorTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.tpu.v1.IAcceleratorType,
           protos.google.cloud.tpu.v1.IGetAcceleratorTypeRequest|null|undefined,
@@ -571,7 +571,7 @@ export class TpuClient {
   }
 
   createNode(
-      request: protos.google.cloud.tpu.v1.ICreateNodeRequest,
+      request?: protos.google.cloud.tpu.v1.ICreateNodeRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
@@ -615,7 +615,7 @@ export class TpuClient {
  * const [response] = await operation.promise();
  */
   createNode(
-      request: protos.google.cloud.tpu.v1.ICreateNodeRequest,
+      request?: protos.google.cloud.tpu.v1.ICreateNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -670,7 +670,7 @@ export class TpuClient {
     return decodeOperation as LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>;
   }
   deleteNode(
-      request: protos.google.cloud.tpu.v1.IDeleteNodeRequest,
+      request?: protos.google.cloud.tpu.v1.IDeleteNodeRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
@@ -710,7 +710,7 @@ export class TpuClient {
  * const [response] = await operation.promise();
  */
   deleteNode(
-      request: protos.google.cloud.tpu.v1.IDeleteNodeRequest,
+      request?: protos.google.cloud.tpu.v1.IDeleteNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -765,7 +765,7 @@ export class TpuClient {
     return decodeOperation as LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>;
   }
   reimageNode(
-      request: protos.google.cloud.tpu.v1.IReimageNodeRequest,
+      request?: protos.google.cloud.tpu.v1.IReimageNodeRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
@@ -807,7 +807,7 @@ export class TpuClient {
  * const [response] = await operation.promise();
  */
   reimageNode(
-      request: protos.google.cloud.tpu.v1.IReimageNodeRequest,
+      request?: protos.google.cloud.tpu.v1.IReimageNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -862,7 +862,7 @@ export class TpuClient {
     return decodeOperation as LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>;
   }
   stopNode(
-      request: protos.google.cloud.tpu.v1.IStopNodeRequest,
+      request?: protos.google.cloud.tpu.v1.IStopNodeRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
@@ -902,7 +902,7 @@ export class TpuClient {
  * const [response] = await operation.promise();
  */
   stopNode(
-      request: protos.google.cloud.tpu.v1.IStopNodeRequest,
+      request?: protos.google.cloud.tpu.v1.IStopNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -957,7 +957,7 @@ export class TpuClient {
     return decodeOperation as LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>;
   }
   startNode(
-      request: protos.google.cloud.tpu.v1.IStartNodeRequest,
+      request?: protos.google.cloud.tpu.v1.IStartNodeRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
@@ -997,7 +997,7 @@ export class TpuClient {
  * const [response] = await operation.promise();
  */
   startNode(
-      request: protos.google.cloud.tpu.v1.IStartNodeRequest,
+      request?: protos.google.cloud.tpu.v1.IStartNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1052,7 +1052,7 @@ export class TpuClient {
     return decodeOperation as LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>;
   }
   listNodes(
-      request: protos.google.cloud.tpu.v1.IListNodesRequest,
+      request?: protos.google.cloud.tpu.v1.IListNodesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.tpu.v1.INode[],
@@ -1097,7 +1097,7 @@ export class TpuClient {
  *   for more details and examples.
  */
   listNodes(
-      request: protos.google.cloud.tpu.v1.IListNodesRequest,
+      request?: protos.google.cloud.tpu.v1.IListNodesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.tpu.v1.IListNodesRequest,
           protos.google.cloud.tpu.v1.IListNodesResponse|null|undefined,
@@ -1227,7 +1227,7 @@ export class TpuClient {
     ) as AsyncIterable<protos.google.cloud.tpu.v1.INode>;
   }
   listTensorFlowVersions(
-      request: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
+      request?: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.tpu.v1.ITensorFlowVersion[],
@@ -1276,7 +1276,7 @@ export class TpuClient {
  *   for more details and examples.
  */
   listTensorFlowVersions(
-      request: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
+      request?: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
           protos.google.cloud.tpu.v1.IListTensorFlowVersionsResponse|null|undefined,
@@ -1414,7 +1414,7 @@ export class TpuClient {
     ) as AsyncIterable<protos.google.cloud.tpu.v1.ITensorFlowVersion>;
   }
   listAcceleratorTypes(
-      request: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
+      request?: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.tpu.v1.IAcceleratorType[],
@@ -1463,7 +1463,7 @@ export class TpuClient {
  *   for more details and examples.
  */
   listAcceleratorTypes(
-      request: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
+      request?: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
           protos.google.cloud.tpu.v1.IListAcceleratorTypesResponse|null|undefined,

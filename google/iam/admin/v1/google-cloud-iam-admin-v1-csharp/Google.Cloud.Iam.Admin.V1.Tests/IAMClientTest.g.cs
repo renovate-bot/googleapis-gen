@@ -1428,7 +1428,9 @@ namespace Google.Cloud.Iam.Admin.V1.Tests
             };
             mockGrpcClient.Setup(x => x.SignBlob(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             IAMClient client = new IAMClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             SignBlobResponse response = client.SignBlob(request);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
         }
@@ -1453,9 +1455,13 @@ namespace Google.Cloud.Iam.Admin.V1.Tests
             };
             mockGrpcClient.Setup(x => x.SignBlobAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<SignBlobResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             IAMClient client = new IAMClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             SignBlobResponse responseCallSettings = await client.SignBlobAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCallSettings);
+#pragma warning disable CS0612
             SignBlobResponse responseCancellationToken = await client.SignBlobAsync(request, st::CancellationToken.None);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCancellationToken);
             mockGrpcClient.VerifyAll();
         }
@@ -1596,7 +1602,9 @@ namespace Google.Cloud.Iam.Admin.V1.Tests
             };
             mockGrpcClient.Setup(x => x.SignJwt(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             IAMClient client = new IAMClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             SignJwtResponse response = client.SignJwt(request);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
         }
@@ -1621,9 +1629,13 @@ namespace Google.Cloud.Iam.Admin.V1.Tests
             };
             mockGrpcClient.Setup(x => x.SignJwtAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<SignJwtResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             IAMClient client = new IAMClientImpl(mockGrpcClient.Object, null);
+#pragma warning disable CS0612
             SignJwtResponse responseCallSettings = await client.SignJwtAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCallSettings);
+#pragma warning disable CS0612
             SignJwtResponse responseCancellationToken = await client.SignJwtAsync(request, st::CancellationToken.None);
+#pragma warning restore CS0612
             xunit::Assert.Same(expectedResponse, responseCancellationToken);
             mockGrpcClient.VerifyAll();
         }

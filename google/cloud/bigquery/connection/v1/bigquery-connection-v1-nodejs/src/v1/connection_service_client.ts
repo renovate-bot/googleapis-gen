@@ -287,7 +287,7 @@ export class ConnectionServiceClient {
   // -- Service calls --
   // -------------------
   createConnection(
-      request: protos.google.cloud.bigquery.connection.v1.ICreateConnectionRequest,
+      request?: protos.google.cloud.bigquery.connection.v1.ICreateConnectionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.connection.v1.IConnection,
@@ -329,7 +329,7 @@ export class ConnectionServiceClient {
  * const [response] = await client.createConnection(request);
  */
   createConnection(
-      request: protos.google.cloud.bigquery.connection.v1.ICreateConnectionRequest,
+      request?: protos.google.cloud.bigquery.connection.v1.ICreateConnectionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.connection.v1.IConnection,
           protos.google.cloud.bigquery.connection.v1.ICreateConnectionRequest|null|undefined,
@@ -363,7 +363,7 @@ export class ConnectionServiceClient {
     return this.innerApiCalls.createConnection(request, options, callback);
   }
   getConnection(
-      request: protos.google.cloud.bigquery.connection.v1.IGetConnectionRequest,
+      request?: protos.google.cloud.bigquery.connection.v1.IGetConnectionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.connection.v1.IConnection,
@@ -401,7 +401,7 @@ export class ConnectionServiceClient {
  * const [response] = await client.getConnection(request);
  */
   getConnection(
-      request: protos.google.cloud.bigquery.connection.v1.IGetConnectionRequest,
+      request?: protos.google.cloud.bigquery.connection.v1.IGetConnectionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.connection.v1.IConnection,
           protos.google.cloud.bigquery.connection.v1.IGetConnectionRequest|null|undefined,
@@ -435,7 +435,7 @@ export class ConnectionServiceClient {
     return this.innerApiCalls.getConnection(request, options, callback);
   }
   updateConnection(
-      request: protos.google.cloud.bigquery.connection.v1.IUpdateConnectionRequest,
+      request?: protos.google.cloud.bigquery.connection.v1.IUpdateConnectionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.connection.v1.IConnection,
@@ -478,7 +478,7 @@ export class ConnectionServiceClient {
  * const [response] = await client.updateConnection(request);
  */
   updateConnection(
-      request: protos.google.cloud.bigquery.connection.v1.IUpdateConnectionRequest,
+      request?: protos.google.cloud.bigquery.connection.v1.IUpdateConnectionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.connection.v1.IConnection,
           protos.google.cloud.bigquery.connection.v1.IUpdateConnectionRequest|null|undefined,
@@ -512,7 +512,7 @@ export class ConnectionServiceClient {
     return this.innerApiCalls.updateConnection(request, options, callback);
   }
   deleteConnection(
-      request: protos.google.cloud.bigquery.connection.v1.IDeleteConnectionRequest,
+      request?: protos.google.cloud.bigquery.connection.v1.IDeleteConnectionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -550,7 +550,7 @@ export class ConnectionServiceClient {
  * const [response] = await client.deleteConnection(request);
  */
   deleteConnection(
-      request: protos.google.cloud.bigquery.connection.v1.IDeleteConnectionRequest,
+      request?: protos.google.cloud.bigquery.connection.v1.IDeleteConnectionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.connection.v1.IDeleteConnectionRequest|null|undefined,
@@ -584,7 +584,7 @@ export class ConnectionServiceClient {
     return this.innerApiCalls.deleteConnection(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -627,7 +627,7 @@ export class ConnectionServiceClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -661,7 +661,7 @@ export class ConnectionServiceClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -707,7 +707,7 @@ export class ConnectionServiceClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -741,7 +741,7 @@ export class ConnectionServiceClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -790,7 +790,7 @@ export class ConnectionServiceClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -825,7 +825,7 @@ export class ConnectionServiceClient {
   }
 
   listConnections(
-      request: protos.google.cloud.bigquery.connection.v1.IListConnectionsRequest,
+      request?: protos.google.cloud.bigquery.connection.v1.IListConnectionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.connection.v1.IConnection[],
@@ -871,7 +871,7 @@ export class ConnectionServiceClient {
  *   for more details and examples.
  */
   listConnections(
-      request: protos.google.cloud.bigquery.connection.v1.IListConnectionsRequest,
+      request?: protos.google.cloud.bigquery.connection.v1.IListConnectionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.bigquery.connection.v1.IListConnectionsRequest,
           protos.google.cloud.bigquery.connection.v1.IListConnectionsResponse|null|undefined,

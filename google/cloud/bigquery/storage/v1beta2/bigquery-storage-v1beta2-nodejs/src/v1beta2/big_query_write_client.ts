@@ -295,7 +295,7 @@ export class BigQueryWriteClient {
   // -- Service calls --
   // -------------------
   createWriteStream(
-      request: protos.google.cloud.bigquery.storage.v1beta2.ICreateWriteStreamRequest,
+      request?: protos.google.cloud.bigquery.storage.v1beta2.ICreateWriteStreamRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.storage.v1beta2.IWriteStream,
@@ -340,7 +340,7 @@ export class BigQueryWriteClient {
  * const [response] = await client.createWriteStream(request);
  */
   createWriteStream(
-      request: protos.google.cloud.bigquery.storage.v1beta2.ICreateWriteStreamRequest,
+      request?: protos.google.cloud.bigquery.storage.v1beta2.ICreateWriteStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.storage.v1beta2.IWriteStream,
           protos.google.cloud.bigquery.storage.v1beta2.ICreateWriteStreamRequest|null|undefined,
@@ -374,7 +374,7 @@ export class BigQueryWriteClient {
     return this.innerApiCalls.createWriteStream(request, options, callback);
   }
   getWriteStream(
-      request: protos.google.cloud.bigquery.storage.v1beta2.IGetWriteStreamRequest,
+      request?: protos.google.cloud.bigquery.storage.v1beta2.IGetWriteStreamRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.storage.v1beta2.IWriteStream,
@@ -412,7 +412,7 @@ export class BigQueryWriteClient {
  * const [response] = await client.getWriteStream(request);
  */
   getWriteStream(
-      request: protos.google.cloud.bigquery.storage.v1beta2.IGetWriteStreamRequest,
+      request?: protos.google.cloud.bigquery.storage.v1beta2.IGetWriteStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.storage.v1beta2.IWriteStream,
           protos.google.cloud.bigquery.storage.v1beta2.IGetWriteStreamRequest|null|undefined,
@@ -446,7 +446,7 @@ export class BigQueryWriteClient {
     return this.innerApiCalls.getWriteStream(request, options, callback);
   }
   finalizeWriteStream(
-      request: protos.google.cloud.bigquery.storage.v1beta2.IFinalizeWriteStreamRequest,
+      request?: protos.google.cloud.bigquery.storage.v1beta2.IFinalizeWriteStreamRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.storage.v1beta2.IFinalizeWriteStreamResponse,
@@ -485,7 +485,7 @@ export class BigQueryWriteClient {
  * const [response] = await client.finalizeWriteStream(request);
  */
   finalizeWriteStream(
-      request: protos.google.cloud.bigquery.storage.v1beta2.IFinalizeWriteStreamRequest,
+      request?: protos.google.cloud.bigquery.storage.v1beta2.IFinalizeWriteStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.storage.v1beta2.IFinalizeWriteStreamResponse,
           protos.google.cloud.bigquery.storage.v1beta2.IFinalizeWriteStreamRequest|null|undefined,
@@ -519,7 +519,7 @@ export class BigQueryWriteClient {
     return this.innerApiCalls.finalizeWriteStream(request, options, callback);
   }
   batchCommitWriteStreams(
-      request: protos.google.cloud.bigquery.storage.v1beta2.IBatchCommitWriteStreamsRequest,
+      request?: protos.google.cloud.bigquery.storage.v1beta2.IBatchCommitWriteStreamsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.storage.v1beta2.IBatchCommitWriteStreamsResponse,
@@ -563,7 +563,7 @@ export class BigQueryWriteClient {
  * const [response] = await client.batchCommitWriteStreams(request);
  */
   batchCommitWriteStreams(
-      request: protos.google.cloud.bigquery.storage.v1beta2.IBatchCommitWriteStreamsRequest,
+      request?: protos.google.cloud.bigquery.storage.v1beta2.IBatchCommitWriteStreamsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.storage.v1beta2.IBatchCommitWriteStreamsResponse,
           protos.google.cloud.bigquery.storage.v1beta2.IBatchCommitWriteStreamsRequest|null|undefined,
@@ -597,7 +597,7 @@ export class BigQueryWriteClient {
     return this.innerApiCalls.batchCommitWriteStreams(request, options, callback);
   }
   flushRows(
-      request: protos.google.cloud.bigquery.storage.v1beta2.IFlushRowsRequest,
+      request?: protos.google.cloud.bigquery.storage.v1beta2.IFlushRowsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.storage.v1beta2.IFlushRowsResponse,
@@ -642,7 +642,7 @@ export class BigQueryWriteClient {
  * const [response] = await client.flushRows(request);
  */
   flushRows(
-      request: protos.google.cloud.bigquery.storage.v1beta2.IFlushRowsRequest,
+      request?: protos.google.cloud.bigquery.storage.v1beta2.IFlushRowsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.storage.v1beta2.IFlushRowsResponse,
           protos.google.cloud.bigquery.storage.v1beta2.IFlushRowsRequest|null|undefined,

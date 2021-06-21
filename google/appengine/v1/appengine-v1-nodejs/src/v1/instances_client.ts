@@ -317,7 +317,7 @@ export class InstancesClient {
   // -- Service calls --
   // -------------------
   getInstance(
-      request: protos.google.appengine.v1.IGetInstanceRequest,
+      request?: protos.google.appengine.v1.IGetInstanceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IInstance,
@@ -355,7 +355,7 @@ export class InstancesClient {
  * const [response] = await client.getInstance(request);
  */
   getInstance(
-      request: protos.google.appengine.v1.IGetInstanceRequest,
+      request?: protos.google.appengine.v1.IGetInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.appengine.v1.IInstance,
           protos.google.appengine.v1.IGetInstanceRequest|null|undefined,
@@ -390,7 +390,7 @@ export class InstancesClient {
   }
 
   deleteInstance(
-      request: protos.google.appengine.v1.IDeleteInstanceRequest,
+      request?: protos.google.appengine.v1.IDeleteInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.appengine.v1.IOperationMetadataV1>,
@@ -442,7 +442,7 @@ export class InstancesClient {
  * const [response] = await operation.promise();
  */
   deleteInstance(
-      request: protos.google.appengine.v1.IDeleteInstanceRequest,
+      request?: protos.google.appengine.v1.IDeleteInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.appengine.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -497,7 +497,7 @@ export class InstancesClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.appengine.v1.OperationMetadataV1>;
   }
   debugInstance(
-      request: protos.google.appengine.v1.IDebugInstanceRequest,
+      request?: protos.google.appengine.v1.IDebugInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.appengine.v1.IInstance, protos.google.appengine.v1.IOperationMetadataV1>,
@@ -553,7 +553,7 @@ export class InstancesClient {
  * const [response] = await operation.promise();
  */
   debugInstance(
-      request: protos.google.appengine.v1.IDebugInstanceRequest,
+      request?: protos.google.appengine.v1.IDebugInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.appengine.v1.IInstance, protos.google.appengine.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -608,7 +608,7 @@ export class InstancesClient {
     return decodeOperation as LROperation<protos.google.appengine.v1.Instance, protos.google.appengine.v1.OperationMetadataV1>;
   }
   listInstances(
-      request: protos.google.appengine.v1.IListInstancesRequest,
+      request?: protos.google.appengine.v1.IListInstancesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IInstance[],
@@ -657,7 +657,7 @@ export class InstancesClient {
  *   for more details and examples.
  */
   listInstances(
-      request: protos.google.appengine.v1.IListInstancesRequest,
+      request?: protos.google.appengine.v1.IListInstancesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.appengine.v1.IListInstancesRequest,
           protos.google.appengine.v1.IListInstancesResponse|null|undefined,

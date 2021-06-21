@@ -264,7 +264,7 @@ export class LanguageServiceClient {
   // -- Service calls --
   // -------------------
   analyzeSentiment(
-      request: protos.google.cloud.language.v1.IAnalyzeSentimentRequest,
+      request?: protos.google.cloud.language.v1.IAnalyzeSentimentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.language.v1.IAnalyzeSentimentResponse,
@@ -303,7 +303,7 @@ export class LanguageServiceClient {
  * const [response] = await client.analyzeSentiment(request);
  */
   analyzeSentiment(
-      request: protos.google.cloud.language.v1.IAnalyzeSentimentRequest,
+      request?: protos.google.cloud.language.v1.IAnalyzeSentimentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.language.v1.IAnalyzeSentimentResponse,
           protos.google.cloud.language.v1.IAnalyzeSentimentRequest|null|undefined,
@@ -330,7 +330,7 @@ export class LanguageServiceClient {
     return this.innerApiCalls.analyzeSentiment(request, options, callback);
   }
   analyzeEntities(
-      request: protos.google.cloud.language.v1.IAnalyzeEntitiesRequest,
+      request?: protos.google.cloud.language.v1.IAnalyzeEntitiesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.language.v1.IAnalyzeEntitiesResponse,
@@ -371,7 +371,7 @@ export class LanguageServiceClient {
  * const [response] = await client.analyzeEntities(request);
  */
   analyzeEntities(
-      request: protos.google.cloud.language.v1.IAnalyzeEntitiesRequest,
+      request?: protos.google.cloud.language.v1.IAnalyzeEntitiesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.language.v1.IAnalyzeEntitiesResponse,
           protos.google.cloud.language.v1.IAnalyzeEntitiesRequest|null|undefined,
@@ -398,7 +398,7 @@ export class LanguageServiceClient {
     return this.innerApiCalls.analyzeEntities(request, options, callback);
   }
   analyzeEntitySentiment(
-      request: protos.google.cloud.language.v1.IAnalyzeEntitySentimentRequest,
+      request?: protos.google.cloud.language.v1.IAnalyzeEntitySentimentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.language.v1.IAnalyzeEntitySentimentResponse,
@@ -438,7 +438,7 @@ export class LanguageServiceClient {
  * const [response] = await client.analyzeEntitySentiment(request);
  */
   analyzeEntitySentiment(
-      request: protos.google.cloud.language.v1.IAnalyzeEntitySentimentRequest,
+      request?: protos.google.cloud.language.v1.IAnalyzeEntitySentimentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.language.v1.IAnalyzeEntitySentimentResponse,
           protos.google.cloud.language.v1.IAnalyzeEntitySentimentRequest|null|undefined,
@@ -465,7 +465,7 @@ export class LanguageServiceClient {
     return this.innerApiCalls.analyzeEntitySentiment(request, options, callback);
   }
   analyzeSyntax(
-      request: protos.google.cloud.language.v1.IAnalyzeSyntaxRequest,
+      request?: protos.google.cloud.language.v1.IAnalyzeSyntaxRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.language.v1.IAnalyzeSyntaxResponse,
@@ -506,7 +506,7 @@ export class LanguageServiceClient {
  * const [response] = await client.analyzeSyntax(request);
  */
   analyzeSyntax(
-      request: protos.google.cloud.language.v1.IAnalyzeSyntaxRequest,
+      request?: protos.google.cloud.language.v1.IAnalyzeSyntaxRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.language.v1.IAnalyzeSyntaxResponse,
           protos.google.cloud.language.v1.IAnalyzeSyntaxRequest|null|undefined,
@@ -533,7 +533,7 @@ export class LanguageServiceClient {
     return this.innerApiCalls.analyzeSyntax(request, options, callback);
   }
   classifyText(
-      request: protos.google.cloud.language.v1.IClassifyTextRequest,
+      request?: protos.google.cloud.language.v1.IClassifyTextRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.language.v1.IClassifyTextResponse,
@@ -570,7 +570,7 @@ export class LanguageServiceClient {
  * const [response] = await client.classifyText(request);
  */
   classifyText(
-      request: protos.google.cloud.language.v1.IClassifyTextRequest,
+      request?: protos.google.cloud.language.v1.IClassifyTextRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.language.v1.IClassifyTextResponse,
           protos.google.cloud.language.v1.IClassifyTextRequest|null|undefined,
@@ -597,7 +597,7 @@ export class LanguageServiceClient {
     return this.innerApiCalls.classifyText(request, options, callback);
   }
   annotateText(
-      request: protos.google.cloud.language.v1.IAnnotateTextRequest,
+      request?: protos.google.cloud.language.v1.IAnnotateTextRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.language.v1.IAnnotateTextResponse,
@@ -639,7 +639,7 @@ export class LanguageServiceClient {
  * const [response] = await client.annotateText(request);
  */
   annotateText(
-      request: protos.google.cloud.language.v1.IAnnotateTextRequest,
+      request?: protos.google.cloud.language.v1.IAnnotateTextRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.language.v1.IAnnotateTextResponse,
           protos.google.cloud.language.v1.IAnnotateTextRequest|null|undefined,

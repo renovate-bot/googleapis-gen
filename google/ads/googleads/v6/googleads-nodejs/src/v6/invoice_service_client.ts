@@ -614,7 +614,7 @@ export class InvoiceServiceClient {
   // -- Service calls --
   // -------------------
   listInvoices(
-      request: protos.google.ads.googleads.v6.services.IListInvoicesRequest,
+      request?: protos.google.ads.googleads.v6.services.IListInvoicesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IListInvoicesResponse,
@@ -660,7 +660,7 @@ export class InvoiceServiceClient {
  * const [response] = await client.listInvoices(request);
  */
   listInvoices(
-      request: protos.google.ads.googleads.v6.services.IListInvoicesRequest,
+      request?: protos.google.ads.googleads.v6.services.IListInvoicesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IListInvoicesResponse,
           protos.google.ads.googleads.v6.services.IListInvoicesRequest|null|undefined,

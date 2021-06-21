@@ -327,7 +327,7 @@ export class RecommenderClient {
   // -- Service calls --
   // -------------------
   getInsight(
-      request: protos.google.cloud.recommender.v1beta1.IGetInsightRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IGetInsightRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommender.v1beta1.IInsight,
@@ -365,7 +365,7 @@ export class RecommenderClient {
  * const [response] = await client.getInsight(request);
  */
   getInsight(
-      request: protos.google.cloud.recommender.v1beta1.IGetInsightRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IGetInsightRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.recommender.v1beta1.IInsight,
           protos.google.cloud.recommender.v1beta1.IGetInsightRequest|null|undefined,
@@ -399,7 +399,7 @@ export class RecommenderClient {
     return this.innerApiCalls.getInsight(request, options, callback);
   }
   markInsightAccepted(
-      request: protos.google.cloud.recommender.v1beta1.IMarkInsightAcceptedRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IMarkInsightAcceptedRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommender.v1beta1.IInsight,
@@ -446,7 +446,7 @@ export class RecommenderClient {
  * const [response] = await client.markInsightAccepted(request);
  */
   markInsightAccepted(
-      request: protos.google.cloud.recommender.v1beta1.IMarkInsightAcceptedRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IMarkInsightAcceptedRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.recommender.v1beta1.IInsight,
           protos.google.cloud.recommender.v1beta1.IMarkInsightAcceptedRequest|null|undefined,
@@ -480,7 +480,7 @@ export class RecommenderClient {
     return this.innerApiCalls.markInsightAccepted(request, options, callback);
   }
   getRecommendation(
-      request: protos.google.cloud.recommender.v1beta1.IGetRecommendationRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IGetRecommendationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommender.v1beta1.IRecommendation,
@@ -518,7 +518,7 @@ export class RecommenderClient {
  * const [response] = await client.getRecommendation(request);
  */
   getRecommendation(
-      request: protos.google.cloud.recommender.v1beta1.IGetRecommendationRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IGetRecommendationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.recommender.v1beta1.IRecommendation,
           protos.google.cloud.recommender.v1beta1.IGetRecommendationRequest|null|undefined,
@@ -552,7 +552,7 @@ export class RecommenderClient {
     return this.innerApiCalls.getRecommendation(request, options, callback);
   }
   markRecommendationClaimed(
-      request: protos.google.cloud.recommender.v1beta1.IMarkRecommendationClaimedRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IMarkRecommendationClaimedRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommender.v1beta1.IRecommendation,
@@ -605,7 +605,7 @@ export class RecommenderClient {
  * const [response] = await client.markRecommendationClaimed(request);
  */
   markRecommendationClaimed(
-      request: protos.google.cloud.recommender.v1beta1.IMarkRecommendationClaimedRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IMarkRecommendationClaimedRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.recommender.v1beta1.IRecommendation,
           protos.google.cloud.recommender.v1beta1.IMarkRecommendationClaimedRequest|null|undefined,
@@ -639,7 +639,7 @@ export class RecommenderClient {
     return this.innerApiCalls.markRecommendationClaimed(request, options, callback);
   }
   markRecommendationSucceeded(
-      request: protos.google.cloud.recommender.v1beta1.IMarkRecommendationSucceededRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IMarkRecommendationSucceededRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommender.v1beta1.IRecommendation,
@@ -693,7 +693,7 @@ export class RecommenderClient {
  * const [response] = await client.markRecommendationSucceeded(request);
  */
   markRecommendationSucceeded(
-      request: protos.google.cloud.recommender.v1beta1.IMarkRecommendationSucceededRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IMarkRecommendationSucceededRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.recommender.v1beta1.IRecommendation,
           protos.google.cloud.recommender.v1beta1.IMarkRecommendationSucceededRequest|null|undefined,
@@ -727,7 +727,7 @@ export class RecommenderClient {
     return this.innerApiCalls.markRecommendationSucceeded(request, options, callback);
   }
   markRecommendationFailed(
-      request: protos.google.cloud.recommender.v1beta1.IMarkRecommendationFailedRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IMarkRecommendationFailedRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommender.v1beta1.IRecommendation,
@@ -781,7 +781,7 @@ export class RecommenderClient {
  * const [response] = await client.markRecommendationFailed(request);
  */
   markRecommendationFailed(
-      request: protos.google.cloud.recommender.v1beta1.IMarkRecommendationFailedRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IMarkRecommendationFailedRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.recommender.v1beta1.IRecommendation,
           protos.google.cloud.recommender.v1beta1.IMarkRecommendationFailedRequest|null|undefined,
@@ -816,7 +816,7 @@ export class RecommenderClient {
   }
 
   listInsights(
-      request: protos.google.cloud.recommender.v1beta1.IListInsightsRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IListInsightsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommender.v1beta1.IInsight[],
@@ -880,7 +880,7 @@ export class RecommenderClient {
  *   for more details and examples.
  */
   listInsights(
-      request: protos.google.cloud.recommender.v1beta1.IListInsightsRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IListInsightsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.recommender.v1beta1.IListInsightsRequest,
           protos.google.cloud.recommender.v1beta1.IListInsightsResponse|null|undefined,
@@ -1046,7 +1046,7 @@ export class RecommenderClient {
     ) as AsyncIterable<protos.google.cloud.recommender.v1beta1.IInsight>;
   }
   listRecommendations(
-      request: protos.google.cloud.recommender.v1beta1.IListRecommendationsRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IListRecommendationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommender.v1beta1.IRecommendation[],
@@ -1110,7 +1110,7 @@ export class RecommenderClient {
  *   for more details and examples.
  */
   listRecommendations(
-      request: protos.google.cloud.recommender.v1beta1.IListRecommendationsRequest,
+      request?: protos.google.cloud.recommender.v1beta1.IListRecommendationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.recommender.v1beta1.IListRecommendationsRequest,
           protos.google.cloud.recommender.v1beta1.IListRecommendationsResponse|null|undefined,

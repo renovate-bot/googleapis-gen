@@ -314,7 +314,7 @@ export class ApplicationsClient {
   // -- Service calls --
   // -------------------
   getApplication(
-      request: protos.google.appengine.v1.IGetApplicationRequest,
+      request?: protos.google.appengine.v1.IGetApplicationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IApplication,
@@ -351,7 +351,7 @@ export class ApplicationsClient {
  * const [response] = await client.getApplication(request);
  */
   getApplication(
-      request: protos.google.appengine.v1.IGetApplicationRequest,
+      request?: protos.google.appengine.v1.IGetApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.appengine.v1.IApplication,
           protos.google.appengine.v1.IGetApplicationRequest|null|undefined,
@@ -386,7 +386,7 @@ export class ApplicationsClient {
   }
 
   createApplication(
-      request: protos.google.appengine.v1.ICreateApplicationRequest,
+      request?: protos.google.appengine.v1.ICreateApplicationRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.appengine.v1.IApplication, protos.google.appengine.v1.IOperationMetadataV1>,
@@ -432,7 +432,7 @@ export class ApplicationsClient {
  * const [response] = await operation.promise();
  */
   createApplication(
-      request: protos.google.appengine.v1.ICreateApplicationRequest,
+      request?: protos.google.appengine.v1.ICreateApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.appengine.v1.IApplication, protos.google.appengine.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -480,7 +480,7 @@ export class ApplicationsClient {
     return decodeOperation as LROperation<protos.google.appengine.v1.Application, protos.google.appengine.v1.OperationMetadataV1>;
   }
   updateApplication(
-      request: protos.google.appengine.v1.IUpdateApplicationRequest,
+      request?: protos.google.appengine.v1.IUpdateApplicationRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.appengine.v1.IApplication, protos.google.appengine.v1.IOperationMetadataV1>,
@@ -528,7 +528,7 @@ export class ApplicationsClient {
  * const [response] = await operation.promise();
  */
   updateApplication(
-      request: protos.google.appengine.v1.IUpdateApplicationRequest,
+      request?: protos.google.appengine.v1.IUpdateApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.appengine.v1.IApplication, protos.google.appengine.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -583,7 +583,7 @@ export class ApplicationsClient {
     return decodeOperation as LROperation<protos.google.appengine.v1.Application, protos.google.appengine.v1.OperationMetadataV1>;
   }
   repairApplication(
-      request: protos.google.appengine.v1.IRepairApplicationRequest,
+      request?: protos.google.appengine.v1.IRepairApplicationRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.appengine.v1.IApplication, protos.google.appengine.v1.IOperationMetadataV1>,
@@ -632,7 +632,7 @@ export class ApplicationsClient {
  * const [response] = await operation.promise();
  */
   repairApplication(
-      request: protos.google.appengine.v1.IRepairApplicationRequest,
+      request?: protos.google.appengine.v1.IRepairApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.appengine.v1.IApplication, protos.google.appengine.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,

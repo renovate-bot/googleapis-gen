@@ -653,7 +653,7 @@ export class SmartCampaignSuggestServiceClient {
   // -- Service calls --
   // -------------------
   suggestSmartCampaignBudgetOptions(
-      request: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsRequest,
+      request?: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsResponse,
@@ -694,7 +694,7 @@ export class SmartCampaignSuggestServiceClient {
  * const [response] = await client.suggestSmartCampaignBudgetOptions(request);
  */
   suggestSmartCampaignBudgetOptions(
-      request: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsRequest,
+      request?: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsResponse,
           protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsRequest|null|undefined,

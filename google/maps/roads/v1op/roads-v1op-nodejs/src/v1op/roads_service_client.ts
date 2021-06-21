@@ -259,7 +259,7 @@ export class RoadsServiceClient {
   // -- Service calls --
   // -------------------
   snapToRoads(
-      request: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
+      request?: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.maps.roads.v1op.ISnapToRoadsResponse,
@@ -306,7 +306,7 @@ export class RoadsServiceClient {
  * const [response] = await client.snapToRoads(request);
  */
   snapToRoads(
-      request: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
+      request?: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.maps.roads.v1op.ISnapToRoadsResponse,
           protos.google.maps.roads.v1op.ISnapToRoadsRequest|null|undefined,
@@ -333,7 +333,7 @@ export class RoadsServiceClient {
     return this.innerApiCalls.snapToRoads(request, options, callback);
   }
   listNearestRoads(
-      request: protos.google.maps.roads.v1op.IListNearestRoadsRequest,
+      request?: protos.google.maps.roads.v1op.IListNearestRoadsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.maps.roads.v1op.IListNearestRoadsResponse,
@@ -374,7 +374,7 @@ export class RoadsServiceClient {
  * const [response] = await client.listNearestRoads(request);
  */
   listNearestRoads(
-      request: protos.google.maps.roads.v1op.IListNearestRoadsRequest,
+      request?: protos.google.maps.roads.v1op.IListNearestRoadsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.maps.roads.v1op.IListNearestRoadsResponse,
           protos.google.maps.roads.v1op.IListNearestRoadsRequest|null|undefined,

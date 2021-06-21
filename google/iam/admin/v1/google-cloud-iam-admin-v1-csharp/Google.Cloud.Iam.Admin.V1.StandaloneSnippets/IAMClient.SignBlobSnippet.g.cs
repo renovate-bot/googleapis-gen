@@ -34,7 +34,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             string name = "projects/[PROJECT]/serviceAccounts/[SERVICE_ACCOUNT]";
             ByteString bytesToSign = ByteString.Empty;
             // Make the request
+#pragma warning disable CS0612
             SignBlobResponse response = iAMClient.SignBlob(name, bytesToSign);
+#pragma warning restore CS0612
         }
     }
 }

@@ -263,7 +263,7 @@ export class SqlTiersServiceClient {
   // -- Service calls --
   // -------------------
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlTiersListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlTiersListRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.sql.v1beta4.ITiersListResponse,
@@ -302,7 +302,7 @@ export class SqlTiersServiceClient {
  * const [response] = await client.list(request);
  */
   list(
-      request: protos.google.cloud.sql.v1beta4.ISqlTiersListRequest,
+      request?: protos.google.cloud.sql.v1beta4.ISqlTiersListRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.sql.v1beta4.ITiersListResponse,
           protos.google.cloud.sql.v1beta4.ISqlTiersListRequest|null|undefined,

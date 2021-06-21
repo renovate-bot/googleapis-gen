@@ -418,7 +418,7 @@ export class IntentsClient {
   // -- Service calls --
   // -------------------
   getIntent(
-      request: protos.google.cloud.dialogflow.v2.IGetIntentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetIntentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IIntent,
@@ -464,7 +464,7 @@ export class IntentsClient {
  * const [response] = await client.getIntent(request);
  */
   getIntent(
-      request: protos.google.cloud.dialogflow.v2.IGetIntentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IIntent,
           protos.google.cloud.dialogflow.v2.IGetIntentRequest|null|undefined,
@@ -498,7 +498,7 @@ export class IntentsClient {
     return this.innerApiCalls.getIntent(request, options, callback);
   }
   createIntent(
-      request: protos.google.cloud.dialogflow.v2.ICreateIntentRequest,
+      request?: protos.google.cloud.dialogflow.v2.ICreateIntentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IIntent,
@@ -550,7 +550,7 @@ export class IntentsClient {
  * const [response] = await client.createIntent(request);
  */
   createIntent(
-      request: protos.google.cloud.dialogflow.v2.ICreateIntentRequest,
+      request?: protos.google.cloud.dialogflow.v2.ICreateIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IIntent,
           protos.google.cloud.dialogflow.v2.ICreateIntentRequest|null|undefined,
@@ -584,7 +584,7 @@ export class IntentsClient {
     return this.innerApiCalls.createIntent(request, options, callback);
   }
   updateIntent(
-      request: protos.google.cloud.dialogflow.v2.IUpdateIntentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateIntentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IIntent,
@@ -635,7 +635,7 @@ export class IntentsClient {
  * const [response] = await client.updateIntent(request);
  */
   updateIntent(
-      request: protos.google.cloud.dialogflow.v2.IUpdateIntentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IIntent,
           protos.google.cloud.dialogflow.v2.IUpdateIntentRequest|null|undefined,
@@ -669,7 +669,7 @@ export class IntentsClient {
     return this.innerApiCalls.updateIntent(request, options, callback);
   }
   deleteIntent(
-      request: protos.google.cloud.dialogflow.v2.IDeleteIntentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteIntentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -712,7 +712,7 @@ export class IntentsClient {
  * const [response] = await client.deleteIntent(request);
  */
   deleteIntent(
-      request: protos.google.cloud.dialogflow.v2.IDeleteIntentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IDeleteIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.v2.IDeleteIntentRequest|null|undefined,
@@ -747,7 +747,7 @@ export class IntentsClient {
   }
 
   batchUpdateIntents(
-      request: protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsResponse, protos.google.protobuf.IStruct>,
@@ -809,7 +809,7 @@ export class IntentsClient {
  * const [response] = await operation.promise();
  */
   batchUpdateIntents(
-      request: protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsResponse, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -864,7 +864,7 @@ export class IntentsClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2.BatchUpdateIntentsResponse, protos.google.protobuf.Struct>;
   }
   batchDeleteIntents(
-      request: protos.google.cloud.dialogflow.v2.IBatchDeleteIntentsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchDeleteIntentsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
@@ -913,7 +913,7 @@ export class IntentsClient {
  * const [response] = await operation.promise();
  */
   batchDeleteIntents(
-      request: protos.google.cloud.dialogflow.v2.IBatchDeleteIntentsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IBatchDeleteIntentsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -968,7 +968,7 @@ export class IntentsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
   listIntents(
-      request: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IIntent[],
@@ -1031,7 +1031,7 @@ export class IntentsClient {
  *   for more details and examples.
  */
   listIntents(
-      request: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2.IListIntentsRequest,
           protos.google.cloud.dialogflow.v2.IListIntentsResponse|null|undefined,

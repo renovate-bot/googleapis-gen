@@ -341,7 +341,7 @@ export class EntityTypesClient {
   // -- Service calls --
   // -------------------
   getEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IEntityType,
@@ -393,7 +393,7 @@ export class EntityTypesClient {
  * const [response] = await client.getEntityType(request);
  */
   getEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IEntityType,
           protos.google.cloud.dialogflow.cx.v3beta1.IGetEntityTypeRequest|null|undefined,
@@ -427,7 +427,7 @@ export class EntityTypesClient {
     return this.innerApiCalls.getEntityType(request, options, callback);
   }
   createEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IEntityType,
@@ -479,7 +479,7 @@ export class EntityTypesClient {
  * const [response] = await client.createEntityType(request);
  */
   createEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IEntityType,
           protos.google.cloud.dialogflow.cx.v3beta1.ICreateEntityTypeRequest|null|undefined,
@@ -513,7 +513,7 @@ export class EntityTypesClient {
     return this.innerApiCalls.createEntityType(request, options, callback);
   }
   updateEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IEntityType,
@@ -568,7 +568,7 @@ export class EntityTypesClient {
  * const [response] = await client.updateEntityType(request);
  */
   updateEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IEntityType,
           protos.google.cloud.dialogflow.cx.v3beta1.IUpdateEntityTypeRequest|null|undefined,
@@ -602,7 +602,7 @@ export class EntityTypesClient {
     return this.innerApiCalls.updateEntityType(request, options, callback);
   }
   deleteEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -656,7 +656,7 @@ export class EntityTypesClient {
  * const [response] = await client.deleteEntityType(request);
  */
   deleteEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteEntityTypeRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.cx.v3beta1.IDeleteEntityTypeRequest|null|undefined,
@@ -691,7 +691,7 @@ export class EntityTypesClient {
   }
 
   listEntityTypes(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListEntityTypesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListEntityTypesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IEntityType[],
@@ -751,7 +751,7 @@ export class EntityTypesClient {
  *   for more details and examples.
  */
   listEntityTypes(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListEntityTypesRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListEntityTypesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.cx.v3beta1.IListEntityTypesRequest,
           protos.google.cloud.dialogflow.cx.v3beta1.IListEntityTypesResponse|null|undefined,

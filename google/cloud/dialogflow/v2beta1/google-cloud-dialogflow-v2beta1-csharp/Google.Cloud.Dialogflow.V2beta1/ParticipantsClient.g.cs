@@ -1574,6 +1574,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A pageable sequence of <see cref="Suggestion"/> resources.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public virtual gax::PagedEnumerable<ListSuggestionsResponse, Suggestion> ListSuggestions(ListSuggestionsRequest request, gaxgrpc::CallSettings callSettings = null) =>
 #pragma warning restore CS0612
@@ -1604,6 +1605,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A pageable asynchronous sequence of <see cref="Suggestion"/> resources.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public virtual gax::PagedAsyncEnumerable<ListSuggestionsResponse, Suggestion> ListSuggestionsAsync(ListSuggestionsRequest request, gaxgrpc::CallSettings callSettings = null) =>
 #pragma warning restore CS0612
@@ -1622,6 +1624,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public virtual CompileSuggestionResponse CompileSuggestion(CompileSuggestionRequest request, gaxgrpc::CallSettings callSettings = null) =>
 #pragma warning restore CS0612
@@ -1640,6 +1643,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public virtual stt::Task<CompileSuggestionResponse> CompileSuggestionAsync(CompileSuggestionRequest request, gaxgrpc::CallSettings callSettings = null) =>
 #pragma warning restore CS0612
@@ -1658,6 +1662,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public virtual stt::Task<CompileSuggestionResponse> CompileSuggestionAsync(CompileSuggestionRequest request, st::CancellationToken cancellationToken) =>
 #pragma warning restore CS0612
@@ -2031,6 +2036,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A pageable sequence of <see cref="Suggestion"/> resources.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public override gax::PagedEnumerable<ListSuggestionsResponse, Suggestion> ListSuggestions(ListSuggestionsRequest request, gaxgrpc::CallSettings callSettings = null)
 #pragma warning restore CS0612
@@ -2066,6 +2072,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A pageable asynchronous sequence of <see cref="Suggestion"/> resources.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public override gax::PagedAsyncEnumerable<ListSuggestionsResponse, Suggestion> ListSuggestionsAsync(ListSuggestionsRequest request, gaxgrpc::CallSettings callSettings = null)
 #pragma warning restore CS0612
@@ -2089,6 +2096,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public override CompileSuggestionResponse CompileSuggestion(CompileSuggestionRequest request, gaxgrpc::CallSettings callSettings = null)
 #pragma warning restore CS0612
@@ -2110,6 +2118,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
+        [sys::ObsoleteAttribute]
 #pragma warning disable CS0612
         public override stt::Task<CompileSuggestionResponse> CompileSuggestionAsync(CompileSuggestionRequest request, gaxgrpc::CallSettings callSettings = null)
 #pragma warning restore CS0612

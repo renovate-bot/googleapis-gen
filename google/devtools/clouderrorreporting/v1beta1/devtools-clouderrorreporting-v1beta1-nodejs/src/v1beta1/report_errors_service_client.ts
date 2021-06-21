@@ -275,7 +275,7 @@ export class ReportErrorsServiceClient {
   // -- Service calls --
   // -------------------
   reportErrorEvent(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventResponse,
@@ -335,7 +335,7 @@ export class ReportErrorsServiceClient {
  * const [response] = await client.reportErrorEvent(request);
  */
   reportErrorEvent(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventResponse,
           protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest|null|undefined,

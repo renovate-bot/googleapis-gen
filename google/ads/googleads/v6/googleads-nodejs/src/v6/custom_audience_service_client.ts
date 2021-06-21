@@ -614,7 +614,7 @@ export class CustomAudienceServiceClient {
   // -- Service calls --
   // -------------------
   getCustomAudience(
-      request: protos.google.ads.googleads.v6.services.IGetCustomAudienceRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCustomAudienceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.ICustomAudience,
@@ -651,7 +651,7 @@ export class CustomAudienceServiceClient {
  * const [response] = await client.getCustomAudience(request);
  */
   getCustomAudience(
-      request: protos.google.ads.googleads.v6.services.IGetCustomAudienceRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCustomAudienceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.ICustomAudience,
           protos.google.ads.googleads.v6.services.IGetCustomAudienceRequest|null|undefined,
@@ -685,7 +685,7 @@ export class CustomAudienceServiceClient {
     return this.innerApiCalls.getCustomAudience(request, options, callback);
   }
   mutateCustomAudiences(
-      request: protos.google.ads.googleads.v6.services.IMutateCustomAudiencesRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCustomAudiencesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateCustomAudiencesResponse,
@@ -727,7 +727,7 @@ export class CustomAudienceServiceClient {
  * const [response] = await client.mutateCustomAudiences(request);
  */
   mutateCustomAudiences(
-      request: protos.google.ads.googleads.v6.services.IMutateCustomAudiencesRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCustomAudiencesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateCustomAudiencesResponse,
           protos.google.ads.googleads.v6.services.IMutateCustomAudiencesRequest|null|undefined,

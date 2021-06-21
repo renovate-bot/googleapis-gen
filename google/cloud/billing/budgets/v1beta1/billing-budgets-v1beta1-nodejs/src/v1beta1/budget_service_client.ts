@@ -288,7 +288,7 @@ export class BudgetServiceClient {
   // -- Service calls --
   // -------------------
   createBudget(
-      request: protos.google.cloud.billing.budgets.v1beta1.ICreateBudgetRequest,
+      request?: protos.google.cloud.billing.budgets.v1beta1.ICreateBudgetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.budgets.v1beta1.IBudget,
@@ -330,7 +330,7 @@ export class BudgetServiceClient {
  * const [response] = await client.createBudget(request);
  */
   createBudget(
-      request: protos.google.cloud.billing.budgets.v1beta1.ICreateBudgetRequest,
+      request?: protos.google.cloud.billing.budgets.v1beta1.ICreateBudgetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.billing.budgets.v1beta1.IBudget,
           protos.google.cloud.billing.budgets.v1beta1.ICreateBudgetRequest|null|undefined,
@@ -364,7 +364,7 @@ export class BudgetServiceClient {
     return this.innerApiCalls.createBudget(request, options, callback);
   }
   updateBudget(
-      request: protos.google.cloud.billing.budgets.v1beta1.IUpdateBudgetRequest,
+      request?: protos.google.cloud.billing.budgets.v1beta1.IUpdateBudgetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.budgets.v1beta1.IBudget,
@@ -413,7 +413,7 @@ export class BudgetServiceClient {
  * const [response] = await client.updateBudget(request);
  */
   updateBudget(
-      request: protos.google.cloud.billing.budgets.v1beta1.IUpdateBudgetRequest,
+      request?: protos.google.cloud.billing.budgets.v1beta1.IUpdateBudgetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.billing.budgets.v1beta1.IBudget,
           protos.google.cloud.billing.budgets.v1beta1.IUpdateBudgetRequest|null|undefined,
@@ -447,7 +447,7 @@ export class BudgetServiceClient {
     return this.innerApiCalls.updateBudget(request, options, callback);
   }
   getBudget(
-      request: protos.google.cloud.billing.budgets.v1beta1.IGetBudgetRequest,
+      request?: protos.google.cloud.billing.budgets.v1beta1.IGetBudgetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.budgets.v1beta1.IBudget,
@@ -490,7 +490,7 @@ export class BudgetServiceClient {
  * const [response] = await client.getBudget(request);
  */
   getBudget(
-      request: protos.google.cloud.billing.budgets.v1beta1.IGetBudgetRequest,
+      request?: protos.google.cloud.billing.budgets.v1beta1.IGetBudgetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.billing.budgets.v1beta1.IBudget,
           protos.google.cloud.billing.budgets.v1beta1.IGetBudgetRequest|null|undefined,
@@ -524,7 +524,7 @@ export class BudgetServiceClient {
     return this.innerApiCalls.getBudget(request, options, callback);
   }
   deleteBudget(
-      request: protos.google.cloud.billing.budgets.v1beta1.IDeleteBudgetRequest,
+      request?: protos.google.cloud.billing.budgets.v1beta1.IDeleteBudgetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -562,7 +562,7 @@ export class BudgetServiceClient {
  * const [response] = await client.deleteBudget(request);
  */
   deleteBudget(
-      request: protos.google.cloud.billing.budgets.v1beta1.IDeleteBudgetRequest,
+      request?: protos.google.cloud.billing.budgets.v1beta1.IDeleteBudgetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.billing.budgets.v1beta1.IDeleteBudgetRequest|null|undefined,
@@ -597,7 +597,7 @@ export class BudgetServiceClient {
   }
 
   listBudgets(
-      request: protos.google.cloud.billing.budgets.v1beta1.IListBudgetsRequest,
+      request?: protos.google.cloud.billing.budgets.v1beta1.IListBudgetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.budgets.v1beta1.IBudget[],
@@ -651,7 +651,7 @@ export class BudgetServiceClient {
  *   for more details and examples.
  */
   listBudgets(
-      request: protos.google.cloud.billing.budgets.v1beta1.IListBudgetsRequest,
+      request?: protos.google.cloud.billing.budgets.v1beta1.IListBudgetsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.billing.budgets.v1beta1.IListBudgetsRequest,
           protos.google.cloud.billing.budgets.v1beta1.IListBudgetsResponse|null|undefined,

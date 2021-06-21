@@ -590,7 +590,7 @@ export class CampaignSharedSetServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignSharedSet(
-      request: protos.google.ads.googleads.v5.services.IGetCampaignSharedSetRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetCampaignSharedSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.ICampaignSharedSet,
@@ -627,7 +627,7 @@ export class CampaignSharedSetServiceClient {
  * const [response] = await client.getCampaignSharedSet(request);
  */
   getCampaignSharedSet(
-      request: protos.google.ads.googleads.v5.services.IGetCampaignSharedSetRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetCampaignSharedSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.ICampaignSharedSet,
           protos.google.ads.googleads.v5.services.IGetCampaignSharedSetRequest|null|undefined,
@@ -661,7 +661,7 @@ export class CampaignSharedSetServiceClient {
     return this.innerApiCalls.getCampaignSharedSet(request, options, callback);
   }
   mutateCampaignSharedSets(
-      request: protos.google.ads.googleads.v5.services.IMutateCampaignSharedSetsRequest,
+      request?: protos.google.ads.googleads.v5.services.IMutateCampaignSharedSetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.services.IMutateCampaignSharedSetsResponse,
@@ -708,7 +708,7 @@ export class CampaignSharedSetServiceClient {
  * const [response] = await client.mutateCampaignSharedSets(request);
  */
   mutateCampaignSharedSets(
-      request: protos.google.ads.googleads.v5.services.IMutateCampaignSharedSetsRequest,
+      request?: protos.google.ads.googleads.v5.services.IMutateCampaignSharedSetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.services.IMutateCampaignSharedSetsResponse,
           protos.google.ads.googleads.v5.services.IMutateCampaignSharedSetsRequest|null|undefined,

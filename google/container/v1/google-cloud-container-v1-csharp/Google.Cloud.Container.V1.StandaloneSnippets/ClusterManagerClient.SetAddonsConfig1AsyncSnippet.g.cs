@@ -36,7 +36,9 @@ namespace Google.Cloud.Container.V1.Snippets
             string clusterId = "";
             AddonsConfig addonsConfig = new AddonsConfig();
             // Make the request
+#pragma warning disable CS0612
             Operation response = await clusterManagerClient.SetAddonsConfigAsync(projectId, zone, clusterId, addonsConfig);
+#pragma warning restore CS0612
         }
     }
 }

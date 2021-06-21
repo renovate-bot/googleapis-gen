@@ -365,7 +365,7 @@ export class BigtableInstanceAdminClient {
   // -- Service calls --
   // -------------------
   getInstance(
-      request: protos.google.bigtable.admin.v2.IGetInstanceRequest,
+      request?: protos.google.bigtable.admin.v2.IGetInstanceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.bigtable.admin.v2.IInstance,
@@ -403,7 +403,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.getInstance(request);
  */
   getInstance(
-      request: protos.google.bigtable.admin.v2.IGetInstanceRequest,
+      request?: protos.google.bigtable.admin.v2.IGetInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.bigtable.admin.v2.IInstance,
           protos.google.bigtable.admin.v2.IGetInstanceRequest|null|undefined,
@@ -437,7 +437,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.getInstance(request, options, callback);
   }
   listInstances(
-      request: protos.google.bigtable.admin.v2.IListInstancesRequest,
+      request?: protos.google.bigtable.admin.v2.IListInstancesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.bigtable.admin.v2.IListInstancesResponse,
@@ -477,7 +477,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.listInstances(request);
  */
   listInstances(
-      request: protos.google.bigtable.admin.v2.IListInstancesRequest,
+      request?: protos.google.bigtable.admin.v2.IListInstancesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.bigtable.admin.v2.IListInstancesResponse,
           protos.google.bigtable.admin.v2.IListInstancesRequest|null|undefined,
@@ -511,7 +511,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.listInstances(request, options, callback);
   }
   updateInstance(
-      request: protos.google.bigtable.admin.v2.IInstance,
+      request?: protos.google.bigtable.admin.v2.IInstance,
       options?: CallOptions):
       Promise<[
         protos.google.bigtable.admin.v2.IInstance,
@@ -572,7 +572,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.updateInstance(request);
  */
   updateInstance(
-      request: protos.google.bigtable.admin.v2.IInstance,
+      request?: protos.google.bigtable.admin.v2.IInstance,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.bigtable.admin.v2.IInstance,
           protos.google.bigtable.admin.v2.IInstance|null|undefined,
@@ -606,7 +606,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.updateInstance(request, options, callback);
   }
   deleteInstance(
-      request: protos.google.bigtable.admin.v2.IDeleteInstanceRequest,
+      request?: protos.google.bigtable.admin.v2.IDeleteInstanceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -644,7 +644,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.deleteInstance(request);
  */
   deleteInstance(
-      request: protos.google.bigtable.admin.v2.IDeleteInstanceRequest,
+      request?: protos.google.bigtable.admin.v2.IDeleteInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.bigtable.admin.v2.IDeleteInstanceRequest|null|undefined,
@@ -678,7 +678,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.deleteInstance(request, options, callback);
   }
   getCluster(
-      request: protos.google.bigtable.admin.v2.IGetClusterRequest,
+      request?: protos.google.bigtable.admin.v2.IGetClusterRequest,
       options?: CallOptions):
       Promise<[
         protos.google.bigtable.admin.v2.ICluster,
@@ -716,7 +716,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.getCluster(request);
  */
   getCluster(
-      request: protos.google.bigtable.admin.v2.IGetClusterRequest,
+      request?: protos.google.bigtable.admin.v2.IGetClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.bigtable.admin.v2.ICluster,
           protos.google.bigtable.admin.v2.IGetClusterRequest|null|undefined,
@@ -750,7 +750,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.getCluster(request, options, callback);
   }
   listClusters(
-      request: protos.google.bigtable.admin.v2.IListClustersRequest,
+      request?: protos.google.bigtable.admin.v2.IListClustersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.bigtable.admin.v2.IListClustersResponse,
@@ -792,7 +792,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.listClusters(request);
  */
   listClusters(
-      request: protos.google.bigtable.admin.v2.IListClustersRequest,
+      request?: protos.google.bigtable.admin.v2.IListClustersRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.bigtable.admin.v2.IListClustersResponse,
           protos.google.bigtable.admin.v2.IListClustersRequest|null|undefined,
@@ -826,7 +826,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.listClusters(request, options, callback);
   }
   deleteCluster(
-      request: protos.google.bigtable.admin.v2.IDeleteClusterRequest,
+      request?: protos.google.bigtable.admin.v2.IDeleteClusterRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -864,7 +864,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.deleteCluster(request);
  */
   deleteCluster(
-      request: protos.google.bigtable.admin.v2.IDeleteClusterRequest,
+      request?: protos.google.bigtable.admin.v2.IDeleteClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.bigtable.admin.v2.IDeleteClusterRequest|null|undefined,
@@ -898,7 +898,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.deleteCluster(request, options, callback);
   }
   createAppProfile(
-      request: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
+      request?: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.bigtable.admin.v2.IAppProfile,
@@ -946,7 +946,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.createAppProfile(request);
  */
   createAppProfile(
-      request: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
+      request?: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.bigtable.admin.v2.IAppProfile,
           protos.google.bigtable.admin.v2.ICreateAppProfileRequest|null|undefined,
@@ -980,7 +980,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.createAppProfile(request, options, callback);
   }
   getAppProfile(
-      request: protos.google.bigtable.admin.v2.IGetAppProfileRequest,
+      request?: protos.google.bigtable.admin.v2.IGetAppProfileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.bigtable.admin.v2.IAppProfile,
@@ -1018,7 +1018,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.getAppProfile(request);
  */
   getAppProfile(
-      request: protos.google.bigtable.admin.v2.IGetAppProfileRequest,
+      request?: protos.google.bigtable.admin.v2.IGetAppProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.bigtable.admin.v2.IAppProfile,
           protos.google.bigtable.admin.v2.IGetAppProfileRequest|null|undefined,
@@ -1052,7 +1052,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.getAppProfile(request, options, callback);
   }
   deleteAppProfile(
-      request: protos.google.bigtable.admin.v2.IDeleteAppProfileRequest,
+      request?: protos.google.bigtable.admin.v2.IDeleteAppProfileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1092,7 +1092,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.deleteAppProfile(request);
  */
   deleteAppProfile(
-      request: protos.google.bigtable.admin.v2.IDeleteAppProfileRequest,
+      request?: protos.google.bigtable.admin.v2.IDeleteAppProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.bigtable.admin.v2.IDeleteAppProfileRequest|null|undefined,
@@ -1126,7 +1126,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.deleteAppProfile(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -1168,7 +1168,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -1202,7 +1202,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -1246,7 +1246,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -1280,7 +1280,7 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -1323,7 +1323,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -1358,7 +1358,7 @@ export class BigtableInstanceAdminClient {
   }
 
   createInstance(
-      request: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
+      request?: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.ICreateInstanceMetadata>,
@@ -1412,7 +1412,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await operation.promise();
  */
   createInstance(
-      request: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
+      request?: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.ICreateInstanceMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1467,7 +1467,7 @@ export class BigtableInstanceAdminClient {
     return decodeOperation as LROperation<protos.google.bigtable.admin.v2.Instance, protos.google.bigtable.admin.v2.CreateInstanceMetadata>;
   }
   partialUpdateInstance(
-      request: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
+      request?: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.IUpdateInstanceMetadata>,
@@ -1511,7 +1511,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await operation.promise();
  */
   partialUpdateInstance(
-      request: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
+      request?: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.IUpdateInstanceMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1566,7 +1566,7 @@ export class BigtableInstanceAdminClient {
     return decodeOperation as LROperation<protos.google.bigtable.admin.v2.Instance, protos.google.bigtable.admin.v2.UpdateInstanceMetadata>;
   }
   createCluster(
-      request: protos.google.bigtable.admin.v2.ICreateClusterRequest,
+      request?: protos.google.bigtable.admin.v2.ICreateClusterRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.ICreateClusterMetadata>,
@@ -1615,7 +1615,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await operation.promise();
  */
   createCluster(
-      request: protos.google.bigtable.admin.v2.ICreateClusterRequest,
+      request?: protos.google.bigtable.admin.v2.ICreateClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.ICreateClusterMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1670,7 +1670,7 @@ export class BigtableInstanceAdminClient {
     return decodeOperation as LROperation<protos.google.bigtable.admin.v2.Cluster, protos.google.bigtable.admin.v2.CreateClusterMetadata>;
   }
   updateCluster(
-      request: protos.google.bigtable.admin.v2.ICluster,
+      request?: protos.google.bigtable.admin.v2.ICluster,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IUpdateClusterMetadata>,
@@ -1728,7 +1728,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await operation.promise();
  */
   updateCluster(
-      request: protos.google.bigtable.admin.v2.ICluster,
+      request?: protos.google.bigtable.admin.v2.ICluster,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IUpdateClusterMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1783,7 +1783,7 @@ export class BigtableInstanceAdminClient {
     return decodeOperation as LROperation<protos.google.bigtable.admin.v2.Cluster, protos.google.bigtable.admin.v2.UpdateClusterMetadata>;
   }
   updateAppProfile(
-      request: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
+      request?: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.bigtable.admin.v2.IAppProfile, protos.google.bigtable.admin.v2.IUpdateAppProfileMetadata>,
@@ -1828,7 +1828,7 @@ export class BigtableInstanceAdminClient {
  * const [response] = await operation.promise();
  */
   updateAppProfile(
-      request: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
+      request?: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.bigtable.admin.v2.IAppProfile, protos.google.bigtable.admin.v2.IUpdateAppProfileMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1883,7 +1883,7 @@ export class BigtableInstanceAdminClient {
     return decodeOperation as LROperation<protos.google.bigtable.admin.v2.AppProfile, protos.google.bigtable.admin.v2.UpdateAppProfileMetadata>;
   }
   listAppProfiles(
-      request: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
+      request?: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.bigtable.admin.v2.IAppProfile[],
@@ -1940,7 +1940,7 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  */
   listAppProfiles(
-      request: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
+      request?: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.bigtable.admin.v2.IListAppProfilesRequest,
           protos.google.bigtable.admin.v2.IListAppProfilesResponse|null|undefined,

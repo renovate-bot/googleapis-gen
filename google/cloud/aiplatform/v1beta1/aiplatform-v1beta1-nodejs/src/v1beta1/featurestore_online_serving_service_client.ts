@@ -372,7 +372,7 @@ export class FeaturestoreOnlineServingServiceClient {
   // -- Service calls --
   // -------------------
   readFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IReadFeatureValuesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IReadFeatureValuesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IReadFeatureValuesResponse,
@@ -421,7 +421,7 @@ export class FeaturestoreOnlineServingServiceClient {
  * const [response] = await client.readFeatureValues(request);
  */
   readFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IReadFeatureValuesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IReadFeatureValuesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IReadFeatureValuesResponse,
           protos.google.cloud.aiplatform.v1beta1.IReadFeatureValuesRequest|null|undefined,

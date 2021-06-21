@@ -653,7 +653,7 @@ export class PaidOrganicSearchTermViewServiceClient {
   // -- Service calls --
   // -------------------
   getPaidOrganicSearchTermView(
-      request: protos.google.ads.googleads.v8.services.IGetPaidOrganicSearchTermViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetPaidOrganicSearchTermViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IPaidOrganicSearchTermView,
@@ -698,7 +698,7 @@ export class PaidOrganicSearchTermViewServiceClient {
  * const [response] = await client.getPaidOrganicSearchTermView(request);
  */
   getPaidOrganicSearchTermView(
-      request: protos.google.ads.googleads.v8.services.IGetPaidOrganicSearchTermViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetPaidOrganicSearchTermViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IPaidOrganicSearchTermView,
           protos.google.ads.googleads.v8.services.IGetPaidOrganicSearchTermViewRequest|null|undefined,

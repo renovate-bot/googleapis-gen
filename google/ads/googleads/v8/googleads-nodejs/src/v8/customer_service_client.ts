@@ -653,7 +653,7 @@ export class CustomerServiceClient {
   // -- Service calls --
   // -------------------
   getCustomer(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ICustomer,
@@ -698,7 +698,7 @@ export class CustomerServiceClient {
  * const [response] = await client.getCustomer(request);
  */
   getCustomer(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ICustomer,
           protos.google.ads.googleads.v8.services.IGetCustomerRequest|null|undefined,
@@ -732,7 +732,7 @@ export class CustomerServiceClient {
     return this.innerApiCalls.getCustomer(request, options, callback);
   }
   mutateCustomer(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IMutateCustomerResponse,
@@ -788,7 +788,7 @@ export class CustomerServiceClient {
  * const [response] = await client.mutateCustomer(request);
  */
   mutateCustomer(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerRequest,
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IMutateCustomerResponse,
           protos.google.ads.googleads.v8.services.IMutateCustomerRequest|null|undefined,
@@ -822,7 +822,7 @@ export class CustomerServiceClient {
     return this.innerApiCalls.mutateCustomer(request, options, callback);
   }
   listAccessibleCustomers(
-      request: protos.google.ads.googleads.v8.services.IListAccessibleCustomersRequest,
+      request?: protos.google.ads.googleads.v8.services.IListAccessibleCustomersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IListAccessibleCustomersResponse,
@@ -866,7 +866,7 @@ export class CustomerServiceClient {
  * const [response] = await client.listAccessibleCustomers(request);
  */
   listAccessibleCustomers(
-      request: protos.google.ads.googleads.v8.services.IListAccessibleCustomersRequest,
+      request?: protos.google.ads.googleads.v8.services.IListAccessibleCustomersRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IListAccessibleCustomersResponse,
           protos.google.ads.googleads.v8.services.IListAccessibleCustomersRequest|null|undefined,
@@ -893,7 +893,7 @@ export class CustomerServiceClient {
     return this.innerApiCalls.listAccessibleCustomers(request, options, callback);
   }
   createCustomerClient(
-      request: protos.google.ads.googleads.v8.services.ICreateCustomerClientRequest,
+      request?: protos.google.ads.googleads.v8.services.ICreateCustomerClientRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.ICreateCustomerClientResponse,
@@ -955,7 +955,7 @@ export class CustomerServiceClient {
  * const [response] = await client.createCustomerClient(request);
  */
   createCustomerClient(
-      request: protos.google.ads.googleads.v8.services.ICreateCustomerClientRequest,
+      request?: protos.google.ads.googleads.v8.services.ICreateCustomerClientRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.ICreateCustomerClientResponse,
           protos.google.ads.googleads.v8.services.ICreateCustomerClientRequest|null|undefined,

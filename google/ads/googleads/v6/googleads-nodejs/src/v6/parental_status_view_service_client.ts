@@ -614,7 +614,7 @@ export class ParentalStatusViewServiceClient {
   // -- Service calls --
   // -------------------
   getParentalStatusView(
-      request: protos.google.ads.googleads.v6.services.IGetParentalStatusViewRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetParentalStatusViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IParentalStatusView,
@@ -651,7 +651,7 @@ export class ParentalStatusViewServiceClient {
  * const [response] = await client.getParentalStatusView(request);
  */
   getParentalStatusView(
-      request: protos.google.ads.googleads.v6.services.IGetParentalStatusViewRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetParentalStatusViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IParentalStatusView,
           protos.google.ads.googleads.v6.services.IGetParentalStatusViewRequest|null|undefined,

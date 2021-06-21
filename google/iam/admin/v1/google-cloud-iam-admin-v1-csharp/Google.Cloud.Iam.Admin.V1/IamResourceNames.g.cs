@@ -606,6 +606,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <summary>
         /// <see cref="gciav::ServiceAccountName"/>-typed view over the <see cref="Name"/> resource name property.
         /// </summary>
+        [sys::ObsoleteAttribute]
         public gciav::ServiceAccountName ServiceAccountName
         {
             get => string.IsNullOrEmpty(Name) ? null : gciav::ServiceAccountName.Parse(Name, allowUnparsed: true);
@@ -618,6 +619,7 @@ namespace Google.Cloud.Iam.Admin.V1
         /// <summary>
         /// <see cref="gciav::ServiceAccountName"/>-typed view over the <see cref="Name"/> resource name property.
         /// </summary>
+        [sys::ObsoleteAttribute]
         public gciav::ServiceAccountName ServiceAccountName
         {
             get => string.IsNullOrEmpty(Name) ? null : gciav::ServiceAccountName.Parse(Name, allowUnparsed: true);

@@ -653,7 +653,7 @@ export class ManagedPlacementViewServiceClient {
   // -- Service calls --
   // -------------------
   getManagedPlacementView(
-      request: protos.google.ads.googleads.v8.services.IGetManagedPlacementViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetManagedPlacementViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IManagedPlacementView,
@@ -698,7 +698,7 @@ export class ManagedPlacementViewServiceClient {
  * const [response] = await client.getManagedPlacementView(request);
  */
   getManagedPlacementView(
-      request: protos.google.ads.googleads.v8.services.IGetManagedPlacementViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetManagedPlacementViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IManagedPlacementView,
           protos.google.ads.googleads.v8.services.IGetManagedPlacementViewRequest|null|undefined,

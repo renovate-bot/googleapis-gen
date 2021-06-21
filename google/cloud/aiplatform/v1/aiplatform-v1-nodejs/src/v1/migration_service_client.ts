@@ -354,7 +354,7 @@ export class MigrationServiceClient {
   // -------------------
 
   batchMigrateResources(
-      request: protos.google.cloud.aiplatform.v1.IBatchMigrateResourcesRequest,
+      request?: protos.google.cloud.aiplatform.v1.IBatchMigrateResourcesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1.IBatchMigrateResourcesResponse, protos.google.cloud.aiplatform.v1.IBatchMigrateResourcesOperationMetadata>,
@@ -400,7 +400,7 @@ export class MigrationServiceClient {
  * const [response] = await operation.promise();
  */
   batchMigrateResources(
-      request: protos.google.cloud.aiplatform.v1.IBatchMigrateResourcesRequest,
+      request?: protos.google.cloud.aiplatform.v1.IBatchMigrateResourcesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1.IBatchMigrateResourcesResponse, protos.google.cloud.aiplatform.v1.IBatchMigrateResourcesOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -455,7 +455,7 @@ export class MigrationServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1.BatchMigrateResourcesResponse, protos.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata>;
   }
   searchMigratableResources(
-      request: protos.google.cloud.aiplatform.v1.ISearchMigratableResourcesRequest,
+      request?: protos.google.cloud.aiplatform.v1.ISearchMigratableResourcesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1.IMigratableResource[],
@@ -520,7 +520,7 @@ export class MigrationServiceClient {
  *   for more details and examples.
  */
   searchMigratableResources(
-      request: protos.google.cloud.aiplatform.v1.ISearchMigratableResourcesRequest,
+      request?: protos.google.cloud.aiplatform.v1.ISearchMigratableResourcesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1.ISearchMigratableResourcesRequest,
           protos.google.cloud.aiplatform.v1.ISearchMigratableResourcesResponse|null|undefined,

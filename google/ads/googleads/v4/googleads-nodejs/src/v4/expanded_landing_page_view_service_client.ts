@@ -587,7 +587,7 @@ export class ExpandedLandingPageViewServiceClient {
   // -- Service calls --
   // -------------------
   getExpandedLandingPageView(
-      request: protos.google.ads.googleads.v4.services.IGetExpandedLandingPageViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetExpandedLandingPageViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.IExpandedLandingPageView,
@@ -624,7 +624,7 @@ export class ExpandedLandingPageViewServiceClient {
  * const [response] = await client.getExpandedLandingPageView(request);
  */
   getExpandedLandingPageView(
-      request: protos.google.ads.googleads.v4.services.IGetExpandedLandingPageViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetExpandedLandingPageViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.IExpandedLandingPageView,
           protos.google.ads.googleads.v4.services.IGetExpandedLandingPageViewRequest|null|undefined,

@@ -291,7 +291,7 @@ export class CloudCatalogClient {
   // -------------------
 
   listServices(
-      request: protos.google.cloud.billing.v1.IListServicesRequest,
+      request?: protos.google.cloud.billing.v1.IListServicesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.v1.IService[],
@@ -336,7 +336,7 @@ export class CloudCatalogClient {
  *   for more details and examples.
  */
   listServices(
-      request: protos.google.cloud.billing.v1.IListServicesRequest,
+      request?: protos.google.cloud.billing.v1.IListServicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.billing.v1.IListServicesRequest,
           protos.google.cloud.billing.v1.IListServicesResponse|null|undefined,
@@ -445,7 +445,7 @@ export class CloudCatalogClient {
     ) as AsyncIterable<protos.google.cloud.billing.v1.IService>;
   }
   listSkus(
-      request: protos.google.cloud.billing.v1.IListSkusRequest,
+      request?: protos.google.cloud.billing.v1.IListSkusRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.billing.v1.ISku[],
@@ -511,7 +511,7 @@ export class CloudCatalogClient {
  *   for more details and examples.
  */
   listSkus(
-      request: protos.google.cloud.billing.v1.IListSkusRequest,
+      request?: protos.google.cloud.billing.v1.IListSkusRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.billing.v1.IListSkusRequest,
           protos.google.cloud.billing.v1.IListSkusResponse|null|undefined,

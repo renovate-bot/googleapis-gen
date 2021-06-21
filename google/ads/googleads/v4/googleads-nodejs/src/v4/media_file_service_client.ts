@@ -587,7 +587,7 @@ export class MediaFileServiceClient {
   // -- Service calls --
   // -------------------
   getMediaFile(
-      request: protos.google.ads.googleads.v4.services.IGetMediaFileRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetMediaFileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.IMediaFile,
@@ -624,7 +624,7 @@ export class MediaFileServiceClient {
  * const [response] = await client.getMediaFile(request);
  */
   getMediaFile(
-      request: protos.google.ads.googleads.v4.services.IGetMediaFileRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetMediaFileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.IMediaFile,
           protos.google.ads.googleads.v4.services.IGetMediaFileRequest|null|undefined,
@@ -658,7 +658,7 @@ export class MediaFileServiceClient {
     return this.innerApiCalls.getMediaFile(request, options, callback);
   }
   mutateMediaFiles(
-      request: protos.google.ads.googleads.v4.services.IMutateMediaFilesRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateMediaFilesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IMutateMediaFilesResponse,
@@ -705,7 +705,7 @@ export class MediaFileServiceClient {
  * const [response] = await client.mutateMediaFiles(request);
  */
   mutateMediaFiles(
-      request: protos.google.ads.googleads.v4.services.IMutateMediaFilesRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateMediaFilesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IMutateMediaFilesResponse,
           protos.google.ads.googleads.v4.services.IMutateMediaFilesRequest|null|undefined,

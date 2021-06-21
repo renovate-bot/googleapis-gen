@@ -319,7 +319,7 @@ export class KeyManagementServiceClient {
   // -- Service calls --
   // -------------------
   getKeyRing(
-      request: protos.google.cloud.kms.v1.IGetKeyRingRequest,
+      request?: protos.google.cloud.kms.v1.IGetKeyRingRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.IKeyRing,
@@ -356,7 +356,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.getKeyRing(request);
  */
   getKeyRing(
-      request: protos.google.cloud.kms.v1.IGetKeyRingRequest,
+      request?: protos.google.cloud.kms.v1.IGetKeyRingRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.IKeyRing,
           protos.google.cloud.kms.v1.IGetKeyRingRequest|null|undefined,
@@ -390,7 +390,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.getKeyRing(request, options, callback);
   }
   getCryptoKey(
-      request: protos.google.cloud.kms.v1.IGetCryptoKeyRequest,
+      request?: protos.google.cloud.kms.v1.IGetCryptoKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKey,
@@ -428,7 +428,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.getCryptoKey(request);
  */
   getCryptoKey(
-      request: protos.google.cloud.kms.v1.IGetCryptoKeyRequest,
+      request?: protos.google.cloud.kms.v1.IGetCryptoKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.ICryptoKey,
           protos.google.cloud.kms.v1.IGetCryptoKeyRequest|null|undefined,
@@ -462,7 +462,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.getCryptoKey(request, options, callback);
   }
   getCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.IGetCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.IGetCryptoKeyVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKeyVersion,
@@ -499,7 +499,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.getCryptoKeyVersion(request);
  */
   getCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.IGetCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.IGetCryptoKeyVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.ICryptoKeyVersion,
           protos.google.cloud.kms.v1.IGetCryptoKeyVersionRequest|null|undefined,
@@ -533,7 +533,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.getCryptoKeyVersion(request, options, callback);
   }
   getPublicKey(
-      request: protos.google.cloud.kms.v1.IGetPublicKeyRequest,
+      request?: protos.google.cloud.kms.v1.IGetPublicKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.IPublicKey,
@@ -574,7 +574,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.getPublicKey(request);
  */
   getPublicKey(
-      request: protos.google.cloud.kms.v1.IGetPublicKeyRequest,
+      request?: protos.google.cloud.kms.v1.IGetPublicKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.IPublicKey,
           protos.google.cloud.kms.v1.IGetPublicKeyRequest|null|undefined,
@@ -608,7 +608,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.getPublicKey(request, options, callback);
   }
   getImportJob(
-      request: protos.google.cloud.kms.v1.IGetImportJobRequest,
+      request?: protos.google.cloud.kms.v1.IGetImportJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.IImportJob,
@@ -645,7 +645,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.getImportJob(request);
  */
   getImportJob(
-      request: protos.google.cloud.kms.v1.IGetImportJobRequest,
+      request?: protos.google.cloud.kms.v1.IGetImportJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.IImportJob,
           protos.google.cloud.kms.v1.IGetImportJobRequest|null|undefined,
@@ -679,7 +679,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.getImportJob(request, options, callback);
   }
   createKeyRing(
-      request: protos.google.cloud.kms.v1.ICreateKeyRingRequest,
+      request?: protos.google.cloud.kms.v1.ICreateKeyRingRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.IKeyRing,
@@ -722,7 +722,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.createKeyRing(request);
  */
   createKeyRing(
-      request: protos.google.cloud.kms.v1.ICreateKeyRingRequest,
+      request?: protos.google.cloud.kms.v1.ICreateKeyRingRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.IKeyRing,
           protos.google.cloud.kms.v1.ICreateKeyRingRequest|null|undefined,
@@ -756,7 +756,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.createKeyRing(request, options, callback);
   }
   createCryptoKey(
-      request: protos.google.cloud.kms.v1.ICreateCryptoKeyRequest,
+      request?: protos.google.cloud.kms.v1.ICreateCryptoKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKey,
@@ -809,7 +809,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.createCryptoKey(request);
  */
   createCryptoKey(
-      request: protos.google.cloud.kms.v1.ICreateCryptoKeyRequest,
+      request?: protos.google.cloud.kms.v1.ICreateCryptoKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.ICryptoKey,
           protos.google.cloud.kms.v1.ICreateCryptoKeyRequest|null|undefined,
@@ -843,7 +843,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.createCryptoKey(request, options, callback);
   }
   createCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.ICreateCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.ICreateCryptoKeyVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKeyVersion,
@@ -887,7 +887,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.createCryptoKeyVersion(request);
  */
   createCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.ICreateCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.ICreateCryptoKeyVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.ICryptoKeyVersion,
           protos.google.cloud.kms.v1.ICreateCryptoKeyVersionRequest|null|undefined,
@@ -921,7 +921,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.createCryptoKeyVersion(request, options, callback);
   }
   importCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.IImportCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.IImportCryptoKeyVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKeyVersion,
@@ -995,7 +995,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.importCryptoKeyVersion(request);
  */
   importCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.IImportCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.IImportCryptoKeyVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.ICryptoKeyVersion,
           protos.google.cloud.kms.v1.IImportCryptoKeyVersionRequest|null|undefined,
@@ -1029,7 +1029,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.importCryptoKeyVersion(request, options, callback);
   }
   createImportJob(
-      request: protos.google.cloud.kms.v1.ICreateImportJobRequest,
+      request?: protos.google.cloud.kms.v1.ICreateImportJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.IImportJob,
@@ -1074,7 +1074,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.createImportJob(request);
  */
   createImportJob(
-      request: protos.google.cloud.kms.v1.ICreateImportJobRequest,
+      request?: protos.google.cloud.kms.v1.ICreateImportJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.IImportJob,
           protos.google.cloud.kms.v1.ICreateImportJobRequest|null|undefined,
@@ -1108,7 +1108,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.createImportJob(request, options, callback);
   }
   updateCryptoKey(
-      request: protos.google.cloud.kms.v1.IUpdateCryptoKeyRequest,
+      request?: protos.google.cloud.kms.v1.IUpdateCryptoKeyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKey,
@@ -1147,7 +1147,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.updateCryptoKey(request);
  */
   updateCryptoKey(
-      request: protos.google.cloud.kms.v1.IUpdateCryptoKeyRequest,
+      request?: protos.google.cloud.kms.v1.IUpdateCryptoKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.ICryptoKey,
           protos.google.cloud.kms.v1.IUpdateCryptoKeyRequest|null|undefined,
@@ -1181,7 +1181,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.updateCryptoKey(request, options, callback);
   }
   updateCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.IUpdateCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.IUpdateCryptoKeyVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKeyVersion,
@@ -1226,7 +1226,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.updateCryptoKeyVersion(request);
  */
   updateCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.IUpdateCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.IUpdateCryptoKeyVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.ICryptoKeyVersion,
           protos.google.cloud.kms.v1.IUpdateCryptoKeyVersionRequest|null|undefined,
@@ -1260,7 +1260,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.updateCryptoKeyVersion(request, options, callback);
   }
   encrypt(
-      request: protos.google.cloud.kms.v1.IEncryptRequest,
+      request?: protos.google.cloud.kms.v1.IEncryptRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.IEncryptResponse,
@@ -1355,7 +1355,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.encrypt(request);
  */
   encrypt(
-      request: protos.google.cloud.kms.v1.IEncryptRequest,
+      request?: protos.google.cloud.kms.v1.IEncryptRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.IEncryptResponse,
           protos.google.cloud.kms.v1.IEncryptRequest|null|undefined,
@@ -1389,7 +1389,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.encrypt(request, options, callback);
   }
   decrypt(
-      request: protos.google.cloud.kms.v1.IDecryptRequest,
+      request?: protos.google.cloud.kms.v1.IDecryptRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.IDecryptResponse,
@@ -1467,7 +1467,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.decrypt(request);
  */
   decrypt(
-      request: protos.google.cloud.kms.v1.IDecryptRequest,
+      request?: protos.google.cloud.kms.v1.IDecryptRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.IDecryptResponse,
           protos.google.cloud.kms.v1.IDecryptRequest|null|undefined,
@@ -1501,7 +1501,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.decrypt(request, options, callback);
   }
   asymmetricSign(
-      request: protos.google.cloud.kms.v1.IAsymmetricSignRequest,
+      request?: protos.google.cloud.kms.v1.IAsymmetricSignRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.IAsymmetricSignResponse,
@@ -1560,7 +1560,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.asymmetricSign(request);
  */
   asymmetricSign(
-      request: protos.google.cloud.kms.v1.IAsymmetricSignRequest,
+      request?: protos.google.cloud.kms.v1.IAsymmetricSignRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.IAsymmetricSignResponse,
           protos.google.cloud.kms.v1.IAsymmetricSignRequest|null|undefined,
@@ -1594,7 +1594,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.asymmetricSign(request, options, callback);
   }
   asymmetricDecrypt(
-      request: protos.google.cloud.kms.v1.IAsymmetricDecryptRequest,
+      request?: protos.google.cloud.kms.v1.IAsymmetricDecryptRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.IAsymmetricDecryptResponse,
@@ -1653,7 +1653,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.asymmetricDecrypt(request);
  */
   asymmetricDecrypt(
-      request: protos.google.cloud.kms.v1.IAsymmetricDecryptRequest,
+      request?: protos.google.cloud.kms.v1.IAsymmetricDecryptRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.IAsymmetricDecryptResponse,
           protos.google.cloud.kms.v1.IAsymmetricDecryptRequest|null|undefined,
@@ -1687,7 +1687,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.asymmetricDecrypt(request, options, callback);
   }
   updateCryptoKeyPrimaryVersion(
-      request: protos.google.cloud.kms.v1.IUpdateCryptoKeyPrimaryVersionRequest,
+      request?: protos.google.cloud.kms.v1.IUpdateCryptoKeyPrimaryVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKey,
@@ -1729,7 +1729,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.updateCryptoKeyPrimaryVersion(request);
  */
   updateCryptoKeyPrimaryVersion(
-      request: protos.google.cloud.kms.v1.IUpdateCryptoKeyPrimaryVersionRequest,
+      request?: protos.google.cloud.kms.v1.IUpdateCryptoKeyPrimaryVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.ICryptoKey,
           protos.google.cloud.kms.v1.IUpdateCryptoKeyPrimaryVersionRequest|null|undefined,
@@ -1763,7 +1763,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.updateCryptoKeyPrimaryVersion(request, options, callback);
   }
   destroyCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.IDestroyCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.IDestroyCryptoKeyVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKeyVersion,
@@ -1811,7 +1811,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.destroyCryptoKeyVersion(request);
  */
   destroyCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.IDestroyCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.IDestroyCryptoKeyVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.ICryptoKeyVersion,
           protos.google.cloud.kms.v1.IDestroyCryptoKeyVersionRequest|null|undefined,
@@ -1845,7 +1845,7 @@ export class KeyManagementServiceClient {
     return this.innerApiCalls.destroyCryptoKeyVersion(request, options, callback);
   }
   restoreCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.IRestoreCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.IRestoreCryptoKeyVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKeyVersion,
@@ -1888,7 +1888,7 @@ export class KeyManagementServiceClient {
  * const [response] = await client.restoreCryptoKeyVersion(request);
  */
   restoreCryptoKeyVersion(
-      request: protos.google.cloud.kms.v1.IRestoreCryptoKeyVersionRequest,
+      request?: protos.google.cloud.kms.v1.IRestoreCryptoKeyVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.kms.v1.ICryptoKeyVersion,
           protos.google.cloud.kms.v1.IRestoreCryptoKeyVersionRequest|null|undefined,
@@ -1923,7 +1923,7 @@ export class KeyManagementServiceClient {
   }
 
   listKeyRings(
-      request: protos.google.cloud.kms.v1.IListKeyRingsRequest,
+      request?: protos.google.cloud.kms.v1.IListKeyRingsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.IKeyRing[],
@@ -1983,7 +1983,7 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  */
   listKeyRings(
-      request: protos.google.cloud.kms.v1.IListKeyRingsRequest,
+      request?: protos.google.cloud.kms.v1.IListKeyRingsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.kms.v1.IListKeyRingsRequest,
           protos.google.cloud.kms.v1.IListKeyRingsResponse|null|undefined,
@@ -2143,7 +2143,7 @@ export class KeyManagementServiceClient {
     ) as AsyncIterable<protos.google.cloud.kms.v1.IKeyRing>;
   }
   listCryptoKeys(
-      request: protos.google.cloud.kms.v1.IListCryptoKeysRequest,
+      request?: protos.google.cloud.kms.v1.IListCryptoKeysRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKey[],
@@ -2205,7 +2205,7 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  */
   listCryptoKeys(
-      request: protos.google.cloud.kms.v1.IListCryptoKeysRequest,
+      request?: protos.google.cloud.kms.v1.IListCryptoKeysRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.kms.v1.IListCryptoKeysRequest,
           protos.google.cloud.kms.v1.IListCryptoKeysResponse|null|undefined,
@@ -2369,7 +2369,7 @@ export class KeyManagementServiceClient {
     ) as AsyncIterable<protos.google.cloud.kms.v1.ICryptoKey>;
   }
   listCryptoKeyVersions(
-      request: protos.google.cloud.kms.v1.IListCryptoKeyVersionsRequest,
+      request?: protos.google.cloud.kms.v1.IListCryptoKeyVersionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.ICryptoKeyVersion[],
@@ -2432,7 +2432,7 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  */
   listCryptoKeyVersions(
-      request: protos.google.cloud.kms.v1.IListCryptoKeyVersionsRequest,
+      request?: protos.google.cloud.kms.v1.IListCryptoKeyVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.kms.v1.IListCryptoKeyVersionsRequest,
           protos.google.cloud.kms.v1.IListCryptoKeyVersionsResponse|null|undefined,
@@ -2598,7 +2598,7 @@ export class KeyManagementServiceClient {
     ) as AsyncIterable<protos.google.cloud.kms.v1.ICryptoKeyVersion>;
   }
   listImportJobs(
-      request: protos.google.cloud.kms.v1.IListImportJobsRequest,
+      request?: protos.google.cloud.kms.v1.IListImportJobsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.kms.v1.IImportJob[],
@@ -2658,7 +2658,7 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  */
   listImportJobs(
-      request: protos.google.cloud.kms.v1.IListImportJobsRequest,
+      request?: protos.google.cloud.kms.v1.IListImportJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.kms.v1.IListImportJobsRequest,
           protos.google.cloud.kms.v1.IListImportJobsResponse|null|undefined,

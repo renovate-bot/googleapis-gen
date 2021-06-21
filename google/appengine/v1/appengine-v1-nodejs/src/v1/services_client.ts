@@ -317,7 +317,7 @@ export class ServicesClient {
   // -- Service calls --
   // -------------------
   getService(
-      request: protos.google.appengine.v1.IGetServiceRequest,
+      request?: protos.google.appengine.v1.IGetServiceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IService,
@@ -354,7 +354,7 @@ export class ServicesClient {
  * const [response] = await client.getService(request);
  */
   getService(
-      request: protos.google.appengine.v1.IGetServiceRequest,
+      request?: protos.google.appengine.v1.IGetServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.appengine.v1.IService,
           protos.google.appengine.v1.IGetServiceRequest|null|undefined,
@@ -389,7 +389,7 @@ export class ServicesClient {
   }
 
   updateService(
-      request: protos.google.appengine.v1.IUpdateServiceRequest,
+      request?: protos.google.appengine.v1.IUpdateServiceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.appengine.v1.IService, protos.google.appengine.v1.IOperationMetadataV1>,
@@ -447,7 +447,7 @@ export class ServicesClient {
  * const [response] = await operation.promise();
  */
   updateService(
-      request: protos.google.appengine.v1.IUpdateServiceRequest,
+      request?: protos.google.appengine.v1.IUpdateServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.appengine.v1.IService, protos.google.appengine.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -502,7 +502,7 @@ export class ServicesClient {
     return decodeOperation as LROperation<protos.google.appengine.v1.Service, protos.google.appengine.v1.OperationMetadataV1>;
   }
   deleteService(
-      request: protos.google.appengine.v1.IDeleteServiceRequest,
+      request?: protos.google.appengine.v1.IDeleteServiceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.appengine.v1.IOperationMetadataV1>,
@@ -542,7 +542,7 @@ export class ServicesClient {
  * const [response] = await operation.promise();
  */
   deleteService(
-      request: protos.google.appengine.v1.IDeleteServiceRequest,
+      request?: protos.google.appengine.v1.IDeleteServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.appengine.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -597,7 +597,7 @@ export class ServicesClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.appengine.v1.OperationMetadataV1>;
   }
   listServices(
-      request: protos.google.appengine.v1.IListServicesRequest,
+      request?: protos.google.appengine.v1.IListServicesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.appengine.v1.IService[],
@@ -642,7 +642,7 @@ export class ServicesClient {
  *   for more details and examples.
  */
   listServices(
-      request: protos.google.appengine.v1.IListServicesRequest,
+      request?: protos.google.appengine.v1.IListServicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.appengine.v1.IListServicesRequest,
           protos.google.appengine.v1.IListServicesResponse|null|undefined,

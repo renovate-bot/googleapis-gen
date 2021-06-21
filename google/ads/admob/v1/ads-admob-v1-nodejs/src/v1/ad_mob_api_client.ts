@@ -292,7 +292,7 @@ export class AdMobApiClient {
   // -- Service calls --
   // -------------------
   getPublisherAccount(
-      request: protos.google.ads.admob.v1.IGetPublisherAccountRequest,
+      request?: protos.google.ads.admob.v1.IGetPublisherAccountRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.admob.v1.IPublisherAccount,
@@ -330,7 +330,7 @@ export class AdMobApiClient {
  * const [response] = await client.getPublisherAccount(request);
  */
   getPublisherAccount(
-      request: protos.google.ads.admob.v1.IGetPublisherAccountRequest,
+      request?: protos.google.ads.admob.v1.IGetPublisherAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.admob.v1.IPublisherAccount,
           protos.google.ads.admob.v1.IGetPublisherAccountRequest|null|undefined,
@@ -445,7 +445,7 @@ export class AdMobApiClient {
   }
 
   listPublisherAccounts(
-      request: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
+      request?: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.admob.v1.IPublisherAccount[],
@@ -491,7 +491,7 @@ export class AdMobApiClient {
  *   for more details and examples.
  */
   listPublisherAccounts(
-      request: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
+      request?: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.ads.admob.v1.IListPublisherAccountsRequest,
           protos.google.ads.admob.v1.IListPublisherAccountsResponse|null|undefined,

@@ -635,7 +635,7 @@ export class CampaignFeedServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignFeed(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignFeedRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignFeedRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.ICampaignFeed,
@@ -680,7 +680,7 @@ export class CampaignFeedServiceClient {
  * const [response] = await client.getCampaignFeed(request);
  */
   getCampaignFeed(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignFeedRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.ICampaignFeed,
           protos.google.ads.googleads.v7.services.IGetCampaignFeedRequest|null|undefined,
@@ -714,7 +714,7 @@ export class CampaignFeedServiceClient {
     return this.innerApiCalls.getCampaignFeed(request, options, callback);
   }
   mutateCampaignFeeds(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignFeedsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateCampaignFeedsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IMutateCampaignFeedsResponse,
@@ -790,7 +790,7 @@ export class CampaignFeedServiceClient {
  * const [response] = await client.mutateCampaignFeeds(request);
  */
   mutateCampaignFeeds(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignFeedsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateCampaignFeedsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IMutateCampaignFeedsResponse,
           protos.google.ads.googleads.v7.services.IMutateCampaignFeedsRequest|null|undefined,

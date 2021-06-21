@@ -653,7 +653,7 @@ export class KeywordThemeConstantServiceClient {
   // -- Service calls --
   // -------------------
   getKeywordThemeConstant(
-      request: protos.google.ads.googleads.v8.services.IGetKeywordThemeConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetKeywordThemeConstantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IKeywordThemeConstant,
@@ -690,7 +690,7 @@ export class KeywordThemeConstantServiceClient {
  * const [response] = await client.getKeywordThemeConstant(request);
  */
   getKeywordThemeConstant(
-      request: protos.google.ads.googleads.v8.services.IGetKeywordThemeConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetKeywordThemeConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IKeywordThemeConstant,
           protos.google.ads.googleads.v8.services.IGetKeywordThemeConstantRequest|null|undefined,
@@ -724,7 +724,7 @@ export class KeywordThemeConstantServiceClient {
     return this.innerApiCalls.getKeywordThemeConstant(request, options, callback);
   }
   suggestKeywordThemeConstants(
-      request: protos.google.ads.googleads.v8.services.ISuggestKeywordThemeConstantsRequest,
+      request?: protos.google.ads.googleads.v8.services.ISuggestKeywordThemeConstantsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.ISuggestKeywordThemeConstantsResponse,
@@ -776,7 +776,7 @@ export class KeywordThemeConstantServiceClient {
  * const [response] = await client.suggestKeywordThemeConstants(request);
  */
   suggestKeywordThemeConstants(
-      request: protos.google.ads.googleads.v8.services.ISuggestKeywordThemeConstantsRequest,
+      request?: protos.google.ads.googleads.v8.services.ISuggestKeywordThemeConstantsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.ISuggestKeywordThemeConstantsResponse,
           protos.google.ads.googleads.v8.services.ISuggestKeywordThemeConstantsRequest|null|undefined,

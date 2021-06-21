@@ -632,7 +632,7 @@ export class GoogleAdsServiceClient {
   // -- Service calls --
   // -------------------
   mutate(
-      request: protos.google.ads.googleads.v6.services.IMutateGoogleAdsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateGoogleAdsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateGoogleAdsResponse,
@@ -734,7 +734,7 @@ export class GoogleAdsServiceClient {
  * const [response] = await client.mutate(request);
  */
   mutate(
-      request: protos.google.ads.googleads.v6.services.IMutateGoogleAdsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateGoogleAdsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateGoogleAdsResponse,
           protos.google.ads.googleads.v6.services.IMutateGoogleAdsRequest|null|undefined,
@@ -811,7 +811,7 @@ export class GoogleAdsServiceClient {
   }
 
   search(
-      request: protos.google.ads.googleads.v6.services.ISearchGoogleAdsRequest,
+      request?: protos.google.ads.googleads.v6.services.ISearchGoogleAdsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IGoogleAdsRow[],
@@ -873,7 +873,7 @@ export class GoogleAdsServiceClient {
  *   for more details and examples.
  */
   search(
-      request: protos.google.ads.googleads.v6.services.ISearchGoogleAdsRequest,
+      request?: protos.google.ads.googleads.v6.services.ISearchGoogleAdsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.ads.googleads.v6.services.ISearchGoogleAdsRequest,
           protos.google.ads.googleads.v6.services.ISearchGoogleAdsResponse|null|undefined,

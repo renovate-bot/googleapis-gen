@@ -310,7 +310,7 @@ export class DataTransferServiceClient {
   // -- Service calls --
   // -------------------
   getDataSource(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IGetDataSourceRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IGetDataSourceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.IDataSource,
@@ -350,7 +350,7 @@ export class DataTransferServiceClient {
  * const [response] = await client.getDataSource(request);
  */
   getDataSource(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IGetDataSourceRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IGetDataSourceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.datatransfer.v1.IDataSource,
           protos.google.cloud.bigquery.datatransfer.v1.IGetDataSourceRequest|null|undefined,
@@ -384,7 +384,7 @@ export class DataTransferServiceClient {
     return this.innerApiCalls.getDataSource(request, options, callback);
   }
   createTransferConfig(
-      request: protos.google.cloud.bigquery.datatransfer.v1.ICreateTransferConfigRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.ICreateTransferConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.ITransferConfig,
@@ -455,7 +455,7 @@ export class DataTransferServiceClient {
  * const [response] = await client.createTransferConfig(request);
  */
   createTransferConfig(
-      request: protos.google.cloud.bigquery.datatransfer.v1.ICreateTransferConfigRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.ICreateTransferConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.datatransfer.v1.ITransferConfig,
           protos.google.cloud.bigquery.datatransfer.v1.ICreateTransferConfigRequest|null|undefined,
@@ -489,7 +489,7 @@ export class DataTransferServiceClient {
     return this.innerApiCalls.createTransferConfig(request, options, callback);
   }
   updateTransferConfig(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IUpdateTransferConfigRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IUpdateTransferConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.ITransferConfig,
@@ -559,7 +559,7 @@ export class DataTransferServiceClient {
  * const [response] = await client.updateTransferConfig(request);
  */
   updateTransferConfig(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IUpdateTransferConfigRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IUpdateTransferConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.datatransfer.v1.ITransferConfig,
           protos.google.cloud.bigquery.datatransfer.v1.IUpdateTransferConfigRequest|null|undefined,
@@ -593,7 +593,7 @@ export class DataTransferServiceClient {
     return this.innerApiCalls.updateTransferConfig(request, options, callback);
   }
   deleteTransferConfig(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IDeleteTransferConfigRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IDeleteTransferConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -633,7 +633,7 @@ export class DataTransferServiceClient {
  * const [response] = await client.deleteTransferConfig(request);
  */
   deleteTransferConfig(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IDeleteTransferConfigRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IDeleteTransferConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.datatransfer.v1.IDeleteTransferConfigRequest|null|undefined,
@@ -667,7 +667,7 @@ export class DataTransferServiceClient {
     return this.innerApiCalls.deleteTransferConfig(request, options, callback);
   }
   getTransferConfig(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IGetTransferConfigRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IGetTransferConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.ITransferConfig,
@@ -706,7 +706,7 @@ export class DataTransferServiceClient {
  * const [response] = await client.getTransferConfig(request);
  */
   getTransferConfig(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IGetTransferConfigRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IGetTransferConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.datatransfer.v1.ITransferConfig,
           protos.google.cloud.bigquery.datatransfer.v1.IGetTransferConfigRequest|null|undefined,
@@ -740,7 +740,7 @@ export class DataTransferServiceClient {
     return this.innerApiCalls.getTransferConfig(request, options, callback);
   }
   scheduleTransferRuns(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IScheduleTransferRunsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IScheduleTransferRunsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.IScheduleTransferRunsResponse,
@@ -787,9 +787,10 @@ export class DataTransferServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.scheduleTransferRuns(request);
+ * @deprecated ScheduleTransferRuns is deprecated and may be removed in a future version.
  */
   scheduleTransferRuns(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IScheduleTransferRunsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IScheduleTransferRunsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.datatransfer.v1.IScheduleTransferRunsResponse,
           protos.google.cloud.bigquery.datatransfer.v1.IScheduleTransferRunsRequest|null|undefined,
@@ -820,10 +821,11 @@ export class DataTransferServiceClient {
       'parent': request.parent || '',
     });
     this.initialize();
+    gax.warn('DEP$DataTransferService-$ScheduleTransferRuns','ScheduleTransferRuns is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.scheduleTransferRuns(request, options, callback);
   }
   startManualTransferRuns(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IStartManualTransferRunsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IStartManualTransferRunsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.IStartManualTransferRunsResponse,
@@ -870,7 +872,7 @@ export class DataTransferServiceClient {
  * const [response] = await client.startManualTransferRuns(request);
  */
   startManualTransferRuns(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IStartManualTransferRunsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IStartManualTransferRunsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.datatransfer.v1.IStartManualTransferRunsResponse,
           protos.google.cloud.bigquery.datatransfer.v1.IStartManualTransferRunsRequest|null|undefined,
@@ -904,7 +906,7 @@ export class DataTransferServiceClient {
     return this.innerApiCalls.startManualTransferRuns(request, options, callback);
   }
   getTransferRun(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IGetTransferRunRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IGetTransferRunRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.ITransferRun,
@@ -943,7 +945,7 @@ export class DataTransferServiceClient {
  * const [response] = await client.getTransferRun(request);
  */
   getTransferRun(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IGetTransferRunRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IGetTransferRunRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.datatransfer.v1.ITransferRun,
           protos.google.cloud.bigquery.datatransfer.v1.IGetTransferRunRequest|null|undefined,
@@ -977,7 +979,7 @@ export class DataTransferServiceClient {
     return this.innerApiCalls.getTransferRun(request, options, callback);
   }
   deleteTransferRun(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IDeleteTransferRunRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IDeleteTransferRunRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1016,7 +1018,7 @@ export class DataTransferServiceClient {
  * const [response] = await client.deleteTransferRun(request);
  */
   deleteTransferRun(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IDeleteTransferRunRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IDeleteTransferRunRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.datatransfer.v1.IDeleteTransferRunRequest|null|undefined,
@@ -1050,7 +1052,7 @@ export class DataTransferServiceClient {
     return this.innerApiCalls.deleteTransferRun(request, options, callback);
   }
   checkValidCreds(
-      request: protos.google.cloud.bigquery.datatransfer.v1.ICheckValidCredsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.ICheckValidCredsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.ICheckValidCredsResponse,
@@ -1094,7 +1096,7 @@ export class DataTransferServiceClient {
  * const [response] = await client.checkValidCreds(request);
  */
   checkValidCreds(
-      request: protos.google.cloud.bigquery.datatransfer.v1.ICheckValidCredsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.ICheckValidCredsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.bigquery.datatransfer.v1.ICheckValidCredsResponse,
           protos.google.cloud.bigquery.datatransfer.v1.ICheckValidCredsRequest|null|undefined,
@@ -1129,7 +1131,7 @@ export class DataTransferServiceClient {
   }
 
   listDataSources(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IListDataSourcesRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IListDataSourcesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.IDataSource[],
@@ -1181,7 +1183,7 @@ export class DataTransferServiceClient {
  *   for more details and examples.
  */
   listDataSources(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IListDataSourcesRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IListDataSourcesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.bigquery.datatransfer.v1.IListDataSourcesRequest,
           protos.google.cloud.bigquery.datatransfer.v1.IListDataSourcesResponse|null|undefined,
@@ -1323,7 +1325,7 @@ export class DataTransferServiceClient {
     ) as AsyncIterable<protos.google.cloud.bigquery.datatransfer.v1.IDataSource>;
   }
   listTransferConfigs(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IListTransferConfigsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IListTransferConfigsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.ITransferConfig[],
@@ -1376,7 +1378,7 @@ export class DataTransferServiceClient {
  *   for more details and examples.
  */
   listTransferConfigs(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IListTransferConfigsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IListTransferConfigsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.bigquery.datatransfer.v1.IListTransferConfigsRequest,
           protos.google.cloud.bigquery.datatransfer.v1.IListTransferConfigsResponse|null|undefined,
@@ -1522,7 +1524,7 @@ export class DataTransferServiceClient {
     ) as AsyncIterable<protos.google.cloud.bigquery.datatransfer.v1.ITransferConfig>;
   }
   listTransferRuns(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IListTransferRunsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IListTransferRunsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.ITransferRun[],
@@ -1578,7 +1580,7 @@ export class DataTransferServiceClient {
  *   for more details and examples.
  */
   listTransferRuns(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IListTransferRunsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IListTransferRunsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.bigquery.datatransfer.v1.IListTransferRunsRequest,
           protos.google.cloud.bigquery.datatransfer.v1.IListTransferRunsResponse|null|undefined,
@@ -1730,7 +1732,7 @@ export class DataTransferServiceClient {
     ) as AsyncIterable<protos.google.cloud.bigquery.datatransfer.v1.ITransferRun>;
   }
   listTransferLogs(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IListTransferLogsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IListTransferLogsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.bigquery.datatransfer.v1.ITransferMessage[],
@@ -1784,7 +1786,7 @@ export class DataTransferServiceClient {
  *   for more details and examples.
  */
   listTransferLogs(
-      request: protos.google.cloud.bigquery.datatransfer.v1.IListTransferLogsRequest,
+      request?: protos.google.cloud.bigquery.datatransfer.v1.IListTransferLogsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.bigquery.datatransfer.v1.IListTransferLogsRequest,
           protos.google.cloud.bigquery.datatransfer.v1.IListTransferLogsResponse|null|undefined,

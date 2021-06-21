@@ -590,7 +590,7 @@ export class AdGroupSimulationServiceClient {
   // -- Service calls --
   // -------------------
   getAdGroupSimulation(
-      request: protos.google.ads.googleads.v5.services.IGetAdGroupSimulationRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetAdGroupSimulationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.IAdGroupSimulation,
@@ -627,7 +627,7 @@ export class AdGroupSimulationServiceClient {
  * const [response] = await client.getAdGroupSimulation(request);
  */
   getAdGroupSimulation(
-      request: protos.google.ads.googleads.v5.services.IGetAdGroupSimulationRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetAdGroupSimulationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.IAdGroupSimulation,
           protos.google.ads.googleads.v5.services.IGetAdGroupSimulationRequest|null|undefined,

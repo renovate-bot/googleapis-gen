@@ -653,7 +653,7 @@ export class TopicConstantServiceClient {
   // -- Service calls --
   // -------------------
   getTopicConstant(
-      request: protos.google.ads.googleads.v8.services.IGetTopicConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetTopicConstantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ITopicConstant,
@@ -698,7 +698,7 @@ export class TopicConstantServiceClient {
  * const [response] = await client.getTopicConstant(request);
  */
   getTopicConstant(
-      request: protos.google.ads.googleads.v8.services.IGetTopicConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetTopicConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ITopicConstant,
           protos.google.ads.googleads.v8.services.IGetTopicConstantRequest|null|undefined,

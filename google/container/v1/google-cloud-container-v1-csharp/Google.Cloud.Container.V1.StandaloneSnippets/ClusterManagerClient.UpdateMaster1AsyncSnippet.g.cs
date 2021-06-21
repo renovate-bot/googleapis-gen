@@ -36,7 +36,9 @@ namespace Google.Cloud.Container.V1.Snippets
             string clusterId = "";
             string masterVersion = "";
             // Make the request
+#pragma warning disable CS0612
             Operation response = await clusterManagerClient.UpdateMasterAsync(projectId, zone, clusterId, masterVersion);
+#pragma warning restore CS0612
         }
     }
 }

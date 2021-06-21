@@ -327,7 +327,7 @@ export class GameServerConfigsServiceClient {
   // -- Service calls --
   // -------------------
   getGameServerConfig(
-      request: protos.google.cloud.gaming.v1beta.IGetGameServerConfigRequest,
+      request?: protos.google.cloud.gaming.v1beta.IGetGameServerConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.gaming.v1beta.IGameServerConfig,
@@ -366,7 +366,7 @@ export class GameServerConfigsServiceClient {
  * const [response] = await client.getGameServerConfig(request);
  */
   getGameServerConfig(
-      request: protos.google.cloud.gaming.v1beta.IGetGameServerConfigRequest,
+      request?: protos.google.cloud.gaming.v1beta.IGetGameServerConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.gaming.v1beta.IGameServerConfig,
           protos.google.cloud.gaming.v1beta.IGetGameServerConfigRequest|null|undefined,
@@ -401,7 +401,7 @@ export class GameServerConfigsServiceClient {
   }
 
   createGameServerConfig(
-      request: protos.google.cloud.gaming.v1beta.ICreateGameServerConfigRequest,
+      request?: protos.google.cloud.gaming.v1beta.ICreateGameServerConfigRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.gaming.v1beta.IGameServerConfig, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
@@ -449,7 +449,7 @@ export class GameServerConfigsServiceClient {
  * const [response] = await operation.promise();
  */
   createGameServerConfig(
-      request: protos.google.cloud.gaming.v1beta.ICreateGameServerConfigRequest,
+      request?: protos.google.cloud.gaming.v1beta.ICreateGameServerConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.gaming.v1beta.IGameServerConfig, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -504,7 +504,7 @@ export class GameServerConfigsServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.gaming.v1beta.GameServerConfig, protos.google.cloud.gaming.v1beta.OperationMetadata>;
   }
   deleteGameServerConfig(
-      request: protos.google.cloud.gaming.v1beta.IDeleteGameServerConfigRequest,
+      request?: protos.google.cloud.gaming.v1beta.IDeleteGameServerConfigRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
@@ -547,7 +547,7 @@ export class GameServerConfigsServiceClient {
  * const [response] = await operation.promise();
  */
   deleteGameServerConfig(
-      request: protos.google.cloud.gaming.v1beta.IDeleteGameServerConfigRequest,
+      request?: protos.google.cloud.gaming.v1beta.IDeleteGameServerConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -602,7 +602,7 @@ export class GameServerConfigsServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.gaming.v1beta.OperationMetadata>;
   }
   listGameServerConfigs(
-      request: protos.google.cloud.gaming.v1beta.IListGameServerConfigsRequest,
+      request?: protos.google.cloud.gaming.v1beta.IListGameServerConfigsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.gaming.v1beta.IGameServerConfig[],
@@ -660,7 +660,7 @@ export class GameServerConfigsServiceClient {
  *   for more details and examples.
  */
   listGameServerConfigs(
-      request: protos.google.cloud.gaming.v1beta.IListGameServerConfigsRequest,
+      request?: protos.google.cloud.gaming.v1beta.IListGameServerConfigsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.gaming.v1beta.IListGameServerConfigsRequest,
           protos.google.cloud.gaming.v1beta.IListGameServerConfigsResponse|null|undefined,

@@ -382,7 +382,7 @@ export class DatastoreAdminClient {
   // -- Service calls --
   // -------------------
   getIndex(
-      request: protos.google.datastore.admin.v1.IGetIndexRequest,
+      request?: protos.google.datastore.admin.v1.IGetIndexRequest,
       options?: CallOptions):
       Promise<[
         protos.google.datastore.admin.v1.IIndex,
@@ -421,7 +421,7 @@ export class DatastoreAdminClient {
  * const [response] = await client.getIndex(request);
  */
   getIndex(
-      request: protos.google.datastore.admin.v1.IGetIndexRequest,
+      request?: protos.google.datastore.admin.v1.IGetIndexRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.datastore.admin.v1.IIndex,
           protos.google.datastore.admin.v1.IGetIndexRequest|null|undefined,
@@ -456,7 +456,7 @@ export class DatastoreAdminClient {
   }
 
   exportEntities(
-      request: protos.google.datastore.admin.v1.IExportEntitiesRequest,
+      request?: protos.google.datastore.admin.v1.IExportEntitiesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.datastore.admin.v1.IExportEntitiesResponse, protos.google.datastore.admin.v1.IExportEntitiesMetadata>,
@@ -526,7 +526,7 @@ export class DatastoreAdminClient {
  * const [response] = await operation.promise();
  */
   exportEntities(
-      request: protos.google.datastore.admin.v1.IExportEntitiesRequest,
+      request?: protos.google.datastore.admin.v1.IExportEntitiesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.datastore.admin.v1.IExportEntitiesResponse, protos.google.datastore.admin.v1.IExportEntitiesMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -581,7 +581,7 @@ export class DatastoreAdminClient {
     return decodeOperation as LROperation<protos.google.datastore.admin.v1.ExportEntitiesResponse, protos.google.datastore.admin.v1.ExportEntitiesMetadata>;
   }
   importEntities(
-      request: protos.google.datastore.admin.v1.IImportEntitiesRequest,
+      request?: protos.google.datastore.admin.v1.IImportEntitiesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.datastore.admin.v1.IImportEntitiesMetadata>,
@@ -646,7 +646,7 @@ export class DatastoreAdminClient {
  * const [response] = await operation.promise();
  */
   importEntities(
-      request: protos.google.datastore.admin.v1.IImportEntitiesRequest,
+      request?: protos.google.datastore.admin.v1.IImportEntitiesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.datastore.admin.v1.IImportEntitiesMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -701,7 +701,7 @@ export class DatastoreAdminClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.datastore.admin.v1.ImportEntitiesMetadata>;
   }
   createIndex(
-      request: protos.google.datastore.admin.v1.ICreateIndexRequest,
+      request?: protos.google.datastore.admin.v1.ICreateIndexRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.datastore.admin.v1.IIndex, protos.google.datastore.admin.v1.IIndexOperationMetadata>,
@@ -757,7 +757,7 @@ export class DatastoreAdminClient {
  * const [response] = await operation.promise();
  */
   createIndex(
-      request: protos.google.datastore.admin.v1.ICreateIndexRequest,
+      request?: protos.google.datastore.admin.v1.ICreateIndexRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.datastore.admin.v1.IIndex, protos.google.datastore.admin.v1.IIndexOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -812,7 +812,7 @@ export class DatastoreAdminClient {
     return decodeOperation as LROperation<protos.google.datastore.admin.v1.Index, protos.google.datastore.admin.v1.IndexOperationMetadata>;
   }
   deleteIndex(
-      request: protos.google.datastore.admin.v1.IDeleteIndexRequest,
+      request?: protos.google.datastore.admin.v1.IDeleteIndexRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.datastore.admin.v1.IIndex, protos.google.datastore.admin.v1.IIndexOperationMetadata>,
@@ -863,7 +863,7 @@ export class DatastoreAdminClient {
  * const [response] = await operation.promise();
  */
   deleteIndex(
-      request: protos.google.datastore.admin.v1.IDeleteIndexRequest,
+      request?: protos.google.datastore.admin.v1.IDeleteIndexRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.datastore.admin.v1.IIndex, protos.google.datastore.admin.v1.IIndexOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -918,7 +918,7 @@ export class DatastoreAdminClient {
     return decodeOperation as LROperation<protos.google.datastore.admin.v1.Index, protos.google.datastore.admin.v1.IndexOperationMetadata>;
   }
   listIndexes(
-      request: protos.google.datastore.admin.v1.IListIndexesRequest,
+      request?: protos.google.datastore.admin.v1.IListIndexesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.datastore.admin.v1.IIndex[],
@@ -967,7 +967,7 @@ export class DatastoreAdminClient {
  *   for more details and examples.
  */
   listIndexes(
-      request: protos.google.datastore.admin.v1.IListIndexesRequest,
+      request?: protos.google.datastore.admin.v1.IListIndexesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.datastore.admin.v1.IListIndexesRequest,
           protos.google.datastore.admin.v1.IListIndexesResponse|null|undefined,

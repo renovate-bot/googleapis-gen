@@ -105,14 +105,14 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
             aio.Channel: A gRPC AsyncIO channel object.
         """
 
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
+            default_scopes=cls.AUTH_SCOPES,
+            scopes=scopes,
+            default_host=cls.DEFAULT_HOST,
             **kwargs
         )
 
@@ -220,6 +220,7 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
             scopes=scopes,
             quota_project_id=quota_project_id,
             client_info=client_info,
+            always_use_jwt_access=True,
         )
 
         if not self._grpc_channel:

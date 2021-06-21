@@ -35,7 +35,9 @@ namespace Google.Cloud.Container.V1.Snippets
             string clusterId = "";
             ClusterUpdate update = new ClusterUpdate();
             // Make the request
+#pragma warning disable CS0612
             Operation response = clusterManagerClient.UpdateCluster(projectId, zone, clusterId, update);
+#pragma warning restore CS0612
         }
     }
 }

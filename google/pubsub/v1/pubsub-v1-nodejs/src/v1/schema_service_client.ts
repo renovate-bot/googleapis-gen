@@ -299,7 +299,7 @@ export class SchemaServiceClient {
   // -- Service calls --
   // -------------------
   createSchema(
-      request: protos.google.pubsub.v1.ICreateSchemaRequest,
+      request?: protos.google.pubsub.v1.ICreateSchemaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.pubsub.v1.ISchema,
@@ -349,7 +349,7 @@ export class SchemaServiceClient {
  * const [response] = await client.createSchema(request);
  */
   createSchema(
-      request: protos.google.pubsub.v1.ICreateSchemaRequest,
+      request?: protos.google.pubsub.v1.ICreateSchemaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.pubsub.v1.ISchema,
           protos.google.pubsub.v1.ICreateSchemaRequest|null|undefined,
@@ -383,7 +383,7 @@ export class SchemaServiceClient {
     return this.innerApiCalls.createSchema(request, options, callback);
   }
   getSchema(
-      request: protos.google.pubsub.v1.IGetSchemaRequest,
+      request?: protos.google.pubsub.v1.IGetSchemaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.pubsub.v1.ISchema,
@@ -425,7 +425,7 @@ export class SchemaServiceClient {
  * const [response] = await client.getSchema(request);
  */
   getSchema(
-      request: protos.google.pubsub.v1.IGetSchemaRequest,
+      request?: protos.google.pubsub.v1.IGetSchemaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.pubsub.v1.ISchema,
           protos.google.pubsub.v1.IGetSchemaRequest|null|undefined,
@@ -459,7 +459,7 @@ export class SchemaServiceClient {
     return this.innerApiCalls.getSchema(request, options, callback);
   }
   deleteSchema(
-      request: protos.google.pubsub.v1.IDeleteSchemaRequest,
+      request?: protos.google.pubsub.v1.IDeleteSchemaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -497,7 +497,7 @@ export class SchemaServiceClient {
  * const [response] = await client.deleteSchema(request);
  */
   deleteSchema(
-      request: protos.google.pubsub.v1.IDeleteSchemaRequest,
+      request?: protos.google.pubsub.v1.IDeleteSchemaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.pubsub.v1.IDeleteSchemaRequest|null|undefined,
@@ -531,7 +531,7 @@ export class SchemaServiceClient {
     return this.innerApiCalls.deleteSchema(request, options, callback);
   }
   validateSchema(
-      request: protos.google.pubsub.v1.IValidateSchemaRequest,
+      request?: protos.google.pubsub.v1.IValidateSchemaRequest,
       options?: CallOptions):
       Promise<[
         protos.google.pubsub.v1.IValidateSchemaResponse,
@@ -571,7 +571,7 @@ export class SchemaServiceClient {
  * const [response] = await client.validateSchema(request);
  */
   validateSchema(
-      request: protos.google.pubsub.v1.IValidateSchemaRequest,
+      request?: protos.google.pubsub.v1.IValidateSchemaRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.pubsub.v1.IValidateSchemaResponse,
           protos.google.pubsub.v1.IValidateSchemaRequest|null|undefined,
@@ -605,7 +605,7 @@ export class SchemaServiceClient {
     return this.innerApiCalls.validateSchema(request, options, callback);
   }
   validateMessage(
-      request: protos.google.pubsub.v1.IValidateMessageRequest,
+      request?: protos.google.pubsub.v1.IValidateMessageRequest,
       options?: CallOptions):
       Promise<[
         protos.google.pubsub.v1.IValidateMessageResponse,
@@ -653,7 +653,7 @@ export class SchemaServiceClient {
  * const [response] = await client.validateMessage(request);
  */
   validateMessage(
-      request: protos.google.pubsub.v1.IValidateMessageRequest,
+      request?: protos.google.pubsub.v1.IValidateMessageRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.pubsub.v1.IValidateMessageResponse,
           protos.google.pubsub.v1.IValidateMessageRequest|null|undefined,
@@ -688,7 +688,7 @@ export class SchemaServiceClient {
   }
 
   listSchemas(
-      request: protos.google.pubsub.v1.IListSchemasRequest,
+      request?: protos.google.pubsub.v1.IListSchemasRequest,
       options?: CallOptions):
       Promise<[
         protos.google.pubsub.v1.ISchema[],
@@ -740,7 +740,7 @@ export class SchemaServiceClient {
  *   for more details and examples.
  */
   listSchemas(
-      request: protos.google.pubsub.v1.IListSchemasRequest,
+      request?: protos.google.pubsub.v1.IListSchemasRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.pubsub.v1.IListSchemasRequest,
           protos.google.pubsub.v1.IListSchemasResponse|null|undefined,

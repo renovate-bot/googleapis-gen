@@ -273,7 +273,7 @@ export class ClusterManagerClient {
   // -- Service calls --
   // -------------------
   listClusters(
-      request: protos.google.container.v1.IListClustersRequest,
+      request?: protos.google.container.v1.IListClustersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IListClustersResponse,
@@ -322,7 +322,7 @@ export class ClusterManagerClient {
  * const [response] = await client.listClusters(request);
  */
   listClusters(
-      request: protos.google.container.v1.IListClustersRequest,
+      request?: protos.google.container.v1.IListClustersRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IListClustersResponse,
           protos.google.container.v1.IListClustersRequest|null|undefined,
@@ -357,7 +357,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.listClusters(request, options, callback);
   }
   getCluster(
-      request: protos.google.container.v1.IGetClusterRequest,
+      request?: protos.google.container.v1.IGetClusterRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.ICluster,
@@ -407,7 +407,7 @@ export class ClusterManagerClient {
  * const [response] = await client.getCluster(request);
  */
   getCluster(
-      request: protos.google.container.v1.IGetClusterRequest,
+      request?: protos.google.container.v1.IGetClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.ICluster,
           protos.google.container.v1.IGetClusterRequest|null|undefined,
@@ -442,7 +442,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.getCluster(request, options, callback);
   }
   createCluster(
-      request: protos.google.container.v1.ICreateClusterRequest,
+      request?: protos.google.container.v1.ICreateClusterRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -505,7 +505,7 @@ export class ClusterManagerClient {
  * const [response] = await client.createCluster(request);
  */
   createCluster(
-      request: protos.google.container.v1.ICreateClusterRequest,
+      request?: protos.google.container.v1.ICreateClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ICreateClusterRequest|null|undefined,
@@ -540,7 +540,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.createCluster(request, options, callback);
   }
   updateCluster(
-      request: protos.google.container.v1.IUpdateClusterRequest,
+      request?: protos.google.container.v1.IUpdateClusterRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -592,7 +592,7 @@ export class ClusterManagerClient {
  * const [response] = await client.updateCluster(request);
  */
   updateCluster(
-      request: protos.google.container.v1.IUpdateClusterRequest,
+      request?: protos.google.container.v1.IUpdateClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.IUpdateClusterRequest|null|undefined,
@@ -627,7 +627,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.updateCluster(request, options, callback);
   }
   updateNodePool(
-      request: protos.google.container.v1.IUpdateNodePoolRequest,
+      request?: protos.google.container.v1.IUpdateNodePoolRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -705,7 +705,7 @@ export class ClusterManagerClient {
  * const [response] = await client.updateNodePool(request);
  */
   updateNodePool(
-      request: protos.google.container.v1.IUpdateNodePoolRequest,
+      request?: protos.google.container.v1.IUpdateNodePoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.IUpdateNodePoolRequest|null|undefined,
@@ -740,7 +740,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.updateNodePool(request, options, callback);
   }
   setNodePoolAutoscaling(
-      request: protos.google.container.v1.ISetNodePoolAutoscalingRequest,
+      request?: protos.google.container.v1.ISetNodePoolAutoscalingRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -796,7 +796,7 @@ export class ClusterManagerClient {
  * const [response] = await client.setNodePoolAutoscaling(request);
  */
   setNodePoolAutoscaling(
-      request: protos.google.container.v1.ISetNodePoolAutoscalingRequest,
+      request?: protos.google.container.v1.ISetNodePoolAutoscalingRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetNodePoolAutoscalingRequest|null|undefined,
@@ -831,7 +831,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.setNodePoolAutoscaling(request, options, callback);
   }
   setLoggingService(
-      request: protos.google.container.v1.ISetLoggingServiceRequest,
+      request?: protos.google.container.v1.ISetLoggingServiceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -893,7 +893,7 @@ export class ClusterManagerClient {
  * const [response] = await client.setLoggingService(request);
  */
   setLoggingService(
-      request: protos.google.container.v1.ISetLoggingServiceRequest,
+      request?: protos.google.container.v1.ISetLoggingServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetLoggingServiceRequest|null|undefined,
@@ -928,7 +928,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.setLoggingService(request, options, callback);
   }
   setMonitoringService(
-      request: protos.google.container.v1.ISetMonitoringServiceRequest,
+      request?: protos.google.container.v1.ISetMonitoringServiceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -990,7 +990,7 @@ export class ClusterManagerClient {
  * const [response] = await client.setMonitoringService(request);
  */
   setMonitoringService(
-      request: protos.google.container.v1.ISetMonitoringServiceRequest,
+      request?: protos.google.container.v1.ISetMonitoringServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetMonitoringServiceRequest|null|undefined,
@@ -1025,7 +1025,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.setMonitoringService(request, options, callback);
   }
   setAddonsConfig(
-      request: protos.google.container.v1.ISetAddonsConfigRequest,
+      request?: protos.google.container.v1.ISetAddonsConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -1078,7 +1078,7 @@ export class ClusterManagerClient {
  * const [response] = await client.setAddonsConfig(request);
  */
   setAddonsConfig(
-      request: protos.google.container.v1.ISetAddonsConfigRequest,
+      request?: protos.google.container.v1.ISetAddonsConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetAddonsConfigRequest|null|undefined,
@@ -1113,7 +1113,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.setAddonsConfig(request, options, callback);
   }
   setLocations(
-      request: protos.google.container.v1.ISetLocationsRequest,
+      request?: protos.google.container.v1.ISetLocationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -1172,9 +1172,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setLocations(request);
+ * @deprecated SetLocations is deprecated and may be removed in a future version.
  */
   setLocations(
-      request: protos.google.container.v1.ISetLocationsRequest,
+      request?: protos.google.container.v1.ISetLocationsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetLocationsRequest|null|undefined,
@@ -1206,10 +1207,11 @@ export class ClusterManagerClient {
       'project_id': request.projectId || '',
     });
     this.initialize();
+    gax.warn('DEP$ClusterManager-$SetLocations','SetLocations is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.setLocations(request, options, callback);
   }
   updateMaster(
-      request: protos.google.container.v1.IUpdateMasterRequest,
+      request?: protos.google.container.v1.IUpdateMasterRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -1270,7 +1272,7 @@ export class ClusterManagerClient {
  * const [response] = await client.updateMaster(request);
  */
   updateMaster(
-      request: protos.google.container.v1.IUpdateMasterRequest,
+      request?: protos.google.container.v1.IUpdateMasterRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.IUpdateMasterRequest|null|undefined,
@@ -1305,7 +1307,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.updateMaster(request, options, callback);
   }
   setMasterAuth(
-      request: protos.google.container.v1.ISetMasterAuthRequest,
+      request?: protos.google.container.v1.ISetMasterAuthRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -1361,7 +1363,7 @@ export class ClusterManagerClient {
  * const [response] = await client.setMasterAuth(request);
  */
   setMasterAuth(
-      request: protos.google.container.v1.ISetMasterAuthRequest,
+      request?: protos.google.container.v1.ISetMasterAuthRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetMasterAuthRequest|null|undefined,
@@ -1396,7 +1398,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.setMasterAuth(request, options, callback);
   }
   deleteCluster(
-      request: protos.google.container.v1.IDeleteClusterRequest,
+      request?: protos.google.container.v1.IDeleteClusterRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -1454,7 +1456,7 @@ export class ClusterManagerClient {
  * const [response] = await client.deleteCluster(request);
  */
   deleteCluster(
-      request: protos.google.container.v1.IDeleteClusterRequest,
+      request?: protos.google.container.v1.IDeleteClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.IDeleteClusterRequest|null|undefined,
@@ -1489,7 +1491,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.deleteCluster(request, options, callback);
   }
   listOperations(
-      request: protos.google.container.v1.IListOperationsRequest,
+      request?: protos.google.container.v1.IListOperationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IListOperationsResponse,
@@ -1537,7 +1539,7 @@ export class ClusterManagerClient {
  * const [response] = await client.listOperations(request);
  */
   listOperations(
-      request: protos.google.container.v1.IListOperationsRequest,
+      request?: protos.google.container.v1.IListOperationsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IListOperationsResponse,
           protos.google.container.v1.IListOperationsRequest|null|undefined,
@@ -1572,7 +1574,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.listOperations(request, options, callback);
   }
   getOperation(
-      request: protos.google.container.v1.IGetOperationRequest,
+      request?: protos.google.container.v1.IGetOperationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -1622,7 +1624,7 @@ export class ClusterManagerClient {
  * const [response] = await client.getOperation(request);
  */
   getOperation(
-      request: protos.google.container.v1.IGetOperationRequest,
+      request?: protos.google.container.v1.IGetOperationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.IGetOperationRequest|null|undefined,
@@ -1657,7 +1659,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.getOperation(request, options, callback);
   }
   cancelOperation(
-      request: protos.google.container.v1.ICancelOperationRequest,
+      request?: protos.google.container.v1.ICancelOperationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1707,7 +1709,7 @@ export class ClusterManagerClient {
  * const [response] = await client.cancelOperation(request);
  */
   cancelOperation(
-      request: protos.google.container.v1.ICancelOperationRequest,
+      request?: protos.google.container.v1.ICancelOperationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.container.v1.ICancelOperationRequest|null|undefined,
@@ -1742,7 +1744,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.cancelOperation(request, options, callback);
   }
   getServerConfig(
-      request: protos.google.container.v1.IGetServerConfigRequest,
+      request?: protos.google.container.v1.IGetServerConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IServerConfig,
@@ -1789,7 +1791,7 @@ export class ClusterManagerClient {
  * const [response] = await client.getServerConfig(request);
  */
   getServerConfig(
-      request: protos.google.container.v1.IGetServerConfigRequest,
+      request?: protos.google.container.v1.IGetServerConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IServerConfig,
           protos.google.container.v1.IGetServerConfigRequest|null|undefined,
@@ -1824,7 +1826,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.getServerConfig(request, options, callback);
   }
   getJSONWebKeys(
-      request: protos.google.container.v1.IGetJSONWebKeysRequest,
+      request?: protos.google.container.v1.IGetJSONWebKeysRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IGetJSONWebKeysResponse,
@@ -1865,7 +1867,7 @@ export class ClusterManagerClient {
  * const [response] = await client.getJSONWebKeys(request);
  */
   getJSONWebKeys(
-      request: protos.google.container.v1.IGetJSONWebKeysRequest,
+      request?: protos.google.container.v1.IGetJSONWebKeysRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IGetJSONWebKeysResponse,
           protos.google.container.v1.IGetJSONWebKeysRequest|null|undefined,
@@ -1899,7 +1901,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.getJSONWebKeys(request, options, callback);
   }
   listNodePools(
-      request: protos.google.container.v1.IListNodePoolsRequest,
+      request?: protos.google.container.v1.IListNodePoolsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IListNodePoolsResponse,
@@ -1949,7 +1951,7 @@ export class ClusterManagerClient {
  * const [response] = await client.listNodePools(request);
  */
   listNodePools(
-      request: protos.google.container.v1.IListNodePoolsRequest,
+      request?: protos.google.container.v1.IListNodePoolsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IListNodePoolsResponse,
           protos.google.container.v1.IListNodePoolsRequest|null|undefined,
@@ -1984,7 +1986,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.listNodePools(request, options, callback);
   }
   getNodePool(
-      request: protos.google.container.v1.IGetNodePoolRequest,
+      request?: protos.google.container.v1.IGetNodePoolRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.INodePool,
@@ -2038,7 +2040,7 @@ export class ClusterManagerClient {
  * const [response] = await client.getNodePool(request);
  */
   getNodePool(
-      request: protos.google.container.v1.IGetNodePoolRequest,
+      request?: protos.google.container.v1.IGetNodePoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.INodePool,
           protos.google.container.v1.IGetNodePoolRequest|null|undefined,
@@ -2073,7 +2075,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.getNodePool(request, options, callback);
   }
   createNodePool(
-      request: protos.google.container.v1.ICreateNodePoolRequest,
+      request?: protos.google.container.v1.ICreateNodePoolRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -2126,7 +2128,7 @@ export class ClusterManagerClient {
  * const [response] = await client.createNodePool(request);
  */
   createNodePool(
-      request: protos.google.container.v1.ICreateNodePoolRequest,
+      request?: protos.google.container.v1.ICreateNodePoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ICreateNodePoolRequest|null|undefined,
@@ -2161,7 +2163,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.createNodePool(request, options, callback);
   }
   deleteNodePool(
-      request: protos.google.container.v1.IDeleteNodePoolRequest,
+      request?: protos.google.container.v1.IDeleteNodePoolRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -2215,7 +2217,7 @@ export class ClusterManagerClient {
  * const [response] = await client.deleteNodePool(request);
  */
   deleteNodePool(
-      request: protos.google.container.v1.IDeleteNodePoolRequest,
+      request?: protos.google.container.v1.IDeleteNodePoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.IDeleteNodePoolRequest|null|undefined,
@@ -2250,7 +2252,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.deleteNodePool(request, options, callback);
   }
   rollbackNodePoolUpgrade(
-      request: protos.google.container.v1.IRollbackNodePoolUpgradeRequest,
+      request?: protos.google.container.v1.IRollbackNodePoolUpgradeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -2305,7 +2307,7 @@ export class ClusterManagerClient {
  * const [response] = await client.rollbackNodePoolUpgrade(request);
  */
   rollbackNodePoolUpgrade(
-      request: protos.google.container.v1.IRollbackNodePoolUpgradeRequest,
+      request?: protos.google.container.v1.IRollbackNodePoolUpgradeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.IRollbackNodePoolUpgradeRequest|null|undefined,
@@ -2340,7 +2342,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.rollbackNodePoolUpgrade(request, options, callback);
   }
   setNodePoolManagement(
-      request: protos.google.container.v1.ISetNodePoolManagementRequest,
+      request?: protos.google.container.v1.ISetNodePoolManagementRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -2396,7 +2398,7 @@ export class ClusterManagerClient {
  * const [response] = await client.setNodePoolManagement(request);
  */
   setNodePoolManagement(
-      request: protos.google.container.v1.ISetNodePoolManagementRequest,
+      request?: protos.google.container.v1.ISetNodePoolManagementRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetNodePoolManagementRequest|null|undefined,
@@ -2431,7 +2433,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.setNodePoolManagement(request, options, callback);
   }
   setLabels(
-      request: protos.google.container.v1.ISetLabelsRequest,
+      request?: protos.google.container.v1.ISetLabelsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -2490,7 +2492,7 @@ export class ClusterManagerClient {
  * const [response] = await client.setLabels(request);
  */
   setLabels(
-      request: protos.google.container.v1.ISetLabelsRequest,
+      request?: protos.google.container.v1.ISetLabelsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetLabelsRequest|null|undefined,
@@ -2525,7 +2527,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.setLabels(request, options, callback);
   }
   setLegacyAbac(
-      request: protos.google.container.v1.ISetLegacyAbacRequest,
+      request?: protos.google.container.v1.ISetLegacyAbacRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -2577,7 +2579,7 @@ export class ClusterManagerClient {
  * const [response] = await client.setLegacyAbac(request);
  */
   setLegacyAbac(
-      request: protos.google.container.v1.ISetLegacyAbacRequest,
+      request?: protos.google.container.v1.ISetLegacyAbacRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetLegacyAbacRequest|null|undefined,
@@ -2612,7 +2614,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.setLegacyAbac(request, options, callback);
   }
   startIPRotation(
-      request: protos.google.container.v1.IStartIPRotationRequest,
+      request?: protos.google.container.v1.IStartIPRotationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -2664,7 +2666,7 @@ export class ClusterManagerClient {
  * const [response] = await client.startIPRotation(request);
  */
   startIPRotation(
-      request: protos.google.container.v1.IStartIPRotationRequest,
+      request?: protos.google.container.v1.IStartIPRotationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.IStartIPRotationRequest|null|undefined,
@@ -2699,7 +2701,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.startIPRotation(request, options, callback);
   }
   completeIPRotation(
-      request: protos.google.container.v1.ICompleteIPRotationRequest,
+      request?: protos.google.container.v1.ICompleteIPRotationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -2749,7 +2751,7 @@ export class ClusterManagerClient {
  * const [response] = await client.completeIPRotation(request);
  */
   completeIPRotation(
-      request: protos.google.container.v1.ICompleteIPRotationRequest,
+      request?: protos.google.container.v1.ICompleteIPRotationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ICompleteIPRotationRequest|null|undefined,
@@ -2784,7 +2786,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.completeIPRotation(request, options, callback);
   }
   setNodePoolSize(
-      request: protos.google.container.v1.ISetNodePoolSizeRequest,
+      request?: protos.google.container.v1.ISetNodePoolSizeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -2840,7 +2842,7 @@ export class ClusterManagerClient {
  * const [response] = await client.setNodePoolSize(request);
  */
   setNodePoolSize(
-      request: protos.google.container.v1.ISetNodePoolSizeRequest,
+      request?: protos.google.container.v1.ISetNodePoolSizeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetNodePoolSizeRequest|null|undefined,
@@ -2875,7 +2877,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.setNodePoolSize(request, options, callback);
   }
   setNetworkPolicy(
-      request: protos.google.container.v1.ISetNetworkPolicyRequest,
+      request?: protos.google.container.v1.ISetNetworkPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -2927,7 +2929,7 @@ export class ClusterManagerClient {
  * const [response] = await client.setNetworkPolicy(request);
  */
   setNetworkPolicy(
-      request: protos.google.container.v1.ISetNetworkPolicyRequest,
+      request?: protos.google.container.v1.ISetNetworkPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetNetworkPolicyRequest|null|undefined,
@@ -2962,7 +2964,7 @@ export class ClusterManagerClient {
     return this.innerApiCalls.setNetworkPolicy(request, options, callback);
   }
   setMaintenancePolicy(
-      request: protos.google.container.v1.ISetMaintenancePolicyRequest,
+      request?: protos.google.container.v1.ISetMaintenancePolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IOperation,
@@ -3013,7 +3015,7 @@ export class ClusterManagerClient {
  * const [response] = await client.setMaintenancePolicy(request);
  */
   setMaintenancePolicy(
-      request: protos.google.container.v1.ISetMaintenancePolicyRequest,
+      request?: protos.google.container.v1.ISetMaintenancePolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.container.v1.IOperation,
           protos.google.container.v1.ISetMaintenancePolicyRequest|null|undefined,
@@ -3049,7 +3051,7 @@ export class ClusterManagerClient {
   }
 
   listUsableSubnetworks(
-      request: protos.google.container.v1.IListUsableSubnetworksRequest,
+      request?: protos.google.container.v1.IListUsableSubnetworksRequest,
       options?: CallOptions):
       Promise<[
         protos.google.container.v1.IUsableSubnetwork[],
@@ -3104,7 +3106,7 @@ export class ClusterManagerClient {
  *   for more details and examples.
  */
   listUsableSubnetworks(
-      request: protos.google.container.v1.IListUsableSubnetworksRequest,
+      request?: protos.google.container.v1.IListUsableSubnetworksRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.container.v1.IListUsableSubnetworksRequest,
           protos.google.container.v1.IListUsableSubnetworksResponse|null|undefined,

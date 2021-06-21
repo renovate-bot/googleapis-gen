@@ -367,7 +367,7 @@ export class HubServiceClient {
   // -- Service calls --
   // -------------------
   getHub(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IGetHubRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IGetHubRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.networkconnectivity.v1alpha1.IHub,
@@ -404,7 +404,7 @@ export class HubServiceClient {
  * const [response] = await client.getHub(request);
  */
   getHub(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IGetHubRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IGetHubRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.networkconnectivity.v1alpha1.IHub,
           protos.google.cloud.networkconnectivity.v1alpha1.IGetHubRequest|null|undefined,
@@ -438,7 +438,7 @@ export class HubServiceClient {
     return this.innerApiCalls.getHub(request, options, callback);
   }
   getSpoke(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IGetSpokeRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IGetSpokeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.networkconnectivity.v1alpha1.ISpoke,
@@ -475,7 +475,7 @@ export class HubServiceClient {
  * const [response] = await client.getSpoke(request);
  */
   getSpoke(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IGetSpokeRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IGetSpokeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.networkconnectivity.v1alpha1.ISpoke,
           protos.google.cloud.networkconnectivity.v1alpha1.IGetSpokeRequest|null|undefined,
@@ -510,7 +510,7 @@ export class HubServiceClient {
   }
 
   createHub(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.ICreateHubRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.ICreateHubRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.networkconnectivity.v1alpha1.IHub, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
@@ -568,7 +568,7 @@ export class HubServiceClient {
  * const [response] = await operation.promise();
  */
   createHub(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.ICreateHubRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.ICreateHubRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.networkconnectivity.v1alpha1.IHub, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -623,7 +623,7 @@ export class HubServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.networkconnectivity.v1alpha1.Hub, protos.google.cloud.networkconnectivity.v1alpha1.OperationMetadata>;
   }
   updateHub(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IUpdateHubRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IUpdateHubRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.networkconnectivity.v1alpha1.IHub, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
@@ -683,7 +683,7 @@ export class HubServiceClient {
  * const [response] = await operation.promise();
  */
   updateHub(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IUpdateHubRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IUpdateHubRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.networkconnectivity.v1alpha1.IHub, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -738,7 +738,7 @@ export class HubServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.networkconnectivity.v1alpha1.Hub, protos.google.cloud.networkconnectivity.v1alpha1.OperationMetadata>;
   }
   deleteHub(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IDeleteHubRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IDeleteHubRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
@@ -792,7 +792,7 @@ export class HubServiceClient {
  * const [response] = await operation.promise();
  */
   deleteHub(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IDeleteHubRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IDeleteHubRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -847,7 +847,7 @@ export class HubServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.networkconnectivity.v1alpha1.OperationMetadata>;
   }
   createSpoke(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.ICreateSpokeRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.ICreateSpokeRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.networkconnectivity.v1alpha1.ISpoke, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
@@ -905,7 +905,7 @@ export class HubServiceClient {
  * const [response] = await operation.promise();
  */
   createSpoke(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.ICreateSpokeRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.ICreateSpokeRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.networkconnectivity.v1alpha1.ISpoke, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -960,7 +960,7 @@ export class HubServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.networkconnectivity.v1alpha1.Spoke, protos.google.cloud.networkconnectivity.v1alpha1.OperationMetadata>;
   }
   updateSpoke(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IUpdateSpokeRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IUpdateSpokeRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.networkconnectivity.v1alpha1.ISpoke, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
@@ -1020,7 +1020,7 @@ export class HubServiceClient {
  * const [response] = await operation.promise();
  */
   updateSpoke(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IUpdateSpokeRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IUpdateSpokeRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.networkconnectivity.v1alpha1.ISpoke, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1075,7 +1075,7 @@ export class HubServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.networkconnectivity.v1alpha1.Spoke, protos.google.cloud.networkconnectivity.v1alpha1.OperationMetadata>;
   }
   deleteSpoke(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IDeleteSpokeRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IDeleteSpokeRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
@@ -1129,7 +1129,7 @@ export class HubServiceClient {
  * const [response] = await operation.promise();
  */
   deleteSpoke(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IDeleteSpokeRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IDeleteSpokeRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1alpha1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1184,7 +1184,7 @@ export class HubServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.networkconnectivity.v1alpha1.OperationMetadata>;
   }
   listHubs(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IListHubsRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IListHubsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.networkconnectivity.v1alpha1.IHub[],
@@ -1233,7 +1233,7 @@ export class HubServiceClient {
  *   for more details and examples.
  */
   listHubs(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IListHubsRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IListHubsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.networkconnectivity.v1alpha1.IListHubsRequest,
           protos.google.cloud.networkconnectivity.v1alpha1.IListHubsResponse|null|undefined,
@@ -1371,7 +1371,7 @@ export class HubServiceClient {
     ) as AsyncIterable<protos.google.cloud.networkconnectivity.v1alpha1.IHub>;
   }
   listSpokes(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IListSpokesRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IListSpokesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.networkconnectivity.v1alpha1.ISpoke[],
@@ -1420,7 +1420,7 @@ export class HubServiceClient {
  *   for more details and examples.
  */
   listSpokes(
-      request: protos.google.cloud.networkconnectivity.v1alpha1.IListSpokesRequest,
+      request?: protos.google.cloud.networkconnectivity.v1alpha1.IListSpokesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.networkconnectivity.v1alpha1.IListSpokesRequest,
           protos.google.cloud.networkconnectivity.v1alpha1.IListSpokesResponse|null|undefined,

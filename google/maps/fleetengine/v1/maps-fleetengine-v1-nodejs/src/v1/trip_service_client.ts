@@ -284,7 +284,7 @@ export class TripServiceClient {
   // -- Service calls --
   // -------------------
   createTrip(
-      request: protos.maps.fleetengine.v1.ICreateTripRequest,
+      request?: protos.maps.fleetengine.v1.ICreateTripRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.ITrip,
@@ -363,7 +363,7 @@ export class TripServiceClient {
  * const [response] = await client.createTrip(request);
  */
   createTrip(
-      request: protos.maps.fleetengine.v1.ICreateTripRequest,
+      request?: protos.maps.fleetengine.v1.ICreateTripRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.maps.fleetengine.v1.ITrip,
           protos.maps.fleetengine.v1.ICreateTripRequest|null|undefined,
@@ -397,7 +397,7 @@ export class TripServiceClient {
     return this.innerApiCalls.createTrip(request, options, callback);
   }
   getTrip(
-      request: protos.maps.fleetengine.v1.IGetTripRequest,
+      request?: protos.maps.fleetengine.v1.IGetTripRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.ITrip,
@@ -455,7 +455,7 @@ export class TripServiceClient {
  * const [response] = await client.getTrip(request);
  */
   getTrip(
-      request: protos.maps.fleetengine.v1.IGetTripRequest,
+      request?: protos.maps.fleetengine.v1.IGetTripRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.maps.fleetengine.v1.ITrip,
           protos.maps.fleetengine.v1.IGetTripRequest|null|undefined,
@@ -489,7 +489,7 @@ export class TripServiceClient {
     return this.innerApiCalls.getTrip(request, options, callback);
   }
   reportBillableTrip(
-      request: protos.maps.fleetengine.v1.IReportBillableTripRequest,
+      request?: protos.maps.fleetengine.v1.IReportBillableTripRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -543,7 +543,7 @@ export class TripServiceClient {
  * const [response] = await client.reportBillableTrip(request);
  */
   reportBillableTrip(
-      request: protos.maps.fleetengine.v1.IReportBillableTripRequest,
+      request?: protos.maps.fleetengine.v1.IReportBillableTripRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.maps.fleetengine.v1.IReportBillableTripRequest|null|undefined,
@@ -577,7 +577,7 @@ export class TripServiceClient {
     return this.innerApiCalls.reportBillableTrip(request, options, callback);
   }
   updateTrip(
-      request: protos.maps.fleetengine.v1.IUpdateTripRequest,
+      request?: protos.maps.fleetengine.v1.IUpdateTripRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.ITrip,
@@ -658,7 +658,7 @@ export class TripServiceClient {
  * const [response] = await client.updateTrip(request);
  */
   updateTrip(
-      request: protos.maps.fleetengine.v1.IUpdateTripRequest,
+      request?: protos.maps.fleetengine.v1.IUpdateTripRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.maps.fleetengine.v1.ITrip,
           protos.maps.fleetengine.v1.IUpdateTripRequest|null|undefined,
@@ -693,7 +693,7 @@ export class TripServiceClient {
   }
 
   searchTrips(
-      request: protos.maps.fleetengine.v1.ISearchTripsRequest,
+      request?: protos.maps.fleetengine.v1.ISearchTripsRequest,
       options?: CallOptions):
       Promise<[
         protos.maps.fleetengine.v1.ITrip[],
@@ -759,7 +759,7 @@ export class TripServiceClient {
  *   for more details and examples.
  */
   searchTrips(
-      request: protos.maps.fleetengine.v1.ISearchTripsRequest,
+      request?: protos.maps.fleetengine.v1.ISearchTripsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.maps.fleetengine.v1.ISearchTripsRequest,
           protos.maps.fleetengine.v1.ISearchTripsResponse|null|undefined,

@@ -627,7 +627,7 @@ export class AccountBudgetProposalServiceClient {
   // -- Service calls --
   // -------------------
   getAccountBudgetProposal(
-      request: protos.google.ads.googleads.v6.services.IGetAccountBudgetProposalRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetAccountBudgetProposalRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IAccountBudgetProposal,
@@ -664,7 +664,7 @@ export class AccountBudgetProposalServiceClient {
  * const [response] = await client.getAccountBudgetProposal(request);
  */
   getAccountBudgetProposal(
-      request: protos.google.ads.googleads.v6.services.IGetAccountBudgetProposalRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetAccountBudgetProposalRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IAccountBudgetProposal,
           protos.google.ads.googleads.v6.services.IGetAccountBudgetProposalRequest|null|undefined,
@@ -698,7 +698,7 @@ export class AccountBudgetProposalServiceClient {
     return this.innerApiCalls.getAccountBudgetProposal(request, options, callback);
   }
   mutateAccountBudgetProposal(
-      request: protos.google.ads.googleads.v6.services.IMutateAccountBudgetProposalRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateAccountBudgetProposalRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateAccountBudgetProposalResponse,
@@ -741,7 +741,7 @@ export class AccountBudgetProposalServiceClient {
  * const [response] = await client.mutateAccountBudgetProposal(request);
  */
   mutateAccountBudgetProposal(
-      request: protos.google.ads.googleads.v6.services.IMutateAccountBudgetProposalRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateAccountBudgetProposalRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateAccountBudgetProposalResponse,
           protos.google.ads.googleads.v6.services.IMutateAccountBudgetProposalRequest|null|undefined,

@@ -32,7 +32,9 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             // Initialize request argument(s)
             GetAnswerRecordRequest request = new GetAnswerRecordRequest { Name = "", };
             // Make the request
+#pragma warning disable CS0612
             AnswerRecord response = answerRecordsClient.GetAnswerRecord(request);
+#pragma warning restore CS0612
         }
     }
 }

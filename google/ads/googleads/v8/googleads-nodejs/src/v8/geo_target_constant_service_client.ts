@@ -653,7 +653,7 @@ export class GeoTargetConstantServiceClient {
   // -- Service calls --
   // -------------------
   getGeoTargetConstant(
-      request: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.IGeoTargetConstant,
@@ -698,7 +698,7 @@ export class GeoTargetConstantServiceClient {
  * const [response] = await client.getGeoTargetConstant(request);
  */
   getGeoTargetConstant(
-      request: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.IGeoTargetConstant,
           protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest|null|undefined,
@@ -732,7 +732,7 @@ export class GeoTargetConstantServiceClient {
     return this.innerApiCalls.getGeoTargetConstant(request, options, callback);
   }
   suggestGeoTargetConstants(
-      request: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,
+      request?: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsResponse,
@@ -786,7 +786,7 @@ export class GeoTargetConstantServiceClient {
  * const [response] = await client.suggestGeoTargetConstants(request);
  */
   suggestGeoTargetConstants(
-      request: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,
+      request?: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsResponse,
           protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest|null|undefined,

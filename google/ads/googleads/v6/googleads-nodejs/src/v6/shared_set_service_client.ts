@@ -614,7 +614,7 @@ export class SharedSetServiceClient {
   // -- Service calls --
   // -------------------
   getSharedSet(
-      request: protos.google.ads.googleads.v6.services.IGetSharedSetRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetSharedSetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.ISharedSet,
@@ -651,7 +651,7 @@ export class SharedSetServiceClient {
  * const [response] = await client.getSharedSet(request);
  */
   getSharedSet(
-      request: protos.google.ads.googleads.v6.services.IGetSharedSetRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetSharedSetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.ISharedSet,
           protos.google.ads.googleads.v6.services.IGetSharedSetRequest|null|undefined,
@@ -685,7 +685,7 @@ export class SharedSetServiceClient {
     return this.innerApiCalls.getSharedSet(request, options, callback);
   }
   mutateSharedSets(
-      request: protos.google.ads.googleads.v6.services.IMutateSharedSetsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateSharedSetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateSharedSetsResponse,
@@ -735,7 +735,7 @@ export class SharedSetServiceClient {
  * const [response] = await client.mutateSharedSets(request);
  */
   mutateSharedSets(
-      request: protos.google.ads.googleads.v6.services.IMutateSharedSetsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateSharedSetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateSharedSetsResponse,
           protos.google.ads.googleads.v6.services.IMutateSharedSetsRequest|null|undefined,

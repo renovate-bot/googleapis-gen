@@ -266,7 +266,7 @@ export class ServiceControllerClient {
   // -- Service calls --
   // -------------------
   check(
-      request: protos.google.api.servicecontrol.v1.ICheckRequest,
+      request?: protos.google.api.servicecontrol.v1.ICheckRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.servicecontrol.v1.ICheckResponse,
@@ -331,7 +331,7 @@ export class ServiceControllerClient {
  * const [response] = await client.check(request);
  */
   check(
-      request: protos.google.api.servicecontrol.v1.ICheckRequest,
+      request?: protos.google.api.servicecontrol.v1.ICheckRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.servicecontrol.v1.ICheckResponse,
           protos.google.api.servicecontrol.v1.ICheckRequest|null|undefined,
@@ -365,7 +365,7 @@ export class ServiceControllerClient {
     return this.innerApiCalls.check(request, options, callback);
   }
   report(
-      request: protos.google.api.servicecontrol.v1.IReportRequest,
+      request?: protos.google.api.servicecontrol.v1.IReportRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.servicecontrol.v1.IReportResponse,
@@ -438,7 +438,7 @@ export class ServiceControllerClient {
  * const [response] = await client.report(request);
  */
   report(
-      request: protos.google.api.servicecontrol.v1.IReportRequest,
+      request?: protos.google.api.servicecontrol.v1.IReportRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.servicecontrol.v1.IReportResponse,
           protos.google.api.servicecontrol.v1.IReportRequest|null|undefined,

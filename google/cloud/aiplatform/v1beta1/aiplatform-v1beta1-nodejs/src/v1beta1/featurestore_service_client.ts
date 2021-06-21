@@ -492,7 +492,7 @@ export class FeaturestoreServiceClient {
   // -- Service calls --
   // -------------------
   getFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetFeaturestoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetFeaturestoreRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IFeaturestore,
@@ -529,7 +529,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await client.getFeaturestore(request);
  */
   getFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetFeaturestoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetFeaturestoreRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IFeaturestore,
           protos.google.cloud.aiplatform.v1beta1.IGetFeaturestoreRequest|null|undefined,
@@ -563,7 +563,7 @@ export class FeaturestoreServiceClient {
     return this.innerApiCalls.getFeaturestore(request, options, callback);
   }
   getEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetEntityTypeRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IEntityType,
@@ -602,7 +602,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await client.getEntityType(request);
  */
   getEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetEntityTypeRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IEntityType,
           protos.google.cloud.aiplatform.v1beta1.IGetEntityTypeRequest|null|undefined,
@@ -636,7 +636,7 @@ export class FeaturestoreServiceClient {
     return this.innerApiCalls.getEntityType(request, options, callback);
   }
   updateEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IEntityType,
@@ -691,7 +691,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await client.updateEntityType(request);
  */
   updateEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IEntityType,
           protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest|null|undefined,
@@ -725,7 +725,7 @@ export class FeaturestoreServiceClient {
     return this.innerApiCalls.updateEntityType(request, options, callback);
   }
   getFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetFeatureRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetFeatureRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IFeature,
@@ -764,7 +764,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await client.getFeature(request);
  */
   getFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.IGetFeatureRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IGetFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IFeature,
           protos.google.cloud.aiplatform.v1beta1.IGetFeatureRequest|null|undefined,
@@ -798,7 +798,7 @@ export class FeaturestoreServiceClient {
     return this.innerApiCalls.getFeature(request, options, callback);
   }
   updateFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IFeature,
@@ -853,7 +853,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await client.updateFeature(request);
  */
   updateFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.aiplatform.v1beta1.IFeature,
           protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest|null|undefined,
@@ -888,7 +888,7 @@ export class FeaturestoreServiceClient {
   }
 
   createFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreOperationMetadata>,
@@ -940,7 +940,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await operation.promise();
  */
   createFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -995,7 +995,7 @@ export class FeaturestoreServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.Featurestore, protos.google.cloud.aiplatform.v1beta1.CreateFeaturestoreOperationMetadata>;
   }
   updateFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreOperationMetadata>,
@@ -1051,7 +1051,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await operation.promise();
  */
   updateFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1106,7 +1106,7 @@ export class FeaturestoreServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.Featurestore, protos.google.cloud.aiplatform.v1beta1.UpdateFeaturestoreOperationMetadata>;
   }
   deleteFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteFeaturestoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteFeaturestoreRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
@@ -1153,7 +1153,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await operation.promise();
  */
   deleteFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteFeaturestoreRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteFeaturestoreRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1208,7 +1208,7 @@ export class FeaturestoreServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>;
   }
   createEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1beta1.IEntityType, protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeOperationMetadata>,
@@ -1260,7 +1260,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await operation.promise();
  */
   createEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1beta1.IEntityType, protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1315,7 +1315,7 @@ export class FeaturestoreServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.EntityType, protos.google.cloud.aiplatform.v1beta1.CreateEntityTypeOperationMetadata>;
   }
   deleteEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteEntityTypeRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteEntityTypeRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
@@ -1361,7 +1361,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await operation.promise();
  */
   deleteEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteEntityTypeRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1416,7 +1416,7 @@ export class FeaturestoreServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>;
   }
   createFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeatureRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateFeatureRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1beta1.IFeature, protos.google.cloud.aiplatform.v1beta1.ICreateFeatureOperationMetadata>,
@@ -1468,7 +1468,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await operation.promise();
  */
   createFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeatureRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1beta1.IFeature, protos.google.cloud.aiplatform.v1beta1.ICreateFeatureOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1523,7 +1523,7 @@ export class FeaturestoreServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.Feature, protos.google.cloud.aiplatform.v1beta1.CreateFeatureOperationMetadata>;
   }
   batchCreateFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesOperationMetadata>,
@@ -1570,7 +1570,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await operation.promise();
  */
   batchCreateFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1625,7 +1625,7 @@ export class FeaturestoreServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesResponse, protos.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesOperationMetadata>;
   }
   deleteFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteFeatureRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteFeatureRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
@@ -1667,7 +1667,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await operation.promise();
  */
   deleteFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteFeatureRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1722,7 +1722,7 @@ export class FeaturestoreServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>;
   }
   importFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesOperationMetadata>,
@@ -1810,7 +1810,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await operation.promise();
  */
   importFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1865,7 +1865,7 @@ export class FeaturestoreServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.ImportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.ImportFeatureValuesOperationMetadata>;
   }
   batchReadFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesOperationMetadata>,
@@ -1945,7 +1945,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await operation.promise();
  */
   batchReadFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2000,7 +2000,7 @@ export class FeaturestoreServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesOperationMetadata>;
   }
   exportFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesOperationMetadata>,
@@ -2051,7 +2051,7 @@ export class FeaturestoreServiceClient {
  * const [response] = await operation.promise();
  */
   exportFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2106,7 +2106,7 @@ export class FeaturestoreServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.ExportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.ExportFeatureValuesOperationMetadata>;
   }
   listFeaturestores(
-      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IFeaturestore[],
@@ -2192,7 +2192,7 @@ export class FeaturestoreServiceClient {
  *   for more details and examples.
  */
   listFeaturestores(
-      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
           protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresResponse|null|undefined,
@@ -2404,7 +2404,7 @@ export class FeaturestoreServiceClient {
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IFeaturestore>;
   }
   listEntityTypes(
-      request: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IEntityType[],
@@ -2490,7 +2490,7 @@ export class FeaturestoreServiceClient {
  *   for more details and examples.
  */
   listEntityTypes(
-      request: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
           protos.google.cloud.aiplatform.v1beta1.IListEntityTypesResponse|null|undefined,
@@ -2702,7 +2702,7 @@ export class FeaturestoreServiceClient {
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IEntityType>;
   }
   listFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IFeature[],
@@ -2795,7 +2795,7 @@ export class FeaturestoreServiceClient {
  *   for more details and examples.
  */
   listFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
           protos.google.cloud.aiplatform.v1beta1.IListFeaturesResponse|null|undefined,
@@ -3021,7 +3021,7 @@ export class FeaturestoreServiceClient {
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IFeature>;
   }
   searchFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.aiplatform.v1beta1.IFeature[],
@@ -3137,7 +3137,7 @@ export class FeaturestoreServiceClient {
  *   for more details and examples.
  */
   searchFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
+      request?: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
           protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesResponse|null|undefined,

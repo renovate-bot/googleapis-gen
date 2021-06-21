@@ -643,7 +643,7 @@ export class BillingSetupServiceClient {
   // -- Service calls --
   // -------------------
   getBillingSetup(
-      request: protos.google.ads.googleads.v7.services.IGetBillingSetupRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetBillingSetupRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IBillingSetup,
@@ -688,7 +688,7 @@ export class BillingSetupServiceClient {
  * const [response] = await client.getBillingSetup(request);
  */
   getBillingSetup(
-      request: protos.google.ads.googleads.v7.services.IGetBillingSetupRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetBillingSetupRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IBillingSetup,
           protos.google.ads.googleads.v7.services.IGetBillingSetupRequest|null|undefined,
@@ -722,7 +722,7 @@ export class BillingSetupServiceClient {
     return this.innerApiCalls.getBillingSetup(request, options, callback);
   }
   mutateBillingSetup(
-      request: protos.google.ads.googleads.v7.services.IMutateBillingSetupRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateBillingSetupRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IMutateBillingSetupResponse,
@@ -773,7 +773,7 @@ export class BillingSetupServiceClient {
  * const [response] = await client.mutateBillingSetup(request);
  */
   mutateBillingSetup(
-      request: protos.google.ads.googleads.v7.services.IMutateBillingSetupRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateBillingSetupRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IMutateBillingSetupResponse,
           protos.google.ads.googleads.v7.services.IMutateBillingSetupRequest|null|undefined,

@@ -590,7 +590,7 @@ export class CurrencyConstantServiceClient {
   // -- Service calls --
   // -------------------
   getCurrencyConstant(
-      request: protos.google.ads.googleads.v5.services.IGetCurrencyConstantRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetCurrencyConstantRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.ICurrencyConstant,
@@ -627,7 +627,7 @@ export class CurrencyConstantServiceClient {
  * const [response] = await client.getCurrencyConstant(request);
  */
   getCurrencyConstant(
-      request: protos.google.ads.googleads.v5.services.IGetCurrencyConstantRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetCurrencyConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.ICurrencyConstant,
           protos.google.ads.googleads.v5.services.IGetCurrencyConstantRequest|null|undefined,

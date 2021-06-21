@@ -649,7 +649,7 @@ export class CampaignDraftServiceClient {
   // -- Service calls --
   // -------------------
   getCampaignDraft(
-      request: protos.google.ads.googleads.v6.services.IGetCampaignDraftRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCampaignDraftRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.ICampaignDraft,
@@ -686,7 +686,7 @@ export class CampaignDraftServiceClient {
  * const [response] = await client.getCampaignDraft(request);
  */
   getCampaignDraft(
-      request: protos.google.ads.googleads.v6.services.IGetCampaignDraftRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCampaignDraftRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.ICampaignDraft,
           protos.google.ads.googleads.v6.services.IGetCampaignDraftRequest|null|undefined,
@@ -720,7 +720,7 @@ export class CampaignDraftServiceClient {
     return this.innerApiCalls.getCampaignDraft(request, options, callback);
   }
   mutateCampaignDrafts(
-      request: protos.google.ads.googleads.v6.services.IMutateCampaignDraftsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCampaignDraftsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateCampaignDraftsResponse,
@@ -771,7 +771,7 @@ export class CampaignDraftServiceClient {
  * const [response] = await client.mutateCampaignDrafts(request);
  */
   mutateCampaignDrafts(
-      request: protos.google.ads.googleads.v6.services.IMutateCampaignDraftsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCampaignDraftsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateCampaignDraftsResponse,
           protos.google.ads.googleads.v6.services.IMutateCampaignDraftsRequest|null|undefined,
@@ -806,7 +806,7 @@ export class CampaignDraftServiceClient {
   }
 
   promoteCampaignDraft(
-      request: protos.google.ads.googleads.v6.services.IPromoteCampaignDraftRequest,
+      request?: protos.google.ads.googleads.v6.services.IPromoteCampaignDraftRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
@@ -854,7 +854,7 @@ export class CampaignDraftServiceClient {
  * const [response] = await operation.promise();
  */
   promoteCampaignDraft(
-      request: protos.google.ads.googleads.v6.services.IPromoteCampaignDraftRequest,
+      request?: protos.google.ads.googleads.v6.services.IPromoteCampaignDraftRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -909,7 +909,7 @@ export class CampaignDraftServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Empty>;
   }
   listCampaignDraftAsyncErrors(
-      request: protos.google.ads.googleads.v6.services.IListCampaignDraftAsyncErrorsRequest,
+      request?: protos.google.ads.googleads.v6.services.IListCampaignDraftAsyncErrorsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.rpc.IStatus[],
@@ -961,7 +961,7 @@ export class CampaignDraftServiceClient {
  *   for more details and examples.
  */
   listCampaignDraftAsyncErrors(
-      request: protos.google.ads.googleads.v6.services.IListCampaignDraftAsyncErrorsRequest,
+      request?: protos.google.ads.googleads.v6.services.IListCampaignDraftAsyncErrorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.ads.googleads.v6.services.IListCampaignDraftAsyncErrorsRequest,
           protos.google.ads.googleads.v6.services.IListCampaignDraftAsyncErrorsResponse|null|undefined,

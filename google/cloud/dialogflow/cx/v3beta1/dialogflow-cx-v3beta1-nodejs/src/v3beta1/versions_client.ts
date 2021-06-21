@@ -373,7 +373,7 @@ export class VersionsClient {
   // -- Service calls --
   // -------------------
   getVersion(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetVersionRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IVersion,
@@ -412,7 +412,7 @@ export class VersionsClient {
  * const [response] = await client.getVersion(request);
  */
   getVersion(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetVersionRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IVersion,
           protos.google.cloud.dialogflow.cx.v3beta1.IGetVersionRequest|null|undefined,
@@ -446,7 +446,7 @@ export class VersionsClient {
     return this.innerApiCalls.getVersion(request, options, callback);
   }
   updateVersion(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateVersionRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IVersion,
@@ -486,7 +486,7 @@ export class VersionsClient {
  * const [response] = await client.updateVersion(request);
  */
   updateVersion(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateVersionRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.cx.v3beta1.IVersion,
           protos.google.cloud.dialogflow.cx.v3beta1.IUpdateVersionRequest|null|undefined,
@@ -520,7 +520,7 @@ export class VersionsClient {
     return this.innerApiCalls.updateVersion(request, options, callback);
   }
   deleteVersion(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteVersionRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteVersionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -559,7 +559,7 @@ export class VersionsClient {
  * const [response] = await client.deleteVersion(request);
  */
   deleteVersion(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteVersionRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.cx.v3beta1.IDeleteVersionRequest|null|undefined,
@@ -594,7 +594,7 @@ export class VersionsClient {
   }
 
   createVersion(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateVersionRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateVersionRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.dialogflow.cx.v3beta1.IVersion, protos.google.cloud.dialogflow.cx.v3beta1.ICreateVersionOperationMetadata>,
@@ -638,7 +638,7 @@ export class VersionsClient {
  * const [response] = await operation.promise();
  */
   createVersion(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateVersionRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.dialogflow.cx.v3beta1.IVersion, protos.google.cloud.dialogflow.cx.v3beta1.ICreateVersionOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -693,7 +693,7 @@ export class VersionsClient {
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.cx.v3beta1.Version, protos.google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata>;
   }
   loadVersion(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ILoadVersionRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ILoadVersionRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
@@ -740,7 +740,7 @@ export class VersionsClient {
  * const [response] = await operation.promise();
  */
   loadVersion(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ILoadVersionRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ILoadVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -795,7 +795,7 @@ export class VersionsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
   listVersions(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListVersionsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListVersionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.cx.v3beta1.IVersion[],
@@ -843,7 +843,7 @@ export class VersionsClient {
  *   for more details and examples.
  */
   listVersions(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListVersionsRequest,
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.cx.v3beta1.IListVersionsRequest,
           protos.google.cloud.dialogflow.cx.v3beta1.IListVersionsResponse|null|undefined,

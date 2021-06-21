@@ -587,7 +587,7 @@ export class AdGroupFeedServiceClient {
   // -- Service calls --
   // -------------------
   getAdGroupFeed(
-      request: protos.google.ads.googleads.v4.services.IGetAdGroupFeedRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetAdGroupFeedRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.IAdGroupFeed,
@@ -624,7 +624,7 @@ export class AdGroupFeedServiceClient {
  * const [response] = await client.getAdGroupFeed(request);
  */
   getAdGroupFeed(
-      request: protos.google.ads.googleads.v4.services.IGetAdGroupFeedRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetAdGroupFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.IAdGroupFeed,
           protos.google.ads.googleads.v4.services.IGetAdGroupFeedRequest|null|undefined,
@@ -658,7 +658,7 @@ export class AdGroupFeedServiceClient {
     return this.innerApiCalls.getAdGroupFeed(request, options, callback);
   }
   mutateAdGroupFeeds(
-      request: protos.google.ads.googleads.v4.services.IMutateAdGroupFeedsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateAdGroupFeedsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IMutateAdGroupFeedsResponse,
@@ -706,7 +706,7 @@ export class AdGroupFeedServiceClient {
  * const [response] = await client.mutateAdGroupFeeds(request);
  */
   mutateAdGroupFeeds(
-      request: protos.google.ads.googleads.v4.services.IMutateAdGroupFeedsRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateAdGroupFeedsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IMutateAdGroupFeedsResponse,
           protos.google.ads.googleads.v4.services.IMutateAdGroupFeedsRequest|null|undefined,

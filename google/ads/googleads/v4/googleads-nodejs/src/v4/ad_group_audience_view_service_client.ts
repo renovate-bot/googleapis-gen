@@ -587,7 +587,7 @@ export class AdGroupAudienceViewServiceClient {
   // -- Service calls --
   // -------------------
   getAdGroupAudienceView(
-      request: protos.google.ads.googleads.v4.services.IGetAdGroupAudienceViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetAdGroupAudienceViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.IAdGroupAudienceView,
@@ -624,7 +624,7 @@ export class AdGroupAudienceViewServiceClient {
  * const [response] = await client.getAdGroupAudienceView(request);
  */
   getAdGroupAudienceView(
-      request: protos.google.ads.googleads.v4.services.IGetAdGroupAudienceViewRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetAdGroupAudienceViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.IAdGroupAudienceView,
           protos.google.ads.googleads.v4.services.IGetAdGroupAudienceViewRequest|null|undefined,

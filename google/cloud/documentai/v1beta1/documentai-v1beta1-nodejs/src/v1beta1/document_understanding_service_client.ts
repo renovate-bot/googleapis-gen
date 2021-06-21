@@ -289,7 +289,7 @@ export class DocumentUnderstandingServiceClient {
   // -------------------
 
   batchProcessDocuments(
-      request: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
+      request?: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta1.IOperationMetadata>,
@@ -335,7 +335,7 @@ export class DocumentUnderstandingServiceClient {
  * const [response] = await operation.promise();
  */
   batchProcessDocuments(
-      request: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
+      request?: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,

@@ -294,7 +294,7 @@ export class TestEnvironmentDiscoveryServiceClient {
   // -- Service calls --
   // -------------------
   getTestEnvironmentCatalog(
-      request: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,
+      request?: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.testing.v1.ITestEnvironmentCatalog,
@@ -339,7 +339,7 @@ export class TestEnvironmentDiscoveryServiceClient {
  * const [response] = await client.getTestEnvironmentCatalog(request);
  */
   getTestEnvironmentCatalog(
-      request: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,
+      request?: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.testing.v1.ITestEnvironmentCatalog,
           protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest|null|undefined,

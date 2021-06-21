@@ -386,7 +386,7 @@ export class AnswerRecordsClient {
   // -- Service calls --
   // -------------------
   updateAnswerRecord(
-      request: protos.google.cloud.dialogflow.v2.IUpdateAnswerRecordRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateAnswerRecordRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IAnswerRecord,
@@ -425,7 +425,7 @@ export class AnswerRecordsClient {
  * const [response] = await client.updateAnswerRecord(request);
  */
   updateAnswerRecord(
-      request: protos.google.cloud.dialogflow.v2.IUpdateAnswerRecordRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateAnswerRecordRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IAnswerRecord,
           protos.google.cloud.dialogflow.v2.IUpdateAnswerRecordRequest|null|undefined,
@@ -460,7 +460,7 @@ export class AnswerRecordsClient {
   }
 
   listAnswerRecords(
-      request: protos.google.cloud.dialogflow.v2.IListAnswerRecordsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListAnswerRecordsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IAnswerRecord[],
@@ -520,7 +520,7 @@ export class AnswerRecordsClient {
  *   for more details and examples.
  */
   listAnswerRecords(
-      request: protos.google.cloud.dialogflow.v2.IListAnswerRecordsRequest,
+      request?: protos.google.cloud.dialogflow.v2.IListAnswerRecordsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2.IListAnswerRecordsRequest,
           protos.google.cloud.dialogflow.v2.IListAnswerRecordsResponse|null|undefined,

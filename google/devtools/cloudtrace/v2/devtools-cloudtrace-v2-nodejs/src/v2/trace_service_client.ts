@@ -280,7 +280,7 @@ export class TraceServiceClient {
   // -- Service calls --
   // -------------------
   batchWriteSpans(
-      request: protos.google.devtools.cloudtrace.v2.IBatchWriteSpansRequest,
+      request?: protos.google.devtools.cloudtrace.v2.IBatchWriteSpansRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -322,7 +322,7 @@ export class TraceServiceClient {
  * const [response] = await client.batchWriteSpans(request);
  */
   batchWriteSpans(
-      request: protos.google.devtools.cloudtrace.v2.IBatchWriteSpansRequest,
+      request?: protos.google.devtools.cloudtrace.v2.IBatchWriteSpansRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.devtools.cloudtrace.v2.IBatchWriteSpansRequest|null|undefined,
@@ -356,7 +356,7 @@ export class TraceServiceClient {
     return this.innerApiCalls.batchWriteSpans(request, options, callback);
   }
   createSpan(
-      request: protos.google.devtools.cloudtrace.v2.ISpan,
+      request?: protos.google.devtools.cloudtrace.v2.ISpan,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.cloudtrace.v2.ISpan,
@@ -446,7 +446,7 @@ export class TraceServiceClient {
  * const [response] = await client.createSpan(request);
  */
   createSpan(
-      request: protos.google.devtools.cloudtrace.v2.ISpan,
+      request?: protos.google.devtools.cloudtrace.v2.ISpan,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.cloudtrace.v2.ISpan,
           protos.google.devtools.cloudtrace.v2.ISpan|null|undefined,

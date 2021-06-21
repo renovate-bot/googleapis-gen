@@ -590,7 +590,7 @@ export class IncomeRangeViewServiceClient {
   // -- Service calls --
   // -------------------
   getIncomeRangeView(
-      request: protos.google.ads.googleads.v5.services.IGetIncomeRangeViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetIncomeRangeViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.IIncomeRangeView,
@@ -627,7 +627,7 @@ export class IncomeRangeViewServiceClient {
  * const [response] = await client.getIncomeRangeView(request);
  */
   getIncomeRangeView(
-      request: protos.google.ads.googleads.v5.services.IGetIncomeRangeViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetIncomeRangeViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.IIncomeRangeView,
           protos.google.ads.googleads.v5.services.IGetIncomeRangeViewRequest|null|undefined,

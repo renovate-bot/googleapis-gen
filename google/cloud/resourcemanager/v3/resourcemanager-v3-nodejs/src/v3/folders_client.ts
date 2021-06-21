@@ -359,7 +359,7 @@ export class FoldersClient {
   // -- Service calls --
   // -------------------
   getFolder(
-      request: protos.google.cloud.resourcemanager.v3.IGetFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IGetFolderRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.resourcemanager.v3.IFolder,
@@ -401,7 +401,7 @@ export class FoldersClient {
  * const [response] = await client.getFolder(request);
  */
   getFolder(
-      request: protos.google.cloud.resourcemanager.v3.IGetFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IGetFolderRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.resourcemanager.v3.IFolder,
           protos.google.cloud.resourcemanager.v3.IGetFolderRequest|null|undefined,
@@ -435,7 +435,7 @@ export class FoldersClient {
     return this.innerApiCalls.getFolder(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -480,7 +480,7 @@ export class FoldersClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -514,7 +514,7 @@ export class FoldersClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -561,7 +561,7 @@ export class FoldersClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -595,7 +595,7 @@ export class FoldersClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -642,7 +642,7 @@ export class FoldersClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -677,7 +677,7 @@ export class FoldersClient {
   }
 
   createFolder(
-      request: protos.google.cloud.resourcemanager.v3.ICreateFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ICreateFolderRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.IFolder, protos.google.cloud.resourcemanager.v3.ICreateFolderMetadata>,
@@ -744,7 +744,7 @@ export class FoldersClient {
  * const [response] = await operation.promise();
  */
   createFolder(
-      request: protos.google.cloud.resourcemanager.v3.ICreateFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ICreateFolderRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.IFolder, protos.google.cloud.resourcemanager.v3.ICreateFolderMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -792,7 +792,7 @@ export class FoldersClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Folder, protos.google.cloud.resourcemanager.v3.CreateFolderMetadata>;
   }
   updateFolder(
-      request: protos.google.cloud.resourcemanager.v3.IUpdateFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IUpdateFolderRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.IFolder, protos.google.cloud.resourcemanager.v3.IUpdateFolderMetadata>,
@@ -850,7 +850,7 @@ export class FoldersClient {
  * const [response] = await operation.promise();
  */
   updateFolder(
-      request: protos.google.cloud.resourcemanager.v3.IUpdateFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IUpdateFolderRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.IFolder, protos.google.cloud.resourcemanager.v3.IUpdateFolderMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -905,7 +905,7 @@ export class FoldersClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Folder, protos.google.cloud.resourcemanager.v3.UpdateFolderMetadata>;
   }
   moveFolder(
-      request: protos.google.cloud.resourcemanager.v3.IMoveFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IMoveFolderRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.IFolder, protos.google.cloud.resourcemanager.v3.IMoveFolderMetadata>,
@@ -966,7 +966,7 @@ export class FoldersClient {
  * const [response] = await operation.promise();
  */
   moveFolder(
-      request: protos.google.cloud.resourcemanager.v3.IMoveFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IMoveFolderRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.IFolder, protos.google.cloud.resourcemanager.v3.IMoveFolderMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1021,7 +1021,7 @@ export class FoldersClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Folder, protos.google.cloud.resourcemanager.v3.MoveFolderMetadata>;
   }
   deleteFolder(
-      request: protos.google.cloud.resourcemanager.v3.IDeleteFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IDeleteFolderRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.IFolder, protos.google.cloud.resourcemanager.v3.IDeleteFolderMetadata>,
@@ -1070,7 +1070,7 @@ export class FoldersClient {
  * const [response] = await operation.promise();
  */
   deleteFolder(
-      request: protos.google.cloud.resourcemanager.v3.IDeleteFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IDeleteFolderRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.IFolder, protos.google.cloud.resourcemanager.v3.IDeleteFolderMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1125,7 +1125,7 @@ export class FoldersClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Folder, protos.google.cloud.resourcemanager.v3.DeleteFolderMetadata>;
   }
   undeleteFolder(
-      request: protos.google.cloud.resourcemanager.v3.IUndeleteFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IUndeleteFolderRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.resourcemanager.v3.IFolder, protos.google.cloud.resourcemanager.v3.IUndeleteFolderMetadata>,
@@ -1174,7 +1174,7 @@ export class FoldersClient {
  * const [response] = await operation.promise();
  */
   undeleteFolder(
-      request: protos.google.cloud.resourcemanager.v3.IUndeleteFolderRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IUndeleteFolderRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.resourcemanager.v3.IFolder, protos.google.cloud.resourcemanager.v3.IUndeleteFolderMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1229,7 +1229,7 @@ export class FoldersClient {
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Folder, protos.google.cloud.resourcemanager.v3.UndeleteFolderMetadata>;
   }
   listFolders(
-      request: protos.google.cloud.resourcemanager.v3.IListFoldersRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IListFoldersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.resourcemanager.v3.IFolder[],
@@ -1290,7 +1290,7 @@ export class FoldersClient {
  *   for more details and examples.
  */
   listFolders(
-      request: protos.google.cloud.resourcemanager.v3.IListFoldersRequest,
+      request?: protos.google.cloud.resourcemanager.v3.IListFoldersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.resourcemanager.v3.IListFoldersRequest,
           protos.google.cloud.resourcemanager.v3.IListFoldersResponse|null|undefined,
@@ -1419,7 +1419,7 @@ export class FoldersClient {
     ) as AsyncIterable<protos.google.cloud.resourcemanager.v3.IFolder>;
   }
   searchFolders(
-      request: protos.google.cloud.resourcemanager.v3.ISearchFoldersRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ISearchFoldersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.resourcemanager.v3.IFolder[],
@@ -1499,7 +1499,7 @@ export class FoldersClient {
  *   for more details and examples.
  */
   searchFolders(
-      request: protos.google.cloud.resourcemanager.v3.ISearchFoldersRequest,
+      request?: protos.google.cloud.resourcemanager.v3.ISearchFoldersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.resourcemanager.v3.ISearchFoldersRequest,
           protos.google.cloud.resourcemanager.v3.ISearchFoldersResponse|null|undefined,

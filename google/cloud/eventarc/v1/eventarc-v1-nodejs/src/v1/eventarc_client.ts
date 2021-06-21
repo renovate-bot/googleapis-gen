@@ -330,7 +330,7 @@ export class EventarcClient {
   // -- Service calls --
   // -------------------
   getTrigger(
-      request: protos.google.cloud.eventarc.v1.IGetTriggerRequest,
+      request?: protos.google.cloud.eventarc.v1.IGetTriggerRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.eventarc.v1.ITrigger,
@@ -367,7 +367,7 @@ export class EventarcClient {
  * const [response] = await client.getTrigger(request);
  */
   getTrigger(
-      request: protos.google.cloud.eventarc.v1.IGetTriggerRequest,
+      request?: protos.google.cloud.eventarc.v1.IGetTriggerRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.eventarc.v1.ITrigger,
           protos.google.cloud.eventarc.v1.IGetTriggerRequest|null|undefined,
@@ -402,7 +402,7 @@ export class EventarcClient {
   }
 
   createTrigger(
-      request: protos.google.cloud.eventarc.v1.ICreateTriggerRequest,
+      request?: protos.google.cloud.eventarc.v1.ICreateTriggerRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.eventarc.v1.ITrigger, protos.google.cloud.eventarc.v1.IOperationMetadata>,
@@ -449,7 +449,7 @@ export class EventarcClient {
  * const [response] = await operation.promise();
  */
   createTrigger(
-      request: protos.google.cloud.eventarc.v1.ICreateTriggerRequest,
+      request?: protos.google.cloud.eventarc.v1.ICreateTriggerRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.eventarc.v1.ITrigger, protos.google.cloud.eventarc.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -504,7 +504,7 @@ export class EventarcClient {
     return decodeOperation as LROperation<protos.google.cloud.eventarc.v1.Trigger, protos.google.cloud.eventarc.v1.OperationMetadata>;
   }
   updateTrigger(
-      request: protos.google.cloud.eventarc.v1.IUpdateTriggerRequest,
+      request?: protos.google.cloud.eventarc.v1.IUpdateTriggerRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.eventarc.v1.ITrigger, protos.google.cloud.eventarc.v1.IOperationMetadata>,
@@ -554,7 +554,7 @@ export class EventarcClient {
  * const [response] = await operation.promise();
  */
   updateTrigger(
-      request: protos.google.cloud.eventarc.v1.IUpdateTriggerRequest,
+      request?: protos.google.cloud.eventarc.v1.IUpdateTriggerRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.eventarc.v1.ITrigger, protos.google.cloud.eventarc.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -609,7 +609,7 @@ export class EventarcClient {
     return decodeOperation as LROperation<protos.google.cloud.eventarc.v1.Trigger, protos.google.cloud.eventarc.v1.OperationMetadata>;
   }
   deleteTrigger(
-      request: protos.google.cloud.eventarc.v1.IDeleteTriggerRequest,
+      request?: protos.google.cloud.eventarc.v1.IDeleteTriggerRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.eventarc.v1.ITrigger, protos.google.cloud.eventarc.v1.IOperationMetadata>,
@@ -658,7 +658,7 @@ export class EventarcClient {
  * const [response] = await operation.promise();
  */
   deleteTrigger(
-      request: protos.google.cloud.eventarc.v1.IDeleteTriggerRequest,
+      request?: protos.google.cloud.eventarc.v1.IDeleteTriggerRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.eventarc.v1.ITrigger, protos.google.cloud.eventarc.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -713,7 +713,7 @@ export class EventarcClient {
     return decodeOperation as LROperation<protos.google.cloud.eventarc.v1.Trigger, protos.google.cloud.eventarc.v1.OperationMetadata>;
   }
   listTriggers(
-      request: protos.google.cloud.eventarc.v1.IListTriggersRequest,
+      request?: protos.google.cloud.eventarc.v1.IListTriggersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.eventarc.v1.ITrigger[],
@@ -768,7 +768,7 @@ export class EventarcClient {
  *   for more details and examples.
  */
   listTriggers(
-      request: protos.google.cloud.eventarc.v1.IListTriggersRequest,
+      request?: protos.google.cloud.eventarc.v1.IListTriggersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.eventarc.v1.IListTriggersRequest,
           protos.google.cloud.eventarc.v1.IListTriggersResponse|null|undefined,

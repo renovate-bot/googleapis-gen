@@ -372,7 +372,7 @@ export class FulfillmentsClient {
   // -- Service calls --
   // -------------------
   getFulfillment(
-      request: protos.google.cloud.dialogflow.v2.IGetFulfillmentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetFulfillmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IFulfillment,
@@ -410,7 +410,7 @@ export class FulfillmentsClient {
  * const [response] = await client.getFulfillment(request);
  */
   getFulfillment(
-      request: protos.google.cloud.dialogflow.v2.IGetFulfillmentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IGetFulfillmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IFulfillment,
           protos.google.cloud.dialogflow.v2.IGetFulfillmentRequest|null|undefined,
@@ -444,7 +444,7 @@ export class FulfillmentsClient {
     return this.innerApiCalls.getFulfillment(request, options, callback);
   }
   updateFulfillment(
-      request: protos.google.cloud.dialogflow.v2.IUpdateFulfillmentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateFulfillmentRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2.IFulfillment,
@@ -484,7 +484,7 @@ export class FulfillmentsClient {
  * const [response] = await client.updateFulfillment(request);
  */
   updateFulfillment(
-      request: protos.google.cloud.dialogflow.v2.IUpdateFulfillmentRequest,
+      request?: protos.google.cloud.dialogflow.v2.IUpdateFulfillmentRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2.IFulfillment,
           protos.google.cloud.dialogflow.v2.IUpdateFulfillmentRequest|null|undefined,

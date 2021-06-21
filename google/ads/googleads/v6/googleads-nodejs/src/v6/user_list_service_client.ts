@@ -614,7 +614,7 @@ export class UserListServiceClient {
   // -- Service calls --
   // -------------------
   getUserList(
-      request: protos.google.ads.googleads.v6.services.IGetUserListRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetUserListRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IUserList,
@@ -651,7 +651,7 @@ export class UserListServiceClient {
  * const [response] = await client.getUserList(request);
  */
   getUserList(
-      request: protos.google.ads.googleads.v6.services.IGetUserListRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetUserListRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IUserList,
           protos.google.ads.googleads.v6.services.IGetUserListRequest|null|undefined,
@@ -685,7 +685,7 @@ export class UserListServiceClient {
     return this.innerApiCalls.getUserList(request, options, callback);
   }
   mutateUserLists(
-      request: protos.google.ads.googleads.v6.services.IMutateUserListsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateUserListsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateUserListsResponse,
@@ -732,7 +732,7 @@ export class UserListServiceClient {
  * const [response] = await client.mutateUserLists(request);
  */
   mutateUserLists(
-      request: protos.google.ads.googleads.v6.services.IMutateUserListsRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateUserListsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateUserListsResponse,
           protos.google.ads.googleads.v6.services.IMutateUserListsRequest|null|undefined,

@@ -386,7 +386,7 @@ export class AnswerRecordsClient {
   // -- Service calls --
   // -------------------
   getAnswerRecord(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetAnswerRecordRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetAnswerRecordRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IAnswerRecord,
@@ -424,9 +424,10 @@ export class AnswerRecordsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAnswerRecord(request);
+ * @deprecated GetAnswerRecord is deprecated and may be removed in a future version.
  */
   getAnswerRecord(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetAnswerRecordRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetAnswerRecordRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IAnswerRecord,
           protos.google.cloud.dialogflow.v2beta1.IGetAnswerRecordRequest|null|undefined,
@@ -457,10 +458,11 @@ export class AnswerRecordsClient {
       'name': request.name || '',
     });
     this.initialize();
+    gax.warn('DEP$AnswerRecords-$GetAnswerRecord','GetAnswerRecord is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.getAnswerRecord(request, options, callback);
   }
   updateAnswerRecord(
-      request: protos.google.cloud.dialogflow.v2beta1.IUpdateAnswerRecordRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IUpdateAnswerRecordRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IAnswerRecord,
@@ -499,7 +501,7 @@ export class AnswerRecordsClient {
  * const [response] = await client.updateAnswerRecord(request);
  */
   updateAnswerRecord(
-      request: protos.google.cloud.dialogflow.v2beta1.IUpdateAnswerRecordRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IUpdateAnswerRecordRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dialogflow.v2beta1.IAnswerRecord,
           protos.google.cloud.dialogflow.v2beta1.IUpdateAnswerRecordRequest|null|undefined,
@@ -534,7 +536,7 @@ export class AnswerRecordsClient {
   }
 
   listAnswerRecords(
-      request: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dialogflow.v2beta1.IAnswerRecord[],
@@ -587,7 +589,7 @@ export class AnswerRecordsClient {
  *   for more details and examples.
  */
   listAnswerRecords(
-      request: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
+      request?: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
           protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsResponse|null|undefined,

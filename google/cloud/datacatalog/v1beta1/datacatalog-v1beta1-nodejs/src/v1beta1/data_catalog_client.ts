@@ -314,7 +314,7 @@ export class DataCatalogClient {
   // -- Service calls --
   // -------------------
   createEntryGroup(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateEntryGroupRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateEntryGroupRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IEntryGroup,
@@ -368,7 +368,7 @@ export class DataCatalogClient {
  * const [response] = await client.createEntryGroup(request);
  */
   createEntryGroup(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateEntryGroupRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateEntryGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IEntryGroup,
           protos.google.cloud.datacatalog.v1beta1.ICreateEntryGroupRequest|null|undefined,
@@ -402,7 +402,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.createEntryGroup(request, options, callback);
   }
   updateEntryGroup(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateEntryGroupRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateEntryGroupRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IEntryGroup,
@@ -446,7 +446,7 @@ export class DataCatalogClient {
  * const [response] = await client.updateEntryGroup(request);
  */
   updateEntryGroup(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateEntryGroupRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateEntryGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IEntryGroup,
           protos.google.cloud.datacatalog.v1beta1.IUpdateEntryGroupRequest|null|undefined,
@@ -480,7 +480,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.updateEntryGroup(request, options, callback);
   }
   getEntryGroup(
-      request: protos.google.cloud.datacatalog.v1beta1.IGetEntryGroupRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IGetEntryGroupRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IEntryGroup,
@@ -520,7 +520,7 @@ export class DataCatalogClient {
  * const [response] = await client.getEntryGroup(request);
  */
   getEntryGroup(
-      request: protos.google.cloud.datacatalog.v1beta1.IGetEntryGroupRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IGetEntryGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IEntryGroup,
           protos.google.cloud.datacatalog.v1beta1.IGetEntryGroupRequest|null|undefined,
@@ -554,7 +554,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.getEntryGroup(request, options, callback);
   }
   deleteEntryGroup(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteEntryGroupRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteEntryGroupRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -598,7 +598,7 @@ export class DataCatalogClient {
  * const [response] = await client.deleteEntryGroup(request);
  */
   deleteEntryGroup(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteEntryGroupRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteEntryGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.datacatalog.v1beta1.IDeleteEntryGroupRequest|null|undefined,
@@ -632,7 +632,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.deleteEntryGroup(request, options, callback);
   }
   createEntry(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateEntryRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateEntryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IEntry,
@@ -686,7 +686,7 @@ export class DataCatalogClient {
  * const [response] = await client.createEntry(request);
  */
   createEntry(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateEntryRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateEntryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IEntry,
           protos.google.cloud.datacatalog.v1beta1.ICreateEntryRequest|null|undefined,
@@ -720,7 +720,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.createEntry(request, options, callback);
   }
   updateEntry(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateEntryRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateEntryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IEntry,
@@ -782,7 +782,7 @@ export class DataCatalogClient {
  * const [response] = await client.updateEntry(request);
  */
   updateEntry(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateEntryRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateEntryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IEntry,
           protos.google.cloud.datacatalog.v1beta1.IUpdateEntryRequest|null|undefined,
@@ -816,7 +816,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.updateEntry(request, options, callback);
   }
   deleteEntry(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteEntryRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteEntryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -861,7 +861,7 @@ export class DataCatalogClient {
  * const [response] = await client.deleteEntry(request);
  */
   deleteEntry(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteEntryRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteEntryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.datacatalog.v1beta1.IDeleteEntryRequest|null|undefined,
@@ -895,7 +895,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.deleteEntry(request, options, callback);
   }
   getEntry(
-      request: protos.google.cloud.datacatalog.v1beta1.IGetEntryRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IGetEntryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IEntry,
@@ -934,7 +934,7 @@ export class DataCatalogClient {
  * const [response] = await client.getEntry(request);
  */
   getEntry(
-      request: protos.google.cloud.datacatalog.v1beta1.IGetEntryRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IGetEntryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IEntry,
           protos.google.cloud.datacatalog.v1beta1.IGetEntryRequest|null|undefined,
@@ -968,7 +968,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.getEntry(request, options, callback);
   }
   lookupEntry(
-      request: protos.google.cloud.datacatalog.v1beta1.ILookupEntryRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ILookupEntryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IEntry,
@@ -1028,7 +1028,7 @@ export class DataCatalogClient {
  * const [response] = await client.lookupEntry(request);
  */
   lookupEntry(
-      request: protos.google.cloud.datacatalog.v1beta1.ILookupEntryRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ILookupEntryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.IEntry,
           protos.google.cloud.datacatalog.v1beta1.ILookupEntryRequest|null|undefined,
@@ -1055,7 +1055,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.lookupEntry(request, options, callback);
   }
   createTagTemplate(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateTagTemplateRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateTagTemplateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITagTemplate,
@@ -1105,7 +1105,7 @@ export class DataCatalogClient {
  * const [response] = await client.createTagTemplate(request);
  */
   createTagTemplate(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateTagTemplateRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateTagTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.ITagTemplate,
           protos.google.cloud.datacatalog.v1beta1.ICreateTagTemplateRequest|null|undefined,
@@ -1139,7 +1139,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.createTagTemplate(request, options, callback);
   }
   getTagTemplate(
-      request: protos.google.cloud.datacatalog.v1beta1.IGetTagTemplateRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IGetTagTemplateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITagTemplate,
@@ -1178,7 +1178,7 @@ export class DataCatalogClient {
  * const [response] = await client.getTagTemplate(request);
  */
   getTagTemplate(
-      request: protos.google.cloud.datacatalog.v1beta1.IGetTagTemplateRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IGetTagTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.ITagTemplate,
           protos.google.cloud.datacatalog.v1beta1.IGetTagTemplateRequest|null|undefined,
@@ -1212,7 +1212,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.getTagTemplate(request, options, callback);
   }
   updateTagTemplate(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateTagTemplateRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateTagTemplateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITagTemplate,
@@ -1263,7 +1263,7 @@ export class DataCatalogClient {
  * const [response] = await client.updateTagTemplate(request);
  */
   updateTagTemplate(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateTagTemplateRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateTagTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.ITagTemplate,
           protos.google.cloud.datacatalog.v1beta1.IUpdateTagTemplateRequest|null|undefined,
@@ -1297,7 +1297,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.updateTagTemplate(request, options, callback);
   }
   deleteTagTemplate(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteTagTemplateRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteTagTemplateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1344,7 +1344,7 @@ export class DataCatalogClient {
  * const [response] = await client.deleteTagTemplate(request);
  */
   deleteTagTemplate(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteTagTemplateRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteTagTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.datacatalog.v1beta1.IDeleteTagTemplateRequest|null|undefined,
@@ -1378,7 +1378,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.deleteTagTemplate(request, options, callback);
   }
   createTagTemplateField(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateTagTemplateFieldRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateTagTemplateFieldRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITagTemplateField,
@@ -1432,7 +1432,7 @@ export class DataCatalogClient {
  * const [response] = await client.createTagTemplateField(request);
  */
   createTagTemplateField(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateTagTemplateFieldRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateTagTemplateFieldRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.ITagTemplateField,
           protos.google.cloud.datacatalog.v1beta1.ICreateTagTemplateFieldRequest|null|undefined,
@@ -1466,7 +1466,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.createTagTemplateField(request, options, callback);
   }
   updateTagTemplateField(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateTagTemplateFieldRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateTagTemplateFieldRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITagTemplateField,
@@ -1526,7 +1526,7 @@ export class DataCatalogClient {
  * const [response] = await client.updateTagTemplateField(request);
  */
   updateTagTemplateField(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateTagTemplateFieldRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateTagTemplateFieldRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.ITagTemplateField,
           protos.google.cloud.datacatalog.v1beta1.IUpdateTagTemplateFieldRequest|null|undefined,
@@ -1560,7 +1560,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.updateTagTemplateField(request, options, callback);
   }
   renameTagTemplateField(
-      request: protos.google.cloud.datacatalog.v1beta1.IRenameTagTemplateFieldRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IRenameTagTemplateFieldRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITagTemplateField,
@@ -1605,7 +1605,7 @@ export class DataCatalogClient {
  * const [response] = await client.renameTagTemplateField(request);
  */
   renameTagTemplateField(
-      request: protos.google.cloud.datacatalog.v1beta1.IRenameTagTemplateFieldRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IRenameTagTemplateFieldRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.ITagTemplateField,
           protos.google.cloud.datacatalog.v1beta1.IRenameTagTemplateFieldRequest|null|undefined,
@@ -1639,7 +1639,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.renameTagTemplateField(request, options, callback);
   }
   deleteTagTemplateField(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteTagTemplateFieldRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteTagTemplateFieldRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1686,7 +1686,7 @@ export class DataCatalogClient {
  * const [response] = await client.deleteTagTemplateField(request);
  */
   deleteTagTemplateField(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteTagTemplateFieldRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteTagTemplateFieldRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.datacatalog.v1beta1.IDeleteTagTemplateFieldRequest|null|undefined,
@@ -1720,7 +1720,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.deleteTagTemplateField(request, options, callback);
   }
   createTag(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateTagRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITag,
@@ -1771,7 +1771,7 @@ export class DataCatalogClient {
  * const [response] = await client.createTag(request);
  */
   createTag(
-      request: protos.google.cloud.datacatalog.v1beta1.ICreateTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ICreateTagRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.ITag,
           protos.google.cloud.datacatalog.v1beta1.ICreateTagRequest|null|undefined,
@@ -1805,7 +1805,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.createTag(request, options, callback);
   }
   updateTag(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateTagRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITag,
@@ -1845,7 +1845,7 @@ export class DataCatalogClient {
  * const [response] = await client.updateTag(request);
  */
   updateTag(
-      request: protos.google.cloud.datacatalog.v1beta1.IUpdateTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IUpdateTagRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.datacatalog.v1beta1.ITag,
           protos.google.cloud.datacatalog.v1beta1.IUpdateTagRequest|null|undefined,
@@ -1879,7 +1879,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.updateTag(request, options, callback);
   }
   deleteTag(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteTagRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1918,7 +1918,7 @@ export class DataCatalogClient {
  * const [response] = await client.deleteTag(request);
  */
   deleteTag(
-      request: protos.google.cloud.datacatalog.v1beta1.IDeleteTagRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IDeleteTagRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.datacatalog.v1beta1.IDeleteTagRequest|null|undefined,
@@ -1952,7 +1952,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.deleteTag(request, options, callback);
   }
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -2008,7 +2008,7 @@ export class DataCatalogClient {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -2042,7 +2042,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -2098,7 +2098,7 @@ export class DataCatalogClient {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -2132,7 +2132,7 @@ export class DataCatalogClient {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -2187,7 +2187,7 @@ export class DataCatalogClient {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -2222,7 +2222,7 @@ export class DataCatalogClient {
   }
 
   searchCatalog(
-      request: protos.google.cloud.datacatalog.v1beta1.ISearchCatalogRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ISearchCatalogRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ISearchCatalogResult[],
@@ -2313,7 +2313,7 @@ export class DataCatalogClient {
  *   for more details and examples.
  */
   searchCatalog(
-      request: protos.google.cloud.datacatalog.v1beta1.ISearchCatalogRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.ISearchCatalogRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.datacatalog.v1beta1.ISearchCatalogRequest,
           protos.google.cloud.datacatalog.v1beta1.ISearchCatalogResponse|null|undefined,
@@ -2484,7 +2484,7 @@ export class DataCatalogClient {
     ) as AsyncIterable<protos.google.cloud.datacatalog.v1beta1.ISearchCatalogResult>;
   }
   listEntryGroups(
-      request: protos.google.cloud.datacatalog.v1beta1.IListEntryGroupsRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IListEntryGroupsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IEntryGroup[],
@@ -2534,7 +2534,7 @@ export class DataCatalogClient {
  *   for more details and examples.
  */
   listEntryGroups(
-      request: protos.google.cloud.datacatalog.v1beta1.IListEntryGroupsRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IListEntryGroupsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.datacatalog.v1beta1.IListEntryGroupsRequest,
           protos.google.cloud.datacatalog.v1beta1.IListEntryGroupsResponse|null|undefined,
@@ -2674,7 +2674,7 @@ export class DataCatalogClient {
     ) as AsyncIterable<protos.google.cloud.datacatalog.v1beta1.IEntryGroup>;
   }
   listEntries(
-      request: protos.google.cloud.datacatalog.v1beta1.IListEntriesRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IListEntriesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.IEntry[],
@@ -2729,7 +2729,7 @@ export class DataCatalogClient {
  *   for more details and examples.
  */
   listEntries(
-      request: protos.google.cloud.datacatalog.v1beta1.IListEntriesRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IListEntriesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.datacatalog.v1beta1.IListEntriesRequest,
           protos.google.cloud.datacatalog.v1beta1.IListEntriesResponse|null|undefined,
@@ -2879,7 +2879,7 @@ export class DataCatalogClient {
     ) as AsyncIterable<protos.google.cloud.datacatalog.v1beta1.IEntry>;
   }
   listTags(
-      request: protos.google.cloud.datacatalog.v1beta1.IListTagsRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IListTagsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.datacatalog.v1beta1.ITag[],
@@ -2932,7 +2932,7 @@ export class DataCatalogClient {
  *   for more details and examples.
  */
   listTags(
-      request: protos.google.cloud.datacatalog.v1beta1.IListTagsRequest,
+      request?: protos.google.cloud.datacatalog.v1beta1.IListTagsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.datacatalog.v1beta1.IListTagsRequest,
           protos.google.cloud.datacatalog.v1beta1.IListTagsResponse|null|undefined,

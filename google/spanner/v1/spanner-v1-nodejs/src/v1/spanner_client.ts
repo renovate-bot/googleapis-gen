@@ -298,7 +298,7 @@ export class SpannerClient {
   // -- Service calls --
   // -------------------
   createSession(
-      request: protos.google.spanner.v1.ICreateSessionRequest,
+      request?: protos.google.spanner.v1.ICreateSessionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.v1.ISession,
@@ -355,7 +355,7 @@ export class SpannerClient {
  * const [response] = await client.createSession(request);
  */
   createSession(
-      request: protos.google.spanner.v1.ICreateSessionRequest,
+      request?: protos.google.spanner.v1.ICreateSessionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.v1.ISession,
           protos.google.spanner.v1.ICreateSessionRequest|null|undefined,
@@ -389,7 +389,7 @@ export class SpannerClient {
     return this.innerApiCalls.createSession(request, options, callback);
   }
   batchCreateSessions(
-      request: protos.google.spanner.v1.IBatchCreateSessionsRequest,
+      request?: protos.google.spanner.v1.IBatchCreateSessionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.v1.IBatchCreateSessionsResponse,
@@ -437,7 +437,7 @@ export class SpannerClient {
  * const [response] = await client.batchCreateSessions(request);
  */
   batchCreateSessions(
-      request: protos.google.spanner.v1.IBatchCreateSessionsRequest,
+      request?: protos.google.spanner.v1.IBatchCreateSessionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.v1.IBatchCreateSessionsResponse,
           protos.google.spanner.v1.IBatchCreateSessionsRequest|null|undefined,
@@ -471,7 +471,7 @@ export class SpannerClient {
     return this.innerApiCalls.batchCreateSessions(request, options, callback);
   }
   getSession(
-      request: protos.google.spanner.v1.IGetSessionRequest,
+      request?: protos.google.spanner.v1.IGetSessionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.v1.ISession,
@@ -510,7 +510,7 @@ export class SpannerClient {
  * const [response] = await client.getSession(request);
  */
   getSession(
-      request: protos.google.spanner.v1.IGetSessionRequest,
+      request?: protos.google.spanner.v1.IGetSessionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.v1.ISession,
           protos.google.spanner.v1.IGetSessionRequest|null|undefined,
@@ -544,7 +544,7 @@ export class SpannerClient {
     return this.innerApiCalls.getSession(request, options, callback);
   }
   deleteSession(
-      request: protos.google.spanner.v1.IDeleteSessionRequest,
+      request?: protos.google.spanner.v1.IDeleteSessionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -583,7 +583,7 @@ export class SpannerClient {
  * const [response] = await client.deleteSession(request);
  */
   deleteSession(
-      request: protos.google.spanner.v1.IDeleteSessionRequest,
+      request?: protos.google.spanner.v1.IDeleteSessionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.spanner.v1.IDeleteSessionRequest|null|undefined,
@@ -617,7 +617,7 @@ export class SpannerClient {
     return this.innerApiCalls.deleteSession(request, options, callback);
   }
   executeSql(
-      request: protos.google.spanner.v1.IExecuteSqlRequest,
+      request?: protos.google.spanner.v1.IExecuteSqlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.v1.IResultSet,
@@ -731,7 +731,7 @@ export class SpannerClient {
  * const [response] = await client.executeSql(request);
  */
   executeSql(
-      request: protos.google.spanner.v1.IExecuteSqlRequest,
+      request?: protos.google.spanner.v1.IExecuteSqlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.v1.IResultSet,
           protos.google.spanner.v1.IExecuteSqlRequest|null|undefined,
@@ -765,7 +765,7 @@ export class SpannerClient {
     return this.innerApiCalls.executeSql(request, options, callback);
   }
   executeBatchDml(
-      request: protos.google.spanner.v1.IExecuteBatchDmlRequest,
+      request?: protos.google.spanner.v1.IExecuteBatchDmlRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.v1.IExecuteBatchDmlResponse,
@@ -836,7 +836,7 @@ export class SpannerClient {
  * const [response] = await client.executeBatchDml(request);
  */
   executeBatchDml(
-      request: protos.google.spanner.v1.IExecuteBatchDmlRequest,
+      request?: protos.google.spanner.v1.IExecuteBatchDmlRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.v1.IExecuteBatchDmlResponse,
           protos.google.spanner.v1.IExecuteBatchDmlRequest|null|undefined,
@@ -870,7 +870,7 @@ export class SpannerClient {
     return this.innerApiCalls.executeBatchDml(request, options, callback);
   }
   read(
-      request: protos.google.spanner.v1.IReadRequest,
+      request?: protos.google.spanner.v1.IReadRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.v1.IResultSet,
@@ -962,7 +962,7 @@ export class SpannerClient {
  * const [response] = await client.read(request);
  */
   read(
-      request: protos.google.spanner.v1.IReadRequest,
+      request?: protos.google.spanner.v1.IReadRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.v1.IResultSet,
           protos.google.spanner.v1.IReadRequest|null|undefined,
@@ -996,7 +996,7 @@ export class SpannerClient {
     return this.innerApiCalls.read(request, options, callback);
   }
   beginTransaction(
-      request: protos.google.spanner.v1.IBeginTransactionRequest,
+      request?: protos.google.spanner.v1.IBeginTransactionRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.v1.ITransaction,
@@ -1044,7 +1044,7 @@ export class SpannerClient {
  * const [response] = await client.beginTransaction(request);
  */
   beginTransaction(
-      request: protos.google.spanner.v1.IBeginTransactionRequest,
+      request?: protos.google.spanner.v1.IBeginTransactionRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.v1.ITransaction,
           protos.google.spanner.v1.IBeginTransactionRequest|null|undefined,
@@ -1078,7 +1078,7 @@ export class SpannerClient {
     return this.innerApiCalls.beginTransaction(request, options, callback);
   }
   commit(
-      request: protos.google.spanner.v1.ICommitRequest,
+      request?: protos.google.spanner.v1.ICommitRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.v1.ICommitResponse,
@@ -1150,7 +1150,7 @@ export class SpannerClient {
  * const [response] = await client.commit(request);
  */
   commit(
-      request: protos.google.spanner.v1.ICommitRequest,
+      request?: protos.google.spanner.v1.ICommitRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.v1.ICommitResponse,
           protos.google.spanner.v1.ICommitRequest|null|undefined,
@@ -1184,7 +1184,7 @@ export class SpannerClient {
     return this.innerApiCalls.commit(request, options, callback);
   }
   rollback(
-      request: protos.google.spanner.v1.IRollbackRequest,
+      request?: protos.google.spanner.v1.IRollbackRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -1230,7 +1230,7 @@ export class SpannerClient {
  * const [response] = await client.rollback(request);
  */
   rollback(
-      request: protos.google.spanner.v1.IRollbackRequest,
+      request?: protos.google.spanner.v1.IRollbackRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.spanner.v1.IRollbackRequest|null|undefined,
@@ -1264,7 +1264,7 @@ export class SpannerClient {
     return this.innerApiCalls.rollback(request, options, callback);
   }
   partitionQuery(
-      request: protos.google.spanner.v1.IPartitionQueryRequest,
+      request?: protos.google.spanner.v1.IPartitionQueryRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.v1.IPartitionResponse,
@@ -1349,7 +1349,7 @@ export class SpannerClient {
  * const [response] = await client.partitionQuery(request);
  */
   partitionQuery(
-      request: protos.google.spanner.v1.IPartitionQueryRequest,
+      request?: protos.google.spanner.v1.IPartitionQueryRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.v1.IPartitionResponse,
           protos.google.spanner.v1.IPartitionQueryRequest|null|undefined,
@@ -1383,7 +1383,7 @@ export class SpannerClient {
     return this.innerApiCalls.partitionQuery(request, options, callback);
   }
   partitionRead(
-      request: protos.google.spanner.v1.IPartitionReadRequest,
+      request?: protos.google.spanner.v1.IPartitionReadRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.v1.IPartitionResponse,
@@ -1454,7 +1454,7 @@ export class SpannerClient {
  * const [response] = await client.partitionRead(request);
  */
   partitionRead(
-      request: protos.google.spanner.v1.IPartitionReadRequest,
+      request?: protos.google.spanner.v1.IPartitionReadRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.spanner.v1.IPartitionResponse,
           protos.google.spanner.v1.IPartitionReadRequest|null|undefined,
@@ -1679,7 +1679,7 @@ export class SpannerClient {
   }
 
   listSessions(
-      request: protos.google.spanner.v1.IListSessionsRequest,
+      request?: protos.google.spanner.v1.IListSessionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.spanner.v1.ISession[],
@@ -1738,7 +1738,7 @@ export class SpannerClient {
  *   for more details and examples.
  */
   listSessions(
-      request: protos.google.spanner.v1.IListSessionsRequest,
+      request?: protos.google.spanner.v1.IListSessionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.spanner.v1.IListSessionsRequest,
           protos.google.spanner.v1.IListSessionsResponse|null|undefined,

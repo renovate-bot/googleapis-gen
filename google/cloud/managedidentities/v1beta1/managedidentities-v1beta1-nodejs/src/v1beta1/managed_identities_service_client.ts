@@ -344,7 +344,7 @@ export class ManagedIdentitiesServiceClient {
   // -- Service calls --
   // -------------------
   resetAdminPassword(
-      request: protos.google.cloud.managedidentities.v1beta1.IResetAdminPasswordRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IResetAdminPasswordRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.managedidentities.v1beta1.IResetAdminPasswordResponse,
@@ -382,7 +382,7 @@ export class ManagedIdentitiesServiceClient {
  * const [response] = await client.resetAdminPassword(request);
  */
   resetAdminPassword(
-      request: protos.google.cloud.managedidentities.v1beta1.IResetAdminPasswordRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IResetAdminPasswordRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.managedidentities.v1beta1.IResetAdminPasswordResponse,
           protos.google.cloud.managedidentities.v1beta1.IResetAdminPasswordRequest|null|undefined,
@@ -416,7 +416,7 @@ export class ManagedIdentitiesServiceClient {
     return this.innerApiCalls.resetAdminPassword(request, options, callback);
   }
   getDomain(
-      request: protos.google.cloud.managedidentities.v1beta1.IGetDomainRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IGetDomainRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.managedidentities.v1beta1.IDomain,
@@ -454,7 +454,7 @@ export class ManagedIdentitiesServiceClient {
  * const [response] = await client.getDomain(request);
  */
   getDomain(
-      request: protos.google.cloud.managedidentities.v1beta1.IGetDomainRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IGetDomainRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.managedidentities.v1beta1.IDomain,
           protos.google.cloud.managedidentities.v1beta1.IGetDomainRequest|null|undefined,
@@ -489,7 +489,7 @@ export class ManagedIdentitiesServiceClient {
   }
 
   createMicrosoftAdDomain(
-      request: protos.google.cloud.managedidentities.v1beta1.ICreateMicrosoftAdDomainRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.ICreateMicrosoftAdDomainRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
@@ -543,7 +543,7 @@ export class ManagedIdentitiesServiceClient {
  * const [response] = await operation.promise();
  */
   createMicrosoftAdDomain(
-      request: protos.google.cloud.managedidentities.v1beta1.ICreateMicrosoftAdDomainRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.ICreateMicrosoftAdDomainRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -598,7 +598,7 @@ export class ManagedIdentitiesServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.managedidentities.v1beta1.Domain, protos.google.cloud.managedidentities.v1beta1.OpMetadata>;
   }
   updateDomain(
-      request: protos.google.cloud.managedidentities.v1beta1.IUpdateDomainRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IUpdateDomainRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
@@ -646,7 +646,7 @@ export class ManagedIdentitiesServiceClient {
  * const [response] = await operation.promise();
  */
   updateDomain(
-      request: protos.google.cloud.managedidentities.v1beta1.IUpdateDomainRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IUpdateDomainRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -701,7 +701,7 @@ export class ManagedIdentitiesServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.managedidentities.v1beta1.Domain, protos.google.cloud.managedidentities.v1beta1.OpMetadata>;
   }
   deleteDomain(
-      request: protos.google.cloud.managedidentities.v1beta1.IDeleteDomainRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IDeleteDomainRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
@@ -742,7 +742,7 @@ export class ManagedIdentitiesServiceClient {
  * const [response] = await operation.promise();
  */
   deleteDomain(
-      request: protos.google.cloud.managedidentities.v1beta1.IDeleteDomainRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IDeleteDomainRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -797,7 +797,7 @@ export class ManagedIdentitiesServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.managedidentities.v1beta1.OpMetadata>;
   }
   attachTrust(
-      request: protos.google.cloud.managedidentities.v1beta1.IAttachTrustRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IAttachTrustRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
@@ -840,7 +840,7 @@ export class ManagedIdentitiesServiceClient {
  * const [response] = await operation.promise();
  */
   attachTrust(
-      request: protos.google.cloud.managedidentities.v1beta1.IAttachTrustRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IAttachTrustRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -895,7 +895,7 @@ export class ManagedIdentitiesServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.managedidentities.v1beta1.Domain, protos.google.cloud.managedidentities.v1beta1.OpMetadata>;
   }
   reconfigureTrust(
-      request: protos.google.cloud.managedidentities.v1beta1.IReconfigureTrustRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IReconfigureTrustRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
@@ -942,7 +942,7 @@ export class ManagedIdentitiesServiceClient {
  * const [response] = await operation.promise();
  */
   reconfigureTrust(
-      request: protos.google.cloud.managedidentities.v1beta1.IReconfigureTrustRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IReconfigureTrustRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -997,7 +997,7 @@ export class ManagedIdentitiesServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.managedidentities.v1beta1.Domain, protos.google.cloud.managedidentities.v1beta1.OpMetadata>;
   }
   detachTrust(
-      request: protos.google.cloud.managedidentities.v1beta1.IDetachTrustRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IDetachTrustRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
@@ -1040,7 +1040,7 @@ export class ManagedIdentitiesServiceClient {
  * const [response] = await operation.promise();
  */
   detachTrust(
-      request: protos.google.cloud.managedidentities.v1beta1.IDetachTrustRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IDetachTrustRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1095,7 +1095,7 @@ export class ManagedIdentitiesServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.managedidentities.v1beta1.Domain, protos.google.cloud.managedidentities.v1beta1.OpMetadata>;
   }
   validateTrust(
-      request: protos.google.cloud.managedidentities.v1beta1.IValidateTrustRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IValidateTrustRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
@@ -1139,7 +1139,7 @@ export class ManagedIdentitiesServiceClient {
  * const [response] = await operation.promise();
  */
   validateTrust(
-      request: protos.google.cloud.managedidentities.v1beta1.IValidateTrustRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IValidateTrustRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.managedidentities.v1beta1.IDomain, protos.google.cloud.managedidentities.v1beta1.IOpMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1194,7 +1194,7 @@ export class ManagedIdentitiesServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.managedidentities.v1beta1.Domain, protos.google.cloud.managedidentities.v1beta1.OpMetadata>;
   }
   listDomains(
-      request: protos.google.cloud.managedidentities.v1beta1.IListDomainsRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IListDomainsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.managedidentities.v1beta1.IDomain[],
@@ -1254,7 +1254,7 @@ export class ManagedIdentitiesServiceClient {
  *   for more details and examples.
  */
   listDomains(
-      request: protos.google.cloud.managedidentities.v1beta1.IListDomainsRequest,
+      request?: protos.google.cloud.managedidentities.v1beta1.IListDomainsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.managedidentities.v1beta1.IListDomainsRequest,
           protos.google.cloud.managedidentities.v1beta1.IListDomainsResponse|null|undefined,

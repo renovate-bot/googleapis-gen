@@ -384,7 +384,7 @@ export class MetricServiceClient {
   // -- Service calls --
   // -------------------
   getMonitoredResourceDescriptor(
-      request: protos.google.monitoring.v3.IGetMonitoredResourceDescriptorRequest,
+      request?: protos.google.monitoring.v3.IGetMonitoredResourceDescriptorRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.IMonitoredResourceDescriptor,
@@ -426,7 +426,7 @@ export class MetricServiceClient {
  * const [response] = await client.getMonitoredResourceDescriptor(request);
  */
   getMonitoredResourceDescriptor(
-      request: protos.google.monitoring.v3.IGetMonitoredResourceDescriptorRequest,
+      request?: protos.google.monitoring.v3.IGetMonitoredResourceDescriptorRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.IMonitoredResourceDescriptor,
           protos.google.monitoring.v3.IGetMonitoredResourceDescriptorRequest|null|undefined,
@@ -460,7 +460,7 @@ export class MetricServiceClient {
     return this.innerApiCalls.getMonitoredResourceDescriptor(request, options, callback);
   }
   getMetricDescriptor(
-      request: protos.google.monitoring.v3.IGetMetricDescriptorRequest,
+      request?: protos.google.monitoring.v3.IGetMetricDescriptorRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.IMetricDescriptor,
@@ -502,7 +502,7 @@ export class MetricServiceClient {
  * const [response] = await client.getMetricDescriptor(request);
  */
   getMetricDescriptor(
-      request: protos.google.monitoring.v3.IGetMetricDescriptorRequest,
+      request?: protos.google.monitoring.v3.IGetMetricDescriptorRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.IMetricDescriptor,
           protos.google.monitoring.v3.IGetMetricDescriptorRequest|null|undefined,
@@ -536,7 +536,7 @@ export class MetricServiceClient {
     return this.innerApiCalls.getMetricDescriptor(request, options, callback);
   }
   createMetricDescriptor(
-      request: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
+      request?: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.IMetricDescriptor,
@@ -580,7 +580,7 @@ export class MetricServiceClient {
  * const [response] = await client.createMetricDescriptor(request);
  */
   createMetricDescriptor(
-      request: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
+      request?: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.IMetricDescriptor,
           protos.google.monitoring.v3.ICreateMetricDescriptorRequest|null|undefined,
@@ -614,7 +614,7 @@ export class MetricServiceClient {
     return this.innerApiCalls.createMetricDescriptor(request, options, callback);
   }
   deleteMetricDescriptor(
-      request: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
+      request?: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -658,7 +658,7 @@ export class MetricServiceClient {
  * const [response] = await client.deleteMetricDescriptor(request);
  */
   deleteMetricDescriptor(
-      request: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
+      request?: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.monitoring.v3.IDeleteMetricDescriptorRequest|null|undefined,
@@ -692,7 +692,7 @@ export class MetricServiceClient {
     return this.innerApiCalls.deleteMetricDescriptor(request, options, callback);
   }
   createTimeSeries(
-      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      request?: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -742,7 +742,7 @@ export class MetricServiceClient {
  * const [response] = await client.createTimeSeries(request);
  */
   createTimeSeries(
-      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      request?: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
@@ -777,7 +777,7 @@ export class MetricServiceClient {
   }
 
   listMonitoredResourceDescriptors(
-      request: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
+      request?: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.IMonitoredResourceDescriptor[],
@@ -833,7 +833,7 @@ export class MetricServiceClient {
  *   for more details and examples.
  */
   listMonitoredResourceDescriptors(
-      request: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
+      request?: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
           protos.google.monitoring.v3.IListMonitoredResourceDescriptorsResponse|null|undefined,
@@ -985,7 +985,7 @@ export class MetricServiceClient {
     ) as AsyncIterable<protos.google.api.IMonitoredResourceDescriptor>;
   }
   listMetricDescriptors(
-      request: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
+      request?: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.IMetricDescriptor[],
@@ -1043,7 +1043,7 @@ export class MetricServiceClient {
  *   for more details and examples.
  */
   listMetricDescriptors(
-      request: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
+      request?: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.monitoring.v3.IListMetricDescriptorsRequest,
           protos.google.monitoring.v3.IListMetricDescriptorsResponse|null|undefined,
@@ -1199,7 +1199,7 @@ export class MetricServiceClient {
     ) as AsyncIterable<protos.google.api.IMetricDescriptor>;
   }
   listTimeSeries(
-      request: protos.google.monitoring.v3.IListTimeSeriesRequest,
+      request?: protos.google.monitoring.v3.IListTimeSeriesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.ITimeSeries[],
@@ -1281,7 +1281,7 @@ export class MetricServiceClient {
  *   for more details and examples.
  */
   listTimeSeries(
-      request: protos.google.monitoring.v3.IListTimeSeriesRequest,
+      request?: protos.google.monitoring.v3.IListTimeSeriesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.monitoring.v3.IListTimeSeriesRequest,
           protos.google.monitoring.v3.IListTimeSeriesResponse|null|undefined,

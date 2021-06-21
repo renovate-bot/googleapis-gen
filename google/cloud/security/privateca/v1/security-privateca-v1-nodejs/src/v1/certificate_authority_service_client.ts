@@ -435,7 +435,7 @@ export class CertificateAuthorityServiceClient {
   // -- Service calls --
   // -------------------
   createCertificate(
-      request: protos.google.cloud.security.privateca.v1.ICreateCertificateRequest,
+      request?: protos.google.cloud.security.privateca.v1.ICreateCertificateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICertificate,
@@ -511,7 +511,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await client.createCertificate(request);
  */
   createCertificate(
-      request: protos.google.cloud.security.privateca.v1.ICreateCertificateRequest,
+      request?: protos.google.cloud.security.privateca.v1.ICreateCertificateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.security.privateca.v1.ICertificate,
           protos.google.cloud.security.privateca.v1.ICreateCertificateRequest|null|undefined,
@@ -545,7 +545,7 @@ export class CertificateAuthorityServiceClient {
     return this.innerApiCalls.createCertificate(request, options, callback);
   }
   getCertificate(
-      request: protos.google.cloud.security.privateca.v1.IGetCertificateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IGetCertificateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICertificate,
@@ -582,7 +582,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await client.getCertificate(request);
  */
   getCertificate(
-      request: protos.google.cloud.security.privateca.v1.IGetCertificateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IGetCertificateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.security.privateca.v1.ICertificate,
           protos.google.cloud.security.privateca.v1.IGetCertificateRequest|null|undefined,
@@ -616,7 +616,7 @@ export class CertificateAuthorityServiceClient {
     return this.innerApiCalls.getCertificate(request, options, callback);
   }
   revokeCertificate(
-      request: protos.google.cloud.security.privateca.v1.IRevokeCertificateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IRevokeCertificateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICertificate,
@@ -671,7 +671,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await client.revokeCertificate(request);
  */
   revokeCertificate(
-      request: protos.google.cloud.security.privateca.v1.IRevokeCertificateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IRevokeCertificateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.security.privateca.v1.ICertificate,
           protos.google.cloud.security.privateca.v1.IRevokeCertificateRequest|null|undefined,
@@ -705,7 +705,7 @@ export class CertificateAuthorityServiceClient {
     return this.innerApiCalls.revokeCertificate(request, options, callback);
   }
   updateCertificate(
-      request: protos.google.cloud.security.privateca.v1.IUpdateCertificateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUpdateCertificateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICertificate,
@@ -759,7 +759,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await client.updateCertificate(request);
  */
   updateCertificate(
-      request: protos.google.cloud.security.privateca.v1.IUpdateCertificateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUpdateCertificateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.security.privateca.v1.ICertificate,
           protos.google.cloud.security.privateca.v1.IUpdateCertificateRequest|null|undefined,
@@ -793,7 +793,7 @@ export class CertificateAuthorityServiceClient {
     return this.innerApiCalls.updateCertificate(request, options, callback);
   }
   fetchCertificateAuthorityCsr(
-      request: protos.google.cloud.security.privateca.v1.IFetchCertificateAuthorityCsrRequest,
+      request?: protos.google.cloud.security.privateca.v1.IFetchCertificateAuthorityCsrRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.IFetchCertificateAuthorityCsrResponse,
@@ -837,7 +837,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await client.fetchCertificateAuthorityCsr(request);
  */
   fetchCertificateAuthorityCsr(
-      request: protos.google.cloud.security.privateca.v1.IFetchCertificateAuthorityCsrRequest,
+      request?: protos.google.cloud.security.privateca.v1.IFetchCertificateAuthorityCsrRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.security.privateca.v1.IFetchCertificateAuthorityCsrResponse,
           protos.google.cloud.security.privateca.v1.IFetchCertificateAuthorityCsrRequest|null|undefined,
@@ -871,7 +871,7 @@ export class CertificateAuthorityServiceClient {
     return this.innerApiCalls.fetchCertificateAuthorityCsr(request, options, callback);
   }
   getCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IGetCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IGetCertificateAuthorityRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICertificateAuthority,
@@ -909,7 +909,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await client.getCertificateAuthority(request);
  */
   getCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IGetCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IGetCertificateAuthorityRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.security.privateca.v1.ICertificateAuthority,
           protos.google.cloud.security.privateca.v1.IGetCertificateAuthorityRequest|null|undefined,
@@ -943,7 +943,7 @@ export class CertificateAuthorityServiceClient {
     return this.innerApiCalls.getCertificateAuthority(request, options, callback);
   }
   getCaPool(
-      request: protos.google.cloud.security.privateca.v1.IGetCaPoolRequest,
+      request?: protos.google.cloud.security.privateca.v1.IGetCaPoolRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICaPool,
@@ -980,7 +980,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await client.getCaPool(request);
  */
   getCaPool(
-      request: protos.google.cloud.security.privateca.v1.IGetCaPoolRequest,
+      request?: protos.google.cloud.security.privateca.v1.IGetCaPoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.security.privateca.v1.ICaPool,
           protos.google.cloud.security.privateca.v1.IGetCaPoolRequest|null|undefined,
@@ -1014,7 +1014,7 @@ export class CertificateAuthorityServiceClient {
     return this.innerApiCalls.getCaPool(request, options, callback);
   }
   fetchCaCerts(
-      request: protos.google.cloud.security.privateca.v1.IFetchCaCertsRequest,
+      request?: protos.google.cloud.security.privateca.v1.IFetchCaCertsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.IFetchCaCertsResponse,
@@ -1068,7 +1068,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await client.fetchCaCerts(request);
  */
   fetchCaCerts(
-      request: protos.google.cloud.security.privateca.v1.IFetchCaCertsRequest,
+      request?: protos.google.cloud.security.privateca.v1.IFetchCaCertsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.security.privateca.v1.IFetchCaCertsResponse,
           protos.google.cloud.security.privateca.v1.IFetchCaCertsRequest|null|undefined,
@@ -1102,7 +1102,7 @@ export class CertificateAuthorityServiceClient {
     return this.innerApiCalls.fetchCaCerts(request, options, callback);
   }
   getCertificateRevocationList(
-      request: protos.google.cloud.security.privateca.v1.IGetCertificateRevocationListRequest,
+      request?: protos.google.cloud.security.privateca.v1.IGetCertificateRevocationListRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICertificateRevocationList,
@@ -1140,7 +1140,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await client.getCertificateRevocationList(request);
  */
   getCertificateRevocationList(
-      request: protos.google.cloud.security.privateca.v1.IGetCertificateRevocationListRequest,
+      request?: protos.google.cloud.security.privateca.v1.IGetCertificateRevocationListRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.security.privateca.v1.ICertificateRevocationList,
           protos.google.cloud.security.privateca.v1.IGetCertificateRevocationListRequest|null|undefined,
@@ -1174,7 +1174,7 @@ export class CertificateAuthorityServiceClient {
     return this.innerApiCalls.getCertificateRevocationList(request, options, callback);
   }
   getCertificateTemplate(
-      request: protos.google.cloud.security.privateca.v1.IGetCertificateTemplateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IGetCertificateTemplateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICertificateTemplate,
@@ -1212,7 +1212,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await client.getCertificateTemplate(request);
  */
   getCertificateTemplate(
-      request: protos.google.cloud.security.privateca.v1.IGetCertificateTemplateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IGetCertificateTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.security.privateca.v1.ICertificateTemplate,
           protos.google.cloud.security.privateca.v1.IGetCertificateTemplateRequest|null|undefined,
@@ -1247,7 +1247,7 @@ export class CertificateAuthorityServiceClient {
   }
 
   activateCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IActivateCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IActivateCertificateAuthorityRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -1313,7 +1313,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   activateCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IActivateCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IActivateCertificateAuthorityRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1368,7 +1368,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CertificateAuthority, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   createCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.ICreateCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.ICreateCertificateAuthorityRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -1429,7 +1429,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   createCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.ICreateCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.ICreateCertificateAuthorityRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1484,7 +1484,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CertificateAuthority, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   disableCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IDisableCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IDisableCertificateAuthorityRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -1539,7 +1539,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   disableCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IDisableCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IDisableCertificateAuthorityRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1594,7 +1594,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CertificateAuthority, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   enableCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IEnableCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IEnableCertificateAuthorityRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -1649,7 +1649,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   enableCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IEnableCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IEnableCertificateAuthorityRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1704,7 +1704,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CertificateAuthority, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   undeleteCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IUndeleteCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUndeleteCertificateAuthorityRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -1759,7 +1759,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   undeleteCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IUndeleteCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUndeleteCertificateAuthorityRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1814,7 +1814,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CertificateAuthority, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   deleteCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IDeleteCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IDeleteCertificateAuthorityRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -1872,7 +1872,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   deleteCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IDeleteCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IDeleteCertificateAuthorityRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1927,7 +1927,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CertificateAuthority, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   updateCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IUpdateCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUpdateCertificateAuthorityRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -1983,7 +1983,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   updateCertificateAuthority(
-      request: protos.google.cloud.security.privateca.v1.IUpdateCertificateAuthorityRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUpdateCertificateAuthorityRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICertificateAuthority, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2038,7 +2038,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CertificateAuthority, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   createCaPool(
-      request: protos.google.cloud.security.privateca.v1.ICreateCaPoolRequest,
+      request?: protos.google.cloud.security.privateca.v1.ICreateCaPoolRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -2098,7 +2098,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   createCaPool(
-      request: protos.google.cloud.security.privateca.v1.ICreateCaPoolRequest,
+      request?: protos.google.cloud.security.privateca.v1.ICreateCaPoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2153,7 +2153,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CaPool, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   updateCaPool(
-      request: protos.google.cloud.security.privateca.v1.IUpdateCaPoolRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUpdateCaPoolRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -2209,7 +2209,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   updateCaPool(
-      request: protos.google.cloud.security.privateca.v1.IUpdateCaPoolRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUpdateCaPoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2264,7 +2264,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CaPool, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   deleteCaPool(
-      request: protos.google.cloud.security.privateca.v1.IDeleteCaPoolRequest,
+      request?: protos.google.cloud.security.privateca.v1.IDeleteCaPoolRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -2319,7 +2319,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   deleteCaPool(
-      request: protos.google.cloud.security.privateca.v1.IDeleteCaPoolRequest,
+      request?: protos.google.cloud.security.privateca.v1.IDeleteCaPoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2374,7 +2374,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CaPool, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   updateCertificateRevocationList(
-      request: protos.google.cloud.security.privateca.v1.IUpdateCertificateRevocationListRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUpdateCertificateRevocationListRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICertificateRevocationList, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -2430,7 +2430,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   updateCertificateRevocationList(
-      request: protos.google.cloud.security.privateca.v1.IUpdateCertificateRevocationListRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUpdateCertificateRevocationListRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICertificateRevocationList, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2485,7 +2485,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CertificateRevocationList, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   createCertificateTemplate(
-      request: protos.google.cloud.security.privateca.v1.ICreateCertificateTemplateRequest,
+      request?: protos.google.cloud.security.privateca.v1.ICreateCertificateTemplateRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICertificateTemplate, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -2546,7 +2546,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   createCertificateTemplate(
-      request: protos.google.cloud.security.privateca.v1.ICreateCertificateTemplateRequest,
+      request?: protos.google.cloud.security.privateca.v1.ICreateCertificateTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICertificateTemplate, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2601,7 +2601,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CertificateTemplate, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   deleteCertificateTemplate(
-      request: protos.google.cloud.security.privateca.v1.IDeleteCertificateTemplateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IDeleteCertificateTemplateRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -2656,7 +2656,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   deleteCertificateTemplate(
-      request: protos.google.cloud.security.privateca.v1.IDeleteCertificateTemplateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IDeleteCertificateTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2711,7 +2711,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   updateCertificateTemplate(
-      request: protos.google.cloud.security.privateca.v1.IUpdateCertificateTemplateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUpdateCertificateTemplateRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.security.privateca.v1.ICertificateTemplate, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
@@ -2767,7 +2767,7 @@ export class CertificateAuthorityServiceClient {
  * const [response] = await operation.promise();
  */
   updateCertificateTemplate(
-      request: protos.google.cloud.security.privateca.v1.IUpdateCertificateTemplateRequest,
+      request?: protos.google.cloud.security.privateca.v1.IUpdateCertificateTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.security.privateca.v1.ICertificateTemplate, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -2822,7 +2822,7 @@ export class CertificateAuthorityServiceClient {
     return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CertificateTemplate, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   listCertificates(
-      request: protos.google.cloud.security.privateca.v1.IListCertificatesRequest,
+      request?: protos.google.cloud.security.privateca.v1.IListCertificatesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICertificate[],
@@ -2883,7 +2883,7 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  */
   listCertificates(
-      request: protos.google.cloud.security.privateca.v1.IListCertificatesRequest,
+      request?: protos.google.cloud.security.privateca.v1.IListCertificatesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.security.privateca.v1.IListCertificatesRequest,
           protos.google.cloud.security.privateca.v1.IListCertificatesResponse|null|undefined,
@@ -3045,7 +3045,7 @@ export class CertificateAuthorityServiceClient {
     ) as AsyncIterable<protos.google.cloud.security.privateca.v1.ICertificate>;
   }
   listCertificateAuthorities(
-      request: protos.google.cloud.security.privateca.v1.IListCertificateAuthoritiesRequest,
+      request?: protos.google.cloud.security.privateca.v1.IListCertificateAuthoritiesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICertificateAuthority[],
@@ -3102,7 +3102,7 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  */
   listCertificateAuthorities(
-      request: protos.google.cloud.security.privateca.v1.IListCertificateAuthoritiesRequest,
+      request?: protos.google.cloud.security.privateca.v1.IListCertificateAuthoritiesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.security.privateca.v1.IListCertificateAuthoritiesRequest,
           protos.google.cloud.security.privateca.v1.IListCertificateAuthoritiesResponse|null|undefined,
@@ -3256,7 +3256,7 @@ export class CertificateAuthorityServiceClient {
     ) as AsyncIterable<protos.google.cloud.security.privateca.v1.ICertificateAuthority>;
   }
   listCaPools(
-      request: protos.google.cloud.security.privateca.v1.IListCaPoolsRequest,
+      request?: protos.google.cloud.security.privateca.v1.IListCaPoolsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICaPool[],
@@ -3313,7 +3313,7 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  */
   listCaPools(
-      request: protos.google.cloud.security.privateca.v1.IListCaPoolsRequest,
+      request?: protos.google.cloud.security.privateca.v1.IListCaPoolsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.security.privateca.v1.IListCaPoolsRequest,
           protos.google.cloud.security.privateca.v1.IListCaPoolsResponse|null|undefined,
@@ -3467,7 +3467,7 @@ export class CertificateAuthorityServiceClient {
     ) as AsyncIterable<protos.google.cloud.security.privateca.v1.ICaPool>;
   }
   listCertificateRevocationLists(
-      request: protos.google.cloud.security.privateca.v1.IListCertificateRevocationListsRequest,
+      request?: protos.google.cloud.security.privateca.v1.IListCertificateRevocationListsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICertificateRevocationList[],
@@ -3524,7 +3524,7 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  */
   listCertificateRevocationLists(
-      request: protos.google.cloud.security.privateca.v1.IListCertificateRevocationListsRequest,
+      request?: protos.google.cloud.security.privateca.v1.IListCertificateRevocationListsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.security.privateca.v1.IListCertificateRevocationListsRequest,
           protos.google.cloud.security.privateca.v1.IListCertificateRevocationListsResponse|null|undefined,
@@ -3678,7 +3678,7 @@ export class CertificateAuthorityServiceClient {
     ) as AsyncIterable<protos.google.cloud.security.privateca.v1.ICertificateRevocationList>;
   }
   listCertificateTemplates(
-      request: protos.google.cloud.security.privateca.v1.IListCertificateTemplatesRequest,
+      request?: protos.google.cloud.security.privateca.v1.IListCertificateTemplatesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.security.privateca.v1.ICertificateTemplate[],
@@ -3735,7 +3735,7 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  */
   listCertificateTemplates(
-      request: protos.google.cloud.security.privateca.v1.IListCertificateTemplatesRequest,
+      request?: protos.google.cloud.security.privateca.v1.IListCertificateTemplatesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.security.privateca.v1.IListCertificateTemplatesRequest,
           protos.google.cloud.security.privateca.v1.IListCertificateTemplatesResponse|null|undefined,

@@ -261,7 +261,7 @@ export class CustomerLicenseServiceClient {
   // -- Service calls --
   // -------------------
   get(
-      request: protos.ccc.hosted.marketplace.v2.ICustomerLicenseGetRequest,
+      request?: protos.ccc.hosted.marketplace.v2.ICustomerLicenseGetRequest,
       options?: CallOptions):
       Promise<[
         protos.ccc.hosted.marketplace.v2.ICustomerLicense,
@@ -301,7 +301,7 @@ export class CustomerLicenseServiceClient {
  * const [response] = await client.get(request);
  */
   get(
-      request: protos.ccc.hosted.marketplace.v2.ICustomerLicenseGetRequest,
+      request?: protos.ccc.hosted.marketplace.v2.ICustomerLicenseGetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.ccc.hosted.marketplace.v2.ICustomerLicense,
           protos.ccc.hosted.marketplace.v2.ICustomerLicenseGetRequest|null|undefined,

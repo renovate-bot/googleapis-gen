@@ -587,7 +587,7 @@ export class CustomerManagerLinkServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerManagerLink(
-      request: protos.google.ads.googleads.v4.services.IGetCustomerManagerLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetCustomerManagerLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.ICustomerManagerLink,
@@ -624,7 +624,7 @@ export class CustomerManagerLinkServiceClient {
  * const [response] = await client.getCustomerManagerLink(request);
  */
   getCustomerManagerLink(
-      request: protos.google.ads.googleads.v4.services.IGetCustomerManagerLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetCustomerManagerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.ICustomerManagerLink,
           protos.google.ads.googleads.v4.services.IGetCustomerManagerLinkRequest|null|undefined,
@@ -658,7 +658,7 @@ export class CustomerManagerLinkServiceClient {
     return this.innerApiCalls.getCustomerManagerLink(request, options, callback);
   }
   mutateCustomerManagerLink(
-      request: protos.google.ads.googleads.v4.services.IMutateCustomerManagerLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateCustomerManagerLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IMutateCustomerManagerLinkResponse,
@@ -697,7 +697,7 @@ export class CustomerManagerLinkServiceClient {
  * const [response] = await client.mutateCustomerManagerLink(request);
  */
   mutateCustomerManagerLink(
-      request: protos.google.ads.googleads.v4.services.IMutateCustomerManagerLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IMutateCustomerManagerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IMutateCustomerManagerLinkResponse,
           protos.google.ads.googleads.v4.services.IMutateCustomerManagerLinkRequest|null|undefined,
@@ -731,7 +731,7 @@ export class CustomerManagerLinkServiceClient {
     return this.innerApiCalls.mutateCustomerManagerLink(request, options, callback);
   }
   moveManagerLink(
-      request: protos.google.ads.googleads.v4.services.IMoveManagerLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IMoveManagerLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.services.IMoveManagerLinkResponse,
@@ -779,7 +779,7 @@ export class CustomerManagerLinkServiceClient {
  * const [response] = await client.moveManagerLink(request);
  */
   moveManagerLink(
-      request: protos.google.ads.googleads.v4.services.IMoveManagerLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IMoveManagerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.services.IMoveManagerLinkResponse,
           protos.google.ads.googleads.v4.services.IMoveManagerLinkRequest|null|undefined,

@@ -588,7 +588,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
   // -- Service calls --
   // -------------------
   getThirdPartyAppAnalyticsLink(
-      request: protos.google.ads.googleads.v4.services.IGetThirdPartyAppAnalyticsLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetThirdPartyAppAnalyticsLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v4.resources.IThirdPartyAppAnalyticsLink,
@@ -625,7 +625,7 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
  * const [response] = await client.getThirdPartyAppAnalyticsLink(request);
  */
   getThirdPartyAppAnalyticsLink(
-      request: protos.google.ads.googleads.v4.services.IGetThirdPartyAppAnalyticsLinkRequest,
+      request?: protos.google.ads.googleads.v4.services.IGetThirdPartyAppAnalyticsLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v4.resources.IThirdPartyAppAnalyticsLink,
           protos.google.ads.googleads.v4.services.IGetThirdPartyAppAnalyticsLinkRequest|null|undefined,

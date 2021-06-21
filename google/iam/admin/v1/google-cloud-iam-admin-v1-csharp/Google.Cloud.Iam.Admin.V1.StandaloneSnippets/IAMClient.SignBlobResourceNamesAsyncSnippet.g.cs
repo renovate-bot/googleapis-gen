@@ -35,7 +35,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             ServiceAccountName name = ServiceAccountName.FromProjectServiceAccount("[PROJECT]", "[SERVICE_ACCOUNT]");
             ByteString bytesToSign = ByteString.Empty;
             // Make the request
+#pragma warning disable CS0612
             SignBlobResponse response = await iAMClient.SignBlobAsync(name, bytesToSign);
+#pragma warning restore CS0612
         }
     }
 }

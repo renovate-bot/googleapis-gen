@@ -393,7 +393,7 @@ export class ServiceUsageClient {
   // -- Service calls --
   // -------------------
   getService(
-      request: protos.google.api.serviceusage.v1beta1.IGetServiceRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IGetServiceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.serviceusage.v1beta1.IService,
@@ -432,9 +432,10 @@ export class ServiceUsageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getService(request);
+ * @deprecated GetService is deprecated and may be removed in a future version.
  */
   getService(
-      request: protos.google.api.serviceusage.v1beta1.IGetServiceRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IGetServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.serviceusage.v1beta1.IService,
           protos.google.api.serviceusage.v1beta1.IGetServiceRequest|null|undefined,
@@ -465,10 +466,11 @@ export class ServiceUsageClient {
       'name': request.name || '',
     });
     this.initialize();
+    gax.warn('DEP$ServiceUsage-$GetService','GetService is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.getService(request, options, callback);
   }
   getConsumerQuotaMetric(
-      request: protos.google.api.serviceusage.v1beta1.IGetConsumerQuotaMetricRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IGetConsumerQuotaMetricRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.serviceusage.v1beta1.IConsumerQuotaMetric,
@@ -510,7 +512,7 @@ export class ServiceUsageClient {
  * const [response] = await client.getConsumerQuotaMetric(request);
  */
   getConsumerQuotaMetric(
-      request: protos.google.api.serviceusage.v1beta1.IGetConsumerQuotaMetricRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IGetConsumerQuotaMetricRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.serviceusage.v1beta1.IConsumerQuotaMetric,
           protos.google.api.serviceusage.v1beta1.IGetConsumerQuotaMetricRequest|null|undefined,
@@ -544,7 +546,7 @@ export class ServiceUsageClient {
     return this.innerApiCalls.getConsumerQuotaMetric(request, options, callback);
   }
   getConsumerQuotaLimit(
-      request: protos.google.api.serviceusage.v1beta1.IGetConsumerQuotaLimitRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IGetConsumerQuotaLimitRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.serviceusage.v1beta1.IConsumerQuotaLimit,
@@ -586,7 +588,7 @@ export class ServiceUsageClient {
  * const [response] = await client.getConsumerQuotaLimit(request);
  */
   getConsumerQuotaLimit(
-      request: protos.google.api.serviceusage.v1beta1.IGetConsumerQuotaLimitRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IGetConsumerQuotaLimitRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.api.serviceusage.v1beta1.IConsumerQuotaLimit,
           protos.google.api.serviceusage.v1beta1.IGetConsumerQuotaLimitRequest|null|undefined,
@@ -621,7 +623,7 @@ export class ServiceUsageClient {
   }
 
   enableService(
-      request: protos.google.api.serviceusage.v1beta1.IEnableServiceRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IEnableServiceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
@@ -671,9 +673,10 @@ export class ServiceUsageClient {
  * @example
  * const [operation] = await client.enableService(request);
  * const [response] = await operation.promise();
+ * @deprecated EnableService is deprecated and may be removed in a future version.
  */
   enableService(
-      request: protos.google.api.serviceusage.v1beta1.IEnableServiceRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IEnableServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -704,6 +707,7 @@ export class ServiceUsageClient {
       'name': request.name || '',
     });
     this.initialize();
+    gax.warn('DEP$ServiceUsage-$EnableService','EnableService is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.enableService(request, options, callback);
   }
 /**
@@ -720,6 +724,7 @@ export class ServiceUsageClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ * @deprecated EnableService is deprecated and may be removed in a future version.
  */
   async checkEnableServiceProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.api.serviceusage.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -728,7 +733,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.api.serviceusage.v1beta1.OperationMetadata>;
   }
   disableService(
-      request: protos.google.api.serviceusage.v1beta1.IDisableServiceRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IDisableServiceRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
@@ -780,9 +785,10 @@ export class ServiceUsageClient {
  * @example
  * const [operation] = await client.disableService(request);
  * const [response] = await operation.promise();
+ * @deprecated DisableService is deprecated and may be removed in a future version.
  */
   disableService(
-      request: protos.google.api.serviceusage.v1beta1.IDisableServiceRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IDisableServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -813,6 +819,7 @@ export class ServiceUsageClient {
       'name': request.name || '',
     });
     this.initialize();
+    gax.warn('DEP$ServiceUsage-$DisableService','DisableService is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.disableService(request, options, callback);
   }
 /**
@@ -829,6 +836,7 @@ export class ServiceUsageClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ * @deprecated DisableService is deprecated and may be removed in a future version.
  */
   async checkDisableServiceProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.api.serviceusage.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -837,7 +845,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.api.serviceusage.v1beta1.OperationMetadata>;
   }
   batchEnableServices(
-      request: protos.google.api.serviceusage.v1beta1.IBatchEnableServicesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IBatchEnableServicesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
@@ -900,9 +908,10 @@ export class ServiceUsageClient {
  * @example
  * const [operation] = await client.batchEnableServices(request);
  * const [response] = await operation.promise();
+ * @deprecated BatchEnableServices is deprecated and may be removed in a future version.
  */
   batchEnableServices(
-      request: protos.google.api.serviceusage.v1beta1.IBatchEnableServicesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IBatchEnableServicesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -933,6 +942,7 @@ export class ServiceUsageClient {
       'parent': request.parent || '',
     });
     this.initialize();
+    gax.warn('DEP$ServiceUsage-$BatchEnableServices','BatchEnableServices is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.batchEnableServices(request, options, callback);
   }
 /**
@@ -949,6 +959,7 @@ export class ServiceUsageClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ * @deprecated BatchEnableServices is deprecated and may be removed in a future version.
  */
   async checkBatchEnableServicesProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.api.serviceusage.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -957,7 +968,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.api.serviceusage.v1beta1.OperationMetadata>;
   }
   createAdminOverride(
-      request: protos.google.api.serviceusage.v1beta1.ICreateAdminOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.ICreateAdminOverrideRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.api.serviceusage.v1beta1.IQuotaOverride, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
@@ -1017,7 +1028,7 @@ export class ServiceUsageClient {
  * const [response] = await operation.promise();
  */
   createAdminOverride(
-      request: protos.google.api.serviceusage.v1beta1.ICreateAdminOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.ICreateAdminOverrideRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.api.serviceusage.v1beta1.IQuotaOverride, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1072,7 +1083,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.api.serviceusage.v1beta1.QuotaOverride, protos.google.api.serviceusage.v1beta1.OperationMetadata>;
   }
   updateAdminOverride(
-      request: protos.google.api.serviceusage.v1beta1.IUpdateAdminOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IUpdateAdminOverrideRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.api.serviceusage.v1beta1.IQuotaOverride, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
@@ -1130,7 +1141,7 @@ export class ServiceUsageClient {
  * const [response] = await operation.promise();
  */
   updateAdminOverride(
-      request: protos.google.api.serviceusage.v1beta1.IUpdateAdminOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IUpdateAdminOverrideRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.api.serviceusage.v1beta1.IQuotaOverride, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1185,7 +1196,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.api.serviceusage.v1beta1.QuotaOverride, protos.google.api.serviceusage.v1beta1.OperationMetadata>;
   }
   deleteAdminOverride(
-      request: protos.google.api.serviceusage.v1beta1.IDeleteAdminOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IDeleteAdminOverrideRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
@@ -1237,7 +1248,7 @@ export class ServiceUsageClient {
  * const [response] = await operation.promise();
  */
   deleteAdminOverride(
-      request: protos.google.api.serviceusage.v1beta1.IDeleteAdminOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IDeleteAdminOverrideRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1292,7 +1303,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.api.serviceusage.v1beta1.OperationMetadata>;
   }
   importAdminOverrides(
-      request: protos.google.api.serviceusage.v1beta1.IImportAdminOverridesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IImportAdminOverridesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.api.serviceusage.v1beta1.IImportAdminOverridesResponse, protos.google.api.serviceusage.v1beta1.IImportAdminOverridesMetadata>,
@@ -1348,7 +1359,7 @@ export class ServiceUsageClient {
  * const [response] = await operation.promise();
  */
   importAdminOverrides(
-      request: protos.google.api.serviceusage.v1beta1.IImportAdminOverridesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IImportAdminOverridesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.api.serviceusage.v1beta1.IImportAdminOverridesResponse, protos.google.api.serviceusage.v1beta1.IImportAdminOverridesMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1403,7 +1414,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.api.serviceusage.v1beta1.ImportAdminOverridesResponse, protos.google.api.serviceusage.v1beta1.ImportAdminOverridesMetadata>;
   }
   createConsumerOverride(
-      request: protos.google.api.serviceusage.v1beta1.ICreateConsumerOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.ICreateConsumerOverrideRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.api.serviceusage.v1beta1.IQuotaOverride, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
@@ -1462,7 +1473,7 @@ export class ServiceUsageClient {
  * const [response] = await operation.promise();
  */
   createConsumerOverride(
-      request: protos.google.api.serviceusage.v1beta1.ICreateConsumerOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.ICreateConsumerOverrideRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.api.serviceusage.v1beta1.IQuotaOverride, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1517,7 +1528,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.api.serviceusage.v1beta1.QuotaOverride, protos.google.api.serviceusage.v1beta1.OperationMetadata>;
   }
   updateConsumerOverride(
-      request: protos.google.api.serviceusage.v1beta1.IUpdateConsumerOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IUpdateConsumerOverrideRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.api.serviceusage.v1beta1.IQuotaOverride, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
@@ -1575,7 +1586,7 @@ export class ServiceUsageClient {
  * const [response] = await operation.promise();
  */
   updateConsumerOverride(
-      request: protos.google.api.serviceusage.v1beta1.IUpdateConsumerOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IUpdateConsumerOverrideRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.api.serviceusage.v1beta1.IQuotaOverride, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1630,7 +1641,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.api.serviceusage.v1beta1.QuotaOverride, protos.google.api.serviceusage.v1beta1.OperationMetadata>;
   }
   deleteConsumerOverride(
-      request: protos.google.api.serviceusage.v1beta1.IDeleteConsumerOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IDeleteConsumerOverrideRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
@@ -1682,7 +1693,7 @@ export class ServiceUsageClient {
  * const [response] = await operation.promise();
  */
   deleteConsumerOverride(
-      request: protos.google.api.serviceusage.v1beta1.IDeleteConsumerOverrideRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IDeleteConsumerOverrideRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.api.serviceusage.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1737,7 +1748,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.api.serviceusage.v1beta1.OperationMetadata>;
   }
   importConsumerOverrides(
-      request: protos.google.api.serviceusage.v1beta1.IImportConsumerOverridesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IImportConsumerOverridesRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.api.serviceusage.v1beta1.IImportConsumerOverridesResponse, protos.google.api.serviceusage.v1beta1.IImportConsumerOverridesMetadata>,
@@ -1793,7 +1804,7 @@ export class ServiceUsageClient {
  * const [response] = await operation.promise();
  */
   importConsumerOverrides(
-      request: protos.google.api.serviceusage.v1beta1.IImportConsumerOverridesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IImportConsumerOverridesRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.api.serviceusage.v1beta1.IImportConsumerOverridesResponse, protos.google.api.serviceusage.v1beta1.IImportConsumerOverridesMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1848,7 +1859,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.api.serviceusage.v1beta1.ImportConsumerOverridesResponse, protos.google.api.serviceusage.v1beta1.ImportConsumerOverridesMetadata>;
   }
   generateServiceIdentity(
-      request: protos.google.api.serviceusage.v1beta1.IGenerateServiceIdentityRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IGenerateServiceIdentityRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.api.serviceusage.v1beta1.IServiceIdentity, protos.google.protobuf.IEmpty>,
@@ -1894,7 +1905,7 @@ export class ServiceUsageClient {
  * const [response] = await operation.promise();
  */
   generateServiceIdentity(
-      request: protos.google.api.serviceusage.v1beta1.IGenerateServiceIdentityRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IGenerateServiceIdentityRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.api.serviceusage.v1beta1.IServiceIdentity, protos.google.protobuf.IEmpty>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1949,7 +1960,7 @@ export class ServiceUsageClient {
     return decodeOperation as LROperation<protos.google.api.serviceusage.v1beta1.ServiceIdentity, protos.google.protobuf.Empty>;
   }
   listServices(
-      request: protos.google.api.serviceusage.v1beta1.IListServicesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IListServicesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.serviceusage.v1beta1.IService[],
@@ -2008,9 +2019,10 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ * @deprecated ListServices is deprecated and may be removed in a future version.
  */
   listServices(
-      request: protos.google.api.serviceusage.v1beta1.IListServicesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IListServicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.api.serviceusage.v1beta1.IListServicesRequest,
           protos.google.api.serviceusage.v1beta1.IListServicesResponse|null|undefined,
@@ -2042,6 +2054,7 @@ export class ServiceUsageClient {
       'parent': request.parent || '',
     });
     this.initialize();
+    gax.warn('DEP$ServiceUsage-$ListServices','ListServices is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.listServices(request, options, callback);
   }
 
@@ -2076,6 +2089,7 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ * @deprecated ListServices is deprecated and may be removed in a future version.
  */
   listServicesStream(
       request?: protos.google.api.serviceusage.v1beta1.IListServicesRequest,
@@ -2092,6 +2106,7 @@ export class ServiceUsageClient {
     });
     const callSettings = new gax.CallSettings(options);
     this.initialize();
+    gax.warn('DEP$ServiceUsage-$ListServices','ListServices is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.descriptors.page.listServices.createStream(
       this.innerApiCalls.listServices as gax.GaxCall,
       request,
@@ -2136,6 +2151,7 @@ export class ServiceUsageClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ * @deprecated ListServices is deprecated and may be removed in a future version.
  */
   listServicesAsync(
       request?: protos.google.api.serviceusage.v1beta1.IListServicesRequest,
@@ -2153,6 +2169,7 @@ export class ServiceUsageClient {
     options = options || {};
     const callSettings = new gax.CallSettings(options);
     this.initialize();
+    gax.warn('DEP$ServiceUsage-$ListServices','ListServices is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.descriptors.page.listServices.asyncIterate(
       this.innerApiCalls['listServices'] as GaxCall,
       request as unknown as RequestType,
@@ -2160,7 +2177,7 @@ export class ServiceUsageClient {
     ) as AsyncIterable<protos.google.api.serviceusage.v1beta1.IService>;
   }
   listConsumerQuotaMetrics(
-      request: protos.google.api.serviceusage.v1beta1.IListConsumerQuotaMetricsRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IListConsumerQuotaMetricsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.serviceusage.v1beta1.IConsumerQuotaMetric[],
@@ -2217,7 +2234,7 @@ export class ServiceUsageClient {
  *   for more details and examples.
  */
   listConsumerQuotaMetrics(
-      request: protos.google.api.serviceusage.v1beta1.IListConsumerQuotaMetricsRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IListConsumerQuotaMetricsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.api.serviceusage.v1beta1.IListConsumerQuotaMetricsRequest,
           protos.google.api.serviceusage.v1beta1.IListConsumerQuotaMetricsResponse|null|undefined,
@@ -2363,7 +2380,7 @@ export class ServiceUsageClient {
     ) as AsyncIterable<protos.google.api.serviceusage.v1beta1.IConsumerQuotaMetric>;
   }
   listAdminOverrides(
-      request: protos.google.api.serviceusage.v1beta1.IListAdminOverridesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IListAdminOverridesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.serviceusage.v1beta1.IQuotaOverride[],
@@ -2413,7 +2430,7 @@ export class ServiceUsageClient {
  *   for more details and examples.
  */
   listAdminOverrides(
-      request: protos.google.api.serviceusage.v1beta1.IListAdminOverridesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IListAdminOverridesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.api.serviceusage.v1beta1.IListAdminOverridesRequest,
           protos.google.api.serviceusage.v1beta1.IListAdminOverridesResponse|null|undefined,
@@ -2553,7 +2570,7 @@ export class ServiceUsageClient {
     ) as AsyncIterable<protos.google.api.serviceusage.v1beta1.IQuotaOverride>;
   }
   listConsumerOverrides(
-      request: protos.google.api.serviceusage.v1beta1.IListConsumerOverridesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IListConsumerOverridesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.api.serviceusage.v1beta1.IQuotaOverride[],
@@ -2603,7 +2620,7 @@ export class ServiceUsageClient {
  *   for more details and examples.
  */
   listConsumerOverrides(
-      request: protos.google.api.serviceusage.v1beta1.IListConsumerOverridesRequest,
+      request?: protos.google.api.serviceusage.v1beta1.IListConsumerOverridesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.api.serviceusage.v1beta1.IListConsumerOverridesRequest,
           protos.google.api.serviceusage.v1beta1.IListConsumerOverridesResponse|null|undefined,

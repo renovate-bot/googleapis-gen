@@ -269,7 +269,7 @@ export class ProfilerServiceClient {
   // -- Service calls --
   // -------------------
   createProfile(
-      request: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
+      request?: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.cloudprofiler.v2.IProfile,
@@ -322,7 +322,7 @@ export class ProfilerServiceClient {
  * const [response] = await client.createProfile(request);
  */
   createProfile(
-      request: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
+      request?: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.cloudprofiler.v2.IProfile,
           protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest|null|undefined,
@@ -356,7 +356,7 @@ export class ProfilerServiceClient {
     return this.innerApiCalls.createProfile(request, options, callback);
   }
   createOfflineProfile(
-      request: protos.google.devtools.cloudprofiler.v2.ICreateOfflineProfileRequest,
+      request?: protos.google.devtools.cloudprofiler.v2.ICreateOfflineProfileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.cloudprofiler.v2.IProfile,
@@ -397,7 +397,7 @@ export class ProfilerServiceClient {
  * const [response] = await client.createOfflineProfile(request);
  */
   createOfflineProfile(
-      request: protos.google.devtools.cloudprofiler.v2.ICreateOfflineProfileRequest,
+      request?: protos.google.devtools.cloudprofiler.v2.ICreateOfflineProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.cloudprofiler.v2.IProfile,
           protos.google.devtools.cloudprofiler.v2.ICreateOfflineProfileRequest|null|undefined,
@@ -431,7 +431,7 @@ export class ProfilerServiceClient {
     return this.innerApiCalls.createOfflineProfile(request, options, callback);
   }
   updateProfile(
-      request: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,
+      request?: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.cloudprofiler.v2.IProfile,
@@ -476,7 +476,7 @@ export class ProfilerServiceClient {
  * const [response] = await client.updateProfile(request);
  */
   updateProfile(
-      request: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,
+      request?: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.cloudprofiler.v2.IProfile,
           protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest|null|undefined,

@@ -614,7 +614,7 @@ export class CustomerClientLinkServiceClient {
   // -- Service calls --
   // -------------------
   getCustomerClientLink(
-      request: protos.google.ads.googleads.v6.services.IGetCustomerClientLinkRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCustomerClientLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.ICustomerClientLink,
@@ -651,7 +651,7 @@ export class CustomerClientLinkServiceClient {
  * const [response] = await client.getCustomerClientLink(request);
  */
   getCustomerClientLink(
-      request: protos.google.ads.googleads.v6.services.IGetCustomerClientLinkRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetCustomerClientLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.ICustomerClientLink,
           protos.google.ads.googleads.v6.services.IGetCustomerClientLinkRequest|null|undefined,
@@ -685,7 +685,7 @@ export class CustomerClientLinkServiceClient {
     return this.innerApiCalls.getCustomerClientLink(request, options, callback);
   }
   mutateCustomerClientLink(
-      request: protos.google.ads.googleads.v6.services.IMutateCustomerClientLinkRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCustomerClientLinkRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateCustomerClientLinkResponse,
@@ -724,7 +724,7 @@ export class CustomerClientLinkServiceClient {
  * const [response] = await client.mutateCustomerClientLink(request);
  */
   mutateCustomerClientLink(
-      request: protos.google.ads.googleads.v6.services.IMutateCustomerClientLinkRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateCustomerClientLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateCustomerClientLinkResponse,
           protos.google.ads.googleads.v6.services.IMutateCustomerClientLinkRequest|null|undefined,

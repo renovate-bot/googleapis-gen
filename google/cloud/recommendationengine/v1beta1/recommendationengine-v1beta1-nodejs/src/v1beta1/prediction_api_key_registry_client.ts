@@ -290,7 +290,7 @@ export class PredictionApiKeyRegistryClient {
   // -- Service calls --
   // -------------------
   createPredictionApiKeyRegistration(
-      request: protos.google.cloud.recommendationengine.v1beta1.ICreatePredictionApiKeyRegistrationRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.ICreatePredictionApiKeyRegistrationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommendationengine.v1beta1.IPredictionApiKeyRegistration,
@@ -330,7 +330,7 @@ export class PredictionApiKeyRegistryClient {
  * const [response] = await client.createPredictionApiKeyRegistration(request);
  */
   createPredictionApiKeyRegistration(
-      request: protos.google.cloud.recommendationengine.v1beta1.ICreatePredictionApiKeyRegistrationRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.ICreatePredictionApiKeyRegistrationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.recommendationengine.v1beta1.IPredictionApiKeyRegistration,
           protos.google.cloud.recommendationengine.v1beta1.ICreatePredictionApiKeyRegistrationRequest|null|undefined,
@@ -364,7 +364,7 @@ export class PredictionApiKeyRegistryClient {
     return this.innerApiCalls.createPredictionApiKeyRegistration(request, options, callback);
   }
   deletePredictionApiKeyRegistration(
-      request: protos.google.cloud.recommendationengine.v1beta1.IDeletePredictionApiKeyRegistrationRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IDeletePredictionApiKeyRegistrationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -402,7 +402,7 @@ export class PredictionApiKeyRegistryClient {
  * const [response] = await client.deletePredictionApiKeyRegistration(request);
  */
   deletePredictionApiKeyRegistration(
-      request: protos.google.cloud.recommendationengine.v1beta1.IDeletePredictionApiKeyRegistrationRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IDeletePredictionApiKeyRegistrationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.recommendationengine.v1beta1.IDeletePredictionApiKeyRegistrationRequest|null|undefined,
@@ -437,7 +437,7 @@ export class PredictionApiKeyRegistryClient {
   }
 
   listPredictionApiKeyRegistrations(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.recommendationengine.v1beta1.IPredictionApiKeyRegistration[],
@@ -484,7 +484,7 @@ export class PredictionApiKeyRegistryClient {
  *   for more details and examples.
  */
   listPredictionApiKeyRegistrations(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
+      request?: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
           protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsResponse|null|undefined,

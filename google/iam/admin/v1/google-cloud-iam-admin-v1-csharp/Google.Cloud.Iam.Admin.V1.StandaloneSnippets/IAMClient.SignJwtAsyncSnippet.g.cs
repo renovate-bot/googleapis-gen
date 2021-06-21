@@ -34,7 +34,9 @@ namespace Google.Cloud.Iam.Admin.V1.Snippets
             string name = "projects/[PROJECT]/serviceAccounts/[SERVICE_ACCOUNT]";
             string payload = "";
             // Make the request
+#pragma warning disable CS0612
             SignJwtResponse response = await iAMClient.SignJwtAsync(name, payload);
+#pragma warning restore CS0612
         }
     }
 }

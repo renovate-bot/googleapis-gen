@@ -371,7 +371,7 @@ export class WorkloadIdentityPoolsClient {
   // -- Service calls --
   // -------------------
   getWorkloadIdentityPool(
-      request: protos.google.iam.v1beta.IGetWorkloadIdentityPoolRequest,
+      request?: protos.google.iam.v1beta.IGetWorkloadIdentityPoolRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1beta.IWorkloadIdentityPool,
@@ -409,7 +409,7 @@ export class WorkloadIdentityPoolsClient {
  * const [response] = await client.getWorkloadIdentityPool(request);
  */
   getWorkloadIdentityPool(
-      request: protos.google.iam.v1beta.IGetWorkloadIdentityPoolRequest,
+      request?: protos.google.iam.v1beta.IGetWorkloadIdentityPoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1beta.IWorkloadIdentityPool,
           protos.google.iam.v1beta.IGetWorkloadIdentityPoolRequest|null|undefined,
@@ -443,7 +443,7 @@ export class WorkloadIdentityPoolsClient {
     return this.innerApiCalls.getWorkloadIdentityPool(request, options, callback);
   }
   getWorkloadIdentityPoolProvider(
-      request: protos.google.iam.v1beta.IGetWorkloadIdentityPoolProviderRequest,
+      request?: protos.google.iam.v1beta.IGetWorkloadIdentityPoolProviderRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1beta.IWorkloadIdentityPoolProvider,
@@ -481,7 +481,7 @@ export class WorkloadIdentityPoolsClient {
  * const [response] = await client.getWorkloadIdentityPoolProvider(request);
  */
   getWorkloadIdentityPoolProvider(
-      request: protos.google.iam.v1beta.IGetWorkloadIdentityPoolProviderRequest,
+      request?: protos.google.iam.v1beta.IGetWorkloadIdentityPoolProviderRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1beta.IWorkloadIdentityPoolProvider,
           protos.google.iam.v1beta.IGetWorkloadIdentityPoolProviderRequest|null|undefined,
@@ -516,7 +516,7 @@ export class WorkloadIdentityPoolsClient {
   }
 
   createWorkloadIdentityPool(
-      request: protos.google.iam.v1beta.ICreateWorkloadIdentityPoolRequest,
+      request?: protos.google.iam.v1beta.ICreateWorkloadIdentityPoolRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.iam.v1beta.IWorkloadIdentityPool, protos.google.iam.v1beta.IWorkloadIdentityPoolOperationMetadata>,
@@ -567,7 +567,7 @@ export class WorkloadIdentityPoolsClient {
  * const [response] = await operation.promise();
  */
   createWorkloadIdentityPool(
-      request: protos.google.iam.v1beta.ICreateWorkloadIdentityPoolRequest,
+      request?: protos.google.iam.v1beta.ICreateWorkloadIdentityPoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.iam.v1beta.IWorkloadIdentityPool, protos.google.iam.v1beta.IWorkloadIdentityPoolOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -622,7 +622,7 @@ export class WorkloadIdentityPoolsClient {
     return decodeOperation as LROperation<protos.google.iam.v1beta.WorkloadIdentityPool, protos.google.iam.v1beta.WorkloadIdentityPoolOperationMetadata>;
   }
   updateWorkloadIdentityPool(
-      request: protos.google.iam.v1beta.IUpdateWorkloadIdentityPoolRequest,
+      request?: protos.google.iam.v1beta.IUpdateWorkloadIdentityPoolRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.iam.v1beta.IWorkloadIdentityPool, protos.google.iam.v1beta.IWorkloadIdentityPoolOperationMetadata>,
@@ -665,7 +665,7 @@ export class WorkloadIdentityPoolsClient {
  * const [response] = await operation.promise();
  */
   updateWorkloadIdentityPool(
-      request: protos.google.iam.v1beta.IUpdateWorkloadIdentityPoolRequest,
+      request?: protos.google.iam.v1beta.IUpdateWorkloadIdentityPoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.iam.v1beta.IWorkloadIdentityPool, protos.google.iam.v1beta.IWorkloadIdentityPoolOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -720,7 +720,7 @@ export class WorkloadIdentityPoolsClient {
     return decodeOperation as LROperation<protos.google.iam.v1beta.WorkloadIdentityPool, protos.google.iam.v1beta.WorkloadIdentityPoolOperationMetadata>;
   }
   deleteWorkloadIdentityPool(
-      request: protos.google.iam.v1beta.IDeleteWorkloadIdentityPoolRequest,
+      request?: protos.google.iam.v1beta.IDeleteWorkloadIdentityPoolRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.iam.v1beta.IWorkloadIdentityPool, protos.google.iam.v1beta.IWorkloadIdentityPoolOperationMetadata>,
@@ -771,7 +771,7 @@ export class WorkloadIdentityPoolsClient {
  * const [response] = await operation.promise();
  */
   deleteWorkloadIdentityPool(
-      request: protos.google.iam.v1beta.IDeleteWorkloadIdentityPoolRequest,
+      request?: protos.google.iam.v1beta.IDeleteWorkloadIdentityPoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.iam.v1beta.IWorkloadIdentityPool, protos.google.iam.v1beta.IWorkloadIdentityPoolOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -826,7 +826,7 @@ export class WorkloadIdentityPoolsClient {
     return decodeOperation as LROperation<protos.google.iam.v1beta.WorkloadIdentityPool, protos.google.iam.v1beta.WorkloadIdentityPoolOperationMetadata>;
   }
   undeleteWorkloadIdentityPool(
-      request: protos.google.iam.v1beta.IUndeleteWorkloadIdentityPoolRequest,
+      request?: protos.google.iam.v1beta.IUndeleteWorkloadIdentityPoolRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.iam.v1beta.IWorkloadIdentityPool, protos.google.iam.v1beta.IWorkloadIdentityPoolOperationMetadata>,
@@ -867,7 +867,7 @@ export class WorkloadIdentityPoolsClient {
  * const [response] = await operation.promise();
  */
   undeleteWorkloadIdentityPool(
-      request: protos.google.iam.v1beta.IUndeleteWorkloadIdentityPoolRequest,
+      request?: protos.google.iam.v1beta.IUndeleteWorkloadIdentityPoolRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.iam.v1beta.IWorkloadIdentityPool, protos.google.iam.v1beta.IWorkloadIdentityPoolOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -922,7 +922,7 @@ export class WorkloadIdentityPoolsClient {
     return decodeOperation as LROperation<protos.google.iam.v1beta.WorkloadIdentityPool, protos.google.iam.v1beta.WorkloadIdentityPoolOperationMetadata>;
   }
   createWorkloadIdentityPoolProvider(
-      request: protos.google.iam.v1beta.ICreateWorkloadIdentityPoolProviderRequest,
+      request?: protos.google.iam.v1beta.ICreateWorkloadIdentityPoolProviderRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.iam.v1beta.IWorkloadIdentityPoolProvider, protos.google.iam.v1beta.IWorkloadIdentityPoolProviderOperationMetadata>,
@@ -974,7 +974,7 @@ export class WorkloadIdentityPoolsClient {
  * const [response] = await operation.promise();
  */
   createWorkloadIdentityPoolProvider(
-      request: protos.google.iam.v1beta.ICreateWorkloadIdentityPoolProviderRequest,
+      request?: protos.google.iam.v1beta.ICreateWorkloadIdentityPoolProviderRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.iam.v1beta.IWorkloadIdentityPoolProvider, protos.google.iam.v1beta.IWorkloadIdentityPoolProviderOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1029,7 +1029,7 @@ export class WorkloadIdentityPoolsClient {
     return decodeOperation as LROperation<protos.google.iam.v1beta.WorkloadIdentityPoolProvider, protos.google.iam.v1beta.WorkloadIdentityPoolProviderOperationMetadata>;
   }
   updateWorkloadIdentityPoolProvider(
-      request: protos.google.iam.v1beta.IUpdateWorkloadIdentityPoolProviderRequest,
+      request?: protos.google.iam.v1beta.IUpdateWorkloadIdentityPoolProviderRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.iam.v1beta.IWorkloadIdentityPoolProvider, protos.google.iam.v1beta.IWorkloadIdentityPoolProviderOperationMetadata>,
@@ -1072,7 +1072,7 @@ export class WorkloadIdentityPoolsClient {
  * const [response] = await operation.promise();
  */
   updateWorkloadIdentityPoolProvider(
-      request: protos.google.iam.v1beta.IUpdateWorkloadIdentityPoolProviderRequest,
+      request?: protos.google.iam.v1beta.IUpdateWorkloadIdentityPoolProviderRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.iam.v1beta.IWorkloadIdentityPoolProvider, protos.google.iam.v1beta.IWorkloadIdentityPoolProviderOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1127,7 +1127,7 @@ export class WorkloadIdentityPoolsClient {
     return decodeOperation as LROperation<protos.google.iam.v1beta.WorkloadIdentityPoolProvider, protos.google.iam.v1beta.WorkloadIdentityPoolProviderOperationMetadata>;
   }
   deleteWorkloadIdentityPoolProvider(
-      request: protos.google.iam.v1beta.IDeleteWorkloadIdentityPoolProviderRequest,
+      request?: protos.google.iam.v1beta.IDeleteWorkloadIdentityPoolProviderRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.iam.v1beta.IWorkloadIdentityPoolProvider, protos.google.iam.v1beta.IWorkloadIdentityPoolProviderOperationMetadata>,
@@ -1173,7 +1173,7 @@ export class WorkloadIdentityPoolsClient {
  * const [response] = await operation.promise();
  */
   deleteWorkloadIdentityPoolProvider(
-      request: protos.google.iam.v1beta.IDeleteWorkloadIdentityPoolProviderRequest,
+      request?: protos.google.iam.v1beta.IDeleteWorkloadIdentityPoolProviderRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.iam.v1beta.IWorkloadIdentityPoolProvider, protos.google.iam.v1beta.IWorkloadIdentityPoolProviderOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1228,7 +1228,7 @@ export class WorkloadIdentityPoolsClient {
     return decodeOperation as LROperation<protos.google.iam.v1beta.WorkloadIdentityPoolProvider, protos.google.iam.v1beta.WorkloadIdentityPoolProviderOperationMetadata>;
   }
   undeleteWorkloadIdentityPoolProvider(
-      request: protos.google.iam.v1beta.IUndeleteWorkloadIdentityPoolProviderRequest,
+      request?: protos.google.iam.v1beta.IUndeleteWorkloadIdentityPoolProviderRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.iam.v1beta.IWorkloadIdentityPoolProvider, protos.google.iam.v1beta.IWorkloadIdentityPoolProviderOperationMetadata>,
@@ -1270,7 +1270,7 @@ export class WorkloadIdentityPoolsClient {
  * const [response] = await operation.promise();
  */
   undeleteWorkloadIdentityPoolProvider(
-      request: protos.google.iam.v1beta.IUndeleteWorkloadIdentityPoolProviderRequest,
+      request?: protos.google.iam.v1beta.IUndeleteWorkloadIdentityPoolProviderRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.iam.v1beta.IWorkloadIdentityPoolProvider, protos.google.iam.v1beta.IWorkloadIdentityPoolProviderOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -1325,7 +1325,7 @@ export class WorkloadIdentityPoolsClient {
     return decodeOperation as LROperation<protos.google.iam.v1beta.WorkloadIdentityPoolProvider, protos.google.iam.v1beta.WorkloadIdentityPoolProviderOperationMetadata>;
   }
   listWorkloadIdentityPools(
-      request: protos.google.iam.v1beta.IListWorkloadIdentityPoolsRequest,
+      request?: protos.google.iam.v1beta.IListWorkloadIdentityPoolsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1beta.IWorkloadIdentityPool[],
@@ -1378,7 +1378,7 @@ export class WorkloadIdentityPoolsClient {
  *   for more details and examples.
  */
   listWorkloadIdentityPools(
-      request: protos.google.iam.v1beta.IListWorkloadIdentityPoolsRequest,
+      request?: protos.google.iam.v1beta.IListWorkloadIdentityPoolsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.iam.v1beta.IListWorkloadIdentityPoolsRequest,
           protos.google.iam.v1beta.IListWorkloadIdentityPoolsResponse|null|undefined,
@@ -1518,7 +1518,7 @@ export class WorkloadIdentityPoolsClient {
     ) as AsyncIterable<protos.google.iam.v1beta.IWorkloadIdentityPool>;
   }
   listWorkloadIdentityPoolProviders(
-      request: protos.google.iam.v1beta.IListWorkloadIdentityPoolProvidersRequest,
+      request?: protos.google.iam.v1beta.IListWorkloadIdentityPoolProvidersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1beta.IWorkloadIdentityPoolProvider[],
@@ -1572,7 +1572,7 @@ export class WorkloadIdentityPoolsClient {
  *   for more details and examples.
  */
   listWorkloadIdentityPoolProviders(
-      request: protos.google.iam.v1beta.IListWorkloadIdentityPoolProvidersRequest,
+      request?: protos.google.iam.v1beta.IListWorkloadIdentityPoolProvidersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.iam.v1beta.IListWorkloadIdentityPoolProvidersRequest,
           protos.google.iam.v1beta.IListWorkloadIdentityPoolProvidersResponse|null|undefined,

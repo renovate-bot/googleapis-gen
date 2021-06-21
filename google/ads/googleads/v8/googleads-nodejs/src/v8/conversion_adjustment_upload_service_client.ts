@@ -653,7 +653,7 @@ export class ConversionAdjustmentUploadServiceClient {
   // -- Service calls --
   // -------------------
   uploadConversionAdjustments(
-      request: protos.google.ads.googleads.v8.services.IUploadConversionAdjustmentsRequest,
+      request?: protos.google.ads.googleads.v8.services.IUploadConversionAdjustmentsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.services.IUploadConversionAdjustmentsResponse,
@@ -712,7 +712,7 @@ export class ConversionAdjustmentUploadServiceClient {
  * const [response] = await client.uploadConversionAdjustments(request);
  */
   uploadConversionAdjustments(
-      request: protos.google.ads.googleads.v8.services.IUploadConversionAdjustmentsRequest,
+      request?: protos.google.ads.googleads.v8.services.IUploadConversionAdjustmentsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.services.IUploadConversionAdjustmentsResponse,
           protos.google.ads.googleads.v8.services.IUploadConversionAdjustmentsRequest|null|undefined,

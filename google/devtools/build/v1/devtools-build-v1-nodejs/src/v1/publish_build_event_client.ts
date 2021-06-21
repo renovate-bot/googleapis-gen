@@ -283,7 +283,7 @@ export class PublishBuildEventClient {
   // -- Service calls --
   // -------------------
   publishLifecycleEvent(
-      request: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
+      request?: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -347,7 +347,7 @@ export class PublishBuildEventClient {
  * const [response] = await client.publishLifecycleEvent(request);
  */
   publishLifecycleEvent(
-      request: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
+      request?: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.devtools.build.v1.IPublishLifecycleEventRequest|null|undefined,

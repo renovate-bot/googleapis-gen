@@ -635,7 +635,7 @@ export class ExtensionFeedItemServiceClient {
   // -- Service calls --
   // -------------------
   getExtensionFeedItem(
-      request: protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IExtensionFeedItem,
@@ -680,7 +680,7 @@ export class ExtensionFeedItemServiceClient {
  * const [response] = await client.getExtensionFeedItem(request);
  */
   getExtensionFeedItem(
-      request: protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IExtensionFeedItem,
           protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest|null|undefined,
@@ -714,7 +714,7 @@ export class ExtensionFeedItemServiceClient {
     return this.innerApiCalls.getExtensionFeedItem(request, options, callback);
   }
   mutateExtensionFeedItems(
-      request: protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsResponse,
@@ -791,7 +791,7 @@ export class ExtensionFeedItemServiceClient {
  * const [response] = await client.mutateExtensionFeedItems(request);
  */
   mutateExtensionFeedItems(
-      request: protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsResponse,
           protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest|null|undefined,

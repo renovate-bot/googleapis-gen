@@ -357,7 +357,7 @@ export class QueryServiceClient {
   // -------------------
 
   queryTimeSeries(
-      request: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
+      request?: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.monitoring.v3.ITimeSeriesData[],
@@ -410,7 +410,7 @@ export class QueryServiceClient {
  *   for more details and examples.
  */
   queryTimeSeries(
-      request: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
+      request?: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.monitoring.v3.IQueryTimeSeriesRequest,
           protos.google.monitoring.v3.IQueryTimeSeriesResponse|null|undefined,

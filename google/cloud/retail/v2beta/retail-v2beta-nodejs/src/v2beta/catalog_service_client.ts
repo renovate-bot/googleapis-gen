@@ -289,7 +289,7 @@ export class CatalogServiceClient {
   // -- Service calls --
   // -------------------
   updateCatalog(
-      request: protos.google.cloud.retail.v2beta.IUpdateCatalogRequest,
+      request?: protos.google.cloud.retail.v2beta.IUpdateCatalogRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.retail.v2beta.ICatalog,
@@ -342,7 +342,7 @@ export class CatalogServiceClient {
  * const [response] = await client.updateCatalog(request);
  */
   updateCatalog(
-      request: protos.google.cloud.retail.v2beta.IUpdateCatalogRequest,
+      request?: protos.google.cloud.retail.v2beta.IUpdateCatalogRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.retail.v2beta.ICatalog,
           protos.google.cloud.retail.v2beta.IUpdateCatalogRequest|null|undefined,
@@ -377,7 +377,7 @@ export class CatalogServiceClient {
   }
 
   listCatalogs(
-      request: protos.google.cloud.retail.v2beta.IListCatalogsRequest,
+      request?: protos.google.cloud.retail.v2beta.IListCatalogsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.retail.v2beta.ICatalog[],
@@ -441,7 +441,7 @@ export class CatalogServiceClient {
  *   for more details and examples.
  */
   listCatalogs(
-      request: protos.google.cloud.retail.v2beta.IListCatalogsRequest,
+      request?: protos.google.cloud.retail.v2beta.IListCatalogsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.retail.v2beta.IListCatalogsRequest,
           protos.google.cloud.retail.v2beta.IListCatalogsResponse|null|undefined,

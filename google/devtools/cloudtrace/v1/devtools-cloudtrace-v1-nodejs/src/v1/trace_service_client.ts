@@ -279,7 +279,7 @@ export class TraceServiceClient {
   // -- Service calls --
   // -------------------
   getTrace(
-      request: protos.google.devtools.cloudtrace.v1.IGetTraceRequest,
+      request?: protos.google.devtools.cloudtrace.v1.IGetTraceRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.cloudtrace.v1.ITrace,
@@ -318,7 +318,7 @@ export class TraceServiceClient {
  * const [response] = await client.getTrace(request);
  */
   getTrace(
-      request: protos.google.devtools.cloudtrace.v1.IGetTraceRequest,
+      request?: protos.google.devtools.cloudtrace.v1.IGetTraceRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.cloudtrace.v1.ITrace,
           protos.google.devtools.cloudtrace.v1.IGetTraceRequest|null|undefined,
@@ -352,7 +352,7 @@ export class TraceServiceClient {
     return this.innerApiCalls.getTrace(request, options, callback);
   }
   patchTraces(
-      request: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
+      request?: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -395,7 +395,7 @@ export class TraceServiceClient {
  * const [response] = await client.patchTraces(request);
  */
   patchTraces(
-      request: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
+      request?: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.devtools.cloudtrace.v1.IPatchTracesRequest|null|undefined,
@@ -430,7 +430,7 @@ export class TraceServiceClient {
   }
 
   listTraces(
-      request: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
+      request?: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.cloudtrace.v1.ITrace[],
@@ -532,7 +532,7 @@ export class TraceServiceClient {
  *   for more details and examples.
  */
   listTraces(
-      request: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
+      request?: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.devtools.cloudtrace.v1.IListTracesRequest,
           protos.google.devtools.cloudtrace.v1.IListTracesResponse|null|undefined,

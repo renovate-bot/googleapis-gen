@@ -635,7 +635,7 @@ export class FeedItemTargetServiceClient {
   // -- Service calls --
   // -------------------
   getFeedItemTarget(
-      request: protos.google.ads.googleads.v7.services.IGetFeedItemTargetRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetFeedItemTargetRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IFeedItemTarget,
@@ -680,7 +680,7 @@ export class FeedItemTargetServiceClient {
  * const [response] = await client.getFeedItemTarget(request);
  */
   getFeedItemTarget(
-      request: protos.google.ads.googleads.v7.services.IGetFeedItemTargetRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetFeedItemTargetRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IFeedItemTarget,
           protos.google.ads.googleads.v7.services.IGetFeedItemTargetRequest|null|undefined,
@@ -714,7 +714,7 @@ export class FeedItemTargetServiceClient {
     return this.innerApiCalls.getFeedItemTarget(request, options, callback);
   }
   mutateFeedItemTargets(
-      request: protos.google.ads.googleads.v7.services.IMutateFeedItemTargetsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateFeedItemTargetsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IMutateFeedItemTargetsResponse,
@@ -785,7 +785,7 @@ export class FeedItemTargetServiceClient {
  * const [response] = await client.mutateFeedItemTargets(request);
  */
   mutateFeedItemTargets(
-      request: protos.google.ads.googleads.v7.services.IMutateFeedItemTargetsRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateFeedItemTargetsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IMutateFeedItemTargetsResponse,
           protos.google.ads.googleads.v7.services.IMutateFeedItemTargetsRequest|null|undefined,

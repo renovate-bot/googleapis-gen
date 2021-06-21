@@ -649,7 +649,7 @@ export class BatchJobServiceClient {
   // -- Service calls --
   // -------------------
   mutateBatchJob(
-      request: protos.google.ads.googleads.v6.services.IMutateBatchJobRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateBatchJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IMutateBatchJobResponse,
@@ -688,7 +688,7 @@ export class BatchJobServiceClient {
  * const [response] = await client.mutateBatchJob(request);
  */
   mutateBatchJob(
-      request: protos.google.ads.googleads.v6.services.IMutateBatchJobRequest,
+      request?: protos.google.ads.googleads.v6.services.IMutateBatchJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IMutateBatchJobResponse,
           protos.google.ads.googleads.v6.services.IMutateBatchJobRequest|null|undefined,
@@ -722,7 +722,7 @@ export class BatchJobServiceClient {
     return this.innerApiCalls.mutateBatchJob(request, options, callback);
   }
   getBatchJob(
-      request: protos.google.ads.googleads.v6.services.IGetBatchJobRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetBatchJobRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IBatchJob,
@@ -759,7 +759,7 @@ export class BatchJobServiceClient {
  * const [response] = await client.getBatchJob(request);
  */
   getBatchJob(
-      request: protos.google.ads.googleads.v6.services.IGetBatchJobRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetBatchJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IBatchJob,
           protos.google.ads.googleads.v6.services.IGetBatchJobRequest|null|undefined,
@@ -793,7 +793,7 @@ export class BatchJobServiceClient {
     return this.innerApiCalls.getBatchJob(request, options, callback);
   }
   addBatchJobOperations(
-      request: protos.google.ads.googleads.v6.services.IAddBatchJobOperationsRequest,
+      request?: protos.google.ads.googleads.v6.services.IAddBatchJobOperationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IAddBatchJobOperationsResponse,
@@ -847,7 +847,7 @@ export class BatchJobServiceClient {
  * const [response] = await client.addBatchJobOperations(request);
  */
   addBatchJobOperations(
-      request: protos.google.ads.googleads.v6.services.IAddBatchJobOperationsRequest,
+      request?: protos.google.ads.googleads.v6.services.IAddBatchJobOperationsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.services.IAddBatchJobOperationsResponse,
           protos.google.ads.googleads.v6.services.IAddBatchJobOperationsRequest|null|undefined,
@@ -882,7 +882,7 @@ export class BatchJobServiceClient {
   }
 
   runBatchJob(
-      request: protos.google.ads.googleads.v6.services.IRunBatchJobRequest,
+      request?: protos.google.ads.googleads.v6.services.IRunBatchJobRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v6.resources.BatchJob.IBatchJobMetadata>,
@@ -926,7 +926,7 @@ export class BatchJobServiceClient {
  * const [response] = await operation.promise();
  */
   runBatchJob(
-      request: protos.google.ads.googleads.v6.services.IRunBatchJobRequest,
+      request?: protos.google.ads.googleads.v6.services.IRunBatchJobRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v6.resources.BatchJob.IBatchJobMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -981,7 +981,7 @@ export class BatchJobServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v6.resources.BatchJob.BatchJobMetadata>;
   }
   listBatchJobResults(
-      request: protos.google.ads.googleads.v6.services.IListBatchJobResultsRequest,
+      request?: protos.google.ads.googleads.v6.services.IListBatchJobResultsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.services.IBatchJobResult[],
@@ -1032,7 +1032,7 @@ export class BatchJobServiceClient {
  *   for more details and examples.
  */
   listBatchJobResults(
-      request: protos.google.ads.googleads.v6.services.IListBatchJobResultsRequest,
+      request?: protos.google.ads.googleads.v6.services.IListBatchJobResultsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.ads.googleads.v6.services.IListBatchJobResultsRequest,
           protos.google.ads.googleads.v6.services.IListBatchJobResultsResponse|null|undefined,

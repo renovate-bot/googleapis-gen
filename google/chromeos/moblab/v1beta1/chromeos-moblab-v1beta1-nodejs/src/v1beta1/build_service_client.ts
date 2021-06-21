@@ -319,7 +319,7 @@ export class BuildServiceClient {
   // -- Service calls --
   // -------------------
   checkBuildStageStatus(
-      request: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
+      request?: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
       options?: CallOptions):
       Promise<[
         protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusResponse,
@@ -363,7 +363,7 @@ export class BuildServiceClient {
  * const [response] = await client.checkBuildStageStatus(request);
  */
   checkBuildStageStatus(
-      request: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
+      request?: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusResponse,
           protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest|null|undefined,
@@ -398,7 +398,7 @@ export class BuildServiceClient {
   }
 
   stageBuild(
-      request: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
+      request?: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.chromeos.moblab.v1beta1.IStageBuildResponse, protos.google.chromeos.moblab.v1beta1.IStageBuildMetadata>,
@@ -448,7 +448,7 @@ export class BuildServiceClient {
  * const [response] = await operation.promise();
  */
   stageBuild(
-      request: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
+      request?: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.chromeos.moblab.v1beta1.IStageBuildResponse, protos.google.chromeos.moblab.v1beta1.IStageBuildMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -503,7 +503,7 @@ export class BuildServiceClient {
     return decodeOperation as LROperation<protos.google.chromeos.moblab.v1beta1.StageBuildResponse, protos.google.chromeos.moblab.v1beta1.StageBuildMetadata>;
   }
   listBuilds(
-      request: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
+      request?: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.chromeos.moblab.v1beta1.IBuild[],
@@ -568,7 +568,7 @@ export class BuildServiceClient {
  *   for more details and examples.
  */
   listBuilds(
-      request: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
+      request?: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
           protos.google.chromeos.moblab.v1beta1.IListBuildsResponse|null|undefined,

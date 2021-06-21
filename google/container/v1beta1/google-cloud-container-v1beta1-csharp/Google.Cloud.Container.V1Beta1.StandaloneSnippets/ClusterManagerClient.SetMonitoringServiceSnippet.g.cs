@@ -35,7 +35,9 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             string clusterId = "";
             string monitoringService = "";
             // Make the request
+#pragma warning disable CS0612
             Operation response = clusterManagerClient.SetMonitoringService(projectId, zone, clusterId, monitoringService);
+#pragma warning restore CS0612
         }
     }
 }

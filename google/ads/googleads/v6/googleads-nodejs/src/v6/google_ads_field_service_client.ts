@@ -625,7 +625,7 @@ export class GoogleAdsFieldServiceClient {
   // -- Service calls --
   // -------------------
   getGoogleAdsField(
-      request: protos.google.ads.googleads.v6.services.IGetGoogleAdsFieldRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetGoogleAdsFieldRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IGoogleAdsField,
@@ -662,7 +662,7 @@ export class GoogleAdsFieldServiceClient {
  * const [response] = await client.getGoogleAdsField(request);
  */
   getGoogleAdsField(
-      request: protos.google.ads.googleads.v6.services.IGetGoogleAdsFieldRequest,
+      request?: protos.google.ads.googleads.v6.services.IGetGoogleAdsFieldRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v6.resources.IGoogleAdsField,
           protos.google.ads.googleads.v6.services.IGetGoogleAdsFieldRequest|null|undefined,
@@ -697,7 +697,7 @@ export class GoogleAdsFieldServiceClient {
   }
 
   searchGoogleAdsFields(
-      request: protos.google.ads.googleads.v6.services.ISearchGoogleAdsFieldsRequest,
+      request?: protos.google.ads.googleads.v6.services.ISearchGoogleAdsFieldsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v6.resources.IGoogleAdsField[],
@@ -746,7 +746,7 @@ export class GoogleAdsFieldServiceClient {
  *   for more details and examples.
  */
   searchGoogleAdsFields(
-      request: protos.google.ads.googleads.v6.services.ISearchGoogleAdsFieldsRequest,
+      request?: protos.google.ads.googleads.v6.services.ISearchGoogleAdsFieldsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.ads.googleads.v6.services.ISearchGoogleAdsFieldsRequest,
           protos.google.ads.googleads.v6.services.ISearchGoogleAdsFieldsResponse|null|undefined,

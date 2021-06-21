@@ -298,7 +298,7 @@ export class ContainerAnalysisV1Beta1Client {
   // -- Service calls --
   // -------------------
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -348,7 +348,7 @@ export class ContainerAnalysisV1Beta1Client {
  * const [response] = await client.setIamPolicy(request);
  */
   setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
@@ -382,7 +382,7 @@ export class ContainerAnalysisV1Beta1Client {
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.IPolicy,
@@ -430,7 +430,7 @@ export class ContainerAnalysisV1Beta1Client {
  * const [response] = await client.getIamPolicy(request);
  */
   getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
@@ -464,7 +464,7 @@ export class ContainerAnalysisV1Beta1Client {
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.iam.v1.ITestIamPermissionsResponse,
@@ -513,7 +513,7 @@ export class ContainerAnalysisV1Beta1Client {
  * const [response] = await client.testIamPermissions(request);
  */
   testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.iam.v1.ITestIamPermissionsResponse,
           protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
@@ -547,7 +547,7 @@ export class ContainerAnalysisV1Beta1Client {
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
   getScanConfig(
-      request: protos.google.devtools.containeranalysis.v1beta1.IGetScanConfigRequest,
+      request?: protos.google.devtools.containeranalysis.v1beta1.IGetScanConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.containeranalysis.v1beta1.IScanConfig,
@@ -585,7 +585,7 @@ export class ContainerAnalysisV1Beta1Client {
  * const [response] = await client.getScanConfig(request);
  */
   getScanConfig(
-      request: protos.google.devtools.containeranalysis.v1beta1.IGetScanConfigRequest,
+      request?: protos.google.devtools.containeranalysis.v1beta1.IGetScanConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.containeranalysis.v1beta1.IScanConfig,
           protos.google.devtools.containeranalysis.v1beta1.IGetScanConfigRequest|null|undefined,
@@ -619,7 +619,7 @@ export class ContainerAnalysisV1Beta1Client {
     return this.innerApiCalls.getScanConfig(request, options, callback);
   }
   updateScanConfig(
-      request: protos.google.devtools.containeranalysis.v1beta1.IUpdateScanConfigRequest,
+      request?: protos.google.devtools.containeranalysis.v1beta1.IUpdateScanConfigRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.containeranalysis.v1beta1.IScanConfig,
@@ -659,7 +659,7 @@ export class ContainerAnalysisV1Beta1Client {
  * const [response] = await client.updateScanConfig(request);
  */
   updateScanConfig(
-      request: protos.google.devtools.containeranalysis.v1beta1.IUpdateScanConfigRequest,
+      request?: protos.google.devtools.containeranalysis.v1beta1.IUpdateScanConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.containeranalysis.v1beta1.IScanConfig,
           protos.google.devtools.containeranalysis.v1beta1.IUpdateScanConfigRequest|null|undefined,
@@ -694,7 +694,7 @@ export class ContainerAnalysisV1Beta1Client {
   }
 
   listScanConfigs(
-      request: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
+      request?: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.containeranalysis.v1beta1.IScanConfig[],
@@ -742,7 +742,7 @@ export class ContainerAnalysisV1Beta1Client {
  *   for more details and examples.
  */
   listScanConfigs(
-      request: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
+      request?: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
           protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsResponse|null|undefined,

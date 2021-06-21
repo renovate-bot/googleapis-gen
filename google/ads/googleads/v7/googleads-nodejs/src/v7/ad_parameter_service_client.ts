@@ -635,7 +635,7 @@ export class AdParameterServiceClient {
   // -- Service calls --
   // -------------------
   getAdParameter(
-      request: protos.google.ads.googleads.v7.services.IGetAdParameterRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetAdParameterRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IAdParameter,
@@ -680,7 +680,7 @@ export class AdParameterServiceClient {
  * const [response] = await client.getAdParameter(request);
  */
   getAdParameter(
-      request: protos.google.ads.googleads.v7.services.IGetAdParameterRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetAdParameterRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IAdParameter,
           protos.google.ads.googleads.v7.services.IGetAdParameterRequest|null|undefined,
@@ -714,7 +714,7 @@ export class AdParameterServiceClient {
     return this.innerApiCalls.getAdParameter(request, options, callback);
   }
   mutateAdParameters(
-      request: protos.google.ads.googleads.v7.services.IMutateAdParametersRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateAdParametersRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.services.IMutateAdParametersResponse,
@@ -779,7 +779,7 @@ export class AdParameterServiceClient {
  * const [response] = await client.mutateAdParameters(request);
  */
   mutateAdParameters(
-      request: protos.google.ads.googleads.v7.services.IMutateAdParametersRequest,
+      request?: protos.google.ads.googleads.v7.services.IMutateAdParametersRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.services.IMutateAdParametersResponse,
           protos.google.ads.googleads.v7.services.IMutateAdParametersRequest|null|undefined,

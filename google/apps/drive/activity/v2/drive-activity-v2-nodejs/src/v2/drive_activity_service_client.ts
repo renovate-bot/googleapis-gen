@@ -277,7 +277,7 @@ export class DriveActivityServiceClient {
   // -------------------
 
   queryDriveActivity(
-      request: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
+      request?: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
       options?: CallOptions):
       Promise<[
         protos.google.apps.drive.activity.v2.IDriveActivity[],
@@ -355,7 +355,7 @@ export class DriveActivityServiceClient {
  *   for more details and examples.
  */
   queryDriveActivity(
-      request: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
+      request?: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
           protos.google.apps.drive.activity.v2.IQueryDriveActivityResponse|null|undefined,

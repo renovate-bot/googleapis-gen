@@ -272,7 +272,7 @@ export class PhishingProtectionServiceV1Beta1Client {
   // -- Service calls --
   // -------------------
   reportPhishing(
-      request: protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest,
+      request?: protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.phishingprotection.v1beta1.IReportPhishingResponse,
@@ -318,7 +318,7 @@ export class PhishingProtectionServiceV1Beta1Client {
  * const [response] = await client.reportPhishing(request);
  */
   reportPhishing(
-      request: protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest,
+      request?: protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.phishingprotection.v1beta1.IReportPhishingResponse,
           protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest|null|undefined,

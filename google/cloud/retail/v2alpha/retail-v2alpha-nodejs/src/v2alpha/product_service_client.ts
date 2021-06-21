@@ -303,7 +303,7 @@ export class ProductServiceClient {
   // -- Service calls --
   // -------------------
   createProduct(
-      request: protos.google.cloud.retail.v2alpha.ICreateProductRequest,
+      request?: protos.google.cloud.retail.v2alpha.ICreateProductRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.retail.v2alpha.IProduct,
@@ -359,7 +359,7 @@ export class ProductServiceClient {
  * const [response] = await client.createProduct(request);
  */
   createProduct(
-      request: protos.google.cloud.retail.v2alpha.ICreateProductRequest,
+      request?: protos.google.cloud.retail.v2alpha.ICreateProductRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.retail.v2alpha.IProduct,
           protos.google.cloud.retail.v2alpha.ICreateProductRequest|null|undefined,
@@ -393,7 +393,7 @@ export class ProductServiceClient {
     return this.innerApiCalls.createProduct(request, options, callback);
   }
   getProduct(
-      request: protos.google.cloud.retail.v2alpha.IGetProductRequest,
+      request?: protos.google.cloud.retail.v2alpha.IGetProductRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.retail.v2alpha.IProduct,
@@ -439,7 +439,7 @@ export class ProductServiceClient {
  * const [response] = await client.getProduct(request);
  */
   getProduct(
-      request: protos.google.cloud.retail.v2alpha.IGetProductRequest,
+      request?: protos.google.cloud.retail.v2alpha.IGetProductRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.retail.v2alpha.IProduct,
           protos.google.cloud.retail.v2alpha.IGetProductRequest|null|undefined,
@@ -473,7 +473,7 @@ export class ProductServiceClient {
     return this.innerApiCalls.getProduct(request, options, callback);
   }
   updateProduct(
-      request: protos.google.cloud.retail.v2alpha.IUpdateProductRequest,
+      request?: protos.google.cloud.retail.v2alpha.IUpdateProductRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.retail.v2alpha.IProduct,
@@ -525,7 +525,7 @@ export class ProductServiceClient {
  * const [response] = await client.updateProduct(request);
  */
   updateProduct(
-      request: protos.google.cloud.retail.v2alpha.IUpdateProductRequest,
+      request?: protos.google.cloud.retail.v2alpha.IUpdateProductRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.retail.v2alpha.IProduct,
           protos.google.cloud.retail.v2alpha.IUpdateProductRequest|null|undefined,
@@ -559,7 +559,7 @@ export class ProductServiceClient {
     return this.innerApiCalls.updateProduct(request, options, callback);
   }
   deleteProduct(
-      request: protos.google.cloud.retail.v2alpha.IDeleteProductRequest,
+      request?: protos.google.cloud.retail.v2alpha.IDeleteProductRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -605,7 +605,7 @@ export class ProductServiceClient {
  * const [response] = await client.deleteProduct(request);
  */
   deleteProduct(
-      request: protos.google.cloud.retail.v2alpha.IDeleteProductRequest,
+      request?: protos.google.cloud.retail.v2alpha.IDeleteProductRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.retail.v2alpha.IDeleteProductRequest|null|undefined,
@@ -640,7 +640,7 @@ export class ProductServiceClient {
   }
 
   importProducts(
-      request: protos.google.cloud.retail.v2alpha.IImportProductsRequest,
+      request?: protos.google.cloud.retail.v2alpha.IImportProductsRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.retail.v2alpha.IImportProductsResponse, protos.google.cloud.retail.v2alpha.IImportMetadata>,
@@ -697,7 +697,7 @@ export class ProductServiceClient {
  * const [response] = await operation.promise();
  */
   importProducts(
-      request: protos.google.cloud.retail.v2alpha.IImportProductsRequest,
+      request?: protos.google.cloud.retail.v2alpha.IImportProductsRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.retail.v2alpha.IImportProductsResponse, protos.google.cloud.retail.v2alpha.IImportMetadata>,
           protos.google.longrunning.IOperation|null|undefined,

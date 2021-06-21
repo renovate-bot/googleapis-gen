@@ -314,7 +314,7 @@ export class PrivateCatalogClient {
   // -------------------
 
   searchCatalogs(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
+      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.privatecatalog.v1beta1.ICatalog[],
@@ -369,7 +369,7 @@ export class PrivateCatalogClient {
  *   for more details and examples.
  */
   searchCatalogs(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
+      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
           protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsResponse|null|undefined,
@@ -517,7 +517,7 @@ export class PrivateCatalogClient {
     ) as AsyncIterable<protos.google.cloud.privatecatalog.v1beta1.ICatalog>;
   }
   searchProducts(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
+      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.privatecatalog.v1beta1.IProduct[],
@@ -573,7 +573,7 @@ export class PrivateCatalogClient {
  *   for more details and examples.
  */
   searchProducts(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
+      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
           protos.google.cloud.privatecatalog.v1beta1.ISearchProductsResponse|null|undefined,
@@ -723,7 +723,7 @@ export class PrivateCatalogClient {
     ) as AsyncIterable<protos.google.cloud.privatecatalog.v1beta1.IProduct>;
   }
   searchVersions(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
+      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.privatecatalog.v1beta1.IVersion[],
@@ -779,7 +779,7 @@ export class PrivateCatalogClient {
  *   for more details and examples.
  */
   searchVersions(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
+      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
           protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsResponse|null|undefined,

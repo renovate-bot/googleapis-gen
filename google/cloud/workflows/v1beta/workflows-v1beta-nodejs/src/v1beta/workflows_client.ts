@@ -328,7 +328,7 @@ export class WorkflowsClient {
   // -- Service calls --
   // -------------------
   getWorkflow(
-      request: protos.google.cloud.workflows.v1beta.IGetWorkflowRequest,
+      request?: protos.google.cloud.workflows.v1beta.IGetWorkflowRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.workflows.v1beta.IWorkflow,
@@ -366,7 +366,7 @@ export class WorkflowsClient {
  * const [response] = await client.getWorkflow(request);
  */
   getWorkflow(
-      request: protos.google.cloud.workflows.v1beta.IGetWorkflowRequest,
+      request?: protos.google.cloud.workflows.v1beta.IGetWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.workflows.v1beta.IWorkflow,
           protos.google.cloud.workflows.v1beta.IGetWorkflowRequest|null|undefined,
@@ -401,7 +401,7 @@ export class WorkflowsClient {
   }
 
   createWorkflow(
-      request: protos.google.cloud.workflows.v1beta.ICreateWorkflowRequest,
+      request?: protos.google.cloud.workflows.v1beta.ICreateWorkflowRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.workflows.v1beta.IWorkflow, protos.google.cloud.workflows.v1beta.IOperationMetadata>,
@@ -455,7 +455,7 @@ export class WorkflowsClient {
  * const [response] = await operation.promise();
  */
   createWorkflow(
-      request: protos.google.cloud.workflows.v1beta.ICreateWorkflowRequest,
+      request?: protos.google.cloud.workflows.v1beta.ICreateWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.workflows.v1beta.IWorkflow, protos.google.cloud.workflows.v1beta.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -510,7 +510,7 @@ export class WorkflowsClient {
     return decodeOperation as LROperation<protos.google.cloud.workflows.v1beta.Workflow, protos.google.cloud.workflows.v1beta.OperationMetadata>;
   }
   deleteWorkflow(
-      request: protos.google.cloud.workflows.v1beta.IDeleteWorkflowRequest,
+      request?: protos.google.cloud.workflows.v1beta.IDeleteWorkflowRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.workflows.v1beta.IOperationMetadata>,
@@ -553,7 +553,7 @@ export class WorkflowsClient {
  * const [response] = await operation.promise();
  */
   deleteWorkflow(
-      request: protos.google.cloud.workflows.v1beta.IDeleteWorkflowRequest,
+      request?: protos.google.cloud.workflows.v1beta.IDeleteWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.workflows.v1beta.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -608,7 +608,7 @@ export class WorkflowsClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.workflows.v1beta.OperationMetadata>;
   }
   updateWorkflow(
-      request: protos.google.cloud.workflows.v1beta.IUpdateWorkflowRequest,
+      request?: protos.google.cloud.workflows.v1beta.IUpdateWorkflowRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.cloud.workflows.v1beta.IWorkflow, protos.google.cloud.workflows.v1beta.IOperationMetadata>,
@@ -655,7 +655,7 @@ export class WorkflowsClient {
  * const [response] = await operation.promise();
  */
   updateWorkflow(
-      request: protos.google.cloud.workflows.v1beta.IUpdateWorkflowRequest,
+      request?: protos.google.cloud.workflows.v1beta.IUpdateWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.cloud.workflows.v1beta.IWorkflow, protos.google.cloud.workflows.v1beta.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -710,7 +710,7 @@ export class WorkflowsClient {
     return decodeOperation as LROperation<protos.google.cloud.workflows.v1beta.Workflow, protos.google.cloud.workflows.v1beta.OperationMetadata>;
   }
   listWorkflows(
-      request: protos.google.cloud.workflows.v1beta.IListWorkflowsRequest,
+      request?: protos.google.cloud.workflows.v1beta.IListWorkflowsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.workflows.v1beta.IWorkflow[],
@@ -771,7 +771,7 @@ export class WorkflowsClient {
  *   for more details and examples.
  */
   listWorkflows(
-      request: protos.google.cloud.workflows.v1beta.IListWorkflowsRequest,
+      request?: protos.google.cloud.workflows.v1beta.IListWorkflowsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.workflows.v1beta.IListWorkflowsRequest,
           protos.google.cloud.workflows.v1beta.IListWorkflowsResponse|null|undefined,

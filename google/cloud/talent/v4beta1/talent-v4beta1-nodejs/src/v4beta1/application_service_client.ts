@@ -303,7 +303,7 @@ export class ApplicationServiceClient {
   // -- Service calls --
   // -------------------
   createApplication(
-      request: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
+      request?: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.talent.v4beta1.IApplication,
@@ -346,7 +346,7 @@ export class ApplicationServiceClient {
  * const [response] = await client.createApplication(request);
  */
   createApplication(
-      request: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
+      request?: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.talent.v4beta1.IApplication,
           protos.google.cloud.talent.v4beta1.ICreateApplicationRequest|null|undefined,
@@ -380,7 +380,7 @@ export class ApplicationServiceClient {
     return this.innerApiCalls.createApplication(request, options, callback);
   }
   getApplication(
-      request: protos.google.cloud.talent.v4beta1.IGetApplicationRequest,
+      request?: protos.google.cloud.talent.v4beta1.IGetApplicationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.talent.v4beta1.IApplication,
@@ -421,7 +421,7 @@ export class ApplicationServiceClient {
  * const [response] = await client.getApplication(request);
  */
   getApplication(
-      request: protos.google.cloud.talent.v4beta1.IGetApplicationRequest,
+      request?: protos.google.cloud.talent.v4beta1.IGetApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.talent.v4beta1.IApplication,
           protos.google.cloud.talent.v4beta1.IGetApplicationRequest|null|undefined,
@@ -455,7 +455,7 @@ export class ApplicationServiceClient {
     return this.innerApiCalls.getApplication(request, options, callback);
   }
   updateApplication(
-      request: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
+      request?: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.talent.v4beta1.IApplication,
@@ -500,7 +500,7 @@ export class ApplicationServiceClient {
  * const [response] = await client.updateApplication(request);
  */
   updateApplication(
-      request: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
+      request?: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.talent.v4beta1.IApplication,
           protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest|null|undefined,
@@ -534,7 +534,7 @@ export class ApplicationServiceClient {
     return this.innerApiCalls.updateApplication(request, options, callback);
   }
   deleteApplication(
-      request: protos.google.cloud.talent.v4beta1.IDeleteApplicationRequest,
+      request?: protos.google.cloud.talent.v4beta1.IDeleteApplicationRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -575,7 +575,7 @@ export class ApplicationServiceClient {
  * const [response] = await client.deleteApplication(request);
  */
   deleteApplication(
-      request: protos.google.cloud.talent.v4beta1.IDeleteApplicationRequest,
+      request?: protos.google.cloud.talent.v4beta1.IDeleteApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.talent.v4beta1.IDeleteApplicationRequest|null|undefined,
@@ -610,7 +610,7 @@ export class ApplicationServiceClient {
   }
 
   listApplications(
-      request: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
+      request?: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.talent.v4beta1.IApplication[],
@@ -660,7 +660,7 @@ export class ApplicationServiceClient {
  *   for more details and examples.
  */
   listApplications(
-      request: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
+      request?: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
           protos.google.cloud.talent.v4beta1.IListApplicationsResponse|null|undefined,

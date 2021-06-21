@@ -289,7 +289,7 @@ export class ErrorStatsServiceClient {
   // -- Service calls --
   // -------------------
   deleteEvents(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsResponse,
@@ -331,7 +331,7 @@ export class ErrorStatsServiceClient {
  * const [response] = await client.deleteEvents(request);
  */
   deleteEvents(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsResponse,
           protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsRequest|null|undefined,
@@ -366,7 +366,7 @@ export class ErrorStatsServiceClient {
   }
 
   listGroupStats(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroupStats[],
@@ -446,7 +446,7 @@ export class ErrorStatsServiceClient {
  *   for more details and examples.
  */
   listGroupStats(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
           protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsResponse|null|undefined,
@@ -646,7 +646,7 @@ export class ErrorStatsServiceClient {
     ) as AsyncIterable<protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroupStats>;
   }
   listEvents(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.devtools.clouderrorreporting.v1beta1.IErrorEvent[],
@@ -706,7 +706,7 @@ export class ErrorStatsServiceClient {
  *   for more details and examples.
  */
   listEvents(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
           protos.google.devtools.clouderrorreporting.v1beta1.IListEventsResponse|null|undefined,

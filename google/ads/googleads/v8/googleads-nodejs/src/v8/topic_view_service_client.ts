@@ -653,7 +653,7 @@ export class TopicViewServiceClient {
   // -- Service calls --
   // -------------------
   getTopicView(
-      request: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v8.resources.ITopicView,
@@ -698,7 +698,7 @@ export class TopicViewServiceClient {
  * const [response] = await client.getTopicView(request);
  */
   getTopicView(
-      request: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
+      request?: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v8.resources.ITopicView,
           protos.google.ads.googleads.v8.services.IGetTopicViewRequest|null|undefined,

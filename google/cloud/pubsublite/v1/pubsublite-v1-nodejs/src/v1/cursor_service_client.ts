@@ -298,7 +298,7 @@ export class CursorServiceClient {
   // -- Service calls --
   // -------------------
   commitCursor(
-      request: protos.google.cloud.pubsublite.v1.ICommitCursorRequest,
+      request?: protos.google.cloud.pubsublite.v1.ICommitCursorRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.ICommitCursorResponse,
@@ -340,7 +340,7 @@ export class CursorServiceClient {
  * const [response] = await client.commitCursor(request);
  */
   commitCursor(
-      request: protos.google.cloud.pubsublite.v1.ICommitCursorRequest,
+      request?: protos.google.cloud.pubsublite.v1.ICommitCursorRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.pubsublite.v1.ICommitCursorResponse,
           protos.google.cloud.pubsublite.v1.ICommitCursorRequest|null|undefined,
@@ -401,7 +401,7 @@ export class CursorServiceClient {
   }
 
   listPartitionCursors(
-      request: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.pubsublite.v1.IPartitionCursor[],
@@ -454,7 +454,7 @@ export class CursorServiceClient {
  *   for more details and examples.
  */
   listPartitionCursors(
-      request: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
+      request?: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
           protos.google.cloud.pubsublite.v1.IListPartitionCursorsResponse|null|undefined,

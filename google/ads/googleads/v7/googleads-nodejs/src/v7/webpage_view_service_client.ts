@@ -635,7 +635,7 @@ export class WebpageViewServiceClient {
   // -- Service calls --
   // -------------------
   getWebpageView(
-      request: protos.google.ads.googleads.v7.services.IGetWebpageViewRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetWebpageViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v7.resources.IWebpageView,
@@ -672,7 +672,7 @@ export class WebpageViewServiceClient {
  * const [response] = await client.getWebpageView(request);
  */
   getWebpageView(
-      request: protos.google.ads.googleads.v7.services.IGetWebpageViewRequest,
+      request?: protos.google.ads.googleads.v7.services.IGetWebpageViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v7.resources.IWebpageView,
           protos.google.ads.googleads.v7.services.IGetWebpageViewRequest|null|undefined,

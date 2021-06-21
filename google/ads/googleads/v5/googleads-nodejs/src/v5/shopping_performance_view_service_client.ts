@@ -590,7 +590,7 @@ export class ShoppingPerformanceViewServiceClient {
   // -- Service calls --
   // -------------------
   getShoppingPerformanceView(
-      request: protos.google.ads.googleads.v5.services.IGetShoppingPerformanceViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetShoppingPerformanceViewRequest,
       options?: CallOptions):
       Promise<[
         protos.google.ads.googleads.v5.resources.IShoppingPerformanceView,
@@ -627,7 +627,7 @@ export class ShoppingPerformanceViewServiceClient {
  * const [response] = await client.getShoppingPerformanceView(request);
  */
   getShoppingPerformanceView(
-      request: protos.google.ads.googleads.v5.services.IGetShoppingPerformanceViewRequest,
+      request?: protos.google.ads.googleads.v5.services.IGetShoppingPerformanceViewRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.ads.googleads.v5.resources.IShoppingPerformanceView,
           protos.google.ads.googleads.v5.services.IGetShoppingPerformanceViewRequest|null|undefined,

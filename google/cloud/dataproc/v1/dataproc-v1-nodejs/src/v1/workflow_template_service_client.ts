@@ -331,7 +331,7 @@ export class WorkflowTemplateServiceClient {
   // -- Service calls --
   // -------------------
   createWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.ICreateWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.ICreateWorkflowTemplateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IWorkflowTemplate,
@@ -379,7 +379,7 @@ export class WorkflowTemplateServiceClient {
  * const [response] = await client.createWorkflowTemplate(request);
  */
   createWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.ICreateWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.ICreateWorkflowTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dataproc.v1.IWorkflowTemplate,
           protos.google.cloud.dataproc.v1.ICreateWorkflowTemplateRequest|null|undefined,
@@ -413,7 +413,7 @@ export class WorkflowTemplateServiceClient {
     return this.innerApiCalls.createWorkflowTemplate(request, options, callback);
   }
   getWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.IGetWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.IGetWorkflowTemplateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IWorkflowTemplate,
@@ -467,7 +467,7 @@ export class WorkflowTemplateServiceClient {
  * const [response] = await client.getWorkflowTemplate(request);
  */
   getWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.IGetWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.IGetWorkflowTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dataproc.v1.IWorkflowTemplate,
           protos.google.cloud.dataproc.v1.IGetWorkflowTemplateRequest|null|undefined,
@@ -501,7 +501,7 @@ export class WorkflowTemplateServiceClient {
     return this.innerApiCalls.getWorkflowTemplate(request, options, callback);
   }
   updateWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.IUpdateWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.IUpdateWorkflowTemplateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IWorkflowTemplate,
@@ -541,7 +541,7 @@ export class WorkflowTemplateServiceClient {
  * const [response] = await client.updateWorkflowTemplate(request);
  */
   updateWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.IUpdateWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.IUpdateWorkflowTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.cloud.dataproc.v1.IWorkflowTemplate,
           protos.google.cloud.dataproc.v1.IUpdateWorkflowTemplateRequest|null|undefined,
@@ -575,7 +575,7 @@ export class WorkflowTemplateServiceClient {
     return this.innerApiCalls.updateWorkflowTemplate(request, options, callback);
   }
   deleteWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.IDeleteWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.IDeleteWorkflowTemplateRequest,
       options?: CallOptions):
       Promise<[
         protos.google.protobuf.IEmpty,
@@ -625,7 +625,7 @@ export class WorkflowTemplateServiceClient {
  * const [response] = await client.deleteWorkflowTemplate(request);
  */
   deleteWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.IDeleteWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.IDeleteWorkflowTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dataproc.v1.IDeleteWorkflowTemplateRequest|null|undefined,
@@ -660,7 +660,7 @@ export class WorkflowTemplateServiceClient {
   }
 
   instantiateWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.IInstantiateWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.IInstantiateWorkflowTemplateRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dataproc.v1.IWorkflowMetadata>,
@@ -748,7 +748,7 @@ export class WorkflowTemplateServiceClient {
  * const [response] = await operation.promise();
  */
   instantiateWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.IInstantiateWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.IInstantiateWorkflowTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dataproc.v1.IWorkflowMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -803,7 +803,7 @@ export class WorkflowTemplateServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.dataproc.v1.WorkflowMetadata>;
   }
   instantiateInlineWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.IInstantiateInlineWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.IInstantiateInlineWorkflowTemplateRequest,
       options?: CallOptions):
       Promise<[
         LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dataproc.v1.IWorkflowMetadata>,
@@ -888,7 +888,7 @@ export class WorkflowTemplateServiceClient {
  * const [response] = await operation.promise();
  */
   instantiateInlineWorkflowTemplate(
-      request: protos.google.cloud.dataproc.v1.IInstantiateInlineWorkflowTemplateRequest,
+      request?: protos.google.cloud.dataproc.v1.IInstantiateInlineWorkflowTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dataproc.v1.IWorkflowMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
@@ -943,7 +943,7 @@ export class WorkflowTemplateServiceClient {
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.dataproc.v1.WorkflowMetadata>;
   }
   listWorkflowTemplates(
-      request: protos.google.cloud.dataproc.v1.IListWorkflowTemplatesRequest,
+      request?: protos.google.cloud.dataproc.v1.IListWorkflowTemplatesRequest,
       options?: CallOptions):
       Promise<[
         protos.google.cloud.dataproc.v1.IWorkflowTemplate[],
@@ -998,7 +998,7 @@ export class WorkflowTemplateServiceClient {
  *   for more details and examples.
  */
   listWorkflowTemplates(
-      request: protos.google.cloud.dataproc.v1.IListWorkflowTemplatesRequest,
+      request?: protos.google.cloud.dataproc.v1.IListWorkflowTemplatesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.dataproc.v1.IListWorkflowTemplatesRequest,
           protos.google.cloud.dataproc.v1.IListWorkflowTemplatesResponse|null|undefined,
