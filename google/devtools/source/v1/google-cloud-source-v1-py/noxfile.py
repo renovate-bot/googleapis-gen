@@ -47,7 +47,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/cloud/source_v1/',
+        '--cov=google/cloud/source_context_v1/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',

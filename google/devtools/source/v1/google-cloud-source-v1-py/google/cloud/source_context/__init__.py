@@ -15,16 +15,16 @@
 #
 
 
-from google.cloud.source_v1.types.source_context import AliasContext
-from google.cloud.source_v1.types.source_context import CloudRepoSourceContext
-from google.cloud.source_v1.types.source_context import CloudWorkspaceId
-from google.cloud.source_v1.types.source_context import CloudWorkspaceSourceContext
-from google.cloud.source_v1.types.source_context import ExtendedSourceContext
-from google.cloud.source_v1.types.source_context import GerritSourceContext
-from google.cloud.source_v1.types.source_context import GitSourceContext
-from google.cloud.source_v1.types.source_context import ProjectRepoId
-from google.cloud.source_v1.types.source_context import RepoId
-from google.cloud.source_v1.types.source_context import SourceContext
+from google.cloud.source_context_v1.types.source_context import AliasContext
+from google.cloud.source_context_v1.types.source_context import CloudRepoSourceContext
+from google.cloud.source_context_v1.types.source_context import CloudWorkspaceId
+from google.cloud.source_context_v1.types.source_context import CloudWorkspaceSourceContext
+from google.cloud.source_context_v1.types.source_context import ExtendedSourceContext
+from google.cloud.source_context_v1.types.source_context import GerritSourceContext
+from google.cloud.source_context_v1.types.source_context import GitSourceContext
+from google.cloud.source_context_v1.types.source_context import ProjectRepoId
+from google.cloud.source_context_v1.types.source_context import RepoId
+from google.cloud.source_context_v1.types.source_context import SourceContext
 
 __all__ = ('AliasContext',
     'CloudRepoSourceContext',

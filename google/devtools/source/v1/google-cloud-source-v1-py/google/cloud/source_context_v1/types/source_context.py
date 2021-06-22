@@ -39,16 +39,16 @@ class SourceContext(proto.Message):
     a single file or directory.
 
     Attributes:
-        cloud_repo (google.cloud.source_v1.types.CloudRepoSourceContext):
+        cloud_repo (google.cloud.source_context_v1.types.CloudRepoSourceContext):
             A SourceContext referring to a revision in a
             cloud repo.
-        cloud_workspace (google.cloud.source_v1.types.CloudWorkspaceSourceContext):
+        cloud_workspace (google.cloud.source_context_v1.types.CloudWorkspaceSourceContext):
             A SourceContext referring to a snapshot in a
             cloud workspace.
-        gerrit (google.cloud.source_v1.types.GerritSourceContext):
+        gerrit (google.cloud.source_context_v1.types.GerritSourceContext):
             A SourceContext referring to a Gerrit
             project.
-        git (google.cloud.source_v1.types.GitSourceContext):
+        git (google.cloud.source_context_v1.types.GitSourceContext):
             A SourceContext referring to any third party
             Git repo (e.g. GitHub).
     """
@@ -84,9 +84,9 @@ class ExtendedSourceContext(proto.Message):
     additional details describing the context.
 
     Attributes:
-        context (google.cloud.source_v1.types.SourceContext):
+        context (google.cloud.source_context_v1.types.SourceContext):
             Any source context.
-        labels (Sequence[google.cloud.source_v1.types.ExtendedSourceContext.LabelsEntry]):
+        labels (Sequence[google.cloud.source_context_v1.types.ExtendedSourceContext.LabelsEntry]):
             Labels with user defined metadata.
     """
 
@@ -105,7 +105,7 @@ class ExtendedSourceContext(proto.Message):
 class AliasContext(proto.Message):
     r"""An alias to a repo revision.
     Attributes:
-        kind (google.cloud.source_v1.types.AliasContext.Kind):
+        kind (google.cloud.source_context_v1.types.AliasContext.Kind):
             The alias kind.
         name (str):
             The alias name.
@@ -133,13 +133,13 @@ class CloudRepoSourceContext(proto.Message):
     cloud repo (a repo hosted by the Google Cloud Platform).
 
     Attributes:
-        repo_id (google.cloud.source_v1.types.RepoId):
+        repo_id (google.cloud.source_context_v1.types.RepoId):
             The ID of the repo.
         revision_id (str):
             A revision ID.
         alias_name (str):
             The name of an alias (branch, tag, etc.).
-        alias_context (google.cloud.source_v1.types.AliasContext):
+        alias_context (google.cloud.source_context_v1.types.AliasContext):
             An alias, which may be a branch or tag.
     """
 
@@ -171,7 +171,7 @@ class CloudWorkspaceSourceContext(proto.Message):
     particular snapshot.
 
     Attributes:
-        workspace_id (google.cloud.source_v1.types.CloudWorkspaceId):
+        workspace_id (google.cloud.source_context_v1.types.CloudWorkspaceId):
             The ID of the workspace.
         snapshot_id (str):
             The ID of the snapshot. An empty snapshot_id refers to the
@@ -203,7 +203,7 @@ class GerritSourceContext(proto.Message):
             A revision (commit) ID.
         alias_name (str):
             The name of an alias (branch, tag, etc.).
-        alias_context (google.cloud.source_v1.types.AliasContext):
+        alias_context (google.cloud.source_context_v1.types.AliasContext):
             An alias, which may be a branch or tag.
     """
 
@@ -258,7 +258,7 @@ class GitSourceContext(proto.Message):
 class RepoId(proto.Message):
     r"""A unique identifier for a cloud repo.
     Attributes:
-        project_repo_id (google.cloud.source_v1.types.ProjectRepoId):
+        project_repo_id (google.cloud.source_context_v1.types.ProjectRepoId):
             A combination of a project ID and a repo
             name.
         uid (str):
@@ -307,7 +307,7 @@ class CloudWorkspaceId(proto.Message):
     where modified files can be stored before they are committed.
 
     Attributes:
-        repo_id (google.cloud.source_v1.types.RepoId):
+        repo_id (google.cloud.source_context_v1.types.RepoId):
             The ID of the repo containing the workspace.
         name (str):
             The unique name of the workspace within the
