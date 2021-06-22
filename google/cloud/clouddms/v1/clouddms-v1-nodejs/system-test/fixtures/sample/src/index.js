@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const clouddms = require('@google-cloud/clouddms');
+const clouddms = require('@google-cloud/dms');
 
 function main() {
   const dataMigrationServiceClient = new clouddms.DataMigrationServiceClient();
