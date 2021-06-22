@@ -24,9 +24,17 @@ class Parent extends \Google\Protobuf\Internal\Message
      */
     protected $revision = 0;
     /**
+     * The index of the parent revisions corresponding collection of items
+     * (eg. list of entities, properties within entities, etc.)
+     *
+     * Generated from protobuf field <code>int32 index = 3;</code>
+     */
+    protected $index = 0;
+    /**
      * The id of the parent provenance.
      *
-     * Generated from protobuf field <code>int32 id = 2;</code>
+     * Generated from protobuf field <code>int32 id = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $id = 0;
 
@@ -38,6 +46,9 @@ class Parent extends \Google\Protobuf\Internal\Message
      *
      *     @type int $revision
      *           The index of the [Document.revisions] identifying the parent revision.
+     *     @type int $index
+     *           The index of the parent revisions corresponding collection of items
+     *           (eg. list of entities, properties within entities, etc.)
      *     @type int $id
      *           The id of the parent provenance.
      * }
@@ -74,25 +85,57 @@ class Parent extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The index of the parent revisions corresponding collection of items
+     * (eg. list of entities, properties within entities, etc.)
+     *
+     * Generated from protobuf field <code>int32 index = 3;</code>
+     * @return int
+     */
+    public function getIndex()
+    {
+        return $this->index;
+    }
+
+    /**
+     * The index of the parent revisions corresponding collection of items
+     * (eg. list of entities, properties within entities, etc.)
+     *
+     * Generated from protobuf field <code>int32 index = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setIndex($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->index = $var;
+
+        return $this;
+    }
+
+    /**
      * The id of the parent provenance.
      *
-     * Generated from protobuf field <code>int32 id = 2;</code>
+     * Generated from protobuf field <code>int32 id = 2 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getId()
     {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
         return $this->id;
     }
 
     /**
      * The id of the parent provenance.
      *
-     * Generated from protobuf field <code>int32 id = 2;</code>
+     * Generated from protobuf field <code>int32 id = 2 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setId($var)
     {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkInt32($var);
         $this->id = $var;
 

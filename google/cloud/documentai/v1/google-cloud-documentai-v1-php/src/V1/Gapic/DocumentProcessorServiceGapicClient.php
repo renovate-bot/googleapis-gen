@@ -45,6 +45,7 @@ use Google\Cloud\DocumentAI\V1\ProcessRequest;
 use Google\Cloud\DocumentAI\V1\ProcessResponse;
 use Google\Cloud\DocumentAI\V1\RawDocument;
 use Google\Cloud\DocumentAI\V1\ReviewDocumentRequest;
+use Google\Cloud\DocumentAI\V1\ReviewDocumentRequest\Priority;
 use Google\LongRunning\Operation;
 
 /**
@@ -542,6 +543,11 @@ class DocumentProcessorServiceGapicClient
      *
      *     @type Document $inlineDocument
      *           An inline document proto.
+     *     @type bool $enableSchemaValidation
+     *           Whether the validation should be performed on the ad-hoc review request.
+     *     @type int $priority
+     *           The priority of the human review task.
+     *           For allowed values, use constants defined on {@see \Google\Cloud\DocumentAI\V1\ReviewDocumentRequest\Priority}
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -561,6 +567,14 @@ class DocumentProcessorServiceGapicClient
         $requestParamHeaders['human_review_config'] = $humanReviewConfig;
         if (isset($optionalArgs['inlineDocument'])) {
             $request->setInlineDocument($optionalArgs['inlineDocument']);
+        }
+
+        if (isset($optionalArgs['enableSchemaValidation'])) {
+            $request->setEnableSchemaValidation($optionalArgs['enableSchemaValidation']);
+        }
+
+        if (isset($optionalArgs['priority'])) {
+            $request->setPriority($optionalArgs['priority']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);

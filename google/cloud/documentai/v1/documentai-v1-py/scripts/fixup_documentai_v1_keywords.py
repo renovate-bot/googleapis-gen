@@ -41,7 +41,7 @@ class documentaiCallTransformer(cst.CSTTransformer):
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
           'batch_process_documents': ('name', 'input_documents', 'document_output_config', 'skip_human_review', ),
           'process_document': ('name', 'inline_document', 'raw_document', 'skip_human_review', ),
-          'review_document': ('human_review_config', 'inline_document', ),
+          'review_document': ('human_review_config', 'inline_document', 'enable_schema_validation', 'priority', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:

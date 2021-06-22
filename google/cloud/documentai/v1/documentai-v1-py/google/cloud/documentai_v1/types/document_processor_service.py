@@ -277,7 +277,16 @@ class ReviewDocumentRequest(proto.Message):
             Required. The resource name of the
             HumanReviewConfig that the document will be
             reviewed with.
+        enable_schema_validation (bool):
+            Whether the validation should be performed on
+            the ad-hoc review request.
+        priority (google.cloud.documentai_v1.types.ReviewDocumentRequest.Priority):
+            The priority of the human review task.
     """
+    class Priority(proto.Enum):
+        r"""The priority level of the human review task."""
+        DEFAULT = 0
+        URGENT = 1
 
     inline_document = proto.Field(
         proto.MESSAGE,
@@ -288,6 +297,15 @@ class ReviewDocumentRequest(proto.Message):
     human_review_config = proto.Field(
         proto.STRING,
         number=1,
+    )
+    enable_schema_validation = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    priority = proto.Field(
+        proto.ENUM,
+        number=5,
+        enum=Priority,
     )
 
 

@@ -4232,6 +4232,33 @@ private static final long serialVersionUID = 0L;
      */
     com.google.cloud.documentai.v1.Document.Page.FormFieldOrBuilder getFormFieldsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * The history of this page.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+     * @return Whether the provenance field is set.
+     */
+    boolean hasProvenance();
+    /**
+     * <pre>
+     * The history of this page.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+     * @return The provenance.
+     */
+    com.google.cloud.documentai.v1.Document.Provenance getProvenance();
+    /**
+     * <pre>
+     * The history of this page.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+     */
+    com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder getProvenanceOrBuilder();
   }
   /**
    * <pre>
@@ -4415,6 +4442,19 @@ private static final long serialVersionUID = 0L;
               }
               transforms_.add(
                   input.readMessage(com.google.cloud.documentai.v1.Document.Page.Matrix.parser(), extensionRegistry));
+              break;
+            }
+            case 130: {
+              com.google.cloud.documentai.v1.Document.Provenance.Builder subBuilder = null;
+              if (provenance_ != null) {
+                subBuilder = provenance_.toBuilder();
+              }
+              provenance_ = input.readMessage(com.google.cloud.documentai.v1.Document.Provenance.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(provenance_);
+                provenance_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -21054,6 +21094,33 @@ private static final long serialVersionUID = 0L;
        */
       com.google.protobuf.ByteString
           getValueTypeBytes();
+
+      /**
+       * <pre>
+       * The history of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+       * @return Whether the provenance field is set.
+       */
+      boolean hasProvenance();
+      /**
+       * <pre>
+       * The history of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+       * @return The provenance.
+       */
+      com.google.cloud.documentai.v1.Document.Provenance getProvenance();
+      /**
+       * <pre>
+       * The history of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+       */
+      com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder getProvenanceOrBuilder();
     }
     /**
      * <pre>
@@ -21156,6 +21223,19 @@ private static final long serialVersionUID = 0L;
                 java.lang.String s = input.readStringRequireUtf8();
 
                 valueType_ = s;
+                break;
+              }
+              case 66: {
+                com.google.cloud.documentai.v1.Document.Provenance.Builder subBuilder = null;
+                if (provenance_ != null) {
+                  subBuilder = provenance_.toBuilder();
+                }
+                provenance_ = input.readMessage(com.google.cloud.documentai.v1.Document.Provenance.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(provenance_);
+                  provenance_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
               default: {
@@ -21449,6 +21529,44 @@ private static final long serialVersionUID = 0L;
         }
       }
 
+      public static final int PROVENANCE_FIELD_NUMBER = 8;
+      private com.google.cloud.documentai.v1.Document.Provenance provenance_;
+      /**
+       * <pre>
+       * The history of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+       * @return Whether the provenance field is set.
+       */
+      @java.lang.Override
+      public boolean hasProvenance() {
+        return provenance_ != null;
+      }
+      /**
+       * <pre>
+       * The history of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+       * @return The provenance.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.Provenance getProvenance() {
+        return provenance_ == null ? com.google.cloud.documentai.v1.Document.Provenance.getDefaultInstance() : provenance_;
+      }
+      /**
+       * <pre>
+       * The history of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder getProvenanceOrBuilder() {
+        return getProvenance();
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -21478,6 +21596,9 @@ private static final long serialVersionUID = 0L;
         if (!getValueTypeBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 5, valueType_);
         }
+        if (provenance_ != null) {
+          output.writeMessage(8, getProvenance());
+        }
         unknownFields.writeTo(output);
       }
 
@@ -21505,6 +21626,10 @@ private static final long serialVersionUID = 0L;
         }
         if (!getValueTypeBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, valueType_);
+        }
+        if (provenance_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(8, getProvenance());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -21537,6 +21662,11 @@ private static final long serialVersionUID = 0L;
             .equals(other.getValueDetectedLanguagesList())) return false;
         if (!getValueType()
             .equals(other.getValueType())) return false;
+        if (hasProvenance() != other.hasProvenance()) return false;
+        if (hasProvenance()) {
+          if (!getProvenance()
+              .equals(other.getProvenance())) return false;
+        }
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -21566,6 +21696,10 @@ private static final long serialVersionUID = 0L;
         }
         hash = (37 * hash) + VALUE_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getValueType().hashCode();
+        if (hasProvenance()) {
+          hash = (37 * hash) + PROVENANCE_FIELD_NUMBER;
+          hash = (53 * hash) + getProvenance().hashCode();
+        }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -21731,6 +21865,12 @@ private static final long serialVersionUID = 0L;
           }
           valueType_ = "";
 
+          if (provenanceBuilder_ == null) {
+            provenance_ = null;
+          } else {
+            provenance_ = null;
+            provenanceBuilder_ = null;
+          }
           return this;
         }
 
@@ -21787,6 +21927,11 @@ private static final long serialVersionUID = 0L;
             result.valueDetectedLanguages_ = valueDetectedLanguagesBuilder_.build();
           }
           result.valueType_ = valueType_;
+          if (provenanceBuilder_ == null) {
+            result.provenance_ = provenance_;
+          } else {
+            result.provenance_ = provenanceBuilder_.build();
+          }
           onBuilt();
           return result;
         }
@@ -21896,6 +22041,9 @@ private static final long serialVersionUID = 0L;
           if (!other.getValueType().isEmpty()) {
             valueType_ = other.valueType_;
             onChanged();
+          }
+          if (other.hasProvenance()) {
+            mergeProvenance(other.getProvenance());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -22984,6 +23132,161 @@ private static final long serialVersionUID = 0L;
           valueType_ = value;
           onChanged();
           return this;
+        }
+
+        private com.google.cloud.documentai.v1.Document.Provenance provenance_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.Document.Provenance, com.google.cloud.documentai.v1.Document.Provenance.Builder, com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder> provenanceBuilder_;
+        /**
+         * <pre>
+         * The history of this annotation.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+         * @return Whether the provenance field is set.
+         */
+        public boolean hasProvenance() {
+          return provenanceBuilder_ != null || provenance_ != null;
+        }
+        /**
+         * <pre>
+         * The history of this annotation.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+         * @return The provenance.
+         */
+        public com.google.cloud.documentai.v1.Document.Provenance getProvenance() {
+          if (provenanceBuilder_ == null) {
+            return provenance_ == null ? com.google.cloud.documentai.v1.Document.Provenance.getDefaultInstance() : provenance_;
+          } else {
+            return provenanceBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * The history of this annotation.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+         */
+        public Builder setProvenance(com.google.cloud.documentai.v1.Document.Provenance value) {
+          if (provenanceBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            provenance_ = value;
+            onChanged();
+          } else {
+            provenanceBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The history of this annotation.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+         */
+        public Builder setProvenance(
+            com.google.cloud.documentai.v1.Document.Provenance.Builder builderForValue) {
+          if (provenanceBuilder_ == null) {
+            provenance_ = builderForValue.build();
+            onChanged();
+          } else {
+            provenanceBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The history of this annotation.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+         */
+        public Builder mergeProvenance(com.google.cloud.documentai.v1.Document.Provenance value) {
+          if (provenanceBuilder_ == null) {
+            if (provenance_ != null) {
+              provenance_ =
+                com.google.cloud.documentai.v1.Document.Provenance.newBuilder(provenance_).mergeFrom(value).buildPartial();
+            } else {
+              provenance_ = value;
+            }
+            onChanged();
+          } else {
+            provenanceBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The history of this annotation.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+         */
+        public Builder clearProvenance() {
+          if (provenanceBuilder_ == null) {
+            provenance_ = null;
+            onChanged();
+          } else {
+            provenance_ = null;
+            provenanceBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * The history of this annotation.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+         */
+        public com.google.cloud.documentai.v1.Document.Provenance.Builder getProvenanceBuilder() {
+          
+          onChanged();
+          return getProvenanceFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * The history of this annotation.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+         */
+        public com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder getProvenanceOrBuilder() {
+          if (provenanceBuilder_ != null) {
+            return provenanceBuilder_.getMessageOrBuilder();
+          } else {
+            return provenance_ == null ?
+                com.google.cloud.documentai.v1.Document.Provenance.getDefaultInstance() : provenance_;
+          }
+        }
+        /**
+         * <pre>
+         * The history of this annotation.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 8;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.Document.Provenance, com.google.cloud.documentai.v1.Document.Provenance.Builder, com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder> 
+            getProvenanceFieldBuilder() {
+          if (provenanceBuilder_ == null) {
+            provenanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1.Document.Provenance, com.google.cloud.documentai.v1.Document.Provenance.Builder, com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder>(
+                    getProvenance(),
+                    getParentForChildren(),
+                    isClean());
+            provenance_ = null;
+          }
+          return provenanceBuilder_;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
@@ -24467,6 +24770,44 @@ private static final long serialVersionUID = 0L;
       return formFields_.get(index);
     }
 
+    public static final int PROVENANCE_FIELD_NUMBER = 16;
+    private com.google.cloud.documentai.v1.Document.Provenance provenance_;
+    /**
+     * <pre>
+     * The history of this page.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+     * @return Whether the provenance field is set.
+     */
+    @java.lang.Override
+    public boolean hasProvenance() {
+      return provenance_ != null;
+    }
+    /**
+     * <pre>
+     * The history of this page.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+     * @return The provenance.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.Provenance getProvenance() {
+      return provenance_ == null ? com.google.cloud.documentai.v1.Document.Provenance.getDefaultInstance() : provenance_;
+    }
+    /**
+     * <pre>
+     * The history of this page.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder getProvenanceOrBuilder() {
+      return getProvenance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -24519,6 +24860,9 @@ private static final long serialVersionUID = 0L;
       }
       for (int i = 0; i < transforms_.size(); i++) {
         output.writeMessage(14, transforms_.get(i));
+      }
+      if (provenance_ != null) {
+        output.writeMessage(16, getProvenance());
       }
       unknownFields.writeTo(output);
     }
@@ -24581,6 +24925,10 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, transforms_.get(i));
       }
+      if (provenance_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, getProvenance());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -24631,6 +24979,11 @@ private static final long serialVersionUID = 0L;
           .equals(other.getTablesList())) return false;
       if (!getFormFieldsList()
           .equals(other.getFormFieldsList())) return false;
+      if (hasProvenance() != other.hasProvenance()) return false;
+      if (hasProvenance()) {
+        if (!getProvenance()
+            .equals(other.getProvenance())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -24691,6 +25044,10 @@ private static final long serialVersionUID = 0L;
       if (getFormFieldsCount() > 0) {
         hash = (37 * hash) + FORM_FIELDS_FIELD_NUMBER;
         hash = (53 * hash) + getFormFieldsList().hashCode();
+      }
+      if (hasProvenance()) {
+        hash = (37 * hash) + PROVENANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getProvenance().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -24912,6 +25269,12 @@ private static final long serialVersionUID = 0L;
         } else {
           formFieldsBuilder_.clear();
         }
+        if (provenanceBuilder_ == null) {
+          provenance_ = null;
+        } else {
+          provenance_ = null;
+          provenanceBuilder_ = null;
+        }
         return this;
       }
 
@@ -25035,6 +25398,11 @@ private static final long serialVersionUID = 0L;
           result.formFields_ = formFields_;
         } else {
           result.formFields_ = formFieldsBuilder_.build();
+        }
+        if (provenanceBuilder_ == null) {
+          result.provenance_ = provenance_;
+        } else {
+          result.provenance_ = provenanceBuilder_.build();
         }
         onBuilt();
         return result;
@@ -25329,6 +25697,9 @@ private static final long serialVersionUID = 0L;
               formFieldsBuilder_.addAllMessages(other.formFields_);
             }
           }
+        }
+        if (other.hasProvenance()) {
+          mergeProvenance(other.getProvenance());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -28806,6 +29177,161 @@ private static final long serialVersionUID = 0L;
           formFields_ = null;
         }
         return formFieldsBuilder_;
+      }
+
+      private com.google.cloud.documentai.v1.Document.Provenance provenance_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.documentai.v1.Document.Provenance, com.google.cloud.documentai.v1.Document.Provenance.Builder, com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder> provenanceBuilder_;
+      /**
+       * <pre>
+       * The history of this page.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+       * @return Whether the provenance field is set.
+       */
+      public boolean hasProvenance() {
+        return provenanceBuilder_ != null || provenance_ != null;
+      }
+      /**
+       * <pre>
+       * The history of this page.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+       * @return The provenance.
+       */
+      public com.google.cloud.documentai.v1.Document.Provenance getProvenance() {
+        if (provenanceBuilder_ == null) {
+          return provenance_ == null ? com.google.cloud.documentai.v1.Document.Provenance.getDefaultInstance() : provenance_;
+        } else {
+          return provenanceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The history of this page.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+       */
+      public Builder setProvenance(com.google.cloud.documentai.v1.Document.Provenance value) {
+        if (provenanceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          provenance_ = value;
+          onChanged();
+        } else {
+          provenanceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The history of this page.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+       */
+      public Builder setProvenance(
+          com.google.cloud.documentai.v1.Document.Provenance.Builder builderForValue) {
+        if (provenanceBuilder_ == null) {
+          provenance_ = builderForValue.build();
+          onChanged();
+        } else {
+          provenanceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The history of this page.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+       */
+      public Builder mergeProvenance(com.google.cloud.documentai.v1.Document.Provenance value) {
+        if (provenanceBuilder_ == null) {
+          if (provenance_ != null) {
+            provenance_ =
+              com.google.cloud.documentai.v1.Document.Provenance.newBuilder(provenance_).mergeFrom(value).buildPartial();
+          } else {
+            provenance_ = value;
+          }
+          onChanged();
+        } else {
+          provenanceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The history of this page.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+       */
+      public Builder clearProvenance() {
+        if (provenanceBuilder_ == null) {
+          provenance_ = null;
+          onChanged();
+        } else {
+          provenance_ = null;
+          provenanceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The history of this page.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+       */
+      public com.google.cloud.documentai.v1.Document.Provenance.Builder getProvenanceBuilder() {
+        
+        onChanged();
+        return getProvenanceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The history of this page.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+       */
+      public com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder getProvenanceOrBuilder() {
+        if (provenanceBuilder_ != null) {
+          return provenanceBuilder_.getMessageOrBuilder();
+        } else {
+          return provenance_ == null ?
+              com.google.cloud.documentai.v1.Document.Provenance.getDefaultInstance() : provenance_;
+        }
+      }
+      /**
+       * <pre>
+       * The history of this page.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.Document.Provenance provenance = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.documentai.v1.Document.Provenance, com.google.cloud.documentai.v1.Document.Provenance.Builder, com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder> 
+          getProvenanceFieldBuilder() {
+        if (provenanceBuilder_ == null) {
+          provenanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1.Document.Provenance, com.google.cloud.documentai.v1.Document.Provenance.Builder, com.google.cloud.documentai.v1.Document.ProvenanceOrBuilder>(
+                  getProvenance(),
+                  getParentForChildren(),
+                  isClean());
+          provenance_ = null;
+        }
+        return provenanceBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -36817,6 +37343,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Required. Index into the [Document.pages][google.cloud.documentai.v1.Document.pages] element, for example using
        * [Document.pages][page_refs.page] to locate the related page element.
+       * This field is skipped when its value is the default 0. See
+       * https://developers.google.com/protocol-buffers/docs/proto3#json.
        * </pre>
        *
        * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -37254,6 +37782,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Required. Index into the [Document.pages][google.cloud.documentai.v1.Document.pages] element, for example using
        * [Document.pages][page_refs.page] to locate the related page element.
+       * This field is skipped when its value is the default 0. See
+       * https://developers.google.com/protocol-buffers/docs/proto3#json.
        * </pre>
        *
        * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -37784,6 +38314,8 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Required. Index into the [Document.pages][google.cloud.documentai.v1.Document.pages] element, for example using
          * [Document.pages][page_refs.page] to locate the related page element.
+         * This field is skipped when its value is the default 0. See
+         * https://developers.google.com/protocol-buffers/docs/proto3#json.
          * </pre>
          *
          * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -37797,6 +38329,8 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Required. Index into the [Document.pages][google.cloud.documentai.v1.Document.pages] element, for example using
          * [Document.pages][page_refs.page] to locate the related page element.
+         * This field is skipped when its value is the default 0. See
+         * https://developers.google.com/protocol-buffers/docs/proto3#json.
          * </pre>
          *
          * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -37813,6 +38347,8 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Required. Index into the [Document.pages][google.cloud.documentai.v1.Document.pages] element, for example using
          * [Document.pages][page_refs.page] to locate the related page element.
+         * This field is skipped when its value is the default 0. See
+         * https://developers.google.com/protocol-buffers/docs/proto3#json.
          * </pre>
          *
          * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39037,10 +39573,10 @@ private static final long serialVersionUID = 0L;
      * revision.
      * </pre>
      *
-     * <code>int32 id = 2;</code>
+     * <code>int32 id = 2 [deprecated = true];</code>
      * @return The id.
      */
-    int getId();
+    @java.lang.Deprecated int getId();
 
     /**
      * <pre>
@@ -39449,13 +39985,24 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
+       * The index of the parent revisions corresponding collection of items
+       * (eg. list of entities, properties within entities, etc.)
+       * </pre>
+       *
+       * <code>int32 index = 3;</code>
+       * @return The index.
+       */
+      int getIndex();
+
+      /**
+       * <pre>
        * The id of the parent provenance.
        * </pre>
        *
-       * <code>int32 id = 2;</code>
+       * <code>int32 id = 2 [deprecated = true];</code>
        * @return The id.
        */
-      int getId();
+      @java.lang.Deprecated int getId();
     }
     /**
      * <pre>
@@ -39518,6 +40065,11 @@ private static final long serialVersionUID = 0L;
                 id_ = input.readInt32();
                 break;
               }
+              case 24: {
+
+                index_ = input.readInt32();
+                break;
+              }
               default: {
                 if (!parseUnknownField(
                     input, unknownFields, extensionRegistry, tag)) {
@@ -39565,6 +40117,22 @@ private static final long serialVersionUID = 0L;
         return revision_;
       }
 
+      public static final int INDEX_FIELD_NUMBER = 3;
+      private int index_;
+      /**
+       * <pre>
+       * The index of the parent revisions corresponding collection of items
+       * (eg. list of entities, properties within entities, etc.)
+       * </pre>
+       *
+       * <code>int32 index = 3;</code>
+       * @return The index.
+       */
+      @java.lang.Override
+      public int getIndex() {
+        return index_;
+      }
+
       public static final int ID_FIELD_NUMBER = 2;
       private int id_;
       /**
@@ -39572,11 +40140,11 @@ private static final long serialVersionUID = 0L;
        * The id of the parent provenance.
        * </pre>
        *
-       * <code>int32 id = 2;</code>
+       * <code>int32 id = 2 [deprecated = true];</code>
        * @return The id.
        */
       @java.lang.Override
-      public int getId() {
+      @java.lang.Deprecated public int getId() {
         return id_;
       }
 
@@ -39600,6 +40168,9 @@ private static final long serialVersionUID = 0L;
         if (id_ != 0) {
           output.writeInt32(2, id_);
         }
+        if (index_ != 0) {
+          output.writeInt32(3, index_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -39616,6 +40187,10 @@ private static final long serialVersionUID = 0L;
         if (id_ != 0) {
           size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(2, id_);
+        }
+        if (index_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(3, index_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -39634,6 +40209,8 @@ private static final long serialVersionUID = 0L;
 
         if (getRevision()
             != other.getRevision()) return false;
+        if (getIndex()
+            != other.getIndex()) return false;
         if (getId()
             != other.getId()) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
@@ -39649,6 +40226,8 @@ private static final long serialVersionUID = 0L;
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + REVISION_FIELD_NUMBER;
         hash = (53 * hash) + getRevision();
+        hash = (37 * hash) + INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getIndex();
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId();
         hash = (29 * hash) + unknownFields.hashCode();
@@ -39792,6 +40371,8 @@ private static final long serialVersionUID = 0L;
           super.clear();
           revision_ = 0;
 
+          index_ = 0;
+
           id_ = 0;
 
           return this;
@@ -39821,6 +40402,7 @@ private static final long serialVersionUID = 0L;
         public com.google.cloud.documentai.v1.Document.Provenance.Parent buildPartial() {
           com.google.cloud.documentai.v1.Document.Provenance.Parent result = new com.google.cloud.documentai.v1.Document.Provenance.Parent(this);
           result.revision_ = revision_;
+          result.index_ = index_;
           result.id_ = id_;
           onBuilt();
           return result;
@@ -39872,6 +40454,9 @@ private static final long serialVersionUID = 0L;
           if (other == com.google.cloud.documentai.v1.Document.Provenance.Parent.getDefaultInstance()) return this;
           if (other.getRevision() != 0) {
             setRevision(other.getRevision());
+          }
+          if (other.getIndex() != 0) {
+            setIndex(other.getIndex());
           }
           if (other.getId() != 0) {
             setId(other.getId());
@@ -39948,17 +40533,63 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        private int index_ ;
+        /**
+         * <pre>
+         * The index of the parent revisions corresponding collection of items
+         * (eg. list of entities, properties within entities, etc.)
+         * </pre>
+         *
+         * <code>int32 index = 3;</code>
+         * @return The index.
+         */
+        @java.lang.Override
+        public int getIndex() {
+          return index_;
+        }
+        /**
+         * <pre>
+         * The index of the parent revisions corresponding collection of items
+         * (eg. list of entities, properties within entities, etc.)
+         * </pre>
+         *
+         * <code>int32 index = 3;</code>
+         * @param value The index to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIndex(int value) {
+          
+          index_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The index of the parent revisions corresponding collection of items
+         * (eg. list of entities, properties within entities, etc.)
+         * </pre>
+         *
+         * <code>int32 index = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearIndex() {
+          
+          index_ = 0;
+          onChanged();
+          return this;
+        }
+
         private int id_ ;
         /**
          * <pre>
          * The id of the parent provenance.
          * </pre>
          *
-         * <code>int32 id = 2;</code>
+         * <code>int32 id = 2 [deprecated = true];</code>
          * @return The id.
          */
         @java.lang.Override
-        public int getId() {
+        @java.lang.Deprecated public int getId() {
           return id_;
         }
         /**
@@ -39966,11 +40597,11 @@ private static final long serialVersionUID = 0L;
          * The id of the parent provenance.
          * </pre>
          *
-         * <code>int32 id = 2;</code>
+         * <code>int32 id = 2 [deprecated = true];</code>
          * @param value The id to set.
          * @return This builder for chaining.
          */
-        public Builder setId(int value) {
+        @java.lang.Deprecated public Builder setId(int value) {
           
           id_ = value;
           onChanged();
@@ -39981,10 +40612,10 @@ private static final long serialVersionUID = 0L;
          * The id of the parent provenance.
          * </pre>
          *
-         * <code>int32 id = 2;</code>
+         * <code>int32 id = 2 [deprecated = true];</code>
          * @return This builder for chaining.
          */
-        public Builder clearId() {
+        @java.lang.Deprecated public Builder clearId() {
           
           id_ = 0;
           onChanged();
@@ -40066,11 +40697,11 @@ private static final long serialVersionUID = 0L;
      * revision.
      * </pre>
      *
-     * <code>int32 id = 2;</code>
+     * <code>int32 id = 2 [deprecated = true];</code>
      * @return The id.
      */
     @java.lang.Override
-    public int getId() {
+    @java.lang.Deprecated public int getId() {
       return id_;
     }
 
@@ -40608,11 +41239,11 @@ private static final long serialVersionUID = 0L;
        * revision.
        * </pre>
        *
-       * <code>int32 id = 2;</code>
+       * <code>int32 id = 2 [deprecated = true];</code>
        * @return The id.
        */
       @java.lang.Override
-      public int getId() {
+      @java.lang.Deprecated public int getId() {
         return id_;
       }
       /**
@@ -40621,11 +41252,11 @@ private static final long serialVersionUID = 0L;
        * revision.
        * </pre>
        *
-       * <code>int32 id = 2;</code>
+       * <code>int32 id = 2 [deprecated = true];</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setId(int value) {
+      @java.lang.Deprecated public Builder setId(int value) {
         
         id_ = value;
         onChanged();
@@ -40637,10 +41268,10 @@ private static final long serialVersionUID = 0L;
        * revision.
        * </pre>
        *
-       * <code>int32 id = 2;</code>
+       * <code>int32 id = 2 [deprecated = true];</code>
        * @return This builder for chaining.
        */
-      public Builder clearId() {
+      @java.lang.Deprecated public Builder clearId() {
         
         id_ = 0;
         onChanged();
