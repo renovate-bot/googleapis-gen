@@ -279,6 +279,10 @@ class PagesGrpcTransport(PagesTransport):
 
         Creates a page in the specified flow.
 
+        Note: You should always train a flow prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
+
         Returns:
             Callable[[~.CreatePageRequest],
                     ~.Page]:
@@ -305,6 +309,10 @@ class PagesGrpcTransport(PagesTransport):
 
         Updates the specified page.
 
+        Note: You should always train a flow prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
+
         Returns:
             Callable[[~.UpdatePageRequest],
                     ~.Page]:
@@ -330,6 +338,10 @@ class PagesGrpcTransport(PagesTransport):
         r"""Return a callable for the delete page method over gRPC.
 
         Deletes the specified page.
+
+        Note: You should always train a flow prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Returns:
             Callable[[~.DeletePageRequest],

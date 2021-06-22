@@ -174,6 +174,10 @@ module Google
               ##
               # Creates a flow in the specified agent.
               #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+              #
               # @overload create_flow(request, options = nil)
               #   Pass arguments to `create_flow` via a request object, either of type
               #   {::Google::Cloud::Dialogflow::Cx::V3::CreateFlowRequest} or an equivalent Hash.
@@ -504,6 +508,10 @@ module Google
               ##
               # Updates the specified flow.
               #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+              #
               # @overload update_flow(request, options = nil)
               #   Pass arguments to `update_flow` via a request object, either of type
               #   {::Google::Cloud::Dialogflow::Cx::V3::UpdateFlowRequest} or an equivalent Hash.
@@ -586,6 +594,10 @@ module Google
               ##
               # Trains the specified flow. Note that only the flow in 'draft' environment
               # is trained.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               #
               # @overload train_flow(request, options = nil)
               #   Pass arguments to `train_flow` via a request object, either of type
@@ -798,6 +810,10 @@ module Google
 
               ##
               # Imports the specified flow to the specified agent from a binary file.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               #
               # @overload import_flow(request, options = nil)
               #   Pass arguments to `import_flow` via a request object, either of type

@@ -1769,10 +1769,22 @@ type PagesClient interface {
 	// Retrieves the specified page.
 	GetPage(ctx context.Context, in *GetPageRequest, opts ...grpc.CallOption) (*Page, error)
 	// Creates a page in the specified flow.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	CreatePage(ctx context.Context, in *CreatePageRequest, opts ...grpc.CallOption) (*Page, error)
 	// Updates the specified page.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	UpdatePage(ctx context.Context, in *UpdatePageRequest, opts ...grpc.CallOption) (*Page, error)
 	// Deletes the specified page.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	DeletePage(ctx context.Context, in *DeletePageRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
@@ -1836,10 +1848,22 @@ type PagesServer interface {
 	// Retrieves the specified page.
 	GetPage(context.Context, *GetPageRequest) (*Page, error)
 	// Creates a page in the specified flow.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	CreatePage(context.Context, *CreatePageRequest) (*Page, error)
 	// Updates the specified page.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	UpdatePage(context.Context, *UpdatePageRequest) (*Page, error)
 	// Deletes the specified page.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	DeletePage(context.Context, *DeletePageRequest) (*emptypb.Empty, error)
 }
 

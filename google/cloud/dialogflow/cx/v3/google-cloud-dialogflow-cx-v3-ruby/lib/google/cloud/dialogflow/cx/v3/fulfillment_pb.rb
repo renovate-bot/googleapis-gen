@@ -12,6 +12,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.dialogflow.cx.v3.Fulfillment" do
       repeated :messages, :message, 1, "google.cloud.dialogflow.cx.v3.ResponseMessage"
       optional :webhook, :string, 2
+      optional :return_partial_responses, :bool, 8
       optional :tag, :string, 3
       repeated :set_parameter_actions, :message, 4, "google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction"
       repeated :conditional_cases, :message, 5, "google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases"

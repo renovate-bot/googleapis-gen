@@ -284,6 +284,10 @@ class TransitionRouteGroupsGrpcTransport(TransitionRouteGroupsTransport):
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
         in the specified flow.
 
+        Note: You should always train a flow prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
+
         Returns:
             Callable[[~.CreateTransitionRouteGroupRequest],
                     ~.TransitionRouteGroup]:
@@ -311,6 +315,10 @@ class TransitionRouteGroupsGrpcTransport(TransitionRouteGroupsTransport):
         Updates the specified
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
 
+        Note: You should always train a flow prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
+
         Returns:
             Callable[[~.UpdateTransitionRouteGroupRequest],
                     ~.TransitionRouteGroup]:
@@ -337,6 +345,10 @@ class TransitionRouteGroupsGrpcTransport(TransitionRouteGroupsTransport):
 
         Deletes the specified
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+
+        Note: You should always train a flow prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Returns:
             Callable[[~.DeleteTransitionRouteGroupRequest],

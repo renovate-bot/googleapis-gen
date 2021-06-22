@@ -261,8 +261,9 @@ public interface QueryParametersOrBuilder extends
   /**
    * <pre>
    * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
-   * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+   * page][QueryResult.current_page] in the session.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
    * If `current_page` is specified, the previous state of the session will be
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session
@@ -279,8 +280,9 @@ public interface QueryParametersOrBuilder extends
   /**
    * <pre>
    * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
-   * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+   * page][QueryResult.current_page] in the session.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
    * If `current_page` is specified, the previous state of the session will be
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session

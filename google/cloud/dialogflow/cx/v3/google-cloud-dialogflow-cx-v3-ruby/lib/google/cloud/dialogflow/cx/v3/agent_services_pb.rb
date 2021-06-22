@@ -39,8 +39,16 @@ module Google
               # Retrieves the specified agent.
               rpc :GetAgent, ::Google::Cloud::Dialogflow::Cx::V3::GetAgentRequest, ::Google::Cloud::Dialogflow::Cx::V3::Agent
               # Creates an agent in the specified location.
+              #
+              # Note: You should always train flows prior to sending them queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :CreateAgent, ::Google::Cloud::Dialogflow::Cx::V3::CreateAgentRequest, ::Google::Cloud::Dialogflow::Cx::V3::Agent
               # Updates the specified agent.
+              #
+              # Note: You should always train flows prior to sending them queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :UpdateAgent, ::Google::Cloud::Dialogflow::Cx::V3::UpdateAgentRequest, ::Google::Cloud::Dialogflow::Cx::V3::Agent
               # Deletes the specified agent.
               rpc :DeleteAgent, ::Google::Cloud::Dialogflow::Cx::V3::DeleteAgentRequest, ::Google::Protobuf::Empty
@@ -50,6 +58,11 @@ module Google
               #
               # Replaces the current agent with a new one. Note that all existing resources
               # in agent (e.g. intents, entity types, flows) will be removed.
+              #
+              #
+              # Note: You should always train flows prior to sending them queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :RestoreAgent, ::Google::Cloud::Dialogflow::Cx::V3::RestoreAgentRequest, ::Google::Longrunning::Operation
               # Validates the specified agent and creates or updates validation results.
               # The agent in draft version is validated. Please call this API after the

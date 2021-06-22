@@ -64,6 +64,10 @@ class AgentsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Creates an agent in the specified location.
+     *
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3\CreateAgentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -79,6 +83,10 @@ class AgentsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates the specified agent.
+     *
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3\UpdateAgentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -127,6 +135,11 @@ class AgentsGrpcClient extends \Grpc\BaseStub {
      *
      * Replaces the current agent with a new one. Note that all existing resources
      * in agent (e.g. intents, entity types, flows) will be removed.
+     *
+     *
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3\RestoreAgentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

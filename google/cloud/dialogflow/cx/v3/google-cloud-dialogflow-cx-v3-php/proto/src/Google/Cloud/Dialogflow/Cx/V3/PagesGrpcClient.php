@@ -64,6 +64,10 @@ class PagesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Creates a page in the specified flow.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3\CreatePageRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -79,6 +83,10 @@ class PagesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates the specified page.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3\UpdatePageRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -94,6 +102,10 @@ class PagesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Deletes the specified page.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3\DeletePageRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

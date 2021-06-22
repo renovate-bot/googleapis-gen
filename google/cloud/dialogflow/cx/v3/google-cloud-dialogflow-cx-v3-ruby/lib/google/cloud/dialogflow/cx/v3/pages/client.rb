@@ -348,6 +348,10 @@ module Google
               ##
               # Creates a page in the specified flow.
               #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+              #
               # @overload create_page(request, options = nil)
               #   Pass arguments to `create_page` via a request object, either of type
               #   {::Google::Cloud::Dialogflow::Cx::V3::CreatePageRequest} or an equivalent Hash.
@@ -439,6 +443,10 @@ module Google
               ##
               # Updates the specified page.
               #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+              #
               # @overload update_page(request, options = nil)
               #   Pass arguments to `update_page` via a request object, either of type
               #   {::Google::Cloud::Dialogflow::Cx::V3::UpdatePageRequest} or an equivalent Hash.
@@ -528,6 +536,10 @@ module Google
 
               ##
               # Deletes the specified page.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               #
               # @overload delete_page(request, options = nil)
               #   Pass arguments to `delete_page` via a request object, either of type

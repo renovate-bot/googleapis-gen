@@ -35,6 +35,10 @@ module Google
               self.service_name = 'google.cloud.dialogflow.cx.v3.Flows'
 
               # Creates a flow in the specified agent.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :CreateFlow, ::Google::Cloud::Dialogflow::Cx::V3::CreateFlowRequest, ::Google::Cloud::Dialogflow::Cx::V3::Flow
               # Deletes a specified flow.
               rpc :DeleteFlow, ::Google::Cloud::Dialogflow::Cx::V3::DeleteFlowRequest, ::Google::Protobuf::Empty
@@ -43,9 +47,17 @@ module Google
               # Retrieves the specified flow.
               rpc :GetFlow, ::Google::Cloud::Dialogflow::Cx::V3::GetFlowRequest, ::Google::Cloud::Dialogflow::Cx::V3::Flow
               # Updates the specified flow.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :UpdateFlow, ::Google::Cloud::Dialogflow::Cx::V3::UpdateFlowRequest, ::Google::Cloud::Dialogflow::Cx::V3::Flow
               # Trains the specified flow. Note that only the flow in 'draft' environment
               # is trained.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :TrainFlow, ::Google::Cloud::Dialogflow::Cx::V3::TrainFlowRequest, ::Google::Longrunning::Operation
               # Validates the specified flow and creates or updates validation results.
               # Please call this API after the training is completed to get the complete
@@ -55,6 +67,10 @@ module Google
               # when ValidateFlow is called.
               rpc :GetFlowValidationResult, ::Google::Cloud::Dialogflow::Cx::V3::GetFlowValidationResultRequest, ::Google::Cloud::Dialogflow::Cx::V3::FlowValidationResult
               # Imports the specified flow to the specified agent from a binary file.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :ImportFlow, ::Google::Cloud::Dialogflow::Cx::V3::ImportFlowRequest, ::Google::Longrunning::Operation
               # Exports the specified flow to a binary file.
               #

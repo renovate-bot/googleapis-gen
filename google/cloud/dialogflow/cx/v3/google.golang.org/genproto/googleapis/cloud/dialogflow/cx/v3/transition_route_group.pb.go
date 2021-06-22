@@ -966,10 +966,22 @@ type TransitionRouteGroupsClient interface {
 	// Retrieves the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
 	GetTransitionRouteGroup(ctx context.Context, in *GetTransitionRouteGroupRequest, opts ...grpc.CallOption) (*TransitionRouteGroup, error)
 	// Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup] in the specified flow.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	CreateTransitionRouteGroup(ctx context.Context, in *CreateTransitionRouteGroupRequest, opts ...grpc.CallOption) (*TransitionRouteGroup, error)
 	// Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	UpdateTransitionRouteGroup(ctx context.Context, in *UpdateTransitionRouteGroupRequest, opts ...grpc.CallOption) (*TransitionRouteGroup, error)
 	// Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	DeleteTransitionRouteGroup(ctx context.Context, in *DeleteTransitionRouteGroupRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
@@ -1033,10 +1045,22 @@ type TransitionRouteGroupsServer interface {
 	// Retrieves the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
 	GetTransitionRouteGroup(context.Context, *GetTransitionRouteGroupRequest) (*TransitionRouteGroup, error)
 	// Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup] in the specified flow.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	CreateTransitionRouteGroup(context.Context, *CreateTransitionRouteGroupRequest) (*TransitionRouteGroup, error)
 	// Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	UpdateTransitionRouteGroup(context.Context, *UpdateTransitionRouteGroupRequest) (*TransitionRouteGroup, error)
 	// Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	DeleteTransitionRouteGroup(context.Context, *DeleteTransitionRouteGroupRequest) (*emptypb.Empty, error)
 }
 

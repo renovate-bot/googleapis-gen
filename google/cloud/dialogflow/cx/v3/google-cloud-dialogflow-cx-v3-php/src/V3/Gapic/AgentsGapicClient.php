@@ -465,6 +465,10 @@ class AgentsGapicClient
     /**
      * Creates an agent in the specified location.
      *
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     *
      * Sample code:
      * ```
      * $agentsClient = new AgentsClient();
@@ -794,6 +798,11 @@ class AgentsGapicClient
      * Replaces the current agent with a new one. Note that all existing resources
      * in agent (e.g. intents, entity types, flows) will be removed.
      *
+     *
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     *
      * Sample code:
      * ```
      * $agentsClient = new AgentsClient();
@@ -878,6 +887,10 @@ class AgentsGapicClient
 
     /**
      * Updates the specified agent.
+     *
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      *
      * Sample code:
      * ```

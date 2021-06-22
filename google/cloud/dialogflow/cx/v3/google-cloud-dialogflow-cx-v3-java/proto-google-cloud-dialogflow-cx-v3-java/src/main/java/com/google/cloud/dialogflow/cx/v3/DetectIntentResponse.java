@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private DetectIntentResponse() {
     responseId_ = "";
     outputAudio_ = com.google.protobuf.ByteString.EMPTY;
+    responseType_ = 0;
   }
 
   @java.lang.Override
@@ -91,6 +92,17 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 48: {
+            int rawValue = input.readEnum();
+
+            responseType_ = rawValue;
+            break;
+          }
+          case 56: {
+
+            allowCancellation_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -121,6 +133,155 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dialogflow.cx.v3.SessionProto.internal_static_google_cloud_dialogflow_cx_v3_DetectIntentResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.class, com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * Represents different DetectIntentResponse types.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType}
+   */
+  public enum ResponseType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Not specified. This should never happen.
+     * </pre>
+     *
+     * <code>RESPONSE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    RESPONSE_TYPE_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Partial response. e.g. Aggregated responses in a Fulfillment that enables
+     * `return_partial_response` can be returned as partial response.
+     * WARNING: partial response is not eligible for barge-in.
+     * </pre>
+     *
+     * <code>PARTIAL = 1;</code>
+     */
+    PARTIAL(1),
+    /**
+     * <pre>
+     * Final response.
+     * </pre>
+     *
+     * <code>FINAL = 2;</code>
+     */
+    FINAL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Not specified. This should never happen.
+     * </pre>
+     *
+     * <code>RESPONSE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int RESPONSE_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Partial response. e.g. Aggregated responses in a Fulfillment that enables
+     * `return_partial_response` can be returned as partial response.
+     * WARNING: partial response is not eligible for barge-in.
+     * </pre>
+     *
+     * <code>PARTIAL = 1;</code>
+     */
+    public static final int PARTIAL_VALUE = 1;
+    /**
+     * <pre>
+     * Final response.
+     * </pre>
+     *
+     * <code>FINAL = 2;</code>
+     */
+    public static final int FINAL_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ResponseType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ResponseType forNumber(int value) {
+      switch (value) {
+        case 0: return RESPONSE_TYPE_UNSPECIFIED;
+        case 1: return PARTIAL;
+        case 2: return FINAL;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ResponseType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ResponseType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ResponseType>() {
+            public ResponseType findValueByNumber(int number) {
+              return ResponseType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ResponseType[] VALUES = values();
+
+    public static ResponseType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ResponseType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType)
   }
 
   public static final int RESPONSE_ID_FIELD_NUMBER = 1;
@@ -271,6 +432,50 @@ private static final long serialVersionUID = 0L;
     return getOutputAudioConfig();
   }
 
+  public static final int RESPONSE_TYPE_FIELD_NUMBER = 6;
+  private int responseType_;
+  /**
+   * <pre>
+   * Response type.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;</code>
+   * @return The enum numeric value on the wire for responseType.
+   */
+  @java.lang.Override public int getResponseTypeValue() {
+    return responseType_;
+  }
+  /**
+   * <pre>
+   * Response type.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;</code>
+   * @return The responseType.
+   */
+  @java.lang.Override public com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType getResponseType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType result = com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType.valueOf(responseType_);
+    return result == null ? com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType.UNRECOGNIZED : result;
+  }
+
+  public static final int ALLOW_CANCELLATION_FIELD_NUMBER = 7;
+  private boolean allowCancellation_;
+  /**
+   * <pre>
+   * Indicates whether the partial response can be cancelled when a later
+   * response arrives. e.g. if the agent specified some music as partial
+   * response, it can be cancelled.
+   * </pre>
+   *
+   * <code>bool allow_cancellation = 7;</code>
+   * @return The allowCancellation.
+   */
+  @java.lang.Override
+  public boolean getAllowCancellation() {
+    return allowCancellation_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -297,6 +502,12 @@ private static final long serialVersionUID = 0L;
     if (outputAudioConfig_ != null) {
       output.writeMessage(5, getOutputAudioConfig());
     }
+    if (responseType_ != com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType.RESPONSE_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, responseType_);
+    }
+    if (allowCancellation_ != false) {
+      output.writeBool(7, allowCancellation_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -320,6 +531,14 @@ private static final long serialVersionUID = 0L;
     if (outputAudioConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getOutputAudioConfig());
+    }
+    if (responseType_ != com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType.RESPONSE_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(6, responseType_);
+    }
+    if (allowCancellation_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, allowCancellation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -350,6 +569,9 @@ private static final long serialVersionUID = 0L;
       if (!getOutputAudioConfig()
           .equals(other.getOutputAudioConfig())) return false;
     }
+    if (responseType_ != other.responseType_) return false;
+    if (getAllowCancellation()
+        != other.getAllowCancellation()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -373,6 +595,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + OUTPUT_AUDIO_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getOutputAudioConfig().hashCode();
     }
+    hash = (37 * hash) + RESPONSE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + responseType_;
+    hash = (37 * hash) + ALLOW_CANCELLATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAllowCancellation());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -526,6 +753,10 @@ private static final long serialVersionUID = 0L;
         outputAudioConfig_ = null;
         outputAudioConfigBuilder_ = null;
       }
+      responseType_ = 0;
+
+      allowCancellation_ = false;
+
       return this;
     }
 
@@ -564,6 +795,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.outputAudioConfig_ = outputAudioConfigBuilder_.build();
       }
+      result.responseType_ = responseType_;
+      result.allowCancellation_ = allowCancellation_;
       onBuilt();
       return result;
     }
@@ -624,6 +857,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasOutputAudioConfig()) {
         mergeOutputAudioConfig(other.getOutputAudioConfig());
+      }
+      if (other.responseType_ != 0) {
+        setResponseTypeValue(other.getResponseTypeValue());
+      }
+      if (other.getAllowCancellation() != false) {
+        setAllowCancellation(other.getAllowCancellation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1136,6 +1375,129 @@ private static final long serialVersionUID = 0L;
         outputAudioConfig_ = null;
       }
       return outputAudioConfigBuilder_;
+    }
+
+    private int responseType_ = 0;
+    /**
+     * <pre>
+     * Response type.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;</code>
+     * @return The enum numeric value on the wire for responseType.
+     */
+    @java.lang.Override public int getResponseTypeValue() {
+      return responseType_;
+    }
+    /**
+     * <pre>
+     * Response type.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;</code>
+     * @param value The enum numeric value on the wire for responseType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseTypeValue(int value) {
+      
+      responseType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Response type.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;</code>
+     * @return The responseType.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType getResponseType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType result = com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType.valueOf(responseType_);
+      return result == null ? com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Response type.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;</code>
+     * @param value The responseType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseType(com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      responseType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Response type.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResponseType() {
+      
+      responseType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowCancellation_ ;
+    /**
+     * <pre>
+     * Indicates whether the partial response can be cancelled when a later
+     * response arrives. e.g. if the agent specified some music as partial
+     * response, it can be cancelled.
+     * </pre>
+     *
+     * <code>bool allow_cancellation = 7;</code>
+     * @return The allowCancellation.
+     */
+    @java.lang.Override
+    public boolean getAllowCancellation() {
+      return allowCancellation_;
+    }
+    /**
+     * <pre>
+     * Indicates whether the partial response can be cancelled when a later
+     * response arrives. e.g. if the agent specified some music as partial
+     * response, it can be cancelled.
+     * </pre>
+     *
+     * <code>bool allow_cancellation = 7;</code>
+     * @param value The allowCancellation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowCancellation(boolean value) {
+      
+      allowCancellation_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether the partial response can be cancelled when a later
+     * response arrives. e.g. if the agent specified some music as partial
+     * response, it can be cancelled.
+     * </pre>
+     *
+     * <code>bool allow_cancellation = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowCancellation() {
+      
+      allowCancellation_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

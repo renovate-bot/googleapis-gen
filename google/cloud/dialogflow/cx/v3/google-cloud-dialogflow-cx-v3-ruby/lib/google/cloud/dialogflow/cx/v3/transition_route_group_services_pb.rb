@@ -39,10 +39,22 @@ module Google
               # Retrieves the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
               rpc :GetTransitionRouteGroup, ::Google::Cloud::Dialogflow::Cx::V3::GetTransitionRouteGroupRequest, ::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup
               # Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup] in the specified flow.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :CreateTransitionRouteGroup, ::Google::Cloud::Dialogflow::Cx::V3::CreateTransitionRouteGroupRequest, ::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup
               # Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :UpdateTransitionRouteGroup, ::Google::Cloud::Dialogflow::Cx::V3::UpdateTransitionRouteGroupRequest, ::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup
               # Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :DeleteTransitionRouteGroup, ::Google::Cloud::Dialogflow::Cx::V3::DeleteTransitionRouteGroupRequest, ::Google::Protobuf::Empty
             end
 

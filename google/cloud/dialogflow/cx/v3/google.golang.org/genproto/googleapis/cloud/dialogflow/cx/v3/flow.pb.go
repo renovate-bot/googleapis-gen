@@ -2148,6 +2148,10 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type FlowsClient interface {
 	// Creates a flow in the specified agent.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	CreateFlow(ctx context.Context, in *CreateFlowRequest, opts ...grpc.CallOption) (*Flow, error)
 	// Deletes a specified flow.
 	DeleteFlow(ctx context.Context, in *DeleteFlowRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
@@ -2156,9 +2160,17 @@ type FlowsClient interface {
 	// Retrieves the specified flow.
 	GetFlow(ctx context.Context, in *GetFlowRequest, opts ...grpc.CallOption) (*Flow, error)
 	// Updates the specified flow.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	UpdateFlow(ctx context.Context, in *UpdateFlowRequest, opts ...grpc.CallOption) (*Flow, error)
 	// Trains the specified flow. Note that only the flow in 'draft' environment
 	// is trained.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	TrainFlow(ctx context.Context, in *TrainFlowRequest, opts ...grpc.CallOption) (*longrunning.Operation, error)
 	// Validates the specified flow and creates or updates validation results.
 	// Please call this API after the training is completed to get the complete
@@ -2168,6 +2180,10 @@ type FlowsClient interface {
 	// when ValidateFlow is called.
 	GetFlowValidationResult(ctx context.Context, in *GetFlowValidationResultRequest, opts ...grpc.CallOption) (*FlowValidationResult, error)
 	// Imports the specified flow to the specified agent from a binary file.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	ImportFlow(ctx context.Context, in *ImportFlowRequest, opts ...grpc.CallOption) (*longrunning.Operation, error)
 	// Exports the specified flow to a binary file.
 	//
@@ -2277,6 +2293,10 @@ func (c *flowsClient) ExportFlow(ctx context.Context, in *ExportFlowRequest, opt
 // FlowsServer is the server API for Flows service.
 type FlowsServer interface {
 	// Creates a flow in the specified agent.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	CreateFlow(context.Context, *CreateFlowRequest) (*Flow, error)
 	// Deletes a specified flow.
 	DeleteFlow(context.Context, *DeleteFlowRequest) (*emptypb.Empty, error)
@@ -2285,9 +2305,17 @@ type FlowsServer interface {
 	// Retrieves the specified flow.
 	GetFlow(context.Context, *GetFlowRequest) (*Flow, error)
 	// Updates the specified flow.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	UpdateFlow(context.Context, *UpdateFlowRequest) (*Flow, error)
 	// Trains the specified flow. Note that only the flow in 'draft' environment
 	// is trained.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	TrainFlow(context.Context, *TrainFlowRequest) (*longrunning.Operation, error)
 	// Validates the specified flow and creates or updates validation results.
 	// Please call this API after the training is completed to get the complete
@@ -2297,6 +2325,10 @@ type FlowsServer interface {
 	// when ValidateFlow is called.
 	GetFlowValidationResult(context.Context, *GetFlowValidationResultRequest) (*FlowValidationResult, error)
 	// Imports the specified flow to the specified agent from a binary file.
+	//
+	// Note: You should always train a flow prior to sending it queries. See the
+	// [training
+	// documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
 	ImportFlow(context.Context, *ImportFlowRequest) (*longrunning.Operation, error)
 	// Exports the specified flow to a binary file.
 	//

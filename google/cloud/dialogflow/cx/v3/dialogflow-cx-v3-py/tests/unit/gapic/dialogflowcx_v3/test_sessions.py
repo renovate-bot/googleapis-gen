@@ -396,6 +396,8 @@ def test_detect_intent(transport: str = 'grpc', request_type=session.DetectInten
         call.return_value = session.DetectIntentResponse(
             response_id='response_id_value',
             output_audio=b'output_audio_blob',
+            response_type=session.DetectIntentResponse.ResponseType.PARTIAL,
+            allow_cancellation=True,
         )
         response = client.detect_intent(request)
 
@@ -408,6 +410,8 @@ def test_detect_intent(transport: str = 'grpc', request_type=session.DetectInten
     assert isinstance(response, session.DetectIntentResponse)
     assert response.response_id == 'response_id_value'
     assert response.output_audio == b'output_audio_blob'
+    assert response.response_type == session.DetectIntentResponse.ResponseType.PARTIAL
+    assert response.allow_cancellation is True
 
 
 def test_detect_intent_from_dict():
@@ -451,6 +455,8 @@ async def test_detect_intent_async(transport: str = 'grpc_asyncio', request_type
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(session.DetectIntentResponse(
             response_id='response_id_value',
             output_audio=b'output_audio_blob',
+            response_type=session.DetectIntentResponse.ResponseType.PARTIAL,
+            allow_cancellation=True,
         ))
         response = await client.detect_intent(request)
 
@@ -463,6 +469,8 @@ async def test_detect_intent_async(transport: str = 'grpc_asyncio', request_type
     assert isinstance(response, session.DetectIntentResponse)
     assert response.response_id == 'response_id_value'
     assert response.output_audio == b'output_audio_blob'
+    assert response.response_type == session.DetectIntentResponse.ResponseType.PARTIAL
+    assert response.allow_cancellation is True
 
 
 @pytest.mark.asyncio

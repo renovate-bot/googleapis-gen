@@ -175,16 +175,28 @@ func (c *PagesClient) GetPage(ctx context.Context, req *cxpb.GetPageRequest, opt
 }
 
 // CreatePage creates a page in the specified flow.
+//
+// Note: You should always train a flow prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/cx/docs/concept/training).
 func (c *PagesClient) CreatePage(ctx context.Context, req *cxpb.CreatePageRequest, opts ...gax.CallOption) (*cxpb.Page, error) {
 	return c.internalClient.CreatePage(ctx, req, opts...)
 }
 
 // UpdatePage updates the specified page.
+//
+// Note: You should always train a flow prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/cx/docs/concept/training).
 func (c *PagesClient) UpdatePage(ctx context.Context, req *cxpb.UpdatePageRequest, opts ...gax.CallOption) (*cxpb.Page, error) {
 	return c.internalClient.UpdatePage(ctx, req, opts...)
 }
 
 // DeletePage deletes the specified page.
+//
+// Note: You should always train a flow prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/cx/docs/concept/training).
 func (c *PagesClient) DeletePage(ctx context.Context, req *cxpb.DeletePageRequest, opts ...gax.CallOption) error {
 	return c.internalClient.DeletePage(ctx, req, opts...)
 }

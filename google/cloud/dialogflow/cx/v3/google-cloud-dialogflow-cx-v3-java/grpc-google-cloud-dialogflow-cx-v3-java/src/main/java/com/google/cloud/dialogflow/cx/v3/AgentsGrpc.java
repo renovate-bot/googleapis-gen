@@ -370,6 +370,9 @@ public final class AgentsGrpc {
     /**
      * <pre>
      * Creates an agent in the specified location.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void createAgent(com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request,
@@ -380,6 +383,9 @@ public final class AgentsGrpc {
     /**
      * <pre>
      * Updates the specified agent.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updateAgent(com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request,
@@ -412,6 +418,9 @@ public final class AgentsGrpc {
      * Restores the specified agent from a binary file.
      * Replaces the current agent with a new one. Note that all existing resources
      * in agent (e.g. intents, entity types, flows) will be removed.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void restoreAgent(com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request,
@@ -553,6 +562,9 @@ public final class AgentsGrpc {
     /**
      * <pre>
      * Creates an agent in the specified location.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void createAgent(com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request,
@@ -564,6 +576,9 @@ public final class AgentsGrpc {
     /**
      * <pre>
      * Updates the specified agent.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void updateAgent(com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request,
@@ -599,6 +614,9 @@ public final class AgentsGrpc {
      * Restores the specified agent from a binary file.
      * Replaces the current agent with a new one. Note that all existing resources
      * in agent (e.g. intents, entity types, flows) will be removed.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public void restoreAgent(com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request,
@@ -673,6 +691,9 @@ public final class AgentsGrpc {
     /**
      * <pre>
      * Creates an agent in the specified location.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Agent createAgent(com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request) {
@@ -683,6 +704,9 @@ public final class AgentsGrpc {
     /**
      * <pre>
      * Updates the specified agent.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Agent updateAgent(com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request) {
@@ -715,6 +739,9 @@ public final class AgentsGrpc {
      * Restores the specified agent from a binary file.
      * Replaces the current agent with a new one. Note that all existing resources
      * in agent (e.g. intents, entity types, flows) will be removed.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.longrunning.Operation restoreAgent(com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request) {
@@ -788,6 +815,9 @@ public final class AgentsGrpc {
     /**
      * <pre>
      * Creates an agent in the specified location.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.cx.v3.Agent> createAgent(
@@ -799,6 +829,9 @@ public final class AgentsGrpc {
     /**
      * <pre>
      * Updates the specified agent.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.cx.v3.Agent> updateAgent(
@@ -834,6 +867,9 @@ public final class AgentsGrpc {
      * Restores the specified agent from a binary file.
      * Replaces the current agent with a new one. Note that all existing resources
      * in agent (e.g. intents, entity types, flows) will be removed.
+     * Note: You should always train flows prior to sending them queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> restoreAgent(

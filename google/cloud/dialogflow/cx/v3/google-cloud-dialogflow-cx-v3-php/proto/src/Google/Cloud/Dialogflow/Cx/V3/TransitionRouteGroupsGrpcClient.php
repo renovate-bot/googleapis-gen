@@ -64,6 +64,10 @@ class TransitionRouteGroupsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup] in the specified flow.
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3\CreateTransitionRouteGroupRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -79,6 +83,10 @@ class TransitionRouteGroupsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3\UpdateTransitionRouteGroupRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -94,6 +102,10 @@ class TransitionRouteGroupsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     *
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * @param \Google\Cloud\Dialogflow\Cx\V3\DeleteTransitionRouteGroupRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

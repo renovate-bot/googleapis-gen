@@ -37,13 +37,13 @@ class Agent extends \Google\Protobuf\Internal\Message
      */
     protected $display_name = '';
     /**
-     * Immutable. The default language of the agent as a language tag.
+     * Required. Immutable. The default language of the agent as a language tag.
      * See [Language
      * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
      * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
      *
-     * Generated from protobuf field <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $default_language_code = '';
     /**
@@ -129,7 +129,7 @@ class Agent extends \Google\Protobuf\Internal\Message
      *     @type string $display_name
      *           Required. The human-readable name of the agent, unique within the location.
      *     @type string $default_language_code
-     *           Immutable. The default language of the agent as a language tag.
+     *           Required. Immutable. The default language of the agent as a language tag.
      *           See [Language
      *           Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      *           for a list of the currently supported language codes.
@@ -232,13 +232,13 @@ class Agent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The default language of the agent as a language tag.
+     * Required. Immutable. The default language of the agent as a language tag.
      * See [Language
      * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
      * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
      *
-     * Generated from protobuf field <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getDefaultLanguageCode()
@@ -247,13 +247,13 @@ class Agent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The default language of the agent as a language tag.
+     * Required. Immutable. The default language of the agent as a language tag.
      * See [Language
      * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
      * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
      *
-     * Generated from protobuf field <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */

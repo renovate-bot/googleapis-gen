@@ -747,8 +747,10 @@ private static final long serialVersionUID = 0L;
    * settings.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
-   * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+   * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
+   * ID&gt;` OR
+   * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
    * </pre>
    *
    * <code>string inspect_template = 9;</code>
@@ -773,8 +775,10 @@ private static final long serialVersionUID = 0L;
    * settings.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
-   * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+   * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
+   * ID&gt;` OR
+   * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
    * </pre>
    *
    * <code>string inspect_template = 9;</code>
@@ -1764,8 +1768,10 @@ private static final long serialVersionUID = 0L;
      * settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
+     * ID&gt;` OR
+     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
      * </pre>
      *
      * <code>string inspect_template = 9;</code>
@@ -1789,8 +1795,10 @@ private static final long serialVersionUID = 0L;
      * settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
+     * ID&gt;` OR
+     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
      * </pre>
      *
      * <code>string inspect_template = 9;</code>
@@ -1815,8 +1823,10 @@ private static final long serialVersionUID = 0L;
      * settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
+     * ID&gt;` OR
+     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
      * </pre>
      *
      * <code>string inspect_template = 9;</code>
@@ -1839,8 +1849,10 @@ private static final long serialVersionUID = 0L;
      * settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
+     * ID&gt;` OR
+     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
      * </pre>
      *
      * <code>string inspect_template = 9;</code>
@@ -1858,8 +1870,10 @@ private static final long serialVersionUID = 0L;
      * settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-     * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
+     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
+     * ID&gt;` OR
+     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
      * </pre>
      *
      * <code>string inspect_template = 9;</code>

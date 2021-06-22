@@ -327,6 +327,10 @@ module Google
               ##
               # Creates an intent in the specified agent.
               #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+              #
               # @overload create_intent(request, options = nil)
               #   Pass arguments to `create_intent` via a request object, either of type
               #   {::Google::Cloud::Dialogflow::Cx::V3::CreateIntentRequest} or an equivalent Hash.
@@ -406,6 +410,10 @@ module Google
               ##
               # Updates the specified intent.
               #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+              #
               # @overload update_intent(request, options = nil)
               #   Pass arguments to `update_intent` via a request object, either of type
               #   {::Google::Cloud::Dialogflow::Cx::V3::UpdateIntentRequest} or an equivalent Hash.
@@ -484,6 +492,10 @@ module Google
 
               ##
               # Deletes the specified intent.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               #
               # @overload delete_intent(request, options = nil)
               #   Pass arguments to `delete_intent` via a request object, either of type

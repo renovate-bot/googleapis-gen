@@ -49,6 +49,20 @@ class DetectIntentResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.OutputAudioConfig output_audio_config = 5;</code>
      */
     protected $output_audio_config = null;
+    /**
+     * Response type.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;</code>
+     */
+    protected $response_type = 0;
+    /**
+     * Indicates whether the partial response can be cancelled when a later
+     * response arrives. e.g. if the agent specified some music as partial
+     * response, it can be cancelled.
+     *
+     * Generated from protobuf field <code>bool allow_cancellation = 7;</code>
+     */
+    protected $allow_cancellation = false;
 
     /**
      * Constructor.
@@ -74,6 +88,12 @@ class DetectIntentResponse extends \Google\Protobuf\Internal\Message
      *           has content.
      *     @type \Google\Cloud\Dialogflow\Cx\V3\OutputAudioConfig $output_audio_config
      *           The config used by the speech synthesizer to generate the output audio.
+     *     @type int $response_type
+     *           Response type.
+     *     @type bool $allow_cancellation
+     *           Indicates whether the partial response can be cancelled when a later
+     *           response arrives. e.g. if the agent specified some music as partial
+     *           response, it can be cancelled.
      * }
      */
     public function __construct($data = NULL) {
@@ -221,6 +241,62 @@ class DetectIntentResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3\OutputAudioConfig::class);
         $this->output_audio_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Response type.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;</code>
+     * @return int
+     */
+    public function getResponseType()
+    {
+        return $this->response_type;
+    }
+
+    /**
+     * Response type.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.DetectIntentResponse.ResponseType response_type = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setResponseType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Dialogflow\Cx\V3\DetectIntentResponse\ResponseType::class);
+        $this->response_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Indicates whether the partial response can be cancelled when a later
+     * response arrives. e.g. if the agent specified some music as partial
+     * response, it can be cancelled.
+     *
+     * Generated from protobuf field <code>bool allow_cancellation = 7;</code>
+     * @return bool
+     */
+    public function getAllowCancellation()
+    {
+        return $this->allow_cancellation;
+    }
+
+    /**
+     * Indicates whether the partial response can be cancelled when a later
+     * response arrives. e.g. if the agent specified some music as partial
+     * response, it can be cancelled.
+     *
+     * Generated from protobuf field <code>bool allow_cancellation = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowCancellation($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_cancellation = $var;
 
         return $this;
     }

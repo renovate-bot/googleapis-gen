@@ -329,6 +329,10 @@ module Google
               ##
               # Creates an entity type in the specified agent.
               #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+              #
               # @overload create_entity_type(request, options = nil)
               #   Pass arguments to `create_entity_type` via a request object, either of type
               #   {::Google::Cloud::Dialogflow::Cx::V3::CreateEntityTypeRequest} or an equivalent Hash.
@@ -410,6 +414,10 @@ module Google
               ##
               # Updates the specified entity type.
               #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+              #
               # @overload update_entity_type(request, options = nil)
               #   Pass arguments to `update_entity_type` via a request object, either of type
               #   {::Google::Cloud::Dialogflow::Cx::V3::UpdateEntityTypeRequest} or an equivalent Hash.
@@ -489,6 +497,10 @@ module Google
 
               ##
               # Deletes the specified entity type.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               #
               # @overload delete_entity_type(request, options = nil)
               #   Pass arguments to `delete_entity_type` via a request object, either of type

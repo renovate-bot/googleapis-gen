@@ -39,10 +39,22 @@ module Google
               # Retrieves the specified page.
               rpc :GetPage, ::Google::Cloud::Dialogflow::Cx::V3::GetPageRequest, ::Google::Cloud::Dialogflow::Cx::V3::Page
               # Creates a page in the specified flow.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :CreatePage, ::Google::Cloud::Dialogflow::Cx::V3::CreatePageRequest, ::Google::Cloud::Dialogflow::Cx::V3::Page
               # Updates the specified page.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :UpdatePage, ::Google::Cloud::Dialogflow::Cx::V3::UpdatePageRequest, ::Google::Cloud::Dialogflow::Cx::V3::Page
               # Deletes the specified page.
+              #
+              # Note: You should always train a flow prior to sending it queries. See the
+              # [training
+              # documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
               rpc :DeletePage, ::Google::Cloud::Dialogflow::Cx::V3::DeletePageRequest, ::Google::Protobuf::Empty
             end
 
