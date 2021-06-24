@@ -47,7 +47,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/dataflow_v1beta3/',
+        '--cov=google/cloud/dataflow_v1beta3/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',

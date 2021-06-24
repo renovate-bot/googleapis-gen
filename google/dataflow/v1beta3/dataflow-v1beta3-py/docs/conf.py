@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-dataflow documentation build configuration file
+# google-cloud-dataflow documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-dataflow"
+project = u"google-cloud-dataflow"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -146,7 +146,7 @@ html_theme = "alabaster"
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "description": "Google Client Libraries for Python",
+    "description": "Google Cloud Client Libraries for Python",
     "github_user": "googleapis",
     "github_repo": "google-cloud-python",
     "github_banner": True,
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-dataflow-doc"
+htmlhelp_basename = "google-cloud-dataflow-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-dataflow.tex",
-        u"google-dataflow Documentation",
+        "google-cloud-dataflow.tex",
+        u"google-cloud-dataflow Documentation",
         author,
         "manual",
     )
@@ -308,8 +308,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-dataflow",
-        u"Google Dataflow Documentation",
+        "google-cloud-dataflow",
+        u"Google Cloud Dataflow Documentation",
         [author],
         1,
     )
@@ -327,11 +327,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-dataflow",
-        u"google-dataflow Documentation",
+        "google-cloud-dataflow",
+        u"google-cloud-dataflow Documentation",
         author,
-        "google-dataflow",
-        "GAPIC library for Google Dataflow API",
+        "google-cloud-dataflow",
+        "GAPIC library for Google Cloud Dataflow API",
         "APIs",
     )
 ]
