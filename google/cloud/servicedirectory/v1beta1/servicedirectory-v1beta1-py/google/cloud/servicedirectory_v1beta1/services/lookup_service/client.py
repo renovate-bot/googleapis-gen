@@ -167,6 +167,17 @@ class LookupServiceClient(metaclass=LookupServiceClientMeta):
         return m.groupdict() if m else {}
 
     @staticmethod
+    def network_path(project: str,network: str,) -> str:
+        """Returns a fully-qualified network string."""
+        return "projects/{project}/locations/global/networks/{network}".format(project=project, network=network, )
+
+    @staticmethod
+    def parse_network_path(path: str) -> Dict[str,str]:
+        """Parses a network path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/global/networks/(?P<network>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
     def service_path(project: str,location: str,namespace: str,service: str,) -> str:
         """Returns a fully-qualified service string."""
         return "projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}".format(project=project, location=location, namespace=namespace, service=service, )
@@ -410,7 +421,7 @@ class LookupServiceClient(metaclass=LookupServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-servicedirectory",
+            "google-cloud-service-directory",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

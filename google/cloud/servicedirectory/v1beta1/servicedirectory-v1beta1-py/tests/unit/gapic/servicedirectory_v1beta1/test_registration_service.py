@@ -48,6 +48,7 @@ from google.iam.v1 import options_pb2  # type: ignore
 from google.iam.v1 import policy_pb2  # type: ignore
 from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from google.type import expr_pb2  # type: ignore
 import google.auth
 
@@ -3108,6 +3109,7 @@ def test_create_endpoint(transport: str = 'grpc', request_type=registration_serv
             name='name_value',
             address='address_value',
             port=453,
+            network='network_value',
         )
         response = client.create_endpoint(request)
 
@@ -3121,6 +3123,7 @@ def test_create_endpoint(transport: str = 'grpc', request_type=registration_serv
     assert response.name == 'name_value'
     assert response.address == 'address_value'
     assert response.port == 453
+    assert response.network == 'network_value'
 
 
 def test_create_endpoint_from_dict():
@@ -3165,6 +3168,7 @@ async def test_create_endpoint_async(transport: str = 'grpc_asyncio', request_ty
             name='name_value',
             address='address_value',
             port=453,
+            network='network_value',
         ))
         response = await client.create_endpoint(request)
 
@@ -3178,6 +3182,7 @@ async def test_create_endpoint_async(transport: str = 'grpc_asyncio', request_ty
     assert response.name == 'name_value'
     assert response.address == 'address_value'
     assert response.port == 453
+    assert response.network == 'network_value'
 
 
 @pytest.mark.asyncio
@@ -3776,6 +3781,7 @@ def test_get_endpoint(transport: str = 'grpc', request_type=registration_service
             name='name_value',
             address='address_value',
             port=453,
+            network='network_value',
         )
         response = client.get_endpoint(request)
 
@@ -3789,6 +3795,7 @@ def test_get_endpoint(transport: str = 'grpc', request_type=registration_service
     assert response.name == 'name_value'
     assert response.address == 'address_value'
     assert response.port == 453
+    assert response.network == 'network_value'
 
 
 def test_get_endpoint_from_dict():
@@ -3833,6 +3840,7 @@ async def test_get_endpoint_async(transport: str = 'grpc_asyncio', request_type=
             name='name_value',
             address='address_value',
             port=453,
+            network='network_value',
         ))
         response = await client.get_endpoint(request)
 
@@ -3846,6 +3854,7 @@ async def test_get_endpoint_async(transport: str = 'grpc_asyncio', request_type=
     assert response.name == 'name_value'
     assert response.address == 'address_value'
     assert response.port == 453
+    assert response.network == 'network_value'
 
 
 @pytest.mark.asyncio
@@ -4015,6 +4024,7 @@ def test_update_endpoint(transport: str = 'grpc', request_type=registration_serv
             name='name_value',
             address='address_value',
             port=453,
+            network='network_value',
         )
         response = client.update_endpoint(request)
 
@@ -4028,6 +4038,7 @@ def test_update_endpoint(transport: str = 'grpc', request_type=registration_serv
     assert response.name == 'name_value'
     assert response.address == 'address_value'
     assert response.port == 453
+    assert response.network == 'network_value'
 
 
 def test_update_endpoint_from_dict():
@@ -4072,6 +4083,7 @@ async def test_update_endpoint_async(transport: str = 'grpc_asyncio', request_ty
             name='name_value',
             address='address_value',
             port=453,
+            network='network_value',
         ))
         response = await client.update_endpoint(request)
 
@@ -4085,6 +4097,7 @@ async def test_update_endpoint_async(transport: str = 'grpc_asyncio', request_ty
     assert response.name == 'name_value'
     assert response.address == 'address_value'
     assert response.port == 453
+    assert response.network == 'network_value'
 
 
 @pytest.mark.asyncio
@@ -5468,11 +5481,30 @@ def test_parse_namespace_path():
     actual = RegistrationServiceClient.parse_namespace_path(path)
     assert expected == actual
 
-def test_service_path():
+def test_network_path():
     project = "oyster"
-    location = "nudibranch"
-    namespace = "cuttlefish"
-    service = "mussel"
+    network = "nudibranch"
+    expected = "projects/{project}/locations/global/networks/{network}".format(project=project, network=network, )
+    actual = RegistrationServiceClient.network_path(project, network)
+    assert expected == actual
+
+
+def test_parse_network_path():
+    expected = {
+        "project": "cuttlefish",
+        "network": "mussel",
+    }
+    path = RegistrationServiceClient.network_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = RegistrationServiceClient.parse_network_path(path)
+    assert expected == actual
+
+def test_service_path():
+    project = "winkle"
+    location = "nautilus"
+    namespace = "scallop"
+    service = "abalone"
     expected = "projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}".format(project=project, location=location, namespace=namespace, service=service, )
     actual = RegistrationServiceClient.service_path(project, location, namespace, service)
     assert expected == actual
@@ -5480,10 +5512,10 @@ def test_service_path():
 
 def test_parse_service_path():
     expected = {
-        "project": "winkle",
-        "location": "nautilus",
-        "namespace": "scallop",
-        "service": "abalone",
+        "project": "squid",
+        "location": "clam",
+        "namespace": "whelk",
+        "service": "octopus",
     }
     path = RegistrationServiceClient.service_path(**expected)
 
@@ -5492,7 +5524,7 @@ def test_parse_service_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "squid"
+    billing_account = "oyster"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = RegistrationServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -5500,7 +5532,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+        "billing_account": "nudibranch",
     }
     path = RegistrationServiceClient.common_billing_account_path(**expected)
 
@@ -5509,7 +5541,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "whelk"
+    folder = "cuttlefish"
     expected = "folders/{folder}".format(folder=folder, )
     actual = RegistrationServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -5517,7 +5549,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+        "folder": "mussel",
     }
     path = RegistrationServiceClient.common_folder_path(**expected)
 
@@ -5526,7 +5558,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "oyster"
+    organization = "winkle"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = RegistrationServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -5534,7 +5566,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+        "organization": "nautilus",
     }
     path = RegistrationServiceClient.common_organization_path(**expected)
 
@@ -5543,7 +5575,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "cuttlefish"
+    project = "scallop"
     expected = "projects/{project}".format(project=project, )
     actual = RegistrationServiceClient.common_project_path(project)
     assert expected == actual
@@ -5551,7 +5583,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+        "project": "abalone",
     }
     path = RegistrationServiceClient.common_project_path(**expected)
 
@@ -5560,8 +5592,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "winkle"
-    location = "nautilus"
+    project = "squid"
+    location = "clam"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = RegistrationServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -5569,8 +5601,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+        "project": "whelk",
+        "location": "octopus",
     }
     path = RegistrationServiceClient.common_location_path(**expected)
 

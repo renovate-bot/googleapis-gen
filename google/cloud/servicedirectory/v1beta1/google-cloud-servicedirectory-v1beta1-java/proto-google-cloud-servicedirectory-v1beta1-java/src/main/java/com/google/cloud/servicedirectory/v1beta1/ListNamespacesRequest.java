@@ -121,8 +121,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The resource name of the project and location whose namespaces we'd like to
-   * list.
+   * Required. The resource name of the project and location whose namespaces you'd like
+   * to list.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -143,8 +143,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The resource name of the project and location whose namespaces we'd like to
-   * list.
+   * Required. The resource name of the project and location whose namespaces you'd like
+   * to list.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -230,27 +230,28 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object filter_;
   /**
    * <pre>
-   * Optional. The filter to list result by.
-   * General filter string syntax:
-   * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
-   * &lt;field&gt; can be "name", or "labels.&lt;key&gt;" for map field.
-   * &lt;operator&gt; can be "&lt;, &gt;, &lt;=, &gt;=, !=, =, :". Of which ":" means HAS, and
-   * is roughly the same as "=".
-   * &lt;value&gt; must be the same data type as field.
-   * &lt;logical connector&gt; can be "AND, OR, NOT".
+   * Optional. The filter to list results by.
+   * General `filter` string syntax:
+   * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   * *   `&lt;field&gt;` can be `name` or `labels.&lt;key&gt;` for map field
+   * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
+   *     means `HAS`, and is roughly the same as `=`
+   * *   `&lt;value&gt;` must be the same data type as field
+   * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
    * Examples of valid filters:
-   * * "labels.owner" returns Namespaces that have a label with the key "owner"
-   *   this is the same as "labels:owner".
-   * * "labels.protocol=gRPC" returns Namespaces that have key/value
-   *   "protocol=gRPC".
-   * * "name&gt;projects/my-project/locations/us-east/namespaces/namespace-c"
-   *   returns Namespaces that have name that is alphabetically later than the
-   *   string, so "namespace-e" will be returned but "namespace-a" will not be.
-   * * "labels.owner!=sd AND labels.foo=bar" returns Namespaces that have
-   *   "owner" in label key but value is not "sd" AND have key/value foo=bar.
-   * * "doesnotexist.foo=bar" returns an empty list. Note that Namespace doesn't
-   *   have a field called "doesnotexist". Since the filter does not match any
-   *   Namespaces, it returns no results.
+   * *   `labels.owner` returns namespaces that have a label with the key
+   *     `owner`, this is the same as `labels:owner`
+   * *   `labels.owner=sd` returns namespaces that have key/value `owner=sd`
+   * *   `name&gt;projects/my-project/locations/us-east1/namespaces/namespace-c`
+   *     returns namespaces that have name that is alphabetically later than the
+   *     string, so "namespace-e" is returned but "namespace-a" is not
+   * *   `labels.owner!=sd AND labels.foo=bar` returns namespaces that have
+   *     `owner` in label key but value is not `sd` AND have key/value `foo=bar`
+   * *   `doesnotexist.foo=bar` returns an empty list. Note that namespace
+   *     doesn't have a field called "doesnotexist". Since the filter does not
+   *     match any namespaces, it returns no results
+   * For more information about filtering, see
+   * [API Filtering](https://aip.dev/160).
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -271,27 +272,28 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The filter to list result by.
-   * General filter string syntax:
-   * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
-   * &lt;field&gt; can be "name", or "labels.&lt;key&gt;" for map field.
-   * &lt;operator&gt; can be "&lt;, &gt;, &lt;=, &gt;=, !=, =, :". Of which ":" means HAS, and
-   * is roughly the same as "=".
-   * &lt;value&gt; must be the same data type as field.
-   * &lt;logical connector&gt; can be "AND, OR, NOT".
+   * Optional. The filter to list results by.
+   * General `filter` string syntax:
+   * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   * *   `&lt;field&gt;` can be `name` or `labels.&lt;key&gt;` for map field
+   * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
+   *     means `HAS`, and is roughly the same as `=`
+   * *   `&lt;value&gt;` must be the same data type as field
+   * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
    * Examples of valid filters:
-   * * "labels.owner" returns Namespaces that have a label with the key "owner"
-   *   this is the same as "labels:owner".
-   * * "labels.protocol=gRPC" returns Namespaces that have key/value
-   *   "protocol=gRPC".
-   * * "name&gt;projects/my-project/locations/us-east/namespaces/namespace-c"
-   *   returns Namespaces that have name that is alphabetically later than the
-   *   string, so "namespace-e" will be returned but "namespace-a" will not be.
-   * * "labels.owner!=sd AND labels.foo=bar" returns Namespaces that have
-   *   "owner" in label key but value is not "sd" AND have key/value foo=bar.
-   * * "doesnotexist.foo=bar" returns an empty list. Note that Namespace doesn't
-   *   have a field called "doesnotexist". Since the filter does not match any
-   *   Namespaces, it returns no results.
+   * *   `labels.owner` returns namespaces that have a label with the key
+   *     `owner`, this is the same as `labels:owner`
+   * *   `labels.owner=sd` returns namespaces that have key/value `owner=sd`
+   * *   `name&gt;projects/my-project/locations/us-east1/namespaces/namespace-c`
+   *     returns namespaces that have name that is alphabetically later than the
+   *     string, so "namespace-e" is returned but "namespace-a" is not
+   * *   `labels.owner!=sd AND labels.foo=bar` returns namespaces that have
+   *     `owner` in label key but value is not `sd` AND have key/value `foo=bar`
+   * *   `doesnotexist.foo=bar` returns an empty list. Note that namespace
+   *     doesn't have a field called "doesnotexist". Since the filter does not
+   *     match any namespaces, it returns no results
+   * For more information about filtering, see
+   * [API Filtering](https://aip.dev/160).
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -316,14 +318,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object orderBy_;
   /**
    * <pre>
-   * Optional. The order to list result by.
-   * General order by string syntax:
-   * &lt;field&gt; (&lt;asc|desc&gt;) (,)
-   * &lt;field&gt; allows values {"name"}
-   * &lt;asc/desc&gt; ascending or descending order by &lt;field&gt;. If this is left
-   * blank, "asc" is used.
-   * Note that an empty order_by string result in default order, which is order
-   * by name in ascending order.
+   * Optional. The order to list results by.
+   * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+   * *   `&lt;field&gt;` allows value: `name`
+   * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
+   *     left blank, `asc` is used
+   * Note that an empty `order_by` string results in default order, which is
+   * order by `name` in ascending order.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -344,14 +345,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The order to list result by.
-   * General order by string syntax:
-   * &lt;field&gt; (&lt;asc|desc&gt;) (,)
-   * &lt;field&gt; allows values {"name"}
-   * &lt;asc/desc&gt; ascending or descending order by &lt;field&gt;. If this is left
-   * blank, "asc" is used.
-   * Note that an empty order_by string result in default order, which is order
-   * by name in ascending order.
+   * Optional. The order to list results by.
+   * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+   * *   `&lt;field&gt;` allows value: `name`
+   * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
+   *     left blank, `asc` is used
+   * Note that an empty `order_by` string results in default order, which is
+   * order by `name` in ascending order.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -749,8 +749,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The resource name of the project and location whose namespaces we'd like to
-     * list.
+     * Required. The resource name of the project and location whose namespaces you'd like
+     * to list.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -770,8 +770,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the project and location whose namespaces we'd like to
-     * list.
+     * Required. The resource name of the project and location whose namespaces you'd like
+     * to list.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -792,8 +792,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the project and location whose namespaces we'd like to
-     * list.
+     * Required. The resource name of the project and location whose namespaces you'd like
+     * to list.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -812,8 +812,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the project and location whose namespaces we'd like to
-     * list.
+     * Required. The resource name of the project and location whose namespaces you'd like
+     * to list.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -827,8 +827,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the project and location whose namespaces we'd like to
-     * list.
+     * Required. The resource name of the project and location whose namespaces you'd like
+     * to list.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -989,27 +989,28 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object filter_ = "";
     /**
      * <pre>
-     * Optional. The filter to list result by.
-     * General filter string syntax:
-     * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
-     * &lt;field&gt; can be "name", or "labels.&lt;key&gt;" for map field.
-     * &lt;operator&gt; can be "&lt;, &gt;, &lt;=, &gt;=, !=, =, :". Of which ":" means HAS, and
-     * is roughly the same as "=".
-     * &lt;value&gt; must be the same data type as field.
-     * &lt;logical connector&gt; can be "AND, OR, NOT".
+     * Optional. The filter to list results by.
+     * General `filter` string syntax:
+     * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+     * *   `&lt;field&gt;` can be `name` or `labels.&lt;key&gt;` for map field
+     * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
+     *     means `HAS`, and is roughly the same as `=`
+     * *   `&lt;value&gt;` must be the same data type as field
+     * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
      * Examples of valid filters:
-     * * "labels.owner" returns Namespaces that have a label with the key "owner"
-     *   this is the same as "labels:owner".
-     * * "labels.protocol=gRPC" returns Namespaces that have key/value
-     *   "protocol=gRPC".
-     * * "name&gt;projects/my-project/locations/us-east/namespaces/namespace-c"
-     *   returns Namespaces that have name that is alphabetically later than the
-     *   string, so "namespace-e" will be returned but "namespace-a" will not be.
-     * * "labels.owner!=sd AND labels.foo=bar" returns Namespaces that have
-     *   "owner" in label key but value is not "sd" AND have key/value foo=bar.
-     * * "doesnotexist.foo=bar" returns an empty list. Note that Namespace doesn't
-     *   have a field called "doesnotexist". Since the filter does not match any
-     *   Namespaces, it returns no results.
+     * *   `labels.owner` returns namespaces that have a label with the key
+     *     `owner`, this is the same as `labels:owner`
+     * *   `labels.owner=sd` returns namespaces that have key/value `owner=sd`
+     * *   `name&gt;projects/my-project/locations/us-east1/namespaces/namespace-c`
+     *     returns namespaces that have name that is alphabetically later than the
+     *     string, so "namespace-e" is returned but "namespace-a" is not
+     * *   `labels.owner!=sd AND labels.foo=bar` returns namespaces that have
+     *     `owner` in label key but value is not `sd` AND have key/value `foo=bar`
+     * *   `doesnotexist.foo=bar` returns an empty list. Note that namespace
+     *     doesn't have a field called "doesnotexist". Since the filter does not
+     *     match any namespaces, it returns no results
+     * For more information about filtering, see
+     * [API Filtering](https://aip.dev/160).
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1029,27 +1030,28 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The filter to list result by.
-     * General filter string syntax:
-     * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
-     * &lt;field&gt; can be "name", or "labels.&lt;key&gt;" for map field.
-     * &lt;operator&gt; can be "&lt;, &gt;, &lt;=, &gt;=, !=, =, :". Of which ":" means HAS, and
-     * is roughly the same as "=".
-     * &lt;value&gt; must be the same data type as field.
-     * &lt;logical connector&gt; can be "AND, OR, NOT".
+     * Optional. The filter to list results by.
+     * General `filter` string syntax:
+     * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+     * *   `&lt;field&gt;` can be `name` or `labels.&lt;key&gt;` for map field
+     * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
+     *     means `HAS`, and is roughly the same as `=`
+     * *   `&lt;value&gt;` must be the same data type as field
+     * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
      * Examples of valid filters:
-     * * "labels.owner" returns Namespaces that have a label with the key "owner"
-     *   this is the same as "labels:owner".
-     * * "labels.protocol=gRPC" returns Namespaces that have key/value
-     *   "protocol=gRPC".
-     * * "name&gt;projects/my-project/locations/us-east/namespaces/namespace-c"
-     *   returns Namespaces that have name that is alphabetically later than the
-     *   string, so "namespace-e" will be returned but "namespace-a" will not be.
-     * * "labels.owner!=sd AND labels.foo=bar" returns Namespaces that have
-     *   "owner" in label key but value is not "sd" AND have key/value foo=bar.
-     * * "doesnotexist.foo=bar" returns an empty list. Note that Namespace doesn't
-     *   have a field called "doesnotexist". Since the filter does not match any
-     *   Namespaces, it returns no results.
+     * *   `labels.owner` returns namespaces that have a label with the key
+     *     `owner`, this is the same as `labels:owner`
+     * *   `labels.owner=sd` returns namespaces that have key/value `owner=sd`
+     * *   `name&gt;projects/my-project/locations/us-east1/namespaces/namespace-c`
+     *     returns namespaces that have name that is alphabetically later than the
+     *     string, so "namespace-e" is returned but "namespace-a" is not
+     * *   `labels.owner!=sd AND labels.foo=bar` returns namespaces that have
+     *     `owner` in label key but value is not `sd` AND have key/value `foo=bar`
+     * *   `doesnotexist.foo=bar` returns an empty list. Note that namespace
+     *     doesn't have a field called "doesnotexist". Since the filter does not
+     *     match any namespaces, it returns no results
+     * For more information about filtering, see
+     * [API Filtering](https://aip.dev/160).
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1070,27 +1072,28 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The filter to list result by.
-     * General filter string syntax:
-     * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
-     * &lt;field&gt; can be "name", or "labels.&lt;key&gt;" for map field.
-     * &lt;operator&gt; can be "&lt;, &gt;, &lt;=, &gt;=, !=, =, :". Of which ":" means HAS, and
-     * is roughly the same as "=".
-     * &lt;value&gt; must be the same data type as field.
-     * &lt;logical connector&gt; can be "AND, OR, NOT".
+     * Optional. The filter to list results by.
+     * General `filter` string syntax:
+     * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+     * *   `&lt;field&gt;` can be `name` or `labels.&lt;key&gt;` for map field
+     * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
+     *     means `HAS`, and is roughly the same as `=`
+     * *   `&lt;value&gt;` must be the same data type as field
+     * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
      * Examples of valid filters:
-     * * "labels.owner" returns Namespaces that have a label with the key "owner"
-     *   this is the same as "labels:owner".
-     * * "labels.protocol=gRPC" returns Namespaces that have key/value
-     *   "protocol=gRPC".
-     * * "name&gt;projects/my-project/locations/us-east/namespaces/namespace-c"
-     *   returns Namespaces that have name that is alphabetically later than the
-     *   string, so "namespace-e" will be returned but "namespace-a" will not be.
-     * * "labels.owner!=sd AND labels.foo=bar" returns Namespaces that have
-     *   "owner" in label key but value is not "sd" AND have key/value foo=bar.
-     * * "doesnotexist.foo=bar" returns an empty list. Note that Namespace doesn't
-     *   have a field called "doesnotexist". Since the filter does not match any
-     *   Namespaces, it returns no results.
+     * *   `labels.owner` returns namespaces that have a label with the key
+     *     `owner`, this is the same as `labels:owner`
+     * *   `labels.owner=sd` returns namespaces that have key/value `owner=sd`
+     * *   `name&gt;projects/my-project/locations/us-east1/namespaces/namespace-c`
+     *     returns namespaces that have name that is alphabetically later than the
+     *     string, so "namespace-e" is returned but "namespace-a" is not
+     * *   `labels.owner!=sd AND labels.foo=bar` returns namespaces that have
+     *     `owner` in label key but value is not `sd` AND have key/value `foo=bar`
+     * *   `doesnotexist.foo=bar` returns an empty list. Note that namespace
+     *     doesn't have a field called "doesnotexist". Since the filter does not
+     *     match any namespaces, it returns no results
+     * For more information about filtering, see
+     * [API Filtering](https://aip.dev/160).
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1109,27 +1112,28 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The filter to list result by.
-     * General filter string syntax:
-     * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
-     * &lt;field&gt; can be "name", or "labels.&lt;key&gt;" for map field.
-     * &lt;operator&gt; can be "&lt;, &gt;, &lt;=, &gt;=, !=, =, :". Of which ":" means HAS, and
-     * is roughly the same as "=".
-     * &lt;value&gt; must be the same data type as field.
-     * &lt;logical connector&gt; can be "AND, OR, NOT".
+     * Optional. The filter to list results by.
+     * General `filter` string syntax:
+     * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+     * *   `&lt;field&gt;` can be `name` or `labels.&lt;key&gt;` for map field
+     * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
+     *     means `HAS`, and is roughly the same as `=`
+     * *   `&lt;value&gt;` must be the same data type as field
+     * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
      * Examples of valid filters:
-     * * "labels.owner" returns Namespaces that have a label with the key "owner"
-     *   this is the same as "labels:owner".
-     * * "labels.protocol=gRPC" returns Namespaces that have key/value
-     *   "protocol=gRPC".
-     * * "name&gt;projects/my-project/locations/us-east/namespaces/namespace-c"
-     *   returns Namespaces that have name that is alphabetically later than the
-     *   string, so "namespace-e" will be returned but "namespace-a" will not be.
-     * * "labels.owner!=sd AND labels.foo=bar" returns Namespaces that have
-     *   "owner" in label key but value is not "sd" AND have key/value foo=bar.
-     * * "doesnotexist.foo=bar" returns an empty list. Note that Namespace doesn't
-     *   have a field called "doesnotexist". Since the filter does not match any
-     *   Namespaces, it returns no results.
+     * *   `labels.owner` returns namespaces that have a label with the key
+     *     `owner`, this is the same as `labels:owner`
+     * *   `labels.owner=sd` returns namespaces that have key/value `owner=sd`
+     * *   `name&gt;projects/my-project/locations/us-east1/namespaces/namespace-c`
+     *     returns namespaces that have name that is alphabetically later than the
+     *     string, so "namespace-e" is returned but "namespace-a" is not
+     * *   `labels.owner!=sd AND labels.foo=bar` returns namespaces that have
+     *     `owner` in label key but value is not `sd` AND have key/value `foo=bar`
+     * *   `doesnotexist.foo=bar` returns an empty list. Note that namespace
+     *     doesn't have a field called "doesnotexist". Since the filter does not
+     *     match any namespaces, it returns no results
+     * For more information about filtering, see
+     * [API Filtering](https://aip.dev/160).
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1143,27 +1147,28 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The filter to list result by.
-     * General filter string syntax:
-     * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
-     * &lt;field&gt; can be "name", or "labels.&lt;key&gt;" for map field.
-     * &lt;operator&gt; can be "&lt;, &gt;, &lt;=, &gt;=, !=, =, :". Of which ":" means HAS, and
-     * is roughly the same as "=".
-     * &lt;value&gt; must be the same data type as field.
-     * &lt;logical connector&gt; can be "AND, OR, NOT".
+     * Optional. The filter to list results by.
+     * General `filter` string syntax:
+     * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+     * *   `&lt;field&gt;` can be `name` or `labels.&lt;key&gt;` for map field
+     * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
+     *     means `HAS`, and is roughly the same as `=`
+     * *   `&lt;value&gt;` must be the same data type as field
+     * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
      * Examples of valid filters:
-     * * "labels.owner" returns Namespaces that have a label with the key "owner"
-     *   this is the same as "labels:owner".
-     * * "labels.protocol=gRPC" returns Namespaces that have key/value
-     *   "protocol=gRPC".
-     * * "name&gt;projects/my-project/locations/us-east/namespaces/namespace-c"
-     *   returns Namespaces that have name that is alphabetically later than the
-     *   string, so "namespace-e" will be returned but "namespace-a" will not be.
-     * * "labels.owner!=sd AND labels.foo=bar" returns Namespaces that have
-     *   "owner" in label key but value is not "sd" AND have key/value foo=bar.
-     * * "doesnotexist.foo=bar" returns an empty list. Note that Namespace doesn't
-     *   have a field called "doesnotexist". Since the filter does not match any
-     *   Namespaces, it returns no results.
+     * *   `labels.owner` returns namespaces that have a label with the key
+     *     `owner`, this is the same as `labels:owner`
+     * *   `labels.owner=sd` returns namespaces that have key/value `owner=sd`
+     * *   `name&gt;projects/my-project/locations/us-east1/namespaces/namespace-c`
+     *     returns namespaces that have name that is alphabetically later than the
+     *     string, so "namespace-e" is returned but "namespace-a" is not
+     * *   `labels.owner!=sd AND labels.foo=bar` returns namespaces that have
+     *     `owner` in label key but value is not `sd` AND have key/value `foo=bar`
+     * *   `doesnotexist.foo=bar` returns an empty list. Note that namespace
+     *     doesn't have a field called "doesnotexist". Since the filter does not
+     *     match any namespaces, it returns no results
+     * For more information about filtering, see
+     * [API Filtering](https://aip.dev/160).
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1185,14 +1190,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object orderBy_ = "";
     /**
      * <pre>
-     * Optional. The order to list result by.
-     * General order by string syntax:
-     * &lt;field&gt; (&lt;asc|desc&gt;) (,)
-     * &lt;field&gt; allows values {"name"}
-     * &lt;asc/desc&gt; ascending or descending order by &lt;field&gt;. If this is left
-     * blank, "asc" is used.
-     * Note that an empty order_by string result in default order, which is order
-     * by name in ascending order.
+     * Optional. The order to list results by.
+     * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+     * *   `&lt;field&gt;` allows value: `name`
+     * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
+     *     left blank, `asc` is used
+     * Note that an empty `order_by` string results in default order, which is
+     * order by `name` in ascending order.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1212,14 +1216,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The order to list result by.
-     * General order by string syntax:
-     * &lt;field&gt; (&lt;asc|desc&gt;) (,)
-     * &lt;field&gt; allows values {"name"}
-     * &lt;asc/desc&gt; ascending or descending order by &lt;field&gt;. If this is left
-     * blank, "asc" is used.
-     * Note that an empty order_by string result in default order, which is order
-     * by name in ascending order.
+     * Optional. The order to list results by.
+     * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+     * *   `&lt;field&gt;` allows value: `name`
+     * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
+     *     left blank, `asc` is used
+     * Note that an empty `order_by` string results in default order, which is
+     * order by `name` in ascending order.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1240,14 +1243,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The order to list result by.
-     * General order by string syntax:
-     * &lt;field&gt; (&lt;asc|desc&gt;) (,)
-     * &lt;field&gt; allows values {"name"}
-     * &lt;asc/desc&gt; ascending or descending order by &lt;field&gt;. If this is left
-     * blank, "asc" is used.
-     * Note that an empty order_by string result in default order, which is order
-     * by name in ascending order.
+     * Optional. The order to list results by.
+     * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+     * *   `&lt;field&gt;` allows value: `name`
+     * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
+     *     left blank, `asc` is used
+     * Note that an empty `order_by` string results in default order, which is
+     * order by `name` in ascending order.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1266,14 +1268,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The order to list result by.
-     * General order by string syntax:
-     * &lt;field&gt; (&lt;asc|desc&gt;) (,)
-     * &lt;field&gt; allows values {"name"}
-     * &lt;asc/desc&gt; ascending or descending order by &lt;field&gt;. If this is left
-     * blank, "asc" is used.
-     * Note that an empty order_by string result in default order, which is order
-     * by name in ascending order.
+     * Optional. The order to list results by.
+     * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+     * *   `&lt;field&gt;` allows value: `name`
+     * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
+     *     left blank, `asc` is used
+     * Note that an empty `order_by` string results in default order, which is
+     * order by `name` in ascending order.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1287,14 +1288,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The order to list result by.
-     * General order by string syntax:
-     * &lt;field&gt; (&lt;asc|desc&gt;) (,)
-     * &lt;field&gt; allows values {"name"}
-     * &lt;asc/desc&gt; ascending or descending order by &lt;field&gt;. If this is left
-     * blank, "asc" is used.
-     * Note that an empty order_by string result in default order, which is order
-     * by name in ascending order.
+     * Optional. The order to list results by.
+     * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+     * *   `&lt;field&gt;` allows value: `name`
+     * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
+     *     left blank, `asc` is used
+     * Note that an empty `order_by` string results in default order, which is
+     * order by `name` in ascending order.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

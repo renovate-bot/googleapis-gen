@@ -247,7 +247,7 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
             gcs_namespace.Namespace]:
         r"""Return a callable for the create namespace method over gRPC.
 
-        Creates a namespace, and returns the new Namespace.
+        Creates a namespace, and returns the new namespace.
 
         Returns:
             Callable[[~.CreateNamespaceRequest],
@@ -378,7 +378,7 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
             gcs_service.Service]:
         r"""Return a callable for the create service method over gRPC.
 
-        Creates a service, and returns the new Service.
+        Creates a service, and returns the new service.
 
         Returns:
             Callable[[~.CreateServiceRequest],
@@ -509,7 +509,7 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
             gcs_endpoint.Endpoint]:
         r"""Return a callable for the create endpoint method over gRPC.
 
-        Creates a endpoint, and returns the new Endpoint.
+        Creates an endpoint, and returns the new endpoint.
 
         Returns:
             Callable[[~.CreateEndpointRequest],
@@ -561,7 +561,7 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
             endpoint.Endpoint]:
         r"""Return a callable for the get endpoint method over gRPC.
 
-        Gets a endpoint.
+        Gets an endpoint.
 
         Returns:
             Callable[[~.GetEndpointRequest],
@@ -587,7 +587,7 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
             gcs_endpoint.Endpoint]:
         r"""Return a callable for the update endpoint method over gRPC.
 
-        Updates a endpoint.
+        Updates an endpoint.
 
         Returns:
             Callable[[~.UpdateEndpointRequest],
@@ -613,7 +613,7 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
             empty_pb2.Empty]:
         r"""Return a callable for the delete endpoint method over gRPC.
 
-        Deletes a endpoint.
+        Deletes an endpoint.
 
         Returns:
             Callable[[~.DeleteEndpointRequest],

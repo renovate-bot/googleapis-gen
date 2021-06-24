@@ -10,7 +10,7 @@ public interface NamespaceOrBuilder extends
   /**
    * <pre>
    * Immutable. The resource name for the namespace in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -20,7 +20,7 @@ public interface NamespaceOrBuilder extends
   /**
    * <pre>
    * Immutable. The resource name for the namespace in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -31,8 +31,8 @@ public interface NamespaceOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -41,8 +41,8 @@ public interface NamespaceOrBuilder extends
   int getLabelsCount();
   /**
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -58,8 +58,8 @@ public interface NamespaceOrBuilder extends
   getLabels();
   /**
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -69,8 +69,8 @@ public interface NamespaceOrBuilder extends
   getLabelsMap();
   /**
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -82,8 +82,8 @@ public interface NamespaceOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -92,4 +92,58 @@ public interface NamespaceOrBuilder extends
 
   java.lang.String getLabelsOrThrow(
       java.lang.String key);
+
+  /**
+   * <pre>
+   * Output only. The timestamp when the namespace was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+  /**
+   * <pre>
+   * Output only. The timestamp when the namespace was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   * <pre>
+   * Output only. The timestamp when the namespace was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Output only. The timestamp when the namespace was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+  /**
+   * <pre>
+   * Output only. The timestamp when the namespace was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   * <pre>
+   * Output only. The timestamp when the namespace was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

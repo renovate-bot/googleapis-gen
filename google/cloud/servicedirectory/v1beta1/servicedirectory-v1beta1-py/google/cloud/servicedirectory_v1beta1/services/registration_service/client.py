@@ -41,6 +41,7 @@ from google.cloud.servicedirectory_v1beta1.types import service as gcs_service
 from google.iam.v1 import iam_policy_pb2  # type: ignore
 from google.iam.v1 import policy_pb2  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import RegistrationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import RegistrationServiceGrpcTransport
 from .transports.grpc_asyncio import RegistrationServiceGrpcAsyncIOTransport
@@ -200,6 +201,17 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
     def parse_namespace_path(path: str) -> Dict[str,str]:
         """Parses a namespace path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/namespaces/(?P<namespace>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def network_path(project: str,network: str,) -> str:
+        """Returns a fully-qualified network string."""
+        return "projects/{project}/locations/global/networks/{network}".format(project=project, network=network, )
+
+    @staticmethod
+    def parse_network_path(path: str) -> Dict[str,str]:
+        """Parses a network path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/global/networks/(?P<network>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
@@ -388,7 +400,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_namespace.Namespace:
-        r"""Creates a namespace, and returns the new Namespace.
+        r"""Creates a namespace, and returns the new namespace.
 
         Args:
             request (google.cloud.servicedirectory_v1beta1.types.CreateNamespaceRequest):
@@ -499,7 +511,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             parent (str):
                 Required. The resource name of the
                 project and location whose namespaces
-                we'd like to list.
+                you'd like to list.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -809,7 +821,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_service.Service:
-        r"""Creates a service, and returns the new Service.
+        r"""Creates a service, and returns the new service.
 
         Args:
             request (google.cloud.servicedirectory_v1beta1.types.CreateServiceRequest):
@@ -918,7 +930,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
                 [RegistrationService.ListServices][google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices].
             parent (str):
                 Required. The resource name of the
-                namespace whose services we'd like to
+                namespace whose services you'd like to
                 list.
 
                 This corresponds to the ``parent`` field
@@ -1005,7 +1017,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
                 The request object. The request message for
                 [RegistrationService.GetService][google.cloud.servicedirectory.v1beta1.RegistrationService.GetService].
                 This should not be used for looking up a service.
-                Insead, use the `resolve` method as it will contain all
+                Insead, use the `resolve` method as it contains all
                 endpoints and associated metadata.
             name (str):
                 Required. The name of the service to
@@ -1232,7 +1244,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_endpoint.Endpoint:
-        r"""Creates a endpoint, and returns the new Endpoint.
+        r"""Creates an endpoint, and returns the new endpoint.
 
         Args:
             request (google.cloud.servicedirectory_v1beta1.types.CreateEndpointRequest):
@@ -1340,7 +1352,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
                 [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
             parent (str):
                 Required. The resource name of the
-                service whose endpoints we'd like to
+                service whose endpoints you'd like to
                 list.
 
                 This corresponds to the ``parent`` field
@@ -1420,7 +1432,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> endpoint.Endpoint:
-        r"""Gets a endpoint.
+        r"""Gets an endpoint.
 
         Args:
             request (google.cloud.servicedirectory_v1beta1.types.GetEndpointRequest):
@@ -1499,7 +1511,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_endpoint.Endpoint:
-        r"""Updates a endpoint.
+        r"""Updates an endpoint.
 
         Args:
             request (google.cloud.servicedirectory_v1beta1.types.UpdateEndpointRequest):
@@ -1582,7 +1594,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
-        r"""Deletes a endpoint.
+        r"""Deletes an endpoint.
 
         Args:
             request (google.cloud.servicedirectory_v1beta1.types.DeleteEndpointRequest):
@@ -1925,7 +1937,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-servicedirectory",
+            "google-cloud-service-directory",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

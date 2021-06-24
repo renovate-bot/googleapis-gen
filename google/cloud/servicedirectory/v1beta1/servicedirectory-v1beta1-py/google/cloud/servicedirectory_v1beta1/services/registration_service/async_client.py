@@ -37,6 +37,7 @@ from google.cloud.servicedirectory_v1beta1.types import service as gcs_service
 from google.iam.v1 import iam_policy_pb2  # type: ignore
 from google.iam.v1 import policy_pb2  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import RegistrationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import RegistrationServiceGrpcAsyncIOTransport
 from .client import RegistrationServiceClient
@@ -70,6 +71,8 @@ class RegistrationServiceAsyncClient:
     parse_endpoint_path = staticmethod(RegistrationServiceClient.parse_endpoint_path)
     namespace_path = staticmethod(RegistrationServiceClient.namespace_path)
     parse_namespace_path = staticmethod(RegistrationServiceClient.parse_namespace_path)
+    network_path = staticmethod(RegistrationServiceClient.network_path)
+    parse_network_path = staticmethod(RegistrationServiceClient.parse_network_path)
     service_path = staticmethod(RegistrationServiceClient.service_path)
     parse_service_path = staticmethod(RegistrationServiceClient.parse_service_path)
     common_billing_account_path = staticmethod(RegistrationServiceClient.common_billing_account_path)
@@ -183,7 +186,7 @@ class RegistrationServiceAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_namespace.Namespace:
-        r"""Creates a namespace, and returns the new Namespace.
+        r"""Creates a namespace, and returns the new namespace.
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.CreateNamespaceRequest`):
@@ -294,7 +297,7 @@ class RegistrationServiceAsyncClient:
             parent (:class:`str`):
                 Required. The resource name of the
                 project and location whose namespaces
-                we'd like to list.
+                you'd like to list.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -604,7 +607,7 @@ class RegistrationServiceAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_service.Service:
-        r"""Creates a service, and returns the new Service.
+        r"""Creates a service, and returns the new service.
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.CreateServiceRequest`):
@@ -713,7 +716,7 @@ class RegistrationServiceAsyncClient:
                 [RegistrationService.ListServices][google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices].
             parent (:class:`str`):
                 Required. The resource name of the
-                namespace whose services we'd like to
+                namespace whose services you'd like to
                 list.
 
                 This corresponds to the ``parent`` field
@@ -800,7 +803,7 @@ class RegistrationServiceAsyncClient:
                 The request object. The request message for
                 [RegistrationService.GetService][google.cloud.servicedirectory.v1beta1.RegistrationService.GetService].
                 This should not be used for looking up a service.
-                Insead, use the `resolve` method as it will contain all
+                Insead, use the `resolve` method as it contains all
                 endpoints and associated metadata.
             name (:class:`str`):
                 Required. The name of the service to
@@ -1027,7 +1030,7 @@ class RegistrationServiceAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_endpoint.Endpoint:
-        r"""Creates a endpoint, and returns the new Endpoint.
+        r"""Creates an endpoint, and returns the new endpoint.
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.CreateEndpointRequest`):
@@ -1135,7 +1138,7 @@ class RegistrationServiceAsyncClient:
                 [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
             parent (:class:`str`):
                 Required. The resource name of the
-                service whose endpoints we'd like to
+                service whose endpoints you'd like to
                 list.
 
                 This corresponds to the ``parent`` field
@@ -1215,7 +1218,7 @@ class RegistrationServiceAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> endpoint.Endpoint:
-        r"""Gets a endpoint.
+        r"""Gets an endpoint.
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.GetEndpointRequest`):
@@ -1294,7 +1297,7 @@ class RegistrationServiceAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_endpoint.Endpoint:
-        r"""Updates a endpoint.
+        r"""Updates an endpoint.
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.UpdateEndpointRequest`):
@@ -1377,7 +1380,7 @@ class RegistrationServiceAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
-        r"""Deletes a endpoint.
+        r"""Deletes an endpoint.
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.DeleteEndpointRequest`):
@@ -1723,7 +1726,7 @@ class RegistrationServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-servicedirectory",
+            "google-cloud-service-directory",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

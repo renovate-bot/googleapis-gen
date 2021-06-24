@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
   private Endpoint() {
     name_ = "";
     address_ = "";
+    network_ = "";
   }
 
   @java.lang.Override
@@ -87,6 +88,38 @@ private static final long serialVersionUID = 0L;
                 metadata__.getKey(), metadata__.getValue());
             break;
           }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            network_ = s;
+            break;
+          }
+          case 50: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (createTime_ != null) {
+              subBuilder = createTime_.toBuilder();
+            }
+            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(createTime_);
+              createTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 58: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (updateTime_ != null) {
+              subBuilder = updateTime_.toBuilder();
+            }
+            updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateTime_);
+              updateTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -136,7 +169,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. The resource name for the endpoint in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -158,7 +191,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. The resource name for the endpoint in the format
-   * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;'.
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -183,13 +216,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object address_;
   /**
    * <pre>
-   * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-   * addresses like:
-   *   "8.8.8"
-   *   "8.8.8.8:53"
-   *   "test:bad:address"
-   *   "[::1]"
-   *   "[::1]:8080"
+   * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses like:
+   * *   `8.8.8`
+   * *   `8.8.8.8:53`
+   * *   `test:bad:address`
+   * *   `[::1]`
+   * *   `[::1]:8080`
    * Limited to 45 characters.
    * </pre>
    *
@@ -211,13 +243,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-   * addresses like:
-   *   "8.8.8"
-   *   "8.8.8.8:53"
-   *   "test:bad:address"
-   *   "[::1]"
-   *   "[::1]:8080"
+   * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses like:
+   * *   `8.8.8`
+   * *   `8.8.8.8:53`
+   * *   `test:bad:address`
+   * *   `[::1]`
+   * *   `[::1]:8080`
    * Limited to 45 characters.
    * </pre>
    *
@@ -243,7 +274,7 @@ private static final long serialVersionUID = 0L;
   private int port_;
   /**
    * <pre>
-   * Optional. Service Directory will reject values outside of [0, 65535].
+   * Optional. Service Directory rejects values outside of `[0, 65535]`.
    * </pre>
    *
    * <code>int32 port = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -283,9 +314,26 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. Metadata for the endpoint. This data can be consumed by service
-   * clients.  The entire metadata dictionary may contain up to 512 characters,
-   * spread accoss all key-value pairs. Metadata that goes beyond any these
-   * limits will be rejected.
+   * clients.
+   * Restrictions:
+   * *   The entire metadata dictionary may contain up to 512 characters,
+   *     spread accoss all key-value pairs. Metadata that goes beyond this
+   *     limit are rejected
+   * *   Valid metadata keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Metadata that fails to meet these requirements are rejected
+   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+   *     for system metadata managed by Service Directory. If the user tries
+   *     to write to these keyspaces, those entries are silently ignored by
+   *     the system
+   * Note: This field is equivalent to the `annotations` field in the v1 API.
+   * They have the same syntax and read/write to the same location in Service
+   * Directory.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -308,9 +356,26 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. Metadata for the endpoint. This data can be consumed by service
-   * clients.  The entire metadata dictionary may contain up to 512 characters,
-   * spread accoss all key-value pairs. Metadata that goes beyond any these
-   * limits will be rejected.
+   * clients.
+   * Restrictions:
+   * *   The entire metadata dictionary may contain up to 512 characters,
+   *     spread accoss all key-value pairs. Metadata that goes beyond this
+   *     limit are rejected
+   * *   Valid metadata keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Metadata that fails to meet these requirements are rejected
+   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+   *     for system metadata managed by Service Directory. If the user tries
+   *     to write to these keyspaces, those entries are silently ignored by
+   *     the system
+   * Note: This field is equivalent to the `annotations` field in the v1 API.
+   * They have the same syntax and read/write to the same location in Service
+   * Directory.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -323,9 +388,26 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. Metadata for the endpoint. This data can be consumed by service
-   * clients.  The entire metadata dictionary may contain up to 512 characters,
-   * spread accoss all key-value pairs. Metadata that goes beyond any these
-   * limits will be rejected.
+   * clients.
+   * Restrictions:
+   * *   The entire metadata dictionary may contain up to 512 characters,
+   *     spread accoss all key-value pairs. Metadata that goes beyond this
+   *     limit are rejected
+   * *   Valid metadata keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Metadata that fails to meet these requirements are rejected
+   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+   *     for system metadata managed by Service Directory. If the user tries
+   *     to write to these keyspaces, those entries are silently ignored by
+   *     the system
+   * Note: This field is equivalent to the `annotations` field in the v1 API.
+   * They have the same syntax and read/write to the same location in Service
+   * Directory.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -343,9 +425,26 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. Metadata for the endpoint. This data can be consumed by service
-   * clients.  The entire metadata dictionary may contain up to 512 characters,
-   * spread accoss all key-value pairs. Metadata that goes beyond any these
-   * limits will be rejected.
+   * clients.
+   * Restrictions:
+   * *   The entire metadata dictionary may contain up to 512 characters,
+   *     spread accoss all key-value pairs. Metadata that goes beyond this
+   *     limit are rejected
+   * *   Valid metadata keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Metadata that fails to meet these requirements are rejected
+   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+   *     for system metadata managed by Service Directory. If the user tries
+   *     to write to these keyspaces, those entries are silently ignored by
+   *     the system
+   * Note: This field is equivalent to the `annotations` field in the v1 API.
+   * They have the same syntax and read/write to the same location in Service
+   * Directory.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -361,6 +460,138 @@ private static final long serialVersionUID = 0L;
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int NETWORK_FIELD_NUMBER = 5;
+  private volatile java.lang.Object network_;
+  /**
+   * <pre>
+   * Immutable. The Google Compute Engine network (VPC) of the endpoint in the format
+   * `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+   * The project must be specified by project number (project id is rejected).
+   * Incorrectly formatted networks are rejected, but no other validation
+   * is performed on this field (ex. network or project existence, reachability,
+   * or permissions).
+   * </pre>
+   *
+   * <code>string network = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * @return The network.
+   */
+  @java.lang.Override
+  public java.lang.String getNetwork() {
+    java.lang.Object ref = network_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      network_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Immutable. The Google Compute Engine network (VPC) of the endpoint in the format
+   * `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+   * The project must be specified by project number (project id is rejected).
+   * Incorrectly formatted networks are rejected, but no other validation
+   * is performed on this field (ex. network or project existence, reachability,
+   * or permissions).
+   * </pre>
+   *
+   * <code>string network = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for network.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNetworkBytes() {
+    java.lang.Object ref = network_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      network_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 6;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   * <pre>
+   * Output only. The timestamp when the endpoint was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return createTime_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. The timestamp when the endpoint was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   * <pre>
+   * Output only. The timestamp when the endpoint was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return getCreateTime();
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   * <pre>
+   * Output only. The timestamp when the endpoint was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. The timestamp when the endpoint was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   * <pre>
+   * Output only. The timestamp when the endpoint was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,6 +623,15 @@ private static final long serialVersionUID = 0L;
         internalGetMetadata(),
         MetadataDefaultEntryHolder.defaultEntry,
         4);
+    if (!getNetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, network_);
+    }
+    if (createTime_ != null) {
+      output.writeMessage(6, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(7, getUpdateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -421,6 +661,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, metadata__);
     }
+    if (!getNetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, network_);
+    }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getUpdateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -444,6 +695,18 @@ private static final long serialVersionUID = 0L;
         != other.getPort()) return false;
     if (!internalGetMetadata().equals(
         other.internalGetMetadata())) return false;
+    if (!getNetwork()
+        .equals(other.getNetwork())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime()
+          .equals(other.getCreateTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime()
+          .equals(other.getUpdateTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -464,6 +727,16 @@ private static final long serialVersionUID = 0L;
     if (!internalGetMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
+    }
+    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getNetwork().hashCode();
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -633,6 +906,20 @@ private static final long serialVersionUID = 0L;
       port_ = 0;
 
       internalGetMutableMetadata().clear();
+      network_ = "";
+
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -665,6 +952,17 @@ private static final long serialVersionUID = 0L;
       result.port_ = port_;
       result.metadata_ = internalGetMetadata();
       result.metadata_.makeImmutable();
+      result.network_ = network_;
+      if (createTimeBuilder_ == null) {
+        result.createTime_ = createTime_;
+      } else {
+        result.createTime_ = createTimeBuilder_.build();
+      }
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -726,6 +1024,16 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableMetadata().mergeFrom(
           other.internalGetMetadata());
+      if (!other.getNetwork().isEmpty()) {
+        network_ = other.network_;
+        onChanged();
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -760,7 +1068,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The resource name for the endpoint in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -781,7 +1089,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The resource name for the endpoint in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -803,7 +1111,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The resource name for the endpoint in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -823,7 +1131,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The resource name for the endpoint in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -838,7 +1146,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The resource name for the endpoint in the format
-     * 'projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;'.
+     * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -860,13 +1168,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object address_ = "";
     /**
      * <pre>
-     * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-     * addresses like:
-     *   "8.8.8"
-     *   "8.8.8.8:53"
-     *   "test:bad:address"
-     *   "[::1]"
-     *   "[::1]:8080"
+     * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses like:
+     * *   `8.8.8`
+     * *   `8.8.8.8:53`
+     * *   `test:bad:address`
+     * *   `[::1]`
+     * *   `[::1]:8080`
      * Limited to 45 characters.
      * </pre>
      *
@@ -887,13 +1194,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-     * addresses like:
-     *   "8.8.8"
-     *   "8.8.8.8:53"
-     *   "test:bad:address"
-     *   "[::1]"
-     *   "[::1]:8080"
+     * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses like:
+     * *   `8.8.8`
+     * *   `8.8.8.8:53`
+     * *   `test:bad:address`
+     * *   `[::1]`
+     * *   `[::1]:8080`
      * Limited to 45 characters.
      * </pre>
      *
@@ -915,13 +1221,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-     * addresses like:
-     *   "8.8.8"
-     *   "8.8.8.8:53"
-     *   "test:bad:address"
-     *   "[::1]"
-     *   "[::1]:8080"
+     * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses like:
+     * *   `8.8.8`
+     * *   `8.8.8.8:53`
+     * *   `test:bad:address`
+     * *   `[::1]`
+     * *   `[::1]:8080`
      * Limited to 45 characters.
      * </pre>
      *
@@ -941,13 +1246,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-     * addresses like:
-     *   "8.8.8"
-     *   "8.8.8.8:53"
-     *   "test:bad:address"
-     *   "[::1]"
-     *   "[::1]:8080"
+     * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses like:
+     * *   `8.8.8`
+     * *   `8.8.8.8:53`
+     * *   `test:bad:address`
+     * *   `[::1]`
+     * *   `[::1]:8080`
      * Limited to 45 characters.
      * </pre>
      *
@@ -962,13 +1266,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-     * addresses like:
-     *   "8.8.8"
-     *   "8.8.8.8:53"
-     *   "test:bad:address"
-     *   "[::1]"
-     *   "[::1]:8080"
+     * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses like:
+     * *   `8.8.8`
+     * *   `8.8.8.8:53`
+     * *   `test:bad:address`
+     * *   `[::1]`
+     * *   `[::1]:8080`
      * Limited to 45 characters.
      * </pre>
      *
@@ -991,7 +1294,7 @@ private static final long serialVersionUID = 0L;
     private int port_ ;
     /**
      * <pre>
-     * Optional. Service Directory will reject values outside of [0, 65535].
+     * Optional. Service Directory rejects values outside of `[0, 65535]`.
      * </pre>
      *
      * <code>int32 port = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1003,7 +1306,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Service Directory will reject values outside of [0, 65535].
+     * Optional. Service Directory rejects values outside of `[0, 65535]`.
      * </pre>
      *
      * <code>int32 port = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1018,7 +1321,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Service Directory will reject values outside of [0, 65535].
+     * Optional. Service Directory rejects values outside of `[0, 65535]`.
      * </pre>
      *
      * <code>int32 port = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1060,9 +1363,26 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Metadata for the endpoint. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 512 characters,
-     * spread accoss all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1085,9 +1405,26 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Metadata for the endpoint. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 512 characters,
-     * spread accoss all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1100,9 +1437,26 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Metadata for the endpoint. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 512 characters,
-     * spread accoss all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1120,9 +1474,26 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Metadata for the endpoint. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 512 characters,
-     * spread accoss all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1148,9 +1519,26 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Metadata for the endpoint. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 512 characters,
-     * spread accoss all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1174,9 +1562,26 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Metadata for the endpoint. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 512 characters,
-     * spread accoss all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1193,9 +1598,26 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Metadata for the endpoint. This data can be consumed by service
-     * clients.  The entire metadata dictionary may contain up to 512 characters,
-     * spread accoss all key-value pairs. Metadata that goes beyond any these
-     * limits will be rejected.
+     * clients.
+     * Restrictions:
+     * *   The entire metadata dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Metadata that goes beyond this
+     *     limit are rejected
+     * *   Valid metadata keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/).
+     *     Metadata that fails to meet these requirements are rejected
+     * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
+     *     for system metadata managed by Service Directory. If the user tries
+     *     to write to these keyspaces, those entries are silently ignored by
+     *     the system
+     * Note: This field is equivalent to the `annotations` field in the v1 API.
+     * They have the same syntax and read/write to the same location in Service
+     * Directory.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1206,6 +1628,437 @@ private static final long serialVersionUID = 0L;
       internalGetMutableMetadata().getMutableMap()
           .putAll(values);
       return this;
+    }
+
+    private java.lang.Object network_ = "";
+    /**
+     * <pre>
+     * Immutable. The Google Compute Engine network (VPC) of the endpoint in the format
+     * `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+     * The project must be specified by project number (project id is rejected).
+     * Incorrectly formatted networks are rejected, but no other validation
+     * is performed on this field (ex. network or project existence, reachability,
+     * or permissions).
+     * </pre>
+     *
+     * <code>string network = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * @return The network.
+     */
+    public java.lang.String getNetwork() {
+      java.lang.Object ref = network_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        network_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Immutable. The Google Compute Engine network (VPC) of the endpoint in the format
+     * `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+     * The project must be specified by project number (project id is rejected).
+     * Incorrectly formatted networks are rejected, but no other validation
+     * is performed on this field (ex. network or project existence, reachability,
+     * or permissions).
+     * </pre>
+     *
+     * <code>string network = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for network.
+     */
+    public com.google.protobuf.ByteString
+        getNetworkBytes() {
+      java.lang.Object ref = network_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        network_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Immutable. The Google Compute Engine network (VPC) of the endpoint in the format
+     * `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+     * The project must be specified by project number (project id is rejected).
+     * Incorrectly formatted networks are rejected, but no other validation
+     * is performed on this field (ex. network or project existence, reachability,
+     * or permissions).
+     * </pre>
+     *
+     * <code>string network = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * @param value The network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetwork(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      network_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Immutable. The Google Compute Engine network (VPC) of the endpoint in the format
+     * `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+     * The project must be specified by project number (project id is rejected).
+     * Incorrectly formatted networks are rejected, but no other validation
+     * is performed on this field (ex. network or project existence, reachability,
+     * or permissions).
+     * </pre>
+     *
+     * <code>string network = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNetwork() {
+      
+      network_ = getDefaultInstance().getNetwork();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Immutable. The Google Compute Engine network (VPC) of the endpoint in the format
+     * `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+     * The project must be specified by project number (project id is rejected).
+     * Incorrectly formatted networks are rejected, but no other validation
+     * is performed on this field (ex. network or project existence, reachability,
+     * or permissions).
+     * </pre>
+     *
+     * <code>string network = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      network_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return createTimeBuilder_ != null || createTime_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setCreateTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (createTime_ != null) {
+          createTime_ =
+            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        } else {
+          createTime_ = value;
+        }
+        onChanged();
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearCreateTime() {
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+        onChanged();
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(),
+                getParentForChildren(),
+                isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was last updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was last updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was last updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was last updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setUpdateTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was last updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was last updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was last updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was last updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The timestamp when the endpoint was last updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(),
+                getParentForChildren(),
+                isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

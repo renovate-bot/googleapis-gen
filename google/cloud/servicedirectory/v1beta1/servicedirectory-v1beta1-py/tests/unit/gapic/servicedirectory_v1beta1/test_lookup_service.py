@@ -971,11 +971,30 @@ def test_parse_endpoint_path():
     actual = LookupServiceClient.parse_endpoint_path(path)
     assert expected == actual
 
-def test_service_path():
+def test_network_path():
     project = "scallop"
-    location = "abalone"
-    namespace = "squid"
-    service = "clam"
+    network = "abalone"
+    expected = "projects/{project}/locations/global/networks/{network}".format(project=project, network=network, )
+    actual = LookupServiceClient.network_path(project, network)
+    assert expected == actual
+
+
+def test_parse_network_path():
+    expected = {
+        "project": "squid",
+        "network": "clam",
+    }
+    path = LookupServiceClient.network_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = LookupServiceClient.parse_network_path(path)
+    assert expected == actual
+
+def test_service_path():
+    project = "whelk"
+    location = "octopus"
+    namespace = "oyster"
+    service = "nudibranch"
     expected = "projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}".format(project=project, location=location, namespace=namespace, service=service, )
     actual = LookupServiceClient.service_path(project, location, namespace, service)
     assert expected == actual
@@ -983,10 +1002,10 @@ def test_service_path():
 
 def test_parse_service_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
-        "namespace": "oyster",
-        "service": "nudibranch",
+        "project": "cuttlefish",
+        "location": "mussel",
+        "namespace": "winkle",
+        "service": "nautilus",
     }
     path = LookupServiceClient.service_path(**expected)
 
@@ -995,7 +1014,7 @@ def test_parse_service_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "cuttlefish"
+    billing_account = "scallop"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = LookupServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1003,7 +1022,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "mussel",
+        "billing_account": "abalone",
     }
     path = LookupServiceClient.common_billing_account_path(**expected)
 
@@ -1012,7 +1031,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "winkle"
+    folder = "squid"
     expected = "folders/{folder}".format(folder=folder, )
     actual = LookupServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1020,7 +1039,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nautilus",
+        "folder": "clam",
     }
     path = LookupServiceClient.common_folder_path(**expected)
 
@@ -1029,7 +1048,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "scallop"
+    organization = "whelk"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = LookupServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1037,7 +1056,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "abalone",
+        "organization": "octopus",
     }
     path = LookupServiceClient.common_organization_path(**expected)
 
@@ -1046,7 +1065,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "squid"
+    project = "oyster"
     expected = "projects/{project}".format(project=project, )
     actual = LookupServiceClient.common_project_path(project)
     assert expected == actual
@@ -1054,7 +1073,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "clam",
+        "project": "nudibranch",
     }
     path = LookupServiceClient.common_project_path(**expected)
 
@@ -1063,8 +1082,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "whelk"
-    location = "octopus"
+    project = "cuttlefish"
+    location = "mussel"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = LookupServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1072,8 +1091,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "oyster",
-        "location": "nudibranch",
+        "project": "winkle",
+        "location": "nautilus",
     }
     path = LookupServiceClient.common_location_path(**expected)
 

@@ -17,7 +17,8 @@
 // Package servicedirectory is an auto-generated package for the
 // Service Directory API.
 //
-// Allows the registration and lookup of services.
+// Service Directory is a platform for discovering, publishing, and
+// connecting services.
 //
 // Use of Context
 //
