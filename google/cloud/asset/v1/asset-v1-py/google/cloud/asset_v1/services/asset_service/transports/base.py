@@ -228,24 +228,22 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                 self.search_all_resources,
                 default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
-                    deadline=15.0,
+                    deadline=30.0,
                 ),
-                default_timeout=15.0,
+                default_timeout=30.0,
                 client_info=client_info,
             ),
             self.search_all_iam_policies: gapic_v1.method.wrap_method(
                 self.search_all_iam_policies,
                 default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
-                    deadline=15.0,
+                    deadline=30.0,
                 ),
-                default_timeout=15.0,
+                default_timeout=30.0,
                 client_info=client_info,
             ),
             self.analyze_iam_policy: gapic_v1.method.wrap_method(

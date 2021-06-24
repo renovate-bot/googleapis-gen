@@ -21,7 +21,10 @@ private static final long serialVersionUID = 0L;
   }
   private IamPolicySearchResult() {
     resource_ = "";
+    assetType_ = "";
     project_ = "";
+    folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    organization_ = "";
   }
 
   @java.lang.Override
@@ -44,6 +47,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -92,6 +96,27 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            assetType_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              folders_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            folders_.add(s);
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            organization_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -107,6 +132,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        folders_ = folders_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -1804,6 +1832,58 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ASSET_TYPE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object assetType_;
+  /**
+   * <pre>
+   * The type of the resource associated with this IAM policy. Example:
+   * `compute.googleapis.com/Disk`.
+   * To search against the `asset_type`:
+   * * specify the `asset_types` field in your search request.
+   * </pre>
+   *
+   * <code>string asset_type = 5;</code>
+   * @return The assetType.
+   */
+  @java.lang.Override
+  public java.lang.String getAssetType() {
+    java.lang.Object ref = assetType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      assetType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The type of the resource associated with this IAM policy. Example:
+   * `compute.googleapis.com/Disk`.
+   * To search against the `asset_type`:
+   * * specify the `asset_types` field in your search request.
+   * </pre>
+   *
+   * <code>string asset_type = 5;</code>
+   * @return The bytes for assetType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAssetTypeBytes() {
+    java.lang.Object ref = assetType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      assetType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PROJECT_FIELD_NUMBER = 2;
   private volatile java.lang.Object project_;
   /**
@@ -1856,6 +1936,139 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       project_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FOLDERS_FIELD_NUMBER = 6;
+  private com.google.protobuf.LazyStringList folders_;
+  /**
+   * <pre>
+   * The folder(s) that the IAM policy belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 6;</code>
+   * @return A list containing the folders.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getFoldersList() {
+    return folders_;
+  }
+  /**
+   * <pre>
+   * The folder(s) that the IAM policy belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 6;</code>
+   * @return The count of folders.
+   */
+  public int getFoldersCount() {
+    return folders_.size();
+  }
+  /**
+   * <pre>
+   * The folder(s) that the IAM policy belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 6;</code>
+   * @param index The index of the element to return.
+   * @return The folders at the given index.
+   */
+  public java.lang.String getFolders(int index) {
+    return folders_.get(index);
+  }
+  /**
+   * <pre>
+   * The folder(s) that the IAM policy belongs to, in the form of
+   * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+   * belongs to one or more folders.
+   * To search against `folders`:
+   * * use a field query. Example: `folders:(123 OR 456)`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this folder in your search request.
+   * </pre>
+   *
+   * <code>repeated string folders = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the folders at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getFoldersBytes(int index) {
+    return folders_.getByteString(index);
+  }
+
+  public static final int ORGANIZATION_FIELD_NUMBER = 7;
+  private volatile java.lang.Object organization_;
+  /**
+   * <pre>
+   * The organization that the IAM policy belongs to, in the form
+   * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+   * IAM policy belongs to an organization.
+   * To search against `organization`:
+   * * use a field query. Example: `organization:123`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this organization in your search request.
+   * </pre>
+   *
+   * <code>string organization = 7;</code>
+   * @return The organization.
+   */
+  @java.lang.Override
+  public java.lang.String getOrganization() {
+    java.lang.Object ref = organization_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      organization_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The organization that the IAM policy belongs to, in the form
+   * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+   * IAM policy belongs to an organization.
+   * To search against `organization`:
+   * * use a field query. Example: `organization:123`
+   * * use a free text query. Example: `123`
+   * * specify the `scope` field as this organization in your search request.
+   * </pre>
+   *
+   * <code>string organization = 7;</code>
+   * @return The bytes for organization.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOrganizationBytes() {
+    java.lang.Object ref = organization_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      organization_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2000,6 +2213,15 @@ private static final long serialVersionUID = 0L;
     if (explanation_ != null) {
       output.writeMessage(4, getExplanation());
     }
+    if (!getAssetTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, assetType_);
+    }
+    for (int i = 0; i < folders_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, folders_.getRaw(i));
+    }
+    if (!getOrganizationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, organization_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2023,6 +2245,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getExplanation());
     }
+    if (!getAssetTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, assetType_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < folders_.size(); i++) {
+        dataSize += computeStringSizeNoTag(folders_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getFoldersList().size();
+    }
+    if (!getOrganizationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, organization_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2040,8 +2276,14 @@ private static final long serialVersionUID = 0L;
 
     if (!getResource()
         .equals(other.getResource())) return false;
+    if (!getAssetType()
+        .equals(other.getAssetType())) return false;
     if (!getProject()
         .equals(other.getProject())) return false;
+    if (!getFoldersList()
+        .equals(other.getFoldersList())) return false;
+    if (!getOrganization()
+        .equals(other.getOrganization())) return false;
     if (hasPolicy() != other.hasPolicy()) return false;
     if (hasPolicy()) {
       if (!getPolicy()
@@ -2065,8 +2307,16 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getResource().hashCode();
+    hash = (37 * hash) + ASSET_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getAssetType().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
+    if (getFoldersCount() > 0) {
+      hash = (37 * hash) + FOLDERS_FIELD_NUMBER;
+      hash = (53 * hash) + getFoldersList().hashCode();
+    }
+    hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
+    hash = (53 * hash) + getOrganization().hashCode();
     if (hasPolicy()) {
       hash = (37 * hash) + POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getPolicy().hashCode();
@@ -2214,7 +2464,13 @@ private static final long serialVersionUID = 0L;
       super.clear();
       resource_ = "";
 
+      assetType_ = "";
+
       project_ = "";
+
+      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      organization_ = "";
 
       if (policyBuilder_ == null) {
         policy_ = null;
@@ -2254,8 +2510,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.asset.v1.IamPolicySearchResult buildPartial() {
       com.google.cloud.asset.v1.IamPolicySearchResult result = new com.google.cloud.asset.v1.IamPolicySearchResult(this);
+      int from_bitField0_ = bitField0_;
       result.resource_ = resource_;
+      result.assetType_ = assetType_;
       result.project_ = project_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        folders_ = folders_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.folders_ = folders_;
+      result.organization_ = organization_;
       if (policyBuilder_ == null) {
         result.policy_ = policy_;
       } else {
@@ -2318,8 +2582,26 @@ private static final long serialVersionUID = 0L;
         resource_ = other.resource_;
         onChanged();
       }
+      if (!other.getAssetType().isEmpty()) {
+        assetType_ = other.assetType_;
+        onChanged();
+      }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        onChanged();
+      }
+      if (!other.folders_.isEmpty()) {
+        if (folders_.isEmpty()) {
+          folders_ = other.folders_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureFoldersIsMutable();
+          folders_.addAll(other.folders_);
+        }
+        onChanged();
+      }
+      if (!other.getOrganization().isEmpty()) {
+        organization_ = other.organization_;
         onChanged();
       }
       if (other.hasPolicy()) {
@@ -2356,6 +2638,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object resource_ = "";
     /**
@@ -2488,6 +2771,117 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object assetType_ = "";
+    /**
+     * <pre>
+     * The type of the resource associated with this IAM policy. Example:
+     * `compute.googleapis.com/Disk`.
+     * To search against the `asset_type`:
+     * * specify the `asset_types` field in your search request.
+     * </pre>
+     *
+     * <code>string asset_type = 5;</code>
+     * @return The assetType.
+     */
+    public java.lang.String getAssetType() {
+      java.lang.Object ref = assetType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        assetType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The type of the resource associated with this IAM policy. Example:
+     * `compute.googleapis.com/Disk`.
+     * To search against the `asset_type`:
+     * * specify the `asset_types` field in your search request.
+     * </pre>
+     *
+     * <code>string asset_type = 5;</code>
+     * @return The bytes for assetType.
+     */
+    public com.google.protobuf.ByteString
+        getAssetTypeBytes() {
+      java.lang.Object ref = assetType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        assetType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The type of the resource associated with this IAM policy. Example:
+     * `compute.googleapis.com/Disk`.
+     * To search against the `asset_type`:
+     * * specify the `asset_types` field in your search request.
+     * </pre>
+     *
+     * <code>string asset_type = 5;</code>
+     * @param value The assetType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssetType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      assetType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The type of the resource associated with this IAM policy. Example:
+     * `compute.googleapis.com/Disk`.
+     * To search against the `asset_type`:
+     * * specify the `asset_types` field in your search request.
+     * </pre>
+     *
+     * <code>string asset_type = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAssetType() {
+      
+      assetType_ = getDefaultInstance().getAssetType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The type of the resource associated with this IAM policy. Example:
+     * `compute.googleapis.com/Disk`.
+     * To search against the `asset_type`:
+     * * specify the `asset_types` field in your search request.
+     * </pre>
+     *
+     * <code>string asset_type = 5;</code>
+     * @param value The bytes for assetType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssetTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      assetType_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object project_ = "";
     /**
      * <pre>
@@ -2610,6 +3004,332 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       project_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureFoldersIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        folders_ = new com.google.protobuf.LazyStringArrayList(folders_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <pre>
+     * The folder(s) that the IAM policy belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     * @return A list containing the folders.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getFoldersList() {
+      return folders_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * The folder(s) that the IAM policy belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     * @return The count of folders.
+     */
+    public int getFoldersCount() {
+      return folders_.size();
+    }
+    /**
+     * <pre>
+     * The folder(s) that the IAM policy belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     * @param index The index of the element to return.
+     * @return The folders at the given index.
+     */
+    public java.lang.String getFolders(int index) {
+      return folders_.get(index);
+    }
+    /**
+     * <pre>
+     * The folder(s) that the IAM policy belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the folders at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getFoldersBytes(int index) {
+      return folders_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * The folder(s) that the IAM policy belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The folders to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFolders(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFoldersIsMutable();
+      folders_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The folder(s) that the IAM policy belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     * @param value The folders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFolders(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFoldersIsMutable();
+      folders_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The folder(s) that the IAM policy belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     * @param values The folders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllFolders(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureFoldersIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, folders_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The folder(s) that the IAM policy belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFolders() {
+      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The folder(s) that the IAM policy belongs to, in the form of
+     * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
+     * belongs to one or more folders.
+     * To search against `folders`:
+     * * use a field query. Example: `folders:(123 OR 456)`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this folder in your search request.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     * @param value The bytes of the folders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFoldersBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureFoldersIsMutable();
+      folders_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object organization_ = "";
+    /**
+     * <pre>
+     * The organization that the IAM policy belongs to, in the form
+     * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * IAM policy belongs to an organization.
+     * To search against `organization`:
+     * * use a field query. Example: `organization:123`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this organization in your search request.
+     * </pre>
+     *
+     * <code>string organization = 7;</code>
+     * @return The organization.
+     */
+    public java.lang.String getOrganization() {
+      java.lang.Object ref = organization_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organization_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The organization that the IAM policy belongs to, in the form
+     * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * IAM policy belongs to an organization.
+     * To search against `organization`:
+     * * use a field query. Example: `organization:123`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this organization in your search request.
+     * </pre>
+     *
+     * <code>string organization = 7;</code>
+     * @return The bytes for organization.
+     */
+    public com.google.protobuf.ByteString
+        getOrganizationBytes() {
+      java.lang.Object ref = organization_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organization_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The organization that the IAM policy belongs to, in the form
+     * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * IAM policy belongs to an organization.
+     * To search against `organization`:
+     * * use a field query. Example: `organization:123`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this organization in your search request.
+     * </pre>
+     *
+     * <code>string organization = 7;</code>
+     * @param value The organization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganization(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      organization_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The organization that the IAM policy belongs to, in the form
+     * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * IAM policy belongs to an organization.
+     * To search against `organization`:
+     * * use a field query. Example: `organization:123`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this organization in your search request.
+     * </pre>
+     *
+     * <code>string organization = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrganization() {
+      
+      organization_ = getDefaultInstance().getOrganization();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The organization that the IAM policy belongs to, in the form
+     * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * IAM policy belongs to an organization.
+     * To search against `organization`:
+     * * use a field query. Example: `organization:123`
+     * * use a free text query. Example: `123`
+     * * specify the `scope` field as this organization in your search request.
+     * </pre>
+     *
+     * <code>string organization = 7;</code>
+     * @param value The bytes for organization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      organization_ = value;
       onChanged();
       return this;
     }

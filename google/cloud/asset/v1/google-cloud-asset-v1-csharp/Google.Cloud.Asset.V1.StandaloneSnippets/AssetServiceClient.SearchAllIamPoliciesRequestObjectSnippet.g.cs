@@ -32,7 +32,13 @@ namespace Google.Cloud.Asset.V1.Snippets
             // Create client
             AssetServiceClient assetServiceClient = AssetServiceClient.Create();
             // Initialize request argument(s)
-            SearchAllIamPoliciesRequest request = new SearchAllIamPoliciesRequest { Scope = "", Query = "", };
+            SearchAllIamPoliciesRequest request = new SearchAllIamPoliciesRequest
+            {
+                Scope = "",
+                Query = "",
+                AssetTypes = { "", },
+                OrderBy = "",
+            };
             // Make the request
             PagedEnumerable<SearchAllIamPoliciesResponse, IamPolicySearchResult> response = assetServiceClient.SearchAllIamPolicies(request);
 

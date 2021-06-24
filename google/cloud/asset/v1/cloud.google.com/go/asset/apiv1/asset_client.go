@@ -136,7 +136,6 @@ func defaultCallOptions() *CallOptions {
 		SearchAllResources: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
-					codes.DeadlineExceeded,
 					codes.Unavailable,
 				}, gax.Backoff{
 					Initial:    100 * time.Millisecond,
@@ -148,7 +147,6 @@ func defaultCallOptions() *CallOptions {
 		SearchAllIamPolicies: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
-					codes.DeadlineExceeded,
 					codes.Unavailable,
 				}, gax.Backoff{
 					Initial:    100 * time.Millisecond,
