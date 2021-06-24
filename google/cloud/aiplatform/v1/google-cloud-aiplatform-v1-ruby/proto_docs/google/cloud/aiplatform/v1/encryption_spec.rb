@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         # Represents a customer-managed encryption key spec that can be applied to
         # a top-level resource.

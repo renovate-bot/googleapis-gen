@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         # Used to assign specific AnnotationSpec to a particular area of a DataItem or
         # the whole part of the DataItem.
@@ -28,17 +28,17 @@ module Google
         #     Output only. Resource name of the Annotation.
         # @!attribute [rw] payload_schema_uri
         #   @return [::String]
-        #     Required. Google Cloud Storage URI points to a YAML file describing {::Google::Cloud::Aiplatform::V1::Annotation#payload payload}. The
+        #     Required. Google Cloud Storage URI points to a YAML file describing {::Google::Cloud::AIPlatform::V1::Annotation#payload payload}. The
         #     schema is defined as an [OpenAPI 3.0.2 Schema
         #     Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
         #     The schema files that can be used here are found in
         #     gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
         #     chosen schema must be consistent with the parent Dataset's
-        #     {::Google::Cloud::Aiplatform::V1::Dataset#metadata_schema_uri metadata}.
+        #     {::Google::Cloud::AIPlatform::V1::Dataset#metadata_schema_uri metadata}.
         # @!attribute [rw] payload
         #   @return [::Google::Protobuf::Value]
         #     Required. The schema of the payload can be found in
-        #     {::Google::Cloud::Aiplatform::V1::Annotation#payload_schema_uri payload_schema}.
+        #     {::Google::Cloud::AIPlatform::V1::Annotation#payload_schema_uri payload_schema}.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when this Annotation was created.
@@ -50,7 +50,7 @@ module Google
         #     Optional. Used to perform consistent read-modify-write updates. If not set, a blind
         #     "overwrite" update happens.
         # @!attribute [r] annotation_source
-        #   @return [::Google::Cloud::Aiplatform::V1::UserActionReference]
+        #   @return [::Google::Cloud::AIPlatform::V1::UserActionReference]
         #     Output only. The source of the Annotation.
         # @!attribute [rw] labels
         #   @return [::Google::Protobuf::Map{::String => ::String}]

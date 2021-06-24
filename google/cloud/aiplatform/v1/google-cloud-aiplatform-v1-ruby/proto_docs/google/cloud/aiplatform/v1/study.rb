@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         # A message representing a Trial. A Trial contains a unique set of Parameters
         # that has been or will be evaluated, along with the objective metrics got by
@@ -28,13 +28,13 @@ module Google
         #   @return [::String]
         #     Output only. The identifier of the Trial assigned by the service.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1::Trial::State]
+        #   @return [::Google::Cloud::AIPlatform::V1::Trial::State]
         #     Output only. The detailed state of the Trial.
         # @!attribute [r] parameters
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::Trial::Parameter>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::Trial::Parameter>]
         #     Output only. The parameters of the Trial.
         # @!attribute [r] final_measurement
-        #   @return [::Google::Cloud::Aiplatform::V1::Measurement]
+        #   @return [::Google::Cloud::AIPlatform::V1::Measurement]
         #     Output only. The final measurement containing the objective value.
         # @!attribute [r] start_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -94,21 +94,21 @@ module Google
 
         # Represents specification of a Study.
         # @!attribute [rw] metrics
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::StudySpec::MetricSpec>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::StudySpec::MetricSpec>]
         #     Required. Metric specs for the Study.
         # @!attribute [rw] parameters
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::StudySpec::ParameterSpec>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::StudySpec::ParameterSpec>]
         #     Required. The set of parameters to tune.
         # @!attribute [rw] algorithm
-        #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::Algorithm]
+        #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::Algorithm]
         #     The search algorithm specified for the Study.
         # @!attribute [rw] observation_noise
-        #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::ObservationNoise]
+        #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::ObservationNoise]
         #     The observation noise level of the study.
         #     Currently only supported by the Vizier service. Not supported by
         #     HyperparamterTuningJob or TrainingPipeline.
         # @!attribute [rw] measurement_selection_type
-        #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::MeasurementSelectionType]
+        #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::MeasurementSelectionType]
         #     Describe which measurement selection type will be used
         class StudySpec
           include ::Google::Protobuf::MessageExts
@@ -120,7 +120,7 @@ module Google
           #     Required. The ID of the metric. Must not contain whitespaces and must be unique
           #     amongst all MetricSpecs.
           # @!attribute [rw] goal
-          #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::MetricSpec::GoalType]
+          #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::MetricSpec::GoalType]
           #     Required. The optimization goal of the metric.
           class MetricSpec
             include ::Google::Protobuf::MessageExts
@@ -141,27 +141,27 @@ module Google
 
           # Represents a single parameter to optimize.
           # @!attribute [rw] double_value_spec
-          #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::ParameterSpec::DoubleValueSpec]
+          #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::ParameterSpec::DoubleValueSpec]
           #     The value spec for a 'DOUBLE' parameter.
           # @!attribute [rw] integer_value_spec
-          #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::ParameterSpec::IntegerValueSpec]
+          #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::ParameterSpec::IntegerValueSpec]
           #     The value spec for an 'INTEGER' parameter.
           # @!attribute [rw] categorical_value_spec
-          #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::ParameterSpec::CategoricalValueSpec]
+          #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::ParameterSpec::CategoricalValueSpec]
           #     The value spec for a 'CATEGORICAL' parameter.
           # @!attribute [rw] discrete_value_spec
-          #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::ParameterSpec::DiscreteValueSpec]
+          #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::ParameterSpec::DiscreteValueSpec]
           #     The value spec for a 'DISCRETE' parameter.
           # @!attribute [rw] parameter_id
           #   @return [::String]
           #     Required. The ID of the parameter. Must not contain whitespaces and must be unique
           #     amongst all ParameterSpecs.
           # @!attribute [rw] scale_type
-          #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::ParameterSpec::ScaleType]
+          #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::ParameterSpec::ScaleType]
           #     How the parameter should be scaled.
           #     Leave unset for `CATEGORICAL` parameters.
           # @!attribute [rw] conditional_parameter_specs
-          #   @return [::Array<::Google::Cloud::Aiplatform::V1::StudySpec::ParameterSpec::ConditionalParameterSpec>]
+          #   @return [::Array<::Google::Cloud::AIPlatform::V1::StudySpec::ParameterSpec::ConditionalParameterSpec>]
           #     A conditional parameter node is active if the parameter's value matches
           #     the conditional node's parent_value_condition.
           #
@@ -218,19 +218,19 @@ module Google
 
             # Represents a parameter spec with condition from its parent parameter.
             # @!attribute [rw] parent_discrete_values
-            #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::ParameterSpec::ConditionalParameterSpec::DiscreteValueCondition]
+            #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::ParameterSpec::ConditionalParameterSpec::DiscreteValueCondition]
             #     The spec for matching values from a parent parameter of
             #     `DISCRETE` type.
             # @!attribute [rw] parent_int_values
-            #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::ParameterSpec::ConditionalParameterSpec::IntValueCondition]
+            #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::ParameterSpec::ConditionalParameterSpec::IntValueCondition]
             #     The spec for matching values from a parent parameter of `INTEGER`
             #     type.
             # @!attribute [rw] parent_categorical_values
-            #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::ParameterSpec::ConditionalParameterSpec::CategoricalValueCondition]
+            #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::ParameterSpec::ConditionalParameterSpec::CategoricalValueCondition]
             #     The spec for matching values from a parent parameter of
             #     `CATEGORICAL` type.
             # @!attribute [rw] parameter_spec
-            #   @return [::Google::Cloud::Aiplatform::V1::StudySpec::ParameterSpec]
+            #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::ParameterSpec]
             #     Required. The spec for a conditional parameter.
             class ConditionalParameterSpec
               include ::Google::Protobuf::MessageExts
@@ -356,7 +356,7 @@ module Google
         #     Output only. The number of steps the machine learning model has been trained for.
         #     Must be non-negative.
         # @!attribute [r] metrics
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::Measurement::Metric>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::Measurement::Metric>]
         #     Output only. A list of metrics got by evaluating the objective functions using suggested
         #     Parameter values.
         class Measurement

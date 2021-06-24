@@ -22,7 +22,7 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Aiplatform\V1\Gapic;
+namespace Google\Cloud\AIPlatform\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -38,16 +38,16 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1\CreateEndpointRequest;
-use Google\Cloud\Aiplatform\V1\DeleteEndpointRequest;
-use Google\Cloud\Aiplatform\V1\DeployedModel;
-use Google\Cloud\Aiplatform\V1\DeployModelRequest;
-use Google\Cloud\Aiplatform\V1\Endpoint;
-use Google\Cloud\Aiplatform\V1\GetEndpointRequest;
-use Google\Cloud\Aiplatform\V1\ListEndpointsRequest;
-use Google\Cloud\Aiplatform\V1\ListEndpointsResponse;
-use Google\Cloud\Aiplatform\V1\UndeployModelRequest;
-use Google\Cloud\Aiplatform\V1\UpdateEndpointRequest;
+use Google\Cloud\AIPlatform\V1\CreateEndpointRequest;
+use Google\Cloud\AIPlatform\V1\DeleteEndpointRequest;
+use Google\Cloud\AIPlatform\V1\DeployedModel;
+use Google\Cloud\AIPlatform\V1\DeployModelRequest;
+use Google\Cloud\AIPlatform\V1\Endpoint;
+use Google\Cloud\AIPlatform\V1\GetEndpointRequest;
+use Google\Cloud\AIPlatform\V1\ListEndpointsRequest;
+use Google\Cloud\AIPlatform\V1\ListEndpointsResponse;
+use Google\Cloud\AIPlatform\V1\UndeployModelRequest;
+use Google\Cloud\AIPlatform\V1\UpdateEndpointRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
@@ -633,7 +633,7 @@ class EndpointServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\Endpoint
+     * @return \Google\Cloud\AIPlatform\V1\Endpoint
      *
      * @throws ApiException if the remote call fails
      */
@@ -867,7 +867,7 @@ class EndpointServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\Endpoint
+     * @return \Google\Cloud\AIPlatform\V1\Endpoint
      *
      * @throws ApiException if the remote call fails
      */

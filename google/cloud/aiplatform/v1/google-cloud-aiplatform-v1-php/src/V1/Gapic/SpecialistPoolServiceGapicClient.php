@@ -22,7 +22,7 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Aiplatform\V1\Gapic;
+namespace Google\Cloud\AIPlatform\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -37,13 +37,13 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1\CreateSpecialistPoolRequest;
-use Google\Cloud\Aiplatform\V1\DeleteSpecialistPoolRequest;
-use Google\Cloud\Aiplatform\V1\GetSpecialistPoolRequest;
-use Google\Cloud\Aiplatform\V1\ListSpecialistPoolsRequest;
-use Google\Cloud\Aiplatform\V1\ListSpecialistPoolsResponse;
-use Google\Cloud\Aiplatform\V1\SpecialistPool;
-use Google\Cloud\Aiplatform\V1\UpdateSpecialistPoolRequest;
+use Google\Cloud\AIPlatform\V1\CreateSpecialistPoolRequest;
+use Google\Cloud\AIPlatform\V1\DeleteSpecialistPoolRequest;
+use Google\Cloud\AIPlatform\V1\GetSpecialistPoolRequest;
+use Google\Cloud\AIPlatform\V1\ListSpecialistPoolsRequest;
+use Google\Cloud\AIPlatform\V1\ListSpecialistPoolsResponse;
+use Google\Cloud\AIPlatform\V1\SpecialistPool;
+use Google\Cloud\AIPlatform\V1\UpdateSpecialistPoolRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
@@ -520,7 +520,7 @@ class SpecialistPoolServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\SpecialistPool
+     * @return \Google\Cloud\AIPlatform\V1\SpecialistPool
      *
      * @throws ApiException if the remote call fails
      */

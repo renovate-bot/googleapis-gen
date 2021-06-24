@@ -29,9 +29,9 @@ In order to use this library, you first need to go through the following steps:
 ## Quick Start
 
 ```ruby
-require "google/cloud/aiplatform/v1"
+require "google/cloud/ai_platform/v1"
 
-client = ::Google::Cloud::Aiplatform::V1::DatasetService::Client.new
+client = ::Google::Cloud::AIPlatform::V1::DatasetService::Client.new
 request = my_create_request
 response = client.create_dataset request
 ```

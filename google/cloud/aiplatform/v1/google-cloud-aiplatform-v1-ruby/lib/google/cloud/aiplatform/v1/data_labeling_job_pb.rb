@@ -65,7 +65,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         DataLabelingJob = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.DataLabelingJob").msgclass
         ActiveLearningConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ActiveLearningConfig").msgclass

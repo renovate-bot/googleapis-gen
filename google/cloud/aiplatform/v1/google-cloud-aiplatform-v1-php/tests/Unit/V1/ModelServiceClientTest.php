@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,17 +29,17 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1\ExportModelRequest\OutputConfig;
-use Google\Cloud\Aiplatform\V1\ExportModelResponse;
+use Google\Cloud\AIPlatform\V1\ExportModelRequest\OutputConfig;
+use Google\Cloud\AIPlatform\V1\ExportModelResponse;
 
-use Google\Cloud\Aiplatform\V1\ListModelEvaluationSlicesResponse;
-use Google\Cloud\Aiplatform\V1\ListModelEvaluationsResponse;
-use Google\Cloud\Aiplatform\V1\ListModelsResponse;
-use Google\Cloud\Aiplatform\V1\Model;
-use Google\Cloud\Aiplatform\V1\ModelEvaluation;
-use Google\Cloud\Aiplatform\V1\ModelEvaluationSlice;
-use Google\Cloud\Aiplatform\V1\ModelServiceClient;
-use Google\Cloud\Aiplatform\V1\UploadModelResponse;
+use Google\Cloud\AIPlatform\V1\ListModelEvaluationSlicesResponse;
+use Google\Cloud\AIPlatform\V1\ListModelEvaluationsResponse;
+use Google\Cloud\AIPlatform\V1\ListModelsResponse;
+use Google\Cloud\AIPlatform\V1\Model;
+use Google\Cloud\AIPlatform\V1\ModelEvaluation;
+use Google\Cloud\AIPlatform\V1\ModelEvaluationSlice;
+use Google\Cloud\AIPlatform\V1\ModelServiceClient;
+use Google\Cloud\AIPlatform\V1\UploadModelResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

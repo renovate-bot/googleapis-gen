@@ -41,7 +41,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         Dataset = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.Dataset").msgclass
         ImportDataConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ImportDataConfig").msgclass

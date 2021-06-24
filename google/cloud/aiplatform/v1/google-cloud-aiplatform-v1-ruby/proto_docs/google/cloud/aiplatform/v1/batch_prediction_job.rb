@@ -19,10 +19,10 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
-        # A job that uses a {::Google::Cloud::Aiplatform::V1::BatchPredictionJob#model Model} to produce predictions
-        # on multiple {::Google::Cloud::Aiplatform::V1::BatchPredictionJob#input_config input instances}. If
+        # A job that uses a {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#model Model} to produce predictions
+        # on multiple {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#input_config input instances}. If
         # predictions for significant portion of the instances fail, the job may finish
         # without attempting predictions for all remaining instances.
         # @!attribute [r] name
@@ -38,45 +38,45 @@ module Google
         #     Starting this job has no impact on any existing deployments of the Model
         #     and their resources.
         # @!attribute [rw] input_config
-        #   @return [::Google::Cloud::Aiplatform::V1::BatchPredictionJob::InputConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1::BatchPredictionJob::InputConfig]
         #     Required. Input configuration of the instances on which predictions are performed.
         #     The schema of any single instance may be specified via
         #     the [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
         #     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
-        #     {::Google::Cloud::Aiplatform::V1::PredictSchemata#instance_schema_uri instance_schema_uri}.
+        #     {::Google::Cloud::AIPlatform::V1::PredictSchemata#instance_schema_uri instance_schema_uri}.
         # @!attribute [rw] model_parameters
         #   @return [::Google::Protobuf::Value]
         #     The parameters that govern the predictions. The schema of the parameters
         #     may be specified via the [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
         #     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
-        #     {::Google::Cloud::Aiplatform::V1::PredictSchemata#parameters_schema_uri parameters_schema_uri}.
+        #     {::Google::Cloud::AIPlatform::V1::PredictSchemata#parameters_schema_uri parameters_schema_uri}.
         # @!attribute [rw] output_config
-        #   @return [::Google::Cloud::Aiplatform::V1::BatchPredictionJob::OutputConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1::BatchPredictionJob::OutputConfig]
         #     Required. The Configuration specifying where output predictions should
         #     be written.
         #     The schema of any single prediction may be specified as a concatenation
         #     of [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
         #     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
-        #     {::Google::Cloud::Aiplatform::V1::PredictSchemata#instance_schema_uri instance_schema_uri}
+        #     {::Google::Cloud::AIPlatform::V1::PredictSchemata#instance_schema_uri instance_schema_uri}
         #     and
-        #     {::Google::Cloud::Aiplatform::V1::PredictSchemata#prediction_schema_uri prediction_schema_uri}.
+        #     {::Google::Cloud::AIPlatform::V1::PredictSchemata#prediction_schema_uri prediction_schema_uri}.
         # @!attribute [rw] dedicated_resources
-        #   @return [::Google::Cloud::Aiplatform::V1::BatchDedicatedResources]
+        #   @return [::Google::Cloud::AIPlatform::V1::BatchDedicatedResources]
         #     The config of resources used by the Model during the batch prediction. If
-        #     the Model {::Google::Cloud::Aiplatform::V1::Model#supported_deployment_resources_types supports}
+        #     the Model {::Google::Cloud::AIPlatform::V1::Model#supported_deployment_resources_types supports}
         #     DEDICATED_RESOURCES this config may be provided (and the job will use these
         #     resources), if the Model doesn't support AUTOMATIC_RESOURCES, this config
         #     must be provided.
         # @!attribute [rw] manual_batch_tuning_parameters
-        #   @return [::Google::Cloud::Aiplatform::V1::ManualBatchTuningParameters]
+        #   @return [::Google::Cloud::AIPlatform::V1::ManualBatchTuningParameters]
         #     Immutable. Parameters configuring the batch behavior. Currently only applicable when
-        #     {::Google::Cloud::Aiplatform::V1::BatchPredictionJob#dedicated_resources dedicated_resources} are used (in other cases Vertex AI does
+        #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#dedicated_resources dedicated_resources} are used (in other cases Vertex AI does
         #     the tuning itself).
         # @!attribute [r] output_info
-        #   @return [::Google::Cloud::Aiplatform::V1::BatchPredictionJob::OutputInfo]
+        #   @return [::Google::Cloud::AIPlatform::V1::BatchPredictionJob::OutputInfo]
         #     Output only. Information further describing the output of this job.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1::JobState]
+        #   @return [::Google::Cloud::AIPlatform::V1::JobState]
         #     Output only. The detailed state of the job.
         # @!attribute [r] error
         #   @return [::Google::Rpc::Status]
@@ -89,7 +89,7 @@ module Google
         #     This field never exceeds 20 entries.
         #     Status details fields contain standard GCP error details.
         # @!attribute [r] resources_consumed
-        #   @return [::Google::Cloud::Aiplatform::V1::ResourcesConsumed]
+        #   @return [::Google::Cloud::AIPlatform::V1::ResourcesConsumed]
         #     Output only. Information about resources that had been consumed by this job.
         #     Provided in real time at best effort basis, as well as a final value
         #     once the job completes.
@@ -97,7 +97,7 @@ module Google
         #     Note: This field currently may be not populated for batch predictions that
         #     use AutoML Models.
         # @!attribute [r] completion_stats
-        #   @return [::Google::Cloud::Aiplatform::V1::CompletionStats]
+        #   @return [::Google::Cloud::AIPlatform::V1::CompletionStats]
         #     Output only. Statistics on completed and failed prediction instances.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -123,7 +123,7 @@ module Google
         #
         #     See https://goo.gl/xmQnxf for more information and examples of labels.
         # @!attribute [rw] encryption_spec
-        #   @return [::Google::Cloud::Aiplatform::V1::EncryptionSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1::EncryptionSpec]
         #     Customer-managed encryption key options for a BatchPredictionJob. If this
         #     is set, then all resources created by the BatchPredictionJob will be
         #     encrypted with the provided encryption key.
@@ -131,14 +131,14 @@ module Google
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
 
-          # Configures the input to {::Google::Cloud::Aiplatform::V1::BatchPredictionJob BatchPredictionJob}.
-          # See {::Google::Cloud::Aiplatform::V1::Model#supported_input_storage_formats Model.supported_input_storage_formats} for Model's supported input
+          # Configures the input to {::Google::Cloud::AIPlatform::V1::BatchPredictionJob BatchPredictionJob}.
+          # See {::Google::Cloud::AIPlatform::V1::Model#supported_input_storage_formats Model.supported_input_storage_formats} for Model's supported input
           # formats, and how instances should be expressed via any of them.
           # @!attribute [rw] gcs_source
-          #   @return [::Google::Cloud::Aiplatform::V1::GcsSource]
+          #   @return [::Google::Cloud::AIPlatform::V1::GcsSource]
           #     The Cloud Storage location for the input instances.
           # @!attribute [rw] bigquery_source
-          #   @return [::Google::Cloud::Aiplatform::V1::BigQuerySource]
+          #   @return [::Google::Cloud::AIPlatform::V1::BigQuerySource]
           #     The BigQuery location of the input table.
           #     The schema of the table should be in the format described by the given
           #     context OpenAPI Schema, if one is provided. The table may contain
@@ -148,17 +148,17 @@ module Google
           #   @return [::String]
           #     Required. The format in which instances are given, must be one of the
           #     [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
-          #     {::Google::Cloud::Aiplatform::V1::Model#supported_input_storage_formats supported_input_storage_formats}.
+          #     {::Google::Cloud::AIPlatform::V1::Model#supported_input_storage_formats supported_input_storage_formats}.
           class InputConfig
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # Configures the output of {::Google::Cloud::Aiplatform::V1::BatchPredictionJob BatchPredictionJob}.
-          # See {::Google::Cloud::Aiplatform::V1::Model#supported_output_storage_formats Model.supported_output_storage_formats} for supported output
+          # Configures the output of {::Google::Cloud::AIPlatform::V1::BatchPredictionJob BatchPredictionJob}.
+          # See {::Google::Cloud::AIPlatform::V1::Model#supported_output_storage_formats Model.supported_output_storage_formats} for supported output
           # formats, and how predictions are expressed via any of them.
           # @!attribute [rw] gcs_destination
-          #   @return [::Google::Cloud::Aiplatform::V1::GcsDestination]
+          #   @return [::Google::Cloud::AIPlatform::V1::GcsDestination]
           #     The Cloud Storage location of the directory where the output is
           #     to be written to. In the given directory a new directory is created.
           #     Its name is `prediction-<model-display-name>-<job-create-time>`,
@@ -166,12 +166,12 @@ module Google
           #     Inside of it files `predictions_0001.<extension>`,
           #     `predictions_0002.<extension>`, ..., `predictions_N.<extension>`
           #     are created where `<extension>` depends on chosen
-          #     {::Google::Cloud::Aiplatform::V1::BatchPredictionJob::OutputConfig#predictions_format predictions_format}, and N may equal 0001 and depends on the total
+          #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob::OutputConfig#predictions_format predictions_format}, and N may equal 0001 and depends on the total
           #     number of successfully predicted instances.
-          #     If the Model has both {::Google::Cloud::Aiplatform::V1::PredictSchemata#instance_schema_uri instance}
-          #     and {::Google::Cloud::Aiplatform::V1::PredictSchemata#parameters_schema_uri prediction} schemata
+          #     If the Model has both {::Google::Cloud::AIPlatform::V1::PredictSchemata#instance_schema_uri instance}
+          #     and {::Google::Cloud::AIPlatform::V1::PredictSchemata#parameters_schema_uri prediction} schemata
           #     defined then each such file contains predictions as per the
-          #     {::Google::Cloud::Aiplatform::V1::BatchPredictionJob::OutputConfig#predictions_format predictions_format}.
+          #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob::OutputConfig#predictions_format predictions_format}.
           #     If prediction for any instance failed (partially or completely), then
           #     an additional `errors_0001.<extension>`, `errors_0002.<extension>`,...,
           #     `errors_N.<extension>` files are created (N depends on total number
@@ -181,7 +181,7 @@ module Google
           #     [`google.rpc.Status`](Status)
           #     containing only `code` and `message` fields.
           # @!attribute [rw] bigquery_destination
-          #   @return [::Google::Cloud::Aiplatform::V1::BigQueryDestination]
+          #   @return [::Google::Cloud::AIPlatform::V1::BigQueryDestination]
           #     The BigQuery project or dataset location where the output is to be
           #     written to. If project is provided, a new dataset is created with name
           #     `prediction_<model-display-name>_<job-create-time>`
@@ -190,8 +190,8 @@ module Google
           #     become underscores), and timestamp is in
           #     YYYY_MM_DDThh_mm_ss_sssZ "based on ISO-8601" format. In the dataset
           #     two tables will be created, `predictions`, and `errors`.
-          #     If the Model has both {::Google::Cloud::Aiplatform::V1::PredictSchemata#instance_schema_uri instance}
-          #     and {::Google::Cloud::Aiplatform::V1::PredictSchemata#parameters_schema_uri prediction} schemata
+          #     If the Model has both {::Google::Cloud::AIPlatform::V1::PredictSchemata#instance_schema_uri instance}
+          #     and {::Google::Cloud::AIPlatform::V1::PredictSchemata#parameters_schema_uri prediction} schemata
           #     defined then the tables have columns as follows: The `predictions`
           #     table contains instances for which the prediction succeeded, it
           #     has columns as per a concatenation of the Model's instance and
@@ -204,14 +204,14 @@ module Google
           #   @return [::String]
           #     Required. The format in which Vertex AI gives the predictions, must be one of the
           #     [Model's][google.cloud.aiplatform.v1.BatchPredictionJob.model]
-          #     {::Google::Cloud::Aiplatform::V1::Model#supported_output_storage_formats supported_output_storage_formats}.
+          #     {::Google::Cloud::AIPlatform::V1::Model#supported_output_storage_formats supported_output_storage_formats}.
           class OutputConfig
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
           # Further describes this job's output.
-          # Supplements {::Google::Cloud::Aiplatform::V1::BatchPredictionJob#output_config output_config}.
+          # Supplements {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#output_config output_config}.
           # @!attribute [r] gcs_output_directory
           #   @return [::String]
           #     Output only. The full path of the Cloud Storage directory created, into which

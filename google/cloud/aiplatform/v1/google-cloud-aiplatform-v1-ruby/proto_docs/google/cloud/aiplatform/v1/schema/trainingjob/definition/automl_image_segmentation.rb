@@ -19,17 +19,17 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         module Schema
-          module Trainingjob
+          module TrainingJob
             module Definition
               # A TrainingJob that trains and uploads an AutoML Image Segmentation Model.
               # @!attribute [rw] inputs
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlImageSegmentationInputs]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlImageSegmentationInputs]
               #     The input parameters of this TrainingJob.
               # @!attribute [rw] metadata
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlImageSegmentationMetadata]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlImageSegmentationMetadata]
               #     The metadata information.
               class AutoMlImageSegmentation
                 include ::Google::Protobuf::MessageExts
@@ -37,7 +37,7 @@ module Google
               end
 
               # @!attribute [rw] model_type
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlImageSegmentationInputs::ModelType]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlImageSegmentationInputs::ModelType]
               # @!attribute [rw] budget_milli_node_hours
               #   @return [::Integer]
               #     The training budget of creating this model, expressed in milli node
@@ -92,7 +92,7 @@ module Google
               #     milli node hours, i.e. 1,000 value in this field means 1 node hour.
               #     Guaranteed to not exceed inputs.budgetMilliNodeHours.
               # @!attribute [rw] successful_stop_reason
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlImageSegmentationMetadata::SuccessfulStopReason]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlImageSegmentationMetadata::SuccessfulStopReason]
               #     For successful job completions, this is the reason why the job has
               #     finished.
               class AutoMlImageSegmentationMetadata

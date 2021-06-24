@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         # Represents a job that runs custom workloads such as a Docker container or a
         # Python package. A CustomJob can have multiple worker pools and each worker
@@ -34,10 +34,10 @@ module Google
         #     The name can be up to 128 characters long and can be consist of any UTF-8
         #     characters.
         # @!attribute [rw] job_spec
-        #   @return [::Google::Cloud::Aiplatform::V1::CustomJobSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1::CustomJobSpec]
         #     Required. Job spec.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1::JobState]
+        #   @return [::Google::Cloud::AIPlatform::V1::JobState]
         #     Output only. The detailed state of the job.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -67,7 +67,7 @@ module Google
         #
         #     See https://goo.gl/xmQnxf for more information and examples of labels.
         # @!attribute [rw] encryption_spec
-        #   @return [::Google::Cloud::Aiplatform::V1::EncryptionSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1::EncryptionSpec]
         #     Customer-managed encryption key options for a CustomJob. If this is set,
         #     then all resources created by the CustomJob will be encrypted with the
         #     provided encryption key.
@@ -87,12 +87,12 @@ module Google
 
         # Represents the spec of a CustomJob.
         # @!attribute [rw] worker_pool_specs
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::WorkerPoolSpec>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::WorkerPoolSpec>]
         #     Required. The spec of the worker pools including machine type and Docker image.
         #     All worker pools except the first one are optional and can be skipped by
         #     providing an empty value.
         # @!attribute [rw] scheduling
-        #   @return [::Google::Cloud::Aiplatform::V1::Scheduling]
+        #   @return [::Google::Cloud::AIPlatform::V1::Scheduling]
         #     Scheduling options for a CustomJob.
         # @!attribute [rw] service_account
         #   @return [::String]
@@ -114,12 +114,12 @@ module Google
         #     Private services access must already be configured for the network. If left
         #     unspecified, the job is not peered with any network.
         # @!attribute [rw] base_output_directory
-        #   @return [::Google::Cloud::Aiplatform::V1::GcsDestination]
+        #   @return [::Google::Cloud::AIPlatform::V1::GcsDestination]
         #     The Cloud Storage location to store the output of this CustomJob or
         #     HyperparameterTuningJob. For HyperparameterTuningJob,
         #     the baseOutputDirectory of
         #     each child CustomJob backing a Trial is set to a subdirectory of name
-        #     {::Google::Cloud::Aiplatform::V1::Trial#id id} under its parent HyperparameterTuningJob's
+        #     {::Google::Cloud::AIPlatform::V1::Trial#id id} under its parent HyperparameterTuningJob's
         #     baseOutputDirectory.
         #
         #     The following Vertex AI environment variables will be passed to
@@ -143,19 +143,19 @@ module Google
 
         # Represents the spec of a worker pool in a job.
         # @!attribute [rw] container_spec
-        #   @return [::Google::Cloud::Aiplatform::V1::ContainerSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1::ContainerSpec]
         #     The custom container task.
         # @!attribute [rw] python_package_spec
-        #   @return [::Google::Cloud::Aiplatform::V1::PythonPackageSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1::PythonPackageSpec]
         #     The Python packaged task.
         # @!attribute [rw] machine_spec
-        #   @return [::Google::Cloud::Aiplatform::V1::MachineSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1::MachineSpec]
         #     Optional. Immutable. The specification of a single machine.
         # @!attribute [rw] replica_count
         #   @return [::Integer]
         #     Optional. The number of worker replicas to use for this worker pool.
         # @!attribute [rw] disk_spec
-        #   @return [::Google::Cloud::Aiplatform::V1::DiskSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1::DiskSpec]
         #     Disk spec.
         class WorkerPoolSpec
           include ::Google::Protobuf::MessageExts
@@ -175,7 +175,7 @@ module Google
         #   @return [::Array<::String>]
         #     The arguments to be passed when starting the container.
         # @!attribute [rw] env
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::EnvVar>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::EnvVar>]
         #     Environment variables to be passed to the container.
         class ContainerSpec
           include ::Google::Protobuf::MessageExts
@@ -203,7 +203,7 @@ module Google
         #   @return [::Array<::String>]
         #     Command line arguments to be passed to the Python task.
         # @!attribute [rw] env
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::EnvVar>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::EnvVar>]
         #     Environment variables to be passed to the python module.
         class PythonPackageSpec
           include ::Google::Protobuf::MessageExts

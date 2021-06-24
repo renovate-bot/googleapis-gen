@@ -26,7 +26,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         ModelEvaluationSlice = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ModelEvaluationSlice").msgclass
         ModelEvaluationSlice::Slice = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice").msgclass

@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,13 +29,13 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1\DeployedModel;
-use Google\Cloud\Aiplatform\V1\DeployModelResponse;
+use Google\Cloud\AIPlatform\V1\DeployedModel;
+use Google\Cloud\AIPlatform\V1\DeployModelResponse;
 
-use Google\Cloud\Aiplatform\V1\Endpoint;
-use Google\Cloud\Aiplatform\V1\EndpointServiceClient;
-use Google\Cloud\Aiplatform\V1\ListEndpointsResponse;
-use Google\Cloud\Aiplatform\V1\UndeployModelResponse;
+use Google\Cloud\AIPlatform\V1\Endpoint;
+use Google\Cloud\AIPlatform\V1\EndpointServiceClient;
+use Google\Cloud\AIPlatform\V1\ListEndpointsResponse;
+use Google\Cloud\AIPlatform\V1\UndeployModelResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

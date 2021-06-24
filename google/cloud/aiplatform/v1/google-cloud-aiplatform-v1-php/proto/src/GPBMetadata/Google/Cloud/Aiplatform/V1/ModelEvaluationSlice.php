@@ -21,7 +21,7 @@ class ModelEvaluationSlice
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-§
+˛
 7google/cloud/aiplatform/v1/model_evaluation_slice.protogoogle.cloud.aiplatform.v1google/api/resource.protogoogle/protobuf/struct.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"∆
 ModelEvaluationSlice
 name (	B‡AJ
@@ -32,8 +32,8 @@ class ModelEvaluationSlice
 Slice
 	dimension (	B‡A
 value (	B‡A:îÍAê
-.aiplatform.googleapis.com/ModelEvaluationSlice^projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}BÉ
-com.google.cloud.aiplatform.v1BModelEvaluationSliceProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformbproto3'
+.aiplatform.googleapis.com/ModelEvaluationSlice^projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}B›
+com.google.cloud.aiplatform.v1BModelEvaluationSliceProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatform™Google.Cloud.AIPlatform.V1 Google\\Cloud\\AIPlatform\\V1ÍGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
 
         static::$is_initialized = true;

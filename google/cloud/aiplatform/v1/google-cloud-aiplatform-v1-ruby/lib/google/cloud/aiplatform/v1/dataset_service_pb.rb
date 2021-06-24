@@ -100,7 +100,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         CreateDatasetRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.CreateDatasetRequest").msgclass
         CreateDatasetOperationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.CreateDatasetOperationMetadata").msgclass

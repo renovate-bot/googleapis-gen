@@ -18,12 +18,12 @@ class ManualBatchTuningParameters
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-È
+¢
 ?google/cloud/aiplatform/v1/manual_batch_tuning_parameters.protogoogle.cloud.aiplatform.v1google/api/annotations.proto"6
 ManualBatchTuningParameters
 
-batch_size (BàABŠ
-com.google.cloud.aiplatform.v1B ManualBatchTuningParametersProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformbproto3'
+batch_size (BàABä
+com.google.cloud.aiplatform.v1B ManualBatchTuningParametersProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformªGoogle.Cloud.AIPlatform.V1ÊGoogle\\Cloud\\AIPlatform\\V1êGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
 
         static::$is_initialized = true;

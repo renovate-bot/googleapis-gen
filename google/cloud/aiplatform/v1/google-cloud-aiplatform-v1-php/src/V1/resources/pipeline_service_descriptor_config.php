@@ -6,7 +6,7 @@ return [
             'DeleteTrainingPipeline' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

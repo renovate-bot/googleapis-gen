@@ -22,7 +22,7 @@ class Annotation
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Í
+¨
 +google/cloud/aiplatform/v1/annotation.protogoogle.cloud.aiplatform.v1google/api/resource.proto6google/cloud/aiplatform/v1/user_action_reference.protogoogle/protobuf/struct.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"Î
 
 Annotation
@@ -37,8 +37,8 @@ Annotation
 LabelsEntry
 key (	
 value (	:8:•êA‘
-$aiplatform.googleapis.com/Annotationiprojects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}/annotations/{annotation}By
-com.google.cloud.aiplatform.v1BAnnotationProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformbproto3'
+$aiplatform.googleapis.com/Annotationiprojects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}/annotations/{annotation}BÓ
+com.google.cloud.aiplatform.v1BAnnotationProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformªGoogle.Cloud.AIPlatform.V1ÊGoogle\\Cloud\\AIPlatform\\V1êGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
 
         static::$is_initialized = true;

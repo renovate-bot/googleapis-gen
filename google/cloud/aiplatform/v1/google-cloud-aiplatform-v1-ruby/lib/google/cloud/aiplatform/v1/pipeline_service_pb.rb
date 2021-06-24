@@ -42,7 +42,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         CreateTrainingPipelineRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.CreateTrainingPipelineRequest").msgclass
         GetTrainingPipelineRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.GetTrainingPipelineRequest").msgclass

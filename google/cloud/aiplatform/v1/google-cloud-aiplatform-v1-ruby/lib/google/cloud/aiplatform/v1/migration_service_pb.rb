@@ -85,7 +85,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         SearchMigratableResourcesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.SearchMigratableResourcesRequest").msgclass
         SearchMigratableResourcesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.SearchMigratableResourcesResponse").msgclass

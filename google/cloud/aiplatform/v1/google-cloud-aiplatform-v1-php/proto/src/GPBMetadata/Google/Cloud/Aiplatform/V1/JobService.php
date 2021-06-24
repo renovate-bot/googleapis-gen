@@ -29,7 +29,7 @@ class JobService
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-„A
+ßA
 ,google/cloud/aiplatform/v1/job_service.protogoogle.cloud.aiplatform.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto5google/cloud/aiplatform/v1/batch_prediction_job.proto+google/cloud/aiplatform/v1/custom_job.proto2google/cloud/aiplatform/v1/data_labeling_job.proto:google/cloud/aiplatform/v1/hyperparameter_tuning_job.proto*google/cloud/aiplatform/v1/operation.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"“
 CreateCustomJobRequest9
 parent (	B)àAúA#
@@ -155,8 +155,8 @@ custom_jobÚAparent,custom_job¥
 ListBatchPredictionJobs:.google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest;.google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse"H‚Óä“97/v1/{parent=projects/*/locations/*}/batchPredictionJobsÚAparentñ
 DeleteBatchPredictionJob;.google.cloud.aiplatform.v1.DeleteBatchPredictionJobRequest.google.longrunning.Operation"y‚Óä“9*7/v1/{name=projects/*/locations/*/batchPredictionJobs/*}ÚAnameÊA0
 google.protobuf.EmptyDeleteOperationMetadataÁ
-CancelBatchPredictionJob;.google.cloud.aiplatform.v1.CancelBatchPredictionJobRequest.google.protobuf.Empty"P‚Óä“C">/v1/{name=projects/*/locations/*/batchPredictionJobs/*}:cancel:*ÚAnameMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBy
-com.google.cloud.aiplatform.v1BJobServiceProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformbproto3'
+CancelBatchPredictionJob;.google.cloud.aiplatform.v1.CancelBatchPredictionJobRequest.google.protobuf.Empty"P‚Óä“C">/v1/{name=projects/*/locations/*/batchPredictionJobs/*}:cancel:*ÚAnameMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBÓ
+com.google.cloud.aiplatform.v1BJobServiceProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformªGoogle.Cloud.AIPlatform.V1ÊGoogle\\Cloud\\AIPlatform\\V1êGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
 
         static::$is_initialized = true;

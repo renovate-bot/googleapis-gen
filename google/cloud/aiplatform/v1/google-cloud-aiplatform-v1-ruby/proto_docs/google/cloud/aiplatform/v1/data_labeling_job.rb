@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         # DataLabelingJob is used to trigger a human labeling job on unlabeled data
         # from the following Dataset:
@@ -67,7 +67,7 @@ module Google
         #   @return [::Google::Protobuf::Value]
         #     Required. Input config parameters for the DataLabelingJob.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1::JobState]
+        #   @return [::Google::Cloud::AIPlatform::V1::JobState]
         #     Output only. The detailed state of the job.
         # @!attribute [r] labeling_progress
         #   @return [::Integer]
@@ -100,19 +100,19 @@ module Google
         #     and are immutable. Following system labels exist for each DataLabelingJob:
         #
         #     * "aiplatform.googleapis.com/schema": output only, its value is the
-        #       {::Google::Cloud::Aiplatform::V1::DataLabelingJob#inputs_schema_uri inputs_schema}'s title.
+        #       {::Google::Cloud::AIPlatform::V1::DataLabelingJob#inputs_schema_uri inputs_schema}'s title.
         # @!attribute [rw] specialist_pools
         #   @return [::Array<::String>]
         #     The SpecialistPools' resource names associated with this job.
         # @!attribute [rw] encryption_spec
-        #   @return [::Google::Cloud::Aiplatform::V1::EncryptionSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1::EncryptionSpec]
         #     Customer-managed encryption key spec for a DataLabelingJob. If set, this
         #     DataLabelingJob will be secured by this key.
         #
         #     Note: Annotations created in the DataLabelingJob are associated with
         #     the EncryptionSpec of the Dataset they are exported to.
         # @!attribute [rw] active_learning_config
-        #   @return [::Google::Cloud::Aiplatform::V1::ActiveLearningConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1::ActiveLearningConfig]
         #     Parameters that configure the active learning pipeline. Active learning
         #     will label the data incrementally via several iterations. For every
         #     iteration, it will select a batch of data based on the sampling strategy.
@@ -149,11 +149,11 @@ module Google
         #   @return [::Integer]
         #     Max percent of total DataItems for human labeling.
         # @!attribute [rw] sample_config
-        #   @return [::Google::Cloud::Aiplatform::V1::SampleConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1::SampleConfig]
         #     Active learning data sampling config. For every active learning labeling
         #     iteration, it will select a batch of data based on the sampling strategy.
         # @!attribute [rw] training_config
-        #   @return [::Google::Cloud::Aiplatform::V1::TrainingConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1::TrainingConfig]
         #     CMLE training config. For every active learning labeling iteration, system
         #     will train a machine learning model on CMLE. The trained model will be used
         #     by data sampling algorithm to select DataItems.
@@ -172,7 +172,7 @@ module Google
         #     The percentage of data needed to be labeled in each following batch
         #     (except the first batch).
         # @!attribute [rw] sample_strategy
-        #   @return [::Google::Cloud::Aiplatform::V1::SampleConfig::SampleStrategy]
+        #   @return [::Google::Cloud::AIPlatform::V1::SampleConfig::SampleStrategy]
         #     Field to choose sampling strategy. Sampling strategy will decide which data
         #     should be selected for human labeling in every batch.
         class SampleConfig

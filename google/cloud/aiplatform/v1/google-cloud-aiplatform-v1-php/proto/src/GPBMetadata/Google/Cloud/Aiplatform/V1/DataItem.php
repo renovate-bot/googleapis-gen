@@ -21,7 +21,7 @@ class DataItem
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ÿ
+Ú
 *google/cloud/aiplatform/v1/data_item.protogoogle.cloud.aiplatform.v1google/api/resource.protogoogle/protobuf/struct.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"»
 DataItem
 name (	BàA4
@@ -33,8 +33,8 @@ class DataItem
 LabelsEntry
 key (	
 value (	:8:yêAv
-"aiplatform.googleapis.com/DataItemPprojects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}Bw
-com.google.cloud.aiplatform.v1BDataItemProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformbproto3'
+"aiplatform.googleapis.com/DataItemPprojects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}BÑ
+com.google.cloud.aiplatform.v1BDataItemProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformªGoogle.Cloud.AIPlatform.V1ÊGoogle\\Cloud\\AIPlatform\\V1êGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
 
         static::$is_initialized = true;

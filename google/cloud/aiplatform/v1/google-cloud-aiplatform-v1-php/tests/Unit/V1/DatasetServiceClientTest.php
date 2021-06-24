@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,18 +29,18 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1\Annotation;
-use Google\Cloud\Aiplatform\V1\AnnotationSpec;
+use Google\Cloud\AIPlatform\V1\Annotation;
+use Google\Cloud\AIPlatform\V1\AnnotationSpec;
 
-use Google\Cloud\Aiplatform\V1\DataItem;
-use Google\Cloud\Aiplatform\V1\Dataset;
-use Google\Cloud\Aiplatform\V1\DatasetServiceClient;
-use Google\Cloud\Aiplatform\V1\ExportDataConfig;
-use Google\Cloud\Aiplatform\V1\ExportDataResponse;
-use Google\Cloud\Aiplatform\V1\ImportDataResponse;
-use Google\Cloud\Aiplatform\V1\ListAnnotationsResponse;
-use Google\Cloud\Aiplatform\V1\ListDataItemsResponse;
-use Google\Cloud\Aiplatform\V1\ListDatasetsResponse;
+use Google\Cloud\AIPlatform\V1\DataItem;
+use Google\Cloud\AIPlatform\V1\Dataset;
+use Google\Cloud\AIPlatform\V1\DatasetServiceClient;
+use Google\Cloud\AIPlatform\V1\ExportDataConfig;
+use Google\Cloud\AIPlatform\V1\ExportDataResponse;
+use Google\Cloud\AIPlatform\V1\ImportDataResponse;
+use Google\Cloud\AIPlatform\V1\ListAnnotationsResponse;
+use Google\Cloud\AIPlatform\V1\ListDataItemsResponse;
+use Google\Cloud\AIPlatform\V1\ListDatasetsResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

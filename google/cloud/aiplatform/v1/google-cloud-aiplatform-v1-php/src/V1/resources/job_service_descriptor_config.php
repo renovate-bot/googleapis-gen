@@ -6,7 +6,7 @@ return [
             'DeleteBatchPredictionJob' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -16,7 +16,7 @@ return [
             'DeleteCustomJob' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -26,7 +26,7 @@ return [
             'DeleteDataLabelingJob' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -36,7 +36,7 @@ return [
             'DeleteHyperparameterTuningJob' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

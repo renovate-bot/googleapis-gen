@@ -19,22 +19,22 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
-        # Request message for {::Google::Cloud::Aiplatform::V1::PipelineService::Client#create_training_pipeline PipelineService.CreateTrainingPipeline}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::PipelineService::Client#create_training_pipeline PipelineService.CreateTrainingPipeline}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to create the TrainingPipeline in.
         #     Format: `projects/{project}/locations/{location}`
         # @!attribute [rw] training_pipeline
-        #   @return [::Google::Cloud::Aiplatform::V1::TrainingPipeline]
+        #   @return [::Google::Cloud::AIPlatform::V1::TrainingPipeline]
         #     Required. The TrainingPipeline to create.
         class CreateTrainingPipelineRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::PipelineService::Client#get_training_pipeline PipelineService.GetTrainingPipeline}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::PipelineService::Client#get_training_pipeline PipelineService.GetTrainingPipeline}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TrainingPipeline resource.
@@ -45,7 +45,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to list the TrainingPipelines from.
@@ -75,8 +75,8 @@ module Google
         #   @return [::String]
         #     The standard list page token.
         #     Typically obtained via
-        #     {::Google::Cloud::Aiplatform::V1::ListTrainingPipelinesResponse#next_page_token ListTrainingPipelinesResponse.next_page_token} of the previous
-        #     {::Google::Cloud::Aiplatform::V1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines} call.
+        #     {::Google::Cloud::AIPlatform::V1::ListTrainingPipelinesResponse#next_page_token ListTrainingPipelinesResponse.next_page_token} of the previous
+        #     {::Google::Cloud::AIPlatform::V1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines} call.
         # @!attribute [rw] read_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Mask specifying which fields to read.
@@ -85,20 +85,20 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines}
+        # Response message for {::Google::Cloud::AIPlatform::V1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines}
         # @!attribute [rw] training_pipelines
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::TrainingPipeline>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::TrainingPipeline>]
         #     List of TrainingPipelines in the requested page.
         # @!attribute [rw] next_page_token
         #   @return [::String]
         #     A token to retrieve the next page of results.
-        #     Pass to {::Google::Cloud::Aiplatform::V1::ListTrainingPipelinesRequest#page_token ListTrainingPipelinesRequest.page_token} to obtain that page.
+        #     Pass to {::Google::Cloud::AIPlatform::V1::ListTrainingPipelinesRequest#page_token ListTrainingPipelinesRequest.page_token} to obtain that page.
         class ListTrainingPipelinesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::PipelineService::Client#delete_training_pipeline PipelineService.DeleteTrainingPipeline}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::PipelineService::Client#delete_training_pipeline PipelineService.DeleteTrainingPipeline}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TrainingPipeline resource to be deleted.
@@ -109,7 +109,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::PipelineService::Client#cancel_training_pipeline PipelineService.CancelTrainingPipeline}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::PipelineService::Client#cancel_training_pipeline PipelineService.CancelTrainingPipeline}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TrainingPipeline to cancel.

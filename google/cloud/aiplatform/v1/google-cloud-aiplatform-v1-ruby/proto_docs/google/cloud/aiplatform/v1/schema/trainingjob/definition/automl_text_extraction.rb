@@ -19,14 +19,14 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         module Schema
-          module Trainingjob
+          module TrainingJob
             module Definition
               # A TrainingJob that trains and uploads an AutoML Text Extraction Model.
               # @!attribute [rw] inputs
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTextExtractionInputs]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTextExtractionInputs]
               #     The input parameters of this TrainingJob.
               class AutoMlTextExtraction
                 include ::Google::Protobuf::MessageExts

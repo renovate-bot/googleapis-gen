@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         module Schema
           module Predict
@@ -48,7 +48,7 @@ module Google
               #     The Model's confidence in correction of this prediction, higher
               #     value means higher confidence.
               # @!attribute [rw] frames
-              #   @return [::Array<::Google::Cloud::Aiplatform::V1::Schema::Predict::Prediction::VideoObjectTrackingPredictionResult::Frame>]
+              #   @return [::Array<::Google::Cloud::AIPlatform::V1::Schema::Predict::Prediction::VideoObjectTrackingPredictionResult::Frame>]
               #     All of the frames of the video in which a single object instance has been
               #     detected. The bounding boxes in the frames identify the same object.
               class VideoObjectTrackingPredictionResult

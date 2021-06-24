@@ -22,9 +22,9 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Aiplatform\V1;
+namespace Google\Cloud\AIPlatform\V1;
 
-use Google\Cloud\Aiplatform\V1\Gapic\SpecialistPoolServiceGapicClient;
+use Google\Cloud\AIPlatform\V1\Gapic\SpecialistPoolServiceGapicClient;
 
 /** {@inheritdoc} */
 class SpecialistPoolServiceClient extends SpecialistPoolServiceGapicClient

@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         # Specification of a single machine.
         # @!attribute [rw] machine_type
@@ -32,13 +32,13 @@ module Google
         #     See the [list of machine types supported for custom
         #     training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
         #
-        #     For {::Google::Cloud::Aiplatform::V1::DeployedModel DeployedModel} this field is optional, and the default
-        #     value is `n1-standard-2`. For {::Google::Cloud::Aiplatform::V1::BatchPredictionJob BatchPredictionJob} or as part of
-        #     {::Google::Cloud::Aiplatform::V1::WorkerPoolSpec WorkerPoolSpec} this field is required.
+        #     For {::Google::Cloud::AIPlatform::V1::DeployedModel DeployedModel} this field is optional, and the default
+        #     value is `n1-standard-2`. For {::Google::Cloud::AIPlatform::V1::BatchPredictionJob BatchPredictionJob} or as part of
+        #     {::Google::Cloud::AIPlatform::V1::WorkerPoolSpec WorkerPoolSpec} this field is required.
         # @!attribute [rw] accelerator_type
-        #   @return [::Google::Cloud::Aiplatform::V1::AcceleratorType]
+        #   @return [::Google::Cloud::AIPlatform::V1::AcceleratorType]
         #     Immutable. The type of accelerator(s) that may be attached to the machine as per
-        #     {::Google::Cloud::Aiplatform::V1::MachineSpec#accelerator_count accelerator_count}.
+        #     {::Google::Cloud::AIPlatform::V1::MachineSpec#accelerator_count accelerator_count}.
         # @!attribute [rw] accelerator_count
         #   @return [::Integer]
         #     The number of accelerators to attach to the machine.
@@ -50,7 +50,7 @@ module Google
         # A description of resources that are dedicated to a DeployedModel, and
         # that need a higher degree of manual configuration.
         # @!attribute [rw] machine_spec
-        #   @return [::Google::Cloud::Aiplatform::V1::MachineSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1::MachineSpec]
         #     Required. Immutable. The specification of a single machine used by the prediction.
         # @!attribute [rw] min_replica_count
         #   @return [::Integer]
@@ -58,9 +58,9 @@ module Google
         #     deployed on. If traffic against it increases, it may dynamically be
         #     deployed onto more replicas, and as traffic decreases, some of these extra
         #     replicas may be freed.
-        #     Note: if {::Google::Cloud::Aiplatform::V1::MachineSpec#accelerator_count machine_spec.accelerator_count} is
+        #     Note: if {::Google::Cloud::AIPlatform::V1::MachineSpec#accelerator_count machine_spec.accelerator_count} is
         #     above 0, currently the model will be always deployed precisely on
-        #     {::Google::Cloud::Aiplatform::V1::DedicatedResources#min_replica_count min_replica_count}.
+        #     {::Google::Cloud::AIPlatform::V1::DedicatedResources#min_replica_count min_replica_count}.
         # @!attribute [rw] max_replica_count
         #   @return [::Integer]
         #     Immutable. The maximum number of replicas this DeployedModel may be deployed on when
@@ -69,7 +69,7 @@ module Google
         #     to scale the model to that many replicas is guaranteed (barring service
         #     outages). If traffic against the DeployedModel increases beyond what its
         #     replicas at maximum may handle, a portion of the traffic will be dropped.
-        #     If this value is not provided, will use {::Google::Cloud::Aiplatform::V1::DedicatedResources#min_replica_count min_replica_count} as the
+        #     If this value is not provided, will use {::Google::Cloud::AIPlatform::V1::DedicatedResources#min_replica_count min_replica_count} as the
         #     default value.
         class DedicatedResources
           include ::Google::Protobuf::MessageExts
@@ -83,7 +83,7 @@ module Google
         #   @return [::Integer]
         #     Immutable. The minimum number of replicas this DeployedModel will be always deployed
         #     on. If traffic against it increases, it may dynamically be deployed onto
-        #     more replicas up to {::Google::Cloud::Aiplatform::V1::AutomaticResources#max_replica_count max_replica_count}, and as traffic decreases, some
+        #     more replicas up to {::Google::Cloud::AIPlatform::V1::AutomaticResources#max_replica_count max_replica_count}, and as traffic decreases, some
         #     of these extra replicas may be freed.
         #     If the requested value is too large, the deployment will error.
         # @!attribute [rw] max_replica_count
@@ -105,13 +105,13 @@ module Google
         # A description of resources that are used for performing batch operations, are
         # dedicated to a Model, and need manual configuration.
         # @!attribute [rw] machine_spec
-        #   @return [::Google::Cloud::Aiplatform::V1::MachineSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1::MachineSpec]
         #     Required. Immutable. The specification of a single machine.
         # @!attribute [rw] starting_replica_count
         #   @return [::Integer]
         #     Immutable. The number of machine replicas used at the start of the batch operation.
         #     If not set, Vertex AI decides starting number, not greater than
-        #     {::Google::Cloud::Aiplatform::V1::BatchDedicatedResources#max_replica_count max_replica_count}
+        #     {::Google::Cloud::AIPlatform::V1::BatchDedicatedResources#max_replica_count max_replica_count}
         # @!attribute [rw] max_replica_count
         #   @return [::Integer]
         #     Immutable. The maximum number of machine replicas the batch operation may be scaled

@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         # Models are deployed into it, and afterwards Endpoint is called to obtain
         # predictions and explanations.
@@ -35,10 +35,10 @@ module Google
         #   @return [::String]
         #     The description of the Endpoint.
         # @!attribute [r] deployed_models
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::DeployedModel>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::DeployedModel>]
         #     Output only. The models deployed in this Endpoint.
-        #     To add or remove DeployedModels use {::Google::Cloud::Aiplatform::V1::EndpointService::Client#deploy_model EndpointService.DeployModel} and
-        #     {::Google::Cloud::Aiplatform::V1::EndpointService::Client#undeploy_model EndpointService.UndeployModel} respectively.
+        #     To add or remove DeployedModels use {::Google::Cloud::AIPlatform::V1::EndpointService::Client#deploy_model EndpointService.DeployModel} and
+        #     {::Google::Cloud::AIPlatform::V1::EndpointService::Client#undeploy_model EndpointService.UndeployModel} respectively.
         # @!attribute [rw] traffic_split
         #   @return [::Google::Protobuf::Map{::String => ::Integer}]
         #     A map from a DeployedModel's ID to the percentage of this Endpoint's
@@ -69,7 +69,7 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when this Endpoint was last updated.
         # @!attribute [rw] encryption_spec
-        #   @return [::Google::Cloud::Aiplatform::V1::EncryptionSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1::EncryptionSpec]
         #     Customer-managed encryption key spec for an Endpoint. If set, this
         #     Endpoint and all sub-resources of this Endpoint will be secured by
         #     this key.
@@ -98,11 +98,11 @@ module Google
 
         # A deployment of a Model. Endpoints contain one or more DeployedModels.
         # @!attribute [rw] dedicated_resources
-        #   @return [::Google::Cloud::Aiplatform::V1::DedicatedResources]
+        #   @return [::Google::Cloud::AIPlatform::V1::DedicatedResources]
         #     A description of resources that are dedicated to the DeployedModel, and
         #     that need a higher degree of manual configuration.
         # @!attribute [rw] automatic_resources
-        #   @return [::Google::Cloud::Aiplatform::V1::AutomaticResources]
+        #   @return [::Google::Cloud::AIPlatform::V1::AutomaticResources]
         #     A description of resources that to large degree are decided by AI
         #     Platform, and require only a modest additional configuration.
         # @!attribute [r] id

@@ -19,14 +19,14 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         module Schema
-          module Trainingjob
+          module TrainingJob
             module Definition
               # A TrainingJob that trains and uploads an AutoML Video ObjectTracking Model.
               # @!attribute [rw] inputs
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlVideoObjectTrackingInputs]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlVideoObjectTrackingInputs]
               #     The input parameters of this TrainingJob.
               class AutoMlVideoObjectTracking
                 include ::Google::Protobuf::MessageExts
@@ -34,7 +34,7 @@ module Google
               end
 
               # @!attribute [rw] model_type
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlVideoObjectTrackingInputs::ModelType]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlVideoObjectTrackingInputs::ModelType]
               class AutoMlVideoObjectTrackingInputs
                 include ::Google::Protobuf::MessageExts
                 extend ::Google::Protobuf::MessageExts::ClassMethods

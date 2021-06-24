@@ -19,10 +19,10 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         module Schema
-          module Trainingjob
+          module TrainingJob
             module Definition
               # Configuration for exporting test set predictions to a BigQuery table.
               # @!attribute [rw] destination_bigquery_uri

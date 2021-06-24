@@ -22,7 +22,7 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Aiplatform\V1\Gapic;
+namespace Google\Cloud\AIPlatform\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -37,34 +37,34 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1\BatchPredictionJob;
-use Google\Cloud\Aiplatform\V1\CancelBatchPredictionJobRequest;
-use Google\Cloud\Aiplatform\V1\CancelCustomJobRequest;
-use Google\Cloud\Aiplatform\V1\CancelDataLabelingJobRequest;
-use Google\Cloud\Aiplatform\V1\CancelHyperparameterTuningJobRequest;
-use Google\Cloud\Aiplatform\V1\CreateBatchPredictionJobRequest;
-use Google\Cloud\Aiplatform\V1\CreateCustomJobRequest;
-use Google\Cloud\Aiplatform\V1\CreateDataLabelingJobRequest;
-use Google\Cloud\Aiplatform\V1\CreateHyperparameterTuningJobRequest;
-use Google\Cloud\Aiplatform\V1\CustomJob;
-use Google\Cloud\Aiplatform\V1\DataLabelingJob;
-use Google\Cloud\Aiplatform\V1\DeleteBatchPredictionJobRequest;
-use Google\Cloud\Aiplatform\V1\DeleteCustomJobRequest;
-use Google\Cloud\Aiplatform\V1\DeleteDataLabelingJobRequest;
-use Google\Cloud\Aiplatform\V1\DeleteHyperparameterTuningJobRequest;
-use Google\Cloud\Aiplatform\V1\GetBatchPredictionJobRequest;
-use Google\Cloud\Aiplatform\V1\GetCustomJobRequest;
-use Google\Cloud\Aiplatform\V1\GetDataLabelingJobRequest;
-use Google\Cloud\Aiplatform\V1\GetHyperparameterTuningJobRequest;
-use Google\Cloud\Aiplatform\V1\HyperparameterTuningJob;
-use Google\Cloud\Aiplatform\V1\ListBatchPredictionJobsRequest;
-use Google\Cloud\Aiplatform\V1\ListBatchPredictionJobsResponse;
-use Google\Cloud\Aiplatform\V1\ListCustomJobsRequest;
-use Google\Cloud\Aiplatform\V1\ListCustomJobsResponse;
-use Google\Cloud\Aiplatform\V1\ListDataLabelingJobsRequest;
-use Google\Cloud\Aiplatform\V1\ListDataLabelingJobsResponse;
-use Google\Cloud\Aiplatform\V1\ListHyperparameterTuningJobsRequest;
-use Google\Cloud\Aiplatform\V1\ListHyperparameterTuningJobsResponse;
+use Google\Cloud\AIPlatform\V1\BatchPredictionJob;
+use Google\Cloud\AIPlatform\V1\CancelBatchPredictionJobRequest;
+use Google\Cloud\AIPlatform\V1\CancelCustomJobRequest;
+use Google\Cloud\AIPlatform\V1\CancelDataLabelingJobRequest;
+use Google\Cloud\AIPlatform\V1\CancelHyperparameterTuningJobRequest;
+use Google\Cloud\AIPlatform\V1\CreateBatchPredictionJobRequest;
+use Google\Cloud\AIPlatform\V1\CreateCustomJobRequest;
+use Google\Cloud\AIPlatform\V1\CreateDataLabelingJobRequest;
+use Google\Cloud\AIPlatform\V1\CreateHyperparameterTuningJobRequest;
+use Google\Cloud\AIPlatform\V1\CustomJob;
+use Google\Cloud\AIPlatform\V1\DataLabelingJob;
+use Google\Cloud\AIPlatform\V1\DeleteBatchPredictionJobRequest;
+use Google\Cloud\AIPlatform\V1\DeleteCustomJobRequest;
+use Google\Cloud\AIPlatform\V1\DeleteDataLabelingJobRequest;
+use Google\Cloud\AIPlatform\V1\DeleteHyperparameterTuningJobRequest;
+use Google\Cloud\AIPlatform\V1\GetBatchPredictionJobRequest;
+use Google\Cloud\AIPlatform\V1\GetCustomJobRequest;
+use Google\Cloud\AIPlatform\V1\GetDataLabelingJobRequest;
+use Google\Cloud\AIPlatform\V1\GetHyperparameterTuningJobRequest;
+use Google\Cloud\AIPlatform\V1\HyperparameterTuningJob;
+use Google\Cloud\AIPlatform\V1\ListBatchPredictionJobsRequest;
+use Google\Cloud\AIPlatform\V1\ListBatchPredictionJobsResponse;
+use Google\Cloud\AIPlatform\V1\ListCustomJobsRequest;
+use Google\Cloud\AIPlatform\V1\ListCustomJobsResponse;
+use Google\Cloud\AIPlatform\V1\ListDataLabelingJobsRequest;
+use Google\Cloud\AIPlatform\V1\ListDataLabelingJobsResponse;
+use Google\Cloud\AIPlatform\V1\ListHyperparameterTuningJobsRequest;
+use Google\Cloud\AIPlatform\V1\ListHyperparameterTuningJobsResponse;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
@@ -719,7 +719,7 @@ class JobServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\BatchPredictionJob
+     * @return \Google\Cloud\AIPlatform\V1\BatchPredictionJob
      *
      * @throws ApiException if the remote call fails
      */
@@ -764,7 +764,7 @@ class JobServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\CustomJob
+     * @return \Google\Cloud\AIPlatform\V1\CustomJob
      *
      * @throws ApiException if the remote call fails
      */
@@ -808,7 +808,7 @@ class JobServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\DataLabelingJob
+     * @return \Google\Cloud\AIPlatform\V1\DataLabelingJob
      *
      * @throws ApiException if the remote call fails
      */
@@ -852,7 +852,7 @@ class JobServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\HyperparameterTuningJob
+     * @return \Google\Cloud\AIPlatform\V1\HyperparameterTuningJob
      *
      * @throws ApiException if the remote call fails
      */
@@ -1156,7 +1156,7 @@ class JobServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\BatchPredictionJob
+     * @return \Google\Cloud\AIPlatform\V1\BatchPredictionJob
      *
      * @throws ApiException if the remote call fails
      */
@@ -1198,7 +1198,7 @@ class JobServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\CustomJob
+     * @return \Google\Cloud\AIPlatform\V1\CustomJob
      *
      * @throws ApiException if the remote call fails
      */
@@ -1240,7 +1240,7 @@ class JobServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\DataLabelingJob
+     * @return \Google\Cloud\AIPlatform\V1\DataLabelingJob
      *
      * @throws ApiException if the remote call fails
      */
@@ -1282,7 +1282,7 @@ class JobServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\HyperparameterTuningJob
+     * @return \Google\Cloud\AIPlatform\V1\HyperparameterTuningJob
      *
      * @throws ApiException if the remote call fails
      */

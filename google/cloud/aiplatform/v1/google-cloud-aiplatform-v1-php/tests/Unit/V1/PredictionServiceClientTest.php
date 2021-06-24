@@ -20,15 +20,15 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1\PredictionServiceClient;
-use Google\Cloud\Aiplatform\V1\PredictResponse;
+use Google\Cloud\AIPlatform\V1\PredictionServiceClient;
+use Google\Cloud\AIPlatform\V1\PredictResponse;
 use Google\Rpc\Code;
 use stdClass;
 

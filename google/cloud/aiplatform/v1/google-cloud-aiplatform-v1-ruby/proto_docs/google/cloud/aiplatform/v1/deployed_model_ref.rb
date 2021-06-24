@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         # Points to a DeployedModel.
         # @!attribute [rw] endpoint

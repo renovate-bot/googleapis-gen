@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         # The Google Cloud Storage location for the input content.
         # @!attribute [rw] uris

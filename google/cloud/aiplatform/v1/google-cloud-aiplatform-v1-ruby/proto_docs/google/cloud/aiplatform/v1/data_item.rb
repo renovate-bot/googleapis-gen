@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         # A piece of data in a Dataset. Could be an image, a video, a document or plain
         # text.

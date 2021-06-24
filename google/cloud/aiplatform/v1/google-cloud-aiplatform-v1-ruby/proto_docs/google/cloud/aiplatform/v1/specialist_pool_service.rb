@@ -19,15 +19,15 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
-        # Request message for {::Google::Cloud::Aiplatform::V1::SpecialistPoolService::Client#create_specialist_pool SpecialistPoolService.CreateSpecialistPool}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client#create_specialist_pool SpecialistPoolService.CreateSpecialistPool}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The parent Project name for the new SpecialistPool.
         #     The form is `projects/{project}/locations/{location}`.
         # @!attribute [rw] specialist_pool
-        #   @return [::Google::Cloud::Aiplatform::V1::SpecialistPool]
+        #   @return [::Google::Cloud::AIPlatform::V1::SpecialistPool]
         #     Required. The SpecialistPool to create.
         class CreateSpecialistPoolRequest
           include ::Google::Protobuf::MessageExts
@@ -35,16 +35,16 @@ module Google
         end
 
         # Runtime operation information for
-        # {::Google::Cloud::Aiplatform::V1::SpecialistPoolService::Client#create_specialist_pool SpecialistPoolService.CreateSpecialistPool}.
+        # {::Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client#create_specialist_pool SpecialistPoolService.CreateSpecialistPool}.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1::GenericOperationMetadata]
         #     The operation generic information.
         class CreateSpecialistPoolOperationMetadata
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::SpecialistPoolService::Client#get_specialist_pool SpecialistPoolService.GetSpecialistPool}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client#get_specialist_pool SpecialistPoolService.GetSpecialistPool}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the SpecialistPool resource.
@@ -55,7 +55,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::SpecialistPoolService::Client#list_specialist_pools SpecialistPoolService.ListSpecialistPools}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client#list_specialist_pools SpecialistPoolService.ListSpecialistPools}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The name of the SpecialistPool's parent resource.
@@ -66,8 +66,8 @@ module Google
         # @!attribute [rw] page_token
         #   @return [::String]
         #     The standard list page token.
-        #     Typically obtained by {::Google::Cloud::Aiplatform::V1::ListSpecialistPoolsResponse#next_page_token ListSpecialistPoolsResponse.next_page_token} of
-        #     the previous {::Google::Cloud::Aiplatform::V1::SpecialistPoolService::Client#list_specialist_pools SpecialistPoolService.ListSpecialistPools} call. Return
+        #     Typically obtained by {::Google::Cloud::AIPlatform::V1::ListSpecialistPoolsResponse#next_page_token ListSpecialistPoolsResponse.next_page_token} of
+        #     the previous {::Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client#list_specialist_pools SpecialistPoolService.ListSpecialistPools} call. Return
         #     first page if empty.
         # @!attribute [rw] read_mask
         #   @return [::Google::Protobuf::FieldMask]
@@ -77,9 +77,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1::SpecialistPoolService::Client#list_specialist_pools SpecialistPoolService.ListSpecialistPools}.
+        # Response message for {::Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client#list_specialist_pools SpecialistPoolService.ListSpecialistPools}.
         # @!attribute [rw] specialist_pools
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::SpecialistPool>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::SpecialistPool>]
         #     A list of SpecialistPools that matches the specified filter in the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -89,7 +89,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::SpecialistPoolService::Client#delete_specialist_pool SpecialistPoolService.DeleteSpecialistPool}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client#delete_specialist_pool SpecialistPoolService.DeleteSpecialistPool}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The resource name of the SpecialistPool to delete. Format:
@@ -104,9 +104,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::SpecialistPoolService::Client#update_specialist_pool SpecialistPoolService.UpdateSpecialistPool}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client#update_specialist_pool SpecialistPoolService.UpdateSpecialistPool}.
         # @!attribute [rw] specialist_pool
-        #   @return [::Google::Cloud::Aiplatform::V1::SpecialistPool]
+        #   @return [::Google::Cloud::AIPlatform::V1::SpecialistPool]
         #     Required. The SpecialistPool which replaces the resource on the server.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
@@ -117,14 +117,14 @@ module Google
         end
 
         # Runtime operation metadata for
-        # {::Google::Cloud::Aiplatform::V1::SpecialistPoolService::Client#update_specialist_pool SpecialistPoolService.UpdateSpecialistPool}.
+        # {::Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client#update_specialist_pool SpecialistPoolService.UpdateSpecialistPool}.
         # @!attribute [r] specialist_pool
         #   @return [::String]
         #     Output only. The name of the SpecialistPool to which the specialists are being added.
         #     Format:
         #     `projects/{project_id}/locations/{location_id}/specialistPools/{specialist_pool}`
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1::GenericOperationMetadata]
         #     The operation generic information.
         class UpdateSpecialistPoolOperationMetadata
           include ::Google::Protobuf::MessageExts

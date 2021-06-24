@@ -3,7 +3,7 @@
     "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
     "language": "php",
     "protoPackage": "google.cloud.aiplatform.v1",
-    "libraryPackage": "Google\\Cloud\\Aiplatform\\V1",
+    "libraryPackage": "Google\\Cloud\\AIPlatform\\V1",
     "services": {
         "DatasetService": {
             "clients": {

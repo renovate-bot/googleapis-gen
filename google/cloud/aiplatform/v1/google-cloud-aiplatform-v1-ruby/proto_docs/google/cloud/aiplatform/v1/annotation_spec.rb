@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         # Identifies a concept with which DataItems may be annotated with.
         # @!attribute [r] name

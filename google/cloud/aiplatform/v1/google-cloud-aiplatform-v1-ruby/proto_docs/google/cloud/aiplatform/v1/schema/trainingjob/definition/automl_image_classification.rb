@@ -19,17 +19,17 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         module Schema
-          module Trainingjob
+          module TrainingJob
             module Definition
               # A TrainingJob that trains and uploads an AutoML Image Classification Model.
               # @!attribute [rw] inputs
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlImageClassificationInputs]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlImageClassificationInputs]
               #     The input parameters of this TrainingJob.
               # @!attribute [rw] metadata
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlImageClassificationMetadata]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlImageClassificationMetadata]
               #     The metadata information.
               class AutoMlImageClassification
                 include ::Google::Protobuf::MessageExts
@@ -37,7 +37,7 @@ module Google
               end
 
               # @!attribute [rw] model_type
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlImageClassificationInputs::ModelType]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlImageClassificationInputs::ModelType]
               # @!attribute [rw] base_model_id
               #   @return [::String]
               #     The ID of the `base` model. If it is specified, the new model will be
@@ -114,7 +114,7 @@ module Google
               #     milli node hours, i.e. 1,000 value in this field means 1 node hour.
               #     Guaranteed to not exceed inputs.budgetMilliNodeHours.
               # @!attribute [rw] successful_stop_reason
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlImageClassificationMetadata::SuccessfulStopReason]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlImageClassificationMetadata::SuccessfulStopReason]
               #     For successful job completions, this is the reason why the job has
               #     finished.
               class AutoMlImageClassificationMetadata

@@ -25,9 +25,9 @@ export AIPLATFORM_CREDENTIALS=path/to/keyfile.json
 3. Initialize the client.
 
 ```ruby
-require "google/cloud/aiplatform/v1"
+require "google/cloud/ai_platform/v1"
 
-client = ::Google::Cloud::Aiplatform::V1::DatasetService::Client.new
+client = ::Google::Cloud::AIPlatform::V1::DatasetService::Client.new
 ```
 
 ## Credential Lookup
@@ -64,7 +64,7 @@ containers where writing files is difficult or not encouraged.
 
 The environment variables that google-cloud-aiplatform-v1
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Aiplatform::V1::DatasetService::Credentials}):
+{::Google::Cloud::AIPlatform::V1::DatasetService::Credentials}):
 
 1. `AIPLATFORM_CREDENTIALS` - Path to JSON file, or JSON contents
 2. `AIPLATFORM_KEYFILE` - Path to JSON file, or JSON contents
@@ -73,11 +73,11 @@ checks for credentials are configured on the service Credentials class (such as
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
-require "google/cloud/aiplatform/v1"
+require "google/cloud/ai_platform/v1"
 
 ENV["AIPLATFORM_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Aiplatform::V1::DatasetService::Client.new
+client = ::Google::Cloud::AIPlatform::V1::DatasetService::Client.new
 ```
 
 ### Configuration
@@ -86,9 +86,9 @@ The **Credentials JSON** can be configured instead of placing them in
 environment variables. Either on an individual client initialization:
 
 ```ruby
-require "google/cloud/aiplatform/v1"
+require "google/cloud/ai_platform/v1"
 
-client = ::Google::Cloud::Aiplatform::V1::DatasetService::Client.new do |config|
+client = ::Google::Cloud::AIPlatform::V1::DatasetService::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -96,13 +96,13 @@ end
 Or configured globally for all clients:
 
 ```ruby
-require "google/cloud/aiplatform/v1"
+require "google/cloud/ai_platform/v1"
 
-::Google::Cloud::Aiplatform::V1::DatasetService::Client.configure do |config|
+::Google::Cloud::AIPlatform::V1::DatasetService::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Aiplatform::V1::DatasetService::Client.new
+client = ::Google::Cloud::AIPlatform::V1::DatasetService::Client.new
 ```
 
 ### Cloud SDK

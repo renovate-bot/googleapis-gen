@@ -18,7 +18,7 @@ class Io
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ø
+ö
 #google/cloud/aiplatform/v1/io.protogoogle.cloud.aiplatform.v1google/api/annotations.proto"
 	GcsSource
 uris (	B‡A"0
@@ -31,8 +31,8 @@ class Io
 output_uri (	B‡A"7
 ContainerRegistryDestination
 
-output_uri (	B‡ABq
-com.google.cloud.aiplatform.v1BIoProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformbproto3'
+output_uri (	B‡ABÀ
+com.google.cloud.aiplatform.v1BIoProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatform™Google.Cloud.AIPlatform.V1 Google\\Cloud\\AIPlatform\\V1ÍGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
 
         static::$is_initialized = true;

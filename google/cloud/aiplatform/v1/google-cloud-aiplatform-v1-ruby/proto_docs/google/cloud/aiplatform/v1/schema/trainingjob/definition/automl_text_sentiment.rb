@@ -19,14 +19,14 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         module Schema
-          module Trainingjob
+          module TrainingJob
             module Definition
               # A TrainingJob that trains and uploads an AutoML Text Sentiment Model.
               # @!attribute [rw] inputs
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTextSentimentInputs]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTextSentimentInputs]
               #     The input parameters of this TrainingJob.
               class AutoMlTextSentiment
                 include ::Google::Protobuf::MessageExts

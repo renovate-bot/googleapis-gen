@@ -22,7 +22,7 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Aiplatform\V1\Gapic;
+namespace Google\Cloud\AIPlatform\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -37,13 +37,13 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1\CancelTrainingPipelineRequest;
-use Google\Cloud\Aiplatform\V1\CreateTrainingPipelineRequest;
-use Google\Cloud\Aiplatform\V1\DeleteTrainingPipelineRequest;
-use Google\Cloud\Aiplatform\V1\GetTrainingPipelineRequest;
-use Google\Cloud\Aiplatform\V1\ListTrainingPipelinesRequest;
-use Google\Cloud\Aiplatform\V1\ListTrainingPipelinesResponse;
-use Google\Cloud\Aiplatform\V1\TrainingPipeline;
+use Google\Cloud\AIPlatform\V1\CancelTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1\CreateTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1\DeleteTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1\GetTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1\ListTrainingPipelinesRequest;
+use Google\Cloud\AIPlatform\V1\ListTrainingPipelinesResponse;
+use Google\Cloud\AIPlatform\V1\TrainingPipeline;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
@@ -402,7 +402,7 @@ class PipelineServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\TrainingPipeline
+     * @return \Google\Cloud\AIPlatform\V1\TrainingPipeline
      *
      * @throws ApiException if the remote call fails
      */
@@ -510,7 +510,7 @@ class PipelineServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\TrainingPipeline
+     * @return \Google\Cloud\AIPlatform\V1\TrainingPipeline
      *
      * @throws ApiException if the remote call fails
      */

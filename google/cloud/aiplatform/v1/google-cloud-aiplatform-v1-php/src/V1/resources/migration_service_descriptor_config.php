@@ -5,8 +5,8 @@ return [
         'google.cloud.aiplatform.v1.MigrationService' => [
             'BatchMigrateResources' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1\BatchMigrateResourcesResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\BatchMigrateResourcesOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1\BatchMigrateResourcesResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1\BatchMigrateResourcesOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

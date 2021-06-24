@@ -19,15 +19,15 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         module Schema
-          module Trainingjob
+          module TrainingJob
             module Definition
               # A TrainingJob that trains and uploads an AutoML Video Action Recognition
               # Model.
               # @!attribute [rw] inputs
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlVideoActionRecognitionInputs]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlVideoActionRecognitionInputs]
               #     The input parameters of this TrainingJob.
               class AutoMlVideoActionRecognition
                 include ::Google::Protobuf::MessageExts
@@ -35,7 +35,7 @@ module Google
               end
 
               # @!attribute [rw] model_type
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlVideoActionRecognitionInputs::ModelType]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlVideoActionRecognitionInputs::ModelType]
               class AutoMlVideoActionRecognitionInputs
                 include ::Google::Protobuf::MessageExts
                 extend ::Google::Protobuf::MessageExts::ClassMethods

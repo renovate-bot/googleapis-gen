@@ -6,7 +6,7 @@ return [
             'DeleteModel' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -15,8 +15,8 @@ return [
             ],
             'ExportModel' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1\ExportModelResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\ExportModelOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1\ExportModelResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1\ExportModelOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -25,8 +25,8 @@ return [
             ],
             'UploadModel' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1\UploadModelResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1\UploadModelOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1\UploadModelResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1\UploadModelOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

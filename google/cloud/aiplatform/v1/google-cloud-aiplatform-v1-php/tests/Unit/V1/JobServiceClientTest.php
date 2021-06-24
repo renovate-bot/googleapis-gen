@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,20 +29,20 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1\BatchPredictionJob;
-use Google\Cloud\Aiplatform\V1\BatchPredictionJob\InputConfig;
+use Google\Cloud\AIPlatform\V1\BatchPredictionJob;
+use Google\Cloud\AIPlatform\V1\BatchPredictionJob\InputConfig;
 
-use Google\Cloud\Aiplatform\V1\BatchPredictionJob\OutputConfig;
-use Google\Cloud\Aiplatform\V1\CustomJob;
-use Google\Cloud\Aiplatform\V1\CustomJobSpec;
-use Google\Cloud\Aiplatform\V1\DataLabelingJob;
-use Google\Cloud\Aiplatform\V1\HyperparameterTuningJob;
-use Google\Cloud\Aiplatform\V1\JobServiceClient;
-use Google\Cloud\Aiplatform\V1\ListBatchPredictionJobsResponse;
-use Google\Cloud\Aiplatform\V1\ListCustomJobsResponse;
-use Google\Cloud\Aiplatform\V1\ListDataLabelingJobsResponse;
-use Google\Cloud\Aiplatform\V1\ListHyperparameterTuningJobsResponse;
-use Google\Cloud\Aiplatform\V1\StudySpec;
+use Google\Cloud\AIPlatform\V1\BatchPredictionJob\OutputConfig;
+use Google\Cloud\AIPlatform\V1\CustomJob;
+use Google\Cloud\AIPlatform\V1\CustomJobSpec;
+use Google\Cloud\AIPlatform\V1\DataLabelingJob;
+use Google\Cloud\AIPlatform\V1\HyperparameterTuningJob;
+use Google\Cloud\AIPlatform\V1\JobServiceClient;
+use Google\Cloud\AIPlatform\V1\ListBatchPredictionJobsResponse;
+use Google\Cloud\AIPlatform\V1\ListCustomJobsResponse;
+use Google\Cloud\AIPlatform\V1\ListDataLabelingJobsResponse;
+use Google\Cloud\AIPlatform\V1\ListHyperparameterTuningJobsResponse;
+use Google\Cloud\AIPlatform\V1\StudySpec;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

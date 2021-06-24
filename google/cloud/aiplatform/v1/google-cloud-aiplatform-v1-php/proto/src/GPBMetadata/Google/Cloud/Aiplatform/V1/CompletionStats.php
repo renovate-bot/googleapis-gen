@@ -19,13 +19,13 @@ class CompletionStats
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ú
+Õ
 1google/cloud/aiplatform/v1/completion_stats.protogoogle.cloud.aiplatform.v1google/rpc/status.protogoogle/api/annotations.proto"j
 CompletionStats
 successful_count (BàA
 failed_count (BàA
-incomplete_count (BàAB~
-com.google.cloud.aiplatform.v1BCompletionStatsProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformbproto3'
+incomplete_count (BàABØ
+com.google.cloud.aiplatform.v1BCompletionStatsProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformªGoogle.Cloud.AIPlatform.V1ÊGoogle\\Cloud\\AIPlatform\\V1êGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
 
         static::$is_initialized = true;

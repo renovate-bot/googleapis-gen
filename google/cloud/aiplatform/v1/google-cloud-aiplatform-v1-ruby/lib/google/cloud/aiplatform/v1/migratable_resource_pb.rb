@@ -45,7 +45,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         MigratableResource = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.MigratableResource").msgclass
         MigratableResource::MlEngineModelVersion = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.MigratableResource.MlEngineModelVersion").msgclass

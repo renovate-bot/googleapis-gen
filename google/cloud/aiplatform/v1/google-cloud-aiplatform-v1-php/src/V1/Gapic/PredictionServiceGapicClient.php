@@ -22,7 +22,7 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Aiplatform\V1\Gapic;
+namespace Google\Cloud\AIPlatform\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -34,8 +34,8 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1\PredictRequest;
-use Google\Cloud\Aiplatform\V1\PredictResponse;
+use Google\Cloud\AIPlatform\V1\PredictRequest;
+use Google\Cloud\AIPlatform\V1\PredictResponse;
 use Google\Protobuf\Value;
 
 /**
@@ -293,7 +293,7 @@ class PredictionServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1\PredictResponse
+     * @return \Google\Cloud\AIPlatform\V1\PredictResponse
      *
      * @throws ApiException if the remote call fails
      */

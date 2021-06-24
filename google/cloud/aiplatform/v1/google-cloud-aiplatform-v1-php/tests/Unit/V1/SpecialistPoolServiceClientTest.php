@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,10 +29,10 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1\ListSpecialistPoolsResponse;
-use Google\Cloud\Aiplatform\V1\SpecialistPool;
+use Google\Cloud\AIPlatform\V1\ListSpecialistPoolsResponse;
+use Google\Cloud\AIPlatform\V1\SpecialistPool;
 
-use Google\Cloud\Aiplatform\V1\SpecialistPoolServiceClient;
+use Google\Cloud\AIPlatform\V1\SpecialistPoolServiceClient;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

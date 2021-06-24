@@ -19,31 +19,31 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
-        # Request message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#create_dataset DatasetService.CreateDataset}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#create_dataset DatasetService.CreateDataset}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to create the Dataset in.
         #     Format: `projects/{project}/locations/{location}`
         # @!attribute [rw] dataset
-        #   @return [::Google::Cloud::Aiplatform::V1::Dataset]
+        #   @return [::Google::Cloud::AIPlatform::V1::Dataset]
         #     Required. The Dataset to create.
         class CreateDatasetRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Runtime operation information for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#create_dataset DatasetService.CreateDataset}.
+        # Runtime operation information for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#create_dataset DatasetService.CreateDataset}.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1::GenericOperationMetadata]
         #     The operation generic information.
         class CreateDatasetOperationMetadata
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#get_dataset DatasetService.GetDataset}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#get_dataset DatasetService.GetDataset}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the Dataset resource.
@@ -55,9 +55,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#update_dataset DatasetService.UpdateDataset}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#update_dataset DatasetService.UpdateDataset}.
         # @!attribute [rw] dataset
-        #   @return [::Google::Cloud::Aiplatform::V1::Dataset]
+        #   @return [::Google::Cloud::AIPlatform::V1::Dataset]
         #     Required. The Dataset which replaces the resource on the server.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
@@ -73,7 +73,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#list_datasets DatasetService.ListDatasets}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#list_datasets DatasetService.ListDatasets}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The name of the Dataset's parent resource.
@@ -115,9 +115,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#list_datasets DatasetService.ListDatasets}.
+        # Response message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#list_datasets DatasetService.ListDatasets}.
         # @!attribute [rw] datasets
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::Dataset>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::Dataset>]
         #     A list of Datasets that matches the specified filter in the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -127,7 +127,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#delete_dataset DatasetService.DeleteDataset}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#delete_dataset DatasetService.DeleteDataset}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The resource name of the Dataset to delete.
@@ -138,14 +138,14 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#import_data DatasetService.ImportData}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#import_data DatasetService.ImportData}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the Dataset resource.
         #     Format:
         #     `projects/{project}/locations/{location}/datasets/{dataset}`
         # @!attribute [rw] import_configs
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::ImportDataConfig>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::ImportDataConfig>]
         #     Required. The desired input locations. The contents of all input locations will be
         #     imported in one batch.
         class ImportDataRequest
@@ -153,36 +153,36 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#import_data DatasetService.ImportData}.
+        # Response message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#import_data DatasetService.ImportData}.
         class ImportDataResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Runtime operation information for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#import_data DatasetService.ImportData}.
+        # Runtime operation information for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#import_data DatasetService.ImportData}.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1::GenericOperationMetadata]
         #     The common part of the operation metadata.
         class ImportDataOperationMetadata
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#export_data DatasetService.ExportData}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#export_data DatasetService.ExportData}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the Dataset resource.
         #     Format:
         #     `projects/{project}/locations/{location}/datasets/{dataset}`
         # @!attribute [rw] export_config
-        #   @return [::Google::Cloud::Aiplatform::V1::ExportDataConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1::ExportDataConfig]
         #     Required. The desired output location.
         class ExportDataRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#export_data DatasetService.ExportData}.
+        # Response message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#export_data DatasetService.ExportData}.
         # @!attribute [rw] exported_files
         #   @return [::Array<::String>]
         #     All of the files that are exported in this export operation.
@@ -191,9 +191,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Runtime operation information for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#export_data DatasetService.ExportData}.
+        # Runtime operation information for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#export_data DatasetService.ExportData}.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1::GenericOperationMetadata]
         #     The common part of the operation metadata.
         # @!attribute [rw] gcs_output_directory
         #   @return [::String]
@@ -204,7 +204,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#list_data_items DatasetService.ListDataItems}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#list_data_items DatasetService.ListDataItems}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Dataset to list DataItems from.
@@ -231,9 +231,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#list_data_items DatasetService.ListDataItems}.
+        # Response message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#list_data_items DatasetService.ListDataItems}.
         # @!attribute [rw] data_items
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::DataItem>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::DataItem>]
         #     A list of DataItems that matches the specified filter in the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -243,7 +243,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#get_annotation_spec DatasetService.GetAnnotationSpec}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#get_annotation_spec DatasetService.GetAnnotationSpec}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the AnnotationSpec resource.
@@ -257,7 +257,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#list_annotations DatasetService.ListAnnotations}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#list_annotations DatasetService.ListAnnotations}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the DataItem to list Annotations from.
@@ -284,9 +284,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1::DatasetService::Client#list_annotations DatasetService.ListAnnotations}.
+        # Response message for {::Google::Cloud::AIPlatform::V1::DatasetService::Client#list_annotations DatasetService.ListAnnotations}.
         # @!attribute [rw] annotations
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1::Annotation>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::Annotation>]
         #     A list of Annotations that matches the specified filter in the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]

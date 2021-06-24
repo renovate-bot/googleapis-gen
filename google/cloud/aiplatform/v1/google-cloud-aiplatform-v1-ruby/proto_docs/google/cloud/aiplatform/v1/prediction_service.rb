@@ -19,9 +19,9 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
-        # Request message for {::Google::Cloud::Aiplatform::V1::PredictionService::Client#predict PredictionService.Predict}.
+        # Request message for {::Google::Cloud::AIPlatform::V1::PredictionService::Client#predict PredictionService.Predict}.
         # @!attribute [rw] endpoint
         #   @return [::String]
         #     Required. The name of the Endpoint requested to serve the prediction.
@@ -37,26 +37,26 @@ module Google
         #     The schema of any single instance may be specified via Endpoint's
         #     DeployedModels' [Model's][google.cloud.aiplatform.v1.DeployedModel.model]
         #     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
-        #     {::Google::Cloud::Aiplatform::V1::PredictSchemata#instance_schema_uri instance_schema_uri}.
+        #     {::Google::Cloud::AIPlatform::V1::PredictSchemata#instance_schema_uri instance_schema_uri}.
         # @!attribute [rw] parameters
         #   @return [::Google::Protobuf::Value]
         #     The parameters that govern the prediction. The schema of the parameters may
         #     be specified via Endpoint's DeployedModels' [Model's ][google.cloud.aiplatform.v1.DeployedModel.model]
         #     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
-        #     {::Google::Cloud::Aiplatform::V1::PredictSchemata#parameters_schema_uri parameters_schema_uri}.
+        #     {::Google::Cloud::AIPlatform::V1::PredictSchemata#parameters_schema_uri parameters_schema_uri}.
         class PredictRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1::PredictionService::Client#predict PredictionService.Predict}.
+        # Response message for {::Google::Cloud::AIPlatform::V1::PredictionService::Client#predict PredictionService.Predict}.
         # @!attribute [rw] predictions
         #   @return [::Array<::Google::Protobuf::Value>]
         #     The predictions that are the output of the predictions call.
         #     The schema of any single prediction may be specified via Endpoint's
         #     DeployedModels' [Model's ][google.cloud.aiplatform.v1.DeployedModel.model]
         #     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
-        #     {::Google::Cloud::Aiplatform::V1::PredictSchemata#prediction_schema_uri prediction_schema_uri}.
+        #     {::Google::Cloud::AIPlatform::V1::PredictSchemata#prediction_schema_uri prediction_schema_uri}.
         # @!attribute [rw] deployed_model_id
         #   @return [::String]
         #     ID of the Endpoint's DeployedModel that served this prediction.

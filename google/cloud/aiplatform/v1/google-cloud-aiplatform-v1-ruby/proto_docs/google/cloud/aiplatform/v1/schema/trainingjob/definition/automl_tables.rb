@@ -19,17 +19,17 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1
         module Schema
-          module Trainingjob
+          module TrainingJob
             module Definition
               # A TrainingJob that trains and uploads an AutoML Tables Model.
               # @!attribute [rw] inputs
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTablesInputs]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTablesInputs]
               #     The input parameters of this TrainingJob.
               # @!attribute [rw] metadata
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTablesMetadata]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTablesMetadata]
               #     The metadata information.
               class AutoMlTables
                 include ::Google::Protobuf::MessageExts
@@ -57,7 +57,7 @@ module Google
               #   @return [::String]
               #     The column name of the target column that the model is to predict.
               # @!attribute [rw] transformations
-              #   @return [::Array<::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTablesInputs::Transformation>]
+              #   @return [::Array<::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTablesInputs::Transformation>]
               #     Each transformation will apply transform function to given input column.
               #     And the result will be used for training.
               #     When creating transformation for BigQuery Struct column, the column should
@@ -118,7 +118,7 @@ module Google
               #     column field is not set, then all rows are assumed to have equal weight
               #     of 1.
               # @!attribute [rw] export_evaluated_data_items_config
-              #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::ExportEvaluatedDataItemsConfig]
+              #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::ExportEvaluatedDataItemsConfig]
               #     Configuration for exporting test set predictions to a BigQuery table. If
               #     this configuration is absent, then the export is not performed.
               class AutoMlTablesInputs
@@ -126,21 +126,21 @@ module Google
                 extend ::Google::Protobuf::MessageExts::ClassMethods
 
                 # @!attribute [rw] auto
-                #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTablesInputs::Transformation::AutoTransformation]
+                #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTablesInputs::Transformation::AutoTransformation]
                 # @!attribute [rw] numeric
-                #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTablesInputs::Transformation::NumericTransformation]
+                #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTablesInputs::Transformation::NumericTransformation]
                 # @!attribute [rw] categorical
-                #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTablesInputs::Transformation::CategoricalTransformation]
+                #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTablesInputs::Transformation::CategoricalTransformation]
                 # @!attribute [rw] timestamp
-                #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTablesInputs::Transformation::TimestampTransformation]
+                #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTablesInputs::Transformation::TimestampTransformation]
                 # @!attribute [rw] text
-                #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTablesInputs::Transformation::TextTransformation]
+                #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTablesInputs::Transformation::TextTransformation]
                 # @!attribute [rw] repeated_numeric
-                #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTablesInputs::Transformation::NumericArrayTransformation]
+                #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTablesInputs::Transformation::NumericArrayTransformation]
                 # @!attribute [rw] repeated_categorical
-                #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTablesInputs::Transformation::CategoricalArrayTransformation]
+                #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTablesInputs::Transformation::CategoricalArrayTransformation]
                 # @!attribute [rw] repeated_text
-                #   @return [::Google::Cloud::Aiplatform::V1::Schema::Trainingjob::Definition::AutoMlTablesInputs::Transformation::TextArrayTransformation]
+                #   @return [::Google::Cloud::AIPlatform::V1::Schema::TrainingJob::Definition::AutoMlTablesInputs::Transformation::TextArrayTransformation]
                 class Transformation
                   include ::Google::Protobuf::MessageExts
                   extend ::Google::Protobuf::MessageExts::ClassMethods
