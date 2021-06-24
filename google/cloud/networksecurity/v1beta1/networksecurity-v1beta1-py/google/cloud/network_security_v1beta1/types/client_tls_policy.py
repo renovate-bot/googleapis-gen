@@ -15,7 +15,7 @@
 #
 import proto  # type: ignore
 
-from google.cloud.networksecurity_v1beta1.types import tls
+from google.cloud.network_security_v1beta1.types import tls
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 
@@ -54,19 +54,19 @@ class ClientTlsPolicy(proto.Message):
         update_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The timestamp when the resource
             was updated.
-        labels (Sequence[google.cloud.networksecurity_v1beta1.types.ClientTlsPolicy.LabelsEntry]):
+        labels (Sequence[google.cloud.network_security_v1beta1.types.ClientTlsPolicy.LabelsEntry]):
             Optional. Set of label tags associated with
             the resource.
         sni (str):
             Optional. Server Name Indication string to
             present to the server during TLS handshake. E.g:
             "secure.example.com".
-        client_certificate (google.cloud.networksecurity_v1beta1.types.CertificateProvider):
+        client_certificate (google.cloud.network_security_v1beta1.types.CertificateProvider):
             Optional. Defines a mechanism to provision
             client identity (public and private keys) for
             peer to peer authentication. The presence of
             this dictates mTLS.
-        server_validation_ca (Sequence[google.cloud.networksecurity_v1beta1.types.ValidationCA]):
+        server_validation_ca (Sequence[google.cloud.network_security_v1beta1.types.ValidationCA]):
             Optional. Defines the mechanism to obtain the
             Certificate Authority certificate to validate
             the server certificate. If empty, client does
@@ -146,7 +146,7 @@ class ListClientTlsPoliciesRequest(proto.Message):
 class ListClientTlsPoliciesResponse(proto.Message):
     r"""Response returned by the ListClientTlsPolicies method.
     Attributes:
-        client_tls_policies (Sequence[google.cloud.networksecurity_v1beta1.types.ClientTlsPolicy]):
+        client_tls_policies (Sequence[google.cloud.network_security_v1beta1.types.ClientTlsPolicy]):
             List of ClientTlsPolicy resources.
         next_page_token (str):
             If there might be more results than those appearing in this
@@ -197,7 +197,7 @@ class CreateClientTlsPolicyRequest(proto.Message):
             containing only letters, numbers, hyphens, and underscores,
             and should not start with a number. E.g.
             "client_mtls_policy".
-        client_tls_policy (google.cloud.networksecurity_v1beta1.types.ClientTlsPolicy):
+        client_tls_policy (google.cloud.network_security_v1beta1.types.ClientTlsPolicy):
             Required. ClientTlsPolicy resource to be
             created.
     """
@@ -227,7 +227,7 @@ class UpdateClientTlsPolicyRequest(proto.Message):
             resource, not the full request. A field will be overwritten
             if it is in the mask. If the user does not provide a mask
             then all fields will be overwritten.
-        client_tls_policy (google.cloud.networksecurity_v1beta1.types.ClientTlsPolicy):
+        client_tls_policy (google.cloud.network_security_v1beta1.types.ClientTlsPolicy):
             Required. Updated ClientTlsPolicy resource.
     """
 

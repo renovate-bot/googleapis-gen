@@ -48,10 +48,10 @@ class ValidationCA(proto.Message):
     peer certificate.
 
     Attributes:
-        grpc_endpoint (google.cloud.networksecurity_v1beta1.types.GrpcEndpoint):
+        grpc_endpoint (google.cloud.network_security_v1beta1.types.GrpcEndpoint):
             gRPC specific configuration to access the
             gRPC server to obtain the CA certificate.
-        certificate_provider_instance (google.cloud.networksecurity_v1beta1.types.CertificateProviderInstance):
+        certificate_provider_instance (google.cloud.network_security_v1beta1.types.CertificateProviderInstance):
             The certificate provider instance
             specification that will be passed to the data
             plane, which will be used to load necessary
@@ -100,10 +100,10 @@ class CertificateProvider(proto.Message):
     authentication.
 
     Attributes:
-        grpc_endpoint (google.cloud.networksecurity_v1beta1.types.GrpcEndpoint):
+        grpc_endpoint (google.cloud.network_security_v1beta1.types.GrpcEndpoint):
             gRPC specific configuration to access the
             gRPC server to obtain the cert and private key.
-        certificate_provider_instance (google.cloud.networksecurity_v1beta1.types.CertificateProviderInstance):
+        certificate_provider_instance (google.cloud.network_security_v1beta1.types.CertificateProviderInstance):
             The certificate provider instance
             specification that will be passed to the data
             plane, which will be used to load necessary
