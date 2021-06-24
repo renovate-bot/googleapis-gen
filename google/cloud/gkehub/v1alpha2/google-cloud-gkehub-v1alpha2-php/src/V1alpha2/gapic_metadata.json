@@ -1,0 +1,53 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.gkehub.v1alpha2",
+    "libraryPackage": "Google\\Cloud\\GkeHub\\V1alpha2",
+    "services": {
+        "GkeHub": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "GkeHubGapicClient",
+                    "rpcs": {
+                        "CreateMembership": {
+                            "methods": [
+                                "createMembership"
+                            ]
+                        },
+                        "DeleteMembership": {
+                            "methods": [
+                                "deleteMembership"
+                            ]
+                        },
+                        "GenerateConnectManifest": {
+                            "methods": [
+                                "generateConnectManifest"
+                            ]
+                        },
+                        "GetMembership": {
+                            "methods": [
+                                "getMembership"
+                            ]
+                        },
+                        "InitializeHub": {
+                            "methods": [
+                                "initializeHub"
+                            ]
+                        },
+                        "ListMemberships": {
+                            "methods": [
+                                "listMemberships"
+                            ]
+                        },
+                        "UpdateMembership": {
+                            "methods": [
+                                "updateMembership"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

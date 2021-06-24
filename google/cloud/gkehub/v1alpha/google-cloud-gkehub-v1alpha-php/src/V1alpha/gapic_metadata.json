@@ -1,0 +1,43 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.gkehub.v1alpha",
+    "libraryPackage": "Google\\Cloud\\GkeHub\\V1alpha",
+    "services": {
+        "GkeHub": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "GkeHubGapicClient",
+                    "rpcs": {
+                        "CreateFeature": {
+                            "methods": [
+                                "createFeature"
+                            ]
+                        },
+                        "DeleteFeature": {
+                            "methods": [
+                                "deleteFeature"
+                            ]
+                        },
+                        "GetFeature": {
+                            "methods": [
+                                "getFeature"
+                            ]
+                        },
+                        "ListFeatures": {
+                            "methods": [
+                                "listFeatures"
+                            ]
+                        },
+                        "UpdateFeature": {
+                            "methods": [
+                                "updateFeature"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
