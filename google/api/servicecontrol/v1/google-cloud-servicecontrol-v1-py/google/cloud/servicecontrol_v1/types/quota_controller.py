@@ -16,6 +16,7 @@
 import proto  # type: ignore
 
 from google.cloud.servicecontrol_v1.types import metric_value
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -214,6 +215,9 @@ class QuotaError(proto.Message):
         description (str):
             Free-form text that provides details on the
             cause of the error.
+        status (google.rpc.status_pb2.Status):
+            Contains additional information about the quota error. If
+            available, ``status.code`` will be non zero.
     """
     class Code(proto.Enum):
         r"""Error codes related to project config validations are deprecated
@@ -242,6 +246,11 @@ class QuotaError(proto.Message):
     description = proto.Field(
         proto.STRING,
         number=3,
+    )
+    status = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=status_pb2.Status,
     )
 
 

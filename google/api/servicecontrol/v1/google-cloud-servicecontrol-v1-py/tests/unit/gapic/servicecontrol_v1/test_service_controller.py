@@ -24,6 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 
+from google.api import distribution_pb2  # type: ignore
 from google.api_core import client_options
 from google.api_core import exceptions as core_exceptions
 from google.api_core import gapic_v1
@@ -36,7 +37,7 @@ from google.cloud.servicecontrol_v1.services.service_controller import ServiceCo
 from google.cloud.servicecontrol_v1.services.service_controller import transports
 from google.cloud.servicecontrol_v1.services.service_controller.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.servicecontrol_v1.types import check_error
-from google.cloud.servicecontrol_v1.types import distribution
+from google.cloud.servicecontrol_v1.types import distribution as gas_distribution
 from google.cloud.servicecontrol_v1.types import http_request
 from google.cloud.servicecontrol_v1.types import log_entry
 from google.cloud.servicecontrol_v1.types import metric_value
