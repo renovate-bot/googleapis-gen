@@ -123,6 +123,20 @@ public enum TypeCode
    * <code>NUMERIC = 10;</code>
    */
   NUMERIC(10),
+  /**
+   * <pre>
+   * Encoded as a JSON-formatted 'string' as described in RFC 7159. The
+   * following rules will be applied when parsing JSON input:
+   * - Whitespace will be stripped from the document.
+   * - If a JSON object has duplicate keys, only the first key will be
+   *   preserved.
+   * - Members of a JSON object are not guaranteed to have their order
+   *   preserved. JSON array elements will have their order preserved.
+   * </pre>
+   *
+   * <code>JSON = 11;</code>
+   */
+  JSON(11),
   UNRECOGNIZED(-1),
   ;
 
@@ -232,6 +246,20 @@ public enum TypeCode
    * <code>NUMERIC = 10;</code>
    */
   public static final int NUMERIC_VALUE = 10;
+  /**
+   * <pre>
+   * Encoded as a JSON-formatted 'string' as described in RFC 7159. The
+   * following rules will be applied when parsing JSON input:
+   * - Whitespace will be stripped from the document.
+   * - If a JSON object has duplicate keys, only the first key will be
+   *   preserved.
+   * - Members of a JSON object are not guaranteed to have their order
+   *   preserved. JSON array elements will have their order preserved.
+   * </pre>
+   *
+   * <code>JSON = 11;</code>
+   */
+  public static final int JSON_VALUE = 11;
 
 
   public final int getNumber() {
@@ -269,6 +297,7 @@ public enum TypeCode
       case 8: return ARRAY;
       case 9: return STRUCT;
       case 10: return NUMERIC;
+      case 11: return JSON;
       default: return null;
     }
   }
