@@ -17,8 +17,8 @@ class PaymentsAccountService
         \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Protobuf\Wrappers::initOnce();
         \GPBMetadata\Google\Api\Client::initOnce();
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
 §
