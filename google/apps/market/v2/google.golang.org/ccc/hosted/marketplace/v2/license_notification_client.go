@@ -46,6 +46,7 @@ func defaultLicenseNotificationGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultMTLSEndpoint("appsmarket.mtls.googleapis.com:443"),
 		internaloption.WithDefaultAudience("https://appsmarket.googleapis.com/"),
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
+		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDisableServiceConfig()),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
 			grpc.MaxCallRecvMsgSize(math.MaxInt32))),

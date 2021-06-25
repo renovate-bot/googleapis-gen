@@ -50,6 +50,7 @@ func defaultHomeGraphApiGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultMTLSEndpoint("homegraph.mtls.googleapis.com:443"),
 		internaloption.WithDefaultAudience("https://homegraph.googleapis.com/"),
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
+		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDisableServiceConfig()),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
 			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
