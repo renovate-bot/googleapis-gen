@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/apigeeconnect",
+  "name": "@google-cloud/apigee-connect",
   "version": "0.1.0",
   "description": "Apigeeconnect client for Node.js",
   "repository": "googleapis/nodejs-apigeeconnect",
