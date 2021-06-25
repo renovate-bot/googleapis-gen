@@ -1,0 +1,43 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.gkehub.v1beta",
+  "libraryPackage": "::Google::Cloud::GkeHub::V1beta",
+  "services": {
+    "GkeHub": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::GkeHub::V1beta::GkeHub::Client",
+          "rpcs": {
+            "ListFeatures": {
+              "methods": [
+                "list_features"
+              ]
+            },
+            "GetFeature": {
+              "methods": [
+                "get_feature"
+              ]
+            },
+            "CreateFeature": {
+              "methods": [
+                "create_feature"
+              ]
+            },
+            "DeleteFeature": {
+              "methods": [
+                "delete_feature"
+              ]
+            },
+            "UpdateFeature": {
+              "methods": [
+                "update_feature"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
