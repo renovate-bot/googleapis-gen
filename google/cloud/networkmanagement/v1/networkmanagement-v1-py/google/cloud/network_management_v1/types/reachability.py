@@ -15,7 +15,7 @@
 #
 import proto  # type: ignore
 
-from google.cloud.networkmanagement_v1.types import connectivity_test
+from google.cloud.network_management_v1.types import connectivity_test
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 
@@ -96,7 +96,7 @@ class ListConnectivityTestsRequest(proto.Message):
 class ListConnectivityTestsResponse(proto.Message):
     r"""Response for the ``ListConnectivityTests`` method.
     Attributes:
-        resources (Sequence[google.cloud.networkmanagement_v1.types.ConnectivityTest]):
+        resources (Sequence[google.cloud.network_management_v1.types.ConnectivityTest]):
             List of Connectivity Tests.
         next_page_token (str):
             Page token to fetch the next set of
@@ -155,7 +155,7 @@ class CreateConnectivityTestRequest(proto.Message):
             -  Must be between 1-40 characters.
             -  Must end with a number or a letter.
             -  Must be unique within the customer project
-        resource (google.cloud.networkmanagement_v1.types.ConnectivityTest):
+        resource (google.cloud.network_management_v1.types.ConnectivityTest):
             Required. A ``ConnectivityTest`` resource
     """
 
@@ -180,7 +180,7 @@ class UpdateConnectivityTestRequest(proto.Message):
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. Mask of fields to update. At least
             one path must be supplied in this field.
-        resource (google.cloud.networkmanagement_v1.types.ConnectivityTest):
+        resource (google.cloud.network_management_v1.types.ConnectivityTest):
             Required. Only fields specified in update_mask are updated.
     """
 

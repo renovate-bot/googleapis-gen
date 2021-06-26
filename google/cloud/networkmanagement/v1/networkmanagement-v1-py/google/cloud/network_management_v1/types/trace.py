@@ -56,13 +56,13 @@ class Trace(proto.Message):
          Step1(State) Step2(State) ---  StepN(State(final))
 
     Attributes:
-        endpoint_info (google.cloud.networkmanagement_v1.types.EndpointInfo):
+        endpoint_info (google.cloud.network_management_v1.types.EndpointInfo):
             Derived from the source and destination endpoints definition
             specified by user request, and validated by the data plane
             model. If there are multiple traces starting from different
             source locations, then the endpoint_info may be different
             between traces.
-        steps (Sequence[google.cloud.networkmanagement_v1.types.Step]):
+        steps (Sequence[google.cloud.network_management_v1.types.Step]):
             A trace of a test contains multiple steps
             from the initial state to the final state
             (delivered, dropped, forwarded, or aborted).
@@ -93,7 +93,7 @@ class Step(proto.Message):
         description (str):
             A description of the step. Usually this is a
             summary of the state.
-        state (google.cloud.networkmanagement_v1.types.Step.State):
+        state (google.cloud.network_management_v1.types.Step.State):
             Each step is in one of the pre-defined
             states.
         causes_drop (bool):
@@ -102,51 +102,51 @@ class Step(proto.Message):
         project_id (str):
             Project ID that contains the configuration
             this step is validating.
-        instance (google.cloud.networkmanagement_v1.types.InstanceInfo):
+        instance (google.cloud.network_management_v1.types.InstanceInfo):
             Display information of a Compute Engine
             instance.
-        firewall (google.cloud.networkmanagement_v1.types.FirewallInfo):
+        firewall (google.cloud.network_management_v1.types.FirewallInfo):
             Display information of a Compute Engine
             firewall rule.
-        route (google.cloud.networkmanagement_v1.types.RouteInfo):
+        route (google.cloud.network_management_v1.types.RouteInfo):
             Display information of a Compute Engine
             route.
-        endpoint (google.cloud.networkmanagement_v1.types.EndpointInfo):
+        endpoint (google.cloud.network_management_v1.types.EndpointInfo):
             Display information of the source and
             destination under analysis. The endpoint
             information in an intermediate state may differ
             with the initial input, as it might be modified
             by state like NAT, or Connection Proxy.
-        forwarding_rule (google.cloud.networkmanagement_v1.types.ForwardingRuleInfo):
+        forwarding_rule (google.cloud.network_management_v1.types.ForwardingRuleInfo):
             Display information of a Compute Engine
             forwarding rule.
-        vpn_gateway (google.cloud.networkmanagement_v1.types.VpnGatewayInfo):
+        vpn_gateway (google.cloud.network_management_v1.types.VpnGatewayInfo):
             Display information of a Compute Engine VPN
             gateway.
-        vpn_tunnel (google.cloud.networkmanagement_v1.types.VpnTunnelInfo):
+        vpn_tunnel (google.cloud.network_management_v1.types.VpnTunnelInfo):
             Display information of a Compute Engine VPN
             tunnel.
-        deliver (google.cloud.networkmanagement_v1.types.DeliverInfo):
+        deliver (google.cloud.network_management_v1.types.DeliverInfo):
             Display information of the final state
             "deliver" and reason.
-        forward (google.cloud.networkmanagement_v1.types.ForwardInfo):
+        forward (google.cloud.network_management_v1.types.ForwardInfo):
             Display information of the final state
             "forward" and reason.
-        abort (google.cloud.networkmanagement_v1.types.AbortInfo):
+        abort (google.cloud.network_management_v1.types.AbortInfo):
             Display information of the final state
             "abort" and reason.
-        drop (google.cloud.networkmanagement_v1.types.DropInfo):
+        drop (google.cloud.network_management_v1.types.DropInfo):
             Display information of the final state "drop"
             and reason.
-        load_balancer (google.cloud.networkmanagement_v1.types.LoadBalancerInfo):
+        load_balancer (google.cloud.network_management_v1.types.LoadBalancerInfo):
             Display information of the load balancers.
-        network (google.cloud.networkmanagement_v1.types.NetworkInfo):
+        network (google.cloud.network_management_v1.types.NetworkInfo):
             Display information of a Google Cloud
             network.
-        gke_master (google.cloud.networkmanagement_v1.types.GKEMasterInfo):
+        gke_master (google.cloud.network_management_v1.types.GKEMasterInfo):
             Display information of a Google Kubernetes
             Engine cluster master.
-        cloud_sql_instance (google.cloud.networkmanagement_v1.types.CloudSQLInstanceInfo):
+        cloud_sql_instance (google.cloud.network_management_v1.types.CloudSQLInstanceInfo):
             Display information of a Cloud SQL instance.
     """
     class State(proto.Enum):
@@ -407,7 +407,7 @@ class FirewallInfo(proto.Message):
             The hierarchical firewall policy that this
             rule is associated with. This field is not
             applicable to VPC firewall rules.
-        firewall_rule_type (google.cloud.networkmanagement_v1.types.FirewallInfo.FirewallRuleType):
+        firewall_rule_type (google.cloud.network_management_v1.types.FirewallInfo.FirewallRuleType):
             The firewall rule's type.
     """
     class FirewallRuleType(proto.Enum):
@@ -465,9 +465,9 @@ class RouteInfo(proto.Message):
     route.
 
     Attributes:
-        route_type (google.cloud.networkmanagement_v1.types.RouteInfo.RouteType):
+        route_type (google.cloud.network_management_v1.types.RouteInfo.RouteType):
             Type of route.
-        next_hop_type (google.cloud.networkmanagement_v1.types.RouteInfo.NextHopType):
+        next_hop_type (google.cloud.network_management_v1.types.RouteInfo.NextHopType):
             Type of next hop.
         display_name (str):
             Name of a Compute Engine route.
@@ -608,14 +608,14 @@ class ForwardingRuleInfo(proto.Message):
 class LoadBalancerInfo(proto.Message):
     r"""For display only. Metadata associated with a load balancer.
     Attributes:
-        load_balancer_type (google.cloud.networkmanagement_v1.types.LoadBalancerInfo.LoadBalancerType):
+        load_balancer_type (google.cloud.network_management_v1.types.LoadBalancerInfo.LoadBalancerType):
             Type of the load balancer.
         health_check_uri (str):
             URI of the health check for the load
             balancer.
-        backends (Sequence[google.cloud.networkmanagement_v1.types.LoadBalancerBackend]):
+        backends (Sequence[google.cloud.network_management_v1.types.LoadBalancerBackend]):
             Information for the loadbalancer backends.
-        backend_type (google.cloud.networkmanagement_v1.types.LoadBalancerInfo.BackendType):
+        backend_type (google.cloud.network_management_v1.types.LoadBalancerInfo.BackendType):
             Type of load balancer's backend
             configuration.
         backend_uri (str):
@@ -674,7 +674,7 @@ class LoadBalancerBackend(proto.Message):
         uri (str):
             URI of a Compute Engine instance or network
             endpoint.
-        health_check_firewall_state (google.cloud.networkmanagement_v1.types.LoadBalancerBackend.HealthCheckFirewallState):
+        health_check_firewall_state (google.cloud.network_management_v1.types.LoadBalancerBackend.HealthCheckFirewallState):
             State of the health check firewall
             configuration.
         health_check_allowing_firewall_rules (Sequence[str]):
@@ -788,7 +788,7 @@ class VpnTunnelInfo(proto.Message):
         region (str):
             Name of a Google Cloud region where this VPN
             tunnel is configured.
-        routing_type (google.cloud.networkmanagement_v1.types.VpnTunnelInfo.RoutingType):
+        routing_type (google.cloud.network_management_v1.types.VpnTunnelInfo.RoutingType):
             Type of the routing policy.
     """
     class RoutingType(proto.Enum):
@@ -900,7 +900,7 @@ class EndpointInfo(proto.Message):
 class DeliverInfo(proto.Message):
     r"""Details of the final state "deliver" and associated resource.
     Attributes:
-        target (google.cloud.networkmanagement_v1.types.DeliverInfo.Target):
+        target (google.cloud.network_management_v1.types.DeliverInfo.Target):
             Target type where the packet is delivered to.
         resource_uri (str):
             URI of the resource that the packet is
@@ -929,7 +929,7 @@ class DeliverInfo(proto.Message):
 class ForwardInfo(proto.Message):
     r"""Details of the final state "forward" and associated resource.
     Attributes:
-        target (google.cloud.networkmanagement_v1.types.ForwardInfo.Target):
+        target (google.cloud.network_management_v1.types.ForwardInfo.Target):
             Target type where this packet is forwarded
             to.
         resource_uri (str):
@@ -960,7 +960,7 @@ class ForwardInfo(proto.Message):
 class AbortInfo(proto.Message):
     r"""Details of the final state "abort" and associated resource.
     Attributes:
-        cause (google.cloud.networkmanagement_v1.types.AbortInfo.Cause):
+        cause (google.cloud.network_management_v1.types.AbortInfo.Cause):
             Causes that the analysis is aborted.
         resource_uri (str):
             URI of the resource that caused the abort.
@@ -997,7 +997,7 @@ class AbortInfo(proto.Message):
 class DropInfo(proto.Message):
     r"""Details of the final state "drop" and associated resource.
     Attributes:
-        cause (google.cloud.networkmanagement_v1.types.DropInfo.Cause):
+        cause (google.cloud.network_management_v1.types.DropInfo.Cause):
             Cause that the packet is dropped.
         resource_uri (str):
             URI of the resource that caused the drop.

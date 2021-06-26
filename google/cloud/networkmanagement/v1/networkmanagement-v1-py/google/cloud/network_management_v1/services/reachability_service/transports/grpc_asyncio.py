@@ -14,25 +14,27 @@
 # limitations under the License.
 #
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
-from google.api_core import grpc_helpers   # type: ignore
-from google.api_core import operations_v1  # type: ignore
-from google.api_core import gapic_v1       # type: ignore
-import google.auth                         # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
+from google.api_core import gapic_v1                   # type: ignore
+from google.api_core import grpc_helpers_async         # type: ignore
+from google.api_core import operations_v1              # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
-import grpc  # type: ignore
+import grpc                        # type: ignore
+from grpc.experimental import aio  # type: ignore
 
-from google.cloud.networkmanagement_v1.types import connectivity_test
-from google.cloud.networkmanagement_v1.types import reachability
+from google.cloud.network_management_v1.types import connectivity_test
+from google.cloud.network_management_v1.types import reachability
 from google.longrunning import operations_pb2  # type: ignore
 from .base import ReachabilityServiceTransport, DEFAULT_CLIENT_INFO
+from .grpc import ReachabilityServiceGrpcTransport
 
 
-class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
-    """gRPC backend transport for ReachabilityService.
+class ReachabilityServiceGrpcAsyncIOTransport(ReachabilityServiceTransport):
+    """gRPC AsyncIO backend transport for ReachabilityService.
 
     The Reachability service in the Google Cloud Network
     Management API provides services that analyze the reachability
@@ -52,19 +54,62 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
     It sends protocol buffers over the wire using gRPC (which is built on
     top of HTTP/2); the ``grpcio`` package must be installed.
     """
-    _stubs: Dict[str, Callable]
+
+    _grpc_channel: aio.Channel
+    _stubs: Dict[str, Callable] = {}
+
+    @classmethod
+    def create_channel(cls,
+                       host: str = 'networkmanagement.googleapis.com',
+                       credentials: ga_credentials.Credentials = None,
+                       credentials_file: Optional[str] = None,
+                       scopes: Optional[Sequence[str]] = None,
+                       quota_project_id: Optional[str] = None,
+                       **kwargs) -> aio.Channel:
+        """Create and return a gRPC AsyncIO channel object.
+        Args:
+            host (Optional[str]): The host for the channel to use.
+            credentials (Optional[~.Credentials]): The
+                authorization credentials to attach to requests. These
+                credentials identify this application to the service. If
+                none are specified, the client will attempt to ascertain
+                the credentials from the environment.
+            credentials_file (Optional[str]): A file with credentials that can
+                be loaded with :func:`google.auth.load_credentials_from_file`.
+                This argument is ignored if ``channel`` is provided.
+            scopes (Optional[Sequence[str]]): A optional list of scopes needed for this
+                service. These are only used when credentials are not specified and
+                are passed to :func:`google.auth.default`.
+            quota_project_id (Optional[str]): An optional project to use for billing
+                and quota.
+            kwargs (Optional[dict]): Keyword arguments, which are passed to the
+                channel creation.
+        Returns:
+            aio.Channel: A gRPC AsyncIO channel object.
+        """
+
+        return grpc_helpers_async.create_channel(
+            host,
+            credentials=credentials,
+            credentials_file=credentials_file,
+            quota_project_id=quota_project_id,
+            default_scopes=cls.AUTH_SCOPES,
+            scopes=scopes,
+            default_host=cls.DEFAULT_HOST,
+            **kwargs
+        )
 
     def __init__(self, *,
             host: str = 'networkmanagement.googleapis.com',
             credentials: ga_credentials.Credentials = None,
-            credentials_file: str = None,
-            scopes: Sequence[str] = None,
-            channel: grpc.Channel = None,
+            credentials_file: Optional[str] = None,
+            scopes: Optional[Sequence[str]] = None,
+            channel: aio.Channel = None,
             api_mtls_endpoint: str = None,
             client_cert_source: Callable[[], Tuple[bytes, bytes]] = None,
             ssl_channel_credentials: grpc.ChannelCredentials = None,
             client_cert_source_for_mtls: Callable[[], Tuple[bytes, bytes]] = None,
-            quota_project_id: Optional[str] = None,
+            quota_project_id=None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
         """Instantiate the transport.
@@ -81,9 +126,10 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is ignored if ``channel`` is provided.
-            scopes (Optional(Sequence[str])): A list of scopes. This argument is
-                ignored if ``channel`` is provided.
-            channel (Optional[grpc.Channel]): A ``Channel`` instance through
+            scopes (Optional[Sequence[str]]): A optional list of scopes needed for this
+                service. These are only used when credentials are not specified and
+                are passed to :func:`google.auth.default`.
+            channel (Optional[aio.Channel]): A ``Channel`` instance through
                 which to make calls.
             api_mtls_endpoint (Optional[str]): Deprecated. The mutual TLS endpoint.
                 If provided, it overrides the ``host`` argument and tries to create
@@ -108,7 +154,7 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
                 your own client library.
 
         Raises:
-          google.auth.exceptions.MutualTLSChannelError: If mutual TLS transport
+            google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
               creation failed for any reason.
           google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
@@ -129,7 +175,6 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -179,59 +224,18 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
         # Wrap messages. This must be done after self._grpc_channel exists
         self._prep_wrapped_messages(client_info)
 
-    @classmethod
-    def create_channel(cls,
-                       host: str = 'networkmanagement.googleapis.com',
-                       credentials: ga_credentials.Credentials = None,
-                       credentials_file: str = None,
-                       scopes: Optional[Sequence[str]] = None,
-                       quota_project_id: Optional[str] = None,
-                       **kwargs) -> grpc.Channel:
-        """Create and return a gRPC channel object.
-        Args:
-            host (Optional[str]): The host for the channel to use.
-            credentials (Optional[~.Credentials]): The
-                authorization credentials to attach to requests. These
-                credentials identify this application to the service. If
-                none are specified, the client will attempt to ascertain
-                the credentials from the environment.
-            credentials_file (Optional[str]): A file with credentials that can
-                be loaded with :func:`google.auth.load_credentials_from_file`.
-                This argument is mutually exclusive with credentials.
-            scopes (Optional[Sequence[str]]): A optional list of scopes needed for this
-                service. These are only used when credentials are not specified and
-                are passed to :func:`google.auth.default`.
-            quota_project_id (Optional[str]): An optional project to use for billing
-                and quota.
-            kwargs (Optional[dict]): Keyword arguments, which are passed to the
-                channel creation.
-        Returns:
-            grpc.Channel: A gRPC channel object.
-
-        Raises:
-            google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
-              and ``credentials_file`` are passed.
-        """
-
-        return grpc_helpers.create_channel(
-            host,
-            credentials=credentials,
-            credentials_file=credentials_file,
-            quota_project_id=quota_project_id,
-            default_scopes=cls.AUTH_SCOPES,
-            scopes=scopes,
-            default_host=cls.DEFAULT_HOST,
-            **kwargs
-        )
-
     @property
-    def grpc_channel(self) -> grpc.Channel:
-        """Return the channel designed to connect to this service.
+    def grpc_channel(self) -> aio.Channel:
+        """Create the channel designed to connect to this service.
+
+        This property caches on the instance; repeated calls return
+        the same channel.
         """
+        # Return the channel from cache.
         return self._grpc_channel
 
     @property
-    def operations_client(self) -> operations_v1.OperationsClient:
+    def operations_client(self) -> operations_v1.OperationsAsyncClient:
         """Create the client designed to process long-running operations.
 
         This property caches on the instance; repeated calls return the same
@@ -239,7 +243,7 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
         """
         # Sanity check: Only create a new client if we do not already have one.
         if self._operations_client is None:
-            self._operations_client = operations_v1.OperationsClient(
+            self._operations_client = operations_v1.OperationsAsyncClient(
                 self.grpc_channel
             )
 
@@ -249,14 +253,14 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
     @property
     def list_connectivity_tests(self) -> Callable[
             [reachability.ListConnectivityTestsRequest],
-            reachability.ListConnectivityTestsResponse]:
+            Awaitable[reachability.ListConnectivityTestsResponse]]:
         r"""Return a callable for the list connectivity tests method over gRPC.
 
         Lists all Connectivity Tests owned by a project.
 
         Returns:
             Callable[[~.ListConnectivityTestsRequest],
-                    ~.ListConnectivityTestsResponse]:
+                    Awaitable[~.ListConnectivityTestsResponse]]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -275,14 +279,14 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
     @property
     def get_connectivity_test(self) -> Callable[
             [reachability.GetConnectivityTestRequest],
-            connectivity_test.ConnectivityTest]:
+            Awaitable[connectivity_test.ConnectivityTest]]:
         r"""Return a callable for the get connectivity test method over gRPC.
 
         Gets the details of a specific Connectivity Test.
 
         Returns:
             Callable[[~.GetConnectivityTestRequest],
-                    ~.ConnectivityTest]:
+                    Awaitable[~.ConnectivityTest]]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -301,7 +305,7 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
     @property
     def create_connectivity_test(self) -> Callable[
             [reachability.CreateConnectivityTestRequest],
-            operations_pb2.Operation]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the create connectivity test method over gRPC.
 
         Creates a new Connectivity Test. After you create a test, the
@@ -321,7 +325,7 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
 
         Returns:
             Callable[[~.CreateConnectivityTestRequest],
-                    ~.Operation]:
+                    Awaitable[~.Operation]]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -340,7 +344,7 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
     @property
     def update_connectivity_test(self) -> Callable[
             [reachability.UpdateConnectivityTestRequest],
-            operations_pb2.Operation]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the update connectivity test method over gRPC.
 
         Updates the configuration of an existing ``ConnectivityTest``.
@@ -362,7 +366,7 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
 
         Returns:
             Callable[[~.UpdateConnectivityTestRequest],
-                    ~.Operation]:
+                    Awaitable[~.Operation]]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -381,7 +385,7 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
     @property
     def rerun_connectivity_test(self) -> Callable[
             [reachability.RerunConnectivityTestRequest],
-            operations_pb2.Operation]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the rerun connectivity test method over gRPC.
 
         Rerun an existing ``ConnectivityTest``. After the user triggers
@@ -401,7 +405,7 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
 
         Returns:
             Callable[[~.RerunConnectivityTestRequest],
-                    ~.Operation]:
+                    Awaitable[~.Operation]]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -420,14 +424,14 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
     @property
     def delete_connectivity_test(self) -> Callable[
             [reachability.DeleteConnectivityTestRequest],
-            operations_pb2.Operation]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the delete connectivity test method over gRPC.
 
         Deletes a specific ``ConnectivityTest``.
 
         Returns:
             Callable[[~.DeleteConnectivityTestRequest],
-                    ~.Operation]:
+                    Awaitable[~.Operation]]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -445,5 +449,5 @@ class ReachabilityServiceGrpcTransport(ReachabilityServiceTransport):
 
 
 __all__ = (
-    'ReachabilityServiceGrpcTransport',
+    'ReachabilityServiceGrpcAsyncIOTransport',
 )

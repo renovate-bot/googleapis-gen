@@ -3,5 +3,5 @@ API Reference
 .. toctree::
     :maxdepth: 2
 
-    networkmanagement_v1/services
-    networkmanagement_v1/types
+    network_management_v1/services
+    network_management_v1/types

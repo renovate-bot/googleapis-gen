@@ -27,14 +27,14 @@ from google.api_core import operations_v1  # type: ignore
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account # type: ignore
 
-from google.cloud.networkmanagement_v1.types import connectivity_test
-from google.cloud.networkmanagement_v1.types import reachability
+from google.cloud.network_management_v1.types import connectivity_test
+from google.cloud.network_management_v1.types import reachability
 from google.longrunning import operations_pb2  # type: ignore
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-networkmanagement',
+            'google-cloud-network-management',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

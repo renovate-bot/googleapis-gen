@@ -14,32 +14,68 @@
 # limitations under the License.
 #
 from collections import OrderedDict
-import functools
+from distutils import util
+import os
 import re
-from typing import Dict, Sequence, Tuple, Type, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions as core_exceptions  # type: ignore
-from google.api_core import gapic_v1                   # type: ignore
-from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials as ga_credentials   # type: ignore
-from google.oauth2 import service_account              # type: ignore
+from google.api_core import client_options as client_options_lib  # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
+from google.api_core import gapic_v1                              # type: ignore
+from google.api_core import retry as retries                      # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
+from google.auth.transport import mtls                            # type: ignore
+from google.auth.transport.grpc import SslCredentials             # type: ignore
+from google.auth.exceptions import MutualTLSChannelError          # type: ignore
+from google.oauth2 import service_account                         # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
-from google.cloud.networkmanagement_v1.services.reachability_service import pagers
-from google.cloud.networkmanagement_v1.types import connectivity_test
-from google.cloud.networkmanagement_v1.types import reachability
+from google.cloud.network_management_v1.services.reachability_service import pagers
+from google.cloud.network_management_v1.types import connectivity_test
+from google.cloud.network_management_v1.types import reachability
 from google.protobuf import empty_pb2  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import ReachabilityServiceTransport, DEFAULT_CLIENT_INFO
+from .transports.grpc import ReachabilityServiceGrpcTransport
 from .transports.grpc_asyncio import ReachabilityServiceGrpcAsyncIOTransport
-from .client import ReachabilityServiceClient
 
 
-class ReachabilityServiceAsyncClient:
+class ReachabilityServiceClientMeta(type):
+    """Metaclass for the ReachabilityService client.
+
+    This provides class-level methods for building and retrieving
+    support objects (e.g. transport) without polluting the client instance
+    objects.
+    """
+    _transport_registry = OrderedDict()  # type: Dict[str, Type[ReachabilityServiceTransport]]
+    _transport_registry["grpc"] = ReachabilityServiceGrpcTransport
+    _transport_registry["grpc_asyncio"] = ReachabilityServiceGrpcAsyncIOTransport
+
+    def get_transport_class(cls,
+            label: str = None,
+        ) -> Type[ReachabilityServiceTransport]:
+        """Returns an appropriate transport class.
+
+        Args:
+            label: The name of the desired transport. If none is
+                provided, then the first transport in the registry is used.
+
+        Returns:
+            The transport class to use.
+        """
+        # If a specific transport is requested, return that one.
+        if label:
+            return cls._transport_registry[label]
+
+        # No transport is requested; return the default (that is, the first one
+        # in the dictionary).
+        return next(iter(cls._transport_registry.values()))
+
+
+class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
     """The Reachability service in the Google Cloud Network
     Management API provides services that analyze the reachability
     within a single Google Virtual Private Cloud (VPC) network,
@@ -52,23 +88,40 @@ class ReachabilityServiceAsyncClient:
     and to troubleshoot connectivity issues.
     """
 
-    _client: ReachabilityServiceClient
+    @staticmethod
+    def _get_default_mtls_endpoint(api_endpoint):
+        """Converts api endpoint to mTLS endpoint.
 
-    DEFAULT_ENDPOINT = ReachabilityServiceClient.DEFAULT_ENDPOINT
-    DEFAULT_MTLS_ENDPOINT = ReachabilityServiceClient.DEFAULT_MTLS_ENDPOINT
+        Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
+        "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
+        Args:
+            api_endpoint (Optional[str]): the api endpoint to convert.
+        Returns:
+            str: converted mTLS api endpoint.
+        """
+        if not api_endpoint:
+            return api_endpoint
 
-    connectivity_test_path = staticmethod(ReachabilityServiceClient.connectivity_test_path)
-    parse_connectivity_test_path = staticmethod(ReachabilityServiceClient.parse_connectivity_test_path)
-    common_billing_account_path = staticmethod(ReachabilityServiceClient.common_billing_account_path)
-    parse_common_billing_account_path = staticmethod(ReachabilityServiceClient.parse_common_billing_account_path)
-    common_folder_path = staticmethod(ReachabilityServiceClient.common_folder_path)
-    parse_common_folder_path = staticmethod(ReachabilityServiceClient.parse_common_folder_path)
-    common_organization_path = staticmethod(ReachabilityServiceClient.common_organization_path)
-    parse_common_organization_path = staticmethod(ReachabilityServiceClient.parse_common_organization_path)
-    common_project_path = staticmethod(ReachabilityServiceClient.common_project_path)
-    parse_common_project_path = staticmethod(ReachabilityServiceClient.parse_common_project_path)
-    common_location_path = staticmethod(ReachabilityServiceClient.common_location_path)
-    parse_common_location_path = staticmethod(ReachabilityServiceClient.parse_common_location_path)
+        mtls_endpoint_re = re.compile(
+            r"(?P<name>[^.]+)(?P<mtls>\.mtls)?(?P<sandbox>\.sandbox)?(?P<googledomain>\.googleapis\.com)?"
+        )
+
+        m = mtls_endpoint_re.match(api_endpoint)
+        name, mtls, sandbox, googledomain = m.groups()
+        if mtls or not googledomain:
+            return api_endpoint
+
+        if sandbox:
+            return api_endpoint.replace(
+                "sandbox.googleapis.com", "mtls.sandbox.googleapis.com"
+            )
+
+        return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
+
+    DEFAULT_ENDPOINT = "networkmanagement.googleapis.com"
+    DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
+        DEFAULT_ENDPOINT
+    )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
@@ -81,9 +134,11 @@ class ReachabilityServiceAsyncClient:
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            ReachabilityServiceAsyncClient: The constructed client.
+            ReachabilityServiceClient: The constructed client.
         """
-        return ReachabilityServiceClient.from_service_account_info.__func__(ReachabilityServiceAsyncClient, info, *args, **kwargs)  # type: ignore
+        credentials = service_account.Credentials.from_service_account_info(info)
+        kwargs["credentials"] = credentials
+        return cls(*args, **kwargs)
 
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
@@ -97,9 +152,12 @@ class ReachabilityServiceAsyncClient:
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            ReachabilityServiceAsyncClient: The constructed client.
+            ReachabilityServiceClient: The constructed client.
         """
-        return ReachabilityServiceClient.from_service_account_file.__func__(ReachabilityServiceAsyncClient, filename, *args, **kwargs)  # type: ignore
+        credentials = service_account.Credentials.from_service_account_file(
+            filename)
+        kwargs["credentials"] = credentials
+        return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
@@ -108,16 +166,81 @@ class ReachabilityServiceAsyncClient:
         """Returns the transport used by the client instance.
 
         Returns:
-            ReachabilityServiceTransport: The transport used by the client instance.
+            ReachabilityServiceTransport: The transport used by the client
+                instance.
         """
-        return self._client.transport
+        return self._transport
 
-    get_transport_class = functools.partial(type(ReachabilityServiceClient).get_transport_class, type(ReachabilityServiceClient))
+    @staticmethod
+    def connectivity_test_path(project: str,test: str,) -> str:
+        """Returns a fully-qualified connectivity_test string."""
+        return "projects/{project}/locations/global/connectivityTests/{test}".format(project=project, test=test, )
+
+    @staticmethod
+    def parse_connectivity_test_path(path: str) -> Dict[str,str]:
+        """Parses a connectivity_test path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/global/connectivityTests/(?P<test>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_billing_account_path(billing_account: str, ) -> str:
+        """Returns a fully-qualified billing_account string."""
+        return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
+
+    @staticmethod
+    def parse_common_billing_account_path(path: str) -> Dict[str,str]:
+        """Parse a billing_account path into its component segments."""
+        m = re.match(r"^billingAccounts/(?P<billing_account>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_folder_path(folder: str, ) -> str:
+        """Returns a fully-qualified folder string."""
+        return "folders/{folder}".format(folder=folder, )
+
+    @staticmethod
+    def parse_common_folder_path(path: str) -> Dict[str,str]:
+        """Parse a folder path into its component segments."""
+        m = re.match(r"^folders/(?P<folder>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_organization_path(organization: str, ) -> str:
+        """Returns a fully-qualified organization string."""
+        return "organizations/{organization}".format(organization=organization, )
+
+    @staticmethod
+    def parse_common_organization_path(path: str) -> Dict[str,str]:
+        """Parse a organization path into its component segments."""
+        m = re.match(r"^organizations/(?P<organization>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_project_path(project: str, ) -> str:
+        """Returns a fully-qualified project string."""
+        return "projects/{project}".format(project=project, )
+
+    @staticmethod
+    def parse_common_project_path(path: str) -> Dict[str,str]:
+        """Parse a project path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_location_path(project: str, location: str, ) -> str:
+        """Returns a fully-qualified location string."""
+        return "projects/{project}/locations/{location}".format(project=project, location=location, )
+
+    @staticmethod
+    def parse_common_location_path(path: str) -> Dict[str,str]:
+        """Parse a location path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)$", path)
+        return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: ga_credentials.Credentials = None,
-            transport: Union[str, ReachabilityServiceTransport] = "grpc_asyncio",
-            client_options: ClientOptions = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
+            transport: Union[str, ReachabilityServiceTransport, None] = None,
+            client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
         """Instantiates the reachability service client.
@@ -128,11 +251,11 @@ class ReachabilityServiceAsyncClient:
                 credentials identify the application to the service; if none
                 are specified, the client will attempt to ascertain the
                 credentials from the environment.
-            transport (Union[str, ~.ReachabilityServiceTransport]): The
+            transport (Union[str, ReachabilityServiceTransport]): The
                 transport to use. If set to None, a transport is chosen
                 automatically.
-            client_options (ClientOptions): Custom options for the client. It
-                won't take effect if a ``transport`` instance is provided.
+            client_options (google.api_core.client_options.ClientOptions): Custom options for the
+                client. It won't take effect if a ``transport`` instance is provided.
                 (1) The ``api_endpoint`` property can be used to override the
                 default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT
                 environment variable can also be used to override the endpoint:
@@ -147,34 +270,98 @@ class ReachabilityServiceAsyncClient:
                 not provided, the default SSL client certificate will be used if
                 present. If GOOGLE_API_USE_CLIENT_CERTIFICATE is "false" or not
                 set, no client certificate will be used.
+            client_info (google.api_core.gapic_v1.client_info.ClientInfo):
+                The client info used to send a user-agent string along with
+                API requests. If ``None``, then default info will be used.
+                Generally, you only need to set this if you're developing
+                your own client library.
 
         Raises:
-            google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
+            google.auth.exceptions.MutualTLSChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-        self._client = ReachabilityServiceClient(
-            credentials=credentials,
-            transport=transport,
-            client_options=client_options,
-            client_info=client_info,
+        if isinstance(client_options, dict):
+            client_options = client_options_lib.from_dict(client_options)
+        if client_options is None:
+            client_options = client_options_lib.ClientOptions()
 
-        )
+        # Create SSL credentials for mutual TLS if needed.
+        use_client_cert = bool(util.strtobool(os.getenv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false")))
 
-    async def list_connectivity_tests(self,
+        client_cert_source_func = None
+        is_mtls = False
+        if use_client_cert:
+            if client_options.client_cert_source:
+                is_mtls = True
+                client_cert_source_func = client_options.client_cert_source
+            else:
+                is_mtls = mtls.has_default_client_cert_source()
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
+
+        # Figure out which api endpoint to use.
+        if client_options.api_endpoint is not None:
+            api_endpoint = client_options.api_endpoint
+        else:
+            use_mtls_env = os.getenv("GOOGLE_API_USE_MTLS_ENDPOINT", "auto")
+            if use_mtls_env == "never":
+                api_endpoint = self.DEFAULT_ENDPOINT
+            elif use_mtls_env == "always":
+                api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+            elif use_mtls_env == "auto":
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
+            else:
+                raise MutualTLSChannelError(
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
+                )
+
+        # Save or instantiate the transport.
+        # Ordinarily, we provide the transport, but allowing a custom transport
+        # instance provides an extensibility point for unusual situations.
+        if isinstance(transport, ReachabilityServiceTransport):
+            # transport is a ReachabilityServiceTransport instance.
+            if credentials or client_options.credentials_file:
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
+            if client_options.scopes:
+                raise ValueError(
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
+                )
+            self._transport = transport
+        else:
+            Transport = type(self).get_transport_class(transport)
+            self._transport = Transport(
+                credentials=credentials,
+                credentials_file=client_options.credentials_file,
+                host=api_endpoint,
+                scopes=client_options.scopes,
+                client_cert_source_for_mtls=client_cert_source_func,
+                quota_project_id=client_options.quota_project_id,
+                client_info=client_info,
+            )
+
+    def list_connectivity_tests(self,
             request: reachability.ListConnectivityTestsRequest = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> pagers.ListConnectivityTestsAsyncPager:
+            ) -> pagers.ListConnectivityTestsPager:
         r"""Lists all Connectivity Tests owned by a project.
 
         Args:
-            request (:class:`google.cloud.networkmanagement_v1.types.ListConnectivityTestsRequest`):
+            request (google.cloud.network_management_v1.types.ListConnectivityTestsRequest):
                 The request object. Request for the
                 `ListConnectivityTests` method.
-            parent (:class:`str`):
+            parent (str):
                 Required. The parent resource of the Connectivity Tests:
                 ``projects/{project_id}/locations/global``
 
@@ -188,7 +375,7 @@ class ReachabilityServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.networkmanagement_v1.services.reachability_service.pagers.ListConnectivityTestsAsyncPager:
+            google.cloud.network_management_v1.services.reachability_service.pagers.ListConnectivityTestsPager:
                 Response for the ListConnectivityTests method.
 
                 Iterating over this object will yield results and
@@ -200,23 +387,23 @@ class ReachabilityServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError("If the `request` argument is set, then none of "
-                             "the individual field arguments should be set.")
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
 
-        request = reachability.ListConnectivityTestsRequest(request)
-
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
-        if parent is not None:
-            request.parent = parent
+        # Minor optimization to avoid making a copy if the user passes
+        # in a reachability.ListConnectivityTestsRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, reachability.ListConnectivityTestsRequest):
+            request = reachability.ListConnectivityTestsRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if parent is not None:
+                request.parent = parent
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.list_connectivity_tests,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.list_connectivity_tests]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -227,7 +414,7 @@ class ReachabilityServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -235,8 +422,8 @@ class ReachabilityServiceAsyncClient:
         )
 
         # This method is paged; wrap the response in a pager, which provides
-        # an `__aiter__` convenience method.
-        response = pagers.ListConnectivityTestsAsyncPager(
+        # an `__iter__` convenience method.
+        response = pagers.ListConnectivityTestsPager(
             method=rpc,
             request=request,
             response=response,
@@ -246,7 +433,7 @@ class ReachabilityServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def get_connectivity_test(self,
+    def get_connectivity_test(self,
             request: reachability.GetConnectivityTestRequest = None,
             *,
             name: str = None,
@@ -257,10 +444,10 @@ class ReachabilityServiceAsyncClient:
         r"""Gets the details of a specific Connectivity Test.
 
         Args:
-            request (:class:`google.cloud.networkmanagement_v1.types.GetConnectivityTestRequest`):
+            request (google.cloud.network_management_v1.types.GetConnectivityTestRequest):
                 The request object. Request for the
                 `GetConnectivityTest` method.
-            name (:class:`str`):
+            name (str):
                 Required. ``ConnectivityTest`` resource name using the
                 form:
                 ``projects/{project_id}/locations/global/connectivityTests/{test_id}``
@@ -275,7 +462,7 @@ class ReachabilityServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.networkmanagement_v1.types.ConnectivityTest:
+            google.cloud.network_management_v1.types.ConnectivityTest:
                 A Connectivity Test for a network
                 reachability analysis.
 
@@ -285,23 +472,23 @@ class ReachabilityServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError("If the `request` argument is set, then none of "
-                             "the individual field arguments should be set.")
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
 
-        request = reachability.GetConnectivityTestRequest(request)
-
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
-        if name is not None:
-            request.name = name
+        # Minor optimization to avoid making a copy if the user passes
+        # in a reachability.GetConnectivityTestRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, reachability.GetConnectivityTestRequest):
+            request = reachability.GetConnectivityTestRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.get_connectivity_test,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.get_connectivity_test]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -312,7 +499,7 @@ class ReachabilityServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -322,7 +509,7 @@ class ReachabilityServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def create_connectivity_test(self,
+    def create_connectivity_test(self,
             request: reachability.CreateConnectivityTestRequest = None,
             *,
             parent: str = None,
@@ -331,7 +518,7 @@ class ReachabilityServiceAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Creates a new Connectivity Test. After you create a test, the
         reachability analysis is performed as part of the long running
         operation, which completes when the analysis completes.
@@ -348,17 +535,17 @@ class ReachabilityServiceAsyncClient:
         documentation.
 
         Args:
-            request (:class:`google.cloud.networkmanagement_v1.types.CreateConnectivityTestRequest`):
+            request (google.cloud.network_management_v1.types.CreateConnectivityTestRequest):
                 The request object. Request for the
                 `CreateConnectivityTest` method.
-            parent (:class:`str`):
+            parent (str):
                 Required. The parent resource of the Connectivity Test
                 to create: ``projects/{project_id}/locations/global``
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            test_id (:class:`str`):
+            test_id (str):
                 Required. The logical name of the Connectivity Test in
                 your project with the following restrictions:
 
@@ -372,7 +559,7 @@ class ReachabilityServiceAsyncClient:
                 This corresponds to the ``test_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            resource (:class:`google.cloud.networkmanagement_v1.types.ConnectivityTest`):
+            resource (google.cloud.network_management_v1.types.ConnectivityTest):
                 Required. A ``ConnectivityTest`` resource
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -384,11 +571,11 @@ class ReachabilityServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.networkmanagement_v1.types.ConnectivityTest`
+                :class:`google.cloud.network_management_v1.types.ConnectivityTest`
                 A Connectivity Test for a network reachability analysis.
 
         """
@@ -397,27 +584,27 @@ class ReachabilityServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, test_id, resource])
         if request is not None and has_flattened_params:
-            raise ValueError("If the `request` argument is set, then none of "
-                             "the individual field arguments should be set.")
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
 
-        request = reachability.CreateConnectivityTestRequest(request)
-
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
-        if parent is not None:
-            request.parent = parent
-        if test_id is not None:
-            request.test_id = test_id
-        if resource is not None:
-            request.resource = resource
+        # Minor optimization to avoid making a copy if the user passes
+        # in a reachability.CreateConnectivityTestRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, reachability.CreateConnectivityTestRequest):
+            request = reachability.CreateConnectivityTestRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if parent is not None:
+                request.parent = parent
+            if test_id is not None:
+                request.test_id = test_id
+            if resource is not None:
+                request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.create_connectivity_test,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.create_connectivity_test]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -428,7 +615,7 @@ class ReachabilityServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -436,9 +623,9 @@ class ReachabilityServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             connectivity_test.ConnectivityTest,
             metadata_type=reachability.OperationMetadata,
         )
@@ -446,7 +633,7 @@ class ReachabilityServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def update_connectivity_test(self,
+    def update_connectivity_test(self,
             request: reachability.UpdateConnectivityTestRequest = None,
             *,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -454,7 +641,7 @@ class ReachabilityServiceAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Updates the configuration of an existing ``ConnectivityTest``.
         After you update a test, the reachability analysis is performed
         as part of the long running operation, which completes when the
@@ -473,10 +660,10 @@ class ReachabilityServiceAsyncClient:
         for more details.
 
         Args:
-            request (:class:`google.cloud.networkmanagement_v1.types.UpdateConnectivityTestRequest`):
+            request (google.cloud.network_management_v1.types.UpdateConnectivityTestRequest):
                 The request object. Request for the
                 `UpdateConnectivityTest` method.
-            update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
+            update_mask (google.protobuf.field_mask_pb2.FieldMask):
                 Required. Mask of fields to update.
                 At least one path must be supplied in
                 this field.
@@ -484,7 +671,7 @@ class ReachabilityServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            resource (:class:`google.cloud.networkmanagement_v1.types.ConnectivityTest`):
+            resource (google.cloud.network_management_v1.types.ConnectivityTest):
                 Required. Only fields specified in update_mask are
                 updated.
 
@@ -498,11 +685,11 @@ class ReachabilityServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.networkmanagement_v1.types.ConnectivityTest`
+                :class:`google.cloud.network_management_v1.types.ConnectivityTest`
                 A Connectivity Test for a network reachability analysis.
 
         """
@@ -511,25 +698,25 @@ class ReachabilityServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([update_mask, resource])
         if request is not None and has_flattened_params:
-            raise ValueError("If the `request` argument is set, then none of "
-                             "the individual field arguments should be set.")
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
 
-        request = reachability.UpdateConnectivityTestRequest(request)
-
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
-        if update_mask is not None:
-            request.update_mask = update_mask
-        if resource is not None:
-            request.resource = resource
+        # Minor optimization to avoid making a copy if the user passes
+        # in a reachability.UpdateConnectivityTestRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, reachability.UpdateConnectivityTestRequest):
+            request = reachability.UpdateConnectivityTestRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if update_mask is not None:
+                request.update_mask = update_mask
+            if resource is not None:
+                request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.update_connectivity_test,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.update_connectivity_test]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -540,7 +727,7 @@ class ReachabilityServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -548,9 +735,9 @@ class ReachabilityServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             connectivity_test.ConnectivityTest,
             metadata_type=reachability.OperationMetadata,
         )
@@ -558,13 +745,13 @@ class ReachabilityServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def rerun_connectivity_test(self,
+    def rerun_connectivity_test(self,
             request: reachability.RerunConnectivityTestRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Rerun an existing ``ConnectivityTest``. After the user triggers
         the rerun, the reachability analysis is performed as part of the
         long running operation, which completes when the analysis
@@ -581,7 +768,7 @@ class ReachabilityServiceAsyncClient:
         returns a value of ``UNKNOWN``.
 
         Args:
-            request (:class:`google.cloud.networkmanagement_v1.types.RerunConnectivityTestRequest`):
+            request (google.cloud.network_management_v1.types.RerunConnectivityTestRequest):
                 The request object. Request for the
                 `RerunConnectivityTest` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -591,24 +778,25 @@ class ReachabilityServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.networkmanagement_v1.types.ConnectivityTest`
+                :class:`google.cloud.network_management_v1.types.ConnectivityTest`
                 A Connectivity Test for a network reachability analysis.
 
         """
         # Create or coerce a protobuf request object.
-        request = reachability.RerunConnectivityTestRequest(request)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a reachability.RerunConnectivityTestRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, reachability.RerunConnectivityTestRequest):
+            request = reachability.RerunConnectivityTestRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.rerun_connectivity_test,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.rerun_connectivity_test]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -619,7 +807,7 @@ class ReachabilityServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -627,9 +815,9 @@ class ReachabilityServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             connectivity_test.ConnectivityTest,
             metadata_type=reachability.OperationMetadata,
         )
@@ -637,21 +825,21 @@ class ReachabilityServiceAsyncClient:
         # Done; return the response.
         return response
 
-    async def delete_connectivity_test(self,
+    def delete_connectivity_test(self,
             request: reachability.DeleteConnectivityTestRequest = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation_async.AsyncOperation:
+            ) -> operation.Operation:
         r"""Deletes a specific ``ConnectivityTest``.
 
         Args:
-            request (:class:`google.cloud.networkmanagement_v1.types.DeleteConnectivityTestRequest`):
+            request (google.cloud.network_management_v1.types.DeleteConnectivityTestRequest):
                 The request object. Request for the
                 `DeleteConnectivityTest` method.
-            name (:class:`str`):
+            name (str):
                 Required. Connectivity Test resource name using the
                 form:
                 ``projects/{project_id}/locations/global/connectivityTests/{test_id}``
@@ -666,7 +854,7 @@ class ReachabilityServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.protobuf.empty_pb2.Empty` A generic empty message that you can re-use to avoid defining duplicated
@@ -689,23 +877,23 @@ class ReachabilityServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError("If the `request` argument is set, then none of "
-                             "the individual field arguments should be set.")
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
 
-        request = reachability.DeleteConnectivityTestRequest(request)
-
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
-        if name is not None:
-            request.name = name
+        # Minor optimization to avoid making a copy if the user passes
+        # in a reachability.DeleteConnectivityTestRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, reachability.DeleteConnectivityTestRequest):
+            request = reachability.DeleteConnectivityTestRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.delete_connectivity_test,
-            default_timeout=None,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.delete_connectivity_test]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -716,7 +904,7 @@ class ReachabilityServiceAsyncClient:
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -724,9 +912,9 @@ class ReachabilityServiceAsyncClient:
         )
 
         # Wrap the response in an operation future.
-        response = operation_async.from_gapic(
+        response = operation.from_gapic(
             response,
-            self._client._transport.operations_client,
+            self._transport.operations_client,
             empty_pb2.Empty,
             metadata_type=reachability.OperationMetadata,
         )
@@ -741,7 +929,7 @@ class ReachabilityServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-networkmanagement",
+            "google-cloud-network-management",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -749,5 +937,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    "ReachabilityServiceAsyncClient",
+    "ReachabilityServiceClient",
 )

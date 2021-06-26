@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-cloud-networkmanagement documentation build configuration file
+# google-cloud-network-management documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-networkmanagement"
+project = u"google-cloud-network-management"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-networkmanagement-doc"
+htmlhelp_basename = "google-cloud-network-management-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-networkmanagement.tex",
-        u"google-cloud-networkmanagement Documentation",
+        "google-cloud-network-management.tex",
+        u"google-cloud-network-management Documentation",
         author,
         "manual",
     )
@@ -308,8 +308,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-networkmanagement",
-        u"Google Cloud Networkmanagement Documentation",
+        "google-cloud-network-management",
+        u"Google Cloud Network Management Documentation",
         [author],
         1,
     )
@@ -327,11 +327,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-networkmanagement",
-        u"google-cloud-networkmanagement Documentation",
+        "google-cloud-network-management",
+        u"google-cloud-network-management Documentation",
         author,
-        "google-cloud-networkmanagement",
-        "GAPIC library for Google Cloud Networkmanagement API",
+        "google-cloud-network-management",
+        "GAPIC library for Google Cloud Network Management API",
         "APIs",
     )
 ]

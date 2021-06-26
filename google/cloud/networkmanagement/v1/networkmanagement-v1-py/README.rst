@@ -1,4 +1,4 @@
-Python Client for Google Cloud Networkmanagement API
+Python Client for Google Cloud Network Management API
 =================================================
 
 Quick Start
@@ -8,7 +8,7 @@ In order to use this library, you first need to go through the following steps:
 
 1. `Select or create a Cloud Platform project.`_
 2. `Enable billing for your project.`_
-3. Enable the Google Cloud Networkmanagement API.
+3. Enable the Google Cloud Network Management API.
 4. `Setup Authentication.`_
 
 .. _Select or create a Cloud Platform project.: https://console.cloud.google.com/project

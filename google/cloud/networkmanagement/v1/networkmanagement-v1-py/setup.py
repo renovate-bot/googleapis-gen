@@ -26,7 +26,7 @@ with io.open(readme_filename, encoding='utf-8') as readme_file:
     readme = readme_file.read()
 
 setuptools.setup(
-    name='google-cloud-networkmanagement',
+    name='google-cloud-network-management',
     version=version,
     long_description=readme,
     packages=setuptools.PEP420PackageFinder.find(),

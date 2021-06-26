@@ -15,15 +15,15 @@
 #
 from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
 
-from google.cloud.networkmanagement_v1.types import connectivity_test
-from google.cloud.networkmanagement_v1.types import reachability
+from google.cloud.network_management_v1.types import connectivity_test
+from google.cloud.network_management_v1.types import reachability
 
 
 class ListConnectivityTestsPager:
     """A pager for iterating through ``list_connectivity_tests`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.networkmanagement_v1.types.ListConnectivityTestsResponse` object, and
+    :class:`google.cloud.network_management_v1.types.ListConnectivityTestsResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``resources`` field.
 
@@ -32,7 +32,7 @@ class ListConnectivityTestsPager:
     through the ``resources`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.networkmanagement_v1.types.ListConnectivityTestsResponse`
+    All the usual :class:`google.cloud.network_management_v1.types.ListConnectivityTestsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -47,9 +47,9 @@ class ListConnectivityTestsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.networkmanagement_v1.types.ListConnectivityTestsRequest):
+            request (google.cloud.network_management_v1.types.ListConnectivityTestsRequest):
                 The initial request object.
-            response (google.cloud.networkmanagement_v1.types.ListConnectivityTestsResponse):
+            response (google.cloud.network_management_v1.types.ListConnectivityTestsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -82,7 +82,7 @@ class ListConnectivityTestsAsyncPager:
     """A pager for iterating through ``list_connectivity_tests`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.networkmanagement_v1.types.ListConnectivityTestsResponse` object, and
+    :class:`google.cloud.network_management_v1.types.ListConnectivityTestsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``resources`` field.
 
@@ -91,7 +91,7 @@ class ListConnectivityTestsAsyncPager:
     through the ``resources`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.networkmanagement_v1.types.ListConnectivityTestsResponse`
+    All the usual :class:`google.cloud.network_management_v1.types.ListConnectivityTestsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -106,9 +106,9 @@ class ListConnectivityTestsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.networkmanagement_v1.types.ListConnectivityTestsRequest):
+            request (google.cloud.network_management_v1.types.ListConnectivityTestsRequest):
                 The initial request object.
-            response (google.cloud.networkmanagement_v1.types.ListConnectivityTestsResponse):
+            response (google.cloud.network_management_v1.types.ListConnectivityTestsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.

@@ -15,7 +15,7 @@
 #
 import proto  # type: ignore
 
-from google.cloud.networkmanagement_v1.types import trace
+from google.cloud.network_management_v1.types import trace
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.rpc import status_pb2  # type: ignore
 
@@ -39,7 +39,7 @@ class ConnectivityTest(proto.Message):
         description (str):
             The user-supplied description of the
             Connectivity Test. Maximum of 512 characters.
-        source (google.cloud.networkmanagement_v1.types.Endpoint):
+        source (google.cloud.network_management_v1.types.Endpoint):
             Required. Source specification of the
             Connectivity Test.
             You can use a combination of source IP address,
@@ -67,7 +67,7 @@ class ConnectivityTest(proto.Message):
             source location is ambiguous. However, the test
             result may include endpoints that you don't
             intend to test.
-        destination (google.cloud.networkmanagement_v1.types.Endpoint):
+        destination (google.cloud.network_management_v1.types.Endpoint):
             Required. Destination specification of the
             Connectivity Test.
             You can use a combination of destination IP
@@ -101,7 +101,7 @@ class ConnectivityTest(proto.Message):
         display_name (str):
             Output only. The display name of a
             Connectivity Test.
-        labels (Sequence[google.cloud.networkmanagement_v1.types.ConnectivityTest.LabelsEntry]):
+        labels (Sequence[google.cloud.network_management_v1.types.ConnectivityTest.LabelsEntry]):
             Resource labels to represent user-provided
             metadata.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
@@ -109,7 +109,7 @@ class ConnectivityTest(proto.Message):
         update_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the test's
             configuration was updated.
-        reachability_details (google.cloud.networkmanagement_v1.types.ReachabilityDetails):
+        reachability_details (google.cloud.network_management_v1.types.ReachabilityDetails):
             Output only. The reachability details of this
             test from the latest run. The details are
             updated when creating a new test, updating an
@@ -189,7 +189,7 @@ class Endpoint(proto.Message):
             A `Cloud SQL <https://cloud.google.com/sql>`__ instance URI.
         network (str):
             A Compute Engine network URI.
-        network_type (google.cloud.networkmanagement_v1.types.Endpoint.NetworkType):
+        network_type (google.cloud.network_management_v1.types.Endpoint.NetworkType):
             Type of the network where the endpoint is
             located. Applicable only to source endpoint, as
             destination network type can be inferred from
@@ -256,7 +256,7 @@ class ReachabilityDetails(proto.Message):
     the test.
 
     Attributes:
-        result (google.cloud.networkmanagement_v1.types.ReachabilityDetails.Result):
+        result (google.cloud.network_management_v1.types.ReachabilityDetails.Result):
             The overall result of the test's
             configuration analysis.
         verify_time (google.protobuf.timestamp_pb2.Timestamp):
@@ -264,7 +264,7 @@ class ReachabilityDetails(proto.Message):
         error (google.rpc.status_pb2.Status):
             The details of a failure or a cancellation of
             reachability analysis.
-        traces (Sequence[google.cloud.networkmanagement_v1.types.Trace]):
+        traces (Sequence[google.cloud.network_management_v1.types.Trace]):
             Result may contain a list of traces if a test
             has multiple possible paths in the network, such
             as when destination endpoint is a load balancer
