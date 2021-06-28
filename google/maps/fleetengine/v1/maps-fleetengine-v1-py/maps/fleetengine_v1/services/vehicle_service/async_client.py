@@ -18,6 +18,7 @@ import functools
 import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
+import warnings
 
 import google.api_core.client_options as ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
@@ -389,6 +390,9 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 vehicle at a point in time.
 
         """
+        warnings.warn("VehicleServiceAsyncClient.update_vehicle_location is deprecated",
+            warnings.DeprecationWarning)
+
         # Create or coerce a protobuf request object.
         request = vehicle_api.UpdateVehicleLocationRequest(request)
 

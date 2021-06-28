@@ -18,6 +18,7 @@ import functools
 import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
+import warnings
 
 import google.api_core.client_options as ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
@@ -188,6 +189,9 @@ class ServiceUsageAsyncClient:
                    object {}.
 
         """
+        warnings.warn("ServiceUsageAsyncClient.enable_service is deprecated",
+            warnings.DeprecationWarning)
+
         # Create or coerce a protobuf request object.
         request = serviceusage.EnableServiceRequest(request)
 
@@ -273,6 +277,9 @@ class ServiceUsageAsyncClient:
                    object {}.
 
         """
+        warnings.warn("ServiceUsageAsyncClient.disable_service is deprecated",
+            warnings.DeprecationWarning)
+
         # Create or coerce a protobuf request object.
         request = serviceusage.DisableServiceRequest(request)
 
@@ -337,6 +344,9 @@ class ServiceUsageAsyncClient:
                 by the consumer.
 
         """
+        warnings.warn("ServiceUsageAsyncClient.get_service is deprecated",
+            warnings.DeprecationWarning)
+
         # Create or coerce a protobuf request object.
         request = serviceusage.GetServiceRequest(request)
 
@@ -401,6 +411,9 @@ class ServiceUsageAsyncClient:
                 resolve additional pages automatically.
 
         """
+        warnings.warn("ServiceUsageAsyncClient.list_services is deprecated",
+            warnings.DeprecationWarning)
+
         # Create or coerce a protobuf request object.
         request = serviceusage.ListServicesRequest(request)
 
@@ -482,6 +495,9 @@ class ServiceUsageAsyncClient:
                    object {}.
 
         """
+        warnings.warn("ServiceUsageAsyncClient.batch_enable_services is deprecated",
+            warnings.DeprecationWarning)
+
         # Create or coerce a protobuf request object.
         request = serviceusage.BatchEnableServicesRequest(request)
 

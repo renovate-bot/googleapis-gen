@@ -1307,9 +1307,7 @@ def test_migration_service_grpc_transport_client_cert_source_for_mtls(
             "squid.clam.whelk:443",
             credentials=cred,
             credentials_file=None,
-            scopes=(
-                'https://www.googleapis.com/auth/cloud-platform',
-            ),
+            scopes=None,
             ssl_credentials=mock_ssl_channel_creds,
             quota_project_id=None,
             options=[
@@ -1406,9 +1404,7 @@ def test_migration_service_transport_channel_mtls_with_client_cert_source(
                 "mtls.squid.clam.whelk:443",
                 credentials=cred,
                 credentials_file=None,
-                scopes=(
-                    'https://www.googleapis.com/auth/cloud-platform',
-                ),
+                scopes=None,
                 ssl_credentials=mock_ssl_cred,
                 quota_project_id=None,
                 options=[
@@ -1449,9 +1445,7 @@ def test_migration_service_transport_channel_mtls_with_adc(
                 "mtls.squid.clam.whelk:443",
                 credentials=mock_cred,
                 credentials_file=None,
-                scopes=(
-                    'https://www.googleapis.com/auth/cloud-platform',
-                ),
+                scopes=None,
                 ssl_credentials=mock_ssl_cred,
                 quota_project_id=None,
                 options=[
@@ -1540,18 +1534,16 @@ def test_parse_dataset_path():
 
 def test_dataset_path():
     project = "squid"
-    location = "clam"
-    dataset = "whelk"
-    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, location, dataset)
+    dataset = "clam"
+    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-        "project": "octopus",
-        "location": "oyster",
-        "dataset": "nudibranch",
+        "project": "whelk",
+        "dataset": "octopus",
     }
     path = MigrationServiceClient.dataset_path(**expected)
 
@@ -1560,16 +1552,18 @@ def test_parse_dataset_path():
     assert expected == actual
 
 def test_dataset_path():
-    project = "cuttlefish"
-    dataset = "mussel"
-    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, dataset)
+    project = "oyster"
+    location = "nudibranch"
+    dataset = "cuttlefish"
+    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, location, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-        "project": "winkle",
+        "project": "mussel",
+        "location": "winkle",
         "dataset": "nautilus",
     }
     path = MigrationServiceClient.dataset_path(**expected)

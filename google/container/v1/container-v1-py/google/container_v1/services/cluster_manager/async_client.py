@@ -18,6 +18,7 @@ import functools
 import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
+import warnings
 
 import google.api_core.client_options as ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
@@ -1222,6 +1223,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 output only.
 
         """
+        warnings.warn("ClusterManagerAsyncClient.set_locations is deprecated",
+            warnings.DeprecationWarning)
+
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.

@@ -2693,10 +2693,7 @@ def test_intents_grpc_transport_client_cert_source_for_mtls(
             "squid.clam.whelk:443",
             credentials=cred,
             credentials_file=None,
-            scopes=(
-                'https://www.googleapis.com/auth/cloud-platform',
-                'https://www.googleapis.com/auth/dialogflow',
-            ),
+            scopes=None,
             ssl_credentials=mock_ssl_channel_creds,
             quota_project_id=None,
             options=[
@@ -2793,10 +2790,7 @@ def test_intents_transport_channel_mtls_with_client_cert_source(
                 "mtls.squid.clam.whelk:443",
                 credentials=cred,
                 credentials_file=None,
-                scopes=(
-                    'https://www.googleapis.com/auth/cloud-platform',
-                    'https://www.googleapis.com/auth/dialogflow',
-                ),
+                scopes=None,
                 ssl_credentials=mock_ssl_cred,
                 quota_project_id=None,
                 options=[
@@ -2837,10 +2831,7 @@ def test_intents_transport_channel_mtls_with_adc(
                 "mtls.squid.clam.whelk:443",
                 credentials=mock_cred,
                 credentials_file=None,
-                scopes=(
-                    'https://www.googleapis.com/auth/cloud-platform',
-                    'https://www.googleapis.com/auth/dialogflow',
-                ),
+                scopes=None,
                 ssl_credentials=mock_ssl_cred,
                 quota_project_id=None,
                 options=[

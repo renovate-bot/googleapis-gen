@@ -19,6 +19,7 @@ import os
 import re
 from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
+import warnings
 
 from google.api_core import client_options as client_options_lib  # type: ignore
 from google.api_core import exceptions as core_exceptions         # type: ignore
@@ -561,7 +562,9 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
                 vehicle at a point in time.
 
         """
-        warnings.warn("update_vehicle_location is deprecated", warnings.DeprecationWarning)
+        warnings.warn("VehicleServiceClient.update_vehicle_location is deprecated",
+            warnings.DeprecationWarning)
+
         # Create or coerce a protobuf request object.
         # Minor optimization to avoid making a copy if the user passes
         # in a vehicle_api.UpdateVehicleLocationRequest.
