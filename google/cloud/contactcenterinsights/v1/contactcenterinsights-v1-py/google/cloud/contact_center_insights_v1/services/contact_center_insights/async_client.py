@@ -28,9 +28,9 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
-from google.cloud.contactcenterinsights_v1.services.contact_center_insights import pagers
-from google.cloud.contactcenterinsights_v1.types import contact_center_insights
-from google.cloud.contactcenterinsights_v1.types import resources
+from google.cloud.contact_center_insights_v1.services.contact_center_insights import pagers
+from google.cloud.contact_center_insights_v1.types import contact_center_insights
+from google.cloud.contact_center_insights_v1.types import resources
 from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -175,7 +175,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Creates a conversation.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.CreateConversationRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.CreateConversationRequest`):
                 The request object. Request to create a conversation.
             parent (:class:`str`):
                 Required. The parent resource of the
@@ -184,7 +184,7 @@ class ContactCenterInsightsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            conversation (:class:`google.cloud.contactcenterinsights_v1.types.Conversation`):
+            conversation (:class:`google.cloud.contact_center_insights_v1.types.Conversation`):
                 Required. The conversation resource
                 to create.
 
@@ -211,7 +211,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Conversation:
+            google.cloud.contact_center_insights_v1.types.Conversation:
                 The conversation resource.
         """
         # Create or coerce a protobuf request object.
@@ -272,10 +272,10 @@ class ContactCenterInsightsAsyncClient:
         r"""Updates a conversation.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.UpdateConversationRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.UpdateConversationRequest`):
                 The request object. The request to update a
                 conversation.
-            conversation (:class:`google.cloud.contactcenterinsights_v1.types.Conversation`):
+            conversation (:class:`google.cloud.contact_center_insights_v1.types.Conversation`):
                 Required. The new values for the
                 conversation.
 
@@ -294,7 +294,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Conversation:
+            google.cloud.contact_center_insights_v1.types.Conversation:
                 The conversation resource.
         """
         # Create or coerce a protobuf request object.
@@ -352,7 +352,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Gets a conversation.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.GetConversationRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.GetConversationRequest`):
                 The request object. The request to get a conversation.
             name (:class:`str`):
                 Required. The name of the
@@ -368,7 +368,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Conversation:
+            google.cloud.contact_center_insights_v1.types.Conversation:
                 The conversation resource.
         """
         # Create or coerce a protobuf request object.
@@ -424,7 +424,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Lists conversations.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.ListConversationsRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.ListConversationsRequest`):
                 The request object. Request to list conversations.
             parent (:class:`str`):
                 Required. The parent resource of the
@@ -440,7 +440,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.services.contact_center_insights.pagers.ListConversationsAsyncPager:
+            google.cloud.contact_center_insights_v1.services.contact_center_insights.pagers.ListConversationsAsyncPager:
                 The response of listing
                 conversations.
                 Iterating over this object will yield
@@ -510,7 +510,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Deletes a conversation.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.DeleteConversationRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.DeleteConversationRequest`):
                 The request object. The request to delete a
                 conversation.
             name (:class:`str`):
@@ -578,7 +578,7 @@ class ContactCenterInsightsAsyncClient:
         done when the analysis has completed.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.CreateAnalysisRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.CreateAnalysisRequest`):
                 The request object. The request to create an analysis.
             parent (:class:`str`):
                 Required. The parent resource of the
@@ -587,7 +587,7 @@ class ContactCenterInsightsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            analysis (:class:`google.cloud.contactcenterinsights_v1.types.Analysis`):
+            analysis (:class:`google.cloud.contact_center_insights_v1.types.Analysis`):
                 Required. The analysis to create.
                 This corresponds to the ``analysis`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -603,7 +603,7 @@ class ContactCenterInsightsAsyncClient:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.contactcenterinsights_v1.types.Analysis`
+                :class:`google.cloud.contact_center_insights_v1.types.Analysis`
                 The analysis resource.
 
         """
@@ -670,7 +670,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Gets an analysis.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.GetAnalysisRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.GetAnalysisRequest`):
                 The request object. The request to get an analysis.
             name (:class:`str`):
                 Required. The name of the analysis to
@@ -686,7 +686,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Analysis:
+            google.cloud.contact_center_insights_v1.types.Analysis:
                 The analysis resource.
         """
         # Create or coerce a protobuf request object.
@@ -742,7 +742,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Lists analyses.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.ListAnalysesRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.ListAnalysesRequest`):
                 The request object. The request to list analyses.
             parent (:class:`str`):
                 Required. The parent resource of the
@@ -758,7 +758,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.services.contact_center_insights.pagers.ListAnalysesAsyncPager:
+            google.cloud.contact_center_insights_v1.services.contact_center_insights.pagers.ListAnalysesAsyncPager:
                 The response to list analyses.
                 Iterating over this object will yield
                 results and resolve additional pages
@@ -827,7 +827,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Deletes an analysis.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.DeleteAnalysisRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.DeleteAnalysisRequest`):
                 The request object. The request to delete an analysis.
             name (:class:`str`):
                 Required. The name of the analysis to
@@ -893,7 +893,7 @@ class ContactCenterInsightsAsyncClient:
         request body.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.ExportInsightsDataRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.ExportInsightsDataRequest`):
                 The request object. The request to export insights.
             parent (:class:`str`):
                 Required. The parent resource to
@@ -913,7 +913,7 @@ class ContactCenterInsightsAsyncClient:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.contactcenterinsights_v1.types.ExportInsightsDataResponse`
+                :class:`google.cloud.contact_center_insights_v1.types.ExportInsightsDataResponse`
                 Response for an export insights operation.
 
         """
@@ -978,7 +978,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Gets an issue model.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.GetIssueModelRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.GetIssueModelRequest`):
                 The request object. The request to get an issue model.
             name (:class:`str`):
                 Required. The name of the issue model
@@ -994,7 +994,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.IssueModel:
+            google.cloud.contact_center_insights_v1.types.IssueModel:
                 The issue model resource.
         """
         # Create or coerce a protobuf request object.
@@ -1050,7 +1050,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Lists issue models.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.ListIssueModelsRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.ListIssueModelsRequest`):
                 The request object. Request to list issue models.
             parent (:class:`str`):
                 Required. The parent resource of the
@@ -1066,7 +1066,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.ListIssueModelsResponse:
+            google.cloud.contact_center_insights_v1.types.ListIssueModelsResponse:
                 The response of listing issue models.
         """
         # Create or coerce a protobuf request object.
@@ -1122,7 +1122,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Gets an issue.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.GetIssueRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.GetIssueRequest`):
                 The request object. The request to get an issue.
             name (:class:`str`):
                 Required. The name of the issue to
@@ -1138,7 +1138,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Issue:
+            google.cloud.contact_center_insights_v1.types.Issue:
                 The issue resource.
         """
         # Create or coerce a protobuf request object.
@@ -1194,7 +1194,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Lists issues.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.ListIssuesRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.ListIssuesRequest`):
                 The request object. Request to list issues.
             parent (:class:`str`):
                 Required. The parent resource of the
@@ -1210,7 +1210,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.ListIssuesResponse:
+            google.cloud.contact_center_insights_v1.types.ListIssuesResponse:
                 The response of listing issues.
         """
         # Create or coerce a protobuf request object.
@@ -1266,7 +1266,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Gets an issue model's statistics.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.CalculateIssueModelStatsRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.CalculateIssueModelStatsRequest`):
                 The request object. Request to get statistics of an
                 issue model.
             issue_model (:class:`str`):
@@ -1283,7 +1283,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.CalculateIssueModelStatsResponse:
+            google.cloud.contact_center_insights_v1.types.CalculateIssueModelStatsResponse:
                 Response of querying an issue model's
                 statistics.
 
@@ -1342,7 +1342,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Creates a phrase matcher.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.CreatePhraseMatcherRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.CreatePhraseMatcherRequest`):
                 The request object. Request to create a phrase matcher.
             parent (:class:`str`):
                 Required. The parent resource of the phrase matcher.
@@ -1354,7 +1354,7 @@ class ContactCenterInsightsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            phrase_matcher (:class:`google.cloud.contactcenterinsights_v1.types.PhraseMatcher`):
+            phrase_matcher (:class:`google.cloud.contact_center_insights_v1.types.PhraseMatcher`):
                 Required. The phrase matcher resource
                 to create.
 
@@ -1368,7 +1368,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.PhraseMatcher:
+            google.cloud.contact_center_insights_v1.types.PhraseMatcher:
                 The phrase matcher resource.
         """
         # Create or coerce a protobuf request object.
@@ -1426,7 +1426,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Gets a phrase matcher.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.GetPhraseMatcherRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.GetPhraseMatcherRequest`):
                 The request object. The request to get a a phrase
                 matcher.
             name (:class:`str`):
@@ -1443,7 +1443,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.PhraseMatcher:
+            google.cloud.contact_center_insights_v1.types.PhraseMatcher:
                 The phrase matcher resource.
         """
         # Create or coerce a protobuf request object.
@@ -1499,7 +1499,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Lists phrase matchers.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.ListPhraseMatchersRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.ListPhraseMatchersRequest`):
                 The request object. Request to list phrase matchers.
             parent (:class:`str`):
                 Required. The parent resource of the
@@ -1515,7 +1515,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.services.contact_center_insights.pagers.ListPhraseMatchersAsyncPager:
+            google.cloud.contact_center_insights_v1.services.contact_center_insights.pagers.ListPhraseMatchersAsyncPager:
                 The response of listing phrase
                 matchers.
                 Iterating over this object will yield
@@ -1585,7 +1585,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Deletes a phrase matcher.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.DeletePhraseMatcherRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.DeletePhraseMatcherRequest`):
                 The request object. The request to delete a phrase
                 matcher.
             name (:class:`str`):
@@ -1651,7 +1651,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Gets conversation statistics.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.CalculateStatsRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.CalculateStatsRequest`):
                 The request object. The request for calculating
                 conversation statistics.
             location (:class:`str`):
@@ -1668,7 +1668,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.CalculateStatsResponse:
+            google.cloud.contact_center_insights_v1.types.CalculateStatsResponse:
                 The response for calculating
                 conversation statistics.
 
@@ -1726,7 +1726,7 @@ class ContactCenterInsightsAsyncClient:
         r"""Gets project-level settings.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.GetSettingsRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.GetSettingsRequest`):
                 The request object. The request to get project-level
                 settings.
             name (:class:`str`):
@@ -1743,7 +1743,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Settings:
+            google.cloud.contact_center_insights_v1.types.Settings:
                 The settings resource.
         """
         # Create or coerce a protobuf request object.
@@ -1800,10 +1800,10 @@ class ContactCenterInsightsAsyncClient:
         r"""Updates project-level settings.
 
         Args:
-            request (:class:`google.cloud.contactcenterinsights_v1.types.UpdateSettingsRequest`):
+            request (:class:`google.cloud.contact_center_insights_v1.types.UpdateSettingsRequest`):
                 The request object. The request to update project-level
                 settings.
-            settings (:class:`google.cloud.contactcenterinsights_v1.types.Settings`):
+            settings (:class:`google.cloud.contact_center_insights_v1.types.Settings`):
                 Required. The new values for the
                 conversation.
 
@@ -1824,7 +1824,7 @@ class ContactCenterInsightsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Settings:
+            google.cloud.contact_center_insights_v1.types.Settings:
                 The settings resource.
         """
         # Create or coerce a protobuf request object.
@@ -1878,7 +1878,7 @@ class ContactCenterInsightsAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-contactcenterinsights",
+            "google-cloud-contact-center-insights",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

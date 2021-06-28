@@ -27,15 +27,15 @@ from google.api_core import operations_v1  # type: ignore
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account # type: ignore
 
-from google.cloud.contactcenterinsights_v1.types import contact_center_insights
-from google.cloud.contactcenterinsights_v1.types import resources
+from google.cloud.contact_center_insights_v1.types import contact_center_insights
+from google.cloud.contact_center_insights_v1.types import resources
 from google.longrunning import operations_pb2  # type: ignore
 from google.protobuf import empty_pb2  # type: ignore
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-contactcenterinsights',
+            'google-cloud-contact-center-insights',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

@@ -32,9 +32,9 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
-from google.cloud.contactcenterinsights_v1.services.contact_center_insights import pagers
-from google.cloud.contactcenterinsights_v1.types import contact_center_insights
-from google.cloud.contactcenterinsights_v1.types import resources
+from google.cloud.contact_center_insights_v1.services.contact_center_insights import pagers
+from google.cloud.contact_center_insights_v1.types import contact_center_insights
+from google.cloud.contact_center_insights_v1.types import resources
 from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -407,7 +407,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Creates a conversation.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.CreateConversationRequest):
+            request (google.cloud.contact_center_insights_v1.types.CreateConversationRequest):
                 The request object. Request to create a conversation.
             parent (str):
                 Required. The parent resource of the
@@ -416,7 +416,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            conversation (google.cloud.contactcenterinsights_v1.types.Conversation):
+            conversation (google.cloud.contact_center_insights_v1.types.Conversation):
                 Required. The conversation resource
                 to create.
 
@@ -443,7 +443,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Conversation:
+            google.cloud.contact_center_insights_v1.types.Conversation:
                 The conversation resource.
         """
         # Create or coerce a protobuf request object.
@@ -504,10 +504,10 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Updates a conversation.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.UpdateConversationRequest):
+            request (google.cloud.contact_center_insights_v1.types.UpdateConversationRequest):
                 The request object. The request to update a
                 conversation.
-            conversation (google.cloud.contactcenterinsights_v1.types.Conversation):
+            conversation (google.cloud.contact_center_insights_v1.types.Conversation):
                 Required. The new values for the
                 conversation.
 
@@ -526,7 +526,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Conversation:
+            google.cloud.contact_center_insights_v1.types.Conversation:
                 The conversation resource.
         """
         # Create or coerce a protobuf request object.
@@ -584,7 +584,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Gets a conversation.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.GetConversationRequest):
+            request (google.cloud.contact_center_insights_v1.types.GetConversationRequest):
                 The request object. The request to get a conversation.
             name (str):
                 Required. The name of the
@@ -600,7 +600,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Conversation:
+            google.cloud.contact_center_insights_v1.types.Conversation:
                 The conversation resource.
         """
         # Create or coerce a protobuf request object.
@@ -656,7 +656,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Lists conversations.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.ListConversationsRequest):
+            request (google.cloud.contact_center_insights_v1.types.ListConversationsRequest):
                 The request object. Request to list conversations.
             parent (str):
                 Required. The parent resource of the
@@ -672,7 +672,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.services.contact_center_insights.pagers.ListConversationsPager:
+            google.cloud.contact_center_insights_v1.services.contact_center_insights.pagers.ListConversationsPager:
                 The response of listing
                 conversations.
                 Iterating over this object will yield
@@ -742,7 +742,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Deletes a conversation.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.DeleteConversationRequest):
+            request (google.cloud.contact_center_insights_v1.types.DeleteConversationRequest):
                 The request object. The request to delete a
                 conversation.
             name (str):
@@ -810,7 +810,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         done when the analysis has completed.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.CreateAnalysisRequest):
+            request (google.cloud.contact_center_insights_v1.types.CreateAnalysisRequest):
                 The request object. The request to create an analysis.
             parent (str):
                 Required. The parent resource of the
@@ -819,7 +819,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            analysis (google.cloud.contactcenterinsights_v1.types.Analysis):
+            analysis (google.cloud.contact_center_insights_v1.types.Analysis):
                 Required. The analysis to create.
                 This corresponds to the ``analysis`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -835,7 +835,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.contactcenterinsights_v1.types.Analysis`
+                :class:`google.cloud.contact_center_insights_v1.types.Analysis`
                 The analysis resource.
 
         """
@@ -902,7 +902,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Gets an analysis.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.GetAnalysisRequest):
+            request (google.cloud.contact_center_insights_v1.types.GetAnalysisRequest):
                 The request object. The request to get an analysis.
             name (str):
                 Required. The name of the analysis to
@@ -918,7 +918,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Analysis:
+            google.cloud.contact_center_insights_v1.types.Analysis:
                 The analysis resource.
         """
         # Create or coerce a protobuf request object.
@@ -974,7 +974,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Lists analyses.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.ListAnalysesRequest):
+            request (google.cloud.contact_center_insights_v1.types.ListAnalysesRequest):
                 The request object. The request to list analyses.
             parent (str):
                 Required. The parent resource of the
@@ -990,7 +990,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.services.contact_center_insights.pagers.ListAnalysesPager:
+            google.cloud.contact_center_insights_v1.services.contact_center_insights.pagers.ListAnalysesPager:
                 The response to list analyses.
                 Iterating over this object will yield
                 results and resolve additional pages
@@ -1059,7 +1059,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Deletes an analysis.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.DeleteAnalysisRequest):
+            request (google.cloud.contact_center_insights_v1.types.DeleteAnalysisRequest):
                 The request object. The request to delete an analysis.
             name (str):
                 Required. The name of the analysis to
@@ -1125,7 +1125,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         request body.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.ExportInsightsDataRequest):
+            request (google.cloud.contact_center_insights_v1.types.ExportInsightsDataRequest):
                 The request object. The request to export insights.
             parent (str):
                 Required. The parent resource to
@@ -1145,7 +1145,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.contactcenterinsights_v1.types.ExportInsightsDataResponse`
+                :class:`google.cloud.contact_center_insights_v1.types.ExportInsightsDataResponse`
                 Response for an export insights operation.
 
         """
@@ -1210,7 +1210,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Gets an issue model.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.GetIssueModelRequest):
+            request (google.cloud.contact_center_insights_v1.types.GetIssueModelRequest):
                 The request object. The request to get an issue model.
             name (str):
                 Required. The name of the issue model
@@ -1226,7 +1226,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.IssueModel:
+            google.cloud.contact_center_insights_v1.types.IssueModel:
                 The issue model resource.
         """
         # Create or coerce a protobuf request object.
@@ -1282,7 +1282,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Lists issue models.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.ListIssueModelsRequest):
+            request (google.cloud.contact_center_insights_v1.types.ListIssueModelsRequest):
                 The request object. Request to list issue models.
             parent (str):
                 Required. The parent resource of the
@@ -1298,7 +1298,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.ListIssueModelsResponse:
+            google.cloud.contact_center_insights_v1.types.ListIssueModelsResponse:
                 The response of listing issue models.
         """
         # Create or coerce a protobuf request object.
@@ -1354,7 +1354,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Gets an issue.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.GetIssueRequest):
+            request (google.cloud.contact_center_insights_v1.types.GetIssueRequest):
                 The request object. The request to get an issue.
             name (str):
                 Required. The name of the issue to
@@ -1370,7 +1370,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Issue:
+            google.cloud.contact_center_insights_v1.types.Issue:
                 The issue resource.
         """
         # Create or coerce a protobuf request object.
@@ -1426,7 +1426,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Lists issues.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.ListIssuesRequest):
+            request (google.cloud.contact_center_insights_v1.types.ListIssuesRequest):
                 The request object. Request to list issues.
             parent (str):
                 Required. The parent resource of the
@@ -1442,7 +1442,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.ListIssuesResponse:
+            google.cloud.contact_center_insights_v1.types.ListIssuesResponse:
                 The response of listing issues.
         """
         # Create or coerce a protobuf request object.
@@ -1498,7 +1498,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Gets an issue model's statistics.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.CalculateIssueModelStatsRequest):
+            request (google.cloud.contact_center_insights_v1.types.CalculateIssueModelStatsRequest):
                 The request object. Request to get statistics of an
                 issue model.
             issue_model (str):
@@ -1515,7 +1515,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.CalculateIssueModelStatsResponse:
+            google.cloud.contact_center_insights_v1.types.CalculateIssueModelStatsResponse:
                 Response of querying an issue model's
                 statistics.
 
@@ -1574,7 +1574,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Creates a phrase matcher.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.CreatePhraseMatcherRequest):
+            request (google.cloud.contact_center_insights_v1.types.CreatePhraseMatcherRequest):
                 The request object. Request to create a phrase matcher.
             parent (str):
                 Required. The parent resource of the phrase matcher.
@@ -1586,7 +1586,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            phrase_matcher (google.cloud.contactcenterinsights_v1.types.PhraseMatcher):
+            phrase_matcher (google.cloud.contact_center_insights_v1.types.PhraseMatcher):
                 Required. The phrase matcher resource
                 to create.
 
@@ -1600,7 +1600,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.PhraseMatcher:
+            google.cloud.contact_center_insights_v1.types.PhraseMatcher:
                 The phrase matcher resource.
         """
         # Create or coerce a protobuf request object.
@@ -1658,7 +1658,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Gets a phrase matcher.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.GetPhraseMatcherRequest):
+            request (google.cloud.contact_center_insights_v1.types.GetPhraseMatcherRequest):
                 The request object. The request to get a a phrase
                 matcher.
             name (str):
@@ -1675,7 +1675,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.PhraseMatcher:
+            google.cloud.contact_center_insights_v1.types.PhraseMatcher:
                 The phrase matcher resource.
         """
         # Create or coerce a protobuf request object.
@@ -1731,7 +1731,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Lists phrase matchers.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.ListPhraseMatchersRequest):
+            request (google.cloud.contact_center_insights_v1.types.ListPhraseMatchersRequest):
                 The request object. Request to list phrase matchers.
             parent (str):
                 Required. The parent resource of the
@@ -1747,7 +1747,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.services.contact_center_insights.pagers.ListPhraseMatchersPager:
+            google.cloud.contact_center_insights_v1.services.contact_center_insights.pagers.ListPhraseMatchersPager:
                 The response of listing phrase
                 matchers.
                 Iterating over this object will yield
@@ -1817,7 +1817,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Deletes a phrase matcher.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.DeletePhraseMatcherRequest):
+            request (google.cloud.contact_center_insights_v1.types.DeletePhraseMatcherRequest):
                 The request object. The request to delete a phrase
                 matcher.
             name (str):
@@ -1883,7 +1883,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Gets conversation statistics.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.CalculateStatsRequest):
+            request (google.cloud.contact_center_insights_v1.types.CalculateStatsRequest):
                 The request object. The request for calculating
                 conversation statistics.
             location (str):
@@ -1900,7 +1900,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.CalculateStatsResponse:
+            google.cloud.contact_center_insights_v1.types.CalculateStatsResponse:
                 The response for calculating
                 conversation statistics.
 
@@ -1958,7 +1958,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Gets project-level settings.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.GetSettingsRequest):
+            request (google.cloud.contact_center_insights_v1.types.GetSettingsRequest):
                 The request object. The request to get project-level
                 settings.
             name (str):
@@ -1975,7 +1975,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Settings:
+            google.cloud.contact_center_insights_v1.types.Settings:
                 The settings resource.
         """
         # Create or coerce a protobuf request object.
@@ -2032,10 +2032,10 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
         r"""Updates project-level settings.
 
         Args:
-            request (google.cloud.contactcenterinsights_v1.types.UpdateSettingsRequest):
+            request (google.cloud.contact_center_insights_v1.types.UpdateSettingsRequest):
                 The request object. The request to update project-level
                 settings.
-            settings (google.cloud.contactcenterinsights_v1.types.Settings):
+            settings (google.cloud.contact_center_insights_v1.types.Settings):
                 Required. The new values for the
                 conversation.
 
@@ -2056,7 +2056,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.contactcenterinsights_v1.types.Settings:
+            google.cloud.contact_center_insights_v1.types.Settings:
                 The settings resource.
         """
         # Create or coerce a protobuf request object.
@@ -2110,7 +2110,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-contactcenterinsights",
+            "google-cloud-contact-center-insights",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

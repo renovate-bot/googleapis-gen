@@ -15,7 +15,7 @@
 #
 import proto  # type: ignore
 
-from google.cloud.contactcenterinsights_v1.types import resources
+from google.cloud.contact_center_insights_v1.types import resources
 from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -102,15 +102,15 @@ class CalculateStatsResponse(proto.Message):
             The average number of turns per conversation.
         conversation_count (int):
             The total number of conversations.
-        smart_highlighter_matches (Sequence[google.cloud.contactcenterinsights_v1.types.CalculateStatsResponse.SmartHighlighterMatchesEntry]):
+        smart_highlighter_matches (Sequence[google.cloud.contact_center_insights_v1.types.CalculateStatsResponse.SmartHighlighterMatchesEntry]):
             A map associating each smart highlighter
             display name with its respective number of
             matches in the set of conversations.
-        custom_highlighter_matches (Sequence[google.cloud.contactcenterinsights_v1.types.CalculateStatsResponse.CustomHighlighterMatchesEntry]):
+        custom_highlighter_matches (Sequence[google.cloud.contact_center_insights_v1.types.CalculateStatsResponse.CustomHighlighterMatchesEntry]):
             A map associating each custom highlighter
             resource name with its respective number of
             matches in the set of conversations.
-        issue_matches (Sequence[google.cloud.contactcenterinsights_v1.types.CalculateStatsResponse.IssueMatchesEntry]):
+        issue_matches (Sequence[google.cloud.contact_center_insights_v1.types.CalculateStatsResponse.IssueMatchesEntry]):
             A map associating each issue resource name with its
             respective number of matches in the set of conversations.
             Key has the format:
@@ -183,7 +183,7 @@ class CreateConversationRequest(proto.Message):
         parent (str):
             Required. The parent resource of the
             conversation.
-        conversation (google.cloud.contactcenterinsights_v1.types.Conversation):
+        conversation (google.cloud.contact_center_insights_v1.types.Conversation):
             Required. The conversation resource to
             create.
         conversation_id (str):
@@ -232,7 +232,7 @@ class ListConversationsRequest(proto.Message):
             A filter to reduce results to a specific
             subset. Useful for querying conversations with
             specific properties.
-        view (google.cloud.contactcenterinsights_v1.types.ConversationView):
+        view (google.cloud.contact_center_insights_v1.types.ConversationView):
             The level of details of the conversation. Default is
             ``BASIC``.
     """
@@ -263,7 +263,7 @@ class ListConversationsRequest(proto.Message):
 class ListConversationsResponse(proto.Message):
     r"""The response of listing conversations.
     Attributes:
-        conversations (Sequence[google.cloud.contactcenterinsights_v1.types.Conversation]):
+        conversations (Sequence[google.cloud.contact_center_insights_v1.types.Conversation]):
             The conversations that match the request.
         next_page_token (str):
             A token, which can be sent as ``page_token`` to retrieve the
@@ -292,7 +292,7 @@ class GetConversationRequest(proto.Message):
         name (str):
             Required. The name of the conversation to
             get.
-        view (google.cloud.contactcenterinsights_v1.types.ConversationView):
+        view (google.cloud.contact_center_insights_v1.types.ConversationView):
             The level of details of the conversation. Default is
             ``FULL``.
     """
@@ -311,7 +311,7 @@ class GetConversationRequest(proto.Message):
 class UpdateConversationRequest(proto.Message):
     r"""The request to update a conversation.
     Attributes:
-        conversation (google.cloud.contactcenterinsights_v1.types.Conversation):
+        conversation (google.cloud.contact_center_insights_v1.types.Conversation):
             Required. The new values for the
             conversation.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
@@ -359,7 +359,7 @@ class CreateAnalysisRequest(proto.Message):
         parent (str):
             Required. The parent resource of the
             analysis.
-        analysis (google.cloud.contactcenterinsights_v1.types.Analysis):
+        analysis (google.cloud.contact_center_insights_v1.types.Analysis):
             Required. The analysis to create.
     """
 
@@ -418,7 +418,7 @@ class ListAnalysesRequest(proto.Message):
 class ListAnalysesResponse(proto.Message):
     r"""The response to list analyses.
     Attributes:
-        analyses (Sequence[google.cloud.contactcenterinsights_v1.types.Analysis]):
+        analyses (Sequence[google.cloud.contact_center_insights_v1.types.Analysis]):
             The analyses that match the request.
         next_page_token (str):
             A token, which can be sent as ``page_token`` to retrieve the
@@ -470,7 +470,7 @@ class DeleteAnalysisRequest(proto.Message):
 class ExportInsightsDataRequest(proto.Message):
     r"""The request to export insights.
     Attributes:
-        big_query_destination (google.cloud.contactcenterinsights_v1.types.ExportInsightsDataRequest.BigQueryDestination):
+        big_query_destination (google.cloud.contact_center_insights_v1.types.ExportInsightsDataRequest.BigQueryDestination):
             Specified if sink is a BigQuery table.
         parent (str):
             Required. The parent resource to export data
@@ -536,7 +536,7 @@ class ExportInsightsDataMetadata(proto.Message):
         end_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation finished
             running.
-        request (google.cloud.contactcenterinsights_v1.types.ExportInsightsDataRequest):
+        request (google.cloud.contact_center_insights_v1.types.ExportInsightsDataRequest):
             The original request for export.
         partial_errors (Sequence[google.rpc.status_pb2.Status]):
             Partial errors during export operation that
@@ -587,7 +587,7 @@ class ListIssueModelsRequest(proto.Message):
 class ListIssueModelsResponse(proto.Message):
     r"""The response of listing issue models.
     Attributes:
-        issue_models (Sequence[google.cloud.contactcenterinsights_v1.types.IssueModel]):
+        issue_models (Sequence[google.cloud.contact_center_insights_v1.types.IssueModel]):
             The issue models that match the request.
     """
 
@@ -640,7 +640,7 @@ class ListIssuesRequest(proto.Message):
 class ListIssuesResponse(proto.Message):
     r"""The response of listing issues.
     Attributes:
-        issues (Sequence[google.cloud.contactcenterinsights_v1.types.Issue]):
+        issues (Sequence[google.cloud.contact_center_insights_v1.types.Issue]):
             The issues that match the request.
     """
 
@@ -668,7 +668,7 @@ class CalculateIssueModelStatsRequest(proto.Message):
 class CalculateIssueModelStatsResponse(proto.Message):
     r"""Response of querying an issue model's statistics.
     Attributes:
-        current_stats (google.cloud.contactcenterinsights_v1.types.IssueModelLabelStats):
+        current_stats (google.cloud.contact_center_insights_v1.types.IssueModelLabelStats):
             The latest label statistics for the queried
             issue model. Includes results on both training
             data and data labeled after deployment.
@@ -689,7 +689,7 @@ class CreatePhraseMatcherRequest(proto.Message):
             Required. The location to create a phrase matcher for.
             Format: ``projects/<Project ID>/locations/<Location ID>`` or
             ``projects/<Project Number>/locations/<Location ID>``
-        phrase_matcher (google.cloud.contactcenterinsights_v1.types.PhraseMatcher):
+        phrase_matcher (google.cloud.contact_center_insights_v1.types.PhraseMatcher):
             Required. The phrase matcher resource to
             create.
     """
@@ -750,7 +750,7 @@ class ListPhraseMatchersRequest(proto.Message):
 class ListPhraseMatchersResponse(proto.Message):
     r"""The response of listing phrase matchers.
     Attributes:
-        phrase_matchers (Sequence[google.cloud.contactcenterinsights_v1.types.PhraseMatcher]):
+        phrase_matchers (Sequence[google.cloud.contact_center_insights_v1.types.PhraseMatcher]):
             The phrase matchers that match the request.
         next_page_token (str):
             A token, which can be sent as ``page_token`` to retrieve the
@@ -818,7 +818,7 @@ class GetSettingsRequest(proto.Message):
 class UpdateSettingsRequest(proto.Message):
     r"""The request to update project-level settings.
     Attributes:
-        settings (google.cloud.contactcenterinsights_v1.types.Settings):
+        settings (google.cloud.contact_center_insights_v1.types.Settings):
             Required. The new values for the
             conversation.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):

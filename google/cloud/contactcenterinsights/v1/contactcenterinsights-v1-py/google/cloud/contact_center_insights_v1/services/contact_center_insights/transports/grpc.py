@@ -14,28 +14,26 @@
 # limitations under the License.
 #
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
-from google.api_core import gapic_v1                   # type: ignore
-from google.api_core import grpc_helpers_async         # type: ignore
-from google.api_core import operations_v1              # type: ignore
-from google.auth import credentials as ga_credentials   # type: ignore
+from google.api_core import grpc_helpers   # type: ignore
+from google.api_core import operations_v1  # type: ignore
+from google.api_core import gapic_v1       # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
-import grpc                        # type: ignore
-from grpc.experimental import aio  # type: ignore
+import grpc  # type: ignore
 
-from google.cloud.contactcenterinsights_v1.types import contact_center_insights
-from google.cloud.contactcenterinsights_v1.types import resources
+from google.cloud.contact_center_insights_v1.types import contact_center_insights
+from google.cloud.contact_center_insights_v1.types import resources
 from google.longrunning import operations_pb2  # type: ignore
 from google.protobuf import empty_pb2  # type: ignore
 from .base import ContactCenterInsightsTransport, DEFAULT_CLIENT_INFO
-from .grpc import ContactCenterInsightsGrpcTransport
 
 
-class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
-    """gRPC AsyncIO backend transport for ContactCenterInsights.
+class ContactCenterInsightsGrpcTransport(ContactCenterInsightsTransport):
+    """gRPC backend transport for ContactCenterInsights.
 
     An API that lets users analyze and explore their business
     conversation data.
@@ -47,62 +45,19 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     It sends protocol buffers over the wire using gRPC (which is built on
     top of HTTP/2); the ``grpcio`` package must be installed.
     """
-
-    _grpc_channel: aio.Channel
-    _stubs: Dict[str, Callable] = {}
-
-    @classmethod
-    def create_channel(cls,
-                       host: str = 'contactcenterinsights.googleapis.com',
-                       credentials: ga_credentials.Credentials = None,
-                       credentials_file: Optional[str] = None,
-                       scopes: Optional[Sequence[str]] = None,
-                       quota_project_id: Optional[str] = None,
-                       **kwargs) -> aio.Channel:
-        """Create and return a gRPC AsyncIO channel object.
-        Args:
-            host (Optional[str]): The host for the channel to use.
-            credentials (Optional[~.Credentials]): The
-                authorization credentials to attach to requests. These
-                credentials identify this application to the service. If
-                none are specified, the client will attempt to ascertain
-                the credentials from the environment.
-            credentials_file (Optional[str]): A file with credentials that can
-                be loaded with :func:`google.auth.load_credentials_from_file`.
-                This argument is ignored if ``channel`` is provided.
-            scopes (Optional[Sequence[str]]): A optional list of scopes needed for this
-                service. These are only used when credentials are not specified and
-                are passed to :func:`google.auth.default`.
-            quota_project_id (Optional[str]): An optional project to use for billing
-                and quota.
-            kwargs (Optional[dict]): Keyword arguments, which are passed to the
-                channel creation.
-        Returns:
-            aio.Channel: A gRPC AsyncIO channel object.
-        """
-
-        return grpc_helpers_async.create_channel(
-            host,
-            credentials=credentials,
-            credentials_file=credentials_file,
-            quota_project_id=quota_project_id,
-            default_scopes=cls.AUTH_SCOPES,
-            scopes=scopes,
-            default_host=cls.DEFAULT_HOST,
-            **kwargs
-        )
+    _stubs: Dict[str, Callable]
 
     def __init__(self, *,
             host: str = 'contactcenterinsights.googleapis.com',
             credentials: ga_credentials.Credentials = None,
-            credentials_file: Optional[str] = None,
-            scopes: Optional[Sequence[str]] = None,
-            channel: aio.Channel = None,
+            credentials_file: str = None,
+            scopes: Sequence[str] = None,
+            channel: grpc.Channel = None,
             api_mtls_endpoint: str = None,
             client_cert_source: Callable[[], Tuple[bytes, bytes]] = None,
             ssl_channel_credentials: grpc.ChannelCredentials = None,
             client_cert_source_for_mtls: Callable[[], Tuple[bytes, bytes]] = None,
-            quota_project_id=None,
+            quota_project_id: Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
         """Instantiate the transport.
@@ -119,10 +74,9 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is ignored if ``channel`` is provided.
-            scopes (Optional[Sequence[str]]): A optional list of scopes needed for this
-                service. These are only used when credentials are not specified and
-                are passed to :func:`google.auth.default`.
-            channel (Optional[aio.Channel]): A ``Channel`` instance through
+            scopes (Optional(Sequence[str])): A list of scopes. This argument is
+                ignored if ``channel`` is provided.
+            channel (Optional[grpc.Channel]): A ``Channel`` instance through
                 which to make calls.
             api_mtls_endpoint (Optional[str]): Deprecated. The mutual TLS endpoint.
                 If provided, it overrides the ``host`` argument and tries to create
@@ -147,7 +101,7 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
                 your own client library.
 
         Raises:
-            google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
+          google.auth.exceptions.MutualTLSChannelError: If mutual TLS transport
               creation failed for any reason.
           google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
@@ -168,6 +122,7 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -217,18 +172,59 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
         # Wrap messages. This must be done after self._grpc_channel exists
         self._prep_wrapped_messages(client_info)
 
-    @property
-    def grpc_channel(self) -> aio.Channel:
-        """Create the channel designed to connect to this service.
+    @classmethod
+    def create_channel(cls,
+                       host: str = 'contactcenterinsights.googleapis.com',
+                       credentials: ga_credentials.Credentials = None,
+                       credentials_file: str = None,
+                       scopes: Optional[Sequence[str]] = None,
+                       quota_project_id: Optional[str] = None,
+                       **kwargs) -> grpc.Channel:
+        """Create and return a gRPC channel object.
+        Args:
+            host (Optional[str]): The host for the channel to use.
+            credentials (Optional[~.Credentials]): The
+                authorization credentials to attach to requests. These
+                credentials identify this application to the service. If
+                none are specified, the client will attempt to ascertain
+                the credentials from the environment.
+            credentials_file (Optional[str]): A file with credentials that can
+                be loaded with :func:`google.auth.load_credentials_from_file`.
+                This argument is mutually exclusive with credentials.
+            scopes (Optional[Sequence[str]]): A optional list of scopes needed for this
+                service. These are only used when credentials are not specified and
+                are passed to :func:`google.auth.default`.
+            quota_project_id (Optional[str]): An optional project to use for billing
+                and quota.
+            kwargs (Optional[dict]): Keyword arguments, which are passed to the
+                channel creation.
+        Returns:
+            grpc.Channel: A gRPC channel object.
 
-        This property caches on the instance; repeated calls return
-        the same channel.
+        Raises:
+            google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
+              and ``credentials_file`` are passed.
         """
-        # Return the channel from cache.
+
+        return grpc_helpers.create_channel(
+            host,
+            credentials=credentials,
+            credentials_file=credentials_file,
+            quota_project_id=quota_project_id,
+            default_scopes=cls.AUTH_SCOPES,
+            scopes=scopes,
+            default_host=cls.DEFAULT_HOST,
+            **kwargs
+        )
+
+    @property
+    def grpc_channel(self) -> grpc.Channel:
+        """Return the channel designed to connect to this service.
+        """
         return self._grpc_channel
 
     @property
-    def operations_client(self) -> operations_v1.OperationsAsyncClient:
+    def operations_client(self) -> operations_v1.OperationsClient:
         """Create the client designed to process long-running operations.
 
         This property caches on the instance; repeated calls return the same
@@ -236,7 +232,7 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
         """
         # Sanity check: Only create a new client if we do not already have one.
         if self._operations_client is None:
-            self._operations_client = operations_v1.OperationsAsyncClient(
+            self._operations_client = operations_v1.OperationsClient(
                 self.grpc_channel
             )
 
@@ -246,14 +242,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def create_conversation(self) -> Callable[
             [contact_center_insights.CreateConversationRequest],
-            Awaitable[resources.Conversation]]:
+            resources.Conversation]:
         r"""Return a callable for the create conversation method over gRPC.
 
         Creates a conversation.
 
         Returns:
             Callable[[~.CreateConversationRequest],
-                    Awaitable[~.Conversation]]:
+                    ~.Conversation]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -272,14 +268,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def update_conversation(self) -> Callable[
             [contact_center_insights.UpdateConversationRequest],
-            Awaitable[resources.Conversation]]:
+            resources.Conversation]:
         r"""Return a callable for the update conversation method over gRPC.
 
         Updates a conversation.
 
         Returns:
             Callable[[~.UpdateConversationRequest],
-                    Awaitable[~.Conversation]]:
+                    ~.Conversation]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -298,14 +294,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def get_conversation(self) -> Callable[
             [contact_center_insights.GetConversationRequest],
-            Awaitable[resources.Conversation]]:
+            resources.Conversation]:
         r"""Return a callable for the get conversation method over gRPC.
 
         Gets a conversation.
 
         Returns:
             Callable[[~.GetConversationRequest],
-                    Awaitable[~.Conversation]]:
+                    ~.Conversation]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -324,14 +320,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def list_conversations(self) -> Callable[
             [contact_center_insights.ListConversationsRequest],
-            Awaitable[contact_center_insights.ListConversationsResponse]]:
+            contact_center_insights.ListConversationsResponse]:
         r"""Return a callable for the list conversations method over gRPC.
 
         Lists conversations.
 
         Returns:
             Callable[[~.ListConversationsRequest],
-                    Awaitable[~.ListConversationsResponse]]:
+                    ~.ListConversationsResponse]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -350,14 +346,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def delete_conversation(self) -> Callable[
             [contact_center_insights.DeleteConversationRequest],
-            Awaitable[empty_pb2.Empty]]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete conversation method over gRPC.
 
         Deletes a conversation.
 
         Returns:
             Callable[[~.DeleteConversationRequest],
-                    Awaitable[~.Empty]]:
+                    ~.Empty]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -376,7 +372,7 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def create_analysis(self) -> Callable[
             [contact_center_insights.CreateAnalysisRequest],
-            Awaitable[operations_pb2.Operation]]:
+            operations_pb2.Operation]:
         r"""Return a callable for the create analysis method over gRPC.
 
         Creates an analysis. The long running operation is
@@ -384,7 +380,7 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
 
         Returns:
             Callable[[~.CreateAnalysisRequest],
-                    Awaitable[~.Operation]]:
+                    ~.Operation]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -403,14 +399,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def get_analysis(self) -> Callable[
             [contact_center_insights.GetAnalysisRequest],
-            Awaitable[resources.Analysis]]:
+            resources.Analysis]:
         r"""Return a callable for the get analysis method over gRPC.
 
         Gets an analysis.
 
         Returns:
             Callable[[~.GetAnalysisRequest],
-                    Awaitable[~.Analysis]]:
+                    ~.Analysis]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -429,14 +425,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def list_analyses(self) -> Callable[
             [contact_center_insights.ListAnalysesRequest],
-            Awaitable[contact_center_insights.ListAnalysesResponse]]:
+            contact_center_insights.ListAnalysesResponse]:
         r"""Return a callable for the list analyses method over gRPC.
 
         Lists analyses.
 
         Returns:
             Callable[[~.ListAnalysesRequest],
-                    Awaitable[~.ListAnalysesResponse]]:
+                    ~.ListAnalysesResponse]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -455,14 +451,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def delete_analysis(self) -> Callable[
             [contact_center_insights.DeleteAnalysisRequest],
-            Awaitable[empty_pb2.Empty]]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete analysis method over gRPC.
 
         Deletes an analysis.
 
         Returns:
             Callable[[~.DeleteAnalysisRequest],
-                    Awaitable[~.Empty]]:
+                    ~.Empty]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -481,7 +477,7 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def export_insights_data(self) -> Callable[
             [contact_center_insights.ExportInsightsDataRequest],
-            Awaitable[operations_pb2.Operation]]:
+            operations_pb2.Operation]:
         r"""Return a callable for the export insights data method over gRPC.
 
         Export insights data to a destination defined in the
@@ -489,7 +485,7 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
 
         Returns:
             Callable[[~.ExportInsightsDataRequest],
-                    Awaitable[~.Operation]]:
+                    ~.Operation]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -508,14 +504,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def get_issue_model(self) -> Callable[
             [contact_center_insights.GetIssueModelRequest],
-            Awaitable[resources.IssueModel]]:
+            resources.IssueModel]:
         r"""Return a callable for the get issue model method over gRPC.
 
         Gets an issue model.
 
         Returns:
             Callable[[~.GetIssueModelRequest],
-                    Awaitable[~.IssueModel]]:
+                    ~.IssueModel]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -534,14 +530,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def list_issue_models(self) -> Callable[
             [contact_center_insights.ListIssueModelsRequest],
-            Awaitable[contact_center_insights.ListIssueModelsResponse]]:
+            contact_center_insights.ListIssueModelsResponse]:
         r"""Return a callable for the list issue models method over gRPC.
 
         Lists issue models.
 
         Returns:
             Callable[[~.ListIssueModelsRequest],
-                    Awaitable[~.ListIssueModelsResponse]]:
+                    ~.ListIssueModelsResponse]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -560,14 +556,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def get_issue(self) -> Callable[
             [contact_center_insights.GetIssueRequest],
-            Awaitable[resources.Issue]]:
+            resources.Issue]:
         r"""Return a callable for the get issue method over gRPC.
 
         Gets an issue.
 
         Returns:
             Callable[[~.GetIssueRequest],
-                    Awaitable[~.Issue]]:
+                    ~.Issue]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -586,14 +582,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def list_issues(self) -> Callable[
             [contact_center_insights.ListIssuesRequest],
-            Awaitable[contact_center_insights.ListIssuesResponse]]:
+            contact_center_insights.ListIssuesResponse]:
         r"""Return a callable for the list issues method over gRPC.
 
         Lists issues.
 
         Returns:
             Callable[[~.ListIssuesRequest],
-                    Awaitable[~.ListIssuesResponse]]:
+                    ~.ListIssuesResponse]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -612,14 +608,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def calculate_issue_model_stats(self) -> Callable[
             [contact_center_insights.CalculateIssueModelStatsRequest],
-            Awaitable[contact_center_insights.CalculateIssueModelStatsResponse]]:
+            contact_center_insights.CalculateIssueModelStatsResponse]:
         r"""Return a callable for the calculate issue model stats method over gRPC.
 
         Gets an issue model's statistics.
 
         Returns:
             Callable[[~.CalculateIssueModelStatsRequest],
-                    Awaitable[~.CalculateIssueModelStatsResponse]]:
+                    ~.CalculateIssueModelStatsResponse]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -638,14 +634,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def create_phrase_matcher(self) -> Callable[
             [contact_center_insights.CreatePhraseMatcherRequest],
-            Awaitable[resources.PhraseMatcher]]:
+            resources.PhraseMatcher]:
         r"""Return a callable for the create phrase matcher method over gRPC.
 
         Creates a phrase matcher.
 
         Returns:
             Callable[[~.CreatePhraseMatcherRequest],
-                    Awaitable[~.PhraseMatcher]]:
+                    ~.PhraseMatcher]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -664,14 +660,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def get_phrase_matcher(self) -> Callable[
             [contact_center_insights.GetPhraseMatcherRequest],
-            Awaitable[resources.PhraseMatcher]]:
+            resources.PhraseMatcher]:
         r"""Return a callable for the get phrase matcher method over gRPC.
 
         Gets a phrase matcher.
 
         Returns:
             Callable[[~.GetPhraseMatcherRequest],
-                    Awaitable[~.PhraseMatcher]]:
+                    ~.PhraseMatcher]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -690,14 +686,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def list_phrase_matchers(self) -> Callable[
             [contact_center_insights.ListPhraseMatchersRequest],
-            Awaitable[contact_center_insights.ListPhraseMatchersResponse]]:
+            contact_center_insights.ListPhraseMatchersResponse]:
         r"""Return a callable for the list phrase matchers method over gRPC.
 
         Lists phrase matchers.
 
         Returns:
             Callable[[~.ListPhraseMatchersRequest],
-                    Awaitable[~.ListPhraseMatchersResponse]]:
+                    ~.ListPhraseMatchersResponse]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -716,14 +712,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def delete_phrase_matcher(self) -> Callable[
             [contact_center_insights.DeletePhraseMatcherRequest],
-            Awaitable[empty_pb2.Empty]]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete phrase matcher method over gRPC.
 
         Deletes a phrase matcher.
 
         Returns:
             Callable[[~.DeletePhraseMatcherRequest],
-                    Awaitable[~.Empty]]:
+                    ~.Empty]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -742,14 +738,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def calculate_stats(self) -> Callable[
             [contact_center_insights.CalculateStatsRequest],
-            Awaitable[contact_center_insights.CalculateStatsResponse]]:
+            contact_center_insights.CalculateStatsResponse]:
         r"""Return a callable for the calculate stats method over gRPC.
 
         Gets conversation statistics.
 
         Returns:
             Callable[[~.CalculateStatsRequest],
-                    Awaitable[~.CalculateStatsResponse]]:
+                    ~.CalculateStatsResponse]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -768,14 +764,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def get_settings(self) -> Callable[
             [contact_center_insights.GetSettingsRequest],
-            Awaitable[resources.Settings]]:
+            resources.Settings]:
         r"""Return a callable for the get settings method over gRPC.
 
         Gets project-level settings.
 
         Returns:
             Callable[[~.GetSettingsRequest],
-                    Awaitable[~.Settings]]:
+                    ~.Settings]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -794,14 +790,14 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
     @property
     def update_settings(self) -> Callable[
             [contact_center_insights.UpdateSettingsRequest],
-            Awaitable[resources.Settings]]:
+            resources.Settings]:
         r"""Return a callable for the update settings method over gRPC.
 
         Updates project-level settings.
 
         Returns:
             Callable[[~.UpdateSettingsRequest],
-                    Awaitable[~.Settings]]:
+                    ~.Settings]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -819,5 +815,5 @@ class ContactCenterInsightsGrpcAsyncIOTransport(ContactCenterInsightsTransport):
 
 
 __all__ = (
-    'ContactCenterInsightsGrpcAsyncIOTransport',
+    'ContactCenterInsightsGrpcTransport',
 )

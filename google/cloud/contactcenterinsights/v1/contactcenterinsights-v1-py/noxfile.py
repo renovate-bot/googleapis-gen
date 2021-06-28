@@ -47,7 +47,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/cloud/contactcenterinsights_v1/',
+        '--cov=google/cloud/contact_center_insights_v1/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',

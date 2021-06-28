@@ -66,7 +66,7 @@ __protobuf__ = proto.module(
 class Conversation(proto.Message):
     r"""The conversation resource.
     Attributes:
-        call_metadata (google.cloud.contactcenterinsights_v1.types.Conversation.CallMetadata):
+        call_metadata (google.cloud.contact_center_insights_v1.types.Conversation.CallMetadata):
             Call-specific metadata.
         expire_time (google.protobuf.timestamp_pb2.Timestamp):
             The time at which this conversation should
@@ -80,7 +80,7 @@ class Conversation(proto.Message):
             Immutable. The resource name of the
             conversation. Format:
             projects/{project}/locations/{location}/conversations/{conversation}
-        data_source (google.cloud.contactcenterinsights_v1.types.ConversationDataSource):
+        data_source (google.cloud.contact_center_insights_v1.types.ConversationDataSource):
             The source of the audio and transcription for
             the conversation.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
@@ -97,14 +97,14 @@ class Conversation(proto.Message):
         agent_id (str):
             An opaque, user-specified string representing
             the human agent who handled the conversation.
-        labels (Sequence[google.cloud.contactcenterinsights_v1.types.Conversation.LabelsEntry]):
+        labels (Sequence[google.cloud.contact_center_insights_v1.types.Conversation.LabelsEntry]):
             A map for the user to specify any custom
             fields. A maximum of 20 labels per conversation
             is allowed, with a maximum of 256 characters per
             entry.
-        transcript (google.cloud.contactcenterinsights_v1.types.Conversation.Transcript):
+        transcript (google.cloud.contact_center_insights_v1.types.Conversation.Transcript):
             Output only. The conversation transcript.
-        medium (google.cloud.contactcenterinsights_v1.types.Conversation.Medium):
+        medium (google.cloud.contact_center_insights_v1.types.Conversation.Medium):
             Immutable. The conversation medium.
         duration (google.protobuf.duration_pb2.Duration):
             Output only. The duration of the
@@ -112,14 +112,14 @@ class Conversation(proto.Message):
         turn_count (int):
             Output only. The number of turns in the
             conversation.
-        latest_analysis (google.cloud.contactcenterinsights_v1.types.Analysis):
+        latest_analysis (google.cloud.contact_center_insights_v1.types.Analysis):
             Output only. The conversation's latest
             analysis, if one exists.
-        runtime_annotations (Sequence[google.cloud.contactcenterinsights_v1.types.RuntimeAnnotation]):
+        runtime_annotations (Sequence[google.cloud.contact_center_insights_v1.types.RuntimeAnnotation]):
             Output only. The annotations that were
             generated during the customer and agent
             interaction.
-        dialogflow_intents (Sequence[google.cloud.contactcenterinsights_v1.types.Conversation.DialogflowIntentsEntry]):
+        dialogflow_intents (Sequence[google.cloud.contact_center_insights_v1.types.Conversation.DialogflowIntentsEntry]):
             Output only. All the matched Dialogflow
             intents in the call. The key corresponds to a
             Dialogflow intent, format:
@@ -152,7 +152,7 @@ class Conversation(proto.Message):
     class Transcript(proto.Message):
         r"""A message representing the transcript of a conversation.
         Attributes:
-            transcript_segments (Sequence[google.cloud.contactcenterinsights_v1.types.Conversation.Transcript.TranscriptSegment]):
+            transcript_segments (Sequence[google.cloud.contact_center_insights_v1.types.Conversation.Transcript.TranscriptSegment]):
                 A list of sequential transcript segments that
                 comprise the conversation.
         """
@@ -166,7 +166,7 @@ class Conversation(proto.Message):
                     A confidence estimate between 0.0 and 1.0 of
                     the fidelity of this segment. A default value of
                     0.0 indicates that the value is unset.
-                words (Sequence[google.cloud.contactcenterinsights_v1.types.Conversation.Transcript.TranscriptSegment.WordInfo]):
+                words (Sequence[google.cloud.contact_center_insights_v1.types.Conversation.Transcript.TranscriptSegment.WordInfo]):
                     A list of the word-specific information for
                     each word in the segment.
                 language_code (str):
@@ -180,7 +180,7 @@ class Conversation(proto.Message):
                     audioChannelCount = N, its output values can
                     range from '1' to 'N'. A channel tag of 0
                     indicates that the audio is mono.
-                participant (google.cloud.contactcenterinsights_v1.types.Conversation.Transcript.TranscriptSegment.Participant):
+                participant (google.cloud.contact_center_insights_v1.types.Conversation.Transcript.TranscriptSegment.Participant):
                     The participant of this segment.
             """
 
@@ -229,7 +229,7 @@ class Conversation(proto.Message):
                         The name of the Dialogflow participant.
                         Format:
                         projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
-                    role (google.cloud.contactcenterinsights_v1.types.Conversation.Transcript.TranscriptSegment.Participant.Role):
+                    role (google.cloud.contact_center_insights_v1.types.Conversation.Transcript.TranscriptSegment.Participant.Role):
                         The role of the participant.
                 """
                 class Role(proto.Enum):
@@ -388,7 +388,7 @@ class Analysis(proto.Message):
             Output only. The time at which the analysis
             was created, which occurs when the long-running
             operation completes.
-        analysis_result (google.cloud.contactcenterinsights_v1.types.AnalysisResult):
+        analysis_result (google.cloud.contact_center_insights_v1.types.AnalysisResult):
             Output only. The result of the analysis,
             which is populated when the analysis finishes.
     """
@@ -419,10 +419,10 @@ class ConversationDataSource(proto.Message):
     and audio.
 
     Attributes:
-        gcs_source (google.cloud.contactcenterinsights_v1.types.GcsSource):
+        gcs_source (google.cloud.contact_center_insights_v1.types.GcsSource):
             A Cloud Storage location specification for
             the audio and transcript.
-        dialogflow_source (google.cloud.contactcenterinsights_v1.types.DialogflowSource):
+        dialogflow_source (google.cloud.contact_center_insights_v1.types.DialogflowSource):
             The source when the conversation comes from
             Dialogflow.
     """
@@ -488,7 +488,7 @@ class DialogflowSource(proto.Message):
 class AnalysisResult(proto.Message):
     r"""The result of an analysis.
     Attributes:
-        call_analysis_metadata (google.cloud.contactcenterinsights_v1.types.AnalysisResult.CallAnalysisMetadata):
+        call_analysis_metadata (google.cloud.contact_center_insights_v1.types.AnalysisResult.CallAnalysisMetadata):
             Call-specific metadata created by the
             analysis.
         end_time (google.protobuf.timestamp_pb2.Timestamp):
@@ -498,19 +498,19 @@ class AnalysisResult(proto.Message):
     class CallAnalysisMetadata(proto.Message):
         r"""Call-specific metadata created during analysis.
         Attributes:
-            annotations (Sequence[google.cloud.contactcenterinsights_v1.types.CallAnnotation]):
+            annotations (Sequence[google.cloud.contact_center_insights_v1.types.CallAnnotation]):
                 A list of call annotations that apply to this
                 call.
-            entities (Sequence[google.cloud.contactcenterinsights_v1.types.AnalysisResult.CallAnalysisMetadata.EntitiesEntry]):
+            entities (Sequence[google.cloud.contact_center_insights_v1.types.AnalysisResult.CallAnalysisMetadata.EntitiesEntry]):
                 All the entities in the call.
-            sentiments (Sequence[google.cloud.contactcenterinsights_v1.types.ConversationLevelSentiment]):
+            sentiments (Sequence[google.cloud.contact_center_insights_v1.types.ConversationLevelSentiment]):
                 Overall conversation-level sentiment for each
                 channel of the call.
-            intents (Sequence[google.cloud.contactcenterinsights_v1.types.AnalysisResult.CallAnalysisMetadata.IntentsEntry]):
+            intents (Sequence[google.cloud.contact_center_insights_v1.types.AnalysisResult.CallAnalysisMetadata.IntentsEntry]):
                 All the matched intents in the call.
-            phrase_matchers (Sequence[google.cloud.contactcenterinsights_v1.types.AnalysisResult.CallAnalysisMetadata.PhraseMatchersEntry]):
+            phrase_matchers (Sequence[google.cloud.contact_center_insights_v1.types.AnalysisResult.CallAnalysisMetadata.PhraseMatchersEntry]):
                 All the matched phrase matchers in the call.
-            issue_model_result (google.cloud.contactcenterinsights_v1.types.IssueModelResult):
+            issue_model_result (google.cloud.contact_center_insights_v1.types.IssueModelResult):
                 Overall conversation-level issue modeling
                 result.
         """
@@ -567,7 +567,7 @@ class IssueModelResult(proto.Message):
     Attributes:
         issue_model (str):
             Issue model that generates the result.
-        issues (Sequence[google.cloud.contactcenterinsights_v1.types.IssueAssignment]):
+        issues (Sequence[google.cloud.contact_center_insights_v1.types.IssueAssignment]):
             All the matched issues.
     """
 
@@ -588,7 +588,7 @@ class ConversationLevelSentiment(proto.Message):
         channel_tag (int):
             The channel of the audio that the data
             applies to.
-        sentiment_data (google.cloud.contactcenterinsights_v1.types.SentimentData):
+        sentiment_data (google.cloud.contact_center_insights_v1.types.SentimentData):
             Data specifying sentiment.
     """
 
@@ -626,28 +626,28 @@ class IssueAssignment(proto.Message):
 class CallAnnotation(proto.Message):
     r"""A piece of metadata that applies to a window of a call.
     Attributes:
-        interruption_data (google.cloud.contactcenterinsights_v1.types.InterruptionData):
+        interruption_data (google.cloud.contact_center_insights_v1.types.InterruptionData):
             Data specifying an interruption.
-        sentiment_data (google.cloud.contactcenterinsights_v1.types.SentimentData):
+        sentiment_data (google.cloud.contact_center_insights_v1.types.SentimentData):
             Data specifying sentiment.
-        silence_data (google.cloud.contactcenterinsights_v1.types.SilenceData):
+        silence_data (google.cloud.contact_center_insights_v1.types.SilenceData):
             Data specifying silence.
-        hold_data (google.cloud.contactcenterinsights_v1.types.HoldData):
+        hold_data (google.cloud.contact_center_insights_v1.types.HoldData):
             Data specifying a hold.
-        entity_mention_data (google.cloud.contactcenterinsights_v1.types.EntityMentionData):
+        entity_mention_data (google.cloud.contact_center_insights_v1.types.EntityMentionData):
             Data specifying an entity mention.
-        intent_match_data (google.cloud.contactcenterinsights_v1.types.IntentMatchData):
+        intent_match_data (google.cloud.contact_center_insights_v1.types.IntentMatchData):
             Data specifying an intent match.
-        phrase_match_data (google.cloud.contactcenterinsights_v1.types.PhraseMatchData):
+        phrase_match_data (google.cloud.contact_center_insights_v1.types.PhraseMatchData):
             Data specifying a phrase match.
         channel_tag (int):
             The channel of the audio where the annotation
             occurs. For single-channel audio, this field is
             not populated.
-        annotation_start_boundary (google.cloud.contactcenterinsights_v1.types.AnnotationBoundary):
+        annotation_start_boundary (google.cloud.contact_center_insights_v1.types.AnnotationBoundary):
             The boundary in the conversation where the
             annotation starts, inclusive.
-        annotation_end_boundary (google.cloud.contactcenterinsights_v1.types.AnnotationBoundary):
+        annotation_end_boundary (google.cloud.contact_center_insights_v1.types.AnnotationBoundary):
             The boundary in the conversation where the
             annotation ends, inclusive.
     """
@@ -754,9 +754,9 @@ class Entity(proto.Message):
     Attributes:
         display_name (str):
             The representative name for the entity.
-        type_ (google.cloud.contactcenterinsights_v1.types.Entity.Type):
+        type_ (google.cloud.contact_center_insights_v1.types.Entity.Type):
             The entity type.
-        metadata (Sequence[google.cloud.contactcenterinsights_v1.types.Entity.MetadataEntry]):
+        metadata (Sequence[google.cloud.contact_center_insights_v1.types.Entity.MetadataEntry]):
             Metadata associated with the entity.
 
             For most entity types, the metadata is a Wikipedia URL
@@ -771,7 +771,7 @@ class Entity(proto.Message):
             the importance or centrality of that entity to the entire
             document text. Scores closer to 0 are less salient, while
             scores closer to 1.0 are highly salient.
-        sentiment (google.cloud.contactcenterinsights_v1.types.SentimentData):
+        sentiment (google.cloud.contact_center_insights_v1.types.SentimentData):
             The aggregate sentiment expressed for this
             entity in the conversation.
     """
@@ -901,9 +901,9 @@ class EntityMentionData(proto.Message):
             The key of this entity in conversation entities. Can be used
             to retrieve the exact ``Entity`` this mention is attached
             to.
-        type_ (google.cloud.contactcenterinsights_v1.types.EntityMentionData.MentionType):
+        type_ (google.cloud.contact_center_insights_v1.types.EntityMentionData.MentionType):
             The type of the entity mention.
-        sentiment (google.cloud.contactcenterinsights_v1.types.SentimentData):
+        sentiment (google.cloud.contact_center_insights_v1.types.SentimentData):
             Sentiment expressed for this mention of the
             entity.
     """
@@ -984,9 +984,9 @@ class IssueModel(proto.Message):
         update_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The most recent time at which
             the issue model was updated.
-        state (google.cloud.contactcenterinsights_v1.types.IssueModel.State):
+        state (google.cloud.contact_center_insights_v1.types.IssueModel.State):
             Output only. State of the model.
-        training_stats (google.cloud.contactcenterinsights_v1.types.IssueModelLabelStats):
+        training_stats (google.cloud.contact_center_insights_v1.types.IssueModelLabelStats):
             Output only. Immutable. The issue model's
             label statistics on its training data.
     """
@@ -1074,7 +1074,7 @@ class IssueModelLabelStats(proto.Message):
         unclassified_conversations_count (int):
             Number of analyzed conversations for which no
             issue was applicable at this point in time.
-        issue_stats (Sequence[google.cloud.contactcenterinsights_v1.types.IssueModelLabelStats.IssueStatsEntry]):
+        issue_stats (Sequence[google.cloud.contact_center_insights_v1.types.IssueModelLabelStats.IssueStatsEntry]):
             Statistics on each issue. Key is the issue's
             resource name.
     """
@@ -1139,12 +1139,12 @@ class PhraseMatcher(proto.Message):
         display_name (str):
             The human-readable name of the phrase
             matcher.
-        type_ (google.cloud.contactcenterinsights_v1.types.PhraseMatcher.PhraseMatcherType):
+        type_ (google.cloud.contact_center_insights_v1.types.PhraseMatcher.PhraseMatcherType):
             Required. The type of this phrase matcher.
         active (bool):
             Applies the phrase matcher only when it is
             active.
-        phrase_match_rule_groups (Sequence[google.cloud.contactcenterinsights_v1.types.PhraseMatchRuleGroup]):
+        phrase_match_rule_groups (Sequence[google.cloud.contact_center_insights_v1.types.PhraseMatchRuleGroup]):
             A list of phase match rule groups that are
             included in this matcher.
         activation_update_time (google.protobuf.timestamp_pb2.Timestamp):
@@ -1204,10 +1204,10 @@ class PhraseMatcher(proto.Message):
 class PhraseMatchRuleGroup(proto.Message):
     r"""A message representing a rule in the phrase matcher.
     Attributes:
-        type_ (google.cloud.contactcenterinsights_v1.types.PhraseMatchRuleGroup.PhraseMatchRuleGroupType):
+        type_ (google.cloud.contact_center_insights_v1.types.PhraseMatchRuleGroup.PhraseMatchRuleGroupType):
             Required. The type of this phrase match rule
             group.
-        phrase_match_rules (Sequence[google.cloud.contactcenterinsights_v1.types.PhraseMatchRule]):
+        phrase_match_rules (Sequence[google.cloud.contact_center_insights_v1.types.PhraseMatchRule]):
             A list of phase match rules that are included
             in this group.
     """
@@ -1240,7 +1240,7 @@ class PhraseMatchRule(proto.Message):
             Specifies whether the phrase must be missing
             from the transcript segment or present in the
             transcript segment.
-        config (google.cloud.contactcenterinsights_v1.types.PhraseMatchRuleConfig):
+        config (google.cloud.contact_center_insights_v1.types.PhraseMatchRuleConfig):
             Provides additional information about the
             rule that specifies how to apply the rule.
     """
@@ -1263,7 +1263,7 @@ class PhraseMatchRule(proto.Message):
 class PhraseMatchRuleConfig(proto.Message):
     r"""Configuration information of a phrase match rule.
     Attributes:
-        exact_match_config (google.cloud.contactcenterinsights_v1.types.ExactMatchConfig):
+        exact_match_config (google.cloud.contact_center_insights_v1.types.ExactMatchConfig):
             The configuration for the exact match rule.
     """
 
@@ -1316,7 +1316,7 @@ class Settings(proto.Message):
             expiration of existing conversations.
             Conversations with no expire time persist until
             they are deleted.
-        pubsub_notification_settings (Sequence[google.cloud.contactcenterinsights_v1.types.Settings.PubsubNotificationSettingsEntry]):
+        pubsub_notification_settings (Sequence[google.cloud.contact_center_insights_v1.types.Settings.PubsubNotificationSettingsEntry]):
             A map that maps a notification trigger to a Pub/Sub topic.
             Each time a specified trigger occurs, Insights will notify
             the corresponding Pub/Sub topic.
@@ -1334,7 +1334,7 @@ class Settings(proto.Message):
 
             Values are Pub/Sub topics. The format of each Pub/Sub topic
             is: projects/{project}/topics/{topic}
-        analysis_config (google.cloud.contactcenterinsights_v1.types.Settings.AnalysisConfig):
+        analysis_config (google.cloud.contact_center_insights_v1.types.Settings.AnalysisConfig):
             Default analysis settings.
     """
 
@@ -1391,15 +1391,15 @@ class RuntimeAnnotation(proto.Message):
     agent interaction.
 
     Attributes:
-        article_suggestion (google.cloud.contactcenterinsights_v1.types.ArticleSuggestionData):
+        article_suggestion (google.cloud.contact_center_insights_v1.types.ArticleSuggestionData):
             Agent Assist Article Suggestion data.
-        faq_answer (google.cloud.contactcenterinsights_v1.types.FaqAnswerData):
+        faq_answer (google.cloud.contact_center_insights_v1.types.FaqAnswerData):
             Agent Assist FAQ answer data.
-        smart_reply (google.cloud.contactcenterinsights_v1.types.SmartReplyData):
+        smart_reply (google.cloud.contact_center_insights_v1.types.SmartReplyData):
             Agent Assist Smart Reply data.
-        smart_compose_suggestion (google.cloud.contactcenterinsights_v1.types.SmartComposeSuggestionData):
+        smart_compose_suggestion (google.cloud.contact_center_insights_v1.types.SmartComposeSuggestionData):
             Agent Assist Smart Compose suggestion data.
-        dialogflow_interaction (google.cloud.contactcenterinsights_v1.types.DialogflowInteractionData):
+        dialogflow_interaction (google.cloud.contact_center_insights_v1.types.DialogflowInteractionData):
             Dialogflow interaction data.
         annotation_id (str):
             The unique identifier of the annotation. Format:
@@ -1407,13 +1407,13 @@ class RuntimeAnnotation(proto.Message):
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             The time at which this annotation was
             created.
-        start_boundary (google.cloud.contactcenterinsights_v1.types.AnnotationBoundary):
+        start_boundary (google.cloud.contact_center_insights_v1.types.AnnotationBoundary):
             The boundary in the conversation where the
             annotation starts, inclusive.
-        end_boundary (google.cloud.contactcenterinsights_v1.types.AnnotationBoundary):
+        end_boundary (google.cloud.contact_center_insights_v1.types.AnnotationBoundary):
             The boundary in the conversation where the
             annotation ends, inclusive.
-        answer_feedback (google.cloud.contactcenterinsights_v1.types.AnswerFeedback):
+        answer_feedback (google.cloud.contact_center_insights_v1.types.AnswerFeedback):
             The feedback that the customer has about the answer in
             ``data``.
     """
@@ -1479,7 +1479,7 @@ class AnswerFeedback(proto.Message):
     the conversation.
 
     Attributes:
-        correctness_level (google.cloud.contactcenterinsights_v1.types.AnswerFeedback.CorrectnessLevel):
+        correctness_level (google.cloud.contact_center_insights_v1.types.AnswerFeedback.CorrectnessLevel):
             The correctness level of an answer.
         clicked (bool):
             Indicates whether an answer or item was
@@ -1523,7 +1523,7 @@ class ArticleSuggestionData(proto.Message):
             article is a good match for this conversation,
             ranging from 0.0 (completely uncertain) to 1.0
             (completely certain).
-        metadata (Sequence[google.cloud.contactcenterinsights_v1.types.ArticleSuggestionData.MetadataEntry]):
+        metadata (Sequence[google.cloud.contact_center_insights_v1.types.ArticleSuggestionData.MetadataEntry]):
             Map that contains metadata about the Article
             Suggestion and the document that it originates
             from.
@@ -1576,7 +1576,7 @@ class FaqAnswerData(proto.Message):
             (completely certain).
         question (str):
             The corresponding FAQ question.
-        metadata (Sequence[google.cloud.contactcenterinsights_v1.types.FaqAnswerData.MetadataEntry]):
+        metadata (Sequence[google.cloud.contact_center_insights_v1.types.FaqAnswerData.MetadataEntry]):
             Map that contains metadata about the FAQ
             answer and the document that it originates from.
         query_record (str):
@@ -1625,7 +1625,7 @@ class SmartReplyData(proto.Message):
             is a good match for this conversation, ranging
             from 0.0 (completely uncertain) to 1.0
             (completely certain).
-        metadata (Sequence[google.cloud.contactcenterinsights_v1.types.SmartReplyData.MetadataEntry]):
+        metadata (Sequence[google.cloud.contact_center_insights_v1.types.SmartReplyData.MetadataEntry]):
             Map that contains metadata about the Smart
             Reply and the document from which it originates.
         query_record (str):
@@ -1662,7 +1662,7 @@ class SmartComposeSuggestionData(proto.Message):
             suggestion is a good match for this
             conversation, ranging from 0.0 (completely
             uncertain) to 1.0 (completely certain).
-        metadata (Sequence[google.cloud.contactcenterinsights_v1.types.SmartComposeSuggestionData.MetadataEntry]):
+        metadata (Sequence[google.cloud.contact_center_insights_v1.types.SmartComposeSuggestionData.MetadataEntry]):
             Map that contains metadata about the Smart
             Compose suggestion and the document from which
             it originates.

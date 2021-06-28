@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-cloud-contactcenterinsights documentation build configuration file
+# google-cloud-contact-center-insights documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-contactcenterinsights"
+project = u"google-cloud-contact-center-insights"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-contactcenterinsights-doc"
+htmlhelp_basename = "google-cloud-contact-center-insights-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-contactcenterinsights.tex",
-        u"google-cloud-contactcenterinsights Documentation",
+        "google-cloud-contact-center-insights.tex",
+        u"google-cloud-contact-center-insights Documentation",
         author,
         "manual",
     )
@@ -308,8 +308,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-contactcenterinsights",
-        u"Google Cloud Contactcenterinsights Documentation",
+        "google-cloud-contact-center-insights",
+        u"Google Cloud Contact Center Insights Documentation",
         [author],
         1,
     )
@@ -327,11 +327,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-contactcenterinsights",
-        u"google-cloud-contactcenterinsights Documentation",
+        "google-cloud-contact-center-insights",
+        u"google-cloud-contact-center-insights Documentation",
         author,
-        "google-cloud-contactcenterinsights",
-        "GAPIC library for Google Cloud Contactcenterinsights API",
+        "google-cloud-contact-center-insights",
+        "GAPIC library for Google Cloud Contact Center Insights API",
         "APIs",
     )
 ]

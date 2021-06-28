@@ -15,15 +15,15 @@
 #
 from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
 
-from google.cloud.contactcenterinsights_v1.types import contact_center_insights
-from google.cloud.contactcenterinsights_v1.types import resources
+from google.cloud.contact_center_insights_v1.types import contact_center_insights
+from google.cloud.contact_center_insights_v1.types import resources
 
 
 class ListConversationsPager:
     """A pager for iterating through ``list_conversations`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.contactcenterinsights_v1.types.ListConversationsResponse` object, and
+    :class:`google.cloud.contact_center_insights_v1.types.ListConversationsResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``conversations`` field.
 
@@ -32,7 +32,7 @@ class ListConversationsPager:
     through the ``conversations`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.contactcenterinsights_v1.types.ListConversationsResponse`
+    All the usual :class:`google.cloud.contact_center_insights_v1.types.ListConversationsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -47,9 +47,9 @@ class ListConversationsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.contactcenterinsights_v1.types.ListConversationsRequest):
+            request (google.cloud.contact_center_insights_v1.types.ListConversationsRequest):
                 The initial request object.
-            response (google.cloud.contactcenterinsights_v1.types.ListConversationsResponse):
+            response (google.cloud.contact_center_insights_v1.types.ListConversationsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -82,7 +82,7 @@ class ListConversationsAsyncPager:
     """A pager for iterating through ``list_conversations`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.contactcenterinsights_v1.types.ListConversationsResponse` object, and
+    :class:`google.cloud.contact_center_insights_v1.types.ListConversationsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``conversations`` field.
 
@@ -91,7 +91,7 @@ class ListConversationsAsyncPager:
     through the ``conversations`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.contactcenterinsights_v1.types.ListConversationsResponse`
+    All the usual :class:`google.cloud.contact_center_insights_v1.types.ListConversationsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -106,9 +106,9 @@ class ListConversationsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.contactcenterinsights_v1.types.ListConversationsRequest):
+            request (google.cloud.contact_center_insights_v1.types.ListConversationsRequest):
                 The initial request object.
-            response (google.cloud.contactcenterinsights_v1.types.ListConversationsResponse):
+            response (google.cloud.contact_center_insights_v1.types.ListConversationsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -145,7 +145,7 @@ class ListAnalysesPager:
     """A pager for iterating through ``list_analyses`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.contactcenterinsights_v1.types.ListAnalysesResponse` object, and
+    :class:`google.cloud.contact_center_insights_v1.types.ListAnalysesResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``analyses`` field.
 
@@ -154,7 +154,7 @@ class ListAnalysesPager:
     through the ``analyses`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.contactcenterinsights_v1.types.ListAnalysesResponse`
+    All the usual :class:`google.cloud.contact_center_insights_v1.types.ListAnalysesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -169,9 +169,9 @@ class ListAnalysesPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.contactcenterinsights_v1.types.ListAnalysesRequest):
+            request (google.cloud.contact_center_insights_v1.types.ListAnalysesRequest):
                 The initial request object.
-            response (google.cloud.contactcenterinsights_v1.types.ListAnalysesResponse):
+            response (google.cloud.contact_center_insights_v1.types.ListAnalysesResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -204,7 +204,7 @@ class ListAnalysesAsyncPager:
     """A pager for iterating through ``list_analyses`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.contactcenterinsights_v1.types.ListAnalysesResponse` object, and
+    :class:`google.cloud.contact_center_insights_v1.types.ListAnalysesResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``analyses`` field.
 
@@ -213,7 +213,7 @@ class ListAnalysesAsyncPager:
     through the ``analyses`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.contactcenterinsights_v1.types.ListAnalysesResponse`
+    All the usual :class:`google.cloud.contact_center_insights_v1.types.ListAnalysesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -228,9 +228,9 @@ class ListAnalysesAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.contactcenterinsights_v1.types.ListAnalysesRequest):
+            request (google.cloud.contact_center_insights_v1.types.ListAnalysesRequest):
                 The initial request object.
-            response (google.cloud.contactcenterinsights_v1.types.ListAnalysesResponse):
+            response (google.cloud.contact_center_insights_v1.types.ListAnalysesResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -267,7 +267,7 @@ class ListPhraseMatchersPager:
     """A pager for iterating through ``list_phrase_matchers`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.contactcenterinsights_v1.types.ListPhraseMatchersResponse` object, and
+    :class:`google.cloud.contact_center_insights_v1.types.ListPhraseMatchersResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``phrase_matchers`` field.
 
@@ -276,7 +276,7 @@ class ListPhraseMatchersPager:
     through the ``phrase_matchers`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.contactcenterinsights_v1.types.ListPhraseMatchersResponse`
+    All the usual :class:`google.cloud.contact_center_insights_v1.types.ListPhraseMatchersResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -291,9 +291,9 @@ class ListPhraseMatchersPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.contactcenterinsights_v1.types.ListPhraseMatchersRequest):
+            request (google.cloud.contact_center_insights_v1.types.ListPhraseMatchersRequest):
                 The initial request object.
-            response (google.cloud.contactcenterinsights_v1.types.ListPhraseMatchersResponse):
+            response (google.cloud.contact_center_insights_v1.types.ListPhraseMatchersResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -326,7 +326,7 @@ class ListPhraseMatchersAsyncPager:
     """A pager for iterating through ``list_phrase_matchers`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.contactcenterinsights_v1.types.ListPhraseMatchersResponse` object, and
+    :class:`google.cloud.contact_center_insights_v1.types.ListPhraseMatchersResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``phrase_matchers`` field.
 
@@ -335,7 +335,7 @@ class ListPhraseMatchersAsyncPager:
     through the ``phrase_matchers`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.contactcenterinsights_v1.types.ListPhraseMatchersResponse`
+    All the usual :class:`google.cloud.contact_center_insights_v1.types.ListPhraseMatchersResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -350,9 +350,9 @@ class ListPhraseMatchersAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.contactcenterinsights_v1.types.ListPhraseMatchersRequest):
+            request (google.cloud.contact_center_insights_v1.types.ListPhraseMatchersRequest):
                 The initial request object.
-            response (google.cloud.contactcenterinsights_v1.types.ListPhraseMatchersResponse):
+            response (google.cloud.contact_center_insights_v1.types.ListPhraseMatchersResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
