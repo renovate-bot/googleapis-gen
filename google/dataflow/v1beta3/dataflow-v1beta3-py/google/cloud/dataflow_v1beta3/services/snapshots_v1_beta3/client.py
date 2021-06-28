@@ -466,7 +466,7 @@ class SnapshotsV1Beta3Client(metaclass=SnapshotsV1Beta3ClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-dataflow",
+            "google-cloud-dataflow-client",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
