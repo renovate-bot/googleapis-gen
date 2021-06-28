@@ -65,6 +65,7 @@ from google.devtools.cloudbuild_v1.types.cloudbuild import TimeSpan
 from google.devtools.cloudbuild_v1.types.cloudbuild import UpdateBuildTriggerRequest
 from google.devtools.cloudbuild_v1.types.cloudbuild import UpdateWorkerPoolRequest
 from google.devtools.cloudbuild_v1.types.cloudbuild import Volume
+from google.devtools.cloudbuild_v1.types.cloudbuild import WebhookConfig
 from google.devtools.cloudbuild_v1.types.cloudbuild import WorkerConfig
 from google.devtools.cloudbuild_v1.types.cloudbuild import WorkerPool
 
@@ -118,6 +119,7 @@ __all__ = ('CloudBuildClient',
     'UpdateBuildTriggerRequest',
     'UpdateWorkerPoolRequest',
     'Volume',
+    'WebhookConfig',
     'WorkerConfig',
     'WorkerPool',
 )

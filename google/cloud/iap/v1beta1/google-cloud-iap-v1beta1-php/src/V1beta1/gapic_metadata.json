@@ -1,0 +1,33 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.iap.v1beta1",
+    "libraryPackage": "Google\\Cloud\\Iap\\V1beta1",
+    "services": {
+        "IdentityAwareProxyAdminV1Beta1": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "IdentityAwareProxyAdminV1Beta1GapicClient",
+                    "rpcs": {
+                        "GetIamPolicy": {
+                            "methods": [
+                                "getIamPolicy"
+                            ]
+                        },
+                        "SetIamPolicy": {
+                            "methods": [
+                                "setIamPolicy"
+                            ]
+                        },
+                        "TestIamPermissions": {
+                            "methods": [
+                                "testIamPermissions"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

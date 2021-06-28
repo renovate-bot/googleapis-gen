@@ -34,6 +34,7 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
             {
                 ProjectId = "",
                 TriggerId = "",
+                BuildTriggerName = BuildTriggerName.FromProjectTrigger("[PROJECT]", "[TRIGGER]"),
             };
             // Make the request
             cloudBuildClient.DeleteBuildTrigger(request);

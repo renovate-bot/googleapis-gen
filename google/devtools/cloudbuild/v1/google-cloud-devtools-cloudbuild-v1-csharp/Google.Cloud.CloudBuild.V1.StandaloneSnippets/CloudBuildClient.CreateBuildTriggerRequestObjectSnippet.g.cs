@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
+    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.CloudBuild.V1;
 
     public sealed partial class GeneratedCloudBuildClientStandaloneSnippets
@@ -34,6 +35,7 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
             {
                 ProjectId = "",
                 Trigger = new BuildTrigger(),
+                ParentAsProjectName = ProjectName.FromProject("[PROJECT]"),
             };
             // Make the request
             BuildTrigger response = cloudBuildClient.CreateBuildTrigger(request);

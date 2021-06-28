@@ -154,9 +154,6 @@ export class CloudBuildClient {
     // identifiers to uniquely identify resources within the API.
     // Create useful helper objects for these.
     this.pathTemplates = {
-      buildTriggerPathTemplate: new this._gaxModule.PathTemplate(
-        'projects/{project}/triggers/{trigger}'
-      ),
       cryptoKeyPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}'
       ),
@@ -168,6 +165,12 @@ export class CloudBuildClient {
       ),
       projectLocationBuildPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/locations/{location}/builds/{build}'
+      ),
+      projectLocationTriggerPathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}/locations/{location}/triggers/{trigger}'
+      ),
+      projectTriggerPathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}/triggers/{trigger}'
       ),
       secretVersionPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/secrets/{secret}/versions/{version}'
@@ -539,6 +542,9 @@ export class CloudBuildClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
+ * @param {string} request.parent
+ *   The parent resource where this trigger will be created.
+ *   Format: `projects/{project}/locations/{location}`
  * @param {string} request.projectId
  *   Required. ID of the project for which to configure automatic builds.
  * @param {google.devtools.cloudbuild.v1.BuildTrigger} request.trigger
@@ -583,6 +589,7 @@ export class CloudBuildClient {
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
+      'parent': request.parent || '',
     });
     this.initialize();
     return this.innerApiCalls.createBuildTrigger(request, options, callback);
@@ -614,6 +621,9 @@ export class CloudBuildClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the `Trigger` to retrieve.
+ *   Format: `projects/{project}/locations/{location}/triggers/{trigger}`
  * @param {string} request.projectId
  *   Required. ID of the project that owns the trigger.
  * @param {string} request.triggerId
@@ -658,6 +668,7 @@ export class CloudBuildClient {
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
+      'name': request.name || '',
     });
     this.initialize();
     return this.innerApiCalls.getBuildTrigger(request, options, callback);
@@ -689,6 +700,9 @@ export class CloudBuildClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the `Trigger` to delete.
+ *   Format: `projects/{project}/locations/{location}/triggers/{trigger}`
  * @param {string} request.projectId
  *   Required. ID of the project that owns the trigger.
  * @param {string} request.triggerId
@@ -733,6 +747,7 @@ export class CloudBuildClient {
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
+      'name': request.name || '',
     });
     this.initialize();
     return this.innerApiCalls.deleteBuildTrigger(request, options, callback);
@@ -810,6 +825,7 @@ export class CloudBuildClient {
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
+      'trigger.resource_name': request.trigger!.resourceName || '',
     });
     this.initialize();
     return this.innerApiCalls.updateBuildTrigger(request, options, callback);
@@ -840,6 +856,9 @@ export class CloudBuildClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the `ReceiveTriggerWebhook` to retrieve.
+ *   Format: `projects/{project}/locations/{location}/triggers/{trigger}`
  * @param {google.api.HttpBody} request.body
  *   HTTP request body.
  * @param {string} request.projectId
@@ -888,6 +907,7 @@ export class CloudBuildClient {
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
+      'name': request.name || '',
     });
     this.initialize();
     return this.innerApiCalls.receiveTriggerWebhook(request, options, callback);
@@ -1487,6 +1507,9 @@ export class CloudBuildClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the `Trigger` to run.
+ *   Format: `projects/{project}/locations/{location}/triggers/{trigger}`
  * @param {string} request.projectId
  *   Required. ID of the project.
  * @param {string} request.triggerId
@@ -1536,6 +1559,7 @@ export class CloudBuildClient {
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
+      'name': request.name || '',
     });
     this.initialize();
     return this.innerApiCalls.runBuildTrigger(request, options, callback);
@@ -1809,6 +1833,9 @@ export class CloudBuildClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
+ * @param {string} request.parent
+ *   The parent of the collection of `Triggers`.
+ *   Format: `projects/{project}/locations/{location}`
  * @param {string} request.projectId
  *   Required. ID of the project for which to list BuildTriggers.
  * @param {number} request.pageSize
@@ -1859,6 +1886,7 @@ export class CloudBuildClient {
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
+      'parent': request.parent || '',
     });
     this.initialize();
     return this.innerApiCalls.listBuildTriggers(request, options, callback);
@@ -1868,6 +1896,9 @@ export class CloudBuildClient {
  * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
  * @param {Object} request
  *   The request object that will be sent.
+ * @param {string} request.parent
+ *   The parent of the collection of `Triggers`.
+ *   Format: `projects/{project}/locations/{location}`
  * @param {string} request.projectId
  *   Required. ID of the project for which to list BuildTriggers.
  * @param {number} request.pageSize
@@ -1898,6 +1929,7 @@ export class CloudBuildClient {
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
+      'parent': request.parent || '',
     });
     const callSettings = new gax.CallSettings(options);
     this.initialize();
@@ -1914,6 +1946,9 @@ export class CloudBuildClient {
  * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
  * @param {Object} request
  *   The request object that will be sent.
+ * @param {string} request.parent
+ *   The parent of the collection of `Triggers`.
+ *   Format: `projects/{project}/locations/{location}`
  * @param {string} request.projectId
  *   Required. ID of the project for which to list BuildTriggers.
  * @param {number} request.pageSize
@@ -1948,6 +1983,7 @@ export class CloudBuildClient {
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
+      'parent': request.parent || '',
     });
     options = options || {};
     const callSettings = new gax.CallSettings(options);
@@ -1961,42 +1997,6 @@ export class CloudBuildClient {
   // --------------------
   // -- Path templates --
   // --------------------
-
-  /**
-   * Return a fully-qualified buildTrigger resource name string.
-   *
-   * @param {string} project
-   * @param {string} trigger
-   * @returns {string} Resource name string.
-   */
-  buildTriggerPath(project:string,trigger:string) {
-    return this.pathTemplates.buildTriggerPathTemplate.render({
-      project: project,
-      trigger: trigger,
-    });
-  }
-
-  /**
-   * Parse the project from BuildTrigger resource.
-   *
-   * @param {string} buildTriggerName
-   *   A fully-qualified path representing BuildTrigger resource.
-   * @returns {string} A string representing the project.
-   */
-  matchProjectFromBuildTriggerName(buildTriggerName: string) {
-    return this.pathTemplates.buildTriggerPathTemplate.match(buildTriggerName).project;
-  }
-
-  /**
-   * Parse the trigger from BuildTrigger resource.
-   *
-   * @param {string} buildTriggerName
-   *   A fully-qualified path representing BuildTrigger resource.
-   * @returns {string} A string representing the trigger.
-   */
-  matchTriggerFromBuildTriggerName(buildTriggerName: string) {
-    return this.pathTemplates.buildTriggerPathTemplate.match(buildTriggerName).trigger;
-  }
 
   /**
    * Return a fully-qualified cryptoKey resource name string.
@@ -2166,6 +2166,91 @@ export class CloudBuildClient {
    */
   matchBuildFromProjectLocationBuildName(projectLocationBuildName: string) {
     return this.pathTemplates.projectLocationBuildPathTemplate.match(projectLocationBuildName).build;
+  }
+
+  /**
+   * Return a fully-qualified projectLocationTrigger resource name string.
+   *
+   * @param {string} project
+   * @param {string} location
+   * @param {string} trigger
+   * @returns {string} Resource name string.
+   */
+  projectLocationTriggerPath(project:string,location:string,trigger:string) {
+    return this.pathTemplates.projectLocationTriggerPathTemplate.render({
+      project: project,
+      location: location,
+      trigger: trigger,
+    });
+  }
+
+  /**
+   * Parse the project from ProjectLocationTrigger resource.
+   *
+   * @param {string} projectLocationTriggerName
+   *   A fully-qualified path representing project_location_trigger resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromProjectLocationTriggerName(projectLocationTriggerName: string) {
+    return this.pathTemplates.projectLocationTriggerPathTemplate.match(projectLocationTriggerName).project;
+  }
+
+  /**
+   * Parse the location from ProjectLocationTrigger resource.
+   *
+   * @param {string} projectLocationTriggerName
+   *   A fully-qualified path representing project_location_trigger resource.
+   * @returns {string} A string representing the location.
+   */
+  matchLocationFromProjectLocationTriggerName(projectLocationTriggerName: string) {
+    return this.pathTemplates.projectLocationTriggerPathTemplate.match(projectLocationTriggerName).location;
+  }
+
+  /**
+   * Parse the trigger from ProjectLocationTrigger resource.
+   *
+   * @param {string} projectLocationTriggerName
+   *   A fully-qualified path representing project_location_trigger resource.
+   * @returns {string} A string representing the trigger.
+   */
+  matchTriggerFromProjectLocationTriggerName(projectLocationTriggerName: string) {
+    return this.pathTemplates.projectLocationTriggerPathTemplate.match(projectLocationTriggerName).trigger;
+  }
+
+  /**
+   * Return a fully-qualified projectTrigger resource name string.
+   *
+   * @param {string} project
+   * @param {string} trigger
+   * @returns {string} Resource name string.
+   */
+  projectTriggerPath(project:string,trigger:string) {
+    return this.pathTemplates.projectTriggerPathTemplate.render({
+      project: project,
+      trigger: trigger,
+    });
+  }
+
+  /**
+   * Parse the project from ProjectTrigger resource.
+   *
+   * @param {string} projectTriggerName
+   *   A fully-qualified path representing project_trigger resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromProjectTriggerName(projectTriggerName: string) {
+    return this.pathTemplates.projectTriggerPathTemplate.match(projectTriggerName).project;
+  }
+
+  /**
+   * Parse the trigger from ProjectTrigger resource.
+   *
+   * @param {string} projectTriggerName
+   *   A fully-qualified path representing project_trigger resource.
+   * @returns {string} A string representing the trigger.
+   */
+  matchTriggerFromProjectTriggerName(projectTriggerName: string) {
+    return this.pathTemplates.projectTriggerPathTemplate.match(projectTriggerName).trigger;
   }
 
   /**

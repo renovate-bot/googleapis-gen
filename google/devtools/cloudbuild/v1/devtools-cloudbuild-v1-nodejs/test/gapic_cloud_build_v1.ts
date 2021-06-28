@@ -364,7 +364,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.CreateBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "project_id=&parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -388,7 +389,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.CreateBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "project_id=&parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -423,7 +425,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.CreateBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "project_id=&parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -448,7 +451,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.GetBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -472,7 +476,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.GetBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -507,7 +512,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.GetBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -532,7 +538,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.DeleteBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -556,7 +563,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.DeleteBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -591,7 +599,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.DeleteBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -616,7 +625,9 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.UpdateBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.trigger = {};
+            request.trigger.resourceName = '';
+            const expectedHeaderRequestParams = "project_id=&trigger.resource_name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -640,7 +651,9 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.UpdateBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.trigger = {};
+            request.trigger.resourceName = '';
+            const expectedHeaderRequestParams = "project_id=&trigger.resource_name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -675,7 +688,9 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.UpdateBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.trigger = {};
+            request.trigger.resourceName = '';
+            const expectedHeaderRequestParams = "project_id=&trigger.resource_name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -700,7 +715,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.ReceiveTriggerWebhookRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -724,7 +740,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.ReceiveTriggerWebhookRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -759,7 +776,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.ReceiveTriggerWebhookRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1380,7 +1398,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.RunBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1405,7 +1424,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.RunBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1443,7 +1463,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.RunBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1466,7 +1487,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.RunBuildTriggerRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.name = '';
+            const expectedHeaderRequestParams = "project_id=&name=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1753,7 +1775,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.ListBuildTriggersRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "project_id=&parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1781,7 +1804,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.ListBuildTriggersRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "project_id=&parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1820,7 +1844,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.ListBuildTriggersRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "project_id=&parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1843,7 +1868,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.ListBuildTriggersRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "project_id=&parent=";
             const expectedResponse = [
               generateSampleMessage(new protos.google.devtools.cloudbuild.v1.BuildTrigger()),
               generateSampleMessage(new protos.google.devtools.cloudbuild.v1.BuildTrigger()),
@@ -1882,7 +1908,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.ListBuildTriggersRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "project_id=&parent=";
             const expectedError = new Error('expected');
             client.descriptors.page.listBuildTriggers.createStream = stubPageStreamingCall(undefined, expectedError);
             const stream = client.listBuildTriggersStream(request);
@@ -1916,7 +1943,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.ListBuildTriggersRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";const expectedResponse = [
+            request.parent = '';
+            const expectedHeaderRequestParams = "project_id=&parent=";const expectedResponse = [
               generateSampleMessage(new protos.google.devtools.cloudbuild.v1.BuildTrigger()),
               generateSampleMessage(new protos.google.devtools.cloudbuild.v1.BuildTrigger()),
               generateSampleMessage(new protos.google.devtools.cloudbuild.v1.BuildTrigger()),
@@ -1946,7 +1974,8 @@ describe('v1.CloudBuildClient', () => {
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudbuild.v1.ListBuildTriggersRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";const expectedError = new Error('expected');
+            request.parent = '';
+            const expectedHeaderRequestParams = "project_id=&parent=";const expectedError = new Error('expected');
             client.descriptors.page.listBuildTriggers.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
             const iterable = client.listBuildTriggersAsync(request);
             await assert.rejects(async () => {
@@ -1967,44 +1996,6 @@ describe('v1.CloudBuildClient', () => {
     });
 
     describe('Path templates', () => {
-
-        describe('buildTrigger', () => {
-            const fakePath = "/rendered/path/buildTrigger";
-            const expectedParameters = {
-                project: "projectValue",
-                trigger: "triggerValue",
-            };
-            const client = new cloudbuildModule.v1.CloudBuildClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
-            client.initialize();
-            client.pathTemplates.buildTriggerPathTemplate.render =
-                sinon.stub().returns(fakePath);
-            client.pathTemplates.buildTriggerPathTemplate.match =
-                sinon.stub().returns(expectedParameters);
-
-            it('buildTriggerPath', () => {
-                const result = client.buildTriggerPath("projectValue", "triggerValue");
-                assert.strictEqual(result, fakePath);
-                assert((client.pathTemplates.buildTriggerPathTemplate.render as SinonStub)
-                    .getCall(-1).calledWith(expectedParameters));
-            });
-
-            it('matchProjectFromBuildTriggerName', () => {
-                const result = client.matchProjectFromBuildTriggerName(fakePath);
-                assert.strictEqual(result, "projectValue");
-                assert((client.pathTemplates.buildTriggerPathTemplate.match as SinonStub)
-                    .getCall(-1).calledWith(fakePath));
-            });
-
-            it('matchTriggerFromBuildTriggerName', () => {
-                const result = client.matchTriggerFromBuildTriggerName(fakePath);
-                assert.strictEqual(result, "triggerValue");
-                assert((client.pathTemplates.buildTriggerPathTemplate.match as SinonStub)
-                    .getCall(-1).calledWith(fakePath));
-            });
-        });
 
         describe('cryptoKey', () => {
             const fakePath = "/rendered/path/cryptoKey";
@@ -2170,6 +2161,90 @@ describe('v1.CloudBuildClient', () => {
                 const result = client.matchBuildFromProjectLocationBuildName(fakePath);
                 assert.strictEqual(result, "buildValue");
                 assert((client.pathTemplates.projectLocationBuildPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
+        describe('projectLocationTrigger', () => {
+            const fakePath = "/rendered/path/projectLocationTrigger";
+            const expectedParameters = {
+                project: "projectValue",
+                location: "locationValue",
+                trigger: "triggerValue",
+            };
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.projectLocationTriggerPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.projectLocationTriggerPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('projectLocationTriggerPath', () => {
+                const result = client.projectLocationTriggerPath("projectValue", "locationValue", "triggerValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.projectLocationTriggerPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchProjectFromProjectLocationTriggerName', () => {
+                const result = client.matchProjectFromProjectLocationTriggerName(fakePath);
+                assert.strictEqual(result, "projectValue");
+                assert((client.pathTemplates.projectLocationTriggerPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchLocationFromProjectLocationTriggerName', () => {
+                const result = client.matchLocationFromProjectLocationTriggerName(fakePath);
+                assert.strictEqual(result, "locationValue");
+                assert((client.pathTemplates.projectLocationTriggerPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchTriggerFromProjectLocationTriggerName', () => {
+                const result = client.matchTriggerFromProjectLocationTriggerName(fakePath);
+                assert.strictEqual(result, "triggerValue");
+                assert((client.pathTemplates.projectLocationTriggerPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
+        describe('projectTrigger', () => {
+            const fakePath = "/rendered/path/projectTrigger";
+            const expectedParameters = {
+                project: "projectValue",
+                trigger: "triggerValue",
+            };
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.projectTriggerPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.projectTriggerPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('projectTriggerPath', () => {
+                const result = client.projectTriggerPath("projectValue", "triggerValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.projectTriggerPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchProjectFromProjectTriggerName', () => {
+                const result = client.matchProjectFromProjectTriggerName(fakePath);
+                assert.strictEqual(result, "projectValue");
+                assert((client.pathTemplates.projectTriggerPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchTriggerFromProjectTriggerName', () => {
+                const result = client.matchTriggerFromProjectTriggerName(fakePath);
+                assert.strictEqual(result, "triggerValue");
+                assert((client.pathTemplates.projectTriggerPathTemplate.match as SinonStub)
                     .getCall(-1).calledWith(fakePath));
             });
         });

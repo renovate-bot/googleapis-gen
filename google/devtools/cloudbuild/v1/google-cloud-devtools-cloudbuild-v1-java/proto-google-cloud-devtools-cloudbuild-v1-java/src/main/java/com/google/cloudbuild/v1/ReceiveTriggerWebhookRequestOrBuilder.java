@@ -9,6 +9,28 @@ public interface ReceiveTriggerWebhookRequestOrBuilder extends
 
   /**
    * <pre>
+   * The name of the `ReceiveTriggerWebhook` to retrieve.
+   * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+   * </pre>
+   *
+   * <code>string name = 5;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * The name of the `ReceiveTriggerWebhook` to retrieve.
+   * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+   * </pre>
+   *
+   * <code>string name = 5;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
    * HTTP request body.
    * </pre>
    *

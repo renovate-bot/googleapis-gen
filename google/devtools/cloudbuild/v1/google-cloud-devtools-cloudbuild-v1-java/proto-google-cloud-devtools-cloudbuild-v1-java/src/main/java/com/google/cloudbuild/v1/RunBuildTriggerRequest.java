@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RunBuildTriggerRequest() {
+    name_ = "";
     projectId_ = "";
     triggerId_ = "";
   }
@@ -79,6 +80,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -109,6 +116,54 @@ private static final long serialVersionUID = 0L;
     return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_RunBuildTriggerRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloudbuild.v1.RunBuildTriggerRequest.class, com.google.cloudbuild.v1.RunBuildTriggerRequest.Builder.class);
+  }
+
+  public static final int NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * The name of the `Trigger` to run.
+   * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+   * </pre>
+   *
+   * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The name of the `Trigger` to run.
+   * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+   * </pre>
+   *
+   * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
@@ -264,6 +319,9 @@ private static final long serialVersionUID = 0L;
     if (source_ != null) {
       output.writeMessage(3, getSource());
     }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -283,6 +341,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getSource());
     }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -298,6 +359,8 @@ private static final long serialVersionUID = 0L;
     }
     com.google.cloudbuild.v1.RunBuildTriggerRequest other = (com.google.cloudbuild.v1.RunBuildTriggerRequest) obj;
 
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!getProjectId()
         .equals(other.getProjectId())) return false;
     if (!getTriggerId()
@@ -318,6 +381,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
     hash = (37 * hash) + TRIGGER_ID_FIELD_NUMBER;
@@ -463,6 +528,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       projectId_ = "";
 
       triggerId_ = "";
@@ -499,6 +566,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloudbuild.v1.RunBuildTriggerRequest buildPartial() {
       com.google.cloudbuild.v1.RunBuildTriggerRequest result = new com.google.cloudbuild.v1.RunBuildTriggerRequest(this);
+      result.name_ = name_;
       result.projectId_ = projectId_;
       result.triggerId_ = triggerId_;
       if (sourceBuilder_ == null) {
@@ -554,6 +622,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.cloudbuild.v1.RunBuildTriggerRequest other) {
       if (other == com.google.cloudbuild.v1.RunBuildTriggerRequest.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
@@ -591,6 +663,107 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * The name of the `Trigger` to run.
+     * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the `Trigger` to run.
+     * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the `Trigger` to run.
+     * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The name of the `Trigger` to run.
+     * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The name of the `Trigger` to run.
+     * Format: `projects/{project}/locations/{location}/triggers/{trigger}`
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
       return this;
     }
 

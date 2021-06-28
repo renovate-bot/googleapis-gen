@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
+    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.CloudBuild.V1;
     using System.Threading.Tasks;
 
@@ -35,6 +36,7 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
             {
                 ProjectId = "",
                 Trigger = new BuildTrigger(),
+                ParentAsProjectName = ProjectName.FromProject("[PROJECT]"),
             };
             // Make the request
             BuildTrigger response = await cloudBuildClient.CreateBuildTriggerAsync(request);

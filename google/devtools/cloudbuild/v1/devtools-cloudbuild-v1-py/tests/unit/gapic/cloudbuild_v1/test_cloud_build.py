@@ -1523,6 +1523,7 @@ def test_create_build_trigger(transport: str = 'grpc', request_type=cloudbuild.C
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloudbuild.BuildTrigger(
+            resource_name='resource_name_value',
             id='id_value',
             description='description_value',
             name='name_value',
@@ -1531,7 +1532,7 @@ def test_create_build_trigger(transport: str = 'grpc', request_type=cloudbuild.C
             ignored_files=['ignored_files_value'],
             included_files=['included_files_value'],
             filter='filter_value',
-            build=cloudbuild.Build(name='name_value'),
+            autodetect=True,
         )
         response = client.create_build_trigger(request)
 
@@ -1542,6 +1543,7 @@ def test_create_build_trigger(transport: str = 'grpc', request_type=cloudbuild.C
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloudbuild.BuildTrigger)
+    assert response.resource_name == 'resource_name_value'
     assert response.id == 'id_value'
     assert response.description == 'description_value'
     assert response.name == 'name_value'
@@ -1591,6 +1593,7 @@ async def test_create_build_trigger_async(transport: str = 'grpc_asyncio', reque
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloudbuild.BuildTrigger(
+            resource_name='resource_name_value',
             id='id_value',
             description='description_value',
             name='name_value',
@@ -1609,6 +1612,7 @@ async def test_create_build_trigger_async(transport: str = 'grpc_asyncio', reque
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloudbuild.BuildTrigger)
+    assert response.resource_name == 'resource_name_value'
     assert response.id == 'id_value'
     assert response.description == 'description_value'
     assert response.name == 'name_value'
@@ -1639,7 +1643,7 @@ def test_create_build_trigger_flattened():
         # using the keyword arguments to the method.
         client.create_build_trigger(
             project_id='project_id_value',
-            trigger=cloudbuild.BuildTrigger(id='id_value'),
+            trigger=cloudbuild.BuildTrigger(resource_name='resource_name_value'),
         )
 
         # Establish that the underlying call was made with the expected
@@ -1647,7 +1651,7 @@ def test_create_build_trigger_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].project_id == 'project_id_value'
-        assert args[0].trigger == cloudbuild.BuildTrigger(id='id_value')
+        assert args[0].trigger == cloudbuild.BuildTrigger(resource_name='resource_name_value')
 
 
 def test_create_build_trigger_flattened_error():
@@ -1661,7 +1665,7 @@ def test_create_build_trigger_flattened_error():
         client.create_build_trigger(
             cloudbuild.CreateBuildTriggerRequest(),
             project_id='project_id_value',
-            trigger=cloudbuild.BuildTrigger(id='id_value'),
+            trigger=cloudbuild.BuildTrigger(resource_name='resource_name_value'),
         )
 
 
@@ -1683,7 +1687,7 @@ async def test_create_build_trigger_flattened_async():
         # using the keyword arguments to the method.
         response = await client.create_build_trigger(
             project_id='project_id_value',
-            trigger=cloudbuild.BuildTrigger(id='id_value'),
+            trigger=cloudbuild.BuildTrigger(resource_name='resource_name_value'),
         )
 
         # Establish that the underlying call was made with the expected
@@ -1691,7 +1695,7 @@ async def test_create_build_trigger_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].project_id == 'project_id_value'
-        assert args[0].trigger == cloudbuild.BuildTrigger(id='id_value')
+        assert args[0].trigger == cloudbuild.BuildTrigger(resource_name='resource_name_value')
 
 
 @pytest.mark.asyncio
@@ -1706,7 +1710,7 @@ async def test_create_build_trigger_flattened_error_async():
         await client.create_build_trigger(
             cloudbuild.CreateBuildTriggerRequest(),
             project_id='project_id_value',
-            trigger=cloudbuild.BuildTrigger(id='id_value'),
+            trigger=cloudbuild.BuildTrigger(resource_name='resource_name_value'),
         )
 
 
@@ -1726,6 +1730,7 @@ def test_get_build_trigger(transport: str = 'grpc', request_type=cloudbuild.GetB
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloudbuild.BuildTrigger(
+            resource_name='resource_name_value',
             id='id_value',
             description='description_value',
             name='name_value',
@@ -1734,7 +1739,7 @@ def test_get_build_trigger(transport: str = 'grpc', request_type=cloudbuild.GetB
             ignored_files=['ignored_files_value'],
             included_files=['included_files_value'],
             filter='filter_value',
-            build=cloudbuild.Build(name='name_value'),
+            autodetect=True,
         )
         response = client.get_build_trigger(request)
 
@@ -1745,6 +1750,7 @@ def test_get_build_trigger(transport: str = 'grpc', request_type=cloudbuild.GetB
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloudbuild.BuildTrigger)
+    assert response.resource_name == 'resource_name_value'
     assert response.id == 'id_value'
     assert response.description == 'description_value'
     assert response.name == 'name_value'
@@ -1794,6 +1800,7 @@ async def test_get_build_trigger_async(transport: str = 'grpc_asyncio', request_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloudbuild.BuildTrigger(
+            resource_name='resource_name_value',
             id='id_value',
             description='description_value',
             name='name_value',
@@ -1812,6 +1819,7 @@ async def test_get_build_trigger_async(transport: str = 'grpc_asyncio', request_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloudbuild.BuildTrigger)
+    assert response.resource_name == 'resource_name_value'
     assert response.id == 'id_value'
     assert response.description == 'description_value'
     assert response.name == 'name_value'
@@ -2446,6 +2454,7 @@ def test_update_build_trigger(transport: str = 'grpc', request_type=cloudbuild.U
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloudbuild.BuildTrigger(
+            resource_name='resource_name_value',
             id='id_value',
             description='description_value',
             name='name_value',
@@ -2454,7 +2463,7 @@ def test_update_build_trigger(transport: str = 'grpc', request_type=cloudbuild.U
             ignored_files=['ignored_files_value'],
             included_files=['included_files_value'],
             filter='filter_value',
-            build=cloudbuild.Build(name='name_value'),
+            autodetect=True,
         )
         response = client.update_build_trigger(request)
 
@@ -2465,6 +2474,7 @@ def test_update_build_trigger(transport: str = 'grpc', request_type=cloudbuild.U
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloudbuild.BuildTrigger)
+    assert response.resource_name == 'resource_name_value'
     assert response.id == 'id_value'
     assert response.description == 'description_value'
     assert response.name == 'name_value'
@@ -2514,6 +2524,7 @@ async def test_update_build_trigger_async(transport: str = 'grpc_asyncio', reque
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloudbuild.BuildTrigger(
+            resource_name='resource_name_value',
             id='id_value',
             description='description_value',
             name='name_value',
@@ -2532,6 +2543,7 @@ async def test_update_build_trigger_async(transport: str = 'grpc_asyncio', reque
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloudbuild.BuildTrigger)
+    assert response.resource_name == 'resource_name_value'
     assert response.id == 'id_value'
     assert response.description == 'description_value'
     assert response.name == 'name_value'
@@ -2563,7 +2575,7 @@ def test_update_build_trigger_flattened():
         client.update_build_trigger(
             project_id='project_id_value',
             trigger_id='trigger_id_value',
-            trigger=cloudbuild.BuildTrigger(id='id_value'),
+            trigger=cloudbuild.BuildTrigger(resource_name='resource_name_value'),
         )
 
         # Establish that the underlying call was made with the expected
@@ -2572,7 +2584,7 @@ def test_update_build_trigger_flattened():
         _, args, _ = call.mock_calls[0]
         assert args[0].project_id == 'project_id_value'
         assert args[0].trigger_id == 'trigger_id_value'
-        assert args[0].trigger == cloudbuild.BuildTrigger(id='id_value')
+        assert args[0].trigger == cloudbuild.BuildTrigger(resource_name='resource_name_value')
 
 
 def test_update_build_trigger_flattened_error():
@@ -2587,7 +2599,7 @@ def test_update_build_trigger_flattened_error():
             cloudbuild.UpdateBuildTriggerRequest(),
             project_id='project_id_value',
             trigger_id='trigger_id_value',
-            trigger=cloudbuild.BuildTrigger(id='id_value'),
+            trigger=cloudbuild.BuildTrigger(resource_name='resource_name_value'),
         )
 
 
@@ -2610,7 +2622,7 @@ async def test_update_build_trigger_flattened_async():
         response = await client.update_build_trigger(
             project_id='project_id_value',
             trigger_id='trigger_id_value',
-            trigger=cloudbuild.BuildTrigger(id='id_value'),
+            trigger=cloudbuild.BuildTrigger(resource_name='resource_name_value'),
         )
 
         # Establish that the underlying call was made with the expected
@@ -2619,7 +2631,7 @@ async def test_update_build_trigger_flattened_async():
         _, args, _ = call.mock_calls[0]
         assert args[0].project_id == 'project_id_value'
         assert args[0].trigger_id == 'trigger_id_value'
-        assert args[0].trigger == cloudbuild.BuildTrigger(id='id_value')
+        assert args[0].trigger == cloudbuild.BuildTrigger(resource_name='resource_name_value')
 
 
 @pytest.mark.asyncio
@@ -2635,7 +2647,7 @@ async def test_update_build_trigger_flattened_error_async():
             cloudbuild.UpdateBuildTriggerRequest(),
             project_id='project_id_value',
             trigger_id='trigger_id_value',
-            trigger=cloudbuild.BuildTrigger(id='id_value'),
+            trigger=cloudbuild.BuildTrigger(resource_name='resource_name_value'),
         )
 
 

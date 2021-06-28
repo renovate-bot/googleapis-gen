@@ -1,0 +1,53 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.cloud.iap_v1beta1",
+  "protoPackage": "google.cloud.iap.v1beta1",
+  "schema": "1.0",
+  "services": {
+    "IdentityAwareProxyAdminV1Beta1": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IdentityAwareProxyAdminV1Beta1Client",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": [
+                "get_iam_policy"
+              ]
+            },
+            "SetIamPolicy": {
+              "methods": [
+                "set_iam_policy"
+              ]
+            },
+            "TestIamPermissions": {
+              "methods": [
+                "test_iam_permissions"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "IdentityAwareProxyAdminV1Beta1AsyncClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": [
+                "get_iam_policy"
+              ]
+            },
+            "SetIamPolicy": {
+              "methods": [
+                "set_iam_policy"
+              ]
+            },
+            "TestIamPermissions": {
+              "methods": [
+                "test_iam_permissions"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

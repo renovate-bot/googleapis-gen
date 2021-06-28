@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateBuildTriggerRequest() {
+    parent_ = "";
     projectId_ = "";
   }
 
@@ -72,6 +73,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            parent_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -102,6 +109,54 @@ private static final long serialVersionUID = 0L;
     return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_CreateBuildTriggerRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloudbuild.v1.CreateBuildTriggerRequest.class, com.google.cloudbuild.v1.CreateBuildTriggerRequest.Builder.class);
+  }
+
+  public static final int PARENT_FIELD_NUMBER = 3;
+  private volatile java.lang.Object parent_;
+  /**
+   * <pre>
+   * The parent resource where this trigger will be created.
+   * Format: `projects/{project}/locations/{location}`
+   * </pre>
+   *
+   * <code>string parent = 3 [(.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
+   */
+  @java.lang.Override
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The parent resource where this trigger will be created.
+   * Format: `projects/{project}/locations/{location}`
+   * </pre>
+   *
+   * <code>string parent = 3 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
@@ -208,6 +263,9 @@ private static final long serialVersionUID = 0L;
     if (trigger_ != null) {
       output.writeMessage(2, getTrigger());
     }
+    if (!getParentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, parent_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -224,6 +282,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getTrigger());
     }
+    if (!getParentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, parent_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -239,6 +300,8 @@ private static final long serialVersionUID = 0L;
     }
     com.google.cloudbuild.v1.CreateBuildTriggerRequest other = (com.google.cloudbuild.v1.CreateBuildTriggerRequest) obj;
 
+    if (!getParent()
+        .equals(other.getParent())) return false;
     if (!getProjectId()
         .equals(other.getProjectId())) return false;
     if (hasTrigger() != other.hasTrigger()) return false;
@@ -257,6 +320,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
     if (hasTrigger()) {
@@ -400,6 +465,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      parent_ = "";
+
       projectId_ = "";
 
       if (triggerBuilder_ == null) {
@@ -434,6 +501,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloudbuild.v1.CreateBuildTriggerRequest buildPartial() {
       com.google.cloudbuild.v1.CreateBuildTriggerRequest result = new com.google.cloudbuild.v1.CreateBuildTriggerRequest(this);
+      result.parent_ = parent_;
       result.projectId_ = projectId_;
       if (triggerBuilder_ == null) {
         result.trigger_ = trigger_;
@@ -488,6 +556,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.cloudbuild.v1.CreateBuildTriggerRequest other) {
       if (other == com.google.cloudbuild.v1.CreateBuildTriggerRequest.getDefaultInstance()) return this;
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
@@ -521,6 +593,107 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object parent_ = "";
+    /**
+     * <pre>
+     * The parent resource where this trigger will be created.
+     * Format: `projects/{project}/locations/{location}`
+     * </pre>
+     *
+     * <code>string parent = 3 [(.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
+     */
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The parent resource where this trigger will be created.
+     * Format: `projects/{project}/locations/{location}`
+     * </pre>
+     *
+     * <code>string parent = 3 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
+     */
+    public com.google.protobuf.ByteString
+        getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The parent resource where this trigger will be created.
+     * Format: `projects/{project}/locations/{location}`
+     * </pre>
+     *
+     * <code>string parent = 3 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The parent resource where this trigger will be created.
+     * Format: `projects/{project}/locations/{location}`
+     * </pre>
+     *
+     * <code>string parent = 3 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+      
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The parent resource where this trigger will be created.
+     * Format: `projects/{project}/locations/{location}`
+     * </pre>
+     *
+     * <code>string parent = 3 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      parent_ = value;
+      onChanged();
       return this;
     }
 

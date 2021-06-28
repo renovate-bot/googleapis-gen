@@ -38,6 +38,7 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
                 ProjectId = "",
                 Trigger = "",
                 Secret = "",
+                Name = "",
             };
             // Make the request
             ReceiveTriggerWebhookResponse response = await cloudBuildClient.ReceiveTriggerWebhookAsync(request);

@@ -6,7 +6,8 @@ package com.google.cloudbuild.v1;
 /**
  * <pre>
  * Location of the source manifest in Google Cloud Storage.
- * This feature is in Preview.
+ * This feature is in Preview; see description
+ * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
  * </pre>
  *
  * Protobuf type {@code google.devtools.cloudbuild.v1.StorageSourceManifest}
@@ -397,7 +398,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Location of the source manifest in Google Cloud Storage.
-   * This feature is in Preview.
+   * This feature is in Preview; see description
+   * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudbuild.v1.StorageSourceManifest}

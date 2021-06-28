@@ -36,6 +36,7 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
                 ProjectId = "",
                 TriggerId = "",
                 Source = new RepoSource(),
+                BuildTriggerName = BuildTriggerName.FromProjectTrigger("[PROJECT]", "[TRIGGER]"),
             };
             // Make the request
             Operation<Build, BuildOperationMetadata> response = cloudBuildClient.RunBuildTrigger(request);
