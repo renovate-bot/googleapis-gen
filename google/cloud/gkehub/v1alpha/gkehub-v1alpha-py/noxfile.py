@@ -47,7 +47,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/cloud/gkehub_v1alpha/',
+        '--cov=google/cloud/gkehub/servicemesh_v1alpha/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',

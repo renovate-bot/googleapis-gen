@@ -47,7 +47,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/cloud/gkehub_v1beta/',
+        '--cov=google/cloud/gkehub/multiclusteringress_v1beta/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',
