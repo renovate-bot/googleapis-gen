@@ -22,9 +22,9 @@ require "gapic/grpc/service_stub"
 
 require "google/dataflow/v1beta3/jobs_pb"
 require "google/dataflow/v1beta3/jobs_services_pb"
-require "google/cloud/dataflow/v1beta3/jobs_v1_beta3"
+require "google/cloud/dataflow/v1beta3/jobs"
 
-class ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::ClientTest < Minitest::Test
+class ::Google::Cloud::Dataflow::V1beta3::Jobs::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -74,7 +74,7 @@ class ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, create_job_client_stub do
       # Create client
-      client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -138,7 +138,7 @@ class ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, get_job_client_stub do
       # Create client
-      client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -202,7 +202,7 @@ class ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, update_job_client_stub do
       # Create client
-      client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -270,7 +270,7 @@ class ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, list_jobs_client_stub do
       # Create client
-      client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -343,7 +343,7 @@ class ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, aggregated_list_jobs_client_stub do
       # Create client
-      client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -406,7 +406,7 @@ class ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, check_active_jobs_client_stub do
       # Create client
-      client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -474,7 +474,7 @@ class ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, snapshot_job_client_stub do
       # Create client
-      client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -518,7 +518,7 @@ class ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::ClientTest < Minitest::Te
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -528,6 +528,6 @@ class ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::ClientTest < Minitest::Te
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::Dataflow::V1beta3::Jobs::Client::Configuration, config
   end
 end

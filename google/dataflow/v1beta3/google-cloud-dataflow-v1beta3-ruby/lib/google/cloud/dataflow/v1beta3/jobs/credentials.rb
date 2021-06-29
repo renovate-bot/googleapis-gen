@@ -22,8 +22,8 @@ module Google
   module Cloud
     module Dataflow
       module V1beta3
-        module MetricsV1Beta3
-          # Credentials for the MetricsV1Beta3 API.
+        module Jobs
+          # Credentials for the Jobs API.
           class Credentials < ::Google::Auth::Credentials
             self.scope = [
               "https://www.googleapis.com/auth/cloud-platform",

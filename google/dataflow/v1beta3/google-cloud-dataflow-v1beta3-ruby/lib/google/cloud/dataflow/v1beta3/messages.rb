@@ -22,27 +22,28 @@ require "gapic/config/method"
 
 require "google/cloud/dataflow/v1beta3/version"
 
-require "google/cloud/dataflow/v1beta3/snapshots_v1_beta3/credentials"
-require "google/cloud/dataflow/v1beta3/snapshots_v1_beta3/client"
+require "google/cloud/dataflow/v1beta3/messages/credentials"
+require "google/cloud/dataflow/v1beta3/messages/client"
 
 module Google
   module Cloud
     module Dataflow
       module V1beta3
         ##
-        # Provides methods to manage snapshots of Google Cloud Dataflow jobs.
+        # The Dataflow Messages API is used for monitoring the progress of
+        # Dataflow jobs.
         #
         # To load this service and instantiate a client:
         #
-        #     require "google/cloud/dataflow/v1beta3/snapshots_v1_beta3"
-        #     client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new
+        #     require "google/cloud/dataflow/v1beta3/messages"
+        #     client = ::Google::Cloud::Dataflow::V1beta3::Messages::Client.new
         #
-        module SnapshotsV1Beta3
+        module Messages
         end
       end
     end
   end
 end
 
-helper_path = ::File.join __dir__, "snapshots_v1_beta3", "helpers.rb"
-require "google/cloud/dataflow/v1beta3/snapshots_v1_beta3/helpers" if ::File.file? helper_path
+helper_path = ::File.join __dir__, "messages", "helpers.rb"
+require "google/cloud/dataflow/v1beta3/messages/helpers" if ::File.file? helper_path

@@ -22,8 +22,8 @@ require "gapic/config/method"
 
 require "google/cloud/dataflow/v1beta3/version"
 
-require "google/cloud/dataflow/v1beta3/metrics_v1_beta3/credentials"
-require "google/cloud/dataflow/v1beta3/metrics_v1_beta3/client"
+require "google/cloud/dataflow/v1beta3/metrics/credentials"
+require "google/cloud/dataflow/v1beta3/metrics/client"
 
 module Google
   module Cloud
@@ -35,15 +35,15 @@ module Google
         #
         # To load this service and instantiate a client:
         #
-        #     require "google/cloud/dataflow/v1beta3/metrics_v1_beta3"
-        #     client = ::Google::Cloud::Dataflow::V1beta3::MetricsV1Beta3::Client.new
+        #     require "google/cloud/dataflow/v1beta3/metrics"
+        #     client = ::Google::Cloud::Dataflow::V1beta3::Metrics::Client.new
         #
-        module MetricsV1Beta3
+        module Metrics
         end
       end
     end
   end
 end
 
-helper_path = ::File.join __dir__, "metrics_v1_beta3", "helpers.rb"
-require "google/cloud/dataflow/v1beta3/metrics_v1_beta3/helpers" if ::File.file? helper_path
+helper_path = ::File.join __dir__, "metrics", "helpers.rb"
+require "google/cloud/dataflow/v1beta3/metrics/helpers" if ::File.file? helper_path

@@ -23,28 +23,28 @@ module Google
   module Cloud
     module Dataflow
       module V1beta3
-        module MetricsV1Beta3
+        module Metrics
           ##
-          # Client for the MetricsV1Beta3 service.
+          # Client for the Metrics service.
           #
           # The Dataflow Metrics API lets you monitor the progress of Dataflow
           # jobs.
           #
           class Client
             # @private
-            attr_reader :metrics_v1_beta3_stub
+            attr_reader :metrics_stub
 
             ##
-            # Configure the MetricsV1Beta3 Client class.
+            # Configure the Metrics Client class.
             #
-            # See {::Google::Cloud::Dataflow::V1beta3::MetricsV1Beta3::Client::Configuration}
+            # See {::Google::Cloud::Dataflow::V1beta3::Metrics::Client::Configuration}
             # for a description of the configuration fields.
             #
             # ## Example
             #
-            # To modify the configuration for all MetricsV1Beta3 clients:
+            # To modify the configuration for all Metrics clients:
             #
-            #     ::Google::Cloud::Dataflow::V1beta3::MetricsV1Beta3::Client.configure do |config|
+            #     ::Google::Cloud::Dataflow::V1beta3::Metrics::Client.configure do |config|
             #       config.timeout = 10.0
             #     end
             #
@@ -73,13 +73,13 @@ module Google
             end
 
             ##
-            # Configure the MetricsV1Beta3 Client instance.
+            # Configure the Metrics Client instance.
             #
             # The configuration is set to the derived mode, meaning that values can be changed,
             # but structural changes (adding new fields, etc.) are not allowed. Structural changes
             # should be made on {Client.configure}.
             #
-            # See {::Google::Cloud::Dataflow::V1beta3::MetricsV1Beta3::Client::Configuration}
+            # See {::Google::Cloud::Dataflow::V1beta3::Metrics::Client::Configuration}
             # for a description of the configuration fields.
             #
             # @yield [config] Configure the Client client.
@@ -93,23 +93,23 @@ module Google
             end
 
             ##
-            # Create a new MetricsV1Beta3 client object.
+            # Create a new Metrics client object.
             #
             # ## Examples
             #
-            # To create a new MetricsV1Beta3 client with the default
+            # To create a new Metrics client with the default
             # configuration:
             #
-            #     client = ::Google::Cloud::Dataflow::V1beta3::MetricsV1Beta3::Client.new
+            #     client = ::Google::Cloud::Dataflow::V1beta3::Metrics::Client.new
             #
-            # To create a new MetricsV1Beta3 client with a custom
+            # To create a new Metrics client with a custom
             # configuration:
             #
-            #     client = ::Google::Cloud::Dataflow::V1beta3::MetricsV1Beta3::Client.new do |config|
+            #     client = ::Google::Cloud::Dataflow::V1beta3::Metrics::Client.new do |config|
             #       config.timeout = 10.0
             #     end
             #
-            # @yield [config] Configure the MetricsV1Beta3 client.
+            # @yield [config] Configure the Metrics client.
             # @yieldparam config [Client::Configuration]
             #
             def initialize
@@ -140,7 +140,7 @@ module Google
               @quota_project_id = @config.quota_project
               @quota_project_id ||= credentials.quota_project_id if credentials.respond_to? :quota_project_id
 
-              @metrics_v1_beta3_stub = ::Gapic::ServiceStub.new(
+              @metrics_stub = ::Gapic::ServiceStub.new(
                 ::Google::Cloud::Dataflow::V1beta3::MetricsV1Beta3::Stub,
                 credentials:  credentials,
                 endpoint:     @config.endpoint,
@@ -218,7 +218,7 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @metrics_v1_beta3_stub.call_rpc :get_job_metrics, request, options: options do |response, operation|
+              @metrics_stub.call_rpc :get_job_metrics, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -294,8 +294,8 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @metrics_v1_beta3_stub.call_rpc :get_job_execution_details, request, options: options do |response, operation|
-                response = ::Gapic::PagedEnumerable.new @metrics_v1_beta3_stub, :get_job_execution_details, request, response, operation, options
+              @metrics_stub.call_rpc :get_job_execution_details, request, options: options do |response, operation|
+                response = ::Gapic::PagedEnumerable.new @metrics_stub, :get_job_execution_details, request, response, operation, options
                 yield response, operation if block_given?
                 return response
               end
@@ -378,8 +378,8 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @metrics_v1_beta3_stub.call_rpc :get_stage_execution_details, request, options: options do |response, operation|
-                response = ::Gapic::PagedEnumerable.new @metrics_v1_beta3_stub, :get_stage_execution_details, request, response, operation, options
+              @metrics_stub.call_rpc :get_stage_execution_details, request, options: options do |response, operation|
+                response = ::Gapic::PagedEnumerable.new @metrics_stub, :get_stage_execution_details, request, response, operation, options
                 yield response, operation if block_given?
                 return response
               end
@@ -388,13 +388,13 @@ module Google
             end
 
             ##
-            # Configuration class for the MetricsV1Beta3 API.
+            # Configuration class for the Metrics API.
             #
-            # This class represents the configuration for MetricsV1Beta3,
+            # This class represents the configuration for Metrics,
             # providing control over timeouts, retry behavior, logging, transport
             # parameters, and other low-level controls. Certain parameters can also be
             # applied individually to specific RPCs. See
-            # {::Google::Cloud::Dataflow::V1beta3::MetricsV1Beta3::Client::Configuration::Rpcs}
+            # {::Google::Cloud::Dataflow::V1beta3::Metrics::Client::Configuration::Rpcs}
             # for a list of RPCs that can be configured independently.
             #
             # Configuration can be applied globally to all clients, or to a single client
@@ -405,14 +405,14 @@ module Google
             # To modify the global config, setting the timeout for get_job_metrics
             # to 20 seconds, and all remaining timeouts to 10 seconds:
             #
-            #     ::Google::Cloud::Dataflow::V1beta3::MetricsV1Beta3::Client.configure do |config|
+            #     ::Google::Cloud::Dataflow::V1beta3::Metrics::Client.configure do |config|
             #       config.timeout = 10.0
             #       config.rpcs.get_job_metrics.timeout = 20.0
             #     end
             #
             # To apply the above configuration only to a new client:
             #
-            #     client = ::Google::Cloud::Dataflow::V1beta3::MetricsV1Beta3::Client.new do |config|
+            #     client = ::Google::Cloud::Dataflow::V1beta3::Metrics::Client.new do |config|
             #       config.timeout = 10.0
             #       config.rpcs.get_job_metrics.timeout = 20.0
             #     end
@@ -506,7 +506,7 @@ module Google
               end
 
               ##
-              # Configuration RPC class for the MetricsV1Beta3 API.
+              # Configuration RPC class for the Metrics API.
               #
               # Includes fields providing the configuration for each RPC in this service.
               # Each configuration object is of type `Gapic::Config::Method` and includes

@@ -23,28 +23,28 @@ module Google
   module Cloud
     module Dataflow
       module V1beta3
-        module JobsV1Beta3
+        module Jobs
           ##
-          # Client for the JobsV1Beta3 service.
+          # Client for the Jobs service.
           #
           # Provides a method to create and modify Google Cloud Dataflow jobs.
           # A Job is a multi-stage computation graph run by the Cloud Dataflow service.
           #
           class Client
             # @private
-            attr_reader :jobs_v1_beta3_stub
+            attr_reader :jobs_stub
 
             ##
-            # Configure the JobsV1Beta3 Client class.
+            # Configure the Jobs Client class.
             #
-            # See {::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client::Configuration}
+            # See {::Google::Cloud::Dataflow::V1beta3::Jobs::Client::Configuration}
             # for a description of the configuration fields.
             #
             # ## Example
             #
-            # To modify the configuration for all JobsV1Beta3 clients:
+            # To modify the configuration for all Jobs clients:
             #
-            #     ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.configure do |config|
+            #     ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.configure do |config|
             #       config.timeout = 10.0
             #     end
             #
@@ -73,13 +73,13 @@ module Google
             end
 
             ##
-            # Configure the JobsV1Beta3 Client instance.
+            # Configure the Jobs Client instance.
             #
             # The configuration is set to the derived mode, meaning that values can be changed,
             # but structural changes (adding new fields, etc.) are not allowed. Structural changes
             # should be made on {Client.configure}.
             #
-            # See {::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client::Configuration}
+            # See {::Google::Cloud::Dataflow::V1beta3::Jobs::Client::Configuration}
             # for a description of the configuration fields.
             #
             # @yield [config] Configure the Client client.
@@ -93,23 +93,23 @@ module Google
             end
 
             ##
-            # Create a new JobsV1Beta3 client object.
+            # Create a new Jobs client object.
             #
             # ## Examples
             #
-            # To create a new JobsV1Beta3 client with the default
+            # To create a new Jobs client with the default
             # configuration:
             #
-            #     client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new
+            #     client = ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.new
             #
-            # To create a new JobsV1Beta3 client with a custom
+            # To create a new Jobs client with a custom
             # configuration:
             #
-            #     client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new do |config|
+            #     client = ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.new do |config|
             #       config.timeout = 10.0
             #     end
             #
-            # @yield [config] Configure the JobsV1Beta3 client.
+            # @yield [config] Configure the Jobs client.
             # @yieldparam config [Client::Configuration]
             #
             def initialize
@@ -140,7 +140,7 @@ module Google
               @quota_project_id = @config.quota_project
               @quota_project_id ||= credentials.quota_project_id if credentials.respond_to? :quota_project_id
 
-              @jobs_v1_beta3_stub = ::Gapic::ServiceStub.new(
+              @jobs_stub = ::Gapic::ServiceStub.new(
                 ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Stub,
                 credentials:  credentials,
                 endpoint:     @config.endpoint,
@@ -219,7 +219,7 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @jobs_v1_beta3_stub.call_rpc :create_job, request, options: options do |response, operation|
+              @jobs_stub.call_rpc :create_job, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -293,7 +293,7 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @jobs_v1_beta3_stub.call_rpc :get_job, request, options: options do |response, operation|
+              @jobs_stub.call_rpc :get_job, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -368,7 +368,7 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @jobs_v1_beta3_stub.call_rpc :update_job, request, options: options do |response, operation|
+              @jobs_stub.call_rpc :update_job, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -451,8 +451,8 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @jobs_v1_beta3_stub.call_rpc :list_jobs, request, options: options do |response, operation|
-                response = ::Gapic::PagedEnumerable.new @jobs_v1_beta3_stub, :list_jobs, request, response, operation, options
+              @jobs_stub.call_rpc :list_jobs, request, options: options do |response, operation|
+                response = ::Gapic::PagedEnumerable.new @jobs_stub, :list_jobs, request, response, operation, options
                 yield response, operation if block_given?
                 return response
               end
@@ -528,8 +528,8 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @jobs_v1_beta3_stub.call_rpc :aggregated_list_jobs, request, options: options do |response, operation|
-                response = ::Gapic::PagedEnumerable.new @jobs_v1_beta3_stub, :aggregated_list_jobs, request, response, operation, options
+              @jobs_stub.call_rpc :aggregated_list_jobs, request, options: options do |response, operation|
+                response = ::Gapic::PagedEnumerable.new @jobs_stub, :aggregated_list_jobs, request, response, operation, options
                 yield response, operation if block_given?
                 return response
               end
@@ -589,7 +589,7 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @jobs_v1_beta3_stub.call_rpc :check_active_jobs, request, options: options do |response, operation|
+              @jobs_stub.call_rpc :check_active_jobs, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -659,7 +659,7 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @jobs_v1_beta3_stub.call_rpc :snapshot_job, request, options: options do |response, operation|
+              @jobs_stub.call_rpc :snapshot_job, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -668,13 +668,13 @@ module Google
             end
 
             ##
-            # Configuration class for the JobsV1Beta3 API.
+            # Configuration class for the Jobs API.
             #
-            # This class represents the configuration for JobsV1Beta3,
+            # This class represents the configuration for Jobs,
             # providing control over timeouts, retry behavior, logging, transport
             # parameters, and other low-level controls. Certain parameters can also be
             # applied individually to specific RPCs. See
-            # {::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client::Configuration::Rpcs}
+            # {::Google::Cloud::Dataflow::V1beta3::Jobs::Client::Configuration::Rpcs}
             # for a list of RPCs that can be configured independently.
             #
             # Configuration can be applied globally to all clients, or to a single client
@@ -685,14 +685,14 @@ module Google
             # To modify the global config, setting the timeout for create_job
             # to 20 seconds, and all remaining timeouts to 10 seconds:
             #
-            #     ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.configure do |config|
+            #     ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.configure do |config|
             #       config.timeout = 10.0
             #       config.rpcs.create_job.timeout = 20.0
             #     end
             #
             # To apply the above configuration only to a new client:
             #
-            #     client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new do |config|
+            #     client = ::Google::Cloud::Dataflow::V1beta3::Jobs::Client.new do |config|
             #       config.timeout = 10.0
             #       config.rpcs.create_job.timeout = 20.0
             #     end
@@ -786,7 +786,7 @@ module Google
               end
 
               ##
-              # Configuration RPC class for the JobsV1Beta3 API.
+              # Configuration RPC class for the Jobs API.
               #
               # Includes fields providing the configuration for each RPC in this service.
               # Each configuration object is of type `Gapic::Config::Method` and includes

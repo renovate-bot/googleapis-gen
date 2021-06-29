@@ -8,7 +8,7 @@
     "SnapshotsV1Beta3": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client",
+          "libraryClient": "::Google::Cloud::Dataflow::V1beta3::Snapshots::Client",
           "rpcs": {
             "GetSnapshot": {
               "methods": [
@@ -32,7 +32,7 @@
     "JobsV1Beta3": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client",
+          "libraryClient": "::Google::Cloud::Dataflow::V1beta3::Jobs::Client",
           "rpcs": {
             "CreateJob": {
               "methods": [
@@ -76,7 +76,7 @@
     "MessagesV1Beta3": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dataflow::V1beta3::MessagesV1Beta3::Client",
+          "libraryClient": "::Google::Cloud::Dataflow::V1beta3::Messages::Client",
           "rpcs": {
             "ListJobMessages": {
               "methods": [
@@ -90,7 +90,7 @@
     "MetricsV1Beta3": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dataflow::V1beta3::MetricsV1Beta3::Client",
+          "libraryClient": "::Google::Cloud::Dataflow::V1beta3::Metrics::Client",
           "rpcs": {
             "GetJobMetrics": {
               "methods": [

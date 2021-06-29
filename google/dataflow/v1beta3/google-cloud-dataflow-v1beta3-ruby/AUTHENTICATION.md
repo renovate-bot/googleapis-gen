@@ -27,7 +27,7 @@ export DATAFLOW_CREDENTIALS=path/to/keyfile.json
 ```ruby
 require "google/cloud/dataflow/v1beta3"
 
-client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new
+client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new
 ```
 
 ## Credential Lookup
@@ -64,7 +64,7 @@ containers where writing files is difficult or not encouraged.
 
 The environment variables that google-cloud-dataflow-v1beta3
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Credentials}):
+{::Google::Cloud::Dataflow::V1beta3::Snapshots::Credentials}):
 
 1. `DATAFLOW_CREDENTIALS` - Path to JSON file, or JSON contents
 2. `DATAFLOW_KEYFILE` - Path to JSON file, or JSON contents
@@ -77,7 +77,7 @@ require "google/cloud/dataflow/v1beta3"
 
 ENV["DATAFLOW_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new
+client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new
 ```
 
 ### Configuration
@@ -88,7 +88,7 @@ environment variables. Either on an individual client initialization:
 ```ruby
 require "google/cloud/dataflow/v1beta3"
 
-client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new do |config|
+client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -98,11 +98,11 @@ Or configured globally for all clients:
 ```ruby
 require "google/cloud/dataflow/v1beta3"
 
-::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.configure do |config|
+::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new
+client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new
 ```
 
 ### Cloud SDK

@@ -22,9 +22,9 @@ require "gapic/grpc/service_stub"
 
 require "google/dataflow/v1beta3/messages_pb"
 require "google/dataflow/v1beta3/messages_services_pb"
-require "google/cloud/dataflow/v1beta3/messages_v1_beta3"
+require "google/cloud/dataflow/v1beta3/messages"
 
-class ::Google::Cloud::Dataflow::V1beta3::MessagesV1Beta3::ClientTest < Minitest::Test
+class ::Google::Cloud::Dataflow::V1beta3::Messages::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -80,7 +80,7 @@ class ::Google::Cloud::Dataflow::V1beta3::MessagesV1Beta3::ClientTest < Minitest
 
     Gapic::ServiceStub.stub :new, list_job_messages_client_stub do
       # Create client
-      client = ::Google::Cloud::Dataflow::V1beta3::MessagesV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Messages::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -129,7 +129,7 @@ class ::Google::Cloud::Dataflow::V1beta3::MessagesV1Beta3::ClientTest < Minitest
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dataflow::V1beta3::MessagesV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Messages::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -139,6 +139,6 @@ class ::Google::Cloud::Dataflow::V1beta3::MessagesV1Beta3::ClientTest < Minitest
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dataflow::V1beta3::MessagesV1Beta3::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::Dataflow::V1beta3::Messages::Client::Configuration, config
   end
 end

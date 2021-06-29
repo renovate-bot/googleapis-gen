@@ -22,9 +22,9 @@ require "gapic/grpc/service_stub"
 
 require "google/dataflow/v1beta3/snapshots_pb"
 require "google/dataflow/v1beta3/snapshots_services_pb"
-require "google/cloud/dataflow/v1beta3/snapshots_v1_beta3"
+require "google/cloud/dataflow/v1beta3/snapshots"
 
-class ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::ClientTest < Minitest::Test
+class ::Google::Cloud::Dataflow::V1beta3::Snapshots::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -70,7 +70,7 @@ class ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::ClientTest < Minites
 
     Gapic::ServiceStub.stub :new, get_snapshot_client_stub do
       # Create client
-      client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -132,7 +132,7 @@ class ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::ClientTest < Minites
 
     Gapic::ServiceStub.stub :new, delete_snapshot_client_stub do
       # Create client
-      client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -194,7 +194,7 @@ class ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::ClientTest < Minites
 
     Gapic::ServiceStub.stub :new, list_snapshots_client_stub do
       # Create client
-      client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -238,7 +238,7 @@ class ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::ClientTest < Minites
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new do |config|
+      client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -248,6 +248,6 @@ class ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::ClientTest < Minites
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client::Configuration, config
   end
 end

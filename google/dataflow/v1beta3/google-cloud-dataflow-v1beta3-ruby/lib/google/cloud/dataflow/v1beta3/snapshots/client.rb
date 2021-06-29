@@ -23,27 +23,27 @@ module Google
   module Cloud
     module Dataflow
       module V1beta3
-        module SnapshotsV1Beta3
+        module Snapshots
           ##
-          # Client for the SnapshotsV1Beta3 service.
+          # Client for the Snapshots service.
           #
           # Provides methods to manage snapshots of Google Cloud Dataflow jobs.
           #
           class Client
             # @private
-            attr_reader :snapshots_v1_beta3_stub
+            attr_reader :snapshots_stub
 
             ##
-            # Configure the SnapshotsV1Beta3 Client class.
+            # Configure the Snapshots Client class.
             #
-            # See {::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client::Configuration}
+            # See {::Google::Cloud::Dataflow::V1beta3::Snapshots::Client::Configuration}
             # for a description of the configuration fields.
             #
             # ## Example
             #
-            # To modify the configuration for all SnapshotsV1Beta3 clients:
+            # To modify the configuration for all Snapshots clients:
             #
-            #     ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.configure do |config|
+            #     ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.configure do |config|
             #       config.timeout = 10.0
             #     end
             #
@@ -72,13 +72,13 @@ module Google
             end
 
             ##
-            # Configure the SnapshotsV1Beta3 Client instance.
+            # Configure the Snapshots Client instance.
             #
             # The configuration is set to the derived mode, meaning that values can be changed,
             # but structural changes (adding new fields, etc.) are not allowed. Structural changes
             # should be made on {Client.configure}.
             #
-            # See {::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client::Configuration}
+            # See {::Google::Cloud::Dataflow::V1beta3::Snapshots::Client::Configuration}
             # for a description of the configuration fields.
             #
             # @yield [config] Configure the Client client.
@@ -92,23 +92,23 @@ module Google
             end
 
             ##
-            # Create a new SnapshotsV1Beta3 client object.
+            # Create a new Snapshots client object.
             #
             # ## Examples
             #
-            # To create a new SnapshotsV1Beta3 client with the default
+            # To create a new Snapshots client with the default
             # configuration:
             #
-            #     client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new
+            #     client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new
             #
-            # To create a new SnapshotsV1Beta3 client with a custom
+            # To create a new Snapshots client with a custom
             # configuration:
             #
-            #     client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new do |config|
+            #     client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new do |config|
             #       config.timeout = 10.0
             #     end
             #
-            # @yield [config] Configure the SnapshotsV1Beta3 client.
+            # @yield [config] Configure the Snapshots client.
             # @yieldparam config [Client::Configuration]
             #
             def initialize
@@ -139,7 +139,7 @@ module Google
               @quota_project_id = @config.quota_project
               @quota_project_id ||= credentials.quota_project_id if credentials.respond_to? :quota_project_id
 
-              @snapshots_v1_beta3_stub = ::Gapic::ServiceStub.new(
+              @snapshots_stub = ::Gapic::ServiceStub.new(
                 ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Stub,
                 credentials:  credentials,
                 endpoint:     @config.endpoint,
@@ -206,7 +206,7 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @snapshots_v1_beta3_stub.call_rpc :get_snapshot, request, options: options do |response, operation|
+              @snapshots_stub.call_rpc :get_snapshot, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -270,7 +270,7 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @snapshots_v1_beta3_stub.call_rpc :delete_snapshot, request, options: options do |response, operation|
+              @snapshots_stub.call_rpc :delete_snapshot, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -334,7 +334,7 @@ module Google
               options.apply_defaults metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @snapshots_v1_beta3_stub.call_rpc :list_snapshots, request, options: options do |response, operation|
+              @snapshots_stub.call_rpc :list_snapshots, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -343,13 +343,13 @@ module Google
             end
 
             ##
-            # Configuration class for the SnapshotsV1Beta3 API.
+            # Configuration class for the Snapshots API.
             #
-            # This class represents the configuration for SnapshotsV1Beta3,
+            # This class represents the configuration for Snapshots,
             # providing control over timeouts, retry behavior, logging, transport
             # parameters, and other low-level controls. Certain parameters can also be
             # applied individually to specific RPCs. See
-            # {::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client::Configuration::Rpcs}
+            # {::Google::Cloud::Dataflow::V1beta3::Snapshots::Client::Configuration::Rpcs}
             # for a list of RPCs that can be configured independently.
             #
             # Configuration can be applied globally to all clients, or to a single client
@@ -360,14 +360,14 @@ module Google
             # To modify the global config, setting the timeout for get_snapshot
             # to 20 seconds, and all remaining timeouts to 10 seconds:
             #
-            #     ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.configure do |config|
+            #     ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.configure do |config|
             #       config.timeout = 10.0
             #       config.rpcs.get_snapshot.timeout = 20.0
             #     end
             #
             # To apply the above configuration only to a new client:
             #
-            #     client = ::Google::Cloud::Dataflow::V1beta3::SnapshotsV1Beta3::Client.new do |config|
+            #     client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new do |config|
             #       config.timeout = 10.0
             #       config.rpcs.get_snapshot.timeout = 20.0
             #     end
@@ -461,7 +461,7 @@ module Google
               end
 
               ##
-              # Configuration RPC class for the SnapshotsV1Beta3 API.
+              # Configuration RPC class for the Snapshots API.
               #
               # Includes fields providing the configuration for each RPC in this service.
               # Each configuration object is of type `Gapic::Config::Method` and includes

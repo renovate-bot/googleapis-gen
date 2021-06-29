@@ -22,28 +22,27 @@ require "gapic/config/method"
 
 require "google/cloud/dataflow/v1beta3/version"
 
-require "google/cloud/dataflow/v1beta3/jobs_v1_beta3/credentials"
-require "google/cloud/dataflow/v1beta3/jobs_v1_beta3/client"
+require "google/cloud/dataflow/v1beta3/snapshots/credentials"
+require "google/cloud/dataflow/v1beta3/snapshots/client"
 
 module Google
   module Cloud
     module Dataflow
       module V1beta3
         ##
-        # Provides a method to create and modify Google Cloud Dataflow jobs.
-        # A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+        # Provides methods to manage snapshots of Google Cloud Dataflow jobs.
         #
         # To load this service and instantiate a client:
         #
-        #     require "google/cloud/dataflow/v1beta3/jobs_v1_beta3"
-        #     client = ::Google::Cloud::Dataflow::V1beta3::JobsV1Beta3::Client.new
+        #     require "google/cloud/dataflow/v1beta3/snapshots"
+        #     client = ::Google::Cloud::Dataflow::V1beta3::Snapshots::Client.new
         #
-        module JobsV1Beta3
+        module Snapshots
         end
       end
     end
   end
 end
 
-helper_path = ::File.join __dir__, "jobs_v1_beta3", "helpers.rb"
-require "google/cloud/dataflow/v1beta3/jobs_v1_beta3/helpers" if ::File.file? helper_path
+helper_path = ::File.join __dir__, "snapshots", "helpers.rb"
+require "google/cloud/dataflow/v1beta3/snapshots/helpers" if ::File.file? helper_path
