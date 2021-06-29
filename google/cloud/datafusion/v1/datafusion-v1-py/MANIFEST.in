@@ -1,0 +1,2 @@
+recursive-include google/cloud/datafusion *.py
+recursive-include google/cloud/datafusion_v1 *.py

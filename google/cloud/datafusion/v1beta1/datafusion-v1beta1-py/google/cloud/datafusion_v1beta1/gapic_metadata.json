@@ -1,0 +1,153 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.cloud.datafusion_v1beta1",
+  "protoPackage": "google.cloud.datafusion.v1beta1",
+  "schema": "1.0",
+  "services": {
+    "DataFusion": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataFusionClient",
+          "rpcs": {
+            "AddDnsPeering": {
+              "methods": [
+                "add_dns_peering"
+              ]
+            },
+            "CreateInstance": {
+              "methods": [
+                "create_instance"
+              ]
+            },
+            "DeleteInstance": {
+              "methods": [
+                "delete_instance"
+              ]
+            },
+            "GetInstance": {
+              "methods": [
+                "get_instance"
+              ]
+            },
+            "ListAvailableVersions": {
+              "methods": [
+                "list_available_versions"
+              ]
+            },
+            "ListDnsPeerings": {
+              "methods": [
+                "list_dns_peerings"
+              ]
+            },
+            "ListInstances": {
+              "methods": [
+                "list_instances"
+              ]
+            },
+            "ListNamespaces": {
+              "methods": [
+                "list_namespaces"
+              ]
+            },
+            "RemoveDnsPeering": {
+              "methods": [
+                "remove_dns_peering"
+              ]
+            },
+            "RemoveIamPolicy": {
+              "methods": [
+                "remove_iam_policy"
+              ]
+            },
+            "RestartInstance": {
+              "methods": [
+                "restart_instance"
+              ]
+            },
+            "UpdateInstance": {
+              "methods": [
+                "update_instance"
+              ]
+            },
+            "UpgradeInstance": {
+              "methods": [
+                "upgrade_instance"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "DataFusionAsyncClient",
+          "rpcs": {
+            "AddDnsPeering": {
+              "methods": [
+                "add_dns_peering"
+              ]
+            },
+            "CreateInstance": {
+              "methods": [
+                "create_instance"
+              ]
+            },
+            "DeleteInstance": {
+              "methods": [
+                "delete_instance"
+              ]
+            },
+            "GetInstance": {
+              "methods": [
+                "get_instance"
+              ]
+            },
+            "ListAvailableVersions": {
+              "methods": [
+                "list_available_versions"
+              ]
+            },
+            "ListDnsPeerings": {
+              "methods": [
+                "list_dns_peerings"
+              ]
+            },
+            "ListInstances": {
+              "methods": [
+                "list_instances"
+              ]
+            },
+            "ListNamespaces": {
+              "methods": [
+                "list_namespaces"
+              ]
+            },
+            "RemoveDnsPeering": {
+              "methods": [
+                "remove_dns_peering"
+              ]
+            },
+            "RemoveIamPolicy": {
+              "methods": [
+                "remove_iam_policy"
+              ]
+            },
+            "RestartInstance": {
+              "methods": [
+                "restart_instance"
+              ]
+            },
+            "UpdateInstance": {
+              "methods": [
+                "update_instance"
+              ]
+            },
+            "UpgradeInstance": {
+              "methods": [
+                "upgrade_instance"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
