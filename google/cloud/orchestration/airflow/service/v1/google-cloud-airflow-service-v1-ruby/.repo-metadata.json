@@ -1,0 +1,11 @@
+{
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-airflow-service-v1/latest",
+    "distribution_name": "google-cloud-airflow-service-v1",
+    "language": "ruby",
+    "name_pretty": "Google Cloud Airflow Service V1 API",
+    "repo": "googleapis/google-cloud-ruby",
+    "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-airflow-service-v1 is the official client library for the Google Cloud Airflow Service V1 API. Note that google-cloud-airflow-service-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-airflow-service instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "SERVICE",
+    "library_type": "GAPIC_AUTO"
+}

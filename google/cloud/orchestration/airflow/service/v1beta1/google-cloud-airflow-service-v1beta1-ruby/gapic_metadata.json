@@ -1,0 +1,67 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.orchestration.airflow.service.v1beta1",
+  "libraryPackage": "::Google::Cloud::Orchestration::Airflow::Service::V1beta1",
+  "services": {
+    "Environments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Orchestration::Airflow::Service::V1beta1::Environments::Client",
+          "rpcs": {
+            "CreateEnvironment": {
+              "methods": [
+                "create_environment"
+              ]
+            },
+            "GetEnvironment": {
+              "methods": [
+                "get_environment"
+              ]
+            },
+            "ListEnvironments": {
+              "methods": [
+                "list_environments"
+              ]
+            },
+            "UpdateEnvironment": {
+              "methods": [
+                "update_environment"
+              ]
+            },
+            "DeleteEnvironment": {
+              "methods": [
+                "delete_environment"
+              ]
+            },
+            "RestartWebServer": {
+              "methods": [
+                "restart_web_server"
+              ]
+            },
+            "CheckUpgrade": {
+              "methods": [
+                "check_upgrade"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ImageVersions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Orchestration::Airflow::Service::V1beta1::ImageVersions::Client",
+          "rpcs": {
+            "ListImageVersions": {
+              "methods": [
+                "list_image_versions"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
