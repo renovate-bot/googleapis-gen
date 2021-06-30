@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Resourcemanager
+    module ResourceManager
       module V3
         # A folder in an organization's resource hierarchy, used to
         # organize that organization's resources.
@@ -31,7 +31,7 @@ module Google
         #   @return [::String]
         #     Required. The folder's parent's resource name.
         #     Updates to the folder's parent must be performed using
-        #     {::Google::Cloud::Resourcemanager::V3::Folders::Client#move_folder MoveFolder}.
+        #     {::Google::Cloud::ResourceManager::V3::Folders::Client#move_folder MoveFolder}.
         # @!attribute [rw] display_name
         #   @return [::String]
         #     The folder's display name.
@@ -42,11 +42,11 @@ module Google
         #     than 30 characters. This is captured by the regular expression:
         #     `[\p{L}\p{N}]([\p{L}\p{N}_- ]{0,28}[\p{L}\p{N}])?`.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Resourcemanager::V3::Folder::State]
+        #   @return [::Google::Cloud::ResourceManager::V3::Folder::State]
         #     Output only. The lifecycle state of the folder.
         #     Updates to the state must be performed using
-        #     {::Google::Cloud::Resourcemanager::V3::Folders::Client#delete_folder DeleteFolder} and
-        #     {::Google::Cloud::Resourcemanager::V3::Folders::Client#undelete_folder UndeleteFolder}.
+        #     {::Google::Cloud::ResourceManager::V3::Folders::Client#delete_folder DeleteFolder} and
+        #     {::Google::Cloud::ResourceManager::V3::Folders::Client#undelete_folder UndeleteFolder}.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when the folder was created.
@@ -107,7 +107,7 @@ module Google
         # @!attribute [rw] show_deleted
         #   @return [::Boolean]
         #     Optional. Controls whether folders in the
-        #     {::Google::Cloud::Resourcemanager::V3::Folder::State::DELETE_REQUESTED DELETE_REQUESTED}
+        #     {::Google::Cloud::ResourceManager::V3::Folder::State::DELETE_REQUESTED DELETE_REQUESTED}
         #     state should be returned. Defaults to false.
         class ListFoldersRequest
           include ::Google::Protobuf::MessageExts
@@ -116,7 +116,7 @@ module Google
 
         # The ListFolders response message.
         # @!attribute [rw] folders
-        #   @return [::Array<::Google::Cloud::Resourcemanager::V3::Folder>]
+        #   @return [::Array<::Google::Cloud::ResourceManager::V3::Folder>]
         #     A possibly paginated list of folders that are direct descendants of
         #     the specified parent resource.
         # @!attribute [rw] next_page_token
@@ -175,7 +175,7 @@ module Google
 
         # The response message for searching folders.
         # @!attribute [rw] folders
-        #   @return [::Array<::Google::Cloud::Resourcemanager::V3::Folder>]
+        #   @return [::Array<::Google::Cloud::ResourceManager::V3::Folder>]
         #     A possibly paginated folder search results.
         #     the specified parent resource.
         # @!attribute [rw] next_page_token
@@ -189,7 +189,7 @@ module Google
 
         # The CreateFolder request message.
         # @!attribute [rw] folder
-        #   @return [::Google::Cloud::Resourcemanager::V3::Folder]
+        #   @return [::Google::Cloud::ResourceManager::V3::Folder]
         #     Required. The folder being created, only the display name and parent will be
         #     consulted. All other fields will be ignored.
         class CreateFolderRequest
@@ -216,10 +216,10 @@ module Google
         #
         # Only the `display_name` field can be changed. All other fields will be
         # ignored. Use the
-        # {::Google::Cloud::Resourcemanager::V3::Folders::Client#move_folder MoveFolder} method to
+        # {::Google::Cloud::ResourceManager::V3::Folders::Client#move_folder MoveFolder} method to
         # change the `parent` field.
         # @!attribute [rw] folder
-        #   @return [::Google::Cloud::Resourcemanager::V3::Folder]
+        #   @return [::Google::Cloud::ResourceManager::V3::Folder]
         #     Required. The new definition of the Folder. It must include the `name` field, which
         #     cannot be changed.
         # @!attribute [rw] update_mask

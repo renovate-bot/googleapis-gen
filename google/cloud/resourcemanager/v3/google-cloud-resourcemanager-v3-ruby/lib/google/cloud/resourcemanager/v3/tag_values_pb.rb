@@ -61,7 +61,7 @@ end
 
 module Google
   module Cloud
-    module Resourcemanager
+    module ResourceManager
       module V3
         TagValue = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.resourcemanager.v3.TagValue").msgclass
         ListTagValuesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.resourcemanager.v3.ListTagValuesRequest").msgclass

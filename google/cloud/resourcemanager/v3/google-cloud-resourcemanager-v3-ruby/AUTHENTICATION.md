@@ -1,6 +1,6 @@
 # Authentication
 
-In general, the google-cloud-resourcemanager-v3 library uses
+In general, the google-cloud-resource_manager-v3 library uses
 [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
 credentials to connect to Google Cloud services. When running within
 [Google Cloud Platform environments](#google-cloud-platform-environments) the
@@ -19,20 +19,20 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export RESOURCEMANAGER_CREDENTIALS=path/to/keyfile.json
+export RESOURCE_MANAGER_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
 
 ```ruby
-require "google/cloud/resourcemanager/v3"
+require "google/cloud/resource_manager/v3"
 
-client = ::Google::Cloud::Resourcemanager::V3::Folders::Client.new
+client = ::Google::Cloud::ResourceManager::V3::Folders::Client.new
 ```
 
 ## Credential Lookup
 
-The google-cloud-resourcemanager-v3 library aims to make authentication
+The google-cloud-resource_manager-v3 library aims to make authentication
 as simple as possible, and provides several mechanisms to configure your system
 without requiring **Service Account Credentials** directly in code.
 
@@ -62,22 +62,22 @@ the READMEs for the individual service gems for details.) The path to the
 **Credentials JSON** itself can be stored for environments such as Docker
 containers where writing files is difficult or not encouraged.
 
-The environment variables that google-cloud-resourcemanager-v3
+The environment variables that google-cloud-resource_manager-v3
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Resourcemanager::V3::Folders::Credentials}):
+{::Google::Cloud::ResourceManager::V3::Folders::Credentials}):
 
-1. `RESOURCEMANAGER_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `RESOURCEMANAGER_KEYFILE` - Path to JSON file, or JSON contents
+1. `RESOURCE_MANAGER_CREDENTIALS` - Path to JSON file, or JSON contents
+2. `RESOURCE_MANAGER_KEYFILE` - Path to JSON file, or JSON contents
 3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
-require "google/cloud/resourcemanager/v3"
+require "google/cloud/resource_manager/v3"
 
-ENV["RESOURCEMANAGER_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["RESOURCE_MANAGER_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Resourcemanager::V3::Folders::Client.new
+client = ::Google::Cloud::ResourceManager::V3::Folders::Client.new
 ```
 
 ### Configuration
@@ -86,9 +86,9 @@ The **Credentials JSON** can be configured instead of placing them in
 environment variables. Either on an individual client initialization:
 
 ```ruby
-require "google/cloud/resourcemanager/v3"
+require "google/cloud/resource_manager/v3"
 
-client = ::Google::Cloud::Resourcemanager::V3::Folders::Client.new do |config|
+client = ::Google::Cloud::ResourceManager::V3::Folders::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -96,13 +96,13 @@ end
 Or configured globally for all clients:
 
 ```ruby
-require "google/cloud/resourcemanager/v3"
+require "google/cloud/resource_manager/v3"
 
-::Google::Cloud::Resourcemanager::V3::Folders::Client.configure do |config|
+::Google::Cloud::ResourceManager::V3::Folders::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Resourcemanager::V3::Folders::Client.new
+client = ::Google::Cloud::ResourceManager::V3::Folders::Client.new
 ```
 
 ### Cloud SDK
@@ -133,7 +133,7 @@ To configure your system for this, simply:
 
 Google Cloud requires **Service Account Credentials** to
 connect to the APIs. You will use the **JSON key file** to
-connect to most services with google-cloud-resourcemanager-v3.
+connect to most services with google-cloud-resource_manager-v3.
 
 If you are not running this client within
 [Google Cloud Platform environments](#google-cloud-platform-environments), you

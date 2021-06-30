@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Resourcemanager
+    module ResourceManager
       module V3
         # A TagKey, used to group a set of TagValues.
         # @!attribute [rw] name
@@ -83,7 +83,7 @@ module Google
 
         # The ListTagKeys response message.
         # @!attribute [rw] tag_keys
-        #   @return [::Array<::Google::Cloud::Resourcemanager::V3::TagKey>]
+        #   @return [::Array<::Google::Cloud::ResourceManager::V3::TagKey>]
         #     List of TagKeys that live under the specified parent in the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -106,7 +106,7 @@ module Google
 
         # The request message for creating a TagKey.
         # @!attribute [rw] tag_key
-        #   @return [::Google::Cloud::Resourcemanager::V3::TagKey]
+        #   @return [::Google::Cloud::ResourceManager::V3::TagKey]
         #     Required. The TagKey to be created. Only fields `short_name`, `description`,
         #     and `parent` are considered during the creation request.
         # @!attribute [rw] validate_only
@@ -126,7 +126,7 @@ module Google
 
         # The request message for updating a TagKey.
         # @!attribute [rw] tag_key
-        #   @return [::Google::Cloud::Resourcemanager::V3::TagKey]
+        #   @return [::Google::Cloud::ResourceManager::V3::TagKey]
         #     Required. The new definition of the TagKey. Only the `description` and `etag` fields
         #     can be updated by this request. If the `etag` field is not empty, it
         #     must match the `etag` field of the existing tag key. Otherwise,

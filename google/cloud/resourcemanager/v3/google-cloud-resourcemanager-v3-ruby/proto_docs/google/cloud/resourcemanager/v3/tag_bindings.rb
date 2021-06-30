@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Resourcemanager
+    module ResourceManager
       module V3
         # A TagBinding represents a connection between a TagValue and a cloud
         # resource (currently project, folder, or organization). Once a TagBinding is
@@ -51,7 +51,7 @@ module Google
 
         # The request message to create a TagBinding.
         # @!attribute [rw] tag_binding
-        #   @return [::Google::Cloud::Resourcemanager::V3::TagBinding]
+        #   @return [::Google::Cloud::ResourceManager::V3::TagBinding]
         #     Required. The TagBinding to be created.
         # @!attribute [rw] validate_only
         #   @return [::Boolean]
@@ -101,7 +101,7 @@ module Google
 
         # The ListTagBindings response.
         # @!attribute [rw] tag_bindings
-        #   @return [::Array<::Google::Cloud::Resourcemanager::V3::TagBinding>]
+        #   @return [::Array<::Google::Cloud::ResourceManager::V3::TagBinding>]
         #     A possibly paginated list of TagBindings for the specified TagValue or
         #     resource.
         # @!attribute [rw] next_page_token

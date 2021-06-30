@@ -3,7 +3,7 @@ inherit_gem:
 
 AllCops:
   Exclude:
-    - "google-cloud-resourcemanager-v3.gemspec"
+    - "google-cloud-resource_manager-v3.gemspec"
     - "lib/**/*_pb.rb"
     - "proto_docs/**/*"
     - "test/**/*"
@@ -26,4 +26,4 @@ Metrics/PerceivedComplexity:
   Enabled: false
 Naming/FileName:
   Exclude:
-    - "lib/google-cloud-resourcemanager-v3.rb"
+    - "lib/google-cloud-resource_manager-v3.rb"

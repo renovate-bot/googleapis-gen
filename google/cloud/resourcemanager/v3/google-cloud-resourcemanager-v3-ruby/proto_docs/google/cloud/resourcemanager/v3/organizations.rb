@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Resourcemanager
+    module ResourceManager
       module V3
         # The root node in the resource hierarchy to which a particular entity's
         # (a company, for example) resources belong.
@@ -38,7 +38,7 @@ module Google
         #   @return [::String]
         #     Immutable. The G Suite / Workspace customer id used in the Directory API.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Resourcemanager::V3::Organization::State]
+        #   @return [::Google::Cloud::ResourceManager::V3::Organization::State]
         #     Output only. The organization's current lifecycle state.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -118,7 +118,7 @@ module Google
 
         # The response returned from the `SearchOrganizations` method.
         # @!attribute [rw] organizations
-        #   @return [::Array<::Google::Cloud::Resourcemanager::V3::Organization>]
+        #   @return [::Array<::Google::Cloud::ResourceManager::V3::Organization>]
         #     The list of Organizations that matched the search query, possibly
         #     paginated.
         # @!attribute [rw] next_page_token

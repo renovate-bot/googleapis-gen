@@ -3,12 +3,12 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "ruby",
   "protoPackage": "google.cloud.resourcemanager.v3",
-  "libraryPackage": "::Google::Cloud::Resourcemanager::V3",
+  "libraryPackage": "::Google::Cloud::ResourceManager::V3",
   "services": {
     "Folders": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Resourcemanager::V3::Folders::Client",
+          "libraryClient": "::Google::Cloud::ResourceManager::V3::Folders::Client",
           "rpcs": {
             "GetFolder": {
               "methods": [
@@ -72,7 +72,7 @@
     "Organizations": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Resourcemanager::V3::Organizations::Client",
+          "libraryClient": "::Google::Cloud::ResourceManager::V3::Organizations::Client",
           "rpcs": {
             "GetOrganization": {
               "methods": [
@@ -106,7 +106,7 @@
     "Projects": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Resourcemanager::V3::Projects::Client",
+          "libraryClient": "::Google::Cloud::ResourceManager::V3::Projects::Client",
           "rpcs": {
             "GetProject": {
               "methods": [
@@ -170,7 +170,7 @@
     "TagBindings": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Resourcemanager::V3::TagBindings::Client",
+          "libraryClient": "::Google::Cloud::ResourceManager::V3::TagBindings::Client",
           "rpcs": {
             "ListTagBindings": {
               "methods": [
@@ -194,7 +194,7 @@
     "TagKeys": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Resourcemanager::V3::TagKeys::Client",
+          "libraryClient": "::Google::Cloud::ResourceManager::V3::TagKeys::Client",
           "rpcs": {
             "ListTagKeys": {
               "methods": [
@@ -243,7 +243,7 @@
     "TagValues": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Resourcemanager::V3::TagValues::Client",
+          "libraryClient": "::Google::Cloud::ResourceManager::V3::TagValues::Client",
           "rpcs": {
             "ListTagValues": {
               "methods": [

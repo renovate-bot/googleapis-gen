@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Resourcemanager
+    module ResourceManager
       module V3
         # A project is a high-level Google Cloud entity. It is a
         # container for ACLs, APIs, App Engine Apps, VMs, and other
@@ -43,7 +43,7 @@ module Google
         #
         #     Example: `tokyo-rain-123`
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Resourcemanager::V3::Project::State]
+        #   @return [::Google::Cloud::ResourceManager::V3::Project::State]
         #     Output only. The project lifecycle state.
         # @!attribute [rw] display_name
         #   @return [::String]
@@ -107,7 +107,7 @@ module Google
 
             # The project has been marked for deletion by the user
             # (by invoking
-            # {::Google::Cloud::Resourcemanager::V3::Projects::Client#delete_project DeleteProject})
+            # {::Google::Cloud::ResourceManager::V3::Projects::Client#delete_project DeleteProject})
             # or by the system (Google Cloud Platform).
             # This can generally be reversed by invoking [UndeleteProject]
             # [google.cloud.resourcemanager.v3.Projects.UndeleteProject].
@@ -116,7 +116,7 @@ module Google
         end
 
         # The request sent to the
-        # {::Google::Cloud::Resourcemanager::V3::Projects::Client#get_project GetProject}
+        # {::Google::Cloud::ResourceManager::V3::Projects::Client#get_project GetProject}
         # method.
         # @!attribute [rw] name
         #   @return [::String]
@@ -127,7 +127,7 @@ module Google
         end
 
         # The request sent to the
-        # {::Google::Cloud::Resourcemanager::V3::Projects::Client#list_projects ListProjects}
+        # {::Google::Cloud::ResourceManager::V3::Projects::Client#list_projects ListProjects}
         # method.
         # @!attribute [rw] parent
         #   @return [::String]
@@ -155,7 +155,7 @@ module Google
         end
 
         # A page of the response received from the
-        # {::Google::Cloud::Resourcemanager::V3::Projects::Client#list_projects ListProjects}
+        # {::Google::Cloud::ResourceManager::V3::Projects::Client#list_projects ListProjects}
         # method.
         #
         # A paginated response where more pages are available has
@@ -165,7 +165,7 @@ module Google
         # NOTE: A response may contain fewer elements than the request `page_size` and
         # still have a `next_page_token`.
         # @!attribute [rw] projects
-        #   @return [::Array<::Google::Cloud::Resourcemanager::V3::Project>]
+        #   @return [::Array<::Google::Cloud::ResourceManager::V3::Project>]
         #     The list of Projects under the parent. This list can be paginated.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -186,7 +186,7 @@ module Google
         end
 
         # The request sent to the
-        # {::Google::Cloud::Resourcemanager::V3::Projects::Client#search_projects SearchProjects}
+        # {::Google::Cloud::ResourceManager::V3::Projects::Client#search_projects SearchProjects}
         # method.
         # @!attribute [rw] query
         #   @return [::String]
@@ -241,14 +241,14 @@ module Google
         end
 
         # A page of the response received from the
-        # {::Google::Cloud::Resourcemanager::V3::Projects::Client#search_projects SearchProjects}
+        # {::Google::Cloud::ResourceManager::V3::Projects::Client#search_projects SearchProjects}
         # method.
         #
         # A paginated response where more pages are available has
         # `next_page_token` set. This token can be used in a subsequent request to
         # retrieve the next request page.
         # @!attribute [rw] projects
-        #   @return [::Array<::Google::Cloud::Resourcemanager::V3::Project>]
+        #   @return [::Array<::Google::Cloud::ResourceManager::V3::Project>]
         #     The list of Projects that matched the list filter query. This list can
         #     be paginated.
         # @!attribute [rw] next_page_token
@@ -270,10 +270,10 @@ module Google
         end
 
         # The request sent to the
-        # {::Google::Cloud::Resourcemanager::V3::Projects::Client#create_project CreateProject}
+        # {::Google::Cloud::ResourceManager::V3::Projects::Client#create_project CreateProject}
         # method.
         # @!attribute [rw] project
-        #   @return [::Google::Cloud::Resourcemanager::V3::Project]
+        #   @return [::Google::Cloud::ResourceManager::V3::Project]
         #     Required. The Project to create.
         #
         #     Project ID is required. If the requested ID is unavailable, the request
@@ -308,14 +308,14 @@ module Google
         end
 
         # The request sent to the
-        # {::Google::Cloud::Resourcemanager::V3::Projects::Client#update_project UpdateProject}
+        # {::Google::Cloud::ResourceManager::V3::Projects::Client#update_project UpdateProject}
         # method.
         #
         # Only the `display_name` and `labels` fields can be change. Use the
-        # {::Google::Cloud::Resourcemanager::V3::Projects::Client#move_project MoveProject} method to
+        # {::Google::Cloud::ResourceManager::V3::Projects::Client#move_project MoveProject} method to
         # change the `parent` field.
         # @!attribute [rw] project
-        #   @return [::Google::Cloud::Resourcemanager::V3::Project]
+        #   @return [::Google::Cloud::ResourceManager::V3::Project]
         #     Required. The new definition of the project.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
@@ -333,7 +333,7 @@ module Google
         end
 
         # The request sent to
-        # {::Google::Cloud::Resourcemanager::V3::Projects::Client#move_project MoveProject}
+        # {::Google::Cloud::ResourceManager::V3::Projects::Client#move_project MoveProject}
         # method.
         # @!attribute [rw] name
         #   @return [::String]
@@ -353,7 +353,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # {::Google::Cloud::Resourcemanager::V3::Projects::Client#delete_project DeleteProject}
+        # {::Google::Cloud::ResourceManager::V3::Projects::Client#delete_project DeleteProject}
         # method.
         # @!attribute [rw] name
         #   @return [::String]

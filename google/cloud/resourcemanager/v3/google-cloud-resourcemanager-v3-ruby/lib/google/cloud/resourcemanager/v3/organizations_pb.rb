@@ -51,7 +51,7 @@ end
 
 module Google
   module Cloud
-    module Resourcemanager
+    module ResourceManager
       module V3
         Organization = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.resourcemanager.v3.Organization").msgclass
         Organization::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.resourcemanager.v3.Organization.State").enummodule

@@ -40,7 +40,7 @@ end
 
 module Google
   module Cloud
-    module Resourcemanager
+    module ResourceManager
       module V3
         TagBinding = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.resourcemanager.v3.TagBinding").msgclass
         CreateTagBindingMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.resourcemanager.v3.CreateTagBindingMetadata").msgclass

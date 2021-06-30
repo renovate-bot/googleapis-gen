@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Resourcemanager
+    module ResourceManager
       module V3
         # A TagValue is a child of a particular TagKey. This is used to group
         # cloud resources for the purpose of controlling them using policies.
@@ -84,7 +84,7 @@ module Google
 
         # The ListTagValues response.
         # @!attribute [rw] tag_values
-        #   @return [::Array<::Google::Cloud::Resourcemanager::V3::TagValue>]
+        #   @return [::Array<::Google::Cloud::ResourceManager::V3::TagValue>]
         #     A possibly paginated list of TagValues that are direct descendants of
         #     the specified parent TagKey.
         # @!attribute [rw] next_page_token
@@ -108,7 +108,7 @@ module Google
 
         # The request message for creating a TagValue.
         # @!attribute [rw] tag_value
-        #   @return [::Google::Cloud::Resourcemanager::V3::TagValue]
+        #   @return [::Google::Cloud::ResourceManager::V3::TagValue]
         #     Required. The TagValue to be created. Only fields `short_name`, `description`,
         #     and `parent` are considered during the creation request.
         # @!attribute [rw] validate_only
@@ -128,7 +128,7 @@ module Google
 
         # The request message for updating a TagValue.
         # @!attribute [rw] tag_value
-        #   @return [::Google::Cloud::Resourcemanager::V3::TagValue]
+        #   @return [::Google::Cloud::ResourceManager::V3::TagValue]
         #     Required. The new definition of the TagValue. Only fields `description` and `etag`
         #     fields can be updated by this request. If the `etag` field is nonempty, it
         #     must match the `etag` field of the existing ControlGroup. Otherwise,
