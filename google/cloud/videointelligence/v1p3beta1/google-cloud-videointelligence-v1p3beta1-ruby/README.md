@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/videointelligence/v1p3beta1"
 
 client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Client.new
-request = my_create_request
+request = ::Google::Cloud::Videointelligence::V1p3beta1::AnnotateVideoRequest.new # (request fields as keyword arguments...)
 response = client.annotate_video request
 ```
 

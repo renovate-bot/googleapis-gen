@@ -30,13 +30,9 @@ module Google
               "https://www.googleapis.com/auth/cloud-translation"
             ]
             self.env_vars = [
-              "TRANSLATION_CREDENTIALS",
-              "TRANSLATION_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "TRANSLATION_CREDENTIALS_JSON",
-              "TRANSLATION_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

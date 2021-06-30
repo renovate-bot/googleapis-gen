@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/asset/v1p7beta1"
 
 client = ::Google::Cloud::Asset::V1p7beta1::AssetService::Client.new
-request = my_create_request
+request = ::Google::Cloud::Asset::V1p7beta1::ExportAssetsRequest.new # (request fields as keyword arguments...)
 response = client.export_assets request
 ```
 

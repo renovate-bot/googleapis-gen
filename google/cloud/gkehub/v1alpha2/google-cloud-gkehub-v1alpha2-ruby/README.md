@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/gke_hub/v1alpha2"
 
 client = ::Google::Cloud::GkeHub::V1alpha2::GkeHub::Client.new
-request = my_create_request
+request = ::Google::Cloud::GkeHub::V1alpha2::ListMembershipsRequest.new # (request fields as keyword arguments...)
 response = client.list_memberships request
 ```
 

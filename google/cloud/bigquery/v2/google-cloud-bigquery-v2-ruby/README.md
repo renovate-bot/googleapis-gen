@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/bigquery/v2"
 
 client = ::Google::Cloud::Bigquery::V2::ModelService::Client.new
-request = my_create_request
+request = ::Google::Cloud::Bigquery::V2::GetModelRequest.new # (request fields as keyword arguments...)
 response = client.get_model request
 ```
 

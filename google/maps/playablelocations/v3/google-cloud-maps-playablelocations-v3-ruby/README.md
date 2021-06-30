@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/maps/playablelocations/v3"
 
 client = ::Google::Maps::Playablelocations::V3::PlayableLocations::Client.new
-request = my_create_request
+request = ::Google::Maps::Playablelocations::V3::SamplePlayableLocationsRequest.new # (request fields as keyword arguments...)
 response = client.sample_playable_locations request
 ```
 

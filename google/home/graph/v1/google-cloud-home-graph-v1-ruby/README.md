@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/home/graph/v1"
 
 client = ::Google::Home::Graph::V1::HomeGraphApiService::Client.new
-request = my_create_request
+request = ::Google::Home::Graph::V1::RequestSyncDevicesRequest.new # (request fields as keyword arguments...)
 response = client.request_sync_devices request
 ```
 

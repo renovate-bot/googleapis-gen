@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export MANAGEDIDENTITIES_CREDENTIALS=path/to/keyfile.json
+export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,16 +66,14 @@ The environment variables that google-cloud-managedidentities-v1beta1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::ManagedIdentities::V1beta1::ManagedIdentitiesService::Credentials}):
 
-1. `MANAGEDIDENTITIES_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `MANAGEDIDENTITIES_KEYFILE` - Path to JSON file, or JSON contents
-3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
-4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
-5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
+* `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
+* `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
+* `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
 require "google/cloud/managed_identities/v1beta1"
 
-ENV["MANAGEDIDENTITIES_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::ManagedIdentities::V1beta1::ManagedIdentitiesService::Client.new
 ```

@@ -6,6 +6,5 @@
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
     "ruby-cloud-description": "google-cloud-apps-alertcenter-v1beta1 is the official client library for the Google Cloud Apps Alertcenter V1beta1 API. Note that google-cloud-apps-alertcenter-v1beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-apps-alertcenter instead. See the readme for more details.",
-    "ruby-cloud-env-prefix": "ALERTCENTER",
     "library_type": "GAPIC_AUTO"
 }

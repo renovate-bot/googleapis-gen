@@ -6,6 +6,5 @@
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
     "ruby-cloud-description": "google-cloud-translation-v3beta1 is the official client library for the Google Cloud Translation V3beta1 API. Note that google-cloud-translation-v3beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-translation instead. See the readme for more details.",
-    "ruby-cloud-env-prefix": "TRANSLATION",
     "library_type": "GAPIC_AUTO"
 }

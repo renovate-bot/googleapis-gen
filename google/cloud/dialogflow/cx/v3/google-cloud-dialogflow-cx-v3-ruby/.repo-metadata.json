@@ -6,6 +6,5 @@
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
     "ruby-cloud-description": "google-cloud-dialogflow-cx-v3 is the official client library for the Google Cloud Dialogflow Cx V3 API. Note that google-cloud-dialogflow-cx-v3 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-dialogflow-cx instead. See the readme for more details.",
-    "ruby-cloud-env-prefix": "CX",
     "library_type": "GAPIC_AUTO"
 }

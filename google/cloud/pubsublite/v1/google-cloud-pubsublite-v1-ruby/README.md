@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/pub_sub_lite/v1"
 
 client = ::Google::Cloud::PubSubLite::V1::AdminService::Client.new
-request = my_create_request
+request = ::Google::Cloud::PubSubLite::V1::CreateTopicRequest.new # (request fields as keyword arguments...)
 response = client.create_topic request
 ```
 

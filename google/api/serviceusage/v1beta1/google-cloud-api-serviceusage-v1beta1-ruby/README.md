@@ -33,7 +33,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/api/service_usage/v1beta1"
 
 client = ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
-request = my_create_request
+request = ::Google::Api::ServiceUsage::V1beta1::EnableServiceRequest.new # (request fields as keyword arguments...)
 response = client.enable_service request
 ```
 

@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/metastore/v1alpha"
 
 client = ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client.new
-request = my_create_request
+request = ::Google::Cloud::Metastore::V1alpha::ListServicesRequest.new # (request fields as keyword arguments...)
 response = client.list_services request
 ```
 

@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/maps/roads/v1op"
 
 client = ::Google::Maps::Roads::V1op::RoadsService::Client.new
-request = my_create_request
+request = ::Google::Maps::Roads::V1op::SnapToRoadsRequest.new # (request fields as keyword arguments...)
 response = client.snap_to_roads request
 ```
 

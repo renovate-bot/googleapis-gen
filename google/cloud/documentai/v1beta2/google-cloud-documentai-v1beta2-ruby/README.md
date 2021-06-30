@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/document_ai/v1beta2"
 
 client = ::Google::Cloud::DocumentAI::V1beta2::DocumentUnderstandingService::Client.new
-request = my_create_request
+request = ::Google::Cloud::DocumentAI::V1beta2::BatchProcessDocumentsRequest.new # (request fields as keyword arguments...)
 response = client.batch_process_documents request
 ```
 

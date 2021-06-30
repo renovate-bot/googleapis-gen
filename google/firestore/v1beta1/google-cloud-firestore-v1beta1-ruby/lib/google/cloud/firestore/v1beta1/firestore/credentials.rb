@@ -30,13 +30,9 @@ module Google
               "https://www.googleapis.com/auth/datastore"
             ]
             self.env_vars = [
-              "FIRESTORE_CREDENTIALS",
-              "FIRESTORE_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "FIRESTORE_CREDENTIALS_JSON",
-              "FIRESTORE_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

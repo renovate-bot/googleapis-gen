@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/translate/v3beta1"
 
 client = ::Google::Cloud::Translate::V3beta1::TranslationService::Client.new
-request = my_create_request
+request = ::Google::Cloud::Translate::V3beta1::TranslateTextRequest.new # (request fields as keyword arguments...)
 response = client.translate_text request
 ```
 

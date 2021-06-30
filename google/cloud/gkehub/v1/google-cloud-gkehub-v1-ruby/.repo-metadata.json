@@ -6,6 +6,5 @@
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
     "ruby-cloud-description": "google-cloud-gkehub-v1 is the official client library for the Google Cloud Gkehub V1 API. Note that google-cloud-gkehub-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-gkehub instead. See the readme for more details.",
-    "ruby-cloud-env-prefix": "GKEHUB",
     "library_type": "GAPIC_AUTO"
 }

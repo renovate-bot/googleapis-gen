@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/osconfig/v1beta"
 
 client = ::Google::Cloud::Osconfig::V1beta::OsConfigService::Client.new
-request = my_create_request
+request = ::Google::Cloud::Osconfig::V1beta::ExecutePatchJobRequest.new # (request fields as keyword arguments...)
 response = client.execute_patch_job request
 ```
 

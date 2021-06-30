@@ -29,13 +29,9 @@ module Google
               "https://www.googleapis.com/auth/cloud-platform"
             ]
             self.env_vars = [
-              "CONTACTCENTERINSIGHTS_CREDENTIALS",
-              "CONTACTCENTERINSIGHTS_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "CONTACTCENTERINSIGHTS_CREDENTIALS_JSON",
-              "CONTACTCENTERINSIGHTS_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

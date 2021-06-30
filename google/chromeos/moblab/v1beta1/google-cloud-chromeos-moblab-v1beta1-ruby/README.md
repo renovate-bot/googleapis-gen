@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/chromeos/moblab/v1beta1"
 
 client = ::Google::Chromeos::Moblab::V1beta1::BuildService::Client.new
-request = my_create_request
+request = ::Google::Chromeos::Moblab::V1beta1::ListBuildsRequest.new # (request fields as keyword arguments...)
 response = client.list_builds request
 ```
 

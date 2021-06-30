@@ -69,29 +69,29 @@ desc "Run the google-cloud-graph-v1 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["GRAPH_TEST_PROJECT"] ||
+    ENV["GOOGLE_CLOUD_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["GRAPH_TEST_KEYFILE"] ||
+    ENV["GOOGLE_CLOUD_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["GRAPH_TEST_KEYFILE_JSON"] ||
+      ENV["GOOGLE_CLOUD_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or GRAPH_TEST_PROJECT=test123 GRAPH_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or GOOGLE_CLOUD_TEST_PROJECT=test123 GOOGLE_CLOUD_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/home/graph/v1/home_graph_api_service/credentials"
   ::Google::Home::Graph::V1::HomeGraphApiService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["GRAPH_PROJECT"] = project
-  ENV["GRAPH_TEST_PROJECT"] = project
-  ENV["GRAPH_KEYFILE_JSON"] = keyfile
+  ENV["GOOGLE_CLOUD_PROJECT"] = project
+  ENV["GOOGLE_CLOUD_TEST_PROJECT"] = project
+  ENV["GOOGLE_CLOUD_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

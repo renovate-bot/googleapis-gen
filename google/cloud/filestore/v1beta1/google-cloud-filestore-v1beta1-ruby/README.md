@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/filestore/v1beta1"
 
 client = ::Google::Cloud::Filestore::V1beta1::CloudFilestoreManager::Client.new
-request = my_create_request
+request = ::Google::Cloud::Filestore::V1beta1::ListInstancesRequest.new # (request fields as keyword arguments...)
 response = client.list_instances request
 ```
 

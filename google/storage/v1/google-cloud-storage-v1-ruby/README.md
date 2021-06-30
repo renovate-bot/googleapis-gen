@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/storage/v1"
 
 client = ::Google::Storage::V1::Storage::Client.new
-request = my_create_request
+request = ::Google::Storage::V1::DeleteBucketAccessControlRequest.new # (request fields as keyword arguments...)
 response = client.delete_bucket_access_control request
 ```
 

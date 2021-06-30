@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/dialogflow/cx/v3"
 
 client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new
-request = my_create_request
+request = ::Google::Cloud::Dialogflow::Cx::V3::ListPagesRequest.new # (request fields as keyword arguments...)
 response = client.list_pages request
 ```
 

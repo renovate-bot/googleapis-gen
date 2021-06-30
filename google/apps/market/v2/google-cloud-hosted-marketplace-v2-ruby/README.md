@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "ccc/hosted/marketplace/v2"
 
 client = ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client.new
-request = my_create_request
+request = ::Ccc::Hosted::Marketplace::V2::CustomerLicenseGetRequest.new # (request fields as keyword arguments...)
 response = client.get request
 ```
 

@@ -66,11 +66,11 @@ The environment variables that google-cloud-gsuite_add_ons-v1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Credentials}):
 
-1. `GSUITE_ADD_ONS_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `GSUITE_ADD_ONS_KEYFILE` - Path to JSON file, or JSON contents
-3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
-4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
-5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
+* `GSUITE_ADD_ONS_CREDENTIALS` - Path to JSON file, or JSON contents
+* `GSUITE_ADD_ONS_KEYFILE` - Path to JSON file, or JSON contents
+* `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
+* `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
+* `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
 require "google/cloud/gsuite_add_ons/v1"

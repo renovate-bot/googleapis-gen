@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/partner/aistreams/v1alpha1"
 
 client = ::Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
-request = my_create_request
+request = ::Google::Partner::Aistreams::V1alpha1::ListClustersRequest.new # (request fields as keyword arguments...)
 response = client.list_clusters request
 ```
 

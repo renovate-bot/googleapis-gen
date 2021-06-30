@@ -33,7 +33,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/gsuite_add_ons/v1"
 
 client = ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.new
-request = my_create_request
+request = ::Google::Cloud::GSuiteAddOns::V1::GetAuthorizationRequest.new # (request fields as keyword arguments...)
 response = client.get_authorization request
 ```
 

@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export SERVICE_CREDENTIALS=path/to/keyfile.json
+export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,16 +66,14 @@ The environment variables that google-cloud-airflow-service-v1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Orchestration::Airflow::Service::V1::Environments::Credentials}):
 
-1. `SERVICE_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `SERVICE_KEYFILE` - Path to JSON file, or JSON contents
-3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
-4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
-5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
+* `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
+* `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
+* `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
 require "google/cloud/orchestration/airflow/service/v1"
 
-ENV["SERVICE_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Orchestration::Airflow::Service::V1::Environments::Client.new
 ```

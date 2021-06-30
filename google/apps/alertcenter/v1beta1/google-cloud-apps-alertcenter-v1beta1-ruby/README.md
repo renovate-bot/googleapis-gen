@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/apps/alert_center/v1beta1"
 
 client = ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
-request = my_create_request
+request = ::Google::Apps::AlertCenter::V1beta1::ListAlertsRequest.new # (request fields as keyword arguments...)
 response = client.list_alerts request
 ```
 

@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/orchestration/airflow/service/v1"
 
 client = ::Google::Cloud::Orchestration::Airflow::Service::V1::Environments::Client.new
-request = my_create_request
+request = ::Google::Cloud::Orchestration::Airflow::Service::V1::CreateEnvironmentRequest.new # (request fields as keyword arguments...)
 response = client.create_environment request
 ```
 

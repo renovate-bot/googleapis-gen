@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/workflows/executions/v1"
 
 client = ::Google::Cloud::Workflows::Executions::V1::Executions::Client.new
-request = my_create_request
+request = ::Google::Cloud::Workflows::Executions::V1::ListExecutionsRequest.new # (request fields as keyword arguments...)
 response = client.list_executions request
 ```
 

@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/devtools/remoteworkers/v1test2"
 
 client = ::Google::Devtools::Remoteworkers::V1test2::Bots::Client.new
-request = my_create_request
+request = ::Google::Devtools::Remoteworkers::V1test2::CreateBotSessionRequest.new # (request fields as keyword arguments...)
 response = client.create_bot_session request
 ```
 

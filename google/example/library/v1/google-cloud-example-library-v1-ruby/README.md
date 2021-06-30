@@ -33,7 +33,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/example/library/v1"
 
 client = ::Google::Example::Library::V1::LibraryService::Client.new
-request = my_create_request
+request = ::Google::Example::Library::V1::CreateShelfRequest.new # (request fields as keyword arguments...)
 response = client.create_shelf request
 ```
 

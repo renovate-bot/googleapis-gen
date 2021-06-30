@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/security_center/settings/v1beta1"
 
 client = ::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
-request = my_create_request
+request = ::Google::Cloud::SecurityCenter::Settings::V1beta1::GetServiceAccountRequest.new # (request fields as keyword arguments...)
 response = client.get_service_account request
 ```
 

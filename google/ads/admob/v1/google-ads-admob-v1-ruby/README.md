@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/ads/admob/v1"
 
 client = ::Google::Ads::Admob::V1::AdMobApi::Client.new
-request = my_create_request
+request = ::Google::Ads::Admob::V1::GetPublisherAccountRequest.new # (request fields as keyword arguments...)
 response = client.get_publisher_account request
 ```
 

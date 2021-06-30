@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/firestore/v1beta1"
 
 client = ::Google::Cloud::Firestore::V1beta1::Firestore::Client.new
-request = my_create_request
+request = ::Google::Cloud::Firestore::V1beta1::GetDocumentRequest.new # (request fields as keyword arguments...)
 response = client.get_document request
 ```
 

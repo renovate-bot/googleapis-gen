@@ -66,11 +66,11 @@ The environment variables that google-cloud-resource_manager-v3
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::ResourceManager::V3::Folders::Credentials}):
 
-1. `RESOURCE_MANAGER_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `RESOURCE_MANAGER_KEYFILE` - Path to JSON file, or JSON contents
-3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
-4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
-5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
+* `RESOURCE_MANAGER_CREDENTIALS` - Path to JSON file, or JSON contents
+* `RESOURCE_MANAGER_KEYFILE` - Path to JSON file, or JSON contents
+* `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
+* `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
+* `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
 require "google/cloud/resource_manager/v3"

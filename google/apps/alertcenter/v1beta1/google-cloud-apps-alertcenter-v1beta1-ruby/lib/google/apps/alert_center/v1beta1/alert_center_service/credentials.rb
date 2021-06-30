@@ -29,13 +29,9 @@ module Google
               "https://www.googleapis.com/auth/apps.alerts"
             ]
             self.env_vars = [
-              "ALERTCENTER_CREDENTIALS",
-              "ALERTCENTER_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
-              "ALERTCENTER_CREDENTIALS_JSON",
-              "ALERTCENTER_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/devtools/testing/v1"
 
 client = ::Google::Devtools::Testing::V1::TestExecutionService::Client.new
-request = my_create_request
+request = ::Google::Devtools::Testing::V1::CreateTestMatrixRequest.new # (request fields as keyword arguments...)
 response = client.create_test_matrix request
 ```
 

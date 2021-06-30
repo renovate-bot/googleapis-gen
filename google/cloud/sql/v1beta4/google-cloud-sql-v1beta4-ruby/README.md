@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/sql/v1beta4"
 
 client = ::Google::Cloud::Sql::V1beta4::SqlBackupRunsService::Client.new
-request = my_create_request
+request = ::Google::Cloud::Sql::V1beta4::SqlBackupRunsDeleteRequest.new # (request fields as keyword arguments...)
 response = client.delete request
 ```
 

@@ -25,13 +25,9 @@ module Maps
         # Credentials for the VehicleService API.
         class Credentials < ::Google::Auth::Credentials
           self.env_vars = [
-            "FLEETENGINE_CREDENTIALS",
-            "FLEETENGINE_KEYFILE",
             "GOOGLE_CLOUD_CREDENTIALS",
             "GOOGLE_CLOUD_KEYFILE",
             "GCLOUD_KEYFILE",
-            "FLEETENGINE_CREDENTIALS_JSON",
-            "FLEETENGINE_KEYFILE_JSON",
             "GOOGLE_CLOUD_CREDENTIALS_JSON",
             "GOOGLE_CLOUD_KEYFILE_JSON",
             "GCLOUD_KEYFILE_JSON"

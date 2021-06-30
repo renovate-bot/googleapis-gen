@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export ASSET_CREDENTIALS=path/to/keyfile.json
+export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,16 +66,14 @@ The environment variables that google-cloud-asset-v1p2beta1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Asset::V1p2beta1::AssetService::Credentials}):
 
-1. `ASSET_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `ASSET_KEYFILE` - Path to JSON file, or JSON contents
-3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
-4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
-5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
+* `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
+* `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
+* `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
 require "google/cloud/asset/v1p2beta1"
 
-ENV["ASSET_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Asset::V1p2beta1::AssetService::Client.new
 ```

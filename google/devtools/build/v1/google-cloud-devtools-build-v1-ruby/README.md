@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/devtools/build/v1"
 
 client = ::Google::Devtools::Build::V1::PublishBuildEvent::Client.new
-request = my_create_request
+request = ::Google::Devtools::Build::V1::PublishLifecycleEventRequest.new # (request fields as keyword arguments...)
 response = client.publish_lifecycle_event request
 ```
 

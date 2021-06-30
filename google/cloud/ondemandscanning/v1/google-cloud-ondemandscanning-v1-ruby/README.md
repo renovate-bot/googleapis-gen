@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/on_demand_scanning/v1"
 
 client = ::Grafeas::V1::Grafeas::Client.new
-request = my_create_request
+request = ::Grafeas::V1::GetOccurrenceRequest.new # (request fields as keyword arguments...)
 response = client.get_occurrence request
 ```
 

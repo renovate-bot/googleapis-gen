@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "maps/fleetengine/v1"
 
 client = ::Maps::Fleetengine::V1::TripService::Client.new
-request = my_create_request
+request = ::Maps::Fleetengine::V1::CreateTripRequest.new # (request fields as keyword arguments...)
 response = client.create_trip request
 ```
 

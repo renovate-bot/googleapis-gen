@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/osconfig/agentendpoint/v1beta"
 
 client = ::Google::Cloud::Osconfig::Agentendpoint::V1beta::AgentEndpointService::Client.new
-request = my_create_request
+request = ::Google::Cloud::Osconfig::Agentendpoint::V1beta::ReceiveTaskNotificationRequest.new # (request fields as keyword arguments...)
 response = client.receive_task_notification request
 ```
 

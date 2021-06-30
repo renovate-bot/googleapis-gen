@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/iam/admin/v1"
 
 client = ::Google::Iam::Admin::V1::IAM::Client.new
-request = my_create_request
+request = ::Google::Iam::Admin::V1::ListServiceAccountsRequest.new # (request fields as keyword arguments...)
 response = client.list_service_accounts request
 ```
 

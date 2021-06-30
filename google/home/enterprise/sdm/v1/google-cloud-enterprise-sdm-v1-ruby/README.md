@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/home/enterprise/sdm/v1"
 
 client = ::Google::Home::Enterprise::Sdm::V1::SmartDeviceManagementService::Client.new
-request = my_create_request
+request = ::Google::Home::Enterprise::Sdm::V1::GetDeviceRequest.new # (request fields as keyword arguments...)
 response = client.get_device request
 ```
 

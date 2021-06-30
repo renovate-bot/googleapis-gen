@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/aiplatform/v1beta1"
 
 client = ::Google::Cloud::Aiplatform::V1beta1::DatasetService::Client.new
-request = my_create_request
+request = ::Google::Cloud::Aiplatform::V1beta1::CreateDatasetRequest.new # (request fields as keyword arguments...)
 response = client.create_dataset request
 ```
 

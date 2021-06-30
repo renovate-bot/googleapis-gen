@@ -33,7 +33,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/resource_manager/v3"
 
 client = ::Google::Cloud::ResourceManager::V3::Folders::Client.new
-request = my_create_request
+request = ::Google::Cloud::ResourceManager::V3::GetFolderRequest.new # (request fields as keyword arguments...)
 response = client.get_folder request
 ```
 

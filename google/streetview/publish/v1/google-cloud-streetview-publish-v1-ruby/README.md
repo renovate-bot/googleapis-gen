@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/streetview/publish/v1"
 
 client = ::Google::Streetview::Publish::V1::StreetViewPublishService::Client.new
-request = my_create_request
+request = ::Google::Protobuf::Empty.new # (request fields as keyword arguments...)
 response = client.start_upload request
 ```
 

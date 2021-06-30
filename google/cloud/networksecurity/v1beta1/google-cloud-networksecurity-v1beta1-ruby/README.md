@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/network_security/v1beta1"
 
 client = ::Google::Cloud::NetworkSecurity::V1beta1::NetworkSecurity::Client.new
-request = my_create_request
+request = ::Google::Cloud::NetworkSecurity::V1beta1::ListAuthorizationPoliciesRequest.new # (request fields as keyword arguments...)
 response = client.list_authorization_policies request
 ```
 

@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/network_management/v1"
 
 client = ::Google::Cloud::NetworkManagement::V1::ReachabilityService::Client.new
-request = my_create_request
+request = ::Google::Cloud::NetworkManagement::V1::ListConnectivityTestsRequest.new # (request fields as keyword arguments...)
 response = client.list_connectivity_tests request
 ```
 

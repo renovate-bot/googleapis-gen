@@ -66,11 +66,11 @@ The environment variables that google-cloud-iap-v1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Iap::V1::IdentityAwareProxyAdminService::Credentials}):
 
-1. `IAP_CREDENTIALS` - Path to JSON file, or JSON contents
-2. `IAP_KEYFILE` - Path to JSON file, or JSON contents
-3. `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
-4. `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
-5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
+* `IAP_CREDENTIALS` - Path to JSON file, or JSON contents
+* `IAP_KEYFILE` - Path to JSON file, or JSON contents
+* `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
+* `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
+* `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
 require "google/cloud/iap/v1"

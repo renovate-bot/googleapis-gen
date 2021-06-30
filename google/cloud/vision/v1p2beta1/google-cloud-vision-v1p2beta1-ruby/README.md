@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/cloud/vision/v1p2beta1"
 
 client = ::Google::Cloud::Vision::V1p2beta1::ImageAnnotator::Client.new
-request = my_create_request
+request = ::Google::Cloud::Vision::V1p2beta1::BatchAnnotateImagesRequest.new # (request fields as keyword arguments...)
 response = client.batch_annotate_images request
 ```
 

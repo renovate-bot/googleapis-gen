@@ -67,52 +67,34 @@ module Google
 
                   default_config.rpcs.get_device.timeout = 60.0
                   default_config.rpcs.get_device.retry_policy = {
-                    initial_delay: 1.0,
-                    max_delay: 10.0,
-                    multiplier: 1.3,
-                    retry_codes: [14]
+                    initial_delay: 1.0, max_delay: 10.0, multiplier: 1.3, retry_codes: [14]
                   }
 
                   default_config.rpcs.list_devices.timeout = 60.0
                   default_config.rpcs.list_devices.retry_policy = {
-                    initial_delay: 1.0,
-                    max_delay: 10.0,
-                    multiplier: 1.3,
-                    retry_codes: [14]
+                    initial_delay: 1.0, max_delay: 10.0, multiplier: 1.3, retry_codes: [14]
                   }
 
                   default_config.rpcs.execute_device_command.timeout = 60.0
 
                   default_config.rpcs.get_structure.timeout = 60.0
                   default_config.rpcs.get_structure.retry_policy = {
-                    initial_delay: 1.0,
-                    max_delay: 10.0,
-                    multiplier: 1.3,
-                    retry_codes: [14]
+                    initial_delay: 1.0, max_delay: 10.0, multiplier: 1.3, retry_codes: [14]
                   }
 
                   default_config.rpcs.list_structures.timeout = 60.0
                   default_config.rpcs.list_structures.retry_policy = {
-                    initial_delay: 1.0,
-                    max_delay: 10.0,
-                    multiplier: 1.3,
-                    retry_codes: [14]
+                    initial_delay: 1.0, max_delay: 10.0, multiplier: 1.3, retry_codes: [14]
                   }
 
                   default_config.rpcs.get_room.timeout = 60.0
                   default_config.rpcs.get_room.retry_policy = {
-                    initial_delay: 1.0,
-                    max_delay: 10.0,
-                    multiplier: 1.3,
-                    retry_codes: [14]
+                    initial_delay: 1.0, max_delay: 10.0, multiplier: 1.3, retry_codes: [14]
                   }
 
                   default_config.rpcs.list_rooms.timeout = 60.0
                   default_config.rpcs.list_rooms.retry_policy = {
-                    initial_delay: 1.0,
-                    max_delay: 10.0,
-                    multiplier: 1.3,
-                    retry_codes: [14]
+                    initial_delay: 1.0, max_delay: 10.0, multiplier: 1.3, retry_codes: [14]
                   }
 
                   default_config
@@ -183,7 +165,7 @@ module Google
                                          !@config.endpoint.split(".").first.include?("-")
                 credentials ||= Credentials.default scope: @config.scope,
                                                     enable_self_signed_jwt: enable_self_signed_jwt
-                if credentials.is_a?(String) || credentials.is_a?(Hash)
+                if credentials.is_a?(::String) || credentials.is_a?(::Hash)
                   credentials = Credentials.new credentials, scope: @config.scope
                 end
                 @quota_project_id = @config.quota_project

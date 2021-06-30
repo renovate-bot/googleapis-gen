@@ -69,29 +69,29 @@ desc "Run the google-cloud-apps-alertcenter-v1beta1 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["ALERTCENTER_TEST_PROJECT"] ||
+    ENV["GOOGLE_CLOUD_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["ALERTCENTER_TEST_KEYFILE"] ||
+    ENV["GOOGLE_CLOUD_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["ALERTCENTER_TEST_KEYFILE_JSON"] ||
+      ENV["GOOGLE_CLOUD_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or ALERTCENTER_TEST_PROJECT=test123 ALERTCENTER_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or GOOGLE_CLOUD_TEST_PROJECT=test123 GOOGLE_CLOUD_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/apps/alert_center/v1beta1/alert_center_service/credentials"
   ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["ALERTCENTER_PROJECT"] = project
-  ENV["ALERTCENTER_TEST_PROJECT"] = project
-  ENV["ALERTCENTER_KEYFILE_JSON"] = keyfile
+  ENV["GOOGLE_CLOUD_PROJECT"] = project
+  ENV["GOOGLE_CLOUD_TEST_PROJECT"] = project
+  ENV["GOOGLE_CLOUD_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

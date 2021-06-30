@@ -69,29 +69,29 @@ desc "Run the google-cloud-documentai-v1beta2 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["DOCUMENTAI_TEST_PROJECT"] ||
+    ENV["GOOGLE_CLOUD_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["DOCUMENTAI_TEST_KEYFILE"] ||
+    ENV["GOOGLE_CLOUD_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["DOCUMENTAI_TEST_KEYFILE_JSON"] ||
+      ENV["GOOGLE_CLOUD_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or DOCUMENTAI_TEST_PROJECT=test123 DOCUMENTAI_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or GOOGLE_CLOUD_TEST_PROJECT=test123 GOOGLE_CLOUD_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/cloud/document_ai/v1beta2/document_understanding_service/credentials"
   ::Google::Cloud::DocumentAI::V1beta2::DocumentUnderstandingService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["DOCUMENTAI_PROJECT"] = project
-  ENV["DOCUMENTAI_TEST_PROJECT"] = project
-  ENV["DOCUMENTAI_KEYFILE_JSON"] = keyfile
+  ENV["GOOGLE_CLOUD_PROJECT"] = project
+  ENV["GOOGLE_CLOUD_TEST_PROJECT"] = project
+  ENV["GOOGLE_CLOUD_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end

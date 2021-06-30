@@ -66,34 +66,22 @@ module Maps
 
               default_config.rpcs.create_trip.timeout = 60.0
               default_config.rpcs.create_trip.retry_policy = {
-                initial_delay: 1.0,
-                max_delay: 10.0,
-                multiplier: 1.3,
-                retry_codes: [14]
+                initial_delay: 1.0, max_delay: 10.0, multiplier: 1.3, retry_codes: [14]
               }
 
               default_config.rpcs.get_trip.timeout = 60.0
               default_config.rpcs.get_trip.retry_policy = {
-                initial_delay: 1.0,
-                max_delay: 10.0,
-                multiplier: 1.3,
-                retry_codes: [14]
+                initial_delay: 1.0, max_delay: 10.0, multiplier: 1.3, retry_codes: [14]
               }
 
               default_config.rpcs.search_trips.timeout = 60.0
               default_config.rpcs.search_trips.retry_policy = {
-                initial_delay: 1.0,
-                max_delay: 10.0,
-                multiplier: 1.3,
-                retry_codes: [14]
+                initial_delay: 1.0, max_delay: 10.0, multiplier: 1.3, retry_codes: [14]
               }
 
               default_config.rpcs.update_trip.timeout = 60.0
               default_config.rpcs.update_trip.retry_policy = {
-                initial_delay: 1.0,
-                max_delay: 10.0,
-                multiplier: 1.3,
-                retry_codes: [14]
+                initial_delay: 1.0, max_delay: 10.0, multiplier: 1.3, retry_codes: [14]
               }
 
               default_config
@@ -164,7 +152,7 @@ module Maps
                                      !@config.endpoint.split(".").first.include?("-")
             credentials ||= Credentials.default scope: @config.scope,
                                                 enable_self_signed_jwt: enable_self_signed_jwt
-            if credentials.is_a?(String) || credentials.is_a?(Hash)
+            if credentials.is_a?(::String) || credentials.is_a?(::Hash)
               credentials = Credentials.new credentials, scope: @config.scope
             end
             @quota_project_id = @config.quota_project

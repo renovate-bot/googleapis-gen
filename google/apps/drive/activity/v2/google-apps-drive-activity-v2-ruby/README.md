@@ -32,7 +32,7 @@ In order to use this library, you first need to go through the following steps:
 require "google/apps/drive/activity/v2"
 
 client = ::Google::Apps::Drive::Activity::V2::DriveActivityService::Client.new
-request = my_create_request
+request = ::Google::Apps::Drive::Activity::V2::QueryDriveActivityRequest.new # (request fields as keyword arguments...)
 response = client.query_drive_activity request
 ```
 
