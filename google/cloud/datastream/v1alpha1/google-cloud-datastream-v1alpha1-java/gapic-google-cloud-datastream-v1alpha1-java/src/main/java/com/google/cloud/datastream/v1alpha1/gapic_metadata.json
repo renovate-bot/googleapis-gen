@@ -35,7 +35,7 @@
               "methods": ["deleteStreamAsync", "deleteStreamAsync", "deleteStreamAsync", "deleteStreamOperationCallable", "deleteStreamCallable"]
             },
             "DiscoverConnectionProfile": {
-              "methods": ["discoverConnectionProfile", "discoverConnectionProfile", "discoverConnectionProfile", "discoverConnectionProfileCallable"]
+              "methods": ["discoverConnectionProfile", "discoverConnectionProfileCallable"]
             },
             "FetchErrors": {
               "methods": ["fetchErrorsAsync", "fetchErrorsOperationCallable", "fetchErrorsCallable"]

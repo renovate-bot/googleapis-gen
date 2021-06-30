@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Backfill strategy to disable automatic backfill for the Stream’s objects.
+ * Backfill strategy to disable automatic backfill for the Stream's objects.
  *
  * Generated from protobuf message <code>google.cloud.datastream.v1alpha1.Stream.BackfillNoneStrategy</code>
  */

@@ -16,7 +16,6 @@
 
 namespace Google.Cloud.Datastream.V1Alpha1.Snippets
 {
-    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.Datastream.V1Alpha1;
     using System.Threading.Tasks;
 
@@ -32,7 +31,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Create client
             DatastreamClient datastreamClient = await DatastreamClient.CreateAsync();
             // Initialize request argument(s)
-            LocationName name = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
+            PrivateConnectionName name = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
             // Make the request
             PrivateConnection response = await datastreamClient.GetPrivateConnectionAsync(name);
         }

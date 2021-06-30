@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Backfill strategy to automatically backfill the Stream’s objects.
+   * Backfill strategy to automatically backfill the Stream's objects.
    * Specific objects can be excluded.
    * </pre>
    *
@@ -955,7 +955,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Backfill strategy to automatically backfill the Stream’s objects.
+     * Backfill strategy to automatically backfill the Stream's objects.
      * Specific objects can be excluded.
      * </pre>
      *
@@ -1556,7 +1556,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Backfill strategy to disable automatic backfill for the Stream’s objects.
+   * Backfill strategy to disable automatic backfill for the Stream's objects.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1alpha1.Stream.BackfillNoneStrategy}
@@ -1781,7 +1781,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Backfill strategy to disable automatic backfill for the Stream’s objects.
+     * Backfill strategy to disable automatic backfill for the Stream's objects.
      * </pre>
      *
      * Protobuf type {@code google.cloud.datastream.v1alpha1.Stream.BackfillNoneStrategy}

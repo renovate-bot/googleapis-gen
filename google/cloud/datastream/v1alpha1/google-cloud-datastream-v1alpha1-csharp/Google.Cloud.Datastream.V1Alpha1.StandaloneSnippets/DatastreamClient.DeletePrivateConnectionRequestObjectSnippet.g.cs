@@ -16,7 +16,6 @@
 
 namespace Google.Cloud.Datastream.V1Alpha1.Snippets
 {
-    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.Datastream.V1Alpha1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
@@ -35,7 +34,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Initialize request argument(s)
             DeletePrivateConnectionRequest request = new DeletePrivateConnectionRequest
             {
-                LocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                PrivateConnectionName = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]"),
                 RequestId = "",
                 Force = false,
             };

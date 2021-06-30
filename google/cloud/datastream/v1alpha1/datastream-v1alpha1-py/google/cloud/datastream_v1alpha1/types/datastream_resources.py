@@ -993,7 +993,7 @@ class Stream(proto.Message):
         DRAINING = 8
 
     class BackfillAllStrategy(proto.Message):
-        r"""Backfill strategy to automatically backfill the Stream’s
+        r"""Backfill strategy to automatically backfill the Stream's
         objects. Specific objects can be excluded.
 
         Attributes:
@@ -1020,7 +1020,7 @@ class Stream(proto.Message):
 
     class BackfillNoneStrategy(proto.Message):
         r"""Backfill strategy to disable automatic backfill for the
-        Stream’s objects.
+        Stream's objects.
             """
 
     name = proto.Field(

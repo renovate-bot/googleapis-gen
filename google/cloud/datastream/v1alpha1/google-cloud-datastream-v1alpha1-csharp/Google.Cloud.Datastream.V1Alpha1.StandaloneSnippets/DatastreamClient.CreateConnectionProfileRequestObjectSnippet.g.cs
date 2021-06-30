@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Datastream.V1Alpha1.Snippets
 {
+    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.Datastream.V1Alpha1;
     using Google.LongRunning;
 
@@ -33,7 +34,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Initialize request argument(s)
             CreateConnectionProfileRequest request = new CreateConnectionProfileRequest
             {
-                ParentAsConnectionProfileName = ConnectionProfileName.FromProjectLocationConnectionProfile("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]"),
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 ConnectionProfileId = "",
                 ConnectionProfile = new ConnectionProfile(),
                 RequestId = "",

@@ -3038,7 +3038,7 @@ func (x *ValidationMessage) GetCode() string {
 	return ""
 }
 
-// Backfill strategy to automatically backfill the Stream’s objects.
+// Backfill strategy to automatically backfill the Stream's objects.
 // Specific objects can be excluded.
 type Stream_BackfillAllStrategy struct {
 	state         protoimpl.MessageState
@@ -3126,7 +3126,7 @@ func (*Stream_BackfillAllStrategy_OracleExcludedObjects) isStream_BackfillAllStr
 func (*Stream_BackfillAllStrategy_MysqlExcludedObjects) isStream_BackfillAllStrategy_ExcludedObjects() {
 }
 
-// Backfill strategy to disable automatic backfill for the Stream’s objects.
+// Backfill strategy to disable automatic backfill for the Stream's objects.
 type Stream_BackfillNoneStrategy struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

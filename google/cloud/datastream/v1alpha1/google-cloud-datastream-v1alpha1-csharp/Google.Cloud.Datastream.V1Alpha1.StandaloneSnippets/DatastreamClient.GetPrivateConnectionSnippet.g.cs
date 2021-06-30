@@ -30,7 +30,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Create client
             DatastreamClient datastreamClient = DatastreamClient.Create();
             // Initialize request argument(s)
-            string name = "projects/[PROJECT]/locations/[LOCATION]";
+            string name = "projects/[PROJECT]/locations/[LOCATION]/privateConnections/[PRIVATECONNECTION]";
             // Make the request
             PrivateConnection response = datastreamClient.GetPrivateConnection(name);
         }

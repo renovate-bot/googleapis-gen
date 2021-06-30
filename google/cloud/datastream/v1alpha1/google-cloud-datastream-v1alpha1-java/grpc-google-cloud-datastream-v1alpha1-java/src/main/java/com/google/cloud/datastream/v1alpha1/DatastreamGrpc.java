@@ -775,7 +775,7 @@ public final class DatastreamGrpc {
      * Use this method to discover a connection profile.
      * The discover API call exposes the data objects and metadata belonging to
      * the profile. Typically, a request returns children data objects under a
-     * parent data object that’s optionally supplied in the request.
+     * parent data object that's optionally supplied in the request.
      * </pre>
      */
     public void discoverConnectionProfile(com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest request,
@@ -847,7 +847,7 @@ public final class DatastreamGrpc {
      * <pre>
      * The FetchStaticIps API call exposes the static ips used by Datastream.
      * Typically, a request returns children data objects under
-     * a parent data object that’s optionally supplied in the request.
+     * a parent data object that's optionally supplied in the request.
      * </pre>
      */
     public void fetchStaticIps(com.google.cloud.datastream.v1alpha1.FetchStaticIpsRequest request,
@@ -1169,7 +1169,7 @@ public final class DatastreamGrpc {
      * Use this method to discover a connection profile.
      * The discover API call exposes the data objects and metadata belonging to
      * the profile. Typically, a request returns children data objects under a
-     * parent data object that’s optionally supplied in the request.
+     * parent data object that's optionally supplied in the request.
      * </pre>
      */
     public void discoverConnectionProfile(com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest request,
@@ -1248,7 +1248,7 @@ public final class DatastreamGrpc {
      * <pre>
      * The FetchStaticIps API call exposes the static ips used by Datastream.
      * Typically, a request returns children data objects under
-     * a parent data object that’s optionally supplied in the request.
+     * a parent data object that's optionally supplied in the request.
      * </pre>
      */
     public void fetchStaticIps(com.google.cloud.datastream.v1alpha1.FetchStaticIpsRequest request,
@@ -1422,7 +1422,7 @@ public final class DatastreamGrpc {
      * Use this method to discover a connection profile.
      * The discover API call exposes the data objects and metadata belonging to
      * the profile. Typically, a request returns children data objects under a
-     * parent data object that’s optionally supplied in the request.
+     * parent data object that's optionally supplied in the request.
      * </pre>
      */
     public com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse discoverConnectionProfile(com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest request) {
@@ -1494,7 +1494,7 @@ public final class DatastreamGrpc {
      * <pre>
      * The FetchStaticIps API call exposes the static ips used by Datastream.
      * Typically, a request returns children data objects under
-     * a parent data object that’s optionally supplied in the request.
+     * a parent data object that's optionally supplied in the request.
      * </pre>
      */
     public com.google.cloud.datastream.v1alpha1.FetchStaticIpsResponse fetchStaticIps(com.google.cloud.datastream.v1alpha1.FetchStaticIpsRequest request) {
@@ -1664,7 +1664,7 @@ public final class DatastreamGrpc {
      * Use this method to discover a connection profile.
      * The discover API call exposes the data objects and metadata belonging to
      * the profile. Typically, a request returns children data objects under a
-     * parent data object that’s optionally supplied in the request.
+     * parent data object that's optionally supplied in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse> discoverConnectionProfile(
@@ -1743,7 +1743,7 @@ public final class DatastreamGrpc {
      * <pre>
      * The FetchStaticIps API call exposes the static ips used by Datastream.
      * Typically, a request returns children data objects under
-     * a parent data object that’s optionally supplied in the request.
+     * a parent data object that's optionally supplied in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datastream.v1alpha1.FetchStaticIpsResponse> fetchStaticIps(

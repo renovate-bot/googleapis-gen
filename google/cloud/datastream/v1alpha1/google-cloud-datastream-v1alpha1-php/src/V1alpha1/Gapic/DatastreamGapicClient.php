@@ -85,7 +85,7 @@ use Google\Protobuf\FieldMask;
  * ```
  * $datastreamClient = new DatastreamClient();
  * try {
- *     $formattedParent = $datastreamClient->connectionProfileName('[PROJECT]', '[LOCATION]', '[CONNECTIONPROFILE]');
+ *     $formattedParent = $datastreamClient->locationName('[PROJECT]', '[LOCATION]');
  *     $connectionProfileId = 'connection_profile_id';
  *     $connectionProfile = new ConnectionProfile();
  *     $operationResponse = $datastreamClient->createConnectionProfile($formattedParent, $connectionProfileId, $connectionProfile);
@@ -502,7 +502,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedParent = $datastreamClient->connectionProfileName('[PROJECT]', '[LOCATION]', '[CONNECTIONPROFILE]');
+     *     $formattedParent = $datastreamClient->locationName('[PROJECT]', '[LOCATION]');
      *     $connectionProfileId = 'connection_profile_id';
      *     $connectionProfile = new ConnectionProfile();
      *     $operationResponse = $datastreamClient->createConnectionProfile($formattedParent, $connectionProfileId, $connectionProfile);
@@ -776,7 +776,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedParent = $datastreamClient->streamName('[PROJECT]', '[LOCATION]', '[STREAM]');
+     *     $formattedParent = $datastreamClient->locationName('[PROJECT]', '[LOCATION]');
      *     $streamId = 'stream_id';
      *     $stream = new Stream();
      *     $operationResponse = $datastreamClient->createStream($formattedParent, $streamId, $stream);
@@ -963,7 +963,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedName = $datastreamClient->locationName('[PROJECT]', '[LOCATION]');
+     *     $formattedName = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
      *     $operationResponse = $datastreamClient->deletePrivateConnection($formattedName);
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
@@ -1053,7 +1053,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedName = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
+     *     $formattedName = $datastreamClient->routeName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]', '[ROUTE]');
      *     $operationResponse = $datastreamClient->deleteRoute($formattedName);
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
@@ -1216,7 +1216,7 @@ class DatastreamGapicClient
      * Use this method to discover a connection profile.
      * The discover API call exposes the data objects and metadata belonging to
      * the profile. Typically, a request returns children data objects under a
-     * parent data object that’s optionally supplied in the request.
+     * parent data object that's optionally supplied in the request.
      *
      * Sample code:
      * ```
@@ -1368,7 +1368,7 @@ class DatastreamGapicClient
     /**
      * The FetchStaticIps API call exposes the static ips used by Datastream.
      * Typically, a request returns children data objects under
-     * a parent data object that’s optionally supplied in the request.
+     * a parent data object that's optionally supplied in the request.
      *
      * Sample code:
      * ```
@@ -1488,7 +1488,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedName = $datastreamClient->locationName('[PROJECT]', '[LOCATION]');
+     *     $formattedName = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
      *     $response = $datastreamClient->getPrivateConnection($formattedName);
      * } finally {
      *     $datastreamClient->close();
@@ -1530,7 +1530,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedName = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
+     *     $formattedName = $datastreamClient->routeName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]', '[ROUTE]');
      *     $response = $datastreamClient->getRoute($formattedName);
      * } finally {
      *     $datastreamClient->close();

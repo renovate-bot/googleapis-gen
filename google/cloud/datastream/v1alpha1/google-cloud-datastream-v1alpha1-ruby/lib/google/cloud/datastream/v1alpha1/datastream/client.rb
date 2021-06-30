@@ -592,7 +592,7 @@ module Google
             # Use this method to discover a connection profile.
             # The discover API call exposes the data objects and metadata belonging to
             # the profile. Typically, a request returns children data objects under a
-            # parent data object that’s optionally supplied in the request.
+            # parent data object that's optionally supplied in the request.
             #
             # @overload discover_connection_profile(request, options = nil)
             #   Pass arguments to `discover_connection_profile` via a request object, either of type
@@ -1151,7 +1151,7 @@ module Google
             ##
             # The FetchStaticIps API call exposes the static ips used by Datastream.
             # Typically, a request returns children data objects under
-            # a parent data object that’s optionally supplied in the request.
+            # a parent data object that's optionally supplied in the request.
             #
             # @overload fetch_static_ips(request, options = nil)
             #   Pass arguments to `fetch_static_ips` via a request object, either of type

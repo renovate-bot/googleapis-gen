@@ -112,7 +112,7 @@ class DatastreamGrpcClient extends \Grpc\BaseStub {
      * Use this method to discover a connection profile.
      * The discover API call exposes the data objects and metadata belonging to
      * the profile. Typically, a request returns children data objects under a
-     * parent data object that’s optionally supplied in the request.
+     * parent data object that's optionally supplied in the request.
      * @param \Google\Cloud\Datastream\V1alpha1\DiscoverConnectionProfileRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -219,7 +219,7 @@ class DatastreamGrpcClient extends \Grpc\BaseStub {
     /**
      * The FetchStaticIps API call exposes the static ips used by Datastream.
      * Typically, a request returns children data objects under
-     * a parent data object that’s optionally supplied in the request.
+     * a parent data object that's optionally supplied in the request.
      * @param \Google\Cloud\Datastream\V1alpha1\FetchStaticIpsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

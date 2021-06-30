@@ -16,7 +16,6 @@
 
 namespace Google.Cloud.Datastream.V1Alpha1.Snippets
 {
-    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.Datastream.V1Alpha1;
 
     public sealed partial class GeneratedDatastreamClientStandaloneSnippets
@@ -31,7 +30,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Create client
             DatastreamClient datastreamClient = DatastreamClient.Create();
             // Initialize request argument(s)
-            LocationName name = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
+            PrivateConnectionName name = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
             // Make the request
             PrivateConnection response = datastreamClient.GetPrivateConnection(name);
         }

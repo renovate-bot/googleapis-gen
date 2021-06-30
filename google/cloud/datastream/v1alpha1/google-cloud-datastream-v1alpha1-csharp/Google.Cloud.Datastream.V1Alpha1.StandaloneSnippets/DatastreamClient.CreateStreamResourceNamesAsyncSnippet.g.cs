@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Datastream.V1Alpha1.Snippets
 {
+    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.Datastream.V1Alpha1;
     using Google.LongRunning;
     using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Create client
             DatastreamClient datastreamClient = await DatastreamClient.CreateAsync();
             // Initialize request argument(s)
-            StreamName parent = StreamName.FromProjectLocationStream("[PROJECT]", "[LOCATION]", "[STREAM]");
+            LocationName parent = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
             Stream stream = new Stream();
             string streamId = "";
             // Make the request

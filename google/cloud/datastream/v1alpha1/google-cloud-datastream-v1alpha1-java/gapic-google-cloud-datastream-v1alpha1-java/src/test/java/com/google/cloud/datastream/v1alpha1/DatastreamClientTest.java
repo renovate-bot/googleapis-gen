@@ -293,8 +293,7 @@ public class DatastreamClientTest {
             .build();
     mockDatastream.addResponse(resultOperation);
 
-    ConnectionProfileName parent =
-        ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
     String connectionProfileId = "connectionProfileId597575526";
 
@@ -322,8 +321,7 @@ public class DatastreamClientTest {
     mockDatastream.addException(exception);
 
     try {
-      ConnectionProfileName parent =
-          ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
       String connectionProfileId = "connectionProfileId597575526";
       client.createConnectionProfileAsync(parent, connectionProfile, connectionProfileId).get();
@@ -546,9 +544,14 @@ public class DatastreamClientTest {
         DiscoverConnectionProfileResponse.newBuilder().build();
     mockDatastream.addResponse(expectedResponse);
 
-    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    DiscoverConnectionProfileRequest request =
+        DiscoverConnectionProfileRequest.newBuilder()
+            .setParent(
+                ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+                    .toString())
+            .build();
 
-    DiscoverConnectionProfileResponse actualResponse = client.discoverConnectionProfile(parent);
+    DiscoverConnectionProfileResponse actualResponse = client.discoverConnectionProfile(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDatastream.getRequests();
@@ -556,7 +559,14 @@ public class DatastreamClientTest {
     DiscoverConnectionProfileRequest actualRequest =
         ((DiscoverConnectionProfileRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getConnectionProfile(), actualRequest.getConnectionProfile());
+    Assert.assertEquals(
+        request.getConnectionProfileName(), actualRequest.getConnectionProfileName());
+    Assert.assertEquals(request.getRecursive(), actualRequest.getRecursive());
+    Assert.assertEquals(request.getRecursionDepth(), actualRequest.getRecursionDepth());
+    Assert.assertEquals(request.getOracleRdbms(), actualRequest.getOracleRdbms());
+    Assert.assertEquals(request.getMysqlRdbms(), actualRequest.getMysqlRdbms());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -569,45 +579,13 @@ public class DatastreamClientTest {
     mockDatastream.addException(exception);
 
     try {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-      client.discoverConnectionProfile(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void discoverConnectionProfileTest2() throws Exception {
-    DiscoverConnectionProfileResponse expectedResponse =
-        DiscoverConnectionProfileResponse.newBuilder().build();
-    mockDatastream.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-
-    DiscoverConnectionProfileResponse actualResponse = client.discoverConnectionProfile(parent);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDatastream.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DiscoverConnectionProfileRequest actualRequest =
-        ((DiscoverConnectionProfileRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void discoverConnectionProfileExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockDatastream.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      client.discoverConnectionProfile(parent);
+      DiscoverConnectionProfileRequest request =
+          DiscoverConnectionProfileRequest.newBuilder()
+              .setParent(
+                  ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]")
+                      .toString())
+              .build();
+      client.discoverConnectionProfile(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -813,7 +791,7 @@ public class DatastreamClientTest {
             .build();
     mockDatastream.addResponse(resultOperation);
 
-    StreamName parent = StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Stream stream = Stream.newBuilder().build();
     String streamId = "streamId1790933179";
 
@@ -839,7 +817,7 @@ public class DatastreamClientTest {
     mockDatastream.addException(exception);
 
     try {
-      StreamName parent = StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Stream stream = Stream.newBuilder().build();
       String streamId = "streamId1790933179";
       client.createStreamAsync(parent, stream, streamId).get();
@@ -1328,7 +1306,8 @@ public class DatastreamClientTest {
             .build();
     mockDatastream.addResponse(expectedResponse);
 
-    LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+    PrivateConnectionName name =
+        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
 
     PrivateConnection actualResponse = client.getPrivateConnection(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1351,7 +1330,8 @@ public class DatastreamClientTest {
     mockDatastream.addException(exception);
 
     try {
-      LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+      PrivateConnectionName name =
+          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
       client.getPrivateConnection(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1507,7 +1487,8 @@ public class DatastreamClientTest {
             .build();
     mockDatastream.addResponse(resultOperation);
 
-    LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+    PrivateConnectionName name =
+        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
 
     client.deletePrivateConnectionAsync(name).get();
 
@@ -1529,7 +1510,8 @@ public class DatastreamClientTest {
     mockDatastream.addException(exception);
 
     try {
-      LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+      PrivateConnectionName name =
+          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
       client.deletePrivateConnectionAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -1720,8 +1702,7 @@ public class DatastreamClientTest {
             .build();
     mockDatastream.addResponse(expectedResponse);
 
-    PrivateConnectionName name =
-        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+    RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]");
 
     Route actualResponse = client.getRoute(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1743,8 +1724,7 @@ public class DatastreamClientTest {
     mockDatastream.addException(exception);
 
     try {
-      PrivateConnectionName name =
-          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+      RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]");
       client.getRoute(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1899,8 +1879,7 @@ public class DatastreamClientTest {
             .build();
     mockDatastream.addResponse(resultOperation);
 
-    PrivateConnectionName name =
-        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+    RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]");
 
     client.deleteRouteAsync(name).get();
 
@@ -1921,8 +1900,7 @@ public class DatastreamClientTest {
     mockDatastream.addException(exception);
 
     try {
-      PrivateConnectionName name =
-          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+      RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]");
       client.deleteRouteAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {

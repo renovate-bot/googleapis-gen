@@ -504,7 +504,7 @@ export class DatastreamClient {
  * Use this method to discover a connection profile.
  * The discover API call exposes the data objects and metadata belonging to
  * the profile. Typically, a request returns children data objects under a
- * parent data object that’s optionally supplied in the request.
+ * parent data object that's optionally supplied in the request.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -2444,7 +2444,7 @@ export class DatastreamClient {
 /**
  * The FetchStaticIps API call exposes the static ips used by Datastream.
  * Typically, a request returns children data objects under
- * a parent data object that’s optionally supplied in the request.
+ * a parent data object that's optionally supplied in the request.
  *
  * @param {Object} request
  *   The request object that will be sent.

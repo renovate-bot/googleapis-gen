@@ -587,7 +587,7 @@ module Google
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
 
-          # Backfill strategy to automatically backfill the Stream’s objects.
+          # Backfill strategy to automatically backfill the Stream's objects.
           # Specific objects can be excluded.
           # @!attribute [rw] oracle_excluded_objects
           #   @return [::Google::Cloud::Datastream::V1alpha1::OracleRdbms]
@@ -600,7 +600,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # Backfill strategy to disable automatic backfill for the Stream’s objects.
+          # Backfill strategy to disable automatic backfill for the Stream's objects.
           class BackfillNoneStrategy
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

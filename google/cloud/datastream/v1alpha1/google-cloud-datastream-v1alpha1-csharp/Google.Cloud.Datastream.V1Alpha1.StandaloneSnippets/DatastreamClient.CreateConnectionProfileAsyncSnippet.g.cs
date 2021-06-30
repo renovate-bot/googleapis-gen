@@ -32,7 +32,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Create client
             DatastreamClient datastreamClient = await DatastreamClient.CreateAsync();
             // Initialize request argument(s)
-            string parent = "projects/[PROJECT]/locations/[LOCATION]/connectionProfiles/[CONNECTIONPROFILE]";
+            string parent = "projects/[PROJECT]/locations/[LOCATION]";
             ConnectionProfile connectionProfile = new ConnectionProfile();
             string connectionProfileId = "";
             // Make the request

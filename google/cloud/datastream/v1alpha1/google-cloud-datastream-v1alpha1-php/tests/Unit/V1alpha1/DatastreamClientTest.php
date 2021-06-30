@@ -121,7 +121,7 @@ class DatastreamClientTest extends GeneratedTest
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
         // Mock request
-        $formattedParent = $client->connectionProfileName('[PROJECT]', '[LOCATION]', '[CONNECTIONPROFILE]');
+        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $connectionProfileId = 'connectionProfileId1179884402';
         $connectionProfile = new ConnectionProfile();
         $connectionProfileDisplayName = 'connectionProfileDisplayName-1452081022';
@@ -195,7 +195,7 @@ class DatastreamClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
         // Mock request
-        $formattedParent = $client->connectionProfileName('[PROJECT]', '[LOCATION]', '[CONNECTIONPROFILE]');
+        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $connectionProfileId = 'connectionProfileId1179884402';
         $connectionProfile = new ConnectionProfile();
         $connectionProfileDisplayName = 'connectionProfileDisplayName-1452081022';
@@ -540,7 +540,7 @@ class DatastreamClientTest extends GeneratedTest
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
         // Mock request
-        $formattedParent = $client->streamName('[PROJECT]', '[LOCATION]', '[STREAM]');
+        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $streamId = 'streamId-315624902';
         $stream = new Stream();
         $streamDisplayName = 'streamDisplayName41647821';
@@ -622,7 +622,7 @@ class DatastreamClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
         // Mock request
-        $formattedParent = $client->streamName('[PROJECT]', '[LOCATION]', '[STREAM]');
+        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $streamId = 'streamId-315624902';
         $stream = new Stream();
         $streamDisplayName = 'streamDisplayName41647821';
@@ -810,7 +810,7 @@ class DatastreamClientTest extends GeneratedTest
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
         // Mock request
-        $formattedName = $client->locationName('[PROJECT]', '[LOCATION]');
+        $formattedName = $client->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
         $response = $client->deletePrivateConnection($formattedName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -876,7 +876,7 @@ class DatastreamClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
         // Mock request
-        $formattedName = $client->locationName('[PROJECT]', '[LOCATION]');
+        $formattedName = $client->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
         $response = $client->deletePrivateConnection($formattedName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -931,7 +931,7 @@ class DatastreamClientTest extends GeneratedTest
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
         // Mock request
-        $formattedName = $client->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
+        $formattedName = $client->routeName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]', '[ROUTE]');
         $response = $client->deleteRoute($formattedName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -997,7 +997,7 @@ class DatastreamClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
         // Mock request
-        $formattedName = $client->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
+        $formattedName = $client->routeName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]', '[ROUTE]');
         $response = $client->deleteRoute($formattedName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -1474,7 +1474,7 @@ class DatastreamClientTest extends GeneratedTest
         $expectedResponse->setDisplayName($displayName);
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedName = $client->locationName('[PROJECT]', '[LOCATION]');
+        $formattedName = $client->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
         $response = $client->getPrivateConnection($formattedName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -1508,7 +1508,7 @@ class DatastreamClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedName = $client->locationName('[PROJECT]', '[LOCATION]');
+        $formattedName = $client->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
         try {
             $client->getPrivateConnection($formattedName);
             // If the $client method call did not throw, fail the test
@@ -1544,7 +1544,7 @@ class DatastreamClientTest extends GeneratedTest
         $expectedResponse->setDestinationPort($destinationPort);
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedName = $client->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
+        $formattedName = $client->routeName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]', '[ROUTE]');
         $response = $client->getRoute($formattedName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -1578,7 +1578,7 @@ class DatastreamClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedName = $client->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
+        $formattedName = $client->routeName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]', '[ROUTE]');
         try {
             $client->getRoute($formattedName);
             // If the $client method call did not throw, fail the test

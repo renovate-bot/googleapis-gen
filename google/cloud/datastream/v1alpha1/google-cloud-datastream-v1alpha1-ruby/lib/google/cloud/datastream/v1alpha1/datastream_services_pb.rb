@@ -47,7 +47,7 @@ module Google
             # Use this method to discover a connection profile.
             # The discover API call exposes the data objects and metadata belonging to
             # the profile. Typically, a request returns children data objects under a
-            # parent data object that’s optionally supplied in the request.
+            # parent data object that's optionally supplied in the request.
             rpc :DiscoverConnectionProfile, ::Google::Cloud::Datastream::V1alpha1::DiscoverConnectionProfileRequest, ::Google::Cloud::Datastream::V1alpha1::DiscoverConnectionProfileResponse
             # Use this method to list streams in a project and location.
             rpc :ListStreams, ::Google::Cloud::Datastream::V1alpha1::ListStreamsRequest, ::Google::Cloud::Datastream::V1alpha1::ListStreamsResponse
@@ -63,7 +63,7 @@ module Google
             rpc :FetchErrors, ::Google::Cloud::Datastream::V1alpha1::FetchErrorsRequest, ::Google::Longrunning::Operation
             # The FetchStaticIps API call exposes the static ips used by Datastream.
             # Typically, a request returns children data objects under
-            # a parent data object that’s optionally supplied in the request.
+            # a parent data object that's optionally supplied in the request.
             rpc :FetchStaticIps, ::Google::Cloud::Datastream::V1alpha1::FetchStaticIpsRequest, ::Google::Cloud::Datastream::V1alpha1::FetchStaticIpsResponse
             # Use this method to create a private connectivity configuration.
             rpc :CreatePrivateConnection, ::Google::Cloud::Datastream::V1alpha1::CreatePrivateConnectionRequest, ::Google::Longrunning::Operation

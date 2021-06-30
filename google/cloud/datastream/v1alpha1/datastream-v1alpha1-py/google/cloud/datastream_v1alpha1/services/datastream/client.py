@@ -831,7 +831,6 @@ class DatastreamClient(metaclass=DatastreamClientMeta):
     def discover_connection_profile(self,
             request: datastream.DiscoverConnectionProfileRequest = None,
             *,
-            parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -840,19 +839,12 @@ class DatastreamClient(metaclass=DatastreamClientMeta):
         The discover API call exposes the data objects and
         metadata belonging to the profile. Typically, a request
         returns children data objects under a parent data object
-        that’s optionally supplied in the request.
+        that's optionally supplied in the request.
 
         Args:
             request (google.cloud.datastream_v1alpha1.types.DiscoverConnectionProfileRequest):
                 The request object. Request message for 'discover'
                 ConnectionProfile request.
-            parent (str):
-                Required. The parent resource of the ConnectionProfile
-                type. Must be in the format ``projects/*/locations/*``.
-
-                This corresponds to the ``parent`` field
-                on the ``request`` instance; if ``request`` is provided, this
-                should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -864,23 +856,12 @@ class DatastreamClient(metaclass=DatastreamClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-        # Sanity check: If we got a request object, we should *not* have
-        # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([parent])
-        if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
-
         # Minor optimization to avoid making a copy if the user passes
         # in a datastream.DiscoverConnectionProfileRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, datastream.DiscoverConnectionProfileRequest):
             request = datastream.DiscoverConnectionProfileRequest(request)
-            # If we have keyword arguments corresponding to fields on the
-            # request, apply these.
-            if parent is not None:
-                request.parent = parent
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -1436,7 +1417,7 @@ class DatastreamClient(metaclass=DatastreamClientMeta):
             ) -> pagers.FetchStaticIpsPager:
         r"""The FetchStaticIps API call exposes the static ips
         used by Datastream. Typically, a request returns
-        children data objects under a parent data object that’s
+        children data objects under a parent data object that's
         optionally supplied in the request.
 
         Args:
