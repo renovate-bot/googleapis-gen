@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/fleetengine",
+  "name": "@googlemaps/fleetengine",
   "version": "0.1.0",
   "description": "Fleetengine client for Node.js",
   "repository": "googleapis/nodejs-fleetengine",

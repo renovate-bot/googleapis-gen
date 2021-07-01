@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const fleetengine = require('@google-cloud/fleetengine');
+const fleetengine = require('@googlemaps/fleetengine');
 
 function main() {
   const tripServiceClient = new fleetengine.TripServiceClient();
