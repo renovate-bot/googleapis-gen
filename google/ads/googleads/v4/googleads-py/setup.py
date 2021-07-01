@@ -17,7 +17,7 @@ import setuptools  # type: ignore
 
 
 setuptools.setup(
-    name='google-ads-googleads',
+    name='google-ads',
     version='0.0.1',
     packages=setuptools.PEP420PackageFinder.find(),
     namespace_packages=('google', 'google.ads'),

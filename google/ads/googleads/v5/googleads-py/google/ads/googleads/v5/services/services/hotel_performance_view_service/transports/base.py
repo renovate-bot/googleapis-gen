@@ -28,7 +28,7 @@ from google.ads.googleads.v5.services.types import hotel_performance_view_servic
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-ads-googleads',
+            'google-ads',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

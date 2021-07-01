@@ -28,7 +28,7 @@ from google.ads.googleads.v5.services.types import keyword_plan_campaign_keyword
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-ads-googleads',
+            'google-ads',
         ).version,
     )
 except pkg_resources.DistributionNotFound:
