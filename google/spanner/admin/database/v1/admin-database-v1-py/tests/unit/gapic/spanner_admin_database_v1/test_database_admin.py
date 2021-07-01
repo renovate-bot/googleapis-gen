@@ -1070,6 +1070,7 @@ def test_get_database(transport: str = 'grpc', request_type=spanner_database_adm
             name='name_value',
             state=spanner_database_admin.Database.State.CREATING,
             version_retention_period='version_retention_period_value',
+            default_leader='default_leader_value',
         )
         response = client.get_database(request)
 
@@ -1083,6 +1084,7 @@ def test_get_database(transport: str = 'grpc', request_type=spanner_database_adm
     assert response.name == 'name_value'
     assert response.state == spanner_database_admin.Database.State.CREATING
     assert response.version_retention_period == 'version_retention_period_value'
+    assert response.default_leader == 'default_leader_value'
 
 
 def test_get_database_from_dict():
@@ -1127,6 +1129,7 @@ async def test_get_database_async(transport: str = 'grpc_asyncio', request_type=
             name='name_value',
             state=spanner_database_admin.Database.State.CREATING,
             version_retention_period='version_retention_period_value',
+            default_leader='default_leader_value',
         ))
         response = await client.get_database(request)
 
@@ -1140,6 +1143,7 @@ async def test_get_database_async(transport: str = 'grpc_asyncio', request_type=
     assert response.name == 'name_value'
     assert response.state == spanner_database_admin.Database.State.CREATING
     assert response.version_retention_period == 'version_retention_period_value'
+    assert response.default_leader == 'default_leader_value'
 
 
 @pytest.mark.asyncio

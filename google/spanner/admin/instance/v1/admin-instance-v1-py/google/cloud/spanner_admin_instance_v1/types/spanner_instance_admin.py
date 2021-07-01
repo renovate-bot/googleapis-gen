@@ -97,6 +97,9 @@ class InstanceConfig(proto.Message):
             The geographic placement of nodes in this
             instance configuration and their replication
             properties.
+        leader_options (Sequence[str]):
+            Allowed values of the “default_leader” schema option for
+            databases in instances that use this instance configuration.
     """
 
     name = proto.Field(
@@ -111,6 +114,10 @@ class InstanceConfig(proto.Message):
         proto.MESSAGE,
         number=3,
         message='ReplicaInfo',
+    )
+    leader_options = proto.RepeatedField(
+        proto.STRING,
+        number=4,
     )
 
 
