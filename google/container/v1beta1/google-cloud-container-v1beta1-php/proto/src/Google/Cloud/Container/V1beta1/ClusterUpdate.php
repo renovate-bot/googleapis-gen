@@ -223,6 +223,13 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.container.v1beta1.Master desired_master = 52;</code>
      */
     protected $desired_master = null;
+    /**
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     */
+    protected $desired_authenticator_groups_config = null;
 
     /**
      * Constructor.
@@ -328,6 +335,9 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      *           Configuration for Shielded Nodes.
      *     @type \Google\Cloud\Container\V1beta1\Master $desired_master
      *           Configuration for master components.
+     *     @type \Google\Cloud\Container\V1beta1\AuthenticatorGroupsConfig $desired_authenticator_groups_config
+     *           AuthenticatorGroupsConfig specifies the config for the cluster security
+     *           groups settings.
      * }
      */
     public function __construct($data = NULL) {
@@ -1311,6 +1321,44 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\Master::class);
         $this->desired_master = $var;
+
+        return $this;
+    }
+
+    /**
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     * @return \Google\Cloud\Container\V1beta1\AuthenticatorGroupsConfig|null
+     */
+    public function getDesiredAuthenticatorGroupsConfig()
+    {
+        return isset($this->desired_authenticator_groups_config) ? $this->desired_authenticator_groups_config : null;
+    }
+
+    public function hasDesiredAuthenticatorGroupsConfig()
+    {
+        return isset($this->desired_authenticator_groups_config);
+    }
+
+    public function clearDesiredAuthenticatorGroupsConfig()
+    {
+        unset($this->desired_authenticator_groups_config);
+    }
+
+    /**
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     * @param \Google\Cloud\Container\V1beta1\AuthenticatorGroupsConfig $var
+     * @return $this
+     */
+    public function setDesiredAuthenticatorGroupsConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\AuthenticatorGroupsConfig::class);
+        $this->desired_authenticator_groups_config = $var;
 
         return $this;
     }

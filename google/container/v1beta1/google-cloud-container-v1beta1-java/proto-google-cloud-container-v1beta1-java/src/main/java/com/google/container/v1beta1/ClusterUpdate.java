@@ -355,6 +355,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 506: {
+            com.google.container.v1beta1.AuthenticatorGroupsConfig.Builder subBuilder = null;
+            if (desiredAuthenticatorGroupsConfig_ != null) {
+              subBuilder = desiredAuthenticatorGroupsConfig_.toBuilder();
+            }
+            desiredAuthenticatorGroupsConfig_ = input.readMessage(com.google.container.v1beta1.AuthenticatorGroupsConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(desiredAuthenticatorGroupsConfig_);
+              desiredAuthenticatorGroupsConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 802: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -1573,6 +1586,47 @@ private static final long serialVersionUID = 0L;
     return getDesiredMaster();
   }
 
+  public static final int DESIRED_AUTHENTICATOR_GROUPS_CONFIG_FIELD_NUMBER = 63;
+  private com.google.container.v1beta1.AuthenticatorGroupsConfig desiredAuthenticatorGroupsConfig_;
+  /**
+   * <pre>
+   * AuthenticatorGroupsConfig specifies the config for the cluster security
+   * groups settings.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+   * @return Whether the desiredAuthenticatorGroupsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredAuthenticatorGroupsConfig() {
+    return desiredAuthenticatorGroupsConfig_ != null;
+  }
+  /**
+   * <pre>
+   * AuthenticatorGroupsConfig specifies the config for the cluster security
+   * groups settings.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+   * @return The desiredAuthenticatorGroupsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AuthenticatorGroupsConfig getDesiredAuthenticatorGroupsConfig() {
+    return desiredAuthenticatorGroupsConfig_ == null ? com.google.container.v1beta1.AuthenticatorGroupsConfig.getDefaultInstance() : desiredAuthenticatorGroupsConfig_;
+  }
+  /**
+   * <pre>
+   * AuthenticatorGroupsConfig specifies the config for the cluster security
+   * groups settings.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AuthenticatorGroupsConfigOrBuilder getDesiredAuthenticatorGroupsConfigOrBuilder() {
+    return getDesiredAuthenticatorGroupsConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1664,6 +1718,9 @@ private static final long serialVersionUID = 0L;
     }
     if (desiredNotificationConfig_ != null) {
       output.writeMessage(55, getDesiredNotificationConfig());
+    }
+    if (desiredAuthenticatorGroupsConfig_ != null) {
+      output.writeMessage(63, getDesiredAuthenticatorGroupsConfig());
     }
     if (!getDesiredMasterVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, desiredMasterVersion_);
@@ -1779,6 +1836,10 @@ private static final long serialVersionUID = 0L;
     if (desiredNotificationConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(55, getDesiredNotificationConfig());
+    }
+    if (desiredAuthenticatorGroupsConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(63, getDesiredAuthenticatorGroupsConfig());
     }
     if (!getDesiredMasterVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, desiredMasterVersion_);
@@ -1908,6 +1969,11 @@ private static final long serialVersionUID = 0L;
       if (!getDesiredMaster()
           .equals(other.getDesiredMaster())) return false;
     }
+    if (hasDesiredAuthenticatorGroupsConfig() != other.hasDesiredAuthenticatorGroupsConfig()) return false;
+    if (hasDesiredAuthenticatorGroupsConfig()) {
+      if (!getDesiredAuthenticatorGroupsConfig()
+          .equals(other.getDesiredAuthenticatorGroupsConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2012,6 +2078,10 @@ private static final long serialVersionUID = 0L;
     if (hasDesiredMaster()) {
       hash = (37 * hash) + DESIRED_MASTER_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredMaster().hashCode();
+    }
+    if (hasDesiredAuthenticatorGroupsConfig()) {
+      hash = (37 * hash) + DESIRED_AUTHENTICATOR_GROUPS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredAuthenticatorGroupsConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2282,6 +2352,12 @@ private static final long serialVersionUID = 0L;
         desiredMaster_ = null;
         desiredMasterBuilder_ = null;
       }
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        desiredAuthenticatorGroupsConfig_ = null;
+      } else {
+        desiredAuthenticatorGroupsConfig_ = null;
+        desiredAuthenticatorGroupsConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2415,6 +2491,11 @@ private static final long serialVersionUID = 0L;
         result.desiredMaster_ = desiredMaster_;
       } else {
         result.desiredMaster_ = desiredMasterBuilder_.build();
+      }
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        result.desiredAuthenticatorGroupsConfig_ = desiredAuthenticatorGroupsConfig_;
+      } else {
+        result.desiredAuthenticatorGroupsConfig_ = desiredAuthenticatorGroupsConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2557,6 +2638,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasDesiredMaster()) {
         mergeDesiredMaster(other.getDesiredMaster());
+      }
+      if (other.hasDesiredAuthenticatorGroupsConfig()) {
+        mergeDesiredAuthenticatorGroupsConfig(other.getDesiredAuthenticatorGroupsConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6579,6 +6663,170 @@ private static final long serialVersionUID = 0L;
         desiredMaster_ = null;
       }
       return desiredMasterBuilder_;
+    }
+
+    private com.google.container.v1beta1.AuthenticatorGroupsConfig desiredAuthenticatorGroupsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1beta1.AuthenticatorGroupsConfig, com.google.container.v1beta1.AuthenticatorGroupsConfig.Builder, com.google.container.v1beta1.AuthenticatorGroupsConfigOrBuilder> desiredAuthenticatorGroupsConfigBuilder_;
+    /**
+     * <pre>
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     * @return Whether the desiredAuthenticatorGroupsConfig field is set.
+     */
+    public boolean hasDesiredAuthenticatorGroupsConfig() {
+      return desiredAuthenticatorGroupsConfigBuilder_ != null || desiredAuthenticatorGroupsConfig_ != null;
+    }
+    /**
+     * <pre>
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     * @return The desiredAuthenticatorGroupsConfig.
+     */
+    public com.google.container.v1beta1.AuthenticatorGroupsConfig getDesiredAuthenticatorGroupsConfig() {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        return desiredAuthenticatorGroupsConfig_ == null ? com.google.container.v1beta1.AuthenticatorGroupsConfig.getDefaultInstance() : desiredAuthenticatorGroupsConfig_;
+      } else {
+        return desiredAuthenticatorGroupsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     */
+    public Builder setDesiredAuthenticatorGroupsConfig(com.google.container.v1beta1.AuthenticatorGroupsConfig value) {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredAuthenticatorGroupsConfig_ = value;
+        onChanged();
+      } else {
+        desiredAuthenticatorGroupsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     */
+    public Builder setDesiredAuthenticatorGroupsConfig(
+        com.google.container.v1beta1.AuthenticatorGroupsConfig.Builder builderForValue) {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        desiredAuthenticatorGroupsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredAuthenticatorGroupsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     */
+    public Builder mergeDesiredAuthenticatorGroupsConfig(com.google.container.v1beta1.AuthenticatorGroupsConfig value) {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        if (desiredAuthenticatorGroupsConfig_ != null) {
+          desiredAuthenticatorGroupsConfig_ =
+            com.google.container.v1beta1.AuthenticatorGroupsConfig.newBuilder(desiredAuthenticatorGroupsConfig_).mergeFrom(value).buildPartial();
+        } else {
+          desiredAuthenticatorGroupsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredAuthenticatorGroupsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     */
+    public Builder clearDesiredAuthenticatorGroupsConfig() {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        desiredAuthenticatorGroupsConfig_ = null;
+        onChanged();
+      } else {
+        desiredAuthenticatorGroupsConfig_ = null;
+        desiredAuthenticatorGroupsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     */
+    public com.google.container.v1beta1.AuthenticatorGroupsConfig.Builder getDesiredAuthenticatorGroupsConfigBuilder() {
+      
+      onChanged();
+      return getDesiredAuthenticatorGroupsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     */
+    public com.google.container.v1beta1.AuthenticatorGroupsConfigOrBuilder getDesiredAuthenticatorGroupsConfigOrBuilder() {
+      if (desiredAuthenticatorGroupsConfigBuilder_ != null) {
+        return desiredAuthenticatorGroupsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredAuthenticatorGroupsConfig_ == null ?
+            com.google.container.v1beta1.AuthenticatorGroupsConfig.getDefaultInstance() : desiredAuthenticatorGroupsConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * AuthenticatorGroupsConfig specifies the config for the cluster security
+     * groups settings.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1beta1.AuthenticatorGroupsConfig, com.google.container.v1beta1.AuthenticatorGroupsConfig.Builder, com.google.container.v1beta1.AuthenticatorGroupsConfigOrBuilder> 
+        getDesiredAuthenticatorGroupsConfigFieldBuilder() {
+      if (desiredAuthenticatorGroupsConfigBuilder_ == null) {
+        desiredAuthenticatorGroupsConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AuthenticatorGroupsConfig, com.google.container.v1beta1.AuthenticatorGroupsConfig.Builder, com.google.container.v1beta1.AuthenticatorGroupsConfigOrBuilder>(
+                getDesiredAuthenticatorGroupsConfig(),
+                getParentForChildren(),
+                isClean());
+        desiredAuthenticatorGroupsConfig_ = null;
+      }
+      return desiredAuthenticatorGroupsConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
