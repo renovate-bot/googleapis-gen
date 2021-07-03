@@ -15,14 +15,14 @@
 #
 from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
 
-from google.cloud.datafusion_v1.types import datafusion
+from google.cloud.data_fusion_v1.types import datafusion
 
 
 class ListAvailableVersionsPager:
     """A pager for iterating through ``list_available_versions`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.datafusion_v1.types.ListAvailableVersionsResponse` object, and
+    :class:`google.cloud.data_fusion_v1.types.ListAvailableVersionsResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``available_versions`` field.
 
@@ -31,7 +31,7 @@ class ListAvailableVersionsPager:
     through the ``available_versions`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.datafusion_v1.types.ListAvailableVersionsResponse`
+    All the usual :class:`google.cloud.data_fusion_v1.types.ListAvailableVersionsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -46,9 +46,9 @@ class ListAvailableVersionsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.datafusion_v1.types.ListAvailableVersionsRequest):
+            request (google.cloud.data_fusion_v1.types.ListAvailableVersionsRequest):
                 The initial request object.
-            response (google.cloud.datafusion_v1.types.ListAvailableVersionsResponse):
+            response (google.cloud.data_fusion_v1.types.ListAvailableVersionsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -81,7 +81,7 @@ class ListAvailableVersionsAsyncPager:
     """A pager for iterating through ``list_available_versions`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.datafusion_v1.types.ListAvailableVersionsResponse` object, and
+    :class:`google.cloud.data_fusion_v1.types.ListAvailableVersionsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``available_versions`` field.
 
@@ -90,7 +90,7 @@ class ListAvailableVersionsAsyncPager:
     through the ``available_versions`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.datafusion_v1.types.ListAvailableVersionsResponse`
+    All the usual :class:`google.cloud.data_fusion_v1.types.ListAvailableVersionsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -105,9 +105,9 @@ class ListAvailableVersionsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.datafusion_v1.types.ListAvailableVersionsRequest):
+            request (google.cloud.data_fusion_v1.types.ListAvailableVersionsRequest):
                 The initial request object.
-            response (google.cloud.datafusion_v1.types.ListAvailableVersionsResponse):
+            response (google.cloud.data_fusion_v1.types.ListAvailableVersionsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -144,7 +144,7 @@ class ListInstancesPager:
     """A pager for iterating through ``list_instances`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.datafusion_v1.types.ListInstancesResponse` object, and
+    :class:`google.cloud.data_fusion_v1.types.ListInstancesResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``instances`` field.
 
@@ -153,7 +153,7 @@ class ListInstancesPager:
     through the ``instances`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.datafusion_v1.types.ListInstancesResponse`
+    All the usual :class:`google.cloud.data_fusion_v1.types.ListInstancesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -168,9 +168,9 @@ class ListInstancesPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.datafusion_v1.types.ListInstancesRequest):
+            request (google.cloud.data_fusion_v1.types.ListInstancesRequest):
                 The initial request object.
-            response (google.cloud.datafusion_v1.types.ListInstancesResponse):
+            response (google.cloud.data_fusion_v1.types.ListInstancesResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -203,7 +203,7 @@ class ListInstancesAsyncPager:
     """A pager for iterating through ``list_instances`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.datafusion_v1.types.ListInstancesResponse` object, and
+    :class:`google.cloud.data_fusion_v1.types.ListInstancesResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``instances`` field.
 
@@ -212,7 +212,7 @@ class ListInstancesAsyncPager:
     through the ``instances`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.datafusion_v1.types.ListInstancesResponse`
+    All the usual :class:`google.cloud.data_fusion_v1.types.ListInstancesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -227,9 +227,9 @@ class ListInstancesAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.datafusion_v1.types.ListInstancesRequest):
+            request (google.cloud.data_fusion_v1.types.ListInstancesRequest):
                 The initial request object.
-            response (google.cloud.datafusion_v1.types.ListInstancesResponse):
+            response (google.cloud.data_fusion_v1.types.ListInstancesResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.

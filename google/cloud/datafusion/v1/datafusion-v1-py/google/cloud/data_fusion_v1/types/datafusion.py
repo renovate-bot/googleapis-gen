@@ -111,9 +111,9 @@ class Version(proto.Message):
 class Accelerator(proto.Message):
     r"""Identifies Data Fusion accelerators for an instance.
     Attributes:
-        accelerator_type (google.cloud.datafusion_v1.types.Accelerator.AcceleratorType):
+        accelerator_type (google.cloud.data_fusion_v1.types.Accelerator.AcceleratorType):
             The type of an accelator for a CDF instance.
-        state (google.cloud.datafusion_v1.types.Accelerator.State):
+        state (google.cloud.data_fusion_v1.types.Accelerator.State):
             The state of the accelerator
     """
     class AcceleratorType(proto.Enum):
@@ -171,7 +171,7 @@ class Instance(proto.Message):
             projects/{project}/locations/{location}/instances/{instance}.
         description (str):
             A description of this instance.
-        type_ (google.cloud.datafusion_v1.types.Instance.Type):
+        type_ (google.cloud.data_fusion_v1.types.Instance.Type):
             Required. Instance type.
         enable_stackdriver_logging (bool):
             Option to enable Stackdriver Logging.
@@ -182,16 +182,16 @@ class Instance(proto.Message):
             should be private. If set to true, all Data
             Fusion nodes will have private IP addresses and
             will not be able to access the public internet.
-        network_config (google.cloud.datafusion_v1.types.NetworkConfig):
+        network_config (google.cloud.data_fusion_v1.types.NetworkConfig):
             Network configuration options. These are
             required when a private Data Fusion instance is
             to be created.
-        labels (Sequence[google.cloud.datafusion_v1.types.Instance.LabelsEntry]):
+        labels (Sequence[google.cloud.data_fusion_v1.types.Instance.LabelsEntry]):
             The resource labels for instance to use to
             annotate any related underlying resources such
             as Compute Engine VMs. The character '=' is not
             allowed to be used within the labels.
-        options (Sequence[google.cloud.datafusion_v1.types.Instance.OptionsEntry]):
+        options (Sequence[google.cloud.data_fusion_v1.types.Instance.OptionsEntry]):
             Map of additional options used to configure
             the behavior of Data Fusion instance.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
@@ -200,7 +200,7 @@ class Instance(proto.Message):
         update_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the instance was last
             updated.
-        state (google.cloud.datafusion_v1.types.Instance.State):
+        state (google.cloud.data_fusion_v1.types.Instance.State):
             Output only. The current state of this Data
             Fusion instance.
         state_message (str):
@@ -222,7 +222,7 @@ class Instance(proto.Message):
             extract the tenant project ID.
         display_name (str):
             Display name for an instance.
-        available_version (Sequence[google.cloud.datafusion_v1.types.Version]):
+        available_version (Sequence[google.cloud.data_fusion_v1.types.Version]):
             Available versions that the instance can be
             upgraded to using UpdateInstanceRequest.
         api_endpoint (str):
@@ -231,7 +231,7 @@ class Instance(proto.Message):
         gcs_bucket (str):
             Output only. Cloud Storage bucket generated
             by Data Fusion in the customer project.
-        accelerators (Sequence[google.cloud.datafusion_v1.types.Accelerator]):
+        accelerators (Sequence[google.cloud.data_fusion_v1.types.Accelerator]):
             List of accelerators enabled for this CDF
             instance.
         p4_service_account (str):
@@ -249,7 +249,7 @@ class Instance(proto.Message):
         enable_rbac (bool):
             Option to enable granular role-based access
             control.
-        crypto_key_config (google.cloud.datafusion_v1.types.CryptoKeyConfig):
+        crypto_key_config (google.cloud.data_fusion_v1.types.CryptoKeyConfig):
             The crypto key configuration. This field is
             used by the Customer-Managed Encryption Keys
             (CMEK) feature.
@@ -443,7 +443,7 @@ class ListInstancesRequest(proto.Message):
 class ListInstancesResponse(proto.Message):
     r"""Response message for the list instance request.
     Attributes:
-        instances (Sequence[google.cloud.datafusion_v1.types.Instance]):
+        instances (Sequence[google.cloud.data_fusion_v1.types.Instance]):
             Represents a list of Data Fusion instances.
         next_page_token (str):
             Token to retrieve the next page of results or
@@ -511,7 +511,7 @@ class ListAvailableVersionsRequest(proto.Message):
 class ListAvailableVersionsResponse(proto.Message):
     r"""Response message for the list available versions request.
     Attributes:
-        available_versions (Sequence[google.cloud.datafusion_v1.types.Version]):
+        available_versions (Sequence[google.cloud.data_fusion_v1.types.Version]):
             Represents a list of versions that are
             supported.
         next_page_token (str):
@@ -558,7 +558,7 @@ class CreateInstanceRequest(proto.Message):
             format projects/{project}/locations/{location}.
         instance_id (str):
             The name of the instance to create.
-        instance (google.cloud.datafusion_v1.types.Instance):
+        instance (google.cloud.data_fusion_v1.types.Instance):
             An instance resource.
     """
 
@@ -594,7 +594,7 @@ class DeleteInstanceRequest(proto.Message):
 class UpdateInstanceRequest(proto.Message):
     r"""
     Attributes:
-        instance (google.cloud.datafusion_v1.types.Instance):
+        instance (google.cloud.data_fusion_v1.types.Instance):
             The instance resource that replaces the
             resource on the server. Currently, Data Fusion
             only allows replacing labels, options, and stack
@@ -660,7 +660,7 @@ class OperationMetadata(proto.Message):
             corresponding to ``Code.CANCELLED``.
         api_version (str):
             API version used to start the operation.
-        additional_status (Sequence[google.cloud.datafusion_v1.types.OperationMetadata.AdditionalStatusEntry]):
+        additional_status (Sequence[google.cloud.data_fusion_v1.types.OperationMetadata.AdditionalStatusEntry]):
             Map to hold any additional status info for
             the operation If there is an accelerator being
             enabled/disabled/deleted, this will be populated

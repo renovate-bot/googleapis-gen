@@ -27,13 +27,13 @@ from google.api_core import operations_v1  # type: ignore
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account # type: ignore
 
-from google.cloud.datafusion_v1.types import datafusion
+from google.cloud.data_fusion_v1.types import datafusion
 from google.longrunning import operations_pb2  # type: ignore
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-datafusion',
+            'google-cloud-data-fusion',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

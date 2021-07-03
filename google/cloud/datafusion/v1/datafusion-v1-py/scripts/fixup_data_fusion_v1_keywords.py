@@ -36,7 +36,7 @@ def partition(
     return results[1], results[0]
 
 
-class datafusionCallTransformer(cst.CSTTransformer):
+class data_fusionCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
           'create_instance': ('parent', 'instance_id', 'instance', ),
@@ -94,7 +94,7 @@ def fix_files(
     in_dir: pathlib.Path,
     out_dir: pathlib.Path,
     *,
-    transformer=datafusionCallTransformer(),
+    transformer=data_fusionCallTransformer(),
 ):
     """Duplicate the input dir to the output dir, fixing file method calls.
 
@@ -127,7 +127,7 @@ def fix_files(
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description="""Fix up source that uses the datafusion client library.
+        description="""Fix up source that uses the data_fusion client library.
 
 The existing sources are NOT overwritten but are copied to output_dir with changes made.
 

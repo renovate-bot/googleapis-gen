@@ -25,7 +25,7 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
-from google.cloud.datafusion_v1.types import datafusion
+from google.cloud.data_fusion_v1.types import datafusion
 from google.longrunning import operations_pb2  # type: ignore
 from .base import DataFusionTransport, DEFAULT_CLIENT_INFO
 

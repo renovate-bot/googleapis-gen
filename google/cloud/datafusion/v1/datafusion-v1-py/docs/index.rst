@@ -3,5 +3,5 @@ API Reference
 .. toctree::
     :maxdepth: 2
 
-    datafusion_v1/services
-    datafusion_v1/types
+    data_fusion_v1/services
+    data_fusion_v1/types

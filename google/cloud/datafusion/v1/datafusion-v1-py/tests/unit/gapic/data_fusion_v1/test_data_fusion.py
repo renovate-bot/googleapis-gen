@@ -34,12 +34,12 @@ from google.api_core import operation_async  # type: ignore
 from google.api_core import operations_v1
 from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
-from google.cloud.datafusion_v1.services.data_fusion import DataFusionAsyncClient
-from google.cloud.datafusion_v1.services.data_fusion import DataFusionClient
-from google.cloud.datafusion_v1.services.data_fusion import pagers
-from google.cloud.datafusion_v1.services.data_fusion import transports
-from google.cloud.datafusion_v1.services.data_fusion.transports.base import _GOOGLE_AUTH_VERSION
-from google.cloud.datafusion_v1.types import datafusion
+from google.cloud.data_fusion_v1.services.data_fusion import DataFusionAsyncClient
+from google.cloud.data_fusion_v1.services.data_fusion import DataFusionClient
+from google.cloud.data_fusion_v1.services.data_fusion import pagers
+from google.cloud.data_fusion_v1.services.data_fusion import transports
+from google.cloud.data_fusion_v1.services.data_fusion.transports.base import _GOOGLE_AUTH_VERSION
+from google.cloud.data_fusion_v1.types import datafusion
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2  # type: ignore
@@ -373,7 +373,7 @@ def test_data_fusion_client_client_options_credentials_file(client_class, transp
 
 
 def test_data_fusion_client_client_options_from_dict():
-    with mock.patch('google.cloud.datafusion_v1.services.data_fusion.transports.DataFusionGrpcTransport.__init__') as grpc_transport:
+    with mock.patch('google.cloud.data_fusion_v1.services.data_fusion.transports.DataFusionGrpcTransport.__init__') as grpc_transport:
         grpc_transport.return_value = None
         client = DataFusionClient(
             client_options={'api_endpoint': 'squid.clam.whelk'}
@@ -2308,7 +2308,7 @@ def test_data_fusion_base_transport_error():
 
 def test_data_fusion_base_transport():
     # Instantiate the base transport.
-    with mock.patch('google.cloud.datafusion_v1.services.data_fusion.transports.DataFusionTransport.__init__') as Transport:
+    with mock.patch('google.cloud.data_fusion_v1.services.data_fusion.transports.DataFusionTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.DataFusionTransport(
             credentials=ga_credentials.AnonymousCredentials(),
@@ -2338,7 +2338,7 @@ def test_data_fusion_base_transport():
 @requires_google_auth_gte_1_25_0
 def test_data_fusion_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.datafusion_v1.services.data_fusion.transports.DataFusionTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.data_fusion_v1.services.data_fusion.transports.DataFusionTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.DataFusionTransport(
@@ -2357,7 +2357,7 @@ def test_data_fusion_base_transport_with_credentials_file():
 @requires_google_auth_lt_1_25_0
 def test_data_fusion_base_transport_with_credentials_file_old_google_auth():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.datafusion_v1.services.data_fusion.transports.DataFusionTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.data_fusion_v1.services.data_fusion.transports.DataFusionTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.DataFusionTransport(
@@ -2373,7 +2373,7 @@ def test_data_fusion_base_transport_with_credentials_file_old_google_auth():
 
 def test_data_fusion_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.datafusion_v1.services.data_fusion.transports.DataFusionTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.data_fusion_v1.services.data_fusion.transports.DataFusionTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.DataFusionTransport()

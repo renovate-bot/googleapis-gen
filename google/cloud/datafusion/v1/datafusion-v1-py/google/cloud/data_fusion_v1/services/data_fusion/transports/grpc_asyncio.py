@@ -26,7 +26,7 @@ import packaging.version
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
-from google.cloud.datafusion_v1.types import datafusion
+from google.cloud.data_fusion_v1.types import datafusion
 from google.longrunning import operations_pb2  # type: ignore
 from .base import DataFusionTransport, DEFAULT_CLIENT_INFO
 from .grpc import DataFusionGrpcTransport
