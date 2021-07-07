@@ -522,9 +522,8 @@ namespace Google.Monitoring.Dashboard.V1 {
     public const int FilterFieldNumber = 1;
     private string filter_ = "";
     /// <summary>
-    /// Required. The [monitoring
-    /// filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-    /// the metric types, resources, and projects to query.
+    /// Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+    /// that identifies the metric types, resources, and projects to query.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Filter {

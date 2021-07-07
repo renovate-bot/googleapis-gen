@@ -33,4 +33,15 @@ public interface UpdateDashboardRequestOrBuilder extends
    * <code>.google.monitoring.dashboard.v1.Dashboard dashboard = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.monitoring.dashboard.v1.DashboardOrBuilder getDashboardOrBuilder();
+
+  /**
+   * <pre>
+   * If set, validate the request and preview the review, but do not actually
+   * save it.
+   * </pre>
+   *
+   * <code>bool validate_only = 3;</code>
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

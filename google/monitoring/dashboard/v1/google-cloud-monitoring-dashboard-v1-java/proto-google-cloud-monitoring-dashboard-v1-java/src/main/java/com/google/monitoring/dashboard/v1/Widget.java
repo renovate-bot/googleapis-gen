@@ -116,6 +116,20 @@ private static final long serialVersionUID = 0L;
             contentCase_ = 5;
             break;
           }
+          case 58: {
+            com.google.monitoring.dashboard.v1.AlertChart.Builder subBuilder = null;
+            if (contentCase_ == 7) {
+              subBuilder = ((com.google.monitoring.dashboard.v1.AlertChart) content_).toBuilder();
+            }
+            content_ =
+                input.readMessage(com.google.monitoring.dashboard.v1.AlertChart.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.monitoring.dashboard.v1.AlertChart) content_);
+              content_ = subBuilder.buildPartial();
+            }
+            contentCase_ = 7;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -157,6 +171,7 @@ private static final long serialVersionUID = 0L;
     SCORECARD(3),
     TEXT(4),
     BLANK(5),
+    ALERT_CHART(7),
     CONTENT_NOT_SET(0);
     private final int value;
     private ContentCase(int value) {
@@ -178,6 +193,7 @@ private static final long serialVersionUID = 0L;
         case 3: return SCORECARD;
         case 4: return TEXT;
         case 5: return BLANK;
+        case 7: return ALERT_CHART;
         case 0: return CONTENT_NOT_SET;
         default: return null;
       }
@@ -411,6 +427,49 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.Empty.getDefaultInstance();
   }
 
+  public static final int ALERT_CHART_FIELD_NUMBER = 7;
+  /**
+   * <pre>
+   * A chart of alert policy data.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+   * @return Whether the alertChart field is set.
+   */
+  @java.lang.Override
+  public boolean hasAlertChart() {
+    return contentCase_ == 7;
+  }
+  /**
+   * <pre>
+   * A chart of alert policy data.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+   * @return The alertChart.
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.AlertChart getAlertChart() {
+    if (contentCase_ == 7) {
+       return (com.google.monitoring.dashboard.v1.AlertChart) content_;
+    }
+    return com.google.monitoring.dashboard.v1.AlertChart.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * A chart of alert policy data.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.AlertChartOrBuilder getAlertChartOrBuilder() {
+    if (contentCase_ == 7) {
+       return (com.google.monitoring.dashboard.v1.AlertChart) content_;
+    }
+    return com.google.monitoring.dashboard.v1.AlertChart.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -440,6 +499,9 @@ private static final long serialVersionUID = 0L;
     if (contentCase_ == 5) {
       output.writeMessage(5, (com.google.protobuf.Empty) content_);
     }
+    if (contentCase_ == 7) {
+      output.writeMessage(7, (com.google.monitoring.dashboard.v1.AlertChart) content_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -467,6 +529,10 @@ private static final long serialVersionUID = 0L;
     if (contentCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, (com.google.protobuf.Empty) content_);
+    }
+    if (contentCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.google.monitoring.dashboard.v1.AlertChart) content_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -503,6 +569,10 @@ private static final long serialVersionUID = 0L;
         if (!getBlank()
             .equals(other.getBlank())) return false;
         break;
+      case 7:
+        if (!getAlertChart()
+            .equals(other.getAlertChart())) return false;
+        break;
       case 0:
       default:
     }
@@ -535,6 +605,10 @@ private static final long serialVersionUID = 0L;
       case 5:
         hash = (37 * hash) + BLANK_FIELD_NUMBER;
         hash = (53 * hash) + getBlank().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + ALERT_CHART_FIELD_NUMBER;
+        hash = (53 * hash) + getAlertChart().hashCode();
         break;
       case 0:
       default:
@@ -736,6 +810,13 @@ private static final long serialVersionUID = 0L;
           result.content_ = blankBuilder_.build();
         }
       }
+      if (contentCase_ == 7) {
+        if (alertChartBuilder_ == null) {
+          result.content_ = content_;
+        } else {
+          result.content_ = alertChartBuilder_.build();
+        }
+      }
       result.contentCase_ = contentCase_;
       onBuilt();
       return result;
@@ -804,6 +885,10 @@ private static final long serialVersionUID = 0L;
         }
         case BLANK: {
           mergeBlank(other.getBlank());
+          break;
+        }
+        case ALERT_CHART: {
+          mergeAlertChart(other.getAlertChart());
           break;
         }
         case CONTENT_NOT_SET: {
@@ -1656,6 +1741,183 @@ private static final long serialVersionUID = 0L;
       contentCase_ = 5;
       onChanged();;
       return blankBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.monitoring.dashboard.v1.AlertChart, com.google.monitoring.dashboard.v1.AlertChart.Builder, com.google.monitoring.dashboard.v1.AlertChartOrBuilder> alertChartBuilder_;
+    /**
+     * <pre>
+     * A chart of alert policy data.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+     * @return Whether the alertChart field is set.
+     */
+    @java.lang.Override
+    public boolean hasAlertChart() {
+      return contentCase_ == 7;
+    }
+    /**
+     * <pre>
+     * A chart of alert policy data.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+     * @return The alertChart.
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.AlertChart getAlertChart() {
+      if (alertChartBuilder_ == null) {
+        if (contentCase_ == 7) {
+          return (com.google.monitoring.dashboard.v1.AlertChart) content_;
+        }
+        return com.google.monitoring.dashboard.v1.AlertChart.getDefaultInstance();
+      } else {
+        if (contentCase_ == 7) {
+          return alertChartBuilder_.getMessage();
+        }
+        return com.google.monitoring.dashboard.v1.AlertChart.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * A chart of alert policy data.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+     */
+    public Builder setAlertChart(com.google.monitoring.dashboard.v1.AlertChart value) {
+      if (alertChartBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        content_ = value;
+        onChanged();
+      } else {
+        alertChartBuilder_.setMessage(value);
+      }
+      contentCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * A chart of alert policy data.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+     */
+    public Builder setAlertChart(
+        com.google.monitoring.dashboard.v1.AlertChart.Builder builderForValue) {
+      if (alertChartBuilder_ == null) {
+        content_ = builderForValue.build();
+        onChanged();
+      } else {
+        alertChartBuilder_.setMessage(builderForValue.build());
+      }
+      contentCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * A chart of alert policy data.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+     */
+    public Builder mergeAlertChart(com.google.monitoring.dashboard.v1.AlertChart value) {
+      if (alertChartBuilder_ == null) {
+        if (contentCase_ == 7 &&
+            content_ != com.google.monitoring.dashboard.v1.AlertChart.getDefaultInstance()) {
+          content_ = com.google.monitoring.dashboard.v1.AlertChart.newBuilder((com.google.monitoring.dashboard.v1.AlertChart) content_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          content_ = value;
+        }
+        onChanged();
+      } else {
+        if (contentCase_ == 7) {
+          alertChartBuilder_.mergeFrom(value);
+        }
+        alertChartBuilder_.setMessage(value);
+      }
+      contentCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * A chart of alert policy data.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+     */
+    public Builder clearAlertChart() {
+      if (alertChartBuilder_ == null) {
+        if (contentCase_ == 7) {
+          contentCase_ = 0;
+          content_ = null;
+          onChanged();
+        }
+      } else {
+        if (contentCase_ == 7) {
+          contentCase_ = 0;
+          content_ = null;
+        }
+        alertChartBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * A chart of alert policy data.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+     */
+    public com.google.monitoring.dashboard.v1.AlertChart.Builder getAlertChartBuilder() {
+      return getAlertChartFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * A chart of alert policy data.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.AlertChartOrBuilder getAlertChartOrBuilder() {
+      if ((contentCase_ == 7) && (alertChartBuilder_ != null)) {
+        return alertChartBuilder_.getMessageOrBuilder();
+      } else {
+        if (contentCase_ == 7) {
+          return (com.google.monitoring.dashboard.v1.AlertChart) content_;
+        }
+        return com.google.monitoring.dashboard.v1.AlertChart.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * A chart of alert policy data.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.monitoring.dashboard.v1.AlertChart, com.google.monitoring.dashboard.v1.AlertChart.Builder, com.google.monitoring.dashboard.v1.AlertChartOrBuilder> 
+        getAlertChartFieldBuilder() {
+      if (alertChartBuilder_ == null) {
+        if (!(contentCase_ == 7)) {
+          content_ = com.google.monitoring.dashboard.v1.AlertChart.getDefaultInstance();
+        }
+        alertChartBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.AlertChart, com.google.monitoring.dashboard.v1.AlertChart.Builder, com.google.monitoring.dashboard.v1.AlertChartOrBuilder>(
+                (com.google.monitoring.dashboard.v1.AlertChart) content_,
+                getParentForChildren(),
+                isClean());
+        content_ = null;
+      }
+      contentCase_ = 7;
+      onChanged();;
+      return alertChartBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

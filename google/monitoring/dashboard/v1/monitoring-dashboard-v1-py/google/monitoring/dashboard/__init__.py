@@ -17,6 +17,7 @@
 from google.monitoring.dashboard_v1.services.dashboards_service.client import DashboardsServiceClient
 from google.monitoring.dashboard_v1.services.dashboards_service.async_client import DashboardsServiceAsyncClient
 
+from google.monitoring.dashboard_v1.types.alertchart import AlertChart
 from google.monitoring.dashboard_v1.types.common import Aggregation
 from google.monitoring.dashboard_v1.types.common import PickTimeSeriesFilter
 from google.monitoring.dashboard_v1.types.common import StatisticalTimeSeriesFilter
@@ -44,6 +45,7 @@ from google.monitoring.dashboard_v1.types.xychart import XyChart
 
 __all__ = ('DashboardsServiceClient',
     'DashboardsServiceAsyncClient',
+    'AlertChart',
     'Aggregation',
     'PickTimeSeriesFilter',
     'StatisticalTimeSeriesFilter',

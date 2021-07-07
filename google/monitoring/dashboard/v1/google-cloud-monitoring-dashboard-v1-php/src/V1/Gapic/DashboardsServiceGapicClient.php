@@ -287,12 +287,8 @@ class DashboardsServiceGapicClient
     }
 
     /**
-     * Creates a new custom dashboard. For examples on how you can use this API to
-     * create dashboards, see [Managing dashboards by
-     * API](https://cloud.google.com/monitoring/dashboards/api-dashboard). This method requires the
-     * `monitoring.dashboards.create` permission on the specified project. For
-     * more information about permissions, see [Cloud Identity and Access
-     * Management](https://cloud.google.com/iam).
+     * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](/monitoring/dashboards/api-dashboard).
+     * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](/iam).
      *
      * Sample code:
      * ```
@@ -315,6 +311,9 @@ class DashboardsServiceGapicClient
      * @param array     $optionalArgs {
      *     Optional.
      *
+     *     @type bool $validateOnly
+     *           If set, validate the request and preview the review, but do not actually
+     *           save it.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -333,6 +332,10 @@ class DashboardsServiceGapicClient
         $request->setParent($parent);
         $request->setDashboard($dashboard);
         $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['validateOnly'])) {
+            $request->setValidateOnly($optionalArgs['validateOnly']);
+        }
+
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('CreateDashboard', Dashboard::class, $optionalArgs, $request)->wait();
@@ -527,6 +530,9 @@ class DashboardsServiceGapicClient
      * @param array     $optionalArgs {
      *     Optional.
      *
+     *     @type bool $validateOnly
+     *           If set, validate the request and preview the review, but do not actually
+     *           save it.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -544,6 +550,10 @@ class DashboardsServiceGapicClient
         $requestParamHeaders = [];
         $request->setDashboard($dashboard);
         $requestParamHeaders['dashboard.name'] = $dashboard->getName();
+        if (isset($optionalArgs['validateOnly'])) {
+            $request->setValidateOnly($optionalArgs['validateOnly']);
+        }
+
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('UpdateDashboard', Dashboard::class, $optionalArgs, $request)->wait();

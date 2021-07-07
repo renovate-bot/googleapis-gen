@@ -36,6 +36,7 @@ from google.monitoring.dashboard_v1.services.dashboards_service import Dashboard
 from google.monitoring.dashboard_v1.services.dashboards_service import pagers
 from google.monitoring.dashboard_v1.services.dashboards_service import transports
 from google.monitoring.dashboard_v1.services.dashboards_service.transports.base import _GOOGLE_AUTH_VERSION
+from google.monitoring.dashboard_v1.types import alertchart
 from google.monitoring.dashboard_v1.types import common
 from google.monitoring.dashboard_v1.types import dashboard
 from google.monitoring.dashboard_v1.types import dashboards_service
@@ -1794,9 +1795,28 @@ def test_dashboards_service_transport_channel_mtls_with_adc(
             assert transport.grpc_channel == mock_grpc_channel
 
 
-def test_dashboard_path():
+def test_alert_policy_path():
     project = "squid"
-    dashboard = "clam"
+    alert_policy = "clam"
+    expected = "projects/{project}/alertPolicies/{alert_policy}".format(project=project, alert_policy=alert_policy, )
+    actual = DashboardsServiceClient.alert_policy_path(project, alert_policy)
+    assert expected == actual
+
+
+def test_parse_alert_policy_path():
+    expected = {
+        "project": "whelk",
+        "alert_policy": "octopus",
+    }
+    path = DashboardsServiceClient.alert_policy_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = DashboardsServiceClient.parse_alert_policy_path(path)
+    assert expected == actual
+
+def test_dashboard_path():
+    project = "oyster"
+    dashboard = "nudibranch"
     expected = "projects/{project}/dashboards/{dashboard}".format(project=project, dashboard=dashboard, )
     actual = DashboardsServiceClient.dashboard_path(project, dashboard)
     assert expected == actual
@@ -1804,8 +1824,8 @@ def test_dashboard_path():
 
 def test_parse_dashboard_path():
     expected = {
-        "project": "whelk",
-        "dashboard": "octopus",
+        "project": "cuttlefish",
+        "dashboard": "mussel",
     }
     path = DashboardsServiceClient.dashboard_path(**expected)
 
@@ -1814,7 +1834,7 @@ def test_parse_dashboard_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "oyster"
+    billing_account = "winkle"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = DashboardsServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1822,7 +1842,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+        "billing_account": "nautilus",
     }
     path = DashboardsServiceClient.common_billing_account_path(**expected)
 
@@ -1831,7 +1851,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "cuttlefish"
+    folder = "scallop"
     expected = "folders/{folder}".format(folder=folder, )
     actual = DashboardsServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1839,7 +1859,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+        "folder": "abalone",
     }
     path = DashboardsServiceClient.common_folder_path(**expected)
 
@@ -1848,7 +1868,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "winkle"
+    organization = "squid"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = DashboardsServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1856,7 +1876,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+        "organization": "clam",
     }
     path = DashboardsServiceClient.common_organization_path(**expected)
 
@@ -1865,7 +1885,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "scallop"
+    project = "whelk"
     expected = "projects/{project}".format(project=project, )
     actual = DashboardsServiceClient.common_project_path(project)
     assert expected == actual
@@ -1873,7 +1893,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+        "project": "octopus",
     }
     path = DashboardsServiceClient.common_project_path(**expected)
 
@@ -1882,8 +1902,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "squid"
-    location = "clam"
+    project = "oyster"
+    location = "nudibranch"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = DashboardsServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1891,8 +1911,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = DashboardsServiceClient.common_location_path(**expected)
 

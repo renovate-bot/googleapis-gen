@@ -21,6 +21,13 @@ class UpdateDashboardRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.Dashboard dashboard = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $dashboard = null;
+    /**
+     * If set, validate the request and preview the review, but do not actually
+     * save it.
+     *
+     * Generated from protobuf field <code>bool validate_only = 3;</code>
+     */
+    protected $validate_only = false;
 
     /**
      * Constructor.
@@ -30,6 +37,9 @@ class UpdateDashboardRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\Monitoring\Dashboard\V1\Dashboard $dashboard
      *           Required. The dashboard that will replace the existing dashboard.
+     *     @type bool $validate_only
+     *           If set, validate the request and preview the review, but do not actually
+     *           save it.
      * }
      */
     public function __construct($data = NULL) {
@@ -69,6 +79,34 @@ class UpdateDashboardRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Monitoring\Dashboard\V1\Dashboard::class);
         $this->dashboard = $var;
+
+        return $this;
+    }
+
+    /**
+     * If set, validate the request and preview the review, but do not actually
+     * save it.
+     *
+     * Generated from protobuf field <code>bool validate_only = 3;</code>
+     * @return bool
+     */
+    public function getValidateOnly()
+    {
+        return $this->validate_only;
+    }
+
+    /**
+     * If set, validate the request and preview the review, but do not actually
+     * save it.
+     *
+     * Generated from protobuf field <code>bool validate_only = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setValidateOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->validate_only = $var;
 
         return $this;
     }

@@ -45,6 +45,8 @@ class DashboardsServiceAsyncClient:
     DEFAULT_ENDPOINT = DashboardsServiceClient.DEFAULT_ENDPOINT
     DEFAULT_MTLS_ENDPOINT = DashboardsServiceClient.DEFAULT_MTLS_ENDPOINT
 
+    alert_policy_path = staticmethod(DashboardsServiceClient.alert_policy_path)
+    parse_alert_policy_path = staticmethod(DashboardsServiceClient.parse_alert_policy_path)
     dashboard_path = staticmethod(DashboardsServiceClient.dashboard_path)
     parse_dashboard_path = staticmethod(DashboardsServiceClient.parse_dashboard_path)
     common_billing_account_path = staticmethod(DashboardsServiceClient.common_billing_account_path)
@@ -157,11 +159,10 @@ class DashboardsServiceAsyncClient:
             ) -> dashboard.Dashboard:
         r"""Creates a new custom dashboard. For examples on how you can use
         this API to create dashboards, see `Managing dashboards by
-        API <https://cloud.google.com/monitoring/dashboards/api-dashboard>`__.
-        This method requires the ``monitoring.dashboards.create``
-        permission on the specified project. For more information about
-        permissions, see `Cloud Identity and Access
-        Management <https://cloud.google.com/iam>`__.
+        API </monitoring/dashboards/api-dashboard>`__. This method
+        requires the ``monitoring.dashboards.create`` permission on the
+        specified project. For more information about permissions, see
+        `Cloud Identity and Access Management </iam>`__.
 
         Args:
             request (:class:`google.monitoring.dashboard_v1.types.CreateDashboardRequest`):

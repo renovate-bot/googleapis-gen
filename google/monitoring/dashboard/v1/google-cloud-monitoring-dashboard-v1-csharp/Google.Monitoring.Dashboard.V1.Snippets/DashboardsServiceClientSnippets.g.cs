@@ -36,6 +36,7 @@ namespace Google.Monitoring.Dashboard.V1.Snippets
             {
                 Parent = "",
                 Dashboard = new Dashboard(),
+                ValidateOnly = false,
             };
             // Make the request
             Dashboard response = dashboardsServiceClient.CreateDashboard(request);
@@ -54,6 +55,7 @@ namespace Google.Monitoring.Dashboard.V1.Snippets
             {
                 Parent = "",
                 Dashboard = new Dashboard(),
+                ValidateOnly = false,
             };
             // Make the request
             Dashboard response = await dashboardsServiceClient.CreateDashboardAsync(request);
@@ -232,6 +234,7 @@ namespace Google.Monitoring.Dashboard.V1.Snippets
             UpdateDashboardRequest request = new UpdateDashboardRequest
             {
                 Dashboard = new Dashboard(),
+                ValidateOnly = false,
             };
             // Make the request
             Dashboard response = dashboardsServiceClient.UpdateDashboard(request);
@@ -249,6 +252,7 @@ namespace Google.Monitoring.Dashboard.V1.Snippets
             UpdateDashboardRequest request = new UpdateDashboardRequest
             {
                 Dashboard = new Dashboard(),
+                ValidateOnly = false,
             };
             // Make the request
             Dashboard response = await dashboardsServiceClient.UpdateDashboardAsync(request);

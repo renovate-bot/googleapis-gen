@@ -23,11 +23,12 @@ class DashboardsService
         \GPBMetadata\Google\Api\Client::initOnce();
         $pool->internalAddGeneratedFile(
             '
-£
-7google/monitoring/dashboard/v1/dashboards_service.protogoogle.monitoring.dashboard.v1google/api/field_behavior.protogoogle/api/resource.proto.google/monitoring/dashboard/v1/dashboard.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/api/client.proto"p
+“
+7google/monitoring/dashboard/v1/dashboards_service.protogoogle.monitoring.dashboard.v1google/api/field_behavior.protogoogle/api/resource.proto.google/monitoring/dashboard/v1/dashboard.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/api/client.proto"á
 CreateDashboardRequest
 parent (	B‡AA
-	dashboard (2).google.monitoring.dashboard.v1.DashboardB‡A"É
+	dashboard (2).google.monitoring.dashboard.v1.DashboardB‡A
+validate_only ("É
 ListDashboardsRequestC
 parent (	B3‡A˙A-
 +cloudresourcemanager.googleapis.com/Project
@@ -43,9 +44,10 @@ dashboards (2).google.monitoring.dashboard.v1.Dashboard
 #monitoring.googleapis.com/Dashboard"S
 DeleteDashboardRequest9
 name (	B+‡A˙A%
-#monitoring.googleapis.com/Dashboard"[
+#monitoring.googleapis.com/Dashboard"r
 UpdateDashboardRequestA
-	dashboard (2).google.monitoring.dashboard.v1.DashboardB‡A2±
+	dashboard (2).google.monitoring.dashboard.v1.DashboardB‡A
+validate_only (2±
 DashboardsService´
 CreateDashboard6.google.monitoring.dashboard.v1.CreateDashboardRequest).google.monitoring.dashboard.v1.Dashboard"5Ç”‰ì/""/v1/{parent=projects/*}/dashboards:	dashboard´
 ListDashboards5.google.monitoring.dashboard.v1.ListDashboardsRequest6.google.monitoring.dashboard.v1.ListDashboardsResponse"*Ç”‰ì$"/v1/{parent=projects/*}/dashboardsö

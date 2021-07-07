@@ -19,9 +19,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class TimeSeriesFilter extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The [monitoring
-     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-     * the metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      *
      * Generated from protobuf field <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -49,9 +48,8 @@ class TimeSeriesFilter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $filter
-     *           Required. The [monitoring
-     *           filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-     *           the metric types, resources, and projects to query.
+     *           Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     *           that identifies the metric types, resources, and projects to query.
      *     @type \Google\Cloud\Monitoring\Dashboard\V1\Aggregation $aggregation
      *           By default, the raw time series data is returned.
      *           Use this field to combine multiple time series for different views of the
@@ -71,9 +69,8 @@ class TimeSeriesFilter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The [monitoring
-     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-     * the metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      *
      * Generated from protobuf field <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -84,9 +81,8 @@ class TimeSeriesFilter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The [monitoring
-     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
-     * the metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      *
      * Generated from protobuf field <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

@@ -35,6 +35,7 @@ namespace Google.Monitoring.Dashboard.V1.Tests
             {
                 Parent = "parent7858e4d0",
                 Dashboard = new Dashboard(),
+                ValidateOnly = true,
             };
             Dashboard expectedResponse = new Dashboard
             {
@@ -61,6 +62,7 @@ namespace Google.Monitoring.Dashboard.V1.Tests
             {
                 Parent = "parent7858e4d0",
                 Dashboard = new Dashboard(),
+                ValidateOnly = true,
             };
             Dashboard expectedResponse = new Dashboard
             {
@@ -171,6 +173,7 @@ namespace Google.Monitoring.Dashboard.V1.Tests
             UpdateDashboardRequest request = new UpdateDashboardRequest
             {
                 Dashboard = new Dashboard(),
+                ValidateOnly = true,
             };
             Dashboard expectedResponse = new Dashboard
             {
@@ -196,6 +199,7 @@ namespace Google.Monitoring.Dashboard.V1.Tests
             UpdateDashboardRequest request = new UpdateDashboardRequest
             {
                 Dashboard = new Dashboard(),
+                ValidateOnly = true,
             };
             Dashboard expectedResponse = new Dashboard
             {

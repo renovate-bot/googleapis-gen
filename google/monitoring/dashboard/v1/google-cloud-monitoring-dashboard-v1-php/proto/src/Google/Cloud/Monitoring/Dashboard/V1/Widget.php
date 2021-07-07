@@ -40,6 +40,8 @@ class Widget extends \Google\Protobuf\Internal\Message
      *           A raw string or markdown displaying textual content.
      *     @type \Google\Protobuf\GPBEmpty $blank
      *           A blank space.
+     *     @type \Google\Cloud\Monitoring\Dashboard\V1\AlertChart $alert_chart
+     *           A chart of alert policy data.
      * }
      */
     public function __construct($data = NULL) {
@@ -193,6 +195,37 @@ class Widget extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\GPBEmpty::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * A chart of alert policy data.
+     *
+     * Generated from protobuf field <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+     * @return \Google\Cloud\Monitoring\Dashboard\V1\AlertChart|null
+     */
+    public function getAlertChart()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasAlertChart()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * A chart of alert policy data.
+     *
+     * Generated from protobuf field <code>.google.monitoring.dashboard.v1.AlertChart alert_chart = 7;</code>
+     * @param \Google\Cloud\Monitoring\Dashboard\V1\AlertChart $var
+     * @return $this
+     */
+    public function setAlertChart($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Monitoring\Dashboard\V1\AlertChart::class);
+        $this->writeOneof(7, $var);
 
         return $this;
     }

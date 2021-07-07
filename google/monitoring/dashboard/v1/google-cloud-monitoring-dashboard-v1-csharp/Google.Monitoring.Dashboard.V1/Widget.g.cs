@@ -26,25 +26,28 @@ namespace Google.Monitoring.Dashboard.V1 {
           string.Concat(
             "Citnb29nbGUvbW9uaXRvcmluZy9kYXNoYm9hcmQvdjEvd2lkZ2V0LnByb3Rv",
             "Eh5nb29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQudjEaH2dvb2dsZS9hcGkv",
-            "ZmllbGRfYmVoYXZpb3IucHJvdG8aLmdvb2dsZS9tb25pdG9yaW5nL2Rhc2hi",
-            "b2FyZC92MS9zY29yZWNhcmQucHJvdG8aKWdvb2dsZS9tb25pdG9yaW5nL2Rh",
-            "c2hib2FyZC92MS90ZXh0LnByb3RvGixnb29nbGUvbW9uaXRvcmluZy9kYXNo",
-            "Ym9hcmQvdjEveHljaGFydC5wcm90bxobZ29vZ2xlL3Byb3RvYnVmL2VtcHR5",
-            "LnByb3RvIoMCCgZXaWRnZXQSEgoFdGl0bGUYASABKAlCA+BBARI7Cgh4eV9j",
-            "aGFydBgCIAEoCzInLmdvb2dsZS5tb25pdG9yaW5nLmRhc2hib2FyZC52MS5Y",
-            "eUNoYXJ0SAASPgoJc2NvcmVjYXJkGAMgASgLMikuZ29vZ2xlLm1vbml0b3Jp",
-            "bmcuZGFzaGJvYXJkLnYxLlNjb3JlY2FyZEgAEjQKBHRleHQYBCABKAsyJC5n",
-            "b29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQudjEuVGV4dEgAEicKBWJsYW5r",
-            "GAUgASgLMhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5SABCCQoHY29udGVudELO",
-            "AQoiY29tLmdvb2dsZS5tb25pdG9yaW5nLmRhc2hib2FyZC52MUILV2lkZ2V0",
-            "UHJvdG9QAVpHZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBp",
-            "cy9tb25pdG9yaW5nL2Rhc2hib2FyZC92MTtkYXNoYm9hcmTKAiRHb29nbGVc",
-            "Q2xvdWRcTW9uaXRvcmluZ1xEYXNoYm9hcmRcVjHqAihHb29nbGU6OkNsb3Vk",
-            "OjpNb25pdG9yaW5nOjpEYXNoYm9hcmQ6OlYxYgZwcm90bzM="));
+            "ZmllbGRfYmVoYXZpb3IucHJvdG8aL2dvb2dsZS9tb25pdG9yaW5nL2Rhc2hi",
+            "b2FyZC92MS9hbGVydGNoYXJ0LnByb3RvGi5nb29nbGUvbW9uaXRvcmluZy9k",
+            "YXNoYm9hcmQvdjEvc2NvcmVjYXJkLnByb3RvGilnb29nbGUvbW9uaXRvcmlu",
+            "Zy9kYXNoYm9hcmQvdjEvdGV4dC5wcm90bxosZ29vZ2xlL21vbml0b3Jpbmcv",
+            "ZGFzaGJvYXJkL3YxL3h5Y2hhcnQucHJvdG8aG2dvb2dsZS9wcm90b2J1Zi9l",
+            "bXB0eS5wcm90byLGAgoGV2lkZ2V0EhIKBXRpdGxlGAEgASgJQgPgQQESOwoI",
+            "eHlfY2hhcnQYAiABKAsyJy5nb29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQu",
+            "djEuWHlDaGFydEgAEj4KCXNjb3JlY2FyZBgDIAEoCzIpLmdvb2dsZS5tb25p",
+            "dG9yaW5nLmRhc2hib2FyZC52MS5TY29yZWNhcmRIABI0CgR0ZXh0GAQgASgL",
+            "MiQuZ29vZ2xlLm1vbml0b3JpbmcuZGFzaGJvYXJkLnYxLlRleHRIABInCgVi",
+            "bGFuaxgFIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eUgAEkEKC2FsZXJ0",
+            "X2NoYXJ0GAcgASgLMiouZ29vZ2xlLm1vbml0b3JpbmcuZGFzaGJvYXJkLnYx",
+            "LkFsZXJ0Q2hhcnRIAEIJCgdjb250ZW50Qs4BCiJjb20uZ29vZ2xlLm1vbml0",
+            "b3JpbmcuZGFzaGJvYXJkLnYxQgtXaWRnZXRQcm90b1ABWkdnb29nbGUuZ29s",
+            "YW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL21vbml0b3JpbmcvZGFzaGJv",
+            "YXJkL3YxO2Rhc2hib2FyZMoCJEdvb2dsZVxDbG91ZFxNb25pdG9yaW5nXERh",
+            "c2hib2FyZFxWMeoCKEdvb2dsZTo6Q2xvdWQ6Ok1vbml0b3Jpbmc6OkRhc2hi",
+            "b2FyZDo6VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.ScorecardReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.TextReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.XychartReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.AlertchartReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.ScorecardReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.TextReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.XychartReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Monitoring.Dashboard.V1.Widget), global::Google.Monitoring.Dashboard.V1.Widget.Parser, new[]{ "Title", "XyChart", "Scorecard", "Text", "Blank" }, new[]{ "Content" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Monitoring.Dashboard.V1.Widget), global::Google.Monitoring.Dashboard.V1.Widget.Parser, new[]{ "Title", "XyChart", "Scorecard", "Text", "Blank", "AlertChart" }, new[]{ "Content" }, null, null, null)
           }));
     }
     #endregion
@@ -97,6 +100,9 @@ namespace Google.Monitoring.Dashboard.V1 {
           break;
         case ContentOneofCase.Blank:
           Blank = other.Blank.Clone();
+          break;
+        case ContentOneofCase.AlertChart:
+          AlertChart = other.AlertChart.Clone();
           break;
       }
 
@@ -178,6 +184,20 @@ namespace Google.Monitoring.Dashboard.V1 {
       }
     }
 
+    /// <summary>Field number for the "alert_chart" field.</summary>
+    public const int AlertChartFieldNumber = 7;
+    /// <summary>
+    /// A chart of alert policy data.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Monitoring.Dashboard.V1.AlertChart AlertChart {
+      get { return contentCase_ == ContentOneofCase.AlertChart ? (global::Google.Monitoring.Dashboard.V1.AlertChart) content_ : null; }
+      set {
+        content_ = value;
+        contentCase_ = value == null ? ContentOneofCase.None : ContentOneofCase.AlertChart;
+      }
+    }
+
     private object content_;
     /// <summary>Enum of possible cases for the "content" oneof.</summary>
     public enum ContentOneofCase {
@@ -186,6 +206,7 @@ namespace Google.Monitoring.Dashboard.V1 {
       Scorecard = 3,
       Text = 4,
       Blank = 5,
+      AlertChart = 7,
     }
     private ContentOneofCase contentCase_ = ContentOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -217,6 +238,7 @@ namespace Google.Monitoring.Dashboard.V1 {
       if (!object.Equals(Scorecard, other.Scorecard)) return false;
       if (!object.Equals(Text, other.Text)) return false;
       if (!object.Equals(Blank, other.Blank)) return false;
+      if (!object.Equals(AlertChart, other.AlertChart)) return false;
       if (ContentCase != other.ContentCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -229,6 +251,7 @@ namespace Google.Monitoring.Dashboard.V1 {
       if (contentCase_ == ContentOneofCase.Scorecard) hash ^= Scorecard.GetHashCode();
       if (contentCase_ == ContentOneofCase.Text) hash ^= Text.GetHashCode();
       if (contentCase_ == ContentOneofCase.Blank) hash ^= Blank.GetHashCode();
+      if (contentCase_ == ContentOneofCase.AlertChart) hash ^= AlertChart.GetHashCode();
       hash ^= (int) contentCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -266,6 +289,10 @@ namespace Google.Monitoring.Dashboard.V1 {
         output.WriteRawTag(42);
         output.WriteMessage(Blank);
       }
+      if (contentCase_ == ContentOneofCase.AlertChart) {
+        output.WriteRawTag(58);
+        output.WriteMessage(AlertChart);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -295,6 +322,10 @@ namespace Google.Monitoring.Dashboard.V1 {
         output.WriteRawTag(42);
         output.WriteMessage(Blank);
       }
+      if (contentCase_ == ContentOneofCase.AlertChart) {
+        output.WriteRawTag(58);
+        output.WriteMessage(AlertChart);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -318,6 +349,9 @@ namespace Google.Monitoring.Dashboard.V1 {
       }
       if (contentCase_ == ContentOneofCase.Blank) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Blank);
+      }
+      if (contentCase_ == ContentOneofCase.AlertChart) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AlertChart);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -357,6 +391,12 @@ namespace Google.Monitoring.Dashboard.V1 {
             Blank = new global::Google.Protobuf.WellKnownTypes.Empty();
           }
           Blank.MergeFrom(other.Blank);
+          break;
+        case ContentOneofCase.AlertChart:
+          if (AlertChart == null) {
+            AlertChart = new global::Google.Monitoring.Dashboard.V1.AlertChart();
+          }
+          AlertChart.MergeFrom(other.AlertChart);
           break;
       }
 
@@ -414,6 +454,15 @@ namespace Google.Monitoring.Dashboard.V1 {
             Blank = subBuilder;
             break;
           }
+          case 58: {
+            global::Google.Monitoring.Dashboard.V1.AlertChart subBuilder = new global::Google.Monitoring.Dashboard.V1.AlertChart();
+            if (contentCase_ == ContentOneofCase.AlertChart) {
+              subBuilder.MergeFrom(AlertChart);
+            }
+            input.ReadMessage(subBuilder);
+            AlertChart = subBuilder;
+            break;
+          }
         }
       }
     #endif
@@ -466,6 +515,15 @@ namespace Google.Monitoring.Dashboard.V1 {
             }
             input.ReadMessage(subBuilder);
             Blank = subBuilder;
+            break;
+          }
+          case 58: {
+            global::Google.Monitoring.Dashboard.V1.AlertChart subBuilder = new global::Google.Monitoring.Dashboard.V1.AlertChart();
+            if (contentCase_ == ContentOneofCase.AlertChart) {
+              subBuilder.MergeFrom(AlertChart);
+            }
+            input.ReadMessage(subBuilder);
+            AlertChart = subBuilder;
             break;
           }
         }

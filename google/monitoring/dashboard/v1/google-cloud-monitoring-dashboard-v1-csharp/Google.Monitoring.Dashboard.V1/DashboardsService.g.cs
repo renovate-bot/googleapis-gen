@@ -31,58 +31,59 @@ namespace Google.Monitoring.Dashboard.V1 {
             "Lmdvb2dsZS9tb25pdG9yaW5nL2Rhc2hib2FyZC92MS9kYXNoYm9hcmQucHJv",
             "dG8aG2dvb2dsZS9wcm90b2J1Zi9lbXB0eS5wcm90bxogZ29vZ2xlL3Byb3Rv",
             "YnVmL2ZpZWxkX21hc2sucHJvdG8aF2dvb2dsZS9hcGkvY2xpZW50LnByb3Rv",
-            "InAKFkNyZWF0ZURhc2hib2FyZFJlcXVlc3QSEwoGcGFyZW50GAEgASgJQgPg",
-            "QQISQQoJZGFzaGJvYXJkGAIgASgLMikuZ29vZ2xlLm1vbml0b3JpbmcuZGFz",
-            "aGJvYXJkLnYxLkRhc2hib2FyZEID4EECIoMBChVMaXN0RGFzaGJvYXJkc1Jl",
-            "cXVlc3QSQwoGcGFyZW50GAEgASgJQjPgQQL6QS0KK2Nsb3VkcmVzb3VyY2Vt",
-            "YW5hZ2VyLmdvb2dsZWFwaXMuY29tL1Byb2plY3QSEQoJcGFnZV9zaXplGAIg",
-            "ASgFEhIKCnBhZ2VfdG9rZW4YAyABKAkicAoWTGlzdERhc2hib2FyZHNSZXNw",
-            "b25zZRI9CgpkYXNoYm9hcmRzGAEgAygLMikuZ29vZ2xlLm1vbml0b3Jpbmcu",
-            "ZGFzaGJvYXJkLnYxLkRhc2hib2FyZBIXCg9uZXh0X3BhZ2VfdG9rZW4YAiAB",
-            "KAkiUAoTR2V0RGFzaGJvYXJkUmVxdWVzdBI5CgRuYW1lGAEgASgJQivgQQL6",
-            "QSUKI21vbml0b3JpbmcuZ29vZ2xlYXBpcy5jb20vRGFzaGJvYXJkIlMKFkRl",
-            "bGV0ZURhc2hib2FyZFJlcXVlc3QSOQoEbmFtZRgBIAEoCUIr4EEC+kElCiNt",
-            "b25pdG9yaW5nLmdvb2dsZWFwaXMuY29tL0Rhc2hib2FyZCJbChZVcGRhdGVE",
-            "YXNoYm9hcmRSZXF1ZXN0EkEKCWRhc2hib2FyZBgBIAEoCzIpLmdvb2dsZS5t",
-            "b25pdG9yaW5nLmRhc2hib2FyZC52MS5EYXNoYm9hcmRCA+BBAjKxCAoRRGFz",
-            "aGJvYXJkc1NlcnZpY2USqwEKD0NyZWF0ZURhc2hib2FyZBI2Lmdvb2dsZS5t",
-            "b25pdG9yaW5nLmRhc2hib2FyZC52MS5DcmVhdGVEYXNoYm9hcmRSZXF1ZXN0",
-            "GikuZ29vZ2xlLm1vbml0b3JpbmcuZGFzaGJvYXJkLnYxLkRhc2hib2FyZCI1",
-            "gtPkkwIvIiIvdjEve3BhcmVudD1wcm9qZWN0cy8qfS9kYXNoYm9hcmRzOglk",
-            "YXNoYm9hcmQSqwEKDkxpc3REYXNoYm9hcmRzEjUuZ29vZ2xlLm1vbml0b3Jp",
-            "bmcuZGFzaGJvYXJkLnYxLkxpc3REYXNoYm9hcmRzUmVxdWVzdBo2Lmdvb2ds",
-            "ZS5tb25pdG9yaW5nLmRhc2hib2FyZC52MS5MaXN0RGFzaGJvYXJkc1Jlc3Bv",
-            "bnNlIiqC0+STAiQSIi92MS97cGFyZW50PXByb2plY3RzLyp9L2Rhc2hib2Fy",
-            "ZHMSmgEKDEdldERhc2hib2FyZBIzLmdvb2dsZS5tb25pdG9yaW5nLmRhc2hi",
-            "b2FyZC52MS5HZXREYXNoYm9hcmRSZXF1ZXN0GikuZ29vZ2xlLm1vbml0b3Jp",
-            "bmcuZGFzaGJvYXJkLnYxLkRhc2hib2FyZCIqgtPkkwIkEiIvdjEve25hbWU9",
-            "cHJvamVjdHMvKi9kYXNoYm9hcmRzLyp9Eo0BCg9EZWxldGVEYXNoYm9hcmQS",
-            "Ni5nb29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQudjEuRGVsZXRlRGFzaGJv",
-            "YXJkUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIqgtPkkwIkKiIv",
-            "djEve25hbWU9cHJvamVjdHMvKi9kYXNoYm9hcmRzLyp9ErUBCg9VcGRhdGVE",
-            "YXNoYm9hcmQSNi5nb29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQudjEuVXBk",
-            "YXRlRGFzaGJvYXJkUmVxdWVzdBopLmdvb2dsZS5tb25pdG9yaW5nLmRhc2hi",
-            "b2FyZC52MS5EYXNoYm9hcmQiP4LT5JMCOTIsL3YxL3tkYXNoYm9hcmQubmFt",
-            "ZT1wcm9qZWN0cy8qL2Rhc2hib2FyZHMvKn06CWRhc2hib2FyZBraAcpBGW1v",
-            "bml0b3JpbmcuZ29vZ2xlYXBpcy5jb23SQboBaHR0cHM6Ly93d3cuZ29vZ2xl",
-            "YXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybSxodHRwczovL3d3dy5nb29n",
-            "bGVhcGlzLmNvbS9hdXRoL21vbml0b3JpbmcsaHR0cHM6Ly93d3cuZ29vZ2xl",
-            "YXBpcy5jb20vYXV0aC9tb25pdG9yaW5nLnJlYWQsaHR0cHM6Ly93d3cuZ29v",
-            "Z2xlYXBpcy5jb20vYXV0aC9tb25pdG9yaW5nLndyaXRlQtkBCiJjb20uZ29v",
-            "Z2xlLm1vbml0b3JpbmcuZGFzaGJvYXJkLnYxQhZEYXNoYm9hcmRzU2Vydmlj",
-            "ZVByb3RvUAFaR2dvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFw",
-            "aXMvbW9uaXRvcmluZy9kYXNoYm9hcmQvdjE7ZGFzaGJvYXJkygIkR29vZ2xl",
-            "XENsb3VkXE1vbml0b3JpbmdcRGFzaGJvYXJkXFYx6gIoR29vZ2xlOjpDbG91",
-            "ZDo6TW9uaXRvcmluZzo6RGFzaGJvYXJkOjpWMWIGcHJvdG8z"));
+            "IocBChZDcmVhdGVEYXNoYm9hcmRSZXF1ZXN0EhMKBnBhcmVudBgBIAEoCUID",
+            "4EECEkEKCWRhc2hib2FyZBgCIAEoCzIpLmdvb2dsZS5tb25pdG9yaW5nLmRh",
+            "c2hib2FyZC52MS5EYXNoYm9hcmRCA+BBAhIVCg12YWxpZGF0ZV9vbmx5GAMg",
+            "ASgIIoMBChVMaXN0RGFzaGJvYXJkc1JlcXVlc3QSQwoGcGFyZW50GAEgASgJ",
+            "QjPgQQL6QS0KK2Nsb3VkcmVzb3VyY2VtYW5hZ2VyLmdvb2dsZWFwaXMuY29t",
+            "L1Byb2plY3QSEQoJcGFnZV9zaXplGAIgASgFEhIKCnBhZ2VfdG9rZW4YAyAB",
+            "KAkicAoWTGlzdERhc2hib2FyZHNSZXNwb25zZRI9CgpkYXNoYm9hcmRzGAEg",
+            "AygLMikuZ29vZ2xlLm1vbml0b3JpbmcuZGFzaGJvYXJkLnYxLkRhc2hib2Fy",
+            "ZBIXCg9uZXh0X3BhZ2VfdG9rZW4YAiABKAkiUAoTR2V0RGFzaGJvYXJkUmVx",
+            "dWVzdBI5CgRuYW1lGAEgASgJQivgQQL6QSUKI21vbml0b3JpbmcuZ29vZ2xl",
+            "YXBpcy5jb20vRGFzaGJvYXJkIlMKFkRlbGV0ZURhc2hib2FyZFJlcXVlc3QS",
+            "OQoEbmFtZRgBIAEoCUIr4EEC+kElCiNtb25pdG9yaW5nLmdvb2dsZWFwaXMu",
+            "Y29tL0Rhc2hib2FyZCJyChZVcGRhdGVEYXNoYm9hcmRSZXF1ZXN0EkEKCWRh",
+            "c2hib2FyZBgBIAEoCzIpLmdvb2dsZS5tb25pdG9yaW5nLmRhc2hib2FyZC52",
+            "MS5EYXNoYm9hcmRCA+BBAhIVCg12YWxpZGF0ZV9vbmx5GAMgASgIMrEIChFE",
+            "YXNoYm9hcmRzU2VydmljZRKrAQoPQ3JlYXRlRGFzaGJvYXJkEjYuZ29vZ2xl",
+            "Lm1vbml0b3JpbmcuZGFzaGJvYXJkLnYxLkNyZWF0ZURhc2hib2FyZFJlcXVl",
+            "c3QaKS5nb29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQudjEuRGFzaGJvYXJk",
+            "IjWC0+STAi8iIi92MS97cGFyZW50PXByb2plY3RzLyp9L2Rhc2hib2FyZHM6",
+            "CWRhc2hib2FyZBKrAQoOTGlzdERhc2hib2FyZHMSNS5nb29nbGUubW9uaXRv",
+            "cmluZy5kYXNoYm9hcmQudjEuTGlzdERhc2hib2FyZHNSZXF1ZXN0GjYuZ29v",
+            "Z2xlLm1vbml0b3JpbmcuZGFzaGJvYXJkLnYxLkxpc3REYXNoYm9hcmRzUmVz",
+            "cG9uc2UiKoLT5JMCJBIiL3YxL3twYXJlbnQ9cHJvamVjdHMvKn0vZGFzaGJv",
+            "YXJkcxKaAQoMR2V0RGFzaGJvYXJkEjMuZ29vZ2xlLm1vbml0b3JpbmcuZGFz",
+            "aGJvYXJkLnYxLkdldERhc2hib2FyZFJlcXVlc3QaKS5nb29nbGUubW9uaXRv",
+            "cmluZy5kYXNoYm9hcmQudjEuRGFzaGJvYXJkIiqC0+STAiQSIi92MS97bmFt",
+            "ZT1wcm9qZWN0cy8qL2Rhc2hib2FyZHMvKn0SjQEKD0RlbGV0ZURhc2hib2Fy",
+            "ZBI2Lmdvb2dsZS5tb25pdG9yaW5nLmRhc2hib2FyZC52MS5EZWxldGVEYXNo",
+            "Ym9hcmRSZXF1ZXN0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IiqC0+STAiQq",
+            "Ii92MS97bmFtZT1wcm9qZWN0cy8qL2Rhc2hib2FyZHMvKn0StQEKD1VwZGF0",
+            "ZURhc2hib2FyZBI2Lmdvb2dsZS5tb25pdG9yaW5nLmRhc2hib2FyZC52MS5V",
+            "cGRhdGVEYXNoYm9hcmRSZXF1ZXN0GikuZ29vZ2xlLm1vbml0b3JpbmcuZGFz",
+            "aGJvYXJkLnYxLkRhc2hib2FyZCI/gtPkkwI5MiwvdjEve2Rhc2hib2FyZC5u",
+            "YW1lPXByb2plY3RzLyovZGFzaGJvYXJkcy8qfToJZGFzaGJvYXJkGtoBykEZ",
+            "bW9uaXRvcmluZy5nb29nbGVhcGlzLmNvbdJBugFodHRwczovL3d3dy5nb29n",
+            "bGVhcGlzLmNvbS9hdXRoL2Nsb3VkLXBsYXRmb3JtLGh0dHBzOi8vd3d3Lmdv",
+            "b2dsZWFwaXMuY29tL2F1dGgvbW9uaXRvcmluZyxodHRwczovL3d3dy5nb29n",
+            "bGVhcGlzLmNvbS9hdXRoL21vbml0b3JpbmcucmVhZCxodHRwczovL3d3dy5n",
+            "b29nbGVhcGlzLmNvbS9hdXRoL21vbml0b3Jpbmcud3JpdGVC2QEKImNvbS5n",
+            "b29nbGUubW9uaXRvcmluZy5kYXNoYm9hcmQudjFCFkRhc2hib2FyZHNTZXJ2",
+            "aWNlUHJvdG9QAVpHZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xl",
+            "YXBpcy9tb25pdG9yaW5nL2Rhc2hib2FyZC92MTtkYXNoYm9hcmTKAiRHb29n",
+            "bGVcQ2xvdWRcTW9uaXRvcmluZ1xEYXNoYm9hcmRcVjHqAihHb29nbGU6OkNs",
+            "b3VkOjpNb25pdG9yaW5nOjpEYXNoYm9hcmQ6OlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Monitoring.Dashboard.V1.DashboardReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Monitoring.Dashboard.V1.CreateDashboardRequest), global::Google.Monitoring.Dashboard.V1.CreateDashboardRequest.Parser, new[]{ "Parent", "Dashboard" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Monitoring.Dashboard.V1.CreateDashboardRequest), global::Google.Monitoring.Dashboard.V1.CreateDashboardRequest.Parser, new[]{ "Parent", "Dashboard", "ValidateOnly" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Monitoring.Dashboard.V1.ListDashboardsRequest), global::Google.Monitoring.Dashboard.V1.ListDashboardsRequest.Parser, new[]{ "Parent", "PageSize", "PageToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Monitoring.Dashboard.V1.ListDashboardsResponse), global::Google.Monitoring.Dashboard.V1.ListDashboardsResponse.Parser, new[]{ "Dashboards", "NextPageToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Monitoring.Dashboard.V1.GetDashboardRequest), global::Google.Monitoring.Dashboard.V1.GetDashboardRequest.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Monitoring.Dashboard.V1.DeleteDashboardRequest), global::Google.Monitoring.Dashboard.V1.DeleteDashboardRequest.Parser, new[]{ "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Monitoring.Dashboard.V1.UpdateDashboardRequest), global::Google.Monitoring.Dashboard.V1.UpdateDashboardRequest.Parser, new[]{ "Dashboard" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Monitoring.Dashboard.V1.UpdateDashboardRequest), global::Google.Monitoring.Dashboard.V1.UpdateDashboardRequest.Parser, new[]{ "Dashboard", "ValidateOnly" }, null, null, null, null)
           }));
     }
     #endregion
@@ -123,6 +124,7 @@ namespace Google.Monitoring.Dashboard.V1 {
     public CreateDashboardRequest(CreateDashboardRequest other) : this() {
       parent_ = other.parent_;
       dashboard_ = other.dashboard_ != null ? other.dashboard_.Clone() : null;
+      validateOnly_ = other.validateOnly_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -163,6 +165,21 @@ namespace Google.Monitoring.Dashboard.V1 {
       }
     }
 
+    /// <summary>Field number for the "validate_only" field.</summary>
+    public const int ValidateOnlyFieldNumber = 3;
+    private bool validateOnly_;
+    /// <summary>
+    /// If set, validate the request and preview the review, but do not actually
+    /// save it.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool ValidateOnly {
+      get { return validateOnly_; }
+      set {
+        validateOnly_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CreateDashboardRequest);
@@ -178,6 +195,7 @@ namespace Google.Monitoring.Dashboard.V1 {
       }
       if (Parent != other.Parent) return false;
       if (!object.Equals(Dashboard, other.Dashboard)) return false;
+      if (ValidateOnly != other.ValidateOnly) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -186,6 +204,7 @@ namespace Google.Monitoring.Dashboard.V1 {
       int hash = 1;
       if (Parent.Length != 0) hash ^= Parent.GetHashCode();
       if (dashboard_ != null) hash ^= Dashboard.GetHashCode();
+      if (ValidateOnly != false) hash ^= ValidateOnly.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -210,6 +229,10 @@ namespace Google.Monitoring.Dashboard.V1 {
         output.WriteRawTag(18);
         output.WriteMessage(Dashboard);
       }
+      if (ValidateOnly != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(ValidateOnly);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -227,6 +250,10 @@ namespace Google.Monitoring.Dashboard.V1 {
         output.WriteRawTag(18);
         output.WriteMessage(Dashboard);
       }
+      if (ValidateOnly != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(ValidateOnly);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -241,6 +268,9 @@ namespace Google.Monitoring.Dashboard.V1 {
       }
       if (dashboard_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Dashboard);
+      }
+      if (ValidateOnly != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -261,6 +291,9 @@ namespace Google.Monitoring.Dashboard.V1 {
           Dashboard = new global::Google.Monitoring.Dashboard.V1.Dashboard();
         }
         Dashboard.MergeFrom(other.Dashboard);
+      }
+      if (other.ValidateOnly != false) {
+        ValidateOnly = other.ValidateOnly;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -287,6 +320,10 @@ namespace Google.Monitoring.Dashboard.V1 {
             input.ReadMessage(Dashboard);
             break;
           }
+          case 24: {
+            ValidateOnly = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -310,6 +347,10 @@ namespace Google.Monitoring.Dashboard.V1 {
               Dashboard = new global::Google.Monitoring.Dashboard.V1.Dashboard();
             }
             input.ReadMessage(Dashboard);
+            break;
+          }
+          case 24: {
+            ValidateOnly = input.ReadBool();
             break;
           }
         }
@@ -1183,6 +1224,7 @@ namespace Google.Monitoring.Dashboard.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UpdateDashboardRequest(UpdateDashboardRequest other) : this() {
       dashboard_ = other.dashboard_ != null ? other.dashboard_.Clone() : null;
+      validateOnly_ = other.validateOnly_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1205,6 +1247,21 @@ namespace Google.Monitoring.Dashboard.V1 {
       }
     }
 
+    /// <summary>Field number for the "validate_only" field.</summary>
+    public const int ValidateOnlyFieldNumber = 3;
+    private bool validateOnly_;
+    /// <summary>
+    /// If set, validate the request and preview the review, but do not actually
+    /// save it.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool ValidateOnly {
+      get { return validateOnly_; }
+      set {
+        validateOnly_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UpdateDashboardRequest);
@@ -1219,6 +1276,7 @@ namespace Google.Monitoring.Dashboard.V1 {
         return true;
       }
       if (!object.Equals(Dashboard, other.Dashboard)) return false;
+      if (ValidateOnly != other.ValidateOnly) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1226,6 +1284,7 @@ namespace Google.Monitoring.Dashboard.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (dashboard_ != null) hash ^= Dashboard.GetHashCode();
+      if (ValidateOnly != false) hash ^= ValidateOnly.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1246,6 +1305,10 @@ namespace Google.Monitoring.Dashboard.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(Dashboard);
       }
+      if (ValidateOnly != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(ValidateOnly);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1259,6 +1322,10 @@ namespace Google.Monitoring.Dashboard.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(Dashboard);
       }
+      if (ValidateOnly != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(ValidateOnly);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1270,6 +1337,9 @@ namespace Google.Monitoring.Dashboard.V1 {
       int size = 0;
       if (dashboard_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Dashboard);
+      }
+      if (ValidateOnly != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1287,6 +1357,9 @@ namespace Google.Monitoring.Dashboard.V1 {
           Dashboard = new global::Google.Monitoring.Dashboard.V1.Dashboard();
         }
         Dashboard.MergeFrom(other.Dashboard);
+      }
+      if (other.ValidateOnly != false) {
+        ValidateOnly = other.ValidateOnly;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1309,6 +1382,10 @@ namespace Google.Monitoring.Dashboard.V1 {
             input.ReadMessage(Dashboard);
             break;
           }
+          case 24: {
+            ValidateOnly = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -1328,6 +1405,10 @@ namespace Google.Monitoring.Dashboard.V1 {
               Dashboard = new global::Google.Monitoring.Dashboard.V1.Dashboard();
             }
             input.ReadMessage(Dashboard);
+            break;
+          }
+          case 24: {
+            ValidateOnly = input.ReadBool();
             break;
           }
         }

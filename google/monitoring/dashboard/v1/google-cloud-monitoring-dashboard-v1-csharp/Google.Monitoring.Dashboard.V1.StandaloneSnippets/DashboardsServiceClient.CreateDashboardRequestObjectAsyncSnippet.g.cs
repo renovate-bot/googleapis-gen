@@ -35,6 +35,7 @@ namespace Google.Monitoring.Dashboard.V1.Snippets
             {
                 Parent = "",
                 Dashboard = new Dashboard(),
+                ValidateOnly = false,
             };
             // Make the request
             Dashboard response = await dashboardsServiceClient.CreateDashboardAsync(request);

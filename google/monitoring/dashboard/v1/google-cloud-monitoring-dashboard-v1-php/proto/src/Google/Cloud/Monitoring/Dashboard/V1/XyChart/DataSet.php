@@ -37,10 +37,10 @@ class DataSet extends \Google\Protobuf\Internal\Message
      */
     protected $legend_template = '';
     /**
-     * Optional. The lower bound on data point frequency for this data set,
-     * implemented by specifying the minimum alignment period to use in a time
-     * series query. For example, if the data is published once every 10 minutes,
-     * the `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set, implemented by
+     * specifying the minimum alignment period to use in a time series query
+     * For example, if the data is published once every 10 minutes, the
+     * `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration min_alignment_period = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -63,10 +63,10 @@ class DataSet extends \Google\Protobuf\Internal\Message
      *           This should be a string with interpolations of the form `${label_name}`,
      *           which will resolve to the label's value.
      *     @type \Google\Protobuf\Duration $min_alignment_period
-     *           Optional. The lower bound on data point frequency for this data set,
-     *           implemented by specifying the minimum alignment period to use in a time
-     *           series query. For example, if the data is published once every 10 minutes,
-     *           the `min_alignment_period` should be at least 10 minutes. It would not
+     *           Optional. The lower bound on data point frequency for this data set, implemented by
+     *           specifying the minimum alignment period to use in a time series query
+     *           For example, if the data is published once every 10 minutes, the
+     *           `min_alignment_period` should be at least 10 minutes. It would not
      *           make sense to fetch and align data at one minute intervals.
      * }
      */
@@ -170,10 +170,10 @@ class DataSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The lower bound on data point frequency for this data set,
-     * implemented by specifying the minimum alignment period to use in a time
-     * series query. For example, if the data is published once every 10 minutes,
-     * the `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set, implemented by
+     * specifying the minimum alignment period to use in a time series query
+     * For example, if the data is published once every 10 minutes, the
+     * `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration min_alignment_period = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -195,10 +195,10 @@ class DataSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The lower bound on data point frequency for this data set,
-     * implemented by specifying the minimum alignment period to use in a time
-     * series query. For example, if the data is published once every 10 minutes,
-     * the `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set, implemented by
+     * specifying the minimum alignment period to use in a time series query
+     * For example, if the data is published once every 10 minutes, the
+     * `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration min_alignment_period = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
