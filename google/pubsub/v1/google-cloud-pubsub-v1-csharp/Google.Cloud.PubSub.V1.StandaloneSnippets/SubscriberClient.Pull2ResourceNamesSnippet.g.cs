@@ -25,18 +25,15 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// This snippet has been automatically generated for illustrative purposes only.
         /// It may require modifications to work in your environment.
         /// </remarks>
-        public void PullResourceNames()
+        public void Pull2ResourceNames()
         {
             // Create client
             SubscriberClient subscriberClient = SubscriberClient.Create();
             // Initialize request argument(s)
             SubscriptionName subscription = SubscriptionName.FromProjectSubscription("[PROJECT]", "[SUBSCRIPTION]");
-            bool returnImmediately = false;
             int maxMessages = 0;
             // Make the request
-#pragma warning disable CS0612
-            PullResponse response = subscriberClient.Pull(subscription, returnImmediately, maxMessages);
-#pragma warning restore CS0612
+            PullResponse response = subscriberClient.Pull(subscription, maxMessages);
         }
     }
 }

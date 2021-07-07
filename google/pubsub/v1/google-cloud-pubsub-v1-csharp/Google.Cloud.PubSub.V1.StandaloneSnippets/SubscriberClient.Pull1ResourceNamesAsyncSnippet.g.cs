@@ -26,12 +26,12 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// This snippet has been automatically generated for illustrative purposes only.
         /// It may require modifications to work in your environment.
         /// </remarks>
-        public async Task PullAsync()
+        public async Task Pull1ResourceNamesAsync()
         {
             // Create client
             SubscriberClient subscriberClient = await SubscriberClient.CreateAsync();
             // Initialize request argument(s)
-            string subscription = "projects/[PROJECT]/subscriptions/[SUBSCRIPTION]";
+            SubscriptionName subscription = SubscriptionName.FromProjectSubscription("[PROJECT]", "[SUBSCRIPTION]");
             bool returnImmediately = false;
             int maxMessages = 0;
             // Make the request

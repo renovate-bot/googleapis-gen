@@ -17,26 +17,25 @@
 namespace Google.Cloud.PubSub.V1.Snippets
 {
     using Google.Cloud.PubSub.V1;
-    using System.Threading.Tasks;
 
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
-        /// <summary>Snippet for PullAsync</summary>
+        /// <summary>Snippet for Pull</summary>
         /// <remarks>
         /// This snippet has been automatically generated for illustrative purposes only.
         /// It may require modifications to work in your environment.
         /// </remarks>
-        public async Task PullResourceNamesAsync()
+        public void Pull1ResourceNames()
         {
             // Create client
-            SubscriberClient subscriberClient = await SubscriberClient.CreateAsync();
+            SubscriberClient subscriberClient = SubscriberClient.Create();
             // Initialize request argument(s)
             SubscriptionName subscription = SubscriptionName.FromProjectSubscription("[PROJECT]", "[SUBSCRIPTION]");
             bool returnImmediately = false;
             int maxMessages = 0;
             // Make the request
 #pragma warning disable CS0612
-            PullResponse response = await subscriberClient.PullAsync(subscription, returnImmediately, maxMessages);
+            PullResponse response = subscriberClient.Pull(subscription, returnImmediately, maxMessages);
 #pragma warning restore CS0612
         }
     }
