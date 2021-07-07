@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/vpcaccess",
+  "name": "@google-cloud/vpc-access",
   "version": "0.1.0",
   "description": "Vpcaccess client for Node.js",
   "repository": "googleapis/nodejs-vpcaccess",
