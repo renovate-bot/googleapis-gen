@@ -21,6 +21,8 @@ from .types.build_service import CheckBuildStageStatusRequest
 from .types.build_service import CheckBuildStageStatusResponse
 from .types.build_service import ListBuildsRequest
 from .types.build_service import ListBuildsResponse
+from .types.build_service import ListBuildTargetsRequest
+from .types.build_service import ListBuildTargetsResponse
 from .types.build_service import StageBuildMetadata
 from .types.build_service import StageBuildRequest
 from .types.build_service import StageBuildResponse
@@ -38,6 +40,8 @@ __all__ = (
 'BuildTarget',
 'CheckBuildStageStatusRequest',
 'CheckBuildStageStatusResponse',
+'ListBuildTargetsRequest',
+'ListBuildTargetsResponse',
 'ListBuildsRequest',
 'ListBuildsResponse',
 'Milestone',

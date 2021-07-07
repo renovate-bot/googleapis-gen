@@ -42,6 +42,7 @@ var newBuildClientHook clientHook
 
 // BuildCallOptions contains the retry settings for each method of BuildClient.
 type BuildCallOptions struct {
+	ListBuildTargets      []gax.CallOption
 	ListBuilds            []gax.CallOption
 	CheckBuildStageStatus []gax.CallOption
 	StageBuild            []gax.CallOption
@@ -62,6 +63,7 @@ func defaultBuildGRPCClientOptions() []option.ClientOption {
 
 func defaultBuildCallOptions() *BuildCallOptions {
 	return &BuildCallOptions{
+		ListBuildTargets: []gax.CallOption{},
 		ListBuilds: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -93,6 +95,7 @@ type internalBuildClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
+	ListBuildTargets(context.Context, *moblabpb.ListBuildTargetsRequest, ...gax.CallOption) *BuildTargetIterator
 	ListBuilds(context.Context, *moblabpb.ListBuildsRequest, ...gax.CallOption) *BuildIterator
 	CheckBuildStageStatus(context.Context, *moblabpb.CheckBuildStageStatusRequest, ...gax.CallOption) (*moblabpb.CheckBuildStageStatusResponse, error)
 	StageBuild(context.Context, *moblabpb.StageBuildRequest, ...gax.CallOption) (*StageBuildOperation, error)
@@ -136,6 +139,11 @@ func (c *BuildClient) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *BuildClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
+}
+
+// ListBuildTargets lists all build targets that a user has access to.
+func (c *BuildClient) ListBuildTargets(ctx context.Context, req *moblabpb.ListBuildTargetsRequest, opts ...gax.CallOption) *BuildTargetIterator {
+	return c.internalClient.ListBuildTargets(ctx, req, opts...)
 }
 
 // ListBuilds lists all builds for the given build target and model in descending order
@@ -259,6 +267,45 @@ func (c *buildGRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *buildGRPCClient) Close() error {
 	return c.connPool.Close()
+}
+
+func (c *buildGRPCClient) ListBuildTargets(ctx context.Context, req *moblabpb.ListBuildTargetsRequest, opts ...gax.CallOption) *BuildTargetIterator {
+	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	opts = append((*c.CallOptions).ListBuildTargets[0:len((*c.CallOptions).ListBuildTargets):len((*c.CallOptions).ListBuildTargets)], opts...)
+	it := &BuildTargetIterator{}
+	req = proto.Clone(req).(*moblabpb.ListBuildTargetsRequest)
+	it.InternalFetch = func(pageSize int, pageToken string) ([]*moblabpb.BuildTarget, string, error) {
+		var resp *moblabpb.ListBuildTargetsResponse
+		req.PageToken = pageToken
+		if pageSize > math.MaxInt32 {
+			req.PageSize = math.MaxInt32
+		} else {
+			req.PageSize = int32(pageSize)
+		}
+		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+			var err error
+			resp, err = c.buildClient.ListBuildTargets(ctx, req, settings.GRPC...)
+			return err
+		}, opts...)
+		if err != nil {
+			return nil, "", err
+		}
+
+		it.Response = resp
+		return resp.GetBuildTargets(), resp.GetNextPageToken(), nil
+	}
+	fetch := func(pageSize int, pageToken string) (string, error) {
+		items, nextPageToken, err := it.InternalFetch(pageSize, pageToken)
+		if err != nil {
+			return "", err
+		}
+		it.items = append(it.items, items...)
+		return nextPageToken, nil
+	}
+	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
+	it.pageInfo.MaxSize = int(req.GetPageSize())
+	it.pageInfo.Token = req.GetPageToken()
+	return it
 }
 
 func (c *buildGRPCClient) ListBuilds(ctx context.Context, req *moblabpb.ListBuildsRequest, opts ...gax.CallOption) *BuildIterator {
@@ -456,6 +503,53 @@ func (it *BuildIterator) bufLen() int {
 }
 
 func (it *BuildIterator) takeBuf() interface{} {
+	b := it.items
+	it.items = nil
+	return b
+}
+
+// BuildTargetIterator manages a stream of *moblabpb.BuildTarget.
+type BuildTargetIterator struct {
+	items    []*moblabpb.BuildTarget
+	pageInfo *iterator.PageInfo
+	nextFunc func() error
+
+	// Response is the raw response for the current page.
+	// It must be cast to the RPC response type.
+	// Calling Next() or InternalFetch() updates this value.
+	Response interface{}
+
+	// InternalFetch is for use by the Google Cloud Libraries only.
+	// It is not part of the stable interface of this package.
+	//
+	// InternalFetch returns results from a single call to the underlying RPC.
+	// The number of results is no greater than pageSize.
+	// If there are no more results, nextPageToken is empty and err is nil.
+	InternalFetch func(pageSize int, pageToken string) (results []*moblabpb.BuildTarget, nextPageToken string, err error)
+}
+
+// PageInfo supports pagination. See the google.golang.org/api/iterator package for details.
+func (it *BuildTargetIterator) PageInfo() *iterator.PageInfo {
+	return it.pageInfo
+}
+
+// Next returns the next result. Its second return value is iterator.Done if there are no more
+// results. Once Next returns Done, all subsequent calls will return Done.
+func (it *BuildTargetIterator) Next() (*moblabpb.BuildTarget, error) {
+	var item *moblabpb.BuildTarget
+	if err := it.nextFunc(); err != nil {
+		return item, err
+	}
+	item = it.items[0]
+	it.items = it.items[1:]
+	return item, nil
+}
+
+func (it *BuildTargetIterator) bufLen() int {
+	return len(it.items)
+}
+
+func (it *BuildTargetIterator) takeBuf() interface{} {
 	b := it.items
 	it.items = nil
 	return b

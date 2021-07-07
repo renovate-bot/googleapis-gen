@@ -15,6 +15,11 @@
                 "CheckBuildStageStatus"
               ]
             },
+            "ListBuildTargets":  {
+              "methods":  [
+                "ListBuildTargets"
+              ]
+            },
             "ListBuilds":  {
               "methods":  [
                 "ListBuilds"

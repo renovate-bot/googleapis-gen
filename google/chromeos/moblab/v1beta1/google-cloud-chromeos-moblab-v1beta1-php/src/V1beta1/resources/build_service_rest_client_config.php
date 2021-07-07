@@ -14,6 +14,10 @@ return [
                     ],
                 ],
             ],
+            'ListBuildTargets' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/buildTargets',
+            ],
             'ListBuilds' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1beta1/{parent=buildTargets/*/models/*}/builds',

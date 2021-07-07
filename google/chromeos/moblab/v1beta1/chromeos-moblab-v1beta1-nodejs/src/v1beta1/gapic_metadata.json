@@ -20,6 +20,13 @@
                 "stageBuild"
               ]
             },
+            "ListBuildTargets": {
+              "methods": [
+                "listBuildTargets",
+                "listBuildTargetsStream",
+                "listBuildTargetsAsync"
+              ]
+            },
             "ListBuilds": {
               "methods": [
                 "listBuilds",
@@ -40,6 +47,13 @@
             "StageBuild": {
               "methods": [
                 "stageBuild"
+              ]
+            },
+            "ListBuildTargets": {
+              "methods": [
+                "listBuildTargets",
+                "listBuildTargetsStream",
+                "listBuildTargetsAsync"
               ]
             },
             "ListBuilds": {

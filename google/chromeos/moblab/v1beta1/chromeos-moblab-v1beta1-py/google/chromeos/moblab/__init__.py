@@ -21,6 +21,8 @@ from google.chromeos.moblab_v1beta1.types.build_service import CheckBuildStageSt
 from google.chromeos.moblab_v1beta1.types.build_service import CheckBuildStageStatusResponse
 from google.chromeos.moblab_v1beta1.types.build_service import ListBuildsRequest
 from google.chromeos.moblab_v1beta1.types.build_service import ListBuildsResponse
+from google.chromeos.moblab_v1beta1.types.build_service import ListBuildTargetsRequest
+from google.chromeos.moblab_v1beta1.types.build_service import ListBuildTargetsResponse
 from google.chromeos.moblab_v1beta1.types.build_service import StageBuildMetadata
 from google.chromeos.moblab_v1beta1.types.build_service import StageBuildRequest
 from google.chromeos.moblab_v1beta1.types.build_service import StageBuildResponse
@@ -36,6 +38,8 @@ __all__ = ('BuildServiceClient',
     'CheckBuildStageStatusResponse',
     'ListBuildsRequest',
     'ListBuildsResponse',
+    'ListBuildTargetsRequest',
+    'ListBuildTargetsResponse',
     'StageBuildMetadata',
     'StageBuildRequest',
     'StageBuildResponse',

@@ -168,6 +168,8 @@ export class BuildServiceClient {
     // (e.g. 50 results at a time, with tokens to get subsequent
     // pages). Denote the keys used for pagination and results.
     this.descriptors.page = {
+      listBuildTargets:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'buildTargets'),
       listBuilds:
           new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'builds')
     };
@@ -234,7 +236,7 @@ export class BuildServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const buildServiceStubMethods =
-        ['listBuilds', 'checkBuildStageStatus', 'stageBuild'];
+        ['listBuildTargets', 'listBuilds', 'checkBuildStageStatus', 'stageBuild'];
     for (const methodName of buildServiceStubMethods) {
       const callPromise = this.buildServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -350,7 +352,7 @@ export class BuildServiceClient {
  *   'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
  * @param {string} [request.filter]
  *   Optional. Filter that specifies value constraints of fields. For example, the
- *   filter can be set as `filter='type=release'` to only check the release
+ *   filter can be set as "filter='type=release'" to only check the release
  *   builds.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -432,7 +434,7 @@ export class BuildServiceClient {
  *   'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
  * @param {string} [request.filter]
  *   Optional. Filter that specifies value constraints of fields. For example, the
- *   filter can be set as `filter='type=release'` to only check the release
+ *   filter can be set as "filter='type=release'" to only check the release
  *   builds.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -502,6 +504,157 @@ export class BuildServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.stageBuild, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.chromeos.moblab.v1beta1.StageBuildResponse, protos.google.chromeos.moblab.v1beta1.StageBuildMetadata>;
   }
+  listBuildTargets(
+      request?: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.chromeos.moblab.v1beta1.IBuildTarget[],
+        protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest|null,
+        protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse
+      ]>;
+  listBuildTargets(
+      request: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IBuildTarget>): void;
+  listBuildTargets(
+      request: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+      callback: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IBuildTarget>): void;
+/**
+ * Lists all build targets that a user has access to.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {number} [request.pageSize]
+ *   Optional. The number of build targets to return in a page.
+ * @param {string} [request.pageToken]
+ *   Optional. A page token, received from a previous `ListBuildTargets` call. Provide
+ *   this to retrieve the subsequent page.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is Array of [BuildTarget]{@link google.chromeos.moblab.v1beta1.BuildTarget}.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed and will merge results from all the pages into this array.
+ *   Note that it can affect your quota.
+ *   We recommend using `listBuildTargetsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listBuildTargets(
+      request?: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+      optionsOrCallback?: CallOptions|PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IBuildTarget>,
+      callback?: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IBuildTarget>):
+      Promise<[
+        protos.google.chromeos.moblab.v1beta1.IBuildTarget[],
+        protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest|null,
+        protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    this.initialize();
+    return this.innerApiCalls.listBuildTargets(request, options, callback);
+  }
+
+/**
+ * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {number} [request.pageSize]
+ *   Optional. The number of build targets to return in a page.
+ * @param {string} [request.pageToken]
+ *   Optional. A page token, received from a previous `ListBuildTargets` call. Provide
+ *   this to retrieve the subsequent page.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream}
+ *   An object stream which emits an object representing [BuildTarget]{@link google.chromeos.moblab.v1beta1.BuildTarget} on 'data' event.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed. Note that it can affect your quota.
+ *   We recommend using `listBuildTargetsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listBuildTargetsStream(
+      request?: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+      options?: CallOptions):
+    Transform{
+    request = request || {};
+    options = options || {};
+    const callSettings = new gax.CallSettings(options);
+    this.initialize();
+    return this.descriptors.page.listBuildTargets.createStream(
+      this.innerApiCalls.listBuildTargets as gax.GaxCall,
+      request,
+      callSettings
+    );
+  }
+
+/**
+ * Equivalent to `listBuildTargets`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {number} [request.pageSize]
+ *   Optional. The number of build targets to return in a page.
+ * @param {string} [request.pageToken]
+ *   Optional. A page token, received from a previous `ListBuildTargets` call. Provide
+ *   this to retrieve the subsequent page.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   [BuildTarget]{@link google.chromeos.moblab.v1beta1.BuildTarget}. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example
+ * const iterable = client.listBuildTargetsAsync(request);
+ * for await (const response of iterable) {
+ *   // process response
+ * }
+ */
+  listBuildTargetsAsync(
+      request?: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+      options?: CallOptions):
+    AsyncIterable<protos.google.chromeos.moblab.v1beta1.IBuildTarget>{
+    request = request || {};
+    options = options || {};
+    options = options || {};
+    const callSettings = new gax.CallSettings(options);
+    this.initialize();
+    return this.descriptors.page.listBuildTargets.asyncIterate(
+      this.innerApiCalls['listBuildTargets'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<protos.google.chromeos.moblab.v1beta1.IBuildTarget>;
+  }
   listBuilds(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
       options?: CallOptions):
@@ -541,13 +694,13 @@ export class BuildServiceClient {
  *   retrieve the subsequent page.
  * @param {string} [request.filter]
  *   Optional. Filter that specifies value constraints of fields. For example, the
- *   filter can be set as `filter='milestone=milestones/80'` to only select
+ *   filter can be set as "filter='milestone=milestones/80'" to only select
  *   builds in milestone 80.
  * @param {google.protobuf.FieldMask} [request.readMask]
  *   Optional. Read mask that specifies which Build fields to return. If empty, all Build
  *   fields will be returned.
  *   Valid fields: name, milestone, build_version.
- *   For example, if the read_mask is set as `read_mask='milestone'`, the
+ *   For example, if the read_mask is set as "read_mask='milestone'", the
  *   ListBuilds will return a list of Builds object with only the milestone
  *   field.
  * @param {google.protobuf.FieldMask} [request.groupBy]
@@ -619,13 +772,13 @@ export class BuildServiceClient {
  *   retrieve the subsequent page.
  * @param {string} [request.filter]
  *   Optional. Filter that specifies value constraints of fields. For example, the
- *   filter can be set as `filter='milestone=milestones/80'` to only select
+ *   filter can be set as "filter='milestone=milestones/80'" to only select
  *   builds in milestone 80.
  * @param {google.protobuf.FieldMask} [request.readMask]
  *   Optional. Read mask that specifies which Build fields to return. If empty, all Build
  *   fields will be returned.
  *   Valid fields: name, milestone, build_version.
- *   For example, if the read_mask is set as `read_mask='milestone'`, the
+ *   For example, if the read_mask is set as "read_mask='milestone'", the
  *   ListBuilds will return a list of Builds object with only the milestone
  *   field.
  * @param {google.protobuf.FieldMask} [request.groupBy]
@@ -684,13 +837,13 @@ export class BuildServiceClient {
  *   retrieve the subsequent page.
  * @param {string} [request.filter]
  *   Optional. Filter that specifies value constraints of fields. For example, the
- *   filter can be set as `filter='milestone=milestones/80'` to only select
+ *   filter can be set as "filter='milestone=milestones/80'" to only select
  *   builds in milestone 80.
  * @param {google.protobuf.FieldMask} [request.readMask]
  *   Optional. Read mask that specifies which Build fields to return. If empty, all Build
  *   fields will be returned.
  *   Valid fields: name, milestone, build_version.
- *   For example, if the read_mask is set as `read_mask='milestone'`, the
+ *   For example, if the read_mask is set as "read_mask='milestone'", the
  *   ListBuilds will return a list of Builds object with only the milestone
  *   field.
  * @param {google.protobuf.FieldMask} [request.groupBy]

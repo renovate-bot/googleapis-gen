@@ -10,6 +10,11 @@
         "grpc": {
           "libraryClient": "::Google::Chromeos::Moblab::V1beta1::BuildService::Client",
           "rpcs": {
+            "ListBuildTargets": {
+              "methods": [
+                "list_build_targets"
+              ]
+            },
             "ListBuilds": {
               "methods": [
                 "list_builds"

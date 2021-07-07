@@ -24,8 +24,17 @@ class BuildService
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ú
-2google/chromeos/moblab/v1beta1/build_service.protogoogle.chromeos.moblab.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/chromeos/moblab/v1beta1/resources.proto#google/longrunning/operations.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"ý
+Û
+2google/chromeos/moblab/v1beta1/build_service.protogoogle.chromeos.moblab.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/chromeos/moblab/v1beta1/resources.proto#google/longrunning/operations.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"J
+ListBuildTargetsRequest
+	page_size (BàA
+
+page_token (	BàA"‹
+ListBuildTargetsResponseB
+build_targets (2+.google.chromeos.moblab.v1beta1.BuildTarget
+next_page_token (	
+
+total_size ("ý
 ListBuildsRequest;
 parent (	B+àAúA%
 #chromeosmoblab.googleapis.com/Model
@@ -58,8 +67,9 @@ total_size ("v
 progress_percent (.
 
 start_time (2.google.protobuf.Timestamp,
-end_time (2.google.protobuf.Timestamp2á
-BuildService¶
+end_time (2.google.protobuf.Timestamp2ˆ
+BuildService¤
+ListBuildTargets7.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest8.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse"‚Óä“/v1beta1/buildTargets¶
 
 ListBuilds1.google.chromeos.moblab.v1beta1.ListBuildsRequest2.google.chromeos.moblab.v1beta1.ListBuildsResponse"A‚Óä“20/v1beta1/{parent=buildTargets/*/models/*}/buildsÚAparentç
 CheckBuildStageStatus<.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest=.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse"Q‚Óä“DB/v1beta1/{name=buildTargets/*/models/*/builds/*/artifacts/*}:checkÚAnameß

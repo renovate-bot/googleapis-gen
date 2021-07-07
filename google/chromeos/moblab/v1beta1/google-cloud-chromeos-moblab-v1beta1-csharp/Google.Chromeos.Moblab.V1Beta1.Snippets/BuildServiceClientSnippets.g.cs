@@ -26,6 +26,96 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
     /// <summary>Generated snippets.</summary>
     public sealed class GeneratedBuildServiceClientSnippets
     {
+        /// <summary>Snippet for ListBuildTargets</summary>
+        public void ListBuildTargetsRequestObject()
+        {
+            // Snippet: ListBuildTargets(ListBuildTargetsRequest, CallSettings)
+            // Create client
+            BuildServiceClient buildServiceClient = BuildServiceClient.Create();
+            // Initialize request argument(s)
+            ListBuildTargetsRequest request = new ListBuildTargetsRequest { };
+            // Make the request
+            PagedEnumerable<ListBuildTargetsResponse, BuildTarget> response = buildServiceClient.ListBuildTargets(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (BuildTarget item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (ListBuildTargetsResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (BuildTarget item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<BuildTarget> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (BuildTarget item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListBuildTargetsAsync</summary>
+        public async Task ListBuildTargetsRequestObjectAsync()
+        {
+            // Snippet: ListBuildTargetsAsync(ListBuildTargetsRequest, CallSettings)
+            // Create client
+            BuildServiceClient buildServiceClient = await BuildServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            ListBuildTargetsRequest request = new ListBuildTargetsRequest { };
+            // Make the request
+            PagedAsyncEnumerable<ListBuildTargetsResponse, BuildTarget> response = buildServiceClient.ListBuildTargetsAsync(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await response.ForEachAsync((BuildTarget item) =>
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            });
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await response.AsRawResponses().ForEachAsync((ListBuildTargetsResponse page) =>
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (BuildTarget item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            });
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<BuildTarget> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (BuildTarget item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
         /// <summary>Snippet for ListBuilds</summary>
         public void ListBuildsRequestObject()
         {

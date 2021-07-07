@@ -32,8 +32,10 @@ use Google\ApiCore\Testing\MockTransport;
 use Google\Chromeos\Moblab\V1beta1\Build;
 
 use Google\Chromeos\Moblab\V1beta1\BuildServiceClient;
+use Google\Chromeos\Moblab\V1beta1\BuildTarget;
 use Google\Chromeos\Moblab\V1beta1\CheckBuildStageStatusResponse;
 use Google\Chromeos\Moblab\V1beta1\ListBuildsResponse;
+use Google\Chromeos\Moblab\V1beta1\ListBuildTargetsResponse;
 use Google\Chromeos\Moblab\V1beta1\StageBuildResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
@@ -128,6 +130,74 @@ class BuildServiceClientTest extends GeneratedTest
         $formattedName = $client->buildArtifactName('[BUILD_TARGET]', '[MODEL]', '[BUILD]', '[ARTIFACT]');
         try {
             $client->checkBuildStageStatus($formattedName);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function listBuildTargetsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $nextPageToken = '';
+        $totalSize = 705419236;
+        $buildTargetsElement = new BuildTarget();
+        $buildTargets = [
+            $buildTargetsElement,
+        ];
+        $expectedResponse = new ListBuildTargetsResponse();
+        $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setTotalSize($totalSize);
+        $expectedResponse->setBuildTargets($buildTargets);
+        $transport->addResponse($expectedResponse);
+        $response = $client->listBuildTargets();
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getBuildTargets()[0], $resources[0]);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.chromeos.moblab.v1beta1.BuildService/ListBuildTargets', $actualFuncCall);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function listBuildTargetsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        try {
+            $client->listBuildTargets();
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

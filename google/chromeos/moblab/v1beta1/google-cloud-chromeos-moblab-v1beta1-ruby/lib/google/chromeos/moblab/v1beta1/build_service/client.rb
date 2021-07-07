@@ -175,6 +175,70 @@ module Google
             # Service calls
 
             ##
+            # Lists all build targets that a user has access to.
+            #
+            # @overload list_build_targets(request, options = nil)
+            #   Pass arguments to `list_build_targets` via a request object, either of type
+            #   {::Google::Chromeos::Moblab::V1beta1::ListBuildTargetsRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Chromeos::Moblab::V1beta1::ListBuildTargetsRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload list_build_targets(page_size: nil, page_token: nil)
+            #   Pass arguments to `list_build_targets` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param page_size [::Integer]
+            #     Optional. The number of build targets to return in a page.
+            #   @param page_token [::String]
+            #     Optional. A page token, received from a previous `ListBuildTargets` call. Provide
+            #     this to retrieve the subsequent page.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::PagedEnumerable<::Google::Chromeos::Moblab::V1beta1::BuildTarget>]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::PagedEnumerable<::Google::Chromeos::Moblab::V1beta1::BuildTarget>]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def list_build_targets request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Chromeos::Moblab::V1beta1::ListBuildTargetsRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.list_build_targets.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Chromeos::Moblab::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              options.apply_defaults timeout:      @config.rpcs.list_build_targets.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.list_build_targets.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @build_service_stub.call_rpc :list_build_targets, request, options: options do |response, operation|
+                response = ::Gapic::PagedEnumerable.new @build_service_stub, :list_build_targets, request, response, operation, options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Lists all builds for the given build target and model in descending order
             # for the milestones and build versions.
             #
@@ -205,13 +269,13 @@ module Google
             #     retrieve the subsequent page.
             #   @param filter [::String]
             #     Optional. Filter that specifies value constraints of fields. For example, the
-            #     filter can be set as `filter='milestone=milestones/80'` to only select
+            #     filter can be set as "filter='milestone=milestones/80'" to only select
             #     builds in milestone 80.
             #   @param read_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     Optional. Read mask that specifies which Build fields to return. If empty, all Build
             #     fields will be returned.
             #     Valid fields: name, milestone, build_version.
-            #     For example, if the read_mask is set as `read_mask='milestone'`, the
+            #     For example, if the read_mask is set as "read_mask='milestone'", the
             #     ListBuilds will return a list of Builds object with only the milestone
             #     field.
             #   @param group_by [::Google::Protobuf::FieldMask, ::Hash]
@@ -290,7 +354,7 @@ module Google
             #     'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
             #   @param filter [::String]
             #     Optional. Filter that specifies value constraints of fields. For example, the
-            #     filter can be set as `filter='type=release'` to only check the release
+            #     filter can be set as "filter='type=release'" to only check the release
             #     builds.
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -366,7 +430,7 @@ module Google
             #     'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
             #   @param filter [::String]
             #     Optional. Filter that specifies value constraints of fields. For example, the
-            #     filter can be set as `filter='type=release'` to only check the release
+            #     filter can be set as "filter='type=release'" to only check the release
             #     builds.
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -430,19 +494,19 @@ module Google
             #
             # # Examples
             #
-            # To modify the global config, setting the timeout for list_builds
+            # To modify the global config, setting the timeout for list_build_targets
             # to 20 seconds, and all remaining timeouts to 10 seconds:
             #
             #     ::Google::Chromeos::Moblab::V1beta1::BuildService::Client.configure do |config|
             #       config.timeout = 10.0
-            #       config.rpcs.list_builds.timeout = 20.0
+            #       config.rpcs.list_build_targets.timeout = 20.0
             #     end
             #
             # To apply the above configuration only to a new client:
             #
             #     client = ::Google::Chromeos::Moblab::V1beta1::BuildService::Client.new do |config|
             #       config.timeout = 10.0
-            #       config.rpcs.list_builds.timeout = 20.0
+            #       config.rpcs.list_build_targets.timeout = 20.0
             #     end
             #
             # @!attribute [rw] endpoint
@@ -552,6 +616,11 @@ module Google
               #
               class Rpcs
                 ##
+                # RPC-specific configuration for `list_build_targets`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :list_build_targets
+                ##
                 # RPC-specific configuration for `list_builds`
                 # @return [::Gapic::Config::Method]
                 #
@@ -569,6 +638,8 @@ module Google
 
                 # @private
                 def initialize parent_rpcs = nil
+                  list_build_targets_config = parent_rpcs.list_build_targets if parent_rpcs.respond_to? :list_build_targets
+                  @list_build_targets = ::Gapic::Config::Method.new list_build_targets_config
                   list_builds_config = parent_rpcs.list_builds if parent_rpcs.respond_to? :list_builds
                   @list_builds = ::Gapic::Config::Method.new list_builds_config
                   check_build_stage_status_config = parent_rpcs.check_build_stage_status if parent_rpcs.respond_to? :check_build_stage_status

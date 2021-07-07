@@ -23,6 +23,8 @@ from google.protobuf import timestamp_pb2  # type: ignore
 __protobuf__ = proto.module(
     package='google.chromeos.moblab.v1beta1',
     manifest={
+        'ListBuildTargetsRequest',
+        'ListBuildTargetsResponse',
         'ListBuildsRequest',
         'ListBuildsResponse',
         'CheckBuildStageStatusRequest',
@@ -32,6 +34,60 @@ __protobuf__ = proto.module(
         'StageBuildMetadata',
     },
 )
+
+
+class ListBuildTargetsRequest(proto.Message):
+    r"""Request message for listing build targets.
+    Attributes:
+        page_size (int):
+            Optional. The number of build targets to
+            return in a page.
+        page_token (str):
+            Optional. A page token, received from a previous
+            ``ListBuildTargets`` call. Provide this to retrieve the
+            subsequent page.
+    """
+
+    page_size = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class ListBuildTargetsResponse(proto.Message):
+    r"""Response message for listing build targets.
+    Attributes:
+        build_targets (Sequence[google.chromeos.moblab_v1beta1.types.BuildTarget]):
+            The list of build targets.
+        next_page_token (str):
+            Token to retrieve the next page of builds. If
+            this field is omitted, there are no subsequent
+            pages.
+        total_size (int):
+            Total number of build targets.
+    """
+
+    @property
+    def raw_page(self):
+        return self
+
+    build_targets = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=resources.BuildTarget,
+    )
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    total_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class ListBuildsRequest(proto.Message):
@@ -50,17 +106,17 @@ class ListBuildsRequest(proto.Message):
             ``ListBuilds`` call. Provide this to retrieve the subsequent
             page.
         filter (str):
-            Optional. Filter that specifies value constraints of fields.
-            For example, the filter can be set as
-            ``filter='milestone=milestones/80'`` to only select builds
-            in milestone 80.
+            Optional. Filter that specifies value
+            constraints of fields. For example, the filter
+            can be set as "filter='milestone=milestones/80'"
+            to only select builds in milestone 80.
         read_mask (google.protobuf.field_mask_pb2.FieldMask):
             Optional. Read mask that specifies which Build fields to
             return. If empty, all Build fields will be returned. Valid
             fields: name, milestone, build_version. For example, if the
-            read_mask is set as ``read_mask='milestone'``, the
-            ListBuilds will return a list of Builds object with only the
-            milestone field.
+            read_mask is set as "read_mask='milestone'", the ListBuilds
+            will return a list of Builds object with only the milestone
+            field.
         group_by (google.protobuf.field_mask_pb2.FieldMask):
             Optional. The operation that groups by all the Build fields
             specified in the read mask. The group_by field should be the
@@ -136,9 +192,10 @@ class CheckBuildStageStatusRequest(proto.Message):
             'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-
             moblab-peng-staging'.
         filter (str):
-            Optional. Filter that specifies value constraints of fields.
-            For example, the filter can be set as
-            ``filter='type=release'`` to only check the release builds.
+            Optional. Filter that specifies value
+            constraints of fields. For example, the filter
+            can be set as "filter='type=release'" to only
+            check the release builds.
     """
 
     name = proto.Field(
@@ -192,9 +249,10 @@ class StageBuildRequest(proto.Message):
             'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-
             moblab-peng-staging'.
         filter (str):
-            Optional. Filter that specifies value constraints of fields.
-            For example, the filter can be set as
-            ``filter='type=release'`` to only check the release builds.
+            Optional. Filter that specifies value
+            constraints of fields. For example, the filter
+            can be set as "filter='type=release'" to only
+            check the release builds.
     """
 
     name = proto.Field(

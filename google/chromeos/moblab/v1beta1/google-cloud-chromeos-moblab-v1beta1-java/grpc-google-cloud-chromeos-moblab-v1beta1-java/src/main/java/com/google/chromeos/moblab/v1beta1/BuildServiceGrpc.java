@@ -17,6 +17,37 @@ public final class BuildServiceGrpc {
   public static final String SERVICE_NAME = "google.chromeos.moblab.v1beta1.BuildService";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest,
+      com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse> getListBuildTargetsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBuildTargets",
+      requestType = com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest.class,
+      responseType = com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest,
+      com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse> getListBuildTargetsMethod() {
+    io.grpc.MethodDescriptor<com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest, com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse> getListBuildTargetsMethod;
+    if ((getListBuildTargetsMethod = BuildServiceGrpc.getListBuildTargetsMethod) == null) {
+      synchronized (BuildServiceGrpc.class) {
+        if ((getListBuildTargetsMethod = BuildServiceGrpc.getListBuildTargetsMethod) == null) {
+          BuildServiceGrpc.getListBuildTargetsMethod = getListBuildTargetsMethod =
+              io.grpc.MethodDescriptor.<com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest, com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBuildTargets"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BuildServiceMethodDescriptorSupplier("ListBuildTargets"))
+              .build();
+        }
+      }
+    }
+    return getListBuildTargetsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.chromeos.moblab.v1beta1.ListBuildsRequest,
       com.google.chromeos.moblab.v1beta1.ListBuildsResponse> getListBuildsMethod;
 
@@ -163,6 +194,16 @@ public final class BuildServiceGrpc {
 
     /**
      * <pre>
+     * Lists all build targets that a user has access to.
+     * </pre>
+     */
+    public void listBuildTargets(com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBuildTargetsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Lists all builds for the given build target and model in descending order
      * for the milestones and build versions.
      * </pre>
@@ -199,6 +240,13 @@ public final class BuildServiceGrpc {
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getListBuildTargetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest,
+                com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse>(
+                  this, METHODID_LIST_BUILD_TARGETS)))
           .addMethod(
             getListBuildsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -239,6 +287,17 @@ public final class BuildServiceGrpc {
     protected BuildServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BuildServiceStub(channel, callOptions);
+    }
+
+    /**
+     * <pre>
+     * Lists all build targets that a user has access to.
+     * </pre>
+     */
+    public void listBuildTargets(com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBuildTargetsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -300,6 +359,16 @@ public final class BuildServiceGrpc {
 
     /**
      * <pre>
+     * Lists all build targets that a user has access to.
+     * </pre>
+     */
+    public com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse listBuildTargets(com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBuildTargetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Lists all builds for the given build target and model in descending order
      * for the milestones and build versions.
      * </pre>
@@ -354,6 +423,17 @@ public final class BuildServiceGrpc {
 
     /**
      * <pre>
+     * Lists all build targets that a user has access to.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse> listBuildTargets(
+        com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBuildTargetsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Lists all builds for the given build target and model in descending order
      * for the milestones and build versions.
      * </pre>
@@ -392,9 +472,10 @@ public final class BuildServiceGrpc {
     }
   }
 
-  private static final int METHODID_LIST_BUILDS = 0;
-  private static final int METHODID_CHECK_BUILD_STAGE_STATUS = 1;
-  private static final int METHODID_STAGE_BUILD = 2;
+  private static final int METHODID_LIST_BUILD_TARGETS = 0;
+  private static final int METHODID_LIST_BUILDS = 1;
+  private static final int METHODID_CHECK_BUILD_STAGE_STATUS = 2;
+  private static final int METHODID_STAGE_BUILD = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -413,6 +494,10 @@ public final class BuildServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_LIST_BUILD_TARGETS:
+          serviceImpl.listBuildTargets((com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse>) responseObserver);
+          break;
         case METHODID_LIST_BUILDS:
           serviceImpl.listBuilds((com.google.chromeos.moblab.v1beta1.ListBuildsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.ListBuildsResponse>) responseObserver);
@@ -486,6 +571,7 @@ public final class BuildServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new BuildServiceFileDescriptorSupplier())
+              .addMethod(getListBuildTargetsMethod())
               .addMethod(getListBuildsMethod())
               .addMethod(getCheckBuildStageStatusMethod())
               .addMethod(getStageBuildMethod())

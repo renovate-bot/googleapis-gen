@@ -48,6 +48,8 @@ class BuildServiceAsyncClient:
     parse_build_path = staticmethod(BuildServiceClient.parse_build_path)
     build_artifact_path = staticmethod(BuildServiceClient.build_artifact_path)
     parse_build_artifact_path = staticmethod(BuildServiceClient.parse_build_artifact_path)
+    build_target_path = staticmethod(BuildServiceClient.build_target_path)
+    parse_build_target_path = staticmethod(BuildServiceClient.parse_build_target_path)
     milestone_path = staticmethod(BuildServiceClient.milestone_path)
     parse_milestone_path = staticmethod(BuildServiceClient.parse_milestone_path)
     model_path = staticmethod(BuildServiceClient.model_path)
@@ -152,6 +154,65 @@ class BuildServiceAsyncClient:
             client_info=client_info,
 
         )
+
+    async def list_build_targets(self,
+            request: build_service.ListBuildTargetsRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> pagers.ListBuildTargetsAsyncPager:
+        r"""Lists all build targets that a user has access to.
+
+        Args:
+            request (:class:`google.chromeos.moblab_v1beta1.types.ListBuildTargetsRequest`):
+                The request object. Request message for listing build
+                targets.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.chromeos.moblab_v1beta1.services.build_service.pagers.ListBuildTargetsAsyncPager:
+                Response message for listing build
+                targets.
+                Iterating over this object will yield
+                results and resolve additional pages
+                automatically.
+
+        """
+        # Create or coerce a protobuf request object.
+        request = build_service.ListBuildTargetsRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.list_build_targets,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # This method is paged; wrap the response in a pager, which provides
+        # an `__aiter__` convenience method.
+        response = pagers.ListBuildTargetsAsyncPager(
+            method=rpc,
+            request=request,
+            response=response,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
 
     async def list_builds(self,
             request: build_service.ListBuildsRequest = None,

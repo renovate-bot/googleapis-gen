@@ -15,6 +15,16 @@ public final class BuildServiceProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_chromeos_moblab_v1beta1_ListBuildsRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -66,56 +76,66 @@ public final class BuildServiceProto {
       ".google/chromeos/moblab/v1beta1/resource" +
       "s.proto\032#google/longrunning/operations.p" +
       "roto\032 google/protobuf/field_mask.proto\032\037" +
-      "google/protobuf/timestamp.proto\"\375\001\n\021List" +
-      "BuildsRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#c" +
-      "hromeosmoblab.googleapis.com/Model\022\026\n\tpa" +
-      "ge_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003" +
-      "\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\0222\n\tread_mask\030\005 " +
-      "\001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\0221\n\010" +
-      "group_by\030\006 \001(\0132\032.google.protobuf.FieldMa" +
-      "skB\003\340A\001\"x\n\022ListBuildsResponse\0225\n\006builds\030" +
-      "\001 \003(\0132%.google.chromeos.moblab.v1beta1.B" +
-      "uild\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntotal_s" +
-      "ize\030\003 \001(\005\"v\n\034CheckBuildStageStatusReques" +
-      "t\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+chromeosmoblab." +
-      "googleapis.com/BuildArtifact\022\023\n\006filter\030\002" +
-      " \001(\tB\003\340A\001\"\324\001\n\035CheckBuildStageStatusRespo" +
-      "nse\022\027\n\017is_build_staged\030\001 \001(\010\022L\n\025staged_b" +
-      "uild_artifact\030\002 \001(\0132-.google.chromeos.mo" +
-      "blab.v1beta1.BuildArtifact\022L\n\025source_bui" +
-      "ld_artifact\030\003 \001(\0132-.google.chromeos.mobl" +
-      "ab.v1beta1.BuildArtifact\"k\n\021StageBuildRe" +
-      "quest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+chromeosmob" +
-      "lab.googleapis.com/BuildArtifact\022\023\n\006filt" +
-      "er\030\002 \001(\tB\003\340A\001\"b\n\022StageBuildResponse\022L\n\025s" +
-      "taged_build_artifact\030\001 \001(\0132-.google.chro" +
-      "meos.moblab.v1beta1.BuildArtifact\"\214\001\n\022St" +
-      "ageBuildMetadata\022\030\n\020progress_percent\030\001 \001" +
-      "(\002\022.\n\nstart_time\030\002 \001(\0132\032.google.protobuf" +
-      ".Timestamp\022,\n\010end_time\030\003 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp2\341\005\n\014BuildService\022\266\001\n\nLi" +
-      "stBuilds\0221.google.chromeos.moblab.v1beta" +
-      "1.ListBuildsRequest\0322.google.chromeos.mo" +
-      "blab.v1beta1.ListBuildsResponse\"A\202\323\344\223\0022\022" +
-      "0/v1beta1/{parent=buildTargets/*/models/" +
-      "*}/builds\332A\006parent\022\347\001\n\025CheckBuildStageSt" +
-      "atus\022<.google.chromeos.moblab.v1beta1.Ch" +
-      "eckBuildStageStatusRequest\032=.google.chro" +
-      "meos.moblab.v1beta1.CheckBuildStageStatu" +
-      "sResponse\"Q\202\323\344\223\002D\022B/v1beta1/{name=buildT" +
-      "argets/*/models/*/builds/*/artifacts/*}:" +
-      "check\332A\004name\022\337\001\n\nStageBuild\0221.google.chr" +
-      "omeos.moblab.v1beta1.StageBuildRequest\032\035" +
-      ".google.longrunning.Operation\"\177\202\323\344\223\002G\"B/" +
-      "v1beta1/{name=buildTargets/*/models/*/bu" +
-      "ilds/*/artifacts/*}:stage:\001*\332A\004name\312A(\n\022" +
-      "StageBuildResponse\022\022StageBuildMetadata\032L" +
-      "\312A\035chromeosmoblab.googleapis.com\322A)https" +
-      "://www.googleapis.com/auth/moblabapiB\201\001\n" +
-      "\"com.google.chromeos.moblab.v1beta1B\021Bui" +
-      "ldServiceProtoH\001P\001ZDgoogle.golang.org/ge" +
-      "nproto/googleapis/chromeos/moblab/v1beta" +
-      "1;moblabb\006proto3"
+      "google/protobuf/timestamp.proto\"J\n\027ListB" +
+      "uildTargetsRequest\022\026\n\tpage_size\030\001 \001(\005B\003\340" +
+      "A\001\022\027\n\npage_token\030\002 \001(\tB\003\340A\001\"\213\001\n\030ListBuil" +
+      "dTargetsResponse\022B\n\rbuild_targets\030\001 \003(\0132" +
+      "+.google.chromeos.moblab.v1beta1.BuildTa" +
+      "rget\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntotal_s" +
+      "ize\030\003 \001(\005\"\375\001\n\021ListBuildsRequest\022;\n\006paren" +
+      "t\030\001 \001(\tB+\340A\002\372A%\n#chromeosmoblab.googleap" +
+      "is.com/Model\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n" +
+      "page_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340" +
+      "A\001\0222\n\tread_mask\030\005 \001(\0132\032.google.protobuf." +
+      "FieldMaskB\003\340A\001\0221\n\010group_by\030\006 \001(\0132\032.googl" +
+      "e.protobuf.FieldMaskB\003\340A\001\"x\n\022ListBuildsR" +
+      "esponse\0225\n\006builds\030\001 \003(\0132%.google.chromeo" +
+      "s.moblab.v1beta1.Build\022\027\n\017next_page_toke" +
+      "n\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"v\n\034CheckBuil" +
+      "dStageStatusRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A" +
+      "-\n+chromeosmoblab.googleapis.com/BuildAr" +
+      "tifact\022\023\n\006filter\030\002 \001(\tB\003\340A\001\"\324\001\n\035CheckBui" +
+      "ldStageStatusResponse\022\027\n\017is_build_staged" +
+      "\030\001 \001(\010\022L\n\025staged_build_artifact\030\002 \001(\0132-." +
+      "google.chromeos.moblab.v1beta1.BuildArti" +
+      "fact\022L\n\025source_build_artifact\030\003 \001(\0132-.go" +
+      "ogle.chromeos.moblab.v1beta1.BuildArtifa" +
+      "ct\"k\n\021StageBuildRequest\022A\n\004name\030\001 \001(\tB3\340" +
+      "A\002\372A-\n+chromeosmoblab.googleapis.com/Bui" +
+      "ldArtifact\022\023\n\006filter\030\002 \001(\tB\003\340A\001\"b\n\022Stage" +
+      "BuildResponse\022L\n\025staged_build_artifact\030\001" +
+      " \001(\0132-.google.chromeos.moblab.v1beta1.Bu" +
+      "ildArtifact\"\214\001\n\022StageBuildMetadata\022\030\n\020pr" +
+      "ogress_percent\030\001 \001(\002\022.\n\nstart_time\030\002 \001(\013" +
+      "2\032.google.protobuf.Timestamp\022,\n\010end_time" +
+      "\030\003 \001(\0132\032.google.protobuf.Timestamp2\210\007\n\014B" +
+      "uildService\022\244\001\n\020ListBuildTargets\0227.googl" +
+      "e.chromeos.moblab.v1beta1.ListBuildTarge" +
+      "tsRequest\0328.google.chromeos.moblab.v1bet" +
+      "a1.ListBuildTargetsResponse\"\035\202\323\344\223\002\027\022\025/v1" +
+      "beta1/buildTargets\022\266\001\n\nListBuilds\0221.goog" +
+      "le.chromeos.moblab.v1beta1.ListBuildsReq" +
+      "uest\0322.google.chromeos.moblab.v1beta1.Li" +
+      "stBuildsResponse\"A\202\323\344\223\0022\0220/v1beta1/{pare" +
+      "nt=buildTargets/*/models/*}/builds\332A\006par" +
+      "ent\022\347\001\n\025CheckBuildStageStatus\022<.google.c" +
+      "hromeos.moblab.v1beta1.CheckBuildStageSt" +
+      "atusRequest\032=.google.chromeos.moblab.v1b" +
+      "eta1.CheckBuildStageStatusResponse\"Q\202\323\344\223" +
+      "\002D\022B/v1beta1/{name=buildTargets/*/models" +
+      "/*/builds/*/artifacts/*}:check\332A\004name\022\337\001" +
+      "\n\nStageBuild\0221.google.chromeos.moblab.v1" +
+      "beta1.StageBuildRequest\032\035.google.longrun" +
+      "ning.Operation\"\177\202\323\344\223\002G\"B/v1beta1/{name=b" +
+      "uildTargets/*/models/*/builds/*/artifact" +
+      "s/*}:stage:\001*\332A\004name\312A(\n\022StageBuildRespo" +
+      "nse\022\022StageBuildMetadata\032L\312A\035chromeosmobl" +
+      "ab.googleapis.com\322A)https://www.googleap" +
+      "is.com/auth/moblabapiB\201\001\n\"com.google.chr" +
+      "omeos.moblab.v1beta1B\021BuildServiceProtoH" +
+      "\001P\001ZDgoogle.golang.org/genproto/googleap" +
+      "is/chromeos/moblab/v1beta1;moblabb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -129,44 +149,56 @@ public final class BuildServiceProto {
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         });
-    internal_static_google_chromeos_moblab_v1beta1_ListBuildsRequest_descriptor =
+    internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsRequest_descriptor,
+        new java.lang.String[] { "PageSize", "PageToken", });
+    internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse_descriptor,
+        new java.lang.String[] { "BuildTargets", "NextPageToken", "TotalSize", });
+    internal_static_google_chromeos_moblab_v1beta1_ListBuildsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_google_chromeos_moblab_v1beta1_ListBuildsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_chromeos_moblab_v1beta1_ListBuildsRequest_descriptor,
         new java.lang.String[] { "Parent", "PageSize", "PageToken", "Filter", "ReadMask", "GroupBy", });
     internal_static_google_chromeos_moblab_v1beta1_ListBuildsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_google_chromeos_moblab_v1beta1_ListBuildsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_chromeos_moblab_v1beta1_ListBuildsResponse_descriptor,
         new java.lang.String[] { "Builds", "NextPageToken", "TotalSize", });
     internal_static_google_chromeos_moblab_v1beta1_CheckBuildStageStatusRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_google_chromeos_moblab_v1beta1_CheckBuildStageStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_chromeos_moblab_v1beta1_CheckBuildStageStatusRequest_descriptor,
         new java.lang.String[] { "Name", "Filter", });
     internal_static_google_chromeos_moblab_v1beta1_CheckBuildStageStatusResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_google_chromeos_moblab_v1beta1_CheckBuildStageStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_chromeos_moblab_v1beta1_CheckBuildStageStatusResponse_descriptor,
         new java.lang.String[] { "IsBuildStaged", "StagedBuildArtifact", "SourceBuildArtifact", });
     internal_static_google_chromeos_moblab_v1beta1_StageBuildRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_google_chromeos_moblab_v1beta1_StageBuildRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_chromeos_moblab_v1beta1_StageBuildRequest_descriptor,
         new java.lang.String[] { "Name", "Filter", });
     internal_static_google_chromeos_moblab_v1beta1_StageBuildResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_google_chromeos_moblab_v1beta1_StageBuildResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_chromeos_moblab_v1beta1_StageBuildResponse_descriptor,
         new java.lang.String[] { "StagedBuildArtifact", });
     internal_static_google_chromeos_moblab_v1beta1_StageBuildMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_google_chromeos_moblab_v1beta1_StageBuildMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_chromeos_moblab_v1beta1_StageBuildMetadata_descriptor,

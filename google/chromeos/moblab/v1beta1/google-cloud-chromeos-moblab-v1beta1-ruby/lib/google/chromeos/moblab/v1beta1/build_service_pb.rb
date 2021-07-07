@@ -13,6 +13,15 @@ require 'google/protobuf/field_mask_pb'
 require 'google/protobuf/timestamp_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/chromeos/moblab/v1beta1/build_service.proto", :syntax => :proto3) do
+    add_message "google.chromeos.moblab.v1beta1.ListBuildTargetsRequest" do
+      optional :page_size, :int32, 1
+      optional :page_token, :string, 2
+    end
+    add_message "google.chromeos.moblab.v1beta1.ListBuildTargetsResponse" do
+      repeated :build_targets, :message, 1, "google.chromeos.moblab.v1beta1.BuildTarget"
+      optional :next_page_token, :string, 2
+      optional :total_size, :int32, 3
+    end
     add_message "google.chromeos.moblab.v1beta1.ListBuildsRequest" do
       optional :parent, :string, 1
       optional :page_size, :int32, 2
@@ -54,6 +63,8 @@ module Google
   module Chromeos
     module Moblab
       module V1beta1
+        ListBuildTargetsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListBuildTargetsRequest").msgclass
+        ListBuildTargetsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListBuildTargetsResponse").msgclass
         ListBuildsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListBuildsRequest").msgclass
         ListBuildsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListBuildsResponse").msgclass
         CheckBuildStageStatusRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest").msgclass

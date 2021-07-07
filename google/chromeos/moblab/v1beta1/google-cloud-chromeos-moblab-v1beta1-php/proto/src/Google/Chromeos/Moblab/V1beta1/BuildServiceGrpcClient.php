@@ -33,6 +33,21 @@ class BuildServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Lists all build targets that a user has access to.
+     * @param \Google\Chromeos\Moblab\V1beta1\ListBuildTargetsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListBuildTargets(\Google\Chromeos\Moblab\V1beta1\ListBuildTargetsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.chromeos.moblab.v1beta1.BuildService/ListBuildTargets',
+        $argument,
+        ['\Google\Chromeos\Moblab\V1beta1\ListBuildTargetsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Lists all builds for the given build target and model in descending order
      * for the milestones and build versions.
      * @param \Google\Chromeos\Moblab\V1beta1\ListBuildsRequest $argument input argument

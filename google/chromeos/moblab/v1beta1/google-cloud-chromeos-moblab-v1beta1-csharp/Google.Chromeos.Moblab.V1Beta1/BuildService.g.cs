@@ -31,54 +31,64 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
             "L2FwaS9yZXNvdXJjZS5wcm90bxouZ29vZ2xlL2Nocm9tZW9zL21vYmxhYi92",
             "MWJldGExL3Jlc291cmNlcy5wcm90bxojZ29vZ2xlL2xvbmdydW5uaW5nL29w",
             "ZXJhdGlvbnMucHJvdG8aIGdvb2dsZS9wcm90b2J1Zi9maWVsZF9tYXNrLnBy",
-            "b3RvGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvIv0BChFMaXN0",
-            "QnVpbGRzUmVxdWVzdBI7CgZwYXJlbnQYASABKAlCK+BBAvpBJQojY2hyb21l",
-            "b3Ntb2JsYWIuZ29vZ2xlYXBpcy5jb20vTW9kZWwSFgoJcGFnZV9zaXplGAIg",
-            "ASgFQgPgQQESFwoKcGFnZV90b2tlbhgDIAEoCUID4EEBEhMKBmZpbHRlchgE",
-            "IAEoCUID4EEBEjIKCXJlYWRfbWFzaxgFIAEoCzIaLmdvb2dsZS5wcm90b2J1",
-            "Zi5GaWVsZE1hc2tCA+BBARIxCghncm91cF9ieRgGIAEoCzIaLmdvb2dsZS5w",
-            "cm90b2J1Zi5GaWVsZE1hc2tCA+BBASJ4ChJMaXN0QnVpbGRzUmVzcG9uc2US",
-            "NQoGYnVpbGRzGAEgAygLMiUuZ29vZ2xlLmNocm9tZW9zLm1vYmxhYi52MWJl",
-            "dGExLkJ1aWxkEhcKD25leHRfcGFnZV90b2tlbhgCIAEoCRISCgp0b3RhbF9z",
-            "aXplGAMgASgFInYKHENoZWNrQnVpbGRTdGFnZVN0YXR1c1JlcXVlc3QSQQoE",
-            "bmFtZRgBIAEoCUIz4EEC+kEtCitjaHJvbWVvc21vYmxhYi5nb29nbGVhcGlz",
-            "LmNvbS9CdWlsZEFydGlmYWN0EhMKBmZpbHRlchgCIAEoCUID4EEBItQBCh1D",
-            "aGVja0J1aWxkU3RhZ2VTdGF0dXNSZXNwb25zZRIXCg9pc19idWlsZF9zdGFn",
-            "ZWQYASABKAgSTAoVc3RhZ2VkX2J1aWxkX2FydGlmYWN0GAIgASgLMi0uZ29v",
-            "Z2xlLmNocm9tZW9zLm1vYmxhYi52MWJldGExLkJ1aWxkQXJ0aWZhY3QSTAoV",
-            "c291cmNlX2J1aWxkX2FydGlmYWN0GAMgASgLMi0uZ29vZ2xlLmNocm9tZW9z",
-            "Lm1vYmxhYi52MWJldGExLkJ1aWxkQXJ0aWZhY3QiawoRU3RhZ2VCdWlsZFJl",
-            "cXVlc3QSQQoEbmFtZRgBIAEoCUIz4EEC+kEtCitjaHJvbWVvc21vYmxhYi5n",
-            "b29nbGVhcGlzLmNvbS9CdWlsZEFydGlmYWN0EhMKBmZpbHRlchgCIAEoCUID",
-            "4EEBImIKElN0YWdlQnVpbGRSZXNwb25zZRJMChVzdGFnZWRfYnVpbGRfYXJ0",
-            "aWZhY3QYASABKAsyLS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTEu",
-            "QnVpbGRBcnRpZmFjdCKMAQoSU3RhZ2VCdWlsZE1ldGFkYXRhEhgKEHByb2dy",
-            "ZXNzX3BlcmNlbnQYASABKAISLgoKc3RhcnRfdGltZRgCIAEoCzIaLmdvb2ds",
-            "ZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kX3RpbWUYAyABKAsyGi5nb29n",
-            "bGUucHJvdG9idWYuVGltZXN0YW1wMuEFCgxCdWlsZFNlcnZpY2UStgEKCkxp",
-            "c3RCdWlsZHMSMS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTEuTGlz",
-            "dEJ1aWxkc1JlcXVlc3QaMi5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0",
-            "YTEuTGlzdEJ1aWxkc1Jlc3BvbnNlIkGC0+STAjISMC92MWJldGExL3twYXJl",
-            "bnQ9YnVpbGRUYXJnZXRzLyovbW9kZWxzLyp9L2J1aWxkc9pBBnBhcmVudBLn",
-            "AQoVQ2hlY2tCdWlsZFN0YWdlU3RhdHVzEjwuZ29vZ2xlLmNocm9tZW9zLm1v",
-            "YmxhYi52MWJldGExLkNoZWNrQnVpbGRTdGFnZVN0YXR1c1JlcXVlc3QaPS5n",
-            "b29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTEuQ2hlY2tCdWlsZFN0YWdl",
-            "U3RhdHVzUmVzcG9uc2UiUYLT5JMCRBJCL3YxYmV0YTEve25hbWU9YnVpbGRU",
-            "YXJnZXRzLyovbW9kZWxzLyovYnVpbGRzLyovYXJ0aWZhY3RzLyp9OmNoZWNr",
-            "2kEEbmFtZRLfAQoKU3RhZ2VCdWlsZBIxLmdvb2dsZS5jaHJvbWVvcy5tb2Js",
-            "YWIudjFiZXRhMS5TdGFnZUJ1aWxkUmVxdWVzdBodLmdvb2dsZS5sb25ncnVu",
-            "bmluZy5PcGVyYXRpb24if4LT5JMCRyJCL3YxYmV0YTEve25hbWU9YnVpbGRU",
-            "YXJnZXRzLyovbW9kZWxzLyovYnVpbGRzLyovYXJ0aWZhY3RzLyp9OnN0YWdl",
-            "OgEq2kEEbmFtZcpBKAoSU3RhZ2VCdWlsZFJlc3BvbnNlEhJTdGFnZUJ1aWxk",
-            "TWV0YWRhdGEaTMpBHWNocm9tZW9zbW9ibGFiLmdvb2dsZWFwaXMuY29t0kEp",
-            "aHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9tb2JsYWJhcGlCgQEK",
-            "ImNvbS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTFCEUJ1aWxkU2Vy",
-            "dmljZVByb3RvSAFQAVpEZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29v",
-            "Z2xlYXBpcy9jaHJvbWVvcy9tb2JsYWIvdjFiZXRhMTttb2JsYWJiBnByb3Rv",
-            "Mw=="));
+            "b3RvGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvIkoKF0xpc3RC",
+            "dWlsZFRhcmdldHNSZXF1ZXN0EhYKCXBhZ2Vfc2l6ZRgBIAEoBUID4EEBEhcK",
+            "CnBhZ2VfdG9rZW4YAiABKAlCA+BBASKLAQoYTGlzdEJ1aWxkVGFyZ2V0c1Jl",
+            "c3BvbnNlEkIKDWJ1aWxkX3RhcmdldHMYASADKAsyKy5nb29nbGUuY2hyb21l",
+            "b3MubW9ibGFiLnYxYmV0YTEuQnVpbGRUYXJnZXQSFwoPbmV4dF9wYWdlX3Rv",
+            "a2VuGAIgASgJEhIKCnRvdGFsX3NpemUYAyABKAUi/QEKEUxpc3RCdWlsZHNS",
+            "ZXF1ZXN0EjsKBnBhcmVudBgBIAEoCUIr4EEC+kElCiNjaHJvbWVvc21vYmxh",
+            "Yi5nb29nbGVhcGlzLmNvbS9Nb2RlbBIWCglwYWdlX3NpemUYAiABKAVCA+BB",
+            "ARIXCgpwYWdlX3Rva2VuGAMgASgJQgPgQQESEwoGZmlsdGVyGAQgASgJQgPg",
+            "QQESMgoJcmVhZF9tYXNrGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxk",
+            "TWFza0ID4EEBEjEKCGdyb3VwX2J5GAYgASgLMhouZ29vZ2xlLnByb3RvYnVm",
+            "LkZpZWxkTWFza0ID4EEBIngKEkxpc3RCdWlsZHNSZXNwb25zZRI1CgZidWls",
+            "ZHMYASADKAsyJS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTEuQnVp",
+            "bGQSFwoPbmV4dF9wYWdlX3Rva2VuGAIgASgJEhIKCnRvdGFsX3NpemUYAyAB",
+            "KAUidgocQ2hlY2tCdWlsZFN0YWdlU3RhdHVzUmVxdWVzdBJBCgRuYW1lGAEg",
+            "ASgJQjPgQQL6QS0KK2Nocm9tZW9zbW9ibGFiLmdvb2dsZWFwaXMuY29tL0J1",
+            "aWxkQXJ0aWZhY3QSEwoGZmlsdGVyGAIgASgJQgPgQQEi1AEKHUNoZWNrQnVp",
+            "bGRTdGFnZVN0YXR1c1Jlc3BvbnNlEhcKD2lzX2J1aWxkX3N0YWdlZBgBIAEo",
+            "CBJMChVzdGFnZWRfYnVpbGRfYXJ0aWZhY3QYAiABKAsyLS5nb29nbGUuY2hy",
+            "b21lb3MubW9ibGFiLnYxYmV0YTEuQnVpbGRBcnRpZmFjdBJMChVzb3VyY2Vf",
+            "YnVpbGRfYXJ0aWZhY3QYAyABKAsyLS5nb29nbGUuY2hyb21lb3MubW9ibGFi",
+            "LnYxYmV0YTEuQnVpbGRBcnRpZmFjdCJrChFTdGFnZUJ1aWxkUmVxdWVzdBJB",
+            "CgRuYW1lGAEgASgJQjPgQQL6QS0KK2Nocm9tZW9zbW9ibGFiLmdvb2dsZWFw",
+            "aXMuY29tL0J1aWxkQXJ0aWZhY3QSEwoGZmlsdGVyGAIgASgJQgPgQQEiYgoS",
+            "U3RhZ2VCdWlsZFJlc3BvbnNlEkwKFXN0YWdlZF9idWlsZF9hcnRpZmFjdBgB",
+            "IAEoCzItLmdvb2dsZS5jaHJvbWVvcy5tb2JsYWIudjFiZXRhMS5CdWlsZEFy",
+            "dGlmYWN0IowBChJTdGFnZUJ1aWxkTWV0YWRhdGESGAoQcHJvZ3Jlc3NfcGVy",
+            "Y2VudBgBIAEoAhIuCgpzdGFydF90aW1lGAIgASgLMhouZ29vZ2xlLnByb3Rv",
+            "YnVmLlRpbWVzdGFtcBIsCghlbmRfdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90",
+            "b2J1Zi5UaW1lc3RhbXAyiAcKDEJ1aWxkU2VydmljZRKkAQoQTGlzdEJ1aWxk",
+            "VGFyZ2V0cxI3Lmdvb2dsZS5jaHJvbWVvcy5tb2JsYWIudjFiZXRhMS5MaXN0",
+            "QnVpbGRUYXJnZXRzUmVxdWVzdBo4Lmdvb2dsZS5jaHJvbWVvcy5tb2JsYWIu",
+            "djFiZXRhMS5MaXN0QnVpbGRUYXJnZXRzUmVzcG9uc2UiHYLT5JMCFxIVL3Yx",
+            "YmV0YTEvYnVpbGRUYXJnZXRzErYBCgpMaXN0QnVpbGRzEjEuZ29vZ2xlLmNo",
+            "cm9tZW9zLm1vYmxhYi52MWJldGExLkxpc3RCdWlsZHNSZXF1ZXN0GjIuZ29v",
+            "Z2xlLmNocm9tZW9zLm1vYmxhYi52MWJldGExLkxpc3RCdWlsZHNSZXNwb25z",
+            "ZSJBgtPkkwIyEjAvdjFiZXRhMS97cGFyZW50PWJ1aWxkVGFyZ2V0cy8qL21v",
+            "ZGVscy8qfS9idWlsZHPaQQZwYXJlbnQS5wEKFUNoZWNrQnVpbGRTdGFnZVN0",
+            "YXR1cxI8Lmdvb2dsZS5jaHJvbWVvcy5tb2JsYWIudjFiZXRhMS5DaGVja0J1",
+            "aWxkU3RhZ2VTdGF0dXNSZXF1ZXN0Gj0uZ29vZ2xlLmNocm9tZW9zLm1vYmxh",
+            "Yi52MWJldGExLkNoZWNrQnVpbGRTdGFnZVN0YXR1c1Jlc3BvbnNlIlGC0+ST",
+            "AkQSQi92MWJldGExL3tuYW1lPWJ1aWxkVGFyZ2V0cy8qL21vZGVscy8qL2J1",
+            "aWxkcy8qL2FydGlmYWN0cy8qfTpjaGVja9pBBG5hbWUS3wEKClN0YWdlQnVp",
+            "bGQSMS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTEuU3RhZ2VCdWls",
+            "ZFJlcXVlc3QaHS5nb29nbGUubG9uZ3J1bm5pbmcuT3BlcmF0aW9uIn+C0+ST",
+            "AkciQi92MWJldGExL3tuYW1lPWJ1aWxkVGFyZ2V0cy8qL21vZGVscy8qL2J1",
+            "aWxkcy8qL2FydGlmYWN0cy8qfTpzdGFnZToBKtpBBG5hbWXKQSgKElN0YWdl",
+            "QnVpbGRSZXNwb25zZRISU3RhZ2VCdWlsZE1ldGFkYXRhGkzKQR1jaHJvbWVv",
+            "c21vYmxhYi5nb29nbGVhcGlzLmNvbdJBKWh0dHBzOi8vd3d3Lmdvb2dsZWFw",
+            "aXMuY29tL2F1dGgvbW9ibGFiYXBpQoEBCiJjb20uZ29vZ2xlLmNocm9tZW9z",
+            "Lm1vYmxhYi52MWJldGExQhFCdWlsZFNlcnZpY2VQcm90b0gBUAFaRGdvb2ds",
+            "ZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvY2hyb21lb3MvbW9i",
+            "bGFiL3YxYmV0YTE7bW9ibGFiYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Chromeos.Moblab.V1Beta1.ResourcesReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest), global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest.Parser, new[]{ "PageSize", "PageToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse), global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse.Parser, new[]{ "BuildTargets", "NextPageToken", "TotalSize" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.ListBuildsRequest), global::Google.Chromeos.Moblab.V1Beta1.ListBuildsRequest.Parser, new[]{ "Parent", "PageSize", "PageToken", "Filter", "ReadMask", "GroupBy" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.ListBuildsResponse), global::Google.Chromeos.Moblab.V1Beta1.ListBuildsResponse.Parser, new[]{ "Builds", "NextPageToken", "TotalSize" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusRequest), global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusRequest.Parser, new[]{ "Name", "Filter" }, null, null, null, null),
@@ -92,6 +102,470 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
 
   }
   #region Messages
+  /// <summary>
+  /// Request message for listing build targets.
+  /// </summary>
+  public sealed partial class ListBuildTargetsRequest : pb::IMessage<ListBuildTargetsRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListBuildTargetsRequest> _parser = new pb::MessageParser<ListBuildTargetsRequest>(() => new ListBuildTargetsRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ListBuildTargetsRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListBuildTargetsRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListBuildTargetsRequest(ListBuildTargetsRequest other) : this() {
+      pageSize_ = other.pageSize_;
+      pageToken_ = other.pageToken_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListBuildTargetsRequest Clone() {
+      return new ListBuildTargetsRequest(this);
+    }
+
+    /// <summary>Field number for the "page_size" field.</summary>
+    public const int PageSizeFieldNumber = 1;
+    private int pageSize_;
+    /// <summary>
+    /// Optional. The number of build targets to return in a page.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PageSize {
+      get { return pageSize_; }
+      set {
+        pageSize_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "page_token" field.</summary>
+    public const int PageTokenFieldNumber = 2;
+    private string pageToken_ = "";
+    /// <summary>
+    /// Optional. A page token, received from a previous `ListBuildTargets` call. Provide
+    /// this to retrieve the subsequent page.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PageToken {
+      get { return pageToken_; }
+      set {
+        pageToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ListBuildTargetsRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ListBuildTargetsRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PageSize != other.PageSize) return false;
+      if (PageToken != other.PageToken) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PageSize != 0) hash ^= PageSize.GetHashCode();
+      if (PageToken.Length != 0) hash ^= PageToken.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (PageSize != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PageSize != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PageToken);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PageSize != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PageSize);
+      }
+      if (PageToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PageToken);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ListBuildTargetsRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PageSize != 0) {
+        PageSize = other.PageSize;
+      }
+      if (other.PageToken.Length != 0) {
+        PageToken = other.PageToken;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            PageSize = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            PageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            PageSize = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            PageToken = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Response message for listing build targets.
+  /// </summary>
+  public sealed partial class ListBuildTargetsResponse : pb::IMessage<ListBuildTargetsResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListBuildTargetsResponse> _parser = new pb::MessageParser<ListBuildTargetsResponse>(() => new ListBuildTargetsResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ListBuildTargetsResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListBuildTargetsResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListBuildTargetsResponse(ListBuildTargetsResponse other) : this() {
+      buildTargets_ = other.buildTargets_.Clone();
+      nextPageToken_ = other.nextPageToken_;
+      totalSize_ = other.totalSize_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ListBuildTargetsResponse Clone() {
+      return new ListBuildTargetsResponse(this);
+    }
+
+    /// <summary>Field number for the "build_targets" field.</summary>
+    public const int BuildTargetsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Google.Chromeos.Moblab.V1Beta1.BuildTarget> _repeated_buildTargets_codec
+        = pb::FieldCodec.ForMessage(10, global::Google.Chromeos.Moblab.V1Beta1.BuildTarget.Parser);
+    private readonly pbc::RepeatedField<global::Google.Chromeos.Moblab.V1Beta1.BuildTarget> buildTargets_ = new pbc::RepeatedField<global::Google.Chromeos.Moblab.V1Beta1.BuildTarget>();
+    /// <summary>
+    /// The list of build targets.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Google.Chromeos.Moblab.V1Beta1.BuildTarget> BuildTargets {
+      get { return buildTargets_; }
+    }
+
+    /// <summary>Field number for the "next_page_token" field.</summary>
+    public const int NextPageTokenFieldNumber = 2;
+    private string nextPageToken_ = "";
+    /// <summary>
+    /// Token to retrieve the next page of builds. If this field is omitted, there
+    /// are no subsequent pages.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NextPageToken {
+      get { return nextPageToken_; }
+      set {
+        nextPageToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "total_size" field.</summary>
+    public const int TotalSizeFieldNumber = 3;
+    private int totalSize_;
+    /// <summary>
+    /// Total number of build targets.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TotalSize {
+      get { return totalSize_; }
+      set {
+        totalSize_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ListBuildTargetsResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ListBuildTargetsResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!buildTargets_.Equals(other.buildTargets_)) return false;
+      if (NextPageToken != other.NextPageToken) return false;
+      if (TotalSize != other.TotalSize) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= buildTargets_.GetHashCode();
+      if (NextPageToken.Length != 0) hash ^= NextPageToken.GetHashCode();
+      if (TotalSize != 0) hash ^= TotalSize.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      buildTargets_.WriteTo(output, _repeated_buildTargets_codec);
+      if (NextPageToken.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NextPageToken);
+      }
+      if (TotalSize != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(TotalSize);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      buildTargets_.WriteTo(ref output, _repeated_buildTargets_codec);
+      if (NextPageToken.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NextPageToken);
+      }
+      if (TotalSize != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(TotalSize);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += buildTargets_.CalculateSize(_repeated_buildTargets_codec);
+      if (NextPageToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NextPageToken);
+      }
+      if (TotalSize != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TotalSize);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ListBuildTargetsResponse other) {
+      if (other == null) {
+        return;
+      }
+      buildTargets_.Add(other.buildTargets_);
+      if (other.NextPageToken.Length != 0) {
+        NextPageToken = other.NextPageToken;
+      }
+      if (other.TotalSize != 0) {
+        TotalSize = other.TotalSize;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            buildTargets_.AddEntriesFrom(input, _repeated_buildTargets_codec);
+            break;
+          }
+          case 18: {
+            NextPageToken = input.ReadString();
+            break;
+          }
+          case 24: {
+            TotalSize = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            buildTargets_.AddEntriesFrom(ref input, _repeated_buildTargets_codec);
+            break;
+          }
+          case 18: {
+            NextPageToken = input.ReadString();
+            break;
+          }
+          case 24: {
+            TotalSize = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   /// <summary>
   /// Request message for listing builds.
   /// </summary>
@@ -107,7 +581,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -189,7 +663,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     private string filter_ = "";
     /// <summary>
     /// Optional. Filter that specifies value constraints of fields. For example, the
-    /// filter can be set as `filter='milestone=milestones/80'` to only select
+    /// filter can be set as "filter='milestone=milestones/80'" to only select
     /// builds in milestone 80.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -207,7 +681,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     /// Optional. Read mask that specifies which Build fields to return. If empty, all Build
     /// fields will be returned.
     /// Valid fields: name, milestone, build_version.
-    /// For example, if the read_mask is set as `read_mask='milestone'`, the
+    /// For example, if the read_mask is set as "read_mask='milestone'", the
     /// ListBuilds will return a list of Builds object with only the milestone
     /// field.
     /// </summary>
@@ -511,7 +985,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -757,7 +1231,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -805,7 +1279,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     private string filter_ = "";
     /// <summary>
     /// Optional. Filter that specifies value constraints of fields. For example, the
-    /// filter can be set as `filter='type=release'` to only check the release
+    /// filter can be set as "filter='type=release'" to only check the release
     /// builds.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -978,7 +1452,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1252,7 +1726,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1300,7 +1774,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     private string filter_ = "";
     /// <summary>
     /// Optional. Filter that specifies value constraints of fields. For example, the
-    /// filter can be set as `filter='type=release'` to only check the release
+    /// filter can be set as "filter='type=release'" to only check the release
     /// builds.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1473,7 +1947,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1660,7 +2134,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Google.Chromeos.Moblab.V1Beta1.BuildServiceReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

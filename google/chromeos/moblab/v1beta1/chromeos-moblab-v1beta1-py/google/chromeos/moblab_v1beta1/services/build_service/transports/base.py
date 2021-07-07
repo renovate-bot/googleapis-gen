@@ -148,6 +148,11 @@ class BuildServiceTransport(abc.ABC):
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
         self._wrapped_methods = {
+            self.list_build_targets: gapic_v1.method.wrap_method(
+                self.list_build_targets,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.list_builds: gapic_v1.method.wrap_method(
                 self.list_builds,
                 default_retry=retries.Retry(
@@ -180,6 +185,15 @@ initial=1.0,maximum=10.0,multiplier=1.3,                    predicate=retries.if
     @property
     def operations_client(self) -> operations_v1.OperationsClient:
         """Return the client designed to process long-running operations."""
+        raise NotImplementedError()
+
+    @property
+    def list_build_targets(self) -> Callable[
+            [build_service.ListBuildTargetsRequest],
+            Union[
+                build_service.ListBuildTargetsResponse,
+                Awaitable[build_service.ListBuildTargetsResponse]
+            ]]:
         raise NotImplementedError()
 
     @property

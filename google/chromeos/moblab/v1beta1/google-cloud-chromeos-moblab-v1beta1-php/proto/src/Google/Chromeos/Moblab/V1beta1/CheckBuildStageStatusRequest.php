@@ -25,7 +25,7 @@ class CheckBuildStageStatusRequest extends \Google\Protobuf\Internal\Message
     protected $name = '';
     /**
      * Optional. Filter that specifies value constraints of fields. For example, the
-     * filter can be set as `filter='type=release'` to only check the release
+     * filter can be set as "filter='type=release'" to only check the release
      * builds.
      *
      * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -44,7 +44,7 @@ class CheckBuildStageStatusRequest extends \Google\Protobuf\Internal\Message
      *           'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
      *     @type string $filter
      *           Optional. Filter that specifies value constraints of fields. For example, the
-     *           filter can be set as `filter='type=release'` to only check the release
+     *           filter can be set as "filter='type=release'" to only check the release
      *           builds.
      * }
      */
@@ -85,7 +85,7 @@ class CheckBuildStageStatusRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Filter that specifies value constraints of fields. For example, the
-     * filter can be set as `filter='type=release'` to only check the release
+     * filter can be set as "filter='type=release'" to only check the release
      * builds.
      *
      * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98,7 +98,7 @@ class CheckBuildStageStatusRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Filter that specifies value constraints of fields. For example, the
-     * filter can be set as `filter='type=release'` to only check the release
+     * filter can be set as "filter='type=release'" to only check the release
      * builds.
      *
      * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -15,6 +15,11 @@
                 "check_build_stage_status"
               ]
             },
+            "ListBuildTargets": {
+              "methods": [
+                "list_build_targets"
+              ]
+            },
             "ListBuilds": {
               "methods": [
                 "list_builds"
@@ -33,6 +38,11 @@
             "CheckBuildStageStatus": {
               "methods": [
                 "check_build_stage_status"
+              ]
+            },
+            "ListBuildTargets": {
+              "methods": [
+                "list_build_targets"
               ]
             },
             "ListBuilds": {

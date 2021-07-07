@@ -36,6 +36,31 @@ func ExampleNewBuildClient() {
 	_ = c
 }
 
+func ExampleBuildClient_ListBuildTargets() {
+	ctx := context.Background()
+	c, err := moblab.NewBuildClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &moblabpb.ListBuildTargetsRequest{
+		// TODO: Fill request struct fields.
+	}
+	it := c.ListBuildTargets(ctx, req)
+	for {
+		resp, err := it.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: Handle error.
+		}
+		// TODO: Use resp.
+		_ = resp
+	}
+}
+
 func ExampleBuildClient_ListBuilds() {
 	ctx := context.Background()
 	c, err := moblab.NewBuildClient(ctx)

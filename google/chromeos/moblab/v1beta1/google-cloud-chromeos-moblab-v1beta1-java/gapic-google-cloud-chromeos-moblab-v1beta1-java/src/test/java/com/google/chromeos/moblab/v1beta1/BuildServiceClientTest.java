@@ -16,6 +16,7 @@
 
 package com.google.chromeos.moblab.v1beta1;
 
+import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildTargetsPagedResponse;
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -80,6 +81,59 @@ public class BuildServiceClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  public void listBuildTargetsTest() throws Exception {
+    BuildTarget responsesElement = BuildTarget.newBuilder().build();
+    ListBuildTargetsResponse expectedResponse =
+        ListBuildTargetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBuildTargets(Arrays.asList(responsesElement))
+            .build();
+    mockBuildService.addResponse(expectedResponse);
+
+    ListBuildTargetsRequest request =
+        ListBuildTargetsRequest.newBuilder()
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListBuildTargetsPagedResponse pagedListResponse = client.listBuildTargets(request);
+
+    List<BuildTarget> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBuildTargetsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBuildService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBuildTargetsRequest actualRequest = ((ListBuildTargetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBuildTargetsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBuildService.addException(exception);
+
+    try {
+      ListBuildTargetsRequest request =
+          ListBuildTargetsRequest.newBuilder()
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listBuildTargets(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test

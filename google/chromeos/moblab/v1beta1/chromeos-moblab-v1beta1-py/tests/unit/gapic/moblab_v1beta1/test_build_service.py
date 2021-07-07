@@ -389,6 +389,279 @@ def test_build_service_client_client_options_from_dict():
         )
 
 
+def test_list_build_targets(transport: str = 'grpc', request_type=build_service.ListBuildTargetsRequest):
+    client = BuildServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_build_targets),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = build_service.ListBuildTargetsResponse(
+            next_page_token='next_page_token_value',
+            total_size=1086,
+        )
+        response = client.list_build_targets(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == build_service.ListBuildTargetsRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, pagers.ListBuildTargetsPager)
+    assert response.next_page_token == 'next_page_token_value'
+    assert response.total_size == 1086
+
+
+def test_list_build_targets_from_dict():
+    test_list_build_targets(request_type=dict)
+
+
+def test_list_build_targets_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = BuildServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_build_targets),
+            '__call__') as call:
+        client.list_build_targets()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == build_service.ListBuildTargetsRequest()
+
+
+@pytest.mark.asyncio
+async def test_list_build_targets_async(transport: str = 'grpc_asyncio', request_type=build_service.ListBuildTargetsRequest):
+    client = BuildServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_build_targets),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(build_service.ListBuildTargetsResponse(
+            next_page_token='next_page_token_value',
+            total_size=1086,
+        ))
+        response = await client.list_build_targets(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == build_service.ListBuildTargetsRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, pagers.ListBuildTargetsAsyncPager)
+    assert response.next_page_token == 'next_page_token_value'
+    assert response.total_size == 1086
+
+
+@pytest.mark.asyncio
+async def test_list_build_targets_async_from_dict():
+    await test_list_build_targets_async(request_type=dict)
+
+
+def test_list_build_targets_pager():
+    client = BuildServiceClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_build_targets),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                ],
+                next_page_token='abc',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[],
+                next_page_token='def',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                ],
+                next_page_token='ghi',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                ],
+            ),
+            RuntimeError,
+        )
+
+        metadata = ()
+        pager = client.list_build_targets(request={})
+
+        assert pager._metadata == metadata
+
+        results = [i for i in pager]
+        assert len(results) == 6
+        assert all(isinstance(i, resources.BuildTarget)
+                   for i in results)
+
+def test_list_build_targets_pages():
+    client = BuildServiceClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_build_targets),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                ],
+                next_page_token='abc',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[],
+                next_page_token='def',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                ],
+                next_page_token='ghi',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = list(client.list_build_targets(request={}).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
+@pytest.mark.asyncio
+async def test_list_build_targets_async_pager():
+    client = BuildServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_build_targets),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                ],
+                next_page_token='abc',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[],
+                next_page_token='def',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                ],
+                next_page_token='ghi',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                ],
+            ),
+            RuntimeError,
+        )
+        async_pager = await client.list_build_targets(request={},)
+        assert async_pager.next_page_token == 'abc'
+        responses = []
+        async for response in async_pager:
+            responses.append(response)
+
+        assert len(responses) == 6
+        assert all(isinstance(i, resources.BuildTarget)
+                   for i in responses)
+
+@pytest.mark.asyncio
+async def test_list_build_targets_async_pages():
+    client = BuildServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_build_targets),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                ],
+                next_page_token='abc',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[],
+                next_page_token='def',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                ],
+                next_page_token='ghi',
+            ),
+            build_service.ListBuildTargetsResponse(
+                build_targets=[
+                    resources.BuildTarget(),
+                    resources.BuildTarget(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = []
+        async for page_ in (await client.list_build_targets(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
 def test_list_builds(transport: str = 'grpc', request_type=build_service.ListBuildsRequest):
     client = BuildServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -1365,6 +1638,7 @@ def test_build_service_base_transport():
     # Every method on the transport should just blindly
     # raise NotImplementedError.
     methods = (
+        'list_build_targets',
         'list_builds',
         'check_build_stage_status',
         'stage_build',
@@ -1776,8 +2050,25 @@ def test_parse_build_artifact_path():
     actual = BuildServiceClient.parse_build_artifact_path(path)
     assert expected == actual
 
+def test_build_target_path():
+    build_target = "whelk"
+    expected = "buildTargets/{build_target}".format(build_target=build_target, )
+    actual = BuildServiceClient.build_target_path(build_target)
+    assert expected == actual
+
+
+def test_parse_build_target_path():
+    expected = {
+        "build_target": "octopus",
+    }
+    path = BuildServiceClient.build_target_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = BuildServiceClient.parse_build_target_path(path)
+    assert expected == actual
+
 def test_milestone_path():
-    milestone = "whelk"
+    milestone = "oyster"
     expected = "milestones/{milestone}".format(milestone=milestone, )
     actual = BuildServiceClient.milestone_path(milestone)
     assert expected == actual
@@ -1785,7 +2076,7 @@ def test_milestone_path():
 
 def test_parse_milestone_path():
     expected = {
-        "milestone": "octopus",
+        "milestone": "nudibranch",
     }
     path = BuildServiceClient.milestone_path(**expected)
 
@@ -1794,8 +2085,8 @@ def test_parse_milestone_path():
     assert expected == actual
 
 def test_model_path():
-    build_target = "oyster"
-    model = "nudibranch"
+    build_target = "cuttlefish"
+    model = "mussel"
     expected = "buildTargets/{build_target}/models/{model}".format(build_target=build_target, model=model, )
     actual = BuildServiceClient.model_path(build_target, model)
     assert expected == actual
@@ -1803,8 +2094,8 @@ def test_model_path():
 
 def test_parse_model_path():
     expected = {
-        "build_target": "cuttlefish",
-        "model": "mussel",
+        "build_target": "winkle",
+        "model": "nautilus",
     }
     path = BuildServiceClient.model_path(**expected)
 
@@ -1813,7 +2104,7 @@ def test_parse_model_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "winkle"
+    billing_account = "scallop"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = BuildServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1821,7 +2112,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+        "billing_account": "abalone",
     }
     path = BuildServiceClient.common_billing_account_path(**expected)
 
@@ -1830,7 +2121,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "scallop"
+    folder = "squid"
     expected = "folders/{folder}".format(folder=folder, )
     actual = BuildServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1838,7 +2129,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+        "folder": "clam",
     }
     path = BuildServiceClient.common_folder_path(**expected)
 
@@ -1847,7 +2138,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "squid"
+    organization = "whelk"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = BuildServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1855,7 +2146,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+        "organization": "octopus",
     }
     path = BuildServiceClient.common_organization_path(**expected)
 
@@ -1864,7 +2155,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "whelk"
+    project = "oyster"
     expected = "projects/{project}".format(project=project, )
     actual = BuildServiceClient.common_project_path(project)
     assert expected == actual
@@ -1872,7 +2163,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+        "project": "nudibranch",
     }
     path = BuildServiceClient.common_project_path(**expected)
 
@@ -1881,8 +2172,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "oyster"
-    location = "nudibranch"
+    project = "cuttlefish"
+    location = "mussel"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = BuildServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1890,8 +2181,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+        "project": "winkle",
+        "location": "nautilus",
     }
     path = BuildServiceClient.common_location_path(**expected)
 

@@ -32,8 +32,8 @@ In order to use this library, you first need to go through the following steps:
 require "google/chromeos/moblab/v1beta1"
 
 client = ::Google::Chromeos::Moblab::V1beta1::BuildService::Client.new
-request = ::Google::Chromeos::Moblab::V1beta1::ListBuildsRequest.new # (request fields as keyword arguments...)
-response = client.list_builds request
+request = ::Google::Chromeos::Moblab::V1beta1::ListBuildTargetsRequest.new # (request fields as keyword arguments...)
+response = client.list_build_targets request
 ```
 
 View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-chromeos-moblab-v1beta1/latest)

@@ -45,6 +45,7 @@ namespace Google.Chromeos.Moblab.V1Beta1
         private BuildServiceSettings(BuildServiceSettings existing) : base(existing)
         {
             gax::GaxPreconditions.CheckNotNull(existing, nameof(existing));
+            ListBuildTargetsSettings = existing.ListBuildTargetsSettings;
             ListBuildsSettings = existing.ListBuildsSettings;
             CheckBuildStageStatusSettings = existing.CheckBuildStageStatusSettings;
             StageBuildSettings = existing.StageBuildSettings;
@@ -53,6 +54,18 @@ namespace Google.Chromeos.Moblab.V1Beta1
         }
 
         partial void OnCopy(BuildServiceSettings existing);
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>BuildServiceClient.ListBuildTargets</c> and <c>BuildServiceClient.ListBuildTargetsAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>This call will not be retried.</description></item>
+        /// <item><description>No timeout is applied.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings ListBuildTargetsSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -255,6 +268,24 @@ namespace Google.Chromeos.Moblab.V1Beta1
 
         /// <summary>The underlying gRPC BuildService client</summary>
         public virtual BuildService.BuildServiceClient GrpcClient => throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Lists all build targets that a user has access to.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="BuildTarget"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListBuildTargetsResponse, BuildTarget> ListBuildTargets(ListBuildTargetsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Lists all build targets that a user has access to.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="BuildTarget"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListBuildTargetsResponse, BuildTarget> ListBuildTargetsAsync(ListBuildTargetsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
 
         /// <summary>
         /// Lists all builds for the given build target and model in descending order
@@ -700,6 +731,8 @@ namespace Google.Chromeos.Moblab.V1Beta1
     /// </remarks>
     public sealed partial class BuildServiceClientImpl : BuildServiceClient
     {
+        private readonly gaxgrpc::ApiCall<ListBuildTargetsRequest, ListBuildTargetsResponse> _callListBuildTargets;
+
         private readonly gaxgrpc::ApiCall<ListBuildsRequest, ListBuildsResponse> _callListBuilds;
 
         private readonly gaxgrpc::ApiCall<CheckBuildStageStatusRequest, CheckBuildStageStatusResponse> _callCheckBuildStageStatus;
@@ -717,6 +750,9 @@ namespace Google.Chromeos.Moblab.V1Beta1
             BuildServiceSettings effectiveSettings = settings ?? BuildServiceSettings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
             StageBuildOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.StageBuildOperationsSettings);
+            _callListBuildTargets = clientHelper.BuildApiCall<ListBuildTargetsRequest, ListBuildTargetsResponse>(grpcClient.ListBuildTargetsAsync, grpcClient.ListBuildTargets, effectiveSettings.ListBuildTargetsSettings);
+            Modify_ApiCall(ref _callListBuildTargets);
+            Modify_ListBuildTargetsApiCall(ref _callListBuildTargets);
             _callListBuilds = clientHelper.BuildApiCall<ListBuildsRequest, ListBuildsResponse>(grpcClient.ListBuildsAsync, grpcClient.ListBuilds, effectiveSettings.ListBuildsSettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callListBuilds);
             Modify_ListBuildsApiCall(ref _callListBuilds);
@@ -731,6 +767,8 @@ namespace Google.Chromeos.Moblab.V1Beta1
 
         partial void Modify_ApiCall<TRequest, TResponse>(ref gaxgrpc::ApiCall<TRequest, TResponse> call) where TRequest : class, proto::IMessage<TRequest> where TResponse : class, proto::IMessage<TResponse>;
 
+        partial void Modify_ListBuildTargetsApiCall(ref gaxgrpc::ApiCall<ListBuildTargetsRequest, ListBuildTargetsResponse> call);
+
         partial void Modify_ListBuildsApiCall(ref gaxgrpc::ApiCall<ListBuildsRequest, ListBuildsResponse> call);
 
         partial void Modify_CheckBuildStageStatusApiCall(ref gaxgrpc::ApiCall<CheckBuildStageStatusRequest, CheckBuildStageStatusResponse> call);
@@ -742,11 +780,37 @@ namespace Google.Chromeos.Moblab.V1Beta1
         /// <summary>The underlying gRPC BuildService client</summary>
         public override BuildService.BuildServiceClient GrpcClient { get; }
 
+        partial void Modify_ListBuildTargetsRequest(ref ListBuildTargetsRequest request, ref gaxgrpc::CallSettings settings);
+
         partial void Modify_ListBuildsRequest(ref ListBuildsRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_CheckBuildStageStatusRequest(ref CheckBuildStageStatusRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_StageBuildRequest(ref StageBuildRequest request, ref gaxgrpc::CallSettings settings);
+
+        /// <summary>
+        /// Lists all build targets that a user has access to.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="BuildTarget"/> resources.</returns>
+        public override gax::PagedEnumerable<ListBuildTargetsResponse, BuildTarget> ListBuildTargets(ListBuildTargetsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListBuildTargetsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedEnumerable<ListBuildTargetsRequest, ListBuildTargetsResponse, BuildTarget>(_callListBuildTargets, request, callSettings);
+        }
+
+        /// <summary>
+        /// Lists all build targets that a user has access to.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="BuildTarget"/> resources.</returns>
+        public override gax::PagedAsyncEnumerable<ListBuildTargetsResponse, BuildTarget> ListBuildTargetsAsync(ListBuildTargetsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListBuildTargetsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedAsyncEnumerable<ListBuildTargetsRequest, ListBuildTargetsResponse, BuildTarget>(_callListBuildTargets, request, callSettings);
+        }
 
         /// <summary>
         /// Lists all builds for the given build target and model in descending order
@@ -836,8 +900,20 @@ namespace Google.Chromeos.Moblab.V1Beta1
         }
     }
 
+    public partial class ListBuildTargetsRequest : gaxgrpc::IPageRequest
+    {
+    }
+
     public partial class ListBuildsRequest : gaxgrpc::IPageRequest
     {
+    }
+
+    public partial class ListBuildTargetsResponse : gaxgrpc::IPageResponse<BuildTarget>
+    {
+        /// <summary>Returns an enumerator that iterates through the resources in this response.</summary>
+        public scg::IEnumerator<BuildTarget> GetEnumerator() => BuildTargets.GetEnumerator();
+
+        sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();
     }
 
     public partial class ListBuildsResponse : gaxgrpc::IPageResponse<Build>

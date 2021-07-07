@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. Filter that specifies value constraints of fields. For example, the
-   * filter can be set as `filter='type=release'` to only check the release
+   * filter can be set as "filter='type=release'" to only check the release
    * builds.
    * </pre>
    *
@@ -176,7 +176,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. Filter that specifies value constraints of fields. For example, the
-   * filter can be set as `filter='type=release'` to only check the release
+   * filter can be set as "filter='type=release'" to only check the release
    * builds.
    * </pre>
    *
@@ -631,7 +631,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Filter that specifies value constraints of fields. For example, the
-     * filter can be set as `filter='type=release'` to only check the release
+     * filter can be set as "filter='type=release'" to only check the release
      * builds.
      * </pre>
      *
@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Filter that specifies value constraints of fields. For example, the
-     * filter can be set as `filter='type=release'` to only check the release
+     * filter can be set as "filter='type=release'" to only check the release
      * builds.
      * </pre>
      *
@@ -676,7 +676,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Filter that specifies value constraints of fields. For example, the
-     * filter can be set as `filter='type=release'` to only check the release
+     * filter can be set as "filter='type=release'" to only check the release
      * builds.
      * </pre>
      *
@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Filter that specifies value constraints of fields. For example, the
-     * filter can be set as `filter='type=release'` to only check the release
+     * filter can be set as "filter='type=release'" to only check the release
      * builds.
      * </pre>
      *
@@ -713,7 +713,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Filter that specifies value constraints of fields. For example, the
-     * filter can be set as `filter='type=release'` to only check the release
+     * filter can be set as "filter='type=release'" to only check the release
      * builds.
      * </pre>
      *

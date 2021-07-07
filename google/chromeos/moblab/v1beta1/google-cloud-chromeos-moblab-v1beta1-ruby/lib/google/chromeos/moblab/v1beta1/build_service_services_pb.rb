@@ -33,6 +33,8 @@ module Google
             self.unmarshal_class_method = :decode
             self.service_name = 'google.chromeos.moblab.v1beta1.BuildService'
 
+            # Lists all build targets that a user has access to.
+            rpc :ListBuildTargets, ::Google::Chromeos::Moblab::V1beta1::ListBuildTargetsRequest, ::Google::Chromeos::Moblab::V1beta1::ListBuildTargetsResponse
             # Lists all builds for the given build target and model in descending order
             # for the milestones and build versions.
             rpc :ListBuilds, ::Google::Chromeos::Moblab::V1beta1::ListBuildsRequest, ::Google::Chromeos::Moblab::V1beta1::ListBuildsResponse

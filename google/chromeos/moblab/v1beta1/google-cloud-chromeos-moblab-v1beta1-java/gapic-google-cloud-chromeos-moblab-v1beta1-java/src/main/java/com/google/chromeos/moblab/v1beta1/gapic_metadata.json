@@ -13,6 +13,9 @@
             "CheckBuildStageStatus": {
               "methods": ["checkBuildStageStatus", "checkBuildStageStatus", "checkBuildStageStatus", "checkBuildStageStatusCallable"]
             },
+            "ListBuildTargets": {
+              "methods": ["listBuildTargets", "listBuildTargetsPagedCallable", "listBuildTargetsCallable"]
+            },
             "ListBuilds": {
               "methods": ["listBuilds", "listBuilds", "listBuilds", "listBuildsPagedCallable", "listBuildsCallable"]
             },

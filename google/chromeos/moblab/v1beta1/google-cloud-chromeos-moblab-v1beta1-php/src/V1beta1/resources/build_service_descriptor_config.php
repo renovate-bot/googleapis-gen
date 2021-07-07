@@ -13,6 +13,16 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
+            'ListBuildTargets' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getBuildTargets',
+                ],
+            ],
             'ListBuilds' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',

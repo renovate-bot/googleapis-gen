@@ -409,6 +409,176 @@ describe('v1beta1.BuildServiceClient', () => {
         });
     });
 
+    describe('listBuildTargets', () => {
+        it('invokes listBuildTargets without error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());
+            const expectedOptions = {};
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+            ];
+            client.innerApiCalls.listBuildTargets = stubSimpleCall(expectedResponse);
+            const [response] = await client.listBuildTargets(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listBuildTargets as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listBuildTargets without error using callback', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());
+            const expectedOptions = {};
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+            ];
+            client.innerApiCalls.listBuildTargets = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.listBuildTargets(
+                    request,
+                    (err?: Error|null, result?: protos.google.chromeos.moblab.v1beta1.IBuildTarget[]|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listBuildTargets as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes listBuildTargets with error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());
+            const expectedOptions = {};
+            const expectedError = new Error('expected');
+            client.innerApiCalls.listBuildTargets = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.listBuildTargets(request), expectedError);
+            assert((client.innerApiCalls.listBuildTargets as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listBuildTargetsStream without error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+            ];
+            client.descriptors.page.listBuildTargets.createStream = stubPageStreamingCall(expectedResponse);
+            const stream = client.listBuildTargetsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.chromeos.moblab.v1beta1.BuildTarget[] = [];
+                stream.on('data', (response: protos.google.chromeos.moblab.v1beta1.BuildTarget) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            const responses = await promise;
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert((client.descriptors.page.listBuildTargets.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listBuildTargets, request));
+        });
+
+        it('invokes listBuildTargetsStream with error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());
+            const expectedError = new Error('expected');
+            client.descriptors.page.listBuildTargets.createStream = stubPageStreamingCall(undefined, expectedError);
+            const stream = client.listBuildTargetsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.chromeos.moblab.v1beta1.BuildTarget[] = [];
+                stream.on('data', (response: protos.google.chromeos.moblab.v1beta1.BuildTarget) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            await assert.rejects(promise, expectedError);
+            assert((client.descriptors.page.listBuildTargets.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listBuildTargets, request));
+        });
+
+        it('uses async iteration with listBuildTargets without error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());const expectedResponse = [
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
+            ];
+            client.descriptors.page.listBuildTargets.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: protos.google.chromeos.moblab.v1beta1.IBuildTarget[] = [];
+            const iterable = client.listBuildTargetsAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.listBuildTargets.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+        });
+
+        it('uses async iteration with listBuildTargets with error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());const expectedError = new Error('expected');
+            client.descriptors.page.listBuildTargets.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.listBuildTargetsAsync(request);
+            await assert.rejects(async () => {
+                const responses: protos.google.chromeos.moblab.v1beta1.IBuildTarget[] = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.listBuildTargets.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+        });
+    });
+
     describe('listBuilds', () => {
         it('invokes listBuilds without error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({

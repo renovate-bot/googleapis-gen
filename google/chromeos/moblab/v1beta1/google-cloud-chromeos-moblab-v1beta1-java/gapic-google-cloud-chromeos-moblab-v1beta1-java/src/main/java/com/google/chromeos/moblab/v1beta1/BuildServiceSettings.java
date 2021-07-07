@@ -16,6 +16,7 @@
 
 package com.google.chromeos.moblab.v1beta1;
 
+import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildTargetsPagedResponse;
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -72,6 +73,13 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class BuildServiceSettings extends ClientSettings<BuildServiceSettings> {
+
+  /** Returns the object with the settings used for calls to listBuildTargets. */
+  public PagedCallSettings<
+          ListBuildTargetsRequest, ListBuildTargetsResponse, ListBuildTargetsPagedResponse>
+      listBuildTargetsSettings() {
+    return ((BuildServiceStubSettings) getStubSettings()).listBuildTargetsSettings();
+  }
 
   /** Returns the object with the settings used for calls to listBuilds. */
   public PagedCallSettings<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
@@ -192,6 +200,13 @@ public class BuildServiceSettings extends ClientSettings<BuildServiceSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to listBuildTargets. */
+    public PagedCallSettings.Builder<
+            ListBuildTargetsRequest, ListBuildTargetsResponse, ListBuildTargetsPagedResponse>
+        listBuildTargetsSettings() {
+      return getStubSettingsBuilder().listBuildTargetsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listBuilds. */

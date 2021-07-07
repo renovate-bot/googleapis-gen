@@ -34,7 +34,7 @@ public interface CheckBuildStageStatusRequestOrBuilder extends
   /**
    * <pre>
    * Optional. Filter that specifies value constraints of fields. For example, the
-   * filter can be set as `filter='type=release'` to only check the release
+   * filter can be set as "filter='type=release'" to only check the release
    * builds.
    * </pre>
    *
@@ -45,7 +45,7 @@ public interface CheckBuildStageStatusRequestOrBuilder extends
   /**
    * <pre>
    * Optional. Filter that specifies value constraints of fields. For example, the
-   * filter can be set as `filter='type=release'` to only check the release
+   * filter can be set as "filter='type=release'" to only check the release
    * builds.
    * </pre>
    *

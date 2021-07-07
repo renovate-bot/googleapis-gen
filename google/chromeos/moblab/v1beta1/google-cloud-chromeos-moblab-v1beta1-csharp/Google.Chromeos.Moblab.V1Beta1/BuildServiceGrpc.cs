@@ -60,12 +60,21 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       return parser.ParseFrom(context.PayloadAsNewBuffer());
     }
 
+    static readonly grpc::Marshaller<global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest> __Marshaller_google_chromeos_moblab_v1beta1_ListBuildTargetsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse> __Marshaller_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse.Parser));
     static readonly grpc::Marshaller<global::Google.Chromeos.Moblab.V1Beta1.ListBuildsRequest> __Marshaller_google_chromeos_moblab_v1beta1_ListBuildsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Chromeos.Moblab.V1Beta1.ListBuildsRequest.Parser));
     static readonly grpc::Marshaller<global::Google.Chromeos.Moblab.V1Beta1.ListBuildsResponse> __Marshaller_google_chromeos_moblab_v1beta1_ListBuildsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Chromeos.Moblab.V1Beta1.ListBuildsResponse.Parser));
     static readonly grpc::Marshaller<global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusRequest> __Marshaller_google_chromeos_moblab_v1beta1_CheckBuildStageStatusRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusRequest.Parser));
     static readonly grpc::Marshaller<global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusResponse> __Marshaller_google_chromeos_moblab_v1beta1_CheckBuildStageStatusResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusResponse.Parser));
     static readonly grpc::Marshaller<global::Google.Chromeos.Moblab.V1Beta1.StageBuildRequest> __Marshaller_google_chromeos_moblab_v1beta1_StageBuildRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Chromeos.Moblab.V1Beta1.StageBuildRequest.Parser));
     static readonly grpc::Marshaller<global::Google.LongRunning.Operation> __Marshaller_google_longrunning_Operation = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.LongRunning.Operation.Parser));
+
+    static readonly grpc::Method<global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest, global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse> __Method_ListBuildTargets = new grpc::Method<global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest, global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListBuildTargets",
+        __Marshaller_google_chromeos_moblab_v1beta1_ListBuildTargetsRequest,
+        __Marshaller_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse);
 
     static readonly grpc::Method<global::Google.Chromeos.Moblab.V1Beta1.ListBuildsRequest, global::Google.Chromeos.Moblab.V1Beta1.ListBuildsResponse> __Method_ListBuilds = new grpc::Method<global::Google.Chromeos.Moblab.V1Beta1.ListBuildsRequest, global::Google.Chromeos.Moblab.V1Beta1.ListBuildsResponse>(
         grpc::MethodType.Unary,
@@ -98,6 +107,17 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     [grpc::BindServiceMethod(typeof(BuildService), "BindService")]
     public abstract partial class BuildServiceBase
     {
+      /// <summary>
+      /// Lists all build targets that a user has access to.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse> ListBuildTargets(global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
       /// <summary>
       /// Lists all builds for the given build target and model in descending order
       /// for the milestones and build versions.
@@ -162,6 +182,50 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       {
       }
 
+      /// <summary>
+      /// Lists all build targets that a user has access to.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse ListBuildTargets(global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListBuildTargets(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Lists all build targets that a user has access to.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse ListBuildTargets(global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListBuildTargets, null, options, request);
+      }
+      /// <summary>
+      /// Lists all build targets that a user has access to.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse> ListBuildTargetsAsync(global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListBuildTargetsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Lists all build targets that a user has access to.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse> ListBuildTargetsAsync(global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListBuildTargets, null, options, request);
+      }
       /// <summary>
       /// Lists all builds for the given build target and model in descending order
       /// for the milestones and build versions.
@@ -330,6 +394,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     public static grpc::ServerServiceDefinition BindService(BuildServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_ListBuildTargets, serviceImpl.ListBuildTargets)
           .AddMethod(__Method_ListBuilds, serviceImpl.ListBuilds)
           .AddMethod(__Method_CheckBuildStageStatus, serviceImpl.CheckBuildStageStatus)
           .AddMethod(__Method_StageBuild, serviceImpl.StageBuild).Build();
@@ -341,6 +406,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, BuildServiceBase serviceImpl)
     {
+      serviceBinder.AddMethod(__Method_ListBuildTargets, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest, global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse>(serviceImpl.ListBuildTargets));
       serviceBinder.AddMethod(__Method_ListBuilds, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Chromeos.Moblab.V1Beta1.ListBuildsRequest, global::Google.Chromeos.Moblab.V1Beta1.ListBuildsResponse>(serviceImpl.ListBuilds));
       serviceBinder.AddMethod(__Method_CheckBuildStageStatus, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusRequest, global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusResponse>(serviceImpl.CheckBuildStageStatus));
       serviceBinder.AddMethod(__Method_StageBuild, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Chromeos.Moblab.V1Beta1.StageBuildRequest, global::Google.LongRunning.Operation>(serviceImpl.StageBuild));

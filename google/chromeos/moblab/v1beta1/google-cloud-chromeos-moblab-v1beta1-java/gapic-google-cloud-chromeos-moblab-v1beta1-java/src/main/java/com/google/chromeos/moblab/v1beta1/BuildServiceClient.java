@@ -165,6 +165,93 @@ public class BuildServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists all build targets that a user has access to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   ListBuildTargetsRequest request =
+   *       ListBuildTargetsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (BuildTarget element : buildServiceClient.listBuildTargets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBuildTargetsPagedResponse listBuildTargets(ListBuildTargetsRequest request) {
+    return listBuildTargetsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all build targets that a user has access to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   ListBuildTargetsRequest request =
+   *       ListBuildTargetsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<BuildTarget> future =
+   *       buildServiceClient.listBuildTargetsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BuildTarget element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBuildTargetsRequest, ListBuildTargetsPagedResponse>
+      listBuildTargetsPagedCallable() {
+    return stub.listBuildTargetsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all build targets that a user has access to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   ListBuildTargetsRequest request =
+   *       ListBuildTargetsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListBuildTargetsResponse response =
+   *         buildServiceClient.listBuildTargetsCallable().call(request);
+   *     for (BuildTarget element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBuildTargetsRequest, ListBuildTargetsResponse>
+      listBuildTargetsCallable() {
+    return stub.listBuildTargetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists all builds for the given build target and model in descending order for the milestones
    * and build versions.
    *
@@ -592,6 +679,82 @@ public class BuildServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListBuildTargetsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBuildTargetsRequest, ListBuildTargetsResponse, BuildTarget, ListBuildTargetsPage,
+          ListBuildTargetsFixedSizeCollection> {
+
+    public static ApiFuture<ListBuildTargetsPagedResponse> createAsync(
+        PageContext<ListBuildTargetsRequest, ListBuildTargetsResponse, BuildTarget> context,
+        ApiFuture<ListBuildTargetsResponse> futureResponse) {
+      ApiFuture<ListBuildTargetsPage> futurePage =
+          ListBuildTargetsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListBuildTargetsPage, ListBuildTargetsPagedResponse>() {
+            @Override
+            public ListBuildTargetsPagedResponse apply(ListBuildTargetsPage input) {
+              return new ListBuildTargetsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBuildTargetsPagedResponse(ListBuildTargetsPage page) {
+      super(page, ListBuildTargetsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBuildTargetsPage
+      extends AbstractPage<
+          ListBuildTargetsRequest, ListBuildTargetsResponse, BuildTarget, ListBuildTargetsPage> {
+
+    private ListBuildTargetsPage(
+        PageContext<ListBuildTargetsRequest, ListBuildTargetsResponse, BuildTarget> context,
+        ListBuildTargetsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBuildTargetsPage createEmptyPage() {
+      return new ListBuildTargetsPage(null, null);
+    }
+
+    @Override
+    protected ListBuildTargetsPage createPage(
+        PageContext<ListBuildTargetsRequest, ListBuildTargetsResponse, BuildTarget> context,
+        ListBuildTargetsResponse response) {
+      return new ListBuildTargetsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBuildTargetsPage> createPageAsync(
+        PageContext<ListBuildTargetsRequest, ListBuildTargetsResponse, BuildTarget> context,
+        ApiFuture<ListBuildTargetsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBuildTargetsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBuildTargetsRequest, ListBuildTargetsResponse, BuildTarget, ListBuildTargetsPage,
+          ListBuildTargetsFixedSizeCollection> {
+
+    private ListBuildTargetsFixedSizeCollection(
+        List<ListBuildTargetsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBuildTargetsFixedSizeCollection createEmptyCollection() {
+      return new ListBuildTargetsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBuildTargetsFixedSizeCollection createCollection(
+        List<ListBuildTargetsPage> pages, int collectionSize) {
+      return new ListBuildTargetsFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListBuildsPagedResponse

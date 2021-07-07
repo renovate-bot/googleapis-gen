@@ -21,6 +21,35 @@ module Google
   module Chromeos
     module Moblab
       module V1beta1
+        # Request message for listing build targets.
+        # @!attribute [rw] page_size
+        #   @return [::Integer]
+        #     Optional. The number of build targets to return in a page.
+        # @!attribute [rw] page_token
+        #   @return [::String]
+        #     Optional. A page token, received from a previous `ListBuildTargets` call. Provide
+        #     this to retrieve the subsequent page.
+        class ListBuildTargetsRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response message for listing build targets.
+        # @!attribute [rw] build_targets
+        #   @return [::Array<::Google::Chromeos::Moblab::V1beta1::BuildTarget>]
+        #     The list of build targets.
+        # @!attribute [rw] next_page_token
+        #   @return [::String]
+        #     Token to retrieve the next page of builds. If this field is omitted, there
+        #     are no subsequent pages.
+        # @!attribute [rw] total_size
+        #   @return [::Integer]
+        #     Total number of build targets.
+        class ListBuildTargetsResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # Request message for listing builds.
         # @!attribute [rw] parent
         #   @return [::String]
@@ -38,14 +67,14 @@ module Google
         # @!attribute [rw] filter
         #   @return [::String]
         #     Optional. Filter that specifies value constraints of fields. For example, the
-        #     filter can be set as `filter='milestone=milestones/80'` to only select
+        #     filter can be set as "filter='milestone=milestones/80'" to only select
         #     builds in milestone 80.
         # @!attribute [rw] read_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Optional. Read mask that specifies which Build fields to return. If empty, all Build
         #     fields will be returned.
         #     Valid fields: name, milestone, build_version.
-        #     For example, if the read_mask is set as `read_mask='milestone'`, the
+        #     For example, if the read_mask is set as "read_mask='milestone'", the
         #     ListBuilds will return a list of Builds object with only the milestone
         #     field.
         # @!attribute [rw] group_by
@@ -83,7 +112,7 @@ module Google
         # @!attribute [rw] filter
         #   @return [::String]
         #     Optional. Filter that specifies value constraints of fields. For example, the
-        #     filter can be set as `filter='type=release'` to only check the release
+        #     filter can be set as "filter='type=release'" to only check the release
         #     builds.
         class CheckBuildStageStatusRequest
           include ::Google::Protobuf::MessageExts
@@ -114,7 +143,7 @@ module Google
         # @!attribute [rw] filter
         #   @return [::String]
         #     Optional. Filter that specifies value constraints of fields. For example, the
-        #     filter can be set as `filter='type=release'` to only check the release
+        #     filter can be set as "filter='type=release'" to only check the release
         #     builds.
         class StageBuildRequest
           include ::Google::Protobuf::MessageExts

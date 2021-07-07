@@ -60,6 +60,27 @@ public class MockBuildServiceImpl extends BuildServiceImplBase {
   }
 
   @Override
+  public void listBuildTargets(
+      ListBuildTargetsRequest request, StreamObserver<ListBuildTargetsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBuildTargetsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBuildTargetsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBuildTargets, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBuildTargetsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listBuilds(
       ListBuildsRequest request, StreamObserver<ListBuildsResponse> responseObserver) {
     Object response = responses.poll();
