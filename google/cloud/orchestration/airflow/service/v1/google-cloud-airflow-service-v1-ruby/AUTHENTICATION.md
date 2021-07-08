@@ -80,8 +80,8 @@ client = ::Google::Cloud::Orchestration::Airflow::Service::V1::Environments::Cli
 
 ### Configuration
 
-The **Credentials JSON** can be configured instead of placing them in
-environment variables. Either on an individual client initialization:
+The path to the **Credentials JSON** file can be configured instead of storing
+it in an environment variable. Either on an individual client initialization:
 
 ```ruby
 require "google/cloud/orchestration/airflow/service/v1"
@@ -91,7 +91,7 @@ client = ::Google::Cloud::Orchestration::Airflow::Service::V1::Environments::Cli
 end
 ```
 
-Or configured globally for all clients:
+Or globally for all clients:
 
 ```ruby
 require "google/cloud/orchestration/airflow/service/v1"

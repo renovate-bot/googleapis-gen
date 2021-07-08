@@ -80,8 +80,8 @@ client = ::Google::Cloud::Bigquery::Connection::V1beta1::ConnectionService::Clie
 
 ### Configuration
 
-The **Credentials JSON** can be configured instead of placing them in
-environment variables. Either on an individual client initialization:
+The path to the **Credentials JSON** file can be configured instead of storing
+it in an environment variable. Either on an individual client initialization:
 
 ```ruby
 require "google/cloud/bigquery/connection/v1beta1"
@@ -91,7 +91,7 @@ client = ::Google::Cloud::Bigquery::Connection::V1beta1::ConnectionService::Clie
 end
 ```
 
-Or configured globally for all clients:
+Or globally for all clients:
 
 ```ruby
 require "google/cloud/bigquery/connection/v1beta1"

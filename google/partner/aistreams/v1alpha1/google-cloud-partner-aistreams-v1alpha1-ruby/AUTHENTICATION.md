@@ -80,8 +80,8 @@ client = ::Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
 
 ### Configuration
 
-The **Credentials JSON** can be configured instead of placing them in
-environment variables. Either on an individual client initialization:
+The path to the **Credentials JSON** file can be configured instead of storing
+it in an environment variable. Either on an individual client initialization:
 
 ```ruby
 require "google/partner/aistreams/v1alpha1"
@@ -91,7 +91,7 @@ client = ::Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new do |confi
 end
 ```
 
-Or configured globally for all clients:
+Or globally for all clients:
 
 ```ruby
 require "google/partner/aistreams/v1alpha1"
