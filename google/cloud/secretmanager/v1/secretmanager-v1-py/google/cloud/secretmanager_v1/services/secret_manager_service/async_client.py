@@ -930,9 +930,9 @@ class SecretManagerServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.access_secret_version,
             default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+initial=2.0,maximum=60.0,multiplier=2.0,                predicate=retries.if_exception_type(
+                    core_exceptions.ResourceExhausted,
                     core_exceptions.ServiceUnavailable,
-                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
