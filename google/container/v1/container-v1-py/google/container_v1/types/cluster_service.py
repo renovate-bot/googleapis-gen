@@ -1795,6 +1795,9 @@ class ClusterUpdate(proto.Message):
             default sNAT for this cluster.
         desired_release_channel (google.container_v1.types.ReleaseChannel):
             The desired release channel configuration.
+        desired_authenticator_groups_config (google.container_v1.types.AuthenticatorGroupsConfig):
+            The desired authenticator groups config for
+            the cluster.
         desired_master_version (str):
             The Kubernetes version to change the master
             to.
@@ -1903,6 +1906,11 @@ class ClusterUpdate(proto.Message):
         proto.MESSAGE,
         number=31,
         message='ReleaseChannel',
+    )
+    desired_authenticator_groups_config = proto.Field(
+        proto.MESSAGE,
+        number=63,
+        message='AuthenticatorGroupsConfig',
     )
     desired_master_version = proto.Field(
         proto.STRING,
