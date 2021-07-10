@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     metrics_ = java.util.Collections.emptyList();
     metricAggregations_ = java.util.Collections.emptyList();
     orderBys_ = java.util.Collections.emptyList();
+    minuteRanges_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -150,6 +151,15 @@ private static final long serialVersionUID = 0L;
             returnPropertyQuota_ = input.readBool();
             break;
           }
+          case 82: {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              minuteRanges_ = new java.util.ArrayList<com.google.analytics.data.v1beta.MinuteRange>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            minuteRanges_.add(
+                input.readMessage(com.google.analytics.data.v1beta.MinuteRange.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -176,6 +186,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
         orderBys_ = java.util.Collections.unmodifiableList(orderBys_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        minuteRanges_ = java.util.Collections.unmodifiableList(minuteRanges_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -634,6 +647,86 @@ private static final long serialVersionUID = 0L;
     return returnPropertyQuota_;
   }
 
+  public static final int MINUTE_RANGES_FIELD_NUMBER = 10;
+  private java.util.List<com.google.analytics.data.v1beta.MinuteRange> minuteRanges_;
+  /**
+   * <pre>
+   * The minute ranges of event data to read. If unspecified, one minute range
+   * for the last 30 minutes will be used. If multiple minute ranges are
+   * requested, each response row will contain a zero based minute range index.
+   * If two minute ranges overlap, the event data for the overlapping minutes is
+   * included in the response rows for both minute ranges.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.analytics.data.v1beta.MinuteRange> getMinuteRangesList() {
+    return minuteRanges_;
+  }
+  /**
+   * <pre>
+   * The minute ranges of event data to read. If unspecified, one minute range
+   * for the last 30 minutes will be used. If multiple minute ranges are
+   * requested, each response row will contain a zero based minute range index.
+   * If two minute ranges overlap, the event data for the overlapping minutes is
+   * included in the response rows for both minute ranges.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.analytics.data.v1beta.MinuteRangeOrBuilder> 
+      getMinuteRangesOrBuilderList() {
+    return minuteRanges_;
+  }
+  /**
+   * <pre>
+   * The minute ranges of event data to read. If unspecified, one minute range
+   * for the last 30 minutes will be used. If multiple minute ranges are
+   * requested, each response row will contain a zero based minute range index.
+   * If two minute ranges overlap, the event data for the overlapping minutes is
+   * included in the response rows for both minute ranges.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+   */
+  @java.lang.Override
+  public int getMinuteRangesCount() {
+    return minuteRanges_.size();
+  }
+  /**
+   * <pre>
+   * The minute ranges of event data to read. If unspecified, one minute range
+   * for the last 30 minutes will be used. If multiple minute ranges are
+   * requested, each response row will contain a zero based minute range index.
+   * If two minute ranges overlap, the event data for the overlapping minutes is
+   * included in the response rows for both minute ranges.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1beta.MinuteRange getMinuteRanges(int index) {
+    return minuteRanges_.get(index);
+  }
+  /**
+   * <pre>
+   * The minute ranges of event data to read. If unspecified, one minute range
+   * for the last 30 minutes will be used. If multiple minute ranges are
+   * requested, each response row will contain a zero based minute range index.
+   * If two minute ranges overlap, the event data for the overlapping minutes is
+   * included in the response rows for both minute ranges.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1beta.MinuteRangeOrBuilder getMinuteRangesOrBuilder(
+      int index) {
+    return minuteRanges_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -679,6 +772,9 @@ private static final long serialVersionUID = 0L;
     }
     if (returnPropertyQuota_ != false) {
       output.writeBool(9, returnPropertyQuota_);
+    }
+    for (int i = 0; i < minuteRanges_.size(); i++) {
+      output.writeMessage(10, minuteRanges_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -732,6 +828,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(9, returnPropertyQuota_);
     }
+    for (int i = 0; i < minuteRanges_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, minuteRanges_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -770,6 +870,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getOrderBysList())) return false;
     if (getReturnPropertyQuota()
         != other.getReturnPropertyQuota()) return false;
+    if (!getMinuteRangesList()
+        .equals(other.getMinuteRangesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -813,6 +915,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + RETURN_PROPERTY_QUOTA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getReturnPropertyQuota());
+    if (getMinuteRangesCount() > 0) {
+      hash = (37 * hash) + MINUTE_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getMinuteRangesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -948,6 +1054,7 @@ private static final long serialVersionUID = 0L;
         getDimensionsFieldBuilder();
         getMetricsFieldBuilder();
         getOrderBysFieldBuilder();
+        getMinuteRangesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -991,6 +1098,12 @@ private static final long serialVersionUID = 0L;
       }
       returnPropertyQuota_ = false;
 
+      if (minuteRangesBuilder_ == null) {
+        minuteRanges_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        minuteRangesBuilder_.clear();
+      }
       return this;
     }
 
@@ -1063,6 +1176,15 @@ private static final long serialVersionUID = 0L;
         result.orderBys_ = orderBysBuilder_.build();
       }
       result.returnPropertyQuota_ = returnPropertyQuota_;
+      if (minuteRangesBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          minuteRanges_ = java.util.Collections.unmodifiableList(minuteRanges_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.minuteRanges_ = minuteRanges_;
+      } else {
+        result.minuteRanges_ = minuteRangesBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1214,6 +1336,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getReturnPropertyQuota() != false) {
         setReturnPropertyQuota(other.getReturnPropertyQuota());
+      }
+      if (minuteRangesBuilder_ == null) {
+        if (!other.minuteRanges_.isEmpty()) {
+          if (minuteRanges_.isEmpty()) {
+            minuteRanges_ = other.minuteRanges_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureMinuteRangesIsMutable();
+            minuteRanges_.addAll(other.minuteRanges_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.minuteRanges_.isEmpty()) {
+          if (minuteRangesBuilder_.isEmpty()) {
+            minuteRangesBuilder_.dispose();
+            minuteRangesBuilder_ = null;
+            minuteRanges_ = other.minuteRanges_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            minuteRangesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMinuteRangesFieldBuilder() : null;
+          } else {
+            minuteRangesBuilder_.addAllMessages(other.minuteRanges_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2942,6 +3090,390 @@ private static final long serialVersionUID = 0L;
       returnPropertyQuota_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.analytics.data.v1beta.MinuteRange> minuteRanges_ =
+      java.util.Collections.emptyList();
+    private void ensureMinuteRangesIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        minuteRanges_ = new java.util.ArrayList<com.google.analytics.data.v1beta.MinuteRange>(minuteRanges_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.analytics.data.v1beta.MinuteRange, com.google.analytics.data.v1beta.MinuteRange.Builder, com.google.analytics.data.v1beta.MinuteRangeOrBuilder> minuteRangesBuilder_;
+
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public java.util.List<com.google.analytics.data.v1beta.MinuteRange> getMinuteRangesList() {
+      if (minuteRangesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(minuteRanges_);
+      } else {
+        return minuteRangesBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public int getMinuteRangesCount() {
+      if (minuteRangesBuilder_ == null) {
+        return minuteRanges_.size();
+      } else {
+        return minuteRangesBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public com.google.analytics.data.v1beta.MinuteRange getMinuteRanges(int index) {
+      if (minuteRangesBuilder_ == null) {
+        return minuteRanges_.get(index);
+      } else {
+        return minuteRangesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public Builder setMinuteRanges(
+        int index, com.google.analytics.data.v1beta.MinuteRange value) {
+      if (minuteRangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMinuteRangesIsMutable();
+        minuteRanges_.set(index, value);
+        onChanged();
+      } else {
+        minuteRangesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public Builder setMinuteRanges(
+        int index, com.google.analytics.data.v1beta.MinuteRange.Builder builderForValue) {
+      if (minuteRangesBuilder_ == null) {
+        ensureMinuteRangesIsMutable();
+        minuteRanges_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        minuteRangesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public Builder addMinuteRanges(com.google.analytics.data.v1beta.MinuteRange value) {
+      if (minuteRangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMinuteRangesIsMutable();
+        minuteRanges_.add(value);
+        onChanged();
+      } else {
+        minuteRangesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public Builder addMinuteRanges(
+        int index, com.google.analytics.data.v1beta.MinuteRange value) {
+      if (minuteRangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMinuteRangesIsMutable();
+        minuteRanges_.add(index, value);
+        onChanged();
+      } else {
+        minuteRangesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public Builder addMinuteRanges(
+        com.google.analytics.data.v1beta.MinuteRange.Builder builderForValue) {
+      if (minuteRangesBuilder_ == null) {
+        ensureMinuteRangesIsMutable();
+        minuteRanges_.add(builderForValue.build());
+        onChanged();
+      } else {
+        minuteRangesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public Builder addMinuteRanges(
+        int index, com.google.analytics.data.v1beta.MinuteRange.Builder builderForValue) {
+      if (minuteRangesBuilder_ == null) {
+        ensureMinuteRangesIsMutable();
+        minuteRanges_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        minuteRangesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public Builder addAllMinuteRanges(
+        java.lang.Iterable<? extends com.google.analytics.data.v1beta.MinuteRange> values) {
+      if (minuteRangesBuilder_ == null) {
+        ensureMinuteRangesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, minuteRanges_);
+        onChanged();
+      } else {
+        minuteRangesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public Builder clearMinuteRanges() {
+      if (minuteRangesBuilder_ == null) {
+        minuteRanges_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        minuteRangesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public Builder removeMinuteRanges(int index) {
+      if (minuteRangesBuilder_ == null) {
+        ensureMinuteRangesIsMutable();
+        minuteRanges_.remove(index);
+        onChanged();
+      } else {
+        minuteRangesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public com.google.analytics.data.v1beta.MinuteRange.Builder getMinuteRangesBuilder(
+        int index) {
+      return getMinuteRangesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public com.google.analytics.data.v1beta.MinuteRangeOrBuilder getMinuteRangesOrBuilder(
+        int index) {
+      if (minuteRangesBuilder_ == null) {
+        return minuteRanges_.get(index);  } else {
+        return minuteRangesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public java.util.List<? extends com.google.analytics.data.v1beta.MinuteRangeOrBuilder> 
+         getMinuteRangesOrBuilderList() {
+      if (minuteRangesBuilder_ != null) {
+        return minuteRangesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(minuteRanges_);
+      }
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public com.google.analytics.data.v1beta.MinuteRange.Builder addMinuteRangesBuilder() {
+      return getMinuteRangesFieldBuilder().addBuilder(
+          com.google.analytics.data.v1beta.MinuteRange.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public com.google.analytics.data.v1beta.MinuteRange.Builder addMinuteRangesBuilder(
+        int index) {
+      return getMinuteRangesFieldBuilder().addBuilder(
+          index, com.google.analytics.data.v1beta.MinuteRange.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The minute ranges of event data to read. If unspecified, one minute range
+     * for the last 30 minutes will be used. If multiple minute ranges are
+     * requested, each response row will contain a zero based minute range index.
+     * If two minute ranges overlap, the event data for the overlapping minutes is
+     * included in the response rows for both minute ranges.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
+     */
+    public java.util.List<com.google.analytics.data.v1beta.MinuteRange.Builder> 
+         getMinuteRangesBuilderList() {
+      return getMinuteRangesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.analytics.data.v1beta.MinuteRange, com.google.analytics.data.v1beta.MinuteRange.Builder, com.google.analytics.data.v1beta.MinuteRangeOrBuilder> 
+        getMinuteRangesFieldBuilder() {
+      if (minuteRangesBuilder_ == null) {
+        minuteRangesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.analytics.data.v1beta.MinuteRange, com.google.analytics.data.v1beta.MinuteRange.Builder, com.google.analytics.data.v1beta.MinuteRangeOrBuilder>(
+                minuteRanges_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        minuteRanges_ = null;
+      }
+      return minuteRangesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

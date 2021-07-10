@@ -46,6 +46,7 @@ from google.analytics.data_v1beta.types.data import Metric
 from google.analytics.data_v1beta.types.data import MetricHeader
 from google.analytics.data_v1beta.types.data import MetricMetadata
 from google.analytics.data_v1beta.types.data import MetricValue
+from google.analytics.data_v1beta.types.data import MinuteRange
 from google.analytics.data_v1beta.types.data import NumericValue
 from google.analytics.data_v1beta.types.data import OrderBy
 from google.analytics.data_v1beta.types.data import Pivot
@@ -89,6 +90,7 @@ __all__ = ('BetaAnalyticsDataClient',
     'MetricHeader',
     'MetricMetadata',
     'MetricValue',
+    'MinuteRange',
     'NumericValue',
     'OrderBy',
     'Pivot',
