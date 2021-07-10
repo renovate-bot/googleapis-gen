@@ -149,10 +149,13 @@ public final class ServicesProto {
       "2*0/v1/{name=projects/*/locations/*/jobT" +
       "emplates/*}\332A\004name\032M\312A\031transcoder.google" +
       "apis.com\322A.https://www.googleapis.com/au" +
-      "th/cloud-platformB\203\001\n$com.google.cloud.v" +
+      "th/cloud-platformB\360\001\n$com.google.cloud.v" +
       "ideo.transcoder.v1B\rServicesProtoP\001ZJgoo" +
       "gle.golang.org/genproto/googleapis/cloud" +
-      "/video/transcoder/v1;transcoderb\006proto3"
+      "/video/transcoder/v1;transcoder\252\002 Google" +
+      ".Cloud.Video.Transcoder.V1\312\002 Google\\Clou" +
+      "d\\Video\\Transcoder\\V1\352\002$Google::Cloud::V" +
+      "ideo::Transcoder::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
