@@ -368,7 +368,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         warnings.warn("ServiceUsageClient.enable_service is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Minor optimization to avoid making a copy if the user passes
@@ -457,7 +457,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         warnings.warn("ServiceUsageClient.disable_service is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Minor optimization to avoid making a copy if the user passes
@@ -525,7 +525,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         warnings.warn("ServiceUsageClient.get_service is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Minor optimization to avoid making a copy if the user passes
@@ -593,7 +593,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         warnings.warn("ServiceUsageClient.list_services is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Minor optimization to avoid making a copy if the user passes
@@ -678,7 +678,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         warnings.warn("ServiceUsageClient.batch_enable_services is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Minor optimization to avoid making a copy if the user passes

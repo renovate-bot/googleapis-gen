@@ -882,7 +882,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         warnings.warn("ParticipantsAsyncClient.list_suggestions is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         request = participant.ListSuggestionsRequest(request)
@@ -963,7 +963,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         warnings.warn("ParticipantsAsyncClient.compile_suggestion is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         request = participant.CompileSuggestionRequest(request)

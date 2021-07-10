@@ -190,7 +190,7 @@ class ServiceUsageAsyncClient:
 
         """
         warnings.warn("ServiceUsageAsyncClient.enable_service is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         request = serviceusage.EnableServiceRequest(request)
@@ -278,7 +278,7 @@ class ServiceUsageAsyncClient:
 
         """
         warnings.warn("ServiceUsageAsyncClient.disable_service is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         request = serviceusage.DisableServiceRequest(request)
@@ -345,7 +345,7 @@ class ServiceUsageAsyncClient:
 
         """
         warnings.warn("ServiceUsageAsyncClient.get_service is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         request = serviceusage.GetServiceRequest(request)
@@ -412,7 +412,7 @@ class ServiceUsageAsyncClient:
 
         """
         warnings.warn("ServiceUsageAsyncClient.list_services is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         request = serviceusage.ListServicesRequest(request)
@@ -496,7 +496,7 @@ class ServiceUsageAsyncClient:
 
         """
         warnings.warn("ServiceUsageAsyncClient.batch_enable_services is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         request = serviceusage.BatchEnableServicesRequest(request)

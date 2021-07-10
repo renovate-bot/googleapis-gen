@@ -1669,7 +1669,7 @@ class IAMClient(metaclass=IAMClientMeta):
 
         """
         warnings.warn("IAMClient.sign_blob is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
@@ -1792,7 +1792,7 @@ class IAMClient(metaclass=IAMClientMeta):
 
         """
         warnings.warn("IAMClient.sign_jwt is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have

@@ -391,7 +391,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         warnings.warn("VehicleServiceAsyncClient.update_vehicle_location is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         request = vehicle_api.UpdateVehicleLocationRequest(request)

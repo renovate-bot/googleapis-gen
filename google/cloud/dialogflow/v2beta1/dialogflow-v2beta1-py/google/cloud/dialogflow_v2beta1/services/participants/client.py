@@ -1108,7 +1108,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         """
         warnings.warn("ParticipantsClient.list_suggestions is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Minor optimization to avoid making a copy if the user passes
@@ -1190,7 +1190,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         """
         warnings.warn("ParticipantsClient.compile_suggestion is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Minor optimization to avoid making a copy if the user passes

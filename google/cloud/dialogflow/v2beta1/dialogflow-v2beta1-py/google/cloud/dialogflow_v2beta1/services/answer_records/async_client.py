@@ -207,7 +207,7 @@ class AnswerRecordsAsyncClient:
 
         """
         warnings.warn("AnswerRecordsAsyncClient.get_answer_record is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         request = answer_record.GetAnswerRecordRequest(request)

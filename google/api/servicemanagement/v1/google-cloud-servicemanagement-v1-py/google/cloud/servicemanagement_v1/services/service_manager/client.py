@@ -1640,7 +1640,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         """
         warnings.warn("ServiceManagerClient.enable_service is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
@@ -1746,7 +1746,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         """
         warnings.warn("ServiceManagerClient.disable_service is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have

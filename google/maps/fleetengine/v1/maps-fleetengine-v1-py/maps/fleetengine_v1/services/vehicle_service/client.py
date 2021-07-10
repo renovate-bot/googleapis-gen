@@ -563,7 +563,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
 
         """
         warnings.warn("VehicleServiceClient.update_vehicle_location is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Minor optimization to avoid making a copy if the user passes

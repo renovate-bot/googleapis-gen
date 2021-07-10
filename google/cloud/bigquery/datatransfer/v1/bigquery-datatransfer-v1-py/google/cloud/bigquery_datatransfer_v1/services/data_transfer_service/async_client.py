@@ -855,7 +855,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         warnings.warn("DataTransferServiceAsyncClient.schedule_transfer_runs is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have

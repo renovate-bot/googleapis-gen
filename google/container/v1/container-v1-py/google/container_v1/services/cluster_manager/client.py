@@ -1390,7 +1390,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         """
         warnings.warn("ClusterManagerClient.set_locations is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have

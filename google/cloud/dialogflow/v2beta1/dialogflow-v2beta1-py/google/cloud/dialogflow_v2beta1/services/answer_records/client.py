@@ -394,7 +394,7 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
 
         """
         warnings.warn("AnswerRecordsClient.get_answer_record is deprecated",
-            warnings.DeprecationWarning)
+            DeprecationWarning)
 
         # Create or coerce a protobuf request object.
         # Minor optimization to avoid making a copy if the user passes
