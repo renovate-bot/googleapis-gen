@@ -17,8 +17,10 @@
 from google.cloud.bigquery_connection_v1.services.connection_service.client import ConnectionServiceClient
 from google.cloud.bigquery_connection_v1.services.connection_service.async_client import ConnectionServiceAsyncClient
 
+from google.cloud.bigquery_connection_v1.types.connection import AwsAccessRole
 from google.cloud.bigquery_connection_v1.types.connection import AwsCrossAccountRole
 from google.cloud.bigquery_connection_v1.types.connection import AwsProperties
+from google.cloud.bigquery_connection_v1.types.connection import CloudSpannerProperties
 from google.cloud.bigquery_connection_v1.types.connection import CloudSqlCredential
 from google.cloud.bigquery_connection_v1.types.connection import CloudSqlProperties
 from google.cloud.bigquery_connection_v1.types.connection import Connection
@@ -31,8 +33,10 @@ from google.cloud.bigquery_connection_v1.types.connection import UpdateConnectio
 
 __all__ = ('ConnectionServiceClient',
     'ConnectionServiceAsyncClient',
+    'AwsAccessRole',
     'AwsCrossAccountRole',
     'AwsProperties',
+    'CloudSpannerProperties',
     'CloudSqlCredential',
     'CloudSqlProperties',
     'Connection',

@@ -66,6 +66,20 @@ private static final long serialVersionUID = 0L;
             authenticationMethodCase_ = 2;
             break;
           }
+          case 26: {
+            com.google.cloud.bigquery.connection.v1.AwsAccessRole.Builder subBuilder = null;
+            if (authenticationMethodCase_ == 3) {
+              subBuilder = ((com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_).toBuilder();
+            }
+            authenticationMethod_ =
+                input.readMessage(com.google.cloud.bigquery.connection.v1.AwsAccessRole.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_);
+              authenticationMethod_ = subBuilder.buildPartial();
+            }
+            authenticationMethodCase_ = 3;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -104,6 +118,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CROSS_ACCOUNT_ROLE(2),
+    ACCESS_ROLE(3),
     AUTHENTICATIONMETHOD_NOT_SET(0);
     private final int value;
     private AuthenticationMethodCase(int value) {
@@ -122,6 +137,7 @@ private static final long serialVersionUID = 0L;
     public static AuthenticationMethodCase forNumber(int value) {
       switch (value) {
         case 2: return CROSS_ACCOUNT_ROLE;
+        case 3: return ACCESS_ROLE;
         case 0: return AUTHENTICATIONMETHOD_NOT_SET;
         default: return null;
       }
@@ -183,6 +199,52 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole.getDefaultInstance();
   }
 
+  public static final int ACCESS_ROLE_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * Authentication using Google owned service account to assume into
+   * customer's AWS IAM Role.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+   * @return Whether the accessRole field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccessRole() {
+    return authenticationMethodCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Authentication using Google owned service account to assume into
+   * customer's AWS IAM Role.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+   * @return The accessRole.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.connection.v1.AwsAccessRole getAccessRole() {
+    if (authenticationMethodCase_ == 3) {
+       return (com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_;
+    }
+    return com.google.cloud.bigquery.connection.v1.AwsAccessRole.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Authentication using Google owned service account to assume into
+   * customer's AWS IAM Role.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.connection.v1.AwsAccessRoleOrBuilder getAccessRoleOrBuilder() {
+    if (authenticationMethodCase_ == 3) {
+       return (com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_;
+    }
+    return com.google.cloud.bigquery.connection.v1.AwsAccessRole.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -200,6 +262,9 @@ private static final long serialVersionUID = 0L;
     if (authenticationMethodCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole) authenticationMethod_);
     }
+    if (authenticationMethodCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -212,6 +277,10 @@ private static final long serialVersionUID = 0L;
     if (authenticationMethodCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, (com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole) authenticationMethod_);
+    }
+    if (authenticationMethodCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -234,6 +303,10 @@ private static final long serialVersionUID = 0L;
         if (!getCrossAccountRole()
             .equals(other.getCrossAccountRole())) return false;
         break;
+      case 3:
+        if (!getAccessRole()
+            .equals(other.getAccessRole())) return false;
+        break;
       case 0:
       default:
     }
@@ -252,6 +325,10 @@ private static final long serialVersionUID = 0L;
       case 2:
         hash = (37 * hash) + CROSS_ACCOUNT_ROLE_FIELD_NUMBER;
         hash = (53 * hash) + getCrossAccountRole().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + ACCESS_ROLE_FIELD_NUMBER;
+        hash = (53 * hash) + getAccessRole().hashCode();
         break;
       case 0:
       default:
@@ -428,6 +505,13 @@ private static final long serialVersionUID = 0L;
           result.authenticationMethod_ = crossAccountRoleBuilder_.build();
         }
       }
+      if (authenticationMethodCase_ == 3) {
+        if (accessRoleBuilder_ == null) {
+          result.authenticationMethod_ = authenticationMethod_;
+        } else {
+          result.authenticationMethod_ = accessRoleBuilder_.build();
+        }
+      }
       result.authenticationMethodCase_ = authenticationMethodCase_;
       onBuilt();
       return result;
@@ -480,6 +564,10 @@ private static final long serialVersionUID = 0L;
       switch (other.getAuthenticationMethodCase()) {
         case CROSS_ACCOUNT_ROLE: {
           mergeCrossAccountRole(other.getCrossAccountRole());
+          break;
+        }
+        case ACCESS_ROLE: {
+          mergeAccessRole(other.getAccessRole());
           break;
         }
         case AUTHENTICATIONMETHOD_NOT_SET: {
@@ -714,6 +802,192 @@ private static final long serialVersionUID = 0L;
       authenticationMethodCase_ = 2;
       onChanged();;
       return crossAccountRoleBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.bigquery.connection.v1.AwsAccessRole, com.google.cloud.bigquery.connection.v1.AwsAccessRole.Builder, com.google.cloud.bigquery.connection.v1.AwsAccessRoleOrBuilder> accessRoleBuilder_;
+    /**
+     * <pre>
+     * Authentication using Google owned service account to assume into
+     * customer's AWS IAM Role.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+     * @return Whether the accessRole field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccessRole() {
+      return authenticationMethodCase_ == 3;
+    }
+    /**
+     * <pre>
+     * Authentication using Google owned service account to assume into
+     * customer's AWS IAM Role.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+     * @return The accessRole.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.connection.v1.AwsAccessRole getAccessRole() {
+      if (accessRoleBuilder_ == null) {
+        if (authenticationMethodCase_ == 3) {
+          return (com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_;
+        }
+        return com.google.cloud.bigquery.connection.v1.AwsAccessRole.getDefaultInstance();
+      } else {
+        if (authenticationMethodCase_ == 3) {
+          return accessRoleBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.connection.v1.AwsAccessRole.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Authentication using Google owned service account to assume into
+     * customer's AWS IAM Role.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+     */
+    public Builder setAccessRole(com.google.cloud.bigquery.connection.v1.AwsAccessRole value) {
+      if (accessRoleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        authenticationMethod_ = value;
+        onChanged();
+      } else {
+        accessRoleBuilder_.setMessage(value);
+      }
+      authenticationMethodCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Authentication using Google owned service account to assume into
+     * customer's AWS IAM Role.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+     */
+    public Builder setAccessRole(
+        com.google.cloud.bigquery.connection.v1.AwsAccessRole.Builder builderForValue) {
+      if (accessRoleBuilder_ == null) {
+        authenticationMethod_ = builderForValue.build();
+        onChanged();
+      } else {
+        accessRoleBuilder_.setMessage(builderForValue.build());
+      }
+      authenticationMethodCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Authentication using Google owned service account to assume into
+     * customer's AWS IAM Role.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+     */
+    public Builder mergeAccessRole(com.google.cloud.bigquery.connection.v1.AwsAccessRole value) {
+      if (accessRoleBuilder_ == null) {
+        if (authenticationMethodCase_ == 3 &&
+            authenticationMethod_ != com.google.cloud.bigquery.connection.v1.AwsAccessRole.getDefaultInstance()) {
+          authenticationMethod_ = com.google.cloud.bigquery.connection.v1.AwsAccessRole.newBuilder((com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          authenticationMethod_ = value;
+        }
+        onChanged();
+      } else {
+        if (authenticationMethodCase_ == 3) {
+          accessRoleBuilder_.mergeFrom(value);
+        }
+        accessRoleBuilder_.setMessage(value);
+      }
+      authenticationMethodCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Authentication using Google owned service account to assume into
+     * customer's AWS IAM Role.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+     */
+    public Builder clearAccessRole() {
+      if (accessRoleBuilder_ == null) {
+        if (authenticationMethodCase_ == 3) {
+          authenticationMethodCase_ = 0;
+          authenticationMethod_ = null;
+          onChanged();
+        }
+      } else {
+        if (authenticationMethodCase_ == 3) {
+          authenticationMethodCase_ = 0;
+          authenticationMethod_ = null;
+        }
+        accessRoleBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Authentication using Google owned service account to assume into
+     * customer's AWS IAM Role.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+     */
+    public com.google.cloud.bigquery.connection.v1.AwsAccessRole.Builder getAccessRoleBuilder() {
+      return getAccessRoleFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Authentication using Google owned service account to assume into
+     * customer's AWS IAM Role.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.connection.v1.AwsAccessRoleOrBuilder getAccessRoleOrBuilder() {
+      if ((authenticationMethodCase_ == 3) && (accessRoleBuilder_ != null)) {
+        return accessRoleBuilder_.getMessageOrBuilder();
+      } else {
+        if (authenticationMethodCase_ == 3) {
+          return (com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_;
+        }
+        return com.google.cloud.bigquery.connection.v1.AwsAccessRole.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Authentication using Google owned service account to assume into
+     * customer's AWS IAM Role.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsAccessRole access_role = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.bigquery.connection.v1.AwsAccessRole, com.google.cloud.bigquery.connection.v1.AwsAccessRole.Builder, com.google.cloud.bigquery.connection.v1.AwsAccessRoleOrBuilder> 
+        getAccessRoleFieldBuilder() {
+      if (accessRoleBuilder_ == null) {
+        if (!(authenticationMethodCase_ == 3)) {
+          authenticationMethod_ = com.google.cloud.bigquery.connection.v1.AwsAccessRole.getDefaultInstance();
+        }
+        accessRoleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.connection.v1.AwsAccessRole, com.google.cloud.bigquery.connection.v1.AwsAccessRole.Builder, com.google.cloud.bigquery.connection.v1.AwsAccessRoleOrBuilder>(
+                (com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_,
+                getParentForChildren(),
+                isClean());
+        authenticationMethod_ = null;
+      }
+      authenticationMethodCase_ = 3;
+      onChanged();;
+      return accessRoleBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
