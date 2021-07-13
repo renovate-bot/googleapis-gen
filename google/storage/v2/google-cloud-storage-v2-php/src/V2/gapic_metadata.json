@@ -1,0 +1,43 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.storage.v2",
+    "libraryPackage": "Google\\Storage\\V2",
+    "services": {
+        "Storage": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "StorageGapicClient",
+                    "rpcs": {
+                        "GetObject": {
+                            "methods": [
+                                "getObject"
+                            ]
+                        },
+                        "QueryWriteStatus": {
+                            "methods": [
+                                "queryWriteStatus"
+                            ]
+                        },
+                        "ReadObject": {
+                            "methods": [
+                                "readObject"
+                            ]
+                        },
+                        "StartResumableWrite": {
+                            "methods": [
+                                "startResumableWrite"
+                            ]
+                        },
+                        "WriteObject": {
+                            "methods": [
+                                "writeObject"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

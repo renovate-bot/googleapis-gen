@@ -1,0 +1,43 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.storage.v2",
+  "libraryPackage": "::Google::Storage::V2",
+  "services": {
+    "Storage": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Storage::V2::Storage::Client",
+          "rpcs": {
+            "GetObject": {
+              "methods": [
+                "get_object"
+              ]
+            },
+            "ReadObject": {
+              "methods": [
+                "read_object"
+              ]
+            },
+            "WriteObject": {
+              "methods": [
+                "write_object"
+              ]
+            },
+            "StartResumableWrite": {
+              "methods": [
+                "start_resumable_write"
+              ]
+            },
+            "QueryWriteStatus": {
+              "methods": [
+                "query_write_status"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.storage_v2",
+  "protoPackage": "google.storage.v2",
+  "schema": "1.0",
+  "services": {
+    "Storage": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StorageClient",
+          "rpcs": {
+            "GetObject": {
+              "methods": [
+                "get_object"
+              ]
+            },
+            "QueryWriteStatus": {
+              "methods": [
+                "query_write_status"
+              ]
+            },
+            "ReadObject": {
+              "methods": [
+                "read_object"
+              ]
+            },
+            "StartResumableWrite": {
+              "methods": [
+                "start_resumable_write"
+              ]
+            },
+            "WriteObject": {
+              "methods": [
+                "write_object"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "StorageAsyncClient",
+          "rpcs": {
+            "GetObject": {
+              "methods": [
+                "get_object"
+              ]
+            },
+            "QueryWriteStatus": {
+              "methods": [
+                "query_write_status"
+              ]
+            },
+            "ReadObject": {
+              "methods": [
+                "read_object"
+              ]
+            },
+            "StartResumableWrite": {
+              "methods": [
+                "start_resumable_write"
+              ]
+            },
+            "WriteObject": {
+              "methods": [
+                "write_object"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.storage.v2",
+  "libraryPackage": "@google-cloud/storage",
+  "services": {
+    "Storage": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StorageClient",
+          "rpcs": {
+            "GetObject": {
+              "methods": [
+                "getObject"
+              ]
+            },
+            "StartResumableWrite": {
+              "methods": [
+                "startResumableWrite"
+              ]
+            },
+            "QueryWriteStatus": {
+              "methods": [
+                "queryWriteStatus"
+              ]
+            },
+            "ReadObject": {
+              "methods": [
+                "readObject"
+              ]
+            },
+            "WriteObject": {
+              "methods": [
+                "writeObject"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "StorageClient",
+          "rpcs": {
+            "GetObject": {
+              "methods": [
+                "getObject"
+              ]
+            },
+            "StartResumableWrite": {
+              "methods": [
+                "startResumableWrite"
+              ]
+            },
+            "QueryWriteStatus": {
+              "methods": [
+                "queryWriteStatus"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
