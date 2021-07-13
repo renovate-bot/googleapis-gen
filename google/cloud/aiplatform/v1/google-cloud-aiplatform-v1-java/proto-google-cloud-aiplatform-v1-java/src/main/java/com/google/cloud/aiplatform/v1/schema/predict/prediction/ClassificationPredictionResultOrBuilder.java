@@ -9,8 +9,7 @@ public interface ClassificationPredictionResultOrBuilder extends
 
   /**
    * <pre>
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
+   * The resource IDs of the AnnotationSpecs that had been identified.
    * </pre>
    *
    * <code>repeated int64 ids = 1;</code>
@@ -19,8 +18,7 @@ public interface ClassificationPredictionResultOrBuilder extends
   java.util.List<java.lang.Long> getIdsList();
   /**
    * <pre>
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
+   * The resource IDs of the AnnotationSpecs that had been identified.
    * </pre>
    *
    * <code>repeated int64 ids = 1;</code>
@@ -29,8 +27,7 @@ public interface ClassificationPredictionResultOrBuilder extends
   int getIdsCount();
   /**
    * <pre>
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
+   * The resource IDs of the AnnotationSpecs that had been identified.
    * </pre>
    *
    * <code>repeated int64 ids = 1;</code>

@@ -119,6 +119,26 @@ private static final long serialVersionUID = 0L;
      * <code>MOBILE_VERSATILE_1 = 2;</code>
      */
     MOBILE_VERSATILE_1(2),
+    /**
+     * <pre>
+     * A model that, in addition to being available within Google Cloud, can
+     * also be exported (see ModelService.ExportModel) to a Jetson device
+     * afterwards.
+     * </pre>
+     *
+     * <code>MOBILE_JETSON_VERSATILE_1 = 3;</code>
+     */
+    MOBILE_JETSON_VERSATILE_1(3),
+    /**
+     * <pre>
+     * A model that, in addition to being available within Google Cloud, can
+     * also be exported (see ModelService.ExportModel) as a TensorFlow or
+     * TensorFlow Lite model and used on a Coral device afterwards.
+     * </pre>
+     *
+     * <code>MOBILE_CORAL_VERSATILE_1 = 4;</code>
+     */
+    MOBILE_CORAL_VERSATILE_1(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -149,6 +169,26 @@ private static final long serialVersionUID = 0L;
      * <code>MOBILE_VERSATILE_1 = 2;</code>
      */
     public static final int MOBILE_VERSATILE_1_VALUE = 2;
+    /**
+     * <pre>
+     * A model that, in addition to being available within Google Cloud, can
+     * also be exported (see ModelService.ExportModel) to a Jetson device
+     * afterwards.
+     * </pre>
+     *
+     * <code>MOBILE_JETSON_VERSATILE_1 = 3;</code>
+     */
+    public static final int MOBILE_JETSON_VERSATILE_1_VALUE = 3;
+    /**
+     * <pre>
+     * A model that, in addition to being available within Google Cloud, can
+     * also be exported (see ModelService.ExportModel) as a TensorFlow or
+     * TensorFlow Lite model and used on a Coral device afterwards.
+     * </pre>
+     *
+     * <code>MOBILE_CORAL_VERSATILE_1 = 4;</code>
+     */
+    public static final int MOBILE_CORAL_VERSATILE_1_VALUE = 4;
 
 
     public final int getNumber() {
@@ -178,6 +218,8 @@ private static final long serialVersionUID = 0L;
         case 0: return MODEL_TYPE_UNSPECIFIED;
         case 1: return CLOUD;
         case 2: return MOBILE_VERSATILE_1;
+        case 3: return MOBILE_JETSON_VERSATILE_1;
+        case 4: return MOBILE_CORAL_VERSATILE_1;
         default: return null;
       }
     }

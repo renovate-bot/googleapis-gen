@@ -102,7 +102,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object content_;
   /**
    * <pre>
-   * The image bytes or GCS URI to make the prediction on.
+   * The image bytes or Cloud Storage URI to make the prediction on.
    * </pre>
    *
    * <code>string content = 1;</code>
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The image bytes or GCS URI to make the prediction on.
+   * The image bytes or Cloud Storage URI to make the prediction on.
    * </pre>
    *
    * <code>string content = 1;</code>
@@ -532,7 +532,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object content_ = "";
     /**
      * <pre>
-     * The image bytes or GCS URI to make the prediction on.
+     * The image bytes or Cloud Storage URI to make the prediction on.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -552,7 +552,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The image bytes or GCS URI to make the prediction on.
+     * The image bytes or Cloud Storage URI to make the prediction on.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The image bytes or GCS URI to make the prediction on.
+     * The image bytes or Cloud Storage URI to make the prediction on.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -592,7 +592,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The image bytes or GCS URI to make the prediction on.
+     * The image bytes or Cloud Storage URI to make the prediction on.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -606,7 +606,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The image bytes or GCS URI to make the prediction on.
+     * The image bytes or Cloud Storage URI to make the prediction on.
      * </pre>
      *
      * <code>string content = 1;</code>

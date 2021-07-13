@@ -27,7 +27,7 @@ module Google
               # Prediction input format for Image Object Detection.
               # @!attribute [rw] content
               #   @return [::String]
-              #     The image bytes or GCS URI to make the prediction on.
+              #     The image bytes or Cloud Storage URI to make the prediction on.
               # @!attribute [rw] mime_type
               #   @return [::String]
               #     The MIME type of the content of the image. Only the images in below listed
