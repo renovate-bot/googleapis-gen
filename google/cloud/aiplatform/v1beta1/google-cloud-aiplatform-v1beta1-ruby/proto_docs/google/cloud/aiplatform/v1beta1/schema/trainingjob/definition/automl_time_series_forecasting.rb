@@ -146,6 +146,9 @@ module Google
               #          fail the pipeline if it fails.
               #
               #       * "ignore-validation" - ignore the results of the validation and continue
+              # @!attribute [rw] additional_experiments
+              #   @return [::Array<::String>]
+              #     Additional experiment flags for the time series forcasting training.
               class AutoMlForecastingInputs
                 include ::Google::Protobuf::MessageExts
                 extend ::Google::Protobuf::MessageExts::ClassMethods

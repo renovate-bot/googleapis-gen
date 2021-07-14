@@ -152,8 +152,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.LongList ids_;
   /**
    * <pre>
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
+   * The resource IDs of the AnnotationSpecs that had been identified.
    * </pre>
    *
    * <code>repeated int64 ids = 1;</code>
@@ -166,8 +165,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
+   * The resource IDs of the AnnotationSpecs that had been identified.
    * </pre>
    *
    * <code>repeated int64 ids = 1;</code>
@@ -178,8 +176,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
+   * The resource IDs of the AnnotationSpecs that had been identified.
    * </pre>
    *
    * <code>repeated int64 ids = 1;</code>
@@ -709,8 +706,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource IDs of the AnnotationSpecs that had been identified, ordered
-     * by the confidence score descendingly.
+     * The resource IDs of the AnnotationSpecs that had been identified.
      * </pre>
      *
      * <code>repeated int64 ids = 1;</code>
@@ -723,8 +719,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource IDs of the AnnotationSpecs that had been identified, ordered
-     * by the confidence score descendingly.
+     * The resource IDs of the AnnotationSpecs that had been identified.
      * </pre>
      *
      * <code>repeated int64 ids = 1;</code>
@@ -735,8 +730,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource IDs of the AnnotationSpecs that had been identified, ordered
-     * by the confidence score descendingly.
+     * The resource IDs of the AnnotationSpecs that had been identified.
      * </pre>
      *
      * <code>repeated int64 ids = 1;</code>
@@ -748,8 +742,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource IDs of the AnnotationSpecs that had been identified, ordered
-     * by the confidence score descendingly.
+     * The resource IDs of the AnnotationSpecs that had been identified.
      * </pre>
      *
      * <code>repeated int64 ids = 1;</code>
@@ -766,8 +759,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource IDs of the AnnotationSpecs that had been identified, ordered
-     * by the confidence score descendingly.
+     * The resource IDs of the AnnotationSpecs that had been identified.
      * </pre>
      *
      * <code>repeated int64 ids = 1;</code>
@@ -782,8 +774,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource IDs of the AnnotationSpecs that had been identified, ordered
-     * by the confidence score descendingly.
+     * The resource IDs of the AnnotationSpecs that had been identified.
      * </pre>
      *
      * <code>repeated int64 ids = 1;</code>
@@ -800,8 +791,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource IDs of the AnnotationSpecs that had been identified, ordered
-     * by the confidence score descendingly.
+     * The resource IDs of the AnnotationSpecs that had been identified.
      * </pre>
      *
      * <code>repeated int64 ids = 1;</code>

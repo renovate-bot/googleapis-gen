@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     availableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     quantiles_ = emptyDoubleList();
     validationOptions_ = "";
+    additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -194,6 +195,15 @@ private static final long serialVersionUID = 0L;
             contextWindow_ = input.readInt64();
             break;
           }
+          case 202: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              additionalExperiments_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            additionalExperiments_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -223,6 +233,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
         availableAtForecastColumns_ = availableAtForecastColumns_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -6642,6 +6655,57 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ADDITIONAL_EXPERIMENTS_FIELD_NUMBER = 25;
+  private com.google.protobuf.LazyStringList additionalExperiments_;
+  /**
+   * <pre>
+   * Additional experiment flags for the time series forcasting training.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 25;</code>
+   * @return A list containing the additionalExperiments.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAdditionalExperimentsList() {
+    return additionalExperiments_;
+  }
+  /**
+   * <pre>
+   * Additional experiment flags for the time series forcasting training.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 25;</code>
+   * @return The count of additionalExperiments.
+   */
+  public int getAdditionalExperimentsCount() {
+    return additionalExperiments_.size();
+  }
+  /**
+   * <pre>
+   * Additional experiment flags for the time series forcasting training.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 25;</code>
+   * @param index The index of the element to return.
+   * @return The additionalExperiments at the given index.
+   */
+  public java.lang.String getAdditionalExperiments(int index) {
+    return additionalExperiments_.get(index);
+  }
+  /**
+   * <pre>
+   * Additional experiment flags for the time series forcasting training.
+   * </pre>
+   *
+   * <code>repeated string additional_experiments = 25;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalExperiments at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAdditionalExperimentsBytes(int index) {
+    return additionalExperiments_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -6708,6 +6772,9 @@ private static final long serialVersionUID = 0L;
     }
     if (contextWindow_ != 0L) {
       output.writeInt64(24, contextWindow_);
+    }
+    for (int i = 0; i < additionalExperiments_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, additionalExperiments_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -6795,6 +6862,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(24, contextWindow_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < additionalExperiments_.size(); i++) {
+        dataSize += computeStringSizeNoTag(additionalExperiments_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAdditionalExperimentsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6848,6 +6923,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getQuantilesList())) return false;
     if (!getValidationOptions()
         .equals(other.getValidationOptions())) return false;
+    if (!getAdditionalExperimentsList()
+        .equals(other.getAdditionalExperimentsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -6908,6 +6985,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + VALIDATION_OPTIONS_FIELD_NUMBER;
     hash = (53 * hash) + getValidationOptions().hashCode();
+    if (getAdditionalExperimentsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_EXPERIMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalExperimentsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -7086,6 +7167,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
       validationOptions_ = "";
 
+      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -7161,6 +7244,11 @@ private static final long serialVersionUID = 0L;
       }
       result.quantiles_ = quantiles_;
       result.validationOptions_ = validationOptions_;
+      if (((bitField0_ & 0x00000020) != 0)) {
+        additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.additionalExperiments_ = additionalExperiments_;
       onBuilt();
       return result;
     }
@@ -7312,6 +7400,16 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getValidationOptions().isEmpty()) {
         validationOptions_ = other.validationOptions_;
+        onChanged();
+      }
+      if (!other.additionalExperiments_.isEmpty()) {
+        if (additionalExperiments_.isEmpty()) {
+          additionalExperiments_ = other.additionalExperiments_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureAdditionalExperimentsIsMutable();
+          additionalExperiments_.addAll(other.additionalExperiments_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -9519,6 +9617,152 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       validationOptions_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureAdditionalExperimentsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        additionalExperiments_ = new com.google.protobuf.LazyStringArrayList(additionalExperiments_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+    /**
+     * <pre>
+     * Additional experiment flags for the time series forcasting training.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 25;</code>
+     * @return A list containing the additionalExperiments.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAdditionalExperimentsList() {
+      return additionalExperiments_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Additional experiment flags for the time series forcasting training.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 25;</code>
+     * @return The count of additionalExperiments.
+     */
+    public int getAdditionalExperimentsCount() {
+      return additionalExperiments_.size();
+    }
+    /**
+     * <pre>
+     * Additional experiment flags for the time series forcasting training.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 25;</code>
+     * @param index The index of the element to return.
+     * @return The additionalExperiments at the given index.
+     */
+    public java.lang.String getAdditionalExperiments(int index) {
+      return additionalExperiments_.get(index);
+    }
+    /**
+     * <pre>
+     * Additional experiment flags for the time series forcasting training.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 25;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the additionalExperiments at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAdditionalExperimentsBytes(int index) {
+      return additionalExperiments_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Additional experiment flags for the time series forcasting training.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 25;</code>
+     * @param index The index to set the value at.
+     * @param value The additionalExperiments to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalExperiments(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalExperimentsIsMutable();
+      additionalExperiments_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Additional experiment flags for the time series forcasting training.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 25;</code>
+     * @param value The additionalExperiments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalExperiments(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalExperimentsIsMutable();
+      additionalExperiments_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Additional experiment flags for the time series forcasting training.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 25;</code>
+     * @param values The additionalExperiments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalExperiments(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAdditionalExperimentsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, additionalExperiments_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Additional experiment flags for the time series forcasting training.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 25;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalExperiments() {
+      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Additional experiment flags for the time series forcasting training.
+     * </pre>
+     *
+     * <code>repeated string additional_experiments = 25;</code>
+     * @param value The bytes of the additionalExperiments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalExperimentsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureAdditionalExperimentsIsMutable();
+      additionalExperiments_.add(value);
       onChanged();
       return this;
     }

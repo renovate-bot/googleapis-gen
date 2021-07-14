@@ -9,7 +9,7 @@ public interface ImageObjectDetectionPredictionInstanceOrBuilder extends
 
   /**
    * <pre>
-   * The image bytes or GCS URI to make the prediction on.
+   * The image bytes or Cloud Storage URI to make the prediction on.
    * </pre>
    *
    * <code>string content = 1;</code>
@@ -18,7 +18,7 @@ public interface ImageObjectDetectionPredictionInstanceOrBuilder extends
   java.lang.String getContent();
   /**
    * <pre>
-   * The image bytes or GCS URI to make the prediction on.
+   * The image bytes or Cloud Storage URI to make the prediction on.
    * </pre>
    *
    * <code>string content = 1;</code>

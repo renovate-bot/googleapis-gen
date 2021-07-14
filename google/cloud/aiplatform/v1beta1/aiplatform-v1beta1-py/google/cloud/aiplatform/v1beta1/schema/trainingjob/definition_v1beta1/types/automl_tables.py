@@ -149,6 +149,9 @@ class AutoMlTablesInputs(proto.Message):
             predictions to a BigQuery table. If this
             configuration is absent, then the export is not
             performed.
+        additional_experiments (Sequence[str]):
+            Additional experiment flags for the Tables
+            training pipeline.
     """
 
     class Transformation(proto.Message):
@@ -470,6 +473,10 @@ class AutoMlTablesInputs(proto.Message):
         proto.MESSAGE,
         number=10,
         message=gcastd_export_evaluated_data_items_config.ExportEvaluatedDataItemsConfig,
+    )
+    additional_experiments = proto.RepeatedField(
+        proto.STRING,
+        number=11,
     )
 
 

@@ -121,6 +121,9 @@ module Google
               #   @return [::Google::Cloud::Aiplatform::V1beta1::Schema::Trainingjob::Definition::ExportEvaluatedDataItemsConfig]
               #     Configuration for exporting test set predictions to a BigQuery table. If
               #     this configuration is absent, then the export is not performed.
+              # @!attribute [rw] additional_experiments
+              #   @return [::Array<::String>]
+              #     Additional experiment flags for the Tables training pipeline.
               class AutoMlTablesInputs
                 include ::Google::Protobuf::MessageExts
                 extend ::Google::Protobuf::MessageExts::ClassMethods

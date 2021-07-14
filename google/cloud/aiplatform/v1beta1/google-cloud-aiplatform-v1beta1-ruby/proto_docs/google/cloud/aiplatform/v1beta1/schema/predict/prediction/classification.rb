@@ -27,8 +27,7 @@ module Google
               # Prediction output format for Image and Text Classification.
               # @!attribute [rw] ids
               #   @return [::Array<::Integer>]
-              #     The resource IDs of the AnnotationSpecs that had been identified, ordered
-              #     by the confidence score descendingly.
+              #     The resource IDs of the AnnotationSpecs that had been identified.
               # @!attribute [rw] display_names
               #   @return [::Array<::String>]
               #     The display names of the AnnotationSpecs that had been identified, order
