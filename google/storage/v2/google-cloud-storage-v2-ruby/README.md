@@ -32,8 +32,8 @@ In order to use this library, you first need to go through the following steps:
 require "google/storage/v2"
 
 client = ::Google::Storage::V2::Storage::Client.new
-request = ::Google::Storage::V2::GetObjectRequest.new # (request fields as keyword arguments...)
-response = client.get_object request
+request = ::Google::Storage::V2::ReadObjectRequest.new # (request fields as keyword arguments...)
+response = client.read_object request
 ```
 
 View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-storage-v2/latest)

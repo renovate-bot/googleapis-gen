@@ -36,9 +36,13 @@ import javax.annotation.Generated;
  *
  * <pre>{@code
  * try (StorageClient storageClient = StorageClient.create()) {
- *   String bucket = "bucket-1378203158";
- *   String object = "object-1023368385";
- *   Object response = storageClient.getObject(bucket, object);
+ *   StartResumableWriteRequest request =
+ *       StartResumableWriteRequest.newBuilder()
+ *           .setWriteObjectSpec(WriteObjectSpec.newBuilder().build())
+ *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+ *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+ *           .build();
+ *   StartResumableWriteResponse response = storageClient.startResumableWrite(request);
  * }
  * }</pre>
  *
@@ -136,124 +140,6 @@ public class StorageClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public StorageStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Retrieves an object's metadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (StorageClient storageClient = StorageClient.create()) {
-   *   String bucket = "bucket-1378203158";
-   *   String object = "object-1023368385";
-   *   Object response = storageClient.getObject(bucket, object);
-   * }
-   * }</pre>
-   *
-   * @param bucket Required. Name of the bucket in which the object resides.
-   * @param object Required. Name of the object.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Object getObject(String bucket, String object) {
-    GetObjectRequest request =
-        GetObjectRequest.newBuilder().setBucket(bucket).setObject(object).build();
-    return getObject(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Retrieves an object's metadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (StorageClient storageClient = StorageClient.create()) {
-   *   String bucket = "bucket-1378203158";
-   *   String object = "object-1023368385";
-   *   long generation = 305703192;
-   *   Object response = storageClient.getObject(bucket, object, generation);
-   * }
-   * }</pre>
-   *
-   * @param bucket Required. Name of the bucket in which the object resides.
-   * @param object Required. Name of the object.
-   * @param generation If present, selects a specific revision of this object (as opposed to the
-   *     latest version, the default).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Object getObject(String bucket, String object, long generation) {
-    GetObjectRequest request =
-        GetObjectRequest.newBuilder()
-            .setBucket(bucket)
-            .setObject(object)
-            .setGeneration(generation)
-            .build();
-    return getObject(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Retrieves an object's metadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (StorageClient storageClient = StorageClient.create()) {
-   *   GetObjectRequest request =
-   *       GetObjectRequest.newBuilder()
-   *           .setBucket("bucket-1378203158")
-   *           .setObject("object-1023368385")
-   *           .setGeneration(305703192)
-   *           .setIfGenerationMatch(-1086241088)
-   *           .setIfGenerationNotMatch(1475720404)
-   *           .setIfMetagenerationMatch(1043427781)
-   *           .setIfMetagenerationNotMatch(1025430873)
-   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
-   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
-   *           .setReadMask(FieldMask.newBuilder().build())
-   *           .build();
-   *   Object response = storageClient.getObject(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Object getObject(GetObjectRequest request) {
-    return getObjectCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Retrieves an object's metadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (StorageClient storageClient = StorageClient.create()) {
-   *   GetObjectRequest request =
-   *       GetObjectRequest.newBuilder()
-   *           .setBucket("bucket-1378203158")
-   *           .setObject("object-1023368385")
-   *           .setGeneration(305703192)
-   *           .setIfGenerationMatch(-1086241088)
-   *           .setIfGenerationNotMatch(1475720404)
-   *           .setIfMetagenerationMatch(1043427781)
-   *           .setIfMetagenerationNotMatch(1025430873)
-   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
-   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
-   *           .setReadMask(FieldMask.newBuilder().build())
-   *           .build();
-   *   ApiFuture<Object> future = storageClient.getObjectCallable().futureCall(request);
-   *   // Do something.
-   *   Object response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetObjectRequest, Object> getObjectCallable() {
-    return stub.getObjectCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

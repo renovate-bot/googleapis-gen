@@ -49,15 +49,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getObject to 30 seconds:
+ * <p>For example, to set the total timeout of startResumableWrite to 30 seconds:
  *
  * <pre>{@code
  * StorageSettings.Builder storageSettingsBuilder = StorageSettings.newBuilder();
  * storageSettingsBuilder
- *     .getObjectSettings()
+ *     .startResumableWriteSettings()
  *     .setRetrySettings(
  *         storageSettingsBuilder
- *             .getObjectSettings()
+ *             .startResumableWriteSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -67,11 +67,6 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class StorageSettings extends ClientSettings<StorageSettings> {
-
-  /** Returns the object with the settings used for calls to getObject. */
-  public UnaryCallSettings<GetObjectRequest, Object> getObjectSettings() {
-    return ((StorageStubSettings) getStubSettings()).getObjectSettings();
-  }
 
   /** Returns the object with the settings used for calls to readObject. */
   public ServerStreamingCallSettings<ReadObjectRequest, ReadObjectResponse> readObjectSettings() {
@@ -190,11 +185,6 @@ public class StorageSettings extends ClientSettings<StorageSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
-    }
-
-    /** Returns the builder for the settings used for calls to getObject. */
-    public UnaryCallSettings.Builder<GetObjectRequest, Object> getObjectSettings() {
-      return getStubSettingsBuilder().getObjectSettings();
     }
 
     /** Returns the builder for the settings used for calls to readObject. */

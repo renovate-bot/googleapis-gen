@@ -150,11 +150,6 @@ class StorageTransport(abc.ABC):
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
         self._wrapped_methods = {
-            self.get_object: gapic_v1.method.wrap_method(
-                self.get_object,
-                default_timeout=None,
-                client_info=client_info,
-            ),
             self.read_object: gapic_v1.method.wrap_method(
                 self.read_object,
                 default_timeout=None,
@@ -176,15 +171,6 @@ class StorageTransport(abc.ABC):
                 client_info=client_info,
             ),
          }
-
-    @property
-    def get_object(self) -> Callable[
-            [storage.GetObjectRequest],
-            Union[
-                storage.Object,
-                Awaitable[storage.Object]
-            ]]:
-        raise NotImplementedError()
 
     @property
     def read_object(self) -> Callable[

@@ -155,95 +155,6 @@ module Google
           # Service calls
 
           ##
-          # Retrieves an object's metadata.
-          #
-          # @overload get_object(request, options = nil)
-          #   Pass arguments to `get_object` via a request object, either of type
-          #   {::Google::Storage::V2::GetObjectRequest} or an equivalent Hash.
-          #
-          #   @param request [::Google::Storage::V2::GetObjectRequest, ::Hash]
-          #     A request object representing the call parameters. Required. To specify no
-          #     parameters, or to keep all the default parameter values, pass an empty Hash.
-          #   @param options [::Gapic::CallOptions, ::Hash]
-          #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-          #
-          # @overload get_object(bucket: nil, object: nil, generation: nil, if_generation_match: nil, if_generation_not_match: nil, if_metageneration_match: nil, if_metageneration_not_match: nil, common_object_request_params: nil, common_request_params: nil, read_mask: nil)
-          #   Pass arguments to `get_object` via keyword arguments. Note that at
-          #   least one keyword argument is required. To specify no parameters, or to keep all
-          #   the default parameter values, pass an empty Hash as a request object (see above).
-          #
-          #   @param bucket [::String]
-          #     Required. Name of the bucket in which the object resides.
-          #   @param object [::String]
-          #     Required. Name of the object.
-          #   @param generation [::Integer]
-          #     If present, selects a specific revision of this object (as opposed to the
-          #     latest version, the default).
-          #   @param if_generation_match [::Integer]
-          #     Makes the operation conditional on whether the object's current generation
-          #     matches the given value. Setting to 0 makes the operation succeed only if
-          #     there are no live versions of the object.
-          #   @param if_generation_not_match [::Integer]
-          #     Makes the operation conditional on whether the object's current generation
-          #     does not match the given value. If no live object exists, the precondition
-          #     fails. Setting to 0 makes the operation succeed only if there is a live
-          #     version of the object.
-          #   @param if_metageneration_match [::Integer]
-          #     Makes the operation conditional on whether the object's current
-          #     metageneration matches the given value.
-          #   @param if_metageneration_not_match [::Integer]
-          #     Makes the operation conditional on whether the object's current
-          #     metageneration does not match the given value.
-          #   @param common_object_request_params [::Google::Storage::V2::CommonObjectRequestParams, ::Hash]
-          #     A set of parameters common to Storage API requests concerning an object.
-          #   @param common_request_params [::Google::Storage::V2::CommonRequestParams, ::Hash]
-          #     A set of parameters common to all Storage API requests.
-          #   @param read_mask [::Google::Protobuf::FieldMask, ::Hash]
-          #     Mask specifying which fields to read.
-          #     If no mask is specified, will default to all fields except metadata.acl and
-          #     metadata.owner.
-          #     * may be used to mean "all fields".
-          #
-          # @yield [response, operation] Access the result along with the RPC operation
-          # @yieldparam response [::Google::Storage::V2::Object]
-          # @yieldparam operation [::GRPC::ActiveCall::Operation]
-          #
-          # @return [::Google::Storage::V2::Object]
-          #
-          # @raise [::Google::Cloud::Error] if the RPC is aborted.
-          #
-          def get_object request, options = nil
-            raise ::ArgumentError, "request must be provided" if request.nil?
-
-            request = ::Gapic::Protobuf.coerce request, to: ::Google::Storage::V2::GetObjectRequest
-
-            # Converts hash and nil to an options object
-            options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
-
-            # Customize the options with defaults
-            metadata = @config.rpcs.get_object.metadata.to_h
-
-            # Set x-goog-api-client and x-goog-user-project headers
-            metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
-              lib_name: @config.lib_name, lib_version: @config.lib_version,
-              gapic_version: ::Google::Cloud::Storage::V2::VERSION
-            metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
-
-            options.apply_defaults timeout:      @config.rpcs.get_object.timeout,
-                                   metadata:     metadata,
-                                   retry_policy: @config.rpcs.get_object.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
-                                   retry_policy: @config.retry_policy
-
-            @storage_stub.call_rpc :get_object, request, options: options do |response, operation|
-              yield response, operation if block_given?
-              return response
-            end
-          rescue ::GRPC::BadStatus => e
-            raise ::Google::Cloud::Error.from_error(e)
-          end
-
-          ##
           # Reads an object's data.
           #
           # @overload read_object(request, options = nil)
@@ -584,19 +495,19 @@ module Google
           #
           # # Examples
           #
-          # To modify the global config, setting the timeout for get_object
+          # To modify the global config, setting the timeout for read_object
           # to 20 seconds, and all remaining timeouts to 10 seconds:
           #
           #     ::Google::Storage::V2::Storage::Client.configure do |config|
           #       config.timeout = 10.0
-          #       config.rpcs.get_object.timeout = 20.0
+          #       config.rpcs.read_object.timeout = 20.0
           #     end
           #
           # To apply the above configuration only to a new client:
           #
           #     client = ::Google::Storage::V2::Storage::Client.new do |config|
           #       config.timeout = 10.0
-          #       config.rpcs.get_object.timeout = 20.0
+          #       config.rpcs.read_object.timeout = 20.0
           #     end
           #
           # @!attribute [rw] endpoint
@@ -706,11 +617,6 @@ module Google
             #
             class Rpcs
               ##
-              # RPC-specific configuration for `get_object`
-              # @return [::Gapic::Config::Method]
-              #
-              attr_reader :get_object
-              ##
               # RPC-specific configuration for `read_object`
               # @return [::Gapic::Config::Method]
               #
@@ -733,8 +639,6 @@ module Google
 
               # @private
               def initialize parent_rpcs = nil
-                get_object_config = parent_rpcs.get_object if parent_rpcs.respond_to? :get_object
-                @get_object = ::Gapic::Config::Method.new get_object_config
                 read_object_config = parent_rpcs.read_object if parent_rpcs.respond_to? :read_object
                 @read_object = ::Gapic::Config::Method.new read_object_config
                 write_object_config = parent_rpcs.write_object if parent_rpcs.respond_to? :write_object

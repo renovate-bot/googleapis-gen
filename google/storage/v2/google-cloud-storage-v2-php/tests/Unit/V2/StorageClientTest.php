@@ -30,7 +30,6 @@ use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
 use Google\Rpc\Code;
-use Google\Storage\V2\Object;
 use Google\Storage\V2\QueryWriteStatusResponse;
 use Google\Storage\V2\ReadObjectResponse;
 use Google\Storage\V2\StartResumableWriteResponse;
@@ -69,102 +68,6 @@ class StorageClientTest extends GeneratedTest
             'credentials' => $this->createCredentials(),
         ];
         return new StorageClient($options);
-    }
-
-    /**
-     * @test
-     */
-    public function getObjectTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient([
-            'transport' => $transport,
-        ]);
-        $this->assertTrue($transport->isExhausted());
-        // Mock response
-        $name = 'name3373707';
-        $bucket2 = 'bucket2-1603304675';
-        $generation2 = 1722994379;
-        $metageneration = 1048558813;
-        $storageClass = 'storageClass2035762868';
-        $size = 3530753;
-        $contentEncoding = 'contentEncoding1916674649';
-        $contentDisposition = 'contentDisposition891901169';
-        $cacheControl = 'cacheControl1032395168';
-        $contentLanguage = 'contentLanguage-1408137122';
-        $contentType = 'contentType831846208';
-        $componentCount = 485073075;
-        $kmsKey = 'kmsKey-591635343';
-        $temporaryHold = false;
-        $eventBasedHold = true;
-        $expectedResponse = new Object();
-        $expectedResponse->setName($name);
-        $expectedResponse->setBucket($bucket2);
-        $expectedResponse->setGeneration($generation2);
-        $expectedResponse->setMetageneration($metageneration);
-        $expectedResponse->setStorageClass($storageClass);
-        $expectedResponse->setSize($size);
-        $expectedResponse->setContentEncoding($contentEncoding);
-        $expectedResponse->setContentDisposition($contentDisposition);
-        $expectedResponse->setCacheControl($cacheControl);
-        $expectedResponse->setContentLanguage($contentLanguage);
-        $expectedResponse->setContentType($contentType);
-        $expectedResponse->setComponentCount($componentCount);
-        $expectedResponse->setKmsKey($kmsKey);
-        $expectedResponse->setTemporaryHold($temporaryHold);
-        $expectedResponse->setEventBasedHold($eventBasedHold);
-        $transport->addResponse($expectedResponse);
-        // Mock request
-        $bucket = 'bucket-1378203158';
-        $object = 'object-1023368385';
-        $response = $client->getObject($bucket, $object);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.storage.v2.Storage/GetObject', $actualFuncCall);
-        $actualValue = $actualRequestObject->getBucket();
-        $this->assertProtobufEquals($bucket, $actualValue);
-        $actualValue = $actualRequestObject->getObject();
-        $this->assertProtobufEquals($object, $actualValue);
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function getObjectExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient([
-            'transport' => $transport,
-        ]);
-        $this->assertTrue($transport->isExhausted());
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-        $expectedExceptionMessage  = json_encode([
-            'message' => 'internal error',
-            'code' => Code::DATA_LOSS,
-            'status' => 'DATA_LOSS',
-            'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-        // Mock request
-        $bucket = 'bucket-1378203158';
-        $object = 'object-1023368385';
-        try {
-            $client->getObject($bucket, $object);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
     }
 
     /**

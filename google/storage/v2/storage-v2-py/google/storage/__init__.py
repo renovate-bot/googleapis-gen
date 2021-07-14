@@ -23,7 +23,6 @@ from google.storage_v2.types.storage import ChecksummedData
 from google.storage_v2.types.storage import CommonObjectRequestParams
 from google.storage_v2.types.storage import CommonRequestParams
 from google.storage_v2.types.storage import ContentRange
-from google.storage_v2.types.storage import GetObjectRequest
 from google.storage_v2.types.storage import Object
 from google.storage_v2.types.storage import ObjectAccessControl
 from google.storage_v2.types.storage import ObjectChecksums
@@ -49,7 +48,6 @@ __all__ = ('StorageClient',
     'CommonObjectRequestParams',
     'CommonRequestParams',
     'ContentRange',
-    'GetObjectRequest',
     'Object',
     'ObjectAccessControl',
     'ObjectChecksums',

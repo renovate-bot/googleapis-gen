@@ -32,8 +32,6 @@ module Google
           self.unmarshal_class_method = :decode
           self.service_name = 'google.storage.v2.Storage'
 
-          # Retrieves an object's metadata.
-          rpc :GetObject, ::Google::Storage::V2::GetObjectRequest, ::Google::Storage::V2::Object
           # Reads an object's data.
           rpc :ReadObject, ::Google::Storage::V2::ReadObjectRequest, stream(::Google::Storage::V2::ReadObjectResponse)
           # Stores a new object and metadata.

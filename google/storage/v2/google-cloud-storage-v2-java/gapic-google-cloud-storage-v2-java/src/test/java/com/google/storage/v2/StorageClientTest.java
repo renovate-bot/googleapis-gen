@@ -30,12 +30,9 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -83,145 +80,6 @@ public class StorageClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
-  }
-
-  @Test
-  public void getObjectTest() throws Exception {
-    Object expectedResponse =
-        Object.newBuilder()
-            .setName("name3373707")
-            .setBucket(BucketName.of("[PROJECT]", "[BUCKET]").toString())
-            .setGeneration(305703192)
-            .setMetageneration(1048558813)
-            .setStorageClass("storageClass871353277")
-            .setSize(3530753)
-            .setContentEncoding("contentEncoding-160088852")
-            .setContentDisposition("contentDisposition1034341758")
-            .setCacheControl("cacheControl-1336592517")
-            .addAllAcl(new ArrayList<ObjectAccessControl>())
-            .setContentLanguage("contentLanguage810066673")
-            .setDeleteTime(Timestamp.newBuilder().build())
-            .setContentType("contentType-389131437")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setComponentCount(-485073075)
-            .setChecksums(ObjectChecksums.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .setKmsKey(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
-            .setUpdateStorageClassTime(Timestamp.newBuilder().build())
-            .setTemporaryHold(true)
-            .setRetentionExpireTime(Timestamp.newBuilder().build())
-            .putAllMetadata(new HashMap<String, String>())
-            .setEventBasedHold(true)
-            .setOwner(Owner.newBuilder().build())
-            .setCustomerEncryption(Object.CustomerEncryption.newBuilder().build())
-            .setCustomTime(Timestamp.newBuilder().build())
-            .build();
-    mockStorage.addResponse(expectedResponse);
-
-    String bucket = "bucket-1378203158";
-    String object = "object-1023368385";
-
-    Object actualResponse = client.getObject(bucket, object);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockStorage.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetObjectRequest actualRequest = ((GetObjectRequest) actualRequests.get(0));
-
-    Assert.assertEquals(bucket, actualRequest.getBucket());
-    Assert.assertEquals(object, actualRequest.getObject());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getObjectExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockStorage.addException(exception);
-
-    try {
-      String bucket = "bucket-1378203158";
-      String object = "object-1023368385";
-      client.getObject(bucket, object);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getObjectTest2() throws Exception {
-    Object expectedResponse =
-        Object.newBuilder()
-            .setName("name3373707")
-            .setBucket(BucketName.of("[PROJECT]", "[BUCKET]").toString())
-            .setGeneration(305703192)
-            .setMetageneration(1048558813)
-            .setStorageClass("storageClass871353277")
-            .setSize(3530753)
-            .setContentEncoding("contentEncoding-160088852")
-            .setContentDisposition("contentDisposition1034341758")
-            .setCacheControl("cacheControl-1336592517")
-            .addAllAcl(new ArrayList<ObjectAccessControl>())
-            .setContentLanguage("contentLanguage810066673")
-            .setDeleteTime(Timestamp.newBuilder().build())
-            .setContentType("contentType-389131437")
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setComponentCount(-485073075)
-            .setChecksums(ObjectChecksums.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .setKmsKey(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
-            .setUpdateStorageClassTime(Timestamp.newBuilder().build())
-            .setTemporaryHold(true)
-            .setRetentionExpireTime(Timestamp.newBuilder().build())
-            .putAllMetadata(new HashMap<String, String>())
-            .setEventBasedHold(true)
-            .setOwner(Owner.newBuilder().build())
-            .setCustomerEncryption(Object.CustomerEncryption.newBuilder().build())
-            .setCustomTime(Timestamp.newBuilder().build())
-            .build();
-    mockStorage.addResponse(expectedResponse);
-
-    String bucket = "bucket-1378203158";
-    String object = "object-1023368385";
-    long generation = 305703192;
-
-    Object actualResponse = client.getObject(bucket, object, generation);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockStorage.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetObjectRequest actualRequest = ((GetObjectRequest) actualRequests.get(0));
-
-    Assert.assertEquals(bucket, actualRequest.getBucket());
-    Assert.assertEquals(object, actualRequest.getObject());
-    Assert.assertEquals(generation, actualRequest.getGeneration());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getObjectExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockStorage.addException(exception);
-
-    try {
-      String bucket = "bucket-1378203158";
-      String object = "object-1023368385";
-      long generation = 305703192;
-      client.getObject(bucket, object, generation);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
   }
 
   @Test

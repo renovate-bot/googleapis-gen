@@ -10,11 +10,6 @@
         "grpc": {
           "libraryClient": "StorageClient",
           "rpcs": {
-            "GetObject": {
-              "methods": [
-                "getObject"
-              ]
-            },
             "StartResumableWrite": {
               "methods": [
                 "startResumableWrite"
@@ -40,11 +35,6 @@
         "grpc-fallback": {
           "libraryClient": "StorageClient",
           "rpcs": {
-            "GetObject": {
-              "methods": [
-                "getObject"
-              ]
-            },
             "StartResumableWrite": {
               "methods": [
                 "startResumableWrite"

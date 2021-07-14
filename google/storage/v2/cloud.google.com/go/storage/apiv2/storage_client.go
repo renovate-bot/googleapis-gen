@@ -35,7 +35,6 @@ var newClientHook clientHook
 
 // CallOptions contains the retry settings for each method of Client.
 type CallOptions struct {
-	GetObject           []gax.CallOption
 	ReadObject          []gax.CallOption
 	WriteObject         []gax.CallOption
 	StartResumableWrite []gax.CallOption
@@ -57,18 +56,6 @@ func defaultGRPCClientOptions() []option.ClientOption {
 
 func defaultCallOptions() *CallOptions {
 	return &CallOptions{
-		GetObject: []gax.CallOption{
-			gax.WithRetry(func() gax.Retryer {
-				return gax.OnCodes([]codes.Code{
-					codes.DeadlineExceeded,
-					codes.Unavailable,
-				}, gax.Backoff{
-					Initial:    1000 * time.Millisecond,
-					Max:        60000 * time.Millisecond,
-					Multiplier: 2.00,
-				})
-			}),
-		},
 		ReadObject: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -125,7 +112,6 @@ type internalClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
-	GetObject(context.Context, *storagepb.GetObjectRequest, ...gax.CallOption) (*storagepb.Object, error)
 	ReadObject(context.Context, *storagepb.ReadObjectRequest, ...gax.CallOption) (storagepb.Storage_ReadObjectClient, error)
 	WriteObject(context.Context, ...gax.CallOption) (storagepb.Storage_WriteObjectClient, error)
 	StartResumableWrite(context.Context, *storagepb.StartResumableWriteRequest, ...gax.CallOption) (*storagepb.StartResumableWriteResponse, error)
@@ -164,11 +150,6 @@ func (c *Client) setGoogleClientInfo(keyval ...string) {
 // Deprecated.
 func (c *Client) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
-}
-
-// GetObject retrieves an object’s metadata.
-func (c *Client) GetObject(ctx context.Context, req *storagepb.GetObjectRequest, opts ...gax.CallOption) (*storagepb.Object, error) {
-	return c.internalClient.GetObject(ctx, req, opts...)
 }
 
 // ReadObject reads an object’s data.
@@ -306,26 +287,6 @@ func (c *gRPCClient) setGoogleClientInfo(keyval ...string) {
 // the client is no longer required.
 func (c *gRPCClient) Close() error {
 	return c.connPool.Close()
-}
-
-func (c *gRPCClient) GetObject(ctx context.Context, req *storagepb.GetObjectRequest, opts ...gax.CallOption) (*storagepb.Object, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
-	opts = append((*c.CallOptions).GetObject[0:len((*c.CallOptions).GetObject):len((*c.CallOptions).GetObject)], opts...)
-	var resp *storagepb.Object
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.client.GetObject(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return resp, nil
 }
 
 func (c *gRPCClient) ReadObject(ctx context.Context, req *storagepb.ReadObjectRequest, opts ...gax.CallOption) (storagepb.Storage_ReadObjectClient, error) {

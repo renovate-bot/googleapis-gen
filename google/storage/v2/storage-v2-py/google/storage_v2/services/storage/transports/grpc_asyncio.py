@@ -225,32 +225,6 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
         return self._grpc_channel
 
     @property
-    def get_object(self) -> Callable[
-            [storage.GetObjectRequest],
-            Awaitable[storage.Object]]:
-        r"""Return a callable for the get object method over gRPC.
-
-        Retrieves an object's metadata.
-
-        Returns:
-            Callable[[~.GetObjectRequest],
-                    Awaitable[~.Object]]:
-                A function that, when called, will call the underlying RPC
-                on the server.
-        """
-        # Generate a "stub function" on-the-fly which will actually make
-        # the request.
-        # gRPC handles serialization and deserialization, so we just need
-        # to pass in the functions for each.
-        if 'get_object' not in self._stubs:
-            self._stubs['get_object'] = self.grpc_channel.unary_unary(
-                '/google.storage.v2.Storage/GetObject',
-                request_serializer=storage.GetObjectRequest.serialize,
-                response_deserializer=storage.Object.deserialize,
-            )
-        return self._stubs['get_object']
-
-    @property
     def read_object(self) -> Callable[
             [storage.ReadObjectRequest],
             Awaitable[storage.ReadObjectResponse]]:

@@ -20,8 +20,6 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.storage.v2.GetObjectRequest;
-import com.google.storage.v2.Object;
 import com.google.storage.v2.QueryWriteStatusRequest;
 import com.google.storage.v2.QueryWriteStatusResponse;
 import com.google.storage.v2.ReadObjectRequest;
@@ -40,10 +38,6 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class StorageStub implements BackgroundResource {
-
-  public UnaryCallable<GetObjectRequest, Object> getObjectCallable() {
-    throw new UnsupportedOperationException("Not implemented: getObjectCallable()");
-  }
 
   public ServerStreamingCallable<ReadObjectRequest, ReadObjectResponse> readObjectCallable() {
     throw new UnsupportedOperationException("Not implemented: readObjectCallable()");

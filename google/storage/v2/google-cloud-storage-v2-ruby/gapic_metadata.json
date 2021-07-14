@@ -10,11 +10,6 @@
         "grpc": {
           "libraryClient": "::Google::Storage::V2::Storage::Client",
           "rpcs": {
-            "GetObject": {
-              "methods": [
-                "get_object"
-              ]
-            },
             "ReadObject": {
               "methods": [
                 "read_object"

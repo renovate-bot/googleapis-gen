@@ -33,21 +33,6 @@ class StorageGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Retrieves an object's metadata.
-     * @param \Google\Storage\V2\GetObjectRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function GetObject(\Google\Storage\V2\GetObjectRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.storage.v2.Storage/GetObject',
-        $argument,
-        ['\Google\Storage\V2\Object', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Reads an object's data.
      * @param \Google\Storage\V2\ReadObjectRequest $argument input argument
      * @param array $metadata metadata

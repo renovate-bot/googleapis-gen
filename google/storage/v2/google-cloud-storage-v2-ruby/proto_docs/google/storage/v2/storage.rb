@@ -88,53 +88,6 @@ module Google
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # Request message for GetObject.
-      # @!attribute [rw] bucket
-      #   @return [::String]
-      #     Required. Name of the bucket in which the object resides.
-      # @!attribute [rw] object
-      #   @return [::String]
-      #     Required. Name of the object.
-      # @!attribute [rw] generation
-      #   @return [::Integer]
-      #     If present, selects a specific revision of this object (as opposed to the
-      #     latest version, the default).
-      # @!attribute [rw] if_generation_match
-      #   @return [::Integer]
-      #     Makes the operation conditional on whether the object's current generation
-      #     matches the given value. Setting to 0 makes the operation succeed only if
-      #     there are no live versions of the object.
-      # @!attribute [rw] if_generation_not_match
-      #   @return [::Integer]
-      #     Makes the operation conditional on whether the object's current generation
-      #     does not match the given value. If no live object exists, the precondition
-      #     fails. Setting to 0 makes the operation succeed only if there is a live
-      #     version of the object.
-      # @!attribute [rw] if_metageneration_match
-      #   @return [::Integer]
-      #     Makes the operation conditional on whether the object's current
-      #     metageneration matches the given value.
-      # @!attribute [rw] if_metageneration_not_match
-      #   @return [::Integer]
-      #     Makes the operation conditional on whether the object's current
-      #     metageneration does not match the given value.
-      # @!attribute [rw] common_object_request_params
-      #   @return [::Google::Storage::V2::CommonObjectRequestParams]
-      #     A set of parameters common to Storage API requests concerning an object.
-      # @!attribute [rw] common_request_params
-      #   @return [::Google::Storage::V2::CommonRequestParams]
-      #     A set of parameters common to all Storage API requests.
-      # @!attribute [rw] read_mask
-      #   @return [::Google::Protobuf::FieldMask]
-      #     Mask specifying which fields to read.
-      #     If no mask is specified, will default to all fields except metadata.acl and
-      #     metadata.owner.
-      #     * may be used to mean "all fields".
-      class GetObjectRequest
-        include ::Google::Protobuf::MessageExts
-        extend ::Google::Protobuf::MessageExts::ClassMethods
-      end
-
       # Response message for GetObject.
       # @!attribute [rw] checksummed_data
       #   @return [::Google::Storage::V2::ChecksummedData]

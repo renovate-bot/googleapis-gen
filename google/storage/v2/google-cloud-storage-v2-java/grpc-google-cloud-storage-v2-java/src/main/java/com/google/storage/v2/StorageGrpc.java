@@ -17,37 +17,6 @@ public final class StorageGrpc {
   public static final String SERVICE_NAME = "google.storage.v2.Storage";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.google.storage.v2.GetObjectRequest,
-      com.google.storage.v2.Object> getGetObjectMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetObject",
-      requestType = com.google.storage.v2.GetObjectRequest.class,
-      responseType = com.google.storage.v2.Object.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.storage.v2.GetObjectRequest,
-      com.google.storage.v2.Object> getGetObjectMethod() {
-    io.grpc.MethodDescriptor<com.google.storage.v2.GetObjectRequest, com.google.storage.v2.Object> getGetObjectMethod;
-    if ((getGetObjectMethod = StorageGrpc.getGetObjectMethod) == null) {
-      synchronized (StorageGrpc.class) {
-        if ((getGetObjectMethod = StorageGrpc.getGetObjectMethod) == null) {
-          StorageGrpc.getGetObjectMethod = getGetObjectMethod =
-              io.grpc.MethodDescriptor.<com.google.storage.v2.GetObjectRequest, com.google.storage.v2.Object>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetObject"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.storage.v2.GetObjectRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.storage.v2.Object.getDefaultInstance()))
-              .setSchemaDescriptor(new StorageMethodDescriptorSupplier("GetObject"))
-              .build();
-        }
-      }
-    }
-    return getGetObjectMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.google.storage.v2.ReadObjectRequest,
       com.google.storage.v2.ReadObjectResponse> getReadObjectMethod;
 
@@ -225,16 +194,6 @@ public final class StorageGrpc {
 
     /**
      * <pre>
-     * Retrieves an object's metadata.
-     * </pre>
-     */
-    public void getObject(com.google.storage.v2.GetObjectRequest request,
-        io.grpc.stub.StreamObserver<com.google.storage.v2.Object> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetObjectMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
      * Reads an object's data.
      * </pre>
      */
@@ -308,13 +267,6 @@ public final class StorageGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getGetObjectMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.google.storage.v2.GetObjectRequest,
-                com.google.storage.v2.Object>(
-                  this, METHODID_GET_OBJECT)))
-          .addMethod(
             getReadObjectMethod(),
             io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
@@ -361,17 +313,6 @@ public final class StorageGrpc {
     protected StorageStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new StorageStub(channel, callOptions);
-    }
-
-    /**
-     * <pre>
-     * Retrieves an object's metadata.
-     * </pre>
-     */
-    public void getObject(com.google.storage.v2.GetObjectRequest request,
-        io.grpc.stub.StreamObserver<com.google.storage.v2.Object> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetObjectMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -470,16 +411,6 @@ public final class StorageGrpc {
 
     /**
      * <pre>
-     * Retrieves an object's metadata.
-     * </pre>
-     */
-    public com.google.storage.v2.Object getObject(com.google.storage.v2.GetObjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetObjectMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
      * Reads an object's data.
      * </pre>
      */
@@ -541,17 +472,6 @@ public final class StorageGrpc {
 
     /**
      * <pre>
-     * Retrieves an object's metadata.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v2.Object> getObject(
-        com.google.storage.v2.GetObjectRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetObjectMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
      * Starts a resumable write. How long the write operation remains valid, and
      * what happens when the write operation becomes invalid, are
      * service-dependent.
@@ -585,11 +505,10 @@ public final class StorageGrpc {
     }
   }
 
-  private static final int METHODID_GET_OBJECT = 0;
-  private static final int METHODID_READ_OBJECT = 1;
-  private static final int METHODID_START_RESUMABLE_WRITE = 2;
-  private static final int METHODID_QUERY_WRITE_STATUS = 3;
-  private static final int METHODID_WRITE_OBJECT = 4;
+  private static final int METHODID_READ_OBJECT = 0;
+  private static final int METHODID_START_RESUMABLE_WRITE = 1;
+  private static final int METHODID_QUERY_WRITE_STATUS = 2;
+  private static final int METHODID_WRITE_OBJECT = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -608,10 +527,6 @@ public final class StorageGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_GET_OBJECT:
-          serviceImpl.getObject((com.google.storage.v2.GetObjectRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.storage.v2.Object>) responseObserver);
-          break;
         case METHODID_READ_OBJECT:
           serviceImpl.readObject((com.google.storage.v2.ReadObjectRequest) request,
               (io.grpc.stub.StreamObserver<com.google.storage.v2.ReadObjectResponse>) responseObserver);
@@ -688,7 +603,6 @@ public final class StorageGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new StorageFileDescriptorSupplier())
-              .addMethod(getGetObjectMethod())
               .addMethod(getReadObjectMethod())
               .addMethod(getWriteObjectMethod())
               .addMethod(getStartResumableWriteMethod())

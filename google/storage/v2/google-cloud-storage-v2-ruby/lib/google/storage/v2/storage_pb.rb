@@ -27,18 +27,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :common_request_params, :message, 11, "google.storage.v2.CommonRequestParams"
       proto3_optional :read_mask, :message, 12, "google.protobuf.FieldMask"
     end
-    add_message "google.storage.v2.GetObjectRequest" do
-      optional :bucket, :string, 1
-      optional :object, :string, 2
-      optional :generation, :int64, 3
-      proto3_optional :if_generation_match, :int64, 4
-      proto3_optional :if_generation_not_match, :int64, 5
-      proto3_optional :if_metageneration_match, :int64, 6
-      proto3_optional :if_metageneration_not_match, :int64, 7
-      optional :common_object_request_params, :message, 8, "google.storage.v2.CommonObjectRequestParams"
-      optional :common_request_params, :message, 9, "google.storage.v2.CommonRequestParams"
-      proto3_optional :read_mask, :message, 10, "google.protobuf.FieldMask"
-    end
     add_message "google.storage.v2.ReadObjectResponse" do
       optional :checksummed_data, :message, 1, "google.storage.v2.ChecksummedData"
       optional :object_checksums, :message, 2, "google.storage.v2.ObjectChecksums"
@@ -299,7 +287,6 @@ module Google
   module Storage
     module V2
       ReadObjectRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.storage.v2.ReadObjectRequest").msgclass
-      GetObjectRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.storage.v2.GetObjectRequest").msgclass
       ReadObjectResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.storage.v2.ReadObjectResponse").msgclass
       WriteObjectSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.storage.v2.WriteObjectSpec").msgclass
       WriteObjectRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.storage.v2.WriteObjectRequest").msgclass

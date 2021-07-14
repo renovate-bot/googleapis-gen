@@ -39,7 +39,6 @@ def partition(
 class storageCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'get_object': ('bucket', 'object_', 'generation', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'common_object_request_params', 'common_request_params', 'read_mask', ),
           'query_write_status': ('upload_id', 'common_object_request_params', 'common_request_params', ),
           'read_object': ('bucket', 'object_', 'generation', 'read_offset', 'read_limit', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'common_object_request_params', 'common_request_params', 'read_mask', ),
           'start_resumable_write': ('write_object_spec', 'common_object_request_params', 'common_request_params', ),

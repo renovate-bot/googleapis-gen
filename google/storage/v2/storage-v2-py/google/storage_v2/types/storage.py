@@ -24,7 +24,6 @@ __protobuf__ = proto.module(
     manifest={
         'PredefinedObjectAcl',
         'ReadObjectRequest',
-        'GetObjectRequest',
         'ReadObjectResponse',
         'WriteObjectSpec',
         'WriteObjectRequest',
@@ -184,103 +183,6 @@ class ReadObjectRequest(proto.Message):
     read_mask = proto.Field(
         proto.MESSAGE,
         number=12,
-        optional=True,
-        message=field_mask_pb2.FieldMask,
-    )
-
-
-class GetObjectRequest(proto.Message):
-    r"""Request message for GetObject.
-    Attributes:
-        bucket (str):
-            Required. Name of the bucket in which the
-            object resides.
-        object_ (str):
-            Required. Name of the object.
-        generation (int):
-            If present, selects a specific revision of
-            this object (as opposed to the latest version,
-            the default).
-        if_generation_match (int):
-            Makes the operation conditional on whether
-            the object's current generation matches the
-            given value. Setting to 0 makes the operation
-            succeed only if there are no live versions of
-            the object.
-        if_generation_not_match (int):
-            Makes the operation conditional on whether
-            the object's current generation does not match
-            the given value. If no live object exists, the
-            precondition fails. Setting to 0 makes the
-            operation succeed only if there is a live
-            version of the object.
-        if_metageneration_match (int):
-            Makes the operation conditional on whether
-            the object's current metageneration matches the
-            given value.
-        if_metageneration_not_match (int):
-            Makes the operation conditional on whether
-            the object's current metageneration does not
-            match the given value.
-        common_object_request_params (google.storage_v2.types.CommonObjectRequestParams):
-            A set of parameters common to Storage API
-            requests concerning an object.
-        common_request_params (google.storage_v2.types.CommonRequestParams):
-            A set of parameters common to all Storage API
-            requests.
-        read_mask (google.protobuf.field_mask_pb2.FieldMask):
-            Mask specifying which fields to read. If no mask is
-            specified, will default to all fields except metadata.acl
-            and metadata.owner.
-
-            -  may be used to mean "all fields".
-    """
-
-    bucket = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    object_ = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    generation = proto.Field(
-        proto.INT64,
-        number=3,
-    )
-    if_generation_match = proto.Field(
-        proto.INT64,
-        number=4,
-        optional=True,
-    )
-    if_generation_not_match = proto.Field(
-        proto.INT64,
-        number=5,
-        optional=True,
-    )
-    if_metageneration_match = proto.Field(
-        proto.INT64,
-        number=6,
-        optional=True,
-    )
-    if_metageneration_not_match = proto.Field(
-        proto.INT64,
-        number=7,
-        optional=True,
-    )
-    common_object_request_params = proto.Field(
-        proto.MESSAGE,
-        number=8,
-        message='CommonObjectRequestParams',
-    )
-    common_request_params = proto.Field(
-        proto.MESSAGE,
-        number=9,
-        message='CommonRequestParams',
-    )
-    read_mask = proto.Field(
-        proto.MESSAGE,
-        number=10,
         optional=True,
         message=field_mask_pb2.FieldMask,
     )

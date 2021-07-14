@@ -202,7 +202,7 @@ export class StorageClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const storageStubMethods =
-        ['getObject', 'readObject', 'writeObject', 'startResumableWrite', 'queryWriteStatus'];
+        ['readObject', 'writeObject', 'startResumableWrite', 'queryWriteStatus'];
     for (const methodName of storageStubMethods) {
       const callPromise = this.storageStub.then(
         stub => (...args: Array<{}>) => {
@@ -289,99 +289,6 @@ export class StorageClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getObject(
-      request?: protos.google.storage.v2.IGetObjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v2.IObject,
-        protos.google.storage.v2.IGetObjectRequest|undefined, {}|undefined
-      ]>;
-  getObject(
-      request: protos.google.storage.v2.IGetObjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v2.IObject,
-          protos.google.storage.v2.IGetObjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  getObject(
-      request: protos.google.storage.v2.IGetObjectRequest,
-      callback: Callback<
-          protos.google.storage.v2.IObject,
-          protos.google.storage.v2.IGetObjectRequest|null|undefined,
-          {}|null|undefined>): void;
-/**
- * Retrieves an object's metadata.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.bucket
- *   Required. Name of the bucket in which the object resides.
- * @param {string} request.object
- *   Required. Name of the object.
- * @param {number} request.generation
- *   If present, selects a specific revision of this object (as opposed to the
- *   latest version, the default).
- * @param {number} request.ifGenerationMatch
- *   Makes the operation conditional on whether the object's current generation
- *   matches the given value. Setting to 0 makes the operation succeed only if
- *   there are no live versions of the object.
- * @param {number} request.ifGenerationNotMatch
- *   Makes the operation conditional on whether the object's current generation
- *   does not match the given value. If no live object exists, the precondition
- *   fails. Setting to 0 makes the operation succeed only if there is a live
- *   version of the object.
- * @param {number} request.ifMetagenerationMatch
- *   Makes the operation conditional on whether the object's current
- *   metageneration matches the given value.
- * @param {number} request.ifMetagenerationNotMatch
- *   Makes the operation conditional on whether the object's current
- *   metageneration does not match the given value.
- * @param {google.storage.v2.CommonObjectRequestParams} request.commonObjectRequestParams
- *   A set of parameters common to Storage API requests concerning an object.
- * @param {google.storage.v2.CommonRequestParams} request.commonRequestParams
- *   A set of parameters common to all Storage API requests.
- * @param {google.protobuf.FieldMask} request.readMask
- *   Mask specifying which fields to read.
- *   If no mask is specified, will default to all fields except metadata.acl and
- *   metadata.owner.
- *   * may be used to mean "all fields".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Object]{@link google.storage.v2.Object}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getObject(request);
- */
-  getObject(
-      request?: protos.google.storage.v2.IGetObjectRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.storage.v2.IObject,
-          protos.google.storage.v2.IGetObjectRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.storage.v2.IObject,
-          protos.google.storage.v2.IGetObjectRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.storage.v2.IObject,
-        protos.google.storage.v2.IGetObjectRequest|undefined, {}|undefined
-      ]>|void {
-    request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
-    options = options || {};
-    this.initialize();
-    return this.innerApiCalls.getObject(request, options, callback);
-  }
   startResumableWrite(
       request?: protos.google.storage.v2.IStartResumableWriteRequest,
       options?: CallOptions):

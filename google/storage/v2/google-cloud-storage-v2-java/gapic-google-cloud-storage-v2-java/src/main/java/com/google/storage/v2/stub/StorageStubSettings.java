@@ -37,8 +37,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.storage.v2.GetObjectRequest;
-import com.google.storage.v2.Object;
 import com.google.storage.v2.QueryWriteStatusRequest;
 import com.google.storage.v2.QueryWriteStatusResponse;
 import com.google.storage.v2.ReadObjectRequest;
@@ -67,15 +65,15 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getObject to 30 seconds:
+ * <p>For example, to set the total timeout of startResumableWrite to 30 seconds:
  *
  * <pre>{@code
  * StorageStubSettings.Builder storageSettingsBuilder = StorageStubSettings.newBuilder();
  * storageSettingsBuilder
- *     .getObjectSettings()
+ *     .startResumableWriteSettings()
  *     .setRetrySettings(
  *         storageSettingsBuilder
- *             .getObjectSettings()
+ *             .startResumableWriteSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -95,7 +93,6 @@ public class StorageStubSettings extends StubSettings<StorageStubSettings> {
           .add("https://www.googleapis.com/auth/devstorage.read_write")
           .build();
 
-  private final UnaryCallSettings<GetObjectRequest, Object> getObjectSettings;
   private final ServerStreamingCallSettings<ReadObjectRequest, ReadObjectResponse>
       readObjectSettings;
   private final StreamingCallSettings<WriteObjectRequest, WriteObjectResponse> writeObjectSettings;
@@ -103,11 +100,6 @@ public class StorageStubSettings extends StubSettings<StorageStubSettings> {
       startResumableWriteSettings;
   private final UnaryCallSettings<QueryWriteStatusRequest, QueryWriteStatusResponse>
       queryWriteStatusSettings;
-
-  /** Returns the object with the settings used for calls to getObject. */
-  public UnaryCallSettings<GetObjectRequest, Object> getObjectSettings() {
-    return getObjectSettings;
-  }
 
   /** Returns the object with the settings used for calls to readObject. */
   public ServerStreamingCallSettings<ReadObjectRequest, ReadObjectResponse> readObjectSettings() {
@@ -204,7 +196,6 @@ public class StorageStubSettings extends StubSettings<StorageStubSettings> {
   protected StorageStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    getObjectSettings = settingsBuilder.getObjectSettings().build();
     readObjectSettings = settingsBuilder.readObjectSettings().build();
     writeObjectSettings = settingsBuilder.writeObjectSettings().build();
     startResumableWriteSettings = settingsBuilder.startResumableWriteSettings().build();
@@ -214,7 +205,6 @@ public class StorageStubSettings extends StubSettings<StorageStubSettings> {
   /** Builder for StorageStubSettings. */
   public static class Builder extends StubSettings.Builder<StorageStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-    private final UnaryCallSettings.Builder<GetObjectRequest, Object> getObjectSettings;
     private final ServerStreamingCallSettings.Builder<ReadObjectRequest, ReadObjectResponse>
         readObjectSettings;
     private final StreamingCallSettings.Builder<WriteObjectRequest, WriteObjectResponse>
@@ -263,7 +253,6 @@ public class StorageStubSettings extends StubSettings<StorageStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      getObjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       readObjectSettings = ServerStreamingCallSettings.newBuilder();
       writeObjectSettings = StreamingCallSettings.newBuilder();
       startResumableWriteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -271,14 +260,13 @@ public class StorageStubSettings extends StubSettings<StorageStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getObjectSettings, startResumableWriteSettings, queryWriteStatusSettings);
+              startResumableWriteSettings, queryWriteStatusSettings);
       initDefaults(this);
     }
 
     protected Builder(StorageStubSettings settings) {
       super(settings);
 
-      getObjectSettings = settings.getObjectSettings.toBuilder();
       readObjectSettings = settings.readObjectSettings.toBuilder();
       writeObjectSettings = settings.writeObjectSettings.toBuilder();
       startResumableWriteSettings = settings.startResumableWriteSettings.toBuilder();
@@ -286,7 +274,7 @@ public class StorageStubSettings extends StubSettings<StorageStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getObjectSettings, startResumableWriteSettings, queryWriteStatusSettings);
+              startResumableWriteSettings, queryWriteStatusSettings);
     }
 
     private static Builder createDefault() {
@@ -303,11 +291,6 @@ public class StorageStubSettings extends StubSettings<StorageStubSettings> {
     }
 
     private static Builder initDefaults(Builder builder) {
-      builder
-          .getObjectSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
       builder
           .readObjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
@@ -340,11 +323,6 @@ public class StorageStubSettings extends StubSettings<StorageStubSettings> {
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to getObject. */
-    public UnaryCallSettings.Builder<GetObjectRequest, Object> getObjectSettings() {
-      return getObjectSettings;
     }
 
     /** Returns the builder for the settings used for calls to readObject. */

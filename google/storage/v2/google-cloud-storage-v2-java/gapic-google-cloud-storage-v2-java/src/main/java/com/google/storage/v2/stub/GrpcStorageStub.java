@@ -25,8 +25,6 @@ import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.stub.GrpcOperationsStub;
-import com.google.storage.v2.GetObjectRequest;
-import com.google.storage.v2.Object;
 import com.google.storage.v2.QueryWriteStatusRequest;
 import com.google.storage.v2.QueryWriteStatusResponse;
 import com.google.storage.v2.ReadObjectRequest;
@@ -49,14 +47,6 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class GrpcStorageStub extends StorageStub {
-  private static final MethodDescriptor<GetObjectRequest, Object> getObjectMethodDescriptor =
-      MethodDescriptor.<GetObjectRequest, Object>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.storage.v2.Storage/GetObject")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetObjectRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Object.getDefaultInstance()))
-          .build();
-
   private static final MethodDescriptor<ReadObjectRequest, ReadObjectResponse>
       readObjectMethodDescriptor =
           MethodDescriptor.<ReadObjectRequest, ReadObjectResponse>newBuilder()
@@ -98,7 +88,6 @@ public class GrpcStorageStub extends StorageStub {
                   ProtoUtils.marshaller(QueryWriteStatusResponse.getDefaultInstance()))
               .build();
 
-  private final UnaryCallable<GetObjectRequest, Object> getObjectCallable;
   private final ServerStreamingCallable<ReadObjectRequest, ReadObjectResponse> readObjectCallable;
   private final ClientStreamingCallable<WriteObjectRequest, WriteObjectResponse>
       writeObjectCallable;
@@ -146,10 +135,6 @@ public class GrpcStorageStub extends StorageStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<GetObjectRequest, Object> getObjectTransportSettings =
-        GrpcCallSettings.<GetObjectRequest, Object>newBuilder()
-            .setMethodDescriptor(getObjectMethodDescriptor)
-            .build();
     GrpcCallSettings<ReadObjectRequest, ReadObjectResponse> readObjectTransportSettings =
         GrpcCallSettings.<ReadObjectRequest, ReadObjectResponse>newBuilder()
             .setMethodDescriptor(readObjectMethodDescriptor)
@@ -169,9 +154,6 @@ public class GrpcStorageStub extends StorageStub {
                 .setMethodDescriptor(queryWriteStatusMethodDescriptor)
                 .build();
 
-    this.getObjectCallable =
-        callableFactory.createUnaryCallable(
-            getObjectTransportSettings, settings.getObjectSettings(), clientContext);
     this.readObjectCallable =
         callableFactory.createServerStreamingCallable(
             readObjectTransportSettings, settings.readObjectSettings(), clientContext);
@@ -193,11 +175,6 @@ public class GrpcStorageStub extends StorageStub {
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  @Override
-  public UnaryCallable<GetObjectRequest, Object> getObjectCallable() {
-    return getObjectCallable;
   }
 
   @Override

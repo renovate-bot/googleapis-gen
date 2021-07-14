@@ -25,9 +25,13 @@
  *
  * <pre>{@code
  * try (StorageClient storageClient = StorageClient.create()) {
- *   String bucket = "bucket-1378203158";
- *   String object = "object-1023368385";
- *   Object response = storageClient.getObject(bucket, object);
+ *   StartResumableWriteRequest request =
+ *       StartResumableWriteRequest.newBuilder()
+ *           .setWriteObjectSpec(WriteObjectSpec.newBuilder().build())
+ *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+ *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+ *           .build();
+ *   StartResumableWriteResponse response = storageClient.startResumableWrite(request);
  * }
  * }</pre>
  */

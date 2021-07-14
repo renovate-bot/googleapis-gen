@@ -38,8 +38,6 @@ use Google\Auth\FetchAuthTokenInterface;
 use Google\Protobuf\FieldMask;
 use Google\Storage\V2\CommonObjectRequestParams;
 use Google\Storage\V2\CommonRequestParams;
-use Google\Storage\V2\GetObjectRequest;
-use Google\Storage\V2\Object;
 use Google\Storage\V2\QueryWriteStatusRequest;
 use Google\Storage\V2\QueryWriteStatusResponse;
 use Google\Storage\V2\ReadObjectRequest;
@@ -59,9 +57,8 @@ use Google\Storage\V2\WriteObjectSpec;
  * ```
  * $storageClient = new StorageClient();
  * try {
- *     $bucket = 'bucket';
- *     $object = 'object';
- *     $response = $storageClient->getObject($bucket, $object);
+ *     $uploadId = 'upload_id';
+ *     $response = $storageClient->queryWriteStatus($uploadId);
  * } finally {
  *     $storageClient->close();
  * }
@@ -261,104 +258,6 @@ class StorageGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
-    }
-
-    /**
-     * Retrieves an object's metadata.
-     *
-     * Sample code:
-     * ```
-     * $storageClient = new StorageClient();
-     * try {
-     *     $bucket = 'bucket';
-     *     $object = 'object';
-     *     $response = $storageClient->getObject($bucket, $object);
-     * } finally {
-     *     $storageClient->close();
-     * }
-     * ```
-     *
-     * @param string $bucket       Required. Name of the bucket in which the object resides.
-     * @param string $object       Required. Name of the object.
-     * @param array  $optionalArgs {
-     *     Optional.
-     *
-     *     @type int $generation
-     *           If present, selects a specific revision of this object (as opposed to the
-     *           latest version, the default).
-     *     @type int $ifGenerationMatch
-     *           Makes the operation conditional on whether the object's current generation
-     *           matches the given value. Setting to 0 makes the operation succeed only if
-     *           there are no live versions of the object.
-     *     @type int $ifGenerationNotMatch
-     *           Makes the operation conditional on whether the object's current generation
-     *           does not match the given value. If no live object exists, the precondition
-     *           fails. Setting to 0 makes the operation succeed only if there is a live
-     *           version of the object.
-     *     @type int $ifMetagenerationMatch
-     *           Makes the operation conditional on whether the object's current
-     *           metageneration matches the given value.
-     *     @type int $ifMetagenerationNotMatch
-     *           Makes the operation conditional on whether the object's current
-     *           metageneration does not match the given value.
-     *     @type CommonObjectRequestParams $commonObjectRequestParams
-     *           A set of parameters common to Storage API requests concerning an object.
-     *     @type CommonRequestParams $commonRequestParams
-     *           A set of parameters common to all Storage API requests.
-     *     @type FieldMask $readMask
-     *           Mask specifying which fields to read.
-     *           If no mask is specified, will default to all fields except metadata.acl and
-     *           metadata.owner.
-     *           * may be used to mean "all fields".
-     *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Storage\V2\Object
-     *
-     * @throws ApiException if the remote call fails
-     */
-    public function getObject($bucket, $object, array $optionalArgs = [])
-    {
-        $request = new GetObjectRequest();
-        $request->setBucket($bucket);
-        $request->setObject($object);
-        if (isset($optionalArgs['generation'])) {
-            $request->setGeneration($optionalArgs['generation']);
-        }
-
-        if (isset($optionalArgs['ifGenerationMatch'])) {
-            $request->setIfGenerationMatch($optionalArgs['ifGenerationMatch']);
-        }
-
-        if (isset($optionalArgs['ifGenerationNotMatch'])) {
-            $request->setIfGenerationNotMatch($optionalArgs['ifGenerationNotMatch']);
-        }
-
-        if (isset($optionalArgs['ifMetagenerationMatch'])) {
-            $request->setIfMetagenerationMatch($optionalArgs['ifMetagenerationMatch']);
-        }
-
-        if (isset($optionalArgs['ifMetagenerationNotMatch'])) {
-            $request->setIfMetagenerationNotMatch($optionalArgs['ifMetagenerationNotMatch']);
-        }
-
-        if (isset($optionalArgs['commonObjectRequestParams'])) {
-            $request->setCommonObjectRequestParams($optionalArgs['commonObjectRequestParams']);
-        }
-
-        if (isset($optionalArgs['commonRequestParams'])) {
-            $request->setCommonRequestParams($optionalArgs['commonRequestParams']);
-        }
-
-        if (isset($optionalArgs['readMask'])) {
-            $request->setReadMask($optionalArgs['readMask']);
-        }
-
-        return $this->startCall('GetObject', Object::class, $optionalArgs, $request)->wait();
     }
 
     /**

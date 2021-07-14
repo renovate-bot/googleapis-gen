@@ -35,25 +35,6 @@ func ExampleNewClient() {
 	_ = c
 }
 
-func ExampleClient_GetObject() {
-	ctx := context.Background()
-	c, err := storage.NewClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-	defer c.Close()
-
-	req := &storagepb.GetObjectRequest{
-		// TODO: Fill request struct fields.
-	}
-	resp, err := c.GetObject(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
-	}
-	// TODO: Use resp.
-	_ = resp
-}
-
 func ExampleClient_StartResumableWrite() {
 	ctx := context.Background()
 	c, err := storage.NewClient(ctx)

@@ -144,66 +144,6 @@ describe('v2.StorageClient', () => {
         assert.strictEqual(result, fakeProjectId);
     });
 
-    describe('getObject', () => {
-        it('invokes getObject without error', async () => {
-            const client = new storageModule.v2.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.storage.v2.GetObjectRequest());
-            const expectedOptions = {};
-            const expectedResponse = generateSampleMessage(new protos.google.storage.v2.Object());
-            client.innerApiCalls.getObject = stubSimpleCall(expectedResponse);
-            const [response] = await client.getObject(request);
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.getObject as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-
-        it('invokes getObject without error using callback', async () => {
-            const client = new storageModule.v2.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.storage.v2.GetObjectRequest());
-            const expectedOptions = {};
-            const expectedResponse = generateSampleMessage(new protos.google.storage.v2.Object());
-            client.innerApiCalls.getObject = stubSimpleCallWithCallback(expectedResponse);
-            const promise = new Promise((resolve, reject) => {
-                 client.getObject(
-                    request,
-                    (err?: Error|null, result?: protos.google.storage.v2.IObject|null) => {
-                        if (err) {
-                            reject(err);
-                        } else {
-                            resolve(result);
-                        }
-                    });
-            });
-            const response = await promise;
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.getObject as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
-        });
-
-        it('invokes getObject with error', async () => {
-            const client = new storageModule.v2.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.storage.v2.GetObjectRequest());
-            const expectedOptions = {};
-            const expectedError = new Error('expected');
-            client.innerApiCalls.getObject = stubSimpleCall(undefined, expectedError);
-            await assert.rejects(client.getObject(request), expectedError);
-            assert((client.innerApiCalls.getObject as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-    });
-
     describe('startResumableWrite', () => {
         it('invokes startResumableWrite without error', async () => {
             const client = new storageModule.v2.StorageClient({

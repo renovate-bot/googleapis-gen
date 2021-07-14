@@ -10,11 +10,6 @@
         "grpc":  {
           "libraryClient":  "Client",
           "rpcs":  {
-            "GetObject":  {
-              "methods":  [
-                "GetObject"
-              ]
-            },
             "QueryWriteStatus":  {
               "methods":  [
                 "QueryWriteStatus"

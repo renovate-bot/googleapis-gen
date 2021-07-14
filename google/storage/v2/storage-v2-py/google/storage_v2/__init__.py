@@ -23,7 +23,6 @@ from .types.storage import ChecksummedData
 from .types.storage import CommonObjectRequestParams
 from .types.storage import CommonRequestParams
 from .types.storage import ContentRange
-from .types.storage import GetObjectRequest
 from .types.storage import Object
 from .types.storage import ObjectAccessControl
 from .types.storage import ObjectChecksums
@@ -49,7 +48,6 @@ __all__ = (
 'CommonObjectRequestParams',
 'CommonRequestParams',
 'ContentRange',
-'GetObjectRequest',
 'Object',
 'ObjectAccessControl',
 'ObjectChecksums',
