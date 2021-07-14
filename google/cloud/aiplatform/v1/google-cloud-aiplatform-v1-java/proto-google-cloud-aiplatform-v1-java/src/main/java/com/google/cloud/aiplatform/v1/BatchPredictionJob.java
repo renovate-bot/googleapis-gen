@@ -1703,8 +1703,7 @@ private static final long serialVersionUID = 0L;
      * `errors_N.&lt;extension&gt;` files are created (N depends on total number
      * of failed predictions). These files contain the failed instances,
      * as per their schema, followed by an additional `error` field which as
-     * value has
-     * [`google.rpc.Status`](Status)
+     * value has [google.rpc.Status][google.rpc.Status]
      * containing only `code` and `message` fields.
      * </pre>
      *
@@ -1732,8 +1731,7 @@ private static final long serialVersionUID = 0L;
      * `errors_N.&lt;extension&gt;` files are created (N depends on total number
      * of failed predictions). These files contain the failed instances,
      * as per their schema, followed by an additional `error` field which as
-     * value has
-     * [`google.rpc.Status`](Status)
+     * value has [google.rpc.Status][google.rpc.Status]
      * containing only `code` and `message` fields.
      * </pre>
      *
@@ -1761,8 +1759,7 @@ private static final long serialVersionUID = 0L;
      * `errors_N.&lt;extension&gt;` files are created (N depends on total number
      * of failed predictions). These files contain the failed instances,
      * as per their schema, followed by an additional `error` field which as
-     * value has
-     * [`google.rpc.Status`](Status)
+     * value has [google.rpc.Status][google.rpc.Status]
      * containing only `code` and `message` fields.
      * </pre>
      *
@@ -1788,7 +1785,7 @@ private static final long serialVersionUID = 0L;
      * prediction schemata. The `errors` table contains rows for which the
      * prediction has failed, it has instance columns, as per the
      * instance schema, followed by a single "errors" column, which as values
-     * has [`google.rpc.Status`](Status)
+     * has [google.rpc.Status][google.rpc.Status]
      * represented as a STRUCT, and containing only `code` and `message`.
      * </pre>
      *
@@ -1814,7 +1811,7 @@ private static final long serialVersionUID = 0L;
      * prediction schemata. The `errors` table contains rows for which the
      * prediction has failed, it has instance columns, as per the
      * instance schema, followed by a single "errors" column, which as values
-     * has [`google.rpc.Status`](Status)
+     * has [google.rpc.Status][google.rpc.Status]
      * represented as a STRUCT, and containing only `code` and `message`.
      * </pre>
      *
@@ -1840,7 +1837,7 @@ private static final long serialVersionUID = 0L;
      * prediction schemata. The `errors` table contains rows for which the
      * prediction has failed, it has instance columns, as per the
      * instance schema, followed by a single "errors" column, which as values
-     * has [`google.rpc.Status`](Status)
+     * has [google.rpc.Status][google.rpc.Status]
      * represented as a STRUCT, and containing only `code` and `message`.
      * </pre>
      *
@@ -2054,8 +2051,7 @@ private static final long serialVersionUID = 0L;
      * `errors_N.&lt;extension&gt;` files are created (N depends on total number
      * of failed predictions). These files contain the failed instances,
      * as per their schema, followed by an additional `error` field which as
-     * value has
-     * [`google.rpc.Status`](Status)
+     * value has [google.rpc.Status][google.rpc.Status]
      * containing only `code` and `message` fields.
      * </pre>
      *
@@ -2086,8 +2082,7 @@ private static final long serialVersionUID = 0L;
      * `errors_N.&lt;extension&gt;` files are created (N depends on total number
      * of failed predictions). These files contain the failed instances,
      * as per their schema, followed by an additional `error` field which as
-     * value has
-     * [`google.rpc.Status`](Status)
+     * value has [google.rpc.Status][google.rpc.Status]
      * containing only `code` and `message` fields.
      * </pre>
      *
@@ -2121,8 +2116,7 @@ private static final long serialVersionUID = 0L;
      * `errors_N.&lt;extension&gt;` files are created (N depends on total number
      * of failed predictions). These files contain the failed instances,
      * as per their schema, followed by an additional `error` field which as
-     * value has
-     * [`google.rpc.Status`](Status)
+     * value has [google.rpc.Status][google.rpc.Status]
      * containing only `code` and `message` fields.
      * </pre>
      *
@@ -2155,7 +2149,7 @@ private static final long serialVersionUID = 0L;
      * prediction schemata. The `errors` table contains rows for which the
      * prediction has failed, it has instance columns, as per the
      * instance schema, followed by a single "errors" column, which as values
-     * has [`google.rpc.Status`](Status)
+     * has [google.rpc.Status][google.rpc.Status]
      * represented as a STRUCT, and containing only `code` and `message`.
      * </pre>
      *
@@ -2184,7 +2178,7 @@ private static final long serialVersionUID = 0L;
      * prediction schemata. The `errors` table contains rows for which the
      * prediction has failed, it has instance columns, as per the
      * instance schema, followed by a single "errors" column, which as values
-     * has [`google.rpc.Status`](Status)
+     * has [google.rpc.Status][google.rpc.Status]
      * represented as a STRUCT, and containing only `code` and `message`.
      * </pre>
      *
@@ -2216,7 +2210,7 @@ private static final long serialVersionUID = 0L;
      * prediction schemata. The `errors` table contains rows for which the
      * prediction has failed, it has instance columns, as per the
      * instance schema, followed by a single "errors" column, which as values
-     * has [`google.rpc.Status`](Status)
+     * has [google.rpc.Status][google.rpc.Status]
      * represented as a STRUCT, and containing only `code` and `message`.
      * </pre>
      *
@@ -2694,8 +2688,7 @@ private static final long serialVersionUID = 0L;
        * `errors_N.&lt;extension&gt;` files are created (N depends on total number
        * of failed predictions). These files contain the failed instances,
        * as per their schema, followed by an additional `error` field which as
-       * value has
-       * [`google.rpc.Status`](Status)
+       * value has [google.rpc.Status][google.rpc.Status]
        * containing only `code` and `message` fields.
        * </pre>
        *
@@ -2726,8 +2719,7 @@ private static final long serialVersionUID = 0L;
        * `errors_N.&lt;extension&gt;` files are created (N depends on total number
        * of failed predictions). These files contain the failed instances,
        * as per their schema, followed by an additional `error` field which as
-       * value has
-       * [`google.rpc.Status`](Status)
+       * value has [google.rpc.Status][google.rpc.Status]
        * containing only `code` and `message` fields.
        * </pre>
        *
@@ -2768,8 +2760,7 @@ private static final long serialVersionUID = 0L;
        * `errors_N.&lt;extension&gt;` files are created (N depends on total number
        * of failed predictions). These files contain the failed instances,
        * as per their schema, followed by an additional `error` field which as
-       * value has
-       * [`google.rpc.Status`](Status)
+       * value has [google.rpc.Status][google.rpc.Status]
        * containing only `code` and `message` fields.
        * </pre>
        *
@@ -2808,8 +2799,7 @@ private static final long serialVersionUID = 0L;
        * `errors_N.&lt;extension&gt;` files are created (N depends on total number
        * of failed predictions). These files contain the failed instances,
        * as per their schema, followed by an additional `error` field which as
-       * value has
-       * [`google.rpc.Status`](Status)
+       * value has [google.rpc.Status][google.rpc.Status]
        * containing only `code` and `message` fields.
        * </pre>
        *
@@ -2846,8 +2836,7 @@ private static final long serialVersionUID = 0L;
        * `errors_N.&lt;extension&gt;` files are created (N depends on total number
        * of failed predictions). These files contain the failed instances,
        * as per their schema, followed by an additional `error` field which as
-       * value has
-       * [`google.rpc.Status`](Status)
+       * value has [google.rpc.Status][google.rpc.Status]
        * containing only `code` and `message` fields.
        * </pre>
        *
@@ -2892,8 +2881,7 @@ private static final long serialVersionUID = 0L;
        * `errors_N.&lt;extension&gt;` files are created (N depends on total number
        * of failed predictions). These files contain the failed instances,
        * as per their schema, followed by an additional `error` field which as
-       * value has
-       * [`google.rpc.Status`](Status)
+       * value has [google.rpc.Status][google.rpc.Status]
        * containing only `code` and `message` fields.
        * </pre>
        *
@@ -2935,8 +2923,7 @@ private static final long serialVersionUID = 0L;
        * `errors_N.&lt;extension&gt;` files are created (N depends on total number
        * of failed predictions). These files contain the failed instances,
        * as per their schema, followed by an additional `error` field which as
-       * value has
-       * [`google.rpc.Status`](Status)
+       * value has [google.rpc.Status][google.rpc.Status]
        * containing only `code` and `message` fields.
        * </pre>
        *
@@ -2965,8 +2952,7 @@ private static final long serialVersionUID = 0L;
        * `errors_N.&lt;extension&gt;` files are created (N depends on total number
        * of failed predictions). These files contain the failed instances,
        * as per their schema, followed by an additional `error` field which as
-       * value has
-       * [`google.rpc.Status`](Status)
+       * value has [google.rpc.Status][google.rpc.Status]
        * containing only `code` and `message` fields.
        * </pre>
        *
@@ -3003,8 +2989,7 @@ private static final long serialVersionUID = 0L;
        * `errors_N.&lt;extension&gt;` files are created (N depends on total number
        * of failed predictions). These files contain the failed instances,
        * as per their schema, followed by an additional `error` field which as
-       * value has
-       * [`google.rpc.Status`](Status)
+       * value has [google.rpc.Status][google.rpc.Status]
        * containing only `code` and `message` fields.
        * </pre>
        *
@@ -3049,7 +3034,7 @@ private static final long serialVersionUID = 0L;
        * prediction schemata. The `errors` table contains rows for which the
        * prediction has failed, it has instance columns, as per the
        * instance schema, followed by a single "errors" column, which as values
-       * has [`google.rpc.Status`](Status)
+       * has [google.rpc.Status][google.rpc.Status]
        * represented as a STRUCT, and containing only `code` and `message`.
        * </pre>
        *
@@ -3078,7 +3063,7 @@ private static final long serialVersionUID = 0L;
        * prediction schemata. The `errors` table contains rows for which the
        * prediction has failed, it has instance columns, as per the
        * instance schema, followed by a single "errors" column, which as values
-       * has [`google.rpc.Status`](Status)
+       * has [google.rpc.Status][google.rpc.Status]
        * represented as a STRUCT, and containing only `code` and `message`.
        * </pre>
        *
@@ -3117,7 +3102,7 @@ private static final long serialVersionUID = 0L;
        * prediction schemata. The `errors` table contains rows for which the
        * prediction has failed, it has instance columns, as per the
        * instance schema, followed by a single "errors" column, which as values
-       * has [`google.rpc.Status`](Status)
+       * has [google.rpc.Status][google.rpc.Status]
        * represented as a STRUCT, and containing only `code` and `message`.
        * </pre>
        *
@@ -3154,7 +3139,7 @@ private static final long serialVersionUID = 0L;
        * prediction schemata. The `errors` table contains rows for which the
        * prediction has failed, it has instance columns, as per the
        * instance schema, followed by a single "errors" column, which as values
-       * has [`google.rpc.Status`](Status)
+       * has [google.rpc.Status][google.rpc.Status]
        * represented as a STRUCT, and containing only `code` and `message`.
        * </pre>
        *
@@ -3189,7 +3174,7 @@ private static final long serialVersionUID = 0L;
        * prediction schemata. The `errors` table contains rows for which the
        * prediction has failed, it has instance columns, as per the
        * instance schema, followed by a single "errors" column, which as values
-       * has [`google.rpc.Status`](Status)
+       * has [google.rpc.Status][google.rpc.Status]
        * represented as a STRUCT, and containing only `code` and `message`.
        * </pre>
        *
@@ -3232,7 +3217,7 @@ private static final long serialVersionUID = 0L;
        * prediction schemata. The `errors` table contains rows for which the
        * prediction has failed, it has instance columns, as per the
        * instance schema, followed by a single "errors" column, which as values
-       * has [`google.rpc.Status`](Status)
+       * has [google.rpc.Status][google.rpc.Status]
        * represented as a STRUCT, and containing only `code` and `message`.
        * </pre>
        *
@@ -3272,7 +3257,7 @@ private static final long serialVersionUID = 0L;
        * prediction schemata. The `errors` table contains rows for which the
        * prediction has failed, it has instance columns, as per the
        * instance schema, followed by a single "errors" column, which as values
-       * has [`google.rpc.Status`](Status)
+       * has [google.rpc.Status][google.rpc.Status]
        * represented as a STRUCT, and containing only `code` and `message`.
        * </pre>
        *
@@ -3299,7 +3284,7 @@ private static final long serialVersionUID = 0L;
        * prediction schemata. The `errors` table contains rows for which the
        * prediction has failed, it has instance columns, as per the
        * instance schema, followed by a single "errors" column, which as values
-       * has [`google.rpc.Status`](Status)
+       * has [google.rpc.Status][google.rpc.Status]
        * represented as a STRUCT, and containing only `code` and `message`.
        * </pre>
        *
@@ -3334,7 +3319,7 @@ private static final long serialVersionUID = 0L;
        * prediction schemata. The `errors` table contains rows for which the
        * prediction has failed, it has instance columns, as per the
        * instance schema, followed by a single "errors" column, which as values
-       * has [`google.rpc.Status`](Status)
+       * has [google.rpc.Status][google.rpc.Status]
        * represented as a STRUCT, and containing only `code` and `message`.
        * </pre>
        *
@@ -3588,6 +3573,32 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.ByteString
         getBigqueryOutputDatasetBytes();
 
+    /**
+     * <pre>
+     * Output only. The name of the BigQuery table created, in
+     * `predictions_&lt;timestamp&gt;`
+     * format, into which the prediction output is written.
+     * Can be used by UI to generate the BigQuery output path, for example.
+     * </pre>
+     *
+     * <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bigqueryOutputTable.
+     */
+    java.lang.String getBigqueryOutputTable();
+    /**
+     * <pre>
+     * Output only. The name of the BigQuery table created, in
+     * `predictions_&lt;timestamp&gt;`
+     * format, into which the prediction output is written.
+     * Can be used by UI to generate the BigQuery output path, for example.
+     * </pre>
+     *
+     * <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for bigqueryOutputTable.
+     */
+    com.google.protobuf.ByteString
+        getBigqueryOutputTableBytes();
+
     public com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo.OutputLocationCase getOutputLocationCase();
   }
   /**
@@ -3608,6 +3619,7 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private OutputInfo() {
+      bigqueryOutputTable_ = "";
     }
 
     @java.lang.Override
@@ -3650,6 +3662,12 @@ private static final long serialVersionUID = 0L;
               java.lang.String s = input.readStringRequireUtf8();
               outputLocationCase_ = 2;
               outputLocation_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bigqueryOutputTable_ = s;
               break;
             }
             default: {
@@ -3862,6 +3880,58 @@ private static final long serialVersionUID = 0L;
       }
     }
 
+    public static final int BIGQUERY_OUTPUT_TABLE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object bigqueryOutputTable_;
+    /**
+     * <pre>
+     * Output only. The name of the BigQuery table created, in
+     * `predictions_&lt;timestamp&gt;`
+     * format, into which the prediction output is written.
+     * Can be used by UI to generate the BigQuery output path, for example.
+     * </pre>
+     *
+     * <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bigqueryOutputTable.
+     */
+    @java.lang.Override
+    public java.lang.String getBigqueryOutputTable() {
+      java.lang.Object ref = bigqueryOutputTable_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bigqueryOutputTable_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The name of the BigQuery table created, in
+     * `predictions_&lt;timestamp&gt;`
+     * format, into which the prediction output is written.
+     * Can be used by UI to generate the BigQuery output path, for example.
+     * </pre>
+     *
+     * <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for bigqueryOutputTable.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBigqueryOutputTableBytes() {
+      java.lang.Object ref = bigqueryOutputTable_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bigqueryOutputTable_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3882,6 +3952,9 @@ private static final long serialVersionUID = 0L;
       if (outputLocationCase_ == 2) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, outputLocation_);
       }
+      if (!getBigqueryOutputTableBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, bigqueryOutputTable_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3896,6 +3969,9 @@ private static final long serialVersionUID = 0L;
       }
       if (outputLocationCase_ == 2) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, outputLocation_);
+      }
+      if (!getBigqueryOutputTableBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, bigqueryOutputTable_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3912,6 +3988,8 @@ private static final long serialVersionUID = 0L;
       }
       com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo other = (com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo) obj;
 
+      if (!getBigqueryOutputTable()
+          .equals(other.getBigqueryOutputTable())) return false;
       if (!getOutputLocationCase().equals(other.getOutputLocationCase())) return false;
       switch (outputLocationCase_) {
         case 1:
@@ -3936,6 +4014,8 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BIGQUERY_OUTPUT_TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getBigqueryOutputTable().hashCode();
       switch (outputLocationCase_) {
         case 1:
           hash = (37 * hash) + GCS_OUTPUT_DIRECTORY_FIELD_NUMBER;
@@ -4086,6 +4166,8 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bigqueryOutputTable_ = "";
+
         outputLocationCase_ = 0;
         outputLocation_ = null;
         return this;
@@ -4120,6 +4202,7 @@ private static final long serialVersionUID = 0L;
         if (outputLocationCase_ == 2) {
           result.outputLocation_ = outputLocation_;
         }
+        result.bigqueryOutputTable_ = bigqueryOutputTable_;
         result.outputLocationCase_ = outputLocationCase_;
         onBuilt();
         return result;
@@ -4169,6 +4252,10 @@ private static final long serialVersionUID = 0L;
 
       public Builder mergeFrom(com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo other) {
         if (other == com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo.getDefaultInstance()) return this;
+        if (!other.getBigqueryOutputTable().isEmpty()) {
+          bigqueryOutputTable_ = other.bigqueryOutputTable_;
+          onChanged();
+        }
         switch (other.getOutputLocationCase()) {
           case GCS_OUTPUT_DIRECTORY: {
             outputLocationCase_ = 1;
@@ -4486,6 +4573,117 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
         outputLocationCase_ = 2;
         outputLocation_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bigqueryOutputTable_ = "";
+      /**
+       * <pre>
+       * Output only. The name of the BigQuery table created, in
+       * `predictions_&lt;timestamp&gt;`
+       * format, into which the prediction output is written.
+       * Can be used by UI to generate the BigQuery output path, for example.
+       * </pre>
+       *
+       * <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The bigqueryOutputTable.
+       */
+      public java.lang.String getBigqueryOutputTable() {
+        java.lang.Object ref = bigqueryOutputTable_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bigqueryOutputTable_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Output only. The name of the BigQuery table created, in
+       * `predictions_&lt;timestamp&gt;`
+       * format, into which the prediction output is written.
+       * Can be used by UI to generate the BigQuery output path, for example.
+       * </pre>
+       *
+       * <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The bytes for bigqueryOutputTable.
+       */
+      public com.google.protobuf.ByteString
+          getBigqueryOutputTableBytes() {
+        java.lang.Object ref = bigqueryOutputTable_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bigqueryOutputTable_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Output only. The name of the BigQuery table created, in
+       * `predictions_&lt;timestamp&gt;`
+       * format, into which the prediction output is written.
+       * Can be used by UI to generate the BigQuery output path, for example.
+       * </pre>
+       *
+       * <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @param value The bigqueryOutputTable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBigqueryOutputTable(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        bigqueryOutputTable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The name of the BigQuery table created, in
+       * `predictions_&lt;timestamp&gt;`
+       * format, into which the prediction output is written.
+       * Can be used by UI to generate the BigQuery output path, for example.
+       * </pre>
+       *
+       * <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBigqueryOutputTable() {
+        
+        bigqueryOutputTable_ = getDefaultInstance().getBigqueryOutputTable();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The name of the BigQuery table created, in
+       * `predictions_&lt;timestamp&gt;`
+       * format, into which the prediction output is written.
+       * Can be used by UI to generate the BigQuery output path, for example.
+       * </pre>
+       *
+       * <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @param value The bytes for bigqueryOutputTable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBigqueryOutputTableBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        bigqueryOutputTable_ = value;
         onChanged();
         return this;
       }

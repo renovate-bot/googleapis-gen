@@ -67,7 +67,8 @@ module Google
         #     Accepted forms:
         #
         #     *  BigQuery path. For example:
-        #     `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
+        #     `bq://projectId` or `bq://projectId.bqDatasetId` or
+        #     `bq://projectId.bqDatasetId.bqTableId`.
         class BigQueryDestination
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

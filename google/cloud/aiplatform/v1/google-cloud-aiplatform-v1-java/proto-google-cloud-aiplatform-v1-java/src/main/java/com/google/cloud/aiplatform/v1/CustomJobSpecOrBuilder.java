@@ -129,7 +129,7 @@ public interface CustomJobSpecOrBuilder extends
    * unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
    * @return The network.
    */
   java.lang.String getNetwork();
@@ -146,7 +146,7 @@ public interface CustomJobSpecOrBuilder extends
    * unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for network.
    */
   com.google.protobuf.ByteString

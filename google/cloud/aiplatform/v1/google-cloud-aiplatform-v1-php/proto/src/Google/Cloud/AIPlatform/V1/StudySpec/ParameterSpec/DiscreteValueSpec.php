@@ -24,6 +24,17 @@ class DiscreteValueSpec extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $values;
+    /**
+     * A default value for a `DISCRETE` parameter that is assumed to be a
+     * relatively good starting point.  Unset value signals that there is no
+     * offered starting point.  It automatically rounds to the
+     * nearest feasible discrete point.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>double default_value = 3;</code>
+     */
+    protected $default_value = null;
 
     /**
      * Constructor.
@@ -36,6 +47,13 @@ class DiscreteValueSpec extends \Google\Protobuf\Internal\Message
      *           The list should be in increasing order and at least 1e-10 apart.
      *           For instance, this parameter might have possible settings of 1.5, 2.5,
      *           and 4.0. This list should not contain more than 1,000 values.
+     *     @type float $default_value
+     *           A default value for a `DISCRETE` parameter that is assumed to be a
+     *           relatively good starting point.  Unset value signals that there is no
+     *           offered starting point.  It automatically rounds to the
+     *           nearest feasible discrete point.
+     *           Currently only supported by the Vizier service. Not supported by
+     *           HyperparamterTuningJob or TrainingPipeline.
      * }
      */
     public function __construct($data = NULL) {
@@ -71,6 +89,52 @@ class DiscreteValueSpec extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::DOUBLE);
         $this->values = $arr;
+
+        return $this;
+    }
+
+    /**
+     * A default value for a `DISCRETE` parameter that is assumed to be a
+     * relatively good starting point.  Unset value signals that there is no
+     * offered starting point.  It automatically rounds to the
+     * nearest feasible discrete point.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>double default_value = 3;</code>
+     * @return float
+     */
+    public function getDefaultValue()
+    {
+        return isset($this->default_value) ? $this->default_value : 0.0;
+    }
+
+    public function hasDefaultValue()
+    {
+        return isset($this->default_value);
+    }
+
+    public function clearDefaultValue()
+    {
+        unset($this->default_value);
+    }
+
+    /**
+     * A default value for a `DISCRETE` parameter that is assumed to be a
+     * relatively good starting point.  Unset value signals that there is no
+     * offered starting point.  It automatically rounds to the
+     * nearest feasible discrete point.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>double default_value = 3;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setDefaultValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->default_value = $var;
 
         return $this;
     }

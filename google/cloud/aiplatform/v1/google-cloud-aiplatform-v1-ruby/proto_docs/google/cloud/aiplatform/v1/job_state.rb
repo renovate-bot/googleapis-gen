@@ -50,6 +50,9 @@ module Google
 
           # The job has been stopped, and can be resumed.
           JOB_STATE_PAUSED = 8
+
+          # The job has expired.
+          JOB_STATE_EXPIRED = 9
         end
       end
     end

@@ -315,7 +315,7 @@ private static final long serialVersionUID = 0L;
    * unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
    * @return The network.
    */
   @java.lang.Override
@@ -344,7 +344,7 @@ private static final long serialVersionUID = 0L;
    * unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -1518,7 +1518,7 @@ private static final long serialVersionUID = 0L;
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      * @return The network.
      */
     public java.lang.String getNetwork() {
@@ -1546,7 +1546,7 @@ private static final long serialVersionUID = 0L;
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      * @return The bytes for network.
      */
     public com.google.protobuf.ByteString
@@ -1575,7 +1575,7 @@ private static final long serialVersionUID = 0L;
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -1602,7 +1602,7 @@ private static final long serialVersionUID = 0L;
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
@@ -1624,7 +1624,7 @@ private static final long serialVersionUID = 0L;
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */

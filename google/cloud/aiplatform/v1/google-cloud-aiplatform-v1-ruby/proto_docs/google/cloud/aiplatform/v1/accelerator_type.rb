@@ -41,11 +41,8 @@ module Google
           # Nvidia Tesla T4 GPU.
           NVIDIA_TESLA_T4 = 5
 
-          # TPU v2.
-          TPU_V2 = 6
-
-          # TPU v3.
-          TPU_V3 = 7
+          # Nvidia Tesla A100 GPU.
+          NVIDIA_TESLA_A100 = 8
         end
       end
     end

@@ -75,6 +75,8 @@ class JobServiceAsyncClient:
     parse_hyperparameter_tuning_job_path = staticmethod(JobServiceClient.parse_hyperparameter_tuning_job_path)
     model_path = staticmethod(JobServiceClient.model_path)
     parse_model_path = staticmethod(JobServiceClient.parse_model_path)
+    network_path = staticmethod(JobServiceClient.network_path)
+    parse_network_path = staticmethod(JobServiceClient.parse_network_path)
     trial_path = staticmethod(JobServiceClient.trial_path)
     parse_trial_path = staticmethod(JobServiceClient.parse_trial_path)
     common_billing_account_path = staticmethod(JobServiceClient.common_billing_account_path)

@@ -54,6 +54,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       end
     end
     add_message "google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo" do
+      optional :bigquery_output_table, :string, 4
       oneof :output_location do
         optional :gcs_output_directory, :string, 1
         optional :bigquery_output_dataset, :string, 2

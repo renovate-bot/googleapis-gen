@@ -50,7 +50,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * Private services access must already be configured for the network. If left
      * unspecified, the job is not peered with any network.
      *
-     * Generated from protobuf field <code>string network = 5;</code>
+     * Generated from protobuf field <code>string network = 5 [(.google.api.resource_reference) = {</code>
      */
     protected $network = '';
     /**
@@ -238,7 +238,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * Private services access must already be configured for the network. If left
      * unspecified, the job is not peered with any network.
      *
-     * Generated from protobuf field <code>string network = 5;</code>
+     * Generated from protobuf field <code>string network = 5 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getNetwork()
@@ -257,7 +257,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * Private services access must already be configured for the network. If left
      * unspecified, the job is not peered with any network.
      *
-     * Generated from protobuf field <code>string network = 5;</code>
+     * Generated from protobuf field <code>string network = 5 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

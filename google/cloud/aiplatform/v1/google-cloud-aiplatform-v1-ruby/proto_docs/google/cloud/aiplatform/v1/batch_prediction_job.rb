@@ -177,8 +177,7 @@ module Google
           #     `errors_N.<extension>` files are created (N depends on total number
           #     of failed predictions). These files contain the failed instances,
           #     as per their schema, followed by an additional `error` field which as
-          #     value has
-          #     [`google.rpc.Status`](Status)
+          #     value has {::Google::Rpc::Status google.rpc.Status}
           #     containing only `code` and `message` fields.
           # @!attribute [rw] bigquery_destination
           #   @return [::Google::Cloud::AIPlatform::V1::BigQueryDestination]
@@ -198,7 +197,7 @@ module Google
           #     prediction schemata. The `errors` table contains rows for which the
           #     prediction has failed, it has instance columns, as per the
           #     instance schema, followed by a single "errors" column, which as values
-          #     has [`google.rpc.Status`](Status)
+          #     has {::Google::Rpc::Status google.rpc.Status}
           #     represented as a STRUCT, and containing only `code` and `message`.
           # @!attribute [rw] predictions_format
           #   @return [::String]
@@ -221,6 +220,12 @@ module Google
           #     Output only. The path of the BigQuery dataset created, in
           #     `bq://projectId.bqDatasetId`
           #     format, into which the prediction output is written.
+          # @!attribute [r] bigquery_output_table
+          #   @return [::String]
+          #     Output only. The name of the BigQuery table created, in
+          #     `predictions_<timestamp>`
+          #     format, into which the prediction output is written.
+          #     Can be used by UI to generate the BigQuery output path, for example.
           class OutputInfo
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

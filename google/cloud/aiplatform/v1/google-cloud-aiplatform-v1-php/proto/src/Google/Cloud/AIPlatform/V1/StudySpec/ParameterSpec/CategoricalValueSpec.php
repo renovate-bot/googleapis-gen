@@ -21,6 +21,16 @@ class CategoricalValueSpec extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $values;
+    /**
+     * A default value for a `CATEGORICAL` parameter that is assumed to be a
+     * relatively good starting point.  Unset value signals that there is no
+     * offered starting point.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>string default_value = 3;</code>
+     */
+    protected $default_value = null;
 
     /**
      * Constructor.
@@ -30,6 +40,12 @@ class CategoricalValueSpec extends \Google\Protobuf\Internal\Message
      *
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $values
      *           Required. The list of possible categories.
+     *     @type string $default_value
+     *           A default value for a `CATEGORICAL` parameter that is assumed to be a
+     *           relatively good starting point.  Unset value signals that there is no
+     *           offered starting point.
+     *           Currently only supported by the Vizier service. Not supported by
+     *           HyperparamterTuningJob or TrainingPipeline.
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +75,50 @@ class CategoricalValueSpec extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->values = $arr;
+
+        return $this;
+    }
+
+    /**
+     * A default value for a `CATEGORICAL` parameter that is assumed to be a
+     * relatively good starting point.  Unset value signals that there is no
+     * offered starting point.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>string default_value = 3;</code>
+     * @return string
+     */
+    public function getDefaultValue()
+    {
+        return isset($this->default_value) ? $this->default_value : '';
+    }
+
+    public function hasDefaultValue()
+    {
+        return isset($this->default_value);
+    }
+
+    public function clearDefaultValue()
+    {
+        unset($this->default_value);
+    }
+
+    /**
+     * A default value for a `CATEGORICAL` parameter that is assumed to be a
+     * relatively good starting point.  Unset value signals that there is no
+     * offered starting point.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>string default_value = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDefaultValue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->default_value = $var;
 
         return $this;
     }

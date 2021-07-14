@@ -93,6 +93,7 @@ class BigQueryDestination(proto.Message):
             Accepted forms:
 
             -  BigQuery path. For example: ``bq://projectId`` or
+               ``bq://projectId.bqDatasetId`` or
                ``bq://projectId.bqDatasetId.bqTableId``.
     """
 

@@ -17,6 +17,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :machine_spec, :message, 1, "google.cloud.aiplatform.v1.MachineSpec"
       optional :min_replica_count, :int32, 2
       optional :max_replica_count, :int32, 3
+      repeated :autoscaling_metric_specs, :message, 4, "google.cloud.aiplatform.v1.AutoscalingMetricSpec"
     end
     add_message "google.cloud.aiplatform.v1.AutomaticResources" do
       optional :min_replica_count, :int32, 1
@@ -34,6 +35,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :boot_disk_type, :string, 1
       optional :boot_disk_size_gb, :int32, 2
     end
+    add_message "google.cloud.aiplatform.v1.AutoscalingMetricSpec" do
+      optional :metric_name, :string, 1
+      optional :target, :int32, 2
+    end
   end
 end
 
@@ -47,6 +52,7 @@ module Google
         BatchDedicatedResources = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.BatchDedicatedResources").msgclass
         ResourcesConsumed = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ResourcesConsumed").msgclass
         DiskSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.DiskSpec").msgclass
+        AutoscalingMetricSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.AutoscalingMetricSpec").msgclass
       end
     end
   end

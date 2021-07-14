@@ -109,9 +109,9 @@
  * <pre>{@code
  * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
  *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
- *   List<Value> instances = new ArrayList<>();
  *   Value parameters = Value.newBuilder().build();
- *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
+ *   List<Value> instances = new ArrayList<>();
+ *   PredictResponse response = predictionServiceClient.predict(endpoint, parameters, instances);
  * }
  * }</pre>
  *

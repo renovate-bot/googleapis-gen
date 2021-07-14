@@ -16,6 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class OutputInfo extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Output only. The name of the BigQuery table created, in
+     * `predictions_<timestamp>`
+     * format, into which the prediction output is written.
+     * Can be used by UI to generate the BigQuery output path, for example.
+     *
+     * Generated from protobuf field <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $bigquery_output_table = '';
     protected $output_location;
 
     /**
@@ -31,6 +40,11 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      *           Output only. The path of the BigQuery dataset created, in
      *           `bq://projectId.bqDatasetId`
      *           format, into which the prediction output is written.
+     *     @type string $bigquery_output_table
+     *           Output only. The name of the BigQuery table created, in
+     *           `predictions_<timestamp>`
+     *           format, into which the prediction output is written.
+     *           Can be used by UI to generate the BigQuery output path, for example.
      * }
      */
     public function __construct($data = NULL) {
@@ -102,6 +116,38 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The name of the BigQuery table created, in
+     * `predictions_<timestamp>`
+     * format, into which the prediction output is written.
+     * Can be used by UI to generate the BigQuery output path, for example.
+     *
+     * Generated from protobuf field <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getBigqueryOutputTable()
+    {
+        return $this->bigquery_output_table;
+    }
+
+    /**
+     * Output only. The name of the BigQuery table created, in
+     * `predictions_<timestamp>`
+     * format, into which the prediction output is written.
+     * Can be used by UI to generate the BigQuery output path, for example.
+     *
+     * Generated from protobuf field <code>string bigquery_output_table = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBigqueryOutputTable($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->bigquery_output_table = $var;
 
         return $this;
     }

@@ -18,6 +18,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class Measurement extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $elapsed_duration = null;
+    /**
      * Output only. The number of steps the machine learning model has been trained for.
      * Must be non-negative.
      *
@@ -38,6 +44,8 @@ class Measurement extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Protobuf\Duration $elapsed_duration
+     *           Output only. Time that the Trial has been running at the point of this Measurement.
      *     @type int|string $step_count
      *           Output only. The number of steps the machine learning model has been trained for.
      *           Must be non-negative.
@@ -49,6 +57,42 @@ class Measurement extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Aiplatform\V1\Study::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getElapsedDuration()
+    {
+        return isset($this->elapsed_duration) ? $this->elapsed_duration : null;
+    }
+
+    public function hasElapsedDuration()
+    {
+        return isset($this->elapsed_duration);
+    }
+
+    public function clearElapsedDuration()
+    {
+        unset($this->elapsed_duration);
+    }
+
+    /**
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setElapsedDuration($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        $this->elapsed_duration = $var;
+
+        return $this;
     }
 
     /**

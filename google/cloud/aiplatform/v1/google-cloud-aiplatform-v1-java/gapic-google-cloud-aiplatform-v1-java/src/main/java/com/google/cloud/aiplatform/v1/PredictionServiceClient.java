@@ -37,9 +37,9 @@ import javax.annotation.Generated;
  * <pre>{@code
  * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
  *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
- *   List<Value> instances = new ArrayList<>();
  *   Value parameters = Value.newBuilder().build();
- *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
+ *   List<Value> instances = new ArrayList<>();
+ *   PredictResponse response = predictionServiceClient.predict(endpoint, parameters, instances);
  * }
  * }</pre>
  *
@@ -154,14 +154,19 @@ public class PredictionServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
    *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   List<Value> instances = new ArrayList<>();
    *   Value parameters = Value.newBuilder().build();
-   *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
+   *   List<Value> instances = new ArrayList<>();
+   *   PredictResponse response = predictionServiceClient.predict(endpoint, parameters, instances);
    * }
    * }</pre>
    *
    * @param endpoint Required. The name of the Endpoint requested to serve the prediction. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param parameters The parameters that govern the prediction. The schema of the parameters may
+   *     be specified via Endpoint's DeployedModels' [Model's
+   *     ][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * @param instances Required. The instances that are the input to the prediction call. A
    *     DeployedModel may have an upper limit on the number of instances it supports per request,
    *     and when it is exceeded the prediction call errors in case of AutoML Models, or, in case of
@@ -170,20 +175,15 @@ public class PredictionServiceClient implements BackgroundResource {
    *     [Model's][google.cloud.aiplatform.v1.DeployedModel.model]
    *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
    *     [instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri].
-   * @param parameters The parameters that govern the prediction. The schema of the parameters may
-   *     be specified via Endpoint's DeployedModels' [Model's
-   *     ][google.cloud.aiplatform.v1.DeployedModel.model]
-   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
-   *     [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictResponse predict(
-      EndpointName endpoint, List<Value> instances, Value parameters) {
+      EndpointName endpoint, Value parameters, List<Value> instances) {
     PredictRequest request =
         PredictRequest.newBuilder()
             .setEndpoint(endpoint == null ? null : endpoint.toString())
-            .addAllInstances(instances)
             .setParameters(parameters)
+            .addAllInstances(instances)
             .build();
     return predict(request);
   }
@@ -197,14 +197,19 @@ public class PredictionServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
    *   String endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString();
-   *   List<Value> instances = new ArrayList<>();
    *   Value parameters = Value.newBuilder().build();
-   *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
+   *   List<Value> instances = new ArrayList<>();
+   *   PredictResponse response = predictionServiceClient.predict(endpoint, parameters, instances);
    * }
    * }</pre>
    *
    * @param endpoint Required. The name of the Endpoint requested to serve the prediction. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param parameters The parameters that govern the prediction. The schema of the parameters may
+   *     be specified via Endpoint's DeployedModels' [Model's
+   *     ][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * @param instances Required. The instances that are the input to the prediction call. A
    *     DeployedModel may have an upper limit on the number of instances it supports per request,
    *     and when it is exceeded the prediction call errors in case of AutoML Models, or, in case of
@@ -213,19 +218,14 @@ public class PredictionServiceClient implements BackgroundResource {
    *     [Model's][google.cloud.aiplatform.v1.DeployedModel.model]
    *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
    *     [instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri].
-   * @param parameters The parameters that govern the prediction. The schema of the parameters may
-   *     be specified via Endpoint's DeployedModels' [Model's
-   *     ][google.cloud.aiplatform.v1.DeployedModel.model]
-   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
-   *     [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PredictResponse predict(String endpoint, List<Value> instances, Value parameters) {
+  public final PredictResponse predict(String endpoint, Value parameters, List<Value> instances) {
     PredictRequest request =
         PredictRequest.newBuilder()
             .setEndpoint(endpoint)
-            .addAllInstances(instances)
             .setParameters(parameters)
+            .addAllInstances(instances)
             .build();
     return predict(request);
   }

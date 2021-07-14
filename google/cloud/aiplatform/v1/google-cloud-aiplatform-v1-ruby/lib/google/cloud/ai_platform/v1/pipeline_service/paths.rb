@@ -25,6 +25,67 @@ module Google
           # Path helper methods for the PipelineService API.
           module Paths
             ##
+            # Create a fully-qualified Artifact resource string.
+            #
+            # The resource will be in the following format:
+            #
+            # `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`
+            #
+            # @param project [String]
+            # @param location [String]
+            # @param metadata_store [String]
+            # @param artifact [String]
+            #
+            # @return [::String]
+            def artifact_path project:, location:, metadata_store:, artifact:
+              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+              raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+              raise ::ArgumentError, "metadata_store cannot contain /" if metadata_store.to_s.include? "/"
+
+              "projects/#{project}/locations/#{location}/metadataStores/#{metadata_store}/artifacts/#{artifact}"
+            end
+
+            ##
+            # Create a fully-qualified Context resource string.
+            #
+            # The resource will be in the following format:
+            #
+            # `projects/{project}/locations/{location}/metadataStores/{metadata_store}/contexts/{context}`
+            #
+            # @param project [String]
+            # @param location [String]
+            # @param metadata_store [String]
+            # @param context [String]
+            #
+            # @return [::String]
+            def context_path project:, location:, metadata_store:, context:
+              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+              raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+              raise ::ArgumentError, "metadata_store cannot contain /" if metadata_store.to_s.include? "/"
+
+              "projects/#{project}/locations/#{location}/metadataStores/#{metadata_store}/contexts/#{context}"
+            end
+
+            ##
+            # Create a fully-qualified CustomJob resource string.
+            #
+            # The resource will be in the following format:
+            #
+            # `projects/{project}/locations/{location}/customJobs/{custom_job}`
+            #
+            # @param project [String]
+            # @param location [String]
+            # @param custom_job [String]
+            #
+            # @return [::String]
+            def custom_job_path project:, location:, custom_job:
+              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+              raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+
+              "projects/#{project}/locations/#{location}/customJobs/#{custom_job}"
+            end
+
+            ##
             # Create a fully-qualified Endpoint resource string.
             #
             # The resource will be in the following format:
@@ -41,6 +102,27 @@ module Google
               raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
 
               "projects/#{project}/locations/#{location}/endpoints/#{endpoint}"
+            end
+
+            ##
+            # Create a fully-qualified Execution resource string.
+            #
+            # The resource will be in the following format:
+            #
+            # `projects/{project}/locations/{location}/metadataStores/{metadata_store}/executions/{execution}`
+            #
+            # @param project [String]
+            # @param location [String]
+            # @param metadata_store [String]
+            # @param execution [String]
+            #
+            # @return [::String]
+            def execution_path project:, location:, metadata_store:, execution:
+              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+              raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+              raise ::ArgumentError, "metadata_store cannot contain /" if metadata_store.to_s.include? "/"
+
+              "projects/#{project}/locations/#{location}/metadataStores/#{metadata_store}/executions/#{execution}"
             end
 
             ##
@@ -77,6 +159,42 @@ module Google
               raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
 
               "projects/#{project}/locations/#{location}/models/#{model}"
+            end
+
+            ##
+            # Create a fully-qualified Network resource string.
+            #
+            # The resource will be in the following format:
+            #
+            # `projects/{project}/global/networks/{network}`
+            #
+            # @param project [String]
+            # @param network [String]
+            #
+            # @return [::String]
+            def network_path project:, network:
+              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+
+              "projects/#{project}/global/networks/#{network}"
+            end
+
+            ##
+            # Create a fully-qualified PipelineJob resource string.
+            #
+            # The resource will be in the following format:
+            #
+            # `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+            #
+            # @param project [String]
+            # @param location [String]
+            # @param pipeline_job [String]
+            #
+            # @return [::String]
+            def pipeline_job_path project:, location:, pipeline_job:
+              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+              raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+
+              "projects/#{project}/locations/#{location}/pipelineJobs/#{pipeline_job}"
             end
 
             ##

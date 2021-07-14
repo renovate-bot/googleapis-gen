@@ -68,6 +68,12 @@ class JobState
      * Generated from protobuf enum <code>JOB_STATE_PAUSED = 8;</code>
      */
     const JOB_STATE_PAUSED = 8;
+    /**
+     * The job has expired.
+     *
+     * Generated from protobuf enum <code>JOB_STATE_EXPIRED = 9;</code>
+     */
+    const JOB_STATE_EXPIRED = 9;
 
     private static $valueToName = [
         self::JOB_STATE_UNSPECIFIED => 'JOB_STATE_UNSPECIFIED',
@@ -79,6 +85,7 @@ class JobState
         self::JOB_STATE_CANCELLING => 'JOB_STATE_CANCELLING',
         self::JOB_STATE_CANCELLED => 'JOB_STATE_CANCELLED',
         self::JOB_STATE_PAUSED => 'JOB_STATE_PAUSED',
+        self::JOB_STATE_EXPIRED => 'JOB_STATE_EXPIRED',
     ];
 
     public static function name($value)

@@ -24,6 +24,9 @@ module Google
         # A message representing a Trial. A Trial contains a unique set of Parameters
         # that has been or will be evaluated, along with the objective metrics got by
         # running the Trial.
+        # @!attribute [r] name
+        #   @return [::String]
+        #     Output only. Resource name of the Trial assigned by the service.
         # @!attribute [r] id
         #   @return [::String]
         #     Output only. The identifier of the Trial assigned by the service.
@@ -36,12 +39,31 @@ module Google
         # @!attribute [r] final_measurement
         #   @return [::Google::Cloud::AIPlatform::V1::Measurement]
         #     Output only. The final measurement containing the objective value.
+        # @!attribute [r] measurements
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::Measurement>]
+        #     Output only. A list of measurements that are strictly lexicographically
+        #     ordered by their induced tuples (steps, elapsed_duration).
+        #     These are used for early stopping computations.
         # @!attribute [r] start_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Time when the Trial was started.
         # @!attribute [r] end_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Time when the Trial's status changed to `SUCCEEDED` or `INFEASIBLE`.
+        # @!attribute [r] client_id
+        #   @return [::String]
+        #     Output only. The identifier of the client that originally requested this Trial.
+        #     Each client is identified by a unique client_id. When a client
+        #     asks for a suggestion, Vizier will assign it a Trial. The client should
+        #     evaluate the Trial, complete it, and report back to Vizier.
+        #     If suggestion is asked again by same client_id before the Trial is
+        #     completed, the same Trial will be returned. Multiple clients with
+        #     different client_ids can ask for suggestions simultaneously, each of them
+        #     will get their own Trial.
+        # @!attribute [r] infeasible_reason
+        #   @return [::String]
+        #     Output only. A human readable string describing why the Trial is
+        #     infeasible. This is set only if Trial state is `INFEASIBLE`.
         # @!attribute [r] custom_job
         #   @return [::String]
         #     Output only. The CustomJob name linked to the Trial.
@@ -178,6 +200,14 @@ module Google
             # @!attribute [rw] max_value
             #   @return [::Float]
             #     Required. Inclusive maximum value of the parameter.
+            # @!attribute [rw] default_value
+            #   @return [::Float]
+            #     A default value for a `DOUBLE` parameter that is assumed to be a
+            #     relatively good starting point.  Unset value signals that there is no
+            #     offered starting point.
+            #
+            #     Currently only supported by the Vizier service. Not supported by
+            #     HyperparamterTuningJob or TrainingPipeline.
             class DoubleValueSpec
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -190,6 +220,14 @@ module Google
             # @!attribute [rw] max_value
             #   @return [::Integer]
             #     Required. Inclusive maximum value of the parameter.
+            # @!attribute [rw] default_value
+            #   @return [::Integer]
+            #     A default value for an `INTEGER` parameter that is assumed to be a
+            #     relatively good starting point.  Unset value signals that there is no
+            #     offered starting point.
+            #
+            #     Currently only supported by the Vizier service. Not supported by
+            #     HyperparamterTuningJob or TrainingPipeline.
             class IntegerValueSpec
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -199,6 +237,14 @@ module Google
             # @!attribute [rw] values
             #   @return [::Array<::String>]
             #     Required. The list of possible categories.
+            # @!attribute [rw] default_value
+            #   @return [::String]
+            #     A default value for a `CATEGORICAL` parameter that is assumed to be a
+            #     relatively good starting point.  Unset value signals that there is no
+            #     offered starting point.
+            #
+            #     Currently only supported by the Vizier service. Not supported by
+            #     HyperparamterTuningJob or TrainingPipeline.
             class CategoricalValueSpec
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -211,6 +257,15 @@ module Google
             #     The list should be in increasing order and at least 1e-10 apart.
             #     For instance, this parameter might have possible settings of 1.5, 2.5,
             #     and 4.0. This list should not contain more than 1,000 values.
+            # @!attribute [rw] default_value
+            #   @return [::Float]
+            #     A default value for a `DISCRETE` parameter that is assumed to be a
+            #     relatively good starting point.  Unset value signals that there is no
+            #     offered starting point.  It automatically rounds to the
+            #     nearest feasible discrete point.
+            #
+            #     Currently only supported by the Vizier service. Not supported by
+            #     HyperparamterTuningJob or TrainingPipeline.
             class DiscreteValueSpec
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -351,6 +406,9 @@ module Google
         # A message representing a Measurement of a Trial. A Measurement contains
         # the Metrics got by executing a Trial using suggested hyperparameter
         # values.
+        # @!attribute [r] elapsed_duration
+        #   @return [::Google::Protobuf::Duration]
+        #     Output only. Time that the Trial has been running at the point of this Measurement.
         # @!attribute [r] step_count
         #   @return [::Integer]
         #     Output only. The number of steps the machine learning model has been trained for.

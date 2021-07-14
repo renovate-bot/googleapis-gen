@@ -156,6 +156,23 @@ module Google
             end
 
             ##
+            # Create a fully-qualified Network resource string.
+            #
+            # The resource will be in the following format:
+            #
+            # `projects/{project}/global/networks/{network}`
+            #
+            # @param project [String]
+            # @param network [String]
+            #
+            # @return [::String]
+            def network_path project:, network:
+              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+
+              "projects/#{project}/global/networks/#{network}"
+            end
+
+            ##
             # Create a fully-qualified Trial resource string.
             #
             # The resource will be in the following format:

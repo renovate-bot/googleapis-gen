@@ -55,12 +55,11 @@ module Google
         # @!attribute [rw] min_replica_count
         #   @return [::Integer]
         #     Required. Immutable. The minimum number of machine replicas this DeployedModel will be always
-        #     deployed on. If traffic against it increases, it may dynamically be
+        #     deployed on. This value must be greater than or equal to 1.
+        #
+        #     If traffic against the DeployedModel increases, it may dynamically be
         #     deployed onto more replicas, and as traffic decreases, some of these extra
         #     replicas may be freed.
-        #     Note: if {::Google::Cloud::AIPlatform::V1::MachineSpec#accelerator_count machine_spec.accelerator_count} is
-        #     above 0, currently the model will be always deployed precisely on
-        #     {::Google::Cloud::AIPlatform::V1::DedicatedResources#min_replica_count min_replica_count}.
         # @!attribute [rw] max_replica_count
         #   @return [::Integer]
         #     Immutable. The maximum number of replicas this DeployedModel may be deployed on when
@@ -71,6 +70,28 @@ module Google
         #     replicas at maximum may handle, a portion of the traffic will be dropped.
         #     If this value is not provided, will use {::Google::Cloud::AIPlatform::V1::DedicatedResources#min_replica_count min_replica_count} as the
         #     default value.
+        # @!attribute [rw] autoscaling_metric_specs
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::AutoscalingMetricSpec>]
+        #     Immutable. The metric specifications that overrides a resource
+        #     utilization metric (CPU utilization, accelerator's duty cycle, and so on)
+        #     target value (default to 60 if not set). At most one entry is allowed per
+        #     metric.
+        #
+        #     If {::Google::Cloud::AIPlatform::V1::MachineSpec#accelerator_count machine_spec.accelerator_count} is
+        #     above 0, the autoscaling will be based on both CPU utilization and
+        #     accelerator's duty cycle metrics and scale up when either metrics exceeds
+        #     its target value while scale down if both metrics are under their target
+        #     value. The default target value is 60 for both metrics.
+        #
+        #     If {::Google::Cloud::AIPlatform::V1::MachineSpec#accelerator_count machine_spec.accelerator_count} is
+        #     0, the autoscaling will be based on CPU utilization metric only with
+        #     default target value 60 if not explicitly set.
+        #
+        #     For example, in the case of Online Prediction, if you want to override
+        #     target CPU utilization to 80, you should set
+        #     {::Google::Cloud::AIPlatform::V1::AutoscalingMetricSpec#metric_name autoscaling_metric_specs.metric_name}
+        #     to `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
+        #     {::Google::Cloud::AIPlatform::V1::AutoscalingMetricSpec#target autoscaling_metric_specs.target} to `80`.
         class DedicatedResources
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -142,6 +163,28 @@ module Google
         #   @return [::Integer]
         #     Size in GB of the boot disk (default is 100GB).
         class DiskSpec
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The metric specification that defines the target resource utilization
+        # (CPU utilization, accelerator's duty cycle, and so on) for calculating the
+        # desired replica count.
+        # @!attribute [rw] metric_name
+        #   @return [::String]
+        #     Required. The resource metric name.
+        #     Supported metrics:
+        #
+        #     * For Online Prediction:
+        #     * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
+        #     * `aiplatform.googleapis.com/prediction/online/cpu/utilization`
+        # @!attribute [rw] target
+        #   @return [::Integer]
+        #     The target resource utilization in percentage (1% - 100%) for the given
+        #     metric; once the real usage deviates from the target by a certain
+        #     percentage, the machine replicas change. The default value is 60
+        #     (representing 60%) if not provided.
+        class AutoscalingMetricSpec
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

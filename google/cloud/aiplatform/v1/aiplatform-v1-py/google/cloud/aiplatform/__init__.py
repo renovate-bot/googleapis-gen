@@ -34,8 +34,10 @@ from google.cloud.aiplatform_v1.services.specialist_pool_service.async_client im
 from google.cloud.aiplatform_v1.types.accelerator_type import AcceleratorType
 from google.cloud.aiplatform_v1.types.annotation import Annotation
 from google.cloud.aiplatform_v1.types.annotation_spec import AnnotationSpec
+from google.cloud.aiplatform_v1.types.artifact import Artifact
 from google.cloud.aiplatform_v1.types.batch_prediction_job import BatchPredictionJob
 from google.cloud.aiplatform_v1.types.completion_stats import CompletionStats
+from google.cloud.aiplatform_v1.types.context import Context
 from google.cloud.aiplatform_v1.types.custom_job import ContainerSpec
 from google.cloud.aiplatform_v1.types.custom_job import CustomJob
 from google.cloud.aiplatform_v1.types.custom_job import CustomJobSpec
@@ -86,6 +88,7 @@ from google.cloud.aiplatform_v1.types.endpoint_service import UndeployModelReque
 from google.cloud.aiplatform_v1.types.endpoint_service import UndeployModelResponse
 from google.cloud.aiplatform_v1.types.endpoint_service import UpdateEndpointRequest
 from google.cloud.aiplatform_v1.types.env_var import EnvVar
+from google.cloud.aiplatform_v1.types.execution import Execution
 from google.cloud.aiplatform_v1.types.hyperparameter_tuning_job import HyperparameterTuningJob
 from google.cloud.aiplatform_v1.types.io import BigQueryDestination
 from google.cloud.aiplatform_v1.types.io import BigQuerySource
@@ -118,6 +121,7 @@ from google.cloud.aiplatform_v1.types.job_service import ListHyperparameterTunin
 from google.cloud.aiplatform_v1.types.job_service import ListHyperparameterTuningJobsResponse
 from google.cloud.aiplatform_v1.types.job_state import JobState
 from google.cloud.aiplatform_v1.types.machine_resources import AutomaticResources
+from google.cloud.aiplatform_v1.types.machine_resources import AutoscalingMetricSpec
 from google.cloud.aiplatform_v1.types.machine_resources import BatchDedicatedResources
 from google.cloud.aiplatform_v1.types.machine_resources import DedicatedResources
 from google.cloud.aiplatform_v1.types.machine_resources import DiskSpec
@@ -157,10 +161,20 @@ from google.cloud.aiplatform_v1.types.model_service import UploadModelRequest
 from google.cloud.aiplatform_v1.types.model_service import UploadModelResponse
 from google.cloud.aiplatform_v1.types.operation import DeleteOperationMetadata
 from google.cloud.aiplatform_v1.types.operation import GenericOperationMetadata
+from google.cloud.aiplatform_v1.types.pipeline_job import PipelineJob
+from google.cloud.aiplatform_v1.types.pipeline_job import PipelineJobDetail
+from google.cloud.aiplatform_v1.types.pipeline_job import PipelineTaskDetail
+from google.cloud.aiplatform_v1.types.pipeline_job import PipelineTaskExecutorDetail
+from google.cloud.aiplatform_v1.types.pipeline_service import CancelPipelineJobRequest
 from google.cloud.aiplatform_v1.types.pipeline_service import CancelTrainingPipelineRequest
+from google.cloud.aiplatform_v1.types.pipeline_service import CreatePipelineJobRequest
 from google.cloud.aiplatform_v1.types.pipeline_service import CreateTrainingPipelineRequest
+from google.cloud.aiplatform_v1.types.pipeline_service import DeletePipelineJobRequest
 from google.cloud.aiplatform_v1.types.pipeline_service import DeleteTrainingPipelineRequest
+from google.cloud.aiplatform_v1.types.pipeline_service import GetPipelineJobRequest
 from google.cloud.aiplatform_v1.types.pipeline_service import GetTrainingPipelineRequest
+from google.cloud.aiplatform_v1.types.pipeline_service import ListPipelineJobsRequest
+from google.cloud.aiplatform_v1.types.pipeline_service import ListPipelineJobsResponse
 from google.cloud.aiplatform_v1.types.pipeline_service import ListTrainingPipelinesRequest
 from google.cloud.aiplatform_v1.types.pipeline_service import ListTrainingPipelinesResponse
 from google.cloud.aiplatform_v1.types.pipeline_state import PipelineState
@@ -185,6 +199,7 @@ from google.cloud.aiplatform_v1.types.training_pipeline import PredefinedSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import TimestampSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import TrainingPipeline
 from google.cloud.aiplatform_v1.types.user_action_reference import UserActionReference
+from google.cloud.aiplatform_v1.types.value import Value
 
 __all__ = ('DatasetServiceClient',
     'DatasetServiceAsyncClient',
@@ -205,8 +220,10 @@ __all__ = ('DatasetServiceClient',
     'AcceleratorType',
     'Annotation',
     'AnnotationSpec',
+    'Artifact',
     'BatchPredictionJob',
     'CompletionStats',
+    'Context',
     'ContainerSpec',
     'CustomJob',
     'CustomJobSpec',
@@ -257,6 +274,7 @@ __all__ = ('DatasetServiceClient',
     'UndeployModelResponse',
     'UpdateEndpointRequest',
     'EnvVar',
+    'Execution',
     'HyperparameterTuningJob',
     'BigQueryDestination',
     'BigQuerySource',
@@ -289,6 +307,7 @@ __all__ = ('DatasetServiceClient',
     'ListHyperparameterTuningJobsResponse',
     'JobState',
     'AutomaticResources',
+    'AutoscalingMetricSpec',
     'BatchDedicatedResources',
     'DedicatedResources',
     'DiskSpec',
@@ -328,10 +347,20 @@ __all__ = ('DatasetServiceClient',
     'UploadModelResponse',
     'DeleteOperationMetadata',
     'GenericOperationMetadata',
+    'PipelineJob',
+    'PipelineJobDetail',
+    'PipelineTaskDetail',
+    'PipelineTaskExecutorDetail',
+    'CancelPipelineJobRequest',
     'CancelTrainingPipelineRequest',
+    'CreatePipelineJobRequest',
     'CreateTrainingPipelineRequest',
+    'DeletePipelineJobRequest',
     'DeleteTrainingPipelineRequest',
+    'GetPipelineJobRequest',
     'GetTrainingPipelineRequest',
+    'ListPipelineJobsRequest',
+    'ListPipelineJobsResponse',
     'ListTrainingPipelinesRequest',
     'ListTrainingPipelinesResponse',
     'PipelineState',
@@ -356,4 +385,5 @@ __all__ = ('DatasetServiceClient',
     'TimestampSplit',
     'TrainingPipeline',
     'UserActionReference',
+    'Value',
 )

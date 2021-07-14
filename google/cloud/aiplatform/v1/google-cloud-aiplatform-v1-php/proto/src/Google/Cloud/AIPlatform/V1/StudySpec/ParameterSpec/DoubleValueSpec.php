@@ -27,6 +27,16 @@ class DoubleValueSpec extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>double max_value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $max_value = 0.0;
+    /**
+     * A default value for a `DOUBLE` parameter that is assumed to be a
+     * relatively good starting point.  Unset value signals that there is no
+     * offered starting point.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>double default_value = 4;</code>
+     */
+    protected $default_value = null;
 
     /**
      * Constructor.
@@ -38,6 +48,12 @@ class DoubleValueSpec extends \Google\Protobuf\Internal\Message
      *           Required. Inclusive minimum value of the parameter.
      *     @type float $max_value
      *           Required. Inclusive maximum value of the parameter.
+     *     @type float $default_value
+     *           A default value for a `DOUBLE` parameter that is assumed to be a
+     *           relatively good starting point.  Unset value signals that there is no
+     *           offered starting point.
+     *           Currently only supported by the Vizier service. Not supported by
+     *           HyperparamterTuningJob or TrainingPipeline.
      * }
      */
     public function __construct($data = NULL) {
@@ -93,6 +109,50 @@ class DoubleValueSpec extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->max_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * A default value for a `DOUBLE` parameter that is assumed to be a
+     * relatively good starting point.  Unset value signals that there is no
+     * offered starting point.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>double default_value = 4;</code>
+     * @return float
+     */
+    public function getDefaultValue()
+    {
+        return isset($this->default_value) ? $this->default_value : 0.0;
+    }
+
+    public function hasDefaultValue()
+    {
+        return isset($this->default_value);
+    }
+
+    public function clearDefaultValue()
+    {
+        unset($this->default_value);
+    }
+
+    /**
+     * A default value for a `DOUBLE` parameter that is assumed to be a
+     * relatively good starting point.  Unset value signals that there is no
+     * offered starting point.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>double default_value = 4;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setDefaultValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->default_value = $var;
 
         return $this;
     }

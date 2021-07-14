@@ -26,25 +26,50 @@
                 }
             },
             "methods": {
+                "CancelPipelineJob": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
                 "CancelTrainingPipeline": {
                     "timeout_millis": 5000,
                     "retry_codes_name": "no_retry_5_codes",
                     "retry_params_name": "no_retry_5_params"
+                },
+                "CreatePipelineJob": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
                 },
                 "CreateTrainingPipeline": {
                     "timeout_millis": 5000,
                     "retry_codes_name": "no_retry_5_codes",
                     "retry_params_name": "no_retry_5_params"
                 },
+                "DeletePipelineJob": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
                 "DeleteTrainingPipeline": {
                     "timeout_millis": 5000,
                     "retry_codes_name": "no_retry_5_codes",
                     "retry_params_name": "no_retry_5_params"
                 },
+                "GetPipelineJob": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
                 "GetTrainingPipeline": {
                     "timeout_millis": 5000,
                     "retry_codes_name": "no_retry_5_codes",
                     "retry_params_name": "no_retry_5_params"
+                },
+                "ListPipelineJobs": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
                 },
                 "ListTrainingPipelines": {
                     "timeout_millis": 5000,

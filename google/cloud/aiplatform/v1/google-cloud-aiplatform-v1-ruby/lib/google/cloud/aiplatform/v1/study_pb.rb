@@ -8,17 +8,20 @@ require 'google/api/resource_pb'
 require 'google/protobuf/duration_pb'
 require 'google/protobuf/struct_pb'
 require 'google/protobuf/timestamp_pb'
-require 'google/protobuf/wrappers_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/aiplatform/v1/study.proto", :syntax => :proto3) do
     add_message "google.cloud.aiplatform.v1.Trial" do
+      optional :name, :string, 1
       optional :id, :string, 2
       optional :state, :enum, 3, "google.cloud.aiplatform.v1.Trial.State"
       repeated :parameters, :message, 4, "google.cloud.aiplatform.v1.Trial.Parameter"
       optional :final_measurement, :message, 5, "google.cloud.aiplatform.v1.Measurement"
+      repeated :measurements, :message, 6, "google.cloud.aiplatform.v1.Measurement"
       optional :start_time, :message, 7, "google.protobuf.Timestamp"
       optional :end_time, :message, 8, "google.protobuf.Timestamp"
+      optional :client_id, :string, 9
+      optional :infeasible_reason, :string, 10
       optional :custom_job, :string, 11
     end
     add_message "google.cloud.aiplatform.v1.Trial.Parameter" do
@@ -63,16 +66,20 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1.StudySpec.ParameterSpec.DoubleValueSpec" do
       optional :min_value, :double, 1
       optional :max_value, :double, 2
+      proto3_optional :default_value, :double, 4
     end
     add_message "google.cloud.aiplatform.v1.StudySpec.ParameterSpec.IntegerValueSpec" do
       optional :min_value, :int64, 1
       optional :max_value, :int64, 2
+      proto3_optional :default_value, :int64, 4
     end
     add_message "google.cloud.aiplatform.v1.StudySpec.ParameterSpec.CategoricalValueSpec" do
       repeated :values, :string, 1
+      proto3_optional :default_value, :string, 3
     end
     add_message "google.cloud.aiplatform.v1.StudySpec.ParameterSpec.DiscreteValueSpec" do
       repeated :values, :double, 1
+      proto3_optional :default_value, :double, 3
     end
     add_message "google.cloud.aiplatform.v1.StudySpec.ParameterSpec.ConditionalParameterSpec" do
       optional :parameter_spec, :message, 1, "google.cloud.aiplatform.v1.StudySpec.ParameterSpec"
@@ -113,6 +120,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :BEST_MEASUREMENT, 2
     end
     add_message "google.cloud.aiplatform.v1.Measurement" do
+      optional :elapsed_duration, :message, 1, "google.protobuf.Duration"
       optional :step_count, :int64, 2
       repeated :metrics, :message, 3, "google.cloud.aiplatform.v1.Measurement.Metric"
     end

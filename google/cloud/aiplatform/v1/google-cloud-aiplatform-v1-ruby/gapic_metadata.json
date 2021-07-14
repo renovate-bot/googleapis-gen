@@ -324,6 +324,31 @@
               "methods": [
                 "cancel_training_pipeline"
               ]
+            },
+            "CreatePipelineJob": {
+              "methods": [
+                "create_pipeline_job"
+              ]
+            },
+            "GetPipelineJob": {
+              "methods": [
+                "get_pipeline_job"
+              ]
+            },
+            "ListPipelineJobs": {
+              "methods": [
+                "list_pipeline_jobs"
+              ]
+            },
+            "DeletePipelineJob": {
+              "methods": [
+                "delete_pipeline_job"
+              ]
+            },
+            "CancelPipelineJob": {
+              "methods": [
+                "cancel_pipeline_job"
+              ]
             }
           }
         }

@@ -50,17 +50,11 @@ class AcceleratorType
      */
     const NVIDIA_TESLA_T4 = 5;
     /**
-     * TPU v2.
+     * Nvidia Tesla A100 GPU.
      *
-     * Generated from protobuf enum <code>TPU_V2 = 6;</code>
+     * Generated from protobuf enum <code>NVIDIA_TESLA_A100 = 8;</code>
      */
-    const TPU_V2 = 6;
-    /**
-     * TPU v3.
-     *
-     * Generated from protobuf enum <code>TPU_V3 = 7;</code>
-     */
-    const TPU_V3 = 7;
+    const NVIDIA_TESLA_A100 = 8;
 
     private static $valueToName = [
         self::ACCELERATOR_TYPE_UNSPECIFIED => 'ACCELERATOR_TYPE_UNSPECIFIED',
@@ -69,8 +63,7 @@ class AcceleratorType
         self::NVIDIA_TESLA_V100 => 'NVIDIA_TESLA_V100',
         self::NVIDIA_TESLA_P4 => 'NVIDIA_TESLA_P4',
         self::NVIDIA_TESLA_T4 => 'NVIDIA_TESLA_T4',
-        self::TPU_V2 => 'TPU_V2',
-        self::TPU_V3 => 'TPU_V3',
+        self::NVIDIA_TESLA_A100 => 'NVIDIA_TESLA_A100',
     ];
 
     public static function name($value)

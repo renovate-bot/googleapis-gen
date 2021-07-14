@@ -52,8 +52,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      *           `errors_N.<extension>` files are created (N depends on total number
      *           of failed predictions). These files contain the failed instances,
      *           as per their schema, followed by an additional `error` field which as
-     *           value has
-     *           [`google.rpc.Status`](Status)
+     *           value has [google.rpc.Status][google.rpc.Status]
      *           containing only `code` and `message` fields.
      *     @type \Google\Cloud\AIPlatform\V1\BigQueryDestination $bigquery_destination
      *           The BigQuery project or dataset location where the output is to be
@@ -72,7 +71,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      *           prediction schemata. The `errors` table contains rows for which the
      *           prediction has failed, it has instance columns, as per the
      *           instance schema, followed by a single "errors" column, which as values
-     *           has [`google.rpc.Status`](Status)
+     *           has [google.rpc.Status][google.rpc.Status]
      *           represented as a STRUCT, and containing only `code` and `message`.
      *     @type string $predictions_format
      *           Required. The format in which Vertex AI gives the predictions, must be one of the
@@ -104,8 +103,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * `errors_N.<extension>` files are created (N depends on total number
      * of failed predictions). These files contain the failed instances,
      * as per their schema, followed by an additional `error` field which as
-     * value has
-     * [`google.rpc.Status`](Status)
+     * value has [google.rpc.Status][google.rpc.Status]
      * containing only `code` and `message` fields.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.GcsDestination gcs_destination = 2;</code>
@@ -140,8 +138,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * `errors_N.<extension>` files are created (N depends on total number
      * of failed predictions). These files contain the failed instances,
      * as per their schema, followed by an additional `error` field which as
-     * value has
-     * [`google.rpc.Status`](Status)
+     * value has [google.rpc.Status][google.rpc.Status]
      * containing only `code` and `message` fields.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.GcsDestination gcs_destination = 2;</code>
@@ -173,7 +170,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * prediction schemata. The `errors` table contains rows for which the
      * prediction has failed, it has instance columns, as per the
      * instance schema, followed by a single "errors" column, which as values
-     * has [`google.rpc.Status`](Status)
+     * has [google.rpc.Status][google.rpc.Status]
      * represented as a STRUCT, and containing only `code` and `message`.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.BigQueryDestination bigquery_destination = 3;</code>
@@ -206,7 +203,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * prediction schemata. The `errors` table contains rows for which the
      * prediction has failed, it has instance columns, as per the
      * instance schema, followed by a single "errors" column, which as values
-     * has [`google.rpc.Status`](Status)
+     * has [google.rpc.Status][google.rpc.Status]
      * represented as a STRUCT, and containing only `code` and `message`.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.BigQueryDestination bigquery_destination = 3;</code>

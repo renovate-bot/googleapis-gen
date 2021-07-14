@@ -18,6 +18,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class Trial extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Output only. Resource name of the Trial assigned by the service.
+     *
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $name = '';
+    /**
      * Output only. The identifier of the Trial assigned by the service.
      *
      * Generated from protobuf field <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -42,6 +48,14 @@ class Trial extends \Google\Protobuf\Internal\Message
      */
     protected $final_measurement = null;
     /**
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $measurements;
+    /**
      * Output only. Time when the Trial was started.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -53,6 +67,26 @@ class Trial extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $end_time = null;
+    /**
+     * Output only. The identifier of the client that originally requested this Trial.
+     * Each client is identified by a unique client_id. When a client
+     * asks for a suggestion, Vizier will assign it a Trial. The client should
+     * evaluate the Trial, complete it, and report back to Vizier.
+     * If suggestion is asked again by same client_id before the Trial is
+     * completed, the same Trial will be returned. Multiple clients with
+     * different client_ids can ask for suggestions simultaneously, each of them
+     * will get their own Trial.
+     *
+     * Generated from protobuf field <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $client_id = '';
+    /**
+     * Output only. A human readable string describing why the Trial is
+     * infeasible. This is set only if Trial state is `INFEASIBLE`.
+     *
+     * Generated from protobuf field <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $infeasible_reason = '';
     /**
      * Output only. The CustomJob name linked to the Trial.
      * It's set for a HyperparameterTuningJob's Trial.
@@ -67,6 +101,8 @@ class Trial extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *           Output only. Resource name of the Trial assigned by the service.
      *     @type string $id
      *           Output only. The identifier of the Trial assigned by the service.
      *     @type int $state
@@ -75,10 +111,26 @@ class Trial extends \Google\Protobuf\Internal\Message
      *           Output only. The parameters of the Trial.
      *     @type \Google\Cloud\AIPlatform\V1\Measurement $final_measurement
      *           Output only. The final measurement containing the objective value.
+     *     @type \Google\Cloud\AIPlatform\V1\Measurement[]|\Google\Protobuf\Internal\RepeatedField $measurements
+     *           Output only. A list of measurements that are strictly lexicographically
+     *           ordered by their induced tuples (steps, elapsed_duration).
+     *           These are used for early stopping computations.
      *     @type \Google\Protobuf\Timestamp $start_time
      *           Output only. Time when the Trial was started.
      *     @type \Google\Protobuf\Timestamp $end_time
      *           Output only. Time when the Trial's status changed to `SUCCEEDED` or `INFEASIBLE`.
+     *     @type string $client_id
+     *           Output only. The identifier of the client that originally requested this Trial.
+     *           Each client is identified by a unique client_id. When a client
+     *           asks for a suggestion, Vizier will assign it a Trial. The client should
+     *           evaluate the Trial, complete it, and report back to Vizier.
+     *           If suggestion is asked again by same client_id before the Trial is
+     *           completed, the same Trial will be returned. Multiple clients with
+     *           different client_ids can ask for suggestions simultaneously, each of them
+     *           will get their own Trial.
+     *     @type string $infeasible_reason
+     *           Output only. A human readable string describing why the Trial is
+     *           infeasible. This is set only if Trial state is `INFEASIBLE`.
      *     @type string $custom_job
      *           Output only. The CustomJob name linked to the Trial.
      *           It's set for a HyperparameterTuningJob's Trial.
@@ -87,6 +139,32 @@ class Trial extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Aiplatform\V1\Study::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Output only. Resource name of the Trial assigned by the service.
+     *
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Output only. Resource name of the Trial assigned by the service.
+     *
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
     }
 
     /**
@@ -204,6 +282,36 @@ class Trial extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getMeasurements()
+    {
+        return $this->measurements;
+    }
+
+    /**
+     * Output only. A list of measurements that are strictly lexicographically
+     * ordered by their induced tuples (steps, elapsed_duration).
+     * These are used for early stopping computations.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Cloud\AIPlatform\V1\Measurement[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setMeasurements($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\AIPlatform\V1\Measurement::class);
+        $this->measurements = $arr;
+
+        return $this;
+    }
+
+    /**
      * Output only. Time when the Trial was started.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -271,6 +379,74 @@ class Trial extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->end_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The identifier of the client that originally requested this Trial.
+     * Each client is identified by a unique client_id. When a client
+     * asks for a suggestion, Vizier will assign it a Trial. The client should
+     * evaluate the Trial, complete it, and report back to Vizier.
+     * If suggestion is asked again by same client_id before the Trial is
+     * completed, the same Trial will be returned. Multiple clients with
+     * different client_ids can ask for suggestions simultaneously, each of them
+     * will get their own Trial.
+     *
+     * Generated from protobuf field <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->client_id;
+    }
+
+    /**
+     * Output only. The identifier of the client that originally requested this Trial.
+     * Each client is identified by a unique client_id. When a client
+     * asks for a suggestion, Vizier will assign it a Trial. The client should
+     * evaluate the Trial, complete it, and report back to Vizier.
+     * If suggestion is asked again by same client_id before the Trial is
+     * completed, the same Trial will be returned. Multiple clients with
+     * different client_ids can ask for suggestions simultaneously, each of them
+     * will get their own Trial.
+     *
+     * Generated from protobuf field <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->client_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. A human readable string describing why the Trial is
+     * infeasible. This is set only if Trial state is `INFEASIBLE`.
+     *
+     * Generated from protobuf field <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getInfeasibleReason()
+    {
+        return $this->infeasible_reason;
+    }
+
+    /**
+     * Output only. A human readable string describing why the Trial is
+     * infeasible. This is set only if Trial state is `INFEASIBLE`.
+     *
+     * Generated from protobuf field <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInfeasibleReason($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->infeasible_reason = $var;
 
         return $this;
     }

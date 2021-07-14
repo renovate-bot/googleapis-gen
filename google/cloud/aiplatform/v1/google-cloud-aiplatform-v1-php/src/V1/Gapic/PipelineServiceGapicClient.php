@@ -37,12 +37,19 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\AIPlatform\V1\CancelPipelineJobRequest;
 use Google\Cloud\AIPlatform\V1\CancelTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1\CreatePipelineJobRequest;
 use Google\Cloud\AIPlatform\V1\CreateTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1\DeletePipelineJobRequest;
 use Google\Cloud\AIPlatform\V1\DeleteTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1\GetPipelineJobRequest;
 use Google\Cloud\AIPlatform\V1\GetTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1\ListPipelineJobsRequest;
+use Google\Cloud\AIPlatform\V1\ListPipelineJobsResponse;
 use Google\Cloud\AIPlatform\V1\ListTrainingPipelinesRequest;
 use Google\Cloud\AIPlatform\V1\ListTrainingPipelinesResponse;
+use Google\Cloud\AIPlatform\V1\PipelineJob;
 use Google\Cloud\AIPlatform\V1\TrainingPipeline;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
@@ -59,8 +66,8 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $pipelineServiceClient = new PipelineServiceClient();
  * try {
- *     $formattedName = $pipelineServiceClient->trainingPipelineName('[PROJECT]', '[LOCATION]', '[TRAINING_PIPELINE]');
- *     $pipelineServiceClient->cancelTrainingPipeline($formattedName);
+ *     $formattedName = $pipelineServiceClient->pipelineJobName('[PROJECT]', '[LOCATION]', '[PIPELINE_JOB]');
+ *     $pipelineServiceClient->cancelPipelineJob($formattedName);
  * } finally {
  *     $pipelineServiceClient->close();
  * }
@@ -104,6 +111,10 @@ class PipelineServiceGapicClient
 
     private static $locationNameTemplate;
 
+    private static $networkNameTemplate;
+
+    private static $pipelineJobNameTemplate;
+
     private static $trainingPipelineNameTemplate;
 
     private static $pathTemplateMap;
@@ -138,6 +149,24 @@ class PipelineServiceGapicClient
         return self::$locationNameTemplate;
     }
 
+    private static function getNetworkNameTemplate()
+    {
+        if (self::$networkNameTemplate == null) {
+            self::$networkNameTemplate = new PathTemplate('projects/{project}/global/networks/{network}');
+        }
+
+        return self::$networkNameTemplate;
+    }
+
+    private static function getPipelineJobNameTemplate()
+    {
+        if (self::$pipelineJobNameTemplate == null) {
+            self::$pipelineJobNameTemplate = new PathTemplate('projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}');
+        }
+
+        return self::$pipelineJobNameTemplate;
+    }
+
     private static function getTrainingPipelineNameTemplate()
     {
         if (self::$trainingPipelineNameTemplate == null) {
@@ -152,6 +181,8 @@ class PipelineServiceGapicClient
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'location' => self::getLocationNameTemplate(),
+                'network' => self::getNetworkNameTemplate(),
+                'pipelineJob' => self::getPipelineJobNameTemplate(),
                 'trainingPipeline' => self::getTrainingPipelineNameTemplate(),
             ];
         }
@@ -173,6 +204,42 @@ class PipelineServiceGapicClient
         return self::getLocationNameTemplate()->render([
             'project' => $project,
             'location' => $location,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a network
+     * resource.
+     *
+     * @param string $project
+     * @param string $network
+     *
+     * @return string The formatted network resource.
+     */
+    public static function networkName($project, $network)
+    {
+        return self::getNetworkNameTemplate()->render([
+            'project' => $project,
+            'network' => $network,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a pipeline_job
+     * resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $pipelineJob
+     *
+     * @return string The formatted pipeline_job resource.
+     */
+    public static function pipelineJobName($project, $location, $pipelineJob)
+    {
+        return self::getPipelineJobNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'pipeline_job' => $pipelineJob,
         ]);
     }
 
@@ -200,6 +267,8 @@ class PipelineServiceGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - location: projects/{project}/locations/{location}
+     * - network: projects/{project}/global/networks/{network}
+     * - pipelineJob: projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}
      * - trainingPipeline: projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
@@ -325,6 +394,55 @@ class PipelineServiceGapicClient
     }
 
     /**
+     * Cancels a PipelineJob.
+     * Starts asynchronous cancellation on the PipelineJob. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1.PipelineService.GetPipelineJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the PipelineJob is not deleted; instead it becomes a pipeline with
+     * a [PipelineJob.error][google.cloud.aiplatform.v1.PipelineJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [PipelineJob.state][google.cloud.aiplatform.v1.PipelineJob.state] is set to
+     * `CANCELLED`.
+     *
+     * Sample code:
+     * ```
+     * $pipelineServiceClient = new PipelineServiceClient();
+     * try {
+     *     $formattedName = $pipelineServiceClient->pipelineJobName('[PROJECT]', '[LOCATION]', '[PIPELINE_JOB]');
+     *     $pipelineServiceClient->cancelPipelineJob($formattedName);
+     * } finally {
+     *     $pipelineServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the PipelineJob to cancel.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function cancelPipelineJob($name, array $optionalArgs = [])
+    {
+        $request = new CancelPipelineJobRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CancelPipelineJob', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Cancels a TrainingPipeline.
      * Starts asynchronous cancellation on the TrainingPipeline. The server
      * makes a best effort to cancel the pipeline, but success is not
@@ -374,6 +492,61 @@ class PipelineServiceGapicClient
     }
 
     /**
+     * Creates a PipelineJob. A PipelineJob will run immediately when created.
+     *
+     * Sample code:
+     * ```
+     * $pipelineServiceClient = new PipelineServiceClient();
+     * try {
+     *     $formattedParent = $pipelineServiceClient->locationName('[PROJECT]', '[LOCATION]');
+     *     $pipelineJob = new PipelineJob();
+     *     $response = $pipelineServiceClient->createPipelineJob($formattedParent, $pipelineJob);
+     * } finally {
+     *     $pipelineServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string      $parent       Required. The resource name of the Location to create the PipelineJob in.
+     *                                  Format: `projects/{project}/locations/{location}`
+     * @param PipelineJob $pipelineJob  Required. The PipelineJob to create.
+     * @param array       $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $pipelineJobId
+     *           The ID to use for the PipelineJob, which will become the final component of
+     *           the PipelineJob name. If not provided, an ID will be automatically
+     *           generated.
+     *
+     *           This value should be less than 128 characters, and valid characters
+     *           are /[a-z][0-9]-/.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\AIPlatform\V1\PipelineJob
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function createPipelineJob($parent, $pipelineJob, array $optionalArgs = [])
+    {
+        $request = new CreatePipelineJobRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $request->setPipelineJob($pipelineJob);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pipelineJobId'])) {
+            $request->setPipelineJobId($optionalArgs['pipelineJobId']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreatePipelineJob', PipelineJob::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Creates a TrainingPipeline. A created TrainingPipeline right away will be
      * attempted to be run.
      *
@@ -416,6 +589,71 @@ class PipelineServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('CreateTrainingPipeline', TrainingPipeline::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Deletes a PipelineJob.
+     *
+     * Sample code:
+     * ```
+     * $pipelineServiceClient = new PipelineServiceClient();
+     * try {
+     *     $formattedName = $pipelineServiceClient->pipelineJobName('[PROJECT]', '[LOCATION]', '[PIPELINE_JOB]');
+     *     $operationResponse = $pipelineServiceClient->deletePipelineJob($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $pipelineServiceClient->deletePipelineJob($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $pipelineServiceClient->resumeOperation($operationName, 'deletePipelineJob');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $pipelineServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the PipelineJob resource to be deleted.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function deletePipelineJob($name, array $optionalArgs = [])
+    {
+        $request = new DeletePipelineJobRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeletePipelineJob', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -484,6 +722,48 @@ class PipelineServiceGapicClient
     }
 
     /**
+     * Gets a PipelineJob.
+     *
+     * Sample code:
+     * ```
+     * $pipelineServiceClient = new PipelineServiceClient();
+     * try {
+     *     $formattedName = $pipelineServiceClient->pipelineJobName('[PROJECT]', '[LOCATION]', '[PIPELINE_JOB]');
+     *     $response = $pipelineServiceClient->getPipelineJob($formattedName);
+     * } finally {
+     *     $pipelineServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the PipelineJob resource.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\AIPlatform\V1\PipelineJob
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getPipelineJob($name, array $optionalArgs = [])
+    {
+        $request = new GetPipelineJobRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetPipelineJob', PipelineJob::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Gets a TrainingPipeline.
      *
      * Sample code:
@@ -526,6 +806,93 @@ class PipelineServiceGapicClient
     }
 
     /**
+     * Lists PipelineJobs in a Location.
+     *
+     * Sample code:
+     * ```
+     * $pipelineServiceClient = new PipelineServiceClient();
+     * try {
+     *     $formattedParent = $pipelineServiceClient->locationName('[PROJECT]', '[LOCATION]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $pipelineServiceClient->listPipelineJobs($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $pipelineServiceClient->listPipelineJobs($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $pipelineServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The resource name of the Location to list the PipelineJobs from.
+     *                             Format: `projects/{project}/locations/{location}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $filter
+     *           The standard list filter.
+     *           Supported fields:
+     *
+     *           * `display_name` supports `=` and `!=`.
+     *           * `state` supports `=` and `!=`.
+     *
+     *           The following examples demonstrate how to filter the list of PipelineJobs:
+     *
+     *           * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     *           * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+     *           * `NOT display_name="my_pipeline"`
+     *           * `state="PIPELINE_STATE_FAILED"`
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listPipelineJobs($parent, array $optionalArgs = [])
+    {
+        $request = new ListPipelineJobsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListPipelineJobs', $optionalArgs, ListPipelineJobsResponse::class, $request);
+    }
+
+    /**
      * Lists TrainingPipelines in a Location.
      *
      * Sample code:
@@ -557,22 +924,32 @@ class PipelineServiceGapicClient
      *     Optional.
      *
      *     @type string $filter
-     *           The standard list filter.
-     *           Supported fields:
+     *           Lists the PipelineJobs that match the filter expression. The following
+     *           fields are supported:
      *
-     *           * `display_name` supports = and !=.
+     *           * `pipeline_name`: Supports `=` and `!=` comparisons.
+     *           * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     *           Values must be in RFC 3339 format.
+     *           * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     *           Values must be in RFC 3339 format.
+     *           * `end_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     *           Values must be in RFC 3339 format.
+     *           * `labels`: Supports key-value equality and key presence.
      *
-     *           * `state` supports = and !=.
+     *           Filter expressions can be combined together using logical operators
+     *           (`AND` & `OR`).
+     *           For example: `pipeline_name="test" AND create_time>"2020-05-18T13:30:00Z"`.
      *
-     *           Some examples of using the filter are:
+     *           The syntax to define filter expression is based on
+     *           https://google.aip.dev/160.
      *
-     *           * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     *           Examples:
      *
-     *           * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
-     *
-     *           * `NOT display_name="my_pipeline"`
-     *
-     *           * `state="PIPELINE_STATE_FAILED"`
+     *           * `create_time>"2021-05-18T00:00:00Z" OR
+     *           update_time>"2020-05-18T00:00:00Z"` PipelineJobs created or updated
+     *           after 2020-05-18 00:00:00 UTC.
+     *           * `labels.env = "prod"`
+     *           PipelineJobs with label "env" set to "prod".
      *     @type int $pageSize
      *           The maximum number of resources contained in the underlying API
      *           response. The API may return fewer values in a page, even if

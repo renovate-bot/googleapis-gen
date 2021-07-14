@@ -55,6 +55,25 @@ module Google
             # corresponding to `Code.CANCELLED`, and [TrainingPipeline.state][google.cloud.aiplatform.v1.TrainingPipeline.state] is set to
             # `CANCELLED`.
             rpc :CancelTrainingPipeline, ::Google::Cloud::AIPlatform::V1::CancelTrainingPipelineRequest, ::Google::Protobuf::Empty
+            # Creates a PipelineJob. A PipelineJob will run immediately when created.
+            rpc :CreatePipelineJob, ::Google::Cloud::AIPlatform::V1::CreatePipelineJobRequest, ::Google::Cloud::AIPlatform::V1::PipelineJob
+            # Gets a PipelineJob.
+            rpc :GetPipelineJob, ::Google::Cloud::AIPlatform::V1::GetPipelineJobRequest, ::Google::Cloud::AIPlatform::V1::PipelineJob
+            # Lists PipelineJobs in a Location.
+            rpc :ListPipelineJobs, ::Google::Cloud::AIPlatform::V1::ListPipelineJobsRequest, ::Google::Cloud::AIPlatform::V1::ListPipelineJobsResponse
+            # Deletes a PipelineJob.
+            rpc :DeletePipelineJob, ::Google::Cloud::AIPlatform::V1::DeletePipelineJobRequest, ::Google::Longrunning::Operation
+            # Cancels a PipelineJob.
+            # Starts asynchronous cancellation on the PipelineJob. The server
+            # makes a best effort to cancel the pipeline, but success is not
+            # guaranteed. Clients can use [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1.PipelineService.GetPipelineJob] or
+            # other methods to check whether the cancellation succeeded or whether the
+            # pipeline completed despite cancellation. On successful cancellation,
+            # the PipelineJob is not deleted; instead it becomes a pipeline with
+            # a [PipelineJob.error][google.cloud.aiplatform.v1.PipelineJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+            # corresponding to `Code.CANCELLED`, and [PipelineJob.state][google.cloud.aiplatform.v1.PipelineJob.state] is set to
+            # `CANCELLED`.
+            rpc :CancelPipelineJob, ::Google::Cloud::AIPlatform::V1::CancelPipelineJobRequest, ::Google::Protobuf::Empty
           end
 
           Stub = Service.rpc_stub_class

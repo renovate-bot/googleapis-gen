@@ -119,4 +119,88 @@ class PipelineServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Creates a PipelineJob. A PipelineJob will run immediately when created.
+     * @param \Google\Cloud\AIPlatform\V1\CreatePipelineJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreatePipelineJob(\Google\Cloud\AIPlatform\V1\CreatePipelineJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1.PipelineService/CreatePipelineJob',
+        $argument,
+        ['\Google\Cloud\AIPlatform\V1\PipelineJob', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Gets a PipelineJob.
+     * @param \Google\Cloud\AIPlatform\V1\GetPipelineJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetPipelineJob(\Google\Cloud\AIPlatform\V1\GetPipelineJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1.PipelineService/GetPipelineJob',
+        $argument,
+        ['\Google\Cloud\AIPlatform\V1\PipelineJob', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Lists PipelineJobs in a Location.
+     * @param \Google\Cloud\AIPlatform\V1\ListPipelineJobsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListPipelineJobs(\Google\Cloud\AIPlatform\V1\ListPipelineJobsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1.PipelineService/ListPipelineJobs',
+        $argument,
+        ['\Google\Cloud\AIPlatform\V1\ListPipelineJobsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Deletes a PipelineJob.
+     * @param \Google\Cloud\AIPlatform\V1\DeletePipelineJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeletePipelineJob(\Google\Cloud\AIPlatform\V1\DeletePipelineJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1.PipelineService/DeletePipelineJob',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Cancels a PipelineJob.
+     * Starts asynchronous cancellation on the PipelineJob. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1.PipelineService.GetPipelineJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the PipelineJob is not deleted; instead it becomes a pipeline with
+     * a [PipelineJob.error][google.cloud.aiplatform.v1.PipelineJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [PipelineJob.state][google.cloud.aiplatform.v1.PipelineJob.state] is set to
+     * `CANCELLED`.
+     * @param \Google\Cloud\AIPlatform\V1\CancelPipelineJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CancelPipelineJob(\Google\Cloud\AIPlatform\V1\CancelPipelineJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1.PipelineService/CancelPipelineJob',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
 }

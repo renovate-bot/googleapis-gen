@@ -19,11 +19,17 @@ from .annotation import (
 from .annotation_spec import (
     AnnotationSpec,
 )
+from .artifact import (
+    Artifact,
+)
 from .batch_prediction_job import (
     BatchPredictionJob,
 )
 from .completion_stats import (
     CompletionStats,
+)
+from .context import (
+    Context,
 )
 from .custom_job import (
     ContainerSpec,
@@ -95,6 +101,9 @@ from .endpoint_service import (
 from .env_var import (
     EnvVar,
 )
+from .execution import (
+    Execution,
+)
 from .hyperparameter_tuning_job import (
     HyperparameterTuningJob,
 )
@@ -133,6 +142,7 @@ from .job_service import (
 )
 from .machine_resources import (
     AutomaticResources,
+    AutoscalingMetricSpec,
     BatchDedicatedResources,
     DedicatedResources,
     DiskSpec,
@@ -189,11 +199,23 @@ from .operation import (
     DeleteOperationMetadata,
     GenericOperationMetadata,
 )
+from .pipeline_job import (
+    PipelineJob,
+    PipelineJobDetail,
+    PipelineTaskDetail,
+    PipelineTaskExecutorDetail,
+)
 from .pipeline_service import (
+    CancelPipelineJobRequest,
     CancelTrainingPipelineRequest,
+    CreatePipelineJobRequest,
     CreateTrainingPipelineRequest,
+    DeletePipelineJobRequest,
     DeleteTrainingPipelineRequest,
+    GetPipelineJobRequest,
     GetTrainingPipelineRequest,
+    ListPipelineJobsRequest,
+    ListPipelineJobsResponse,
     ListTrainingPipelinesRequest,
     ListTrainingPipelinesResponse,
 )
@@ -230,13 +252,18 @@ from .training_pipeline import (
 from .user_action_reference import (
     UserActionReference,
 )
+from .value import (
+    Value,
+)
 
 __all__ = (
     'AcceleratorType',
     'Annotation',
     'AnnotationSpec',
+    'Artifact',
     'BatchPredictionJob',
     'CompletionStats',
+    'Context',
     'ContainerSpec',
     'CustomJob',
     'CustomJobSpec',
@@ -287,6 +314,7 @@ __all__ = (
     'UndeployModelResponse',
     'UpdateEndpointRequest',
     'EnvVar',
+    'Execution',
     'HyperparameterTuningJob',
     'BigQueryDestination',
     'BigQuerySource',
@@ -319,6 +347,7 @@ __all__ = (
     'ListHyperparameterTuningJobsResponse',
     'JobState',
     'AutomaticResources',
+    'AutoscalingMetricSpec',
     'BatchDedicatedResources',
     'DedicatedResources',
     'DiskSpec',
@@ -358,10 +387,20 @@ __all__ = (
     'UploadModelResponse',
     'DeleteOperationMetadata',
     'GenericOperationMetadata',
+    'PipelineJob',
+    'PipelineJobDetail',
+    'PipelineTaskDetail',
+    'PipelineTaskExecutorDetail',
+    'CancelPipelineJobRequest',
     'CancelTrainingPipelineRequest',
+    'CreatePipelineJobRequest',
     'CreateTrainingPipelineRequest',
+    'DeletePipelineJobRequest',
     'DeleteTrainingPipelineRequest',
+    'GetPipelineJobRequest',
     'GetTrainingPipelineRequest',
+    'ListPipelineJobsRequest',
+    'ListPipelineJobsResponse',
     'ListTrainingPipelinesRequest',
     'ListTrainingPipelinesResponse',
     'PipelineState',
@@ -386,4 +425,5 @@ __all__ = (
     'TimestampSplit',
     'TrainingPipeline',
     'UserActionReference',
+    'Value',
 )

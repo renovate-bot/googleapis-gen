@@ -37,28 +37,31 @@ public final class PredictionServiceProto {
       "service.proto\022\032google.cloud.aiplatform.v" +
       "1\032\034google/api/annotations.proto\032\027google/" +
       "api/client.proto\032\037google/api/field_behav" +
-      "ior.proto\032\031google/api/resource.proto\032\034go" +
-      "ogle/protobuf/struct.proto\"\252\001\n\016PredictRe" +
-      "quest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatf" +
-      "orm.googleapis.com/Endpoint\022.\n\tinstances" +
-      "\030\002 \003(\0132\026.google.protobuf.ValueB\003\340A\002\022*\n\np" +
-      "arameters\030\003 \001(\0132\026.google.protobuf.Value\"" +
-      "Y\n\017PredictResponse\022+\n\013predictions\030\001 \003(\0132" +
-      "\026.google.protobuf.Value\022\031\n\021deployed_mode" +
-      "l_id\030\002 \001(\t2\255\002\n\021PredictionService\022\310\001\n\007Pre" +
-      "dict\022*.google.cloud.aiplatform.v1.Predic" +
-      "tRequest\032+.google.cloud.aiplatform.v1.Pr" +
-      "edictResponse\"d\202\323\344\223\002>\"9/v1/{endpoint=pro" +
-      "jects/*/locations/*/endpoints/*}:predict" +
-      ":\001*\332A\035endpoint,instances,parameters\032M\312A\031" +
-      "aiplatform.googleapis.com\322A.https://www." +
-      "googleapis.com/auth/cloud-platformB\332\001\n\036c" +
-      "om.google.cloud.aiplatform.v1B\026Predictio" +
-      "nServiceProtoP\001ZDgoogle.golang.org/genpr" +
-      "oto/googleapis/cloud/aiplatform/v1;aipla" +
-      "tform\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goo" +
-      "gle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud:" +
-      ":AIPlatform::V1b\006proto3"
+      "ior.proto\032\031google/api/httpbody.proto\032\031go" +
+      "ogle/api/resource.proto\032\034google/protobuf" +
+      "/struct.proto\"\252\001\n\016PredictRequest\022<\n\010endp" +
+      "oint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.googleapi" +
+      "s.com/Endpoint\022.\n\tinstances\030\002 \003(\0132\026.goog" +
+      "le.protobuf.ValueB\003\340A\002\022*\n\nparameters\030\003 \001" +
+      "(\0132\026.google.protobuf.Value\"Y\n\017PredictRes" +
+      "ponse\022+\n\013predictions\030\001 \003(\0132\026.google.prot" +
+      "obuf.Value\022\031\n\021deployed_model_id\030\002 \001(\t2\367\002" +
+      "\n\021PredictionService\022\222\002\n\007Predict\022*.google" +
+      ".cloud.aiplatform.v1.PredictRequest\032+.go" +
+      "ogle.cloud.aiplatform.v1.PredictResponse" +
+      "\"\255\001\202\323\344\223\002\206\001\"9/v1/{endpoint=projects/*/loc" +
+      "ations/*/endpoints/*}:predict:\001*ZF\"A/v1/" +
+      "{endpoint=projects/*/locations/*/endpoin" +
+      "ts/*}:predictInternal:\001*\332A\035endpoint,para" +
+      "meters,instances\032M\312A\031aiplatform.googleap" +
+      "is.com\322A.https://www.googleapis.com/auth" +
+      "/cloud-platformB\332\001\n\036com.google.cloud.aip" +
+      "latform.v1B\026PredictionServiceProtoP\001ZDgo" +
+      "ogle.golang.org/genproto/googleapis/clou" +
+      "d/aiplatform/v1;aiplatform\252\002\032Google.Clou" +
+      "d.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfor" +
+      "m\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -66,6 +69,7 @@ public final class PredictionServiceProto {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ClientProto.getDescriptor(),
           com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.HttpBodyProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
         });
@@ -94,6 +98,7 @@ public final class PredictionServiceProto {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.HttpBodyProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }
