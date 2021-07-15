@@ -773,9 +773,7 @@ class CertificateAuthorityServiceClientTest extends GeneratedTest
         $incompleteOperation->setName('operations/deleteCaPoolTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-        $name2 = 'name2-1052831874';
-        $expectedResponse = new CaPool();
-        $expectedResponse->setName($name2);
+        $expectedResponse = new GPBEmpty();
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();

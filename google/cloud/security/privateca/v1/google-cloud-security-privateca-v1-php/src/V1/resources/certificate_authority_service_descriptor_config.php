@@ -45,7 +45,7 @@ return [
             ],
             'DeleteCaPool' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Security\PrivateCA\V1\CaPool',
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
                     'metadataReturnType' => '\Google\Cloud\Security\PrivateCA\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',

@@ -274,7 +274,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -284,7 +283,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -294,7 +292,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -330,7 +327,10 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -339,7 +339,10 @@ private static final long serialVersionUID = 0L;
     boolean hasNotAfterTime();
     /**
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -348,7 +351,10 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.Timestamp getNotAfterTime();
     /**
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -639,7 +645,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -652,7 +657,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -665,7 +669,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * For convenience, the actual lifetime of an issued certificate.
-     * Corresponds to 'not_after_time' - 'not_before_time'.
      * </pre>
      *
      * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -717,7 +720,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Timestamp notAfterTime_;
     /**
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -729,7 +735,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -741,7 +750,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time at which the certificate expires.
+     * The time after which the certificate is expired.
+     * Per RFC 5280, the validity period for a certificate is the period of time
+     * from not_before_time through not_after_time, inclusive.
+     * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -1629,7 +1641,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1641,7 +1652,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1657,7 +1667,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1678,7 +1687,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1697,7 +1705,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1720,7 +1727,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1739,7 +1745,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1752,7 +1757,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1768,7 +1772,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * For convenience, the actual lifetime of an issued certificate.
-       * Corresponds to 'not_after_time' - 'not_before_time'.
        * </pre>
        *
        * <code>.google.protobuf.Duration lifetime = 4;</code>
@@ -1947,7 +1950,10 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> notAfterTimeBuilder_;
       /**
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -1958,7 +1964,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -1973,7 +1982,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -1993,7 +2005,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2011,7 +2026,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2033,7 +2051,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2051,7 +2072,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2063,7 +2087,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>
@@ -2078,7 +2105,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The time at which the certificate expires.
+       * The time after which the certificate is expired.
+       * Per RFC 5280, the validity period for a certificate is the period of time
+       * from not_before_time through not_after_time, inclusive.
+       * Corresponds to 'not_before_time' + 'lifetime' - 1 second.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp not_after_time = 6;</code>

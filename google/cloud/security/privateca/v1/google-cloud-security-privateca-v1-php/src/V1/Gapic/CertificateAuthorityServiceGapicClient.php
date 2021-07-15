@@ -1001,8 +1001,7 @@ class CertificateAuthorityServiceGapicClient
      *     $operationResponse = $certificateAuthorityServiceClient->deleteCaPool($formattedName);
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
-     *         $result = $operationResponse->getResult();
-     *     // doSomethingWith($result)
+     *         // operation succeeded and returns no value
      *     } else {
      *         $error = $operationResponse->getError();
      *         // handleError($error)
@@ -1018,8 +1017,7 @@ class CertificateAuthorityServiceGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *         $result = $newOperationResponse->getResult();
-     *     // doSomethingWith($result)
+     *         // operation succeeded and returns no value
      *     } else {
      *         $error = $newOperationResponse->getError();
      *         // handleError($error)

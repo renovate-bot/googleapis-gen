@@ -231,7 +231,7 @@ export class CertificateAuthorityServiceClient {
     const updateCaPoolMetadata = protoFilesRoot.lookup(
       '.google.cloud.security.privateca.v1.OperationMetadata') as gax.protobuf.Type;
     const deleteCaPoolResponse = protoFilesRoot.lookup(
-      '.google.cloud.security.privateca.v1.CaPool') as gax.protobuf.Type;
+      '.google.protobuf.Empty') as gax.protobuf.Type;
     const deleteCaPoolMetadata = protoFilesRoot.lookup(
       '.google.cloud.security.privateca.v1.OperationMetadata') as gax.protobuf.Type;
     const updateCertificateRevocationListResponse = protoFilesRoot.lookup(
@@ -2267,20 +2267,20 @@ export class CertificateAuthorityServiceClient {
       request?: protos.google.cloud.security.privateca.v1.IDeleteCaPoolRequest,
       options?: CallOptions):
       Promise<[
-        LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
         protos.google.longrunning.IOperation|undefined, {}|undefined
       ]>;
   deleteCaPool(
       request: protos.google.cloud.security.privateca.v1.IDeleteCaPoolRequest,
       options: CallOptions,
       callback: Callback<
-          LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
   deleteCaPool(
       request: protos.google.cloud.security.privateca.v1.IDeleteCaPoolRequest,
       callback: Callback<
-          LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
@@ -2321,15 +2321,15 @@ export class CertificateAuthorityServiceClient {
   deleteCaPool(
       request?: protos.google.cloud.security.privateca.v1.IDeleteCaPoolRequest,
       optionsOrCallback?: CallOptions|Callback<
-          LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>,
       callback?: Callback<
-          LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>):
       Promise<[
-        LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.security.privateca.v1.IOperationMetadata>,
         protos.google.longrunning.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
@@ -2367,11 +2367,11 @@ export class CertificateAuthorityServiceClient {
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
  */
-  async checkDeleteCaPoolProgress(name: string): Promise<LROperation<protos.google.cloud.security.privateca.v1.CaPool, protos.google.cloud.security.privateca.v1.OperationMetadata>>{
+  async checkDeleteCaPoolProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.security.privateca.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
     const [operation] = await this.operationsClient.getOperation(request);
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteCaPool, gax.createDefaultBackoffSettings());
-    return decodeOperation as LROperation<protos.google.cloud.security.privateca.v1.CaPool, protos.google.cloud.security.privateca.v1.OperationMetadata>;
+    return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.security.privateca.v1.OperationMetadata>;
   }
   updateCertificateRevocationList(
       request?: protos.google.cloud.security.privateca.v1.IUpdateCertificateRevocationListRequest,

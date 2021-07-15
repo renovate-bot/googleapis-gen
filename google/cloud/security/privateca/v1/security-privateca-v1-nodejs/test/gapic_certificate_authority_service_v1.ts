@@ -2376,7 +2376,7 @@ describe('v1.CertificateAuthorityServiceClient', () => {
                  client.deleteCaPool(
                     request,
                     (err?: Error|null,
-                     result?: LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>|null
+                     result?: LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.security.privateca.v1.IOperationMetadata>|null
                     ) => {
                         if (err) {
                             reject(err);
@@ -2385,7 +2385,7 @@ describe('v1.CertificateAuthorityServiceClient', () => {
                         }
                     });
             });
-            const operation = await promise as LROperation<protos.google.cloud.security.privateca.v1.ICaPool, protos.google.cloud.security.privateca.v1.IOperationMetadata>;
+            const operation = await promise as LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.security.privateca.v1.IOperationMetadata>;
             const [response] = await operation.promise();
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.deleteCaPool as SinonStub)

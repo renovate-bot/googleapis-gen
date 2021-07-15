@@ -151,12 +151,12 @@ private static final long serialVersionUID = 0L;
   private boolean critical_;
   /**
    * <pre>
-   * Required. Indicates whether or not this extension is critical (i.e., if the client
+   * Optional. Indicates whether or not this extension is critical (i.e., if the client
    * does not know how to handle this extension, the client should consider this
    * to be an error).
    * </pre>
    *
-   * <code>bool critical = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>bool critical = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The critical.
    */
   @java.lang.Override
@@ -692,12 +692,12 @@ private static final long serialVersionUID = 0L;
     private boolean critical_ ;
     /**
      * <pre>
-     * Required. Indicates whether or not this extension is critical (i.e., if the client
+     * Optional. Indicates whether or not this extension is critical (i.e., if the client
      * does not know how to handle this extension, the client should consider this
      * to be an error).
      * </pre>
      *
-     * <code>bool critical = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool critical = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The critical.
      */
     @java.lang.Override
@@ -706,12 +706,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Indicates whether or not this extension is critical (i.e., if the client
+     * Optional. Indicates whether or not this extension is critical (i.e., if the client
      * does not know how to handle this extension, the client should consider this
      * to be an error).
      * </pre>
      *
-     * <code>bool critical = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool critical = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The critical to set.
      * @return This builder for chaining.
      */
@@ -723,12 +723,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Indicates whether or not this extension is critical (i.e., if the client
+     * Optional. Indicates whether or not this extension is critical (i.e., if the client
      * does not know how to handle this extension, the client should consider this
      * to be an error).
      * </pre>
      *
-     * <code>bool critical = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool critical = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearCritical() {

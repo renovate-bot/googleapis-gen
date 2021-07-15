@@ -18,6 +18,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
 {
     using Google.Cloud.Security.PrivateCA.V1;
     using Google.LongRunning;
+    using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
@@ -33,22 +34,22 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // Initialize request argument(s)
             CaPoolName name = CaPoolName.FromProjectLocationCaPool("[PROJECT]", "[LOCATION]", "[CA_POOL]");
             // Make the request
-            Operation<CaPool, OperationMetadata> response = certificateAuthorityServiceClient.DeleteCaPool(name);
+            Operation<Empty, OperationMetadata> response = certificateAuthorityServiceClient.DeleteCaPool(name);
 
             // Poll until the returned long-running operation is complete
-            Operation<CaPool, OperationMetadata> completedResponse = response.PollUntilCompleted();
+            Operation<Empty, OperationMetadata> completedResponse = response.PollUntilCompleted();
             // Retrieve the operation result
-            CaPool result = completedResponse.Result;
+            Empty result = completedResponse.Result;
 
             // Or get the name of the operation
             string operationName = response.Name;
             // This name can be stored, then the long-running operation retrieved later by name
-            Operation<CaPool, OperationMetadata> retrievedResponse = certificateAuthorityServiceClient.PollOnceDeleteCaPool(operationName);
+            Operation<Empty, OperationMetadata> retrievedResponse = certificateAuthorityServiceClient.PollOnceDeleteCaPool(operationName);
             // Check if the retrieved long-running operation has completed
             if (retrievedResponse.IsCompleted)
             {
                 // If it has completed, then access the result
-                CaPool retrievedResult = retrievedResponse.Result;
+                Empty retrievedResult = retrievedResponse.Result;
             }
         }
     }
