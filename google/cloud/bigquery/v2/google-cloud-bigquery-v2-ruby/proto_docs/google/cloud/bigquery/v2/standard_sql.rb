@@ -77,6 +77,9 @@ module Google
             # Encoded as RFC 3339 full-date "T" partial-time: 1985-04-12T23:20:50.52
             DATETIME = 21
 
+            # Encoded as fully qualified 3 part: 0-5 15 2:30:45.6
+            INTERVAL = 26
+
             # Encoded as WKT
             GEOGRAPHY = 22
 
@@ -85,6 +88,9 @@ module Google
 
             # Encoded as a decimal string.
             BIGNUMERIC = 24
+
+            # Encoded as a string.
+            JSON = 25
 
             # Encoded as a list with types matching Type.array_type.
             ARRAY = 16
@@ -112,6 +118,15 @@ module Google
         # @!attribute [rw] fields
         #   @return [::Array<::Google::Cloud::Bigquery::V2::StandardSqlField>]
         class StandardSqlStructType
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # A table type
+        # @!attribute [rw] columns
+        #   @return [::Array<::Google::Cloud::Bigquery::V2::StandardSqlField>]
+        #     The columns in this table type
+        class StandardSqlTableType
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

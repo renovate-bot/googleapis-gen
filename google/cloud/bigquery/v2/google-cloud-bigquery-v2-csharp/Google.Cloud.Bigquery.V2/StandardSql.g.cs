@@ -27,30 +27,33 @@ namespace Google.Cloud.Bigquery.V2 {
             "Citnb29nbGUvY2xvdWQvYmlncXVlcnkvdjIvc3RhbmRhcmRfc3FsLnByb3Rv",
             "Ehhnb29nbGUuY2xvdWQuYmlncXVlcnkudjIaH2dvb2dsZS9hcGkvZmllbGRf",
             "YmVoYXZpb3IucHJvdG8aHGdvb2dsZS9hcGkvYW5ub3RhdGlvbnMucHJvdG8i",
-            "2wMKE1N0YW5kYXJkU3FsRGF0YVR5cGUSTgoJdHlwZV9raW5kGAEgASgOMjYu",
+            "8wMKE1N0YW5kYXJkU3FsRGF0YVR5cGUSTgoJdHlwZV9raW5kGAEgASgOMjYu",
             "Z29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLlN0YW5kYXJkU3FsRGF0YVR5cGUu",
             "VHlwZUtpbmRCA+BBAhJLChJhcnJheV9lbGVtZW50X3R5cGUYAiABKAsyLS5n",
             "b29nbGUuY2xvdWQuYmlncXVlcnkudjIuU3RhbmRhcmRTcWxEYXRhVHlwZUgA",
             "EkYKC3N0cnVjdF90eXBlGAMgASgLMi8uZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5",
-            "LnYyLlN0YW5kYXJkU3FsU3RydWN0VHlwZUgAItIBCghUeXBlS2luZBIZChVU",
+            "LnYyLlN0YW5kYXJkU3FsU3RydWN0VHlwZUgAIuoBCghUeXBlS2luZBIZChVU",
             "WVBFX0tJTkRfVU5TUEVDSUZJRUQQABIJCgVJTlQ2NBACEggKBEJPT0wQBRIL",
             "CgdGTE9BVDY0EAcSCgoGU1RSSU5HEAgSCQoFQllURVMQCRINCglUSU1FU1RB",
-            "TVAQExIICgREQVRFEAoSCAoEVElNRRAUEgwKCERBVEVUSU1FEBUSDQoJR0VP",
-            "R1JBUEhZEBYSCwoHTlVNRVJJQxAXEg4KCkJJR05VTUVSSUMQGBIJCgVBUlJB",
-            "WRAQEgoKBlNUUlVDVBARQgoKCHN1Yl90eXBlImcKEFN0YW5kYXJkU3FsRmll",
-            "bGQSEQoEbmFtZRgBIAEoCUID4EEBEkAKBHR5cGUYAiABKAsyLS5nb29nbGUu",
-            "Y2xvdWQuYmlncXVlcnkudjIuU3RhbmRhcmRTcWxEYXRhVHlwZUID4EEBIlMK",
-            "FVN0YW5kYXJkU3FsU3RydWN0VHlwZRI6CgZmaWVsZHMYASADKAsyKi5nb29n",
-            "bGUuY2xvdWQuYmlncXVlcnkudjIuU3RhbmRhcmRTcWxGaWVsZEJyChxjb20u",
-            "Z29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyQhBTdGFuZGFyZFNxbFByb3RvWkBn",
-            "b29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2Nsb3VkL2Jp",
-            "Z3F1ZXJ5L3YyO2JpZ3F1ZXJ5YgZwcm90bzM="));
+            "TVAQExIICgREQVRFEAoSCAoEVElNRRAUEgwKCERBVEVUSU1FEBUSDAoISU5U",
+            "RVJWQUwQGhINCglHRU9HUkFQSFkQFhILCgdOVU1FUklDEBcSDgoKQklHTlVN",
+            "RVJJQxAYEggKBEpTT04QGRIJCgVBUlJBWRAQEgoKBlNUUlVDVBARQgoKCHN1",
+            "Yl90eXBlImcKEFN0YW5kYXJkU3FsRmllbGQSEQoEbmFtZRgBIAEoCUID4EEB",
+            "EkAKBHR5cGUYAiABKAsyLS5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuU3Rh",
+            "bmRhcmRTcWxEYXRhVHlwZUID4EEBIlMKFVN0YW5kYXJkU3FsU3RydWN0VHlw",
+            "ZRI6CgZmaWVsZHMYASADKAsyKi5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIu",
+            "U3RhbmRhcmRTcWxGaWVsZCJTChRTdGFuZGFyZFNxbFRhYmxlVHlwZRI7Cgdj",
+            "b2x1bW5zGAEgAygLMiouZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLlN0YW5k",
+            "YXJkU3FsRmllbGRCcgocY29tLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52MkIQ",
+            "U3RhbmRhcmRTcWxQcm90b1pAZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8v",
+            "Z29vZ2xlYXBpcy9jbG91ZC9iaWdxdWVyeS92MjtiaWdxdWVyeWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.StandardSqlDataType), global::Google.Cloud.Bigquery.V2.StandardSqlDataType.Parser, new[]{ "TypeKind", "ArrayElementType", "StructType" }, new[]{ "SubType" }, new[]{ typeof(global::Google.Cloud.Bigquery.V2.StandardSqlDataType.Types.TypeKind) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.StandardSqlField), global::Google.Cloud.Bigquery.V2.StandardSqlField.Parser, new[]{ "Name", "Type" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.StandardSqlStructType), global::Google.Cloud.Bigquery.V2.StandardSqlStructType.Parser, new[]{ "Fields" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.StandardSqlStructType), global::Google.Cloud.Bigquery.V2.StandardSqlStructType.Parser, new[]{ "Fields" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.StandardSqlTableType), global::Google.Cloud.Bigquery.V2.StandardSqlTableType.Parser, new[]{ "Columns" }, null, null, null, null)
           }));
     }
     #endregion
@@ -425,6 +428,10 @@ namespace Google.Cloud.Bigquery.V2 {
         /// </summary>
         [pbr::OriginalName("DATETIME")] Datetime = 21,
         /// <summary>
+        /// Encoded as fully qualified 3 part: 0-5 15 2:30:45.6
+        /// </summary>
+        [pbr::OriginalName("INTERVAL")] Interval = 26,
+        /// <summary>
         /// Encoded as WKT
         /// </summary>
         [pbr::OriginalName("GEOGRAPHY")] Geography = 22,
@@ -436,6 +443,10 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Encoded as a decimal string.
         /// </summary>
         [pbr::OriginalName("BIGNUMERIC")] Bignumeric = 24,
+        /// <summary>
+        /// Encoded as a string.
+        /// </summary>
+        [pbr::OriginalName("JSON")] Json = 25,
         /// <summary>
         /// Encoded as a list with types matching Type.array_type.
         /// </summary>
@@ -832,6 +843,173 @@ namespace Google.Cloud.Bigquery.V2 {
             break;
           case 10: {
             fields_.AddEntriesFrom(ref input, _repeated_fields_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// A table type
+  /// </summary>
+  public sealed partial class StandardSqlTableType : pb::IMessage<StandardSqlTableType>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<StandardSqlTableType> _parser = new pb::MessageParser<StandardSqlTableType>(() => new StandardSqlTableType());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<StandardSqlTableType> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Bigquery.V2.StandardSqlReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StandardSqlTableType() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StandardSqlTableType(StandardSqlTableType other) : this() {
+      columns_ = other.columns_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public StandardSqlTableType Clone() {
+      return new StandardSqlTableType(this);
+    }
+
+    /// <summary>Field number for the "columns" field.</summary>
+    public const int ColumnsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Google.Cloud.Bigquery.V2.StandardSqlField> _repeated_columns_codec
+        = pb::FieldCodec.ForMessage(10, global::Google.Cloud.Bigquery.V2.StandardSqlField.Parser);
+    private readonly pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.StandardSqlField> columns_ = new pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.StandardSqlField>();
+    /// <summary>
+    /// The columns in this table type
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.StandardSqlField> Columns {
+      get { return columns_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as StandardSqlTableType);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(StandardSqlTableType other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!columns_.Equals(other.columns_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= columns_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      columns_.WriteTo(output, _repeated_columns_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      columns_.WriteTo(ref output, _repeated_columns_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += columns_.CalculateSize(_repeated_columns_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(StandardSqlTableType other) {
+      if (other == null) {
+        return;
+      }
+      columns_.Add(other.columns_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            columns_.AddEntriesFrom(input, _repeated_columns_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            columns_.AddEntriesFrom(ref input, _repeated_columns_codec);
             break;
           }
         }

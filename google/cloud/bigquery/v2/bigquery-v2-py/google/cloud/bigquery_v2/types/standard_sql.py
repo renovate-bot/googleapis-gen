@@ -22,6 +22,7 @@ __protobuf__ = proto.module(
         'StandardSqlDataType',
         'StandardSqlField',
         'StandardSqlStructType',
+        'StandardSqlTableType',
     },
 )
 
@@ -57,9 +58,11 @@ class StandardSqlDataType(proto.Message):
         DATE = 10
         TIME = 20
         DATETIME = 21
+        INTERVAL = 26
         GEOGRAPHY = 22
         NUMERIC = 23
         BIGNUMERIC = 24
+        JSON = 25
         ARRAY = 16
         STRUCT = 17
 
@@ -115,6 +118,20 @@ class StandardSqlStructType(proto.Message):
     """
 
     fields = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message='StandardSqlField',
+    )
+
+
+class StandardSqlTableType(proto.Message):
+    r"""A table type
+    Attributes:
+        columns (Sequence[google.cloud.bigquery_v2.types.StandardSqlField]):
+            The columns in this table type
+    """
+
+    columns = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
         message='StandardSqlField',

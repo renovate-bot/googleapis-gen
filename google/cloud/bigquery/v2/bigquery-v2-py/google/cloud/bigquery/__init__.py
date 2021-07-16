@@ -28,6 +28,7 @@ from google.cloud.bigquery_v2.types.model_reference import ModelReference
 from google.cloud.bigquery_v2.types.standard_sql import StandardSqlDataType
 from google.cloud.bigquery_v2.types.standard_sql import StandardSqlField
 from google.cloud.bigquery_v2.types.standard_sql import StandardSqlStructType
+from google.cloud.bigquery_v2.types.standard_sql import StandardSqlTableType
 from google.cloud.bigquery_v2.types.table_reference import TableReference
 
 __all__ = ('ModelServiceClient',
@@ -43,5 +44,6 @@ __all__ = ('ModelServiceClient',
     'StandardSqlDataType',
     'StandardSqlField',
     'StandardSqlStructType',
+    'StandardSqlTableType',
     'TableReference',
 )

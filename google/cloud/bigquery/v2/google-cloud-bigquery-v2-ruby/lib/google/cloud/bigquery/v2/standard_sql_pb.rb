@@ -25,9 +25,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :DATE, 10
       value :TIME, 20
       value :DATETIME, 21
+      value :INTERVAL, 26
       value :GEOGRAPHY, 22
       value :NUMERIC, 23
       value :BIGNUMERIC, 24
+      value :JSON, 25
       value :ARRAY, 16
       value :STRUCT, 17
     end
@@ -37,6 +39,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.bigquery.v2.StandardSqlStructType" do
       repeated :fields, :message, 1, "google.cloud.bigquery.v2.StandardSqlField"
+    end
+    add_message "google.cloud.bigquery.v2.StandardSqlTableType" do
+      repeated :columns, :message, 1, "google.cloud.bigquery.v2.StandardSqlField"
     end
   end
 end
@@ -49,6 +54,7 @@ module Google
         StandardSqlDataType::TypeKind = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.bigquery.v2.StandardSqlDataType.TypeKind").enummodule
         StandardSqlField = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.bigquery.v2.StandardSqlField").msgclass
         StandardSqlStructType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.bigquery.v2.StandardSqlStructType").msgclass
+        StandardSqlTableType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.bigquery.v2.StandardSqlTableType").msgclass
       end
     end
   end
