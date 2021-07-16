@@ -423,6 +423,7 @@ describe('v1.VehicleServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleLocationRequest());
             request.name = '';
@@ -437,6 +438,7 @@ describe('v1.VehicleServiceClient', () => {
             const expectedResponse = generateSampleMessage(new protos.maps.fleetengine.v1.VehicleLocation());
             client.innerApiCalls.updateVehicleLocation = stubSimpleCall(expectedResponse);
             const [response] = await client.updateVehicleLocation(request);
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.updateVehicleLocation as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
@@ -447,6 +449,7 @@ describe('v1.VehicleServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleLocationRequest());
             request.name = '';
@@ -472,6 +475,7 @@ describe('v1.VehicleServiceClient', () => {
                     });
             });
             const response = await promise;
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.updateVehicleLocation as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
@@ -482,6 +486,7 @@ describe('v1.VehicleServiceClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleLocationRequest());
             request.name = '';
@@ -496,6 +501,7 @@ describe('v1.VehicleServiceClient', () => {
             const expectedError = new Error('expected');
             client.innerApiCalls.updateVehicleLocation = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.updateVehicleLocation(request), expectedError);
+            assert(stub.calledOnce);
             assert((client.innerApiCalls.updateVehicleLocation as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });

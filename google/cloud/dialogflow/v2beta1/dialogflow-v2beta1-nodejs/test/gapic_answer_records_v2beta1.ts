@@ -171,6 +171,7 @@ describe('v2beta1.AnswerRecordsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest());
             request.name = '';
@@ -185,6 +186,7 @@ describe('v2beta1.AnswerRecordsClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.AnswerRecord());
             client.innerApiCalls.getAnswerRecord = stubSimpleCall(expectedResponse);
             const [response] = await client.getAnswerRecord(request);
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.getAnswerRecord as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
@@ -195,6 +197,7 @@ describe('v2beta1.AnswerRecordsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest());
             request.name = '';
@@ -220,6 +223,7 @@ describe('v2beta1.AnswerRecordsClient', () => {
                     });
             });
             const response = await promise;
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.getAnswerRecord as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
@@ -230,6 +234,7 @@ describe('v2beta1.AnswerRecordsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest());
             request.name = '';
@@ -244,6 +249,7 @@ describe('v2beta1.AnswerRecordsClient', () => {
             const expectedError = new Error('expected');
             client.innerApiCalls.getAnswerRecord = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getAnswerRecord(request), expectedError);
+            assert(stub.calledOnce);
             assert((client.innerApiCalls.getAnswerRecord as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });

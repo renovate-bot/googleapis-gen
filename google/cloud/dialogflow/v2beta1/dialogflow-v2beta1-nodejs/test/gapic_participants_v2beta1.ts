@@ -762,6 +762,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest());
             request.parent = '';
@@ -776,6 +777,7 @@ describe('v2beta1.ParticipantsClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse());
             client.innerApiCalls.compileSuggestion = stubSimpleCall(expectedResponse);
             const [response] = await client.compileSuggestion(request);
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.compileSuggestion as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
@@ -786,6 +788,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest());
             request.parent = '';
@@ -811,6 +814,7 @@ describe('v2beta1.ParticipantsClient', () => {
                     });
             });
             const response = await promise;
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.compileSuggestion as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
@@ -821,6 +825,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest());
             request.parent = '';
@@ -835,6 +840,7 @@ describe('v2beta1.ParticipantsClient', () => {
             const expectedError = new Error('expected');
             client.innerApiCalls.compileSuggestion = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.compileSuggestion(request), expectedError);
+            assert(stub.calledOnce);
             assert((client.innerApiCalls.compileSuggestion as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
@@ -1068,6 +1074,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest());
             request.parent = '';
@@ -1086,6 +1093,7 @@ describe('v2beta1.ParticipantsClient', () => {
             ];
             client.innerApiCalls.listSuggestions = stubSimpleCall(expectedResponse);
             const [response] = await client.listSuggestions(request);
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.listSuggestions as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
@@ -1096,6 +1104,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest());
             request.parent = '';
@@ -1125,6 +1134,7 @@ describe('v2beta1.ParticipantsClient', () => {
                     });
             });
             const response = await promise;
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.listSuggestions as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
@@ -1135,6 +1145,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest());
             request.parent = '';
@@ -1149,6 +1160,7 @@ describe('v2beta1.ParticipantsClient', () => {
             const expectedError = new Error('expected');
             client.innerApiCalls.listSuggestions = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listSuggestions(request), expectedError);
+            assert(stub.calledOnce);
             assert((client.innerApiCalls.listSuggestions as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
@@ -1158,6 +1170,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest());
             request.parent = '';
@@ -1182,6 +1195,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 });
             });
             const responses = await promise;
+            assert(stub.calledOnce);
             assert.deepStrictEqual(responses, expectedResponse);
             assert((client.descriptors.page.listSuggestions.createStream as SinonStub)
                 .getCall(0).calledWith(client.innerApiCalls.listSuggestions, request));
@@ -1197,6 +1211,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest());
             request.parent = '';
@@ -1217,6 +1232,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 });
             });
             await assert.rejects(promise, expectedError);
+            assert(stub.calledOnce);
             assert((client.descriptors.page.listSuggestions.createStream as SinonStub)
                 .getCall(0).calledWith(client.innerApiCalls.listSuggestions, request));
             assert.strictEqual(
@@ -1231,6 +1247,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest());
             request.parent = '';
@@ -1245,6 +1262,7 @@ describe('v2beta1.ParticipantsClient', () => {
             for await (const resource of iterable) {
                 responses.push(resource!);
             }
+            assert(stub.calledOnce);
             assert.deepStrictEqual(responses, expectedResponse);
             assert.deepStrictEqual(
                 (client.descriptors.page.listSuggestions.asyncIterate as SinonStub)
@@ -1261,6 +1279,7 @@ describe('v2beta1.ParticipantsClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest());
             request.parent = '';
@@ -1273,6 +1292,7 @@ describe('v2beta1.ParticipantsClient', () => {
                     responses.push(resource!);
                 }
             });
+            assert(stub.calledOnce);
             assert.deepStrictEqual(
                 (client.descriptors.page.listSuggestions.asyncIterate as SinonStub)
                     .getCall(0).args[1], request);

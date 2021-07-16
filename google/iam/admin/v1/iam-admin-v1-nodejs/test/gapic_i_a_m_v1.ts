@@ -1266,6 +1266,7 @@ describe('v1.IAMClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.SignBlobRequest());
             request.name = '';
@@ -1280,6 +1281,7 @@ describe('v1.IAMClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.SignBlobResponse());
             client.innerApiCalls.signBlob = stubSimpleCall(expectedResponse);
             const [response] = await client.signBlob(request);
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.signBlob as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
@@ -1290,6 +1292,7 @@ describe('v1.IAMClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.SignBlobRequest());
             request.name = '';
@@ -1315,6 +1318,7 @@ describe('v1.IAMClient', () => {
                     });
             });
             const response = await promise;
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.signBlob as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
@@ -1325,6 +1329,7 @@ describe('v1.IAMClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.SignBlobRequest());
             request.name = '';
@@ -1339,6 +1344,7 @@ describe('v1.IAMClient', () => {
             const expectedError = new Error('expected');
             client.innerApiCalls.signBlob = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.signBlob(request), expectedError);
+            assert(stub.calledOnce);
             assert((client.innerApiCalls.signBlob as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
@@ -1350,6 +1356,7 @@ describe('v1.IAMClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.SignJwtRequest());
             request.name = '';
@@ -1364,6 +1371,7 @@ describe('v1.IAMClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.SignJwtResponse());
             client.innerApiCalls.signJwt = stubSimpleCall(expectedResponse);
             const [response] = await client.signJwt(request);
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.signJwt as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
@@ -1374,6 +1382,7 @@ describe('v1.IAMClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.SignJwtRequest());
             request.name = '';
@@ -1399,6 +1408,7 @@ describe('v1.IAMClient', () => {
                     });
             });
             const response = await promise;
+            assert(stub.calledOnce);
             assert.deepStrictEqual(response, expectedResponse);
             assert((client.innerApiCalls.signJwt as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
@@ -1409,6 +1419,7 @@ describe('v1.IAMClient', () => {
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
                 projectId: 'bogus',
             });
+            const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.SignJwtRequest());
             request.name = '';
@@ -1423,6 +1434,7 @@ describe('v1.IAMClient', () => {
             const expectedError = new Error('expected');
             client.innerApiCalls.signJwt = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.signJwt(request), expectedError);
+            assert(stub.calledOnce);
             assert((client.innerApiCalls.signJwt as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });

@@ -42,6 +42,7 @@ const version = require('../../../package.json').version;
 export class MessagesV1Beta3Client {
   private _terminated = false;
   private _opts: ClientOptions;
+  private _providedCustomServicePath: boolean;
   private _gaxModule: typeof gax | typeof gax.fallback;
   private _gaxGrpc: gax.GrpcClient | gax.fallback.GrpcClient;
   private _protos: {};
@@ -53,6 +54,7 @@ export class MessagesV1Beta3Client {
     longrunning: {},
     batching: {},
   };
+  warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
   messagesV1Beta3Stub?: Promise<{[name: string]: Function}>;
 
@@ -94,6 +96,7 @@ export class MessagesV1Beta3Client {
     // Ensure that options include all the required fields.
     const staticMembers = this.constructor as typeof MessagesV1Beta3Client;
     const servicePath = opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
+    this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
@@ -159,6 +162,9 @@ export class MessagesV1Beta3Client {
     // of calling the API is handled in `google-gax`, with this code
     // merely providing the destination and request information.
     this.innerApiCalls = {};
+
+    // Add a warn function to the client constructor so it can be easily tested.
+    this.warn = gax.warn;
   }
 
   /**
@@ -185,7 +191,7 @@ export class MessagesV1Beta3Client {
           (this._protos as protobuf.Root).lookupService('google.dataflow.v1beta3.MessagesV1Beta3') :
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (this._protos as any).google.dataflow.v1beta3.MessagesV1Beta3,
-        this._opts) as Promise<{[method: string]: Function}>;
+        this._opts, this._providedCustomServicePath) as Promise<{[method: string]: Function}>;
 
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
